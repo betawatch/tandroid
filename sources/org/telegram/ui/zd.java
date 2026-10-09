@@ -1,72 +1,54 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zd extends LinearLayout {
-    public static float b = 1.0f;
-    public final /* synthetic */ int a;
+public final class zd extends org.telegram.ui.Components.zd0 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ Object M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zd(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public /* synthetic */ zd(Object obj, Context context, int i10) {
+        super(context, null);
+        this.L = i10;
+        this.M = obj;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 2:
-                super.onLayout(z10, i10, i11, i12, i13);
-                setPivotX(getWidth());
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
             case 0:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                ke keVar = (ke) this.M;
+                org.telegram.ui.Components.k71 k71Var = keVar.a1;
+                fi.o oVar = keVar.Y0;
+                if (oVar != null && !oVar.isFocusable()) {
+                    oVar.setFocusable(true);
+                    oVar.setFocusableInTouchMode(true);
+                    int y12 = k71Var.y1(3);
+                    if (y12 >= 0 && y12 < k71Var.W2.x.size()) {
+                        k71Var.B0();
+                        k71Var.x0(y12);
+                    }
+                    oVar.requestFocus();
+                }
                 break;
-            case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 2:
-            case 4:
             default:
-                super.onMeasure(i10, i11);
-                break;
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)), i11);
-                break;
-            case 5:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(0.0f);
-                break;
-            case 6:
-                super.onMeasure(i10, i11);
-                setPivotY(0.0f);
-                setPivotX(getMeasuredWidth());
-                break;
-            case 7:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
-                break;
-            case 8:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-                break;
-            case 9:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                yh.g gVar = (yh.g) this.M;
+                fi.o oVar2 = gVar.Q;
+                if (oVar2 != null && !oVar2.isFocusable()) {
+                    gVar.Q.setFocusable(true);
+                    gVar.Q.setFocusableInTouchMode(true);
+                    int y13 = gVar.e.y1(1);
+                    if (y13 >= 0 && y13 < gVar.e.W2.x.size()) {
+                        gVar.e.B0();
+                        gVar.e.x0(y13);
+                    }
+                    gVar.Q.requestFocus();
+                }
                 break;
         }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

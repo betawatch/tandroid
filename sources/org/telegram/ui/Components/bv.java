@@ -1,100 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bv extends PopupWindow {
-    public static Field f;
-    public static final org.telegram.ui.ActionBar.g1 g = new org.telegram.ui.ActionBar.g1(1);
-    public ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
-    public final av c;
-    public boolean d;
-    public final int e;
+public final class bv extends CharacterStyle {
+    public final /* synthetic */ int a;
+    public int b;
 
-    public bv(av avVar) {
-        super(avVar);
-        this.e = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
-        this.c = avVar;
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(2);
-        setSoftInputMode(0);
-        avVar.setFocusableInTouchMode(true);
-        avVar.setOnKeyListener(new pn(this, 1));
+    public /* synthetic */ bv(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    public final void a(View view) {
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
-                }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
-                }
-            }
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
+                break;
+            default:
+                textPaint.setColor(org.telegram.ui.ActionBar.i6.m1(textPaint.getAlpha() / 255.0f, this.b));
+                break;
         }
     }
 
-    @Override // android.widget.PopupWindow
-    public final void dismiss() {
-        ViewTreeObserver viewTreeObserver;
-        setFocusable(false);
-        try {
-            super.dismiss();
-        } catch (Exception unused) {
-        }
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
+    public /* synthetic */ bv(boolean z10) {
+        this.a = 0;
     }
 
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i10, int i11) {
-        try {
-            super.showAsDropDown(view, i10, i11);
-            a(view);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i10, int i11, int i12) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i10, i11, i12);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11, int i12, int i13) {
-        super.update(view, i10, i11, i12, i13);
-        a(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11) {
-        super.update(view, i10, i11);
-        a(view);
+    public bv() {
+        this.a = 0;
+        this.b = 0;
     }
 }

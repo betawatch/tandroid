@@ -5,10 +5,11 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import org.telegram.ui.Components.u11;
-import org.telegram.ui.Components.w11;
+import m.f3;
+import org.telegram.ui.Components.a21;
+import org.telegram.ui.Components.c21;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -22,11 +23,12 @@ public final class a implements Choreographer.FrameCallback {
     @Override // android.view.Choreographer.FrameCallback
     public final void doFrame(long j3) {
         int i10;
-        k kVar;
         boolean z10;
+        k kVar;
+        boolean z11;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((k2.e) ((la.h) this.b).b).b;
+                b bVar = (b) ((f3) ((la.h) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -44,7 +46,7 @@ public final class a implements Choreographer.FrameCallback {
                         long j10 = hVar.i;
                         if (j10 == 0) {
                             hVar.i = uptimeMillis;
-                            hVar.e(hVar.b);
+                            hVar.f(hVar.b);
                         } else {
                             long j11 = uptimeMillis - j10;
                             hVar.i = uptimeMillis;
@@ -52,6 +54,7 @@ public final class a implements Choreographer.FrameCallback {
                             if (kVar2.v != Float.MAX_VALUE) {
                                 l lVar = kVar2.u;
                                 double d = lVar.i;
+                                z10 = true;
                                 i10 = i11;
                                 long j12 = j11 / 2;
                                 e c10 = lVar.c(kVar2.b, kVar2.a, j12);
@@ -64,6 +67,7 @@ public final class a implements Choreographer.FrameCallback {
                                 kVar = kVar2;
                             } else {
                                 i10 = i11;
+                                z10 = true;
                                 kVar = kVar2;
                                 e c12 = kVar2.u.c(kVar2.b, kVar2.a, j11);
                                 kVar.b = c12.a;
@@ -76,18 +80,18 @@ public final class a implements Choreographer.FrameCallback {
                             l lVar3 = kVar.u;
                             lVar3.getClass();
                             if (Math.abs(f7) >= lVar3.e || Math.abs(r8 - ((float) lVar3.i)) >= lVar3.d) {
-                                z10 = false;
+                                z11 = false;
                             } else {
                                 kVar.b = (float) kVar.u.i;
                                 kVar.a = 0.0f;
-                                z10 = true;
+                                z11 = z10;
                             }
                             float min = Math.min(hVar.b, hVar.g);
                             hVar.b = min;
                             float max2 = Math.max(min, hVar.h);
                             hVar.b = max2;
-                            hVar.e(max2);
-                            if (z10) {
+                            hVar.f(max2);
+                            if (z11) {
                                 hVar.d(false);
                             }
                             i11 = i10 + 1;
@@ -114,13 +118,13 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 break;
             default:
-                u11 u11Var = ((w11) this.b).a;
-                if (u11Var != null) {
-                    Handler handler = u11Var.getHandler();
-                    if (handler != null && u11Var.b.get()) {
+                a21 a21Var = ((c21) this.b).a;
+                if (a21Var != null) {
+                    Handler handler = a21Var.getHandler();
+                    if (handler != null && a21Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((w11) this.b).a.S) {
+                    if (((c21) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import v7.p6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
@@ -340,65 +340,65 @@ public abstract class h {
                     g(group2, gVar);
                 } else {
                     char c10 = 5;
-                    char c11 = 0;
+                    boolean z10 = false;
                     if ("align".equals(group)) {
                         switch (group2.hashCode()) {
                             case -1364013995:
                                 break;
                             case -1074341483:
                                 if (group2.equals("middle")) {
-                                    c11 = 1;
+                                    z10 = true;
                                     break;
                                 }
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                             case 100571:
                                 if (group2.equals("end")) {
-                                    c11 = 2;
+                                    z10 = 2;
                                     break;
                                 }
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                             case 3317767:
                                 if (group2.equals("left")) {
-                                    c11 = 3;
+                                    z10 = 3;
                                     break;
                                 }
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                             case 108511772:
                                 if (group2.equals("right")) {
-                                    c11 = 4;
+                                    z10 = 4;
                                     break;
                                 }
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                             case 109757538:
                                 if (group2.equals("start")) {
-                                    c11 = 5;
+                                    z10 = 5;
                                     break;
                                 }
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                             default:
-                                c11 = 65535;
+                                z10 = -1;
                                 break;
                         }
-                        switch (c11) {
-                            case 0:
-                            case 1:
+                        switch (z10) {
+                            case false:
+                            case true:
                                 i10 = 2;
                                 break;
-                            case 2:
+                            case true:
                                 i10 = 3;
                                 break;
-                            case 3:
+                            case true:
                                 i10 = 4;
                                 break;
-                            case 4:
+                            case true:
                                 i10 = 5;
                                 break;
-                            case 5:
+                            case true:
                                 i10 = 1;
                                 break;
                             default:
@@ -469,7 +469,7 @@ public abstract class h {
                                     break;
                                 default:
                                     e2.a.n("WebvttCueParser", "Invalid anchor value: ".concat(substring));
-                                    i11 = TLObject.FLAG_31;
+                                    i11 = Integer.MIN_VALUE;
                                     break;
                             }
                             gVar.i = i11;
@@ -485,7 +485,7 @@ public abstract class h {
                             i12 = 1;
                         } else {
                             e2.a.n("WebvttCueParser", "Invalid 'vertical' value: ".concat(group2));
-                            i12 = TLObject.FLAG_31;
+                            i12 = Integer.MIN_VALUE;
                         }
                         gVar.k = i12;
                     } else {

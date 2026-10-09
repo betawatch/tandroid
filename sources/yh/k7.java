@@ -1,88 +1,29 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.v90;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.zl0;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class k7 extends g61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class k7 implements Runnable {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
 
-    static {
-        g61.setup(new k7());
+    public /* synthetic */ k7(long j3, int i10, int i11, boolean z10) {
+        this.a = j3;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
     }
 
-    public static h61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
-        h61 K = h61.K(k7.class);
-        K.d = i10;
-        K.z = i11;
-        long j3 = tL_starsTopupOption.stars;
-        K.B = j3;
-        K.l = LocaleController.formatPluralStringSpaced("StarsCount", (int) j3);
-        K.m = tL_starsTopupOption.loadingStorePrice ? null : BillingController.getInstance().formatCurrency(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
-        K.G = tL_starsTopupOption;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
-        l7 l7Var = (l7) view;
-        int i10 = h61Var.z;
-        CharSequence charSequence = h61Var.l;
-        CharSequence charSequence2 = h61Var.m;
-        org.telegram.ui.Components.p6 p6Var = l7Var.e;
-        TextView textView = l7Var.d;
-        boolean equals = TextUtils.equals(textView.getText(), charSequence);
-        l7Var.n = i10;
-        if (!equals) {
-            l7Var.r.d(i10, true);
-        }
-        textView.setText(charSequence);
-        if (charSequence2 == null) {
-            if (l7Var.f == null) {
-                SpannableString spannableString = new SpannableString("x");
-                l7Var.f = spannableString;
-                spannableString.setSpan(new v90(AndroidUtilities.dp(55.0f), p6Var), 0, l7Var.f.length(), 33);
-            }
-            charSequence2 = l7Var.f;
-        }
-        p6Var.setText(charSequence2);
-        float f7 = LocaleController.isRTL ? -1.0f : 1.0f;
-        if (equals) {
-            textView.animate().translationX(f7 * (i10 - 1) * AndroidUtilities.dp(2.66f)).setDuration(320L).setInterpolator(tr.h).start();
+    @Override // java.lang.Runnable
+    public final void run() {
+        long j3 = this.a;
+        int i10 = this.b;
+        int i11 = this.c;
+        if (j3 != 0) {
+            o.g(i10).p(i11, j3);
         } else {
-            textView.setTranslationX(f7 * (i10 - 1) * AndroidUtilities.dp(2.66f));
+            m5.y(i10, this.d).X(i11);
         }
-        l7Var.h = z10;
-        l7Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean contentsEquals(h61 h61Var, h61 h61Var2) {
-        return h61Var.z == h61Var2.z && h61Var.d == h61Var2.d && TextUtils.equals(h61Var.m, h61Var2.m);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new l7(context, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(h61 h61Var, h61 h61Var2) {
-        return h61Var.d == h61Var2.d;
     }
 }

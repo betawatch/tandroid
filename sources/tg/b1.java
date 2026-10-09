@@ -5,8 +5,9 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Wallet.n5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -29,7 +30,7 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 if (j1Var.N) {
                     j1Var.setLoading(false);
                     if (m1Var.d.G) {
-                        m1Var.d0();
+                        m1Var.e0();
                         break;
                     }
                 }
@@ -38,14 +39,14 @@ public final /* synthetic */ class b1 implements Utilities.Callback {
                 this.b.dismiss(((Boolean) obj).booleanValue());
                 break;
             case 2:
-                m1.R(this.b, (TL_account.TL_birthday) obj);
+                m1.U(this.b, (TL_account.TL_birthday) obj);
                 break;
             default:
                 m1 m1Var2 = this.b;
                 m1Var2.o0 = (String) obj;
-                pg.c1 c1Var = m1Var2.w0;
-                AndroidUtilities.cancelRunOnUIThread(c1Var);
-                AndroidUtilities.runOnUIThread(c1Var, 350L);
+                n5 n5Var = m1Var2.w0;
+                AndroidUtilities.cancelRunOnUIThread(n5Var);
+                AndroidUtilities.runOnUIThread(n5Var, 350L);
                 break;
         }
     }

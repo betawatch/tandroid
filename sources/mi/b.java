@@ -1,62 +1,20 @@
 package mi;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.RenderNode;
-import w7.z;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class b extends z {
-    public final RenderNode a = ah.f.n();
-    public final Paint b = new Paint(1);
-    public final /* synthetic */ f c;
+public final class b {
+    public static final b c = new b(Float.POSITIVE_INFINITY);
+    public final float a;
+    public final float b;
 
-    public b(f fVar) {
-        this.c = fVar;
-    }
-
-    @Override // w7.z
-    public final void a(Rect rect, RectF rectF) {
-        f fVar = this.c;
-        if (fVar.k || !this.a.hasDisplayList()) {
-            int width = rect.width();
-            int height = rect.height();
-            int i10 = fVar.l;
-            float f7 = (i10 == 1 || i10 == 4) ? height : width;
-            g gVar = fVar.o;
-            gVar.getClass();
-            LinearGradient m10 = f.m(fVar, gVar, f7, 0, fVar.s, 1);
-            Paint paint = this.b;
-            paint.setShader(m10);
-            this.a.setPosition(0, 0, width, height);
-            this.a.beginRecording().drawRect(0.0f, 0.0f, width, height, paint);
-            this.a.endRecording();
-            paint.setShader(null);
-            fVar.k = false;
+    public b(float f7) {
+        if (Float.isNaN(Float.POSITIVE_INFINITY)) {
+            throw new IllegalArgumentException("epsX must be >= 0");
         }
-    }
-
-    @Override // w7.z
-    public final void b() {
-        this.a.discardDisplayList();
-    }
-
-    @Override // w7.z
-    public final void c(Canvas canvas) {
-        canvas.drawRenderNode(this.a);
-    }
-
-    @Override // w7.z
-    public final boolean d() {
-        return this.a.hasDisplayList();
-    }
-
-    @Override // w7.z
-    public final void e(float f7) {
-        this.a.setAlpha(f7);
+        if (Float.isNaN(f7) || f7 < 0.0f) {
+            throw new IllegalArgumentException("epsY must be >= 0");
+        }
+        this.a = Float.POSITIVE_INFINITY;
+        this.b = f7;
     }
 }

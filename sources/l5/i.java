@@ -3,7 +3,7 @@ package l5;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -24,13 +24,13 @@ public final class i {
 
     public final i b(i5.d dVar) {
         aa.a a2 = a();
-        a2.s(this.a);
+        a2.t(this.a);
         if (dVar == null) {
             throw new NullPointerException("Null priority");
         }
         a2.d = dVar;
         a2.c = this.b;
-        return a2.e();
+        return a2.d();
     }
 
     public final boolean equals(Object obj) {
@@ -58,6 +58,6 @@ public final class i {
         sb2.append(", ");
         sb2.append(this.c);
         sb2.append(", ");
-        return a4.a.t(sb2, encodeToString, ")");
+        return a1.g.t(sb2, encodeToString, ")");
     }
 }

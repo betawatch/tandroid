@@ -1,54 +1,128 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dy0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ Utilities.Callback c;
+public final class dy0 extends Drawable {
+    public final int a;
+    public final int b;
+    public final s5[] c;
+    public final boolean e;
+    public int d = 255;
+    public final RectF f = new RectF();
+    public boolean g = false;
 
-    public /* synthetic */ dy0(TLObject tLObject, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = tLObject;
-        this.c = callback;
+    public dy0(int i10, ArrayList arrayList, boolean z10) {
+        this.e = z10;
+        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
+        this.a = max;
+        int min = Math.min(max * max, arrayList.size());
+        this.b = min;
+        this.c = new s5[min];
+        if (!arrayList.isEmpty()) {
+            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
+        }
+        int i11 = max < 2 ? 1 : 0;
+        for (int i12 = 0; i12 < this.b; i12++) {
+            this.c[i12] = s5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                TLObject tLObject = this.b;
-                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
-                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
-                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
-                    }
-                    z10 = true;
-                } else {
-                    z10 = false;
-                }
-                this.c.run(Boolean.valueOf(z10));
-                break;
-            default:
-                TLObject tLObject2 = this.b;
-                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
-                Utilities.Callback callback = this.c;
-                if (!z11) {
-                    callback.run(0L);
-                    break;
-                } else {
-                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
-                    break;
-                }
+    public final void a(org.telegram.ui.Cells.u1 u1Var) {
+        for (int i10 = 0; i10 < this.b; i10++) {
+            this.c[i10].o(u1Var);
         }
+    }
+
+    public final boolean b() {
+        return this.g;
+    }
+
+    public final boolean c(ArrayList arrayList) {
+        s5[] s5VarArr = this.c;
+        if (s5VarArr.length == arrayList.size()) {
+            for (int i10 = 0; i10 < s5VarArr.length; i10++) {
+                TLRPC.Document document = s5VarArr[i10].e;
+                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    public final void d() {
+        this.g = false;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        s5 s5Var;
+        if (this.d <= 0) {
+            return;
+        }
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        int dp = AndroidUtilities.dp(48.0f);
+        int i10 = this.a;
+        float f7 = dp / i10;
+        float dp2 = AndroidUtilities.dp(48.0f) / i10;
+        canvas.save();
+        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
+        for (int i11 = 0; i11 < i10; i11++) {
+            for (int i12 = 0; i12 < i10; i12++) {
+                int i13 = (i11 * i10) + i12;
+                if (i13 >= 0) {
+                    s5[] s5VarArr = this.c;
+                    if (i13 < s5VarArr.length && (s5Var = s5VarArr[i13]) != null) {
+                        s5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
+                        s5VarArr[i13].setAlpha(this.d);
+                        s5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.i6.w3 : org.telegram.ui.ActionBar.i6.v3);
+                        s5VarArr[i13].draw(canvas);
+                    }
+                }
+            }
+        }
+        canvas.restore();
+    }
+
+    public final void e() {
+        this.g = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(48.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,47 +1,107 @@
 package w9;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.UUID;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class u extends d {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ ExecutorService b;
+public final class u {
+    public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
+    public static final String h = Pattern.quote("/");
+    public final d9.f a;
+    public final Context b;
+    public final String c;
+    public final qa.d d;
+    public final r e;
+    public c f;
 
-    public u(String str, ExecutorService executorService) {
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.a = str;
-        this.b = executorService;
+    public u(Context context, String str, qa.d dVar, r rVar) {
+        if (context == null) {
+            throw new IllegalArgumentException("appContext must not be null");
+        }
+        if (str == null) {
+            throw new IllegalArgumentException("appIdentifier must not be null");
+        }
+        this.b = context;
+        this.c = str;
+        this.d = dVar;
+        this.e = rVar;
+        this.a = new d9.f();
     }
 
-    @Override // w9.d
-    public final void a() {
-        String str = this.a;
-        ExecutorService executorService = this.b;
-        try {
-            String concat = "Executing shutdown hook for ".concat(str);
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", concat, null);
-            }
-            executorService.shutdown();
-            if (executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
-                return;
-            }
-            String concat2 = str.concat(" did not shut down in the allocated time. Requesting immediate shutdown.");
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", concat2, null);
-            }
-            executorService.shutdownNow();
-        } catch (InterruptedException unused) {
-            Locale locale = Locale.US;
-            String q6 = a4.a.q("Interrupted while waiting for ", str, " to shut down. Requesting immediate shutdown.");
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", q6, null);
-            }
-            executorService.shutdownNow();
+    public final synchronized String a(String str, SharedPreferences sharedPreferences) {
+        String lowerCase;
+        String uuid = UUID.randomUUID().toString();
+        lowerCase = uuid == null ? null : g.matcher(uuid).replaceAll("").toLowerCase(Locale.US);
+        String str2 = "Created new Crashlytics installation ID: " + lowerCase + " for FID: " + str;
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", str2, null);
         }
+        sharedPreferences.edit().putString("crashlytics.installation.id", lowerCase).putString("firebase.installation.id", str).apply();
+        return lowerCase;
+    }
+
+    public final synchronized c b() {
+        String str;
+        c cVar = this.f;
+        if (cVar != null && (cVar.b != null || !this.e.a())) {
+            return this.f;
+        }
+        t9.b bVar = t9.b.a;
+        bVar.c("Determining Crashlytics installation ID...");
+        SharedPreferences sharedPreferences = this.b.getSharedPreferences("com.google.firebase.crashlytics", 0);
+        String string = sharedPreferences.getString("firebase.installation.id", null);
+        bVar.c("Cached Firebase Installation ID: " + string);
+        if (this.e.a()) {
+            try {
+                str = (String) w.a(((qa.c) this.d).d());
+            } catch (Exception e7) {
+                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e7);
+                str = null;
+            }
+            bVar.c("Fetched Firebase Installation ID: " + str);
+            if (str == null) {
+                if (string == null) {
+                    str = "SYN_" + UUID.randomUUID().toString();
+                } else {
+                    str = string;
+                }
+            }
+            if (str.equals(string)) {
+                this.f = new c(sharedPreferences.getString("crashlytics.installation.id", null), str);
+            } else {
+                this.f = new c(a(str, sharedPreferences), str);
+            }
+        } else if (string == null || !string.startsWith("SYN_")) {
+            this.f = new c(a("SYN_" + UUID.randomUUID().toString(), sharedPreferences), null);
+        } else {
+            this.f = new c(sharedPreferences.getString("crashlytics.installation.id", null), null);
+        }
+        bVar.c("Install IDs: " + this.f);
+        return this.f;
+    }
+
+    public final String c() {
+        String str;
+        d9.f fVar = this.a;
+        Context context = this.b;
+        synchronized (fVar) {
+            try {
+                if (fVar.a == null) {
+                    String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+                    if (installerPackageName == null) {
+                        installerPackageName = "";
+                    }
+                    fVar.a = installerPackageName;
+                }
+                str = "".equals(fVar.a) ? null : fVar.a;
+            } finally {
+            }
+        }
+        return str;
     }
 }

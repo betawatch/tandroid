@@ -1,31 +1,12 @@
 package w7;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d6 {
-    public static q90 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        int i11 = org.telegram.ui.ActionBar.i6.gc;
-        q90 q90Var = new q90(context, null);
-        q90Var.setTextSize(1, f7);
-        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
-        if (z10) {
-            q90Var.setTypeface(AndroidUtilities.bold());
-        }
-        return q90Var;
-    }
-
-    public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        TextView f10 = org.telegram.messenger.q.f(context, 1, f7);
-        f10.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        if (z10) {
-            f10.setTypeface(AndroidUtilities.bold());
-        }
-        return f10;
+    public static void a(View view, float f7, float f10, float f11, float f12) {
+        view.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), AndroidUtilities.dp(f12));
     }
 }

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -39,9 +39,9 @@ public abstract class d1 implements Cloneable {
             l2Var.getClass();
             o2 a2 = l2Var.a(f1Var.getClass());
             f1 f1Var2 = this.b;
-            com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
+            com.google.android.gms.internal.clearcut.l lVar = new com.google.android.gms.internal.clearcut.l();
             u0Var.getClass();
-            a2.f(f1Var2, bArr, 0, i10, mVar);
+            a2.f(f1Var2, bArr, 0, i10, lVar);
         } catch (n1 e7) {
             throw e7;
         } catch (IOException e10) {
@@ -92,6 +92,6 @@ public abstract class d1 implements Cloneable {
         if (z10) {
             return e7;
         }
-        throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+        throw new ae.x("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }
 }

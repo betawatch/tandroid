@@ -1,7 +1,18 @@
 package de;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NULL", 1);
+public final class e extends ld.c {
+    public kotlin.jvm.internal.p a;
+    public /* synthetic */ Object b;
+    public int c;
+
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.c |= TLObject.FLAG_31;
+        return p.a(null, null, this);
+    }
 }

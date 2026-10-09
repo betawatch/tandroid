@@ -1,14 +1,23 @@
 package n2;
 
-import java.io.IOException;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class g extends IOException {
-    public final int a;
+public interface g {
+    void a(j jVar);
 
-    public g(int i10, Throwable th2) {
-        super(th2);
-        this.a = i10;
-    }
+    void b(j jVar);
+
+    UUID c();
+
+    boolean d();
+
+    int e();
+
+    boolean f(String str);
+
+    f g();
+
+    h2.b h();
 }

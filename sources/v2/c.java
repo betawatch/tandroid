@@ -7,7 +7,7 @@ import c3.n;
 import e2.d0;
 import e2.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements h0 {
     public final int a;
@@ -52,7 +52,7 @@ public final class c implements h0 {
 
     @Override // c3.h0
     public final /* synthetic */ void d(int i10, v vVar) {
-        a4.a.a(this, vVar, i10);
+        a1.g.a(this, vVar, i10);
     }
 
     @Override // c3.h0

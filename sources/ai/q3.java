@@ -1,156 +1,161 @@
 package ai;
 
-import android.view.View;
-import android.widget.ImageView;
+import android.util.LongSparseArray;
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.FileRefController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.v00;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ca1;
-import org.telegram.ui.cu;
-import org.telegram.ui.da1;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.xy0;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.c41;
+import org.telegram.ui.cj;
+import org.telegram.ui.dn0;
+import org.telegram.ui.g90;
+import org.telegram.ui.nn0;
+import org.telegram.ui.nq;
+import org.telegram.ui.oo;
+import org.telegram.ui.rs0;
+import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q3 implements View.OnLongClickListener {
+public final /* synthetic */ class q3 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ q3(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ q3(ci.l8 l8Var, TL_stories.StoryItem storyItem, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, o8 o8Var) {
+        this.a = 1;
+        this.c = l8Var;
+        this.b = storyItem;
+        this.d = tL_messages_getAttachedStickers;
+        this.e = o8Var;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        TLRPC.TL_messages_exportedChatInvite tL_messages_exportedChatInvite;
+        int i10 = this.a;
+        Object obj = this.d;
+        Object obj2 = this.e;
+        Object obj3 = this.b;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                e6 e6Var = (e6) this.b;
-                jc jcVar = (jc) this.c;
-                c3 c3Var = e6Var.z3;
-                if (c3Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(c3Var);
-                    e6Var.z3 = null;
-                }
-                SharedConfig.setStoriesReactionsLongPressHintUsed(true);
-                ci.e4 e4Var = e6Var.H0;
-                if (e4Var != null) {
-                    e4Var.e(true);
-                }
-                sk0 sk0Var = e6Var.r3;
-                if (sk0Var == null) {
-                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                    sk0 sk0Var2 = new sk0(2, e6Var.C2, e6Var.getContext(), R, new x3(4, e6Var.B0));
-                    e6Var.r3 = sk0Var2;
-                    sk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
-                    e6Var.addView(e6Var.r3, e6Var.getChildCount() - 1, w7.z5.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
-                    e6Var.r3.setVisibility(8);
-                    e6Var.r3.setDelegate(new z4(e6Var));
-                    e6Var.r3.p(null, null, true);
-                } else {
-                    e6Var.bringChildToFront(sk0Var);
-                    e6Var.r3.n();
-                }
-                e6Var.r3.setFragment(LaunchActivity.R());
-                jcVar.s.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
-                e6Var.b1(true);
-                return true;
+                AndroidUtilities.runOnUIThread(new n3((f6) obj4, (Runnable) obj, tL_error, (TL_stories.StoryItem) obj3, (ci.da) obj2));
+                break;
             case 1:
-                org.telegram.ui.Components.d0 d0Var = (org.telegram.ui.Components.d0) this.b;
-                org.telegram.ui.Components.c0 c0Var = (org.telegram.ui.Components.c0) this.c;
-                ci.o5 o5Var = d0Var.n;
-                if (o5Var != null) {
-                    return ((Boolean) o5Var.run(c0Var)).booleanValue();
+                ci.l8 l8Var = (ci.l8) obj4;
+                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
+                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj;
+                o8 o8Var = (o8) obj2;
+                if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && storyItem != null) {
+                    FileRefController.getInstance(l8Var.a).requestReference(storyItem, tL_messages_getAttachedStickers, o8Var);
+                    break;
+                } else {
+                    o8Var.run(tLObject, tL_error);
+                    break;
                 }
-                return false;
             case 2:
-                org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.b;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
-                float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(true);
-                org.telegram.ui.ActionBar.b1 b1Var = j8Var.X;
-                b1Var.d(playbackSpeed, false);
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, d6Var));
-                j8Var.F0(false);
-                org.telegram.ui.ActionBar.v0 v0Var = j8Var.V;
-                v0Var.setDimMenu(0.15f);
-                v0Var.M(b1Var, null);
-                MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
-                return true;
+                AndroidUtilities.runOnUIThread(new a9((gg.a1) obj4, (String) obj, tL_error, tLObject, (MessagesController) obj3, (MessagesStorage) obj2, 3));
+                break;
             case 3:
-                b80 b80Var = (b80) this.b;
-                ((cu) this.c).run();
-                if (!b80Var.J) {
-                    return true;
-                }
-                b80Var.u();
-                return true;
+                AndroidUtilities.runOnUIThread(new n3((gg.d2) obj4, (TLRPC.TL_messages_getStickers) obj, tLObject, (ArrayList) obj3, (LongSparseArray) obj2, 6));
+                break;
             case 4:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                d dVar = (d) this.c;
-                MessageObject messageObject = photoViewer.T4;
-                if (messageObject == null) {
-                    return false;
-                }
-                if (AndroidUtilities.addToClipboard(messageObject.sponsoredUrl)) {
-                    new yc(org.telegram.ui.Components.mb.a(photoViewer.E), dVar).k(false).j();
-                }
-                return true;
-            case 5:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                ImageView imageView = (ImageView) this.c;
-                org.telegram.ui.ActionBar.n1 b10 = org.telegram.ui.Components.o9.b(profileActivity, imageView, profileActivity.a(), profileActivity.g1, profileActivity.z0);
-                if (b10 == null) {
-                    return false;
-                }
-                b10.setOnDismissListener(new org.telegram.ui.f0(profileActivity, 3));
-                profileActivity.w0 = imageView;
-                profileActivity.H3(0.3f);
-                UndoView undoView = profileActivity.M;
-                if (undoView == null) {
-                    return true;
-                }
-                undoView.e(1, true);
-                return true;
-            default:
-                ca1 ca1Var = (ca1) this.b;
-                kg.f fVar = (kg.f) this.c;
-                da1 da1Var = ca1Var.d;
-                v00 v00Var = ca1Var.a;
-                boolean z10 = false;
-                if (v00Var.c) {
-                    da1Var.f();
-                    ArrayList arrayList = da1Var.n;
-                    ig.g gVar = da1Var.c;
-                    int size = arrayList.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        ((ca1) arrayList.get(i10)).a.setChecked(false);
-                        ((ca1) arrayList.get(i10)).b.n = false;
-                        if (da1Var.r.c > 0 && i10 < gVar.d.size()) {
-                            ((kg.f) gVar.d.get(i10)).n = false;
+                org.telegram.ui.pb pbVar = (org.telegram.ui.pb) obj4;
+                TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) obj;
+                boolean[] zArr = (boolean[]) obj3;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
+                org.telegram.ui.vb vbVar = pbVar.a.n;
+                if (tL_error == null) {
+                    tL_messages_exportedChatInvite = (TLRPC.TL_messages_exportedChatInvite) tLObject;
+                    for (int i11 = 0; i11 < tL_messages_exportedChatInvite.users.size(); i11++) {
+                        TLRPC.User user = tL_messages_exportedChatInvite.users.get(i11);
+                        if (vbVar.z0 == null) {
+                            vbVar.z0 = new HashMap();
                         }
+                        vbVar.z0.put(Long.valueOf(user.id), user);
                     }
-                    z10 = true;
-                    v00Var.setChecked(true);
-                    fVar.n = true;
-                    da1Var.b.z();
-                    if (da1Var.r.c > 0) {
-                        ((kg.f) gVar.d.get(ca1Var.c)).n = true;
-                        gVar.z();
-                    }
+                } else {
+                    tL_messages_exportedChatInvite = null;
                 }
-                return z10;
+                AndroidUtilities.runOnUIThread(new n3(pbVar, tL_chatInviteExported, tL_messages_exportedChatInvite, zArr, b2Var, 14));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.n5((up) obj4, (org.telegram.ui.ActionBar.b2[]) obj, (TLRPC.Chat) obj3, (org.telegram.ui.ActionBar.n2) obj2, 12));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new n3((nq) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj3, (TLRPC.TL_channels_editCreator) obj2, 20));
+                break;
+            case 7:
+                xy0.r((rs0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (oo) obj2, tLObject, tL_error);
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new g90(obj4, tL_error, obj, obj3, obj2, 5));
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new a9((nn0) obj4, tL_error, (String) obj, (dn0) obj3, tLObject, (TL_account.sendVerifyPhoneCode) obj2, 9));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new g90(obj4, tL_error, obj, obj3, obj2, 12));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new g90(obj4, tL_error, obj, obj3, obj2, 16));
+                break;
+            case 12:
+                c41 c41Var = (c41) obj4;
+                c41Var.getClass();
+                AndroidUtilities.runOnUIThread(new a9(c41Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2, 10));
+                break;
+            case 13:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a0((org.telegram.ui.web.b1) obj4, tLObject, (ea) obj, (String) obj3, (String) obj2));
+                break;
+            case 14:
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj4;
+                b1Var.getClass();
+                AndroidUtilities.runOnUIThread(new a9(b1Var, tLObject, (TLRPC.TL_messages_requestUrlAuth) obj, (String) obj3, tL_error, (String) obj2, 18));
+                break;
+            case 15:
+                AndroidUtilities.runOnUIThread(new a9((xh.r1) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (qg.f2) obj3, (Utilities.Callback) obj2, tL_error, 20));
+                break;
+            case 16:
+                AndroidUtilities.runOnUIThread(new a9((yh.s3) obj4, tLObject, (CharSequence) obj, (TL_stars.TL_starGiftUnique) obj3, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj2, tL_error, 21));
+                break;
+            case 17:
+                AndroidUtilities.runOnUIThread(new a9((yh.s3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.q) obj2, tL_error, 22));
+                break;
+            case 18:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.q6((yh.m5) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2, 11));
+                break;
+            case 19:
+                AndroidUtilities.runOnUIThread(new a9((yh.m5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (cj) obj2, tL_error, 25));
+                break;
+            default:
+                yh.d5 d5Var = (yh.d5) obj4;
+                d5Var.getClass();
+                AndroidUtilities.runOnUIThread(new a9(d5Var, tLObject, (TL_stars.TL_starGiftCollection) obj, (yh.e5) obj3, (Utilities.Callback) obj2, tL_error, 27));
+                break;
         }
+    }
+
+    public /* synthetic */ q3(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = obj3;
+        this.e = obj4;
     }
 }

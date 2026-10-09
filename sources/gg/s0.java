@@ -1,408 +1,852 @@
 package gg;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
 import android.text.TextUtils;
-import android.view.MotionEvent;
 import android.view.View;
-import java.text.SimpleDateFormat;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.Cells.b7;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Cells.u4;
+import org.telegram.ui.Cells.u6;
+import org.telegram.ui.Cells.v4;
+import org.telegram.ui.Cells.w4;
+import org.telegram.ui.Cells.w7;
+import org.telegram.ui.Cells.x4;
+import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.y9;
+import org.telegram.ui.bd0;
+import org.telegram.ui.xc0;
+import w7.x5;
+import w7.z5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class s0 extends zl0 {
-    public static final q0[] j3 = {new q0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new q0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new q0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new q0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new q0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
-    public static final Pattern k3 = Pattern.compile("20[0-9]{1,2}");
-    public static final Pattern l3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
-    public static final Pattern m3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
-    public static final Pattern n3 = Pattern.compile("^([0-9]{1,4})(\\.| |/|\\-)([0-9]{1,4})$");
-    public static final Pattern o3 = Pattern.compile("^([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,4})$");
-    public static final int[] p3 = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    public final ArrayList e3;
-    public final ArrayList f3;
-    public final j0 g3;
-    public boolean h3;
-    public final m0 i3;
+public class s0 extends c implements LocationController.LocationFetchCallback {
+    public final int K;
+    public final Context L;
+    public int M;
+    public u6 N;
+    public Location O;
+    public Location P;
+    public String Q;
+    public String R;
+    public Location S;
+    public final int T;
+    public final long U;
+    public int V;
+    public MessageObject W;
+    public TLRPC.TL_channelLocation X;
+    public ArrayList Y;
+    public boolean Z;
+    public final boolean a0;
+    public final e6 b0;
+    public boolean c0;
+    public TLRPC.TL_messageMediaVenue d0;
+    public TLRPC.TL_messageMediaVenue e0;
+    public boolean f0;
+    public final boolean g0;
+    public xc0 h0;
+    public boolean i0;
+    public boolean j0;
+    public boolean k0;
+    public FrameLayout l0;
 
-    public s0(Context context, d6 d6Var) {
-        super(context, d6Var);
-        this.e3 = new ArrayList();
-        this.f3 = new ArrayList();
-        this.h3 = true;
-        this.i3 = new m0(this);
-        j0 j0Var = new j0((Object) this, 0);
-        this.g3 = j0Var;
-        j0Var.j1(0);
-        setLayoutManager(j0Var);
-        setAdapter(new n0(this, 0));
-        i(new ai.t(1));
-        setItemAnimator(new l0());
-        setWillNotDraw(false);
-        setHideIfEmpty(false);
-        setSelectorRadius(AndroidUtilities.dp(28.0f));
-        setSelectorDrawableColor(i6.v0(i6.i6, this.p2));
+    public s0(Context context, int i10, long j3, boolean z10, e6 e6Var, boolean z11, boolean z12, boolean z13) {
+        super(z11, z13);
+        this.K = UserConfig.selectedAccount;
+        this.V = -1;
+        this.Y = new ArrayList();
+        this.c0 = true;
+        this.j0 = false;
+        this.k0 = false;
+        this.g0 = z12;
+        this.L = context;
+        this.T = i10;
+        this.U = j3;
+        this.a0 = z10;
+        this.b0 = e6Var;
     }
 
-    public static int A1(String str) {
-        String[] strArr = {LocaleController.getString(R.string.January).toLowerCase(), LocaleController.getString(R.string.February).toLowerCase(), LocaleController.getString(R.string.March).toLowerCase(), LocaleController.getString(R.string.April).toLowerCase(), LocaleController.getString(R.string.May).toLowerCase(), LocaleController.getString(R.string.June).toLowerCase(), LocaleController.getString(R.string.July).toLowerCase(), LocaleController.getString(R.string.August).toLowerCase(), LocaleController.getString(R.string.September).toLowerCase(), LocaleController.getString(R.string.October).toLowerCase(), LocaleController.getString(R.string.November).toLowerCase(), LocaleController.getString(R.string.December).toLowerCase()};
-        String[] strArr2 = new String[12];
-        Calendar calendar = Calendar.getInstance();
-        for (int i10 = 1; i10 <= 12; i10++) {
-            calendar.set(0, 0, 0, 0, 0, 0);
-            calendar.set(2, i10);
-            strArr2[i10 - 1] = calendar.getDisplayName(2, 2, Locale.ENGLISH).toLowerCase();
-        }
-        for (int i11 = 0; i11 < 12; i11++) {
-            if (strArr2[i11].startsWith(str) || strArr[i11].startsWith(str)) {
-                return i11;
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        int i10 = d1Var.f;
+        if (i10 == 6) {
+            if (LocationController.getInstance(this.K).getSharingLocationInfo(this.U) == null && this.O == null) {
+                return false;
             }
+        } else if (i10 != 1 && i10 != 3 && i10 != 8 && i10 != 12 && i10 != 7) {
+            return false;
         }
-        return -1;
+        return true;
     }
 
-    public static void x1(int i10, int i11, ArrayList arrayList) {
-        int i12 = i11;
-        if (i12 < 0 || i12 >= 12 || i10 < 0 || i10 >= p3[i12]) {
+    public final void I() {
+        int i10 = this.T;
+        if (i10 == 8) {
+            Location location = this.P;
+            if (location == null && (location = this.O) == null) {
+                return;
+            }
+            this.Z = true;
+            Q();
+            LocationController.fetchLocationAddress(location, this.e ? 1 : 0, this);
             return;
         }
-        int i13 = Calendar.getInstance().get(1);
-        long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
-        int i14 = i13;
-        while (i14 >= 2013) {
-            if (i12 != 1 || i10 != 28 || gregorianCalendar.isLeapYear(i14)) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(i14, i12, i10 + 1, 0, 0, 0);
-                long timeInMillis2 = calendar.getTimeInMillis();
-                if (timeInMillis2 <= timeInMillis) {
-                    calendar.set(i14, i11, i10 + 2, 0, 0, 0);
-                    long timeInMillis3 = calendar.getTimeInMillis() - 1;
-                    if (i14 == i13) {
-                        arrayList.add(new o0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterDayMonth().format(timeInMillis2)));
-                    } else {
-                        arrayList.add(new o0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis2)));
+        if (i10 != 4) {
+            Location location2 = this.P;
+            if (location2 != null) {
+                Location location3 = this.S;
+                if (location3 == null || location3.distanceTo(location2) > 20.0f) {
+                    this.R = null;
+                }
+                this.Z = true;
+                Q();
+                LocationController.fetchLocationAddress(location2, this.d ? 2 : 0, this);
+                return;
+            }
+            return;
+        }
+        Location location4 = this.P;
+        if (location4 == null && (location4 = this.O) == null) {
+            return;
+        }
+        Location location5 = this.S;
+        if (location5 == null || location5.distanceTo(location4) > 100.0f) {
+            this.R = null;
+        }
+        this.Z = true;
+        Q();
+        LocationController.fetchLocationAddress(location4, this);
+    }
+
+    public final Object J(int i10) {
+        int i11 = this.T;
+        if (i11 == 4) {
+            if (this.R == null) {
+                return null;
+            }
+            TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
+            tL_messageMediaVenue.address = this.R;
+            TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+            tL_messageMediaVenue.geo = tL_geoPoint;
+            Location location = this.P;
+            if (location != null) {
+                tL_geoPoint.lat = location.getLatitude();
+                tL_messageMediaVenue.geo._long = this.P.getLongitude();
+                return tL_messageMediaVenue;
+            }
+            Location location2 = this.O;
+            if (location2 != null) {
+                tL_geoPoint.lat = location2.getLatitude();
+                tL_messageMediaVenue.geo._long = this.O.getLongitude();
+            }
+            return tL_messageMediaVenue;
+        }
+        MessageObject messageObject = this.W;
+        ArrayList arrayList = this.s;
+        if (messageObject == null) {
+            int i12 = 2;
+            if (i11 == 2) {
+                LocationController.SharingLocationInfo sharingLocationInfo = LocationController.getInstance(this.K).getSharingLocationInfo(this.U);
+                if (sharingLocationInfo != null && sharingLocationInfo.period != Integer.MAX_VALUE) {
+                    i12 = 3;
+                }
+                if (i10 >= i12) {
+                    return this.Y.get(i10 - i12);
+                }
+                return null;
+            }
+            if (i11 == 1) {
+                if (i10 > 4 && i10 < arrayList.size() + 5) {
+                    return arrayList.get(i10 - 5);
+                }
+            } else if (i11 == 7) {
+                int i13 = this.e0 == null ? 3 : 4;
+                ArrayList arrayList2 = this.r;
+                if (i10 > i13) {
+                    int i14 = i13 + 1;
+                    if (i10 < arrayList2.size() + i14) {
+                        return arrayList2.get(i10 - i14);
+                    }
+                }
+                int size = arrayList2.size() + i13;
+                if (i10 > size) {
+                    int i15 = size + 1;
+                    if (i10 < arrayList.size() + i15) {
+                        return arrayList.get(i10 - i15);
+                    }
+                }
+            } else if (i10 > 3 && i10 < arrayList.size() + 4) {
+                return arrayList.get(i10 - 4);
+            }
+        } else {
+            if (i10 == 1) {
+                return messageObject;
+            }
+            if (i10 > 4 && i10 < arrayList.size() + 4) {
+                return this.Y.get(i10 - 5);
+            }
+        }
+        return null;
+    }
+
+    public final void L(Location location) {
+        this.P = location;
+        I();
+        Q();
+    }
+
+    public final void M(Location location) {
+        int i10;
+        boolean z10 = this.O == null;
+        this.O = location;
+        if (this.P == null) {
+            I();
+        }
+        if (z10 && (i10 = this.V) > 0) {
+            m(i10);
+        }
+        if (this.W != null) {
+            n(1, new Object());
+            if (this.Y.isEmpty()) {
+                return;
+            }
+            r(2, this.Y.size(), new Object());
+            return;
+        }
+        if (this.T != 2) {
+            Q();
+        } else {
+            if (this.Y.isEmpty()) {
+                return;
+            }
+            r(2, this.Y.size(), new Object());
+        }
+    }
+
+    public void N(ArrayList arrayList) {
+        this.Y = new ArrayList(arrayList);
+        long clientUserId = UserConfig.getInstance(this.K).getClientUserId();
+        for (int i10 = 0; i10 < this.Y.size(); i10++) {
+            if (((bd0) this.Y.get(i10)).a == clientUserId || ((bd0) this.Y.get(i10)).b.out) {
+                this.Y.remove(i10);
+                break;
+            }
+        }
+        l();
+    }
+
+    public final void O(boolean z10, boolean z11) {
+        if (this.j0 == z10 && this.k0 == z11) {
+            return;
+        }
+        this.j0 = z10;
+        this.k0 = z11;
+        if (z11) {
+            this.d0 = null;
+            this.e0 = null;
+        }
+        l();
+    }
+
+    public final void P(int i10) {
+        this.M = i10;
+        FrameLayout frameLayout = this.l0;
+        if (frameLayout != null) {
+            s4.q0 q0Var = (s4.q0) frameLayout.getLayoutParams();
+            if (q0Var == null) {
+                q0Var = new s4.q0(-1, this.M);
+            } else {
+                ((ViewGroup.MarginLayoutParams) q0Var).height = this.M;
+            }
+            this.l0.setLayoutParams(q0Var);
+            this.l0.forceLayout();
+        }
+    }
+
+    public final void Q() {
+        String str;
+        u6 u6Var = this.N;
+        if (u6Var != null) {
+            int i10 = this.T;
+            if (i10 == 8) {
+                this.N.b(LocaleController.getString(R.string.SetThisLocation), !TextUtils.isEmpty(this.Q) ? this.Q : !TextUtils.isEmpty(this.R) ? this.R : this.Z ? LocaleController.getString(R.string.Loading) : LocaleController.getString(R.string.UnknownLocation));
+                this.N.setHasLocation(true);
+                return;
+            }
+            str = "";
+            if (i10 != 4 && this.P == null) {
+                if (this.O != null) {
+                    u6Var.b(LocaleController.getString(R.string.SendLocation), LocaleController.formatString(R.string.AccurateTo, LocaleController.formatPluralString("Meters", (int) this.O.getAccuracy(), new Object[0])));
+                    this.N.setHasLocation(true);
+                    return;
+                } else {
+                    u6Var.b(LocaleController.getString(R.string.SendLocation), this.j0 ? "" : LocaleController.getString(R.string.Loading));
+                    this.N.setHasLocation(!this.j0);
+                    return;
+                }
+            }
+            if (!TextUtils.isEmpty(this.Q)) {
+                str = this.Q;
+            } else if (TextUtils.isEmpty(this.R)) {
+                Location location = this.P;
+                if ((location == null && this.O == null) || this.Z) {
+                    str = LocaleController.getString(R.string.Loading);
+                } else if (location != null) {
+                    str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.P.getLongitude()));
+                } else {
+                    Location location2 = this.O;
+                    if (location2 != null) {
+                        str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.O.getLongitude()));
+                    } else if (!this.j0) {
+                        str = LocaleController.getString(R.string.Loading);
+                    }
+                }
+            } else {
+                str = this.R;
+            }
+            if (this.f0) {
+                this.N.b(LocaleController.getString(R.string.AttachSelectedLocation), str);
+            } else if (i10 == 4) {
+                this.N.b(LocaleController.getString(R.string.ChatSetThisLocation), str);
+            } else {
+                this.N.b(LocaleController.getString(R.string.SendSelectedLocation), str);
+            }
+            this.N.setHasLocation(true);
+        }
+    }
+
+    @Override // s4.i0
+    public final int h() {
+        int i10 = this.T;
+        if (i10 != 6 && i10 != 5 && i10 != 4 && !this.e) {
+            int i11 = 0;
+            if (this.W != null) {
+                if (!this.Y.isEmpty()) {
+                    i11 = this.Y.size() + 3;
+                } else if (!this.g0) {
+                    i11 = 1;
+                }
+                r1 = 2 + i11;
+            } else if (i10 == 2) {
+                LocationController.SharingLocationInfo sharingLocationInfo = LocationController.getInstance(this.K).getSharingLocationInfo(this.U);
+                int size = this.Y.size() + 2;
+                if (sharingLocationInfo != null && sharingLocationInfo.period != Integer.MAX_VALUE) {
+                    i11 = 1;
+                }
+                r1 = size + i11;
+            } else {
+                boolean z10 = this.h;
+                boolean z11 = this.a0;
+                if (!z10 && this.f) {
+                    ArrayList arrayList = this.s;
+                    if (!arrayList.isEmpty()) {
+                        r1 = arrayList.size() + this.r.size() + (z11 ? 1 : 0) + (i10 != 1 ? 5 : 6);
+                    }
+                }
+                if (i10 == 0) {
+                    r3 = 5;
+                } else if (i10 == 7) {
+                    r3 = (this.e0 != null ? 1 : 0) + 5;
+                }
+                boolean z12 = this.j0;
+                r1 = ((((z12 || (!this.h && this.f)) ? 0 : 2) + (z11 ? 1 : 0)) - (z12 ? 2 : 0)) + r3;
+            }
+        }
+        return (this.h0 == null || !this.i0) ? r1 : r1 + 1;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0101 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0111 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x00e5  */
+    @Override // s4.i0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int j(int i10) {
+        int i11;
+        if (i10 == h() - 1 && this.h0 != null && this.i0) {
+            return 13;
+        }
+        if (i10 == 0) {
+            return 0;
+        }
+        int i12 = this.T;
+        if (i12 == 6) {
+            return 8;
+        }
+        if (this.a0 && i10 == h() - 1) {
+            return 11;
+        }
+        if (i12 == 5) {
+            return 8;
+        }
+        if (i12 != 4) {
+            LocationController.SharingLocationInfo sharingLocationInfo = (i12 == 2 || i12 == 1) ? LocationController.getInstance(this.K).getSharingLocationInfo(this.U) : null;
+            if (this.W != null) {
+                if (this.Y.isEmpty()) {
+                    return i10 == 2 ? 9 : 8;
+                }
+                if (i10 == 2) {
+                    return 10;
+                }
+                if (i10 != 3) {
+                    if (i10 != 4) {
+                        return 8;
+                    }
+                    this.V = i10;
+                    return 6;
+                }
+            } else {
+                if (i12 == 2) {
+                    if (i10 != 2 || sharingLocationInfo == null || sharingLocationInfo.period == Integer.MAX_VALUE) {
+                        if (i10 != 1) {
+                            return 8;
+                        }
+                        if (sharingLocationInfo == null || sharingLocationInfo.period != Integer.MAX_VALUE) {
+                            this.V = i10;
+                            return 6;
+                        }
+                    }
+                    return 7;
+                }
+                ArrayList arrayList = this.s;
+                if (i12 != 1) {
+                    int size = arrayList.size();
+                    ArrayList arrayList2 = this.r;
+                    int size2 = arrayList2.size() + size;
+                    if (i12 == 7) {
+                        if (i10 == 1) {
+                            return 12;
+                        }
+                        if (this.e0 != null) {
+                            if (i10 == 2) {
+                                return 12;
+                            }
+                            i10--;
+                            i11 = 3;
+                            if (i10 != 1) {
+                                if (i10 == 2) {
+                                    return 10;
+                                }
+                                if (i10 != 3) {
+                                    if (this.h || (arrayList.isEmpty() && arrayList2.isEmpty())) {
+                                        if (i10 > 6 || ((!this.h && this.f) || this.j0)) {
+                                        }
+                                    } else if (i10 == size2 + i11) {
+                                    }
+                                    return 3;
+                                }
+                            }
+                        }
+                    }
+                    i11 = 4;
+                    if (i10 != 1) {
+                    }
+                } else if (i10 != 1) {
+                    if (i10 == 2) {
+                        if (sharingLocationInfo != null) {
+                            this.V = -1;
+                            return 7;
+                        }
+                        this.V = i10;
+                        return 6;
+                    }
+                    if (i10 == 3) {
+                        return 10;
+                    }
+                    if (i10 != 4) {
+                        if (this.h || arrayList.isEmpty() || !this.f) {
+                            if (i10 > 7 || ((!this.h && this.f) || this.j0)) {
+                                return 4;
+                            }
+                        } else if (i10 == arrayList.size() + 5) {
+                            return 5;
+                        }
+                        return 3;
                     }
                 }
             }
-            i14--;
-            i12 = i11;
+            return 2;
+        }
+        return 1;
+    }
+
+    @Override // org.telegram.messenger.LocationController.LocationFetchCallback
+    public final void onLocationAddressAvailable(String str, String str2, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, TLRPC.TL_messageMediaVenue tL_messageMediaVenue2, Location location) {
+        this.Z = false;
+        this.S = location;
+        int i10 = this.T;
+        if (i10 == 8) {
+            this.R = str2;
+        } else {
+            this.R = str;
+        }
+        if (i10 == 7 && this.k0) {
+            this.d0 = null;
+            this.e0 = null;
+        }
+        boolean z10 = this.e0 != null;
+        if (i10 != 7) {
+            Q();
+            return;
+        }
+        this.d0 = tL_messageMediaVenue;
+        this.e0 = tL_messageMediaVenue2;
+        if (z10 != (tL_messageMediaVenue2 == null)) {
+            q(1, 2);
+            return;
+        }
+        m(1);
+        if (this.e0 == null) {
+            u(2);
+        } else {
+            o(2);
         }
     }
 
-    public static void y1(int i10, int i11, ArrayList arrayList) {
-        int i12 = Calendar.getInstance().get(1);
-        long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        if (i11 < 2013 || i11 > i12) {
-            return;
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(i11, i10, 1, 0, 0, 0);
-        long timeInMillis2 = calendar.getTimeInMillis();
-        if (timeInMillis2 > timeInMillis) {
-            return;
-        }
-        calendar.add(2, 1);
-        arrayList.add(new o0(timeInMillis2, calendar.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis2)));
-    }
-
-    public static void z1(String str, ArrayList arrayList) {
-        arrayList.clear();
-        if (str == null) {
-            return;
-        }
-        String trim = str.trim();
-        if (trim.length() < 3) {
-            return;
-        }
-        if (LocaleController.getString(R.string.SearchTipToday).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
-            Calendar calendar = Calendar.getInstance();
-            int i10 = calendar.get(1);
-            int i11 = calendar.get(2);
-            int i12 = calendar.get(5);
-            calendar.set(i10, i11, i12, 0, 0, 0);
-            long timeInMillis = calendar.getTimeInMillis();
-            calendar.set(i10, i11, i12 + 1, 0, 0, 0);
-            arrayList.add(new o0(timeInMillis, calendar.getTimeInMillis() - 1, LocaleController.getString(R.string.SearchTipToday)));
-            return;
-        }
-        if (LocaleController.getString(R.string.SearchTipYesterday).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
-            Calendar calendar2 = Calendar.getInstance();
-            int i13 = calendar2.get(1);
-            int i14 = calendar2.get(2);
-            int i15 = calendar2.get(5);
-            calendar2.set(i13, i14, i15, 0, 0, 0);
-            long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
-            calendar2.set(i13, i14, i15 + 1, 0, 0, 0);
-            arrayList.add(new o0(timeInMillis2, calendar2.getTimeInMillis() - 86400001, LocaleController.getString(R.string.SearchTipYesterday)));
-            return;
-        }
-        Calendar calendar3 = Calendar.getInstance();
-        int i16 = -1;
-        if (trim.length() > 3) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
-            for (int i17 = 0; i17 < 7; i17++) {
-                calendar3.set(7, i17);
-                if (LocaleController.getInstance().getFormatterWeekLong().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
-                    i16 = i17;
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        int i11;
+        int i12 = d1Var.f;
+        View view = d1Var.a;
+        int i13 = this.T;
+        TLRPC.TL_messageMediaVenue tL_messageMediaVenue = null;
+        switch (i12) {
+            case 0:
+                s4.q0 q0Var = (s4.q0) view.getLayoutParams();
+                if (q0Var == null) {
+                    q0Var = new s4.q0(-1, this.M);
+                } else {
+                    ((ViewGroup.MarginLayoutParams) q0Var).height = this.M;
+                }
+                view.setLayoutParams(q0Var);
+                break;
+            case 1:
+                this.N = (u6) view;
+                Q();
+                break;
+            case 2:
+                m4 m4Var = (m4) view;
+                if (this.W == null) {
+                    m4Var.setText(LocaleController.getString(R.string.NearbyVenue));
+                    break;
+                } else {
+                    m4Var.setText(LocaleController.getString(R.string.LiveLocations));
                     break;
                 }
-            }
-        }
-        if (i16 >= 0) {
-            Calendar calendar4 = Calendar.getInstance();
-            long timeInMillis3 = calendar4.getTimeInMillis();
-            calendar4.set(7, i16);
-            if (calendar4.getTimeInMillis() > timeInMillis3) {
-                calendar4.setTimeInMillis(calendar4.getTimeInMillis() - 604800000);
-            }
-            int i18 = calendar4.get(1);
-            int i19 = calendar4.get(2);
-            int i20 = calendar4.get(5);
-            calendar4.set(i18, i19, i20, 0, 0, 0);
-            long timeInMillis4 = calendar4.getTimeInMillis();
-            calendar4.set(i18, i19, i20 + 1, 0, 0, 0);
-            arrayList.add(new o0(timeInMillis4, calendar4.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterWeekLong().format(timeInMillis4)));
-            return;
-        }
-        Matcher matcher = n3.matcher(trim);
-        if (matcher.matches()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(3);
-            int parseInt = Integer.parseInt(group);
-            int parseInt2 = Integer.parseInt(group2);
-            if (parseInt <= 0 || parseInt > 31) {
-                if (parseInt < 2013 || parseInt2 > 12) {
-                    return;
-                }
-                y1(parseInt2 - 1, parseInt, arrayList);
-                return;
-            }
-            if (parseInt2 >= 2013 && parseInt <= 12) {
-                y1(parseInt - 1, parseInt2, arrayList);
-                return;
-            } else {
-                if (parseInt2 <= 12) {
-                    x1(parseInt - 1, parseInt2 - 1, arrayList);
-                    return;
-                }
-                return;
-            }
-        }
-        Matcher matcher2 = o3.matcher(trim);
-        if (matcher2.matches()) {
-            String group3 = matcher2.group(1);
-            String group4 = matcher2.group(3);
-            String group5 = matcher2.group(5);
-            if (matcher2.group(2).equals(matcher2.group(4))) {
-                int parseInt3 = Integer.parseInt(group3);
-                int parseInt4 = Integer.parseInt(group4) - 1;
-                int parseInt5 = Integer.parseInt(group5);
-                if (parseInt5 >= 10 && parseInt5 <= 99) {
-                    parseInt5 += 2000;
-                }
-                int i21 = parseInt5;
-                int i22 = Calendar.getInstance().get(1);
-                int i23 = parseInt3 - 1;
-                if (parseInt4 < 0 || parseInt4 >= 12 || i23 < 0 || i23 >= p3[parseInt4] || i21 < 2013 || i21 > i22) {
-                    return;
-                }
-                Calendar calendar5 = Calendar.getInstance();
-                calendar5.set(i21, parseInt4, parseInt3, 0, 0, 0);
-                long timeInMillis5 = calendar5.getTimeInMillis();
-                calendar5.set(i21, parseInt4, parseInt3 + 1, 0, 0, 0);
-                arrayList.add(new o0(timeInMillis5, calendar5.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis5)));
-                return;
-            }
-            return;
-        }
-        if (k3.matcher(trim).matches()) {
-            int intValue = Integer.valueOf(trim).intValue();
-            int i24 = Calendar.getInstance().get(1);
-            if (intValue < 2013) {
-                while (i24 >= 2013) {
-                    Calendar calendar6 = Calendar.getInstance();
-                    calendar6.set(i24, 0, 1, 0, 0, 0);
-                    long timeInMillis6 = calendar6.getTimeInMillis();
-                    calendar6.set(i24 + 1, 0, 1, 0, 0, 0);
-                    arrayList.add(new o0(timeInMillis6, calendar6.getTimeInMillis() - 1, Integer.toString(i24)));
-                    i24--;
-                }
-                return;
-            }
-            if (intValue <= i24) {
-                Calendar calendar7 = Calendar.getInstance();
-                calendar7.set(intValue, 0, 1, 0, 0, 0);
-                long timeInMillis7 = calendar7.getTimeInMillis();
-                calendar7.set(intValue + 1, 0, 1, 0, 0, 0);
-                arrayList.add(new o0(timeInMillis7, calendar7.getTimeInMillis() - 1, Integer.toString(intValue)));
-                return;
-            }
-            return;
-        }
-        Matcher matcher3 = l3.matcher(trim);
-        if (matcher3.matches()) {
-            String group6 = matcher3.group(1);
-            String group7 = matcher3.group(2);
-            int A1 = A1(group6);
-            if (A1 >= 0) {
-                int intValue2 = Integer.valueOf(group7).intValue();
-                if (intValue2 > 0 && intValue2 <= 31) {
-                    x1(intValue2 - 1, A1, arrayList);
-                    return;
-                } else if (intValue2 >= 2013) {
-                    y1(A1, intValue2, arrayList);
-                    return;
-                }
-            }
-        }
-        Matcher matcher4 = m3.matcher(trim);
-        if (matcher4.matches()) {
-            String group8 = matcher4.group(1);
-            int A12 = A1(matcher4.group(2));
-            if (A12 >= 0) {
-                int intValue3 = Integer.valueOf(group8).intValue();
-                if (intValue3 > 0 && intValue3 <= 31) {
-                    x1(intValue3 - 1, A12, arrayList);
-                    return;
-                } else if (intValue3 >= 2013) {
-                    y1(A12, intValue3, arrayList);
-                }
-            }
-        }
-        if (TextUtils.isEmpty(trim) || trim.length() <= 2) {
-            return;
-        }
-        int A13 = A1(trim);
-        long timeInMillis8 = Calendar.getInstance().getTimeInMillis();
-        if (A13 >= 0) {
-            for (int i25 = Calendar.getInstance().get(1); i25 >= 2013; i25--) {
-                Calendar calendar8 = Calendar.getInstance();
-                calendar8.set(i25, A13, 1, 0, 0, 0);
-                long timeInMillis9 = calendar8.getTimeInMillis();
-                if (timeInMillis9 <= timeInMillis8) {
-                    calendar8.add(2, 1);
-                    arrayList.add(new o0(timeInMillis9, calendar8.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis9)));
-                }
-            }
-        }
-    }
-
-    public final void B1(ArrayList arrayList, ArrayList arrayList2, boolean z10) {
-        ArrayList arrayList3 = this.f3;
-        arrayList3.clear();
-        ArrayList arrayList4 = this.e3;
-        arrayList3.addAll(arrayList4);
-        arrayList4.clear();
-        if (arrayList != null) {
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                Object obj = arrayList.get(i10);
-                if (obj instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) obj;
-                    q0 q0Var = new q0(R.drawable.search_users_filled, 4, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name, 10));
-                    q0Var.f = user;
-                    arrayList4.add(q0Var);
-                } else if (obj instanceof TLRPC.Chat) {
-                    TLRPC.Chat chat = (TLRPC.Chat) obj;
-                    String str = chat.title;
-                    if (str.length() > 12) {
-                        str = sa.e.v(str.substring(0, 10), "...");
+            case 3:
+                u4 u4Var = (u4) view;
+                if (i13 == 0) {
+                    i11 = i10 - 4;
+                } else {
+                    if (i13 == 7 || i13 == 8) {
+                        int i14 = i10 - 4;
+                        if (this.e0 == null) {
+                            i11 = i14;
+                        }
                     }
-                    q0 q0Var2 = new q0(R.drawable.search_users_filled, 4, str);
-                    q0Var2.f = chat;
-                    arrayList4.add(q0Var2);
+                    i11 = i10 - 5;
                 }
-            }
-        }
-        if (arrayList2 != null) {
-            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                o0 o0Var = (o0) arrayList2.get(i11);
-                q0 q0Var3 = new q0(R.drawable.search_date_filled, 6, o0Var.a);
-                q0Var3.g = o0Var;
-                arrayList4.add(q0Var3);
-            }
-        }
-        if (z10) {
-            arrayList4.add(new q0(R.drawable.chats_archive, R.string.ArchiveSearchFilter, null, 7));
-        }
-        if (getAdapter() != null) {
-            b2.p pVar = new b2.p(getAdapter(), 2);
-            s4.o.c(this.i3, true).a(pVar);
-            if (arrayList4.isEmpty() || !pVar.b) {
-                return;
-            }
-            this.g3.h1(0, 0);
+                if (this.f && (i13 != 7 || !this.h)) {
+                    ArrayList arrayList = this.r;
+                    if (i11 >= 0 && i11 < arrayList.size()) {
+                        tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i11);
+                        u4Var.b(tL_messageMediaVenue, r3, true, false);
+                        break;
+                    } else {
+                        int size = i11 - arrayList.size();
+                        if (size >= 0) {
+                            ArrayList arrayList2 = this.s;
+                            if (size < arrayList2.size()) {
+                                tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList2.get(size);
+                            }
+                        }
+                    }
+                }
+                r3 = i11;
+                u4Var.b(tL_messageMediaVenue, r3, true, false);
+                break;
+            case 4:
+                ((w4) view).setLoading(this.h);
+                break;
+            case 6:
+                u6 u6Var = (u6) view;
+                u6Var.setHasLocation(this.O != null);
+                int i15 = i10 + 1;
+                if (i15 < h() && j(i15) == 7) {
+                    r5 = true;
+                }
+                u6Var.s = r5;
+                u6Var.invalidate();
+                break;
+            case 7:
+                ((u6) view).setHasLocation(this.O != null);
+                break;
+            case 8:
+                w7 w7Var = (w7) view;
+                if (i13 != 6) {
+                    TLRPC.TL_channelLocation tL_channelLocation = this.X;
+                    long j3 = this.U;
+                    if (tL_channelLocation == null) {
+                        MessageObject messageObject = this.W;
+                        if (messageObject != null && i10 == 1) {
+                            w7Var.b(messageObject, this.O, this.j0);
+                            break;
+                        } else {
+                            int i16 = i10 - (messageObject != null ? 5 : 2);
+                            LocationController.SharingLocationInfo sharingLocationInfo = LocationController.getInstance(this.K).getSharingLocationInfo(j3);
+                            if (sharingLocationInfo != null && sharingLocationInfo.period != Integer.MAX_VALUE) {
+                                i16--;
+                            }
+                            if (i16 >= 0 && i16 < this.Y.size()) {
+                                bd0 bd0Var = (bd0) this.Y.get(i16);
+                                Location location = this.O;
+                                TextView textView = w7Var.d;
+                                y9 y9Var = w7Var.a;
+                                j5 j5Var = w7Var.b;
+                                Location location2 = w7Var.v;
+                                w7Var.s = bd0Var;
+                                if (DialogObject.isUserDialog(bd0Var.a)) {
+                                    TLRPC.User user = MessagesController.getInstance(w7Var.x).getUser(Long.valueOf(bd0Var.a));
+                                    if (user != null) {
+                                        w7Var.f.m(w7Var.x, user);
+                                        j5Var.l(ContactsController.formatName(user.first_name, user.last_name), false);
+                                        y9Var.e(user, w7Var.f);
+                                    }
+                                } else {
+                                    TLRPC.Chat chat = MessagesController.getInstance(w7Var.x).getChat(Long.valueOf(-bd0Var.a));
+                                    if (chat != null) {
+                                        w7Var.f.k(w7Var.x, chat);
+                                        j5Var.l(chat.title, false);
+                                        y9Var.e(chat, w7Var.f);
+                                    }
+                                }
+                                IMapsProvider.LatLng position = bd0Var.e.getPosition();
+                                location2.setLatitude(position.latitude);
+                                location2.setLongitude(position.longitude);
+                                int i17 = bd0Var.b.edit_date;
+                                String formatLocationUpdateDate = LocaleController.formatLocationUpdateDate(i17 != 0 ? i17 : r11.date);
+                                if (location == null) {
+                                    textView.setText(formatLocationUpdateDate);
+                                    break;
+                                } else {
+                                    textView.setText(formatLocationUpdateDate + " - " + LocaleController.formatDistance(location2.distanceTo(location), 0));
+                                    break;
+                                }
+                            }
+                        }
+                    } else {
+                        TextView textView2 = w7Var.d;
+                        Location location3 = w7Var.v;
+                        y9 y9Var2 = w7Var.a;
+                        w7Var.x = UserConfig.selectedAccount;
+                        String str = tL_channelLocation.address;
+                        w7Var.f = null;
+                        String str2 = "";
+                        if (DialogObject.isUserDialog(j3)) {
+                            TLRPC.User user2 = MessagesController.getInstance(w7Var.x).getUser(Long.valueOf(j3));
+                            if (user2 != null) {
+                                w7Var.f = new j9(0, user2);
+                                str2 = UserObject.getUserName(user2);
+                                y9Var2.e(user2, w7Var.f);
+                            }
+                        } else {
+                            TLRPC.Chat chat2 = MessagesController.getInstance(w7Var.x).getChat(Long.valueOf(-j3));
+                            if (chat2 != null) {
+                                j9 j9Var = new j9(chat2);
+                                w7Var.f = j9Var;
+                                str2 = chat2.title;
+                                y9Var2.e(chat2, j9Var);
+                            }
+                        }
+                        w7Var.b.l(str2, false);
+                        location3.setLatitude(tL_channelLocation.geo_point.lat);
+                        location3.setLongitude(tL_channelLocation.geo_point._long);
+                        w7Var.e = true;
+                        textView2.setSingleLine(true);
+                        textView2.setText(str);
+                        break;
+                    }
+                } else {
+                    w7Var.b(this.W, this.O, this.j0);
+                    break;
+                }
+                break;
+            case 11:
+                view.setBackgroundColor(i6.w0(this.j0 ? i6.i5 : i6.h5, this.b0));
+                break;
+            case 12:
+                u4 u4Var2 = (u4) view;
+                if (!this.k0) {
+                    if (i10 != 1) {
+                        u4Var2.b(this.e0, 2, false, this.c0);
+                        break;
+                    } else {
+                        u4Var2.b(this.d0, 2, this.e0 != null, this.c0);
+                        break;
+                    }
+                } else {
+                    u4Var2.b(null, 2, i10 == 1 && this.e0 != null, false);
+                    break;
+                }
+                break;
         }
     }
 
-    public final void C1() {
-        getRecycledViewPool().a();
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof p0) {
-                int i11 = p0.f;
-                ((p0) childAt).a();
-            }
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        View view2;
+        long j3 = this.U;
+        e6 e6Var = this.b0;
+        Context context = this.L;
+        switch (i10) {
+            case 0:
+                FrameLayout frameLayout = new FrameLayout(context);
+                this.l0 = frameLayout;
+                frameLayout.setTag(-33024);
+                this.l0.setLayoutParams(new s4.q0(-1, this.M));
+                view2 = frameLayout;
+                break;
+            case 1:
+                view2 = new u6(context, e6Var, false, false);
+                break;
+            case 2:
+                view2 = new m4(context, e6Var);
+                break;
+            case 3:
+                view2 = new u4(context, e6Var);
+                break;
+            case 4:
+                w4 w4Var = new w4(context);
+                RadialProgressView radialProgressView = new RadialProgressView(context, e6Var);
+                w4Var.a = radialProgressView;
+                w4Var.addView(radialProgressView, x5.e(-2, -2, 17));
+                ImageView imageView = new ImageView(context);
+                w4Var.c = imageView;
+                imageView.setImageResource(R.drawable.location_empty);
+                imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(i6.W5, e6Var), PorterDuff.Mode.MULTIPLY));
+                w4Var.addView(imageView, x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 24.0f, -2, 17));
+                TextView textView = new TextView(context);
+                w4Var.b = textView;
+                textView.setTextColor(i6.w0(i6.X5, e6Var));
+                textView.setGravity(17);
+                textView.setTypeface(AndroidUtilities.bold());
+                textView.setTextSize(1, 17.0f);
+                textView.setText(LocaleController.getString(R.string.NoPlacesFound));
+                w4Var.addView(textView, x5.a(-2.0f, 0.0f, 34.0f, 0.0f, 0.0f, -2, 17));
+                view = w4Var;
+                view2 = view;
+                break;
+            case 5:
+                x4 x4Var = new x4(context);
+                LinearLayout linearLayout = new LinearLayout(context);
+                x4Var.addView(linearLayout, x5.e(-2, -2, 17));
+                TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
+                int i11 = i6.A6;
+                f7.setTextColor(i6.w0(i11, e6Var));
+                f7.setText("Powered by");
+                linearLayout.addView(f7, x5.n(-2, -2));
+                ImageView imageView2 = new ImageView(context);
+                imageView2.setImageResource(R.drawable.foursquare);
+                imageView2.setColorFilter(new PorterDuffColorFilter(i6.w0(i11, e6Var), PorterDuff.Mode.MULTIPLY));
+                imageView2.setPadding(0, AndroidUtilities.dp(2.0f), 0, 0);
+                linearLayout.addView(imageView2, x5.n(35, -2));
+                TextView textView2 = new TextView(context);
+                textView2.setTextSize(1, 16.0f);
+                textView2.setTextColor(i6.w0(i11, e6Var));
+                textView2.setText("Foursquare");
+                linearLayout.addView(textView2, x5.n(-2, -2));
+                view = x4Var;
+                view2 = view;
+                break;
+            case 6:
+                u6 u6Var = new u6(context, e6Var, true, false);
+                u6Var.setDialogId(j3);
+                view2 = u6Var;
+                break;
+            case 7:
+                u6 u6Var2 = new u6(context, e6Var, true, true);
+                u6Var2.setDialogId(j3);
+                view2 = u6Var2;
+                break;
+            case 8:
+                int i12 = this.T;
+                view2 = new w7((i12 == 4 || i12 == 5 || i12 == 3) ? 16 : 54, context, e6Var, true);
+                break;
+            case 9:
+                v4 v4Var = new v4(context);
+                FrameLayout frameLayout2 = new FrameLayout(context);
+                v4Var.a = frameLayout2;
+                frameLayout2.setBackground(y5.e(new float[]{8.0f}, i6.w0(i6.Oh, e6Var)));
+                v4Var.addView(frameLayout2, x5.a(48.0f, 16.0f, 10.0f, 16.0f, 0.0f, -1, 51));
+                j5 j5Var = new j5(context);
+                j5Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                j5Var.setGravity(17);
+                j5Var.setDrawablePadding(AndroidUtilities.dp(8.0f));
+                j5Var.setTextColor(i6.w0(i6.Sh, e6Var));
+                j5Var.setTextSize(14);
+                j5Var.l(LocaleController.getString(R.string.Directions), false);
+                j5Var.setLeftDrawable(R.drawable.filled_directions);
+                j5Var.setTypeface(AndroidUtilities.bold());
+                frameLayout2.addView(j5Var, x5.d(-1.0f, -1));
+                frameLayout2.setOutlineProvider(yf.i0.b);
+                frameLayout2.setClipToOutline(true);
+                z5.b(frameLayout2, 0.02f, 1.2f);
+                v4Var.setOnButtonClick(new ai.v0(this, 22));
+                view2 = v4Var;
+                break;
+            case 10:
+                View b7Var = new b7(context, (org.telegram.ui.Cells.c1) null);
+                new fr(new ColorDrawable(i6.w0(i6.a7, e6Var)), i6.W0(context, R.drawable.greydivider_bottom, i6.b7)).w = true;
+                view2 = b7Var;
+                break;
+            case 11:
+            default:
+                view2 = new View(context);
+                break;
+            case 12:
+                u4 u4Var = new u4(context, e6Var);
+                u4Var.setAllowTextAnimation(true);
+                view2 = u4Var;
+                break;
+            case 13:
+                view2 = this.h0;
+                break;
         }
-        for (int i12 = 0; i12 < getCachedChildCount(); i12++) {
-            View P = P(i12);
-            if (P instanceof p0) {
-                int i13 = p0.f;
-                ((p0) P).a();
-            }
-        }
-        for (int i14 = 0; i14 < getAttachedScrapChildCount(); i14++) {
-            View O = O(i14);
-            if (O instanceof p0) {
-                int i15 = p0.f;
-                ((p0) O).a();
-            }
-        }
-        setSelectorDrawableColor(i6.v0(i6.i6, this.p2));
+        return new am0(view2);
     }
 
-    public ArrayList<k6> getThemeDescriptions() {
-        ArrayList<k6> arrayList = new ArrayList<>();
-        arrayList.add(new k6(this, 0, null, null, null, null, i6.e7));
-        arrayList.add(new k6(this, 0, null, null, null, null, i6.f7));
-        return arrayList;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.h3) {
-            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), i6.k0);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        return false;
+    public void K() {
     }
 }

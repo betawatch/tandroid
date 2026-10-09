@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n implements Parcelable {
     public static final Parcelable.Creator<n> CREATOR = new m(1);
@@ -51,7 +51,7 @@ public final class n implements Parcelable {
         if (this.a == 0) {
             int hashCode = this.b.hashCode() * 31;
             String str = this.c;
-            this.a = Arrays.hashCode(this.e) + a4.a.h((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
+            this.a = Arrays.hashCode(this.e) + a1.g.h((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
         }
         return this.a;
     }

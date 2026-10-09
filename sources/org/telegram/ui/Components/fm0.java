@@ -1,37 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fm0 extends jc {
-    public final gm0 c;
+public interface fm0 {
+    boolean Y0(View view);
 
-    public fm0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        gm0 gm0Var = new gm0();
-        this.c = gm0Var;
-        imageView.setImageDrawable(gm0Var);
-    }
+    void c(float f7, float f10, int i10, View view);
 
-    @Override // org.telegram.ui.Components.vb
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        gm0 gm0Var = this.c;
-        gm0Var.getClass();
-        gm0Var.g = System.currentTimeMillis();
-        gm0Var.invalidateSelf();
-    }
-
-    @Override // org.telegram.ui.Components.vb
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        gm0 gm0Var = this.c;
-        gm0Var.g = -1L;
-        gm0Var.invalidateSelf();
-    }
+    void n0(View view, float f7, float f10);
 }

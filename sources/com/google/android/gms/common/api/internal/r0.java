@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.util.Log;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class r0 implements Runnable {
                                 break;
                             } catch (SecurityException e7) {
                                 Log.e("GoogleApiManager", "Failed to get service from broker. ", e7);
-                                cVar.d("Failed to get service from broker.");
+                                cVar.e("Failed to get service from broker.");
                                 p0Var.m(new k6.a(10), null);
                                 return;
                             }
@@ -56,7 +56,7 @@ public final class r0 implements Runnable {
                 o oVar = (o) this.c;
                 Object obj = pVar.b;
                 if (obj != null) {
-                    oVar.q(obj);
+                    oVar.x(obj);
                     break;
                 }
                 break;
@@ -65,9 +65,9 @@ public final class r0 implements Runnable {
                 o8.h hVar3 = (o8.h) this.b;
                 k6.a aVar2 = hVar3.b;
                 if (aVar2.c()) {
-                    n6.v vVar = hVar3.c;
-                    n6.l.h(vVar);
-                    k6.a aVar3 = vVar.c;
+                    n6.w wVar = hVar3.c;
+                    n6.l.h(wVar);
+                    k6.a aVar3 = wVar.c;
                     if (!aVar3.c()) {
                         Log.wtf("SignInCoordinator", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar3)), new Exception());
                         d1Var.j.b(aVar3);
@@ -75,11 +75,11 @@ public final class r0 implements Runnable {
                         break;
                     } else {
                         s0 s0Var2 = d1Var.j;
-                        IBinder iBinder = vVar.b;
+                        IBinder iBinder = wVar.b;
                         if (iBinder != null) {
                             int i10 = n6.a.b;
                             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                            hVar2 = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
+                            hVar2 = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
                         }
                         Set set = d1Var.e;
                         s0Var2.getClass();

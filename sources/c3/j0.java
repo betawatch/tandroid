@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Looper;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j0 {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class j0 {
                 xVar.a(looper, null);
                 break;
             default:
-                new t7.u(context.getApplicationContext());
+                new t7.t(context.getApplicationContext());
                 xVar.a(looper, null);
                 break;
         }
@@ -50,29 +50,29 @@ public final class j0 {
         this.b = z10;
     }
 
-    public j0(f2.o oVar, f2.q qVar) {
+    public j0(f2.p pVar, f2.r rVar) {
         this.a = 1;
-        int i10 = qVar.a;
-        ByteBuffer byteBuffer = qVar.b;
+        int i10 = rVar.a;
+        ByteBuffer byteBuffer = rVar.b;
         e2.d.b(i10 == 6 || i10 == 3);
         int min = Math.min(4, byteBuffer.remaining());
         byte[] bArr = new byte[min];
         byteBuffer.asReadOnlyBuffer().get(bArr);
-        a4.h hVar = new a4.h(bArr, min);
-        oVar.getClass();
-        if (hVar.h()) {
+        a4.g gVar = new a4.g(bArr, min);
+        pVar.getClass();
+        if (gVar.h()) {
             this.b = false;
             return;
         }
-        int i11 = hVar.i(2);
-        if (!hVar.h()) {
+        int i11 = gVar.i(2);
+        if (!gVar.h()) {
             this.b = true;
             return;
         }
         if (i11 != 3 && i11 != 0) {
-            hVar.h();
+            gVar.h();
         }
-        hVar.s();
-        throw new f2.p();
+        gVar.s();
+        throw new f2.q();
     }
 }

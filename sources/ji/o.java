@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import s4.c0;
-import s4.o0;
+import s4.d0;
 import s4.p0;
-import s4.x0;
+import s4.q0;
 import s4.y0;
+import s4.z0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public class o extends y0 {
+public class o extends z0 {
     public final LinearInterpolator i;
     public final DecelerateInterpolator j;
     public final float k;
@@ -35,17 +35,17 @@ public class o extends y0 {
         this.n = i10;
     }
 
-    @Override // s4.y0
+    @Override // s4.z0
     public final PointF a(int i10) {
-        o0 o0Var = this.c;
-        if (o0Var instanceof c0) {
-            return ((c0) o0Var).E0(i10);
+        p0 p0Var = this.c;
+        if (p0Var instanceof d0) {
+            return ((d0) p0Var).E0(i10);
         }
         return null;
     }
 
-    @Override // s4.y0
-    public final void d(int i10, int i11, x0 x0Var) {
+    @Override // s4.z0
+    public final void d(int i10, int i11, y0 y0Var) {
         if (this.b.x.r() == 0) {
             h();
             return;
@@ -63,18 +63,18 @@ public class o extends y0 {
         if (i13 == 0 && i16 == 0) {
             PointF a2 = a(this.a);
             if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-                x0Var.d = this.a;
+                y0Var.d = this.a;
                 h();
             } else {
-                y0.b(a2);
+                z0.b(a2);
                 this.l = (int) (a2.x * 10000.0f);
                 this.m = (int) (a2.y * 10000.0f);
-                x0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
+                y0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
             }
         }
     }
 
-    @Override // s4.y0
+    @Override // s4.z0
     public final void f() {
         this.m = 0;
         this.l = 0;
@@ -84,24 +84,24 @@ public class o extends y0 {
     
         if (r0 < 0) goto L22;
      */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008d  */
-    @Override // s4.y0
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008b  */
+    @Override // s4.z0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(View view, x0 x0Var) {
+    public final void g(View view, y0 y0Var) {
         int i10;
         int ceil;
-        o0 o0Var = this.c;
-        if (o0Var != null && o0Var.e()) {
-            p0 p0Var = (p0) view.getLayoutParams();
-            int z10 = o0.z(view) - ((ViewGroup.MarginLayoutParams) p0Var).topMargin;
-            int v = o0.v(view) + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin;
-            int C = (o0Var.n - o0Var.C()) - o0Var.F();
+        p0 p0Var = this.c;
+        if (p0Var != null && p0Var.e()) {
+            q0 q0Var = (q0) view.getLayoutParams();
+            int z10 = p0.z(view) - ((ViewGroup.MarginLayoutParams) q0Var).topMargin;
+            int v = p0.v(view) + ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin;
+            int C = (p0Var.n - p0Var.C()) - p0Var.F();
             int i11 = v - z10;
             int i12 = this.n;
-            int F = i12 == 2 ? o0Var.F() + this.p : i11 > C ? 0 : i12 == 0 ? (C - i11) / 2 : (o0Var.F() + this.p) - AndroidUtilities.dp(88.0f);
+            int F = i12 == 2 ? p0Var.F() + this.p : i11 > C ? 0 : i12 == 0 ? (C - i11) / 2 : (p0Var.F() + this.p) - AndroidUtilities.dp(88.0f);
             int i13 = i11 + F;
             i10 = F - z10;
             if (i10 <= 0) {
@@ -109,7 +109,7 @@ public class o extends y0 {
             }
             ceil = (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d);
             if (ceil <= 0) {
-                x0Var.b(0, -i10, Math.max((int) (this.o * 400.0f), ceil), this.j);
+                y0Var.b(0, -i10, Math.max((int) (this.o * 400.0f), ceil), this.j);
                 return;
             } else {
                 i();
@@ -132,7 +132,7 @@ public class o extends y0 {
         this.n = i10;
     }
 
-    @Override // s4.y0
+    @Override // s4.z0
     public void e() {
     }
 

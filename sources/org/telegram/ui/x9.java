@@ -1,34 +1,19 @@
 package org.telegram.ui;
 
-import com.google.android.gms.common.api.Status;
+import com.google.android.gms.cast.MediaError;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x9 implements com.google.android.gms.common.api.o {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ x9(int i10) {
-        this.a = i10;
+public final class x9 extends e6.g {
+    @Override // e6.g
+    public final void b(MediaError mediaError) {
+        FileLog.e("Chromecast Media Error: " + mediaError);
     }
 
-    @Override // com.google.android.gms.common.api.o
-    public final void a(Status status) {
-        switch (this.a) {
-            case 0:
-                b5.d.b.decrementAndGet();
-                break;
-            case 1:
-                b5.d.b.decrementAndGet();
-                break;
-            case 2:
-                b5.d.b.decrementAndGet();
-                break;
-            case 3:
-                b5.d.b.decrementAndGet();
-                break;
-            default:
-                b5.d.b.decrementAndGet();
-                break;
-        }
+    @Override // e6.g
+    public final void g() {
+        FileLog.d("onStatusUpdated");
+        b5.d.C();
     }
 }

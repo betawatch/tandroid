@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class h1 extends View {
     public int a;
@@ -17,25 +17,25 @@ public final class h1 extends View {
         super(context);
         this.c = i1Var;
         setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        setLayoutParams(new s4.p0(-2, 0));
+        setLayoutParams(new s4.q0(-2, 0));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         i1 i1Var = this.c;
-        i1Var.e3.setColor(this.a);
+        i1Var.V2.setColor(this.a);
         float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
         if (this.b != 0.0f) {
-            min -= (i1Var.f3.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
+            min -= (i1Var.W2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
         }
         float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
         float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
         i1.y1(width, height, min, this.a, canvas);
         if (this.b != 0.0f) {
-            i1Var.f3.setColor(this.a);
-            i1Var.f3.setAlpha(255);
-            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), i1Var.f3);
+            i1Var.W2.setColor(this.a);
+            i1Var.W2.setAlpha(255);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), i1Var.W2);
         }
     }
 }

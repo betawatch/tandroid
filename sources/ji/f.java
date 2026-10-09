@@ -4,19 +4,19 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import java.util.ArrayList;
-import s4.c1;
+import s4.d1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class f extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ View b;
-    public final /* synthetic */ c1 c;
+    public final /* synthetic */ d1 c;
     public final /* synthetic */ n d;
 
-    public f(n nVar, c1 c1Var, View view) {
+    public f(n nVar, d1 d1Var, View view) {
         this.d = nVar;
-        this.c = c1Var;
+        this.c = d1Var;
         this.b = view;
     }
 
@@ -45,9 +45,9 @@ public final class f extends AnimatorListenerAdapter {
                 view.setTranslationY(0.0f);
                 n nVar = this.d;
                 ArrayList arrayList = nVar.y;
-                c1 c1Var = this.c;
-                if (arrayList.remove(c1Var)) {
-                    nVar.u(c1Var);
+                d1 d1Var = this.c;
+                if (arrayList.remove(d1Var)) {
+                    nVar.u(d1Var);
                     nVar.G();
                     break;
                 }
@@ -62,9 +62,9 @@ public final class f extends AnimatorListenerAdapter {
                 view2.setTranslationY(0.0f);
                 n nVar2 = this.d;
                 ArrayList arrayList2 = nVar2.A;
-                c1 c1Var2 = this.c;
-                if (arrayList2.remove(c1Var2)) {
-                    nVar2.d(c1Var2);
+                d1 d1Var2 = this.c;
+                if (arrayList2.remove(d1Var2)) {
+                    nVar2.d(d1Var2);
                     nVar2.G();
                     break;
                 }
@@ -84,9 +84,9 @@ public final class f extends AnimatorListenerAdapter {
         }
     }
 
-    public f(n nVar, View view, c1 c1Var) {
+    public f(n nVar, View view, d1 d1Var) {
         this.d = nVar;
         this.b = view;
-        this.c = c1Var;
+        this.c = d1Var;
     }
 }

@@ -1,6 +1,6 @@
 package m3;
 
-import a4.h;
+import a4.g;
 import b2.p0;
 import e2.v;
 import java.nio.ByteBuffer;
@@ -8,11 +8,11 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
-import w7.m;
+import w7.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b extends m {
+public final class b extends l {
     public final /* synthetic */ int a;
 
     public static n3.a c(v vVar) {
@@ -23,45 +23,45 @@ public final class b extends m {
         return new n3.a(s10, s11, vVar.r(), vVar.r(), Arrays.copyOfRange(vVar.a, vVar.b, vVar.c));
     }
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         switch (this.a) {
             case 0:
                 if (byteBuffer.get() != 116) {
                     return null;
                 }
-                h hVar = new h(byteBuffer.array(), byteBuffer.limit());
+                g gVar = new g(byteBuffer.array(), byteBuffer.limit());
                 int i10 = 12;
-                hVar.t(12);
-                int f7 = (hVar.f() + hVar.i(12)) - 4;
-                hVar.t(44);
-                hVar.u(hVar.i(12));
-                hVar.t(16);
+                gVar.t(12);
+                int f7 = (gVar.f() + gVar.i(12)) - 4;
+                gVar.t(44);
+                gVar.u(gVar.i(12));
+                gVar.t(16);
                 ArrayList arrayList = new ArrayList();
-                while (hVar.f() < f7) {
-                    hVar.t(48);
-                    int i11 = hVar.i(8);
-                    hVar.t(4);
-                    int f10 = hVar.f() + hVar.i(i10);
+                while (gVar.f() < f7) {
+                    gVar.t(48);
+                    int i11 = gVar.i(8);
+                    gVar.t(4);
+                    int f10 = gVar.f() + gVar.i(i10);
                     String str = null;
                     String str2 = null;
-                    while (hVar.f() < f10) {
-                        int i12 = hVar.i(8);
-                        int i13 = hVar.i(8);
-                        int f11 = hVar.f() + i13;
+                    while (gVar.f() < f10) {
+                        int i12 = gVar.i(8);
+                        int i13 = gVar.i(8);
+                        int f11 = gVar.f() + i13;
                         if (i12 == 2) {
-                            int i14 = hVar.i(16);
-                            hVar.t(8);
+                            int i14 = gVar.i(16);
+                            gVar.t(8);
                             if (i14 == 3) {
-                                while (hVar.f() < f11) {
-                                    int i15 = hVar.i(8);
+                                while (gVar.f() < f11) {
+                                    int i15 = gVar.i(8);
                                     Charset charset = StandardCharsets.US_ASCII;
                                     byte[] bArr = new byte[i15];
-                                    hVar.l(i15, bArr);
+                                    gVar.l(i15, bArr);
                                     String str3 = new String(bArr, charset);
-                                    int i16 = hVar.i(8);
+                                    int i16 = gVar.i(8);
                                     for (int i17 = 0; i17 < i16; i17++) {
-                                        hVar.u(hVar.i(8));
+                                        gVar.u(gVar.i(8));
                                     }
                                     str = str3;
                                 }
@@ -69,12 +69,12 @@ public final class b extends m {
                         } else if (i12 == 21) {
                             Charset charset2 = StandardCharsets.US_ASCII;
                             byte[] bArr2 = new byte[i13];
-                            hVar.l(i13, bArr2);
+                            gVar.l(i13, bArr2);
                             str2 = new String(bArr2, charset2);
                         }
-                        hVar.q(f11 * 8);
+                        gVar.q(f11 * 8);
                     }
-                    hVar.q(f10 * 8);
+                    gVar.q(f10 * 8);
                     if (str != null && str2 != null) {
                         arrayList.add(new a(i11, str.concat(str2)));
                     }

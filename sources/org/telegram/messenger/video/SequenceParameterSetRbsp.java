@@ -4,7 +4,7 @@ import c5.b0;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class SequenceParameterSetRbsp {
     public int bit_depth_chroma_minus8;
@@ -23,7 +23,8 @@ public class SequenceParameterSetRbsp {
 
     public SequenceParameterSetRbsp(InputStream inputStream) {
         pc.a aVar = new pc.a();
-        b0 b0Var = new b0((char) 0, 5);
+        boolean z10 = false;
+        b0 b0Var = new b0(5, z10, z10);
         b0Var.c = new char[50];
         aVar.e = b0Var;
         aVar.a = inputStream;

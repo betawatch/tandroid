@@ -36,10 +36,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.bi;
-import org.telegram.ui.Components.tt;
-import org.telegram.ui.vb1;
+import org.telegram.ui.Components.gu;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class w4 {
     public static final i4 p = new i4();
@@ -50,8 +50,8 @@ public final class w4 {
     public Menu e;
     public final int i;
     public Runnable j;
-    public tt k;
-    public final d6 n;
+    public gu k;
+    public final e6 n;
     public final ah.c o;
     public final Rect c = new Rect();
     public final Rect d = new Rect();
@@ -59,13 +59,13 @@ public final class w4 {
     public MenuItem.OnMenuItemClickListener g = p;
     public boolean h = true;
     public final j4 l = new j4(this);
-    public final a4.e m = new a4.e(23);
+    public final a4.d m = new a4.d(23);
 
-    public w4(Context context, View view, int i10, d6 d6Var, ah.c cVar) {
+    public w4(Context context, View view, int i10, e6 e6Var, ah.c cVar) {
         this.a = view;
         this.i = i10;
         this.o = cVar;
-        this.n = d6Var;
+        this.n = e6Var;
         this.b = new u4(this, context, view);
     }
 
@@ -78,8 +78,8 @@ public final class w4 {
     }
 
     public static LinearLayout b(w4 w4Var, Context context, MenuItem menuItem, boolean z10, boolean z11, boolean z12) {
-        int v02;
-        d6 d6Var = w4Var.n;
+        int w02;
+        e6 e6Var = w4Var.n;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
@@ -95,25 +95,25 @@ public final class w4 {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int v03 = i6.v0(i6.i6, d6Var);
+        int w03 = i6.w0(i6.i6, e6Var);
         int i10 = w4Var.i;
         if (i10 == 0) {
-            v02 = i6.v0(i6.j5, d6Var);
-            textView.setTextColor(v02);
+            w02 = i6.w0(i6.j5, e6Var);
+            textView.setTextColor(w02);
         } else if (i10 == 2) {
-            v02 = -328966;
+            w02 = -328966;
             textView.setTextColor(-328966);
-            v03 = 553648127;
+            w03 = 553648127;
         } else if (i10 == 1) {
-            v02 = i6.v0(i6.G6, d6Var);
-            textView.setTextColor(v02);
+            w02 = i6.w0(i6.G6, e6Var);
+            textView.setTextColor(w02);
         } else {
-            v02 = i6.v0(i6.G6, d6Var);
+            w02 = i6.w0(i6.G6, e6Var);
         }
         if (z11 || z12) {
-            linearLayout.setBackground(i6.a0(v03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
+            linearLayout.setBackground(i6.b0(w03, z11 ? 12 : 0, z12 ? 12 : 0, z12 ? 12 : 0, z11 ? 12 : 0));
         } else {
-            linearLayout.setBackground(i6.f0(v03, 2, -1));
+            linearLayout.setBackground(i6.g0(w03, 2, -1));
         }
         textView.setPaddingRelative(AndroidUtilities.dp(11.0f), 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.dp(z10 ? 42.0f : 48.0f)));
@@ -121,9 +121,9 @@ public final class w4 {
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_mini_lock3);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(i6.l1(0.4f, v02), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.m1(0.4f, w02), PorterDuff.Mode.SRC_IN));
         imageView.setVisibility(8);
-        linearLayout.addView(imageView, w7.z5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
+        linearLayout.addView(imageView, w7.x5.p(-2, -1, 0.0f, 0, 12, 0, 0, 0));
         if (menuItem != null) {
             e(linearLayout, menuItem, w4Var.j != null);
         }
@@ -160,16 +160,15 @@ public final class w4 {
     
         if (r26.h != false) goto L21;
      */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01fd  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x0200 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void c() {
         List list;
+        boolean z10;
         int i10;
         List list2;
-        boolean z10;
+        boolean z11;
         ArrayList d = d(this.e);
         Collections.sort(d, this.m);
         ArrayList arrayList = this.f;
@@ -189,10 +188,11 @@ public final class w4 {
                 }
             }
         }
-        boolean z11 = u4Var.F;
+        boolean z12 = u4Var.F;
         Rect rect = u4Var.A;
         w4 w4Var = u4Var.Q;
-        if (!z11) {
+        boolean z13 = true;
+        if (!z12) {
             u4Var.G = false;
             u4Var.F = true;
             u4Var.x.cancel();
@@ -207,69 +207,74 @@ public final class w4 {
         u4Var.J = null;
         u4Var.N = false;
         u4Var.n();
-        vb1 vb1Var = u4Var.g;
-        vb1Var.removeAllViews();
-        vb1Var.setPaddingRelative(0, 0, 0, 0);
+        dc1 dc1Var = u4Var.g;
+        dc1Var.removeAllViews();
+        dc1Var.setPaddingRelative(0, 0, 0, 0);
         t4 t4Var = u4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) t4Var.getAdapter();
         arrayAdapter.clear();
         t4Var.setAdapter((ListAdapter) arrayAdapter);
         u4Var.f.removeAllViews();
         u4Var.b.getWindowVisibleDisplayFrame(rect);
-        int min = Math.min(AndroidUtilities.dp(400.0f), bi.A(16.0f, 2, rect.width()));
+        int min = Math.min(AndroidUtilities.dp(400.0f), bi.B(16.0f, 2, rect.width()));
         LinkedList linkedList = new LinkedList(d);
         Iterator it = linkedList.iterator();
         int i12 = min;
-        boolean z12 = true;
+        boolean z14 = true;
         while (true) {
             boolean hasNext = it.hasNext();
             List list3 = r;
             if (!hasNext) {
                 list = list3;
+                z10 = z13;
                 break;
             }
             MenuItem menuItem3 = (MenuItem) it.next();
             boolean hasNext2 = it.hasNext();
-            boolean z13 = !hasNext2;
+            boolean z15 = !hasNext2;
+            z10 = z13;
             if (menuItem3 == null || w4Var.j == null || !list3.contains(Integer.valueOf(menuItem3.getItemId()))) {
                 int i13 = i12;
                 list = list3;
-                LinearLayout b10 = b(w4Var, u4Var.a, menuItem3, false, z12, z13);
+                LinearLayout b10 = b(w4Var, u4Var.a, menuItem3, false, z14, z15);
                 b10.setGravity(17);
                 int i14 = min;
-                b10.setPaddingRelative((int) ((z12 ? 1.5d : 1.0d) * b10.getPaddingStart()), b10.getPaddingTop(), (int) (b10.getPaddingEnd() * (hasNext2 ? 1.0d : 1.5d)), b10.getPaddingBottom());
+                b10.setPaddingRelative((int) ((z14 ? 1.5d : 1.0d) * b10.getPaddingStart()), b10.getPaddingTop(), (int) (b10.getPaddingEnd() * (hasNext2 ? 1.0d : 1.5d)), b10.getPaddingBottom());
                 b10.measure(0, 0);
                 min = i14;
                 int min2 = Math.min(b10.getMeasuredWidth(), min);
-                boolean z14 = min2 <= i13 - size2.getWidth();
-                boolean z15 = !hasNext2 && min2 <= i13;
-                if (!z14 && !z15) {
+                boolean z16 = min2 <= i13 - size2.getWidth() ? z10 : false;
+                boolean z17 = (hasNext2 || min2 > i13) ? false : z10;
+                if (!z16 && !z17) {
                     break;
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(u4Var.L);
-                vb1Var.addView(b10);
+                dc1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
                 i12 = i13 - min2;
                 it.remove();
-                z12 = false;
+                z13 = z10;
+                z14 = false;
+            } else {
+                z13 = z10;
             }
         }
         if (linkedList.isEmpty()) {
             i10 = 0;
         } else {
             i10 = 0;
-            vb1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            dc1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        vb1Var.measure(i10, i10);
-        u4Var.J = new Size(vb1Var.getMeasuredWidth(), vb1Var.getMeasuredHeight());
+        dc1Var.measure(i10, i10);
+        u4Var.J = new Size(dc1Var.getMeasuredWidth(), dc1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) t4Var.getAdapter();
             arrayAdapter2.clear();
             if (w4Var.j != null) {
-                Collections.sort(linkedList, new a4.e(24));
+                Collections.sort(linkedList, new a4.d(24));
             }
             int size3 = linkedList.size();
             boolean premiumFeaturesBlocked = MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked();
@@ -277,20 +282,14 @@ public final class w4 {
             while (i15 < size3) {
                 MenuItem menuItem4 = (MenuItem) linkedList.get(i15);
                 if (w4Var.j == null) {
+                    z11 = z10;
                     list2 = list;
                 } else {
                     list2 = list;
-                    if (list2.contains(Integer.valueOf(menuItem4.getItemId()))) {
-                        z10 = !premiumFeaturesBlocked;
-                        if (!z10) {
-                            arrayAdapter2.add(menuItem4);
-                        }
-                        i15++;
-                        list = list2;
-                    }
+                    z11 = list2.contains(Integer.valueOf(menuItem4.getItemId())) ? !premiumFeaturesBlocked : z10;
                 }
-                z10 = true;
-                if (!z10) {
+                if (z11) {
+                    arrayAdapter2.add(menuItem4);
                 }
                 i15++;
                 list = list2;
@@ -307,7 +306,7 @@ public final class w4 {
                 MenuItem menuItem5 = (MenuItem) t4Var.getAdapter().getItem(i17);
                 com.google.firebase.messaging.p pVar = u4Var.q;
                 LinearLayout linearLayout = (LinearLayout) pVar.d;
-                e(linearLayout, menuItem5, ((u4) pVar.e).Q.j != null);
+                e(linearLayout, menuItem5, ((u4) pVar.e).Q.j != null ? z10 : false);
                 linearLayout.measure(0, 0);
                 i16 = Math.max(linearLayout.getMeasuredWidth(), i16);
             }
@@ -345,7 +344,7 @@ public final class w4 {
     }
 
     public final ArrayList d(Menu menu) {
-        tt ttVar;
+        gu guVar;
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; menu != null && i10 < menu.size(); i10++) {
             MenuItem item = menu.getItem(i10);
@@ -353,7 +352,7 @@ public final class w4 {
                 SubMenu subMenu = item.getSubMenu();
                 if (subMenu != null) {
                     arrayList.addAll(d(subMenu));
-                } else if ((item.getItemId() != R.id.menu_quote || (ttVar = this.k) == null || ((Boolean) ttVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
+                } else if ((item.getItemId() != R.id.menu_quote || (guVar = this.k) == null || ((Boolean) guVar.run()).booleanValue()) && item.getItemId() != 16908353 && item.getItemId() != 16909808 && (item.getItemId() != R.id.menu_regular || this.j == null)) {
                     arrayList.add(item);
                 }
             }

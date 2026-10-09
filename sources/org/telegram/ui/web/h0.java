@@ -1,61 +1,26 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.webkit.ValueCallback;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public interface h0 {
-    void a();
+public final /* synthetic */ class h0 implements ValueCallback {
+    public final /* synthetic */ int a;
 
-    void b();
+    public /* synthetic */ h0(int i10) {
+        this.a = i10;
+    }
 
-    void c();
-
-    void d(TLRPC.Document document);
-
-    void e(String str);
-
-    void f(ArrayList arrayList);
-
-    String g(boolean z10, boolean z11);
-
-    boolean h();
-
-    void i(boolean z10);
-
-    void j();
-
-    void k(boolean z10);
-
-    void l(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13, String str2);
-
-    void m(int i10);
-
-    void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject);
-
-    void o(int i10, boolean z10);
-
-    void p(boolean z10);
-
-    void q(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13);
-
-    void r(int i10);
-
-    void s();
-
-    void t(boolean z10);
-
-    void u(int i10, int i11, boolean z10);
-
-    void v(TLRPC.User user, String str, ArrayList arrayList);
-
-    void w(boolean z10);
-
-    void x(boolean z10);
-
-    void y();
-
-    ei.b1 z();
+    @Override // android.webkit.ValueCallback
+    public final void onReceiveValue(Object obj) {
+        switch (this.a) {
+            case 0:
+                int i10 = y0.V;
+                break;
+            default:
+                HashMap hashMap = i2.e;
+                break;
+        }
+    }
 }

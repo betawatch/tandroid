@@ -1,5 +1,6 @@
 package x6;
 
+import ae.x;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
@@ -8,7 +9,7 @@ import android.view.ViewGroup;
 import h8.j;
 import i8.g;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements e {
     public final /* synthetic */ Bundle a;
@@ -33,18 +34,18 @@ public final class c implements e {
         try {
             Bundle bundle2 = new Bundle();
             i8.d.c(bundle, bundle2);
-            Parcel O0 = gVar.O0();
-            s7.b.b(O0, bundle2);
-            gVar.S0(O0, 2);
+            Parcel N0 = gVar.N0();
+            s7.b.b(N0, bundle2);
+            gVar.R0(N0, 2);
             i8.d.c(bundle2, bundle);
-            Parcel N0 = gVar.N0(gVar.O0(), 8);
-            a L0 = b.L0(N0.readStrongBinder());
-            N0.recycle();
-            aVar.d = (View) b.M0(L0);
+            Parcel M0 = gVar.M0(gVar.N0(), 8);
+            a K0 = b.K0(M0.readStrongBinder());
+            M0.recycle();
+            aVar.d = (View) b.L0(K0);
             viewGroup.removeAllViews();
             viewGroup.addView((View) aVar.d);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new x(e7);
         }
     }
 }

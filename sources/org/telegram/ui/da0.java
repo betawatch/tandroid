@@ -12,9 +12,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class da0 implements oy {
+public final /* synthetic */ class da0 implements ny {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ LaunchActivity b;
     public final /* synthetic */ String c;
@@ -28,22 +28,22 @@ public final /* synthetic */ class da0 implements oy {
         this.e = user;
     }
 
-    @Override // org.telegram.ui.oy
-    public final /* synthetic */ boolean A() {
+    @Override // org.telegram.ui.ny
+    public final /* synthetic */ boolean C() {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.oy
-    public final /* synthetic */ boolean H(uy uyVar) {
+    @Override // org.telegram.ui.ny
+    public final /* synthetic */ boolean K(ty tyVar) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.oy
-    public final boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+    @Override // org.telegram.ui.ny
+    public final boolean w(ty tyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
         int i12 = this.a;
         TLRPC.User user = this.e;
         int i13 = this.d;
@@ -53,7 +53,7 @@ public final /* synthetic */ class da0 implements oy {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
                 long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                Bundle i14 = a4.a.i("scrollToTopOnResume", true);
+                Bundle i14 = a1.g.i("scrollToTopOnResume", true);
                 if (DialogObject.isEncryptedDialog(j3)) {
                     i14.putInt("enc_id", DialogObject.getEncryptedChatId(j3));
                 } else if (DialogObject.isUserDialog(j3)) {
@@ -65,9 +65,9 @@ public final /* synthetic */ class da0 implements oy {
                 if (str != null) {
                     i14.putString("attach_bot_start_command", str);
                 }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(i14, uyVar)) {
+                if (MessagesController.getInstance(i13).checkCanOpenChat(i14, tyVar)) {
                     NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).S(new yn(i14), true, false);
+                    ((ActionBarLayout) launchActivity.O()).S(new zn(i14), true, false);
                     break;
                 }
                 break;
@@ -80,7 +80,7 @@ public final /* synthetic */ class da0 implements oy {
                 tL_inputGameShortName.short_name = str;
                 tL_inputGameShortName.bot_id = MessagesController.getInstance(i13).getInputUser(user);
                 SendMessagesHelper.getInstance(i13).sendGame(MessagesController.getInstance(i13).getInputPeer(j10), tL_inputMediaGame, 0L, 0L);
-                Bundle i15 = a4.a.i("scrollToTopOnResume", true);
+                Bundle i15 = a1.g.i("scrollToTopOnResume", true);
                 if (DialogObject.isEncryptedDialog(j10)) {
                     i15.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
                 } else if (DialogObject.isUserDialog(j10)) {
@@ -88,9 +88,9 @@ public final /* synthetic */ class da0 implements oy {
                 } else {
                     i15.putLong("chat_id", -j10);
                 }
-                if (MessagesController.getInstance(i13).checkCanOpenChat(i15, uyVar)) {
+                if (MessagesController.getInstance(i13).checkCanOpenChat(i15, tyVar)) {
                     NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    ((ActionBarLayout) launchActivity.O()).S(new yn(i15), true, false);
+                    ((ActionBarLayout) launchActivity.O()).S(new zn(i15), true, false);
                     break;
                 }
                 break;

@@ -7,10 +7,10 @@ import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.o6;
 import org.telegram.ui.Cells.z7;
-import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.aa;
+import org.telegram.ui.Components.xh0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class z0 extends AnimatorListenerAdapter {
                 break;
             case 2:
                 o6 o6Var = (o6) this.c;
-                o6Var.E = this.b;
+                o6Var.F = this.b;
                 o6Var.invalidate();
                 break;
             case 3:
@@ -58,22 +58,31 @@ public final class z0 extends AnimatorListenerAdapter {
                 z7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 4:
-                y9 y9Var = (y9) this.c;
-                y9Var.g = this.b;
-                y9Var.invalidateSelf();
+                aa aaVar = (aa) this.c;
+                aaVar.g = this.b;
+                aaVar.invalidateSelf();
+                break;
+            case 5:
+                xh0 xh0Var = (xh0) this.c;
+                xh0Var.H.unlock();
+                float f10 = this.b;
+                xh0Var.b = f10;
+                if (f10 <= 0.0f) {
+                    xh0Var.G = -1;
+                }
+                xh0Var.c(true);
+                xh0Var.f = false;
+                if (xh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
+                    xh0Var.O.run();
+                    break;
+                }
                 break;
             default:
-                hh0 hh0Var = (hh0) this.c;
-                hh0Var.H.unlock();
-                float f10 = this.b;
-                hh0Var.b = f10;
-                if (f10 <= 0.0f) {
-                    hh0Var.G = -1;
-                }
-                hh0Var.c(true);
-                hh0Var.f = false;
-                if (hh0Var.O != null && Math.abs(f10 - 1.0f) < 0.01f) {
-                    hh0Var.O.run();
+                org.telegram.ui.Wallet.a5 a5Var = (org.telegram.ui.Wallet.a5) this.c;
+                if (a5Var.k0 == animator) {
+                    a5Var.k0 = null;
+                    a5Var.x0(this.b);
+                    a5Var.n0.o(false);
                     break;
                 }
                 break;
@@ -84,9 +93,9 @@ public final class z0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 5:
-                hh0 hh0Var = (hh0) this.c;
-                hh0Var.f = true;
-                hh0Var.c = this.b;
+                xh0 xh0Var = (xh0) this.c;
+                xh0Var.f = true;
+                xh0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

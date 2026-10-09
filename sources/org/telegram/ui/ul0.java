@@ -1,75 +1,57 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ul0 implements Runnable {
+public final /* synthetic */ class ul0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kn0 b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ ul0(kn0 kn0Var, int i10) {
+    public /* synthetic */ ul0(PasskeysActivity passkeysActivity, int i10) {
         this.a = i10;
-        this.b = kn0Var;
+        this.b = passkeysActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ViewGroup viewGroup;
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        PasskeysActivity passkeysActivity = this.b;
+        switch (i10) {
             case 0:
-                kn0 kn0Var = this.b;
-                ViewGroup[] viewGroupArr = kn0Var.Z;
-                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
-                    kn0Var.Y[0].requestFocus();
-                    AndroidUtilities.showKeyboard(kn0Var.Y[0]);
-                    break;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String string = LocaleController.getString(R.string.PasskeyTopInfo);
+                int i11 = R.raw.passkey;
+                org.telegram.ui.Components.p61 p61Var = new org.telegram.ui.Components.p61(2);
+                p61Var.l = string;
+                p61Var.k = i11;
+                arrayList.add(p61Var);
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
+                    m60 m60Var = new m60(passkeysActivity, 14);
+                    int i13 = vl0.a;
+                    org.telegram.ui.Components.p61 J = org.telegram.ui.Components.p61.J(vl0.class);
+                    J.G = passkey;
+                    J.D = m60Var;
+                    arrayList.add(J);
                 }
-                break;
-            case 1:
-                kn0 kn0Var2 = this.b;
-                kn0Var2.presentFragment(kn0Var2.h1, true);
-                kn0Var2.h1 = null;
-                break;
-            case 2:
-                kn0 kn0Var3 = this.b;
-                EditTextBoldCursor[] editTextBoldCursorArr = kn0Var3.a0;
-                if (editTextBoldCursorArr != null) {
-                    kn0Var3.I1(editTextBoldCursorArr[0]);
-                    break;
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    org.telegram.ui.Components.p61 c10 = org.telegram.ui.Components.p61.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    c10.q = true;
+                    arrayList.add(c10);
                 }
+                arrayList.add(org.telegram.ui.Components.p61.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new tk0(passkeysActivity, 2)), true)));
                 break;
-            case 3:
-                AndroidUtilities.showKeyboard(this.b.Y[2]);
-                break;
-            case 4:
-                this.b.x1();
-                break;
-            case 5:
-                int i10 = 0;
-                while (true) {
-                    kn0 kn0Var4 = this.b;
-                    if (i10 >= kn0Var4.c0.getChildCount()) {
-                        kn0Var4.x1();
-                        kn0Var4.q1.clear();
-                        kn0Var4.p1.clear();
-                        kn0Var4.y.values.clear();
-                        kn0Var4.Q1();
-                        break;
-                    } else {
-                        View childAt = kn0Var4.c0.getChildAt(i10);
-                        if (childAt instanceof jn0) {
-                            kn0Var4.c0.removeView(childAt);
-                            i10--;
-                        }
-                        i10++;
-                    }
-                }
             default:
-                this.b.finishFragment();
+                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
                 break;
         }
     }

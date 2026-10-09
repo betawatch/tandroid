@@ -22,12 +22,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.ii1;
+import org.telegram.ui.Components.bd;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.ui1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class e extends View {
     public boolean E;
     public boolean F;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean R;
     public org.telegram.ui.Cells.z S;
     public final Paint T;
-    public final kj0 U;
+    public final ck0 U;
     public final Drawable V;
     public final s0 W;
     public final FabBackgroundDrawable a;
@@ -57,8 +57,8 @@ public final class e extends View {
     public final StaticLayout e;
     public final StaticLayout f;
     public final StaticLayout h;
-    public final zc n;
-    public final zc r;
+    public final bd n;
+    public final bd r;
     public b s;
     public final int v;
     public float w;
@@ -68,8 +68,8 @@ public final class e extends View {
     public e(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.n = new zc(this);
-        this.r = new zc(this);
+        this.n = new bd(this);
+        this.r = new bd(this);
         this.y = true;
         this.E = true;
         this.M = new Rect();
@@ -111,17 +111,17 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        kj0 kj0Var = new kj0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.U = kj0Var;
-        kj0Var.K(1);
-        kj0Var.P(90);
-        kj0Var.R(this);
+        ck0 ck0Var = new ck0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.U = ck0Var;
+        ck0Var.K(1);
+        ck0Var.P(90);
+        ck0Var.R(this);
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
-        this.S = h02;
-        h02.setCallback(this);
+        org.telegram.ui.Cells.z i02 = i6.i0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
+        this.S = i02;
+        i02.setCallback(this);
     }
 
     @Override // android.view.View
@@ -321,9 +321,9 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int z10 = bi.z(28.0f, i12, 2);
-        this.c.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
-        this.d.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
+        int A = bi.A(28.0f, i12, 2);
+        this.c.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
+        this.d.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
         float dp = AndroidUtilities.dp(3.0f);
         Paint paint = this.T;
         paint.setStrokeWidth(dp);
@@ -341,8 +341,8 @@ public final class e extends View {
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         if (isEnabled()) {
             int action = motionEvent.getAction();
-            zc zcVar = this.n;
-            zc zcVar2 = this.r;
+            bd bdVar = this.n;
+            bd bdVar2 = this.r;
             if (action != 0) {
                 if (action != 1) {
                     if (action == 2) {
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((ii1) this.Q).b();
+                            ((ui1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,35 +369,35 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((ii1) this.Q).a();
+                            ((ui1) this.Q).a();
                         }
                     }
                 }
                 getParent().requestDisallowInterceptTouchEvent(false);
                 this.F = false;
-                zcVar2.c(false);
-                zcVar.c(false);
+                bdVar2.c(false);
+                bdVar.c(false);
                 setPressed(false);
                 return false;
             }
             motionEvent.getX();
             this.H = motionEvent.getY();
             if (this.O == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? i6.w0(null, i6.i6, false) : -51130);
+                this.S = i6.i0(AndroidUtilities.dp(52.0f), 0, this.R ? i6.x0(null, i6.i6, false) : -51130);
                 this.F = true;
                 this.G = true;
-                zcVar2.c(true);
-                zcVar.c(false);
+                bdVar2.c(true);
+                bdVar.c(false);
                 setPressed(true);
                 invalidate();
                 return true;
             }
             if (this.P == null && this.M.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
+                this.S = i6.i0(AndroidUtilities.dp(52.0f), 0, -11677354);
                 this.F = true;
                 this.G = false;
-                zcVar2.c(false);
-                zcVar.c(true);
+                bdVar2.c(false);
+                bdVar.c(true);
                 setPressed(true);
                 ValueAnimator valueAnimator = this.P;
                 if (valueAnimator != null) {

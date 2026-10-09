@@ -15,11 +15,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
+import s4.a1;
 import s4.c0;
-import s4.o0;
-import s4.z0;
+import s4.d0;
+import s4.p0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -419,8 +420,8 @@ public final class h {
                 throw new RuntimeException("Max array capacity exceeded");
             }
             int[] iArr2 = new int[i15];
-            hd.f.b(0, i13, length, iArr, iArr2);
-            hd.f.b(i14, 0, this.a, (int[]) this.c, iArr2);
+            id.f.b(0, i13, length, iArr, iArr2);
+            id.f.b(i14, 0, this.a, (int[]) this.c, iArr2);
             this.c = iArr2;
             this.a = 0;
             this.b = length;
@@ -461,27 +462,27 @@ public final class h {
         if (iArr != null) {
             Arrays.fill(iArr, -1);
         }
-        o0 o0Var = recyclerView.x;
-        if (recyclerView.w == null || o0Var == null || !o0Var.h) {
+        p0 p0Var = recyclerView.x;
+        if (recyclerView.w == null || p0Var == null || !p0Var.h) {
             return;
         }
         if (z10) {
             if (!recyclerView.d.h()) {
                 int h = recyclerView.w.h();
-                c0 c0Var = (c0) o0Var;
-                s4.b0 b0Var = c0Var.B;
-                if (b0Var == null || (i10 = b0Var.a) < 0) {
-                    c0Var.f1();
-                    z11 = c0Var.v;
-                    i10 = c0Var.y;
+                d0 d0Var = (d0) p0Var;
+                c0 c0Var = d0Var.B;
+                if (c0Var == null || (i10 = c0Var.a) < 0) {
+                    d0Var.f1();
+                    z11 = d0Var.v;
+                    i10 = d0Var.y;
                     if (i10 == -1) {
                         i10 = z11 ? h - 1 : 0;
                     }
                 } else {
-                    z11 = b0Var.c;
+                    z11 = c0Var.c;
                 }
                 int i11 = z11 ? -1 : 1;
-                for (int i12 = 0; i12 < c0Var.E && i10 >= 0 && i10 < h; i12++) {
+                for (int i12 = 0; i12 < d0Var.E && i10 >= 0 && i10 < h; i12++) {
                     b(i10, 0);
                     i10 += i11;
                 }
@@ -489,21 +490,21 @@ public final class h {
         } else if (!recyclerView.Z()) {
             int i13 = this.a;
             int i14 = this.b;
-            z0 z0Var = recyclerView.t0;
-            c0 c0Var2 = (c0) o0Var;
-            if (c0Var2.o != 0) {
+            a1 a1Var = recyclerView.u0;
+            d0 d0Var2 = (d0) p0Var;
+            if (d0Var2.o != 0) {
                 i13 = i14;
             }
-            if (c0Var2.r() != 0 && i13 != 0) {
-                c0Var2.G0();
-                c0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, z0Var);
-                c0Var2.A0(z0Var, c0Var2.p, this);
+            if (d0Var2.r() != 0 && i13 != 0) {
+                d0Var2.G0();
+                d0Var2.m1(i13 > 0 ? 1 : -1, Math.abs(i13), true, a1Var);
+                d0Var2.A0(a1Var, d0Var2.p, this);
             }
         }
         int i15 = this.d;
-        if (i15 > o0Var.i) {
-            o0Var.i = i15;
-            o0Var.j = z10;
+        if (i15 > p0Var.i) {
+            p0Var.i = i15;
+            p0Var.j = z10;
             recyclerView.b.l();
         }
     }

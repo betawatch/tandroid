@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class u implements TextWatcher {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final class u implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                this.b.U();
+                this.b.X();
                 break;
             default:
-                this.b.U();
+                this.b.X();
                 break;
         }
     }

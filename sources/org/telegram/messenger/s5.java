@@ -1,28 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s5 implements Runnable {
+public final /* synthetic */ class s5 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ LocationController b;
-    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ s5(LocationController locationController, ArrayList arrayList, int i10) {
+    public /* synthetic */ s5(LocationController locationController, int i10) {
         this.a = i10;
         this.b = locationController;
-        this.c = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadSharingLocations$14(this.c);
+                this.b.lambda$removeSharingLocation$19(tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$removeAllLocationSharings$22(tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadSharingLocations$15(this.c);
+                this.b.lambda$markLiveLoactionsAsRead$27(tLObject, tL_error);
                 break;
         }
     }

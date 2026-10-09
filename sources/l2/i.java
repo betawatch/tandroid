@@ -1,25 +1,25 @@
 package l2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public interface i {
-    long H(long j3, long j10);
+    long b(long j3);
 
-    long a(long j3);
+    long d(long j3, long j10);
 
-    boolean e0();
+    long f(long j3, long j10);
 
     long i(long j3, long j10);
 
-    long j0();
+    m2.j k(long j3);
 
     long n(long j3, long j10);
 
-    long p(long j3, long j10);
+    boolean t();
 
-    long p0(long j3);
+    long u();
 
-    m2.j q(long j3);
+    long w(long j3);
 
-    long q0(long j3, long j10);
+    long y(long j3, long j10);
 }

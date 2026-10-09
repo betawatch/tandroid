@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final j0 a = new j0("PhoneskyVerificationUtils");
@@ -67,7 +67,7 @@ public abstract class g {
                 sb2.append((CharSequence) ", ");
             }
         }
-        j0Var.c(a4.a.q("Play Store package certs are not valid. Found these sha256 certs: [", sb2.toString(), "]."), new Object[0]);
+        j0Var.c(a1.g.q("Play Store package certs are not valid. Found these sha256 certs: [", sb2.toString(), "]."), new Object[0]);
         return false;
     }
 }

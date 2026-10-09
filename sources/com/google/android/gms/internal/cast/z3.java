@@ -1,25 +1,22 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class z3 {
-    public static final z3 c;
-    public static final z3 d;
-    public final boolean a;
-    public final Throwable b;
+    public static final z3 d = new z3();
+    public final Runnable a;
+    public final Executor b;
+    public z3 c;
 
-    static {
-        if (h4.d) {
-            d = null;
-            c = null;
-        } else {
-            d = new z3(null, false);
-            c = new z3(null, true);
-        }
+    public z3() {
+        this.a = null;
+        this.b = null;
     }
 
-    public z3(Throwable th2, boolean z10) {
-        this.a = z10;
-        this.b = th2;
+    public z3(Runnable runnable, Executor executor) {
+        this.a = runnable;
+        this.b = executor;
     }
 }

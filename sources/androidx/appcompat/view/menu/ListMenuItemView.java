@@ -26,7 +26,7 @@ import la.h;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
     public final boolean E;
@@ -75,13 +75,13 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
         rect.top = this.n.getHeight() + layoutParams.topMargin + layoutParams.bottomMargin + rect.top;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0055, code lost:
     
         if (r0 == false) goto L28;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x011b  */
     @Override // l.y
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -89,6 +89,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     public final void b(m mVar) {
         boolean z10;
         String sb2;
+        boolean z11;
         this.a = mVar;
         boolean isVisible = mVar.isVisible();
         k kVar = mVar.n;
@@ -104,8 +105,11 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
                     m mVar2 = this.a;
                     k kVar2 = mVar2.n;
                     if (kVar2.o()) {
-                        boolean z11 = (kVar2.n() ? mVar2.j : mVar2.h) != 0;
+                        if ((kVar2.n() ? mVar2.j : mVar2.h) != 0) {
+                            z11 = true;
+                        }
                     }
+                    z11 = false;
                 }
                 i10 = 8;
                 if (i10 == 0) {
@@ -349,16 +353,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
-        h Q = h.Q(getContext(), attributeSet, a.r, i10);
-        this.s = Q.A(5);
-        TypedArray typedArray = (TypedArray) Q.c;
+        h R = h.R(getContext(), attributeSet, a.r, i10);
+        this.s = R.G(5);
+        TypedArray typedArray = (TypedArray) R.c;
         this.v = typedArray.getResourceId(1, -1);
         this.x = typedArray.getBoolean(7, false);
         this.w = context;
-        this.y = Q.A(8);
+        this.y = R.G(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.E = obtainStyledAttributes.hasValue(0);
-        Q.R();
+        R.S();
         obtainStyledAttributes.recycle();
     }
 }

@@ -1,33 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v51 extends g.p {
-    public final /* synthetic */ d61 c;
+public final class v51 implements rw0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ w51 c;
 
-    public v51(d61 d61Var) {
-        this.c = d61Var;
+    public v51(w51 w51Var) {
+        this.c = w51Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        d61 d61Var = this.c;
-        s4.h0 adapter = d61Var.n.getAdapter();
-        c61 c61Var = d61Var.s;
-        if (adapter == c61Var) {
-            if ((c61Var.d.get(i10) instanceof Integer) || i10 >= c61Var.w) {
-                return c61Var.v;
+    @Override // org.telegram.ui.Components.rw0
+    public final void H(int i10, boolean z10) {
+        if (this.a == i10 && this.b == z10) {
+            return;
+        }
+        this.a = i10;
+        this.b = z10;
+        if (i10 > AndroidUtilities.dp(20.0f)) {
+            w51 w51Var = this.c;
+            if (w51Var.x0) {
+                return;
             }
-            return 1;
+            w51Var.E0.setAllowNestedScroll(false);
+            w51Var.x0 = true;
         }
-        gg.g2 g2Var = d61Var.v;
-        SparseArray sparseArray = g2Var.s;
-        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
-            return g2Var.e.a();
-        }
-        return 1;
     }
 }

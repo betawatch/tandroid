@@ -1,26 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class y4 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.a2[] a;
+public final class y4 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ ud0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y4(Context context, org.telegram.ui.Cells.a2[] a2VarArr) {
+    public y4(Context context, ud0 ud0Var) {
         super(context);
-        this.a = a2VarArr;
+        this.b = ud0Var;
+        this.a = false;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        this.b.getLayoutParams().height = AndroidUtilities.dp(42.0f) * 8;
+        this.a = false;
         super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.a2[] a2VarArr = this.a;
-        if (a2VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + a2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

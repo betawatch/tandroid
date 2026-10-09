@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class NotificationsDisabledReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -48,7 +48,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("apply channel{channel} " + stringExtra + " state");
                 }
-                notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(2), booleanExtra ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0).commit();
+                notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(2);
             } else if (split[1].startsWith("groups")) {
                 if (!stringExtra.equals(notificationsSettings.getString("groups", null))) {
@@ -71,7 +71,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d("apply channel{private} " + stringExtra + " state");
                 }
-                notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(1), booleanExtra ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0).commit();
+                notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
             } else if (!split[1].startsWith("stories")) {
                 long longValue = Utilities.parseLong(split[1]).longValue();
@@ -86,7 +86,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     FileLog.d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit2 = notificationsSettings.edit();
-                edit2.putInt(sa.e.i(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
+                edit2.putInt(sc.v.i(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey), booleanExtra ? 2 : 0);
                 if (!booleanExtra) {
                     edit2.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL + sharedPrefKey);
                 }

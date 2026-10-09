@@ -4,9 +4,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.Build;
-import gd.d;
-import hd.q;
-import hd.r;
+import hd.d;
+import id.q;
+import id.r;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzch {
     public zzch() {
@@ -25,26 +25,24 @@ public final class zzch {
     public static final Set zza(Context context) {
         try {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            if (Build.VERSION.SDK_INT >= 23) {
-                Object systemService = context.getSystemService("connectivity");
-                i.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
-                ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
-                NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
-                if (networkCapabilities != null && networkCapabilities.hasTransport(1)) {
-                    linkedHashSet.add(zzvs.zzM);
-                }
-                if (networkCapabilities != null && networkCapabilities.hasTransport(0)) {
-                    linkedHashSet.add(zzvs.zzN);
-                }
-                if (networkCapabilities != null && networkCapabilities.hasTransport(4)) {
-                    linkedHashSet.add(zzvs.zzO);
-                }
-                if (networkCapabilities != null && networkCapabilities.hasTransport(3)) {
-                    linkedHashSet.add(zzvs.zzP);
-                }
-                if (networkCapabilities != null && networkCapabilities.hasCapability(16)) {
-                    linkedHashSet.add(zzvs.zzr);
-                }
+            Object systemService = context.getSystemService("connectivity");
+            i.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
+            ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
+            NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+            if (networkCapabilities != null && networkCapabilities.hasTransport(1)) {
+                linkedHashSet.add(zzvs.zzM);
+            }
+            if (networkCapabilities != null && networkCapabilities.hasTransport(0)) {
+                linkedHashSet.add(zzvs.zzN);
+            }
+            if (networkCapabilities != null && networkCapabilities.hasTransport(4)) {
+                linkedHashSet.add(zzvs.zzO);
+            }
+            if (networkCapabilities != null && networkCapabilities.hasTransport(3)) {
+                linkedHashSet.add(zzvs.zzP);
+            }
+            if (networkCapabilities != null && networkCapabilities.hasCapability(16)) {
+                linkedHashSet.add(zzvs.zzr);
             }
             return linkedHashSet;
         } catch (Exception unused) {
@@ -57,10 +55,8 @@ public final class zzch {
         LinkedHashMap linkedHashMap = new LinkedHashMap(r.a(16));
         r.c(linkedHashMap, dVarArr);
         int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
-            linkedHashMap.put(17, zzvs.zzs);
-            linkedHashMap.put(16, zzvs.zzr);
-        }
+        linkedHashMap.put(17, zzvs.zzs);
+        linkedHashMap.put(16, zzvs.zzr);
         if (i10 >= 28) {
             linkedHashMap.put(18, zzvs.zzt);
             linkedHashMap.put(19, zzvs.zzu);

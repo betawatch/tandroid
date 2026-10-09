@@ -10,14 +10,12 @@ import android.support.v4.media.RatingCompat;
 import android.view.KeyEvent;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public interface d extends IInterface {
     void A(String str, Bundle bundle);
 
-    void A0(int i10);
-
-    String C0();
+    String B0();
 
     void E(int i10, int i11);
 
@@ -97,17 +95,19 @@ public interface d extends IInterface {
 
     void u(MediaDescriptionCompat mediaDescriptionCompat);
 
-    void v0();
+    void u0();
 
     boolean w();
 
+    void w0(long j3);
+
     void x(MediaDescriptionCompat mediaDescriptionCompat);
 
-    void x0(long j3);
+    ParcelableVolumeInfo x0();
 
     PendingIntent y();
 
-    ParcelableVolumeInfo y0();
-
     void z();
+
+    void z0(int i10);
 }

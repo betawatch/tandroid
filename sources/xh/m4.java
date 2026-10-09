@@ -10,44 +10,43 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.qz;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.w00;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.py0;
-import w7.b6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.d00;
+import org.telegram.ui.Components.db;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
+import w7.x5;
 import w7.z5;
-import yh.l5;
+import yh.e5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class m4 extends cb implements NotificationCenter.NotificationCenterDelegate {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class m4 extends eb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
-    public final l5 Y;
+    public final e5 Y;
     public final HashSet Z;
-    public final qz a0;
+    public final d00 a0;
     public final FrameLayout b0;
     public final ci.d c0;
-    public b80 d0;
-    public w61 e0;
+    public p80 d0;
+    public c71 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m4(org.telegram.ui.ActionBar.n2 n2Var, long j3, int i10, ei.s4 s4Var) {
-        super(r3, n2Var, new bb(r4));
+    public m4(org.telegram.ui.ActionBar.n2 n2Var, long j3, int i10, ei.q4 q4Var) {
+        super(r3, n2Var, new db(r4));
         Activity parentActivity = n2Var.getParentActivity();
-        bb bbVar = new bb();
-        bbVar.f = 2;
-        bbVar.b = 3;
-        bbVar.g = n2Var.getResourceProvider();
+        db dbVar = new db();
+        dbVar.f = 2;
+        dbVar.b = 3;
+        dbVar.g = n2Var.getResourceProvider();
         this.Z = new HashSet();
         this.f0 = i0.b.e;
         Context context = getContext();
@@ -61,10 +60,10 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
         setBackgroundColor(getThemedColor(i11));
-        I();
+        L();
         this.X = i10;
-        this.Y = new l5(this.currentAccount, j3, true);
-        this.e.setActionBarMenuOnItemClick(new j4(this, this.e.n().a(1, R.drawable.ic_ab_other), j3));
+        this.Y = new e5(this.currentAccount, j3, true);
+        this.e.setActionBarMenuOnItemClick(new j4(this, this.e.o().a(1, R.drawable.ic_ab_other), j3));
         ci.d dVar = new ci.d(getContext(), this.resourcesProvider, true);
         this.c0 = dVar;
         dVar.g(LocaleController.getString(R.string.Gift2CollectionAddGiftsButton), false, true);
@@ -77,43 +76,48 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
         frameLayout.setPadding(i12, 0, i12, 0);
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        frameLayout2.addView(dVar, z5.c(-1.0f, -1));
-        frameLayout2.setOnClickListener(new py0(27, this, s4Var));
+        frameLayout2.addView(dVar, x5.d(-1.0f, -1));
+        frameLayout2.setOnClickListener(new a(3, this, q4Var));
         ch.d c10 = cVar2.c(frameLayout2, null, false);
-        c10.w(eh.b.j(this.resourcesProvider));
-        c10.y(AndroidUtilities.dp(28.0f));
-        c10.x(AndroidUtilities.dp(5.0f));
+        c10.o(eh.b.j(this.resourcesProvider));
+        c10.q(AndroidUtilities.dp(28.0f));
+        c10.p(AndroidUtilities.dp(5.0f));
         frameLayout2.setBackground(c10);
-        b6.b(frameLayout2, 0.02f, 1.5f);
-        frameLayout.addView(frameLayout2, z5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
-        ah.e eVar = new ah.e(cVar4.c(frameLayout, null, false));
-        eVar.b(AndroidUtilities.dp(40.0f), true);
-        eVar.q = 220;
-        frameLayout.setBackground(eVar);
-        this.containerView.addView(frameLayout, z5.e(-1, -2, 80));
+        z5.b(frameLayout2, 0.02f, 1.5f);
+        frameLayout.addView(frameLayout2, x5.a(64.0f, 4.0f, 0.0f, 4.0f, 0.0f, -1, 80));
+        ah.d dVar2 = new ah.d(cVar4.c(frameLayout, null, false));
+        dVar2.b(AndroidUtilities.dp(40.0f), true);
+        dVar2.q = 220;
+        frameLayout.setBackground(dVar2);
+        this.containerView.addView(frameLayout, x5.e(-1, -2, 80));
         getContext();
-        qz qzVar = new qz(3, false);
-        this.a0 = qzVar;
-        qzVar.O = new k4(this);
+        d00 d00Var = new d00(3, false);
+        this.a0 = d00Var;
+        d00Var.O = new k4(this);
         this.d.setPadding(AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.backgroundPaddingLeft, 0);
         this.d.setClipToPadding(false);
         this.d.setSelectorType(9);
         this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(qzVar);
+        this.d.setLayoutManager(d00Var);
         this.d.setOnItemClickListener(new ai.g(this, 20));
         this.d.j(new l4(this));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(tr.h);
+        jVar.o(hs.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
         this.e0.N(true);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starUserGiftsLoaded);
-        Q();
+        T();
     }
 
-    public final void Q() {
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
+    }
+
+    public final void T() {
         this.d.setPadding(AndroidUtilities.dp(9.0f) + this.f0.a + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.f0.c + this.backgroundPaddingLeft, this.f0.d);
         i0.b bVar = this.f0;
         int i10 = bVar.a;
@@ -121,11 +125,11 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
         this.b0.setPadding(i10 + i11, 0, bVar.c + i11, bVar.d);
     }
 
-    public final boolean R() {
-        zl0 zl0Var = this.d;
-        if (zl0Var != null && zl0Var.G) {
-            for (int i10 = 0; i10 < zl0Var.getChildCount(); i10++) {
-                if (zl0Var.getChildAt(i10) instanceof w00) {
+    public final boolean U() {
+        qm0 qm0Var = this.d;
+        if (qm0Var != null && qm0Var.G) {
+            for (int i10 = 0; i10 < qm0Var.getChildCount(); i10++) {
+                if (qm0Var.getChildAt(i10) instanceof j10) {
                     return true;
                 }
             }
@@ -135,12 +139,12 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        w61 w61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (w61Var = this.e0) == null) {
+        c71 c71Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (c71Var = this.e0) == null) {
             return;
         }
-        w61Var.N(true);
-        if (R()) {
+        c71Var.N(true);
+        if (U()) {
             this.Y.a();
         }
     }
@@ -152,22 +156,17 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.f3
-    public final r0.l1 onApplyWindowInsetsToRoot(View view, r0.l1 l1Var) {
-        this.f0 = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        Q();
-        return r0.l1.b;
+    public final r0.k1 onApplyWindowInsetsToRoot(View view, r0.k1 k1Var) {
+        this.f0 = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        T();
+        return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
-        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
-        this.e0 = w61Var;
-        w61Var.r = false;
-        return w61Var;
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.Gift2CollectionAddGiftsTitle);
+    @Override // org.telegram.ui.Components.eb
+    public final pm0 x(qm0 qm0Var) {
+        c71 c71Var = new c71(qm0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
+        this.e0 = c71Var;
+        c71Var.r = false;
+        return c71Var;
     }
 }

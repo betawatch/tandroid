@@ -1,21 +1,21 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z01 {
-    public final long a;
-    public final TLRPC.InputFile b;
-    public final TLRPC.InputEncryptedFile c;
-    public final byte[] d;
-    public final byte[] e;
+public final class z01 extends org.telegram.ui.Cells.u1 {
+    @Override // org.telegram.ui.Cells.u1
+    public final int getParentWidth() {
+        return org.telegram.messenger.bi.A(128.0f, AndroidUtilities.displaySize.x, 2);
+    }
 
-    public z01(long j3, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
-        this.a = j3;
-        this.b = inputFile;
-        this.c = inputEncryptedFile;
-        this.d = bArr;
-        this.e = bArr2;
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.u1
+    public final void y4() {
     }
 }

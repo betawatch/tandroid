@@ -1,10 +1,10 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.google.android.gms.internal.cast.b5;
+import com.google.android.gms.internal.cast.z4;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class u2 {
     public static final t1 a;
@@ -413,7 +413,7 @@ public abstract class u2 {
                     } catch (IndexOutOfBoundsException e7) {
                         e = e7;
                         i12 = i13;
-                        throw new b5(i12, m1Var.c, 1, e);
+                        throw new z4(i12, m1Var.c, 1, e);
                     }
                 } catch (IndexOutOfBoundsException e10) {
                     e = e10;
@@ -440,7 +440,7 @@ public abstract class u2 {
                 } catch (IndexOutOfBoundsException e11) {
                     e = e11;
                     i16 = i17;
-                    throw new b5(i16, m1Var.c, 1, e);
+                    throw new z4(i16, m1Var.c, 1, e);
                 }
             } catch (IndexOutOfBoundsException e12) {
                 e = e12;

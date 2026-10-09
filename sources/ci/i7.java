@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class i7 extends j1.b {
     public final Rect o;
@@ -57,7 +57,7 @@ public final class i7 extends j1.b {
             if (i10 != 0) {
                 if (i10 == 1) {
                     if (j7Var.b()) {
-                        ((fb) j7Var.a).a();
+                        ((gb) j7Var.a).a();
                         return true;
                     }
                     if (j7Var.r0) {
@@ -65,41 +65,37 @@ public final class i7 extends j1.b {
                         j7Var.z0 = false;
                         j7Var.v0 = SystemClock.elapsedRealtime();
                         j7Var.u0 = true;
-                        ((fb) j7Var.a).d(false);
+                        ((gb) j7Var.a).e(false);
                         j7Var.invalidate();
                         return true;
                     }
                     if (!j7Var.o0) {
-                        ((fb) j7Var.a).c();
+                        ((gb) j7Var.a).d();
                         return true;
                     }
-                    if (kc.d(((fb) j7Var.a).a)) {
+                    if (lc.c(((gb) j7Var.a).a)) {
                         j7Var.R = 0L;
                         j7Var.Q = System.currentTimeMillis();
                         j7Var.A0 = false;
-                        ((fb) j7Var.a).e(new androidx.fragment.app.a0(this, 19), false);
-                        return true;
+                        ((gb) j7Var.a).f(new androidx.fragment.app.a0(this, 19), false);
                     }
                     return true;
                 }
                 if (i10 == 2 && !j7Var.b()) {
                     j7Var.d(180.0f);
-                    ((fb) j7Var.a).b();
+                    ((gb) j7Var.a).b();
                     return true;
                 }
             } else if (!j7Var.b()) {
                 if (!j7Var.r0 || !j7Var.A0) {
-                    kc kcVar = ((fb) j7Var.a).a;
-                    if (kcVar.f0 == 0 && !kcVar.P1 && !kcVar.Q1 && kc.b(kcVar)) {
-                        kcVar.f(true);
-                    }
+                    ((gb) j7Var.a).c();
                     return true;
                 }
                 j7Var.z0 = false;
                 j7Var.G0.d(1.0f, true);
-                b4 b4Var = ((fb) j7Var.a).a.T0;
-                b4Var.a.q(LocaleController.getString(R.string.StoryHintPinchToZoom), true, true);
-                b4Var.invalidate();
+                a4 a4Var = ((gb) j7Var.a).a.T0;
+                a4Var.a.t(LocaleController.getString(R.string.StoryHintPinchToZoom), true, true);
+                a4Var.invalidate();
                 j7Var.invalidate();
                 return true;
             }

@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
+import ae.g0;
+import ae.x;
 import android.content.Context;
-import androidx.car.app.j;
-import hd.n;
-import hd.u;
+import id.n;
+import id.u;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
 import kotlin.jvm.internal.i;
-import v7.s7;
-import w7.g;
-import wd.c;
-import zd.e0;
+import v7.z7;
+import w7.h;
+import xd.c;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -68,7 +68,7 @@ public final class zzgz implements zzgs {
                 if (iterator.hasNext()) {
                     u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = g.a(cVar, cVar, uVar);
+                    cVar.c = h.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
                     it = n.a;
@@ -114,7 +114,7 @@ public final class zzgz implements zzgs {
             } else if (i10 == 1) {
                 zzi.zzr(zzk.zzg());
             } else if (i10 != 2) {
-                throw new j();
+                throw new x();
             }
             arrayList.add(zzgpVar);
         }
@@ -124,7 +124,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i11 = zzby.zza;
-            if (!((zzha) s7.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) z7.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -144,7 +144,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i10 = zzby.zza;
-            e0.q(((zzcr) s7.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
+            g0.q(((zzcr) z7.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

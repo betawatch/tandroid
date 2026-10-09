@@ -8,10 +8,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.ad;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class o0 implements Utilities.Callback2 {
                     u0.d(n2Var, -j3, 1);
                     break;
                 } else if (!TextUtils.equals("COMMUNITY_REQUEST_CREATED", tL_error.text)) {
-                    yc.a0(n2Var).d0(tL_error, false);
+                    ad.a0(n2Var).f0(tL_error, false);
                     break;
                 } else {
                     u0.d(n2Var, -j3, 2);
@@ -51,12 +51,12 @@ public final /* synthetic */ class o0 implements Utilities.Callback2 {
                 Long l4 = (Long) obj2;
                 Pattern pattern = LaunchActivity.B1;
                 if ("paid".equals((String) obj) && l4.longValue() != 0) {
-                    AndroidUtilities.runOnUIThread(new a3.h0(launchActivity, l4, this.b, 25));
+                    AndroidUtilities.runOnUIThread(new a3.h0(launchActivity, l4, this.b, 26));
                     break;
                 }
                 break;
             default:
-                xh.m.Q((xh.m) obj3, j3, (Boolean) obj, (String) obj2);
+                xh.o.T((xh.o) obj3, j3, (Boolean) obj, (String) obj2);
                 break;
         }
     }

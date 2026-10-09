@@ -5,32 +5,32 @@ import android.view.View;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i7 extends g61 {
+public final class i7 extends o61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new i7());
+        o61.setup(new i7());
     }
 
-    public static h61 a(MediaController.AudioEntry audioEntry, Utilities.CallbackReturn callbackReturn) {
-        h61 K = h61.K(i7.class);
-        K.G = audioEntry;
-        K.H = callbackReturn;
-        return K;
+    public static p61 a(MediaController.AudioEntry audioEntry, Utilities.CallbackReturn callbackReturn) {
+        p61 J = p61.J(i7.class);
+        J.G = audioEntry;
+        J.H = callbackReturn;
+        return J;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
         j7 j7Var = (j7) view;
-        Object obj = h61Var.G;
+        Object obj = p61Var.G;
         if (obj instanceof MessageObject) {
             j7Var.f((MessageObject) obj, z10);
         } else if (obj instanceof MediaController.AudioEntry) {
@@ -38,27 +38,27 @@ public final class i7 extends g61 {
             j7Var.setTag(audioEntry);
             j7Var.f(audioEntry.messageObject, z10);
         }
-        Object obj2 = h61Var.H;
+        Object obj2 = p61Var.H;
         if (obj2 instanceof Utilities.CallbackReturn) {
             j7Var.setNeedPlayMessageListener((Utilities.CallbackReturn) obj2);
         }
-        j7Var.e(h61Var.e, false);
+        j7Var.e(p61Var.e, false);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final boolean contentsEquals(h61 h61Var, h61 h61Var2) {
-        return h61Var.d == h61Var2.d && h61Var.G == h61Var2.G;
+    @Override // org.telegram.ui.Components.o61
+    public final boolean contentsEquals(p61 p61Var, p61 p61Var2) {
+        return p61Var.d == p61Var2.d && p61Var.G == p61Var2.G;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        j7 j7Var = new j7(context, 0, d6Var);
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        j7 j7Var = new j7(context, 0, e6Var);
         j7Var.setCheckForButtonPress(true);
         return j7Var;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(h61 h61Var, h61 h61Var2) {
-        return h61Var.d == h61Var2.d && h61Var.G == h61Var2.G;
+    @Override // org.telegram.ui.Components.o61
+    public final boolean equals(p61 p61Var, p61 p61Var2) {
+        return p61Var.d == p61Var2.d && p61Var.G == p61Var2.G;
     }
 }

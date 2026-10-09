@@ -2,89 +2,48 @@ package ai;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class q7 extends FrameLayout implements r0.m {
-    public final b2.q0 a;
-    public final /* synthetic */ s7 b;
+public final class q7 extends z4.a {
+    public final /* synthetic */ kc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ t7 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q7(s7 s7Var, Context context) {
-        super(context);
-        this.b = s7Var;
-        this.a = new b2.q0();
+    public q7(t7 t7Var, kc kcVar, Context context) {
+        this.e = t7Var;
+        this.c = kcVar;
+        this.d = context;
     }
 
-    @Override // r0.l
-    public final void m(int i10, View view) {
-        this.a.a = 0;
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+        this.e.G.remove(obj);
     }
 
-    @Override // r0.m
-    public final void n(View view, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        s7 s7Var = this.b;
-        jc jcVar = s7Var.r;
-        if (s7Var.x <= 0 && i13 != 0 && i11 == 0) {
-            float f7 = jcVar.e0;
-            float f10 = i13 + f7;
-            if (f10 <= f7) {
-                f7 = f10;
-            }
-            s7Var.setOffset(f7);
-            jcVar.e0 = f7;
-            e6 currentPeerView = jcVar.n0.getCurrentPeerView();
-            if (currentPeerView != null) {
-                currentPeerView.invalidate();
-            }
-            yb ybVar = jcVar.v;
-            if (ybVar != null) {
-                ybVar.invalidate();
-            }
-        }
+    @Override // z4.a
+    public final int b() {
+        return this.e.F.size();
     }
 
-    @Override // r0.l
-    public final boolean p(View view, View view2, int i10, int i11) {
-        return this.b.x <= 0 && i10 == 2;
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        t7 t7Var = this.e;
+        p7 p7Var = new p7(this, this.c, this.d, t7Var.H, new y1(this, 2));
+        p7Var.setTag(Integer.valueOf(i10));
+        p7Var.setShadowDrawable(t7Var.s);
+        p7Var.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
+        p7Var.g(t7Var.y, (s7) t7Var.F.get(i10));
+        p7Var.setListBottomPadding(t7Var.d);
+        gVar.addView(p7Var);
+        t7Var.G.add(p7Var);
+        return p7Var;
     }
 
-    @Override // r0.l
-    public final void s(View view, View view2, int i10, int i11) {
-        this.a.a = i10;
-    }
-
-    @Override // r0.l
-    public final void t(View view, int i10, int i11, int[] iArr, int i12) {
-        s7 s7Var = this.b;
-        jc jcVar = s7Var.r;
-        if (s7Var.x > 0) {
-            return;
-        }
-        float f7 = jcVar.e0;
-        float f10 = s7Var.c;
-        if (f7 >= f10 || i11 <= 0) {
-            return;
-        }
-        float f11 = f7 + i11;
-        iArr[1] = i11;
-        if (f11 <= f10) {
-            f10 = f11;
-        }
-        s7Var.setOffset(f10);
-        jcVar.e0 = f10;
-        e6 currentPeerView = jcVar.n0.getCurrentPeerView();
-        if (currentPeerView != null) {
-            currentPeerView.invalidate();
-        }
-        yb ybVar = jcVar.v;
-        if (ybVar != null) {
-            ybVar.invalidate();
-        }
-    }
-
-    @Override // r0.l
-    public final void o(View view, int i10, int i11, int i12, int i13, int i14) {
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

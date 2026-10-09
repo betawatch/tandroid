@@ -13,12 +13,11 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import sa.e;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -28,67 +27,67 @@ public final class a implements m {
     public final v c = new v();
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x007a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0079, code lost:
     
         r1 = 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0096, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0095, code lost:
     
         if (r22.equals("{\\an9}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x00a6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x00a5, code lost:
     
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x009d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x009c, code lost:
     
         if (r22.equals("{\\an8}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a3, code lost:
     
         if (r22.equals("{\\an7}") != false) goto L42;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00bb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00ba, code lost:
     
         if (r22.equals("{\\an3}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x00cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00ca, code lost:
     
         r3 = 2;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x00c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00c1, code lost:
     
         if (r22.equals("{\\an2}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c8, code lost:
     
         if (r22.equals("{\\an1}") != false) goto L54;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x005e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x005d, code lost:
     
         if (r22.equals("{\\an7}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0087, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0086, code lost:
     
         r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0065, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0064, code lost:
     
         if (r22.equals("{\\an6}") != false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0071, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0070, code lost:
     
         if (r22.equals("{\\an4}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0078, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0077, code lost:
     
         if (r22.equals("{\\an3}") != false) goto L25;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x0085, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0084, code lost:
     
         if (r22.equals("{\\an1}") != false) goto L29;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0052, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0051, code lost:
     
         if (r22.equals("{\\an9}") != false) goto L25;
      */
@@ -188,8 +187,7 @@ public final class a implements m {
                 f10 = 0.92f;
             }
         }
-        float f11 = f7;
-        return new b(spanned, null, null, null, f10, 0, i11, f11, i10, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
+        return new b(spanned, null, null, null, f10, 0, i11, f7, i10, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
     }
 
     public static long b(Matcher matcher, int i10) {
@@ -209,7 +207,12 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final int O() {
+        return 1;
+    }
+
+    @Override // z3.m
+    public final void P(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String k10;
         String str;
         a aVar = this;
@@ -245,11 +248,10 @@ public final class a implements m {
                     long b11 = b(matcher, 6);
                     StringBuilder sb2 = aVar.a;
                     sb2.setLength(0);
+                    long j11 = j10;
                     ArrayList arrayList2 = aVar.b;
                     arrayList2.clear();
-                    String k12 = vVar.k(F);
-                    while (!TextUtils.isEmpty(k12)) {
-                        long j11 = j10;
+                    for (String k12 = vVar.k(F); !TextUtils.isEmpty(k12); k12 = vVar.k(F)) {
                         if (sb2.length() > 0) {
                             sb2.append("<br>");
                         }
@@ -267,11 +269,8 @@ public final class a implements m {
                             j3 = j3;
                         }
                         sb2.append(sb3.toString());
-                        k12 = vVar.k(F);
-                        j10 = j11;
                     }
                     long j12 = j3;
-                    long j13 = j10;
                     Spanned fromHtml = Html.fromHtml(sb2.toString());
                     int i13 = 0;
                     while (true) {
@@ -286,13 +285,13 @@ public final class a implements m {
                             i13++;
                         }
                     }
-                    if (j12 == j13 || b11 >= j12) {
+                    if (j12 == j11 || b11 >= j12) {
                         hVar.accept(new z3.a(b10, b11 - b10, i0.z(a(fromHtml, str))));
                     } else if (arrayList != null) {
                         arrayList.add(new z3.a(b10, b11 - b10, i0.z(a(fromHtml, str))));
                     }
                     aVar = this;
-                    j10 = j13;
+                    j10 = j11;
                     j3 = j12;
                 } else {
                     e2.a.n("SubripParser", "Skipping invalid timing: ".concat(k10));
@@ -312,13 +311,8 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final /* synthetic */ d h(int i10, int i11, byte[] bArr) {
-        return e.a(this, bArr, i11);
-    }
-
-    @Override // z3.m
-    public final int y() {
-        return 1;
+    public final /* synthetic */ d s(int i10, int i11, byte[] bArr) {
+        return sc.v.a(this, bArr, i11);
     }
 
     @Override // z3.m

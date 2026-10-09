@@ -1,50 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qw implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+public final class qw extends org.telegram.ui.Components.a10 {
+    public final /* synthetic */ ty B0;
 
-    public /* synthetic */ qw(uy uyVar, org.telegram.ui.ActionBar.b2 b2Var, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = uyVar;
-        this.b = b2Var;
-        this.e = user;
-        this.f = chat;
-        this.c = j3;
-        this.g = tL_messages_checkHistoryImportPeer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qw(ty tyVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.B0 = tyVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ew((uy) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new ew((yh.y3) this.d, (nf.e) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
-                break;
-        }
-    }
-
-    public /* synthetic */ qw(yh.y3 y3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, CharSequence charSequence) {
-        this.d = y3Var;
-        this.e = eVar;
-        this.b = b2Var;
-        this.f = tL_starGiftUnique;
-        this.c = j3;
-        this.g = charSequence;
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        this.B0.m3 = false;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

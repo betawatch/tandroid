@@ -4,34 +4,22 @@ import e9.a1;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
     public final e2.v b = new e2.v(2786);
     public boolean c;
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0036, code lost:
-    
-        r5.f = 0;
-        r4 = r4 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x003e, code lost:
-    
-        if ((r4 - r3) < 8192) goto L12;
-     */
     @Override // c3.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(c3.p pVar) {
+    public final boolean a(c3.p pVar) {
         c3.l lVar;
         int f7;
         e2.v vVar = new e2.v(10);
         int i10 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.f(vVar.a, 0, 10, false);
+            lVar.h(vVar.a, 0, 10, false);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -39,21 +27,26 @@ public final class a implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            lVar.s(w10, false);
+            lVar.v(w10, false);
         }
         lVar.f = 0;
-        lVar.s(i10, false);
-        int i11 = i10;
-        loop1: while (true) {
-            int i12 = 0;
-            while (true) {
-                lVar.f(vVar.a, 0, 6, false);
-                vVar.J(0);
-                if (vVar.D() != 2935) {
+        lVar.v(i10, false);
+        int i11 = 0;
+        int i12 = i10;
+        while (true) {
+            lVar.h(vVar.a, 0, 6, false);
+            vVar.J(0);
+            if (vVar.D() != 2935) {
+                lVar.f = 0;
+                i12++;
+                if (i12 - i10 >= 8192) {
                     break;
                 }
-                i12++;
-                if (i12 >= 4) {
+                lVar.v(i12, false);
+                i11 = 0;
+            } else {
+                i11++;
+                if (i11 >= 4) {
                     return true;
                 }
                 byte[] bArr = vVar.a;
@@ -66,11 +59,10 @@ public final class a implements c3.o {
                     f7 = c3.b.f((b10 & 192) >> 6, b10 & 63);
                 }
                 if (f7 == -1) {
-                    break loop1;
+                    break;
                 }
-                lVar.s(f7 - 6, false);
+                lVar.v(f7 - 6, false);
             }
-            lVar.s(i11, false);
         }
         return false;
     }
@@ -78,8 +70,8 @@ public final class a implements c3.o {
     @Override // c3.o
     public final void g(c3.q qVar) {
         this.a.d(qVar, new f0(0, 1));
-        qVar.e1();
-        qVar.X1(new c3.t(-9223372036854775807L));
+        qVar.k1();
+        qVar.d2(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o

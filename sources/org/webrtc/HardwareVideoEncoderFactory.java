@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
@@ -24,7 +24,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private final boolean enableIntelVp8Encoder;
     private final EglBase14.Context sharedContext;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -85,8 +85,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
         if (videoCodecMimeType != VideoCodecMimeType.VP8 || !str.startsWith("OMX.qcom.")) {
             return 0;
         }
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23 && i10 == 23) {
+        if (Build.VERSION.SDK_INT == 23) {
             return QCOM_VP8_KEY_FRAME_INTERVAL_ANDROID_M_MS;
         }
         return 15000;
@@ -123,13 +122,10 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
 
     private boolean isHardwareSupportedInCurrentSdkVp8(MediaCodecInfo mediaCodecInfo) {
         String name = mediaCodecInfo.getName();
-        if (name.startsWith("OMX.qcom.")) {
+        if (name.startsWith("OMX.qcom.") || name.startsWith("OMX.Exynos.")) {
             return true;
         }
-        if (!name.startsWith("OMX.Exynos.") || Build.VERSION.SDK_INT < 23) {
-            return name.startsWith("OMX.Intel.") && this.enableIntelVp8Encoder;
-        }
-        return true;
+        return name.startsWith("OMX.Intel.") && this.enableIntelVp8Encoder;
     }
 
     private boolean isHardwareSupportedInCurrentSdkVp9(MediaCodecInfo mediaCodecInfo) {

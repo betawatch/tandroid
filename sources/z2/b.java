@@ -10,7 +10,7 @@ import java.net.SocketTimeoutException;
 import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -19,8 +19,8 @@ public abstract class b {
     public static long d;
 
     public static long a() {
+        byte b10;
         SocketTimeoutException socketTimeoutException;
-        char c10;
         byte[] bArr;
         DatagramSocket datagramSocket = new DatagramSocket();
         try {
@@ -30,27 +30,27 @@ public abstract class b {
             c();
             InetAddress[] allByName = InetAddress.getAllByName("time.android.com");
             int length = allByName.length;
-            byte b10 = 0;
+            byte b11 = 0;
             SocketTimeoutException socketTimeoutException2 = null;
             int i10 = 0;
             int i11 = 0;
             while (i10 < length) {
                 byte[] bArr2 = new byte[48];
                 DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i10], 123);
-                bArr2[b10] = 27;
+                bArr2[b11] = 27;
                 long currentTimeMillis = System.currentTimeMillis();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (currentTimeMillis == 0) {
-                    Arrays.fill(bArr2, 40, 48, b10);
+                    Arrays.fill(bArr2, 40, 48, b11);
+                    b10 = b11;
                     socketTimeoutException = socketTimeoutException2;
                     bArr = bArr2;
-                    c10 = 0;
                 } else {
                     long j3 = currentTimeMillis / 1000;
                     Long.signum(j3);
                     long j10 = currentTimeMillis - (j3 * 1000);
+                    b10 = b11;
                     socketTimeoutException = socketTimeoutException2;
-                    c10 = 0;
                     long j11 = j3 + 2208988800L;
                     bArr = bArr2;
                     bArr[40] = (byte) (j11 >> 24);
@@ -69,12 +69,12 @@ public abstract class b {
                     datagramSocket.receive(new DatagramPacket(bArr3, 48));
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     long j13 = (elapsedRealtime2 - elapsedRealtime) + currentTimeMillis;
-                    byte b11 = bArr3[c10];
+                    byte b12 = bArr3[b10];
                     int i12 = bArr3[1] & 255;
                     long e7 = e(24, bArr3);
                     long e10 = e(32, bArr3);
                     long e11 = e(40, bArr3);
-                    b((byte) ((b11 >> 6) & 3), (byte) (b11 & 7), i12, e11);
+                    b((byte) ((b12 >> 6) & 3), (byte) (b12 & 7), i12, e11);
                     long j14 = (j13 + (((e11 - j13) + (e10 - e7)) / 2)) - elapsedRealtime2;
                     datagramSocket.close();
                     return j14;
@@ -92,7 +92,7 @@ public abstract class b {
                     }
                     i10++;
                     i11 = i13;
-                    b10 = 0;
+                    b11 = b10;
                 }
             }
             socketTimeoutException2.getClass();

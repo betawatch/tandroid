@@ -1,15 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wk extends org.telegram.ui.Components.l51 {
-    public final /* synthetic */ yn s;
+public final class wk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wk(yn ynVar, Activity activity, yn ynVar2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, d6Var, ynVar2);
-        this.s = ynVar;
+    public /* synthetic */ wk(zn znVar, int i10) {
+        this.a = i10;
+        this.b = znVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.fh fhVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                zn znVar = this.b;
+                AnimatorSet animatorSet = znVar.V9;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    znVar.V9.start();
+                    break;
+                }
+                break;
+            default:
+                zn znVar2 = this.b;
+                if (znVar2.O2 == this && (fhVar = znVar2.M0) != null && (frameLayout = znVar2.N2) != null) {
+                    fhVar.i(frameLayout, false, true);
+                    break;
+                }
+                break;
+        }
     }
 }

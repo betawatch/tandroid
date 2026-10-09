@@ -3,11 +3,11 @@ package androidx.mediarouter.app;
 import android.app.Dialog;
 import android.content.res.Configuration;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class v extends androidx.fragment.app.p {
     public boolean A0 = false;
-    public g.u B0;
+    public g.t B0;
     public p4.r C0;
 
     public v() {
@@ -21,11 +21,11 @@ public class v extends androidx.fragment.app.p {
     @Override // androidx.fragment.app.p, androidx.fragment.app.s
     public final void I() {
         super.I();
-        g.u uVar = this.B0;
-        if (uVar == null || this.A0) {
+        g.t tVar = this.B0;
+        if (tVar == null || this.A0) {
             return;
         }
-        ((u) uVar).i(false);
+        ((u) tVar).i(false);
     }
 
     @Override // androidx.fragment.app.p
@@ -43,12 +43,12 @@ public class v extends androidx.fragment.app.p {
     @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
         this.U = true;
-        g.u uVar = this.B0;
-        if (uVar != null) {
+        g.t tVar = this.B0;
+        if (tVar != null) {
             if (this.A0) {
-                ((o0) uVar).j();
+                ((o0) tVar).j();
             } else {
-                ((u) uVar).s();
+                ((u) tVar).s();
             }
         }
     }

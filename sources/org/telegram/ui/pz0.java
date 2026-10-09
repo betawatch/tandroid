@@ -1,19 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.Context;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class pz0 extends r61 {
-    public final /* synthetic */ ProfileActivity e;
+public final class pz0 extends org.telegram.ui.Components.ti0 {
+    public final /* synthetic */ ProfileActivity s1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pz0(ProfileActivity profileActivity, oz0 oz0Var) {
-        super(oz0Var);
-        this.e = profileActivity;
+    public pz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, ez0 ez0Var, oz0 oz0Var, org.telegram.ui.Components.oi0 oi0Var, org.telegram.ui.Components.ki0 ki0Var) {
+        super(context, j3, kVar, ez0Var, oz0Var, oi0Var, ki0Var);
+        this.s1 = profileActivity;
     }
 
-    @Override // org.telegram.ui.r61, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.B5 = null;
+    @Override // org.telegram.ui.Components.ti0
+    public final void setCustomAvatarProgress(float f7) {
+        ProfileActivity profileActivity = this.s1;
+        profileActivity.n5 = f7;
+        profileActivity.B3();
     }
 }

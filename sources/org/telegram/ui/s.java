@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class s implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 i4 i4Var = this.b;
-                ai.w5 w5Var = i4Var.q0;
+                ai.x5 x5Var = i4Var.q0;
                 float f7 = -((Integer) obj).intValue();
                 i4Var.p0 = f7;
-                w5Var.setTranslationY(((1.0f - i4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
+                x5Var.setTranslationY(((1.0f - i4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
                 break;
             case 1:
                 String str = (String) obj;
@@ -42,14 +42,14 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 i4 i4Var3 = this.b;
                 if (i4Var3.L != null && str2 != null) {
                     i4Var3.h0.k(false);
-                    if (!nf.f.f(Uri.parse(str2), false, null)) {
-                        if (!nf.f.l(i4Var3.L, str2, false)) {
+                    if (!of.f.f(Uri.parse(str2), false, null)) {
+                        if (!of.f.l(i4Var3.L, str2, false)) {
                             m3 m3Var = i4Var3.u0[0];
                             if (m3Var != null && m3Var.getWebView() != null) {
                                 i4Var3.u0[0].getWebView().loadUrl(str2);
                                 break;
                             } else {
-                                nf.f.n(str2);
+                                of.f.n(str2);
                                 break;
                             }
                         }
@@ -58,22 +58,22 @@ public final /* synthetic */ class s implements Utilities.Callback {
                         if (v3Var != null) {
                             v3Var.dismiss(true);
                         }
-                        nf.f.k(i4Var3.L, str2, false, false, null);
+                        of.f.k(i4Var3.L, str2, false, false, null);
                         break;
                     }
                 }
                 break;
             default:
-                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
                 i4 i4Var4 = this.b;
-                if (i4Var4.L != null && d1Var != null) {
+                if (i4Var4.L != null && c1Var != null) {
                     i4Var4.h0.k(false);
                     m3 m3Var2 = i4Var4.u0[0];
                     if (m3Var2 != null && m3Var2.getWebView() != null) {
-                        i4Var4.u0[0].getWebView().e(d1Var.c, d1Var.d);
+                        i4Var4.u0[0].getWebView().e(c1Var.c, c1Var.d);
                         break;
                     } else {
-                        nf.f.n(d1Var.c);
+                        of.f.n(c1Var.c);
                         break;
                     }
                 }

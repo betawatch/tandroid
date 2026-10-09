@@ -1,85 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mi implements org.telegram.ui.vq0 {
-    public boolean a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ xi d;
+public final class mi extends t6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ yi c;
 
-    public mi(xi xiVar, HashMap hashMap, ArrayList arrayList) {
-        this.d = xiVar;
-        this.b = hashMap;
-        this.c = arrayList;
-    }
-
-    @Override // org.telegram.ui.vq0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.vq0
-    public final void h(int i10, boolean z10, boolean z11) {
-        if (z10) {
-            return;
-        }
-        HashMap hashMap = this.b;
-        if (hashMap.isEmpty() || this.a) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.c;
-            if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.yn) this.d.f0).d8(i10, arrayList, z11);
-                return;
-            }
-            Object obj = hashMap.get(arrayList2.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList.add(sendingMediaInfo);
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-            String str = searchImage.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.searchImage = searchImage;
-            }
-            sendingMediaInfo.thumbPath = searchImage.thumbPath;
-            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-            CharSequence charSequence = searchImage.caption;
-            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-            sendingMediaInfo.entities = searchImage.entities;
-            sendingMediaInfo.masks = searchImage.stickers;
-            sendingMediaInfo.ttl = searchImage.ttl;
-            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-            if (botInlineResult != null && searchImage.type == 1) {
-                sendingMediaInfo.inlineResult = botInlineResult;
-                sendingMediaInfo.params = searchImage.params;
-            }
-            searchImage.date = (int) (System.currentTimeMillis() / 1000);
-            i11++;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mi(yi yiVar, int i10) {
+        super("translation", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = yiVar;
+                super("openProgress", 0);
+                break;
+            default:
+                this.c = yiVar;
+                break;
         }
     }
 
-    @Override // org.telegram.ui.vq0
-    public final void a() {
+    @Override // org.telegram.ui.Components.t6
+    public final void c(Object obj, float f7) {
+        ViewGroup viewGroup;
+        float f10;
+        switch (this.b) {
+            case 0:
+                yi yiVar = this.c;
+                yiVar.d0 = f7;
+                qi qiVar = yiVar.C0;
+                if (qiVar != null) {
+                    if ((qiVar instanceof hn) || (yiVar.B0 instanceof hn)) {
+                        int max = Math.max(qiVar.getWidth(), yiVar.B0.getWidth());
+                        if (yiVar.C0 instanceof hn) {
+                            yiVar.B0.setTranslationX((-max) * f7);
+                            yiVar.C0.setTranslationX((1.0f - f7) * max);
+                        } else {
+                            yiVar.B0.setTranslationX(max * f7);
+                            yiVar.C0.setTranslationX((1.0f - f7) * (-max));
+                        }
+                    } else {
+                        qiVar.setAlpha(f7);
+                        yiVar.C0.v(f7);
+                        qi qiVar2 = yiVar.C0;
+                        lo loVar = yiVar.m0;
+                        if (qiVar2 == loVar || yiVar.B0 == loVar) {
+                            yiVar.e2(qiVar2 == loVar ? 1 : 0);
+                        }
+                        qi qiVar3 = yiVar.C0;
+                        lo loVar2 = yiVar.n0;
+                        if (qiVar3 == loVar2 || yiVar.B0 == loVar2) {
+                            yiVar.e2(qiVar3 == loVar2 ? 1 : 0);
+                        }
+                        yiVar.C0.setTranslationY(AndroidUtilities.dp(78.0f) * f7);
+                        yiVar.B0.v(1.0f - Math.min(1.0f, f7 / 0.7f));
+                        yiVar.B0.l(yiVar.o2);
+                    }
+                    if (yiVar.w1 != null) {
+                        yiVar.e2(1);
+                    }
+                    yiVar.b1();
+                    viewGroup = ((org.telegram.ui.ActionBar.f3) yiVar).containerView;
+                    viewGroup.invalidate();
+                    break;
+                }
+                break;
+            default:
+                bi biVar = this.c.B1;
+                int childCount = biVar.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    float f11 = (3 - i10) * 32.0f;
+                    View childAt = biVar.getChildAt(i10);
+                    if (f7 > f11) {
+                        float f12 = f7 - f11;
+                        if (f12 <= 200.0f) {
+                            float f13 = f12 / 200.0f;
+                            f10 = hs.g.getInterpolation(f13) * 1.1f;
+                            childAt.setAlpha(hs.j.getInterpolation(f13));
+                        } else {
+                            childAt.setAlpha(1.0f);
+                            float f14 = f12 - 200.0f;
+                            f10 = f14 <= 100.0f ? 1.1f - (hs.i.getInterpolation(f14 / 100.0f) * 0.1f) : 1.0f;
+                        }
+                    } else {
+                        f10 = 0.0f;
+                    }
+                    if (childAt instanceof ti) {
+                        ((ti) childAt).a.setAttachScale(f10);
+                    }
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.vq0
-    public final void b(Editable editable) {
-    }
-
-    @Override // org.telegram.ui.vq0
-    public final /* synthetic */ void g() {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.d0);
+            default:
+                return Float.valueOf(0.0f);
+        }
     }
 }

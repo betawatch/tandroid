@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ScrollView;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e extends r0.b {
     @Override // r0.b
@@ -67,14 +67,14 @@ public final class e extends r0.b {
                 if (i10 == 8192 || i10 == 16908344) {
                     int max = Math.max(nestedScrollView.getScrollY() - ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), 0);
                     if (max != nestedScrollView.getScrollY()) {
-                        nestedScrollView.z(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
+                        nestedScrollView.y(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);
                         return true;
                     }
                 }
             }
             int min = Math.min(nestedScrollView.getScrollY() + ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), nestedScrollView.getScrollRange());
             if (min != nestedScrollView.getScrollY()) {
-                nestedScrollView.z(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
+                nestedScrollView.y(0 - nestedScrollView.getScrollX(), min - nestedScrollView.getScrollY(), true);
                 return true;
             }
         }

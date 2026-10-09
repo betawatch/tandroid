@@ -5,10 +5,10 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Logger;
-import l5.p;
+import l5.o;
 import n6.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i implements Executor {
     public static final Logger f = Logger.getLogger(i.class.getName());
@@ -30,8 +30,8 @@ public final class i implements Executor {
             int i10 = this.c;
             if (i10 != 4 && i10 != 3) {
                 long j3 = this.d;
-                p pVar = new p(1, runnable);
-                this.b.add(pVar);
+                o oVar = new o(1, runnable);
+                this.b.add(oVar);
                 this.c = 2;
                 try {
                     this.a.execute(this.e);
@@ -52,7 +52,7 @@ public final class i implements Executor {
                         try {
                             int i11 = this.c;
                             boolean z10 = true;
-                            if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(pVar)) {
+                            if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(oVar)) {
                                 z10 = false;
                             }
                             if (!(e7 instanceof RejectedExecutionException) || z10) {

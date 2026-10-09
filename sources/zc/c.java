@@ -1,28 +1,36 @@
 package zc;
 
-import bf.p;
-import com.google.android.gms.internal.vision.e2;
-import ed.h;
-import java.util.regex.Pattern;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c extends h {
-    public static final Pattern e = Pattern.compile("(\\${2})([\\s\\S]+?)\\1");
+public final class c implements Iterable {
+    public final HashMap a = new HashMap();
+    public final ArrayList b = new ArrayList();
 
-    @Override // ed.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 == null) {
-            return null;
+    public c(HashMap hashMap) {
+        String str = (String) hashMap.get("cookie");
+        if (str != null) {
+            for (String str2 : str.split(";")) {
+                String[] split = str2.trim().split("=");
+                if (split.length == 2) {
+                    this.a.put(split[0], split[1]);
+                }
+            }
         }
-        d dVar = new d();
-        dVar.g = e2.i(2, 2, a2);
-        return dVar;
     }
 
-    @Override // ed.h
-    public final char d() {
-        return '$';
+    public final void i() {
+        Iterator it = this.b.iterator();
+        if (it.hasNext()) {
+            throw a1.g.k(it);
+        }
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.keySet().iterator();
     }
 }

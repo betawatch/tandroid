@@ -2,7 +2,7 @@ package z7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class ve {
     public final Boolean a;
@@ -11,12 +11,12 @@ public final class ve {
     public final Boolean d;
     public final Boolean e;
 
-    public /* synthetic */ ve(cf.c cVar) {
-        this.a = (Boolean) cVar.a;
-        this.b = (Boolean) cVar.b;
-        this.c = (Boolean) cVar.c;
-        this.d = (Boolean) cVar.d;
-        this.e = (Boolean) cVar.e;
+    public /* synthetic */ ve(ci.u5 u5Var) {
+        this.a = (Boolean) u5Var.a;
+        this.b = (Boolean) u5Var.b;
+        this.c = (Boolean) u5Var.c;
+        this.d = (Boolean) u5Var.d;
+        this.e = (Boolean) u5Var.e;
     }
 
     public final boolean equals(Object obj) {

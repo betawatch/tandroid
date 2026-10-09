@@ -138,70 +138,86 @@ public final class q extends l {
         return lVar;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00a9 A[LOOP:0: B:2:0x0007->B:10:0x00a9, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0079 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0072  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final r e(int i10, Object obj, Object obj2) {
         int i11;
+        int i12;
         r b10;
         r b11;
-        r rVar = this.e;
+        r rVar;
+        r rVar2 = this.e;
         Class<?> cls = null;
         boolean z10 = false;
-        while (rVar != null) {
-            int i12 = rVar.a;
-            if (i12 > i10) {
-                i11 = -1;
-            } else if (i12 < i10) {
-                i11 = 1;
+        while (rVar2 != null) {
+            int i13 = rVar2.a;
+            if (i13 > i10) {
+                i12 = -1;
             } else {
-                Object obj3 = rVar.b;
-                if (obj3 == obj || (obj3 != null && obj.equals(obj3))) {
-                    return rVar;
-                }
-                if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
-                    int i13 = ConcurrentHashMap.g;
-                    int compareTo = (obj3 == null || obj3.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj3);
-                    if (compareTo != 0) {
-                        i11 = compareTo;
-                    }
-                }
-                if (!z10) {
-                    r rVar2 = rVar.f;
-                    if (rVar2 != null && (b11 = rVar2.b(i10, obj, cls)) != null) {
-                        return b11;
-                    }
-                    r rVar3 = rVar.g;
-                    if (rVar3 != null && (b10 = rVar3.b(i10, obj, cls)) != null) {
-                        return b10;
-                    }
-                    z10 = true;
-                }
-                i11 = i(obj, obj3);
-            }
-            r rVar4 = i11 <= 0 ? rVar.f : rVar.g;
-            if (rVar4 == null) {
-                r rVar5 = this.f;
-                r rVar6 = new r(i10, obj, obj2, rVar5, rVar);
-                this.f = rVar6;
-                if (rVar5 != null) {
-                    rVar5.h = rVar6;
-                }
-                if (i11 <= 0) {
-                    rVar.f = rVar6;
+                if (i13 < i10) {
+                    i11 = 1;
                 } else {
-                    rVar.g = rVar6;
+                    Object obj3 = rVar2.b;
+                    if (obj3 == obj || (obj3 != null && obj.equals(obj3))) {
+                        return rVar2;
+                    }
+                    if (cls != null || (cls = ConcurrentHashMap.c(obj)) != null) {
+                        int i14 = ConcurrentHashMap.g;
+                        int compareTo = (obj3 == null || obj3.getClass() != cls) ? 0 : ((Comparable) obj).compareTo(obj3);
+                        if (compareTo != 0) {
+                            i11 = compareTo;
+                        }
+                    }
+                    if (!z10) {
+                        r rVar3 = rVar2.f;
+                        if (rVar3 != null && (b11 = rVar3.b(i10, obj, cls)) != null) {
+                            return b11;
+                        }
+                        r rVar4 = rVar2.g;
+                        if (rVar4 != null && (b10 = rVar4.b(i10, obj, cls)) != null) {
+                            return b10;
+                        }
+                        z10 = true;
+                    }
+                    i12 = i(obj, obj3);
                 }
-                if (!rVar.i) {
-                    rVar6.i = true;
-                    return null;
+                rVar = i11 > 0 ? rVar2.f : rVar2.g;
+                if (rVar != null) {
+                    r rVar5 = this.f;
+                    r rVar6 = new r(i10, obj, obj2, rVar5, rVar2);
+                    this.f = rVar6;
+                    if (rVar5 != null) {
+                        rVar5.h = rVar6;
+                    }
+                    if (i11 <= 0) {
+                        rVar2.f = rVar6;
+                    } else {
+                        rVar2.g = rVar6;
+                    }
+                    if (!rVar2.i) {
+                        rVar6.i = true;
+                        return null;
+                    }
+                    d();
+                    try {
+                        this.e = c(this.e, rVar6);
+                        return null;
+                    } finally {
+                        this.lockState = 0;
+                    }
                 }
-                d();
-                try {
-                    this.e = c(this.e, rVar6);
-                    return null;
-                } finally {
-                    this.lockState = 0;
-                }
+                rVar2 = rVar;
             }
-            rVar = rVar4;
+            i11 = i12;
+            if (i11 > 0) {
+            }
+            if (rVar != null) {
+            }
         }
         r rVar7 = new r(i10, obj, obj2, null, null);
         this.e = rVar7;

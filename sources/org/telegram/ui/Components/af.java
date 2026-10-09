@@ -1,187 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class af extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class af extends xg {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ ChatActivityEnterView m0;
 
-    public /* synthetic */ af(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ af(ChatActivityEnterView chatActivityEnterView, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(i10, context, e6Var, true);
+        this.l0 = i11;
+        this.m0 = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 2:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (animator.equals(chatActivityEnterView.s2)) {
-                    chatActivityEnterView.s2 = null;
-                    break;
-                }
-                break;
-            case 3:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (animator.equals(chatActivityEnterView2.r2)) {
-                    chatActivityEnterView2.r2 = null;
-                    break;
-                }
-                break;
-            case 4:
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                if (animator.equals(chatActivityEnterView3.s2)) {
-                    chatActivityEnterView3.s2 = null;
-                    break;
-                }
-                break;
-            case 5:
-                ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.r2)) {
-                    chatActivityEnterView4.r2 = null;
-                    break;
-                }
-                break;
-            case 6:
-                ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.s2)) {
-                    chatActivityEnterView5.s2 = null;
-                    break;
-                }
-                break;
-            case 7:
-                ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.r2)) {
-                    chatActivityEnterView6.r2 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.xg
+    public boolean d() {
+        switch (this.l0) {
+            case 0:
+                return this.m0.c();
             default:
-                super.onAnimationCancel(animator);
-                break;
+                return super.d();
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.xg
+    public final boolean e() {
+        switch (this.l0) {
             case 0:
-                this.b.b0.setVisibility(8);
-                break;
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                me meVar = chatActivityEnterView.e1;
-                if (meVar != null) {
-                    meVar.setVisibility(8);
-                }
-                rf rfVar = chatActivityEnterView.E0;
-                if (rfVar != null) {
-                    rfVar.requestFocus();
-                }
-                chatActivityEnterView.x0();
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (animator.equals(chatActivityEnterView2.s2)) {
-                    chatActivityEnterView2.p1.setVisibility(8);
-                    chatActivityEnterView2.s2 = null;
-                    break;
-                }
-                break;
-            case 3:
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                if (animator.equals(chatActivityEnterView3.r2)) {
-                    chatActivityEnterView3.getSendButtonInternal().setVisibility(8);
-                    chatActivityEnterView3.P0.setVisibility(8);
-                    chatActivityEnterView3.Z0.setVisibility(8);
-                    df dfVar = chatActivityEnterView3.S0;
-                    if (dfVar != null) {
-                        dfVar.setVisibility(8);
-                    }
-                    chatActivityEnterView3.r2 = null;
-                    chatActivityEnterView3.v2 = 0;
-                    break;
-                }
-                break;
-            case 4:
-                ChatActivityEnterView chatActivityEnterView4 = this.b;
-                if (animator.equals(chatActivityEnterView4.s2)) {
-                    chatActivityEnterView4.s2 = null;
-                    break;
-                }
-                break;
-            case 5:
-                ChatActivityEnterView chatActivityEnterView5 = this.b;
-                if (animator.equals(chatActivityEnterView5.r2)) {
-                    chatActivityEnterView5.getSendButtonInternal().setVisibility(8);
-                    chatActivityEnterView5.P0.setVisibility(8);
-                    chatActivityEnterView5.setSlowModeButtonVisible(false);
-                    chatActivityEnterView5.Z0.setVisibility(8);
-                    chatActivityEnterView5.S0.setVisibility(0);
-                    chatActivityEnterView5.r2 = null;
-                    chatActivityEnterView5.v2 = 0;
-                    break;
-                }
-                break;
-            case 6:
-                ChatActivityEnterView chatActivityEnterView6 = this.b;
-                if (animator.equals(chatActivityEnterView6.s2)) {
-                    chatActivityEnterView6.s2 = null;
-                    break;
-                }
-                break;
-            case 7:
-                ChatActivityEnterView chatActivityEnterView7 = this.b;
-                if (animator.equals(chatActivityEnterView7.r2)) {
-                    chatActivityEnterView7.setSlowModeButtonVisible(false);
-                    chatActivityEnterView7.r2 = null;
-                    chatActivityEnterView7.v2 = 0;
-                    we weVar = chatActivityEnterView7.Z0;
-                    if (weVar != null) {
-                        weVar.setVisibility(0);
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                xe xeVar = this.b.b1;
-                if (xeVar != null) {
-                    xeVar.setScaleX(1.0f);
-                    xeVar.setScaleY(1.0f);
-                    break;
-                }
-                break;
-            case 9:
-                super.onAnimationEnd(animator);
-                xe xeVar2 = this.b.b1;
-                if (xeVar2 != null) {
-                    xeVar2.setAlpha(1.0f);
-                    break;
-                }
-                break;
-            case 10:
-                ChatActivityEnterView chatActivityEnterView8 = this.b;
-                chatActivityEnterView8.V0 = null;
-                pg pgVar = chatActivityEnterView8.Z2;
-                if (pgVar != null) {
-                    pgVar.y(0.0f);
-                }
-                chatActivityEnterView8.requestLayout();
-                chatActivityEnterView8.L3.unlock();
-                break;
-            case 11:
-                ChatActivityEnterView chatActivityEnterView9 = this.b;
-                chatActivityEnterView9.B3 = null;
-                chatActivityEnterView9.U0.setLayerType(0, null);
+                ChatActivityEnterView chatActivityEnterView = this.m0;
+                return !chatActivityEnterView.c() && chatActivityEnterView.G0 == Integer.MAX_VALUE;
+            default:
+                return !this.m0.q3;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.xg
+    public final boolean f() {
+        switch (this.l0) {
+            case 0:
+                pf pfVar = this.m0.L0;
+                return !(pfVar == null || pfVar.q0) || this.r > 0;
+            default:
+                return true;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.xg
+    public boolean j() {
+        switch (this.l0) {
+            case 0:
+                return this.m0.y4;
+            default:
+                return super.j();
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        switch (this.l0) {
+            case 0:
+                super.setAlpha(f7);
+                int i10 = ChatActivityEnterView.n5;
+                this.m0.x1();
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView10 = this.b;
-                chatActivityEnterView10.B3 = null;
-                chatActivityEnterView10.U0.setLayerType(0, null);
-                chatActivityEnterView10.L3.unlock();
+                super.setAlpha(f7);
                 break;
         }
     }

@@ -1,156 +1,183 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.util.Property;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import java.util.ArrayList;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class j20 extends ScrollView {
-    public final int a;
-    public final a0.i b;
-    public final ArrayList c;
-    public final i20 d;
-    public int e;
-    public g20 f;
-    public boolean h;
-    public int n;
+public final class j20 extends fk0 {
+    public boolean r;
+    public boolean s;
+    public final i20 v;
+    public final i20 w;
+    public final /* synthetic */ FragmentContextView x;
 
-    public j20(Context context, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Components.i20] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [org.telegram.ui.Components.i20] */
+    public j20(FragmentContextView fragmentContextView, Context context) {
         super(context);
-        this.b = new a0.i();
-        this.c = new ArrayList();
-        this.a = i10;
-        i20 i20Var = new i20(this, context);
-        this.d = i20Var;
-        setVerticalScrollBarEnabled(false);
-        addView(i20Var, w7.z5.c(-2.0f, -1));
+        this.x = fragmentContextView;
+        final int i10 = 0;
+        this.v = new Runnable(this) { // from class: org.telegram.ui.Components.i20
+            public final /* synthetic */ j20 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.x;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.E.P(fragmentContextView2.P ? 15 : 29)) {
+                                if (fragmentContextView2.P) {
+                                    fragmentContextView2.E.M(0);
+                                } else {
+                                    fragmentContextView2.E.M(14);
+                                }
+                            }
+                            fragmentContextView2.y.d();
+                            org.telegram.ui.ActionBar.i6.E0().c(true);
+                            fragmentContextView2.a.f(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        j20 j20Var = this.b;
+                        FragmentContextView fragmentContextView3 = j20Var.x;
+                        if (j20Var.r && VoIPService.getSharedInstance() != null) {
+                            j20Var.r = false;
+                            j20Var.s = true;
+                            fragmentContextView3.P = false;
+                            AndroidUtilities.runOnUIThread(j20Var.v, 90L);
+                            try {
+                                fragmentContextView3.y.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        final int i11 = 1;
+        this.w = new Runnable(this) { // from class: org.telegram.ui.Components.i20
+            public final /* synthetic */ j20 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.x;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.E.P(fragmentContextView2.P ? 15 : 29)) {
+                                if (fragmentContextView2.P) {
+                                    fragmentContextView2.E.M(0);
+                                } else {
+                                    fragmentContextView2.E.M(14);
+                                }
+                            }
+                            fragmentContextView2.y.d();
+                            org.telegram.ui.ActionBar.i6.E0().c(true);
+                            fragmentContextView2.a.f(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        j20 j20Var = this.b;
+                        FragmentContextView fragmentContextView3 = j20Var.x;
+                        if (j20Var.r && VoIPService.getSharedInstance() != null) {
+                            j20Var.r = false;
+                            j20Var.s = true;
+                            fragmentContextView3.P = false;
+                            AndroidUtilities.runOnUIThread(j20Var.v, 90L);
+                            try {
+                                fragmentContextView3.y.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
     }
 
-    public void a(q30 q30Var) {
-        i20 i20Var = this.d;
-        ArrayList arrayList = i20Var.c;
-        j20 j20Var = i20Var.r;
-        j20Var.c.add(q30Var);
-        if (!q30Var.d) {
-            j20Var.b.k(q30Var, q30Var.getUid());
-        }
-        AnimatorSet animatorSet = i20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            i20Var.a.setupEndValues();
-            i20Var.a.cancel();
-        }
-        i20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        i20Var.a = animatorSet2;
-        animatorSet2.addListener(new h20(i20Var, 1));
-        i20Var.a.setDuration(150L);
-        i20Var.d = q30Var;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(i20Var.d, (Property<q30, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(i20Var.d, (Property<q30, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(i20Var.d, (Property<q30, Float>) View.ALPHA, 0.0f, 1.0f));
-        i20Var.addView(q30Var);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setText(LocaleController.getString(this.x.P ? R.string.VoipUnmute : R.string.VoipMute));
     }
 
-    public void b() {
-        i20 i20Var = this.d;
-        ArrayList arrayList = i20Var.c;
-        j20 j20Var = i20Var.r;
-        j20Var.h = true;
-        ArrayList arrayList2 = j20Var.c;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        arrayList2.clear();
-        ArrayList arrayList4 = i20Var.e;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((q30) arrayList3.get(i10)).setOnClickListener(null);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        FragmentContextView fragmentContextView = this.x;
+        int i10 = fragmentContextView.U;
+        if (i10 != 3 && i10 != 1) {
+            return super.onTouchEvent(motionEvent);
         }
-        AnimatorSet animatorSet = i20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            i20Var.a.setupEndValues();
-            i20Var.a.cancel();
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        i20 i20Var = this.v;
+        i20 i20Var2 = this.w;
+        if (sharedInstance == null) {
+            AndroidUtilities.cancelRunOnUIThread(i20Var2);
+            AndroidUtilities.cancelRunOnUIThread(i20Var);
+            this.r = false;
+            this.s = false;
+            return true;
         }
-        i20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        i20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.z(26, i20Var, arrayList3));
-        arrayList.clear();
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            q30 q30Var = (q30) arrayList3.get(i11);
-            arrayList.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.ALPHA, 1.0f, 0.0f));
+        if (motionEvent.getAction() == 0 && sharedInstance.isMicMute()) {
+            AndroidUtilities.runOnUIThread(i20Var2, 300L);
+            this.r = true;
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            AndroidUtilities.cancelRunOnUIThread(i20Var);
+            if (this.r) {
+                AndroidUtilities.cancelRunOnUIThread(i20Var2);
+                this.r = false;
+            } else if (this.s) {
+                fragmentContextView.P = true;
+                if (fragmentContextView.E.P(15)) {
+                    if (fragmentContextView.P) {
+                        fragmentContextView.E.M(0);
+                    } else {
+                        fragmentContextView.E.M(14);
+                    }
+                }
+                fragmentContextView.y.d();
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(true, true, false);
+                    try {
+                        fragmentContextView.y.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                }
+                this.s = false;
+                org.telegram.ui.ActionBar.i6.E0().c(true);
+                fragmentContextView.a.f(true);
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                super.onTouchEvent(obtain);
+                obtain.recycle();
+                return true;
+            }
         }
-        i20Var.requestLayout();
-    }
-
-    public void c(q30 q30Var) {
-        i20 i20Var = this.d;
-        ArrayList arrayList = i20Var.e;
-        ArrayList arrayList2 = i20Var.c;
-        j20 j20Var = i20Var.r;
-        j20Var.h = true;
-        if (!q30Var.d) {
-            j20Var.b.l(q30Var.getUid());
-        }
-        j20Var.c.remove(q30Var);
-        q30Var.setOnClickListener(null);
-        AnimatorSet animatorSet = i20Var.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            i20Var.a.cancel();
-        }
-        i20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        i20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.z(25, i20Var, q30Var));
-        i20Var.a.setDuration(150L);
-        arrayList.clear();
-        arrayList.add(q30Var);
-        arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(q30Var, (Property<q30, Float>) View.ALPHA, 1.0f, 0.0f));
-        i20Var.requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction();
-        float f7 = this.e;
-        float y3 = motionEvent.getY();
-        if (action != 0 || y3 <= f7) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    public ViewGroup getSpansContainer() {
-        return this.d;
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        if (this.h) {
-            this.h = false;
-            return false;
-        }
-        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.q.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.q.C(50.0f, this.n, rect.bottom);
-        return super.requestChildRectangleOnScreen(view, rect, z10);
-    }
-
-    public void setDelegate(g20 g20Var) {
-        this.f = g20Var;
+        return super.onTouchEvent(motionEvent);
     }
 }

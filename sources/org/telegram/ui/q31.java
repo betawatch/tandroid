@@ -1,33 +1,41 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q31 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s31 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.ui.Components.ci0 e;
 
-    public /* synthetic */ q31(s31 s31Var, int i10) {
+    public /* synthetic */ q31(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.ci0 ci0Var, int i10) {
         this.a = i10;
-        this.b = s31Var;
+        this.b = n2Var;
+        this.c = context;
+        this.d = e6Var;
+        this.e = ci0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                s31 s31Var = this.b;
-                t31 t31Var = s31Var.v;
-                if (s31Var.a != 0) {
-                    t31Var.onBackPressed();
-                    break;
-                } else {
-                    t31Var.dismiss();
-                    break;
-                }
+                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 4), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
+            case 1:
+                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 3), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
+                break;
             default:
-                AndroidUtilities.showKeyboard(this.b.n.b);
+                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 7), this.d)).j();
+                AndroidUtilities.runOnUIThread(this.e);
                 break;
         }
     }

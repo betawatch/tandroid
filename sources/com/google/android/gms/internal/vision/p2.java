@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class p2 {
     public static final Class a;
@@ -232,7 +232,7 @@ public abstract class p2 {
             c10 = o2Var.zzb(l0Var);
             l0Var.b(c10);
         }
-        return a4.a.E(c10, c10, T);
+        return a1.g.E(c10, c10, T);
     }
 
     public static int b(int i10, List list, o2 o2Var) {
@@ -248,7 +248,7 @@ public abstract class p2 {
                 c10 = o2Var.zzb(l0Var);
                 l0Var.b(c10);
             }
-            y3 = a4.a.E(c10, c10, y3);
+            y3 = a1.g.E(c10, c10, y3);
         }
         return y3;
     }
@@ -452,7 +452,7 @@ public abstract class p2 {
                 Object obj = list.get(i11);
                 if (obj instanceof q0) {
                     int n10 = ((q0) obj).n();
-                    y3 = a4.a.E(n10, n10, y3);
+                    y3 = a1.g.E(n10, n10, y3);
                 } else {
                     y3 = r0.G((String) obj) + y3;
                 }
@@ -465,7 +465,7 @@ public abstract class p2 {
             Object a2 = t1Var.a(i11);
             if (a2 instanceof q0) {
                 int n11 = ((q0) a2).n();
-                y3 = a4.a.E(n11, n11, y3);
+                y3 = a1.g.E(n11, n11, y3);
             } else {
                 y3 = r0.G((String) a2) + y3;
             }
@@ -555,7 +555,7 @@ public abstract class p2 {
         int y3 = r0.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
             int n10 = ((q0) list.get(i11)).n();
-            y3 = a4.a.E(n10, n10, y3);
+            y3 = a1.g.E(n10, n10, y3);
         }
         return y3;
     }

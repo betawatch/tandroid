@@ -1,6 +1,6 @@
 package androidx.mediarouter.app;
 
-import ai.q4;
+import ai.r4;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -44,16 +44,16 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class u extends g.g {
+public final class u extends g.f {
     public static final int F0;
     public Interpolator A0;
     public final Interpolator B0;
     public final Interpolator C0;
     public final AccessibilityManager D0;
     public Button E;
-    public final q4 E0;
+    public final r4 E0;
     public ImageButton F;
     public MediaRouteExpandCollapseButton G;
     public FrameLayout H;
@@ -84,7 +84,7 @@ public final class u extends g.g {
     public final int g0;
     public final p4.x h;
     public HashMap h0;
-    public n4.y i0;
+    public n4.x i0;
     public final r j0;
     public PlaybackStateCompat k0;
     public MediaDescriptionCompat l0;
@@ -120,12 +120,12 @@ public final class u extends g.g {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public u(Context context) {
-        super(r5, r1 == 0 ? v7.e0.e(r5) : r1);
+        super(r5, r1 == 0 ? v7.a0.e(r5) : r1);
         int i10 = 1;
-        ContextThemeWrapper a2 = v7.e0.a(context, true);
-        int g10 = v7.e0.g(a2, R.attr.mediaRouteTheme);
+        ContextThemeWrapper a2 = v7.a0.a(context, true);
+        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
         this.O = true;
-        this.E0 = new q4(this, 9);
+        this.E0 = new r4(this, 9);
         Context context2 = getContext();
         this.s = context2;
         this.j0 = new r(this, 0);
@@ -186,7 +186,7 @@ public final class u extends g.g {
             p0 p0Var = (p0) obj;
             p0Var.j = true;
             p0Var.k = true;
-            of.b bVar = p0Var.l;
+            pf.b bVar = p0Var.l;
             if (bVar != null) {
                 u uVar = (u) bVar.c;
                 uVar.Z.remove((p4.v) bVar.b);
@@ -211,7 +211,7 @@ public final class u extends g.g {
     }
 
     public final int k(int i10, int i11) {
-        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a4.a.B(this.x, 9.0f, 16.0f, 0.5f);
+        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a1.g.B(this.x, 9.0f, 16.0f, 0.5f);
     }
 
     public final int l(boolean z10) {
@@ -241,7 +241,7 @@ public final class u extends g.g {
         p(p4.x.e());
     }
 
-    @Override // g.g, g.u, androidx.activity.m, android.app.Dialog
+    @Override // g.f, g.t, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         getWindow().setBackgroundDrawableResource(android.R.color.transparent);
@@ -255,9 +255,9 @@ public final class u extends g.g {
         this.I = linearLayout;
         linearLayout.setOnClickListener(new l());
         Context context = this.s;
-        int f7 = v7.e0.f(context, 0, R.attr.colorPrimary);
-        if (i0.a.e(f7, v7.e0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
-            f7 = v7.e0.f(context, 0, R.attr.colorAccent);
+        int f7 = v7.a0.f(context, 0, R.attr.colorPrimary);
+        if (i0.a.e(f7, v7.a0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
+            f7 = v7.a0.f(context, 0, R.attr.colorAccent);
         }
         Button button = (Button) findViewById(android.R.id.button2);
         this.y = button;
@@ -304,9 +304,9 @@ public final class u extends g.g {
         LinearLayout linearLayout3 = this.Q;
         OverlayListView overlayListView = this.U;
         boolean n10 = n();
-        int f10 = v7.e0.f(context, 0, R.attr.colorPrimary);
-        int f11 = v7.e0.f(context, 0, R.attr.colorPrimaryDark);
-        if (n10 && v7.e0.b(context, 0) == -570425344) {
+        int f10 = v7.a0.f(context, 0, R.attr.colorPrimary);
+        int f11 = v7.a0.f(context, 0, R.attr.colorPrimaryDark);
+        if (n10 && v7.a0.b(context, 0) == -570425344) {
             f11 = f10;
             f10 = -1;
         }
@@ -316,7 +316,7 @@ public final class u extends g.g {
         overlayListView.setTag(Integer.valueOf(f11));
         MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) this.a0;
         LinearLayout linearLayout4 = this.Q;
-        int b10 = v7.e0.b(context, 0);
+        int b10 = v7.a0.b(context, 0);
         if (Color.alpha(b10) != 255) {
             b10 = i0.a.h(b10, ((Integer) linearLayout4.getTag()).intValue());
         }
@@ -343,7 +343,7 @@ public final class u extends g.g {
         super.onDetachedFromWindow();
     }
 
-    @Override // g.g, android.app.Dialog, android.view.KeyEvent.Callback
+    @Override // g.f, android.app.Dialog, android.view.KeyEvent.Callback
     public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
         if (i10 != 25 && i10 != 24) {
             return super.onKeyDown(i10, keyEvent);
@@ -354,7 +354,7 @@ public final class u extends g.g {
         return true;
     }
 
-    @Override // g.g, android.app.Dialog, android.view.KeyEvent.Callback
+    @Override // g.f, android.app.Dialog, android.view.KeyEvent.Callback
     public final boolean onKeyUp(int i10, KeyEvent keyEvent) {
         if (i10 == 25 || i10 == 24) {
             return true;
@@ -365,16 +365,16 @@ public final class u extends g.g {
     public final void p(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
         PlaybackStateCompat d;
-        n4.y yVar = this.i0;
+        n4.x xVar = this.i0;
         r rVar = this.j0;
-        if (yVar != null) {
-            yVar.a0(rVar);
+        if (xVar != null) {
+            xVar.c0(rVar);
             this.i0 = null;
         }
         if (mediaSessionCompat$Token != null && this.w) {
-            n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
-            this.i0 = yVar2;
-            yVar2.X(rVar);
+            n4.x xVar2 = new n4.x(this.s, mediaSessionCompat$Token);
+            this.i0 = xVar2;
+            xVar2.Z(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -408,14 +408,14 @@ public final class u extends g.g {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:122:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0151  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -504,65 +504,61 @@ public final class u extends g.g {
                             this.L.setText(charSequence);
                             z12 = true;
                         }
-                        if (!isEmpty2) {
+                        if (isEmpty2) {
+                            z13 = false;
+                        } else {
                             this.M.setText(charSequence2);
                             z13 = true;
-                            this.L.setVisibility(z12 ? 0 : 8);
-                            this.M.setVisibility(z13 ? 0 : 8);
-                            playbackStateCompat = this.k0;
-                            if (playbackStateCompat != null) {
-                                int i12 = playbackStateCompat.a;
-                                boolean z16 = i12 == 6 || i12 == 3;
-                                Context context = this.F.getContext();
-                                if (z16) {
-                                    if ((this.k0.e & 514) != 0) {
-                                        i10 = R.attr.mediaRoutePauseDrawable;
-                                        i11 = R.string.mr_controller_pause;
-                                        this.F.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                            this.F.setImageResource(v7.e0.g(context, i10));
-                                            this.F.setContentDescription(context.getResources().getText(i11));
-                                        }
-                                    }
-                                }
-                                if (z16) {
-                                    if ((this.k0.e & 1) != 0) {
-                                        i10 = R.attr.mediaRouteStopDrawable;
-                                        i11 = R.string.mr_controller_stop;
-                                        this.F.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                        }
-                                    }
-                                }
-                                if (!z16) {
-                                    if ((this.k0.e & 516) != 0) {
-                                        i10 = R.attr.mediaRoutePlayDrawable;
-                                        i11 = R.string.mr_controller_play;
-                                        this.F.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                        }
-                                    }
-                                }
-                                z14 = false;
-                                i10 = 0;
-                                i11 = 0;
-                                this.F.setVisibility(z14 ? 0 : 8);
-                                if (z14) {
-                                }
-                            }
                         }
-                        z13 = false;
-                        this.L.setVisibility(z12 ? 0 : 8);
-                        this.M.setVisibility(z13 ? 0 : 8);
+                        this.L.setVisibility(!z12 ? 0 : 8);
+                        this.M.setVisibility(!z13 ? 0 : 8);
                         playbackStateCompat = this.k0;
                         if (playbackStateCompat != null) {
+                            int i12 = playbackStateCompat.a;
+                            boolean z16 = i12 == 6 || i12 == 3;
+                            Context context = this.F.getContext();
+                            if (z16) {
+                                if ((this.k0.e & 514) != 0) {
+                                    i10 = R.attr.mediaRoutePauseDrawable;
+                                    i11 = R.string.mr_controller_pause;
+                                    this.F.setVisibility(z14 ? 0 : 8);
+                                    if (z14) {
+                                        this.F.setImageResource(v7.a0.g(context, i10));
+                                        this.F.setContentDescription(context.getResources().getText(i11));
+                                    }
+                                }
+                            }
+                            if (z16) {
+                                if ((this.k0.e & 1) != 0) {
+                                    i10 = R.attr.mediaRouteStopDrawable;
+                                    i11 = R.string.mr_controller_stop;
+                                    this.F.setVisibility(z14 ? 0 : 8);
+                                    if (z14) {
+                                    }
+                                }
+                            }
+                            if (!z16) {
+                                if ((this.k0.e & 516) != 0) {
+                                    i10 = R.attr.mediaRoutePlayDrawable;
+                                    i11 = R.string.mr_controller_play;
+                                    this.F.setVisibility(z14 ? 0 : 8);
+                                    if (z14) {
+                                    }
+                                }
+                            }
+                            z14 = false;
+                            i10 = 0;
+                            i11 = 0;
+                            this.F.setVisibility(z14 ? 0 : 8);
+                            if (z14) {
+                            }
                         }
                     }
                 }
-                z12 = true;
                 z13 = false;
-                this.L.setVisibility(z12 ? 0 : 8);
-                this.M.setVisibility(z13 ? 0 : 8);
+                z12 = true;
+                this.L.setVisibility(!z12 ? 0 : 8);
+                this.M.setVisibility(!z13 ? 0 : 8);
                 playbackStateCompat = this.k0;
                 if (playbackStateCompat != null) {
                 }
@@ -602,7 +598,7 @@ public final class u extends g.g {
 
     public final void s() {
         Context context = this.s;
-        int a2 = v7.d0.a(context);
+        int a2 = v7.z.a(context);
         getWindow().setLayout(a2, -2);
         View decorView = getWindow().getDecorView();
         this.x = (a2 - decorView.getPaddingLeft()) - decorView.getPaddingRight();

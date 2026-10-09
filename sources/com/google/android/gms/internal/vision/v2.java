@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v2 extends x2 {
     public final /* synthetic */ int b;
@@ -105,16 +105,16 @@ public final class v2 extends x2 {
         switch (this.b) {
             case 0:
                 if (y2.g) {
-                    if (y2.n(obj, j3) != 0) {
+                    if (y2.n(obj, j3) == 0) {
                     }
-                } else if (y2.o(obj, j3) != 0) {
+                } else if (y2.o(obj, j3) == 0) {
                 }
                 break;
             default:
                 if (y2.g) {
-                    if (y2.n(obj, j3) != 0) {
+                    if (y2.n(obj, j3) == 0) {
                     }
-                } else if (y2.o(obj, j3) != 0) {
+                } else if (y2.o(obj, j3) == 0) {
                 }
                 break;
         }

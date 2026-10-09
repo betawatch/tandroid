@@ -1,31 +1,171 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dc0 b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ xb0(dc0 dc0Var, int i10) {
+    public /* synthetic */ xb0(ProfileActivity profileActivity, int i10) {
         this.a = i10;
-        this.b = dc0Var;
+        this.b = profileActivity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        y01 y01Var;
         switch (this.a) {
             case 0:
-                dc0 dc0Var = this.b;
-                if (dc0Var.h >= 0) {
-                    ConnectionsManager.getInstance(dc0Var.b).cancelRequest(dc0Var.h, true);
-                    dc0Var.h = -1;
+                ProfileActivity profileActivity = this.b;
+                k01 k01Var = profileActivity.O;
+                if (k01Var != null) {
+                    k01Var.Y0(14);
+                    profileActivity.G4(false);
                     break;
                 }
                 break;
+            case 1:
+                ProfileActivity profileActivity2 = this.b;
+                k01 k01Var2 = profileActivity2.O;
+                if (k01Var2 != null) {
+                    k01Var2.Y0(14);
+                    profileActivity2.G4(false);
+                    break;
+                }
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new xb0(this.b, 0), 200L);
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new xb0(this.b, 1), 200L);
+                break;
+            case 4:
+                ProfileActivity profileActivity3 = this.b;
+                profileActivity3.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", profileActivity3.e1, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                break;
+            case 5:
+                this.b.z4(false);
+                break;
+            case 6:
+                ProfileActivity profileActivity4 = this.b;
+                profileActivity4.getClass();
+                profileActivity4.presentFragment(new UserInfoActivity());
+                break;
+            case 7:
+                this.b.z4(true);
+                break;
+            case 8:
+                ProfileActivity profileActivity5 = this.b;
+                profileActivity5.getClass();
+                profileActivity5.presentFragment(new hg.g1());
+                break;
+            case 9:
+                ProfileActivity profileActivity6 = this.b;
+                profileActivity6.getClass();
+                profileActivity6.presentFragment(new hg.e1());
+                break;
+            case 10:
+                ProfileActivity profileActivity7 = this.b;
+                profileActivity7.getClass();
+                profileActivity7.presentFragment(new ra(null));
+                break;
+            case 11:
+                ProfileActivity profileActivity8 = this.b;
+                profileActivity8.getClass();
+                profileActivity8.presentFragment(new UserInfoActivity());
+                break;
+            case 12:
+                ProfileActivity profileActivity9 = this.b;
+                profileActivity9.getClass();
+                profileActivity9.presentFragment(new h(3));
+                break;
+            case 13:
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                this.b.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
+                break;
+            case 14:
+                ProfileActivity profileActivity10 = this.b;
+                profileActivity10.k4(true);
+                if (profileActivity10.j2.isRunning()) {
+                    profileActivity10.j2.cancel();
+                }
+                profileActivity10.J4(1.0f);
+                break;
+            case 15:
+                this.b.e5(false, false);
+                break;
+            case 16:
+                this.b.F3();
+                break;
+            case 17:
+                ProfileActivity profileActivity11 = this.b;
+                k01 k01Var3 = profileActivity11.O;
+                if (k01Var3 != null) {
+                    k01Var3.v1(true);
+                    profileActivity11.O.n1();
+                    break;
+                }
+                break;
+            case 18:
+                ProfileActivity profileActivity12 = this.b;
+                profileActivity12.getMessagesController().reloadUser(profileActivity12.a());
+                break;
+            case 19:
+                ProfileActivity profileActivity13 = this.b;
+                if (!profileActivity13.a.b0() && (y01Var = profileActivity13.d) != null) {
+                    y01Var.l();
+                    break;
+                }
+                break;
+            case 20:
+                this.b.e5(false, false);
+                break;
+            case 21:
+                this.b.y5.setVisibility(8);
+                break;
+            case 22:
+                ProfileActivity profileActivity14 = this.b;
+                profileActivity14.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity14.f1);
+                bundle.putLong("user_id", profileActivity14.e1);
+                profileActivity14.presentFragment(new e31(bundle));
+                break;
+            case 23:
+                ProfileActivity profileActivity15 = this.b;
+                profileActivity15.getClass();
+                profileActivity15.presentFragment(new ra(null));
+                break;
+            case 24:
+                ProfileActivity.W(this.b);
+                break;
+            case 25:
+                ProfileActivity profileActivity16 = this.b;
+                TLRPC.UserFull userFull = profileActivity16.v2;
+                if (userFull != null) {
+                    AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
+                    org.telegram.messenger.bi.p(R.string.TextCopied, org.telegram.ui.Components.ad.a0(profileActivity16));
+                    break;
+                }
+                break;
+            case 26:
+                ProfileActivity profileActivity17 = this.b;
+                profileActivity17.getClass();
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", profileActivity17.e1);
+                bundle2.putBoolean("focus_notes", true);
+                profileActivity17.presentFragment(new qs(bundle2, profileActivity17.z0));
+                break;
             default:
-                this.b.a();
+                this.b.G4(true);
                 break;
         }
     }

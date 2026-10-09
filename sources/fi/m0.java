@@ -24,21 +24,21 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.r21;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.wv;
-import org.telegram.ui.Components.wx0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.cd;
+import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dd;
+import org.telegram.ui.Components.iw;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.x21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.h90;
+import org.telegram.ui.m70;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -108,36 +108,36 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                wv wvVar = (wv) obj4;
+                iw iwVar = (iw) obj4;
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                n2 n2Var2 = wvVar.c;
+                n2 n2Var2 = iwVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
-                    wvVar.dismiss();
-                    rc.g(n2Var2, new wx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    iwVar.dismiss();
+                    tc.g(n2Var2, new cy0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 3:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                h90 h90Var = (h90) obj3;
+                m70 m70Var = (m70) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    h90Var.run();
+                    m70Var.run();
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
                 LaunchActivity.R();
                 if (tL_storyAlbum == null) {
-                    yc X = yc.X();
+                    ad X = ad.X();
                     if (X != null) {
-                        org.telegram.messenger.q.p(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.q.q(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
@@ -176,32 +176,32 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 break;
             default:
-                ad adVar = (ad) obj4;
+                cd cdVar = (cd) obj4;
                 Context context = (Context) obj3;
-                d6 d6Var = (d6) obj2;
+                e6 e6Var = (e6) obj2;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(adVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new r21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
-                    adVar.setText(spannableStringBuilder);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cdVar.getText());
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new x21(this.b, context, e6Var, savedStarGift, 20), e6Var, null));
+                    cdVar.setText(spannableStringBuilder);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ m0(wv wvVar, int[] iArr, int i10, ArrayList arrayList) {
+    public /* synthetic */ m0(iw iwVar, int[] iArr, int i10, ArrayList arrayList) {
         this.a = 2;
-        this.c = wvVar;
+        this.c = iwVar;
         this.d = iArr;
         this.b = i10;
         this.e = arrayList;
     }
 
-    public /* synthetic */ m0(LaunchActivity launchActivity, h90 h90Var, Long l4, int i10) {
+    public /* synthetic */ m0(LaunchActivity launchActivity, m70 m70Var, Long l4, int i10) {
         this.a = 3;
         this.c = launchActivity;
-        this.d = h90Var;
+        this.d = m70Var;
         this.e = l4;
         this.b = i10;
     }

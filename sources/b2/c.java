@@ -1,6 +1,5 @@
 package b2;
 
-import android.app.AppOpsManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.RemoteInput;
@@ -21,7 +20,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.b7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
@@ -64,7 +63,7 @@ public abstract class c {
                     i12 = 1;
                     break;
                 }
-                if (r2.i.b(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
+                if (r2.j.c(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
                     i12 = 2;
                     break;
                 }
@@ -109,10 +108,10 @@ public abstract class c {
                 u10.d(d10);
                 e9.a1 i10 = u10.i();
                 for (int i11 = 0; i11 < i10.d; i11++) {
-                    if (((r2.o) i10.get(i11)).d != null && (videoCapabilities = ((r2.o) i10.get(i11)).d.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
+                    if (((r2.p) i10.get(i11)).d != null && (videoCapabilities = ((r2.p) i10.get(i11)).d.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
                         MediaCodecInfo.VideoCapabilities.PerformancePoint performancePoint = new MediaCodecInfo.VideoCapabilities.PerformancePoint(1280, 720, 60);
                         for (int i12 = 0; i12 < supportedPerformancePoints.size(); i12++) {
-                            if (r2.i.b(supportedPerformancePoints.get(i12)).covers(performancePoint)) {
+                            if (r2.j.c(supportedPerformancePoints.get(i12)).covers(performancePoint)) {
                                 return 2;
                             }
                         }
@@ -147,17 +146,17 @@ public abstract class c {
 
     public static int e(int i10, int i11, e eVar) {
         for (int i12 = 10; i12 > 0; i12--) {
-            int s10 = e2.d0.s(i12);
-            if (s10 != 0 && AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setEncoding(i10).setSampleRate(i11).setChannelMask(s10).build(), (AudioAttributes) eVar.b().a)) {
+            int r10 = e2.d0.r(i12);
+            if (r10 != 0 && AudioTrack.isDirectPlaybackSupported(new AudioFormat.Builder().setEncoding(i10).setSampleRate(i11).setChannelMask(r10).build(), (AudioAttributes) eVar.b().a)) {
                 return i12;
             }
         }
         return 0;
     }
 
-    public static k2.f f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
+    public static k2.e f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
         if (!AudioManager.isOffloadedPlaybackSupported(audioFormat, audioAttributes)) {
-            return k2.f.d;
+            return k2.e.d;
         }
         ac.d dVar = new ac.d();
         dVar.a = true;
@@ -169,35 +168,31 @@ public abstract class c {
         return context.getOpPackageName();
     }
 
-    public static AppOpsManager h(Context context) {
-        return (AppOpsManager) context.getSystemService(AppOpsManager.class);
-    }
-
-    public static Insets i(int i10, int i11, int i12, int i13) {
+    public static Insets h(int i10, int i11, int i12, int i13) {
         return Insets.of(i10, i11, i12, i13);
     }
 
-    public static void j(Notification.Builder builder, boolean z10) {
+    public static void i(Notification.Builder builder, boolean z10) {
         builder.setAllowSystemGeneratedContextualActions(z10);
     }
 
-    public static void k(AudioAttributes.Builder builder, int i10) {
+    public static void j(AudioAttributes.Builder builder, int i10) {
         builder.setAllowedCapturePolicy(i10);
     }
 
-    public static void l(Notification.Builder builder, Notification.BubbleMetadata bubbleMetadata) {
+    public static void k(Notification.Builder builder, Notification.BubbleMetadata bubbleMetadata) {
         builder.setBubbleMetadata(bubbleMetadata);
     }
 
-    public static void m(Notification.Action.Builder builder) {
+    public static void l(Notification.Action.Builder builder) {
         builder.setContextual(false);
     }
 
-    public static void n(RemoteInput.Builder builder) {
+    public static void m(RemoteInput.Builder builder) {
         builder.setEditChoicesBeforeSending(0);
     }
 
-    public static void o(Notification.Builder builder, Object obj) {
+    public static void n(Notification.Builder builder, Object obj) {
         builder.setLocusId((LocusId) obj);
     }
 }

@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,17 +40,17 @@ public final class p implements View.OnClickListener {
                             break;
                         }
                     } else {
-                        n4.y yVar = uVar.i0;
-                        if (yVar != null && (playbackStateCompat = uVar.k0) != null) {
+                        n4.x xVar = uVar.i0;
+                        if (xVar != null && (playbackStateCompat = uVar.k0) != null) {
                             i10 = playbackStateCompat.a != 3 ? 0 : 1;
                             if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                yVar.T().a.pause();
+                                xVar.V().a.pause();
                                 i12 = R.string.mr_controller_pause;
                             } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                yVar.T().a.stop();
+                                xVar.V().a.stop();
                                 i12 = R.string.mr_controller_stop;
                             } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                yVar.T().a.play();
+                                xVar.V().a.play();
                                 i12 = R.string.mr_controller_play;
                             }
                             if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
@@ -65,9 +65,9 @@ public final class p implements View.OnClickListener {
                     }
                 } else {
                     if (uVar.r.g()) {
-                        p4.x xVar = uVar.h;
+                        p4.x xVar2 = uVar.h;
                         i10 = id2 == 16908313 ? 2 : 1;
-                        xVar.getClass();
+                        xVar2.getClass();
                         p4.x.j(i10);
                     }
                     uVar.dismiss();
@@ -78,8 +78,8 @@ public final class p implements View.OnClickListener {
                 uVar.dismiss();
                 break;
             case 2:
-                n4.y yVar2 = uVar.i0;
-                if (yVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) yVar2.b).a.getSessionActivity()) != null) {
+                n4.x xVar3 = uVar.i0;
+                if (xVar3 != null && (sessionActivity = ((android.support.v4.media.session.h) xVar3.b).a.getSessionActivity()) != null) {
                     try {
                         sessionActivity.send();
                         uVar.dismiss();

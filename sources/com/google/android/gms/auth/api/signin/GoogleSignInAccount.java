@@ -13,10 +13,10 @@ import n6.l;
 import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import w7.g0;
+import w7.d0;
 import z5.d;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -107,21 +107,21 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.s(parcel, 1, 4);
+        int q6 = d0.q(parcel, 20293);
+        d0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        g0.l(parcel, 2, this.b);
-        g0.l(parcel, 3, this.c);
-        g0.l(parcel, 4, this.d);
-        g0.l(parcel, 5, this.e);
-        g0.k(parcel, 6, this.f, i10);
-        g0.l(parcel, 7, this.h);
-        g0.s(parcel, 8, 8);
+        d0.l(parcel, 2, this.b);
+        d0.l(parcel, 3, this.c);
+        d0.l(parcel, 4, this.d);
+        d0.l(parcel, 5, this.e);
+        d0.k(parcel, 6, this.f, i10);
+        d0.l(parcel, 7, this.h);
+        d0.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        g0.l(parcel, 9, this.r);
-        g0.p(parcel, 10, this.s);
-        g0.l(parcel, 11, this.v);
-        g0.l(parcel, 12, this.w);
-        g0.r(parcel, q6);
+        d0.l(parcel, 9, this.r);
+        d0.p(parcel, 10, this.s);
+        d0.l(parcel, 11, this.v);
+        d0.l(parcel, 12, this.w);
+        d0.r(parcel, q6);
     }
 }

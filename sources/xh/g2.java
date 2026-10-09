@@ -6,14 +6,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g91;
-import org.telegram.ui.Components.gs0;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.n91;
+import org.telegram.ui.Components.rs0;
 import org.telegram.ui.ProfileActivity;
-import yh.k5;
+import yh.d5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ o2 b;
@@ -37,23 +37,23 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 break;
             default:
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                gs0 gs0Var = o2Var.a;
-                k5 k5Var = gs0Var.e;
+                rs0 rs0Var = o2Var.a;
+                d5 d5Var = rs0Var.e;
                 int i12 = tL_starGiftCollection.collection_id;
-                k5Var.getClass();
+                d5Var.getClass();
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(savedStarGift);
-                k5Var.a(i12, arrayList);
-                gs0Var.f(true);
-                g91 g91Var = gs0Var.n;
+                d5Var.a(i12, arrayList);
+                rs0Var.f(true);
+                n91 n91Var = rs0Var.n;
                 int i13 = tL_starGiftCollection.collection_id;
-                g91Var.d(i13, gs0Var.e.f(i13) + 1);
-                org.telegram.ui.ActionBar.n2 n2Var = gs0Var.a;
+                n91Var.d(i13, rs0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.n2 n2Var = rs0Var.a;
                 if (n2Var instanceof ProfileActivity) {
                     ((ProfileActivity) n2Var).G4(true);
                 }
-                gs0Var.n();
-                yc.a0(n2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                rs0Var.n();
+                ad.a0(n2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.s3.E1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 break;
         }
     }

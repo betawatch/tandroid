@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class w extends o6.a {
     public static final Parcelable.Creator<w> CREATOR;
@@ -55,16 +55,16 @@ public final class w extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.a);
         String c10 = u6.b.c(this.b.u());
-        return a4.a.t(a4.a.x("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
+        return a1.g.t(a1.g.x("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
+        int q6 = w7.d0.q(parcel, 20293);
         this.a.getClass();
-        w7.g0.l(parcel, 2, "public-key");
-        w7.g0.c(parcel, 3, this.b.u());
-        w7.g0.p(parcel, 4, this.c);
-        w7.g0.r(parcel, q6);
+        w7.d0.l(parcel, 2, "public-key");
+        w7.d0.c(parcel, 3, this.b.u());
+        w7.d0.p(parcel, 4, this.c);
+        w7.d0.r(parcel, q6);
     }
 }

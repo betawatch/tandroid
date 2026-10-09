@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -33,16 +33,16 @@ public final /* synthetic */ class g2 implements Utilities.Callback {
                 ChannelBoostsController.lambda$userCanBoostChannel$2((ChannelBoostsController.CanApplyBoost) this.b, (TL_stories.TL_premium_boostsStatus) this.c, (Utilities.Callback) this.d, (TL_stories.TL_premium_myBoosts) obj);
                 break;
             case 2:
-                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.t8) obj);
+                ((FileRefController) this.b).lambda$requestReferenceFromServer$1((String) this.c, (String) this.d, (ai.u8) obj);
                 break;
             case 3:
                 MediaDataController.lambda$fillWithAnimatedEmoji$227((boolean[]) this.b, (ArrayList[]) this.c, (Runnable) this.d, (ArrayList) obj);
                 break;
             case 4:
-                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.w9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
+                MediaDataController.lambda$setPlaceholderImage$31((String) this.b, (org.telegram.ui.Components.y9) this.c, (String) this.d, (TLRPC.TL_messages_stickerSet) obj);
                 break;
             default:
-                MessagesController.lambda$openApp$499((boolean[]) this.b, (TL_bots.BotInfo[]) this.c, (Runnable) this.d, (TLRPC.UserFull) obj);
+                MessagesController.lambda$openApp$502((boolean[]) this.b, (TL_bots.BotInfo[]) this.c, (Runnable) this.d, (TLRPC.UserFull) obj);
                 break;
         }
     }

@@ -1,114 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.core.widget.NestedScrollView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bq extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ fq a0;
+public final class bq {
+    public final org.telegram.ui.ActionBar.c4 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
+    public Bitmap e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bq(fq fqVar, Context context) {
-        super(context);
-        this.a0 = fqVar;
+    public bq(org.telegram.ui.ActionBar.c4 c4Var) {
+        this.a = c4Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        int i11;
-        fq fqVar = this.a0;
-        int i12 = fqVar.f;
-        i10 = ((org.telegram.ui.ActionBar.f3) fqVar).backgroundPaddingTop;
-        int scrollY = (int) ((getScrollY() + (i12 - i10)) - getTranslationY());
-        Drawable drawable = fqVar.b;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = fqVar.c.getMeasuredHeight() + scrollY;
-        i11 = ((org.telegram.ui.ActionBar.f3) fqVar).backgroundPaddingTop;
-        drawable.setBounds(0, scrollY, measuredWidth, AndroidUtilities.dp(19.0f) + i11 + measuredHeight);
-        drawable.draw(canvas);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            fq fqVar = this.a0;
-            if (fqVar.f != 0 && motionEvent.getY() < fqVar.f) {
-                fqVar.dismiss();
-                return true;
-            }
+    public final String a() {
+        org.telegram.ui.ActionBar.c4 c4Var = this.a;
+        if (c4Var == null || c4Var.a) {
+            return null;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        fq.m(this.a0);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x004a  */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        fq fqVar = this.a0;
-        measureChildWithMargins(fqVar.c, i10, 0, i11, 0);
-        int measuredHeight = fqVar.c.getMeasuredHeight();
-        int i12 = (size / 5) * 3;
-        int i13 = size - i12;
-        if (!fqVar.e && measuredHeight - i13 >= AndroidUtilities.dp(90.0f)) {
-            if (measuredHeight >= AndroidUtilities.dp(90.0f) + (size / 2)) {
-                int dp = AndroidUtilities.dp(108.0f) + (measuredHeight / 2);
-                if (i13 < dp) {
-                    i12 = size - dp;
-                }
-                if (getPaddingTop() != i12) {
-                    this.W = true;
-                    setPadding(0, i12, 0, 0);
-                    this.W = false;
-                }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-            }
-        }
-        i12 = size - measuredHeight;
-        if (getPaddingTop() != i12) {
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        fq.m(this.a0);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.a0.isDismissed() && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        fq.m(this.a0);
+        return c4Var.e;
     }
 }

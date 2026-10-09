@@ -1,107 +1,66 @@
 package n6;
 
-import android.content.Context;
-import android.content.ServiceConnection;
-import android.os.HandlerThread;
-import android.os.Looper;
-import java.util.HashMap;
+import android.content.ComponentName;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class j0 {
-    public static final Object g = new Object();
-    public static j0 h;
-    public static HandlerThread i;
-    public final HashMap a = new HashMap();
-    public final Context b;
-    public volatile com.google.android.gms.internal.cast.c0 c;
-    public final t6.a d;
-    public final long e;
-    public final long f;
+public final class j0 implements Handler.Callback {
+    public final /* synthetic */ k0 a;
 
-    public j0(Context context, Looper looper) {
-        i0 i0Var = new i0(this);
-        this.b = context.getApplicationContext();
-        com.google.android.gms.internal.cast.c0 c0Var = new com.google.android.gms.internal.cast.c0(looper, i0Var);
-        Looper.getMainLooper();
-        this.c = c0Var;
-        this.d = t6.a.a();
-        this.e = 5000L;
-        this.f = 300000L;
+    public /* synthetic */ j0(k0 k0Var) {
+        this.a = k0Var;
     }
 
-    public static HandlerThread a() {
-        synchronized (g) {
-            try {
-                HandlerThread handlerThread = i;
-                if (handlerThread != null) {
-                    return handlerThread;
-                }
-                HandlerThread handlerThread2 = new HandlerThread("GoogleApiHandler", 9);
-                i = handlerThread2;
-                handlerThread2.start();
-                return i;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public final k6.a b(g0 g0Var, c0 c0Var, String str) {
-        synchronized (this.a) {
-            try {
-                h0 h0Var = (h0) this.a.get(g0Var);
-                k6.a aVar = null;
-                if (h0Var == null) {
-                    h0Var = new h0(this, g0Var);
-                    h0Var.a.put(c0Var, c0Var);
-                    aVar = h0.a(h0Var, str, null);
-                    this.a.put(g0Var, h0Var);
-                } else {
-                    this.c.removeMessages(0, g0Var);
-                    if (h0Var.a.containsKey(c0Var)) {
-                        throw new IllegalStateException("Trying to bind a GmsServiceConnection that was already connected before.  config=".concat(g0Var.toString()));
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        int i10 = message.what;
+        if (i10 == 0) {
+            synchronized (this.a.a) {
+                try {
+                    h0 h0Var = (h0) message.obj;
+                    i0 i0Var = (i0) this.a.a.get(h0Var);
+                    if (i0Var != null && i0Var.a.isEmpty()) {
+                        if (i0Var.c) {
+                            i0Var.h.c.removeMessages(1, i0Var.e);
+                            k0 k0Var = i0Var.h;
+                            k0Var.d.b(k0Var.b, i0Var);
+                            i0Var.c = false;
+                            i0Var.b = 2;
+                        }
+                        this.a.a.remove(h0Var);
                     }
-                    h0Var.a.put(c0Var, c0Var);
-                    int i10 = h0Var.b;
-                    if (i10 == 1) {
-                        c0Var.onServiceConnected(h0Var.f, h0Var.d);
-                    } else if (i10 == 2) {
-                        aVar = h0.a(h0Var, str, null);
-                    }
+                } finally {
                 }
-                if (h0Var.c) {
-                    return k6.a.e;
-                }
-                if (aVar == null) {
-                    aVar = new k6.a(-1);
-                }
-                return aVar;
-            } catch (Throwable th2) {
-                throw th2;
             }
+            return true;
         }
-    }
-
-    public final void c(String str, String str2, ServiceConnection serviceConnection, boolean z10) {
-        g0 g0Var = new g0(str, str2, z10);
-        l.i(serviceConnection, "ServiceConnection must not be null");
-        synchronized (this.a) {
+        if (i10 != 1) {
+            return false;
+        }
+        synchronized (this.a.a) {
             try {
-                h0 h0Var = (h0) this.a.get(g0Var);
-                if (h0Var == null) {
-                    throw new IllegalStateException("Nonexistent connection status for service config: ".concat(g0Var.toString()));
+                h0 h0Var2 = (h0) message.obj;
+                i0 i0Var2 = (i0) this.a.a.get(h0Var2);
+                if (i0Var2 != null && i0Var2.b == 3) {
+                    Log.e("GmsClientSupervisor", "Timeout waiting for ServiceConnection callback ".concat(String.valueOf(h0Var2)), new Exception());
+                    ComponentName componentName = i0Var2.f;
+                    if (componentName == null) {
+                        h0Var2.getClass();
+                        componentName = null;
+                    }
+                    if (componentName == null) {
+                        String str = h0Var2.b;
+                        l.h(str);
+                        componentName = new ComponentName(str, "unknown");
+                    }
+                    i0Var2.onServiceDisconnected(componentName);
                 }
-                if (!h0Var.a.containsKey(serviceConnection)) {
-                    throw new IllegalStateException("Trying to unbind a GmsServiceConnection  that was not bound before.  config=".concat(g0Var.toString()));
-                }
-                h0Var.a.remove(serviceConnection);
-                if (h0Var.a.isEmpty()) {
-                    this.c.sendMessageDelayed(this.c.obtainMessage(0, g0Var), this.e);
-                }
-            } catch (Throwable th2) {
-                throw th2;
+            } finally {
             }
         }
+        return true;
     }
 }

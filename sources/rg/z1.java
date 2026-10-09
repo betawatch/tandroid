@@ -1,44 +1,26 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.l4;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.fr;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z1 extends l4 {
-    public final Path h;
-    public final /* synthetic */ b2 n;
+public final class z1 extends fr {
+    public final /* synthetic */ a2 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(b2 b2Var, Context context) {
-        super(context);
-        this.n = b2Var;
-        this.h = new Path();
+    public z1(a2 a2Var, j0.a aVar, Drawable drawable) {
+        super(aVar, drawable);
+        this.y = a2Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.h);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        Path path = this.h;
-        path.reset();
-        b2 b2Var = this.n;
-        if (b2Var.d) {
-            AndroidUtilities.rectTmp.set(0.0f, -b2Var.M, getMeasuredWidth(), getMeasuredHeight());
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        a2 a2Var = this.y;
+        if (a2Var.d) {
+            super.setBounds(i10, (int) (i11 - a2Var.M), i12, i13);
         } else {
-            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), (int) (getMeasuredHeight() + b2Var.M));
+            super.setBounds(i10, i11, i12, (int) (i13 + a2Var.M));
         }
-        float dp = b2Var.M - AndroidUtilities.dp(3.0f);
-        path.addRoundRect(AndroidUtilities.rectTmp, dp, dp, Path.Direction.CW);
     }
 }

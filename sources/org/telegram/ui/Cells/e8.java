@@ -5,15 +5,15 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e8 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 a;
     public final /* synthetic */ f8 b;
 
-    public e8(f8 f8Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public e8(f8 f8Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.b = f8Var;
-        this.a = d6Var;
+        this.a = e6Var;
     }
 
     @Override // org.telegram.messenger.ImageReceiver
@@ -24,9 +24,9 @@ public final class e8 extends ImageReceiver {
                 f8Var.K = AndroidUtilities.getDominantColor(((BitmapDrawable) drawable).getBitmap());
                 int i12 = f8Var.K;
                 if (i12 == -1 || i12 == 0) {
-                    f8Var.K = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.q5, this.a);
+                    f8Var.K = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.q5, this.a);
                 }
-                f8Var.J.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(12.0f), f8Var.K));
+                f8Var.J.setBackground(org.telegram.ui.ActionBar.i6.c0(AndroidUtilities.dp(12.0f), f8Var.K));
                 invalidate();
             }
         }

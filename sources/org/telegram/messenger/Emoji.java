@@ -26,9 +26,9 @@ import java.util.Map;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.er;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class Emoji {
     private static final String[] DEFAULT_RECENT;
@@ -50,7 +50,7 @@ public class Emoji {
     private static final HashMap<CharSequence, DrawableInfo> rects = new HashMap<>();
     private static boolean inited = false;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class DrawableInfo {
         public int emojiIndex;
         public byte page;
@@ -63,7 +63,7 @@ public class Emoji {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class EmojiSpanRange {
         public CharSequence code;
         public int end;
@@ -350,9 +350,11 @@ public class Emoji {
 
     public static void loadRecentEmoji() {
         String string;
+        boolean z10;
         if (recentEmojiLoaded) {
             return;
         }
+        boolean z11 = true;
         recentEmojiLoaded = true;
         SharedPreferences globalEmojiSettings = MessagesController.getGlobalEmojiSettings();
         try {
@@ -361,11 +363,15 @@ public class Emoji {
                 try {
                     String string2 = globalEmojiSettings.getString("emojis", "");
                     if (string2 != null && string2.length() > 0) {
-                        for (String str : string2.split(",")) {
-                            String[] split = str.split("=");
-                            long longValue = Utilities.parseLong(split[0]).longValue();
+                        String[] split = string2.split(",");
+                        int length = split.length;
+                        int i10 = 0;
+                        while (i10 < length) {
+                            String[] split2 = split[i10].split("=");
+                            long longValue = Utilities.parseLong(split2[0]).longValue();
                             StringBuilder sb2 = new StringBuilder();
-                            for (int i10 = 0; i10 < 4; i10++) {
+                            boolean z12 = z11;
+                            for (int i11 = 0; i11 < 4; i11++) {
                                 sb2.insert(0, (char) longValue);
                                 longValue >>= 16;
                                 if (longValue == 0) {
@@ -373,10 +379,13 @@ public class Emoji {
                                 }
                             }
                             if (sb2.length() > 0) {
-                                emojiUseHistory.put(sb2.toString(), Utilities.parseInt((CharSequence) split[1]));
+                                emojiUseHistory.put(sb2.toString(), Utilities.parseInt((CharSequence) split2[z12 ? 1 : 0]));
                             }
+                            i10++;
+                            z11 = z12 ? 1 : 0;
                         }
                     }
+                    z10 = z11;
                     globalEmojiSettings.edit().remove("emojis").commit();
                     saveRecentEmoji();
                 } catch (Exception e7) {
@@ -390,25 +399,26 @@ public class Emoji {
                     }
                 }
             } else {
+                z10 = true;
                 String string3 = globalEmojiSettings.getString("emojis2", "");
                 if (string3 != null && string3.length() > 0) {
-                    for (String str2 : string3.split(",")) {
-                        String[] split2 = str2.split("=");
-                        emojiUseHistory.put(split2[0], Utilities.parseInt((CharSequence) split2[1]));
+                    for (String str : string3.split(",")) {
+                        String[] split3 = str.split("=");
+                        emojiUseHistory.put(split3[0], Utilities.parseInt((CharSequence) split3[1]));
                     }
                 }
             }
             if (emojiUseHistory.isEmpty() && !globalEmojiSettings.getBoolean("filled_default", false)) {
-                int i11 = 0;
+                int i12 = 0;
                 while (true) {
                     String[] strArr = DEFAULT_RECENT;
-                    if (i11 >= strArr.length) {
+                    if (i12 >= strArr.length) {
                         break;
                     }
-                    emojiUseHistory.put(strArr[i11], Integer.valueOf(strArr.length - i11));
-                    i11++;
+                    emojiUseHistory.put(strArr[i12], Integer.valueOf(strArr.length - i12));
+                    i12++;
                 }
-                globalEmojiSettings.edit().putBoolean("filled_default", true).commit();
+                globalEmojiSettings.edit().putBoolean("filled_default", z10).commit();
                 saveRecentEmoji();
             }
             sortEmoji();
@@ -420,9 +430,9 @@ public class Emoji {
             if (string != null || string.length() <= 0) {
                 return;
             }
-            for (String str3 : string.split(",")) {
-                String[] split3 = str3.split("=");
-                emojiColor.put(split3[0], split3[1]);
+            for (String str2 : string.split(",")) {
+                String[] split4 = str2.split("=");
+                emojiColor.put(split4[0], split4[1]);
             }
         } catch (Exception e11) {
             FileLog.e(e11);
@@ -498,12 +508,12 @@ public class Emoji {
             if (arrayList.size() <= 48) {
                 return;
             } else {
-                a4.a.y(1, arrayList);
+                a1.g.y(1, arrayList);
             }
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class EmojiSpan extends ImageSpan {
         public boolean drawn;
         public String emoji;
@@ -548,7 +558,7 @@ public class Emoji {
         @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
         public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
             boolean z10;
-            this.lastDrawX = a4.a.B(this.scale, this.size, 2.0f, f7);
+            this.lastDrawX = a1.g.B(this.scale, this.size, 2.0f, f7);
             this.lastDrawY = ((i14 - i12) / 2.0f) + i12;
             boolean z11 = true;
             this.drawn = true;
@@ -679,12 +689,12 @@ public class Emoji {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:107:0x0283 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:181:0x00fe A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011d, B:20:0x0121, B:22:0x012e, B:26:0x013c, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0149, B:111:0x0150, B:113:0x015c, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00aa, B:165:0x00be, B:181:0x00fe, B:191:0x00e0, B:196:0x00f6), top: B:8:0x002e }] */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x011d A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011d, B:20:0x0121, B:22:0x012e, B:26:0x013c, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0149, B:111:0x0150, B:113:0x015c, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00aa, B:165:0x00be, B:181:0x00fe, B:191:0x00e0, B:196:0x00f6), top: B:8:0x002e }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x01a6 A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011d, B:20:0x0121, B:22:0x012e, B:26:0x013c, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0149, B:111:0x0150, B:113:0x015c, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00aa, B:165:0x00be, B:181:0x00fe, B:191:0x00e0, B:196:0x00f6), top: B:8:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:181:0x00fc A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011c, B:20:0x0120, B:22:0x012d, B:26:0x013b, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0148, B:111:0x014f, B:113:0x015b, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00a8, B:165:0x00bc, B:181:0x00fc, B:191:0x00de, B:196:0x00f4), top: B:8:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0107  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x011c A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011c, B:20:0x0120, B:22:0x012d, B:26:0x013b, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0148, B:111:0x014f, B:113:0x015b, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00a8, B:165:0x00bc, B:181:0x00fc, B:191:0x00de, B:196:0x00f4), top: B:8:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x01a6 A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011c, B:20:0x0120, B:22:0x012d, B:26:0x013b, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0148, B:111:0x014f, B:113:0x015b, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00a8, B:165:0x00bc, B:181:0x00fc, B:191:0x00de, B:196:0x00f4), top: B:8:0x002e }] */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0223 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x022d A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011d, B:20:0x0121, B:22:0x012e, B:26:0x013c, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0149, B:111:0x0150, B:113:0x015c, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00aa, B:165:0x00be, B:181:0x00fe, B:191:0x00e0, B:196:0x00f6), top: B:8:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x022d A[Catch: Exception -> 0x0078, TryCatch #0 {Exception -> 0x0078, blocks: (B:9:0x002e, B:15:0x006c, B:18:0x011c, B:20:0x0120, B:22:0x012d, B:26:0x013b, B:30:0x01a6, B:32:0x01aa, B:36:0x01b7, B:38:0x01bd, B:40:0x021a, B:57:0x01ec, B:59:0x01f0, B:70:0x0205, B:72:0x0209, B:85:0x0225, B:87:0x022d, B:89:0x0231, B:91:0x023c, B:95:0x024a, B:98:0x025a, B:100:0x0266, B:102:0x0269, B:103:0x027a, B:109:0x0148, B:111:0x014f, B:113:0x015b, B:117:0x016b, B:119:0x0171, B:120:0x0178, B:122:0x0180, B:123:0x0187, B:125:0x0191, B:130:0x019a, B:137:0x0042, B:139:0x004d, B:145:0x007b, B:153:0x0098, B:156:0x008f, B:161:0x00a8, B:165:0x00bc, B:181:0x00fc, B:191:0x00de, B:196:0x00f4), top: B:8:0x002e }] */
     /* JADX WARN: Removed duplicated region for block: B:97:0x0258  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -708,16 +718,16 @@ public class Emoji {
             int length = charSequence.length();
             int i18 = -1;
             int[] iArr2 = iArr;
-            int i19 = 0;
+            int i19 = -1;
             int i20 = 0;
+            int i21 = 0;
             long j3 = 0;
-            int i21 = -1;
             int i22 = 0;
             boolean z12 = false;
             boolean z13 = false;
-            while (i20 < length) {
+            while (i21 < length) {
                 try {
-                    char charAt3 = charSequence.charAt(i20);
+                    char charAt3 = charSequence.charAt(i21);
                     if ((charAt3 < 55356 || charAt3 > 55358) && (j3 == 0 || (j3 & (-4294967296L)) != 0 || (j3 & 65535) != 55356 || charAt3 < 56806 || charAt3 > 56831)) {
                         if ((sb2.length() > 0 && (charAt3 == 9792 || charAt3 == 9794 || charAt3 == 9877)) || (j3 > 0 && (61440 & charAt3) == 53248)) {
                             sb2.append(charAt3);
@@ -728,26 +738,26 @@ public class Emoji {
                                 if (charAt3 != 174) {
                                     if (charAt3 >= 8252 && charAt3 <= 12953) {
                                     }
-                                    if (i21 == -1) {
+                                    if (i19 == -1) {
                                         sb2.setLength(0);
                                         z10 = false;
-                                        i21 = -1;
+                                        i19 = -1;
                                         i22 = 0;
                                         z12 = false;
                                         z13 = false;
                                     } else if (charAt3 != 65039 && charAt3 != '\n' && charAt3 != ' ' && charAt3 != '\t') {
                                         z10 = true;
                                     }
-                                    if (z13 || (i17 = i20 + 2) >= length) {
+                                    if (z13 || (i17 = i21 + 2) >= length) {
                                         z11 = z10;
                                     } else {
-                                        int i23 = i20 + 1;
+                                        int i23 = i21 + 1;
                                         char charAt4 = charSequence.charAt(i23);
                                         z11 = z10;
                                         if (charAt4 == 55356) {
                                             char charAt5 = charSequence.charAt(i17);
                                             if (charAt5 >= 57339 && charAt5 <= 57343) {
-                                                sb2.append(charSequence.subSequence(i23, i20 + 3));
+                                                sb2.append(charSequence.subSequence(i23, i21 + 3));
                                                 i22 += 2;
                                                 i10 = i17;
                                                 i11 = i10;
@@ -773,11 +783,11 @@ public class Emoji {
                                                                         z13 = i11 + 2 >= length;
                                                                     }
                                                                     i11 = i24;
-                                                                    i21 = i16;
+                                                                    i19 = i16;
                                                                     z12 = true;
                                                                 }
                                                             }
-                                                        } else if (i21 != -1 && charAt6 >= 65024) {
+                                                        } else if (i19 != -1 && charAt6 >= 65024) {
                                                             if (charAt6 <= 65039) {
                                                                 i22++;
                                                                 if (!z13) {
@@ -811,17 +821,17 @@ public class Emoji {
                                                     if (iArr2 != null) {
                                                         iArr2[0] = iArr2[0] + 1;
                                                     }
-                                                    if (i21 >= 0 && (i13 = i22 + i21) <= length) {
-                                                        arrayList.add(new EmojiSpanRange(i21, i13, sb2.subSequence(0, sb2.length())));
+                                                    if (i19 >= 0 && (i13 = i22 + i19) <= length) {
+                                                        arrayList.add(new EmojiSpanRange(i19, i13, sb2.subSequence(0, sb2.length())));
                                                     }
                                                     sb2.setLength(0);
-                                                    i21 = -1;
+                                                    i19 = -1;
                                                     i22 = 0;
                                                     z12 = false;
                                                     z13 = false;
                                                 }
-                                                i20 = i11 + 1;
-                                                i19 = i25;
+                                                i21 = i11 + 1;
+                                                i20 = i25;
                                                 i18 = -1;
                                             }
                                         } else if (sb2.length() >= 2 && sb2.charAt(0) == 55356 && sb2.charAt(1) == 57332 && charAt4 == 56128) {
@@ -840,10 +850,10 @@ public class Emoji {
                                                 }
                                                 i23 = i27;
                                             }
-                                            i20 = i23 + 1;
+                                            i21 = i23 + 1;
                                         }
                                     }
-                                    i10 = i20;
+                                    i10 = i21;
                                     i11 = i10;
                                     i12 = 0;
                                     while (i12 < 3) {
@@ -863,28 +873,28 @@ public class Emoji {
                                     }
                                     if (z13) {
                                     }
-                                    i20 = i11 + 1;
-                                    i19 = i252;
+                                    i21 = i11 + 1;
+                                    i20 = i252;
                                     i18 = -1;
                                 }
                             }
                             if (EmojiData.dataCharsMap.containsKey(Character.valueOf(charAt3))) {
-                                if (i21 == -1) {
-                                    i21 = i20;
+                                if (i19 == -1) {
+                                    i19 = i21;
                                 } else if (z12) {
-                                    i21 = i20;
+                                    i19 = i21;
                                     i22 = 0;
                                     z12 = false;
                                 }
                                 i22++;
                                 sb2.append(charAt3);
                             }
-                            if (i21 == -1) {
+                            if (i19 == -1) {
                             }
                             if (z13) {
                             }
                             z11 = z10;
-                            i10 = i20;
+                            i10 = i21;
                             i11 = i10;
                             i12 = 0;
                             while (i12 < 3) {
@@ -896,42 +906,23 @@ public class Emoji {
                             }
                             if (z13) {
                             }
-                            i20 = i11 + 1;
-                            i19 = i2522;
+                            i21 = i11 + 1;
+                            i20 = i2522;
                             i18 = -1;
-                        } else if (i20 > 0 && (((charAt = charSequence.charAt(i19)) >= '0' && charAt <= '9') || charAt == '#' || charAt == '*')) {
-                            i22 = (i20 - i19) + 1;
+                        } else if (i21 > 0 && (((charAt = charSequence.charAt(i20)) >= '0' && charAt <= '9') || charAt == '#' || charAt == '*')) {
+                            i22 = (i21 - i20) + 1;
                             sb2.append(charAt);
                             sb2.append(charAt3);
-                            i21 = i19;
-                            z12 = false;
+                            i19 = i20;
                             z13 = true;
+                            z12 = false;
                         }
-                        z10 = false;
                         z13 = true;
-                        if (z13) {
-                        }
-                        z11 = z10;
-                        i10 = i20;
-                        i11 = i10;
-                        i12 = 0;
-                        while (i12 < 3) {
-                        }
-                        int i25222 = i10;
-                        if (z11) {
-                        }
-                        if (z13) {
-                        }
-                        if (z13) {
-                        }
-                        i20 = i11 + 1;
-                        i19 = i25222;
-                        i18 = -1;
                     } else {
-                        if (i21 == i18) {
-                            i21 = i20;
+                        if (i19 == i18) {
+                            i19 = i21;
                         } else if (z12) {
-                            i21 = i20;
+                            i19 = i21;
                             i22 = 0;
                             z12 = false;
                         }
@@ -943,20 +934,20 @@ public class Emoji {
                     if (z13) {
                     }
                     z11 = z10;
-                    i10 = i20;
+                    i10 = i21;
                     i11 = i10;
                     i12 = 0;
                     while (i12 < 3) {
                     }
-                    int i252222 = i10;
+                    int i25222 = i10;
                     if (z11) {
                     }
                     if (z13) {
                     }
                     if (z13) {
                     }
-                    i20 = i11 + 1;
-                    i19 = i252222;
+                    i21 = i11 + 1;
+                    i20 = i25222;
                     i18 = -1;
                 } catch (Exception e7) {
                     FileLog.e(e7);
@@ -983,18 +974,17 @@ public class Emoji {
 
     public static CharSequence replaceWithRestrictedEmoji(CharSequence charSequence, Paint.FontMetricsInt fontMetricsInt, int i10, Runnable runnable) {
         Spannable newSpannable;
-        int i11;
         EmojiSpanRange emojiSpanRange;
         TLRPC.Document document;
-        org.telegram.ui.Components.z5 z5Var;
-        int i12;
+        org.telegram.ui.Components.b6 b6Var;
+        int i11;
         if (SharedConfig.useSystemEmoji || charSequence == null || charSequence.length() == 0) {
             return charSequence;
         }
-        int i13 = UserConfig.selectedAccount;
+        int i12 = UserConfig.selectedAccount;
         TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
         tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(i13).getStickerSet(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new b1(runnable, 1));
+        TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(i12).getStickerSet(tL_inputStickerSetShortName, 0, false, true, runnable == null ? null : new b1(runnable, 1));
         if (charSequence instanceof Spannable) {
             newSpannable = (Spannable) charSequence;
         } else {
@@ -1004,24 +994,23 @@ public class Emoji {
         if (parseEmojis.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.z5.class);
-        int i14 = SharedConfig.getDevicePerformanceClass() >= 2 ? 100 : 50;
-        for (int i15 = 0; i15 < parseEmojis.size(); i15++) {
+        org.telegram.ui.Components.b6[] b6VarArr = (org.telegram.ui.Components.b6[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.b6.class);
+        int i13 = SharedConfig.getDevicePerformanceClass() >= 2 ? 100 : 50;
+        for (int i14 = 0; i14 < parseEmojis.size(); i14++) {
             try {
-                emojiSpanRange = parseEmojis.get(i15);
-                if (z5VarArr != null) {
-                    while (i12 < z5VarArr.length) {
-                        org.telegram.ui.Components.z5 z5Var2 = z5VarArr[i12];
-                        i12 = (z5Var2 != null && newSpannable.getSpanStart(z5Var2) == emojiSpanRange.start && newSpannable.getSpanEnd(z5Var2) == emojiSpanRange.end) ? 0 : i12 + 1;
+                emojiSpanRange = parseEmojis.get(i14);
+                if (b6VarArr != null) {
+                    for (org.telegram.ui.Components.b6 b6Var2 : b6VarArr) {
+                        i11 = (b6Var2 != null && newSpannable.getSpanStart(b6Var2) == emojiSpanRange.start && newSpannable.getSpanEnd(b6Var2) == emojiSpanRange.end) ? 0 : i11 + 1;
                     }
                 }
                 if (stickerSet != null) {
                     ArrayList<TLRPC.Document> arrayList = stickerSet.documents;
                     int size = arrayList.size();
-                    int i16 = 0;
-                    while (i16 < size) {
-                        TLRPC.Document document2 = arrayList.get(i16);
-                        i16++;
+                    int i15 = 0;
+                    while (i15 < size) {
+                        TLRPC.Document document2 = arrayList.get(i15);
+                        i15++;
                         document = document2;
                         if (MessageObject.findAnimatedEmojiEmoticon(document, null).contains(emojiSpanRange.code)) {
                             break;
@@ -1030,28 +1019,27 @@ public class Emoji {
                 }
                 document = null;
                 if (document != null) {
-                    z5Var = new org.telegram.ui.Components.z5(document, fontMetricsInt);
+                    b6Var = new org.telegram.ui.Components.b6(document, fontMetricsInt);
                 } else {
-                    z5Var = new org.telegram.ui.Components.z5(0L, fontMetricsInt);
+                    b6Var = new org.telegram.ui.Components.b6(0L, fontMetricsInt);
                 }
-                z5Var.emoji = emojiSpanRange.code.toString();
+                b6Var.emoji = emojiSpanRange.code.toString();
             } catch (Exception e7) {
                 e = e7;
             }
             try {
-                z5Var.cacheType = i10;
-                newSpannable.setSpan(z5Var, emojiSpanRange.start, emojiSpanRange.end, 33);
+                b6Var.cacheType = i10;
+                newSpannable.setSpan(b6Var, emojiSpanRange.start, emojiSpanRange.end, 33);
             } catch (Exception e10) {
                 e = e10;
                 FileLog.e(e);
-                i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 23) {
+                if (Build.VERSION.SDK_INT >= 29) {
+                    break;
+                    return newSpannable;
                 }
-                break;
-                return newSpannable;
+                continue;
             }
-            i11 = Build.VERSION.SDK_INT;
-            if ((i11 >= 23 || i11 >= 29) && i15 + 1 >= i14) {
+            if (Build.VERSION.SDK_INT >= 29 && i14 + 1 >= i13) {
                 break;
             }
         }
@@ -1078,22 +1066,20 @@ public class Emoji {
         if (parseEmojis.isEmpty()) {
             return charSequence;
         }
-        org.telegram.ui.Components.z5[] z5VarArr = (org.telegram.ui.Components.z5[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.z5.class);
-        rq[] rqVarArr = (rq[]) newSpannable.getSpans(0, newSpannable.length(), rq.class);
+        org.telegram.ui.Components.b6[] b6VarArr = (org.telegram.ui.Components.b6[]) newSpannable.getSpans(0, newSpannable.length(), org.telegram.ui.Components.b6.class);
+        er[] erVarArr = (er[]) newSpannable.getSpans(0, newSpannable.length(), er.class);
         int i14 = (SharedConfig.getDevicePerformanceClass() >= 2 ? 100 : 50) - i11;
         for (int i15 = 0; i15 < parseEmojis.size(); i15++) {
             try {
                 EmojiSpanRange emojiSpanRange = parseEmojis.get(i15);
-                if (z5VarArr != null && z5VarArr.length > 0) {
-                    while (i13 < z5VarArr.length) {
-                        org.telegram.ui.Components.z5 z5Var = z5VarArr[i13];
-                        i13 = (z5Var != null && newSpannable.getSpanStart(z5Var) == emojiSpanRange.start && newSpannable.getSpanEnd(z5Var) == emojiSpanRange.end) ? 0 : i13 + 1;
+                if (b6VarArr != null && b6VarArr.length > 0) {
+                    for (org.telegram.ui.Components.b6 b6Var : b6VarArr) {
+                        i13 = (b6Var != null && newSpannable.getSpanStart(b6Var) == emojiSpanRange.start && newSpannable.getSpanEnd(b6Var) == emojiSpanRange.end) ? 0 : i13 + 1;
                     }
                 }
-                if (rqVarArr != null && rqVarArr.length > 0) {
-                    while (i12 < rqVarArr.length) {
-                        rq rqVar = rqVarArr[i12];
-                        i12 = (rqVar != null && newSpannable.getSpanStart(rqVar) == emojiSpanRange.start && newSpannable.getSpanEnd(rqVar) == emojiSpanRange.end) ? 0 : i12 + 1;
+                if (erVarArr != null && erVarArr.length > 0) {
+                    for (er erVar : erVarArr) {
+                        i12 = (erVar != null && newSpannable.getSpanStart(erVar) == emojiSpanRange.start && newSpannable.getSpanEnd(erVar) == emojiSpanRange.end) ? 0 : i12 + 1;
                     }
                 }
                 EmojiDrawable emojiDrawable = getEmojiDrawable(emojiSpanRange.code);
@@ -1107,15 +1093,14 @@ public class Emoji {
             } catch (Exception e7) {
                 FileLog.e(e7);
             }
-            int i16 = Build.VERSION.SDK_INT;
-            if ((i16 < 23 || i16 >= 29) && i15 + 1 >= i14) {
+            if (Build.VERSION.SDK_INT >= 29 && i15 + 1 >= i14) {
                 break;
             }
         }
         return newSpannable;
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static abstract class EmojiDrawable extends Drawable {
         public boolean fullSize = false;
         int placeholderColor = TLObject.FLAG_28;
@@ -1128,7 +1113,7 @@ public class Emoji {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SimpleEmojiDrawable extends EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();

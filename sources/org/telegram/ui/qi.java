@@ -1,26 +1,24 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qi extends org.telegram.ui.Components.mo {
-    public final /* synthetic */ yn M;
+public final class qi extends org.telegram.ui.Components.iw {
+    public final /* synthetic */ zn W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi(yn ynVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, i10, document, d6Var);
-        this.M = ynVar;
+    public qi(zn znVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
+        super(n2Var, activity, e6Var, arrayList);
+        this.W = znVar;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        yn ynVar = this.M;
-        float y10 = ynVar.P0.getY() + y3;
-        this.J = ynVar.V0.getBackgroundSizeY();
-        this.I = y10;
+    @Override // org.telegram.ui.Components.iw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        zn znVar = this.W;
+        znVar.getClass();
+        znVar.j8(false, true, 0.0f);
     }
 }

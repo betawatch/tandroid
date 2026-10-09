@@ -1,21 +1,22 @@
 package tg;
 
-import ai.y3;
+import ai.z3;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import ci.z8;
+import ci.a9;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.cw0;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.iw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class m extends f3 {
     public static m e;
@@ -23,40 +24,40 @@ public final class m extends f3 {
     public final z0 c;
     public boolean d;
 
-    public m(Activity activity, a0 a0Var, z0 z0Var, d6 d6Var, boolean z10) {
-        super(1, (Context) activity, d6Var, true);
+    public m(Activity activity, a0 a0Var, z0 z0Var, e6 e6Var, boolean z10) {
+        super(1, (Context) activity, e6Var, true);
         this.c = z0Var;
         setApplyBottomPadding(false);
         setApplyTopPadding(false);
         this.useBackgroundTopPadding = false;
         setBackgroundColor(0);
         fixNavigationBar();
-        AndroidUtilities.setLightStatusBar(this, i0.a.f(i6.v0(i6.h5, this.resourcesProvider)) > 0.699999988079071d);
+        AndroidUtilities.setLightStatusBar(this, i0.a.f(i6.w0(i6.h5, this.resourcesProvider)) > 0.699999988079071d);
         this.d = getContext().getResources().getConfiguration().orientation == 2;
-        k kVar = new k(this, getContext(), z0Var, d6Var, a0Var);
+        k kVar = new k(this, getContext(), z0Var, e6Var, a0Var);
         this.b = kVar;
         kVar.setOverScrollMode(2);
         kVar.setClipToPadding(false);
-        kVar.setAdapter(new cw0(a0Var, z0Var));
+        kVar.setAdapter(new iw0(a0Var, z0Var));
         kVar.setPosition(0);
         setCustomView(kVar);
         a0Var.t0 = new j(this, 0);
-        a0Var.r0 = new o0.a(this, z0Var, false, 17);
-        z0Var.u0 = new l(this, a0Var, d6Var);
+        a0Var.r0 = new b5(16, this, z0Var);
+        z0Var.u0 = new l(this, a0Var, e6Var);
         z0Var.s0 = new j(this, 1);
         if (!z10) {
             MessagesController.getInstance(this.currentAccount).getStoriesController().R();
         }
-        rc.a(this.container, new z8(13));
+        tc.a(this.container, new a9(13));
     }
 
-    public static void m(n2 n2Var, d6 d6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
+    public static void o(n2 n2Var, e6 e6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
         if (e != null) {
             return;
         }
-        boolean z10 = d6Var instanceof ai.d;
-        n2 y3Var = z10 ? new y3(n2Var) : n2Var;
-        m mVar = new m(n2Var.getParentActivity(), new a0(y3Var, j3, prepaidGiveaway), new z0(y3Var, j3), y3Var.getResourceProvider(), z10);
+        boolean z10 = e6Var instanceof ai.d;
+        n2 z3Var = z10 ? new z3(n2Var) : n2Var;
+        m mVar = new m(n2Var.getParentActivity(), new a0(z3Var, j3, prepaidGiveaway), new z0(z3Var, j3), z3Var.getResourceProvider(), z10);
         mVar.show();
         e = mVar;
     }
@@ -80,13 +81,13 @@ public final class m extends f3 {
             return;
         }
         z0 z0Var = this.c;
-        if (z0Var.Q()) {
+        if (z0Var.T()) {
             return;
         }
         if (isKeyboardVisible()) {
             AndroidUtilities.hideKeyboard(z0Var.getContainerView());
         }
-        kVar.E(0);
+        kVar.D(0);
     }
 
     @Override // org.telegram.ui.ActionBar.f3

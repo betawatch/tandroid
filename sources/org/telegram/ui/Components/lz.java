@@ -1,133 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
+import android.content.Context;
 import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lz extends yl0 {
-    public final boolean c;
-    public final /* synthetic */ nz d;
+public final class lz extends yx0 {
+    public final /* synthetic */ int x3;
+    public final /* synthetic */ mz y3;
 
-    public lz(nz nzVar, boolean z10) {
-        this.d = nzVar;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lz(mz mzVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(context, i10, e6Var);
+        this.y3 = mzVar;
+        this.x3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
+    @Override // org.telegram.ui.Components.yx0
+    public final boolean B1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        boolean z10 = this.c;
-        nz nzVar = this.d;
-        return (z10 ? nzVar.n1 : nzVar.m1).size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        ArrayList<TLRPC.Document> arrayList;
-        ImageLocation forSticker;
-        w9 w9Var = (w9) c1Var.a;
-        nz nzVar = this.d;
-        boolean z10 = this.c;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? nzVar.n1 : nzVar.m1).get(i10);
-        w9Var.setTag(stickerSetCovered);
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(nzVar.c1).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
-            arrayList = stickerSet == null ? null : stickerSet.documents;
-        } else {
-            arrayList = stickerSetCovered.covers;
+    @Override // org.telegram.ui.Components.yx0
+    public final void F1(int i10) {
+        mx mxVar;
+        ey eyVar;
+        super.F1(i10);
+        mz mzVar = this.y3;
+        a00 a00Var = mzVar.G;
+        lz lzVar = mzVar.r;
+        boolean z10 = lzVar.getSelectedCategory() == null;
+        int i11 = a00.O2;
+        a00Var.M(z10);
+        int i12 = this.x3;
+        if (i12 == 1 && (eyVar = a00Var.I) != null) {
+            eyVar.n(lzVar.getSelectedCategory() == null);
+        } else if (i12 == 0 && (mxVar = a00Var.B0) != null) {
+            mxVar.o0 = lzVar.getSelectedCategory() == null;
+            mxVar.invalidate();
         }
-        TLRPC.Document document = stickerSetCovered.cover;
-        if (document == null) {
-            if (arrayList == null || arrayList.isEmpty()) {
-                document = null;
-            } else {
-                if (stickerSetCovered.set != null) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11).id == stickerSetCovered.set.thumb_document_id) {
-                            document = arrayList.get(i11);
-                            break;
-                        }
-                    }
-                }
-                document = null;
-                if (document == null) {
-                    document = arrayList.get(0);
-                }
-            }
-        }
-        if (document == null) {
-            return;
-        }
-        if (z10) {
-            w9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.i6.n0(nzVar.Z1) : null);
-        }
-        TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.i6.c7, 0.2f);
-        if (svgThumb != null) {
-            svgThumb.overrideWidthAndHeight(512, 512);
-        }
-        if (closestPhotoSizeWithSize == null || MessageObject.isVideoSticker(document)) {
-            closestPhotoSizeWithSize = document;
-        }
-        boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-        if (z11) {
-            forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
-        } else if (!(closestPhotoSizeWithSize instanceof TLRPC.PhotoSize)) {
-            return;
-        } else {
-            forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
-        }
-        if (forSticker == null) {
-            return;
-        }
-        String str = !LiteMode.isEnabled(z10 ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "30_30_firstframe" : "30_30";
-        if (z11 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
-            if (svgThumb != null) {
-                w9Var.n(ImageLocation.getForDocument(document), str, svgThumb, stickerSetCovered);
-                return;
-            } else {
-                w9Var.j(ImageLocation.getForDocument(document), str, forSticker, null, 0, stickerSetCovered);
-                return;
-            }
-        }
-        String str2 = str;
-        ImageLocation imageLocation = forSticker;
-        if (imageLocation.imageType == 1) {
-            w9Var.i(imageLocation, str2, "tgs", svgThumb, stickerSetCovered);
-        } else {
-            w9Var.i(imageLocation, null, "webp", svgThumb, stickerSetCovered);
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        kz kzVar = new kz(this, this.d.getContext());
-        kzVar.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        kzVar.setLayerNum(1);
-        kzVar.setAspectFit(true);
-        kzVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new il0(kzVar);
+        mzVar.g(false);
     }
 }

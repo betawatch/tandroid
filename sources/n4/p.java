@@ -10,7 +10,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class p {
     public boolean c;
@@ -38,9 +38,9 @@ public abstract class p {
         if (this.c) {
             this.c = false;
             handler.removeMessages(1);
-            h0 h0Var = rVar.g;
-            long j3 = h0Var == null ? 0L : h0Var.e;
-            boolean z10 = h0Var != null && h0Var.a == 3;
+            f0 f0Var = rVar.g;
+            long j3 = f0Var == null ? 0L : f0Var.e;
+            boolean z10 = f0Var != null && f0Var.a == 3;
             boolean z11 = (516 & j3) != 0;
             boolean z12 = (j3 & 514) != 0;
             if (z10 && z12) {
@@ -64,7 +64,7 @@ public abstract class p {
                 cVar = this.e;
             }
             if (rVar != null && cVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
-                a0 c10 = rVar.c();
+                z c10 = rVar.c();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
                     a(rVar, cVar);
@@ -81,8 +81,8 @@ public abstract class p {
                 }
                 cVar.removeMessages(1);
                 this.c = false;
-                h0 h0Var = rVar.g;
-                if (((h0Var == null ? 0L : h0Var.e) & 32) != 0) {
+                f0 f0Var = rVar.g;
+                if (((f0Var == null ? 0L : f0Var.e) & 32) != 0) {
                     y();
                 }
                 return true;
@@ -130,10 +130,10 @@ public abstract class p {
     public void t(float f7) {
     }
 
-    public void u(i0 i0Var) {
+    public void u(g0 g0Var) {
     }
 
-    public void v(i0 i0Var) {
+    public void v(g0 g0Var) {
     }
 
     public void w(int i10) {

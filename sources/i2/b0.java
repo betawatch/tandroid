@@ -2,7 +2,7 @@ package i2;
 
 import b2.x1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements e2.m {
     public final /* synthetic */ int a = 0;
@@ -16,7 +16,7 @@ public final /* synthetic */ class b0 implements e2.m {
                 break;
             default:
                 x1 x1Var = this.b;
-                ((j2.b) obj).c(x1Var);
+                ((j2.b) obj).d(x1Var);
                 int i10 = x1Var.a;
                 break;
         }

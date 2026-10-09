@@ -1,57 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ta1;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pp b;
+public final class xo implements ImageReceiver.ImageReceiverDelegate {
+    public boolean a;
+    public final /* synthetic */ hg.h b;
+    public final /* synthetic */ zo c;
 
-    public /* synthetic */ xo(pp ppVar, int i10) {
-        this.a = i10;
-        this.b = ppVar;
+    public xo(hg.j jVar, hg.h hVar) {
+        this.c = jVar;
+        this.b = hVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.h.l();
-                break;
-            case 1:
-                this.b.s(true);
-                break;
-            case 2:
-                pp ppVar = this.b;
-                org.telegram.ui.yn ynVar = ppVar.v;
-                org.telegram.ui.ActionBar.n2 b02 = ta1.b0(ynVar.getMessagesController().getChat(Long.valueOf(-ynVar.a())), true);
-                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                l2Var.a = true;
-                b02.setResourceProvider(ynVar.getResourceProvider());
-                l2Var.c = new uh(2);
-                l2Var.d = new xo(ppVar, 3);
-                l2Var.b = new xo(ppVar, 4);
-                l2Var.e = true;
-                ppVar.X = b02;
-                ynVar.showAsSheet(b02, l2Var);
-                break;
-            case 3:
-                this.b.u();
-                break;
-            case 4:
-                this.b.X = null;
-                break;
-            case 5:
-                this.b.u();
-                break;
-            case 6:
-                this.b.X = null;
-                break;
-            default:
-                pp ppVar2 = this.b;
-                ppVar2.U.f(ppVar2.G, true);
-                break;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        ck0 ck0Var;
+        yf.e eVar;
+        if (this.a) {
+            return;
         }
+        if ((i10 == 0 || i10 == 3) && drawable != null) {
+            this.a = true;
+            boolean z10 = drawable instanceof ck0;
+            hg.h hVar = this.b;
+            if (z10 && (eVar = (ck0Var = (ck0) drawable).B0) != null && eVar.g()) {
+                ck0Var.A0 = new ea(25, this, hVar);
+            } else {
+                zo.a(this.c);
+                hVar.run();
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.i5.b(this, imageReceiver);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

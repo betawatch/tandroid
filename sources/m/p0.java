@@ -3,6 +3,7 @@ package m;
 import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
@@ -15,11 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import v7.v7;
+import android.widget.ThemedSpinnerAdapter;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -46,8 +49,8 @@ public final class p0 extends Spinner {
         this.n = new Rect();
         a3.a(this, getContext());
         int[] iArr = f.a.v;
-        la.h Q = la.h.Q(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-        TypedArray typedArray2 = (TypedArray) Q.c;
+        la.h R = la.h.R(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        TypedArray typedArray2 = (TypedArray) R.c;
         this.a = new e2.c(this);
         int resourceId = typedArray2.getResourceId(4, 0);
         if (resourceId != 0) {
@@ -92,11 +95,11 @@ public final class p0 extends Spinner {
             i0Var.c = typedArray2.getString(2);
         } else if (i10 == 1) {
             m0 m0Var = new m0(this, this.b, attributeSet);
-            la.h Q2 = la.h.Q(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-            this.h = ((TypedArray) Q2.c).getLayoutDimension(3, -2);
-            m0Var.i(Q2.A(1));
+            la.h R2 = la.h.R(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            this.h = ((TypedArray) R2.c).getLayoutDimension(3, -2);
+            m0Var.i(R2.G(1));
             m0Var.S = typedArray2.getString(2);
-            Q2.R();
+            R2.S();
             this.f = m0Var;
             this.c = new e0(this, this, m0Var);
         }
@@ -106,7 +109,7 @@ public final class p0 extends Spinner {
             arrayAdapter.setDropDownViewResource(org.telegram.messenger.beta.R.layout.support_simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
-        Q.R();
+        R.S();
         this.e = true;
         SpinnerAdapter spinnerAdapter = this.d;
         if (spinnerAdapter != null) {
@@ -331,7 +334,7 @@ public final class p0 extends Spinner {
 
     @Override // android.widget.Spinner
     public void setPopupBackgroundResource(int i10) {
-        setPopupBackgroundDrawable(v7.b(getPopupContext(), i10));
+        setPopupBackgroundDrawable(s7.b(getPopupContext(), i10));
     }
 
     @Override // android.widget.Spinner
@@ -371,7 +374,16 @@ public final class p0 extends Spinner {
             if (context == null) {
                 context = getContext();
             }
-            o0Var.n(new j0(spinnerAdapter, context.getTheme()));
+            Resources.Theme theme = context.getTheme();
+            j0 j0Var = new j0();
+            j0Var.a = spinnerAdapter;
+            if (spinnerAdapter instanceof ListAdapter) {
+                j0Var.b = (ListAdapter) spinnerAdapter;
+            }
+            if (theme != null && (spinnerAdapter instanceof ThemedSpinnerAdapter)) {
+                h0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
+            }
+            o0Var.n(j0Var);
         }
     }
 }

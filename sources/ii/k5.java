@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class k5 implements h1 {
     public final /* synthetic */ t5 a;
@@ -16,7 +16,16 @@ public final class k5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(Editable editable) {
+    public final void E(CharSequence charSequence) {
+        d3 d3Var = this.b.E;
+        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        d3Var.a.u4(charSequence.toString());
+    }
+
+    @Override // ii.h1
+    public final void L(Editable editable) {
         TL_iv.pageTableCell pagetablecell = this.a.b;
         if (pagetablecell != null) {
             j6.d(pagetablecell, editable);
@@ -31,22 +40,22 @@ public final class k5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean C(boolean z10) {
+    public final boolean N(boolean z10) {
         return this.b.s(this.a, z10);
     }
 
     @Override // ii.h1
-    public final void b(i1 i1Var) {
+    public final void c(i1 i1Var) {
         d3 d3Var = this.b.E;
         if (d3Var != null) {
             x3 x3Var = d3Var.a;
             x3.N1(x3Var, i1Var);
-            x3Var.o3.P(i1Var, true);
+            x3Var.f3.r(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean e() {
+    public final boolean f() {
         q5 q5Var = this.b;
         d3 d3Var = q5Var.E;
         if (d3Var == null || q5Var.a == null) {
@@ -56,36 +65,36 @@ public final class k5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void f(int i10, int i11) {
+    public final void i(int i10, int i11) {
         i2 i2Var;
         q5 q5Var = this.b;
         d3 d3Var = q5Var.E;
-        if (d3Var == null || q5Var.a == null || (i2Var = d3Var.a.Q3) == null) {
+        if (d3Var == null || q5Var.a == null || (i2Var = d3Var.a.H3) == null) {
             return;
         }
         i2Var.f(i10, i11);
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean n(i1 i1Var) {
+    public final /* synthetic */ boolean m(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean p(i1 i1Var) {
+    public final /* synthetic */ boolean r(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final void t(final i1 i1Var, final int i10, final int i11) {
+    public final void x(final i1 i1Var, final int i10, final int i11) {
         d3 d3Var;
-        final q9 textSelectionHelper;
+        final o9 textSelectionHelper;
         final int k10;
         q5 q5Var = this.b;
         if (q5Var.G || i10 == i11 || (d3Var = q5Var.E) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
             return;
         }
-        if (!(textSelectionHelper.y() && textSelectionHelper.W == q5Var) && (k10 = q5Var.k(this.a.b)) >= 0) {
+        if (!(textSelectionHelper.x() && textSelectionHelper.W == q5Var) && (k10 = q5Var.k(this.a.b)) >= 0) {
             q5Var.post(new Runnable() { // from class: ii.j5
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -93,7 +102,7 @@ public final class k5 implements h1 {
                     i1 i1Var2 = i1Var;
                     int length = i1Var2.length();
                     int i12 = i11;
-                    if (length < i12 || i1Var2.getSelectionStart() == i1Var2.getSelectionEnd() || !textSelectionHelper.k0(q5Var2, k10, i10, i12)) {
+                    if (length < i12 || i1Var2.getSelectionStart() == i1Var2.getSelectionEnd() || !textSelectionHelper.j0(q5Var2, k10, i10, i12)) {
                         return;
                     }
                     q5Var2.G = true;
@@ -105,19 +114,10 @@ public final class k5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void w(CharSequence charSequence) {
-        d3 d3Var = this.b.E;
-        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        d3Var.a.u4(charSequence.toString());
+    public final /* synthetic */ void k(i1 i1Var) {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ void l(i1 i1Var) {
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ void r() {
+    public final /* synthetic */ void t() {
     }
 }

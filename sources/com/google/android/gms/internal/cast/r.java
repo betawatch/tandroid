@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r extends h {
     public static final g6.b j = new g6.b("MediaRouterProxy", null);
@@ -36,20 +36,20 @@ public final class r extends h {
         boolean isEmpty = context.getPackageManager().queryBroadcastReceivers(intent, 0).isEmpty();
         this.i = !isEmpty;
         if (!isEmpty) {
-            f2.a(f1.a0);
+            d2.a(d1.a0);
         }
-        rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new of.b(this, bVar, false, 11));
+        rVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new n4.x(9, this, bVar));
     }
 
-    public final void L0(android.support.v4.media.session.b0 b0Var) {
+    public final void K0(android.support.v4.media.session.a0 a0Var) {
         this.c.getClass();
         p4.x.b();
         p4.e c10 = p4.x.c();
-        c10.D = b0Var;
-        la.h hVar = b0Var != null ? new la.h(c10, b0Var) : null;
+        c10.D = a0Var;
+        la.h hVar = a0Var != null ? new la.h(c10, a0Var) : null;
         la.h hVar2 = c10.C;
         if (hVar2 != null) {
-            hVar2.p();
+            hVar2.u();
         }
         c10.C = hVar;
         if (hVar != null) {
@@ -57,7 +57,7 @@ public final class r extends h {
         }
     }
 
-    public final void M0(p4.r rVar, int i10) {
+    public final void L0(p4.r rVar, int i10) {
         Set set = (Set) this.e.get(rVar);
         if (set == null) {
             return;
@@ -68,7 +68,7 @@ public final class r extends h {
         }
     }
 
-    public final void N0(p4.r rVar) {
+    public final void M0(p4.r rVar) {
         Set set = (Set) this.e.get(rVar);
         if (set == null) {
             return;

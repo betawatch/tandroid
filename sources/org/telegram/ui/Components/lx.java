@@ -1,16 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.Context;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lx extends org.telegram.ui.yn {
-    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.jk jkVar;
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || (jkVar = this.W) == null) {
-            return;
+public final class lx extends mz {
+    public final /* synthetic */ a00 H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lx(a00 a00Var, Context context) {
+        super(a00Var, context, 0);
+        this.H = a00Var;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            this.H.x0.invalidate();
         }
-        jkVar.r1();
-        this.W.postDelayed(new aq(this, 13), 100L);
     }
 }

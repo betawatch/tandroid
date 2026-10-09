@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.hq;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.fa0;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.uq;
+import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver E;
@@ -58,30 +58,30 @@ public abstract class h0 extends View {
     public int f;
     public int h;
     public int n;
-    public r90 r;
-    public final n90 s;
+    public fa0 r;
+    public final ba0 s;
     public f0 v;
     public final int w;
-    public final org.telegram.ui.ActionBar.d6 x;
+    public final org.telegram.ui.ActionBar.e6 x;
     public int y;
 
-    public h0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public h0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.s = new n90(this);
+        this.s = new ba0(this);
         this.H = AndroidUtilities.dp(4.0f);
         this.w = i10;
-        this.x = d6Var;
+        this.x = e6Var;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.E = imageReceiver;
         imageReceiver.setInvalidateAll(true);
         imageReceiver.setCrossfadeWithOldImage(true);
         imageReceiver.setCrossfadeDuration(300);
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, e6Var);
         int i11 = SharedConfig.bubbleRadius;
         this.K = i11;
-        z Y = org.telegram.ui.ActionBar.i6.Y(v02, i11, i11);
-        this.J = Y;
-        Y.setCallback(this);
+        z Z = org.telegram.ui.ActionBar.i6.Z(w02, i11, i11);
+        this.J = Z;
+        Z.setCallback(this);
     }
 
     public final void a() {
@@ -94,11 +94,11 @@ public abstract class h0 extends View {
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x0170  */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0189  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x028e  */
     /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0191  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -122,11 +122,13 @@ public abstract class h0 extends View {
         boolean z14 = z12 || z13;
         this.F = z14;
         this.G = !isEmpty || z13;
+        float f11 = 2.0f;
+        float f12 = 4.0f;
         ImageReceiver imageReceiver = this.E;
         if (z13) {
             if (!Objects.equals(this.d, "setup")) {
                 this.d = "setup";
-                imageReceiver.setImageBitmap(new hq(new g0(getContext())));
+                imageReceiver.setImageBitmap(new uq(new g0(getContext())));
                 int dp = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
                 int dp2 = AndroidUtilities.dp(4.0f);
                 if (!this.G) {
@@ -153,16 +155,20 @@ public abstract class h0 extends View {
                         while (i10 < size) {
                             TLRPC.PhotoSize photoSize = arrayList.get(i10);
                             i10++;
+                            float f13 = f11;
                             TLRPC.PhotoSize photoSize2 = photoSize;
+                            float f14 = f12;
                             if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
                                 bitmapDrawable = new BitmapDrawable(getResources(), ImageLoader.getStrippedPhotoBitmap(photoSize2.bytes, "b"));
                             }
+                            f11 = f13;
+                            f12 = f14;
                         }
                     } else {
                         c10 = 1;
                     }
-                    f7 = 2.0f;
-                    f10 = 4.0f;
+                    f7 = f11;
+                    f10 = f12;
                     imageReceiver.setImage(ImageLocation.getForDocument(document), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(MessageObject.getDocumentVideoThumb(document), document), null, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
                     int dp3 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f7);
                     int dp4 = AndroidUtilities.dp(f10);
@@ -205,7 +211,7 @@ public abstract class h0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), z11);
@@ -233,14 +239,14 @@ public abstract class h0 extends View {
                         int i15 = this.f;
                         int i16 = (int) (dp5 * 0.5625d);
                         this.y = i16;
-                        this.f = org.telegram.messenger.q.C(4.0f, i16, i15);
+                        this.f = org.telegram.messenger.q.C(f10, i16, i15);
                         return;
                     }
                     return;
                 }
                 f7 = 2.0f;
-                c10 = 1;
                 f10 = 4.0f;
+                c10 = 1;
                 int dp32 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f7);
                 int dp42 = AndroidUtilities.dp(f10);
                 if (!this.G) {
@@ -260,6 +266,7 @@ public abstract class h0 extends View {
                 }
             }
         }
+        f10 = 4.0f;
         c10 = 1;
         this.b = AndroidUtilities.getSafeString(str3);
         this.c = str2;
@@ -318,22 +325,22 @@ public abstract class h0 extends View {
             i10 = view.getMeasuredWidth();
             i11 = view.getMeasuredHeight();
         }
-        org.telegram.ui.ActionBar.d6 d6Var = this.x;
-        Drawable drawable = d6Var != null ? d6Var.getDrawable("drawableMsgInMedia") : null;
+        org.telegram.ui.ActionBar.e6 e6Var = this.x;
+        Drawable drawable = e6Var != null ? e6Var.getDrawable("drawableMsgInMedia") : null;
         if (drawable == null) {
-            drawable = org.telegram.ui.ActionBar.i6.O0("drawableMsgInMedia");
+            drawable = org.telegram.ui.ActionBar.i6.P0("drawableMsgInMedia");
         }
-        org.telegram.ui.ActionBar.e5 e5Var = (org.telegram.ui.ActionBar.e5) drawable;
-        e5Var.n((int) getY(), i10, i11);
-        e5Var.setBounds(width, 0, this.e + width, this.f);
-        e5Var.draw(canvas);
+        org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) drawable;
+        f5Var.n((int) getY(), i10, i11);
+        f5Var.setBounds(width, 0, this.e + width, this.f);
+        f5Var.draw(canvas);
         z zVar = this.J;
         if (zVar != null) {
             int i12 = this.K;
             int i13 = SharedConfig.bubbleRadius;
             if (i12 != i13) {
                 this.K = i13;
-                org.telegram.ui.ActionBar.i6.A1(zVar, i13, i13);
+                org.telegram.ui.ActionBar.i6.B1(zVar, i13, i13);
             }
             zVar.setBounds(AndroidUtilities.dp(2.0f) + width, AndroidUtilities.dp(2.0f), (this.e + width) - AndroidUtilities.dp(2.0f), this.f - AndroidUtilities.dp(2.0f));
             zVar.draw(canvas);
@@ -346,8 +353,8 @@ public abstract class h0 extends View {
         ImageReceiver imageReceiver = this.E;
         imageReceiver.setImageCoords(f7, f10, f11, f12);
         imageReceiver.draw(canvas);
-        org.telegram.ui.ActionBar.i6.o2.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ec, d6Var));
-        org.telegram.ui.ActionBar.i6.o2.linkColor = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.gc, d6Var);
+        org.telegram.ui.ActionBar.i6.o2.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.ec, e6Var));
+        org.telegram.ui.ActionBar.i6.o2.linkColor = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.gc, e6Var);
         canvas.save();
         int dp2 = AndroidUtilities.dp(this.F ? 14.0f : 11.0f) + width;
         this.h = dp2;
@@ -382,7 +389,7 @@ public abstract class h0 extends View {
 
     /* JADX WARN: Removed duplicated region for block: B:29:0x0133  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:53:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -410,11 +417,11 @@ public abstract class h0 extends View {
                             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                             if (clickableSpanArr.length != 0) {
                                 a();
-                                this.r = new r90(clickableSpanArr[0], this.x, f7, i10, 0);
+                                this.r = new fa0(clickableSpanArr[0], this.x, f7, i10, 0);
                                 try {
                                     try {
                                         int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        k90 b10 = this.r.b();
+                                        y90 b10 = this.r.b();
                                         b10.d(this.a, spanStart, 0.0f);
                                         this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
                                     } catch (Exception e7) {
@@ -444,12 +451,12 @@ public abstract class h0 extends View {
                         z11 = false;
                     }
                 } else {
-                    r90 r90Var = this.r;
-                    if (r90Var != null) {
+                    fa0 fa0Var = this.r;
+                    if (fa0Var != null) {
                         try {
-                            ClickableSpan clickableSpan = (ClickableSpan) r90Var.i;
-                            if (clickableSpan instanceof l61) {
-                                String url = ((l61) clickableSpan).getURL();
+                            ClickableSpan clickableSpan = (ClickableSpan) fa0Var.i;
+                            if (clickableSpan instanceof t61) {
+                                String url = ((t61) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {
@@ -460,12 +467,12 @@ public abstract class h0 extends View {
                                 }
                                 f0 f0Var = this.v;
                                 if (f0Var != null) {
-                                    ((org.telegram.ui.z0) f0Var).p(url);
+                                    ((org.telegram.ui.z0) f0Var).k(url);
                                 }
                             } else if (clickableSpan instanceof URLSpan) {
                                 f0 f0Var2 = this.v;
                                 if (f0Var2 != null) {
-                                    ((org.telegram.ui.z0) f0Var2).p(((URLSpan) clickableSpan).getURL());
+                                    ((org.telegram.ui.z0) f0Var2).k(((URLSpan) clickableSpan).getURL());
                                 }
                             } else if (clickableSpan != null) {
                                 clickableSpan.onClick(this);

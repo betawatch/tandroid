@@ -1,6 +1,6 @@
 package qg;
 
-import ai.bb;
+import ai.cb;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -12,10 +12,11 @@ import android.widget.TextView;
 import ci.m6;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
-import w7.z5;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Wallet.x4;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class l0 extends LinearLayout {
     public final TextView a;
@@ -35,36 +36,36 @@ public final class l0 extends LinearLayout {
         setOrientation(0);
         int i10 = i6.i6;
         eh.a aVar = m0Var.Q1;
-        setBackground(i6.f0(i6.v0(i10, aVar), 2, -1));
+        setBackground(i6.g0(i6.w0(i10, aVar), 2, -1));
         m6 m6Var = new m6(this, context);
         this.b = m6Var;
-        addView(m6Var, z5.t(-2, -2, 19, 16, 0, 16, 0));
+        addView(m6Var, x5.t(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
         int i11 = i6.E8;
-        imageView2.setColorFilter(i6.v0(i11, aVar));
-        m6Var.addView(this.c, z5.e(-2, -2, 17));
+        imageView2.setColorFilter(i6.w0(i11, aVar));
+        m6Var.addView(this.c, x5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(i6.v0(i11, aVar));
+        this.d.setColorFilter(i6.w0(i11, aVar));
         this.d.setVisibility(8);
-        m6Var.addView(this.d, z5.e(-2, -2, 17));
+        m6Var.addView(this.d, x5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(i6.v0(i11, aVar));
+        textView.setTextColor(i6.w0(i11, aVar));
         textView.setTextSize(1, 16.0f);
-        addView(textView, z5.t(-2, -2, 19, 0, 0, 16, 0));
+        addView(textView, x5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.h7, aVar), PorterDuff.Mode.MULTIPLY));
+        imageView4.setColorFilter(new PorterDuffColorFilter(i6.w0(i6.h7, aVar), PorterDuff.Mode.MULTIPLY));
         imageView4.setVisibility(8);
-        addView(imageView4, z5.n(50, -1));
+        addView(imageView4, x5.n(50, -1));
     }
 
     public final void a(int i10, boolean z10, boolean z11) {
@@ -85,9 +86,9 @@ public final class l0 extends LinearLayout {
         this.d.setAlpha(1.0f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new bb(11, this, z10));
-        this.h.addListener(new pg.d0(this, 1));
-        this.h.setInterpolator(tr.h);
+        ofFloat.addUpdateListener(new cb(11, this, z10));
+        this.h.addListener(new x4(this, 8));
+        this.h.setInterpolator(hs.h);
         this.h.setDuration(420L);
         this.h.start();
     }

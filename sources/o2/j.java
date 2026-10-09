@@ -23,11 +23,10 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import v7.h0;
-import v7.m7;
+import v7.k7;
 import v7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -104,7 +103,7 @@ public final class j extends v2.k {
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o c10 = bVar.a.c();
-            if ((c10 instanceof d0) || (c10 instanceof w3.h)) {
+            if ((c10 instanceof d0) || (c10 instanceof w3.j)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -146,7 +145,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.e(this.U, false);
+                h.g(this.U, false);
             }
             do {
                 try {
@@ -170,10 +169,10 @@ public final class j extends v2.k {
             this.U = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            m7.a(hVar);
+            k7.a(hVar);
             throw th3;
         }
-        m7.a(hVar);
+        k7.a(hVar);
     }
 
     public final int f(int i10) {
@@ -188,12 +187,22 @@ public final class j extends v2.k {
         return this.a0 != -9223372036854775807L;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:170:0x0295  */
+    /* JADX WARN: Removed duplicated region for block: B:172:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:176:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x02ab  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0297  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final c3.l h(g2.h hVar, g2.m mVar) {
+        int i10;
         long j3;
         long j10;
         long j11;
         b bVar;
-        int i10;
+        int i11;
         b0 b0Var;
         ArrayList arrayList;
         c3.o aVar;
@@ -202,7 +211,7 @@ public final class j extends v2.k {
         boolean z11;
         z3.k kVar2;
         List singletonList;
-        int i11;
+        int i12;
         c3.o dVar;
         long j12 = this.h;
         b0 b0Var2 = this.K;
@@ -215,7 +224,7 @@ public final class j extends v2.k {
                 lVar.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.f(vVar.a, 0, 10, false);
+                    lVar.h(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -225,14 +234,14 @@ public final class j extends v2.k {
                 } else {
                     vVar.K(3);
                     int w10 = vVar.w();
-                    int i12 = w10 + 10;
+                    int i13 = w10 + 10;
                     byte[] bArr = vVar.a;
                     j3 = -9223372036854775807L;
-                    if (i12 > bArr.length) {
-                        vVar.G(i12);
+                    if (i13 > bArr.length) {
+                        vVar.G(i13);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.f(vVar.a, 10, w10, false);
+                    lVar.h(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {
@@ -258,45 +267,46 @@ public final class j extends v2.k {
                     c cVar = this.L;
                     cVar.getClass();
                     b2.s sVar = this.d;
-                    int a2 = h0.a(sVar.r);
+                    int a2 = v7.d0.a(sVar.r);
                     List list = (List) responseHeaders.get("Content-Type");
-                    int a10 = h0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
-                    int b10 = h0.b(uri);
+                    int a10 = v7.d0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
+                    int b10 = v7.d0.b(uri);
                     ArrayList arrayList2 = new ArrayList(7);
                     c.a(a2, arrayList2);
                     c.a(a10, arrayList2);
                     c.a(b10, arrayList2);
-                    int i13 = 0;
-                    for (int i14 = 7; i13 < i14; i14 = 7) {
-                        c.a(c.c[i13], arrayList2);
-                        i13++;
+                    int i14 = 0;
+                    for (int i15 = 7; i14 < i15; i15 = 7) {
+                        c.a(c.c[i14], arrayList2);
+                        i14++;
                     }
                     lVar.f = 0;
-                    int i15 = 0;
+                    int i16 = 0;
                     c3.o oVar = null;
                     while (true) {
                         int size = arrayList2.size();
                         b0 b0Var3 = this.K;
-                        if (i15 >= size) {
+                        if (i16 >= size) {
                             j11 = j12;
+                            i10 = 0;
                             oVar.getClass();
                             bVar = new b(oVar, sVar, b0Var3, cVar.a, cVar.b);
                             break;
                         }
-                        int intValue = ((Integer) arrayList2.get(i15)).intValue();
+                        int intValue = ((Integer) arrayList2.get(i16)).intValue();
                         j11 = j12;
                         if (intValue == 0) {
-                            i10 = i15;
+                            i11 = i16;
                             b0Var = b0Var3;
                             arrayList = arrayList2;
                             aVar = new j4.a();
                         } else if (intValue == 1) {
-                            i10 = i15;
+                            i11 = i16;
                             b0Var = b0Var3;
                             arrayList = arrayList2;
                             aVar = new j4.c();
                         } else if (intValue == 2) {
-                            i10 = i15;
+                            i11 = i16;
                             b0Var = b0Var3;
                             arrayList = arrayList2;
                             aVar = new j4.d(0);
@@ -304,88 +314,95 @@ public final class j extends v2.k {
                             List list2 = this.M;
                             z3.k kVar3 = z3.k.D;
                             if (intValue == 8) {
-                                i10 = i15;
+                                i11 = i16;
                                 b0Var = b0Var3;
                                 arrayList = arrayList2;
                                 z3.k kVar4 = cVar.a;
                                 boolean z12 = cVar.b;
                                 p0 p0Var = sVar.l;
-                                if (p0Var != null) {
-                                    int i16 = 0;
+                                if (p0Var == null) {
+                                    kVar = kVar4;
+                                } else {
+                                    int i17 = 0;
                                     z3.k kVar5 = kVar4;
                                     while (true) {
                                         o0[] o0VarArr = p0Var.a;
                                         kVar = kVar5;
-                                        if (i16 >= o0VarArr.length) {
+                                        if (i17 >= o0VarArr.length) {
                                             break;
                                         }
-                                        o0 o0Var2 = o0VarArr[i16];
+                                        o0 o0Var2 = o0VarArr[i17];
                                         if (o0Var2 instanceof s) {
                                             z11 = !((s) o0Var2).c.isEmpty();
                                             break;
                                         }
-                                        i16++;
+                                        i17++;
                                         kVar5 = kVar;
                                     }
-                                } else {
-                                    kVar = kVar4;
+                                    int i18 = !z11 ? 4 : 0;
+                                    if (z12) {
+                                        i18 |= 32;
+                                        kVar2 = kVar3;
+                                    } else {
+                                        kVar2 = kVar;
+                                    }
+                                    aVar = new w3.j(kVar2, i18, b0Var, list2 == null ? list2 : a1.e, null);
                                 }
                                 z11 = false;
-                                int i17 = z11 ? 4 : 0;
-                                if (z12) {
-                                    kVar2 = kVar;
-                                } else {
-                                    i17 |= 32;
-                                    kVar2 = kVar3;
+                                if (!z11) {
                                 }
-                                aVar = new w3.h(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
+                                if (z12) {
+                                }
+                                aVar = new w3.j(kVar2, i18, b0Var, list2 == null ? list2 : a1.e, null);
                             } else if (intValue == 11) {
-                                i10 = i15;
+                                i11 = i16;
                                 arrayList = arrayList2;
                                 z3.k kVar6 = cVar.a;
                                 boolean z13 = cVar.b;
                                 if (list2 != null) {
+                                    i12 = 48;
                                     singletonList = list2;
-                                    i11 = 48;
                                 } else {
                                     b2.r rVar = new b2.r();
                                     rVar.q = r0.n("application/cea-608");
                                     singletonList = Collections.singletonList(new b2.s(rVar));
-                                    i11 = 16;
+                                    i12 = 16;
                                 }
                                 String str = sVar.k;
                                 if (!TextUtils.isEmpty(str)) {
                                     if (r0.b(str, MediaController.AUDIO_MIME_TYPE) == null) {
-                                        i11 |= 2;
+                                        i12 |= 2;
                                     }
                                     if (r0.b(str, MediaController.VIDEO_MIME_TYPE) == null) {
-                                        i11 |= 4;
+                                        i12 |= 4;
                                     }
                                 }
-                                aVar = new d0(2, !z13 ? 1 : 0, !z13 ? kVar3 : kVar6, b0Var3, new j4.f(i11, singletonList));
+                                aVar = new d0(2, !z13 ? 1 : 0, !z13 ? kVar3 : kVar6, b0Var3, new j4.f(i12, singletonList));
                                 b0Var = b0Var3;
                             } else if (intValue != 13) {
-                                i10 = i15;
+                                i11 = i16;
                                 b0Var = b0Var3;
                                 arrayList = arrayList2;
                                 aVar = null;
                             } else {
-                                i10 = i15;
+                                i11 = i16;
                                 arrayList = arrayList2;
-                                aVar = new u(sVar.d, b0Var3, cVar.a, cVar.b);
+                                aVar = new t(sVar.d, b0Var3, cVar.a, cVar.b);
                                 b0Var = b0Var3;
                             }
                         } else {
-                            i10 = i15;
+                            i11 = i16;
                             b0Var = b0Var3;
                             arrayList = arrayList2;
                             aVar = new v3.d(0, 0L);
                         }
                         aVar.getClass();
                         try {
-                            z10 = aVar.b(lVar);
+                            z10 = aVar.a(lVar);
+                            i10 = 0;
                             lVar.f = 0;
                         } catch (EOFException unused2) {
+                            i10 = 0;
                             lVar.f = 0;
                             z10 = false;
                         } catch (Throwable th2) {
@@ -400,18 +417,18 @@ public final class j extends v2.k {
                         if (oVar == null && (intValue == a2 || intValue == a10 || intValue == b10 || intValue == 11)) {
                             oVar = aVar;
                         }
-                        i15 = i10 + 1;
                         sVar = sVar2;
-                        j12 = j11;
                         arrayList2 = arrayList;
+                        i16 = i11 + 1;
+                        j12 = j11;
                     }
                 } else {
                     c3.o oVar2 = bVar2.a;
                     c3.o c11 = oVar2.c();
-                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.h)));
+                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.j)));
                     e2.d.f("Can't recreate wrapped extractors. Outer type: " + oVar2.getClass(), oVar2.c() == oVar2);
-                    if (oVar2 instanceof u) {
-                        dVar = new u(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
+                    if (oVar2 instanceof t) {
+                        dVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
                     } else if (oVar2 instanceof j4.d) {
                         dVar = new j4.d(0);
                     } else if (oVar2 instanceof j4.a) {
@@ -426,16 +443,20 @@ public final class j extends v2.k {
                     }
                     bVar = new b(dVar, bVar2.b, bVar2.c, bVar2.d, bVar2.e);
                     j11 = j12;
+                    i10 = 0;
                 }
                 b bVar3 = bVar;
                 this.S = bVar3;
                 c3.o c12 = bVar3.a.c();
-                if ((c12 instanceof j4.d) || (c12 instanceof j4.a) || (c12 instanceof j4.c) || (c12 instanceof v3.d)) {
+                if ((((c12 instanceof j4.d) || (c12 instanceof j4.a) || (c12 instanceof j4.c) || (c12 instanceof v3.d)) ? 1 : i10) != 0) {
                     q qVar = this.T;
                     long b11 = j10 != j3 ? b0Var2.b(j10) : j11;
                     if (qVar.l0 != b11) {
                         qVar.l0 = b11;
-                        for (p pVar : qVar.L) {
+                        p[] pVarArr = qVar.L;
+                        int length = pVarArr.length;
+                        for (int i19 = i10; i19 < length; i19++) {
+                            p pVar = pVarArr[i19];
                             if (pVar.F != b11) {
                                 pVar.F = b11;
                                 pVar.z = true;
@@ -446,7 +467,10 @@ public final class j extends v2.k {
                     q qVar2 = this.T;
                     if (qVar2.l0 != 0) {
                         qVar2.l0 = 0L;
-                        for (p pVar2 : qVar2.L) {
+                        p[] pVarArr2 = qVar2.L;
+                        int length2 = pVarArr2.length;
+                        for (int i20 = i10; i20 < length2; i20++) {
+                            p pVar2 = pVarArr2[i20];
                             if (pVar2.F != 0) {
                                 pVar2.F = 0L;
                                 pVar2.z = true;
@@ -456,24 +480,26 @@ public final class j extends v2.k {
                 }
                 this.T.N.clear();
                 this.S.a.g(this.T);
+            } else {
+                i10 = 0;
             }
             q qVar3 = this.T;
             b2.o oVar3 = qVar3.m0;
             b2.o oVar4 = this.N;
             if (!Objects.equals(oVar3, oVar4)) {
                 qVar3.m0 = oVar4;
-                int i18 = 0;
+                int i21 = i10;
                 while (true) {
-                    p[] pVarArr = qVar3.L;
-                    if (i18 >= pVarArr.length) {
+                    p[] pVarArr3 = qVar3.L;
+                    if (i21 >= pVarArr3.length) {
                         break;
                     }
-                    if (qVar3.e0[i18]) {
-                        p pVar3 = pVarArr[i18];
+                    if (qVar3.e0[i21]) {
+                        p pVar3 = pVarArr3[i21];
                         pVar3.I = oVar4;
                         pVar3.z = true;
                     }
-                    i18++;
+                    i21++;
                 }
             }
             return lVar;
@@ -485,7 +511,7 @@ public final class j extends v2.k {
     }
 
     @Override // y2.i
-    public final void q() {
+    public final void v() {
         this.W = true;
     }
 }

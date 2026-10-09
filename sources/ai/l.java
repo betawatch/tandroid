@@ -22,13 +22,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.dr0;
-import org.telegram.ui.oy;
-import org.telegram.ui.rx;
-import org.telegram.ui.to;
-import org.telegram.ui.uy;
+import org.telegram.ui.ir0;
+import org.telegram.ui.ny;
+import org.telegram.ui.sx;
+import org.telegram.ui.ty;
+import org.telegram.ui.uo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -59,26 +59,26 @@ public final /* synthetic */ class l implements Utilities.Callback {
                 a0 a0Var = (a0) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
                 if (((Boolean) obj).booleanValue()) {
-                    ci.kc E = ci.kc.E(b0Var.e0.getParentActivity(), b0Var.f);
-                    E.N = j3;
-                    ci.ac acVar = E.c1;
-                    if (acVar != null) {
-                        acVar.setDialogId(j3);
+                    ci.lc D = ci.lc.D(b0Var.e0.getParentActivity(), b0Var.f);
+                    D.N = j3;
+                    ci.bc bcVar = D.c1;
+                    if (bcVar != null) {
+                        bcVar.setDialogId(j3);
                     }
-                    E.M = false;
-                    E.R(ci.fc.c(a0Var));
+                    D.M = false;
+                    D.Q(ci.gc.c(a0Var));
                     break;
                 }
                 break;
             case 1:
-                l9 l9Var = (l9) obj4;
+                m9 m9Var = (m9) obj4;
                 Utilities.Callback callback = (Utilities.Callback) obj3;
                 MessagesController messagesController = (MessagesController) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 if (tL_premium_boostsStatus != null) {
                     ChannelBoostsController boostsController = messagesController.getBoostsController();
                     long j10 = this.b;
-                    boostsController.userCanBoostChannel(j10, tL_premium_boostsStatus, new l(l9Var, callback, j10, tL_premium_boostsStatus, 2));
+                    boostsController.userCanBoostChannel(j10, tL_premium_boostsStatus, new l(m9Var, callback, j10, tL_premium_boostsStatus, 2));
                     callback.run(Boolean.FALSE);
                     break;
                 } else {
@@ -86,21 +86,21 @@ public final /* synthetic */ class l implements Utilities.Callback {
                     break;
                 }
             case 2:
-                l9 l9Var2 = (l9) obj4;
+                m9 m9Var2 = (m9) obj4;
                 Utilities.Callback callback2 = (Utilities.Callback) obj3;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj2;
                 ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
                 if (canApplyBoost != null) {
                     org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                    j jVar = l9Var2.j(j3) ? new j(l9Var2, j3, i11) : null;
-                    int i12 = rg.k0.V0;
+                    j jVar = m9Var2.j(j3) ? new j(m9Var2, j3, i11) : null;
+                    int i12 = rg.j0.V0;
                     if (R != null && tL_premium_boostsStatus2 != null && R.getContext() != null) {
-                        rg.k0 k0Var = new rg.k0(18, R.getCurrentAccount(), R.getContext(), R, R.getResourceProvider());
-                        k0Var.G1(canApplyBoost);
-                        k0Var.F1(tL_premium_boostsStatus2, true);
-                        k0Var.H1(j3);
-                        k0Var.Q0 = jVar;
-                        k0Var.show();
+                        rg.j0 j0Var = new rg.j0(18, R.getCurrentAccount(), R.getContext(), R, R.getResourceProvider());
+                        j0Var.H1(canApplyBoost);
+                        j0Var.G1(tL_premium_boostsStatus2, true);
+                        j0Var.I1(j3);
+                        j0Var.Q0 = jVar;
+                        j0Var.show();
                     }
                     callback2.run(Boolean.FALSE);
                     break;
@@ -112,33 +112,33 @@ public final /* synthetic */ class l implements Utilities.Callback {
                 ((FactCheckController) obj4).lambda$loadMissing$3(this.b, (ArrayList) obj3, (HashMap) obj2, (ArrayList) obj);
                 break;
             case 4:
-                ((MessagesController) obj4).lambda$checkSensitive$448(this.b, (boolean[]) obj3, (Runnable) obj2, (Boolean) obj);
+                ((MessagesController) obj4).lambda$checkSensitive$451(this.b, (boolean[]) obj3, (Runnable) obj2, (Boolean) obj);
                 break;
             case 5:
                 ((TranslateController) obj4).lambda$checkTranslation$6((MessageObject) obj3, (String) obj2, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
             case 6:
-                to.X((to) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                uo.Y((uo) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TL_stories.TL_premium_boostsStatus) obj2, this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             case 7:
-                rx rxVar = (rx) obj4;
+                sx sxVar = (sx) obj4;
                 org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj2;
-                rxVar.getClass();
+                sxVar.getClass();
                 ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
-                uy uyVar = rxVar.b;
-                uyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
-                oy oyVar = uyVar.C2;
-                uyVar.removeSelfFromStack();
+                ty tyVar = sxVar.b;
+                tyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
+                ny nyVar = tyVar.C2;
+                tyVar.removeSelfFromStack();
                 if (n2VarArr[1] != null) {
                     n2VarArr[0].removeSelfFromStack();
                     n2VarArr[1].finishFragment();
                 } else {
                     n2VarArr[0].finishFragment();
                 }
-                if (oyVar != null) {
+                if (nyVar != null) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(-j3, 0L));
-                    oyVar.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
+                    nyVar.w(tyVar, arrayList, null, false, tyVar.J2, tyVar.K2, tyVar.L2, null);
                     break;
                 }
                 break;
@@ -149,7 +149,7 @@ public final /* synthetic */ class l implements Utilities.Callback {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new dr0(photoViewer, 16));
+                    AndroidUtilities.runOnUIThread(new ir0(photoViewer, 16));
                     break;
                 } else {
                     try {
@@ -167,18 +167,18 @@ public final /* synthetic */ class l implements Utilities.Callback {
                         break;
                     } catch (Exception e7) {
                         FileLog.e(e7);
-                        AndroidUtilities.runOnUIThread(new dr0(photoViewer, 17));
+                        AndroidUtilities.runOnUIThread(new ir0(photoViewer, 17));
                         return;
                     }
                 }
             case 9:
-                xh.c1 c1Var = (xh.c1) obj3;
-                nf.e eVar = (nf.e) obj;
+                xh.d1 d1Var = (xh.d1) obj3;
+                of.e eVar = (of.e) obj;
                 eVar.d();
-                c1Var.v1(j3, new e4((xh.q1) obj4, eVar, (Utilities.Callback) obj2, c1Var, 19));
+                d1Var.w1(j3, new f4((xh.r1) obj4, eVar, (Utilities.Callback) obj2, d1Var, 19));
                 break;
             default:
-                yh.y3.s0((yh.y3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
+                yh.s3.t0((yh.s3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
         }
     }

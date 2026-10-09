@@ -1,28 +1,71 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class t6 extends FrameLayout {
-    public org.telegram.ui.Components.p6 a;
-    public s6 b;
+public final class t6 extends og.a {
+    public final int c;
+    public CharSequence d;
+    public String e;
+    public int f;
+    public long g;
+    public int h;
+    public boolean i;
+    public boolean j;
 
-    public final void a(float f7) {
-        org.telegram.ui.Components.p6 p6Var = this.a;
-        p6Var.a();
-        p6Var.c(String.format("%d%%", Integer.valueOf((int) Math.ceil(w7.q.a(f7, 0.0f, 1.0f) * 100.0f))), !LocaleController.isRTL, true);
-        s6 s6Var = this.b;
-        s6Var.d = f7;
-        s6Var.invalidate();
+    public t6(int i10, String str) {
+        super(i10, true);
+        this.c = -1;
+        this.d = str;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(350.0f), TLObject.FLAG_30));
+    public static t6 b(int i10, long j3, String str, int i11) {
+        t6 t6Var = new t6(11);
+        t6Var.f = i10;
+        t6Var.d = str;
+        t6Var.g = j3;
+        t6Var.h = i11;
+        t6Var.j = false;
+        return t6Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj == null || t6.class != obj.getClass()) {
+                return false;
+            }
+            t6 t6Var = (t6) obj;
+            int i10 = this.a;
+            if (i10 != t6Var.a) {
+                return false;
+            }
+            if (i10 != 9 && i10 != 10 && i10 != 8 && i10 != 4 && i10 != 2 && i10 != 0 && i10 != 13) {
+                if (i10 == 3) {
+                    return Objects.equals(this.d, t6Var.d);
+                }
+                if (i10 == 1) {
+                    return Objects.equals(this.e, t6Var.e);
+                }
+                if (i10 == 11) {
+                    if (this.f != t6Var.f || this.g != t6Var.g) {
+                        return false;
+                    }
+                } else if (i10 != 7 || this.c != t6Var.c) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public t6(int i10, int i11) {
+        super(7, true);
+        this.c = i10;
+    }
+
+    public t6(int i10) {
+        super(i10, true);
+        this.c = -1;
     }
 }

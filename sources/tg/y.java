@@ -5,11 +5,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gg;
-import org.telegram.ui.web.x1;
-import org.telegram.ui.yn;
+import org.telegram.ui.le;
+import org.telegram.ui.web.w1;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Utilities.Callback {
     public final /* synthetic */ a0 a;
@@ -31,14 +31,14 @@ public final /* synthetic */ class y implements Utilities.Callback {
         a0 a0Var = this.a;
         a0Var.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new x1(28, a0Var, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new w1(27, a0Var, this.e), 220L);
             return;
         }
         n2 U = LaunchActivity.U();
         if (U != null) {
-            yn Q9 = yn.Q9(this.c);
-            Q9.whenFullyVisible(new gg(Q9, this.d, 6));
-            U.presentFragment(Q9);
+            zn W9 = zn.W9(this.c);
+            W9.whenFullyVisible(new le(W9, this.d, 6));
+            U.presentFragment(W9);
         }
     }
 }

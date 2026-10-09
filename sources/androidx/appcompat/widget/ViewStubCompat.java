@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import java.lang.ref.WeakReference;
-import m.r3;
+import m.s3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class ViewStubCompat extends View {
     public int a;
@@ -119,6 +119,6 @@ public final class ViewStubCompat extends View {
     public final void draw(Canvas canvas) {
     }
 
-    public void setOnInflateListener(r3 r3Var) {
+    public void setOnInflateListener(s3 s3Var) {
     }
 }

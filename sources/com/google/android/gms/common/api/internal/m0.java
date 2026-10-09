@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
-import m.p3;
+import m.q3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -22,7 +22,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final h0 e;
     public final Map f;
     public final HashMap i = new HashMap();
-    public final p3 j;
+    public final q3 j;
     public final Map k;
     public final a8.d l;
     public volatile k0 m;
@@ -30,12 +30,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final j0 o;
     public final v0 p;
 
-    public m0(Context context, j0 j0Var, Lock lock, Looper looper, k6.e eVar, a0.f fVar, p3 p3Var, a0.f fVar2, a8.d dVar, ArrayList arrayList, v0 v0Var) {
+    public m0(Context context, j0 j0Var, Lock lock, Looper looper, k6.e eVar, a0.f fVar, q3 q3Var, a0.f fVar2, a8.d dVar, ArrayList arrayList, v0 v0Var) {
         this.c = context;
         this.a = lock;
         this.d = eVar;
         this.f = fVar;
-        this.j = p3Var;
+        this.j = q3Var;
         this.k = fVar2;
         this.l = dVar;
         this.o = j0Var;
@@ -46,12 +46,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
         }
         this.e = new h0(this, looper, 1);
         this.b = lock.newCondition();
-        this.m = new a6.i(this, 13);
+        this.m = new a4.l(this, 10);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void a() {
-        this.m.h();
+        this.m.n();
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -62,7 +62,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.D(eVar);
+        return this.m.R(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -72,7 +72,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void f() {
-        if (this.m.A()) {
+        if (this.m.J()) {
             this.i.clear();
         }
     }
@@ -92,8 +92,8 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void h() {
         this.a.lock();
         try {
-            this.m = new a6.i(this, 13);
-            this.m.w();
+            this.m = new a4.l(this, 10);
+            this.m.H();
             this.b.signalAll();
         } finally {
             this.a.unlock();
@@ -104,7 +104,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnected(Bundle bundle) {
         this.a.lock();
         try {
-            this.m.e(bundle);
+            this.m.b(bundle);
         } finally {
             this.a.unlock();
         }
@@ -114,7 +114,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnectionSuspended(int i10) {
         this.a.lock();
         try {
-            this.m.t(i10);
+            this.m.D(i10);
         } finally {
             this.a.unlock();
         }

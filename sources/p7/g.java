@@ -3,9 +3,9 @@ package p7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public final String a;
@@ -88,12 +88,12 @@ public final class g extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 1, this.a);
-        g0.k(parcel, 3, this.b, i10);
-        g0.s(parcel, 4, 4);
+        int q6 = d0.q(parcel, 20293);
+        d0.l(parcel, 1, this.a);
+        d0.k(parcel, 3, this.b, i10);
+        d0.s(parcel, 4, 4);
         parcel.writeInt(this.c);
-        g0.c(parcel, 5, this.d);
-        g0.r(parcel, q6);
+        d0.c(parcel, 5, this.d);
+        d0.r(parcel, q6);
     }
 }

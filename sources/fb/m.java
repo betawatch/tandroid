@@ -5,7 +5,7 @@ import java.util.AbstractMap;
 import java.util.Comparator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m extends AbstractMap implements Serializable {
     public static final i r = new i(0);
@@ -275,8 +275,8 @@ public final class m extends AbstractMap implements Serializable {
         lVar2.r = Math.max(max, lVar4 != null ? lVar4.r : 0) + 1;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0010 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x000d  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x000f A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x000c  */
     @Override // java.util.AbstractMap, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -323,9 +323,9 @@ public final class m extends AbstractMap implements Serializable {
         return obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0016 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x000d  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0015 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x000c  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0012  */
     @Override // java.util.AbstractMap, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -1,29 +1,6 @@
 package wd;
 
-import hd.h;
-import hd.o;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.jvm.internal.i;
-
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class d extends f {
-    public static List a(b bVar) {
-        i.e(bVar, "<this>");
-        Iterator it = bVar.iterator();
-        if (!it.hasNext()) {
-            return o.a;
-        }
-        Object next = it.next();
-        if (!it.hasNext()) {
-            return h.b(next);
-        }
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(next);
-        while (it.hasNext()) {
-            arrayList.add(it.next());
-        }
-        return arrayList;
-    }
+public interface d {
 }

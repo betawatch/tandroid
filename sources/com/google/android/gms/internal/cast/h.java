@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h extends b8.b {
     public final /* synthetic */ int b;
@@ -24,8 +24,9 @@ public abstract class h extends b8.b {
         this.b = i10;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         int i11 = 2;
         int i12 = 0;
         switch (this.b) {
@@ -60,9 +61,9 @@ public abstract class h extends b8.b {
                         p4.r b11 = p4.r.b(bundle3);
                         if (b11 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                rVar2.M0(b11, readInt);
+                                rVar2.L0(b11, readInt);
                             } else {
-                                new c0(Looper.getMainLooper(), 0).post(new androidx.activity.g(rVar2, b11, readInt, i11));
+                                new a0(Looper.getMainLooper(), 0).post(new androidx.activity.g(rVar2, b11, readInt, i11));
                             }
                         }
                         parcel2.writeNoException();
@@ -74,9 +75,9 @@ public abstract class h extends b8.b {
                         p4.r b12 = p4.r.b(bundle4);
                         if (b12 != null) {
                             if (Looper.myLooper() == Looper.getMainLooper()) {
-                                rVar3.N0(b12);
+                                rVar3.M0(b12);
                             } else {
-                                new c0(Looper.getMainLooper(), 0).post(new i9.s(9, rVar3, b12));
+                                new a0(Looper.getMainLooper(), 0).post(new i9.s(10, rVar3, b12));
                             }
                         }
                         parcel2.writeNoException();
@@ -95,11 +96,11 @@ public abstract class h extends b8.b {
                             if (!b13.d()) {
                                 if ((readInt2 & 2) != 0 || !c10.p) {
                                     p4.z zVar = c10.u;
-                                    boolean z10 = zVar != null && zVar.c && c10.f();
+                                    Object[] objArr = zVar != null && zVar.c && c10.f();
                                     int size = arrayList.size();
                                     for (int i13 = 0; i13 < size; i13++) {
                                         p4.v vVar = (p4.v) arrayList.get(i13);
-                                        if (((readInt2 & 1) != 0 && vVar.d()) || ((z10 && !vVar.d() && vVar.c() != c10.r) || !vVar.h(b13))) {
+                                        if (((readInt2 & 1) != 0 && vVar.d()) || ((objArr != false && !vVar.d() && vVar.c() != c10.r) || !vVar.h(b13))) {
                                         }
                                     }
                                 }
@@ -263,16 +264,16 @@ public abstract class h extends b8.b {
                     n.f.b("Stopping RouteDiscovery.", new Object[0]);
                     nVar.c.clear();
                     if (Looper.myLooper() == Looper.getMainLooper()) {
-                        n4.y yVar = nVar.e;
-                        if (((p4.x) yVar.c) == null) {
-                            yVar.c = p4.x.d((Context) yVar.b);
+                        pf.b bVar5 = nVar.e;
+                        if (((p4.x) bVar5.c) == null) {
+                            bVar5.c = p4.x.d((Context) bVar5.b);
                         }
-                        p4.x xVar = (p4.x) yVar.c;
+                        p4.x xVar = (p4.x) bVar5.c;
                         if (xVar != null) {
                             xVar.h(nVar);
                         }
                     } else {
-                        new c0(Looper.getMainLooper(), 0).post(new k(nVar, i12));
+                        new a0(Looper.getMainLooper(), 0).post(new k(nVar, i12));
                     }
                 }
                 parcel2.writeNoException();

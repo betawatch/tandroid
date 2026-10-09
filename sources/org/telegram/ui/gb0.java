@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class gb0 implements OnBackAnimationCallback {
     public boolean b;
@@ -22,7 +22,6 @@ public final class gb0 implements OnBackAnimationCallback {
         this.f = launchActivity;
     }
 
-    @Override // android.window.OnBackAnimationCallback
     public final void onBackCancelled() {
         ActionBarLayout actionBarLayout;
         this.c = false;
@@ -38,7 +37,6 @@ public final class gb0 implements OnBackAnimationCallback {
         actionBarLayout.e(true);
     }
 
-    @Override // android.window.OnBackInvokedCallback
     public final void onBackInvoked() {
         this.d = true;
         if (this.b) {
@@ -67,7 +65,6 @@ public final class gb0 implements OnBackAnimationCallback {
     
         if (r1.T != false) goto L68;
      */
-    @Override // android.window.OnBackAnimationCallback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -93,7 +90,7 @@ public final class gb0 implements OnBackAnimationCallback {
                     }
                 }
                 if (!actionBarLayout2.d1 && !actionBarLayout2.c1 && !actionBarLayout2.a0 && !actionBarLayout2.Q && !actionBarLayout2.j() && actionBarLayout2.O0.size() > 1 && !actionBarLayout2.y() && ((sVar = actionBarLayout2.G) == null || !sVar.hasShownSheet())) {
-                    org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) sa.e.h(1, actionBarLayout2.O0);
+                    org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) sc.v.h(1, actionBarLayout2.O0);
                     if (n2Var.onBackPressed(false) && !n2Var.hasShownSheet() && n2Var.canBeginSlide()) {
                         actionBarLayout2.e1 = false;
                         actionBarLayout2.d1 = true;
@@ -117,13 +114,12 @@ public final class gb0 implements OnBackAnimationCallback {
         if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
             return;
         }
-        float interpolation = org.telegram.ui.Components.tr.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
+        float interpolation = org.telegram.ui.Components.hs.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
         actionBarLayout.e1 = max > 0.0f;
         actionBarLayout.s.setTranslationX(interpolation);
         actionBarLayout.setInnerTranslationX(interpolation);
     }
 
-    @Override // android.window.OnBackAnimationCallback
     public final void onBackStarted(BackEvent backEvent) {
         this.c = true;
         this.d = false;

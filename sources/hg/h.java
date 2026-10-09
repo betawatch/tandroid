@@ -2,7 +2,7 @@ package hg;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -17,13 +17,13 @@ public final /* synthetic */ class h implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                n.X(this.b);
-                break;
-            case 1:
                 n.Y(this.b);
                 break;
+            case 1:
+                n.Z(this.b);
+                break;
             default:
-                h hVar = this.b.e;
+                h hVar = this.b.d;
                 AndroidUtilities.cancelRunOnUIThread(hVar);
                 AndroidUtilities.runOnUIThread(hVar, 5000L);
                 break;

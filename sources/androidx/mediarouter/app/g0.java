@@ -5,13 +5,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
 import org.telegram.messenger.beta.R;
-import s4.c1;
-import v7.r8;
-import v7.v7;
+import s4.d1;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class g0 extends c1 {
+public abstract class g0 extends d1 {
     public p4.v v;
     public final ImageButton w;
     public final MediaRouteVolumeSlider x;
@@ -20,25 +19,25 @@ public abstract class g0 extends c1 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g0(o0 o0Var, View view, ImageButton imageButton, MediaRouteVolumeSlider mediaRouteVolumeSlider) {
         super(view);
-        int c10;
-        int c11;
+        int color;
+        int color2;
         this.y = o0Var;
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
         Context context = o0Var.y;
-        Drawable d = r8.d(v7.b(context, R.drawable.mr_cast_mute_button));
-        if (v7.e0.h(context)) {
-            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
+        Drawable b10 = s7.b(context, R.drawable.mr_cast_mute_button);
+        if (v7.a0.h(context)) {
+            b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
-        imageButton.setImageDrawable(d);
-        if (v7.e0.h(context)) {
-            c10 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_light);
-            c11 = f0.e.c(context, R.color.mr_cast_progressbar_background_light);
+        imageButton.setImageDrawable(b10);
+        if (v7.a0.h(context)) {
+            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_light);
+            color2 = context.getColor(R.color.mr_cast_progressbar_background_light);
         } else {
-            c10 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_dark);
-            c11 = f0.e.c(context, R.color.mr_cast_progressbar_background_dark);
+            color = context.getColor(R.color.mr_cast_progressbar_progress_and_thumb_dark);
+            color2 = context.getColor(R.color.mr_cast_progressbar_background_dark);
         }
-        mediaRouteVolumeSlider.a(c10, c11);
+        mediaRouteVolumeSlider.a(color, color2);
     }
 
     public final void t(p4.v vVar) {

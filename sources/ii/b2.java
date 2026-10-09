@@ -6,20 +6,20 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class b2 extends Drawable {
     public final Paint a;
-    public final org.telegram.ui.Components.e6 b;
+    public final org.telegram.ui.Components.g6 b;
     public boolean c;
     public int d;
 
     public b2(int i10) {
         Paint paint = new Paint(1);
         this.a = paint;
-        this.b = new org.telegram.ui.Components.e6(new i2.h0(this, 5), 420L, tr.h, 0);
+        this.b = new org.telegram.ui.Components.g6(new i2.h0(this, 5), 420L, hs.h, 0);
         this.d = 255;
         paint.setColor(i10);
     }
@@ -32,7 +32,7 @@ public final class b2 extends Drawable {
         }
         Paint paint = this.a;
         paint.setAlpha((int) (this.d * e7));
-        paint.setShadowLayer(AndroidUtilities.dp(12.0f) * e7, 0.0f, AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.i6.l1(e7, 805306368));
+        paint.setShadowLayer(AndroidUtilities.dp(12.0f) * e7, 0.0f, AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.i6.m1(e7, 805306368));
         Rect bounds = getBounds();
         float dp = AndroidUtilities.dp(8.0f) * e7;
         float dp2 = AndroidUtilities.dp(0.0f) * e7;

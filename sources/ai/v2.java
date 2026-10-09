@@ -1,74 +1,249 @@
 package ai;
 
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.tr;
+import android.view.ViewTreeObserver;
+import java.util.ArrayList;
+import org.telegram.ui.Components.hp0;
+import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.xm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class v2 {
-    public final long a;
-    public final float b;
-    public final float c;
-    public final kj0 d;
-    public final Paint e;
-    public final ImageReceiver f;
-    public final f11 g;
-    public boolean h;
-    public final org.telegram.ui.Components.e6 i;
-    public final org.telegram.ui.Components.e6 j;
+public final class v2 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public v2(w2 w2Var, View view, int i10, long j3, int i11, boolean z10) {
-        Paint paint = new Paint(1);
-        this.e = paint;
-        this.a = j3;
-        this.b = Utilities.clamp01(Utilities.fastRandom.nextFloat());
-        this.c = Utilities.clamp01(Utilities.fastRandom.nextFloat());
-        if (z10) {
-            int[] iArr = w2Var.f;
-            kj0 kj0Var = new kj0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
-            this.d = kj0Var;
-            kj0Var.R(view);
-            kj0Var.J(true);
-            kj0Var.K(0);
-            kj0Var.start();
+    public /* synthetic */ v2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        switch (this.a) {
+            case 0:
+                ((w2) this.b).f.onAttachedToWindow();
+                break;
+            case 1:
+                aa.a aVar = (aa.a) this.b;
+                hh.j jVar = (hh.j) aVar.c;
+                ViewTreeObserver viewTreeObserver = ((View) aVar.b).getViewTreeObserver();
+                ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) aVar.d;
+                if (viewTreeObserver2 != viewTreeObserver) {
+                    if (viewTreeObserver2 != null) {
+                        if (viewTreeObserver2.isAlive()) {
+                            ((ViewTreeObserver) aVar.d).removeOnPreDrawListener(jVar);
+                        }
+                        aVar.d = null;
+                    }
+                    aVar.d = viewTreeObserver;
+                    if (viewTreeObserver.isAlive()) {
+                        viewTreeObserver.addOnPreDrawListener(jVar);
+                        break;
+                    }
+                }
+                break;
+            case 2:
+            case 3:
+                break;
+            case 4:
+                ((xh.m2) this.b).a(view);
+                break;
+            case 5:
+                org.telegram.ui.Components.ma maVar = (org.telegram.ui.Components.ma) this.b;
+                ArrayList arrayList = maVar.c;
+                arrayList.clear();
+                for (View view2 = maVar.b; view2 != null; view2 = (View) view2.getParent()) {
+                    arrayList.add(0, view2);
+                    if (!(view2.getParent() instanceof View)) {
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                break;
+            case 7:
+                ((hr) this.b).a();
+                break;
+            case 8:
+                xm0 xm0Var = (xm0) this.b;
+                org.telegram.ui.Components.q5 q5Var = xm0Var.t;
+                if (q5Var != null) {
+                    q5Var.a();
+                }
+                org.telegram.ui.Components.q5 q5Var2 = xm0Var.u;
+                if (q5Var2 != null) {
+                    q5Var2.a();
+                    break;
+                }
+                break;
+            case 9:
+                break;
+            case 10:
+                ((org.telegram.ui.Components.q5) this.b).a();
+                break;
+            case 11:
+                oi.f fVar = (oi.f) this.b;
+                if (view == ((View) fVar.b)) {
+                    fVar.Q(view.getViewTreeObserver());
+                    break;
+                }
+                break;
+            case 12:
+                ((xh.g1) this.b).l.a();
+                break;
+            case 13:
+                xh.q3 q3Var = (xh.q3) this.b;
+                xh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.a(q3Var.c);
+                    break;
+                }
+                break;
+            case 14:
+                xh.t3 t3Var = (xh.t3) this.b;
+                xh.r3 r3Var = t3Var.N;
+                if (r3Var != null) {
+                    r3Var.a(t3Var.c);
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList2 = ((yh.f3) this.b).e;
+                int size = arrayList2.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList2.get(i10);
+                    i10++;
+                    yh.d3 d3Var = (yh.d3) obj;
+                    if (d3Var.c) {
+                        d3Var.d.onAttachedToWindow();
+                    }
+                }
+                break;
         }
-        TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j3);
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        h9Var.p(userOrChat);
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.f = imageReceiver;
-        imageReceiver.setImageCoords(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(7.0f));
-        imageReceiver.setForUserOrChat(userOrChat, h9Var);
-        view.addOnAttachStateChangeListener(new u2(this, 0));
-        if (view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                ((w2) this.b).f.onDetachedFromWindow();
+                break;
+            case 1:
+                aa.a aVar = (aa.a) this.b;
+                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) aVar.d;
+                if (viewTreeObserver != null) {
+                    if (viewTreeObserver.isAlive()) {
+                        ((ViewTreeObserver) aVar.d).removeOnPreDrawListener((hh.j) aVar.c);
+                    }
+                    aVar.d = null;
+                    break;
+                }
+                break;
+            case 2:
+                l.e eVar = (l.e) this.b;
+                ViewTreeObserver viewTreeObserver2 = eVar.N;
+                if (viewTreeObserver2 != null) {
+                    if (!viewTreeObserver2.isAlive()) {
+                        eVar.N = view.getViewTreeObserver();
+                    }
+                    eVar.N.removeGlobalOnLayoutListener(eVar.r);
+                }
+                view.removeOnAttachStateChangeListener(this);
+                break;
+            case 3:
+                l.c0 c0Var = (l.c0) this.b;
+                ViewTreeObserver viewTreeObserver3 = c0Var.E;
+                if (viewTreeObserver3 != null) {
+                    if (!viewTreeObserver3.isAlive()) {
+                        c0Var.E = view.getViewTreeObserver();
+                    }
+                    c0Var.E.removeGlobalOnLayoutListener(c0Var.r);
+                }
+                view.removeOnAttachStateChangeListener(this);
+                break;
+            case 4:
+                ((xh.m2) this.b).o(view);
+                break;
+            case 5:
+                ((org.telegram.ui.Components.ma) this.b).c.clear();
+                break;
+            case 6:
+                org.telegram.ui.Components.tc tcVar = (org.telegram.ui.Components.tc) this.b;
+                tcVar.e.removeOnAttachStateChangeListener(this);
+                tcVar.c(0L, false);
+                break;
+            case 7:
+                ((hr) this.b).b();
+                break;
+            case 8:
+                xm0 xm0Var = (xm0) this.b;
+                org.telegram.ui.Components.q5 q5Var = xm0Var.t;
+                if (q5Var != null) {
+                    q5Var.b();
+                }
+                org.telegram.ui.Components.q5 q5Var2 = xm0Var.u;
+                if (q5Var2 != null) {
+                    q5Var2.a();
+                    break;
+                }
+                break;
+            case 9:
+                view.removeCallbacks((Runnable) ((hp0) this.b).a.remove(view));
+                view.removeOnAttachStateChangeListener(this);
+                break;
+            case 10:
+                ((org.telegram.ui.Components.q5) this.b).b();
+                break;
+            case 11:
+                oi.f fVar = (oi.f) this.b;
+                if (view == ((View) fVar.b)) {
+                    fVar.Q(null);
+                    break;
+                }
+                break;
+            case 12:
+                ((xh.g1) this.b).l.b();
+                break;
+            case 13:
+                xh.q3 q3Var = (xh.q3) this.b;
+                xh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.o(q3Var.c);
+                    break;
+                }
+                break;
+            case 14:
+                xh.t3 t3Var = (xh.t3) this.b;
+                xh.r3 r3Var = t3Var.N;
+                if (r3Var != null) {
+                    r3Var.o(t3Var.c);
+                    break;
+                }
+                break;
+            default:
+                ArrayList arrayList = ((yh.f3) this.b).e;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((yh.d3) obj).a();
+                }
+                break;
         }
-        paint.setColor(-1135603);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("⭐️");
-        rq rqVar = new rq(R.drawable.star, 0);
-        rqVar.spaceScaleX = 0.875f;
-        spannableStringBuilder.setSpan(rqVar, 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append((CharSequence) " ");
-        spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new f11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
-        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
-        this.i = e6Var;
-        e6Var.d(0.0f, true);
-        e6Var.d(1.0f, false);
-        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, tr.h);
+    }
+
+    private final void a(View view) {
+    }
+
+    private final void b(View view) {
+    }
+
+    private final void c(View view) {
+    }
+
+    private final void d(View view) {
     }
 }

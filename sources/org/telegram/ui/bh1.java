@@ -1,81 +1,67 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bh1 extends ViewGroup {
-    public final Paint a;
-    public View b;
-    public boolean c;
+public final /* synthetic */ class bh1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ih1 b;
 
-    public bh1(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        setClipToPadding(false);
+    public /* synthetic */ bh1(ih1 ih1Var, int i10) {
+        this.a = i10;
+        this.b = ih1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(0.1f, 0.75f, getPaddingBottom());
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
-        int h = i0.a.h(org.telegram.ui.ActionBar.i6.l1(navigationBarThirdButtonsFactor, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)), w02);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r0, paint);
-        paint.setColor(h);
-        canvas.drawRect(0.0f, getMeasuredHeight() - r0, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View view = this.b;
-        boolean z10 = view != null && view.getVisibility() == 0;
-        int size = View.MeasureSpec.getSize(i10);
-        int paddingBottom = z10 ? getPaddingBottom() + AndroidUtilities.dp(44.0f) : 0;
-        setMeasuredDimension(size, paddingBottom);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30);
-        int childCount = getChildCount();
-        for (int i12 = 0; i12 < childCount; i12++) {
-            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
-        }
-        if (this.c != z10) {
-            this.c = z10;
-            WeakHashMap weakHashMap = r0.i0.a;
-            r0.y.c(this);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final void onViewAdded(View view) {
-        super.onViewAdded(view);
-        this.b = view;
-    }
-
-    @Override // android.view.View
-    public final void setPadding(int i10, int i11, int i12, int i13) {
-        super.setPadding(i10, i11, i12, i13);
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            getChildAt(i14).setPadding(i10, i11, i12, i13);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final ih1 ih1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dh1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                ih1.b0(ih1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                ih1.h0(ih1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new eh1(this.b, tL_error, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new eh1(this.b, tL_error, 1));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new eh1(this.b, tL_error, 2));
+                break;
+            default:
+                final int i11 = 1;
+                final ih1 ih1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dh1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                ih1.b0(ih1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                ih1.h0(ih1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
     }
 }

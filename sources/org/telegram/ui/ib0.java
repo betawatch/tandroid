@@ -3,20 +3,21 @@ package org.telegram.ui;
 import android.view.Window;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ib0 implements yf.g0 {
-    public final /* synthetic */ int a = 0;
+public final class ib0 implements yf.j0 {
+    public final /* synthetic */ int a;
     public boolean b;
     public boolean c;
     public final Object d;
 
-    public ib0(yf.h0 h0Var) {
-        this.d = h0Var;
+    public /* synthetic */ ib0(Object obj, int i10) {
+        this.a = i10;
+        this.d = obj;
     }
 
-    @Override // yf.g0
-    public final void a(boolean z10) {
+    @Override // yf.j0
+    public void a(boolean z10) {
         switch (this.a) {
             case 0:
                 if (this.b != z10 && !this.c) {
@@ -35,18 +36,18 @@ public final class ib0 implements yf.g0 {
                 }
                 break;
             default:
-                yf.h0 h0Var = (yf.h0) this.d;
+                yf.k0 k0Var2 = (yf.k0) this.d;
                 if (this.b != z10 && !this.c) {
                     this.b = z10;
                     if (z10) {
-                        h0Var.a++;
+                        k0Var2.a++;
                     } else {
-                        h0Var.a--;
+                        k0Var2.a--;
                     }
-                    boolean z11 = h0Var.a > 0;
-                    if (h0Var.b != z11) {
-                        h0Var.b = z11;
-                        Window window = (Window) ((WeakReference) h0Var.c.b).get();
+                    boolean z11 = k0Var2.a > 0;
+                    if (k0Var2.b != z11) {
+                        k0Var2.b = z11;
+                        Window window = (Window) ((WeakReference) k0Var2.c.b).get();
                         if (window != null) {
                             window.getDecorView().setVisibility(z11 ? 8 : 0);
                             break;
@@ -57,8 +58,19 @@ public final class ib0 implements yf.g0 {
         }
     }
 
-    @Override // yf.g0
-    public final void destroy() {
+    public void b() {
+        if (this.b) {
+            return;
+        }
+        this.b = true;
+        Runnable runnable = (Runnable) this.d;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    @Override // yf.j0
+    public void destroy() {
         switch (this.a) {
             case 0:
                 a(false);
@@ -72,6 +84,7 @@ public final class ib0 implements yf.g0 {
     }
 
     public ib0(LaunchActivity launchActivity, boolean z10) {
+        this.a = 0;
         this.d = new WeakReference(launchActivity);
     }
 }

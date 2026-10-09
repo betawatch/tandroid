@@ -1,25 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ef1 extends org.telegram.ui.Components.p70 {
-    public final /* synthetic */ long A0;
-    public final /* synthetic */ gf1 B0;
+public final /* synthetic */ class ef1 implements wh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.hm0 {
+    public final /* synthetic */ fg1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ef1(gf1 gf1Var, Context context, int i10, a0.i iVar, long j3, org.telegram.ui.ActionBar.n2 n2Var, long j10) {
-        super(context, i10, iVar, j3, n2Var, null);
-        this.B0 = gf1Var;
-        this.A0 = j10;
+    public /* synthetic */ ef1(fg1 fg1Var) {
+        this.a = fg1Var;
     }
 
-    @Override // org.telegram.ui.Components.p70
-    public final boolean W() {
-        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
-        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
+    @Override // r0.n
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        int i10 = k1Var.a.f(519).d;
+        fg1 fg1Var = this.a;
+        fg1Var.e1 = i10;
+        bg1 bg1Var = fg1Var.r0;
+        if (bg1Var != null) {
+            bg1Var.setPadding(0, 0, 0, i10);
+        }
+        vf1 vf1Var = fg1Var.n;
+        if (vf1Var != null) {
+            vf1Var.a.setTranslationY((-fg1Var.e1) - fg1Var.d1);
+        }
+        fg1Var.h.setTranslationY(((-fg1Var.X0) - fg1Var.e1) - fg1Var.d1);
+        fg1Var.B0();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public boolean c(float f7, float f10, int i10, View view) {
+        return fg1.W(this.a, view, f7);
+    }
+
+    @Override // wh.c
+    public void g(boolean z10, boolean z11) {
+        fg1 fg1Var = this.a;
+        fg1Var.U0.i(fg1Var.R0.c(), z10, z11);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        return fg1.U(this.a, tL_error);
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public /* synthetic */ void h() {
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public /* synthetic */ void q(float f7) {
     }
 }

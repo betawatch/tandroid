@@ -13,22 +13,22 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import ii.n4;
 import l.j;
 import l.k;
 import l.m;
 import l.z;
+import m.f3;
 import m.g;
 import m.h;
 import m.i;
-import m.s3;
+import m.t3;
 import m.v1;
 import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import t7.u;
+import t7.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ActionMenuView extends w1 implements j, z {
     public k F;
@@ -36,7 +36,7 @@ public class ActionMenuView extends w1 implements j, z {
     public int H;
     public boolean I;
     public h J;
-    public n4 K;
+    public f3 K;
     public boolean L;
     public int M;
     public final int N;
@@ -125,12 +125,12 @@ public class ActionMenuView extends w1 implements j, z {
             Context context = getContext();
             k kVar = new k(context);
             this.F = kVar;
-            kVar.e = new a4.m(this, 28);
+            kVar.e = new pb.c(this, 29);
             h hVar = new h(context);
             this.J = hVar;
             hVar.w = true;
             hVar.x = true;
-            hVar.e = new u();
+            hVar.e = new t();
             this.F.b(hVar, this.G);
             h hVar2 = this.J;
             hVar2.n = this;
@@ -213,7 +213,7 @@ public class ActionMenuView extends w1 implements j, z {
         int dividerWidth = getDividerWidth();
         int i16 = i12 - i10;
         int paddingRight = (i16 - getPaddingRight()) - getPaddingLeft();
-        boolean a2 = s3.a(this);
+        boolean a2 = t3.a(this);
         int i17 = 0;
         int i18 = 0;
         for (int i19 = 0; i19 < childCount; i19++) {

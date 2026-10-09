@@ -1,36 +1,44 @@
 package zg;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.os.Build;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l extends b0 {
-    public final /* synthetic */ o h;
+public final class l extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(o oVar, Context context, d6 d6Var, int i10) {
-        super(context, i10, d6Var);
-        this.h = oVar;
+    public /* synthetic */ l(q qVar, int i10) {
+        this.a = i10;
+        this.b = qVar;
     }
 
-    @Override // org.telegram.ui.Components.eu
-    public final void onLineCountChanged(int i10, int i11) {
-        if (i11 > i10) {
-            this.h.E.w0(0, AndroidUtilities.dp(30.0f), null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        q qVar = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                qVar.c.setVisibility(4);
+                if (Build.MODEL.toLowerCase().startsWith("zte") && Build.VERSION.SDK_INT <= 28) {
+                    qVar.f.setFocusableInTouchMode(false);
+                    break;
+                }
+                break;
+            case 1:
+                qVar.n.setFocusableInTouchMode(true);
+                break;
+            case 2:
+                qVar.w.setVisibility(4);
+                break;
+            default:
+                qVar.n.setFocusableInTouchMode(false);
+                qVar.f.setVisibility(4);
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.eu, android.widget.EditText, android.widget.TextView
-    public final boolean onTextContextMenuItem(int i10) {
-        if (i10 == R.id.menu_delete || i10 == 16908320) {
-            return this.h.b0();
-        }
-        if (i10 == 16908322 || i10 == 16908321) {
-            return false;
-        }
-        return super.onTextContextMenuItem(i10);
     }
 }

@@ -1,47 +1,21 @@
 package qg;
 
-import android.graphics.Insets;
-import android.graphics.Rect;
-import android.os.Build;
-import android.view.View;
-import android.view.WindowInsets;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class s2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ t2 a;
+public final class s2 extends o0 {
+    public final /* synthetic */ u2 t0;
 
-    public s2(t2 t2Var) {
-        this.a = t2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s2(u2 u2Var, Context context, float f7) {
+        super(context, f7);
+        this.t0 = u2Var;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        WindowInsets windowInsets2;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        t2 t2Var = this.a;
-        ai.f0 f0Var = t2Var.b;
-        Rect rect = t2Var.h;
-        int i14 = Build.VERSION.SDK_INT;
-        if (i14 >= 30) {
-            Insets insets = windowInsets.getInsets(647);
-            i10 = insets.left;
-            i11 = insets.top;
-            i12 = insets.right;
-            i13 = insets.bottom;
-            rect.set(i10, i11, i12, i13);
-        } else {
-            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
-        }
-        f0Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
-        f0Var.requestLayout();
-        if (i14 < 30) {
-            return windowInsets.consumeSystemWindowInsets();
-        }
-        windowInsets2 = WindowInsets.CONSUMED;
-        return windowInsets2;
+    @Override // android.view.View
+    public final void invalidate() {
+        this.t0.d.invalidate();
+        super.invalidate();
     }
 }

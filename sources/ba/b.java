@@ -1,6 +1,7 @@
 package ba;
 
-import a4.e;
+import a1.g;
+import a4.d;
 import android.util.Log;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -20,22 +21,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 import w9.j;
 import y9.a2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
     public static final int f = 15;
-    public static final z9.c g = new z9.c();
-    public static final e h = new e(8);
+    public static final z9.a g = new z9.a();
+    public static final d h = new d(8);
     public static final a i = new a(0);
     public final AtomicInteger a = new AtomicInteger(0);
     public final c b;
-    public final da.b c;
+    public final da.c c;
     public final j d;
 
-    public b(c cVar, da.b bVar, j jVar) {
+    public b(c cVar, da.c cVar2, j jVar) {
         this.b = cVar;
-        this.c = bVar;
+        this.c = cVar2;
         this.d = jVar;
     }
 
@@ -90,10 +91,10 @@ public final class b {
         c cVar = this.b;
         arrayList.addAll(c.e(cVar.e.listFiles()));
         arrayList.addAll(c.e(cVar.f.listFiles()));
-        e eVar = h;
-        Collections.sort(arrayList, eVar);
+        d dVar = h;
+        Collections.sort(arrayList, dVar);
         List e7 = c.e(cVar.d.listFiles());
-        Collections.sort(e7, eVar);
+        Collections.sort(e7, dVar);
         arrayList.addAll(e7);
         return arrayList;
     }
@@ -107,7 +108,7 @@ public final class b {
         int i10 = this.c.d().a.a;
         g.getClass();
         try {
-            f(cVar.b(str, a4.a.q("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), z9.c.a.c(a2Var));
+            f(cVar.b(str, g.q("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), z9.a.a.T(a2Var));
         } catch (IOException e7) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e7);
         }
@@ -116,7 +117,7 @@ public final class b {
         File file = new File(cVar.c, str);
         file.mkdirs();
         List<File> e10 = c.e(file.listFiles(aVar));
-        Collections.sort(e10, new e(9));
+        Collections.sort(e10, new d(9));
         int size = e10.size();
         for (File file2 : e10) {
             if (size <= i10) {

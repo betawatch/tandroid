@@ -1,25 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kl0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ es b;
+public final class kl0 extends org.telegram.ui.ActionBar.g5 {
+    public final /* synthetic */ ci.d f;
 
-    public /* synthetic */ kl0(es esVar, int i10) {
-        this.a = i10;
-        this.b = esVar;
+    public kl0(ci.d dVar) {
+        this.f = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.l(1.0f);
-                break;
-            default:
-                this.b.l(1.0f);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
+    public final boolean h() {
+        return !this.f.N;
     }
 }

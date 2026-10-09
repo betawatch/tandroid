@@ -1,41 +1,54 @@
 package yh;
 
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ad;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.tgnet.e b;
-    public final /* synthetic */ ad[] c;
-    public final /* synthetic */ TL_stars.UniqueStarGiftValueInfo d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ s1(org.telegram.tgnet.e eVar, ad[] adVarArr, TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo, String str, int i10) {
+    public /* synthetic */ s1(s3 s3Var, String str, int i10) {
         this.a = i10;
-        this.b = eVar;
-        this.c = adVarArr;
-        this.d = uniqueStarGiftValueInfo;
-        this.e = str;
+        this.b = s3Var;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        String str = this.e;
-        TL_stars.UniqueStarGiftValueInfo uniqueStarGiftValueInfo = this.d;
-        ad[] adVarArr = this.c;
-        org.telegram.tgnet.e eVar = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueMinPriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.floor_price, uniqueStarGiftValueInfo.currency), str));
+                s3.j1(this.b, this.c);
+                break;
+            case 1:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 2:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 3:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 4:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 5:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 6:
+                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
+                break;
+            case 7:
+                AndroidUtilities.addToClipboard(this.c);
+                tc k10 = this.b.getBulletinFactory().k(false);
+                k10.t = true;
+                k10.j();
                 break;
             default:
-                eVar.run(adVarArr[0], LocaleController.formatString(R.string.GiftValueAveragePriceInfo, BillingController.getInstance().formatCurrency(uniqueStarGiftValueInfo.average_price, uniqueStarGiftValueInfo.currency), str));
+                s3.p0(this.b, this.c);
                 break;
         }
     }

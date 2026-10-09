@@ -1,47 +1,62 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.PointF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bx0 extends cb {
-    public us X;
+public class bx0 extends s4.e0 {
+    public final hs r;
+    public int s;
+    public float t;
 
     public bx0(Context context) {
-        super(context, null, true, false, null);
-        fixNavigationBar();
-        this.E = true;
-        this.y = true;
-        I();
-        zl0 zl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        zl0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new xb0(this, 7));
-        this.d.setOnItemClickListener(new j(this, 14));
+        super(context);
+        this.r = hs.f;
+        this.t = 1.0f;
     }
 
-    public static void N(bx0 bx0Var, int i10) {
-        h61 G = bx0Var.X.G(i10 - 1);
-        Object obj = G != null ? G.G : null;
-        if (obj instanceof TLRPC.User) {
-            MessagesController.getInstance(bx0Var.currentAccount).openApp(bx0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+    @Override // s4.e0, s4.z0
+    public final void g(View view, s4.y0 y0Var) {
+        int j3 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
+        if (m10 > 0) {
+            y0Var.b(-j3, -k10, m10, this.r);
         }
+        AndroidUtilities.runOnUIThread(new or0(this, 8), Math.max(0, m10));
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
-        us usVar = new us(zl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.X = usVar;
-        usVar.r = false;
-        return usVar;
+    @Override // s4.e0
+    public final int k(int i10, View view) {
+        return super.k(i10, view) - this.s;
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.SearchAppsExamples);
+    @Override // s4.e0
+    public final int m(int i10) {
+        return Math.round(Math.min(super.m(i10), 500) * this.t);
+    }
+
+    @Override // s4.e0
+    public final int n(int i10) {
+        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
+    }
+
+    @Override // s4.e0
+    public final void q(s4.y0 y0Var) {
+        PointF a2 = a(this.a);
+        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+            y0Var.d = this.a;
+            h();
+            return;
+        }
+        s4.z0.b(a2);
+        this.k = a2;
+        this.o = (int) (a2.x * 10000.0f);
+        this.p = (int) (a2.y * 10000.0f);
+        y0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

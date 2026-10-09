@@ -1,6 +1,6 @@
 package androidx.emoji2.text;
 
-import ai.z9;
+import ai.aa;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements v4.b {
     @Override // v4.b
@@ -54,7 +54,7 @@ public class EmojiCompatInitializer implements v4.b {
         m10.a(new androidx.lifecycle.e(this) { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
             @Override // androidx.lifecycle.e
             public final void a(androidx.lifecycle.t tVar) {
-                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new z9(1), 500L);
+                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new aa(1), 500L);
                 m10.b(this);
             }
 

@@ -1,12 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sp extends AnimatorListenerAdapter {
+public final /* synthetic */ class sp implements wd1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ tp b;
 
@@ -15,22 +14,18 @@ public final class sp extends AnimatorListenerAdapter {
         this.b = tpVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.wd1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
         switch (this.a) {
             case 0:
-                tp tpVar = this.b;
-                tpVar.d = null;
-                qg qgVar = new qg(this, 29);
-                tpVar.e = qgVar;
-                AndroidUtilities.runOnUIThread(qgVar, 3000L);
+                cq cqVar = this.b.a;
+                cqVar.Y.dismissInternal();
+                cqVar.dismiss();
                 break;
             default:
-                tp tpVar2 = this.b;
-                tpVar2.setVisibility(4);
-                tpVar2.getClass();
-                tpVar2.getClass();
-                tpVar2.d = null;
+                cq cqVar2 = this.b.a;
+                cqVar2.Y.dismissInternal();
+                cqVar2.dismiss();
                 break;
         }
     }

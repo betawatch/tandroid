@@ -1,32 +1,29 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.util.Pair;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a01 {
-    public final int a;
-    public final int b;
+public final class a01 extends ArrayList {
+    public final Class a;
+    public final Class b;
 
-    public a01(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public a01(Class cls, Class cls2) {
+        this.a = cls;
+        this.b = cls2;
     }
 
-    public final int a() {
-        return this.b - this.a;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final la.h i() {
+        int size = size();
+        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
+        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = ((Pair) get(i10)).first;
+            objArr2[i10] = ((Pair) get(i10)).second;
         }
-        if (obj == null || a01.class != obj.getClass()) {
-            return false;
-        }
-        a01 a01Var = (a01) obj;
-        return this.b == a01Var.b && this.a == a01Var.a;
-    }
-
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
+        return new la.h(objArr, objArr2);
     }
 }

@@ -2,7 +2,7 @@ package b5;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class b extends c {
     public final /* synthetic */ int d;
@@ -17,32 +17,19 @@ public class b extends c {
     public final boolean a() {
         switch (this.d) {
             case 0:
-                if (Build.VERSION.SDK_INT >= 23) {
-                }
-                break;
+                return true;
             case 1:
-                if (Build.VERSION.SDK_INT >= 24) {
-                }
-                break;
+                return Build.VERSION.SDK_INT >= 24;
             case 2:
-                break;
+                return false;
             case 3:
-                if (Build.VERSION.SDK_INT >= 26) {
-                }
-                break;
+                return Build.VERSION.SDK_INT >= 26;
             case 4:
-                if (Build.VERSION.SDK_INT >= 27) {
-                }
-                break;
+                return Build.VERSION.SDK_INT >= 27;
             case 5:
-                if (Build.VERSION.SDK_INT >= 28) {
-                }
-                break;
+                return Build.VERSION.SDK_INT >= 28;
             default:
-                if (Build.VERSION.SDK_INT >= 29) {
-                }
-                break;
+                return Build.VERSION.SDK_INT >= 29;
         }
-        return false;
     }
 }

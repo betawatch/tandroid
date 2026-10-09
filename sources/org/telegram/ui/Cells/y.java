@@ -19,93 +19,96 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.dq;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
-    public final org.telegram.ui.ActionBar.i5 a;
-    public final org.telegram.ui.Components.w9 b;
+    public final org.telegram.ui.ActionBar.j5 a;
+    public final org.telegram.ui.Components.y9 b;
     public final Switch c;
-    public final qp d;
-    public TLRPC.TL_availableReaction e;
-    public final boolean f;
-    public boolean h;
+    public final dq d;
+    public final View e;
+    public TLRPC.TL_availableReaction f;
+    public final boolean h;
+    public boolean n;
 
     public y(Context context, boolean z10, boolean z11) {
         super(context);
-        this.f = z11;
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.a = i5Var;
-        NotificationCenter.listenEmojiLoading(i5Var);
-        i5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
-        i5Var.setTextSize(16);
-        i5Var.setTypeface(AndroidUtilities.bold());
-        i5Var.setMaxLines(1);
-        i5Var.setMaxLines(1);
-        i5Var.setGravity(16 | w7.z5.y());
-        addView(i5Var, w7.z5.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.b = w9Var;
-        w9Var.setAspectFit(true);
-        w9Var.setLayerNum(1);
-        addView(w9Var, w7.z5.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
+        this.h = z11;
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.a = j5Var;
+        NotificationCenter.listenEmojiLoading(j5Var);
+        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        j5Var.setTextSize(16);
+        j5Var.setTypeface(AndroidUtilities.bold());
+        j5Var.setMaxLines(1);
+        j5Var.setMaxLines(1);
+        j5Var.setGravity(16 | w7.x5.y());
+        addView(j5Var, w7.x5.i(-2.0f, -2.0f, 8388627, 81.0f, 0.0f, 61.0f, 0.0f));
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
+        this.b = y9Var;
+        y9Var.setAspectFit(true);
+        y9Var.setLayerNum(1);
+        addView(y9Var, w7.x5.i(32.0f, 32.0f, 8388627, 23.0f, 0.0f, 0.0f, 0.0f));
         if (z10) {
-            qp qpVar = new qp(context, 26, null);
-            this.d = qpVar;
-            qpVar.setDrawUnchecked(false);
-            qpVar.b(-1, -1, org.telegram.ui.ActionBar.i6.h7);
-            qpVar.setDrawBackgroundAsArc(-1);
-            addView(qpVar, w7.z5.i(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            dq dqVar = new dq(context, 26, null);
+            this.d = dqVar;
+            dqVar.setDrawUnchecked(false);
+            dqVar.b(-1, -1, org.telegram.ui.ActionBar.i6.h7);
+            dqVar.setDrawBackgroundAsArc(-1);
+            addView(dqVar, w7.x5.i(26.0f, 26.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         } else {
             Switch r14 = new Switch(context, null);
             this.c = r14;
             r14.d(org.telegram.ui.ActionBar.i6.M6, org.telegram.ui.ActionBar.i6.N6, org.telegram.ui.ActionBar.i6.Q6, org.telegram.ui.ActionBar.i6.R6);
-            addView(r14, w7.z5.i(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
+            addView(r14, w7.x5.i(37.0f, 20.0f, 8388629, 0.0f, 0.0f, 22.0f, 0.0f));
         }
         View view = new View(context);
-        view.setBackground(org.telegram.ui.ActionBar.i6.K0(false));
-        addView(view, w7.z5.c(-1.0f, -1));
+        this.e = view;
+        view.setBackground(org.telegram.ui.ActionBar.i6.L0(false));
+        addView(view, w7.x5.d(-1.0f, -1));
         setWillNotDraw(false);
     }
 
     public final void a(TLRPC.TL_availableReaction tL_availableReaction, boolean z10, int i10) {
-        TLRPC.TL_availableReaction tL_availableReaction2 = this.e;
+        TLRPC.TL_availableReaction tL_availableReaction2 = this.f;
         boolean z11 = tL_availableReaction2 != null && tL_availableReaction.reaction.equals(tL_availableReaction2.reaction);
-        this.e = tL_availableReaction;
+        this.f = tL_availableReaction;
         String str = tL_availableReaction.title;
-        org.telegram.ui.ActionBar.i5 i5Var = this.a;
-        i5Var.l(Emoji.replaceEmoji(str, i5Var.getPaint().getFontMetricsInt(), false), false);
+        org.telegram.ui.ActionBar.j5 j5Var = this.a;
+        j5Var.l(Emoji.replaceEmoji(str, j5Var.getPaint().getFontMetricsInt(), false), false);
         this.b.i(ImageLocation.getForDocument(tL_availableReaction.activate_animation), "30_30_pcache", "tgs", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.i6.a7, 1.0f), tL_availableReaction);
-        boolean z12 = this.f && tL_availableReaction.premium && !UserConfig.getInstance(i10).isPremium();
-        this.h = z12;
+        boolean z12 = this.h && tL_availableReaction.premium && !UserConfig.getInstance(i10).isPremium();
+        this.n = z12;
         if (z12) {
             Drawable drawable = getContext().getDrawable(R.drawable.other_lockedfolders2);
-            drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Uh, false), PorterDuff.Mode.MULTIPLY));
-            i5Var.i(drawable);
+            drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Uh, false), PorterDuff.Mode.MULTIPLY));
+            j5Var.i(drawable);
         } else {
-            i5Var.i(null);
+            j5Var.i(null);
         }
         Switch r02 = this.c;
         if (r02 != null) {
             r02.c(z10, z11);
         }
-        qp qpVar = this.d;
-        if (qpVar != null) {
-            qpVar.a(z10, z11);
+        dq dqVar = this.d;
+        if (dqVar != null) {
+            dqVar.a(z10, z11);
         }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
+        int i10 = 0;
+        canvas.drawColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
         float strokeWidth = org.telegram.ui.ActionBar.i6.k0.getStrokeWidth();
         int dp = AndroidUtilities.dp(81.0f);
-        int i10 = 0;
-        if (LocaleController.isRTL) {
+        if (!LocaleController.isRTL) {
             i10 = dp;
             dp = 0;
         }
-        canvas.drawLine(getPaddingLeft() + dp, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - i10, getHeight() - strokeWidth, org.telegram.ui.ActionBar.i6.k0);
+        canvas.drawLine(getPaddingLeft() + i10, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - dp, getHeight() - strokeWidth, org.telegram.ui.ActionBar.i6.k0);
     }
 
     @Override // android.view.View
@@ -114,22 +117,22 @@ public final class y extends FrameLayout {
         accessibilityNodeInfo.setEnabled(true);
         accessibilityNodeInfo.setClickable(true);
         boolean z10 = false;
-        qp qpVar = this.d;
+        dq dqVar = this.d;
         Switch r32 = this.c;
         if (r32 != null) {
             accessibilityNodeInfo.setCheckable(true);
             if (r32 != null) {
                 z10 = r32.h;
-            } else if (qpVar != null) {
-                z10 = qpVar.a.q;
+            } else if (dqVar != null) {
+                z10 = dqVar.a.q;
             }
             accessibilityNodeInfo.setChecked(z10);
             accessibilityNodeInfo.setClassName("android.widget.Switch");
         } else {
             if (r32 != null) {
                 z10 = r32.h;
-            } else if (qpVar != null) {
-                z10 = qpVar.a.q;
+            } else if (dqVar != null) {
+                z10 = dqVar.a.q;
             }
             if (z10) {
                 accessibilityNodeInfo.setSelected(true);
@@ -148,9 +151,9 @@ public final class y extends FrameLayout {
         if (r12 != null) {
             r12.c(z10, false);
         }
-        qp qpVar = this.d;
-        if (qpVar != null) {
-            qpVar.a(z10, false);
+        dq dqVar = this.d;
+        if (dqVar != null) {
+            dqVar.a(z10, false);
         }
     }
 }

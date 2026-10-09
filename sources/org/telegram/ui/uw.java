@@ -1,73 +1,33 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ty b;
+public final class uw extends org.telegram.ui.Components.rt {
+    public final /* synthetic */ sy E;
 
-    public /* synthetic */ uw(ty tyVar, int i10) {
-        this.a = i10;
-        this.b = tyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uw(py pyVar, sy syVar) {
+        super(pyVar);
+        this.E = syVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.d.l();
-                break;
-            case 1:
-                ty tyVar = this.b;
-                uy uyVar = tyVar.K;
-                qy qyVar = tyVar.a;
-                if (qyVar != null && qyVar.getScrollState() == 0 && tyVar.a.getChildCount() > 0 && tyVar.a.getLayoutManager() != null) {
-                    int i10 = 1;
-                    boolean z10 = tyVar.s == 0 && uyVar.i4() && tyVar.v == 2;
-                    float f7 = uyVar.N;
-                    s4.c0 c0Var = (s4.c0) tyVar.a.getLayoutManager();
-                    View view = null;
-                    int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    int i12 = -1;
-                    for (int i13 = 0; i13 < tyVar.a.getChildCount(); i13++) {
-                        int R = RecyclerView.R(tyVar.a.getChildAt(i13));
-                        View childAt = tyVar.a.getChildAt(i13);
-                        if (R != -1 && childAt != null && childAt.getTop() < i11) {
-                            i11 = childAt.getTop();
-                            i12 = R;
-                            view = childAt;
-                        }
-                    }
-                    if (view != null) {
-                        float top = view.getTop() - tyVar.a.getPaddingTop();
-                        if (uyVar.K) {
-                            f7 = 0.0f;
-                        }
-                        if (tyVar.a.getScrollState() != 1) {
-                            if (z10 && i12 == 0 && ((tyVar.a.getPaddingTop() - view.getTop()) - view.getMeasuredHeight()) + f7 < 0.0f) {
-                                top = f7;
-                            } else {
-                                i10 = i12;
-                            }
-                            c0Var.h1(i10, (int) top);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                ty tyVar2 = this.b;
-                tyVar2.d.W(tyVar2.I);
-                tyVar2.K.Q = true;
-                qy qyVar2 = tyVar2.a;
-                qyVar2.k3 = true;
-                tyVar2.H = false;
-                qyVar2.invalidate();
-                break;
+    @Override // s4.g1
+    public final void y() {
+        sy syVar = this.E;
+        if (syVar.c.L0() == 0) {
+            View m10 = syVar.c.m(0);
+            if (m10 != null) {
+                m10.invalidate();
+            }
+            if (syVar.v == 2) {
+                syVar.v = 1;
+            }
+            zw zwVar = syVar.n;
+            if (zwVar != null) {
+                zwVar.b();
+            }
         }
     }
 }

@@ -1,77 +1,16 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class va extends TextView {
-    public boolean a;
-    public final org.telegram.ui.Components.e6 b;
-    public wp c;
-
-    public va(Context context) {
-        super(context);
-        this.b = new org.telegram.ui.Components.e6(this, 0L, 350L, tr.h);
-    }
-
-    public final void a(boolean z10, boolean z11) {
-        this.a = z10;
-        boolean z12 = true;
-        if (!z11) {
-            this.b.f(z10, true);
-        }
-        if (!isPressed() && !z10) {
-            z12 = false;
-        }
-        super.setPressed(z12);
-        invalidate();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e7 = this.b.e(this.a);
-        if (e7 <= 0.0f) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (e7 < 1.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - e7) * 255.0f), 31);
-            float f7 = 1.0f - (0.2f * e7);
-            canvas2.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas2.translate(0.0f, AndroidUtilities.dp(-12.0f) * e7);
-            super.onDraw(canvas2);
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-        }
-        if (this.c == null) {
-            wp wpVar = new wp(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
-            this.c = wpVar;
-            wpVar.setCallback(this);
-        }
-        this.c.b(getCurrentTextColor());
-        float f10 = 1.0f - e7;
-        this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (AndroidUtilities.dp(12.0f) * f10)), getWidth() / 2, (getHeight() / 2) + ((int) (f10 * AndroidUtilities.dp(12.0f))));
-        this.c.setAlpha((int) (e7 * 255.0f));
-        this.c.draw(canvas2);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        super.setPressed(z10 || this.a);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.c == drawable || super.verifyDrawable(drawable);
+public final class va extends org.telegram.ui.Components.r5 {
+    @Override // org.telegram.ui.Components.r5, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
+        super.draw(canvas);
+        canvas.restore();
     }
 }

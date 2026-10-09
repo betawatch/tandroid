@@ -1,48 +1,215 @@
 package yh;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.bd;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.l11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class f8 extends o8 {
-    public final /* synthetic */ boolean m0;
-    public final /* synthetic */ int n0;
-    public final /* synthetic */ r8 o0;
+public final class f8 {
+    public int a;
+    public final RectF b;
+    public final org.telegram.ui.Components.g6 c;
+    public final org.telegram.ui.Components.g6 d;
+    public final org.telegram.ui.Components.g6 e;
+    public LinearGradient f;
+    public final Matrix g;
+    public final Paint h;
+    public final boolean i;
+    public long j;
+    public final ImageReceiver k;
+    public final j9 l;
+    public final j9 m;
+    public l11 n;
+    public l11 o;
+    public boolean p;
+    public final bd q;
+    public int r;
+    public Drawable s;
+    public Drawable t;
+    public l11 u;
+    public int v;
+    public final /* synthetic */ g8 w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f8(r8 r8Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, int i10) {
-        super(context, d6Var);
-        this.o0 = r8Var;
-        this.m0 = z10;
-        this.n0 = i10;
+    public f8(g8 g8Var, boolean z10, long j3) {
+        String str;
+        h8 h8Var = g8Var.r;
+        this.w = g8Var;
+        this.b = new RectF();
+        hs hsVar = hs.h;
+        this.c = new org.telegram.ui.Components.g6(g8Var, 0L, 600L, hsVar);
+        this.d = new org.telegram.ui.Components.g6(g8Var, 0L, 200L, hsVar);
+        this.e = new org.telegram.ui.Components.g6(g8Var, 0L, 350L, hsVar);
+        this.f = null;
+        this.g = new Matrix();
+        this.h = new Paint(1);
+        ImageReceiver imageReceiver = new ImageReceiver(g8Var);
+        this.k = imageReceiver;
+        j9 j9Var = new j9((org.telegram.ui.ActionBar.e6) null);
+        this.l = j9Var;
+        j9 j9Var2 = new j9((org.telegram.ui.ActionBar.e6) null);
+        this.m = j9Var2;
+        this.q = new bd(g8Var);
+        this.i = z10;
+        this.j = j3;
+        if (j3 >= 0) {
+            TLRPC.User user = MessagesController.getInstance(h8Var.c).getUser(Long.valueOf(j3));
+            str = UserObject.getForcedFirstName(user);
+            j9Var.r(user);
+            imageReceiver.setForUserOrChat(user, j9Var);
+        } else {
+            TLRPC.Chat chat = MessagesController.getInstance(h8Var.c).getChat(Long.valueOf(-j3));
+            str = chat == null ? "" : chat.title;
+            j9Var.q(chat);
+            imageReceiver.setForUserOrChat(chat, j9Var);
+        }
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(56.0f));
+        imageReceiver.onAttachedToWindow();
+        imageReceiver.setCrossfadeWithOldImage(true);
+        j9Var2.g(21);
+        j9Var2.h(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.c8, h8Var.b));
+        this.n = new l11(str, 12.0f, null);
     }
 
-    @Override // yh.o8
-    public final void e(int i10) {
-        long j3 = i10;
-        r8 r8Var = this.o0;
-        r8Var.s(j3);
-        ci.d dVar = r8Var.x;
-        if (dVar != null) {
-            dVar.g(z7.b1(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j3, ',')), r8Var.Q), true, true);
+    public final void a(Canvas canvas) {
+        float f7;
+        float f10;
+        float f11;
+        boolean z10 = false;
+        float d = this.c.d(this.a, false);
+        int i10 = this.a;
+        g8 g8Var = this.w;
+        if (i10 >= 0 && i10 < g8Var.b.size()) {
+            z10 = true;
         }
-        if (this.m0) {
-            ai.m1 m1Var = r8Var.G;
-            m1Var.g = j3;
-            r8Var.H.set(m1Var);
-            int i11 = this.n0;
-            f(ai.g0.b(i11, i10, 3), ai.g0.b(i11, i10, 4), true);
+        float e7 = this.d.e(z10);
+        canvas.save();
+        float width = (g8Var.getWidth() - AndroidUtilities.dp(80.0f)) / Math.max(1.0f, g8Var.f);
+        float dp = ((g8Var.f - (d + 0.5f)) * width) + AndroidUtilities.dp(40.0f);
+        float dp2 = AndroidUtilities.dp(40.0f);
+        float f12 = width / 2.0f;
+        this.b.set(dp - f12, dp2 - AndroidUtilities.dp(50.0f), f12 + dp, AndroidUtilities.dp(50.0f) + dp2);
+        float f13 = (0.3f * e7) + 0.7f;
+        canvas.scale(f13, f13, dp, dp2);
+        float a2 = this.q.a(0.04f);
+        canvas.scale(a2, a2, dp, dp2);
+        if (e7 > 0.0f) {
+            float e10 = this.e.e(this.p);
+            if (e10 < 1.0f) {
+                f11 = 255.0f;
+                float dp3 = AndroidUtilities.dp(56.0f);
+                f7 = 40.0f;
+                float dp4 = AndroidUtilities.dp(56.0f);
+                f10 = 2.0f;
+                ImageReceiver imageReceiver = this.k;
+                imageReceiver.setImageCoords(dp - (AndroidUtilities.dp(56.0f) / 2.0f), dp2 - (AndroidUtilities.dp(56.0f) / 2.0f), dp3, dp4);
+                imageReceiver.setAlpha(e7);
+                imageReceiver.draw(canvas);
+                imageReceiver.setAlpha(1.0f);
+            } else {
+                f7 = 40.0f;
+                f10 = 2.0f;
+                f11 = 255.0f;
+            }
+            if (e10 > 0.0f) {
+                int i11 = (int) dp;
+                int dp5 = i11 - (AndroidUtilities.dp(56.0f) / 2);
+                int i12 = (int) dp2;
+                int dp6 = i12 - (AndroidUtilities.dp(56.0f) / 2);
+                int dp7 = (AndroidUtilities.dp(56.0f) / 2) + i11;
+                int dp8 = (AndroidUtilities.dp(56.0f) / 2) + i12;
+                j9 j9Var = this.m;
+                j9Var.setBounds(dp5, dp6, dp7, dp8);
+                j9Var.y = (int) (e7 * f11 * e10);
+                j9Var.draw(canvas);
+                j9Var.y = 255;
+            }
+        } else {
+            f7 = 40.0f;
+            f10 = 2.0f;
+            f11 = 255.0f;
         }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((dp - (this.o.c / f10)) - AndroidUtilities.dp(5.66f), (AndroidUtilities.dp(23.0f) + dp2) - (AndroidUtilities.dp(16.0f) / f10), (this.o.c / f10) + dp + AndroidUtilities.dp(5.66f), (AndroidUtilities.dp(16.0f) / f10) + AndroidUtilities.dp(23.0f) + dp2);
+        canvas.drawRoundRect(rectF, rectF.height() / f10, rectF.height() / f10, g8Var.d);
+        int i13 = (int) (e7 * f11);
+        Paint paint = this.h;
+        paint.setAlpha(i13);
+        if (this.f != null) {
+            Matrix matrix = this.g;
+            matrix.reset();
+            matrix.postTranslate(0.0f, rectF.top);
+            this.f.setLocalMatrix(matrix);
+        }
+        canvas.drawRoundRect(rectF, rectF.height() / f10, rectF.height() / f10, paint);
+        l11 l11Var = this.o;
+        l11Var.c(dp - (l11Var.c / f10), AndroidUtilities.dp(23.0f) + dp2, e7, -1, canvas);
+        l11 l11Var2 = this.n;
+        l11Var2.p = width - AndroidUtilities.dp(4.0f);
+        l11Var2.c(dp - (this.n.l() / f10), AndroidUtilities.dp(42.0f) + dp2, e7, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, g8Var.r.b), canvas);
+        if (this.v > 0) {
+            int i14 = (int) dp;
+            int i15 = (int) dp2;
+            this.t.setBounds(i14 - AndroidUtilities.dp(12.0f), i15 - AndroidUtilities.dp(f7), AndroidUtilities.dp(12.0f) + i14, i15 - AndroidUtilities.dp(16.0f));
+            this.s.setBounds(i14 - AndroidUtilities.dp(12.0f), i15 - AndroidUtilities.dp(f7), AndroidUtilities.dp(12.0f) + i14, i15 - AndroidUtilities.dp(16.0f));
+            this.t.setAlpha(i13);
+            this.s.setAlpha(i13);
+            this.t.draw(canvas);
+            this.s.draw(canvas);
+            l11 l11Var3 = this.u;
+            l11Var3.c(dp - (l11Var3.c / f10), dp2 - AndroidUtilities.dp(27.0f), e7, -1, canvas);
+        }
+        canvas.restore();
     }
 
-    @Override // yh.o8
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        if (this.m0) {
-            int i11 = this.n0;
-            f(ai.g0.b(i11, i10, 3), ai.g0.b(i11, i10, 4), true);
+    public final void b(long j3) {
+        String str;
+        String str2;
+        g8 g8Var = this.w;
+        h8 h8Var = g8Var.r;
+        if (this.i) {
+            if ((this.p ? 2666000L : this.j == UserConfig.getInstance(h8Var.c).getClientUserId() ? 0L : this.j) != j3) {
+                this.p = j3 == UserObject.ANONYMOUS;
+                if (j3 == 0 || j3 == UserObject.ANONYMOUS) {
+                    j3 = UserConfig.getInstance(h8Var.c).getClientUserId();
+                }
+                this.j = j3;
+                if (this.p) {
+                    str2 = LocaleController.getString(R.string.StarsReactionAnonymous);
+                } else {
+                    ImageReceiver imageReceiver = this.k;
+                    j9 j9Var = this.l;
+                    if (j3 >= 0) {
+                        TLRPC.User user = MessagesController.getInstance(h8Var.c).getUser(Long.valueOf(this.j));
+                        str = UserObject.getForcedFirstName(user);
+                        j9Var.r(user);
+                        imageReceiver.setForUserOrChat(user, j9Var);
+                    } else {
+                        TLRPC.Chat chat = MessagesController.getInstance(h8Var.c).getChat(Long.valueOf(-this.j));
+                        str = chat == null ? "" : chat.title;
+                        j9Var.q(chat);
+                        imageReceiver.setForUserOrChat(chat, j9Var);
+                    }
+                    str2 = str;
+                }
+                this.n = new l11(str2, 12.0f, null);
+                g8Var.invalidate();
+            }
         }
     }
 }

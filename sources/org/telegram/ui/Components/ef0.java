@@ -1,28 +1,131 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ef0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gf0 b;
+public abstract class ef0 {
+    public static int a = 1500;
 
-    public /* synthetic */ ef0(gf0 gf0Var, int i10) {
-        this.a = i10;
-        this.b = gf0Var;
+    public static boolean a() {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return false;
+        }
+        return activity.shouldShowRequestPermissionRationale("android.permission.POST_NOTIFICATIONS");
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s = null;
-                break;
-            default:
-                this.b.v = null;
-                break;
+    public static void b(int i10, int i11, String[] strArr, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        for (String str : strArr) {
+            if (activity.checkSelfPermission(str) != 0) {
+                for (String str2 : strArr) {
+                    if (activity.shouldShowRequestPermissionRationale(str2)) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
+                        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
+                        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new k1(activity, 2));
+                        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+                        alertDialog$Builder.a.show();
+                        callback.run(Boolean.FALSE);
+                        return;
+                    }
+                }
+                e(strArr, new cf0(strArr, activity, callback, 1));
+                return;
+            }
+        }
+        callback.run(Boolean.TRUE);
+    }
+
+    public static void c(int i10, int i11, String[] strArr, String[] strArr2, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        for (String str : strArr) {
+            if (activity.checkSelfPermission(str) == 0) {
+                callback.run(Boolean.TRUE);
+                return;
+            }
+        }
+        for (String str2 : strArr) {
+            if (!activity.shouldShowRequestPermissionRationale(str2)) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
+                alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
+                alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
+                alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new k1(activity, 1));
+                alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+                alertDialog$Builder.a.show();
+                callback.run(Boolean.FALSE);
+                return;
+            }
+        }
+        e(strArr2, new cf0(strArr2, activity, callback, 0));
+    }
+
+    public static boolean d(String str) {
+        Context context = LaunchActivity.G1;
+        if (context == null) {
+            context = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        return context != null && context.checkSelfPermission(str) == 0;
+    }
+
+    public static void e(String[] strArr, Utilities.Callback callback) {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        int i10 = a;
+        a = i10 + 1;
+        NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
+        notificationCenterDelegateArr[0] = new df0(i10, callback, notificationCenterDelegateArr);
+        NotificationCenter.getGlobalInstance().addObserver(notificationCenterDelegateArr[0], NotificationCenter.activityPermissionsGranted);
+        activity.requestPermissions(strArr, i10);
+    }
+
+    public static void f() {
+        Activity activity = LaunchActivity.G1;
+        if (activity == null) {
+            activity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
+        }
+        if (activity == null) {
+            return;
+        }
+        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+        intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+        try {
+            activity.startActivity(intent);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

@@ -1,10 +1,41 @@
 package ai;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public interface dc {
-    void a(float f7, Canvas canvas, RectF rectF, boolean z10);
+public final class dc extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tb b;
+
+    public /* synthetic */ dc(tb tbVar, int i10) {
+        this.a = i10;
+        this.b = tbVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                kc kcVar = this.b.b;
+                q9 q9Var = kcVar.u1;
+                if (q9Var != null) {
+                    q9Var.b();
+                    kcVar.v.removeView(kcVar.u1);
+                }
+                kcVar.u1 = null;
+                kcVar.P();
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                q9 q9Var2 = this.b.b.u1;
+                if (q9Var2 != null) {
+                    q9Var2.a(true);
+                    break;
+                }
+                break;
+        }
+    }
 }

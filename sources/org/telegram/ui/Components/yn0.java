@@ -1,42 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yn0 extends zg.k0 {
-    public final /* synthetic */ zn0 h0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yn0(zn0 zn0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(null, i10, view, tL_reactionCount, false, true, d6Var);
-        this.h0 = zn0Var;
-    }
-
-    @Override // zg.k0
-    public final boolean e() {
-        return this.w > 0 || this.u || this.F.l != 1.0f;
-    }
-
-    @Override // zg.k0
-    public final boolean i() {
-        return !e();
-    }
-
-    @Override // zg.k0
-    public final int j() {
-        return 18;
-    }
-
-    @Override // zg.k0
-    public final void s(float f7) {
-        int i10 = this.i;
-        zn0 zn0Var = this.h0;
-        this.N = i0.a.d(f7, i10, org.telegram.ui.ActionBar.i6.v0(zn0Var.e ? org.telegram.ui.ActionBar.i6.Fj : org.telegram.ui.ActionBar.i6.va, zn0Var.s.c));
-        int d = i0.a.d(f7, this.g, zn0Var.e ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Cj, zn0Var.s.c) : 0);
-        this.O = d;
-        this.N = org.telegram.ui.ActionBar.i6.v(d, this.N);
-        this.P = i0.a.d(f7, this.h, zn0Var.e ? 1526726655 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wa, zn0Var.s.c));
+public final class yn0 extends org.telegram.ui.Cells.j7 {
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        return MediaController.getInstance().playMessage(messageObject);
     }
 }

@@ -1,38 +1,41 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class m3 extends h5 {
+public final class m3 extends f5 {
     private static final m3 zzb;
     private int zzd;
-    private m2 zze;
-    private int zzf;
-    private int zzg;
-    private int zzh;
-    private int zzi;
-    private long zzj;
-    private m5 zzk = h6.d;
+    private String zze = "";
+    private k5 zzf;
+    private k5 zzg;
+    private boolean zzh;
 
     static {
         m3 m3Var = new m3();
         zzb = m3Var;
-        h5.e(m3.class, m3Var);
+        f5.e(m3.class, m3Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.h5
-    public final Object h(int i10, h5 h5Var) {
+    public m3() {
+        f6 f6Var = f6.d;
+        this.zzf = f6Var;
+        this.zzg = f6Var;
+    }
+
+    @Override // com.google.android.gms.internal.cast.f5
+    public final Object h(int i10, f5 f5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0001\u0000\u0001ဉ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006ဂ\u0005\u0007\u001b", new Object[]{"zzd", "zze", "zzf", b1.m, "zzg", b1.l, "zzh", b0.O, "zzi", b0.E, "zzj", "zzk", m2.class});
+            return new g6(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဈ\u0000\u0002\u001b\u0003\u001b\u0004ဇ\u0001", new Object[]{"zzd", "zze", "zzf", r2.class, "zzg", k2.class, "zzh"});
         }
         if (i11 == 3) {
             return new m3();
         }
         if (i11 == 4) {
-            return new f3(zzb);
+            return new d3(zzb);
         }
         if (i11 != 5) {
             return null;

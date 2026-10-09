@@ -16,9 +16,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h implements o {
     public final m a;
@@ -39,7 +39,7 @@ public final class h implements o {
             r a2 = sVar.a();
             a2.q = r0.n("application/x-media3-cues");
             a2.j = sVar.r;
-            a2.O = mVar.y();
+            a2.O = mVar.O();
             sVar2 = new s(a2);
         } else {
             sVar2 = null;
@@ -51,7 +51,12 @@ public final class h implements o {
         this.j = -9223372036854775807L;
     }
 
-    public final void a(g gVar) {
+    @Override // c3.o
+    public final boolean a(p pVar) {
+        return true;
+    }
+
+    public final void b(g gVar) {
         e2.d.h(this.f);
         byte[] bArr = gVar.b;
         int length = bArr.length;
@@ -63,20 +68,15 @@ public final class h implements o {
     }
 
     @Override // c3.o
-    public final boolean b(p pVar) {
-        return true;
-    }
-
-    @Override // c3.o
     public final void g(q qVar) {
         e2.d.g(this.h == 0);
-        h0 Z1 = qVar.Z1(0, 3);
-        this.f = Z1;
+        h0 f22 = qVar.f2(0, 3);
+        this.f = f22;
         s sVar = this.b;
         if (sVar != null) {
-            Z1.b(sVar);
-            qVar.e1();
-            qVar.X1(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
+            f22.b(sVar);
+            qVar.k1();
+            qVar.d2(new y(-9223372036854775807L, new long[]{0}, new long[]{0}));
         }
         this.h = 1;
     }
@@ -100,59 +100,59 @@ public final class h implements o {
         return a1.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0078, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0077, code lost:
     
         if (r20.g != r14) goto L32;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007c, code lost:
     
         if (r2 == (-1)) goto L68;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x007f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x007e, code lost:
     
         r4 = r20.j;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0082, code lost:
     
         if (r4 == (-9223372036854775807L)) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0085, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0084, code lost:
     
         r2 = new z3.l(r4, true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x008f, code lost:
     
-        r20.a.E(r20.e, 0, r20.g, r2, new yh.v7(r20, 1));
+        r20.a.P(r20.e, 0, r20.g, r2, new r5.d(r20, 28));
         java.util.Collections.sort(r11);
         r20.i = new long[r11.size()];
-        r2 = 0;
+        r2 = r22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00b6, code lost:
     
         if (r2 >= r11.size()) goto L72;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b8, code lost:
     
         r20.i[r2] = ((z3.g) r11.get(r2)).a;
         r2 = r2 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
     
         r20.e = e2.d0.b;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00cd, code lost:
     
         r20.h = 4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x008d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x008c, code lost:
     
         r2 = z3.l.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00c7, code lost:
     
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x00d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00d6, code lost:
     
         throw b2.s0.a(r0, "SubtitleParser failed.");
      */
@@ -165,7 +165,7 @@ public final class h implements o {
         int i11 = this.h;
         e2.d.g((i11 == 0 || i11 == 5) ? false : true);
         if (this.h == 1) {
-            int b10 = pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024;
+            int b10 = pVar.getLength() != -1 ? v7.b(pVar.getLength()) : 1024;
             if (b10 > this.e.length) {
                 this.e = new byte[b10];
             }
@@ -195,10 +195,10 @@ public final class h implements o {
             i10 = 0;
         }
         if (this.h == 3) {
-            if (pVar.skip(pVar.getLength() != -1 ? y7.b(pVar.getLength()) : 1024) == -1) {
+            if (pVar.skip(pVar.getLength() != -1 ? v7.b(pVar.getLength()) : 1024) == -1) {
                 long j3 = this.j;
-                for (int e7 = j3 == -9223372036854775807L ? 0 : d0.e(this.i, j3, true); e7 < arrayList.size(); e7++) {
-                    a((g) arrayList.get(e7));
+                for (int e7 = j3 == -9223372036854775807L ? i10 : d0.e(this.i, j3, true); e7 < arrayList.size(); e7++) {
+                    b((g) arrayList.get(e7));
                 }
                 this.h = 4;
             }

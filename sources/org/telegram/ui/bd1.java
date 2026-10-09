@@ -1,29 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bd1 extends org.telegram.ui.Components.br0 {
-    public final /* synthetic */ dd1 X0;
+public final class bd1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xd1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bd1(dd1 dd1Var, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.X0 = dd1Var;
+    public /* synthetic */ bd1(xd1 xd1Var, int i10) {
+        this.a = i10;
+        this.b = xd1Var;
     }
 
-    @Override // org.telegram.ui.Components.br0
-    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = iVar.m();
-            dd1 dd1Var = this.X0;
-            if (m10 == 1) {
-                dd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
-            } else {
-                dd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                xd1 xd1Var = this.b;
+                xd1Var.x0.invalidate();
+                xd1Var.w0[1].setVisibility(8);
+                xd1Var.c2 = null;
+                break;
+            case 1:
+                this.b.B0 = null;
+                break;
+            case 2:
+                xd1 xd1Var2 = this.b;
+                if (xd1Var2.D0.getTag() == null) {
+                    xd1Var2.D0.setVisibility(4);
+                }
+                xd1Var2.H0 = null;
+                break;
+            case 3:
+                xd1 xd1Var3 = this.b;
+                if (xd1Var3.E0.getTag() == null) {
+                    xd1Var3.E0.setVisibility(4);
+                }
+                xd1Var3.I0 = null;
+                break;
+            case 4:
+                xd1 xd1Var4 = this.b;
+                lc lcVar = xd1Var4.h2;
+                if (lcVar != null) {
+                    if (lcVar.getParent() != null) {
+                        ((ViewGroup) xd1Var4.h2.getParent()).removeView(xd1Var4.h2);
+                    }
+                    xd1Var4.h2 = null;
+                }
+                xd1Var4.j2 = null;
+                super.onAnimationEnd(animator);
+                break;
+            default:
+                xd1 xd1Var5 = this.b;
+                if (!xd1Var5.p1.a()) {
+                    xd1Var5.R1.setVisibility(8);
+                    break;
+                }
+                break;
         }
     }
 }

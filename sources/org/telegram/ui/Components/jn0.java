@@ -1,79 +1,92 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.dc1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jn0 extends s4.o {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ on0 k;
+public final class jn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ on0 b;
 
-    public jn0(on0 on0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
-        this.k = on0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = i14;
-        this.g = arrayList;
-        this.h = i15;
-        this.i = i16;
-        this.j = arrayList2;
+    public /* synthetic */ jn0(on0 on0Var, int i10) {
+        this.a = i10;
+        this.b = on0Var;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        MessageObject messageObject;
-        on0 on0Var = this.k;
-        if (i10 >= 0 && i11 >= 0) {
-            if (i10 == this.c && i11 == on0Var.s) {
-                return true;
-            }
-            if (i10 == this.d && i11 == on0Var.x) {
-                return true;
-            }
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r4 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
+    
+        r2.scrollBy(r0 * r4, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int tabSize;
+        int max;
+        switch (this.a) {
+            case 0:
+                on0 on0Var = this.b;
+                dc1 dc1Var = on0Var.e;
+                on0Var.b0 = false;
+                on0Var.V = on0Var.getScrollX() + on0Var.W;
+                tabSize = on0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                on0Var.U = ceil;
+                on0Var.T = ceil;
+                if (on0Var.e(ceil) && ceil >= 0 && ceil < dc1Var.getChildCount()) {
+                    try {
+                        on0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    on0Var.d0 = 0.0f;
+                    on0Var.v = 0.0f;
+                    View childAt = dc1Var.getChildAt(ceil);
+                    on0Var.s = childAt;
+                    on0Var.c0 = childAt.getX() - on0Var.getScrollX();
+                    on0Var.s.invalidate();
+                    dc1Var.invalidate();
+                    on0Var.j();
+                    on0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                long currentTimeMillis = System.currentTimeMillis();
+                on0 on0Var2 = this.b;
+                long j3 = currentTimeMillis - on0Var2.r0;
+                int i10 = -1;
+                if (j3 >= 3000) {
+                    if (j3 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
+                    break;
+                }
         }
-        MessageObject messageObject2 = null;
-        int i12 = this.e;
-        if (i10 < i12 || i10 >= this.f) {
-            int i13 = this.h;
-            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
-        } else {
-            messageObject = (MessageObject) this.g.get(i10 - i12);
-        }
-        int i14 = on0Var.v;
-        if (i11 < i14 || i11 >= on0Var.w) {
-            int i15 = on0Var.y;
-            if (i11 >= i15 && i11 < on0Var.E) {
-                messageObject2 = (MessageObject) on0Var.f.get(i11 - i15);
-            }
-        } else {
-            messageObject2 = (MessageObject) on0Var.e.get(i11 - i14);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
     }
 }

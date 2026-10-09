@@ -1,119 +1,110 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fk0 implements oy, org.telegram.ui.ActionBar.a2, o11 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity a;
+public final class fk0 extends View {
+    public final Paint a;
+    public final Paint b;
+    public final org.telegram.ui.Components.g6 c;
+    public final org.telegram.ui.Components.q6 d;
+    public int e;
+    public float f;
+    public ValueAnimator h;
 
-    public /* synthetic */ fk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.a = notificationsCustomSettingsActivity;
+    public fk0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        org.telegram.ui.Components.hs hsVar = org.telegram.ui.Components.hs.h;
+        this.c = new org.telegram.ui.Components.g6(this, 0L, 320L, hsVar);
+        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(false, true, true);
+        this.d = q6Var;
+        this.f = 1.0f;
+        paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Oh, false));
+        paint2.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h5, false));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(AndroidUtilities.dp(4.0f));
+        q6Var.setCallback(this);
+        q6Var.n(0.35f, 200L, hsVar);
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = q6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(AndroidUtilities.dp(0.24f));
+        textPaint.setStrokeJoin(Paint.Join.ROUND);
+        q6Var.w(AndroidUtilities.dp(13.3f));
+        q6Var.u(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+        q6Var.M = AndroidUtilities.dp(64.0f);
+        q6Var.b = 1;
     }
 
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean A() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.oy
-    public /* synthetic */ boolean H(uy uyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        SharedPreferences.Editor edit = notificationsCustomSettingsActivity.getNotificationsSettings().edit();
-        int size = notificationsCustomSettingsActivity.w.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            rk0 rk0Var = (rk0) notificationsCustomSettingsActivity.w.get(i11);
-            if (notificationsCustomSettingsActivity.s == 3) {
-                edit.remove(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY + rk0Var.d);
-            } else {
-                edit.remove(NotificationsSettingsFacade.PROPERTY_NOTIFY + rk0Var.d).remove(NotificationsSettingsFacade.PROPERTY_CUSTOM + rk0Var.d);
+    public final boolean a(int i10) {
+        int i11 = this.e;
+        if (i11 != i10) {
+            r1 = i11 < i10;
+            this.e = i10;
+            String str = "";
+            if (i10 > 0) {
+                str = "" + this.e;
             }
-            notificationsCustomSettingsActivity.getMessagesStorage().setDialogFlags(rk0Var.d, 0L);
-            TLRPC.Dialog dialog = (TLRPC.Dialog) notificationsCustomSettingsActivity.getMessagesController().dialogs_dict.f(rk0Var.d);
-            if (dialog != null) {
-                dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-            }
-        }
-        edit.commit();
-        int size2 = notificationsCustomSettingsActivity.w.size();
-        for (int i12 = 0; i12 < size2; i12++) {
-            notificationsCustomSettingsActivity.getNotificationsController().updateServerNotificationsSettings(((rk0) notificationsCustomSettingsActivity.w.get(i12)).d, 0, false);
-        }
-        notificationsCustomSettingsActivity.w.clear();
-        notificationsCustomSettingsActivity.x.clear();
-        notificationsCustomSettingsActivity.l0(true);
-        notificationsCustomSettingsActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.notificationsSettingsUpdated, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
-        int i12 = 0;
-        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        if (notificationsCustomSettingsActivity.s != 3) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("dialog_id", j3);
-            bundle.putBoolean("exception", true);
-            p11 p11Var = new p11(bundle, notificationsCustomSettingsActivity.getResourceProvider());
-            p11Var.s = new fk0(notificationsCustomSettingsActivity);
-            notificationsCustomSettingsActivity.presentFragment(p11Var, true);
-            return true;
-        }
-        ArrayList arrayList2 = notificationsCustomSettingsActivity.v;
-        if (arrayList2 != null) {
-            Iterator it = arrayList2.iterator();
-            while (it.hasNext()) {
-                if (((rk0) it.next()).d == j3) {
-                    it.remove();
+            this.d.t(str, true, true);
+            if (r1) {
+                ValueAnimator valueAnimator = this.h;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.h = null;
                 }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                this.h = ofFloat;
+                ofFloat.addUpdateListener(new c3(this, 18));
+                this.h.addListener(new org.telegram.ui.Components.i91(this, 28));
+                org.telegram.messenger.bi.l(2.0f, this.h);
+                this.h.setDuration(200L);
+                this.h.start();
             }
         }
-        ArrayList arrayList3 = notificationsCustomSettingsActivity.w;
-        if (arrayList3 != null) {
-            Iterator it2 = arrayList3.iterator();
-            while (it2.hasNext()) {
-                if (((rk0) it2.next()).d == j3) {
-                    it2.remove();
-                }
-            }
-        }
-        rk0 rk0Var = new rk0();
-        rk0Var.d = j3;
-        rk0Var.e = true;
-        Boolean bool = notificationsCustomSettingsActivity.n;
-        if (bool != null && bool.booleanValue()) {
-            i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        rk0Var.c = i12;
-        if (notificationsCustomSettingsActivity.w == null) {
-            notificationsCustomSettingsActivity.w = new ArrayList();
-        }
-        notificationsCustomSettingsActivity.w.add(rk0Var);
-        notificationsCustomSettingsActivity.l0(true);
-        return true;
+        return r1;
     }
 
-    @Override // org.telegram.ui.o11
-    public void v(rk0 rk0Var) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        notificationsCustomSettingsActivity.w.add(0, rk0Var);
-        notificationsCustomSettingsActivity.l0(true);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d = this.c.d(this.e > 0 ? 1.0f : 0.0f, false);
+        canvas.save();
+        float f7 = this.f;
+        canvas.scale(f7 * d, f7 * d, getWidth() / 2.0f, getHeight() / 2.0f);
+        org.telegram.ui.Components.q6 q6Var = this.d;
+        float dpf2 = AndroidUtilities.dpf2(12.66f) + q6Var.c();
+        float dpf22 = AndroidUtilities.dpf2(20.3f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dpf2) / 2.0f, (getHeight() - dpf22) / 2.0f, (getWidth() + dpf2) / 2.0f, (getHeight() + dpf22) / 2.0f);
+        int i10 = (int) (d * 255.0f);
+        Paint paint = this.b;
+        paint.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint);
+        Paint paint2 = this.a;
+        paint2.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint2);
+        canvas.save();
+        canvas.translate(0.0f, -AndroidUtilities.dp(1.0f));
+        q6Var.setBounds(0, 0, getWidth(), getHeight());
+        q6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.o11
-    public /* synthetic */ void d0() {
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

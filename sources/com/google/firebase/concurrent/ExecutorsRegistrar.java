@@ -15,14 +15,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import m9.b;
 import m9.c;
 import m9.d;
-import org.telegram.ui.web.w;
+import pg.e0;
 import q9.f;
 import q9.n;
 import q9.r;
 import r9.a;
-import w7.t6;
+import w7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final n a = new n(new f(2));
@@ -33,11 +33,9 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
     public static r9.f a() {
         StrictMode.ThreadPolicy.Builder detectNetwork = new StrictMode.ThreadPolicy.Builder().detectNetwork();
         int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23) {
-            detectNetwork.detectResourceMismatches();
-            if (i10 >= 26) {
-                detectNetwork.detectUnbufferedIo();
-            }
+        detectNetwork.detectResourceMismatches();
+        if (i10 >= 26) {
+            detectNetwork.detectUnbufferedIo();
         }
         return new r9.f(Executors.newFixedThreadPool(4, new a("Firebase Background", 10, detectNetwork.penaltyLog().build())), (ScheduledExecutorService) d.get());
     }
@@ -51,10 +49,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            t6.a(rVar2, "Null interface");
+            r6.a(rVar2, "Null interface");
         }
         Collections.addAll(hashSet, rVarArr);
-        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new w(21), hashSet3);
+        q9.a aVar = new q9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new e0(13), hashSet3);
         r rVar3 = new r(b.class, ScheduledExecutorService.class);
         r[] rVarArr2 = {new r(b.class, ExecutorService.class), new r(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
@@ -62,10 +60,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(rVar3);
         for (r rVar4 : rVarArr2) {
-            t6.a(rVar4, "Null interface");
+            r6.a(rVar4, "Null interface");
         }
         Collections.addAll(hashSet4, rVarArr2);
-        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new w(22), hashSet6);
+        q9.a aVar2 = new q9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new e0(14), hashSet6);
         r rVar5 = new r(c.class, ScheduledExecutorService.class);
         r[] rVarArr3 = {new r(c.class, ExecutorService.class), new r(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
@@ -73,12 +71,12 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(rVar5);
         for (r rVar6 : rVarArr3) {
-            t6.a(rVar6, "Null interface");
+            r6.a(rVar6, "Null interface");
         }
         Collections.addAll(hashSet7, rVarArr3);
-        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new w(23), hashSet9);
+        q9.a aVar3 = new q9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new e0(15), hashSet9);
         i0 b10 = q9.a.b(new r(d.class, Executor.class));
-        b10.f = new w(24);
+        b10.f = new e0(16);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

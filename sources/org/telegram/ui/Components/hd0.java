@@ -1,235 +1,166 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Color;
+import android.graphics.ComposeShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.RectF;
+import android.os.Build;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class hd0 {
+    public static final float[] k = new float[4];
+    public static final Matrix l = new Matrix();
+    public final fd0 d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public final aa.a a = new aa.a(new f2(23));
+    public final a5.a b = new a5.a(14, (byte) 0);
+    public final y10 c = new y10();
+    public final Matrix i = new Matrix();
+    public final RectF j = new RectF();
 
-    public /* synthetic */ hd0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 4:
-                ((ch0) this.b).h = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public hd0() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            this.d = new fd0();
+        } else {
+            this.d = null;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                NumberTextView numberTextView = (NumberTextView) this.b;
-                numberTextView.d = null;
-                numberTextView.b.clear();
-                break;
-            case 1:
-                ee0 ee0Var = (ee0) this.b;
-                ee0Var.setVisibility(8);
-                ee0Var.h();
-                ee0Var.P = 0.0f;
-                ee0Var.f(0.0f);
-                ee0Var.setAlpha(0.0f);
-                break;
-            case 2:
-                AnimatorSet animatorSet = (AnimatorSet) this.b;
-                if (animatorSet != null) {
-                    animatorSet.start();
-                    break;
-                }
-                break;
-            case 3:
-                kf kfVar = (kf) this.b;
-                AnimatorSet animatorSet2 = (AnimatorSet) ((ci.i9) kfVar.c).e;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    ((ci.i9) kfVar.c).e = null;
-                    break;
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                hh0 hh0Var = (hh0) this.b;
-                hh0Var.f = false;
-                hh0Var.F = null;
-                break;
-            case 6:
-                ((vi0) this.b).b();
-                break;
-            case 7:
-                ((ck0) this.b).h.setVisibility(8);
-                break;
-            case 8:
-                zl0 zl0Var = (zl0) this.b;
-                View view = zl0Var.c1;
-                if (view != null) {
-                    view.setVisibility(8);
-                }
-                if (zl0Var.b1()) {
-                    zl0Var.invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                an0 an0Var = (an0) this.b;
-                if (an0Var.s != null) {
-                    an0Var.j();
-                    an0Var.s.invalidate();
-                    an0Var.e.invalidate();
-                    an0Var.invalidate();
-                    an0Var.s = null;
-                    break;
-                }
-                break;
-            case 10:
-                ((en0) this.b).d = false;
-                break;
-            case 11:
-                ((qo0) this.b).O0.setVisibility(8);
-                break;
-            case 12:
-                qp0 qp0Var = (qp0) this.b;
-                if (animator == qp0Var.h) {
-                    qp0Var.h = null;
-                    break;
-                }
-                break;
-            case 13:
-                ((ar0) this.b).e = null;
-                break;
-            case 14:
-                hr0 hr0Var = (hr0) this.b;
-                if (hr0Var.getParent() != null) {
-                    ((ViewGroup) hr0Var.getParent()).removeView(hr0Var);
-                    break;
-                }
-                break;
-            case 15:
-                lt0 lt0Var = (lt0) this.b;
-                View view2 = lt0Var.c;
-                view2.setAlpha(1.0f);
-                s4.o0.x0(view2);
-                lt0Var.a.removeView(view2);
-                break;
-            case 16:
-                cw0 cw0Var = (cw0) this.b;
-                if (cw0Var.f == animator) {
-                    cw0Var.f = null;
-                    break;
-                }
-                break;
-            case 17:
-                sx0 sx0Var = (sx0) this.b;
-                sx0Var.setCategoriesShownT(((Float) sx0Var.w3.getAnimatedValue()).floatValue());
-                sx0Var.w3 = null;
-                break;
-            case 18:
-                ry0 ry0Var = (ry0) this.b;
-                ry0Var.x.setVisibility(8);
-                ry0Var.F.setImageDrawable(null);
-                break;
-            case 19:
-                int i10 = 0;
-                while (true) {
-                    yy0[] yy0VarArr = (yy0[]) this.b;
-                    if (i10 >= yy0VarArr.length) {
-                        break;
-                    } else {
-                        yy0 yy0Var = yy0VarArr[i10];
-                        if (yy0Var != null) {
-                            yy0Var.d = false;
-                        }
-                        i10++;
-                    }
-                }
-            case 20:
-                super.onAnimationEnd(animator);
-                ((zy0) this.b).H = null;
-                break;
-            case 21:
-                ((cz0) this.b).e = false;
-                break;
-            case 22:
-                ((m11) this.b).setVisibility(4);
-                break;
-            case 23:
-                ((x21) this.b).setVisibility(8);
-                break;
-            case 24:
-                ai.n4 n4Var = ((r31) this.b).f;
-                n4Var.setScaleX(1.0f);
-                n4Var.setScaleY(1.0f);
-                n4Var.invalidate();
-                break;
-            case 25:
-                v31 v31Var = (v31) this.b;
-                v31Var.K = 1.0f;
-                v31Var.h.invalidate();
-                break;
-            case 26:
-                ((d61) this.b).L = null;
-                break;
-            case 27:
-                UndoView undoView = (UndoView) this.b;
-                undoView.setVisibility(4);
-                undoView.setScaleX(1.0f);
-                undoView.setScaleY(1.0f);
-                undoView.setAlpha(1.0f);
-                break;
-            case 28:
-                l71 l71Var = (l71) this.b;
-                if (l71Var.a.getTag() == null) {
-                    l71Var.a.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                m71 m71Var = (m71) this.b;
-                m71Var.b = 0.0f;
-                m71Var.setTranslationY(0.0f);
-                m71Var.a = null;
-                break;
+    public static void a(Matrix matrix, float[] fArr) {
+        Matrix matrix2 = l;
+        matrix.invert(matrix2);
+        float[] fArr2 = k;
+        fArr2[0] = 0.0f;
+        fArr2[1] = 0.0f;
+        fArr2[2] = 1.0f;
+        fArr2[3] = 1.0f;
+        matrix2.mapPoints(fArr2);
+        fArr[0] = fArr2[2] - fArr2[0];
+        fArr[1] = fArr2[3] - fArr2[1];
+        fArr[2] = fArr2[0];
+        fArr[3] = fArr2[1];
+    }
+
+    public static boolean b(float f7) {
+        return Math.abs(f7 - 1.0f) <= 1.0E-4f;
+    }
+
+    public final void c(RectF rectF) {
+        float f7 = this.e;
+        float f10 = this.f;
+        RectF rectF2 = this.j;
+        rectF2.set(0.0f, 0.0f, f7, f10);
+        Matrix.ScaleToFit scaleToFit = Matrix.ScaleToFit.FILL;
+        Matrix matrix = this.i;
+        matrix.setRectToRect(rectF2, rectF, scaleToFit);
+        y10 y10Var = this.c;
+        gd0 gd0Var = (gd0) y10Var.c;
+        gd0Var.b.set(matrix);
+        BitmapShader bitmapShader = gd0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 10:
-                en0 en0Var = (en0) this.b;
-                en0Var.d = true;
-                if (en0Var.getParent() instanceof HorizontalScrollView) {
-                    ((HorizontalScrollView) en0Var.getParent()).requestDisallowInterceptTouchEvent(false);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        gd0 gd0Var2 = (gd0) y10Var.d;
+        gd0Var2.b.set(matrix);
+        BitmapShader bitmapShader2 = gd0Var2.d;
+        if (bitmapShader2 != null) {
+            bitmapShader2.setLocalMatrix(matrix);
         }
+        fd0 fd0Var = this.d;
+        if (fd0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr = fd0Var.g;
+        a(matrix, fArr);
+        fd0Var.e.a(fArr);
+        fd0Var.f.a(fArr);
     }
 
-    public hd0(lt0 lt0Var, s4.o0 o0Var) {
-        this.a = 15;
-        this.b = lt0Var;
+    public final void d(Matrix matrix) {
+        y10 y10Var = this.c;
+        float[] fArr = (float[]) y10Var.h;
+        a(matrix, fArr);
+        gd0 gd0Var = (gd0) y10Var.e;
+        gd0Var.b.set(matrix);
+        BitmapShader bitmapShader = gd0Var.d;
+        if (bitmapShader != null) {
+            bitmapShader.setLocalMatrix(matrix);
+        }
+        boolean z10 = false;
+        gd0Var.a(b(fArr[0]) && b(fArr[1]));
+        fd0 fd0Var = this.d;
+        if (fd0Var == null || Build.VERSION.SDK_INT < 33) {
+            return;
+        }
+        float[] fArr2 = fd0Var.g;
+        a(matrix, fArr2);
+        gd0 gd0Var2 = fd0Var.d;
+        if (b(fArr2[0]) && b(fArr2[1])) {
+            z10 = true;
+        }
+        gd0Var2.a(z10);
+        fd0Var.e.b(fArr2);
+        fd0Var.f.b(fArr2);
     }
 
-    private final void a(Animator animator) {
+    public final Paint e(Bitmap bitmap, Bitmap bitmap2, int i10, int i11, int i12, boolean z10) {
+        Bitmap bitmap3;
+        Bitmap bitmap4 = (Bitmap) this.a.m(bitmap2);
+        if (i12 >= 0) {
+            int k10 = i0.a.k(i10, ((Color.alpha(i10) * i11) * i12) / 25500);
+            a5.a aVar = this.b;
+            gh.a aVar2 = (gh.a) aVar.c;
+            if (aVar2.a(bitmap) || k10 != aVar.b || ((Bitmap) aVar.d) == null) {
+                Bitmap bitmap5 = (Bitmap) aVar.d;
+                if (bitmap5 == null || bitmap5.getWidth() != bitmap.getWidth() || ((Bitmap) aVar.d).getHeight() != bitmap.getHeight()) {
+                    aVar.d = Bitmap.createBitmap(bitmap);
+                }
+                Utilities.applySoftLight(bitmap, (Bitmap) aVar.d, k10);
+                aVar2.b(bitmap);
+                aVar.b = k10;
+            }
+            bitmap3 = (Bitmap) aVar.d;
+        } else {
+            bitmap3 = null;
+        }
+        Bitmap bitmap6 = bitmap3;
+        this.e = bitmap.getWidth();
+        this.f = bitmap.getHeight();
+        this.g = bitmap4.getWidth();
+        this.h = bitmap4.getHeight();
+        fd0 fd0Var = this.d;
+        if (fd0Var != null && z10 && Build.VERSION.SDK_INT >= 33) {
+            return fd0Var.a(bitmap, bitmap4, bitmap6, i11, i12);
+        }
+        y10 y10Var = this.c;
+        xt xtVar = (xt) y10Var.f;
+        xt xtVar2 = (xt) y10Var.g;
+        gd0 gd0Var = (gd0) y10Var.d;
+        Paint paint = (Paint) y10Var.b;
+        gd0 gd0Var2 = (gd0) y10Var.c;
+        boolean b10 = gd0Var2.b(bitmap);
+        gd0 gd0Var3 = (gd0) y10Var.e;
+        boolean b11 = b10 | gd0Var3.b(bitmap4);
+        if (i12 >= 0) {
+            if ((gd0Var.b(bitmap6) | b11) || y10Var.a != 1) {
+                y10Var.a = 1;
+                paint.setShader(new ComposeShader(gd0Var2.d, new ComposeShader(gd0Var.d, gd0Var3.d, PorterDuff.Mode.DST_IN), PorterDuff.Mode.SRC_OVER));
+                return paint;
+            }
+        } else if ((xtVar2.a(i0.a.k(-1, ((-i12) * i11) / 100)) | b11 | xtVar.a(-16777216)) || y10Var.a != 2) {
+            y10Var.a = 2;
+            paint.setShader(new ComposeShader((yf.i) xtVar.b, new ComposeShader(new ComposeShader(gd0Var2.d, gd0Var3.d, PorterDuff.Mode.DST_IN), (yf.i) xtVar2.b, PorterDuff.Mode.MULTIPLY), PorterDuff.Mode.SRC_OVER));
+            return paint;
+        }
+        return paint;
     }
 }

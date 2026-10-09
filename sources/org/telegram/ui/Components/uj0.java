@@ -1,27 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class uj0 extends zl0 {
-    public final /* synthetic */ ck0 e3;
+public final class uj0 extends Drawable {
+    public final View a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public boolean e;
+    public final g6 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uj0(ck0 ck0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.e3 = ck0Var;
+    public uj0(View view) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Path path = new Path();
+        this.c = path;
+        this.d = 255;
+        this.a = view;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.f = new g6(view, 0L, 350L, hs.h);
+        float dpf2 = AndroidUtilities.dpf2(4.66f);
+        float dpf22 = AndroidUtilities.dpf2(2.16f);
+        path.rewind();
+        path.moveTo(dpf2 / 2.0f, 0.0f);
+        float f7 = (-dpf2) / 2.0f;
+        path.lineTo(f7, 0.0f);
+        float f10 = f7 + dpf22;
+        path.lineTo(f10, -dpf22);
+        path.moveTo(f7, 0.0f);
+        path.lineTo(f10, dpf22);
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ck0 ck0Var = this.e3;
-        hb0 hb0Var = ck0Var.J;
-        if (hb0Var != null) {
-            hb0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
-        }
-        super.onMeasure(i10, i11);
-        ck0Var.j();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        float e7 = this.f.e(this.e);
+        float dpf2 = AndroidUtilities.dpf2(2.51f);
+        canvas.save();
+        canvas.translate(centerX, centerY);
+        canvas.save();
+        canvas.translate(dpf2, dpf2);
+        canvas.rotate(45.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
+        Path path = this.c;
+        Paint paint = this.b;
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.save();
+        float f7 = -dpf2;
+        canvas.translate(f7, f7);
+        canvas.rotate(225.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+        this.b.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

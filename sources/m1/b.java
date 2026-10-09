@@ -3,9 +3,9 @@ package m1;
 import android.content.Context;
 import java.io.File;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b extends kotlin.jvm.internal.j implements rd.a {
+public final class b extends kotlin.jvm.internal.j implements sd.a {
     public final /* synthetic */ Context b;
     public final /* synthetic */ c c;
 
@@ -16,7 +16,7 @@ public final class b extends kotlin.jvm.internal.j implements rd.a {
         this.c = cVar;
     }
 
-    @Override // rd.a
+    @Override // sd.a
     public final Object invoke() {
         Context applicationContext = this.b;
         kotlin.jvm.internal.i.d(applicationContext, "applicationContext");

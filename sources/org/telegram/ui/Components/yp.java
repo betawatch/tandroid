@@ -1,17 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public abstract class yp extends z4.a {
-    public abstract int j();
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-    public final int k(int i10) {
-        int size = ((ai0) this).c.size();
-        int j3 = j();
-        if (i10 < j3) {
-            return ((size - (j3 * 2)) - ((j3 - i10) - 1)) - 1;
-        }
-        int i11 = size - j3;
-        return i10 >= i11 ? i10 - i11 : i10 - j3;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class yp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ cq b;
+
+    public yp(cq cqVar, ChatThemeController chatThemeController) {
+        this.b = cqVar;
+        this.a = chatThemeController;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        ChatThemeController chatThemeController = this.a;
+        List<org.telegram.ui.ActionBar.c4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        cq cqVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.f3) cqVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new ea(27, this, emojiThemes));
+        cqVar.b0 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

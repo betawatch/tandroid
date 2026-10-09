@@ -1,60 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ys extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s4.c1 b;
-    public final /* synthetic */ org.telegram.ui.Cells.s2 c;
-    public final /* synthetic */ dt d;
+public final class ys extends View {
+    public final me.b a;
+    public final Paint b;
+    public final RectF c;
+    public final RectF d;
+    public final RectF e;
+    public final nq f;
 
-    public /* synthetic */ ys(dt dtVar, s4.c1 c1Var, org.telegram.ui.Cells.s2 s2Var, int i10) {
-        this.a = i10;
-        this.d = dtVar;
-        this.b = c1Var;
-        this.c = s2Var;
+    public ys(Context context) {
+        super(context);
+        this.a = new me.b(this, hs.h, 380L);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = new RectF();
+        this.f = new nq(this, 5);
+        paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.hl, false));
+        invalidate();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.s2 s2Var = this.c;
-                s2Var.setClipProgress(0.0f);
-                s2Var.setElevation(0.0f);
-                dt dtVar = this.d;
-                s4.c1 c1Var = this.b;
-                dtVar.d(c1Var);
-                dtVar.x.remove(c1Var);
-                dtVar.A();
-                break;
-            default:
-                animator.removeAllListeners();
-                org.telegram.ui.Cells.s2 s2Var2 = this.c;
-                s2Var2.setClipProgress(0.0f);
-                s2Var2.setElevation(0.0f);
-                dt dtVar2 = this.d;
-                s4.c1 c1Var2 = this.b;
-                dtVar2.d(c1Var2);
-                dtVar2.x.remove(c1Var2);
-                dtVar2.A();
-                break;
-        }
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        AndroidUtilities.runOnUIThread(this.f, 3000L);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.y();
-                break;
-            default:
-                this.d.y();
-                break;
-        }
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AndroidUtilities.cancelRunOnUIThread(this.f);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f7 = this.a.e;
+        RectF rectF = this.d;
+        RectF rectF2 = this.c;
+        RectF rectF3 = this.e;
+        AndroidUtilities.lerp(rectF, rectF2, f7, rectF3);
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(15.0f), 0, f7);
+        canvas.drawRoundRect(rectF3, lerp, lerp, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int paddingTop = getPaddingTop();
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
+        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
+        this.d.set(AndroidUtilities.dp(12.0f), ((currentActionBarHeight / 2) + paddingTop) - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(30.0f) + r6);
     }
 }

@@ -2,11 +2,11 @@ package i2;
 
 import android.os.Bundle;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.ch0;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.fh0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements e2.m, e2.h, p.a, GenericProvider {
     public final /* synthetic */ int a;
@@ -21,20 +21,20 @@ public final /* synthetic */ class y implements e2.m, e2.h, p.a, GenericProvider
     public void accept(Object obj) {
         switch (this.a) {
             case 2:
-                ((m4.e1) obj).X(this.b);
+                ((m4.f1) obj).X(this.b);
                 break;
             case 3:
-                ((m4.e1) obj).o0(this.b);
+                ((m4.f1) obj).o0(this.b);
                 break;
             default:
-                ((m4.e1) obj).x(this.b);
+                ((m4.f1) obj).x(this.b);
                 break;
         }
     }
 
     @Override // p.a
-    public rc c(yc ycVar) {
-        return ycVar.k(this.b);
+    public tc c(ad adVar) {
+        return adVar.k(this.b);
     }
 
     @Override // e2.m
@@ -51,9 +51,9 @@ public final /* synthetic */ class y implements e2.m, e2.h, p.a, GenericProvider
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        Bundle i10 = a4.a.i("afterSignup", this.b);
-        ch0 ch0Var = new ch0();
-        ch0Var.l0(i10);
-        return ch0Var;
+        Bundle i10 = a1.g.i("afterSignup", this.b);
+        fh0 fh0Var = new fh0();
+        fh0Var.l0(i10);
+        return fh0Var;
     }
 }

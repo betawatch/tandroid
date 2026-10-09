@@ -1,35 +1,54 @@
 package m4;
 
+import android.os.Bundle;
+import android.text.TextUtils;
 import j$.util.Objects;
-import java.util.HashSet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h1 {
-    public static final String b;
-    public final e9.m0 a;
+    public static final e9.a1 d = e9.i0.z(40010);
+    public static final e9.a1 e;
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public final int a;
+    public final String b;
+    public final Bundle c;
 
     static {
-        new h1(new HashSet());
+        Object[] objArr = {50000, 50001, 50002, 50003, 50004, 50005, 50006};
+        e9.q.d(7, objArr);
+        e = e9.i0.t(7, objArr);
         String str = e2.d0.a;
-        b = Integer.toString(0, 36);
+        f = Integer.toString(0, 36);
+        g = Integer.toString(1, 36);
+        h = Integer.toString(2, 36);
     }
 
-    public h1(HashSet hashSet) {
-        this.a = e9.m0.v(hashSet);
+    public h1(int i10) {
+        e2.d.a("commandCode shouldn't be COMMAND_CODE_CUSTOM", i10 != 0);
+        this.a = i10;
+        this.b = "";
+        this.c = Bundle.EMPTY;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (!(obj instanceof h1)) {
+            return false;
         }
-        if (obj instanceof h1) {
-            return this.a.equals(((h1) obj).a);
-        }
-        return false;
+        h1 h1Var = (h1) obj;
+        return this.a == h1Var.a && TextUtils.equals(this.b, h1Var.b);
     }
 
     public final int hashCode() {
-        return Objects.hash(this.a);
+        return Objects.hash(this.b, Integer.valueOf(this.a));
+    }
+
+    public h1(String str, Bundle bundle) {
+        this.a = 0;
+        this.b = str;
+        bundle.getClass();
+        this.c = new Bundle(bundle);
     }
 }

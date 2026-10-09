@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class PredefinedCommands {
     static {
@@ -239,9 +239,9 @@ final class PredefinedCommands {
         MacroInfo.Commands.put("geoprop", new PredefMacroInfo(226, 0));
         MacroInfo.Commands.put("minuscolon", new PredefMacroInfo(227, 0));
         MacroInfo.Commands.put("minuscoloncolon", new PredefMacroInfo(228, 0));
-        MacroInfo.Commands.put("simcolon", new PredefMacroInfo(TLRPC.LAYER, 0));
+        MacroInfo.Commands.put("simcolon", new PredefMacroInfo(229, 0));
         MacroInfo.Commands.put("simcoloncolon", new PredefMacroInfo(230, 0));
-        MacroInfo.Commands.put("approxcolon", new PredefMacroInfo(231, 0));
+        MacroInfo.Commands.put("approxcolon", new PredefMacroInfo(TLRPC.LAYER, 0));
         MacroInfo.Commands.put("approxcoloncolon", new PredefMacroInfo(232, 0));
         MacroInfo.Commands.put("coloncolon", new PredefMacroInfo(233, 0));
         MacroInfo.Commands.put("equalscolon", new PredefMacroInfo(234, 0));

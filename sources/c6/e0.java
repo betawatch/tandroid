@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e0 extends com.google.android.gms.common.api.j implements f0 {
     public static final g6.b G = new g6.b("CastClient", null);
@@ -23,7 +23,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
     public final List E;
     public int F;
     public final d0 k;
-    public com.google.android.gms.internal.cast.c0 l;
+    public com.google.android.gms.internal.cast.a0 l;
     public boolean m;
     public boolean n;
     public TaskCompletionSource o;
@@ -92,7 +92,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
 
     public static Handler k(e0 e0Var) {
         if (e0Var.l == null) {
-            e0Var.l = new com.google.android.gms.internal.cast.c0(e0Var.f, 0);
+            e0Var.l = new com.google.android.gms.internal.cast.a0(e0Var.f, 0);
         }
         return e0Var.l;
     }

@@ -10,11 +10,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class zt extends org.telegram.ui.ActionBar.n2 {
-    public org.telegram.ui.Components.zl0 a;
-    public org.telegram.ui.Components.pz b;
+    public org.telegram.ui.Components.qm0 a;
+    public org.telegram.ui.Components.c00 b;
     public wt c;
     public xt d;
     public boolean e;
@@ -32,21 +32,21 @@ public final class zt extends org.telegram.ui.ActionBar.n2 {
         this.h = z10;
     }
 
-    public static org.telegram.ui.Cells.ea S(Context context) {
-        org.telegram.ui.Cells.ea eaVar = new org.telegram.ui.Cells.ea(context);
-        eaVar.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 16.0f : 12.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 16.0f), 0);
+    public static org.telegram.ui.Cells.ca U(Context context) {
+        org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context);
+        caVar.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 16.0f : 12.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 16.0f), 0);
         tt ttVar = new tt();
-        ttVar.a = new st(0, eaVar);
-        eaVar.addOnAttachStateChangeListener(ttVar);
-        return eaVar;
+        ttVar.a = new st(0, caVar);
+        caVar.addOnAttachStateChangeListener(ttVar);
+        return caVar;
     }
 
-    public static SpannableStringBuilder T(ut utVar) {
+    public static SpannableStringBuilder V(ut utVar) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         String languageFlag = LocaleController.getLanguageFlag(utVar.d);
         if (languageFlag != null) {
             spannableStringBuilder.append((CharSequence) languageFlag).append((CharSequence) " ");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.oz(1), languageFlag.length(), languageFlag.length() + 1, 0);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.b00(1), languageFlag.length(), languageFlag.length() + 1, 0);
         }
         spannableStringBuilder.append((CharSequence) utVar.a);
         return spannableStringBuilder;
@@ -57,20 +57,20 @@ public final class zt extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setTitle(LocaleController.getString(R.string.ChooseCountry));
-        this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.G6;
-        kVar.A(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
-        this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.u8, false), false);
-        this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
-        this.actionBar.setActionBarMenuOnItemClick(new qo(this, 16));
-        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+        kVar.D(org.telegram.ui.ActionBar.i6.x0(null, i10, false), false);
+        this.actionBar.C(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.u8, false), false);
+        this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
+        this.actionBar.setActionBarMenuOnItemClick(new ro(this, 16));
+        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.o().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new hg.d2(this, 9);
+        a2.H = new hg.e2(this, 8);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.actionBar.E(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y6, false), true);
-        this.actionBar.E(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
-        this.actionBar.setSearchCursorColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        this.actionBar.H(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.y6, false), true);
+        this.actionBar.H(org.telegram.ui.ActionBar.i6.x0(null, i10, false), false);
+        this.actionBar.setSearchCursorColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
         this.f = false;
         this.e = false;
         wt wtVar = new wt(this, context, this.s, this.n);
@@ -78,25 +78,25 @@ public final class zt extends org.telegram.ui.ActionBar.n2 {
         this.d = new xt(this, context, wtVar.s);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(context, null);
-        this.b = pzVar;
-        pzVar.c();
+        org.telegram.ui.Components.c00 c00Var = new org.telegram.ui.Components.c00(context, null);
+        this.b = c00Var;
+        c00Var.c();
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
-        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        this.a = zl0Var;
-        zl0Var.setSectionsType(3);
+        frameLayout.addView(this.b, w7.x5.d(-1.0f, -1));
+        org.telegram.ui.Components.qm0 qm0Var = new org.telegram.ui.Components.qm0(context, null);
+        this.a = qm0Var;
+        qm0Var.setSectionsType(3);
         this.a.setEmptyView(this.b);
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setFastScrollEnabled(0);
         this.a.setFastScrollVisible(true);
-        this.a.setLayoutManager(new s4.c0(1, false));
+        this.a.setLayoutManager(new s4.d0(1, false));
         this.a.setAdapter(this.c);
         this.a.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
-        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
+        frameLayout.addView(this.a, w7.x5.d(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 6));
-        this.a.setOnScrollListener(new i3(this, 9));
+        this.a.setOnScrollListener(new i3(this, 8));
         return this.fragmentView;
     }
 
@@ -119,15 +119,15 @@ public final class zt extends org.telegram.ui.ActionBar.n2 {
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 33554432, null, null, null, null, org.telegram.ui.ActionBar.i6.m7));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 33554432, null, null, null, null, org.telegram.ui.ActionBar.i6.n7));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.c7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 0, new Class[]{org.telegram.ui.Cells.ca.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, 0, new Class[]{org.telegram.ui.Cells.ca.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.I6));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.a, TLObject.FLAG_19, new Class[]{org.telegram.ui.Cells.r4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.B6));
         return arrayList;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.a.f(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, true)) > 0.699999988079071d;
+        return i0.a.f(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

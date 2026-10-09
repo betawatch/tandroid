@@ -2,75 +2,74 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.fg1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qo extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final /* synthetic */ int T;
-    public Object U;
+public final class qo extends y9 {
+    public final org.telegram.ui.Cells.m6 G;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 H;
+    public final /* synthetic */ boolean I;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 J;
+    public final /* synthetic */ uo K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qo(Context context, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var, int i12) {
-        super(i10, i11, context, d6Var);
-        this.T = i12;
+    public qo(uo uoVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.K = uoVar;
+        this.H = n2Var;
+        this.I = z10;
+        this.J = e6Var;
+        this.G = new org.telegram.ui.Cells.m6(this);
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.T) {
-            case 0:
-                canvas.save();
-                Path path = (Path) this.U;
-                path.rewind();
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            case 1:
-                canvas.save();
-                Path path2 = (Path) this.U;
-                path2.rewind();
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path2.addRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-                canvas.clipPath(path2);
-                boolean drawChild2 = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild2;
-            default:
-                return super.drawChild(canvas, view, j3);
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        long j3;
+        uo uoVar = this.K;
+        if (!uoVar.b || this.e != null) {
+            super.onDraw(canvas);
+            return;
+        }
+        org.telegram.ui.Cells.m6 m6Var = this.G;
+        m6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        m6Var.a = true;
+        m6Var.v = true;
+        m6Var.J = this.J;
+        Integer num = uoVar.c;
+        if (num != null) {
+            m6Var.z = num.intValue();
+        }
+        org.telegram.ui.zn znVar = uoVar.G;
+        if (znVar != null) {
+            j3 = znVar.a();
+        } else {
+            org.telegram.ui.ActionBar.n2 n2Var = this.H;
+            j3 = n2Var instanceof fg1 ? -((fg1) n2Var).a : 0L;
+        }
+        ai.ja.h(j3, canvas, this.a, m6Var);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!this.I || !getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        int i12;
-        switch (this.T) {
-            case 2:
-                b80 b80Var = (b80) this.U;
-                if (this == b80Var.A && (i12 = b80Var.X) > 0) {
-                    i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
-                }
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.K.b && this.G.a(motionEvent, this)) {
+            return true;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo(b80 b80Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(i10, i11, context, d6Var);
-        this.T = 2;
-        this.U = b80Var;
+        return super.onTouchEvent(motionEvent);
     }
 }

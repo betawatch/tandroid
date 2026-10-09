@@ -2,24 +2,81 @@ package xh;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class b0 extends FrameLayout {
-    public final /* synthetic */ float a;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class b0 extends j1 {
+    public final RectF m0;
+    public final RectF n0;
+    public final Path o0;
+    public final /* synthetic */ e0 p0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(Context context, float f7) {
-        super(context);
-        this.a = f7;
+    public b0(e0 e0Var, Context context, int i10, e6 e6Var) {
+        super(context, i10, e6Var);
+        this.p0 = e0Var;
+        this.m0 = new RectF();
+        this.n0 = new RectF();
+        this.o0 = new Path();
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        e0 e0Var = this.p0;
+        z zVar = e0Var.a0;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        FrameLayout frameLayout = this.d;
+        if (view == frameLayout) {
+            FrameLayout frameLayout2 = zVar.b;
+            y yVar = e0Var.Y;
+            RectF rectF = this.m0;
+            if (!hh.j.c(frameLayout2, yVar, rectF)) {
+                return true;
+            }
+            RectF rectF2 = this.n0;
+            if (!hh.j.c(frameLayout, this, rectF2)) {
+                return true;
+            }
+            float centerX = rectF2.centerX() - AndroidUtilities.dp(40.0f);
+            float centerY = rectF2.centerY() - AndroidUtilities.dp(40.0f);
+            if (!rectF.isEmpty()) {
+                canvas.save();
+                canvas.clipPath(this.o0);
+                canvas.scale(0.6f, 0.6f, rectF2.centerX(), rectF2.centerY());
+                canvas.translate(rectF2.centerX() - (zVar.getWidth() / 2.0f), rectF2.centerY() - (zVar.getHeight() / 2.0f));
+                zVar.b(canvas, zVar.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), zVar.getWidth(), zVar.getHeight());
+                zVar.c(canvas, zVar.getWidth() / 2.0f, AndroidUtilities.dp(104.0f), zVar.getWidth(), zVar.getHeight());
+                canvas.restore();
+                canvas.save();
+                canvas.translate(centerX, centerY);
+                canvas.scale(AndroidUtilities.dp(80.0f) / rectF.width(), AndroidUtilities.dp(80.0f) / rectF.height());
+                zVar.b.draw(canvas);
+                canvas.restore();
+            }
+        }
+        return drawChild;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.o0;
+        path.rewind();
+        RectF rectF = this.m0;
+        rectF.set(0.0f, 0.0f, i10, i11);
+        rectF.inset(AndroidUtilities.dp(3.33f), AndroidUtilities.dp(4.0f));
+        path.addRoundRect(rectF, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(11.0f), Path.Direction.CW);
     }
 }

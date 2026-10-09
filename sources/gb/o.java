@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o extends db.u {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class o extends db.u {
                     aVar.t();
                     return null;
                 }
-                Map map = (Map) ((fb.n) this.d).p2();
+                Map map = (Map) ((fb.n) this.d).v2();
                 if (x10 == 1) {
                     aVar.a();
                     while (aVar.k()) {

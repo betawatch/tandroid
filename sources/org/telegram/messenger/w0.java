@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class w0 implements RequestDelegate {
                 ((MediaDataController) this.c).lambda$loadStickersByEmojiOrName$85((String) this.d, this.b, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.c).lambda$getBlockedPeers$113(this.b, (TLRPC.TL_contacts_getBlocked) this.d, tLObject, tL_error);
+                ((MessagesController) this.c).lambda$getBlockedPeers$112(this.b, (TLRPC.TL_contacts_getBlocked) this.d, tLObject, tL_error);
                 break;
             default:
                 ((MessagesController.CommonChatsList) this.c).lambda$load$1((int[]) this.d, this.b, tLObject, tL_error);

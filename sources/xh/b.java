@@ -1,21 +1,69 @@
 package xh;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.text.SpannableStringBuilder;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.b6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.r01;
+import w7.x5;
+import yh.p7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class b extends FrameLayout {
-    public static final /* synthetic */ int c = 0;
-    public final d6 a;
-    public final int b;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class b extends o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public b(Context context, int i10, d6 d6Var) {
-        super(context);
-        this.b = i10;
-        this.a = d6Var;
-        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
+    static {
+        o61.setup(new b());
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
+        c cVar = (c) view;
+        GiftAuctionController.Auction auction = (GiftAuctionController.Auction) p61Var.H;
+        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) p61Var.G;
+        View.OnClickListener onClickListener = p61Var.D;
+        int i10 = c.c;
+        cVar.removeAllViews();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(new b6(auction.giftDocumentId, i6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append(' ');
+        spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.Gift2AuctionsAcquiredRound2, auction.gift.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
+        spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+        spannableStringBuilder2.append((CharSequence) p7.Y0(false, org.telegram.messenger.q.h(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
+        String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
+        r01 r01Var = new r01(cVar.getContext(), cVar.a);
+        r01Var.a(spannableStringBuilder).setFilled(true);
+        r01Var.m(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), cVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new u2.p0(8, cVar, onClickListener));
+        r01Var.f(tL_StarGiftAuctionAcquiredGift.date, LocaleController.getString(R.string.Gift2AuctionsAcquiredDate));
+        r01Var.e(LocaleController.getString(R.string.Gift2AuctionsAcquiredAcceptedBid), spannableStringBuilder2, formatString, null, null);
+        cVar.addView(r01Var, x5.d(-2.0f, -1));
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, e6 e6Var) {
+        c cVar = new c(context, i10, e6Var);
+        cVar.setLayoutParams(x5.d(-2.0f, -1));
+        return cVar;
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean isClickable() {
+        return false;
     }
 }

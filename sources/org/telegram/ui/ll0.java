@@ -1,33 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ll0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 a;
-    public final /* synthetic */ PasscodeActivity b;
+public final class ll0 extends Drawable {
+    public final /* synthetic */ org.telegram.ui.Components.l11 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 b;
 
-    public ll0(PasscodeActivity passcodeActivity, org.telegram.ui.ActionBar.f1 f1Var) {
-        this.b = passcodeActivity;
-        this.a = f1Var;
+    public ll0(org.telegram.ui.Components.l11 l11Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = l11Var;
+        this.b = e6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        PasscodeActivity passcodeActivity = this.b;
-        if (i10 == -1) {
-            passcodeActivity.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            passcodeActivity.y = passcodeActivity.y != 0 ? 0 : 1;
-            AndroidUtilities.runOnUIThread(new wj0(3, this, this.a), 150L);
-            passcodeActivity.h.setText("");
-            for (es esVar : passcodeActivity.n.f) {
-                esVar.setText("");
-            }
-            passcodeActivity.r0();
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.c(getBounds().centerX() - (this.a.c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, this.b), canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -8,8 +8,9 @@ import android.view.animation.PathInterpolator;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -31,10 +32,10 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void f(View view, l1 l1Var, boolean z10) {
+    public static void f(View view, k1 k1Var, boolean z10) {
         b2.g i10 = i(view);
         if (i10 != null) {
-            i10.a = l1Var;
+            i10.a = k1Var;
             if (!z10) {
                 z10 = true;
             }
@@ -42,33 +43,33 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                f(viewGroup.getChildAt(i11), l1Var, z10);
+                f(viewGroup.getChildAt(i11), k1Var, z10);
             }
         }
     }
 
-    public static void g(View view, l1 l1Var, List list) {
+    public static void g(View view, k1 k1Var, List list) {
         b2.g i10 = i(view);
         if (i10 != null) {
-            i10.T0(l1Var, list);
+            i10.T0(k1Var, list);
             return;
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                g(viewGroup.getChildAt(i11), l1Var, list);
+                g(viewGroup.getChildAt(i11), k1Var, list);
             }
         }
     }
 
-    public static void h(View view, v0 v0Var, o0.a aVar) {
+    public static void h(View view, v0 v0Var, b5 b5Var) {
         b2.g i10 = i(view);
         if (i10 != null) {
             ph.e eVar = (ph.e) i10;
             if (eVar.c == 0) {
                 Iterator it = eVar.d.iterator();
                 while (it.hasNext()) {
-                    ((ph.d) it.next()).s();
+                    ((ph.d) it.next()).t();
                 }
             }
             eVar.c++;
@@ -77,7 +78,7 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                h(viewGroup.getChildAt(i11), v0Var, aVar);
+                h(viewGroup.getChildAt(i11), v0Var, b5Var);
             }
         }
     }

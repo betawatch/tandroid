@@ -1,43 +1,44 @@
 package r0;
 
+import android.view.DisplayCutout;
 import android.view.WindowInsets;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class d1 extends c1 {
-    public i0.b n;
-
-    public d1(l1 l1Var, WindowInsets windowInsets) {
-        super(l1Var, windowInsets);
-        this.n = null;
+    public d1(k1 k1Var, WindowInsets windowInsets) {
+        super(k1Var, windowInsets);
     }
 
-    @Override // r0.i1
-    public l1 b() {
-        return l1.h(null, this.c.consumeStableInsets());
+    @Override // r0.h1
+    public k1 a() {
+        return k1.h(null, this.c.consumeDisplayCutout());
     }
 
-    @Override // r0.i1
-    public l1 c() {
-        return l1.h(null, this.c.consumeSystemWindowInsets());
-    }
-
-    @Override // r0.i1
-    public final i0.b i() {
-        if (this.n == null) {
-            WindowInsets windowInsets = this.c;
-            this.n = i0.b.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+    @Override // r0.h1
+    public i e() {
+        DisplayCutout displayCutout = this.c.getDisplayCutout();
+        if (displayCutout == null) {
+            return null;
         }
-        return this.n;
+        return new i(displayCutout);
     }
 
-    @Override // r0.i1
-    public boolean n() {
-        return this.c.isConsumed();
+    @Override // r0.b1, r0.h1
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof d1)) {
+            return false;
+        }
+        d1 d1Var = (d1) obj;
+        return Objects.equals(this.c, d1Var.c) && Objects.equals(this.g, d1Var.g) && b1.B(this.h, d1Var.h);
     }
 
-    @Override // r0.i1
-    public void s(i0.b bVar) {
-        this.n = bVar;
+    @Override // r0.h1
+    public int hashCode() {
+        return this.c.hashCode();
     }
 }

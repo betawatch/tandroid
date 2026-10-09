@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d extends z {
     public final /* synthetic */ k h;
@@ -20,12 +20,12 @@ public final class d extends z {
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         k kVar = this.h;
-        Paint paint = kVar.M0;
-        if (kVar.L0 && this.a && kVar.w != 0) {
-            kVar.N0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        Paint paint = kVar.L0;
+        if (kVar.K0 && this.a && kVar.w != 0) {
+            kVar.M0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
             paint.setColor(kVar.w);
             canvas2 = canvas;
-            kVar.K0.J(canvas2, 0.0f, kVar.N0, paint, true);
+            kVar.J0.J(canvas2, 0.0f, kVar.M0, paint, true);
         } else {
             canvas2 = canvas;
         }
@@ -35,18 +35,18 @@ public final class d extends z {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mw0 mw0Var = this.h.K0;
-        if (mw0Var != null) {
-            mw0Var.T.add(this);
+        sw0 sw0Var = this.h.J0;
+        if (sw0Var != null) {
+            sw0Var.T.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mw0 mw0Var = this.h.K0;
-        if (mw0Var != null) {
-            mw0Var.T.remove(this);
+        sw0 sw0Var = this.h.J0;
+        if (sw0Var != null) {
+            sw0Var.T.remove(this);
         }
     }
 
@@ -55,7 +55,7 @@ public final class d extends z {
         super.setAlpha(f7);
         k kVar = this.h;
         kVar.invalidate();
-        Runnable runnable = kVar.V0;
+        Runnable runnable = kVar.T0;
         if (runnable != null) {
             runnable.run();
         }
@@ -65,7 +65,7 @@ public final class d extends z {
     public final void setBackgroundColor(int i10) {
         k kVar = this.h;
         kVar.w = i10;
-        if (kVar.L0) {
+        if (kVar.K0) {
             return;
         }
         super.setBackgroundColor(i10);

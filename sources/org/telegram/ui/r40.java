@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
-import android.widget.LinearLayout;
+import android.view.TextureView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class r40 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.gd0 b;
-    public final /* synthetic */ n40 c;
-    public final /* synthetic */ o40 d;
+public final class r40 implements mv0 {
+    public final /* synthetic */ g60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r40(LaunchActivity launchActivity, org.telegram.ui.Components.gd0 gd0Var, n40 n40Var, o40 o40Var) {
-        super(launchActivity);
-        this.b = gd0Var;
-        this.c = n40Var;
-        this.d = o40Var;
-        this.a = false;
+    public r40(g60 g60Var) {
+        this.a = g60Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        org.telegram.ui.Components.gd0 gd0Var = this.b;
-        gd0Var.setItemCount(5);
-        n40 n40Var = this.c;
-        n40Var.setItemCount(5);
-        o40 o40Var = this.d;
-        o40Var.setItemCount(5);
-        gd0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        n40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        o40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
-        this.a = false;
-        super.onMeasure(i10, i11);
+    @Override // org.telegram.ui.mv0
+    public final void H(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.a).containerView;
+        viewGroup.invalidate();
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+    @Override // org.telegram.ui.mv0
+    public final /* synthetic */ TextureView d0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.mv0
+    public final void w0(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        g60 g60Var = this.a;
+        g60Var.Q.I0(true);
+        g60Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
+        viewGroup.invalidate();
     }
 }

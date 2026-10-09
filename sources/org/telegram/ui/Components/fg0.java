@@ -1,58 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fg0 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final boolean d;
+public final class fg0 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ma b;
+    public final /* synthetic */ kg0 c;
 
-    public fg0(Context context) {
-        super(context);
-        this.d = true;
-        setBackgroundColor(-15066598);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(-1);
-        textView.setGravity(17);
-        textView.setBackground(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
-        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.z5.e(-2, -1, 51));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(-1);
-        textView2.setGravity(17);
-        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(-12763843, 0, -1));
-        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
-        textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, w7.z5.e(-2, -1, 53));
-        TextView textView3 = new TextView(context);
-        this.c = textView3;
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTextColor(-1);
-        textView3.setGravity(17);
-        textView3.setBackgroundResource(R.drawable.photobadge);
-        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
-        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        addView(textView3, w7.z5.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
+    public fg0(kg0 kg0Var, boolean z10, ma maVar) {
+        this.c = kg0Var;
+        this.a = z10;
+        this.b = maVar;
     }
 
-    public final void a() {
-        this.c.setVisibility(8);
-        this.b.setTextColor(this.d ? -1 : -15095832);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        kg0 kg0Var = this.c;
+        TextureView textureView = kg0Var.i0;
+        if (kg0Var.l0 != null || surfaceTexture == null) {
+            return;
+        }
+        l00 l00Var = new l00(surfaceTexture, kg0Var.C0, kg0Var.H0, kg0Var.w0, this.a, this.b, i10, i11);
+        kg0Var.l0 = l00Var;
+        if (!this.a) {
+            l00Var.i(kg0Var.J0, kg0Var.K0);
+            l00 l00Var2 = kg0Var.l0;
+            Matrix transform = textureView.getTransform(null);
+            int width = textureView.getWidth();
+            int height = textureView.getHeight();
+            sa saVar = l00Var2.I;
+            if (saVar != null) {
+                Matrix matrix = saVar.v;
+                transform.invert(matrix);
+                float f7 = width;
+                float f10 = height;
+                matrix.preScale(f7, f10);
+                matrix.postScale(1.0f / f7, 1.0f / f10);
+                saVar.c(matrix);
+                l00Var2.e(false, false, false);
+            }
+        }
+        kg0Var.l0.f(kg0Var);
+        l00 l00Var3 = kg0Var.l0;
+        l00Var3.getClass();
+        l00Var3.postRunnable(new h00(l00Var3, i10, i11, 1));
+        kg0Var.l0.e(true, true, false);
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        kg0 kg0Var = this.c;
+        l00 l00Var = kg0Var.l0;
+        if (l00Var == null) {
+            return true;
+        }
+        l00Var.postRunnable(new i00(l00Var, 0));
+        kg0Var.l0 = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        kg0 kg0Var = this.c;
+        l00 l00Var = kg0Var.l0;
+        if (l00Var != null) {
+            l00Var.postRunnable(new h00(l00Var, i10, i11, 1));
+            kg0Var.l0.e(false, true, false);
+            kg0Var.l0.postRunnable(new bd0(this, 6));
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

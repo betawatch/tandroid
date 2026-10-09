@@ -1,50 +1,64 @@
 package s4;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class g1 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
+import java.util.ArrayList;
 
-    public boolean a() {
-        int i10 = this.a;
-        int i11 = 2;
-        if ((i10 & 7) != 0) {
-            int i12 = this.d;
-            int i13 = this.b;
-            if (((i12 > i13 ? 1 : i12 == i13 ? 2 : 4) & i10) == 0) {
-                return false;
-            }
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public abstract class g1 extends n0 {
+    public boolean m;
+    public boolean n;
+
+    public g1() {
+        this.a = null;
+        this.b = new ArrayList();
+        this.c = 120L;
+        this.d = 120L;
+        this.e = 250L;
+        this.f = 250L;
+        this.g = 250L;
+        this.l = 0L;
+        this.m = true;
+    }
+
+    @Override // s4.n0
+    public boolean a(d1 d1Var, b2.q0 q0Var, b2.q0 q0Var2) {
+        int i10;
+        int i11;
+        if (q0Var != null && ((i10 = q0Var.a) != (i11 = q0Var2.a) || q0Var.b != q0Var2.b || this.n)) {
+            return r(d1Var, q0Var, i10, q0Var.b, i11, q0Var2.b);
         }
-        if ((i10 & 112) != 0) {
-            int i14 = this.d;
-            int i15 = this.c;
-            if ((((i14 > i15 ? 1 : i14 == i15 ? 2 : 4) << 4) & i10) == 0) {
-                return false;
-            }
-        }
-        if ((i10 & 1792) != 0) {
-            int i16 = this.e;
-            int i17 = this.b;
-            if ((((i16 > i17 ? 1 : i16 == i17 ? 2 : 4) << 8) & i10) == 0) {
-                return false;
-            }
-        }
-        if ((i10 & 28672) != 0) {
-            int i18 = this.e;
-            int i19 = this.c;
-            if (i18 > i19) {
-                i11 = 1;
-            } else if (i18 != i19) {
-                i11 = 4;
-            }
-            if ((i10 & (i11 << 12)) == 0) {
-                return false;
-            }
-        }
+        p(d1Var);
         return true;
+    }
+
+    public abstract void p(d1 d1Var);
+
+    public abstract boolean q(d1 d1Var, d1 d1Var2, b2.q0 q0Var, int i10, int i11, int i12, int i13);
+
+    public abstract boolean r(d1 d1Var, b2.q0 q0Var, int i10, int i11, int i12, int i13);
+
+    public abstract void s(d1 d1Var, b2.q0 q0Var);
+
+    public boolean t(d1 d1Var) {
+        return !this.m || d1Var.h();
+    }
+
+    public final void u(d1 d1Var) {
+        w(d1Var);
+        d(d1Var);
+    }
+
+    public final void v(d1 d1Var) {
+        x(d1Var);
+        d(d1Var);
+    }
+
+    public void y() {
+    }
+
+    public void w(d1 d1Var) {
+    }
+
+    public void x(d1 d1Var) {
     }
 }

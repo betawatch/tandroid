@@ -1,59 +1,39 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jc implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class jc implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ jc(MessagesController messagesController, nf.e eVar, org.telegram.ui.ActionBar.b2[] b2VarArr, org.telegram.ui.ActionBar.n2 n2Var, boolean[] zArr, int i10) {
+    public /* synthetic */ jc(long j3, Runnable runnable, MessagesController messagesController) {
+        this.a = 2;
         this.b = messagesController;
-        this.e = eVar;
-        this.f = b2VarArr;
-        this.g = n2Var;
-        this.c = zArr;
-        this.d = i10;
+        this.d = runnable;
+        this.c = j3;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$openByUserName$455((nf.e) this.e, (org.telegram.ui.ActionBar.b2[]) this.f, (org.telegram.ui.ActionBar.n2) this.g, (boolean[]) this.c, this.d, (Long) obj);
+                this.b.lambda$setUserAdminRole$104(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$openApp$500((boolean[]) this.c, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.d, (c3) this.g, (TL_bots.BotInfo) obj);
+                this.b.lambda$setUserAdminRole$98(this.c, this.d);
                 break;
             default:
-                this.b.lambda$addUsersToChat$297((TLRPC.TL_messages_invitedUsers) this.e, (int[]) this.f, this.d, (TLRPC.Chat) this.g, (Runnable) this.c, (TLRPC.TL_messages_invitedUsers) obj);
+                this.b.lambda$setCustomChatReactions$470(this.d, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ jc(MessagesController messagesController, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, TLRPC.Chat chat, Runnable runnable) {
+    public /* synthetic */ jc(MessagesController messagesController, long j3, Runnable runnable, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
-        this.d = i10;
-        this.g = chat;
-        this.c = runnable;
-    }
-
-    public /* synthetic */ jc(MessagesController messagesController, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i10, c3 c3Var) {
-        this.b = messagesController;
-        this.c = zArr;
-        this.e = botInfoArr;
-        this.f = user;
-        this.d = i10;
-        this.g = c3Var;
+        this.c = j3;
+        this.d = runnable;
     }
 }

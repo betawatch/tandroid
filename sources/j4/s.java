@@ -5,7 +5,7 @@ import c3.h0;
 import i2.m0;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -39,7 +39,7 @@ public final class s implements i {
             this.l += vVar.a();
             this.c.d(vVar.a(), vVar);
             while (i11 < i12) {
-                int b10 = f2.o.b(bArr, i11, i12, this.f);
+                int b10 = f2.p.b(bArr, i11, i12, this.f);
                 if (b10 == i12) {
                     g(i11, i12, bArr);
                     return;
@@ -52,15 +52,16 @@ public final class s implements i {
                     i10 = 4;
                 }
                 int i14 = b10;
-                int i15 = i14 - i11;
-                if (i15 > 0) {
+                int i15 = i10;
+                int i16 = i14 - i11;
+                if (i16 > 0) {
                     g(i11, i14, bArr);
                 }
-                int i16 = i12 - i14;
-                long j3 = this.l - i16;
-                b(j3, i16, i15 < 0 ? -i15 : 0, this.m);
-                h(j3, i16, i13, this.m);
-                i11 = i14 + i10;
+                int i17 = i12 - i14;
+                long j3 = this.l - i17;
+                b(j3, i17, i16 < 0 ? -i16 : 0, this.m);
+                h(j3, i17, i13, this.m);
+                i11 = i14 + i15;
             }
         }
     }
@@ -96,12 +97,12 @@ public final class s implements i {
                 System.arraycopy((byte[]) m0Var2.f, 0, bArr, m0Var.e, m0Var2.e);
                 System.arraycopy((byte[]) m0Var3.f, 0, bArr, m0Var.e + m0Var2.e, m0Var3.e);
                 String str2 = null;
-                f2.k h = f2.o.h((byte[]) m0Var2.f, 3, m0Var2.e, null);
-                f2.h hVar = h.b;
-                if (hVar != null) {
-                    int i13 = hVar.a;
-                    boolean z11 = hVar.b;
-                    str2 = e2.e.a(i13, hVar.c, hVar.d, hVar.f, z11, hVar.e);
+                f2.l h = f2.p.h((byte[]) m0Var2.f, 3, m0Var2.e, null);
+                f2.i iVar = h.b;
+                if (iVar != null) {
+                    int i13 = iVar.a;
+                    boolean z11 = iVar.b;
+                    str2 = e2.e.a(i13, iVar.c, iVar.d, iVar.f, z11, iVar.e);
                 }
                 b2.r rVar2 = new b2.r();
                 rVar2.a = str;
@@ -131,13 +132,13 @@ public final class s implements i {
         boolean e7 = m0Var4.e(i11);
         e2.v vVar = this.n;
         if (e7) {
-            vVar.H(f2.o.m(m0Var4.e, (byte[]) m0Var4.f), (byte[]) m0Var4.f);
+            vVar.H(f2.p.m(m0Var4.e, (byte[]) m0Var4.f), (byte[]) m0Var4.f);
             vVar.K(5);
             cVar.a(j10, vVar);
         }
         m0 m0Var5 = this.k;
         if (m0Var5.e(i11)) {
-            vVar.H(f2.o.m(m0Var5.e, (byte[]) m0Var5.f), (byte[]) m0Var5.f);
+            vVar.H(f2.p.m(m0Var5.e, (byte[]) m0Var5.f), (byte[]) m0Var5.f);
             vVar.K(5);
             cVar.a(j10, vVar);
         }
@@ -147,7 +148,7 @@ public final class s implements i {
     public final void c() {
         this.l = 0L;
         this.m = -9223372036854775807L;
-        f2.o.a(this.f);
+        f2.p.a(this.f);
         this.g.g();
         this.h.g();
         this.i.g();
@@ -166,13 +167,13 @@ public final class s implements i {
 
     @Override // j4.i
     public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.a();
         f0Var.b();
-        this.b = f0Var.e;
-        f0Var.b();
-        h0 Z1 = qVar.Z1(f0Var.d, 2);
-        this.c = Z1;
-        this.d = new r(Z1);
+        f0Var.c();
+        this.b = (String) f0Var.e;
+        f0Var.c();
+        h0 f22 = qVar.f2(f0Var.c, 2);
+        this.c = f22;
+        this.d = new r(f22);
         this.a.b(qVar, f0Var);
     }
 

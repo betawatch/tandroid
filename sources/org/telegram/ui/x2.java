@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.p9 {
+public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.n9 {
     public static final /* synthetic */ int V = 0;
     public int E;
     public int F;
@@ -89,10 +89,10 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         textureView.setOpaque(false);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.f = frameLayout;
-        l4Var.addView(textureView, w7.z5.e(-1, -2, 1));
-        frameLayout.addView(l4Var, w7.z5.e(-1, -1, 17));
-        addView(frameLayout, w7.z5.c(-2.0f, -1));
-        addView(d1Var, w7.z5.c(-2.0f, -1));
+        l4Var.addView(textureView, w7.x5.e(-1, -2, 1));
+        frameLayout.addView(l4Var, w7.x5.e(-1, -1, 17));
+        addView(frameLayout, w7.x5.d(-2.0f, -1));
+        addView(d1Var, w7.x5.d(-2.0f, -1));
     }
 
     private int getIconForCurrentState() {
@@ -276,7 +276,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -389,9 +389,9 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         accessibilityNodeInfo.setText(sb2.toString());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0332  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x032d  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x016c  */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -400,194 +400,203 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         int i12;
         int i13;
         TL_iv.pageBlockVideo pageblockvideo;
-        int i14;
         int dp;
+        int i14;
         int i15;
         int i16;
-        int i17;
         g4 g4Var;
         boolean z10;
+        float f7;
+        int i17;
         int i18;
         int i19;
-        int i20;
         boolean z11;
-        float f7;
-        int i21;
+        float f10;
+        int i20;
         int size = View.MeasureSpec.getSize(i10);
-        int i22 = this.v;
-        if (i22 == 1) {
+        char c10 = 2;
+        int i21 = this.v;
+        int i22 = 1;
+        if (i21 == 1) {
             size = ((View) getParent()).getMeasuredWidth();
             i13 = ((View) getParent()).getMeasuredHeight();
         } else {
-            if (i22 != 2) {
+            if (i21 != 2) {
                 i12 = size;
                 i13 = 0;
                 int i23 = ((i4) this.a).X;
                 pageblockvideo = this.L;
                 ImageReceiver imageReceiver = this.e;
-                if (pageblockvideo == null) {
-                    if (i22 != 0 || (i21 = pageblockvideo.level) <= 0) {
+                if (pageblockvideo != null) {
+                    if (i21 != 0 || (i20 = pageblockvideo.level) <= 0) {
                         this.x = AndroidUtilities.dp(18.0f);
                         dp = i12 - AndroidUtilities.dp(36.0f);
-                        i15 = i12;
-                        i16 = 0;
+                        i14 = i12;
+                        i15 = 0;
                     } else {
-                        i16 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i21 * 14);
-                        this.x = i16;
-                        i15 = org.telegram.messenger.bi.y(18.0f, i16, i12);
-                        dp = i15;
+                        i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i20 * 14);
+                        this.x = i15;
+                        i14 = org.telegram.messenger.bi.z(18.0f, i15, i12);
+                        dp = i14;
                     }
                     TLRPC.Document document = this.O;
                     g4 g4Var2 = this.b;
                     if (document != null) {
                         int dp2 = AndroidUtilities.dp(48.0f);
                         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.O.thumbs, 48);
-                        if (i22 == 0) {
+                        if (i21 == 0) {
                             int size2 = this.O.attributes.size();
                             int i24 = 0;
+                            f7 = 2.0f;
                             while (true) {
                                 if (i24 >= size2) {
                                     z11 = false;
                                     break;
                                 }
+                                char c11 = c10;
                                 if (this.O.attributes.get(i24) instanceof TLRPC.TL_documentAttributeVideo) {
-                                    i13 = (int) ((i15 / r13.w) * r13.h);
+                                    i13 = (int) ((i14 / r13.w) * r13.h);
                                     z11 = true;
                                     break;
+                                } else {
+                                    i24++;
+                                    c10 = c11;
                                 }
-                                i24++;
                             }
-                            float f10 = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.w : 100.0f;
-                            float f11 = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100.0f;
+                            float f11 = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.w : 100.0f;
+                            float f12 = closestPhotoSizeWithSize != null ? closestPhotoSizeWithSize.h : 100.0f;
                             if (!z11) {
-                                i13 = (int) ((i15 / f10) * f11);
+                                i13 = (int) ((i14 / f11) * f12);
                             }
                             if (this.N instanceof TL_iv.pageBlockCover) {
-                                i13 = Math.min(i13, i15);
-                                f7 = 100.0f;
+                                i13 = Math.min(i13, i14);
+                                f10 = 100.0f;
                             } else {
                                 Point point = AndroidUtilities.displaySize;
-                                f7 = 100.0f;
+                                f10 = 100.0f;
                                 int max = (int) ((Math.max(point.x, point.y) - AndroidUtilities.dp(56.0f)) * 0.9f);
                                 if (i13 > max) {
-                                    i15 = (int) ((max / f11) * f10);
-                                    i16 += ((i12 - i16) - i15) / 2;
+                                    i14 = (int) ((max / f12) * f11);
+                                    i15 += ((i12 - i15) - i14) / 2;
                                     i13 = max;
                                 }
                             }
                             if (i13 == 0) {
-                                i13 = AndroidUtilities.dp(f7);
+                                i13 = AndroidUtilities.dp(f10);
                             } else if (i13 < dp2) {
                                 i13 = dp2;
                             }
-                        } else if (i22 == 2) {
-                            if ((this.T.flags & 2) == 0) {
-                                i15 -= AndroidUtilities.dp(2.0f);
-                            }
-                            if ((this.T.flags & 8) == 0) {
-                                int i25 = i15;
-                                i18 = i13;
-                                i13 -= AndroidUtilities.dp(2.0f);
-                                i19 = i16;
-                                i20 = i25;
-                                imageReceiver.setQualityThumbDocument(this.O);
-                                imageReceiver.setImageCoords(i19, (!this.w || i22 == 1 || i22 == 2 || this.L.level > 0) ? 0 : AndroidUtilities.dp(8.0f), i20, i13);
-                                if (!this.Q) {
-                                    if (this.P) {
-                                        y2 y2Var = this.M;
-                                        if (y2Var == null || y2Var.b == null) {
-                                            this.R = DownloadController.getInstance(i23).canDownloadMedia(4, this.O.size);
-                                            File pathToAttach = FileLoader.getInstance(i23).getPathToAttach(this.O);
-                                            File pathToAttach2 = FileLoader.getInstance(i23).getPathToAttach(this.O, true);
-                                            if (this.R || pathToAttach.exists() || pathToAttach2.exists()) {
-                                                imageReceiver.setStrippedLocation(null);
-                                                imageReceiver.setImage(null, null, ImageLocation.getForDocument(this.O), "200_200_pframe", ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", null, this.O.size, null, g4Var2.E, 1);
+                        } else {
+                            f7 = 2.0f;
+                            if (i21 == 2) {
+                                if ((this.T.flags & 2) == 0) {
+                                    i14 -= AndroidUtilities.dp(2.0f);
+                                }
+                                if ((this.T.flags & 8) == 0) {
+                                    int i25 = i14;
+                                    i17 = i13;
+                                    i13 -= AndroidUtilities.dp(2.0f);
+                                    i18 = i15;
+                                    i19 = i25;
+                                    imageReceiver.setQualityThumbDocument(this.O);
+                                    imageReceiver.setImageCoords(i18, (!this.w || i21 == 1 || i21 == 2 || this.L.level > 0) ? 0 : AndroidUtilities.dp(8.0f), i19, i13);
+                                    if (!this.Q) {
+                                        if (this.P) {
+                                            y2 y2Var = this.M;
+                                            if (y2Var == null || y2Var.b == null) {
+                                                this.R = DownloadController.getInstance(i23).canDownloadMedia(4, this.O.size);
+                                                File pathToAttach = FileLoader.getInstance(i23).getPathToAttach(this.O);
+                                                File pathToAttach2 = FileLoader.getInstance(i23).getPathToAttach(this.O, true);
+                                                if (this.R || pathToAttach.exists() || pathToAttach2.exists()) {
+                                                    imageReceiver.setStrippedLocation(null);
+                                                    imageReceiver.setImage(null, null, ImageLocation.getForDocument(this.O), "200_200_pframe", ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", null, this.O.size, null, g4Var2.E, 1);
+                                                } else {
+                                                    imageReceiver.setStrippedLocation(ImageLocation.getForDocument(this.O));
+                                                    imageReceiver.setImage(null, null, null, null, ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", null, this.O.size, null, g4Var2.E, 1);
+                                                }
                                             } else {
-                                                imageReceiver.setStrippedLocation(ImageLocation.getForDocument(this.O));
-                                                imageReceiver.setImage(null, null, null, null, ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", null, this.O.size, null, g4Var2.E, 1);
+                                                imageReceiver.setStrippedLocation(null);
+                                                imageReceiver.setImageBitmap(this.M.b);
                                             }
                                         } else {
                                             imageReceiver.setStrippedLocation(null);
-                                            imageReceiver.setImageBitmap(this.M.b);
+                                            imageReceiver.setImage(null, null, ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", 0L, null, g4Var2 != null ? g4Var2.E : null, 1);
                                         }
-                                    } else {
-                                        imageReceiver.setStrippedLocation(null);
-                                        imageReceiver.setImage(null, null, ImageLocation.getForDocument(closestPhotoSizeWithSize, this.O), "80_80_b", 0L, null, g4Var2 != null ? g4Var2.E : null, 1);
                                     }
+                                    imageReceiver.setAspectFit(true);
+                                    float f13 = dp2;
+                                    float f14 = f7;
+                                    this.F = (int) com.google.android.gms.internal.vision.e2.z(imageReceiver.getImageWidth(), f13, f14, imageReceiver.getImageX());
+                                    int imageHeight = (int) (((imageReceiver.getImageHeight() - f13) / f14) + imageReceiver.getImageY());
+                                    this.G = imageHeight;
+                                    int i26 = this.F;
+                                    this.r.q(i26, imageHeight, i26 + dp2, dp2 + imageHeight);
+                                    i16 = i17;
                                 }
-                                imageReceiver.setAspectFit(true);
-                                float f12 = dp2;
-                                this.F = (int) com.google.android.gms.internal.vision.e2.A(imageReceiver.getImageWidth(), f12, 2.0f, imageReceiver.getImageX());
-                                int imageHeight = (int) (((imageReceiver.getImageHeight() - f12) / 2.0f) + imageReceiver.getImageY());
-                                this.G = imageHeight;
-                                int i26 = this.F;
-                                this.r.q(i26, imageHeight, i26 + dp2, dp2 + imageHeight);
-                                i17 = i18;
                             }
                         }
-                        i19 = i16;
-                        i20 = i15;
-                        i18 = i13;
+                        i18 = i15;
+                        i19 = i14;
+                        i17 = i13;
                         imageReceiver.setQualityThumbDocument(this.O);
-                        imageReceiver.setImageCoords(i19, (!this.w || i22 == 1 || i22 == 2 || this.L.level > 0) ? 0 : AndroidUtilities.dp(8.0f), i20, i13);
+                        imageReceiver.setImageCoords(i18, (!this.w || i21 == 1 || i21 == 2 || this.L.level > 0) ? 0 : AndroidUtilities.dp(8.0f), i19, i13);
                         if (!this.Q) {
                         }
                         imageReceiver.setAspectFit(true);
-                        float f122 = dp2;
-                        this.F = (int) com.google.android.gms.internal.vision.e2.A(imageReceiver.getImageWidth(), f122, 2.0f, imageReceiver.getImageX());
-                        int imageHeight2 = (int) (((imageReceiver.getImageHeight() - f122) / 2.0f) + imageReceiver.getImageY());
+                        float f132 = dp2;
+                        float f142 = f7;
+                        this.F = (int) com.google.android.gms.internal.vision.e2.z(imageReceiver.getImageWidth(), f132, f142, imageReceiver.getImageX());
+                        int imageHeight2 = (int) (((imageReceiver.getImageHeight() - f132) / f142) + imageReceiver.getImageY());
                         this.G = imageHeight2;
                         int i262 = this.F;
                         this.r.q(i262, imageHeight2, i262 + dp2, dp2 + imageHeight2);
-                        i17 = i18;
+                        i16 = i17;
                     } else {
-                        i17 = i13;
+                        i16 = i13;
                     }
                     int imageHeight3 = (int) (imageReceiver.getImageHeight() + imageReceiver.getImageY() + AndroidUtilities.dp(8.0f));
                     this.y = imageHeight3;
-                    if (i22 == 0) {
+                    if (i21 == 0) {
                         TL_iv.pageBlockVideo pageblockvideo2 = this.L;
                         b3 q6 = i4.q(this.a, this, null, pageblockvideo2.caption.text, dp, imageHeight3, pageblockvideo2, this.b);
                         this.c = q6;
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i17 = org.telegram.messenger.q.C(4.0f, height, i17);
+                            i16 = org.telegram.messenger.q.C(4.0f, height, i16);
                             b3 b3Var = this.c;
                             b3Var.s = this.x;
                             b3Var.v = this.y;
                         }
-                        int i27 = i17;
+                        int i27 = i16;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         g4Var = g4Var2;
-                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), 0, this.b);
+                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.mx0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
-                            i17 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;
+                            i16 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;
                             b3 b3Var2 = this.d;
                             b3Var2.s = this.x;
                             b3Var2.v = this.y + this.E;
                         } else {
-                            i17 = i27;
+                            i16 = i27;
                         }
                     } else {
                         g4Var = g4Var2;
                     }
-                    if (!this.w && i22 == 0 && this.L.level <= 0) {
-                        i17 += AndroidUtilities.dp(8.0f);
+                    if (!this.w && i21 == 0 && this.L.level <= 0) {
+                        i16 += AndroidUtilities.dp(8.0f);
                     }
                     if ((this.N instanceof TL_iv.pageBlockCover) && g4Var != null) {
                         ArrayList arrayList = g4Var.e;
                         if (arrayList.size() > 1 && (arrayList.get(1) instanceof TL_iv.pageBlockChannel)) {
                             z10 = true;
-                            i14 = (i22 != 2 || z10) ? i17 : AndroidUtilities.dp(8.0f) + i17;
+                            i22 = (i21 != 2 || z10) ? i16 : AndroidUtilities.dp(8.0f) + i16;
                         }
                     }
                     z10 = false;
-                    if (i22 != 2) {
+                    if (i21 != 2) {
                     }
-                } else {
-                    i14 = 1;
                 }
                 d1 d1Var = this.s;
                 d1Var.measure(i10, i11);
@@ -597,17 +606,17 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                 layoutParams.topMargin = (int) imageReceiver.getImageY();
                 layoutParams.width = (int) imageReceiver.getImageWidth();
                 layoutParams.height = (int) imageReceiver.getImageHeight();
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i22, TLObject.FLAG_30));
             }
-            float f13 = this.T.ph;
+            float f15 = this.T.ph;
             Point point2 = AndroidUtilities.displaySize;
-            i13 = (int) Math.ceil(f13 * Math.max(point2.x, point2.y) * 0.5f);
+            i13 = (int) Math.ceil(f15 * Math.max(point2.x, point2.y) * 0.5f);
         }
         i12 = size;
         int i232 = ((i4) this.a).X;
         pageblockvideo = this.L;
         ImageReceiver imageReceiver2 = this.e;
-        if (pageblockvideo == null) {
+        if (pageblockvideo != null) {
         }
         d1 d1Var2 = this.s;
         d1Var2.measure(i10, i11);
@@ -617,7 +626,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
         layoutParams2.topMargin = (int) imageReceiver2.getImageY();
         layoutParams2.width = (int) imageReceiver2.getImageWidth();
         layoutParams2.height = (int) imageReceiver2.getImageHeight();
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i22, TLObject.FLAG_30));
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

@@ -1,41 +1,24 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class cc extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sb b;
+public final class cc extends k0 {
+    public final /* synthetic */ kc a;
 
-    public /* synthetic */ cc(sb sbVar, int i10) {
-        this.a = i10;
-        this.b = sbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cc(kc kcVar, Context context) {
+        super(context);
+        this.a = kcVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                jc jcVar = this.b.b;
-                p9 p9Var = jcVar.u1;
-                if (p9Var != null) {
-                    p9Var.b();
-                    jcVar.v.removeView(jcVar.u1);
-                }
-                jcVar.u1 = null;
-                jcVar.P();
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                p9 p9Var2 = this.b.b.u1;
-                if (p9Var2 != null) {
-                    p9Var2.a(true);
-                    break;
-                }
-                break;
+    @Override // ai.k0, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        e6 e6Var = this.a.G0;
+        if (e6Var != null) {
+            e6Var.b();
         }
     }
 }

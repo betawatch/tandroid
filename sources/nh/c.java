@@ -6,67 +6,58 @@ import android.graphics.drawable.ShapeDrawable;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import le.e;
+import me.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.z5;
 import org.telegram.ui.Cells.f8;
-import org.telegram.ui.Components.tr;
-import w7.z5;
+import org.telegram.ui.Components.hs;
+import w7.x5;
 import yf.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements le.d, y5 {
+public final class c extends FrameLayout implements me.d, z5 {
     public ShapeDrawable a;
-    public final d6 b;
+    public final e6 b;
     public final f8 c;
     public final TextView d;
-    public final le.b e;
+    public final me.b e;
 
-    public c(Context context, d6 d6Var) {
+    public c(Context context, e6 e6Var) {
         super(context);
-        this.e = new le.b(0, this, tr.h, 380L, false);
-        this.b = d6Var;
-        f8 f8Var = new f8(context, d6Var, false);
+        this.e = new me.b(0, this, hs.h, 380L, false);
+        this.b = e6Var;
+        f8 f8Var = new f8(context, e6Var, false);
         this.c = f8Var;
-        addView(f8Var, z5.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        addView(f8Var, x5.a(45.0f, 0.0f, 8.0f, 0.0f, 0.0f, 45, 49));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, z5.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        addView(textView, x5.a(-2.0f, 6.0f, 0.0f, 6.0f, 5.0f, -1, 80));
         e();
     }
 
     public final void a(boolean z10, boolean z11) {
         if (z10 && this.a == null) {
-            this.a = i6.b0(AndroidUtilities.dp(10.0f), i0.a.k(i6.v0(i6.Wk, this.b), 25));
+            this.a = i6.c0(AndroidUtilities.dp(10.0f), i0.a.k(i6.w0(i6.Wk, this.b), 25));
         }
-        le.b bVar = this.e;
+        me.b bVar = this.e;
         if (bVar.f != z10 || z11) {
             bVar.a(z10, z11);
         }
-    }
-
-    @Override // le.d
-    public final void a0(int i10, float f7, float f10, e eVar) {
-        ShapeDrawable shapeDrawable = this.a;
-        if (shapeDrawable != null) {
-            shapeDrawable.setAlpha((int) (f7 * 255.0f));
-        }
-        invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         ShapeDrawable shapeDrawable = this.a;
         if (shapeDrawable != null) {
-            le.b bVar = this.e;
+            me.b bVar = this.e;
             if (bVar.e > 0.0f) {
                 shapeDrawable.setBounds(0, 0, getWidth(), getHeight());
                 p.b(canvas, this.a, AndroidUtilities.lerp(0.9f, 1.0f, bVar.e));
@@ -75,16 +66,16 @@ public final class c extends FrameLayout implements le.d, y5 {
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         ShapeDrawable shapeDrawable = this.a;
-        d6 d6Var = this.b;
+        e6 e6Var = this.b;
         if (shapeDrawable != null) {
-            ShapeDrawable b02 = i6.b0(AndroidUtilities.dp(10.0f), i0.a.k(i6.v0(i6.Wk, d6Var), 25));
-            this.a = b02;
-            b02.setAlpha((int) (this.e.e * 255.0f));
+            ShapeDrawable c02 = i6.c0(AndroidUtilities.dp(10.0f), i0.a.k(i6.w0(i6.Wk, e6Var), 25));
+            this.a = c02;
+            c02.setAlpha((int) (this.e.e * 255.0f));
         }
-        this.d.setTextColor(i0.a.k(i6.v0(i6.Wk, d6Var), TLRPC.LAYER));
+        this.d.setTextColor(i0.a.k(i6.w0(i6.Wk, e6Var), 229));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -96,12 +87,21 @@ public final class c extends FrameLayout implements le.d, y5 {
         return this.e.f;
     }
 
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, e eVar) {
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            shapeDrawable.setAlpha((int) (f7 * 255.0f));
+        }
+        invalidate();
+    }
+
     public void setPack(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
         this.d.setText(tL_messages_stickerSet.set.short_name);
         this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
     }
 
-    @Override // le.d
-    public final /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

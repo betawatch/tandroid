@@ -1,8 +1,6 @@
 package gb;
 
-import org.telegram.messenger.BuildConfig;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class a1 extends db.u {
     @Override // db.u
@@ -17,6 +15,6 @@ public class a1 extends db.u {
     @Override // db.u
     public final void write(lb.b bVar, Object obj) {
         Boolean bool = (Boolean) obj;
-        bVar.r(bool == null ? BuildConfig.BETA_URL : bool.toString());
+        bVar.r(bool == null ? "null" : bool.toString());
     }
 }

@@ -1,132 +1,95 @@
 package ei;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotFullscreenButtons;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserObject;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class b3 extends q4 {
-    public final /* synthetic */ int c0;
-    public final /* synthetic */ Object d0;
+public final class b3 extends org.telegram.ui.web.b1 {
+    public final /* synthetic */ int S0;
+    public final /* synthetic */ Object T0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b3(Object obj, Context context, int i10) {
-        super(context);
-        this.c0 = i10;
-        this.d0 = obj;
+    public /* synthetic */ b3(int i10, int i11, Context context, Object obj, e6 e6Var) {
+        super(i10, context, e6Var, true);
+        this.S0 = i11;
+        this.T0 = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x009a  */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        float f7;
-        int size;
-        switch (this.c0) {
+    @Override // org.telegram.ui.web.b1
+    public void D(boolean z10, String str) {
+        switch (this.S0) {
             case 0:
-                l3 l3Var = (l3) this.d0;
-                h3 h3Var = l3Var.l0;
-                int size2 = View.MeasureSpec.getSize(i11);
-                if (!AndroidUtilities.isTablet()) {
-                    Point point = AndroidUtilities.displaySize;
-                    if (point.x > point.y) {
-                        i12 = (int) (size2 / 3.5f);
-                        if (i12 < 0) {
-                            i12 = 0;
-                        }
-                        f7 = i12;
-                        if (getOffsetY() != f7 && !l3Var.c0 && l3Var.Q0) {
-                            l3Var.F = true;
-                            setOffsetY(f7);
-                            l3Var.F = false;
-                            l3Var.Q0 = false;
-                        }
-                        if (!l3Var.d0 && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
-                            Point point2 = AndroidUtilities.displaySize;
-                            i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point2.x, point2.y) * 0.8f), TLObject.FLAG_30);
-                        }
-                        size = View.MeasureSpec.getSize(i11);
-                        if (!l3Var.d0) {
-                            size = (size - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                        }
-                        if (h3Var != null && h3Var.getTotalHeight() > 0) {
-                            size -= h3Var.getTotalHeight();
-                        }
-                        super.onMeasure(i10, bi.B(24.0f, size, TLObject.FLAG_30));
-                        break;
+                k3 k3Var = (k3) this.T0;
+                Paint paint = k3Var.P;
+                if (z10) {
+                    k3Var.i();
+                    k3Var.U0.a(k3Var.m() ? k3Var.v0.e : UserObject.getUserName(MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H))), str);
+                    k3Var.U0.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
+                    k3Var.U0.setBackgroundColor(paint.getColor());
+                    k3Var.T0 = str;
+                }
+                org.telegram.ui.d3 d3Var = k3Var.U0;
+                k3Var.S0 = z10;
+                AndroidUtilities.updateViewVisibilityAnimated(d3Var, z10, 1.0f, false);
+                invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.web.b1
+    public final void J(org.telegram.ui.web.y0 y0Var) {
+        switch (this.S0) {
+            case 0:
+                k3 k3Var = (k3) this.T0;
+                k3Var.v.setWebView(y0Var);
+                a1 a1Var = k3Var.B0;
+                if (a1Var != null) {
+                    a1Var.k = y0Var;
+                }
+                k3Var.m0.setWebView(y0Var);
+                k3Var.G();
+                break;
+            default:
+                ((p4) this.T0).J.setWebView(y0Var);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.web.b1
+    public void K(org.telegram.ui.web.y0 y0Var) {
+        switch (this.S0) {
+            case 0:
+                k3 k3Var = (k3) this.T0;
+                a1 a1Var = k3Var.B0;
+                if (a1Var != null && a1Var.k == y0Var) {
+                    a1Var.k = null;
+                    a1Var.b();
+                }
+                k3Var.m0.setWebView(null);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.S0) {
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    p4 p4Var = (p4) this.T0;
+                    if (!p4Var.P) {
+                        p4Var.P = true;
+                        p4Var.n.Q();
                     }
                 }
-                i12 = (size2 / 5) * 2;
-                if (i12 < 0) {
-                }
-                f7 = i12;
-                if (getOffsetY() != f7) {
-                    l3Var.F = true;
-                    setOffsetY(f7);
-                    l3Var.F = false;
-                    l3Var.Q0 = false;
-                }
-                if (!l3Var.d0) {
-                    Point point22 = AndroidUtilities.displaySize;
-                    i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point22.x, point22.y) * 0.8f), TLObject.FLAG_30);
-                }
-                size = View.MeasureSpec.getSize(i11);
-                if (!l3Var.d0) {
-                }
-                if (h3Var != null) {
-                    size -= h3Var.getTotalHeight();
-                }
-                super.onMeasure(i10, bi.B(24.0f, size, TLObject.FLAG_30));
+                return super.dispatchTouchEvent(motionEvent);
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i11) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(84.0f)) + ((r4) this.d0).N, TLObject.FLAG_30));
-                break;
-        }
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.c0) {
-            case 0:
-                if (!((l3) this.d0).F) {
-                    super.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.requestLayout();
-                break;
-        }
-    }
-
-    @Override // ei.q4, android.view.View
-    public void setTranslationY(float f7) {
-        switch (this.c0) {
-            case 0:
-                super.setTranslationY(f7);
-                l3 l3Var = (l3) this.d0;
-                BotFullscreenButtons botFullscreenButtons = l3Var.m0;
-                if (botFullscreenButtons != null) {
-                    botFullscreenButtons.setTranslationY(AndroidUtilities.dp(24.0f) + f7);
-                }
-                FrameLayout frameLayout = l3Var.p0;
-                if (frameLayout != null) {
-                    frameLayout.setTranslationY(l3Var.v.getTranslationY() + AndroidUtilities.lerp(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - AndroidUtilities.dp(24.0f), AndroidUtilities.dp(70.0f) + l3Var.h.top, l3Var.f0));
-                    break;
-                }
-                break;
-            default:
-                super.setTranslationY(f7);
-                break;
+                return super.dispatchTouchEvent(motionEvent);
         }
     }
 }

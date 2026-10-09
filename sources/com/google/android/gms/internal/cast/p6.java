@@ -1,53 +1,48 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p6 extends AbstractList implements RandomAccess, q5 {
-    public final p5 a;
-
-    public p6(p5 p5Var) {
-        this.a = p5Var;
+public final class p6 extends r6 {
+    @Override // com.google.android.gms.internal.cast.r6
+    public final double a(Object obj, long j3) {
+        return Double.longBitsToDouble(this.a.getLong(obj, j3));
     }
 
-    @Override // com.google.android.gms.internal.cast.q5
-    public final Object c(int i10) {
-        return this.a.b.get(i10);
+    @Override // com.google.android.gms.internal.cast.r6
+    public final float b(Object obj, long j3) {
+        return Float.intBitsToFloat(this.a.getInt(obj, j3));
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        return this.a.get(i10);
+    @Override // com.google.android.gms.internal.cast.r6
+    public final void c(Object obj, long j3, boolean z10) {
+        if (s6.g) {
+            s6.c(obj, j3, z10 ? (byte) 1 : (byte) 0);
+        } else {
+            s6.d(obj, j3, z10 ? (byte) 1 : (byte) 0);
+        }
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new o6(this);
+    @Override // com.google.android.gms.internal.cast.r6
+    public final void d(Object obj, long j3, byte b10) {
+        if (s6.g) {
+            s6.c(obj, j3, b10);
+        } else {
+            s6.d(obj, j3, b10);
+        }
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new n6(this, i10);
+    @Override // com.google.android.gms.internal.cast.r6
+    public final void e(Object obj, long j3, double d) {
+        this.a.putLong(obj, j3, Double.doubleToLongBits(d));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.b.size();
+    @Override // com.google.android.gms.internal.cast.r6
+    public final void f(Object obj, long j3, float f7) {
+        this.a.putInt(obj, j3, Float.floatToIntBits(f7));
     }
 
-    @Override // com.google.android.gms.internal.cast.q5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
-
-    @Override // com.google.android.gms.internal.cast.q5
-    public final q5 zzd() {
-        return this;
+    @Override // com.google.android.gms.internal.cast.r6
+    public final boolean g(Object obj, long j3) {
+        return s6.g ? s6.m(obj, j3) : s6.n(obj, j3);
     }
 }

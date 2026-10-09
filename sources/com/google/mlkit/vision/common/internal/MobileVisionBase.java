@@ -9,15 +9,16 @@ import com.google.android.gms.tasks.Tasks;
 import java.io.Closeable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
-import lf.g;
+import mf.g;
 import qb.e;
+import u4.f;
 import wb.a;
 import wb.d;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, s {
-    public static final g e = new g("MobileVisionBase", "");
+    public static final g e = new g(1, "MobileVisionBase", "");
     public final AtomicBoolean a = new AtomicBoolean(false);
     public final e b;
     public final CancellationTokenSource c;
@@ -49,6 +50,6 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         if (aVar.b < 32 || aVar.c < 32) {
             return Tasks.forException(new mb.a("InputImage width and height should be at least 32!", 3));
         }
-        return this.b.a(this.d, new u4.g(this, aVar), this.c.getToken());
+        return this.b.a(this.d, new f(this, aVar), this.c.getToken());
     }
 }

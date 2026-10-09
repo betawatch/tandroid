@@ -3,14 +3,13 @@ package l2;
 import android.os.Handler;
 import android.os.Message;
 import e2.d0;
-import ii.n4;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p implements Handler.Callback {
     public final y2.d a;
-    public final n4 b;
+    public final f b;
     public m2.c f;
     public boolean h;
     public boolean n;
@@ -19,9 +18,9 @@ public final class p implements Handler.Callback {
     public final Handler d = d0.o(this);
     public final m3.b c = new m3.b(1);
 
-    public p(m2.c cVar, n4 n4Var, y2.d dVar) {
+    public p(m2.c cVar, f fVar, y2.d dVar) {
         this.f = cVar;
-        this.b = n4Var;
+        this.b = fVar;
         this.a = dVar;
     }
 

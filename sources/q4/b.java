@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public static final i f = new i(3);
@@ -89,19 +89,19 @@ public final class b {
             Arrays.sort(iArr4, i20, aVar.b + 1);
             a(i24, i20, aVar.b, iArr4);
             int i25 = aVar.c / 2;
-            int i26 = i20;
-            int i27 = 0;
+            int i26 = 0;
+            int i27 = i20;
             while (true) {
                 int i28 = aVar.b;
-                if (i26 > i28) {
+                if (i27 > i28) {
                     break;
                 }
-                i27 += iArr5[iArr4[i26]];
-                if (i27 >= i25) {
-                    i20 = Math.min(i28 - 1, i26);
+                i26 += iArr5[iArr4[i27]];
+                if (i26 >= i25) {
+                    i20 = Math.min(i28 - 1, i27);
                     break;
                 }
-                i26++;
+                i27++;
             }
             a aVar2 = new a(bVar, i20 + 1, aVar.b);
             aVar.b = i20;

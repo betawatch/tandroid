@@ -7,7 +7,6 @@ import b2.r0;
 import b2.s0;
 import e2.d0;
 import g2.u;
-import ii.n4;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
@@ -15,15 +14,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.web.w;
+import org.telegram.ui.a80;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements y2.g {
-    public static final w E = new w(3);
-    public final n4 a;
+    public static final a80 E = new a80(23);
+    public final m2.t a;
     public final s b;
-    public final qb.b c;
+    public final rb.a c;
     public a5.a f;
     public y2.l h;
     public Handler n;
@@ -36,10 +35,75 @@ public final class c implements y2.g {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(n4 n4Var, qb.b bVar, s sVar) {
-        this.a = n4Var;
+    public c(m2.t tVar, rb.a aVar, s sVar) {
+        this.a = tVar;
         this.b = sVar;
-        this.c = bVar;
+        this.c = aVar;
+    }
+
+    @Override // y2.g
+    public final void C(y2.i iVar, long j3, long j10, int i10) {
+        u2.t tVar;
+        y2.o oVar = (y2.o) iVar;
+        if (i10 == 0) {
+            long j11 = oVar.a;
+            tVar = new u2.t(oVar.b);
+        } else {
+            long j12 = oVar.a;
+            Uri uri = oVar.d.c;
+            tVar = new u2.t(j10);
+        }
+        this.f.u(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // y2.g
+    public final void F(y2.i iVar, long j3, long j10) {
+        o oVar;
+        y2.o oVar2 = (y2.o) iVar;
+        p pVar = (p) oVar2.f;
+        boolean z10 = pVar instanceof l;
+        if (z10) {
+            String str = pVar.a;
+            o oVar3 = o.n;
+            Uri parse = Uri.parse(str);
+            b2.r rVar = new b2.r();
+            rVar.a = "0";
+            rVar.p = r0.n("application/x-mpegURL");
+            List singletonList = Collections.singletonList(new n(parse, new b2.s(rVar), null, null, null, null));
+            List list = Collections.EMPTY_LIST;
+            oVar = new o("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
+        } else {
+            oVar = (o) pVar;
+        }
+        this.s = oVar;
+        this.v = ((n) oVar.e.get(0)).a;
+        this.e.add(new a(this));
+        List list2 = oVar.d;
+        int size = list2.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            Uri uri = (Uri) list2.get(i10);
+            this.d.put(uri, new b(this, uri));
+        }
+        Uri uri2 = oVar2.d.c;
+        u2.t tVar = new u2.t(j10);
+        b bVar = (b) this.d.get(this.v);
+        if (z10) {
+            bVar.f((l) pVar, tVar);
+        } else {
+            bVar.c(false);
+        }
+        this.c.getClass();
+        this.f.q(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // y2.g
+    public final void O0(y2.i iVar, long j3, long j10, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j11 = oVar.a;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        this.c.getClass();
+        this.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final l a(Uri uri, boolean z10) {
@@ -105,7 +169,7 @@ public final class c implements y2.g {
             return false;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long max = Math.max(30000L, d0.e0(bVar.d.u));
+        long max = Math.max(30000L, d0.d0(bVar.d.u));
         l lVar = bVar.d;
         return lVar.o || (i10 = lVar.d) == 2 || i10 == 1 || bVar.e + max > elapsedRealtime;
     }
@@ -117,7 +181,7 @@ public final class c implements y2.g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d y(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         y2.o oVar = (y2.o) iVar;
         long j12 = oVar.a;
@@ -133,79 +197,14 @@ public final class c implements y2.g {
             }
             j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             boolean z10 = j11 == -9223372036854775807L;
-            this.f.r(tVar, i11, iOException, z10);
+            this.f.s(tVar, i11, iOException, z10);
             return !z10 ? y2.l.f : new k4.d(0, j11, false);
         }
         j11 = -9223372036854775807L;
         if (j11 == -9223372036854775807L) {
         }
-        this.f.r(tVar, i11, iOException, z10);
+        this.f.s(tVar, i11, iOException, z10);
         if (!z10) {
         }
-    }
-
-    @Override // y2.g
-    public final void x(y2.i iVar, long j3, long j10, int i10) {
-        u2.t tVar;
-        y2.o oVar = (y2.o) iVar;
-        if (i10 == 0) {
-            long j11 = oVar.a;
-            tVar = new u2.t(oVar.b);
-        } else {
-            long j12 = oVar.a;
-            Uri uri = oVar.d.c;
-            tVar = new u2.t(j10);
-        }
-        this.f.s(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
-    }
-
-    @Override // y2.g
-    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        this.c.getClass();
-        this.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    @Override // y2.g
-    public final void y(y2.i iVar, long j3, long j10) {
-        o oVar;
-        y2.o oVar2 = (y2.o) iVar;
-        p pVar = (p) oVar2.f;
-        boolean z10 = pVar instanceof l;
-        if (z10) {
-            String str = pVar.a;
-            o oVar3 = o.n;
-            Uri parse = Uri.parse(str);
-            b2.r rVar = new b2.r();
-            rVar.a = "0";
-            rVar.p = r0.n("application/x-mpegURL");
-            List singletonList = Collections.singletonList(new n(parse, new b2.s(rVar), null, null, null, null));
-            List list = Collections.EMPTY_LIST;
-            oVar = new o("", list, singletonList, list, list, list, list, null, null, false, Collections.EMPTY_MAP, list);
-        } else {
-            oVar = (o) pVar;
-        }
-        this.s = oVar;
-        this.v = ((n) oVar.e.get(0)).a;
-        this.e.add(new a(this));
-        List list2 = oVar.d;
-        int size = list2.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            Uri uri = (Uri) list2.get(i10);
-            this.d.put(uri, new b(this, uri));
-        }
-        Uri uri2 = oVar2.d.c;
-        u2.t tVar = new u2.t(j10);
-        b bVar = (b) this.d.get(this.v);
-        if (z10) {
-            bVar.f((l) pVar, tVar);
-        } else {
-            bVar.c(false);
-        }
-        this.c.getClass();
-        this.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

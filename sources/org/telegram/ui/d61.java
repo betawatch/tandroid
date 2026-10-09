@@ -1,26 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class d61 extends FrameLayout {
-    public FrameLayout a;
-    public org.telegram.ui.Cells.u3 b;
-    public rg.q0 c;
-    public String d;
-    public ValueAnimator e;
-    public float f;
-    public Boolean h;
-    public ValueAnimator n;
+public final class d61 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ k71 c;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+    public /* synthetic */ d61(k71 k71Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = k71Var;
+        this.b = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        switch (this.a) {
+            case 0:
+                k71 k71Var = this.c;
+                x51 x51Var = k71Var.i0;
+                boolean z10 = this.b;
+                x51Var.setVisibility(z10 ? 0 : 8);
+                k71Var.h0.setVisibility(z10 ? 8 : 0);
+                k71Var.E1 = null;
+                if (!z10 && (arrayList2 = k71Var.A1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = k71Var.D1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    k71Var.q0.E(false);
+                }
+                if (!z10 && (arrayList = k71Var.B1) != null) {
+                    arrayList.clear();
+                    break;
+                }
+                break;
+            default:
+                k71 k71Var2 = this.c;
+                k71Var2.j0.setVisibility((this.b && k71Var2.i0.getVisibility() == 0) ? 0 : 8);
+                k71Var2.H1 = null;
+                break;
+        }
     }
 }

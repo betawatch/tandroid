@@ -1,128 +1,113 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class dt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+public final class dt0 extends s4.z0 {
+    public final float k;
+    public final LinearInterpolator i = new LinearInterpolator();
+    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
+    public int l = 0;
+    public int m = 0;
 
-    public /* synthetic */ dt0(PhotoViewer photoViewer, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
+    public dt0(Context context) {
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.Components.xi xiVar;
-        int i10 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                photoViewer.p6 = null;
-                org.telegram.ui.Components.gf0 gf0Var = photoViewer.C1;
-                if (gf0Var != null) {
-                    if (gf0Var.b.j()) {
-                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.i6.zf), PorterDuff.Mode.MULTIPLY));
-                    } else {
-                        photoViewer.a1.setColorFilter((ColorFilter) null);
-                    }
-                    photoViewer.g6 = 0.0f;
-                    photoViewer.e0.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                photoViewer.t3 = null;
-                break;
-            case 2:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.g3();
-                break;
-            case 3:
-                photoViewer.L1.o0(false);
-                vt0 vt0Var = photoViewer.L1;
-                vt0Var.u1.setTypeface(pg.u0.e(vt0Var.P1).j);
-                vt0Var.Z0.setVisibility(0);
-                vt0Var.W0.setVisibility(0);
-                vt0Var.X0.setVisibility(0);
-                org.telegram.ui.Components.sd0 sd0Var = photoViewer.y4;
-                int childCount = sd0Var.getChildCount();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    sd0Var.getChildAt(i11).setVisibility(4);
-                }
-                photoViewer.p6 = null;
-                photoViewer.u4 = 3;
-                photoViewer.f1().L.b(photoViewer.u4 != 0);
-                ci.i4 i4Var = photoViewer.K1;
-                if (i4Var != null) {
-                    i4Var.b(photoViewer.u4 != 3);
-                }
-                photoViewer.o6 = -1;
-                float r22 = photoViewer.r2(false);
-                photoViewer.a6 = r22;
-                photoViewer.e6 = r22;
-                photoViewer.c6 = 0.0f;
-                photoViewer.d6 = 0.0f;
-                photoViewer.w3(r22);
-                photoViewer.t2 = true;
-                photoViewer.e0.invalidate();
-                wu0 wu0Var = photoViewer.d;
-                if (wu0Var == null || !wu0Var.O()) {
-                    photoViewer.S1();
-                    break;
-                }
-                break;
-            case 4:
-                AnimatorSet animatorSet = photoViewer.B1;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    photoViewer.o1.setVisibility(8);
-                    photoViewer.B1 = null;
-                    break;
-                }
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new nl0(this, 21));
-                break;
-            case 6:
-                photoViewer.m6 = 1.0f;
-                Runnable runnable = photoViewer.p4;
-                if (runnable != null) {
-                    yn ynVar = photoViewer.l4;
-                    if (ynVar == null && (xiVar = photoViewer.a2) != null) {
-                        org.telegram.ui.ActionBar.n2 n2Var = xiVar.f0;
-                        if (n2Var instanceof yn) {
-                            ynVar = (yn) n2Var;
-                        }
-                    }
-                    if (ynVar != null) {
-                        ynVar.h8(runnable);
-                        break;
-                    } else {
-                        runnable.run();
-                        photoViewer.p4 = null;
-                        break;
-                    }
-                }
-                break;
-            case 7:
-                photoViewer.p6 = null;
-                photoViewer.e0.invalidate();
-                break;
-            case 8:
-                photoViewer.y3[0].setTag(null);
-                break;
-            default:
-                photoViewer.y3[0].setTag(null);
-                break;
+    @Override // s4.z0
+    public final PointF a(int i10) {
+        s4.p0 p0Var = this.c;
+        if (p0Var instanceof s4.d0) {
+            return ((s4.d0) p0Var).E0(i10);
         }
+        return null;
+    }
+
+    @Override // s4.z0
+    public final void d(int i10, int i11, s4.y0 y0Var) {
+        if (this.b.x.r() == 0) {
+            h();
+            return;
+        }
+        int i12 = this.l;
+        int i13 = i12 - i10;
+        if (i12 * i13 <= 0) {
+            i13 = 0;
+        }
+        this.l = i13;
+        int i14 = this.m;
+        int i15 = i14 - i11;
+        int i16 = i14 * i15 > 0 ? i15 : 0;
+        this.m = i16;
+        if (i13 == 0 && i16 == 0) {
+            PointF a2 = a(this.a);
+            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+                y0Var.d = this.a;
+                h();
+            } else {
+                s4.z0.b(a2);
+                this.l = (int) (a2.x * 10000.0f);
+                this.m = (int) (a2.y * 10000.0f);
+                y0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
+            }
+        }
+    }
+
+    @Override // s4.z0
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
+    
+        if (r4 < 0) goto L16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // s4.z0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.y0 y0Var) {
+        int i10;
+        int max;
+        s4.p0 p0Var = this.c;
+        if (p0Var != null && p0Var.d()) {
+            s4.q0 q0Var = (s4.q0) view.getLayoutParams();
+            int x10 = s4.p0.x(view) - ((ViewGroup.MarginLayoutParams) q0Var).leftMargin;
+            int y3 = s4.p0.y(view) + ((ViewGroup.MarginLayoutParams) q0Var).rightMargin;
+            int D = p0Var.D();
+            int E = p0Var.m - p0Var.E();
+            if (x10 <= D || y3 >= E) {
+                int i11 = y3 - x10;
+                int i12 = (E - D) - i11;
+                int i13 = i11 + i12;
+                i10 = i12 - x10;
+                if (i10 <= 0) {
+                    i10 = i13 - y3;
+                }
+                max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+                if (max <= 0) {
+                    y0Var.b(-i10, 0, Math.max(400, max), this.j);
+                    return;
+                }
+                return;
+            }
+        }
+        i10 = 0;
+        max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+        if (max <= 0) {
+        }
+    }
+
+    @Override // s4.z0
+    public final void e() {
     }
 }

@@ -1,6 +1,6 @@
 package b2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class z {
     public static final z i = new z(new y());
@@ -22,8 +22,8 @@ public class z {
     public final boolean h;
 
     public z(y yVar) {
-        this.a = e2.d0.e0(yVar.a);
-        this.c = e2.d0.e0(yVar.b);
+        this.a = e2.d0.d0(yVar.a);
+        this.c = e2.d0.d0(yVar.b);
         this.b = yVar.a;
         this.d = yVar.b;
         this.e = yVar.c;
@@ -47,6 +47,6 @@ public class z {
         long j3 = this.b;
         int i10 = ((int) (j3 ^ (j3 >>> 32))) * 31;
         long j10 = this.d;
-        return ((((((((i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31) + (this.e ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0);
+        return ((((((((i10 + ((int) ((j10 >>> 32) ^ j10))) * 31) + (this.e ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0);
     }
 }

@@ -1,100 +1,66 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.R;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xc {
-    public static final xc E;
-    public static final xc F;
-    public static final xc G;
-    public static final xc H;
-    public static final xc I;
-    public static final /* synthetic */ xc[] J;
-    public static final xc e;
-    public static final xc f;
-    public static final xc h;
-    public static final xc n;
-    public static final xc r;
-    public static final xc s;
-    public static final xc v;
-    public static final xc w;
-    public static final xc x;
-    public static final xc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final wc d;
+public final class xc extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    static {
-        int i10 = R.string.PhotoSavedHint;
-        wc wcVar = wc.e;
-        xc xcVar = new xc("PHOTO", 0, "PhotoSavedHint", i10, wcVar);
-        e = xcVar;
-        xc xcVar2 = new xc("PHOTOS", 1, "PhotosSavedHint", wcVar);
-        f = xcVar2;
-        xc xcVar3 = new xc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, wcVar);
-        h = xcVar3;
-        xc xcVar4 = new xc("VIDEOS", 3, "VideosSavedHint", wcVar);
-        n = xcVar4;
-        xc xcVar5 = new xc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, wcVar);
-        r = xcVar5;
-        xc xcVar6 = new xc("LIVEPHOTOS", 5, "LivePhotosSavedHint", wcVar);
-        s = xcVar6;
-        xc xcVar7 = new xc("MEDIA", 6, "MediaSavedHint", wcVar);
-        v = xcVar7;
-        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
-        wc wcVar2 = wc.d;
-        xc xcVar8 = new xc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, wcVar2);
-        w = xcVar8;
-        xc xcVar9 = new xc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, wcVar2);
-        x = xcVar9;
-        xc xcVar10 = new xc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, wc.h);
-        y = xcVar10;
-        xc xcVar11 = new xc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, wcVar2);
-        E = xcVar11;
-        int i12 = R.string.AudioSavedHint;
-        wc wcVar3 = wc.f;
-        xc xcVar12 = new xc("AUDIO", 11, "AudioSavedHint", i12, wcVar3);
-        F = xcVar12;
-        xc xcVar13 = new xc("AUDIOS", 12, "AudiosSavedHint", wcVar3);
-        G = xcVar13;
-        xc xcVar14 = new xc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, wcVar2);
-        H = xcVar14;
-        xc xcVar15 = new xc("UNKNOWNS", 14, "FilesSavedHintLinked", wcVar2);
-        I = xcVar15;
-        J = new xc[]{xcVar, xcVar2, xcVar3, xcVar4, xcVar5, xcVar6, xcVar7, xcVar8, xcVar9, xcVar10, xcVar11, xcVar12, xcVar13, xcVar14, xcVar15};
+    public /* synthetic */ xc(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    public xc(String str, int i10, String str2, int i11, wc wcVar) {
-        this.a = str2;
-        this.b = i11;
-        this.d = wcVar;
-        this.c = false;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 2:
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
+            default:
+                Runnable runnable3 = this.b;
+                if (runnable3 != null) {
+                    runnable3.run();
+                    break;
+                }
+                break;
+        }
     }
 
-    public static xc valueOf(String str) {
-        return (xc) Enum.valueOf(xc.class, str);
-    }
-
-    public static xc[] values() {
-        return (xc[]) J.clone();
-    }
-
-    public xc(String str, int i10, String str2, wc wcVar) {
-        this.a = str2;
-        this.d = wcVar;
-        this.b = 0;
-        this.c = true;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 1:
+                textPaint.setUnderlineText(false);
+                break;
+            case 2:
+                textPaint.setUnderlineText(false);
+                break;
+            default:
+                textPaint.setUnderlineText(false);
+                break;
+        }
     }
 }

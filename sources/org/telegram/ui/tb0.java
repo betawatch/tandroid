@@ -10,15 +10,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class tb0 extends org.telegram.ui.Cells.j3 {
     public boolean x;
     public final /* synthetic */ vb0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tb0(vb0 vb0Var, Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, str, false, false, -1, d6Var);
+    public tb0(vb0 vb0Var, Context context, String str, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, str, false, false, -1, e6Var);
         this.y = vb0Var;
     }
 

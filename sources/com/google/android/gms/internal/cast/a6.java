@@ -1,185 +1,75 @@
 package com.google.android.gms.internal.cast;
 
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
-import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a6 {
-    public static final char[] a;
+public final class a6 implements h6 {
+    public final t4 a;
+    public final k6 b;
+    public final a5 c;
 
-    static {
-        char[] cArr = new char[80];
-        a = cArr;
-        Arrays.fill(cArr, ' ');
+    public a6(k6 k6Var, a5 a5Var, t4 t4Var) {
+        this.b = k6Var;
+        this.c = a5Var;
+        this.a = t4Var;
     }
 
-    public static void a(StringBuilder sb2, int i10, String str, Object obj) {
-        if (obj instanceof List) {
-            Iterator it = ((List) obj).iterator();
-            while (it.hasNext()) {
-                a(sb2, i10, str, it.next());
-            }
-            return;
+    @Override // com.google.android.gms.internal.cast.h6
+    public final void a(Object obj) {
+        this.b.getClass();
+        j6 j6Var = ((f5) obj).zzc;
+        if (j6Var.d) {
+            j6Var.d = false;
         }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                a(sb2, i10, str, (Map.Entry) it2.next());
-            }
-            return;
-        }
-        sb2.append('\n');
-        b(i10, sb2);
-        if (!str.isEmpty()) {
-            StringBuilder sb3 = new StringBuilder();
-            sb3.append(Character.toLowerCase(str.charAt(0)));
-            for (int i11 = 1; i11 < str.length(); i11++) {
-                char charAt = str.charAt(i11);
-                if (Character.isUpperCase(charAt)) {
-                    sb3.append("_");
-                }
-                sb3.append(Character.toLowerCase(charAt));
-            }
-            str = sb3.toString();
-        }
-        sb2.append(str);
-        if (obj instanceof String) {
-            sb2.append(": \"");
-            sb2.append(v7.t5.a(new z4(((String) obj).getBytes(n5.a))));
-            sb2.append('\"');
-            return;
-        }
-        if (obj instanceof z4) {
-            sb2.append(": \"");
-            sb2.append(v7.t5.a((z4) obj));
-            sb2.append('\"');
-            return;
-        }
-        if (obj instanceof h5) {
-            sb2.append(" {");
-            c((h5) obj, sb2, i10 + 2);
-            sb2.append("\n");
-            b(i10, sb2);
-            sb2.append("}");
-            return;
-        }
-        if (!(obj instanceof Map.Entry)) {
-            sb2.append(": ");
-            sb2.append(obj);
-            return;
-        }
-        int i12 = i10 + 2;
-        sb2.append(" {");
-        Map.Entry entry = (Map.Entry) obj;
-        a(sb2, i12, "key", entry.getKey());
-        a(sb2, i12, "value", entry.getValue());
-        sb2.append("\n");
-        b(i10, sb2);
-        sb2.append("}");
+        throw a1.g.j(obj);
     }
 
-    public static void b(int i10, StringBuilder sb2) {
-        while (i10 > 0) {
-            int i11 = 80;
-            if (i10 <= 80) {
-                i11 = i10;
-            }
-            sb2.append(a, 0, i11);
-            i10 -= i11;
-        }
+    @Override // com.google.android.gms.internal.cast.h6
+    public final int b(f5 f5Var) {
+        this.b.getClass();
+        f5Var.zzc.getClass();
+        return 506991;
     }
 
-    public static void c(h5 h5Var, StringBuilder sb2, int i10) {
-        int i11;
-        boolean equals;
-        Method method;
-        Method method2;
-        HashSet hashSet = new HashSet();
-        HashMap hashMap = new HashMap();
-        TreeMap treeMap = new TreeMap();
-        Method[] declaredMethods = h5Var.getClass().getDeclaredMethods();
-        int length = declaredMethods.length;
-        int i12 = 0;
-        while (true) {
-            i11 = 3;
-            if (i12 >= length) {
-                break;
-            }
-            Method method3 = declaredMethods[i12];
-            if (!Modifier.isStatic(method3.getModifiers()) && method3.getName().length() >= 3) {
-                if (method3.getName().startsWith("set")) {
-                    hashSet.add(method3.getName());
-                } else if (Modifier.isPublic(method3.getModifiers()) && method3.getParameterTypes().length == 0) {
-                    if (method3.getName().startsWith("has")) {
-                        hashMap.put(method3.getName(), method3);
-                    } else if (method3.getName().startsWith("get")) {
-                        treeMap.put(method3.getName(), method3);
-                    }
-                }
-            }
-            i12++;
+    @Override // com.google.android.gms.internal.cast.h6
+    public final boolean c(f5 f5Var, f5 f5Var2) {
+        this.b.getClass();
+        return f5Var.zzc.equals(f5Var2.zzc);
+    }
+
+    @Override // com.google.android.gms.internal.cast.h6
+    public final void d(Object obj, Object obj2) {
+        i6.o(this.b, obj, obj2);
+    }
+
+    @Override // com.google.android.gms.internal.cast.h6
+    public final void e(Object obj, u5 u5Var) {
+        this.c.getClass();
+        a1.g.z(obj);
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.cast.h6
+    public final boolean f(Object obj) {
+        this.c.getClass();
+        a1.g.z(obj);
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.cast.h6
+    public final int g(t4 t4Var) {
+        this.b.getClass();
+        j6 j6Var = ((f5) t4Var).zzc;
+        int i10 = j6Var.c;
+        if (i10 != -1) {
+            return i10;
         }
-        for (Map.Entry entry : treeMap.entrySet()) {
-            String substring = ((String) entry.getKey()).substring(i11);
-            if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null && method2.getReturnType().equals(List.class)) {
-                a(sb2, i10, substring.substring(0, substring.length() - 4), h5.c(method2, h5Var, new Object[0]));
-            } else if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                a(sb2, i10, substring.substring(0, substring.length() - 3), h5.c(method, h5Var, new Object[0]));
-            } else if (hashSet.contains("set".concat(substring)) && (!substring.endsWith("Bytes") || !treeMap.containsKey("get".concat(String.valueOf(substring.substring(0, substring.length() - 5)))))) {
-                Method method4 = (Method) entry.getValue();
-                Method method5 = (Method) hashMap.get("has".concat(substring));
-                if (method4 != null) {
-                    Object c10 = h5.c(method4, h5Var, new Object[0]);
-                    if (method5 != null) {
-                        if (!((Boolean) h5.c(method5, h5Var, new Object[0])).booleanValue()) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    } else if (c10 instanceof Boolean) {
-                        if (!((Boolean) c10).booleanValue()) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    } else if (c10 instanceof Integer) {
-                        if (((Integer) c10).intValue() == 0) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    } else if (c10 instanceof Float) {
-                        if (Float.floatToRawIntBits(((Float) c10).floatValue()) == 0) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    } else if (c10 instanceof Double) {
-                        if (Double.doubleToRawLongBits(((Double) c10).doubleValue()) == 0) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    } else {
-                        if (c10 instanceof String) {
-                            equals = c10.equals("");
-                        } else if (c10 instanceof z4) {
-                            equals = c10.equals(z4.c);
-                        } else if (c10 instanceof v4) {
-                            if (c10 == ((h5) ((h5) ((v4) c10)).h(6, null))) {
-                            }
-                            a(sb2, i10, substring, c10);
-                        } else {
-                            if ((c10 instanceof Enum) && ((Enum) c10).ordinal() == 0) {
-                            }
-                            a(sb2, i10, substring, c10);
-                        }
-                        if (equals) {
-                        }
-                        a(sb2, i10, substring, c10);
-                    }
-                }
-            }
-            i11 = 3;
-        }
+        j6Var.c = 0;
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.cast.h6
+    public final f5 zzc() {
+        t4 t4Var = this.a;
+        return t4Var instanceof f5 ? (f5) ((f5) t4Var).h(4, null) : ((e5) ((f5) t4Var).h(5, null)).b();
     }
 }

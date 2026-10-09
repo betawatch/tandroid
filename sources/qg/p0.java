@@ -9,7 +9,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class p0 extends i {
     public final /* synthetic */ int n = 2;
@@ -33,10 +33,10 @@ public final class p0 extends i {
                 float f11 = dp + dp2;
                 float f12 = f11 * 2.0f;
                 float measuredWidth = getMeasuredWidth() - f12;
-                float A = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f12, 2.0f, f11);
-                if (f7 <= f11 - dp2 || f10 <= A - dp2 || f7 >= f11 + dp2 || f10 >= A + dp2) {
+                float z10 = com.google.android.gms.internal.vision.e2.z(getMeasuredHeight(), f12, 2.0f, f11);
+                if (f7 <= f11 - dp2 || f10 <= z10 - dp2 || f7 >= f11 + dp2 || f10 >= z10 + dp2) {
                     float f13 = f11 + measuredWidth;
-                    if (f7 <= f13 - dp2 || f10 <= A - dp2 || f7 >= f13 + dp2 || f10 >= A + dp2) {
+                    if (f7 <= f13 - dp2 || f10 <= z10 - dp2 || f7 >= f13 + dp2 || f10 >= z10 + dp2) {
                     }
                 }
                 break;
@@ -46,10 +46,10 @@ public final class p0 extends i {
                 float f14 = dp3 + dp4;
                 float f15 = f14 * 2.0f;
                 float measuredWidth2 = getMeasuredWidth() - f15;
-                float A2 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f15, 2.0f, f14);
-                if (f7 <= f14 - dp4 || f10 <= A2 - dp4 || f7 >= f14 + dp4 || f10 >= A2 + dp4) {
+                float z11 = com.google.android.gms.internal.vision.e2.z(getMeasuredHeight(), f15, 2.0f, f14);
+                if (f7 <= f14 - dp4 || f10 <= z11 - dp4 || f7 >= f14 + dp4 || f10 >= z11 + dp4) {
                     float f16 = f14 + measuredWidth2;
-                    if (f7 <= f16 - dp4 || f10 <= A2 - dp4 || f7 >= f16 + dp4 || f10 >= A2 + dp4) {
+                    if (f7 <= f16 - dp4 || f10 <= z11 - dp4 || f7 >= f16 + dp4 || f10 >= z11 + dp4) {
                     }
                 }
                 break;
@@ -91,10 +91,10 @@ public final class p0 extends i {
                 float f25 = dp9 + dp10;
                 float f26 = f25 * 2.0f;
                 float measuredWidth5 = getMeasuredWidth() - f26;
-                float A3 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f26, 2.0f, f25);
-                if (f7 <= f25 - dp10 || f10 <= A3 - dp10 || f7 >= f25 + dp10 || f10 >= A3 + dp10) {
+                float z12 = com.google.android.gms.internal.vision.e2.z(getMeasuredHeight(), f26, 2.0f, f25);
+                if (f7 <= f25 - dp10 || f10 <= z12 - dp10 || f7 >= f25 + dp10 || f10 >= z12 + dp10) {
                     float f27 = f25 + measuredWidth5;
-                    if (f7 <= f27 - dp10 || f10 <= A3 - dp10 || f7 >= f27 + dp10 || f10 >= A3 + dp10) {
+                    if (f7 <= f27 - dp10 || f10 <= z12 - dp10 || f7 >= f27 + dp10 || f10 >= z12 + dp10) {
                     }
                 }
                 break;
@@ -104,10 +104,10 @@ public final class p0 extends i {
                 float f28 = dp11 + dp12;
                 float f29 = f28 * 2.0f;
                 float measuredWidth6 = getMeasuredWidth() - f29;
-                float A4 = com.google.android.gms.internal.vision.e2.A(getMeasuredHeight(), f29, 2.0f, f28);
-                if (f7 <= f28 - dp12 || f10 <= A4 - dp12 || f7 >= f28 + dp12 || f10 >= A4 + dp12) {
+                float z13 = com.google.android.gms.internal.vision.e2.z(getMeasuredHeight(), f29, 2.0f, f28);
+                if (f7 <= f28 - dp12 || f10 <= z13 - dp12 || f7 >= f28 + dp12 || f10 >= z13 + dp12) {
                     float f30 = f28 + measuredWidth6;
-                    if (f7 <= f30 - dp12 || f10 <= A4 - dp12 || f7 >= f30 + dp12 || f10 >= A4 + dp12) {
+                    if (f7 <= f30 - dp12 || f10 <= z13 - dp12 || f7 >= f30 + dp12 || f10 >= z13 + dp12) {
                     }
                 }
                 break;
@@ -492,8 +492,8 @@ public final class p0 extends i {
         }
     }
 
-    public p0(w2 w2Var, Context context) {
-        super(w2Var, context);
+    public p0(x2 x2Var, Context context) {
+        super(x2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
@@ -508,16 +508,16 @@ public final class p0 extends i {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public p0(v2 v2Var, Context context) {
-        super(v2Var, context);
+    public p0(w2 w2Var, Context context) {
+        super(w2Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public p0(x1 x1Var, Context context) {
-        super(x1Var, context);
+    public p0(y1 y1Var, Context context) {
+        super(y1Var, context);
         Paint paint = new Paint(1);
         this.r = paint;
         this.s = new Path();

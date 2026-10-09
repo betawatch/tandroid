@@ -3,10 +3,10 @@ package k9;
 import android.content.Context;
 import android.text.TextUtils;
 import java.util.Arrays;
-import n4.y;
+import n4.x;
 import n6.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j {
     public final String a;
@@ -30,12 +30,12 @@ public final class j {
     }
 
     public static j a(Context context) {
-        of.b bVar = new of.b(context, 29);
-        String G = bVar.G("google_app_id");
-        if (TextUtils.isEmpty(G)) {
+        pf.b bVar = new pf.b(context, 28);
+        String K = bVar.K("google_app_id");
+        if (TextUtils.isEmpty(K)) {
             return null;
         }
-        return new j(G, bVar.G("google_api_key"), bVar.G("firebase_database_url"), bVar.G("ga_trackingId"), bVar.G("gcm_defaultSenderId"), bVar.G("google_storage_bucket"), bVar.G("project_id"));
+        return new j(K, bVar.K("google_api_key"), bVar.K("firebase_database_url"), bVar.K("ga_trackingId"), bVar.K("gcm_defaultSenderId"), bVar.K("google_storage_bucket"), bVar.K("project_id"));
     }
 
     public final boolean equals(Object obj) {
@@ -51,13 +51,13 @@ public final class j {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.m(this.b, "applicationId");
-        yVar.m(this.a, "apiKey");
-        yVar.m(this.c, "databaseUrl");
-        yVar.m(this.e, "gcmSenderId");
-        yVar.m(this.f, "storageBucket");
-        yVar.m(this.g, "projectId");
-        return yVar.toString();
+        x xVar = new x(this);
+        xVar.o(this.b, "applicationId");
+        xVar.o(this.a, "apiKey");
+        xVar.o(this.c, "databaseUrl");
+        xVar.o(this.e, "gcmSenderId");
+        xVar.o(this.f, "storageBucket");
+        xVar.o(this.g, "projectId");
+        return xVar.toString();
     }
 }

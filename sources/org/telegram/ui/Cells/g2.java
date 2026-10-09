@@ -10,25 +10,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class g2 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.i5 a;
+    public final org.telegram.ui.ActionBar.j5 a;
     public final ImageView b;
     public boolean c;
     public int d;
 
-    public g2(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public g2(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.d = i10;
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.a = i5Var;
-        i5Var.setTextSize(16);
-        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.a = j5Var;
+        j5Var.setTextSize(16);
+        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         int i11 = org.telegram.ui.ActionBar.i6.o6;
-        i5Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
-        i5Var.setTag(Integer.valueOf(i11));
-        addView(i5Var);
+        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
+        j5Var.setTag(Integer.valueOf(i11));
+        addView(j5Var);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -48,16 +48,16 @@ public final class g2 extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int dp;
         int i14 = i12 - i10;
-        org.telegram.ui.ActionBar.i5 i5Var = this.a;
-        int textHeight = ((i13 - i11) - i5Var.getTextHeight()) / 2;
+        org.telegram.ui.ActionBar.j5 j5Var = this.a;
+        int textHeight = ((i13 - i11) - j5Var.getTextHeight()) / 2;
         boolean z11 = LocaleController.isRTL;
         ImageView imageView = this.b;
         if (z11) {
-            dp = (getMeasuredWidth() - i5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? this.d : 25.0f);
+            dp = (getMeasuredWidth() - j5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? this.d : 25.0f);
         } else {
             dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? this.d : 25.0f);
         }
-        i5Var.layout(dp, textHeight, i5Var.getMeasuredWidth() + dp, i5Var.getMeasuredHeight() + textHeight);
+        j5Var.layout(dp, textHeight, j5Var.getMeasuredWidth() + dp, j5Var.getMeasuredHeight() + textHeight);
         int dp2 = !LocaleController.isRTL ? (AndroidUtilities.dp(this.d) - imageView.getMeasuredWidth()) / 2 : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(25.0f);
         imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }

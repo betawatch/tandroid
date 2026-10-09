@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -18,10 +17,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
-import n7.z0;
+import m.f3;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.og;
-import v7.d8;
+import org.telegram.ui.Components.pg;
+import v7.e8;
 import w7.j7;
 import w7.l9;
 import w7.la;
@@ -31,7 +30,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +39,7 @@ public final /* synthetic */ class v implements Runnable {
     public Object d;
 
     public /* synthetic */ v() {
-        this.a = 8;
+        this.a = 7;
     }
 
     private final void a() {
@@ -66,10 +65,10 @@ public final /* synthetic */ class v implements Runnable {
         String str;
         ua uaVar;
         la laVar = (la) this.b;
-        z0 z0Var = (z0) this.c;
+        n6.t tVar = (n6.t) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        v7.k kVar = (v7.k) z0Var.b;
+        v7.k kVar = (v7.k) tVar.b;
         kVar.c = j7Var;
         l9 l9Var = (l9) kVar.b;
         if (l9Var != null) {
@@ -79,19 +78,19 @@ public final /* synthetic */ class v implements Runnable {
             }
         }
         str = "NA";
-        d8 d8Var = new d8();
-        d8Var.a = laVar.a;
-        d8Var.b = laVar.b;
+        e8 e8Var = new e8();
+        e8Var.a = laVar.a;
+        e8Var.b = laVar.b;
         synchronized (la.class) {
             uaVar = la.j;
             if (uaVar == null) {
-                n0.c a2 = w7.b0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.y.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    lf.g gVar = qb.c.a;
+                    mf.g gVar = qb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -116,20 +115,21 @@ public final /* synthetic */ class v implements Runnable {
                 la.j = uaVar;
             }
         }
-        d8Var.k = uaVar;
-        d8Var.g = Boolean.TRUE;
-        d8Var.d = str;
-        d8Var.c = str2;
-        d8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
-        d8Var.i = 10;
-        d8Var.j = Integer.valueOf(laVar.h);
-        z0Var.c = d8Var;
-        laVar.c.a(z0Var);
+        e8Var.k = uaVar;
+        e8Var.g = Boolean.TRUE;
+        e8Var.d = str;
+        e8Var.c = str2;
+        e8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
+        e8Var.i = 10;
+        e8Var.j = Integer.valueOf(laVar.h);
+        tVar.c = e8Var;
+        laVar.c.a(tVar);
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         c6.f fVar;
+        int i10 = 24;
         Object obj = null;
         switch (this.a) {
             case 0:
@@ -141,7 +141,7 @@ public final /* synthetic */ class v implements Runnable {
                 jVar.a(hVar, iVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.d0) this.d);
+                super/*c5.c*/.c((a4.l) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((i) this.d, (j) this.c);
@@ -198,24 +198,21 @@ public final /* synthetic */ class v implements Runnable {
                 }
                 return;
             case 6:
-                g.f.b(((g.f) this.d).e, (View) this.b, (View) this.c);
-                return;
-            case 7:
                 a();
                 return;
-            case 8:
+            case 7:
                 try {
-                    obj = ((o0.f) this.b).call();
+                    obj = ((o0.e) this.b).call();
                 } catch (Exception unused2) {
                 }
-                ((Handler) this.d).post(new i9.s(20, (z) this.c, obj));
+                ((Handler) this.d).post(new i9.s(21, (z) this.c, obj));
+                return;
+            case 8:
+                ((pg) this.d).n((File) this.c, (ArrayList) this.b);
                 return;
             case 9:
-                ((og) this.d).n((File) this.c, (ArrayList) this.b);
-                return;
-            case 10:
-                u4.f fVar2 = (u4.f) this.d;
-                fVar2.d.c.remove((String) this.b);
+                u4.e eVar = (u4.e) this.d;
+                eVar.d.c.remove((String) this.b);
                 c0.l lVar2 = (c0.l) this.c;
                 if (lVar2.a instanceof c0.a) {
                     return;
@@ -224,10 +221,10 @@ public final /* synthetic */ class v implements Runnable {
                     lVar2.get();
                     return;
                 } catch (Exception e7) {
-                    fVar2.c.l(e7);
+                    eVar.c.l(e7);
                     return;
                 }
-            case 11:
+            case 10:
                 ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.d;
                 Bitmap bitmap = (Bitmap) this.b;
                 String str3 = (String) this.c;
@@ -257,9 +254,9 @@ public final /* synthetic */ class v implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e10) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
-                    throw new RuntimeException(sa.e.i("Unable to write bitmap to file ", str3), e10);
+                    throw new RuntimeException(sc.v.i("Unable to write bitmap to file ", str3), e10);
                 }
-            case 12:
+            case 11:
                 b();
                 return;
             default:
@@ -268,10 +265,10 @@ public final /* synthetic */ class v implements Runnable {
                 y8.e0 e0Var = (y8.e0) this.d;
                 Task<byte[]> onRequest = mVar.c.onRequest(k0Var.d, k0Var.b, k0Var.c);
                 if (onRequest == null) {
-                    x8.m.M0(e0Var, false, null);
+                    x8.m.L0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new l2.g(e0Var, 22));
+                    onRequest.addOnCompleteListener(new f3(e0Var, i10));
                     return;
                 }
         }
@@ -298,10 +295,10 @@ public final /* synthetic */ class v implements Runnable {
         this.c = obj3;
     }
 
-    public /* synthetic */ v(la laVar, z0 z0Var, String str) {
-        this.a = 12;
+    public /* synthetic */ v(la laVar, n6.t tVar, String str) {
+        this.a = 11;
         this.b = laVar;
-        this.c = z0Var;
+        this.c = tVar;
         this.d = str;
     }
 }

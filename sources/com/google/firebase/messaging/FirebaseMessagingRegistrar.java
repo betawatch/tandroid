@@ -5,9 +5,9 @@ import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.Arrays;
 import java.util.List;
-import w7.q8;
+import w7.o8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
@@ -16,7 +16,7 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(q9.b bVar) {
         k9.h hVar = (k9.h) bVar.a(k9.h.class);
         if (bVar.a(oa.a.class) == null) {
-            return new FirebaseMessaging(hVar, bVar.d(xa.b.class), bVar.d(na.f.class), (qa.d) bVar.a(qa.d.class), (i5.f) bVar.a(i5.f.class), (ma.b) bVar.a(ma.b.class));
+            return new FirebaseMessaging(hVar, bVar.c(xa.c.class), bVar.c(na.f.class), (qa.d) bVar.a(qa.d.class), (i5.f) bVar.a(i5.f.class), (ma.b) bVar.a(ma.b.class));
         }
         throw new ClassCastException();
     }
@@ -27,13 +27,13 @@ public class FirebaseMessagingRegistrar implements ComponentRegistrar {
         a2.d = LIBRARY_NAME;
         a2.a(q9.j.a(k9.h.class));
         a2.a(new q9.j(0, 0, oa.a.class));
-        a2.a(new q9.j(0, 1, xa.b.class));
+        a2.a(new q9.j(0, 1, xa.c.class));
         a2.a(new q9.j(0, 1, na.f.class));
         a2.a(new q9.j(0, 0, i5.f.class));
         a2.a(q9.j.a(qa.d.class));
         a2.a(q9.j.a(ma.b.class));
         a2.f = new w1(28);
         a2.c(1);
-        return Arrays.asList(a2.b(), q8.a(LIBRARY_NAME, "23.4.0"));
+        return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "23.4.0"));
     }
 }

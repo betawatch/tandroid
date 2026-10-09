@@ -1,6 +1,5 @@
 package androidx.appcompat.widget;
 
-import a6.m;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -8,16 +7,16 @@ import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
-import g.s;
+import g.r;
 import l.k;
 import m.h;
 import m.i1;
 import m.j1;
-import m.l3;
+import m.m3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -90,12 +89,12 @@ public class ContentFrameLayout extends FrameLayout {
         super.onDetachedFromWindow();
         i1 i1Var = this.n;
         if (i1Var != null) {
-            s sVar = (s) ((m) i1Var).b;
-            j1 j1Var = sVar.s;
+            r rVar = (r) ((pb.c) i1Var).b;
+            j1 j1Var = rVar.s;
             if (j1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;
-                actionBarOverlayLayout.e();
-                ActionMenuView actionMenuView = ((l3) actionBarOverlayLayout.e).a.a;
+                actionBarOverlayLayout.f();
+                ActionMenuView actionMenuView = ((m3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (hVar = actionMenuView.J) != null) {
                     hVar.f();
                     m.d dVar = hVar.J;
@@ -104,21 +103,21 @@ public class ContentFrameLayout extends FrameLayout {
                     }
                 }
             }
-            if (sVar.E != null) {
-                sVar.f.getDecorView().removeCallbacks(sVar.F);
-                if (sVar.E.isShowing()) {
+            if (rVar.E != null) {
+                rVar.f.getDecorView().removeCallbacks(rVar.F);
+                if (rVar.E.isShowing()) {
                     try {
-                        sVar.E.dismiss();
+                        rVar.E.dismiss();
                     } catch (IllegalArgumentException unused) {
                     }
                 }
-                sVar.E = null;
+                rVar.E = null;
             }
-            l0 l0Var = sVar.G;
+            l0 l0Var = rVar.G;
             if (l0Var != null) {
                 l0Var.b();
             }
-            k kVar = sVar.o(0).h;
+            k kVar = rVar.p(0).h;
             if (kVar != null) {
                 kVar.c(true);
             }

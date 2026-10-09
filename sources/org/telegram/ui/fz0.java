@@ -1,66 +1,46 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fz0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class fz0 extends s4.j {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
-    public /* synthetic */ fz0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public fz0(ProfileActivity profileActivity) {
+        this.G = profileActivity;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.F0 && i10 != 2) {
-                    profileActivity.F0 = false;
-                }
-                org.telegram.ui.ActionBar.v0 v0Var = profileActivity.U0;
-                if (v0Var != null) {
-                    boolean z10 = i10 != 0;
-                    profileActivity.z1 = z10;
-                    v0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
-                }
-                e01 e01Var = profileActivity.O;
-                boolean z11 = profileActivity.a.K1;
-                e01Var.getClass();
-                break;
-        }
+    @Override // s4.j
+    public final long K(long j3, long j10, long j11) {
+        return 0L;
     }
 
-    @Override // s4.s0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.m40 m40Var = profileActivity.X;
-                if (m40Var != null) {
-                    m40Var.b(true);
-                }
-                profileActivity.A3();
-                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {
-                    profileActivity.R3(false);
-                }
-                e01 e01Var = profileActivity.O;
-                e01Var.setPinnedToTop(e01Var.getY() <= 0.0f);
-                profileActivity.U4();
-                break;
+    @Override // s4.j
+    public final void N() {
+        AndroidUtilities.runOnUIThread(new tk0(this, 29));
+    }
+
+    @Override // s4.j
+    public final void P(s4.d1 d1Var) {
+        this.G.U4();
+    }
+
+    @Override // s4.j, s4.n0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new c3(this, 26));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
         }
+        super.m();
     }
 }

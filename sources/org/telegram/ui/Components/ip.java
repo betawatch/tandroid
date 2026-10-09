@@ -1,28 +1,225 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ip extends nj0 {
-    public final /* synthetic */ pp r;
+public abstract class ip extends LinearLayout {
+    public kl0 a;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+    public FrameLayout c;
+    public int d;
+    public float e;
+    public float f;
+    public float h;
+    public float n;
+    public float r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ip(pp ppVar, Context context) {
-        super(context);
-        this.r = ppVar;
+    public final void a() {
+        FrameLayout frameLayout = this.c;
+        if (frameLayout != null) {
+            frameLayout.setTranslationY(this.h + this.n + this.r);
+        }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.r.N) {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+    public final void b() {
+        float f7 = (1.0f - this.f) * this.e;
+        this.b.setTranslationX(f7);
+        FrameLayout frameLayout = this.c;
+        if (frameLayout != null) {
+            frameLayout.setTranslationX(f7);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = i10;
+        int i13 = this.d;
+        int makeMeasureSpec = i13 != 0 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31) : i11;
+        kl0 kl0Var = this.a;
+        if (kl0Var == null || this.b == null) {
+            super.onMeasure(i12, makeMeasureSpec);
         } else {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+            kl0Var.getLayoutParams().width = -2;
+            ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
+            this.e = 0.0f;
+            super.onMeasure(i12, makeMeasureSpec);
+            int measuredWidth = this.a.getMeasuredWidth();
+            if (this.b.getSwipeBack() != null && this.b.getSwipeBack().getMeasuredWidth() > measuredWidth) {
+                measuredWidth = this.b.getSwipeBack().getMeasuredWidth();
+            }
+            if (this.b.getMeasuredWidth() > measuredWidth) {
+                measuredWidth = this.b.getMeasuredWidth();
+            }
+            if (this.a.q()) {
+                i12 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
+            }
+            kl0 kl0Var2 = this.a;
+            if (!kl0Var2.e1 && kl0Var2.Q0 && kl0Var2.getMeasuredWidth() > 0) {
+                int min = Math.min(AndroidUtilities.dp(320.0f), kl0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
+                StaticLayout staticLayout = new StaticLayout(kl0Var2.R0.getText(), kl0Var2.R0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                kl0Var2.T0 = staticLayout.getHeight();
+                kl0Var2.S0 = 0;
+                for (int i14 = 0; i14 < staticLayout.getLineCount(); i14++) {
+                    kl0Var2.S0 = Math.max(kl0Var2.S0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
+                }
+                if (staticLayout.getLineCount() <= 1 || kl0Var2.R0.getText().toString().contains("\n")) {
+                    kl0Var2.R0.setWidth(AndroidUtilities.dp(16.0f) + min);
+                } else {
+                    int a2 = ci.d4.a(kl0Var2.R0.getText(), kl0Var2.R0.getPaint());
+                    StaticLayout staticLayout2 = new StaticLayout(kl0Var2.R0.getText(), kl0Var2.R0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    kl0Var2.T0 = staticLayout2.getHeight();
+                    kl0Var2.S0 = 0;
+                    for (int i15 = 0; i15 < staticLayout2.getLineCount(); i15++) {
+                        kl0Var2.S0 = Math.max(kl0Var2.S0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
+                    }
+                    kl0Var2.R0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+                    kl0Var2.R0.setWidth(AndroidUtilities.dp(48.0f) + a2);
+                }
+                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + kl0Var2.T0);
+                int i16 = kl0Var2.M0;
+                if (i16 == 1 || i16 == 2) {
+                    max = AndroidUtilities.dp(20.0f);
+                } else {
+                    kl0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
+                }
+                ((FrameLayout.LayoutParams) kl0Var2.z0.getLayoutParams()).topMargin = max;
+                ((FrameLayout.LayoutParams) kl0Var2.b.getLayoutParams()).topMargin = max;
+                kl0Var2.e1 = true;
+            }
+            int totalWidth = this.a.getTotalWidth();
+            View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
+            int dp = AndroidUtilities.dp(36.0f) + AndroidUtilities.dp(16.0f) + AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
+            int hintTextWidth = this.a.getHintTextWidth();
+            if (hintTextWidth > dp) {
+                dp = hintTextWidth;
+            } else if (dp > measuredWidth) {
+                dp = measuredWidth;
+            }
+            this.a.G = AndroidUtilities.dp(36.0f);
+            if (this.a.q()) {
+                this.a.getLayoutParams().width = totalWidth;
+                this.a.G = Math.max((totalWidth - childAt.getMeasuredWidth()) - AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
+            } else if (totalWidth > dp) {
+                int dp2 = ((dp - AndroidUtilities.dp(16.0f)) / AndroidUtilities.dp(36.0f)) + 1;
+                int dp3 = AndroidUtilities.dp(8.0f) + (AndroidUtilities.dp(36.0f) * dp2);
+                if (AndroidUtilities.dp(24.0f) + hintTextWidth > dp3) {
+                    dp3 = AndroidUtilities.dp(24.0f) + hintTextWidth;
+                }
+                if (dp3 <= totalWidth && dp2 != this.a.getItemsCount()) {
+                    totalWidth = dp3;
+                }
+                this.a.getLayoutParams().width = totalWidth;
+            } else {
+                this.a.getLayoutParams().width = -2;
+            }
+            if (this.a.getMeasuredWidth() == measuredWidth && this.a.q()) {
+                float measuredWidth2 = (measuredWidth - childAt.getMeasuredWidth()) * 0.25f;
+                this.e = measuredWidth2;
+                int i17 = (int) (r6.G - measuredWidth2);
+                this.a.G = i17;
+                if (i17 < AndroidUtilities.dp(36.0f)) {
+                    this.e = 0.0f;
+                    this.a.G = AndroidUtilities.dp(36.0f);
+                }
+                b();
+            } else {
+                int measuredWidth3 = this.b.getSwipeBack() != null ? this.b.getSwipeBack().getMeasuredWidth() - this.b.getSwipeBack().getChildAt(0).getMeasuredWidth() : 0;
+                if (this.a.getLayoutParams().width != -2 && this.a.getLayoutParams().width + measuredWidth3 > measuredWidth) {
+                    measuredWidth3 = AndroidUtilities.dp(8.0f) + (measuredWidth - this.a.getLayoutParams().width);
+                }
+                r5 = measuredWidth3 >= 0 ? measuredWidth3 : 0;
+                ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = r5;
+                this.e = 0.0f;
+                b();
+            }
+            if (this.c != null) {
+                if (this.a.q()) {
+                    this.c.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
+                    b();
+                } else {
+                    this.c.getLayoutParams().width = -1;
+                }
+                if (this.b.getSwipeBack() != null) {
+                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f) + r5;
+                } else {
+                    ((LinearLayout.LayoutParams) this.c.getLayoutParams()).rightMargin = AndroidUtilities.dp(36.0f);
+                }
+            }
+            super.onMeasure(i12, makeMeasureSpec);
+        }
+        this.d = getMeasuredHeight();
+    }
+
+    public void setExpandSize(float f7) {
+        this.b.setTranslationY(f7);
+        this.n = f7;
+        a();
+    }
+
+    public void setMaxHeight(int i10) {
+        this.d = i10;
+    }
+
+    public void setPopupAlpha(float f7) {
+        this.b.setAlpha(f7);
+        FrameLayout frameLayout = this.c;
+        if (frameLayout != null) {
+            frameLayout.setAlpha(f7);
+        }
+    }
+
+    public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new y2(10, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+            xh0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
+            swipeBack.x.add(new wh0() { // from class: org.telegram.ui.Components.hp
+                @Override // org.telegram.ui.Components.wh0
+                public final void a(float f7, float f10) {
+                    ip ipVar = ip.this;
+                    FrameLayout frameLayout = ipVar.c;
+                    if (frameLayout != null) {
+                        frameLayout.setAlpha(1.0f - f10);
+                    }
+                    ipVar.f = f10;
+                    ipVar.b();
+                }
+            });
+        }
+    }
+
+    public void setReactionsLayout(kl0 kl0Var) {
+        this.a = kl0Var;
+        if (kl0Var != null) {
+            kl0Var.setChatScrimView(this);
+        }
+    }
+
+    public void setReactionsTransitionProgress(float f7) {
+        this.b.setReactionsTransitionProgress(f7);
+        FrameLayout frameLayout = this.c;
+        if (frameLayout != null) {
+            frameLayout.setAlpha(f7);
+            float f10 = (f7 * 0.5f) + 0.5f;
+            this.c.setPivotX(r0.getMeasuredWidth());
+            this.c.setPivotY(0.0f);
+            this.r = (1.0f - f7) * (-this.b.getMeasuredHeight());
+            a();
+            this.c.setScaleX(f10);
+            this.c.setScaleY(f10);
         }
     }
 }

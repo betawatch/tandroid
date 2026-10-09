@@ -11,11 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.ActionMenuView;
-import ii.n4;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h implements l.x {
     public int E;
@@ -40,7 +39,7 @@ public final class h implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray H = new SparseBooleanArray();
-    public final n4 M = new n4(this, 5);
+    public final a4.l M = new a4.l(this, 29);
 
     public h(Context context) {
         this.a = context;
@@ -80,22 +79,9 @@ public final class h implements l.x {
     }
 
     @Override // l.x
-    public final void c(l.k kVar, boolean z10) {
-        f();
-        d dVar = this.J;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
-        }
-        l.w wVar = this.e;
-        if (wVar != null) {
-            wVar.c(kVar, z10);
-        }
-    }
-
-    @Override // l.x
-    public final boolean d() {
-        ArrayList arrayList;
+    public final boolean c() {
         int i10;
+        ArrayList arrayList;
         int i11;
         boolean z10;
         h hVar = this;
@@ -104,8 +90,8 @@ public final class h implements l.x {
             arrayList = kVar.l();
             i10 = arrayList.size();
         } else {
-            arrayList = null;
             i10 = 0;
+            arrayList = null;
         }
         int i12 = hVar.F;
         int i13 = hVar.E;
@@ -146,7 +132,7 @@ public final class h implements l.x {
         while (i19 < i10) {
             l.m mVar2 = (l.m) arrayList.get(i19);
             int i21 = mVar2.y;
-            boolean z12 = (i21 & 2) == i11;
+            boolean z12 = (i21 & 2) == i11 ? z10 : false;
             int i22 = mVar2.b;
             if (z12) {
                 View a2 = hVar.a(mVar2, null, viewGroup);
@@ -162,7 +148,7 @@ public final class h implements l.x {
                 mVar2.f(z10);
             } else if ((i21 & 1) == z10) {
                 boolean z13 = sparseBooleanArray.get(i22);
-                boolean z14 = (i18 > 0 || z13) && i13 > 0;
+                boolean z14 = ((i18 > 0 || z13) && i13 > 0) ? z10 : false;
                 if (z14) {
                     View a10 = hVar.a(mVar2, null, viewGroup);
                     a10.measure(makeMeasureSpec, makeMeasureSpec);
@@ -203,7 +189,20 @@ public final class h implements l.x {
             hVar = this;
             z10 = true;
         }
-        return true;
+        return z10;
+    }
+
+    @Override // l.x
+    public final void d(l.k kVar, boolean z10) {
+        f();
+        d dVar = this.J;
+        if (dVar != null && dVar.b()) {
+            dVar.i.dismiss();
+        }
+        l.w wVar = this.e;
+        if (wVar != null) {
+            wVar.d(kVar, z10);
+        }
     }
 
     /* JADX WARN: Multi-variable type inference failed */

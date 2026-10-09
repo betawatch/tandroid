@@ -1,41 +1,27 @@
 package x7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public abstract class ha {
-    public static t7.r a;
+import android.content.Context;
 
-    public static synchronized fa a(ba baVar) {
-        fa faVar;
-        synchronized (ha.class) {
-            try {
-                if (a == null) {
-                    a = new t7.r(3);
-                }
-                faVar = (fa) a.O0(baVar);
-            } catch (Throwable th2) {
-                throw th2;
-            }
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class ha implements ea {
+    public final q9.n a;
+    public final ba b;
+
+    public ha(Context context, ba baVar) {
+        this.b = baVar;
+        j5.a aVar = j5.a.e;
+        l5.s.b(context);
+        l5.q c10 = l5.s.a().c(aVar);
+        if (j5.a.d.contains(new i5.c("json"))) {
+            new q9.n(new v7.a9(c10, 4));
         }
-        return faVar;
+        this.a = new q9.n(new v7.a9(c10, 5));
     }
 
-    public static synchronized fa b() {
-        fa a2;
-        synchronized (ha.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
-                StringBuilder sb2 = new StringBuilder();
-                if ((b10 & 1) == 0) {
-                    sb2.append(" enableFirelog");
-                }
-                if ((b10 & 2) == 0) {
-                    sb2.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
-            }
-            a2 = a(new ba());
-        }
-        return a2;
+    @Override // x7.ea
+    public final void a(a5.a aVar) {
+        this.b.getClass();
+        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.D(), i5.d.a, null) : new i5.a(null, aVar.D(), i5.d.b, null), new j2.e(16));
     }
 }

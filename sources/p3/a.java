@@ -8,16 +8,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import v7.r6;
-import w7.m;
+import w7.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a extends m {
+public final class a extends l {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
     public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;

@@ -1,45 +1,52 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatMessageSharedResources;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wu0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ int Ge = 1;
+public final class wu0 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ pm0 m0;
 
-    public /* synthetic */ wu0(Context context, int i10) {
-        super(context, i10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ wu0(pm0 pm0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
+        super(context, 0, e6Var);
+        this.l0 = i10;
+        this.m0 = pm0Var;
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public int getParentWidth() {
-        int i10;
-        int dp;
-        switch (this.Ge) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i10 = getMeasuredWidth();
-                    dp = AndroidUtilities.dp(24.0f);
-                } else {
-                    i10 = AndroidUtilities.displaySize.x;
-                    dp = AndroidUtilities.dp(24.0f);
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        switch (this.l0) {
+            case 0:
+                xu0 xu0Var = (xu0) this.m0;
+                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
+                    if (messageObject.isMusic()) {
+                        return MediaController.getInstance().setPlaylist(xu0Var.d, messageObject, xu0Var.v.c1);
+                    }
+                    return false;
                 }
-                return i10 - dp;
+                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? xu0Var.d : null, false);
+                if (messageObject.isRoundVideo()) {
+                    MediaController.getInstance().setCurrentVideoVisible(false);
+                }
+                return playMessage;
             default:
-                return super.getParentWidth();
+                ov0 ov0Var = (ov0) this.m0;
+                int i10 = ov0Var.d;
+                bw0 bw0Var = ov0Var.f;
+                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
+                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
+                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? bw0Var.t1[i10].a : null, false);
+                    return playMessage2;
+                }
+                if (messageObject.isMusic()) {
+                    return MediaController.getInstance().setPlaylist(bw0Var.t1[i10].a, messageObject, bw0Var.c1);
+                }
+                return false;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        switch (this.Ge) {
-        }
-        return false;
-    }
-
-    public /* synthetic */ wu0(Context context, int i10, boolean z10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, z10, chatMessageSharedResources, d6Var);
     }
 }

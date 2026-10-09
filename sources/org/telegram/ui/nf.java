@@ -1,82 +1,27 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nf implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, ro0 {
+public final /* synthetic */ class nf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ nf(int i10, Runnable runnable) {
+    public /* synthetic */ nf(zn znVar, boolean z10, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = znVar;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ro0
-    public void a(int i10) {
-        int i11 = this.a;
-        Runnable runnable = this.b;
-        switch (i11) {
-            case 9:
-                Pattern pattern = LaunchActivity.B1;
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run();
-                break;
-            case 1:
-                this.b.run();
+                this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
                 break;
             default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.Cc(0, this.c);
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                break;
-            case 5:
-                this.b.run();
-                break;
-            case 6:
-                this.b.run();
-                break;
-            case 7:
-                this.b.run();
-                break;
-            default:
-                this.b.run();
-                break;
-        }
-        return true;
     }
 }

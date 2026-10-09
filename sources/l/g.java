@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -29,16 +29,16 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void c(k kVar, boolean z10) {
-        w wVar = this.e;
-        if (wVar != null) {
-            wVar.c(kVar, z10);
-        }
+    public final boolean c() {
+        return false;
     }
 
     @Override // l.x
-    public final boolean d() {
-        return false;
+    public final void d(k kVar, boolean z10) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.d(kVar, z10);
+        }
     }
 
     @Override // l.x
@@ -79,8 +79,8 @@ public final class g implements x, AdapterView.OnItemClickListener {
         l lVar = new l();
         lVar.a = d0Var;
         c5.b0 b0Var = new c5.b0(context);
-        g.c cVar = (g.c) b0Var.c;
-        g gVar = new g(cVar.a);
+        g.b bVar = (g.b) b0Var.c;
+        g gVar = new g(bVar.a);
         lVar.c = gVar;
         gVar.e = lVar;
         d0Var.b(gVar, context);
@@ -88,17 +88,17 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (gVar2.f == null) {
             gVar2.f = new f(gVar2);
         }
-        cVar.i = gVar2.f;
-        cVar.j = lVar;
+        bVar.i = gVar2.f;
+        bVar.j = lVar;
         View view = d0Var.o;
         if (view != null) {
-            cVar.e = view;
+            bVar.e = view;
         } else {
-            cVar.c = d0Var.n;
-            cVar.d = d0Var.m;
+            bVar.c = d0Var.n;
+            bVar.d = d0Var.m;
         }
-        cVar.h = lVar;
-        g.g e7 = b0Var.e();
+        bVar.h = lVar;
+        g.f e7 = b0Var.e();
         lVar.b = e7;
         e7.setOnDismissListener(lVar);
         WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();

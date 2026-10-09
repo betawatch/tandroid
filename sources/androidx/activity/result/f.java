@@ -13,7 +13,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -121,8 +121,8 @@ public abstract class f {
         if (((Integer) hashMap.get(str)) != null) {
             return;
         }
-        sd.a aVar = sd.d.a;
-        int nextInt = sd.d.a.a().nextInt(2147418112);
+        td.a aVar = td.d.a;
+        int nextInt = td.d.a.a().nextInt(2147418112);
         while (true) {
             int i10 = nextInt + 65536;
             Integer valueOf = Integer.valueOf(i10);
@@ -132,8 +132,8 @@ public abstract class f {
                 hashMap.put(str, Integer.valueOf(i10));
                 return;
             } else {
-                sd.a aVar2 = sd.d.a;
-                nextInt = sd.d.a.a().nextInt(2147418112);
+                td.a aVar2 = td.d.a;
+                nextInt = td.d.a.a().nextInt(2147418112);
             }
         }
     }
@@ -146,14 +146,14 @@ public abstract class f {
         this.e.remove(str);
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
-            StringBuilder w10 = a4.a.w("Dropping pending result for request ", str, ": ");
+            StringBuilder w10 = a1.g.w("Dropping pending result for request ", str, ": ");
             w10.append(hashMap.get(str));
             Log.w("ActivityResultRegistry", w10.toString());
             hashMap.remove(str);
         }
         Bundle bundle = this.g;
         if (bundle.containsKey(str)) {
-            StringBuilder w11 = a4.a.w("Dropping pending result for request ", str, ": ");
+            StringBuilder w11 = a1.g.w("Dropping pending result for request ", str, ": ");
             w11.append(bundle.getParcelable(str));
             Log.w("ActivityResultRegistry", w11.toString());
             bundle.remove(str);

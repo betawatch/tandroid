@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import ci.m7;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class j {
     public g a;
@@ -224,11 +224,13 @@ public final class j {
                 if (f16 < 0.0f) {
                     f7 = f14;
                     f10 = 0.0f;
-                } else if (f17 > 1.0f) {
-                    f10 = 1.0f - f14;
-                    f7 = 1.0f;
                 } else {
-                    f7 = f17;
+                    if (f17 > 1.0f) {
+                        f16 = 1.0f - f14;
+                        f7 = 1.0f;
+                    } else {
+                        f7 = f17;
+                    }
                     f10 = f16;
                 }
                 this.g = ValueAnimator.ofFloat(0.0f, 1.0f);

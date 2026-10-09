@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class bs implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class bs implements TextWatcher {
                 }
                 break;
             case 1:
-                tg0 tg0Var = (tg0) this.d;
-                qg0 qg0Var = tg0Var.b;
-                if (!tg0Var.J) {
-                    int selectionStart = qg0Var.getSelectionStart();
-                    String obj2 = qg0Var.getText().toString();
+                vg0 vg0Var = (vg0) this.d;
+                sg0 sg0Var = vg0Var.b;
+                if (!vg0Var.J) {
+                    int selectionStart = sg0Var.getSelectionStart();
+                    String obj2 = sg0Var.getText().toString();
                     if (this.b == 3) {
                         obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
                         selectionStart--;
@@ -88,8 +88,8 @@ public final class bs implements TextWatcher {
                         }
                         i24 = i25;
                     }
-                    tg0Var.J = true;
-                    String hintText = qg0Var.getHintText();
+                    vg0Var.J = true;
+                    String hintText = sg0Var.getHintText();
                     if (hintText != null) {
                         int i26 = 0;
                         while (true) {
@@ -114,19 +114,19 @@ public final class bs implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb2);
                     if (selectionStart >= 0) {
-                        qg0Var.setSelection(Math.min(selectionStart, qg0Var.length()));
+                        sg0Var.setSelection(Math.min(selectionStart, sg0Var.length()));
                     }
-                    qg0Var.invalidate();
-                    tg0Var.r();
-                    tg0Var.J = false;
+                    sg0Var.invalidate();
+                    vg0Var.q();
+                    vg0Var.J = false;
                     break;
                 }
                 break;
             case 2:
-                ak0 ak0Var = (ak0) this.d;
-                if (!ak0Var.F) {
-                    int selectionStart2 = ak0Var.Q.getSelectionStart();
-                    String obj3 = ak0Var.Q.getText().toString();
+                dk0 dk0Var = (dk0) this.d;
+                if (!dk0Var.F) {
+                    int selectionStart2 = dk0Var.Q.getSelectionStart();
+                    String obj3 = dk0Var.Q.getText().toString();
                     if (this.b == 3) {
                         obj3 = obj3.substring(0, this.c) + obj3.substring(this.c + 1);
                         selectionStart2--;
@@ -141,8 +141,8 @@ public final class bs implements TextWatcher {
                         }
                         i27 = i28;
                     }
-                    ak0Var.F = true;
-                    String hintText2 = ak0Var.Q.getHintText();
+                    dk0Var.F = true;
+                    String hintText2 = dk0Var.Q.getHintText();
                     if (hintText2 != null) {
                         int i29 = 0;
                         while (true) {
@@ -167,21 +167,21 @@ public final class bs implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb3);
                     if (selectionStart2 >= 0) {
-                        yj0 yj0Var = ak0Var.Q;
-                        yj0Var.setSelection(Math.min(selectionStart2, yj0Var.length()));
+                        bk0 bk0Var = dk0Var.Q;
+                        bk0Var.setSelection(Math.min(selectionStart2, bk0Var.length()));
                     }
-                    ak0Var.Q.invalidate();
-                    ak0Var.F = false;
-                    ak0.q(ak0Var);
+                    dk0Var.Q.invalidate();
+                    dk0Var.F = false;
+                    dk0.s(dk0Var);
                     break;
                 }
                 break;
             case 3:
-                kn0 kn0Var = (kn0) this.d;
-                if (!kn0Var.a1) {
-                    org.telegram.ui.Components.j40 j40Var = (org.telegram.ui.Components.j40) kn0Var.Y[2];
-                    int selectionStart3 = j40Var.getSelectionStart();
-                    String obj4 = j40Var.getText().toString();
+                nn0 nn0Var = (nn0) this.d;
+                if (!nn0Var.a1) {
+                    org.telegram.ui.Components.w40 w40Var = (org.telegram.ui.Components.w40) nn0Var.Y[2];
+                    int selectionStart3 = w40Var.getSelectionStart();
+                    String obj4 = w40Var.getText().toString();
                     if (this.b == 3) {
                         obj4 = obj4.substring(0, this.c) + obj4.substring(this.c + 1);
                         selectionStart3--;
@@ -196,8 +196,8 @@ public final class bs implements TextWatcher {
                         }
                         i30 = i31;
                     }
-                    kn0Var.a1 = true;
-                    String hintText3 = j40Var.getHintText();
+                    nn0Var.a1 = true;
+                    String hintText3 = w40Var.getHintText();
                     if (hintText3 != null) {
                         int i32 = 0;
                         while (true) {
@@ -220,21 +220,21 @@ public final class bs implements TextWatcher {
                             }
                         }
                     }
-                    j40Var.setText(sb4);
+                    w40Var.setText(sb4);
                     if (selectionStart3 >= 0) {
-                        j40Var.setSelection(Math.min(selectionStart3, j40Var.length()));
+                        w40Var.setSelection(Math.min(selectionStart3, w40Var.length()));
                     }
-                    j40Var.invalidate();
-                    kn0Var.a1 = false;
+                    w40Var.invalidate();
+                    nn0Var.a1 = false;
                     break;
                 }
                 break;
             default:
-                so0 so0Var = (so0) this.d;
-                if (!so0Var.n0) {
-                    org.telegram.ui.Components.j40 j40Var2 = (org.telegram.ui.Components.j40) so0Var.f[9];
-                    int selectionStart4 = j40Var2.getSelectionStart();
-                    String obj5 = j40Var2.getText().toString();
+                vo0 vo0Var = (vo0) this.d;
+                if (!vo0Var.n0) {
+                    org.telegram.ui.Components.w40 w40Var2 = (org.telegram.ui.Components.w40) vo0Var.f[9];
+                    int selectionStart4 = w40Var2.getSelectionStart();
+                    String obj5 = w40Var2.getText().toString();
                     if (this.b == 3) {
                         obj5 = obj5.substring(0, this.c) + obj5.substring(this.c + 1);
                         selectionStart4--;
@@ -249,8 +249,8 @@ public final class bs implements TextWatcher {
                         }
                         i33 = i34;
                     }
-                    so0Var.n0 = true;
-                    String hintText4 = j40Var2.getHintText();
+                    vo0Var.n0 = true;
+                    String hintText4 = w40Var2.getHintText();
                     if (hintText4 != null) {
                         int i35 = 0;
                         while (true) {
@@ -273,12 +273,12 @@ public final class bs implements TextWatcher {
                             }
                         }
                     }
-                    j40Var2.setText(sb5);
+                    w40Var2.setText(sb5);
                     if (selectionStart4 >= 0) {
-                        j40Var2.setSelection(Math.min(selectionStart4, j40Var2.length()));
+                        w40Var2.setSelection(Math.min(selectionStart4, w40Var2.length()));
                     }
-                    j40Var2.invalidate();
-                    so0Var.n0 = false;
+                    w40Var2.invalidate();
+                    vo0Var.n0 = false;
                     break;
                 }
                 break;

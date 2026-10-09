@@ -1,47 +1,79 @@
 package af;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import t7.u;
+import cf.g;
+import cf.p;
+import cf.s;
+import ze.b;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Pattern a = Pattern.compile("[\\\\&]");
-    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
-    public static final Pattern c;
-    public static final u d;
+public final class a implements ff.a {
+    public final char a;
 
-    static {
-        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
-        c = Pattern.compile("[ \t\r\n]+");
-        d = new u();
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public a(int i10) {
+        this('*');
+        switch (i10) {
+            case 1:
+                this('_');
+                break;
+            default:
+                break;
+        }
     }
 
-    public static String a(String str) {
-        if (!a.matcher(str).find()) {
-            return str;
-        }
-        Matcher matcher = b.matcher(str);
-        if (!matcher.find()) {
-            return str;
-        }
-        StringBuilder sb2 = new StringBuilder(str.length() + 16);
-        int i10 = 0;
-        do {
-            sb2.append((CharSequence) str, i10, matcher.start());
-            String group = matcher.group();
-            d.getClass();
-            if (group.charAt(0) == '\\') {
-                sb2.append((CharSequence) group, 1, group.length());
-            } else {
-                sb2.append(b.a(group));
+    @Override // ff.a
+    public final int a(b bVar, b bVar2) {
+        if (bVar.d || bVar2.c) {
+            int i10 = bVar2.h;
+            if (i10 % 3 != 0 && (bVar.h + i10) % 3 == 0) {
+                return 0;
             }
-            i10 = matcher.end();
-        } while (matcher.find());
-        if (i10 != str.length()) {
-            sb2.append((CharSequence) str, i10, str.length());
         }
-        return sb2.toString();
+        return (bVar.g < 2 || bVar2.g < 2) ? 1 : 2;
+    }
+
+    @Override // ff.a
+    public final void b(s sVar, s sVar2, int i10) {
+        String.valueOf(this.a);
+        g gVar = i10 == 1 ? new g(0) : new g(3);
+        p pVar = (p) sVar.f;
+        while (pVar != null && pVar != sVar2) {
+            p pVar2 = (p) pVar.f;
+            gVar.b(pVar);
+            pVar = pVar2;
+        }
+        gVar.g();
+        p pVar3 = (p) sVar.f;
+        gVar.f = pVar3;
+        if (pVar3 != null) {
+            pVar3.e = gVar;
+        }
+        gVar.e = sVar;
+        sVar.f = gVar;
+        p pVar4 = (p) sVar.b;
+        gVar.b = pVar4;
+        if (((p) gVar.f) == null) {
+            pVar4.d = gVar;
+        }
+    }
+
+    @Override // ff.a
+    public final char c() {
+        return this.a;
+    }
+
+    @Override // ff.a
+    public final int d() {
+        return 1;
+    }
+
+    @Override // ff.a
+    public final char e() {
+        return this.a;
+    }
+
+    public a(char c10) {
+        this.a = c10;
     }
 }

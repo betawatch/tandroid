@@ -1,22 +1,13 @@
 package kd;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import v7.a8;
 
-/* JADX WARN: Method from annotation default annotation not found: i */
-/* JADX WARN: Method from annotation default annotation not found: n */
-/* JADX WARN: Method from annotation default annotation not found: s */
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-@Retention(RetentionPolicy.RUNTIME)
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public @interface e {
-    String c() default "";
-
-    String f() default "";
-
-    int[] l() default {};
-
-    String m() default "";
-
-    int v() default 1;
+public final class e extends ld.c {
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        a8.b(obj);
+        return obj;
+    }
 }

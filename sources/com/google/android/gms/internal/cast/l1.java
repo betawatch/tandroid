@@ -1,45 +1,49 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class l1 extends h5 {
+public final class l1 extends f5 {
     private static final l1 zzb;
     private int zzd;
-    private int zze;
-    private boolean zzf;
-    private int zzg;
-    private boolean zzh;
-    private m5 zzi;
-    private m5 zzj;
-    private String zzk;
+    private String zze = "";
+    private String zzf = "";
 
     static {
         l1 l1Var = new l1();
         zzb = l1Var;
-        h5.e(l1.class, l1Var);
+        f5.e(l1.class, l1Var);
     }
 
-    public l1() {
-        h6 h6Var = h6.d;
-        this.zzi = h6Var;
-        this.zzj = h6Var;
-        this.zzk = "";
+    public static k1 l() {
+        return (k1) zzb.j();
     }
 
-    @Override // com.google.android.gms.internal.cast.h5
-    public final Object h(int i10, h5 h5Var) {
+    public static /* synthetic */ void m(l1 l1Var, String str) {
+        str.getClass();
+        l1Var.zzd |= 1;
+        l1Var.zze = str;
+    }
+
+    public static /* synthetic */ void n(l1 l1Var, String str) {
+        str.getClass();
+        l1Var.zzd |= 2;
+        l1Var.zzf = str;
+    }
+
+    @Override // com.google.android.gms.internal.cast.f5
+    public final Object h(int i10, f5 f5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", b0.v, "zzf", "zzg", b0.O, "zzh", "zzi", g3.class, "zzj", g3.class, "zzk"});
+            return new g6(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
         if (i11 == 3) {
             return new l1();
         }
         if (i11 == 4) {
-            return new x0(zzb);
+            return new k1(zzb);
         }
         if (i11 != 5) {
             return null;

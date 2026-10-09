@@ -8,22 +8,22 @@ import c3.g0;
 import c3.h0;
 import e2.d0;
 import e2.v;
-import n4.y;
-import org.telegram.ui.Components.bp0;
-import u2.b1;
+import n4.x;
+import org.telegram.ui.Components.mp0;
+import u2.a1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o implements h0 {
-    public final b1 a;
-    public final y b = new y(17);
+    public final a1 a;
+    public final x b = new x(19, false);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ p e;
 
     public o(p pVar, y2.d dVar) {
         this.e = pVar;
-        this.a = new b1(dVar, null, null);
+        this.a = new a1(dVar, null, null);
     }
 
     @Override // c3.h0
@@ -45,7 +45,7 @@ public final class o implements h0 {
             l3.a aVar = this.c;
             aVar.clear();
             if (this.a.C(this.b, aVar, 0, false) == -4) {
-                aVar.d();
+                aVar.c();
             } else {
                 aVar = null;
             }
@@ -58,7 +58,7 @@ public final class o implements h0 {
                     String str2 = aVar2.b;
                     if ("urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2))) {
                         try {
-                            j10 = d0.T(d0.p(aVar2.e));
+                            j10 = d0.S(d0.p(aVar2.e));
                         } catch (s0 unused) {
                             j10 = -9223372036854775807L;
                         }
@@ -71,13 +71,13 @@ public final class o implements h0 {
                 }
             }
         }
-        b1 b1Var = this.a;
-        bp0 bp0Var = b1Var.a;
-        synchronized (b1Var) {
-            int i14 = b1Var.s;
-            i13 = i14 == 0 ? -1L : b1Var.i(i14);
+        a1 a1Var = this.a;
+        mp0 mp0Var = a1Var.a;
+        synchronized (a1Var) {
+            int i14 = a1Var.s;
+            i13 = i14 == 0 ? -1L : a1Var.i(i14);
         }
-        bp0Var.b(i13);
+        mp0Var.b(i13);
     }
 
     @Override // c3.h0
@@ -87,15 +87,15 @@ public final class o implements h0 {
 
     @Override // c3.h0
     public final int e(b2.k kVar, int i10, boolean z10) {
-        b1 b1Var = this.a;
-        b1Var.getClass();
-        return b1Var.e(kVar, i10, z10);
+        a1 a1Var = this.a;
+        a1Var.getClass();
+        return a1Var.e(kVar, i10, z10);
     }
 
     @Override // c3.h0
     public final void f(v vVar, int i10, int i11) {
-        b1 b1Var = this.a;
-        b1Var.getClass();
-        b1Var.f(vVar, i10, 0);
+        a1 a1Var = this.a;
+        a1Var.getClass();
+        a1Var.f(vVar, i10, 0);
     }
 }

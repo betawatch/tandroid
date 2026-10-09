@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final y2.c g;
@@ -104,15 +104,15 @@ public final class b extends c {
             return 0;
         }
         int size = list.size();
-        long D = d0.D(((v2.k) list.get(size - 1)).h - j3, this.q);
+        long C = d0.C(((v2.k) list.get(size - 1)).h - j3, this.q);
         long j11 = this.j;
-        if (D >= j11) {
+        if (C >= j11) {
             x(list);
             b2.s sVar = this.d[w(-1, elapsedRealtime)];
             for (int i12 = 0; i12 < size; i12++) {
                 v2.k kVar = (v2.k) list.get(i12);
                 b2.s sVar2 = kVar.d;
-                if (d0.D(kVar.h - j3, this.q) >= j11 && sVar2.j < sVar.j && (i10 = sVar2.z) != -1 && i10 <= this.l && (i11 = sVar2.y) != -1 && i11 <= this.k && i10 < sVar.z) {
+                if (d0.C(kVar.h - j3, this.q) >= j11 && sVar2.j < sVar.j && (i10 = sVar2.z) != -1 && i10 <= this.l && (i11 = sVar2.y) != -1 && i11 <= this.k && i10 < sVar.z) {
                     return i12;
                 }
             }
@@ -141,14 +141,14 @@ public final class b extends c {
                 }
                 v2.l lVar = lVarArr[i11];
                 if (lVar.next()) {
-                    x10 = lVar.f() - lVar.a();
+                    x10 = lVar.h() - lVar.c();
                     break;
                 }
                 i11++;
             }
         } else {
             v2.l lVar2 = lVarArr[this.r];
-            x10 = lVar2.f() - lVar2.a();
+            x10 = lVar2.h() - lVar2.c();
         }
         int i12 = this.s;
         if (i12 == 0) {

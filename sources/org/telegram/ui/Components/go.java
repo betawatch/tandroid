@@ -1,45 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class go extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ho b;
+public final class go extends org.telegram.ui.Cells.d6 {
+    public final /* synthetic */ jo F;
 
-    public /* synthetic */ go(ho hoVar, int i10) {
-        this.a = i10;
-        this.b = hoVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public go(jo joVar, Context context, int i10) {
+        super(context, i10, null, null);
+        this.F = joVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.Q = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.Cells.d6
+    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
+        if (c6Var.isFocused() && c6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.zn.n8(menu, ((org.telegram.ui.zn) this.F.d.b.f0).h, false, true, true, true);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ho hoVar = this.b;
-                if (hoVar.Q == animator) {
-                    hoVar.getSubtitleTextView().setVisibility(4);
-                    hoVar.Q = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.Q = null;
-                break;
-        }
+    @Override // org.telegram.ui.Cells.d6
+    public final void i(boolean z10) {
+        lo.P(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void j(org.telegram.ui.Cells.d6 d6Var) {
+        lo.Q(this.F.d, d6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void k(org.telegram.ui.Cells.c6 c6Var) {
+        this.F.d.b.w1(c6Var, true);
     }
 }

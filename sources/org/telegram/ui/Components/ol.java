@@ -1,47 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ol implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+import android.location.Location;
+import org.telegram.messenger.IMapsProvider;
 
-    public /* synthetic */ ol(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ol implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xl b;
+
+    public /* synthetic */ ol(xl xlVar, int i10) {
         this.a = i10;
-        this.b = chatAttachAlertPhotoLayout;
+        this.b = xlVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
-        switch (i10) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
             case 0:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.b.getContainer().removeView(chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.P = null;
-                break;
-            case 1:
-                chatAttachAlertPhotoLayout.w.setVisibility(8);
-                break;
-            case 2:
-                chatAttachAlertPhotoLayout.G.l();
-                break;
-            case 3:
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 4:
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout.t0(false);
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 5:
-                ChatAttachAlertPhotoLayout.N(chatAttachAlertPhotoLayout);
+                xl.N(this.b, (IMapsProvider.IMap) obj);
                 break;
             default:
-                ChatAttachAlertPhotoLayout.M(chatAttachAlertPhotoLayout);
+                xl.U(this.b, (Location) obj);
                 break;
         }
     }

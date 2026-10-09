@@ -1,47 +1,110 @@
 package e0;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Looper;
-import android.text.TextUtils;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class e extends f0.e {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void g(Activity activity, String[] strArr, int i10) {
-        HashSet hashSet = new HashSet();
-        for (int i11 = 0; i11 < strArr.length; i11++) {
-            if (TextUtils.isEmpty(strArr[i11])) {
-                throw new IllegalArgumentException(a4.a.t(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
-            }
-            if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i11], "android.permission.POST_NOTIFICATIONS")) {
-                hashSet.add(Integer.valueOf(i11));
-            }
+public abstract class e {
+    public static final Class a;
+    public static final Field b;
+    public static final Field c;
+    public static final Method d;
+    public static final Method e;
+    public static final Method f;
+    public static final Handler g = new Handler(Looper.getMainLooper());
+
+    /* JADX WARN: Can't wrap try/catch for region: R(23:0|1|2|3|4|5|6|7|8|9|10|(12:33|34|13|(6:29|30|16|(3:24|25|26)|20|21)|15|16|(1:18)|24|25|26|20|21)|12|13|(0)|15|16|(0)|24|25|26|20|21) */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x005c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    static {
+        Class<?> cls;
+        Field field;
+        Field field2;
+        Method declaredMethod;
+        Class cls2;
+        Method declaredMethod2;
+        Class cls3;
+        int i10;
+        Method method = null;
+        try {
+            cls = Class.forName("android.app.ActivityThread");
+        } catch (Throwable unused) {
+            cls = null;
         }
-        int size = hashSet.size();
-        String[] strArr2 = size > 0 ? new String[strArr.length - size] : strArr;
-        if (size > 0) {
-            if (size == strArr.length) {
-                return;
+        a = cls;
+        try {
+            field = Activity.class.getDeclaredField("mMainThread");
+            field.setAccessible(true);
+        } catch (Throwable unused2) {
+            field = null;
+        }
+        b = field;
+        try {
+            field2 = Activity.class.getDeclaredField("mToken");
+            field2.setAccessible(true);
+        } catch (Throwable unused3) {
+            field2 = null;
+        }
+        c = field2;
+        Class cls4 = a;
+        Class<?> cls5 = Boolean.TYPE;
+        if (cls4 != null) {
+            try {
+                declaredMethod = cls4.getDeclaredMethod("performStopActivity", IBinder.class, cls5, String.class);
+                declaredMethod.setAccessible(true);
+            } catch (Throwable unused4) {
             }
-            int i12 = 0;
-            for (int i13 = 0; i13 < strArr.length; i13++) {
-                if (!hashSet.contains(Integer.valueOf(i13))) {
-                    strArr2[i12] = strArr[i13];
-                    i12++;
+            d = declaredMethod;
+            cls2 = a;
+            if (cls2 != null) {
+                try {
+                    declaredMethod2 = cls2.getDeclaredMethod("performStopActivity", IBinder.class, cls5);
+                    declaredMethod2.setAccessible(true);
+                } catch (Throwable unused5) {
                 }
+                e = declaredMethod2;
+                cls3 = a;
+                i10 = Build.VERSION.SDK_INT;
+                if ((i10 != 26 || i10 == 27) && cls3 != null) {
+                    Method declaredMethod3 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
+                    declaredMethod3.setAccessible(true);
+                    method = declaredMethod3;
+                }
+                f = method;
             }
-        }
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (activity instanceof d) {
+            declaredMethod2 = null;
+            e = declaredMethod2;
+            cls3 = a;
+            i10 = Build.VERSION.SDK_INT;
+            if (i10 != 26) {
             }
-            b.v(activity, strArr, i10);
-        } else if (activity instanceof c) {
-            new Handler(Looper.getMainLooper()).post(new androidx.activity.g(strArr2, activity, i10, 4));
+            Method declaredMethod32 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
+            declaredMethod32.setAccessible(true);
+            method = declaredMethod32;
+            f = method;
         }
+        declaredMethod = null;
+        d = declaredMethod;
+        cls2 = a;
+        if (cls2 != null) {
+        }
+        declaredMethod2 = null;
+        e = declaredMethod2;
+        cls3 = a;
+        i10 = Build.VERSION.SDK_INT;
+        if (i10 != 26) {
+        }
+        Method declaredMethod322 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
+        declaredMethod322.setAccessible(true);
+        method = declaredMethod322;
+        f = method;
     }
 }

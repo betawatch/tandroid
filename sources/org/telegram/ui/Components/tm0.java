@@ -1,37 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an0 b;
+public final class tm0 extends lc {
+    public final um0 c;
 
-    public /* synthetic */ tm0(an0 an0Var, int i10) {
-        this.a = i10;
-        this.b = an0Var;
+    public tm0(Activity activity, String str) {
+        super(activity, null);
+        this.b.setText(str);
+        this.b.setTranslationY(-1.0f);
+        ImageView imageView = this.a;
+        um0 um0Var = new um0();
+        this.c = um0Var;
+        imageView.setImageDrawable(um0Var);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 1:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 2:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            default:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-        }
+    @Override // org.telegram.ui.Components.xb
+    public final void onEnterTransitionEnd() {
+        super.onEnterTransitionEnd();
+        um0 um0Var = this.c;
+        um0Var.getClass();
+        um0Var.g = System.currentTimeMillis();
+        um0Var.invalidateSelf();
+    }
+
+    @Override // org.telegram.ui.Components.xb
+    public final void onExitTransitionEnd() {
+        super.onExitTransitionEnd();
+        um0 um0Var = this.c;
+        um0Var.g = -1L;
+        um0Var.invalidateSelf();
     }
 }

@@ -1,49 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.Build;
-import java.lang.ref.WeakReference;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class sc0 {
-    public final Shader.TileMode a;
-    public final Matrix b = new Matrix();
-    public boolean c;
-    public BitmapShader d;
-    public WeakReference e;
+    public final int a;
+    public final l11 b;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
 
-    public sc0(Shader.TileMode tileMode) {
-        this.a = tileMode;
-    }
-
-    public final void a(boolean z10) {
-        BitmapShader bitmapShader;
-        if (this.c != z10) {
-            this.c = z10;
-            if (Build.VERSION.SDK_INT < 33 || (bitmapShader = this.d) == null) {
-                return;
-            }
-            bitmapShader.setFilterMode(z10 ? 1 : 2);
-        }
-    }
-
-    public final boolean b(Bitmap bitmap) {
-        WeakReference weakReference = this.e;
-        if (weakReference != null && weakReference.get() == bitmap) {
-            return false;
-        }
-        this.e = new WeakReference(bitmap);
-        Shader.TileMode tileMode = this.a;
-        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-        this.d = bitmapShader;
-        bitmapShader.setLocalMatrix(this.b);
-        if (Build.VERSION.SDK_INT >= 33) {
-            this.d.setFilterMode(this.c ? 1 : 2);
-        }
-        return true;
+    public sc0(int i10, String str) {
+        this.a = i10;
+        this.b = new l11(str, 14.0f, AndroidUtilities.bold());
     }
 }

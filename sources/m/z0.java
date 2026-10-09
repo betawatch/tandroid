@@ -10,7 +10,6 @@ import android.os.Build;
 import android.text.InputFilter;
 import android.text.TextDirectionHeuristic;
 import android.text.TextDirectionHeuristics;
-import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
@@ -19,12 +18,11 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import v7.h8;
-import v7.v7;
-import w7.q6;
+import v7.d8;
+import w7.o6;
 import w7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class z0 extends TextView implements u0.k {
     public final e2.c a;
@@ -32,7 +30,7 @@ public class z0 extends TextView implements u0.k {
     public final y c;
     public t d;
     public boolean e;
-    public l2.g f;
+    public l2.f f;
     public Future h;
 
     public z0(Context context, AttributeSet attributeSet) {
@@ -61,7 +59,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (s3.b) {
+        if (t3.b) {
             return super.getAutoSizeMaxTextSize();
         }
         w0 w0Var = this.b;
@@ -73,7 +71,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (s3.b) {
+        if (t3.b) {
             return super.getAutoSizeMinTextSize();
         }
         w0 w0Var = this.b;
@@ -85,7 +83,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (s3.b) {
+        if (t3.b) {
             return super.getAutoSizeStepGranularity();
         }
         w0 w0Var = this.b;
@@ -97,7 +95,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (s3.b) {
+        if (t3.b) {
             return super.getAutoSizeTextAvailableSizes();
         }
         w0 w0Var = this.b;
@@ -106,7 +104,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public int getAutoSizeTextType() {
-        if (s3.b) {
+        if (t3.b) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         w0 w0Var = this.b;
@@ -137,7 +135,7 @@ public class z0 extends TextView implements u0.k {
             if (i10 >= 28) {
                 this.f = new y0(this);
             } else if (i10 >= 26) {
-                this.f = new l2.g(this, 2);
+                this.f = new l2.f(this, 2);
             }
         }
         return this.f;
@@ -206,7 +204,7 @@ public class z0 extends TextView implements u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.o.a(editorInfo, onCreateInputConnection, this);
+        w7.m.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
@@ -214,7 +212,7 @@ public class z0 extends TextView implements u0.k {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         w0 w0Var = this.b;
-        if (w0Var == null || s3.b) {
+        if (w0Var == null || t3.b) {
             return;
         }
         w0Var.i.a();
@@ -246,7 +244,7 @@ public class z0 extends TextView implements u0.k {
         w0 w0Var = this.b;
         if (w0Var != null) {
             g1 g1Var = w0Var.i;
-            if (s3.b || !g1Var.f()) {
+            if (t3.b || !g1Var.f()) {
                 return;
             }
             g1Var.a();
@@ -261,7 +259,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
-        if (s3.b) {
+        if (t3.b) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
             return;
         }
@@ -273,7 +271,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
-        if (s3.b) {
+        if (t3.b) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
             return;
         }
@@ -285,7 +283,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeWithDefaults(int i10) {
-        if (s3.b) {
+        if (t3.b) {
             super.setAutoSizeTextTypeWithDefaults(i10);
             return;
         }
@@ -360,13 +358,13 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((q6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((o6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().m(i10);
+            getSuperCaller().g(i10);
         } else {
             s7.b(i10, this);
         }
@@ -456,7 +454,6 @@ public class z0 extends TextView implements u0.k {
     public void setTextMetricsParamsCompat(p0.c cVar) {
         TextDirectionHeuristic textDirectionHeuristic;
         TextDirectionHeuristic textDirectionHeuristic2 = cVar.b;
-        TextPaint textPaint = cVar.a;
         TextDirectionHeuristic textDirectionHeuristic3 = TextDirectionHeuristics.FIRSTSTRONG_RTL;
         int i10 = 1;
         if (textDirectionHeuristic2 != textDirectionHeuristic3 && textDirectionHeuristic2 != (textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR)) {
@@ -475,23 +472,14 @@ public class z0 extends TextView implements u0.k {
             }
         }
         setTextDirection(i10);
-        if (Build.VERSION.SDK_INT >= 23) {
-            getPaint().set(textPaint);
-            e0.b.y(this, cVar.c);
-            e0.b.B(this, cVar.d);
-        } else {
-            float textScaleX = textPaint.getTextScaleX();
-            getPaint().set(textPaint);
-            if (textScaleX == getTextScaleX()) {
-                setTextScaleX((textScaleX / 2.0f) + 1.0f);
-            }
-            setTextScaleX(textScaleX);
-        }
+        getPaint().set(cVar.a);
+        setBreakStrategy(cVar.c);
+        setHyphenationFrequency(cVar.d);
     }
 
     @Override // android.widget.TextView
     public final void setTextSize(int i10, float f7) {
-        boolean z10 = s3.b;
+        boolean z10 = t3.b;
         if (z10) {
             super.setTextSize(i10, f7);
             return;
@@ -516,7 +504,7 @@ public class z0 extends TextView implements u0.k {
             typeface2 = null;
         } else {
             Context context = getContext();
-            h8 h8Var = i0.e.a;
+            d8 d8Var = i0.e.a;
             if (context == null) {
                 throw new IllegalArgumentException("Context cannot be null");
             }
@@ -556,7 +544,7 @@ public class z0 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
         Context context = getContext();
-        setCompoundDrawablesRelativeWithIntrinsicBounds(i10 != 0 ? v7.b(context, i10) : null, i11 != 0 ? v7.b(context, i11) : null, i12 != 0 ? v7.b(context, i12) : null, i13 != 0 ? v7.b(context, i13) : null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds(i10 != 0 ? v7.s7.b(context, i10) : null, i11 != 0 ? v7.s7.b(context, i11) : null, i12 != 0 ? v7.s7.b(context, i12) : null, i13 != 0 ? v7.s7.b(context, i13) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();
@@ -566,7 +554,7 @@ public class z0 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawablesWithIntrinsicBounds(int i10, int i11, int i12, int i13) {
         Context context = getContext();
-        setCompoundDrawablesWithIntrinsicBounds(i10 != 0 ? v7.b(context, i10) : null, i11 != 0 ? v7.b(context, i11) : null, i12 != 0 ? v7.b(context, i12) : null, i13 != 0 ? v7.b(context, i13) : null);
+        setCompoundDrawablesWithIntrinsicBounds(i10 != 0 ? v7.s7.b(context, i10) : null, i11 != 0 ? v7.s7.b(context, i11) : null, i12 != 0 ? v7.s7.b(context, i12) : null, i13 != 0 ? v7.s7.b(context, i13) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();

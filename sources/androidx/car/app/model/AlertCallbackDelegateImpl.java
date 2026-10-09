@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IAlertCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class AlertCallbackDelegateImpl implements e {
     private final IAlertCallback mCallback;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class AlertCallbackStub extends IAlertCallback.Stub {
         private final d mCallback;
 
@@ -46,7 +46,7 @@ public class AlertCallbackDelegateImpl implements e {
         return new AlertCallbackDelegateImpl(dVar);
     }
 
-    public void sendCancel(int i10, androidx.car.app.k kVar) {
+    public void sendCancel(int i10, androidx.car.app.j jVar) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);
@@ -56,7 +56,7 @@ public class AlertCallbackDelegateImpl implements e {
         }
     }
 
-    public void sendDismiss(androidx.car.app.k kVar) {
+    public void sendDismiss(androidx.car.app.j jVar) {
         try {
             IAlertCallback iAlertCallback = this.mCallback;
             Objects.requireNonNull(iAlertCallback);

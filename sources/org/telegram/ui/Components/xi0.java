@@ -1,88 +1,109 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.View;
+import android.graphics.Path;
+import android.os.Build;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.NotchInfoUtils;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xi0 {
-    public final e6 a;
-    public final o6 b;
-    public final int c;
-    public boolean d;
-    public final cj0 e;
-    public final zc f;
-    public final Paint g = new Paint(1);
+public final class xi0 extends FrameLayout {
+    public final Paint a;
+    public final Path b;
+    public final wi0 c;
+    public float d;
+    public float e;
+    public float f;
     public boolean h;
+    public NotchInfoUtils.NotchInfo n;
 
-    public xi0(View view) {
-        this.a = new e6(view, 350L, tr.h);
-        this.e = new cj0(view);
-        this.f = new zc(view);
-        o6 o6Var = new o6(false, false, false, false);
-        this.b = o6Var;
-        o6Var.t(AndroidUtilities.dp(11.0f));
-        o6Var.o(true, true, false);
-        o6Var.setCallback(view);
-        o6Var.G = (int) (AndroidUtilities.displaySize.x * 0.3f);
-        this.d = false;
-        o6Var.q(LocaleController.getString(R.string.QuoteCollapse), false, true);
-        String string = LocaleController.getString(R.string.QuoteExpand);
-        TextPaint textPaint = o6Var.a;
-        this.c = (int) Math.ceil(Math.max(textPaint.measureText(string), textPaint.measureText(LocaleController.getString(R.string.QuoteCollapse))));
+    public xi0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setColor(-16777216);
+        if (Build.VERSION.SDK_INT < 31 || SharedConfig.getDevicePerformanceClass() < 1) {
+            this.c = new ui0(this);
+        } else {
+            this.c = new vi0(this, SharedConfig.getDevicePerformanceClass() == 2 ? 1.0f : 1.5f);
+        }
+        setIntensity(15.0f);
+        setBlurIntensity(0.0f);
+        setWillNotDraw(false);
     }
 
-    public final void a(Canvas canvas, RectF rectF, float f7, float f10, int i10, boolean z10, boolean z11) {
-        boolean z12 = this.d;
-        o6 o6Var = this.b;
-        if (z10 != z12) {
-            this.d = z10;
-            o6Var.q(LocaleController.getString(z10 ? R.string.QuoteExpand : R.string.QuoteCollapse), true, true);
-        }
-        int d = (int) (o6Var.d() + AndroidUtilities.dp(23.66f));
-        float dp = AndroidUtilities.dp(17.66f);
-        rectF.set(f7 - d, f10 - dp, f7, f10);
-        float a2 = this.f.a(0.02f) * this.a.e(z11);
-        if (a2 > 0.0f) {
-            int k10 = i0.a.k(i10, 30);
-            Paint paint = this.g;
-            paint.setColor(k10);
-            canvas.save();
-            canvas.scale(a2, a2, f7, f10);
-            float f11 = dp / 2.0f;
-            canvas.drawRoundRect(rectF, f11, f11, paint);
-            o6Var.setBounds((int) (rectF.left + AndroidUtilities.dp(6.0f)), (int) rectF.top, (int) (rectF.right - AndroidUtilities.dp(17.66f)), (int) rectF.bottom);
-            o6Var.r(i10);
-            o6Var.draw(canvas);
-            float dp2 = AndroidUtilities.dp(14.0f);
-            int dp3 = (int) ((rectF.right - AndroidUtilities.dp(3.33f)) - dp2);
-            float f12 = dp2 / 2.0f;
-            int centerY = (int) ((rectF.centerY() - f12) + AndroidUtilities.dp(0.33f));
-            int dp4 = (int) (rectF.right - AndroidUtilities.dp(3.33f));
-            int centerY2 = (int) (rectF.centerY() + f12 + AndroidUtilities.dp(0.33f));
-            cj0 cj0Var = this.e;
-            cj0Var.setBounds(dp3, centerY, dp4, centerY2);
-            Paint paint2 = cj0Var.b;
-            paint2.setColor(i10);
-            paint2.setAlpha(cj0Var.d);
-            boolean z13 = !z10;
-            if (cj0Var.e != z13) {
-                cj0Var.e = z13;
-                cj0Var.a.invalidate();
-            }
-            cj0Var.draw(canvas);
-            canvas.restore();
+    public static /* synthetic */ void a(xi0 xi0Var, Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(32.0f));
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (!this.h) {
+            super.draw(canvas);
+        } else {
+            this.c.c(new bw(this, 13), canvas);
         }
     }
 
-    public final void b(boolean z10) {
+    public float getAvatarEndScale() {
+        float min;
+        int dp;
+        NotchInfoUtils.NotchInfo notchInfo = this.n;
+        if (notchInfo == null) {
+            return 0.8f;
+        }
+        if (notchInfo.isLikelyCircle) {
+            min = notchInfo.bounds.width() - AndroidUtilities.dp(2.0f);
+            dp = AndroidUtilities.dp(100.0f);
+        } else {
+            min = Math.min(notchInfo.bounds.width(), this.n.bounds.height());
+            dp = AndroidUtilities.dp(100.0f);
+        }
+        return Math.min(0.8f, min / dp);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        NotchInfoUtils.NotchInfo info = NotchInfoUtils.getInfo(getContext());
+        this.n = info;
+        if ((info != null && info.gravity != 17) || getWidth() > getHeight()) {
+            this.n = null;
+        }
+        this.c.d(i10, i11);
+    }
+
+    public void setBlurIntensity(float f7) {
+        this.f = f7;
+        this.c.b(f7);
+        invalidate();
+    }
+
+    public void setGooeyEnabled(boolean z10) {
+        if (this.h == z10) {
+            return;
+        }
         this.h = z10;
-        this.f.c(z10);
+        invalidate();
+    }
+
+    public void setIntensity(float f7) {
+        this.d = f7;
+        this.c.a(f7);
+        invalidate();
+    }
+
+    public void setPullProgress(float f7) {
+        this.e = f7;
+        invalidate();
     }
 }

@@ -1,16 +1,16 @@
 package ab;
 
-import hd.r;
+import id.r;
 import j$.util.DesugarCollections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
-import v7.t7;
+import v7.a8;
 import w9.j;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -36,7 +36,7 @@ public final class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object b(kd.c cVar) {
+    public final Object b(ld.c cVar) {
         b bVar;
         int i10;
         Map linkedHashMap;
@@ -47,10 +47,10 @@ public final class c {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 bVar.r = i11 - TLObject.FLAG_31;
                 Object obj = bVar.h;
-                jd.a aVar = jd.a.a;
+                kd.a aVar = kd.a.a;
                 i10 = bVar.r;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    a8.b(obj);
                     Map dependencies = b;
                     i.d(dependencies, "dependencies");
                     linkedHashMap = new LinkedHashMap(r.a(dependencies.size()));
@@ -63,11 +63,11 @@ public final class c {
                     }
                     Object key = bVar.f;
                     linkedHashMap = bVar.e;
-                    ie.d dVar = bVar.d;
+                    je.d dVar = bVar.d;
                     d subscriberName = bVar.c;
                     it = bVar.b;
                     Map map = bVar.a;
-                    t7.b(obj);
+                    a8.b(obj);
                     try {
                         i.e(subscriberName, "subscriberName");
                         j jVar = a(subscriberName).b;
@@ -109,7 +109,7 @@ public final class c {
         }
         bVar = new b(this, cVar);
         Object obj2 = bVar.h;
-        jd.a aVar2 = jd.a.a;
+        kd.a aVar2 = kd.a.a;
         i10 = bVar.r;
         if (i10 != 0) {
         }

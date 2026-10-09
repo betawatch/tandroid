@@ -1,34 +1,56 @@
 package gg;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.wa0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.e2 {
-    public final /* synthetic */ k1 a;
+public final /* synthetic */ class w0 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Serializable d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ w0(k1 k1Var) {
-        this.a = k1Var;
+    public /* synthetic */ w0(j1 j1Var, String str, boolean z10, TLRPC.User user, String str2, MessagesStorage messagesStorage, String str3) {
+        this.c = j1Var;
+        this.d = str;
+        this.b = z10;
+        this.g = user;
+        this.e = str2;
+        this.h = messagesStorage;
+        this.f = str3;
     }
 
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        k1 k1Var = this.a;
-        k1Var.N = arrayList;
-        k1Var.I = null;
-        k1Var.A0 = null;
-        k1Var.x = null;
-        k1Var.y = null;
-        k1Var.J = null;
-        k1Var.Q = null;
-        k1Var.M = null;
-        k1Var.K = null;
-        k1Var.P = null;
-        k1Var.l();
-        wa0 wa0Var = k1Var.V;
-        ArrayList arrayList2 = k1Var.N;
-        wa0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new x0((j1) this.c, (String) this.d, this.b, tLObject, (TLRPC.User) this.g, (String) this.e, (MessagesStorage) this.h, (String) this.f));
+                break;
+            default:
+                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$77((ArrayList) this.d, (TLObject) this.e, (ArrayList) this.f, (ArrayList) this.g, (SendMessagesHelper.DelayedMessage) this.h, this.b, tLObject, tL_error);
+                break;
+        }
+    }
+
+    public /* synthetic */ w0(ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, SendMessagesHelper sendMessagesHelper, TLObject tLObject, boolean z10) {
+        this.c = sendMessagesHelper;
+        this.d = arrayList;
+        this.e = tLObject;
+        this.f = arrayList2;
+        this.g = arrayList3;
+        this.h = delayedMessage;
+        this.b = z10;
     }
 }

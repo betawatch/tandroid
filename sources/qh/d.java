@@ -9,23 +9,23 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d extends View {
     public final Drawable a;
-    public final le.b b;
+    public final me.b b;
     public final int c;
     public e d;
 
     public d(Context context, int i10) {
         super(context);
-        this.b = new le.b(this, tr.h, 380L);
+        this.b = new me.b(this, hs.h, 380L);
         this.c = i10;
         Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
         this.a = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.o7, false), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.x0(null, i6.o7, false), PorterDuff.Mode.SRC_IN));
     }
 
     public final void a(e eVar, boolean z10) {

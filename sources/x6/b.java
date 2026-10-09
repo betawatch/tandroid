@@ -5,7 +5,7 @@ import android.os.IInterface;
 import java.lang.reflect.Field;
 import n6.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends b8.b implements a {
     public final Object b;
@@ -15,7 +15,7 @@ public final class b extends b8.b implements a {
         this.b = obj;
     }
 
-    public static a L0(IBinder iBinder) {
+    public static a K0(IBinder iBinder) {
         if (iBinder == null) {
             return null;
         }
@@ -23,7 +23,7 @@ public final class b extends b8.b implements a {
         return queryLocalInterface instanceof a ? (a) queryLocalInterface : new f(iBinder, "com.google.android.gms.dynamic.IObjectWrapper", 7);
     }
 
-    public static Object M0(a aVar) {
+    public static Object L0(a aVar) {
         if (aVar instanceof b) {
             return ((b) aVar).b;
         }

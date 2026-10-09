@@ -1,40 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ e9 d;
+public final class z8 extends f9 {
+    public final /* synthetic */ y8 G;
 
-    public z8(e9 e9Var, float f7, float f10, boolean z10) {
-        this.d = e9Var;
-        this.a = f7;
-        this.b = f10;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z8(g9 g9Var, Activity activity, y8 y8Var) {
+        super(g9Var, activity);
+        this.G = y8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        e9 e9Var = this.d;
-        e9Var.N = floatValue;
-        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
-        kVar.getTitleTextView().setAlpha(e9Var.N);
-        if (e9Var.F && !this.c) {
-            e9Var.i0(1.0f - e9Var.N, false);
-        }
-        e9Var.r.setTranslationY(lerp);
-        e9Var.x.setTranslationY(lerp);
-        e9Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
-        kVar2.invalidate();
+    @Override // org.telegram.ui.Components.f9, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.G.invalidate();
     }
 }

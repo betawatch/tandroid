@@ -1,72 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class st0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f1 c;
-    public final /* synthetic */ ut0 d;
+public final class st0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ bw0 a;
 
-    public /* synthetic */ st0(ut0 ut0Var, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, int i10) {
-        this.a = i10;
-        this.d = ut0Var;
-        this.b = f1Var;
-        this.c = f1Var2;
+    public st0(bw0 bw0Var) {
+        this.a = bw0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                qv0 qv0Var = this.d.d;
-                if (!qv0Var.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var = this.b;
-                    boolean z10 = f1Var.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var2 = this.c;
-                    if (!z10 && f1Var2.getCheckView().a.q) {
-                        float f7 = -qv0Var.s1;
-                        qv0Var.s1 = f7;
-                        AndroidUtilities.shakeViewSpring(f1Var2, f7);
-                        break;
-                    } else {
-                        f1Var2.setChecked(!f1Var2.getCheckView().a.q);
-                        if (f1Var2.getCheckView().a.q && f1Var.getCheckView().a.q) {
-                            qv0Var.t1[0].q = 0;
-                        } else {
-                            qv0Var.t1[0].q = 2;
-                        }
-                        qv0.s(qv0Var);
-                        break;
-                    }
-                }
-                break;
-            default:
-                qv0 qv0Var2 = this.d.d;
-                if (!qv0Var2.H1) {
-                    org.telegram.ui.ActionBar.f1 f1Var3 = this.b;
-                    boolean z11 = f1Var3.getCheckView().a.q;
-                    org.telegram.ui.ActionBar.f1 f1Var4 = this.c;
-                    if (!z11 && f1Var4.getCheckView().a.q) {
-                        float f10 = -qv0Var2.s1;
-                        qv0Var2.s1 = f10;
-                        AndroidUtilities.shakeViewSpring(f1Var4, f10);
-                        break;
-                    } else {
-                        f1Var4.setChecked(!f1Var4.getCheckView().a.q);
-                        if (f1Var3.getCheckView().a.q && f1Var4.getCheckView().a.q) {
-                            qv0Var2.t1[0].q = 0;
-                        } else {
-                            qv0Var2.t1[0].q = 1;
-                        }
-                        qv0.s(qv0Var2);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        bw0 bw0Var = this.a;
+        if (bw0Var.n0 == null) {
+            return;
         }
+        bw0Var.n0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - bw0Var.n0.getRight());
     }
 }

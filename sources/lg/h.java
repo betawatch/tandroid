@@ -3,7 +3,7 @@ package lg;
 import android.animation.ValueAnimator;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
             case 0:
                 p pVar = this.b;
                 pVar.getClass();
-                float z10 = e2.z(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float y3 = e2.y(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
                 float[] fArr = this.d;
                 float f7 = fArr[0];
-                float f10 = z10 / f7;
+                float f10 = y3 / f7;
                 fArr[0] = f7 * f10;
                 n.g(pVar.L, f10, this.e, this.f);
                 pVar.r(false);

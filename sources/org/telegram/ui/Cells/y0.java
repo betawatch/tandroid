@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class y0 extends FrameLayout {
     public x0 a;
@@ -22,12 +22,12 @@ public final class y0 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.d;
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.M6, false);
-        int red = Color.red(w02);
-        int green = Color.green(w02);
-        int blue = Color.blue(w02);
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.M6, false);
+        int red = Color.red(x02);
+        int green = Color.green(x02);
+        int blue = Color.blue(x02);
         x0 x0Var = this.a;
-        x0Var.b(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.g7, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h7, false));
+        x0Var.b(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.g7, false), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h7, false));
         RectF rectF = this.c;
         rectF.set(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), getMeasuredWidth() - AndroidUtilities.dp(1.0f), AndroidUtilities.dp(73.0f));
         org.telegram.ui.ActionBar.i6.X1.setColor(Color.argb((int) (x0Var.getProgress() * 43.0f), red, green, blue));
@@ -38,17 +38,18 @@ public final class y0 extends FrameLayout {
         boolean z10 = this.b;
         String string = LocaleController.getString(z10 ? R.string.ChatListExpanded : R.string.ChatListDefault);
         int ceil = (int) Math.ceil(textPaint.measureText(string));
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
         int measuredWidth = getMeasuredWidth() - ceil;
+        int i10 = 2;
         canvas.drawText(string, measuredWidth / 2, AndroidUtilities.dp(96.0f), textPaint);
-        int i10 = 0;
-        for (int i11 = 2; i10 < i11; i11 = 2) {
-            int dp = AndroidUtilities.dp(i10 == 0 ? 21.0f : 53.0f);
-            org.telegram.ui.ActionBar.i6.t0.setColor(Color.argb(i10 == 0 ? 204 : 90, red, green, blue));
+        int i11 = 0;
+        while (i11 < i10) {
+            int dp = AndroidUtilities.dp(i11 == 0 ? 21.0f : 53.0f);
+            org.telegram.ui.ActionBar.i6.t0.setColor(Color.argb(i11 == 0 ? 204 : 90, red, green, blue));
             canvas.drawCircle(AndroidUtilities.dp(22.0f), dp, AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.i6.t0);
             int i12 = 0;
             while (true) {
-                if (i12 < (z10 ? 3 : 2)) {
+                if (i12 < (z10 ? 3 : i10)) {
                     org.telegram.ui.ActionBar.i6.t0.setColor(Color.argb(i12 == 0 ? 204 : 90, red, green, blue));
                     if (z10) {
                         float f7 = i12 * 7;
@@ -60,9 +61,11 @@ public final class y0 extends FrameLayout {
                         canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.i6.t0);
                     }
                     i12++;
+                    i10 = 2;
                 }
             }
-            i10++;
+            i11++;
+            i10 = 2;
         }
     }
 

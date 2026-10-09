@@ -1,44 +1,55 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.Utilities;
+import android.content.DialogInterface;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.d21;
+import org.telegram.ui.g60;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e1 implements Utilities.Callback {
+public final /* synthetic */ class e1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s2 b;
 
-    public /* synthetic */ e1(s2 s2Var, int i10) {
+    public /* synthetic */ e1(int i10) {
         this.a = i10;
-        this.b = s2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        s2 s2Var = this.b;
-        Integer num = (Integer) obj;
-        switch (i10) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
             case 0:
-                s2.m(s2Var);
+                int i10 = r2.G;
                 break;
             case 1:
-                i1 i1Var = s2Var.f;
-                ValueAnimator valueAnimator = i1Var.S;
-                if ((valueAnimator == null || !valueAnimator.isRunning()) && i1Var.getCurrentPosition() != num.intValue()) {
-                    i1Var.E(num.intValue());
-                    r2 r2Var = s2Var.h;
-                    r2Var.F = num.intValue();
-                    r2Var.invalidate();
-                    break;
-                }
+                org.telegram.ui.b.a = false;
+                break;
+            case 2:
+                break;
+            case 3:
+                SharedConfig.BackgroundActivityPrefs.increaseDismissedCount();
+                break;
+            case 4:
+                int i11 = d21.e;
+                break;
+            case 5:
+                g60 g60Var = g60.D3;
+                break;
+            case 6:
                 break;
             default:
-                int intValue = num.intValue();
-                int i11 = s2.G;
-                s2Var.p0(intValue);
+                MediaController.forceBroadcastNewPhotos = false;
                 break;
         }
+    }
+
+    public /* synthetic */ e1(boolean[] zArr) {
+        this.a = 2;
+    }
+
+    private final void a(DialogInterface dialogInterface) {
+    }
+
+    private final void b(DialogInterface dialogInterface) {
     }
 }

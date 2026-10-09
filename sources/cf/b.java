@@ -1,9 +1,12 @@
 package cf;
 
-import n7.z0;
+import v7.e5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public interface b {
-    a F1(z0 z0Var);
+public final class b extends a {
+    @Override // cf.p
+    public final void a(e5 e5Var) {
+        e5Var.a(this);
+    }
 }

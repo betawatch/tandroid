@@ -17,13 +17,12 @@ import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.bi;
-import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.bd;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.ml0;
 import v7.z6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -36,7 +35,7 @@ public abstract class j extends FrameLayout {
     public boolean K;
     public int L;
     public int M;
-    public ld N;
+    public org.telegram.ui.Wallet.r N;
     public float O;
     public ValueAnimator P;
     public ValueAnimator Q;
@@ -46,7 +45,7 @@ public abstract class j extends FrameLayout {
     public final e U;
     public int V;
     public int W;
-    public final zc a;
+    public final bd a;
     public ValueAnimator a0;
     public float b;
     public ValueAnimator b0;
@@ -81,7 +80,7 @@ public abstract class j extends FrameLayout {
     /* JADX WARN: Type inference failed for: r0v4, types: [qg.e] */
     public j(Context context, PointF pointF) {
         super(context);
-        this.a = new zc(this);
+        this.a = new bd(this);
         this.n = false;
         this.r = false;
         this.s = false;
@@ -109,7 +108,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.A(jVar);
+                            jVar.F.z(jVar);
                             break;
                         }
                         break;
@@ -146,7 +145,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.A(jVar);
+                            jVar.F.z(jVar);
                             break;
                         }
                         break;
@@ -178,7 +177,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.A(jVar);
+                            jVar.F.z(jVar);
                             break;
                         }
                         break;
@@ -244,24 +243,24 @@ public abstract class j extends FrameLayout {
                 }
                 if (!this.v && (hVar4 = this.F) != null) {
                     this.v = true;
-                    hVar4.C();
+                    hVar4.B();
                 }
                 if (!this.w && z10 && (hVar3 = this.F) != null) {
                     this.w = true;
-                    hVar3.j();
+                    hVar3.l();
                 }
                 if (this.w && !z10 && (hVar2 = this.F) != null) {
                     this.w = false;
-                    hVar2.i();
+                    hVar2.k();
                 }
                 if (!this.l0 && !this.x && (hVar = this.F) != null) {
-                    hVar.c(this);
+                    hVar.d(this);
                     this.x = true;
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.B(bi.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
-                    this.F.g(a4.a.e((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
+                    hVar5.A(bi.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    this.F.h(a1.g.e((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
                 boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && z6.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
@@ -274,13 +273,13 @@ public abstract class j extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n0, z11 ? 0.5f : 1.0f);
                     this.o0 = ofFloat;
                     ofFloat.addUpdateListener(new f(this, i10));
-                    this.o0.setInterpolator(tr.h);
+                    this.o0.setInterpolator(hs.h);
                     this.o0.setDuration(280L);
                     this.o0.start();
                     this.y = z11;
                     h hVar7 = this.F;
                     if (hVar7 != null) {
-                        hVar7.l(z11);
+                        hVar7.n(z11);
                     }
                 }
                 this.a.c(false);
@@ -294,16 +293,16 @@ public abstract class j extends FrameLayout {
         h hVar;
         h hVar2;
         if (this.v) {
-            this.F.h(this.y);
+            this.F.i(this.y);
             this.v = false;
         }
         this.w = false;
         if (!z10 && !this.E && !this.n && !this.s && !this.x && (hVar2 = this.F) != null) {
-            hVar2.c(this);
+            hVar2.d(this);
         }
         if (this.n && (hVar = this.F) != null) {
-            hVar.B(false);
-            this.F.g(false);
+            hVar.A(false);
+            this.F.h(false);
         }
         AndroidUtilities.cancelRunOnUIThread(this.I);
         this.E = false;
@@ -312,9 +311,9 @@ public abstract class j extends FrameLayout {
         this.r = true;
         this.x = false;
         this.M = this.L;
-        ld ldVar = this.N;
-        if (ldVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(ldVar);
+        org.telegram.ui.Wallet.r rVar = this.N;
+        if (rVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(rVar);
             this.N = null;
         }
         this.V = this.R;
@@ -333,7 +332,7 @@ public abstract class j extends FrameLayout {
         canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
         if (getParent() instanceof View) {
             View view = (View) getParent();
-            if (this instanceof b2) {
+            if (this instanceof c2) {
                 float f7 = this.n0;
                 canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
             } else {
@@ -347,13 +346,13 @@ public abstract class j extends FrameLayout {
         canvas.restore();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0132, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x012e, code lost:
     
         if (java.lang.Math.abs(((getScaleY() * ((b() / 2.0f) - getStickyPaddingBottom())) + r9.G.y) - (r10.getMeasuredHeight() - org.telegram.messenger.AndroidUtilities.dp(64.0f))) <= org.telegram.messenger.AndroidUtilities.dp(12.0f)) goto L36;
      */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0136  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -439,22 +438,22 @@ public abstract class j extends FrameLayout {
                 if (Math.abs(intValue - f7) < 4.0f) {
                     if (this.M != intValue) {
                         this.M = intValue;
-                        ld ldVar = this.N;
-                        if (ldVar != null) {
-                            AndroidUtilities.cancelRunOnUIThread(ldVar);
+                        org.telegram.ui.Wallet.r rVar = this.N;
+                        if (rVar != null) {
+                            AndroidUtilities.cancelRunOnUIThread(rVar);
                         }
-                        ld ldVar2 = new ld(this, intValue, 28);
-                        this.N = ldVar2;
-                        AndroidUtilities.runOnUIThread(ldVar2, 250L);
+                        org.telegram.ui.Wallet.r rVar2 = new org.telegram.ui.Wallet.r(this, intValue, 4);
+                        this.N = rVar2;
+                        AndroidUtilities.runOnUIThread(rVar2, 250L);
                     }
                 }
             }
         } else if (z10) {
             if (Math.abs(this.L - f7) >= 12.0f || this.c0) {
                 this.M = -1;
-                ld ldVar3 = this.N;
-                if (ldVar3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(ldVar3);
+                org.telegram.ui.Wallet.r rVar3 = this.N;
+                if (rVar3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(rVar3);
                     this.N = null;
                 }
                 ValueAnimator valueAnimator = this.P;
@@ -467,7 +466,7 @@ public abstract class j extends FrameLayout {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 this.Q = duration;
-                duration.setInterpolator(tr.f);
+                duration.setInterpolator(hs.f);
                 this.Q.addUpdateListener(new f(this, i10));
                 this.Q.addListener(new g(this, 3));
                 this.Q.start();
@@ -563,8 +562,8 @@ public abstract class j extends FrameLayout {
         return getScaleX();
     }
 
-    public uk0 getSelectionBounds() {
-        return new uk0(0.0f, 0.0f, 0.0f, 0.0f);
+    public ml0 getSelectionBounds() {
+        return new ml0(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public float getStickyPaddingBottom() {
@@ -602,7 +601,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.a0 = duration;
-        duration.setInterpolator(tr.f);
+        duration.setInterpolator(hs.f);
         this.a0.addUpdateListener(new f(this, 3));
         this.a0.addListener(new g(this, 0));
         this.a0.start();
@@ -615,7 +614,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.b0 = duration;
-        duration.setInterpolator(tr.f);
+        duration.setInterpolator(hs.f);
         this.b0.addUpdateListener(new f(this, 4));
         this.b0.addListener(new g(this, 1));
         this.b0.start();
@@ -631,7 +630,7 @@ public abstract class j extends FrameLayout {
         float f11 = f7 * f10;
         this.h0 = f11;
         float clamp = Utilities.clamp(Math.max(f11, 0.1f), getMaxScale(), getMinScale());
-        if (!(this instanceof a2)) {
+        if (!(this instanceof b2)) {
             if ((clamp >= getMaxScale() || clamp <= getMinScale()) != (f10 >= getMaxScale() || f10 <= getMinScale())) {
                 try {
                     performHapticFeedback(3, 1);
@@ -674,7 +673,7 @@ public abstract class j extends FrameLayout {
             ofFloat.addUpdateListener(new f(this, 2));
             this.k0.addListener(new g(this, 4));
             this.k0.setDuration(280L);
-            this.k0.setInterpolator(tr.h);
+            this.k0.setInterpolator(hs.h);
             this.k0.start();
         }
     }
@@ -746,8 +745,8 @@ public abstract class j extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:17:0x0044  */
     /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
     /* JADX WARN: Removed duplicated region for block: B:25:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x010a A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x010b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00c6  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x0057  */
     @Override // android.view.View
     /*
@@ -763,7 +762,7 @@ public abstract class j extends FrameLayout {
             float rawX = motionEvent.getRawX();
             float rawY = motionEvent.getRawY();
             float[] fArr = this.e0;
-            hVar.v(rawX, rawY, fArr);
+            hVar.u(rawX, rawY, fArr);
             boolean z12 = motionEvent.getPointerCount() > 1;
             float[] fArr2 = this.f0;
             if (z12) {
@@ -794,15 +793,15 @@ public abstract class j extends FrameLayout {
                     float f7 = fArr3[0];
                     float f10 = fArr3[1];
                     actionMasked = motionEvent.getActionMasked();
-                    zc zcVar = this.a;
+                    bd bdVar = this.a;
                     if (actionMasked == 0) {
                         if (actionMasked != 1) {
                             if (actionMasked == 2) {
                                 jVar = this;
                                 z11 = jVar.c(fArr[0], fArr[1], z10, fArr2[0], fArr2[1]);
                             } else if (actionMasked != 3) {
-                                z11 = false;
                                 jVar = this;
+                                z11 = false;
                             }
                             jVar.d0 = z10;
                             if (!super.onTouchEvent(motionEvent) || z11) {
@@ -811,7 +810,7 @@ public abstract class j extends FrameLayout {
                         }
                         jVar = this;
                         d(actionMasked == 3);
-                        zcVar.c(false);
+                        bdVar.c(false);
                         i iVar2 = jVar.H;
                         if (iVar2 != null) {
                             iVar2.f = true;
@@ -828,7 +827,7 @@ public abstract class j extends FrameLayout {
                         if ((getParent() instanceof d) && (jVar.R != 0 || jVar.S != 0)) {
                             ((d) getParent()).invalidate();
                         }
-                        zcVar.c(true);
+                        bdVar.c(true);
                         e eVar = jVar.I;
                         AndroidUtilities.cancelRunOnUIThread(eVar);
                         if (!z10) {
@@ -841,7 +840,7 @@ public abstract class j extends FrameLayout {
                     }
                     return true;
                 }
-                this.F.v(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+                this.F.u(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
             }
             z10 = z12;
             float[] fArr32 = this.g0;
@@ -853,7 +852,7 @@ public abstract class j extends FrameLayout {
             float f72 = fArr32[0];
             float f102 = fArr32[1];
             actionMasked = motionEvent.getActionMasked();
-            zc zcVar2 = this.a;
+            bd bdVar2 = this.a;
             if (actionMasked == 0) {
             }
             z11 = true;

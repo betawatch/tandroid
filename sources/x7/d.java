@@ -2,7 +2,7 @@ package x7;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d implements Map.Entry {
     public final /* synthetic */ int a;
@@ -13,14 +13,14 @@ public abstract class d implements Map.Entry {
             case 0:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry = (Map.Entry) obj;
-                    if (!w7.n8.a(getKey(), entry.getKey()) || !w7.n8.a(getValue(), entry.getValue())) {
+                    if (!w7.l8.a(getKey(), entry.getKey()) || !w7.l8.a(getValue(), entry.getValue())) {
                     }
                 }
                 break;
             default:
                 if (obj instanceof Map.Entry) {
                     Map.Entry entry2 = (Map.Entry) obj;
-                    if (!w7.o9.a(getKey(), entry2.getKey()) || !w7.o9.a(getValue(), entry2.getValue())) {
+                    if (!w7.i9.a(getKey(), entry2.getKey()) || !w7.i9.a(getValue(), entry2.getValue())) {
                     }
                 }
                 break;
@@ -47,7 +47,7 @@ public abstract class d implements Map.Entry {
             case 0:
                 return getKey() + "=" + getValue();
             default:
-                return a4.a.D(String.valueOf(getKey()), "=", String.valueOf(getValue()));
+                return a1.g.D(String.valueOf(getKey()), "=", String.valueOf(getValue()));
         }
     }
 

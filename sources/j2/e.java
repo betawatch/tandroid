@@ -1,44 +1,47 @@
 package j2;
 
-import android.media.AudioDeviceInfo;
-import android.media.MediaDrmResetException;
 import b2.k0;
 import e2.m;
 import e9.i0;
 import m4.a0;
-import m4.e1;
+import m4.a1;
+import m4.b0;
+import m4.f1;
 import m4.n;
 import m4.q;
 import m4.r;
-import m4.z;
-import m4.z0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements m, d9.e, i5.g, z, z0, e2.h {
+public final /* synthetic */ class e implements m, d9.e, i5.g, a0, a1, e2.h {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i10) {
         this.a = i10;
     }
 
-    public static /* bridge */ /* synthetic */ AudioDeviceInfo d(Object obj) {
-        return (AudioDeviceInfo) obj;
-    }
-
-    public static /* bridge */ /* synthetic */ boolean f(Object obj) {
-        return obj instanceof MediaDrmResetException;
-    }
-
     @Override // e2.h
     public void accept(Object obj) {
-        e1 e1Var = (e1) obj;
+        f1 f1Var = (f1) obj;
         switch (this.a) {
-            case 28:
-                e1Var.e();
+            case 22:
+                f1Var.e();
                 break;
+            case 23:
+                f1Var.e0();
+                break;
+            case 24:
+                f1Var.z0();
+                break;
+            case 25:
+                f1Var.G0();
+                break;
+            case 26:
             default:
-                e1Var.e0();
+                f1Var.F();
+                break;
+            case 27:
+                f1Var.V();
                 break;
         }
     }
@@ -48,13 +51,13 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, z0, e2.h {
         return i0.z(Integer.valueOf(((v2.h) obj).a));
     }
 
-    @Override // m4.z
-    public void b(q qVar, int i10) {
+    @Override // m4.a0
+    public void d(q qVar, int i10) {
         switch (this.a) {
-            case 23:
+            case 17:
                 qVar.getClass();
                 break;
-            case 24:
+            case 18:
                 qVar.b(i10);
                 break;
             default:
@@ -63,14 +66,19 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, z0, e2.h {
         }
     }
 
-    @Override // m4.z0
-    public Object h(a0 a0Var, r rVar, int i10) {
+    @Override // m4.a1
+    public Object h(b0 b0Var, r rVar, int i10) {
         switch (this.a) {
-            case 26:
-                a0Var.getClass();
+            case 20:
+                b0Var.getClass();
                 throw new ClassCastException();
+            case 21:
+                b0Var.getClass();
+                throw new ClassCastException();
+            case 26:
+                return b0Var.n(rVar);
             default:
-                a0Var.getClass();
+                b0Var.getClass();
                 throw new ClassCastException();
         }
     }
@@ -94,36 +102,30 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, z0, e2.h {
             case 4:
                 bVar.getClass();
                 break;
-            case 5:
-                bVar.getClass();
-                break;
-            case 6:
-                bVar.getClass();
-                break;
             default:
                 bVar.getClass();
                 break;
         }
     }
 
-    public /* synthetic */ e(a aVar, float f7) {
-        this.a = 7;
-    }
-
-    public /* synthetic */ e(a aVar, int i10) {
-        this.a = 5;
-    }
-
-    public /* synthetic */ e(a aVar, k0 k0Var, int i10) {
-        this.a = 6;
-    }
-
-    public /* synthetic */ e(a aVar, Object obj, int i10) {
+    public /* synthetic */ e(int i10, Object obj, Object obj2) {
         this.a = i10;
     }
 
-    public /* synthetic */ e(a aVar, boolean z10) {
+    public /* synthetic */ e(a aVar, float f7) {
+        this.a = 5;
+    }
+
+    public /* synthetic */ e(a aVar, int i10) {
         this.a = 3;
+    }
+
+    public /* synthetic */ e(a aVar, k0 k0Var, int i10) {
+        this.a = 4;
+    }
+
+    public /* synthetic */ e(a aVar, boolean z10) {
+        this.a = 1;
     }
 
     public /* synthetic */ e(Object obj, int i10) {
@@ -131,7 +133,7 @@ public final /* synthetic */ class e implements m, d9.e, i5.g, z, z0, e2.h {
     }
 
     public /* synthetic */ e(String str, int i10, int i11, n nVar) {
-        this.a = 27;
+        this.a = 21;
     }
 
     @Override // i5.g

@@ -9,9 +9,9 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class e implements m {
+public final class e implements n {
     public static final ArrayDeque g = new ArrayDeque();
     public static final Object h = new Object();
     public final MediaCodec a;
@@ -50,7 +50,7 @@ public final class e implements m {
         }
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void a(long j3, int i10, int i11, int i12) {
         c();
         d d = d();
@@ -63,7 +63,7 @@ public final class e implements m {
         cVar.obtainMessage(1, d).sendToTarget();
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void b(int i10, h2.d dVar, long j3, int i11) {
         c();
         d d = d();
@@ -124,7 +124,7 @@ public final class e implements m {
         cVar.obtainMessage(2, d).sendToTarget();
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void c() {
         RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
         if (runtimeException != null) {
@@ -132,7 +132,7 @@ public final class e implements m {
         }
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void flush() {
         if (this.f) {
             try {
@@ -154,7 +154,7 @@ public final class e implements m {
         }
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void setParameters(Bundle bundle) {
         c();
         androidx.mediarouter.app.c cVar = this.c;
@@ -162,7 +162,7 @@ public final class e implements m {
         cVar.obtainMessage(4, bundle).sendToTarget();
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void shutdown() {
         if (this.f) {
             flush();
@@ -171,7 +171,7 @@ public final class e implements m {
         this.f = false;
     }
 
-    @Override // r2.m
+    @Override // r2.n
     public final void start() {
         if (this.f) {
             return;

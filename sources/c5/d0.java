@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 import v7.a6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -59,7 +59,7 @@ public final class d0 extends c {
         h4Var.b = j4Var;
         h4Var.a = b0.class;
         try {
-            b0Var.j(h4Var);
+            b0Var.s(h4Var);
             h4Var.a = "billingOverrideService.getBillingOverride";
             return j4Var;
         } catch (Exception e7) {
@@ -77,7 +77,7 @@ public final class d0 extends c {
         int i12 = e0.a;
         g3 b10 = e0.b(i10, i11, hVar, null, m3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
-        this.h.T(b10);
+        this.h.W(b10);
     }
 
     public final void G(int i10, q0.a aVar, Runnable runnable) {
@@ -163,8 +163,8 @@ public final class d0 extends c {
     }
 
     @Override // c5.c, c5.b
-    public final void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
-        G(7, new z(d0Var, 0), new v(this, mVar, d0Var, 1));
+    public final void c(a4.l lVar, org.telegram.messenger.d0 d0Var) {
+        G(7, new z(d0Var, 0), new v(this, lVar, d0Var, 1));
     }
 
     @Override // c5.c, c5.b
@@ -175,10 +175,10 @@ public final class d0 extends c {
                 int i10 = e0.a;
                 i3 c10 = e0.c(26, m3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
-                of.b bVar = this.h;
+                pf.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.c0(c10, (p3) bVar.b);
+                    bVar.e0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

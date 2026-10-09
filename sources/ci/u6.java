@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class u6 extends FrameLayout {
     public View a;
@@ -54,7 +54,7 @@ public final class u6 extends FrameLayout {
             this.s.setInterpolator(new LinearInterpolator());
         } else {
             this.s.setDuration(350L);
-            this.s.setInterpolator(tr.h);
+            this.s.setInterpolator(hs.h);
         }
         this.s.start();
     }
@@ -94,7 +94,7 @@ public final class u6 extends FrameLayout {
             View childAt = getChildAt(i10);
             float f7 = this.n;
             if (this.r) {
-                f7 = tr.h.getInterpolation(AndroidUtilities.cascade(f7, i10 - 1, getChildCount() - 1, 3.0f));
+                f7 = hs.h.getInterpolation(AndroidUtilities.cascade(f7, i10 - 1, getChildCount() - 1, 3.0f));
             }
             childAt.setAlpha(f7);
             childAt.setTranslationY((1.0f - f7) * AndroidUtilities.dp(24.0f));
@@ -116,13 +116,13 @@ public final class u6 extends FrameLayout {
                 i16++;
             }
         }
-        int min = Math.min(AndroidUtilities.dp(c() ? 20.0f : 30.0f), i16 < 2 ? 0 : bi.A(40.0f, i16, dp) / (i16 - 1));
-        int z11 = bi.z(40.0f, i15, 2);
+        int min = Math.min(AndroidUtilities.dp(c() ? 20.0f : 30.0f), i16 < 2 ? 0 : bi.B(40.0f, i16, dp) / (i16 - 1));
+        int A = bi.A(40.0f, i15, 2);
         int dp2 = (AndroidUtilities.dp(40.0f) + i15) / 2;
-        int dp3 = AndroidUtilities.dp(12.33f) + (!c() ? (bi.A(40.0f, i16, dp) - ((i16 - 1) * min)) / 2 : 0);
+        int dp3 = AndroidUtilities.dp(12.33f) + (!c() ? (bi.B(40.0f, i16, dp) - ((i16 - 1) * min)) / 2 : 0);
         for (int i18 = 0; i18 < arrayList.size(); i18++) {
             if (((s6) arrayList.get(i18)).getVisibility() == 0) {
-                ((s6) arrayList.get(i18)).layout(dp3, z11, AndroidUtilities.dp(40.0f) + dp3, dp2);
+                ((s6) arrayList.get(i18)).layout(dp3, A, AndroidUtilities.dp(40.0f) + dp3, dp2);
                 dp3 = org.telegram.messenger.q.C(40.0f, min, dp3);
             }
         }

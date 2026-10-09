@@ -1,37 +1,24 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oz implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
+public final class oz implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ ExternalActionActivity a;
 
-    public /* synthetic */ oz(int i10, int i11, int[] iArr) {
-        this.a = i11;
-        this.b = i10;
-        this.c = iArr;
+    public oz(ExternalActionActivity externalActionActivity) {
+        this.a = externalActionActivity;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = ExternalActionActivity.x;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                break;
-            default:
-                Pattern pattern = LaunchActivity.B1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                break;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        ExternalActionActivity externalActionActivity = this.a;
+        externalActionActivity.f();
+        ActionBarLayout actionBarLayout = externalActionActivity.c;
+        if (actionBarLayout != null) {
+            actionBarLayout.getView().getViewTreeObserver().removeOnGlobalLayoutListener(this);
         }
     }
 }

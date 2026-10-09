@@ -5,21 +5,21 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ik;
-import org.telegram.ui.Components.xi;
+import org.telegram.ui.Components.jk;
+import org.telegram.ui.Components.yi;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class u1 implements ik {
-    public final /* synthetic */ xi a;
+public final class u1 implements jk {
+    public final /* synthetic */ yi a;
     public final /* synthetic */ e2 b;
 
-    public u1(e2 e2Var, xi xiVar) {
+    public u1(e2 e2Var, yi yiVar) {
         this.b = e2Var;
-        this.a = xiVar;
+        this.a = yiVar;
     }
 
-    @Override // org.telegram.ui.Components.ik
+    @Override // org.telegram.ui.Components.jk
     public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
         boolean isEmpty = arrayList.isEmpty();
         e2 e2Var = this.b;
@@ -38,8 +38,8 @@ public final class u1 implements ik {
         this.a.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.ik
-    public final void w() {
+    @Override // org.telegram.ui.Components.jk
+    public final void x() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
             intent.setType("*/*");
@@ -49,11 +49,11 @@ public final class u1 implements ik {
         }
     }
 
-    @Override // org.telegram.ui.Components.ik
-    public final /* synthetic */ void M() {
+    @Override // org.telegram.ui.Components.jk
+    public final /* synthetic */ void O() {
     }
 
-    @Override // org.telegram.ui.Components.ik
+    @Override // org.telegram.ui.Components.jk
     public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

@@ -1,6 +1,7 @@
 package ci;
 
-import android.app.Activity;
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -13,96 +14,158 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.view.View;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class xc extends View implements w2 {
-    public final Drawable a;
-    public final int b;
-    public Bitmap c;
-    public final Paint d;
-    public final Paint e;
-    public float f;
-    public final org.telegram.ui.Components.e6 h;
-    public final Path n;
+public class xc extends View implements v2 {
+    public final Path a;
+    public final Paint b;
+    public final Paint c;
+    public boolean d;
+    public final org.telegram.ui.Components.g6 e;
+    public Drawable f;
+    public Bitmap h;
+    public int n;
+    public ValueAnimator r;
 
-    public xc(Activity activity, int i10, int i11) {
-        super(activity);
+    public xc(Context context) {
+        super(context);
+        this.a = new Path();
         Paint paint = new Paint(1);
-        this.d = paint;
+        this.b = paint;
         Paint paint2 = new Paint(3);
-        this.e = paint2;
-        this.h = new org.telegram.ui.Components.e6(this, 0L, 350L, tr.h);
-        this.n = new Path();
-        this.a = activity.getResources().getDrawable(i10).mutate();
-        this.b = i11;
+        this.c = paint2;
+        this.e = new org.telegram.ui.Components.g6(this, 0L, 380L, hs.h);
         paint.setColor(-1);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (this.c == null) {
-            this.c = BitmapFactory.decodeResource(getResources(), this.b);
+    public final void a(u uVar, boolean z10) {
+        if (this.f == uVar) {
+            return;
         }
+        ValueAnimator valueAnimator = this.r;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.r = null;
+        }
+        if (!z10) {
+            setDrawable(uVar);
+            return;
+        }
+        this.r = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
+        this.r.addUpdateListener(new ai.y4(this, new AtomicBoolean(), uVar, 2));
+        this.r.start();
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        this.d = z10;
+        if (!z11) {
+            this.e.d(z10 ? 1.0f : 0.0f, true);
+        }
+        invalidate();
     }
 
     @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        Bitmap bitmap = this.c;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.c = null;
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.f == null) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.h.d(this.f, false);
-        Drawable drawable = this.a;
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
+        float e7 = this.e.e(this.d);
+        int intrinsicWidth = this.f.getIntrinsicWidth();
+        int intrinsicHeight = this.f.getIntrinsicHeight();
         Rect rect = AndroidUtilities.rectTmp2;
         rect.set((getWidth() - intrinsicWidth) / 2, (getHeight() - intrinsicHeight) / 2, (getWidth() + intrinsicWidth) / 2, (getHeight() + intrinsicHeight) / 2);
-        if (d <= 0.0f) {
-            drawable.setBounds(rect);
-            drawable.draw(canvas);
-        } else if (d < 1.0f) {
+        if (e7 <= 0.0f) {
+            this.f.setBounds(rect);
+            this.f.draw(canvas);
+        } else if (e7 < 1.0f) {
             canvas.save();
-            Path path = this.n;
+            Path path = this.a;
             path.rewind();
-            path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f) * d, Path.Direction.CW);
+            path.addCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f) * e7, Path.Direction.CW);
             canvas.clipPath(path, Region.Op.DIFFERENCE);
-            drawable.setBounds(rect);
-            drawable.draw(canvas);
+            this.f.setBounds(rect);
+            this.f.draw(canvas);
             canvas.restore();
         }
-        if (d > 0.0f) {
+        if (e7 > 0.0f) {
             canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-            canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f) * d, this.d);
+            canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, AndroidUtilities.dp(16.0f) * e7, this.b);
             canvas.save();
-            Bitmap bitmap = this.c;
+            Bitmap bitmap = this.h;
             if (bitmap != null) {
-                canvas.drawBitmap(bitmap, (Rect) null, rect, this.e);
+                canvas.drawBitmap(bitmap, (Rect) null, rect, this.c);
             }
             canvas.restore();
             canvas.restore();
         }
     }
 
-    @Override // ci.w2
-    public void setInvert(float f7) {
-        this.a.setColorFilter(new PorterDuffColorFilter(i0.a.d(f7, -1, -16777216), PorterDuff.Mode.MULTIPLY));
-        this.d.setColor(i0.a.d(f7, -1, -16777216));
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.h != null || this.n == 0) {
+            return;
+        }
+        this.h = BitmapFactory.decodeResource(getResources(), this.n);
     }
 
-    public void setValue(boolean z10) {
-        this.f = z10 ? 1.0f : 0.0f;
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Bitmap bitmap = this.h;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.h = null;
+        }
+    }
+
+    public void setDrawable(int i10) {
+        this.f = getContext().getResources().getDrawable(i10).mutate();
+        Bitmap bitmap = this.h;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.h = null;
+        }
+        if (this.h == null && i10 != 0) {
+            this.h = BitmapFactory.decodeResource(getResources(), i10);
+        }
+        invalidate();
+    }
+
+    @Override // ci.v2
+    public void setInvert(float f7) {
+        Drawable drawable = this.f;
+        if (drawable != null) {
+            drawable.setColorFilter(new PorterDuffColorFilter(i0.a.d(f7, -1, -16777216), PorterDuff.Mode.MULTIPLY));
+        }
+        this.b.setColor(i0.a.d(f7, -1, -16777216));
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setSelected(boolean z10) {
+        this.d = z10;
+        invalidate();
+    }
+
+    public void setDrawable(Drawable drawable) {
+        this.f = drawable;
+        Bitmap bitmap = this.h;
+        if (bitmap != null) {
+            bitmap.recycle();
+            this.h = null;
+        }
+        if (this.h == null && drawable != null && drawable.getIntrinsicWidth() > 0 && drawable.getIntrinsicHeight() > 0) {
+            Bitmap createBitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            this.h = createBitmap;
+            drawable.setBounds(0, 0, createBitmap.getWidth(), this.h.getHeight());
+            drawable.draw(new Canvas(this.h));
+        }
         invalidate();
     }
 }

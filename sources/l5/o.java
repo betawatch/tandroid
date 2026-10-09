@@ -1,29 +1,46 @@
 package l5;
 
-import java.util.HashMap;
+import android.os.Process;
+import w7.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class o {
-    public static final la.h a;
+public final class o implements Runnable {
+    public final /* synthetic */ int a;
+    public final Runnable b;
 
-    static {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.put(o.class, e.a);
-        hashMap2.remove(o.class);
-        hashMap.put(o5.a.class, a.a);
-        hashMap2.remove(o5.a.class);
-        hashMap.put(o5.g.class, g.a);
-        hashMap2.remove(o5.g.class);
-        hashMap.put(o5.e.class, d.a);
-        hashMap2.remove(o5.e.class);
-        hashMap.put(o5.d.class, c.a);
-        hashMap2.remove(o5.d.class);
-        hashMap.put(o5.b.class, b.a);
-        hashMap2.remove(o5.b.class);
-        hashMap.put(o5.f.class, f.a);
-        hashMap2.remove(o5.f.class);
-        a = new la.h(new HashMap(hashMap), new HashMap(hashMap2), la.g.a, 0);
+    public /* synthetic */ o(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    this.b.run();
+                    break;
+                } catch (Exception e7) {
+                    i6.b("Executor", "Background execution failure.", e7);
+                    return;
+                }
+            case 1:
+                this.b.run();
+                break;
+            default:
+                Process.setThreadPriority(0);
+                this.b.run();
+                break;
+        }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b.toString();
+            default:
+                return super.toString();
+        }
     }
 }

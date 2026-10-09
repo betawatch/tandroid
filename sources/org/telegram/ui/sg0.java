@@ -1,90 +1,63 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Build;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sg0 {
-    public final /* synthetic */ tg0 a;
+public final class sg0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ vg0 G;
 
-    public sg0(tg0 tg0Var) {
-        this.a = tg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sg0(vg0 vg0Var, Context context) {
+        super(context);
+        this.G = vg0Var;
     }
 
-    public final void a(ig0 ig0Var) {
-        int i10;
-        tg0 tg0Var = this.a;
-        tg0Var.L = true;
-        ug0 ug0Var = tg0Var.V;
-        ug0Var.J = 0;
-        ug0Var.n1(0, false);
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 23 && AndroidUtilities.isSimAvailable()) {
-            boolean z10 = ug0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
-            boolean z11 = ug0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
-            boolean z12 = i11 < 28 || ug0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
-            boolean z13 = i11 < 26 || ug0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
-            yj0 yj0Var = tg0Var.a;
-            if (yj0Var != null && "888".equals(yj0Var.getText())) {
-                z10 = true;
-                z11 = true;
-                z12 = true;
-                z13 = true;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        super.onFocusChanged(z10, i10, rect);
+        vg0 vg0Var = this.G;
+        wg0 wg0Var = vg0Var.V;
+        org.telegram.ui.Components.zd0 zd0Var = vg0Var.f;
+        float f7 = (z10 || vg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        zd0Var.b(f7, f7, true);
+        if (!z10) {
+            if (vg0Var.x == 2) {
+                vg0Var.setCountryButtonText(null);
             }
-            if (ug0Var.v) {
-                ug0Var.r.clear();
-                if (!z10) {
-                    ug0Var.r.add("android.permission.READ_PHONE_STATE");
-                }
-                if (!z11) {
-                    ug0Var.r.add("android.permission.CALL_PHONE");
-                }
-                if (!z12) {
-                    ug0Var.r.add("android.permission.READ_CALL_LOG");
-                }
-                if (!z13 && i11 >= 26) {
-                    ug0Var.r.add("android.permission.READ_PHONE_NUMBERS");
-                }
-                if (!ug0Var.r.isEmpty()) {
-                    SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                    if (!globalMainSettings.getBoolean("firstlogin", true) && !ug0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE") && !ug0Var.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_CALL_LOG")) {
-                        try {
-                            ug0Var.getParentActivity().requestPermissions((String[]) ug0Var.r.toArray(new String[0]), 6);
-                            return;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
-                            return;
-                        }
-                    }
-                    globalMainSettings.edit().putBoolean("firstlogin", false).commit();
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ug0Var.getParentActivity());
-                    alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
-                    if (!z10 && (!z11 || !z12)) {
-                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
-                        i10 = R.raw.calls_log;
-                    } else if (z11 && z12) {
-                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
-                        i10 = R.raw.incoming_calls;
-                    } else {
-                        alertDialog$Builder.a.T = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
-                        i10 = R.raw.calls_log;
-                    }
-                    alertDialog$Builder.m(i10, 46, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
-                    ug0Var.h = ug0Var.showDialog(alertDialog$Builder.a);
-                    tg0Var.L = true;
-                    return;
-                }
+        } else {
+            wg0Var.c.setEditText(this);
+            wg0Var.c.setDispatchBackWhenEmpty(true);
+            if (vg0Var.x == 2) {
+                vg0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
             }
         }
-        rg0 rg0Var = new rg0(0, ig0Var, this);
-        ig0Var.h.f(true, true);
-        AndroidUtilities.runOnUIThread(rg0Var, 400L);
+    }
+
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        vg0 vg0Var = this.G;
+        bk0 bk0Var = vg0Var.a;
+        if (i10 == 67 && vg0Var.b.length() == 0) {
+            bk0Var.requestFocus();
+            bk0Var.setSelection(bk0Var.length());
+            bk0Var.dispatchKeyEvent(keyEvent);
+        }
+        return super.onKeyDown(i10, keyEvent);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !wg0.T0(this.G.V, this)) {
+            clearFocus();
+            requestFocus();
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

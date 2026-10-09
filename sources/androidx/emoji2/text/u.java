@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.style.ReplacementSpan;
 import java.nio.ByteBuffer;
-import w7.p6;
+import w7.n6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u extends ReplacementSpan {
     public final n b;
@@ -15,7 +15,7 @@ public final class u extends ReplacementSpan {
     public float c = 1.0f;
 
     public u(n nVar) {
-        p6.a(nVar, "metadata cannot be null");
+        n6.a(nVar, "metadata cannot be null");
         this.b = nVar;
     }
 

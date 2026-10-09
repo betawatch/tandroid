@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f2 implements o2 {
     public static final int[] n = new int[0];
@@ -68,10 +68,10 @@ public final class f2 implements o2 {
         return b10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0295  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0272  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -108,22 +108,21 @@ public final class f2 implements o2 {
         int i26;
         int i27;
         int i28;
-        int i29;
         Field m10;
         char charAt12;
-        int i30;
+        int i29;
         Object obj;
         Field m11;
         Object obj2;
         Field m12;
-        int i31;
+        int i30;
         char charAt13;
-        int i32;
+        int i31;
         char charAt14;
+        int i32;
         int i33;
-        int i34;
         char charAt15;
-        int i35;
+        int i34;
         char charAt16;
         if (!(m2Var instanceof m2)) {
             m2Var.getClass();
@@ -133,189 +132,189 @@ public final class f2 implements o2 {
         String str = m2Var.b;
         int length = str.length();
         if (str.charAt(0) >= 55296) {
-            int i36 = 1;
+            int i35 = 1;
             while (true) {
-                i10 = i36 + 1;
-                if (str.charAt(i36) < 55296) {
+                i10 = i35 + 1;
+                if (str.charAt(i35) < 55296) {
                     break;
                 }
-                i36 = i10;
+                i35 = i10;
             }
         } else {
             i10 = 1;
         }
-        int i37 = i10 + 1;
+        int i36 = i10 + 1;
         int charAt17 = str.charAt(i10);
         if (charAt17 >= 55296) {
-            int i38 = charAt17 & 8191;
-            int i39 = 13;
+            int i37 = charAt17 & 8191;
+            int i38 = 13;
             while (true) {
-                i35 = i37 + 1;
-                charAt16 = str.charAt(i37);
+                i34 = i36 + 1;
+                charAt16 = str.charAt(i36);
                 if (charAt16 < 55296) {
                     break;
                 }
-                i38 |= (charAt16 & 8191) << i39;
-                i39 += 13;
-                i37 = i35;
+                i37 |= (charAt16 & 8191) << i38;
+                i38 += 13;
+                i36 = i34;
             }
-            charAt17 = i38 | (charAt16 << i39);
-            i37 = i35;
+            charAt17 = i37 | (charAt16 << i38);
+            i36 = i34;
         }
         if (charAt17 == 0) {
-            iArr = n;
             i14 = 0;
-            i12 = 0;
-            i13 = 0;
             charAt = 0;
             charAt2 = 0;
             i11 = 0;
             charAt3 = 0;
+            iArr = n;
+            i12 = 0;
+            i13 = 0;
         } else {
-            int i40 = i37 + 1;
-            int charAt18 = str.charAt(i37);
+            int i39 = i36 + 1;
+            int charAt18 = str.charAt(i36);
             if (charAt18 >= 55296) {
-                int i41 = charAt18 & 8191;
-                int i42 = 13;
+                int i40 = charAt18 & 8191;
+                int i41 = 13;
                 while (true) {
-                    i22 = i40 + 1;
-                    charAt11 = str.charAt(i40);
+                    i22 = i39 + 1;
+                    charAt11 = str.charAt(i39);
                     if (charAt11 < 55296) {
                         break;
                     }
-                    i41 |= (charAt11 & 8191) << i42;
-                    i42 += 13;
-                    i40 = i22;
+                    i40 |= (charAt11 & 8191) << i41;
+                    i41 += 13;
+                    i39 = i22;
                 }
-                charAt18 = i41 | (charAt11 << i42);
-                i40 = i22;
+                charAt18 = i40 | (charAt11 << i41);
+                i39 = i22;
             }
-            int i43 = i40 + 1;
-            int charAt19 = str.charAt(i40);
+            int i42 = i39 + 1;
+            int charAt19 = str.charAt(i39);
             if (charAt19 >= 55296) {
-                int i44 = charAt19 & 8191;
-                int i45 = 13;
+                int i43 = charAt19 & 8191;
+                int i44 = 13;
                 while (true) {
-                    i21 = i43 + 1;
-                    charAt10 = str.charAt(i43);
+                    i21 = i42 + 1;
+                    charAt10 = str.charAt(i42);
                     if (charAt10 < 55296) {
                         break;
                     }
-                    i44 |= (charAt10 & 8191) << i45;
-                    i45 += 13;
-                    i43 = i21;
+                    i43 |= (charAt10 & 8191) << i44;
+                    i44 += 13;
+                    i42 = i21;
                 }
-                charAt19 = i44 | (charAt10 << i45);
-                i43 = i21;
+                charAt19 = i43 | (charAt10 << i44);
+                i42 = i21;
             }
-            int i46 = i43 + 1;
-            int charAt20 = str.charAt(i43);
+            int i45 = i42 + 1;
+            int charAt20 = str.charAt(i42);
             if (charAt20 >= 55296) {
-                int i47 = charAt20 & 8191;
-                int i48 = 13;
+                int i46 = charAt20 & 8191;
+                int i47 = 13;
                 while (true) {
-                    i20 = i46 + 1;
-                    charAt9 = str.charAt(i46);
+                    i20 = i45 + 1;
+                    charAt9 = str.charAt(i45);
                     if (charAt9 < 55296) {
                         break;
                     }
-                    i47 |= (charAt9 & 8191) << i48;
-                    i48 += 13;
-                    i46 = i20;
+                    i46 |= (charAt9 & 8191) << i47;
+                    i47 += 13;
+                    i45 = i20;
                 }
-                charAt20 = i47 | (charAt9 << i48);
-                i46 = i20;
+                charAt20 = i46 | (charAt9 << i47);
+                i45 = i20;
             }
-            int i49 = i46 + 1;
-            int charAt21 = str.charAt(i46);
+            int i48 = i45 + 1;
+            int charAt21 = str.charAt(i45);
             if (charAt21 >= 55296) {
-                int i50 = charAt21 & 8191;
-                int i51 = 13;
+                int i49 = charAt21 & 8191;
+                int i50 = 13;
                 while (true) {
-                    i19 = i49 + 1;
-                    charAt8 = str.charAt(i49);
+                    i19 = i48 + 1;
+                    charAt8 = str.charAt(i48);
                     if (charAt8 < 55296) {
                         break;
                     }
-                    i50 |= (charAt8 & 8191) << i51;
-                    i51 += 13;
-                    i49 = i19;
+                    i49 |= (charAt8 & 8191) << i50;
+                    i50 += 13;
+                    i48 = i19;
                 }
-                charAt21 = i50 | (charAt8 << i51);
-                i49 = i19;
+                charAt21 = i49 | (charAt8 << i50);
+                i48 = i19;
             }
-            int i52 = i49 + 1;
-            charAt = str.charAt(i49);
+            int i51 = i48 + 1;
+            charAt = str.charAt(i48);
             if (charAt >= 55296) {
-                int i53 = charAt & 8191;
-                int i54 = 13;
+                int i52 = charAt & 8191;
+                int i53 = 13;
                 while (true) {
-                    i18 = i52 + 1;
-                    charAt7 = str.charAt(i52);
+                    i18 = i51 + 1;
+                    charAt7 = str.charAt(i51);
                     if (charAt7 < 55296) {
                         break;
                     }
-                    i53 |= (charAt7 & 8191) << i54;
-                    i54 += 13;
-                    i52 = i18;
+                    i52 |= (charAt7 & 8191) << i53;
+                    i53 += 13;
+                    i51 = i18;
                 }
-                charAt = i53 | (charAt7 << i54);
-                i52 = i18;
+                charAt = i52 | (charAt7 << i53);
+                i51 = i18;
             }
-            int i55 = i52 + 1;
-            charAt2 = str.charAt(i52);
+            int i54 = i51 + 1;
+            charAt2 = str.charAt(i51);
             if (charAt2 >= 55296) {
-                int i56 = charAt2 & 8191;
-                int i57 = 13;
+                int i55 = charAt2 & 8191;
+                int i56 = 13;
                 while (true) {
-                    i17 = i55 + 1;
-                    charAt6 = str.charAt(i55);
+                    i17 = i54 + 1;
+                    charAt6 = str.charAt(i54);
                     if (charAt6 < 55296) {
                         break;
                     }
-                    i56 |= (charAt6 & 8191) << i57;
-                    i57 += 13;
-                    i55 = i17;
+                    i55 |= (charAt6 & 8191) << i56;
+                    i56 += 13;
+                    i54 = i17;
                 }
-                charAt2 = i56 | (charAt6 << i57);
-                i55 = i17;
+                charAt2 = i55 | (charAt6 << i56);
+                i54 = i17;
             }
-            int i58 = i55 + 1;
-            int charAt22 = str.charAt(i55);
+            int i57 = i54 + 1;
+            int charAt22 = str.charAt(i54);
             if (charAt22 >= 55296) {
-                int i59 = charAt22 & 8191;
-                int i60 = 13;
+                int i58 = charAt22 & 8191;
+                int i59 = 13;
                 while (true) {
-                    i16 = i58 + 1;
-                    charAt5 = str.charAt(i58);
+                    i16 = i57 + 1;
+                    charAt5 = str.charAt(i57);
                     if (charAt5 < 55296) {
                         break;
                     }
-                    i59 |= (charAt5 & 8191) << i60;
-                    i60 += 13;
-                    i58 = i16;
+                    i58 |= (charAt5 & 8191) << i59;
+                    i59 += 13;
+                    i57 = i16;
                 }
-                charAt22 = i59 | (charAt5 << i60);
-                i58 = i16;
+                charAt22 = i58 | (charAt5 << i59);
+                i57 = i16;
             }
-            int i61 = i58 + 1;
-            charAt3 = str.charAt(i58);
+            int i60 = i57 + 1;
+            charAt3 = str.charAt(i57);
             if (charAt3 >= 55296) {
-                int i62 = charAt3 & 8191;
-                int i63 = i61;
-                int i64 = 13;
+                int i61 = charAt3 & 8191;
+                int i62 = i60;
+                int i63 = 13;
                 while (true) {
-                    i15 = i63 + 1;
-                    charAt4 = str.charAt(i63);
+                    i15 = i62 + 1;
+                    charAt4 = str.charAt(i62);
                     if (charAt4 < 55296) {
                         break;
                     }
-                    i62 |= (charAt4 & 8191) << i64;
-                    i64 += 13;
-                    i63 = i15;
+                    i61 |= (charAt4 & 8191) << i63;
+                    i63 += 13;
+                    i62 = i15;
                 }
-                charAt3 = i62 | (charAt4 << i64);
-                i61 = i15;
+                charAt3 = i61 | (charAt4 << i63);
+                i60 = i15;
             }
             int[] iArr2 = new int[charAt3 + charAt2 + charAt22];
             i11 = (charAt18 << 1) + charAt19;
@@ -323,242 +322,240 @@ public final class f2 implements o2 {
             i13 = charAt21;
             iArr = iArr2;
             i14 = charAt18;
-            i37 = i61;
+            i36 = i60;
         }
         Unsafe unsafe = o;
         Object[] objArr = m2Var.c;
         Class<?> cls = m2Var.a.getClass();
-        int i65 = i14;
+        int i64 = i14;
         int[] iArr3 = new int[charAt * 3];
         Object[] objArr2 = new Object[charAt << 1];
-        int i66 = charAt2 + charAt3;
-        int i67 = i66;
-        int i68 = charAt3;
+        int i65 = charAt2 + charAt3;
+        int i66 = i65;
+        int i67 = charAt3;
+        int i68 = 0;
         int i69 = 0;
-        int i70 = 0;
-        while (i37 < length) {
-            int i71 = i37 + 1;
-            int charAt23 = str.charAt(i37);
+        while (i36 < length) {
+            int i70 = i36 + 1;
+            int charAt23 = str.charAt(i36);
             int[] iArr4 = iArr3;
             if (charAt23 >= 55296) {
-                int i72 = charAt23 & 8191;
-                int i73 = i71;
-                int i74 = 13;
+                int i71 = charAt23 & 8191;
+                int i72 = i70;
+                int i73 = 13;
                 while (true) {
-                    i34 = i73 + 1;
-                    charAt15 = str.charAt(i73);
+                    i33 = i72 + 1;
+                    charAt15 = str.charAt(i72);
                     i23 = length;
                     if (charAt15 < 55296) {
                         break;
                     }
-                    i72 |= (charAt15 & 8191) << i74;
-                    i74 += 13;
-                    i73 = i34;
+                    i71 |= (charAt15 & 8191) << i73;
+                    i73 += 13;
+                    i72 = i33;
                     length = i23;
                 }
-                charAt23 = i72 | (charAt15 << i74);
-                i24 = i34;
+                charAt23 = i71 | (charAt15 << i73);
+                i24 = i33;
             } else {
                 i23 = length;
-                i24 = i71;
+                i24 = i70;
             }
-            int i75 = i24 + 1;
+            int i74 = i24 + 1;
             int charAt24 = str.charAt(i24);
             if (charAt24 >= 55296) {
-                int i76 = charAt24 & 8191;
-                int i77 = i75;
-                int i78 = 13;
+                int i75 = charAt24 & 8191;
+                int i76 = i74;
+                int i77 = 13;
                 while (true) {
-                    i32 = i77 + 1;
-                    charAt14 = str.charAt(i77);
-                    i33 = i76;
+                    i31 = i76 + 1;
+                    charAt14 = str.charAt(i76);
+                    i32 = i75;
                     if (charAt14 < 55296) {
                         break;
                     }
-                    i76 = i33 | ((charAt14 & 8191) << i78);
-                    i78 += 13;
-                    i77 = i32;
+                    i75 = i32 | ((charAt14 & 8191) << i77);
+                    i77 += 13;
+                    i76 = i31;
                 }
-                charAt24 = i33 | (charAt14 << i78);
-                i25 = i32;
+                charAt24 = i32 | (charAt14 << i77);
+                i25 = i31;
             } else {
-                i25 = i75;
+                i25 = i74;
             }
-            int i79 = charAt23;
-            int i80 = charAt24 & 255;
-            int i81 = i12;
+            int i78 = charAt23;
+            int i79 = charAt24 & 255;
+            int i80 = i12;
             if ((charAt24 & 1024) != 0) {
-                iArr[i69] = i70;
-                i69++;
+                iArr[i68] = i69;
+                i68++;
             }
-            int i82 = i13;
-            if (i80 >= 51) {
-                int i83 = i25 + 1;
+            int i81 = i13;
+            if (i79 >= 51) {
+                int i82 = i25 + 1;
                 int charAt25 = str.charAt(i25);
                 char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                 if (charAt25 >= 55296) {
-                    int i84 = charAt25 & 8191;
-                    int i85 = 13;
+                    int i83 = charAt25 & 8191;
+                    int i84 = 13;
                     while (true) {
-                        i31 = i83 + 1;
-                        charAt13 = str.charAt(i83);
+                        i30 = i82 + 1;
+                        charAt13 = str.charAt(i82);
                         if (charAt13 < c10) {
                             break;
                         }
-                        i84 |= (charAt13 & 8191) << i85;
-                        i85 += 13;
-                        i83 = i31;
+                        i83 |= (charAt13 & 8191) << i84;
+                        i84 += 13;
+                        i82 = i30;
                         c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                     }
-                    charAt25 = i84 | (charAt13 << i85);
-                    i83 = i31;
+                    charAt25 = i83 | (charAt13 << i84);
+                    i82 = i30;
                 }
-                int i86 = i80 - 51;
-                int i87 = charAt25;
-                if (i86 == 9 || i86 == 17) {
-                    i30 = i11 + 1;
-                    objArr2[((i70 / 3) << 1) + 1] = objArr[i11];
+                int i85 = i79 - 51;
+                int i86 = charAt25;
+                if (i85 == 9 || i85 == 17) {
+                    i29 = i11 + 1;
+                    objArr2[((i69 / 3) << 1) + 1] = objArr[i11];
                 } else {
-                    if (i86 == 12 && !z10) {
-                        i30 = i11 + 1;
-                        objArr2[((i70 / 3) << 1) + 1] = objArr[i11];
+                    if (i85 == 12 && !z10) {
+                        i29 = i11 + 1;
+                        objArr2[((i69 / 3) << 1) + 1] = objArr[i11];
                     }
-                    int i88 = i87 << 1;
-                    obj = objArr[i88];
+                    int i87 = i86 << 1;
+                    obj = objArr[i87];
                     if (obj instanceof Field) {
                         m11 = m(cls, (String) obj);
-                        objArr[i88] = m11;
+                        objArr[i87] = m11;
                     } else {
                         m11 = (Field) obj;
                     }
-                    int i89 = i83;
+                    int i88 = i82;
                     int objectFieldOffset2 = (int) unsafe.objectFieldOffset(m11);
-                    int i90 = i88 + 1;
-                    obj2 = objArr[i90];
+                    int i89 = i87 + 1;
+                    obj2 = objArr[i89];
                     if (obj2 instanceof Field) {
                         m12 = m(cls, (String) obj2);
-                        objArr[i90] = m12;
+                        objArr[i89] = m12;
                     } else {
                         m12 = (Field) obj2;
                     }
+                    i27 = i88;
+                    objectFieldOffset = objectFieldOffset2;
                     i26 = (int) unsafe.objectFieldOffset(m12);
-                    i29 = objectFieldOffset2;
                     i28 = 0;
-                    i27 = i89;
                 }
-                i11 = i30;
-                int i882 = i87 << 1;
-                obj = objArr[i882];
+                i11 = i29;
+                int i872 = i86 << 1;
+                obj = objArr[i872];
                 if (obj instanceof Field) {
                 }
-                int i892 = i83;
+                int i882 = i82;
                 int objectFieldOffset22 = (int) unsafe.objectFieldOffset(m11);
-                int i902 = i882 + 1;
-                obj2 = objArr[i902];
+                int i892 = i872 + 1;
+                obj2 = objArr[i892];
                 if (obj2 instanceof Field) {
                 }
+                i27 = i882;
+                objectFieldOffset = objectFieldOffset22;
                 i26 = (int) unsafe.objectFieldOffset(m12);
-                i29 = objectFieldOffset22;
                 i28 = 0;
-                i27 = i892;
             } else {
-                int i91 = i11 + 1;
+                int i90 = i11 + 1;
                 Field m13 = m(cls, (String) objArr[i11]);
-                if (i80 == 9 || i80 == 17) {
-                    objArr2[((i70 / 3) << 1) + 1] = m13.getType();
+                if (i79 == 9 || i79 == 17) {
+                    objArr2[((i69 / 3) << 1) + 1] = m13.getType();
                 } else {
-                    if (i80 == 27 || i80 == 49) {
+                    if (i79 == 27 || i79 == 49) {
                         i11 += 2;
-                        objArr2[((i70 / 3) << 1) + 1] = objArr[i91];
-                    } else if (i80 == 12 || i80 == 30 || i80 == 44) {
+                        objArr2[((i69 / 3) << 1) + 1] = objArr[i90];
+                    } else if (i79 == 12 || i79 == 30 || i79 == 44) {
                         if (!z10) {
                             i11 += 2;
-                            objArr2[((i70 / 3) << 1) + 1] = objArr[i91];
+                            objArr2[((i69 / 3) << 1) + 1] = objArr[i90];
                         }
-                    } else if (i80 == 50) {
-                        int i92 = i68 + 1;
-                        iArr[i68] = i70;
-                        int i93 = (i70 / 3) << 1;
-                        int i94 = i11 + 2;
-                        objArr2[i93] = objArr[i91];
+                    } else if (i79 == 50) {
+                        int i91 = i67 + 1;
+                        iArr[i67] = i69;
+                        int i92 = (i69 / 3) << 1;
+                        int i93 = i11 + 2;
+                        objArr2[i92] = objArr[i90];
                         if ((charAt24 & 2048) != 0) {
-                            objArr2[i93 + 1] = objArr[i94];
+                            objArr2[i92 + 1] = objArr[i93];
                             i11 += 3;
                         } else {
-                            i11 = i94;
+                            i11 = i93;
                         }
-                        i68 = i92;
+                        i67 = i91;
                     }
                     objectFieldOffset = (int) unsafe.objectFieldOffset(m13);
-                    if ((charAt24 & 4096) == 4096 || i80 > 17) {
+                    if ((charAt24 & 4096) == 4096 || i79 > 17) {
                         i26 = 1048575;
                         i27 = i25;
                         i28 = 0;
                     } else {
-                        int i95 = i25 + 1;
+                        int i94 = i25 + 1;
                         int charAt26 = str.charAt(i25);
                         if (charAt26 >= 55296) {
-                            int i96 = charAt26 & 8191;
-                            int i97 = 13;
+                            int i95 = charAt26 & 8191;
+                            int i96 = 13;
                             while (true) {
-                                i27 = i95 + 1;
-                                charAt12 = str.charAt(i95);
+                                i27 = i94 + 1;
+                                charAt12 = str.charAt(i94);
                                 if (charAt12 < 55296) {
                                     break;
                                 }
-                                i96 |= (charAt12 & 8191) << i97;
-                                i97 += 13;
-                                i95 = i27;
+                                i95 |= (charAt12 & 8191) << i96;
+                                i96 += 13;
+                                i94 = i27;
                             }
-                            charAt26 = i96 | (charAt12 << i97);
+                            charAt26 = i95 | (charAt12 << i96);
                         } else {
-                            i27 = i95;
+                            i27 = i94;
                         }
-                        int i98 = (charAt26 / 32) + (i65 << 1);
-                        Object obj3 = objArr[i98];
+                        int i97 = (charAt26 / 32) + (i64 << 1);
+                        Object obj3 = objArr[i97];
                         if (obj3 instanceof Field) {
                             m10 = (Field) obj3;
                         } else {
                             m10 = m(cls, (String) obj3);
-                            objArr[i98] = m10;
+                            objArr[i97] = m10;
                         }
-                        i28 = charAt26 % 32;
                         i26 = (int) unsafe.objectFieldOffset(m10);
+                        i28 = charAt26 % 32;
                     }
-                    if (i80 >= 18 && i80 <= 49) {
-                        iArr[i67] = objectFieldOffset;
-                        i67++;
+                    if (i79 >= 18 && i79 <= 49) {
+                        iArr[i66] = objectFieldOffset;
+                        i66++;
                     }
-                    i29 = objectFieldOffset;
                 }
-                i11 = i91;
+                i11 = i90;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(m13);
                 if ((charAt24 & 4096) == 4096) {
                 }
                 i26 = 1048575;
                 i27 = i25;
                 i28 = 0;
-                if (i80 >= 18) {
-                    iArr[i67] = objectFieldOffset;
-                    i67++;
+                if (i79 >= 18) {
+                    iArr[i66] = objectFieldOffset;
+                    i66++;
                 }
-                i29 = objectFieldOffset;
             }
-            int i99 = i70 + 1;
-            iArr4[i70] = i79;
-            int i100 = i70 + 2;
+            int i98 = i69 + 1;
+            iArr4[i69] = i78;
+            int i99 = i69 + 2;
             String str2 = str;
-            iArr4[i99] = ((charAt24 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt24 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i80 << 20) | i29;
-            i70 += 3;
-            iArr4[i100] = (i28 << 20) | i26;
-            iArr3 = iArr4;
-            i12 = i81;
-            length = i23;
+            iArr4[i98] = ((charAt24 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt24 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i79 << 20) | objectFieldOffset;
+            i69 += 3;
+            iArr4[i99] = (i28 << 20) | i26;
             str = str2;
-            i37 = i27;
-            i13 = i82;
+            iArr3 = iArr4;
+            i12 = i80;
+            length = i23;
+            i36 = i27;
+            i13 = i81;
         }
-        return new f2(iArr3, objArr2, i12, i13, m2Var.a, z10, iArr, charAt3, i66, i2Var, s1Var, q2Var, v0Var, b2Var);
+        return new f2(iArr3, objArr2, i12, i13, m2Var.a, z10, iArr, charAt3, i65, i2Var, s1Var, q2Var, v0Var, b2Var);
     }
 
     public static Field m(Class cls, String str) {
@@ -578,7 +575,7 @@ public final class f2 implements o2 {
             sb2.append(str);
             sb2.append(" for ");
             sb2.append(name);
-            throw new RuntimeException(a4.a.t(sb2, " not found. Known fields are ", arrays));
+            throw new RuntimeException(a1.g.t(sb2, " not found. Known fields are ", arrays));
         }
     }
 
@@ -623,7 +620,7 @@ public final class f2 implements o2 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x00f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x00ef, code lost:
     
         return false;
      */
@@ -632,35 +629,35 @@ public final class f2 implements o2 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean a(Object obj) {
-        int i10 = 0;
-        int i11 = 1048575;
+        int i10 = 1048575;
+        int i11 = 0;
         int i12 = 0;
         loop0: while (true) {
             boolean z10 = true;
-            if (i10 >= this.h) {
+            if (i11 >= this.h) {
                 return true;
             }
-            int i13 = this.g[i10];
+            int i13 = this.g[i11];
             int[] iArr = this.a;
             int i14 = iArr[i13];
             int z11 = z(i13);
             int i15 = iArr[i13 + 2];
             int i16 = i15 & 1048575;
             int i17 = 1 << (i15 >>> 20);
-            if (i16 != i11) {
+            if (i16 != i10) {
                 if (i16 != 1048575) {
                     i12 = o.getInt(obj, i16);
                 }
-                i11 = i16;
+                i10 = i16;
             }
             if ((268435456 & z11) != 0) {
-                if (!(i11 == 1048575 ? r(i13, obj) : (i12 & i17) != 0)) {
+                if (!(i10 == 1048575 ? r(i13, obj) : (i12 & i17) != 0)) {
                     break;
                 }
             }
             int i18 = (267386880 & z11) >>> 20;
             if (i18 == 9 || i18 == 17) {
-                if (i11 == 1048575) {
+                if (i10 == 1048575) {
                     z10 = r(i13, obj);
                 } else if ((i17 & i12) == 0) {
                     z10 = false;
@@ -668,7 +665,7 @@ public final class f2 implements o2 {
                 if (z10 && !l(i13).a(y2.l(obj, z11 & 1048575))) {
                     break;
                 }
-                i10++;
+                i11++;
             } else {
                 if (i18 != 27) {
                     if (i18 == 60 || i18 == 68) {
@@ -689,7 +686,7 @@ public final class f2 implements o2 {
                             }
                         }
                     }
-                    i10++;
+                    i11++;
                 }
                 List list = (List) y2.l(obj, z11 & 1048575);
                 if (list.isEmpty()) {
@@ -702,7 +699,7 @@ public final class f2 implements o2 {
                         }
                     }
                 }
-                i10++;
+                i11++;
             }
         }
     }
@@ -1178,7 +1175,7 @@ public final class f2 implements o2 {
         ((f1) obj).zzb.c(y1Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x01fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x01fd, code lost:
     
         if (r4 != false) goto L42;
      */
@@ -1190,7 +1187,7 @@ public final class f2 implements o2 {
     
         r8 = 1231;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00da, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00d9, code lost:
     
         r3 = r8 + r3;
      */
@@ -1770,510 +1767,517 @@ public final class f2 implements o2 {
         }
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:81:0x00a9. Please report as an issue. */
+    /* JADX WARN: Failed to find 'out' block for switch in B:81:0x00a8. Please report as an issue. */
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.android.gms.internal.vision.o2
-    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
-        int s10;
-        Unsafe unsafe;
-        Object obj2;
+    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.l lVar) {
         int i12;
         int i13;
+        Unsafe unsafe;
+        Object obj2;
         int i14;
         int i15;
         int i16;
         int i17;
-        char c10;
-        Unsafe unsafe2;
-        Object obj3;
         int i18;
-        Unsafe unsafe3;
-        Object obj4;
         int i19;
         int i20;
+        Unsafe unsafe2;
+        Object obj3;
         int i21;
+        Unsafe unsafe3;
+        Object obj4;
+        int i22;
+        int i23;
+        int i24;
         f2 f2Var = this;
         Object obj5 = obj;
         byte[] bArr2 = bArr;
-        int i22 = i11;
-        com.google.android.gms.internal.clearcut.m mVar2 = mVar;
+        int i25 = i11;
+        com.google.android.gms.internal.clearcut.l lVar2 = lVar;
         if (!f2Var.f) {
-            j(obj5, bArr, i10, i22, 0, mVar);
+            j(obj5, bArr, i10, i25, 0, lVar);
             return;
         }
         Unsafe unsafe4 = o;
-        int i23 = i10;
-        int i24 = -1;
-        int i25 = 0;
-        int i26 = 1048575;
-        int i27 = 0;
-        while (i23 < i22) {
-            int i28 = i23 + 1;
-            int i29 = bArr2[i23];
-            if (i29 < 0) {
-                i28 = e1.d(i29, bArr2, i28, mVar2);
-                i29 = mVar2.a;
+        int i26 = i10;
+        int i27 = -1;
+        int i28 = 0;
+        int i29 = 1048575;
+        int i30 = 0;
+        while (i26 < i25) {
+            int i31 = i26 + 1;
+            int i32 = bArr2[i26];
+            if (i32 < 0) {
+                i31 = e1.d(i32, bArr2, i31, lVar2);
+                i32 = lVar2.a;
             }
-            int i30 = i28;
-            int i31 = i29 >>> 3;
-            int i32 = i29 & 7;
-            int i33 = f2Var.d;
-            int i34 = f2Var.c;
-            if (i31 > i24) {
-                s10 = (i31 < i34 || i31 > i33) ? -1 : f2Var.s(i31, i25 / 3);
+            int i33 = i31;
+            int i34 = i32 >>> 3;
+            int i35 = i32 & 7;
+            int i36 = f2Var.d;
+            int i37 = f2Var.c;
+            if (i34 > i27) {
+                i13 = (i34 < i37 || i34 > i36) ? -1 : f2Var.s(i34, i28 / 3);
+                i12 = 0;
+            } else if (i34 < i37 || i34 > i36) {
+                i12 = 0;
+                i13 = -1;
             } else {
-                s10 = (i31 < i34 || i31 > i33) ? -1 : f2Var.s(i31, 0);
+                i12 = 0;
+                i13 = f2Var.s(i34, 0);
             }
-            int i35 = s10;
-            if (i35 == -1) {
+            int i38 = i13;
+            if (i38 == -1) {
                 unsafe = unsafe4;
                 obj2 = obj5;
-                i12 = i29;
-                i13 = i27;
-                i14 = i30;
-                i15 = 0;
+                i14 = i32;
+                i15 = i30;
+                i16 = i33;
+                i17 = i12;
             } else {
                 int[] iArr = f2Var.a;
-                int i36 = iArr[i35 + 1];
-                int i37 = (i36 & 267386880) >>> 20;
-                int i38 = i29;
-                long j3 = i36 & 1048575;
-                if (i37 <= 17) {
-                    int i39 = iArr[i35 + 2];
-                    int i40 = 1 << (i39 >>> 20);
-                    int i41 = i39 & 1048575;
-                    if (i41 != i26) {
-                        i17 = i37;
-                        i16 = i36;
-                        c10 = 1;
-                        if (i26 != 1048575) {
-                            unsafe4.putInt(obj5, i26, i27);
+                int i39 = iArr[i38 + 1];
+                int i40 = (i39 & 267386880) >>> 20;
+                int i41 = i32;
+                long j3 = i39 & 1048575;
+                if (i40 <= 17) {
+                    int i42 = iArr[i38 + 2];
+                    int i43 = 1 << (i42 >>> 20);
+                    int i44 = i42 & 1048575;
+                    if (i44 != i29) {
+                        i19 = i40;
+                        i18 = 1;
+                        i20 = i39;
+                        if (i29 != 1048575) {
+                            unsafe4.putInt(obj5, i29, i30);
                         }
-                        if (i41 != 1048575) {
-                            i27 = unsafe4.getInt(obj5, i41);
+                        if (i44 != 1048575) {
+                            i30 = unsafe4.getInt(obj5, i44);
                         }
-                        i26 = i41;
+                        i29 = i44;
                     } else {
-                        i16 = i36;
-                        i17 = i37;
-                        c10 = 1;
+                        i18 = 1;
+                        i19 = i40;
+                        i20 = i39;
                     }
-                    switch (i17) {
+                    switch (i19) {
                         case 0:
-                            i18 = i31;
-                            if (i32 != 1) {
+                            i21 = i34;
+                            if (i35 != i18) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
                                 unsafe3 = unsafe4;
-                                y2.c.d(obj5, j3, Double.longBitsToDouble(e1.u(i30, bArr2)));
-                                i23 = i30 + 8;
-                                i27 |= i40;
+                                y2.c.d(obj5, j3, Double.longBitsToDouble(e1.u(i33, bArr2)));
+                                i26 = i33 + 8;
+                                i30 |= i43;
                                 unsafe4 = unsafe3;
-                                i25 = i35;
-                                i24 = i18;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 1:
-                            i18 = i31;
-                            if (i32 != 5) {
+                            i21 = i34;
+                            if (i35 != 5) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                y2.c.e(obj5, j3, Float.intBitsToFloat(e1.a(i30, bArr2)));
-                                i23 = i30 + 4;
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                y2.c.e(obj5, j3, Float.intBitsToFloat(e1.a(i33, bArr2)));
+                                i26 = i33 + 4;
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 2:
                         case 3:
-                            i18 = i31;
-                            if (i32 != 0) {
+                            i21 = i34;
+                            if (i35 != 0) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                int t10 = e1.t(bArr2, i30, mVar2);
-                                unsafe4.putLong(obj5, j3, mVar2.b);
-                                i27 |= i40;
-                                i23 = t10;
-                                i25 = i35;
-                                i24 = i18;
+                                int t10 = e1.t(bArr2, i33, lVar2);
+                                unsafe4.putLong(obj5, j3, lVar2.b);
+                                i30 |= i43;
+                                i26 = t10;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 4:
                         case 11:
-                            i18 = i31;
-                            if (i32 != 0) {
+                            i21 = i34;
+                            if (i35 != 0) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                int j10 = e1.j(bArr2, i30, mVar2);
-                                unsafe4.putInt(obj5, j3, mVar2.a);
-                                i27 |= i40;
-                                i23 = j10;
-                                i25 = i35;
-                                i24 = i18;
+                                int j10 = e1.j(bArr2, i33, lVar2);
+                                unsafe4.putInt(obj5, j3, lVar2.a);
+                                i30 |= i43;
+                                i26 = j10;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 5:
                         case 14:
-                            i18 = i31;
-                            if (i32 != 1) {
+                            i21 = i34;
+                            if (i35 != i18) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                unsafe4.putLong(obj5, j3, e1.u(i30, bArr2));
-                                i23 = i30 + 8;
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                unsafe4.putLong(obj5, j3, e1.u(i33, bArr2));
+                                i26 = i33 + 8;
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 6:
                         case 13:
-                            i18 = i31;
-                            if (i32 != 5) {
+                            i21 = i34;
+                            if (i35 != 5) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                unsafe4.putInt(obj5, j3, e1.a(i30, bArr2));
-                                i23 = i30 + 4;
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                unsafe4.putInt(obj5, j3, e1.a(i33, bArr2));
+                                i26 = i33 + 4;
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 7:
-                            i18 = i31;
-                            if (i32 != 0) {
+                            i21 = i34;
+                            if (i35 != 0) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = e1.t(bArr2, i30, mVar2);
-                                y2.c.g(obj5, j3, mVar2.b != 0);
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i26 = e1.t(bArr2, i33, lVar2);
+                                y2.c.g(obj5, j3, lVar2.b != 0 ? i18 : 0);
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 8:
-                            i18 = i31;
-                            if (i32 != 2) {
+                            i21 = i34;
+                            if (i35 != 2) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = (i16 & TLObject.FLAG_29) == 0 ? e1.w(bArr2, i30, mVar2) : e1.x(bArr2, i30, mVar2);
-                                unsafe4.putObject(obj5, j3, mVar2.c);
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i26 = (i20 & TLObject.FLAG_29) == 0 ? e1.w(bArr2, i33, lVar2) : e1.x(bArr2, i33, lVar2);
+                                unsafe4.putObject(obj5, j3, lVar2.c);
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 9:
-                            i18 = i31;
-                            if (i32 != 2) {
+                            i21 = i34;
+                            if (i35 != 2) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = e1.g(f2Var.l(i35), bArr2, i30, i22, mVar2);
+                                i26 = e1.g(f2Var.l(i38), bArr2, i33, i25, lVar2);
                                 Object object = unsafe4.getObject(obj5, j3);
                                 if (object == null) {
-                                    unsafe4.putObject(obj5, j3, mVar2.c);
+                                    unsafe4.putObject(obj5, j3, lVar2.c);
                                 } else {
-                                    unsafe4.putObject(obj5, j3, j1.b(object, mVar2.c));
+                                    unsafe4.putObject(obj5, j3, j1.b(object, lVar2.c));
                                 }
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 10:
-                            i18 = i31;
-                            if (i32 != 2) {
+                            i21 = i34;
+                            if (i35 != 2) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = e1.z(bArr2, i30, mVar2);
-                                unsafe4.putObject(obj5, j3, mVar2.c);
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i26 = e1.z(bArr2, i33, lVar2);
+                                unsafe4.putObject(obj5, j3, lVar2.c);
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 12:
-                            i18 = i31;
-                            if (i32 != 0) {
+                            i21 = i34;
+                            if (i35 != 0) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = e1.j(bArr2, i30, mVar2);
-                                unsafe4.putInt(obj5, j3, mVar2.a);
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i26 = e1.j(bArr2, i33, lVar2);
+                                unsafe4.putInt(obj5, j3, lVar2.a);
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 15:
-                            i18 = i31;
-                            if (i32 != 0) {
+                            i21 = i34;
+                            if (i35 != 0) {
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                i23 = e1.j(bArr2, i30, mVar2);
-                                unsafe4.putInt(obj5, j3, e1.y(mVar2.a));
-                                i27 |= i40;
-                                i25 = i35;
-                                i24 = i18;
+                                i26 = e1.j(bArr2, i33, lVar2);
+                                unsafe4.putInt(obj5, j3, e1.y(lVar2.a));
+                                i30 |= i43;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         case 16:
-                            if (i32 != 0) {
-                                i18 = i31;
+                            if (i35 != 0) {
+                                i21 = i34;
                                 unsafe2 = unsafe4;
                                 obj3 = obj5;
                                 obj2 = obj3;
                                 unsafe = unsafe2;
-                                i13 = i27;
-                                i14 = i30;
-                                i15 = i35;
-                                i31 = i18;
-                                i12 = i38;
+                                i15 = i30;
+                                i16 = i33;
+                                i17 = i38;
+                                i34 = i21;
+                                i14 = i41;
                                 break;
                             } else {
-                                int t11 = e1.t(bArr2, i30, mVar2);
-                                long j11 = mVar2.b;
-                                i18 = i31;
-                                unsafe4.putLong(obj5, j3, (j11 >>> c10) ^ (-(j11 & 1)));
-                                i27 |= i40;
-                                i23 = t11;
-                                i25 = i35;
-                                i24 = i18;
+                                int t11 = e1.t(bArr2, i33, lVar2);
+                                long j11 = lVar2.b;
+                                i21 = i34;
+                                unsafe4.putLong(obj5, j3, (j11 >>> i18) ^ (-(j11 & 1)));
+                                i30 |= i43;
+                                i26 = t11;
+                                i28 = i38;
+                                i27 = i21;
                                 break;
                             }
                         default:
                             unsafe2 = unsafe4;
                             obj3 = obj5;
-                            i18 = i31;
+                            i21 = i34;
                             obj2 = obj3;
                             unsafe = unsafe2;
-                            i13 = i27;
-                            i14 = i30;
-                            i15 = i35;
-                            i31 = i18;
-                            i12 = i38;
+                            i15 = i30;
+                            i16 = i33;
+                            i17 = i38;
+                            i34 = i21;
+                            i14 = i41;
                             break;
                     }
                 } else {
-                    i18 = i31;
+                    i21 = i34;
                     unsafe3 = unsafe4;
                     Object obj6 = obj5;
-                    if (i37 != 27) {
-                        if (i37 <= 49) {
-                            long j12 = i36;
+                    if (i40 != 27) {
+                        if (i40 <= 49) {
+                            long j12 = i39;
                             unsafe = unsafe3;
-                            i13 = i27;
-                            i20 = i26;
-                            i31 = i18;
-                            i12 = i38;
-                            i21 = f2Var.i(obj, bArr, i30, i11, i12, i31, i32, i35, j12, i37, j3, mVar);
+                            i15 = i30;
+                            i23 = i29;
+                            i34 = i21;
+                            i14 = i41;
+                            i24 = f2Var.i(obj, bArr, i33, i11, i14, i34, i35, i38, j12, i40, j3, lVar);
                             obj5 = obj;
-                            i15 = i35;
-                            if (i21 == i30) {
+                            i17 = i38;
+                            if (i24 == i33) {
                                 obj2 = obj5;
-                                i14 = i21;
+                                i16 = i24;
                             } else {
-                                i22 = i11;
-                                mVar2 = mVar;
-                                i24 = i31;
-                                i23 = i21;
-                                i25 = i15;
-                                i26 = i20;
-                                i27 = i13;
+                                i25 = i11;
+                                lVar2 = lVar;
+                                i27 = i34;
+                                i26 = i24;
+                                i28 = i17;
+                                i29 = i23;
+                                i30 = i15;
                                 unsafe4 = unsafe;
                                 bArr2 = bArr;
                             }
                         } else {
                             unsafe = unsafe3;
-                            i13 = i27;
-                            i15 = i35;
-                            i19 = i30;
-                            i20 = i26;
-                            i31 = i18;
-                            i12 = i38;
+                            i15 = i30;
+                            i17 = i38;
+                            i22 = i33;
+                            i23 = i29;
+                            i34 = i21;
+                            i14 = i41;
                             obj4 = obj;
-                            if (i37 != 50) {
-                                i21 = f2Var.h(obj4, bArr, i19, i11, i12, i31, i32, i36, i37, j3, i15, mVar);
+                            if (i40 != 50) {
+                                i24 = f2Var.h(obj4, bArr, i22, i11, i14, i34, i35, i39, i40, j3, i17, lVar);
                                 obj2 = obj4;
-                                if (i21 == i19) {
-                                    i14 = i21;
+                                if (i24 == i22) {
+                                    i16 = i24;
                                 } else {
                                     f2Var = this;
-                                    mVar2 = mVar;
-                                    i24 = i31;
-                                    i23 = i21;
+                                    lVar2 = lVar;
+                                    i27 = i34;
+                                    i26 = i24;
                                     obj5 = obj2;
-                                    i25 = i15;
-                                    i26 = i20;
-                                    i27 = i13;
+                                    i28 = i17;
+                                    i29 = i23;
+                                    i30 = i15;
                                     unsafe4 = unsafe;
                                     bArr2 = bArr;
-                                    i22 = i11;
+                                    i25 = i11;
                                 }
-                            } else if (i32 == 2) {
-                                f2Var.p(j3, obj4, i15);
+                            } else if (i35 == 2) {
+                                f2Var.p(j3, obj4, i17);
                                 throw null;
                             }
                         }
-                        i26 = i20;
-                    } else if (i32 == 2) {
+                        i29 = i23;
+                    } else if (i35 == 2) {
                         o1 o1Var = (o1) unsafe3.getObject(obj6, j3);
                         if (!o1Var.zza()) {
                             int size = o1Var.size();
                             o1Var = o1Var.zza(size == 0 ? 10 : size << 1);
                             unsafe3.putObject(obj6, j3, o1Var);
                         }
-                        int e7 = e1.e(f2Var.l(i35), i38, bArr2, i30, i22, o1Var, mVar2);
+                        int e7 = e1.e(f2Var.l(i38), i41, bArr2, i33, i25, o1Var, lVar2);
                         obj5 = obj;
                         bArr2 = bArr;
-                        i22 = i11;
-                        mVar2 = mVar;
-                        i23 = e7;
+                        i25 = i11;
+                        lVar2 = lVar;
+                        i26 = e7;
                         unsafe4 = unsafe3;
-                        i25 = i35;
-                        i24 = i18;
+                        i28 = i38;
+                        i27 = i21;
                     } else {
                         obj4 = obj;
                         unsafe = unsafe3;
-                        i13 = i27;
-                        i19 = i30;
-                        i15 = i35;
-                        i31 = i18;
-                        i12 = i38;
-                        i20 = i26;
+                        i15 = i30;
+                        i22 = i33;
+                        i17 = i38;
+                        i34 = i21;
+                        i14 = i41;
+                        i23 = i29;
                     }
                     obj2 = obj4;
-                    i14 = i19;
-                    i26 = i20;
+                    i16 = i22;
+                    i29 = i23;
                 }
             }
-            int c11 = e1.c(i12, bArr, i14, i11, C(obj2), mVar);
+            int c10 = e1.c(i14, bArr, i16, i11, C(obj2), lVar);
             bArr2 = bArr;
-            mVar2 = mVar;
-            i24 = i31;
+            lVar2 = lVar;
+            i27 = i34;
             obj5 = obj2;
-            i25 = i15;
-            i27 = i13;
+            i28 = i17;
+            i30 = i15;
             unsafe4 = unsafe;
-            i22 = i11;
-            i23 = c11;
+            i25 = i11;
+            i26 = c10;
             f2Var = this;
         }
         Unsafe unsafe5 = unsafe4;
-        int i42 = i22;
-        int i43 = i26;
-        int i44 = i27;
+        int i45 = i25;
+        int i46 = i29;
+        int i47 = i30;
         Object obj7 = obj5;
-        if (i43 != 1048575) {
-            unsafe5.putInt(obj7, i43, i44);
+        if (i46 != 1048575) {
+            unsafe5.putInt(obj7, i46, i47);
         }
-        if (i23 != i42) {
+        if (i26 != i45) {
             throw new n1("Failed to parse the message.");
         }
     }
@@ -2566,7 +2570,7 @@ public final class f2 implements o2 {
         return false;
     }
 
-    public final int h(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, int i17, com.google.android.gms.internal.clearcut.m mVar) {
+    public final int h(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, int i17, com.google.android.gms.internal.clearcut.l lVar) {
         int i18;
         int i19;
         int t10;
@@ -2597,8 +2601,8 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, mVar);
-                unsafe.putObject(obj, j3, Long.valueOf(mVar.b));
+                t10 = e1.t(bArr, i10, lVar);
+                unsafe.putObject(obj, j3, Long.valueOf(lVar.b));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 55:
@@ -2606,8 +2610,8 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.j(bArr, i10, mVar);
-                unsafe.putObject(obj, j3, Integer.valueOf(mVar.a));
+                t10 = e1.j(bArr, i10, lVar);
+                unsafe.putObject(obj, j3, Integer.valueOf(lVar.a));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 56:
@@ -2634,16 +2638,16 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, mVar);
-                unsafe.putObject(obj, j3, Boolean.valueOf(mVar.b != 0));
+                t10 = e1.t(bArr, i10, lVar);
+                unsafe.putObject(obj, j3, Boolean.valueOf(lVar.b != 0));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 59:
                 if (i14 != 2) {
                     return i10;
                 }
-                int j11 = e1.j(bArr, i10, mVar);
-                int i20 = mVar.a;
+                int j11 = e1.j(bArr, i10, lVar);
+                int i20 = lVar.a;
                 if (i20 == 0) {
                     unsafe.putObject(obj, j3, "");
                 } else {
@@ -2661,12 +2665,12 @@ public final class f2 implements o2 {
                 if (i14 != 2) {
                     return i10;
                 }
-                int g10 = e1.g(l(i17), bArr, i10, i11, mVar);
+                int g10 = e1.g(l(i17), bArr, i10, i11, lVar);
                 object = unsafe.getInt(obj, j10) == i13 ? unsafe.getObject(obj, j3) : null;
                 if (object == null) {
-                    unsafe.putObject(obj, j3, mVar.c);
+                    unsafe.putObject(obj, j3, lVar.c);
                 } else {
-                    unsafe.putObject(obj, j3, j1.b(object, mVar.c));
+                    unsafe.putObject(obj, j3, j1.b(object, lVar.c));
                 }
                 unsafe.putInt(obj, j10, i13);
                 return g10;
@@ -2674,16 +2678,16 @@ public final class f2 implements o2 {
                 if (i14 != 2) {
                     return i10;
                 }
-                t10 = e1.z(bArr, i10, mVar);
-                unsafe.putObject(obj, j3, mVar.c);
+                t10 = e1.z(bArr, i10, lVar);
+                unsafe.putObject(obj, j3, lVar.c);
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 63:
                 if (i14 != 0) {
                     return i10;
                 }
-                int j12 = e1.j(bArr, i10, mVar);
-                int i21 = mVar.a;
+                int j12 = e1.j(bArr, i10, lVar);
+                int i21 = lVar.a;
                 k1 x10 = x(i17);
                 if (x10 != null && !x10.zza(i21)) {
                     C(obj).a(i12, Long.valueOf(i21));
@@ -2697,27 +2701,27 @@ public final class f2 implements o2 {
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.j(bArr, i10, mVar);
-                unsafe.putObject(obj, j3, Integer.valueOf(e1.y(mVar.a)));
+                t10 = e1.j(bArr, i10, lVar);
+                unsafe.putObject(obj, j3, Integer.valueOf(e1.y(lVar.a)));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 67:
                 if (i14 != 0) {
                     return i10;
                 }
-                t10 = e1.t(bArr, i10, mVar);
-                long j13 = mVar.b;
+                t10 = e1.t(bArr, i10, lVar);
+                long j13 = lVar.b;
                 unsafe.putObject(obj, j3, Long.valueOf((-(j13 & 1)) ^ (j13 >>> 1)));
                 unsafe.putInt(obj, j10, i13);
                 return t10;
             case 68:
                 if (i14 == 3) {
-                    t10 = e1.f(l(i17), bArr, i10, i11, (i12 & (-8)) | 4, mVar);
+                    t10 = e1.f(l(i17), bArr, i10, i11, (i12 & (-8)) | 4, lVar);
                     object = unsafe.getInt(obj, j10) == i13 ? unsafe.getObject(obj, j3) : null;
                     if (object == null) {
-                        unsafe.putObject(obj, j3, mVar.c);
+                        unsafe.putObject(obj, j3, lVar.c);
                     } else {
-                        unsafe.putObject(obj, j3, j1.b(object, mVar.c));
+                        unsafe.putObject(obj, j3, j1.b(object, lVar.c));
                     }
                     unsafe.putInt(obj, j10, i13);
                     return t10;
@@ -2728,7 +2732,7 @@ public final class f2 implements o2 {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public final int i(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, long j3, int i16, long j10, com.google.android.gms.internal.clearcut.m mVar) {
+    public final int i(Object obj, byte[] bArr, int i10, int i11, int i12, int i13, int i14, int i15, long j3, int i16, long j10, com.google.android.gms.internal.clearcut.l lVar) {
         int b10;
         Unsafe unsafe = o;
         o1 o1Var = (o1) unsafe.getObject(obj, j10);
@@ -2748,8 +2752,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j11 = e1.j(bArr, i10, mVar);
-                int i17 = mVar.a + j11;
+                int j11 = e1.j(bArr, i10, lVar);
+                int i17 = lVar.a + j11;
                 if (j11 < i17) {
                     Double.longBitsToDouble(e1.u(j11, bArr));
                     throw null;
@@ -2767,8 +2771,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j12 = e1.j(bArr, i10, mVar);
-                int i18 = mVar.a + j12;
+                int j12 = e1.j(bArr, i10, lVar);
+                int i18 = lVar.a + j12;
                 if (j12 < i18) {
                     Float.intBitsToFloat(e1.a(j12, bArr));
                     throw null;
@@ -2783,15 +2787,15 @@ public final class f2 implements o2 {
             case 38:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, mVar);
+                        e1.t(bArr, i10, lVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j13 = e1.j(bArr, i10, mVar);
-                int i19 = mVar.a + j13;
+                int j13 = e1.j(bArr, i10, lVar);
+                int i19 = lVar.a + j13;
                 if (j13 < i19) {
-                    e1.t(bArr, j13, mVar);
+                    e1.t(bArr, j13, lVar);
                     throw null;
                 }
                 if (j13 == i19) {
@@ -2804,16 +2808,16 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        return e1.b(i12, bArr, i10, i11, o1Var2, mVar);
+                        return e1.b(i12, bArr, i10, i11, o1Var2, lVar);
                     }
                     return i10;
                 }
                 h1 h1Var = (h1) o1Var2;
-                int j14 = e1.j(bArr, i10, mVar);
-                int i20 = mVar.a + j14;
+                int j14 = e1.j(bArr, i10, lVar);
+                int i20 = lVar.a + j14;
                 while (j14 < i20) {
-                    j14 = e1.j(bArr, j14, mVar);
-                    h1Var.n(mVar.a);
+                    j14 = e1.j(bArr, j14, lVar);
+                    h1Var.n(lVar.a);
                 }
                 if (j14 == i20) {
                     return j14;
@@ -2830,8 +2834,8 @@ public final class f2 implements o2 {
                     }
                     return i10;
                 }
-                int j15 = e1.j(bArr, i10, mVar);
-                int i21 = mVar.a + j15;
+                int j15 = e1.j(bArr, i10, lVar);
+                int i21 = lVar.a + j15;
                 if (j15 < i21) {
                     e1.u(j15, bArr);
                     throw null;
@@ -2846,8 +2850,8 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                 if (i14 == 2) {
                     h1 h1Var2 = (h1) o1Var2;
-                    int j16 = e1.j(bArr, i10, mVar);
-                    int i22 = mVar.a + j16;
+                    int j16 = e1.j(bArr, i10, lVar);
+                    int i22 = lVar.a + j16;
                     while (j16 < i22) {
                         h1Var2.n(e1.a(j16, bArr));
                         j16 += 4;
@@ -2862,8 +2866,8 @@ public final class f2 implements o2 {
                     h1Var3.n(e1.a(i10, bArr));
                     int i23 = i10 + 4;
                     while (i23 < i11) {
-                        int j17 = e1.j(bArr, i23, mVar);
-                        if (i12 != mVar.a) {
+                        int j17 = e1.j(bArr, i23, lVar);
+                        if (i12 != lVar.a) {
                             return i23;
                         }
                         h1Var3.n(e1.a(j17, bArr));
@@ -2876,15 +2880,15 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, mVar);
+                        e1.t(bArr, i10, lVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j18 = e1.j(bArr, i10, mVar);
-                int i24 = mVar.a + j18;
+                int j18 = e1.j(bArr, i10, lVar);
+                int i24 = lVar.a + j18;
                 if (j18 < i24) {
-                    e1.t(bArr, j18, mVar);
+                    e1.t(bArr, j18, lVar);
                     throw null;
                 }
                 if (j18 == i24) {
@@ -2894,8 +2898,8 @@ public final class f2 implements o2 {
             case 26:
                 if (i14 == 2) {
                     if ((j3 & 536870912) == 0) {
-                        int j19 = e1.j(bArr, i10, mVar);
-                        int i25 = mVar.a;
+                        int j19 = e1.j(bArr, i10, lVar);
+                        int i25 = lVar.a;
                         if (i25 < 0) {
                             throw n1.b();
                         }
@@ -2906,12 +2910,12 @@ public final class f2 implements o2 {
                             j19 += i25;
                         }
                         while (j19 < i11) {
-                            int j20 = e1.j(bArr, j19, mVar);
-                            if (i12 != mVar.a) {
+                            int j20 = e1.j(bArr, j19, lVar);
+                            if (i12 != lVar.a) {
                                 return j19;
                             }
-                            j19 = e1.j(bArr, j20, mVar);
-                            int i26 = mVar.a;
+                            j19 = e1.j(bArr, j20, lVar);
+                            int i26 = lVar.a;
                             if (i26 < 0) {
                                 throw n1.b();
                             }
@@ -2924,8 +2928,8 @@ public final class f2 implements o2 {
                         }
                         return j19;
                     }
-                    int j21 = e1.j(bArr, i10, mVar);
-                    int i27 = mVar.a;
+                    int j21 = e1.j(bArr, i10, lVar);
+                    int i27 = lVar.a;
                     if (i27 < 0) {
                         throw n1.b();
                     }
@@ -2940,12 +2944,12 @@ public final class f2 implements o2 {
                         j21 = i28;
                     }
                     while (j21 < i11) {
-                        int j22 = e1.j(bArr, j21, mVar);
-                        if (i12 != mVar.a) {
+                        int j22 = e1.j(bArr, j21, lVar);
+                        if (i12 != lVar.a) {
                             return j21;
                         }
-                        j21 = e1.j(bArr, j22, mVar);
-                        int i29 = mVar.a;
+                        j21 = e1.j(bArr, j22, lVar);
+                        int i29 = lVar.a;
                         if (i29 < 0) {
                             throw n1.b();
                         }
@@ -2965,13 +2969,13 @@ public final class f2 implements o2 {
                 return i10;
             case 27:
                 if (i14 == 2) {
-                    return e1.e(l(i15), i12, bArr, i10, i11, o1Var2, mVar);
+                    return e1.e(l(i15), i12, bArr, i10, i11, o1Var2, lVar);
                 }
                 return i10;
             case 28:
                 if (i14 == 2) {
-                    int j23 = e1.j(bArr, i10, mVar);
-                    int i31 = mVar.a;
+                    int j23 = e1.j(bArr, i10, lVar);
+                    int i31 = lVar.a;
                     if (i31 < 0) {
                         throw n1.b();
                     }
@@ -2985,12 +2989,12 @@ public final class f2 implements o2 {
                         j23 += i31;
                     }
                     while (j23 < i11) {
-                        int j24 = e1.j(bArr, j23, mVar);
-                        if (i12 != mVar.a) {
+                        int j24 = e1.j(bArr, j23, lVar);
+                        if (i12 != lVar.a) {
                             return j23;
                         }
-                        j23 = e1.j(bArr, j24, mVar);
-                        int i32 = mVar.a;
+                        j23 = e1.j(bArr, j24, lVar);
+                        int i32 = lVar.a;
                         if (i32 < 0) {
                             throw n1.b();
                         }
@@ -3011,16 +3015,16 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        b10 = e1.b(i12, bArr, i10, i11, o1Var2, mVar);
+                        b10 = e1.b(i12, bArr, i10, i11, o1Var2, lVar);
                     }
                     return i10;
                 }
                 h1 h1Var4 = (h1) o1Var2;
-                b10 = e1.j(bArr, i10, mVar);
-                int i33 = mVar.a + b10;
+                b10 = e1.j(bArr, i10, lVar);
+                int i33 = lVar.a + b10;
                 while (b10 < i33) {
-                    b10 = e1.j(bArr, b10, mVar);
-                    h1Var4.n(mVar.a);
+                    b10 = e1.j(bArr, b10, lVar);
+                    h1Var4.n(lVar.a);
                 }
                 if (b10 != i33) {
                     throw n1.a();
@@ -3080,11 +3084,11 @@ public final class f2 implements o2 {
             case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                 if (i14 == 2) {
                     h1 h1Var5 = (h1) o1Var2;
-                    int j25 = e1.j(bArr, i10, mVar);
-                    int i36 = mVar.a + j25;
+                    int j25 = e1.j(bArr, i10, lVar);
+                    int i36 = lVar.a + j25;
                     while (j25 < i36) {
-                        j25 = e1.j(bArr, j25, mVar);
-                        h1Var5.n(e1.y(mVar.a));
+                        j25 = e1.j(bArr, j25, lVar);
+                        h1Var5.n(e1.y(lVar.a));
                     }
                     if (j25 == i36) {
                         return j25;
@@ -3093,15 +3097,15 @@ public final class f2 implements o2 {
                 }
                 if (i14 == 0) {
                     h1 h1Var6 = (h1) o1Var2;
-                    int j26 = e1.j(bArr, i10, mVar);
-                    h1Var6.n(e1.y(mVar.a));
+                    int j26 = e1.j(bArr, i10, lVar);
+                    h1Var6.n(e1.y(lVar.a));
                     while (j26 < i11) {
-                        int j27 = e1.j(bArr, j26, mVar);
-                        if (i12 != mVar.a) {
+                        int j27 = e1.j(bArr, j26, lVar);
+                        if (i12 != lVar.a) {
                             return j26;
                         }
-                        j26 = e1.j(bArr, j27, mVar);
-                        h1Var6.n(e1.y(mVar.a));
+                        j26 = e1.j(bArr, j27, lVar);
+                        h1Var6.n(e1.y(lVar.a));
                     }
                     return j26;
                 }
@@ -3110,15 +3114,15 @@ public final class f2 implements o2 {
             case 48:
                 if (i14 != 2) {
                     if (i14 == 0) {
-                        e1.t(bArr, i10, mVar);
+                        e1.t(bArr, i10, lVar);
                         throw null;
                     }
                     return i10;
                 }
-                int j28 = e1.j(bArr, i10, mVar);
-                int i37 = mVar.a + j28;
+                int j28 = e1.j(bArr, i10, lVar);
+                int i37 = lVar.a + j28;
                 if (j28 < i37) {
-                    e1.t(bArr, j28, mVar);
+                    e1.t(bArr, j28, lVar);
                     throw null;
                 }
                 if (j28 == i37) {
@@ -3129,24 +3133,24 @@ public final class f2 implements o2 {
                 if (i14 == 3) {
                     o2 l4 = l(i15);
                     int i38 = (i12 & (-8)) | 4;
-                    int f7 = e1.f(l4, bArr, i10, i11, i38, mVar);
+                    int f7 = e1.f(l4, bArr, i10, i11, i38, lVar);
                     o2 o2Var = l4;
                     int i39 = i11;
-                    com.google.android.gms.internal.clearcut.m mVar2 = mVar;
-                    o1Var2.add(mVar2.c);
+                    com.google.android.gms.internal.clearcut.l lVar2 = lVar;
+                    o1Var2.add(lVar2.c);
                     while (f7 < i39) {
-                        int j29 = e1.j(bArr, f7, mVar2);
-                        if (i12 != mVar2.a) {
+                        int j29 = e1.j(bArr, f7, lVar2);
+                        if (i12 != lVar2.a) {
                             return f7;
                         }
                         o2 o2Var2 = o2Var;
                         int i40 = i39;
-                        com.google.android.gms.internal.clearcut.m mVar3 = mVar2;
-                        f7 = e1.f(o2Var2, bArr, j29, i40, i38, mVar3);
-                        o1Var2.add(mVar3.c);
+                        com.google.android.gms.internal.clearcut.l lVar3 = lVar2;
+                        f7 = e1.f(o2Var2, bArr, j29, i40, i38, lVar3);
+                        o1Var2.add(lVar3.c);
                         o2Var = o2Var2;
                         i39 = i40;
-                        mVar2 = mVar3;
+                        lVar2 = lVar3;
                     }
                     return f7;
                 }
@@ -3163,7 +3167,7 @@ public final class f2 implements o2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int j(Object obj, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.m mVar) {
+    public final int j(Object obj, byte[] bArr, int i10, int i11, int i12, com.google.android.gms.internal.clearcut.l lVar) {
         int i13;
         Unsafe unsafe;
         int[] iArr;
@@ -3171,704 +3175,733 @@ public final class f2 implements o2 {
         Object obj2;
         int i14;
         int i15;
-        Object obj3;
         int i16;
         int i17;
+        Object obj3;
         int i18;
         int i19;
         int i20;
-        int h;
         int i21;
         int i22;
+        int h;
         int i23;
         int i24;
-        Unsafe unsafe2;
         int i25;
+        int i26;
+        char c10;
+        Unsafe unsafe2;
+        int i27;
         Unsafe unsafe3;
         Object obj4;
-        int i26;
-        int i27;
-        Unsafe unsafe4;
         int i28;
         int i29;
+        Unsafe unsafe4;
+        int i30;
+        int i31;
         Object obj5;
         f2 f2Var2 = this;
         Object obj6 = obj;
         byte[] bArr2 = bArr;
-        int i30 = i11;
-        com.google.android.gms.internal.clearcut.m mVar2 = mVar;
+        int i32 = i11;
+        com.google.android.gms.internal.clearcut.l lVar2 = lVar;
         Unsafe unsafe5 = o;
-        int i31 = i10;
-        int i32 = -1;
-        int i33 = 0;
-        int i34 = 0;
-        int i35 = 1048575;
+        int i33 = i10;
+        int i34 = -1;
+        int i35 = 0;
         int i36 = 0;
+        int i37 = 1048575;
+        int i38 = 0;
         while (true) {
             int[] iArr2 = f2Var2.a;
-            if (i31 < i30) {
-                int i37 = i31 + 1;
-                int i38 = bArr2[i31];
-                if (i38 < 0) {
-                    i37 = e1.d(i38, bArr2, i37, mVar2);
-                    i38 = mVar2.a;
+            if (i33 < i32) {
+                int i39 = i33 + 1;
+                int i40 = bArr2[i33];
+                if (i40 < 0) {
+                    i39 = e1.d(i40, bArr2, i39, lVar2);
+                    i40 = lVar2.a;
                 }
-                int i39 = i38 >>> 3;
-                int i40 = i37;
-                int i41 = i38 & 7;
-                int i42 = f2Var2.d;
-                int i43 = f2Var2.c;
-                int i44 = i38;
-                int s10 = i39 > i32 ? (i39 < i43 || i39 > i42) ? -1 : f2Var2.s(i39, i33 / 3) : (i39 < i43 || i39 > i42) ? -1 : f2Var2.s(i39, 0);
-                if (s10 == -1) {
-                    i14 = i44;
-                    i13 = i35;
+                int i41 = i40 >>> 3;
+                int i42 = i39;
+                int i43 = i40 & 7;
+                int i44 = f2Var2.d;
+                int i45 = f2Var2.c;
+                int i46 = i40;
+                if (i41 > i34) {
+                    i15 = (i41 < i45 || i41 > i44) ? -1 : f2Var2.s(i41, i35 / 3);
+                    i14 = 0;
+                } else if (i41 < i45 || i41 > i44) {
+                    i14 = 0;
+                    i15 = -1;
+                } else {
+                    i14 = 0;
+                    i15 = f2Var2.s(i41, 0);
+                }
+                if (i15 == -1) {
+                    i13 = i37;
                     unsafe = unsafe5;
                     iArr = iArr2;
-                    i20 = i39;
-                    i15 = 0;
+                    int i47 = i14;
+                    i22 = i41;
+                    i16 = i46;
                     f2Var = f2Var2;
                     obj2 = obj6;
-                    i21 = i40;
+                    i17 = i47;
+                    i23 = i42;
                 } else {
-                    int i45 = iArr2[s10 + 1];
-                    int i46 = (i45 & 267386880) >>> 20;
-                    long j3 = i45 & 1048575;
-                    if (i46 <= 17) {
-                        int i47 = iArr2[s10 + 2];
-                        int i48 = 1 << (i47 >>> 20);
-                        int i49 = i47 & 1048575;
+                    int i48 = iArr2[i15 + 1];
+                    int i49 = (i48 & 267386880) >>> 20;
+                    long j3 = i48 & 1048575;
+                    if (i49 <= 17) {
+                        int i50 = iArr2[i15 + 2];
+                        int i51 = 1 << (i50 >>> 20);
+                        int i52 = i50 & 1048575;
                         iArr = iArr2;
-                        if (i49 != i35) {
-                            i23 = i48;
-                            if (i35 != 1048575) {
-                                unsafe5.putInt(obj6, i35, i36);
+                        if (i52 != i37) {
+                            i25 = i51;
+                            if (i37 != 1048575) {
+                                unsafe5.putInt(obj6, i37, i38);
                             }
-                            i36 = unsafe5.getInt(obj6, i49);
-                            i22 = i49;
+                            i38 = unsafe5.getInt(obj6, i52);
+                            i24 = i52;
                         } else {
-                            i23 = i48;
-                            i22 = i35;
+                            i25 = i51;
+                            i24 = i37;
                         }
-                        switch (i46) {
+                        switch (i49) {
                             case 0:
-                                i14 = i44;
-                                i24 = i39;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                i25 = i40;
-                                if (i41 == 1) {
+                                i27 = i42;
+                                if (i43 == 1) {
                                     unsafe3 = unsafe2;
-                                    y2.c.d(obj6, j3, Double.longBitsToDouble(e1.u(i25, bArr)));
+                                    y2.c.d(obj6, j3, Double.longBitsToDouble(e1.u(i27, bArr)));
                                     obj4 = obj6;
-                                    i26 = i25 + 8;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i27 + 8;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i20 = i24;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 1:
-                                i14 = i44;
-                                i24 = i39;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                i25 = i40;
-                                if (i41 == 5) {
-                                    y2.c.e(obj6, j3, Float.intBitsToFloat(e1.a(i25, bArr)));
-                                    i27 = i25 + 4;
-                                    int i50 = i27;
+                                i27 = i42;
+                                if (i43 == 5) {
+                                    y2.c.e(obj6, j3, Float.intBitsToFloat(e1.a(i27, bArr)));
+                                    i29 = i27 + 4;
+                                    int i53 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i50;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i53;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i20 = i24;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 2:
                             case 3:
-                                i14 = i44;
-                                i24 = i39;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                i25 = i40;
-                                if (i41 == 0) {
-                                    i27 = e1.t(bArr, i25, mVar2);
-                                    unsafe2.putLong(obj6, j3, mVar2.b);
-                                    int i502 = i27;
+                                i27 = i42;
+                                if (i43 == 0) {
+                                    i29 = e1.t(bArr, i27, lVar2);
+                                    unsafe2.putLong(obj6, j3, lVar2.b);
+                                    int i532 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i502;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i532;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i20 = i24;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 4:
                             case 11:
-                                i14 = i44;
-                                i24 = i39;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                i25 = i40;
-                                if (i41 == 0) {
-                                    i27 = e1.j(bArr, i25, mVar2);
-                                    unsafe2.putInt(obj6, j3, mVar2.a);
-                                    int i5022 = i27;
+                                i27 = i42;
+                                if (i43 == 0) {
+                                    i29 = e1.j(bArr, i27, lVar2);
+                                    unsafe2.putInt(obj6, j3, lVar2.a);
+                                    int i5322 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i5022;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i5322;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i20 = i24;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 5:
                             case 14:
-                                i14 = i44;
-                                i24 = i39;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 != 1) {
-                                    i25 = i40;
+                                if (i43 != 1) {
+                                    i27 = i42;
                                     unsafe4 = unsafe2;
                                     obj5 = obj6;
-                                    i20 = i24;
+                                    i22 = i26;
                                     f2Var = f2Var2;
                                     unsafe = unsafe4;
-                                    i21 = i25;
-                                    i13 = i22;
+                                    i23 = i27;
+                                    i13 = i24;
                                     obj2 = obj5;
                                     break;
                                 } else {
-                                    unsafe2.putLong(obj6, j3, e1.u(i40, bArr));
-                                    i27 = i40 + 8;
-                                    int i50222 = i27;
+                                    unsafe2.putLong(obj6, j3, e1.u(i42, bArr));
+                                    i29 = i42 + 8;
+                                    int i53222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i50222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i53222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                             case 6:
                             case 13:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 5) {
-                                    unsafe2.putInt(obj6, j3, e1.a(i28, bArr));
-                                    i27 = i28 + 4;
-                                    int i502222 = i27;
+                                if (i43 == 5) {
+                                    unsafe2.putInt(obj6, j3, e1.a(i30, bArr));
+                                    i29 = i30 + 4;
+                                    int i532222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i502222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i532222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 7:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 0) {
-                                    i27 = e1.t(bArr, i28, mVar2);
-                                    y2.c.g(obj6, j3, mVar2.b != 0);
-                                    int i5022222 = i27;
+                                if (i43 == 0) {
+                                    i29 = e1.t(bArr, i30, lVar2);
+                                    y2.c.g(obj6, j3, lVar2.b != 0);
+                                    int i5322222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i5022222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i5322222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 8:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 2) {
-                                    i27 = (i45 & TLObject.FLAG_29) == 0 ? e1.w(bArr, i28, mVar2) : e1.x(bArr, i28, mVar2);
-                                    unsafe2.putObject(obj6, j3, mVar2.c);
-                                    int i50222222 = i27;
+                                if (i43 == 2) {
+                                    i29 = (i48 & TLObject.FLAG_29) == 0 ? e1.w(bArr, i30, lVar2) : e1.x(bArr, i30, lVar2);
+                                    unsafe2.putObject(obj6, j3, lVar2.c);
+                                    int i53222222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i50222222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i53222222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 9:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 2) {
-                                    int g10 = e1.g(f2Var2.l(i15), bArr, i28, i11, mVar2);
-                                    if ((i36 & i23) == 0) {
-                                        unsafe2.putObject(obj6, j3, mVar2.c);
+                                if (i43 == 2) {
+                                    int g10 = e1.g(f2Var2.l(i17), bArr, i30, i11, lVar2);
+                                    if ((i38 & i25) == 0) {
+                                        unsafe2.putObject(obj6, j3, lVar2.c);
                                     } else {
-                                        unsafe2.putObject(obj6, j3, j1.b(unsafe2.getObject(obj6, j3), mVar2.c));
+                                        unsafe2.putObject(obj6, j3, j1.b(unsafe2.getObject(obj6, j3), lVar2.c));
                                     }
-                                    i29 = g10;
+                                    i31 = g10;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i29;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i31;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 10:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 2) {
-                                    i27 = e1.z(bArr, i28, mVar2);
-                                    unsafe2.putObject(obj6, j3, mVar2.c);
-                                    int i502222222 = i27;
+                                if (i43 == 2) {
+                                    i29 = e1.z(bArr, i30, lVar2);
+                                    unsafe2.putObject(obj6, j3, lVar2.c);
+                                    int i532222222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i502222222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i532222222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 12:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 0) {
-                                    i27 = e1.j(bArr, i28, mVar2);
-                                    int i51 = mVar2.a;
-                                    k1 x10 = f2Var2.x(i15);
-                                    if (x10 == null || x10.zza(i51)) {
-                                        unsafe2.putInt(obj6, j3, i51);
-                                        int i5022222222 = i27;
+                                if (i43 == 0) {
+                                    i29 = e1.j(bArr, i30, lVar2);
+                                    int i54 = lVar2.a;
+                                    k1 x10 = f2Var2.x(i17);
+                                    if (x10 == null || x10.zza(i54)) {
+                                        unsafe2.putInt(obj6, j3, i54);
+                                        int i5322222222 = i29;
                                         unsafe3 = unsafe2;
                                         obj4 = obj6;
-                                        i26 = i5022222222;
-                                        i20 = i24;
-                                        i30 = i11;
+                                        i28 = i5322222222;
+                                        i22 = i26;
+                                        i32 = i11;
                                         f2Var = f2Var2;
                                         obj2 = obj4;
-                                        i36 |= i23;
+                                        i38 |= i25;
                                         unsafe = unsafe3;
-                                        i31 = i26;
+                                        i33 = i28;
                                         bArr2 = bArr;
-                                        mVar2 = mVar;
-                                        i32 = i20;
+                                        lVar2 = lVar;
+                                        i34 = i22;
                                         f2Var2 = f2Var;
                                         obj6 = obj2;
-                                        i35 = i22;
-                                        i34 = i14;
-                                        i33 = i15;
+                                        i37 = i24;
+                                        i36 = i16;
+                                        i35 = i17;
                                         unsafe5 = unsafe;
                                     } else {
-                                        C(obj6).a(i14, Long.valueOf(i51));
-                                        i20 = i24;
+                                        C(obj6).a(i16, Long.valueOf(i54));
+                                        i22 = i26;
                                         f2Var = f2Var2;
                                         unsafe = unsafe2;
-                                        i31 = i27;
-                                        i30 = i11;
+                                        i33 = i29;
+                                        i32 = i11;
                                         obj2 = obj6;
                                         bArr2 = bArr;
-                                        mVar2 = mVar;
-                                        i32 = i20;
+                                        lVar2 = lVar;
+                                        i34 = i22;
                                         f2Var2 = f2Var;
                                         obj6 = obj2;
-                                        i35 = i22;
-                                        i34 = i14;
-                                        i33 = i15;
+                                        i37 = i24;
+                                        i36 = i16;
+                                        i35 = i17;
                                         unsafe5 = unsafe;
                                     }
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 15:
-                                i14 = i44;
-                                i24 = i39;
-                                i28 = i40;
-                                i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                i30 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 unsafe2 = unsafe5;
-                                if (i41 == 0) {
-                                    i27 = e1.j(bArr, i28, mVar2);
-                                    unsafe2.putInt(obj6, j3, e1.y(mVar2.a));
-                                    int i50222222222 = i27;
+                                if (i43 == 0) {
+                                    i29 = e1.j(bArr, i30, lVar2);
+                                    unsafe2.putInt(obj6, j3, e1.y(lVar2.a));
+                                    int i53222222222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i50222222222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i53222222222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                                 unsafe4 = unsafe2;
                                 obj5 = obj6;
-                                i25 = i28;
-                                i20 = i24;
+                                i27 = i30;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                             case 16:
-                                i14 = i44;
-                                i24 = i39;
-                                com.google.android.gms.internal.clearcut.m mVar3 = mVar2;
-                                i28 = i40;
-                                if (i41 != 0) {
-                                    i15 = s10;
+                                i16 = i46;
+                                i26 = i41;
+                                com.google.android.gms.internal.clearcut.l lVar3 = lVar2;
+                                i30 = i42;
+                                c10 = 65535;
+                                if (i43 != 0) {
+                                    i17 = i15;
                                     unsafe2 = unsafe5;
                                     unsafe4 = unsafe2;
                                     obj5 = obj6;
-                                    i25 = i28;
-                                    i20 = i24;
+                                    i27 = i30;
+                                    i22 = i26;
                                     f2Var = f2Var2;
                                     unsafe = unsafe4;
-                                    i21 = i25;
-                                    i13 = i22;
+                                    i23 = i27;
+                                    i13 = i24;
                                     obj2 = obj5;
                                     break;
                                 } else {
-                                    i27 = e1.t(bArr, i28, mVar3);
-                                    long j10 = mVar3.b;
-                                    i15 = s10;
+                                    i29 = e1.t(bArr, i30, lVar3);
+                                    long j10 = lVar3.b;
+                                    i17 = i15;
                                     unsafe2 = unsafe5;
                                     unsafe2.putLong(obj6, j3, (j10 >>> 1) ^ (-(j10 & 1)));
-                                    int i502222222222 = i27;
+                                    int i532222222222 = i29;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i502222222222;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i532222222222;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                             case 17:
-                                if (i41 != 3) {
-                                    i14 = i44;
-                                    i24 = i39;
-                                    i15 = s10;
+                                if (i43 != 3) {
+                                    i16 = i46;
+                                    i26 = i41;
+                                    c10 = 65535;
+                                    i17 = i15;
                                     obj5 = obj6;
                                     unsafe4 = unsafe5;
-                                    i25 = i40;
-                                    i20 = i24;
+                                    i27 = i42;
+                                    i22 = i26;
                                     f2Var = f2Var2;
                                     unsafe = unsafe4;
-                                    i21 = i25;
-                                    i13 = i22;
+                                    i23 = i27;
+                                    i13 = i24;
                                     obj2 = obj5;
                                     break;
                                 } else {
-                                    i14 = i44;
-                                    i24 = i39;
-                                    com.google.android.gms.internal.clearcut.m mVar4 = mVar2;
-                                    i29 = e1.f(f2Var2.l(s10), bArr, i40, i11, (i39 << 3) | 4, mVar4);
-                                    if ((i36 & i23) == 0) {
-                                        unsafe5.putObject(obj6, j3, mVar4.c);
+                                    i16 = i46;
+                                    i26 = i41;
+                                    com.google.android.gms.internal.clearcut.l lVar4 = lVar2;
+                                    c10 = 65535;
+                                    i31 = e1.f(f2Var2.l(i15), bArr, i42, i11, (i41 << 3) | 4, lVar4);
+                                    if ((i38 & i25) == 0) {
+                                        unsafe5.putObject(obj6, j3, lVar4.c);
                                     } else {
-                                        unsafe5.putObject(obj6, j3, j1.b(unsafe5.getObject(obj6, j3), mVar4.c));
+                                        unsafe5.putObject(obj6, j3, j1.b(unsafe5.getObject(obj6, j3), lVar4.c));
                                     }
-                                    i15 = s10;
+                                    i17 = i15;
                                     unsafe2 = unsafe5;
                                     unsafe3 = unsafe2;
                                     obj4 = obj6;
-                                    i26 = i29;
-                                    i20 = i24;
-                                    i30 = i11;
+                                    i28 = i31;
+                                    i22 = i26;
+                                    i32 = i11;
                                     f2Var = f2Var2;
                                     obj2 = obj4;
-                                    i36 |= i23;
+                                    i38 |= i25;
                                     unsafe = unsafe3;
-                                    i31 = i26;
+                                    i33 = i28;
                                     bArr2 = bArr;
-                                    mVar2 = mVar;
-                                    i32 = i20;
+                                    lVar2 = lVar;
+                                    i34 = i22;
                                     f2Var2 = f2Var;
                                     obj6 = obj2;
-                                    i35 = i22;
-                                    i34 = i14;
-                                    i33 = i15;
+                                    i37 = i24;
+                                    i36 = i16;
+                                    i35 = i17;
                                     unsafe5 = unsafe;
                                 }
                             default:
-                                i14 = i44;
+                                i16 = i46;
                                 unsafe4 = unsafe5;
-                                i24 = i39;
-                                i25 = i40;
-                                i15 = s10;
+                                i26 = i41;
+                                i27 = i42;
+                                c10 = 65535;
+                                i17 = i15;
                                 obj5 = obj6;
-                                i20 = i24;
+                                i22 = i26;
                                 f2Var = f2Var2;
                                 unsafe = unsafe4;
-                                i21 = i25;
-                                i13 = i22;
+                                i23 = i27;
+                                i13 = i24;
                                 obj2 = obj5;
                                 break;
                         }
                     } else {
-                        i14 = i44;
+                        i16 = i46;
                         iArr = iArr2;
-                        i15 = s10;
+                        i17 = i15;
                         Object obj7 = obj6;
                         Unsafe unsafe6 = unsafe5;
-                        if (i46 == 27) {
-                            if (i41 == 2) {
+                        if (i49 == 27) {
+                            if (i43 == 2) {
                                 o1 o1Var = (o1) unsafe6.getObject(obj7, j3);
                                 if (!o1Var.zza()) {
                                     int size = o1Var.size();
@@ -3876,136 +3909,136 @@ public final class f2 implements o2 {
                                     unsafe6.putObject(obj7, j3, o1Var);
                                 }
                                 obj2 = obj;
-                                i20 = i39;
-                                i30 = i11;
-                                i31 = e1.e(f2Var2.l(i15), i14, bArr, i40, i11, o1Var, mVar2);
+                                i22 = i41;
+                                i32 = i11;
+                                i33 = e1.e(f2Var2.l(i17), i16, bArr, i42, i11, o1Var, lVar2);
                                 unsafe = unsafe6;
-                                i22 = i35;
+                                i24 = i37;
                                 f2Var = f2Var2;
                                 bArr2 = bArr;
-                                mVar2 = mVar;
-                                i32 = i20;
+                                lVar2 = lVar;
+                                i34 = i22;
                                 f2Var2 = f2Var;
                                 obj6 = obj2;
-                                i35 = i22;
-                                i34 = i14;
-                                i33 = i15;
+                                i37 = i24;
+                                i36 = i16;
+                                i35 = i17;
                                 unsafe5 = unsafe;
                             } else {
                                 obj3 = obj;
-                                i16 = i39;
-                                i13 = i35;
-                                i19 = i40;
+                                i18 = i41;
+                                i13 = i37;
+                                i21 = i42;
                                 unsafe = unsafe6;
-                                i18 = i14;
-                                i17 = i36;
+                                i20 = i16;
+                                i19 = i38;
                             }
-                        } else if (i46 <= 49) {
-                            long j11 = i45;
-                            i20 = i39;
+                        } else if (i49 <= 49) {
+                            long j11 = i48;
+                            i22 = i41;
                             unsafe = unsafe6;
-                            i13 = i35;
-                            i17 = i36;
-                            h = f2Var2.i(obj, bArr, i40, i11, i14, i20, i41, i15, j11, i46, j3, mVar);
-                            i14 = i14;
-                            i15 = i15;
+                            i13 = i37;
+                            i19 = i38;
+                            h = f2Var2.i(obj, bArr, i42, i11, i16, i22, i43, i17, j11, i49, j3, lVar);
+                            i16 = i16;
+                            i17 = i17;
                             f2Var = f2Var2;
-                            if (h == i40) {
+                            if (h == i42) {
                                 obj2 = obj;
-                                i21 = h;
-                                i36 = i17;
+                                i23 = h;
+                                i38 = i19;
                             } else {
                                 obj2 = obj;
-                                i30 = i11;
-                                i31 = h;
+                                i32 = i11;
+                                i33 = h;
                                 bArr2 = bArr;
-                                mVar2 = mVar;
-                                i32 = i20;
+                                lVar2 = lVar;
+                                i34 = i22;
                                 f2Var2 = f2Var;
                                 obj6 = obj2;
-                                i34 = i14;
-                                i33 = i15;
-                                i35 = i13;
-                                i36 = i17;
+                                i36 = i16;
+                                i35 = i17;
+                                i37 = i13;
+                                i38 = i19;
                                 unsafe5 = unsafe;
                             }
                         } else {
                             obj3 = obj;
-                            i16 = i39;
-                            i13 = i35;
+                            i18 = i41;
+                            i13 = i37;
                             unsafe = unsafe6;
-                            i17 = i36;
-                            i18 = i14;
-                            i19 = i40;
-                            if (i46 != 50) {
-                                i20 = i16;
-                                h = f2Var2.h(obj3, bArr, i19, i11, i18, i20, i41, i45, i46, j3, i15, mVar);
+                            i19 = i38;
+                            i20 = i16;
+                            i21 = i42;
+                            if (i49 != 50) {
+                                i22 = i18;
+                                h = f2Var2.h(obj3, bArr, i21, i11, i20, i22, i43, i48, i49, j3, i17, lVar);
                                 f2Var = f2Var2;
                                 obj2 = obj3;
-                                i14 = i18;
-                            } else if (i41 == 2) {
-                                f2Var2.p(j3, obj3, i15);
+                                i16 = i20;
+                            } else if (i43 == 2) {
+                                f2Var2.p(j3, obj3, i17);
                                 throw null;
                             }
                         }
                         f2Var = f2Var2;
-                        i20 = i16;
+                        i22 = i18;
                         obj2 = obj3;
-                        i21 = i19;
-                        i14 = i18;
-                        i36 = i17;
+                        i23 = i21;
+                        i16 = i20;
+                        i38 = i19;
                     }
                 }
-                if (i14 != i12 || i12 == 0) {
-                    i30 = i11;
-                    i31 = e1.c(i14, bArr, i21, i11, C(obj2), mVar);
-                    i22 = i13;
+                if (i16 != i12 || i12 == 0) {
+                    i32 = i11;
+                    i33 = e1.c(i16, bArr, i23, i11, C(obj2), lVar);
+                    i24 = i13;
                     bArr2 = bArr;
-                    mVar2 = mVar;
-                    i32 = i20;
+                    lVar2 = lVar;
+                    i34 = i22;
                     f2Var2 = f2Var;
                     obj6 = obj2;
-                    i35 = i22;
-                    i34 = i14;
-                    i33 = i15;
+                    i37 = i24;
+                    i36 = i16;
+                    i35 = i17;
                     unsafe5 = unsafe;
                 } else {
-                    i30 = i11;
-                    i31 = i21;
-                    i34 = i14;
+                    i32 = i11;
+                    i33 = i23;
+                    i36 = i16;
                 }
             } else {
-                i13 = i35;
+                i13 = i37;
                 unsafe = unsafe5;
                 iArr = iArr2;
                 f2Var = f2Var2;
                 obj2 = obj6;
             }
         }
-        int i52 = i13;
-        if (i52 != 1048575) {
-            unsafe.putInt(obj2, i52, i36);
+        int i55 = i13;
+        if (i55 != 1048575) {
+            unsafe.putInt(obj2, i55, i38);
         }
-        for (int i53 = f2Var.h; i53 < f2Var.i; i53++) {
-            int i54 = f2Var.g[i53];
-            int i55 = iArr[i54];
-            Object l4 = y2.l(obj2, f2Var.z(i54) & 1048575);
-            if (l4 != null && f2Var.x(i54) != null) {
+        for (int i56 = f2Var.h; i56 < f2Var.i; i56++) {
+            int i57 = f2Var.g[i56];
+            int i58 = iArr[i57];
+            Object l4 = y2.l(obj2, f2Var.z(i57) & 1048575);
+            if (l4 != null && f2Var.x(i57) != null) {
                 f2Var.m.getClass();
-                if (f2Var.t(i54) == null) {
+                if (f2Var.t(i57) == null) {
                     throw new NoSuchMethodError();
                 }
                 throw new ClassCastException();
             }
         }
         if (i12 == 0) {
-            if (i31 != i30) {
+            if (i33 != i32) {
                 throw new n1("Failed to parse the message.");
             }
-        } else if (i31 > i30 || i34 != i12) {
+        } else if (i33 > i32 || i36 != i12) {
             throw new n1("Failed to parse the message.");
         }
-        return i31;
+        return i33;
     }
 
     public final o2 l(int i10) {
@@ -4764,1094 +4797,1370 @@ public final class f2 implements o2 {
     public final int zzb(Object obj) {
         q2 q2Var;
         int i10;
+        int i11;
+        char c10;
+        char c11;
         int O;
         int T;
         int G;
         int J;
-        int i11;
+        char c12;
+        int i12;
         int T2;
+        int G2;
+        int J2;
+        int T3;
         int O2;
         int N;
-        int i12;
+        int i13;
         boolean z10 = this.f;
         q2 q2Var2 = this.l;
         b2 b2Var = this.m;
-        int i13 = 267386880;
-        int i14 = 1048575;
+        int i14 = 267386880;
+        int i15 = 1048575;
         int[] iArr = this.a;
-        if (!z10) {
+        int i16 = 1;
+        if (z10) {
             Unsafe unsafe = o;
-            int i15 = 0;
-            int i16 = 0;
-            int i17 = 1048575;
+            int i17 = 0;
             int i18 = 0;
-            while (i15 < iArr.length) {
-                int z11 = z(i15);
-                int i19 = iArr[i15];
-                int i20 = (z11 & 267386880) >>> 20;
-                if (i20 <= 17) {
-                    int i21 = iArr[i15 + 2];
-                    int i22 = i21 & 1048575;
-                    i10 = 1 << (i21 >>> 20);
-                    q2Var = q2Var2;
-                    if (i22 != i17) {
-                        i18 = unsafe.getInt(obj, i22);
-                        i17 = i22;
-                    }
-                } else {
-                    q2Var = q2Var2;
-                    i10 = 0;
+            while (i17 < iArr.length) {
+                int z11 = z(i17);
+                int i19 = (z11 & i14) >>> 20;
+                int i20 = i14;
+                int i21 = iArr[i17];
+                int i22 = i15;
+                int[] iArr2 = iArr;
+                long j3 = z11 & i15;
+                if (i19 >= x0.b.a && i19 <= x0.c.a) {
+                    int i23 = iArr2[i17 + 2];
                 }
-                long j3 = z11 & 1048575;
-                switch (i20) {
+                switch (i19) {
                     case 0:
-                        if ((i18 & i10) != 0) {
-                            i16 = a4.a.E(i19 << 3, 8, i16);
+                        if (r(i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 8, i18);
+                            break;
+                        } else {
                             break;
                         }
-                        break;
                     case 1:
-                        if ((i18 & i10) != 0) {
-                            i16 = a4.a.E(i19 << 3, 4, i16);
+                        if (r(i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 4, i18);
+                            break;
+                        } else {
                             break;
                         }
                     case 2:
-                        if ((i10 & i18) != 0) {
-                            O = r0.O(unsafe.getLong(obj, j3)) + r0.T(i19 << 3);
-                            i16 += O;
+                        if (r(i17, obj)) {
+                            long l4 = y2.c.l(obj, j3);
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.O(l4);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 3:
-                        if ((i10 & i18) != 0) {
-                            O = r0.N(i19, unsafe.getLong(obj, j3));
-                            i16 += O;
+                        if (r(i17, obj)) {
+                            N = r0.N(i21, y2.c.l(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 4:
-                        if ((i10 & i18) != 0) {
-                            O = r0.P(unsafe.getInt(obj, j3)) + r0.T(i19 << 3);
-                            i16 += O;
+                        if (r(i17, obj)) {
+                            int k10 = y2.c.k(obj, j3);
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.P(k10);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 5:
-                        if ((i18 & i10) != 0) {
-                            O = r0.R(i19);
-                            i16 += O;
+                        if (r(i17, obj)) {
+                            N = r0.R(i21);
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 6:
-                        if ((i18 & i10) != 0) {
-                            O = r0.V(i19);
-                            i16 += O;
+                        if (r(i17, obj)) {
+                            N = r0.V(i21);
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 7:
-                        if ((i18 & i10) != 0) {
-                            i16 = a4.a.E(i19 << 3, 1, i16);
+                        if (r(i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 1, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 8:
-                        if ((i18 & i10) != 0) {
-                            Object object = unsafe.getObject(obj, j3);
-                            if (object instanceof q0) {
-                                J = r0.J(i19, (q0) object);
-                                i16 += J;
+                        if (r(i17, obj)) {
+                            Object l10 = y2.l(obj, j3);
+                            if (l10 instanceof q0) {
+                                N = r0.J(i21, (q0) l10);
+                                i18 += N;
+                                break;
                             } else {
-                                T = r0.T(i19 << 3);
-                                G = r0.G((String) object);
-                                J = G + T;
-                                i16 += J;
+                                T3 = r0.T(i21 << 3);
+                                O2 = r0.G((String) l10);
+                                i18 += O2 + T3;
+                                break;
                             }
+                        } else {
+                            break;
                         }
-                        break;
                     case 9:
-                        if ((i18 & i10) != 0) {
-                            J = p2.a(i19, unsafe.getObject(obj, j3), l(i15));
-                            i16 += J;
+                        if (r(i17, obj)) {
+                            N = p2.a(i21, y2.l(obj, j3), l(i17));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 10:
-                        if ((i18 & i10) != 0) {
-                            J = r0.J(i19, (q0) unsafe.getObject(obj, j3));
-                            i16 += J;
+                        if (r(i17, obj)) {
+                            N = r0.J(i21, (q0) y2.l(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 11:
-                        if ((i18 & i10) != 0) {
-                            J = r0.S(i19, unsafe.getInt(obj, j3));
-                            i16 += J;
+                        if (r(i17, obj)) {
+                            N = r0.S(i21, y2.c.k(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 12:
-                        if ((i18 & i10) != 0) {
-                            int i23 = unsafe.getInt(obj, j3);
-                            T = r0.T(i19 << 3);
-                            G = r0.P(i23);
-                            J = G + T;
-                            i16 += J;
+                        if (r(i17, obj)) {
+                            int k11 = y2.c.k(obj, j3);
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.P(k11);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 13:
-                        if ((i18 & i10) != 0) {
-                            i16 = a4.a.E(i19 << 3, 4, i16);
+                        if (r(i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 4, i18);
+                            break;
+                        } else {
                             break;
                         }
                     case 14:
-                        if ((i18 & i10) != 0) {
-                            i16 = a4.a.E(i19 << 3, 8, i16);
-                        }
-                        break;
-                    case 15:
-                        if ((i18 & i10) != 0) {
-                            J = r0.U(i19, unsafe.getInt(obj, j3));
-                            i16 += J;
-                        }
-                        break;
-                    case 16:
-                        if ((i18 & i10) != 0) {
-                            J = r0.Q(i19, unsafe.getLong(obj, j3));
-                            i16 += J;
-                        }
-                        break;
-                    case 17:
-                        if ((i18 & i10) != 0) {
-                            J = r0.I(i19, (l0) unsafe.getObject(obj, j3), l(i15));
-                            i16 += J;
-                        }
-                        break;
-                    case 18:
-                        J = p2.C(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
-                        break;
-                    case 19:
-                        J = p2.z(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
-                        break;
-                    case 20:
-                        List list = (List) unsafe.getObject(obj, j3);
-                        Class cls = p2.a;
-                        if (list.size() != 0) {
-                            J = e2.c(i19, list.size(), p2.c(list));
-                            i16 += J;
+                        if (r(i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 8, i18);
+                            break;
+                        } else {
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                    case 15:
+                        if (r(i17, obj)) {
+                            N = r0.U(i21, y2.c.k(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                    case 16:
+                        if (r(i17, obj)) {
+                            N = r0.Q(i21, y2.c.l(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                    case 17:
+                        if (r(i17, obj)) {
+                            N = r0.I(i21, (l0) y2.l(obj, j3), l(i17));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                    case 18:
+                        N = p2.C(i21, (List) y2.l(obj, j3));
+                        i18 += N;
+                        break;
+                    case 19:
+                        N = p2.z(i21, (List) y2.l(obj, j3));
+                        i18 += N;
+                        break;
+                    case 20:
+                        List list = (List) y2.l(obj, j3);
+                        Class cls = p2.a;
+                        if (list.size() != 0) {
+                            N = e2.c(i21, list.size(), p2.c(list));
+                            i18 += N;
+                            break;
+                        }
+                        N = 0;
+                        i18 += N;
                     case 21:
-                        List list2 = (List) unsafe.getObject(obj, j3);
+                        List list2 = (List) y2.l(obj, j3);
                         Class cls2 = p2.a;
                         int size = list2.size();
                         if (size != 0) {
-                            J = e2.c(i19, size, p2.k(list2));
-                            i16 += J;
+                            N = e2.c(i21, size, p2.k(list2));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case 22:
-                        List list3 = (List) unsafe.getObject(obj, j3);
+                        List list3 = (List) y2.l(obj, j3);
                         Class cls3 = p2.a;
                         int size2 = list3.size();
                         if (size2 != 0) {
-                            J = e2.c(i19, size2, p2.t(list3));
-                            i16 += J;
+                            N = e2.c(i21, size2, p2.t(list3));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case 23:
-                        J = p2.C(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.C(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 24:
-                        J = p2.z(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.z(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 25:
-                        List list4 = (List) unsafe.getObject(obj, j3);
+                        List list4 = (List) y2.l(obj, j3);
                         Class cls4 = p2.a;
                         int size3 = list4.size();
-                        i16 += size3 == 0 ? 0 : (r0.T(i19 << 3) + 1) * size3;
-                        break;
+                        if (size3 != 0) {
+                            N = (r0.T(i21 << 3) + 1) * size3;
+                            i18 += N;
+                            break;
+                        }
+                        N = 0;
+                        i18 += N;
                     case 26:
-                        J = p2.j(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.j(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 27:
-                        J = p2.b(i19, (List) unsafe.getObject(obj, j3), l(i15));
-                        i16 += J;
+                        N = p2.b(i21, (List) y2.l(obj, j3), l(i17));
+                        i18 += N;
                         break;
                     case 28:
-                        J = p2.o(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.o(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 29:
-                        List list5 = (List) unsafe.getObject(obj, j3);
+                        List list5 = (List) y2.l(obj, j3);
                         Class cls5 = p2.a;
                         int size4 = list5.size();
                         if (size4 != 0) {
-                            J = e2.c(i19, size4, p2.v(list5));
-                            i16 += J;
+                            N = e2.c(i21, size4, p2.v(list5));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                        List list6 = (List) unsafe.getObject(obj, j3);
+                        List list6 = (List) y2.l(obj, j3);
                         Class cls6 = p2.a;
                         int size5 = list6.size();
                         if (size5 != 0) {
-                            J = e2.c(i19, size5, p2.r(list6));
-                            i16 += J;
+                            N = e2.c(i21, size5, p2.r(list6));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                        J = p2.z(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.z(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 32:
-                        J = p2.C(i19, (List) unsafe.getObject(obj, j3));
-                        i16 += J;
+                        N = p2.C(i21, (List) y2.l(obj, j3));
+                        i18 += N;
                         break;
                     case 33:
-                        List list7 = (List) unsafe.getObject(obj, j3);
+                        List list7 = (List) y2.l(obj, j3);
                         Class cls7 = p2.a;
                         int size6 = list7.size();
                         if (size6 != 0) {
-                            J = e2.c(i19, size6, p2.x(list7));
-                            i16 += J;
+                            N = e2.c(i21, size6, p2.x(list7));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case 34:
-                        List list8 = (List) unsafe.getObject(obj, j3);
+                        List list8 = (List) y2.l(obj, j3);
                         Class cls8 = p2.a;
                         int size7 = list8.size();
                         if (size7 != 0) {
-                            J = e2.c(i19, size7, p2.p(list8));
-                            i16 += J;
+                            N = e2.c(i21, size7, p2.p(list8));
+                            i18 += N;
                             break;
                         }
-                        J = 0;
-                        i16 += J;
+                        N = 0;
+                        i18 += N;
                     case 35:
                         int D = p2.D((List) unsafe.getObject(obj, j3));
                         if (D > 0) {
-                            i16 = e2.d(D, r0.y(i19), D, i16);
+                            i18 = e2.d(D, r0.y(i21), D, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 36:
                         int A = p2.A((List) unsafe.getObject(obj, j3));
                         if (A > 0) {
-                            i16 = e2.d(A, r0.y(i19), A, i16);
+                            i18 = e2.d(A, r0.y(i21), A, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 37:
-                        int c10 = p2.c((List) unsafe.getObject(obj, j3));
-                        if (c10 > 0) {
-                            i16 = e2.d(c10, r0.y(i19), c10, i16);
+                        int c13 = p2.c((List) unsafe.getObject(obj, j3));
+                        if (c13 > 0) {
+                            i18 = e2.d(c13, r0.y(i21), c13, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 38:
-                        int k10 = p2.k((List) unsafe.getObject(obj, j3));
-                        if (k10 > 0) {
-                            i16 = e2.d(k10, r0.y(i19), k10, i16);
+                        int k12 = p2.k((List) unsafe.getObject(obj, j3));
+                        if (k12 > 0) {
+                            i18 = e2.d(k12, r0.y(i21), k12, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_DESTINATION /* 39 */:
                         int t10 = p2.t((List) unsafe.getObject(obj, j3));
                         if (t10 > 0) {
-                            i16 = e2.d(t10, r0.y(i19), t10, i16);
+                            i18 = e2.d(t10, r0.y(i21), t10, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                         int D2 = p2.D((List) unsafe.getObject(obj, j3));
                         if (D2 > 0) {
-                            i16 = e2.d(D2, r0.y(i19), D2, i16);
+                            i18 = e2.d(D2, r0.y(i21), D2, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                         int A2 = p2.A((List) unsafe.getObject(obj, j3));
                         if (A2 > 0) {
-                            i16 = e2.d(A2, r0.y(i19), A2, i16);
+                            i18 = e2.d(A2, r0.y(i21), A2, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                         List list9 = (List) unsafe.getObject(obj, j3);
                         Class cls9 = p2.a;
                         int size8 = list9.size();
                         if (size8 > 0) {
-                            i16 = e2.d(size8, r0.y(i19), size8, i16);
+                            i18 = e2.d(size8, r0.y(i21), size8, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                         int v = p2.v((List) unsafe.getObject(obj, j3));
                         if (v > 0) {
-                            i16 = e2.d(v, r0.y(i19), v, i16);
+                            i18 = e2.d(v, r0.y(i21), v, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                         int r10 = p2.r((List) unsafe.getObject(obj, j3));
                         if (r10 > 0) {
-                            i16 = e2.d(r10, r0.y(i19), r10, i16);
+                            i18 = e2.d(r10, r0.y(i21), r10, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                         int A3 = p2.A((List) unsafe.getObject(obj, j3));
                         if (A3 > 0) {
-                            i16 = e2.d(A3, r0.y(i19), A3, i16);
+                            i18 = e2.d(A3, r0.y(i21), A3, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                         int D3 = p2.D((List) unsafe.getObject(obj, j3));
                         if (D3 > 0) {
-                            i16 = e2.d(D3, r0.y(i19), D3, i16);
+                            i18 = e2.d(D3, r0.y(i21), D3, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                         int x10 = p2.x((List) unsafe.getObject(obj, j3));
                         if (x10 > 0) {
-                            i16 = e2.d(x10, r0.y(i19), x10, i16);
+                            i18 = e2.d(x10, r0.y(i21), x10, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 48:
                         int p5 = p2.p((List) unsafe.getObject(obj, j3));
                         if (p5 > 0) {
-                            i16 = e2.d(p5, r0.y(i19), p5, i16);
+                            i18 = e2.d(p5, r0.y(i21), p5, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                        List list10 = (List) unsafe.getObject(obj, j3);
-                        o2 l4 = l(i15);
+                        List list10 = (List) y2.l(obj, j3);
+                        o2 l11 = l(i17);
                         Class cls10 = p2.a;
                         int size9 = list10.size();
                         if (size9 == 0) {
-                            i11 = 0;
+                            i13 = 0;
                         } else {
-                            i11 = 0;
+                            i13 = 0;
                             for (int i24 = 0; i24 < size9; i24++) {
-                                i11 += r0.I(i19, (l0) list10.get(i24), l4);
+                                i13 = r0.I(i21, (l0) list10.get(i24), l11) + i13;
                             }
                         }
-                        i16 += i11;
+                        i18 = i13 + i18;
                         break;
                     case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                        Object object2 = unsafe.getObject(obj, j3);
-                        Object t11 = t(i15);
+                        Object l12 = y2.l(obj, j3);
+                        Object t11 = t(i17);
                         b2Var.getClass();
-                        b2.b(object2, t11);
+                        b2.b(l12, t11);
                         break;
                     case 51:
-                        if (q(i19, i15, obj)) {
-                            i16 = a4.a.E(i19 << 3, 8, i16);
+                        if (q(i21, i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 8, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 52:
-                        if (q(i19, i15, obj)) {
-                            i16 = a4.a.E(i19 << 3, 4, i16);
+                        if (q(i21, i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 4, i18);
+                            break;
+                        } else {
                             break;
                         }
                     case 53:
-                        if (q(i19, i15, obj)) {
-                            J = r0.O(B(obj, j3)) + r0.T(i19 << 3);
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            long B = B(obj, j3);
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.O(B);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 54:
-                        if (q(i19, i15, obj)) {
-                            J = r0.N(i19, B(obj, j3));
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = r0.N(i21, B(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 55:
-                        if (q(i19, i15, obj)) {
+                        if (q(i21, i17, obj)) {
                             int A4 = A(obj, j3);
-                            T = r0.T(i19 << 3);
-                            G = r0.P(A4);
-                            J = G + T;
-                            i16 += J;
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.P(A4);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 56:
-                        if (q(i19, i15, obj)) {
-                            J = r0.R(i19);
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = r0.R(i21);
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 57:
-                        if (q(i19, i15, obj)) {
-                            J = r0.V(i19);
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = r0.V(i21);
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 58:
-                        if (q(i19, i15, obj)) {
-                            i16 = a4.a.E(i19 << 3, 1, i16);
+                        if (q(i21, i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 1, i18);
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 59:
-                        if (q(i19, i15, obj)) {
-                            Object object3 = unsafe.getObject(obj, j3);
-                            if (object3 instanceof q0) {
-                                J = r0.J(i19, (q0) object3);
-                                i16 += J;
+                        if (q(i21, i17, obj)) {
+                            Object l13 = y2.l(obj, j3);
+                            if (l13 instanceof q0) {
+                                N = r0.J(i21, (q0) l13);
+                                i18 += N;
+                                break;
                             } else {
-                                T = r0.T(i19 << 3);
-                                G = r0.G((String) object3);
-                                J = G + T;
-                                i16 += J;
+                                T3 = r0.T(i21 << 3);
+                                O2 = r0.G((String) l13);
+                                i18 += O2 + T3;
+                                break;
                             }
+                        } else {
+                            break;
                         }
-                        break;
                     case 60:
-                        if (q(i19, i15, obj)) {
-                            J = p2.a(i19, unsafe.getObject(obj, j3), l(i15));
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = p2.a(i21, y2.l(obj, j3), l(i17));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 61:
-                        if (q(i19, i15, obj)) {
-                            J = r0.J(i19, (q0) unsafe.getObject(obj, j3));
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = r0.J(i21, (q0) y2.l(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 62:
-                        if (q(i19, i15, obj)) {
-                            J = r0.S(i19, A(obj, j3));
-                            i16 += J;
+                        if (q(i21, i17, obj)) {
+                            N = r0.S(i21, A(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 63:
-                        if (q(i19, i15, obj)) {
+                        if (q(i21, i17, obj)) {
                             int A5 = A(obj, j3);
-                            T = r0.T(i19 << 3);
-                            G = r0.P(A5);
-                            J = G + T;
-                            i16 += J;
+                            T3 = r0.T(i21 << 3);
+                            O2 = r0.P(A5);
+                            i18 += O2 + T3;
+                            break;
+                        } else {
+                            break;
                         }
-                        break;
                     case 64:
-                        if (q(i19, i15, obj)) {
-                            i16 = a4.a.E(i19 << 3, 4, i16);
+                        if (q(i21, i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 4, i18);
+                            break;
+                        } else {
                             break;
                         }
                     case VoIPService.CALL_MIN_LAYER /* 65 */:
-                        if (q(i19, i15, obj)) {
-                            i16 = a4.a.E(i19 << 3, 8, i16);
-                        }
-                        break;
-                    case 66:
-                        if (q(i19, i15, obj)) {
-                            J = r0.U(i19, A(obj, j3));
-                            i16 += J;
-                        }
-                        break;
-                    case 67:
-                        if (q(i19, i15, obj)) {
-                            J = r0.Q(i19, B(obj, j3));
-                            i16 += J;
-                        }
-                        break;
-                    case 68:
-                        if (q(i19, i15, obj)) {
-                            J = r0.I(i19, (l0) unsafe.getObject(obj, j3), l(i15));
-                            i16 += J;
-                        }
-                        break;
-                }
-                i15 += 3;
-                q2Var2 = q2Var;
-            }
-            q2Var2.getClass();
-            return ((f1) obj).zzb.d() + i16;
-        }
-        Unsafe unsafe2 = o;
-        int i25 = 0;
-        int i26 = 0;
-        while (i25 < iArr.length) {
-            int z12 = z(i25);
-            int i27 = (z12 & i13) >>> 20;
-            int i28 = iArr[i25];
-            int[] iArr2 = iArr;
-            long j10 = z12 & i14;
-            if (i27 >= x0.b.a && i27 <= x0.c.a) {
-                int i29 = iArr2[i25 + 2];
-            }
-            switch (i27) {
-                case 0:
-                    if (r(i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 8, i26);
-                        break;
-                    } else {
-                        break;
-                    }
-                case 1:
-                    if (r(i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 4, i26);
-                        break;
-                    } else {
-                        break;
-                    }
-                case 2:
-                    if (r(i25, obj)) {
-                        long l10 = y2.c.l(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.O(l10);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 3:
-                    if (r(i25, obj)) {
-                        N = r0.N(i28, y2.c.l(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 4:
-                    if (r(i25, obj)) {
-                        int k11 = y2.c.k(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.P(k11);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 5:
-                    if (r(i25, obj)) {
-                        N = r0.R(i28);
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 6:
-                    if (r(i25, obj)) {
-                        N = r0.V(i28);
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
-                    }
-                case 7:
-                    if (r(i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 1, i26);
-                        break;
-                    } else {
-                        break;
-                    }
-                case 8:
-                    if (r(i25, obj)) {
-                        Object l11 = y2.l(obj, j10);
-                        if (l11 instanceof q0) {
-                            N = r0.J(i28, (q0) l11);
-                            i26 += N;
+                        if (q(i21, i17, obj)) {
+                            i18 = a1.g.E(i21 << 3, 8, i18);
                             break;
                         } else {
-                            T2 = r0.T(i28 << 3);
-                            O2 = r0.G((String) l11);
-                            i26 += O2 + T2;
                             break;
                         }
-                    } else {
+                    case 66:
+                        if (q(i21, i17, obj)) {
+                            N = r0.U(i21, A(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                    case 67:
+                        if (q(i21, i17, obj)) {
+                            N = r0.Q(i21, B(obj, j3));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                    case 68:
+                        if (q(i21, i17, obj)) {
+                            N = r0.I(i21, (l0) y2.l(obj, j3), l(i17));
+                            i18 += N;
+                            break;
+                        } else {
+                            break;
+                        }
+                }
+                i17 += 3;
+                i14 = i20;
+                i15 = i22;
+                iArr = iArr2;
+            }
+            q2Var2.getClass();
+            return ((f1) obj).zzb.d() + i18;
+        }
+        Unsafe unsafe2 = o;
+        int i25 = 1048575;
+        int i26 = 0;
+        int i27 = 0;
+        int i28 = 0;
+        while (i26 < iArr.length) {
+            int z12 = z(i26);
+            int i29 = iArr[i26];
+            int i30 = (z12 & 267386880) >>> 20;
+            int i31 = i16;
+            if (i30 <= 17) {
+                int i32 = iArr[i26 + 2];
+                int i33 = i32 & 1048575;
+                i10 = i31 << (i32 >>> 20);
+                q2Var = q2Var2;
+                if (i33 != i25) {
+                    i28 = unsafe2.getInt(obj, i33);
+                    i25 = i33;
+                }
+            } else {
+                q2Var = q2Var2;
+                i10 = 0;
+            }
+            long j10 = z12 & 1048575;
+            switch (i30) {
+                case 0:
+                    i11 = i31;
+                    c10 = 4;
+                    if ((i28 & i10) != 0) {
+                        c11 = '\b';
+                        i27 = a1.g.E(i29 << 3, 8, i27);
                         break;
                     }
+                    c11 = '\b';
+                    break;
+                case 1:
+                    i11 = i31;
+                    if ((i28 & i10) != 0) {
+                        c10 = 4;
+                        i27 = a1.g.E(i29 << 3, 4, i27);
+                        c11 = '\b';
+                        break;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                case 2:
+                    i11 = i31;
+                    if ((i10 & i28) != 0) {
+                        O = r0.O(unsafe2.getLong(obj, j10)) + r0.T(i29 << 3);
+                        i27 += O;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 3:
+                    i11 = i31;
+                    if ((i10 & i28) != 0) {
+                        O = r0.N(i29, unsafe2.getLong(obj, j10));
+                        i27 += O;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 4:
+                    i11 = i31;
+                    if ((i10 & i28) != 0) {
+                        O = r0.P(unsafe2.getInt(obj, j10)) + r0.T(i29 << 3);
+                        i27 += O;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 5:
+                    i11 = i31;
+                    if ((i28 & i10) != 0) {
+                        O = r0.R(i29);
+                        i27 += O;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 6:
+                    i11 = i31;
+                    if ((i28 & i10) != 0) {
+                        O = r0.V(i29);
+                        i27 += O;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 7:
+                    if ((i28 & i10) != 0) {
+                        i11 = 1;
+                        i27 = a1.g.E(i29 << 3, 1, i27);
+                    } else {
+                        i11 = 1;
+                    }
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                case 8:
+                    if ((i28 & i10) != 0) {
+                        Object object = unsafe2.getObject(obj, j10);
+                        if (object instanceof q0) {
+                            J = r0.J(i29, (q0) object);
+                            i27 += J;
+                        } else {
+                            T = r0.T(i29 << 3);
+                            G = r0.G((String) object);
+                            J = G + T;
+                            i27 += J;
+                        }
+                    }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 9:
-                    if (r(i25, obj)) {
-                        N = p2.a(i28, y2.l(obj, j10), l(i25));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = p2.a(i29, unsafe2.getObject(obj, j10), l(i26));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 10:
-                    if (r(i25, obj)) {
-                        N = r0.J(i28, (q0) y2.l(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = r0.J(i29, (q0) unsafe2.getObject(obj, j10));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 11:
-                    if (r(i25, obj)) {
-                        N = r0.S(i28, y2.c.k(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = r0.S(i29, unsafe2.getInt(obj, j10));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 12:
-                    if (r(i25, obj)) {
-                        int k12 = y2.c.k(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.P(k12);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        int i34 = unsafe2.getInt(obj, j10);
+                        T = r0.T(i29 << 3);
+                        G = r0.P(i34);
+                        J = G + T;
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 13:
-                    if (r(i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 4, i26);
-                        break;
-                    } else {
+                    if ((i28 & i10) != 0) {
+                        c10 = 4;
+                        i27 = a1.g.E(i29 << 3, 4, i27);
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 14:
-                    if (r(i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 8, i26);
-                        break;
-                    } else {
+                    if ((i28 & i10) != 0) {
+                        c12 = '\b';
+                        i27 = a1.g.E(i29 << 3, 8, i27);
+                        c11 = c12;
+                        c10 = 4;
+                        i11 = 1;
                         break;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 15:
-                    if (r(i25, obj)) {
-                        N = r0.U(i28, y2.c.k(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = r0.U(i29, unsafe2.getInt(obj, j10));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 16:
-                    if (r(i25, obj)) {
-                        N = r0.Q(i28, y2.c.l(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = r0.Q(i29, unsafe2.getLong(obj, j10));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 17:
-                    if (r(i25, obj)) {
-                        N = r0.I(i28, (l0) y2.l(obj, j10), l(i25));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if ((i28 & i10) != 0) {
+                        J = r0.I(i29, (l0) unsafe2.getObject(obj, j10), l(i26));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 18:
-                    N = p2.C(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.C(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 19:
-                    N = p2.z(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.z(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 20:
-                    List list11 = (List) y2.l(obj, j10);
+                    List list11 = (List) unsafe2.getObject(obj, j10);
                     Class cls11 = p2.a;
                     if (list11.size() != 0) {
-                        N = e2.c(i28, list11.size(), p2.c(list11));
-                        i26 += N;
+                        J = e2.c(i29, list11.size(), p2.c(list11));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 21:
-                    List list12 = (List) y2.l(obj, j10);
+                    List list12 = (List) unsafe2.getObject(obj, j10);
                     Class cls12 = p2.a;
                     int size10 = list12.size();
                     if (size10 != 0) {
-                        N = e2.c(i28, size10, p2.k(list12));
-                        i26 += N;
+                        J = e2.c(i29, size10, p2.k(list12));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 22:
-                    List list13 = (List) y2.l(obj, j10);
+                    List list13 = (List) unsafe2.getObject(obj, j10);
                     Class cls13 = p2.a;
                     int size11 = list13.size();
                     if (size11 != 0) {
-                        N = e2.c(i28, size11, p2.t(list13));
-                        i26 += N;
+                        J = e2.c(i29, size11, p2.t(list13));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 23:
-                    N = p2.C(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.C(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 24:
-                    N = p2.z(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.z(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 25:
-                    List list14 = (List) y2.l(obj, j10);
+                    List list14 = (List) unsafe2.getObject(obj, j10);
                     Class cls14 = p2.a;
                     int size12 = list14.size();
-                    if (size12 != 0) {
-                        N = (r0.T(i28 << 3) + 1) * size12;
-                        i26 += N;
-                        break;
-                    }
-                    N = 0;
-                    i26 += N;
+                    i27 += size12 == 0 ? 0 : (r0.T(i29 << 3) + 1) * size12;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 26:
-                    N = p2.j(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.j(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 27:
-                    N = p2.b(i28, (List) y2.l(obj, j10), l(i25));
-                    i26 += N;
+                    J = p2.b(i29, (List) unsafe2.getObject(obj, j10), l(i26));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 28:
-                    N = p2.o(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.o(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 29:
-                    List list15 = (List) y2.l(obj, j10);
+                    List list15 = (List) unsafe2.getObject(obj, j10);
                     Class cls15 = p2.a;
                     int size13 = list15.size();
                     if (size13 != 0) {
-                        N = e2.c(i28, size13, p2.v(list15));
-                        i26 += N;
+                        J = e2.c(i29, size13, p2.v(list15));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                    List list16 = (List) y2.l(obj, j10);
+                    List list16 = (List) unsafe2.getObject(obj, j10);
                     Class cls16 = p2.a;
                     int size14 = list16.size();
                     if (size14 != 0) {
-                        N = e2.c(i28, size14, p2.r(list16));
-                        i26 += N;
+                        J = e2.c(i29, size14, p2.r(list16));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                    N = p2.z(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.z(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 32:
-                    N = p2.C(i28, (List) y2.l(obj, j10));
-                    i26 += N;
+                    J = p2.C(i29, (List) unsafe2.getObject(obj, j10));
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 33:
-                    List list17 = (List) y2.l(obj, j10);
+                    List list17 = (List) unsafe2.getObject(obj, j10);
                     Class cls17 = p2.a;
                     int size15 = list17.size();
                     if (size15 != 0) {
-                        N = e2.c(i28, size15, p2.x(list17));
-                        i26 += N;
+                        J = e2.c(i29, size15, p2.x(list17));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 34:
-                    List list18 = (List) y2.l(obj, j10);
+                    List list18 = (List) unsafe2.getObject(obj, j10);
                     Class cls18 = p2.a;
                     int size16 = list18.size();
                     if (size16 != 0) {
-                        N = e2.c(i28, size16, p2.p(list18));
-                        i26 += N;
+                        J = e2.c(i29, size16, p2.p(list18));
+                        i27 += J;
+                        c10 = 4;
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
-                    N = 0;
-                    i26 += N;
+                    J = 0;
+                    i27 += J;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 35:
                     int D4 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D4 > 0) {
-                        i26 = e2.d(D4, r0.y(i28), D4, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(D4, r0.y(i29), D4, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 36:
                     int A6 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A6 > 0) {
-                        i26 = e2.d(A6, r0.y(i28), A6, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(A6, r0.y(i29), A6, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 37:
-                    int c11 = p2.c((List) unsafe2.getObject(obj, j10));
-                    if (c11 > 0) {
-                        i26 = e2.d(c11, r0.y(i28), c11, i26);
-                        break;
-                    } else {
-                        break;
+                    int c14 = p2.c((List) unsafe2.getObject(obj, j10));
+                    if (c14 > 0) {
+                        i27 = e2.d(c14, r0.y(i29), c14, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 38:
                     int k13 = p2.k((List) unsafe2.getObject(obj, j10));
                     if (k13 > 0) {
-                        i26 = e2.d(k13, r0.y(i28), k13, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(k13, r0.y(i29), k13, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int t12 = p2.t((List) unsafe2.getObject(obj, j10));
                     if (t12 > 0) {
-                        i26 = e2.d(t12, r0.y(i28), t12, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(t12, r0.y(i29), t12, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int D5 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D5 > 0) {
-                        i26 = e2.d(D5, r0.y(i28), D5, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(D5, r0.y(i29), D5, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     int A7 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A7 > 0) {
-                        i26 = e2.d(A7, r0.y(i28), A7, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(A7, r0.y(i29), A7, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                     List list19 = (List) unsafe2.getObject(obj, j10);
                     Class cls19 = p2.a;
                     int size17 = list19.size();
                     if (size17 > 0) {
-                        i26 = e2.d(size17, r0.y(i28), size17, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(size17, r0.y(i29), size17, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int v9 = p2.v((List) unsafe2.getObject(obj, j10));
                     if (v9 > 0) {
-                        i26 = e2.d(v9, r0.y(i28), v9, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(v9, r0.y(i29), v9, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int r11 = p2.r((List) unsafe2.getObject(obj, j10));
                     if (r11 > 0) {
-                        i26 = e2.d(r11, r0.y(i28), r11, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(r11, r0.y(i29), r11, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     int A8 = p2.A((List) unsafe2.getObject(obj, j10));
                     if (A8 > 0) {
-                        i26 = e2.d(A8, r0.y(i28), A8, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(A8, r0.y(i29), A8, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int D6 = p2.D((List) unsafe2.getObject(obj, j10));
                     if (D6 > 0) {
-                        i26 = e2.d(D6, r0.y(i28), D6, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(D6, r0.y(i29), D6, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int x11 = p2.x((List) unsafe2.getObject(obj, j10));
                     if (x11 > 0) {
-                        i26 = e2.d(x11, r0.y(i28), x11, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(x11, r0.y(i29), x11, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 48:
                     int p10 = p2.p((List) unsafe2.getObject(obj, j10));
                     if (p10 > 0) {
-                        i26 = e2.d(p10, r0.y(i28), p10, i26);
-                        break;
-                    } else {
-                        break;
+                        i27 = e2.d(p10, r0.y(i29), p10, i27);
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                    List list20 = (List) y2.l(obj, j10);
-                    o2 l12 = l(i25);
+                    List list20 = (List) unsafe2.getObject(obj, j10);
+                    o2 l14 = l(i26);
                     Class cls20 = p2.a;
                     int size18 = list20.size();
                     if (size18 == 0) {
                         i12 = 0;
                     } else {
                         i12 = 0;
-                        for (int i30 = 0; i30 < size18; i30++) {
-                            i12 = r0.I(i28, (l0) list20.get(i30), l12) + i12;
+                        for (int i35 = 0; i35 < size18; i35++) {
+                            i12 += r0.I(i29, (l0) list20.get(i35), l14);
                         }
                     }
-                    i26 = i12 + i26;
+                    i27 += i12;
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                    Object l13 = y2.l(obj, j10);
-                    Object t13 = t(i25);
+                    Object object2 = unsafe2.getObject(obj, j10);
+                    Object t13 = t(i26);
                     b2Var.getClass();
-                    b2.b(l13, t13);
+                    b2.b(object2, t13);
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                     break;
                 case 51:
-                    if (q(i28, i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 8, i26);
-                        break;
-                    } else {
+                    if (q(i29, i26, obj)) {
+                        c12 = '\b';
+                        i27 = a1.g.E(i29 << 3, 8, i27);
+                        c11 = c12;
+                        c10 = 4;
+                        i11 = 1;
                         break;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 52:
-                    if (q(i28, i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 4, i26);
-                        break;
-                    } else {
+                    if (q(i29, i26, obj)) {
+                        c10 = 4;
+                        i27 = a1.g.E(i29 << 3, 4, i27);
+                        i11 = 1;
+                        c11 = '\b';
                         break;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 53:
-                    if (q(i28, i25, obj)) {
-                        long B = B(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.O(B);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J = r0.O(B(obj, j10)) + r0.T(i29 << 3);
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 54:
-                    if (q(i28, i25, obj)) {
-                        N = r0.N(i28, B(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J = r0.N(i29, B(obj, j10));
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 55:
-                    if (q(i28, i25, obj)) {
+                    if (q(i29, i26, obj)) {
                         int A9 = A(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.P(A9);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
+                        T = r0.T(i29 << 3);
+                        G = r0.P(A9);
+                        J = G + T;
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 56:
-                    if (q(i28, i25, obj)) {
-                        N = r0.R(i28);
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J = r0.R(i29);
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 57:
-                    if (q(i28, i25, obj)) {
-                        N = r0.V(i28);
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J = r0.V(i29);
+                        i27 += J;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
+                    break;
                 case 58:
-                    if (q(i28, i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 1, i26);
-                        break;
-                    } else {
+                    if (q(i29, i26, obj)) {
+                        i27 = a1.g.E(i29 << 3, i31, i27);
+                        i11 = i31;
+                        c10 = 4;
+                        c11 = '\b';
                         break;
                     }
+                    c10 = 4;
+                    i11 = 1;
+                    c11 = '\b';
                 case 59:
-                    if (q(i28, i25, obj)) {
-                        Object l14 = y2.l(obj, j10);
-                        if (l14 instanceof q0) {
-                            N = r0.J(i28, (q0) l14);
-                            i26 += N;
-                            break;
+                    if (q(i29, i26, obj)) {
+                        Object object3 = unsafe2.getObject(obj, j10);
+                        if (object3 instanceof q0) {
+                            J2 = r0.J(i29, (q0) object3);
+                            i27 += J2;
                         } else {
-                            T2 = r0.T(i28 << 3);
-                            O2 = r0.G((String) l14);
-                            i26 += O2 + T2;
-                            break;
+                            T2 = r0.T(i29 << 3);
+                            G2 = r0.G((String) object3);
+                            J2 = G2 + T2;
+                            i27 += J2;
                         }
-                    } else {
-                        break;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 60:
-                    if (q(i28, i25, obj)) {
-                        N = p2.a(i28, y2.l(obj, j10), l(i25));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = p2.a(i29, unsafe2.getObject(obj, j10), l(i26));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 61:
-                    if (q(i28, i25, obj)) {
-                        N = r0.J(i28, (q0) y2.l(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = r0.J(i29, (q0) unsafe2.getObject(obj, j10));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 62:
-                    if (q(i28, i25, obj)) {
-                        N = r0.S(i28, A(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = r0.S(i29, A(obj, j10));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 63:
-                    if (q(i28, i25, obj)) {
+                    if (q(i29, i26, obj)) {
                         int A10 = A(obj, j10);
-                        T2 = r0.T(i28 << 3);
-                        O2 = r0.P(A10);
-                        i26 += O2 + T2;
-                        break;
-                    } else {
-                        break;
+                        T2 = r0.T(i29 << 3);
+                        G2 = r0.P(A10);
+                        J2 = G2 + T2;
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 64:
-                    if (q(i28, i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 4, i26);
-                        break;
-                    } else {
+                    if (q(i29, i26, obj)) {
+                        c10 = 4;
+                        i27 = a1.g.E(i29 << 3, 4, i27);
+                        i11 = i31;
+                        c11 = '\b';
                         break;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
-                    if (q(i28, i25, obj)) {
-                        i26 = a4.a.E(i28 << 3, 8, i26);
-                        break;
-                    } else {
+                    if (q(i29, i26, obj)) {
+                        i27 = a1.g.E(i29 << 3, 8, i27);
+                        c11 = '\b';
+                        i11 = i31;
+                        c10 = 4;
                         break;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 66:
-                    if (q(i28, i25, obj)) {
-                        N = r0.U(i28, A(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = r0.U(i29, A(obj, j10));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 67:
-                    if (q(i28, i25, obj)) {
-                        N = r0.Q(i28, B(obj, j10));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = r0.Q(i29, B(obj, j10));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
                 case 68:
-                    if (q(i28, i25, obj)) {
-                        N = r0.I(i28, (l0) y2.l(obj, j10), l(i25));
-                        i26 += N;
-                        break;
-                    } else {
-                        break;
+                    if (q(i29, i26, obj)) {
+                        J2 = r0.I(i29, (l0) unsafe2.getObject(obj, j10), l(i26));
+                        i27 += J2;
                     }
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
+                default:
+                    i11 = i31;
+                    c10 = 4;
+                    c11 = '\b';
+                    break;
             }
-            i25 += 3;
-            iArr = iArr2;
-            i13 = 267386880;
-            i14 = 1048575;
+            i26 += 3;
+            i16 = i11;
+            q2Var2 = q2Var;
         }
         q2Var2.getClass();
-        return ((f1) obj).zzb.d() + i26;
+        return ((f1) obj).zzb.d() + i27;
     }
 }

@@ -1,73 +1,89 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ip0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jp0 b;
+public final class ip0 extends FrameLayout {
+    public long a;
+    public TL_stars.starGiftAttributeBackdrop b;
+    public TL_stars.starGiftAttributePattern c;
+    public final FrameLayout d;
+    public final xh.g1 e;
+    public final org.telegram.ui.Components.y9 f;
+    public final xh.k1 h;
+    public TLRPC.Document n;
 
-    public /* synthetic */ ip0(jp0 jp0Var, int i10) {
-        this.a = i10;
-        this.b = jp0Var;
+    public ip0(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.d = frameLayout;
+        xh.g1 g1Var = new xh.g1(frameLayout, e6Var, false);
+        this.e = g1Var;
+        frameLayout.setBackground(g1Var);
+        addView(frameLayout, w7.x5.e(-1, -1, 119));
+        w7.z5.b(frameLayout, 0.025f, 1.25f);
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
+        this.f = y9Var;
+        frameLayout.addView(y9Var, w7.x5.a(80.0f, 0.0f, 12.0f, 0.0f, 12.0f, 80, 17));
+        if (!z10) {
+            this.h = null;
+            return;
+        }
+        xh.k1 k1Var = new xh.k1(context);
+        this.h = k1Var;
+        addView(k1Var, w7.x5.a(-2.0f, 0.0f, 2.0f, 1.0f, 0.0f, -2, 53));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        up0 up0Var;
-        qp0 qp0Var;
-        switch (this.a) {
-            case 0:
-                Integer num = (Integer) obj;
-                jp0 jp0Var = this.b;
-                qp0 qp0Var2 = jp0Var.e;
-                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) qp0Var2.M.get(num);
-                qp0Var2.K = starGift;
-                wp0 wp0Var = qp0Var2.p0;
-                if (starGift == null) {
-                    xh.v3 v3Var = qp0Var2.J;
-                    if (v3Var != null) {
-                        v3Var.f();
-                        qp0Var2.J = null;
-                    }
-                } else {
-                    xh.v3 v3Var2 = qp0Var2.J;
-                    if (v3Var2 == null || v3Var2.b != starGift.id) {
-                        i10 = ((org.telegram.ui.ActionBar.n2) wp0Var).currentAccount;
-                        xh.v3 v3Var3 = new xh.v3(qp0Var2.K.id, i10, new ip0(jp0Var, 2));
-                        qp0Var2.J = v3Var3;
-                        v3Var3.g(false);
-                    }
-                }
-                qp0.a(qp0Var2);
-                (wp0Var.I.getCurrentPosition() == 1 ? wp0Var.n : wp0Var.h).e();
-                break;
-            case 1:
-                qp0 qp0Var3 = this.b.e;
-                qp0Var3.h = ((Integer) obj).intValue();
-                qp0Var3.r = null;
-                qp0Var3.s = null;
-                qp0Var3.I = null;
-                qp0Var3.j(true);
-                qp0Var3.i();
-                qp0Var3.f(true);
-                pp0 pp0Var = qp0Var3.y;
-                if (pp0Var != null) {
-                    pp0Var.invalidate();
-                }
-                wp0 wp0Var2 = qp0Var3.p0;
-                qp0 qp0Var4 = wp0Var2.n;
-                if (qp0Var4 != null && (up0Var = qp0Var4.a) != null && (qp0Var = wp0Var2.h) != null) {
-                    up0Var.a(qp0Var.h);
-                    break;
-                }
-                break;
-            default:
-                this.b.e.e();
-                break;
+    public final void a(int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        this.a = tL_starGiftUnique.id;
+        boolean z10 = i10 % 3 == 1;
+        setPadding(z10 ? AndroidUtilities.dp(4.0f) : 0, 0, z10 ? AndroidUtilities.dp(4.0f) : 0, 0);
+        c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
+        this.b = (TL_stars.starGiftAttributeBackdrop) yh.m5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        this.c = (TL_stars.starGiftAttributePattern) yh.m5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
+        xh.g1 g1Var = this.e;
+        g1Var.d(stargiftattributebackdrop);
+        g1Var.e(this.c);
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        this.e.f(z10, z11);
+        float f7 = z10 ? 0.9f : 1.0f;
+        org.telegram.ui.Components.y9 y9Var = this.f;
+        if (z11) {
+            y9Var.animate().scaleX(f7).scaleY(f7).start();
+            return;
         }
+        y9Var.animate().cancel();
+        y9Var.setScaleX(f7);
+        y9Var.setScaleY(f7);
+    }
+
+    public final void c(TLRPC.Document document, TL_stars.StarGift starGift) {
+        org.telegram.ui.Components.y9 y9Var = this.f;
+        if (document == null) {
+            y9Var.b();
+            this.n = null;
+        } else {
+            if (this.n == document) {
+                return;
+            }
+            this.n = document;
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(100.0f));
+            y9Var.l(ImageLocation.getForDocument(document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "100_100", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.i6.a7, 0.3f), starGift);
+        }
+    }
+
+    public long getGiftId() {
+        return this.a;
     }
 }

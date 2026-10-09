@@ -13,15 +13,15 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
-import ci.e4;
+import ci.d4;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.w5;
+import org.telegram.ui.v5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -115,7 +115,7 @@ public final class s extends View {
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
-            d10.c.setColor(i6.w0(null, i6.Oh, false));
+            d10.c.setColor(i6.x0(null, i6.Oh, false));
             canvas.drawRoundRect(rectF, f7, f7, d10.c);
         } else {
             if (this.v) {
@@ -209,7 +209,7 @@ public final class s extends View {
         if (limitPreviewView.e0 != null) {
             canvas.restore();
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x, 31);
-            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((w5) ((org.telegram.ui.z0) limitPreviewView.e0).b).x0(getX(), getY()));
+            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((v5) ((org.telegram.ui.z0) limitPreviewView.e0).b).u0(getX(), getY()));
             canvas.restore();
         }
     }
@@ -218,7 +218,7 @@ public final class s extends View {
     public final void onMeasure(int i10, int i11) {
         SpannableStringBuilder spannableStringBuilder = this.f;
         TextPaint textPaint = this.c;
-        this.e = e4.g(spannableStringBuilder, textPaint);
+        this.e = d4.g(spannableStringBuilder, textPaint);
         this.d = new StaticLayout(this.f, textPaint, AndroidUtilities.dp(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = 0.0f;
         for (int i12 = 0; i12 < this.d.getLineCount(); i12++) {

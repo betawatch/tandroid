@@ -30,15 +30,15 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.p9;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Cells.o9;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.tr;
-import v7.o8;
+import org.telegram.ui.Components.hs;
+import v7.n8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0 {
+public final class w4 extends a0 implements org.telegram.ui.ActionBar.z5, n9, m0 {
     public static Paint k0;
     public final ArrayList E;
     public final ArrayList F;
@@ -56,7 +56,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
     public int R;
     public int S;
     public int T;
-    public final org.telegram.ui.Components.e6 U;
+    public final org.telegram.ui.Components.g6 U;
     public int V;
     public int W;
     public float a0;
@@ -69,7 +69,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
     public VelocityTracker h0;
     public ValueAnimator i0;
     public final Path j0;
-    public final org.telegram.ui.ActionBar.d6 n;
+    public final org.telegram.ui.ActionBar.e6 n;
     public final Paint r;
     public final Paint s;
     public final l0 v;
@@ -77,7 +77,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
     public final ImageView x;
     public final ArrayList y;
 
-    public w4(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public w4(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.r = new Paint(1);
         this.s = new Paint(1);
@@ -91,31 +91,31 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         this.K = new ArrayList();
         this.L = new HashMap();
         this.T = -1;
-        this.U = new org.telegram.ui.Components.e6(this, 0L, 320L, tr.h);
+        this.U = new org.telegram.ui.Components.g6(this, 0L, 320L, hs.h);
         this.j0 = new Path();
-        this.n = d6Var;
+        this.n = e6Var;
         setWillNotDraw(false);
         g(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(4.0f));
-        l0 l0Var = new l0(context, d6Var, new a4.m(this, 23));
+        l0 l0Var = new l0(context, e6Var, new a6.i(this, 29));
         this.v = l0Var;
-        addView(l0Var.a, w7.z5.e(-2, -2, 51));
+        addView(l0Var.a, w7.x5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         if (z10 && i10 >= 31) {
             fh.d dVar = new fh.d(new fh.c());
             this.I = dVar;
-            dVar.e(AndroidUtilities.dp(24.0f));
+            dVar.g(AndroidUtilities.dp(24.0f));
             this.J = new rb.a(11);
         }
         ImageView h = h();
         this.w = h;
         h.setImageResource(R.drawable.iv_media_add);
-        addView(h, w7.z5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
+        addView(h, w7.x5.a(32.0f, 12.0f, 12.0f, 12.0f, 12.0f, 32, 53));
         h.setOnClickListener(new t4(this, 1));
         ImageView h10 = h();
         this.x = h10;
         h10.setVisibility(8);
-        addView(h10, w7.z5.d(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
+        addView(h10, w7.x5.a(32.0f, 12.0f, 12.0f, 66.0f, 12.0f, 32, 53));
         h10.setOnClickListener(new t4(this, 2));
         e();
     }
@@ -151,9 +151,9 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a0, i11 - r7);
             this.i0 = ofFloat;
             ofFloat.setDuration(220L);
-            this.i0.setInterpolator(tr.h);
+            this.i0.setInterpolator(hs.h);
             this.i0.addUpdateListener(new ai.a(this, 28));
-            this.i0.addListener(new ei.w2(this, i11, 2));
+            this.i0.addListener(new ei.v2(this, i11, 2));
             this.i0.start();
         }
         i10 = 1;
@@ -161,9 +161,9 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.a0, i112 - r7);
         this.i0 = ofFloat2;
         ofFloat2.setDuration(220L);
-        this.i0.setInterpolator(tr.h);
+        this.i0.setInterpolator(hs.h);
         this.i0.addUpdateListener(new ai.a(this, 28));
-        this.i0.addListener(new ei.w2(this, i112, 2));
+        this.i0.addListener(new ei.v2(this, i112, 2));
         this.i0.start();
     }
 
@@ -206,19 +206,19 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.i6.Gd;
-        org.telegram.ui.ActionBar.d6 d6Var = this.n;
-        this.r.setColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        this.s.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.uf, d6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.n;
+        this.r.setColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
+        this.s.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.uf, e6Var));
         l0 l0Var = this.v;
         if (l0Var != null) {
             l0Var.a();
         }
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         this.v.e(arrayList);
     }
@@ -242,18 +242,18 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         if (!this.H || Build.VERSION.SDK_INT < 31) {
             int i10 = org.telegram.ui.ActionBar.i6.G6;
-            org.telegram.ui.ActionBar.d6 d6Var = this.n;
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i10, d6Var), PorterDuff.Mode.SRC_IN));
+            org.telegram.ui.ActionBar.e6 e6Var = this.n;
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(i10, e6Var), PorterDuff.Mode.SRC_IN));
             int i11 = org.telegram.ui.ActionBar.i6.d6;
-            imageView.setBackground(new d2(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var)), 20, 20)));
+            imageView.setBackground(new d2(org.telegram.ui.ActionBar.i6.a0(org.telegram.ui.ActionBar.i6.w0(i11, e6Var), org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(i11, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, e6Var)), 20, 20)));
         } else {
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            ch.e eVar = new ch.e(this.I);
-            eVar.w(this.J);
-            eVar.y(AndroidUtilities.dp(16.0f));
+            ch.e eVar = (ch.e) this.I.l();
+            eVar.o(this.J);
+            eVar.q(AndroidUtilities.dp(16.0f));
             this.L.put(imageView, eVar);
         }
-        w7.b6.a(imageView);
+        w7.z5.a(imageView);
         this.K.add(imageView);
         return imageView;
     }
@@ -263,18 +263,20 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         if (imageView.getVisibility() == 0 && (eVar = (ch.e) this.L.get(imageView)) != null) {
             eVar.setBounds(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
             eVar.setAlpha((int) (imageView.getAlpha() * 255.0f));
-            eVar.P = true;
+            eVar.O = true;
             eVar.draw(canvas);
         }
     }
 
     public final void j(Canvas canvas) {
+        char c10;
         int i10;
+        int i11;
         w4 w4Var = this;
         Canvas canvas2 = canvas;
         int paddingTop = w4Var.getPaddingTop();
         int paddingLeft = w4Var.getPaddingLeft();
-        int i11 = 0;
+        int i12 = 0;
         int max = Math.max(0, (w4Var.getWidth() - paddingLeft) - w4Var.getPaddingRight());
         canvas2.save();
         canvas2.translate(paddingLeft, 0.0f);
@@ -288,13 +290,14 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             canvas2.clipRect(0, paddingTop, max, w4Var.P + paddingTop);
         }
         boolean l4 = w4Var.l();
-        int i12 = 1;
+        char c11 = 2;
+        int i13 = 1;
         ArrayList arrayList = w4Var.y;
         boolean z10 = l4 && arrayList.size() >= 2;
         a aVar2 = w4Var.a;
         int dp = (aVar2 == null ? 0 : aVar2.k.size()) > 0 ? AndroidUtilities.dp(8.0f) : 0;
         Paint paint = w4Var.r;
-        if (z10 && (((i10 = w4Var.W) == 0 && w4Var.a0 < 0.0f) || (i10 == arrayList.size() - 1 && w4Var.a0 > 0.0f))) {
+        if (z10 && (((i11 = w4Var.W) == 0 && w4Var.a0 < 0.0f) || (i11 == arrayList.size() - 1 && w4Var.a0 > 0.0f))) {
             canvas2.drawRect(0.0f, paddingTop, max, w4Var.P + paddingTop, paint);
         }
         int size = arrayList.size();
@@ -313,24 +316,26 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
                 }
             }
         }
-        int i13 = 0;
-        while (i13 < arrayList.size() && i13 < arrayList2.size()) {
-            z4 z4Var2 = (z4) arrayList.get(i13);
-            RectF rectF3 = (RectF) arrayList2.get(i13);
+        int i14 = 0;
+        while (i14 < arrayList.size() && i14 < arrayList2.size()) {
+            z4 z4Var2 = (z4) arrayList.get(i14);
+            RectF rectF3 = (RectF) arrayList2.get(i14);
             if (z10) {
-                int i14 = i13 == 0 ? dp : 0;
-                int i15 = i13 == arrayList.size() - i12 ? dp : 0;
-                int i16 = i13 == arrayList.size() - i12 ? dp : 0;
-                int i17 = i13 == 0 ? dp : 0;
-                z4Var2.a.setRoundRadius(i14, i15, i16, i17);
-                z4Var2.b.setRoundRadius(i14, i15, i16, i17);
+                int i15 = i14 == 0 ? dp : i12;
+                int i16 = i14 == arrayList.size() - i13 ? dp : i12;
+                int i17 = i14 == arrayList.size() - i13 ? dp : i12;
+                int i18 = i14 == 0 ? dp : i12;
+                c10 = c11;
+                z4Var2.a.setRoundRadius(i15, i16, i17, i18);
+                z4Var2.b.setRoundRadius(i15, i16, i17, i18);
             } else {
-                z4Var2.a.setRoundRadius(i11, i11, i11, i11);
-                z4Var2.b.setRoundRadius(i11, i11, i11, i11);
+                c10 = c11;
+                z4Var2.a.setRoundRadius(i12, i12, i12, i12);
+                z4Var2.b.setRoundRadius(i12, i12, i12, i12);
             }
-            boolean c10 = z4Var2.c();
+            boolean c12 = z4Var2.c();
             ImageReceiver imageReceiver2 = z4Var2.a;
-            if (!c10) {
+            if (!c12) {
                 canvas2.drawRect(rectF3, paint);
             }
             imageReceiver2.setImageCoords(Math.round(rectF3.left), Math.round(rectF3.top), Math.round(rectF3.width()), Math.round(rectF3.height()));
@@ -339,12 +344,15 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             }
             RadialProgress2 radialProgress2 = z4Var2.d;
             u uVar = z4Var2.e;
-            if (uVar != null && uVar.a()) {
+            if (uVar == null || !uVar.a()) {
+                i10 = i13;
+            } else {
                 int dp2 = AndroidUtilities.dp(48.0f);
                 int round = Math.round(rectF3.centerX());
                 int round2 = Math.round(rectF3.centerY());
-                int i18 = dp2 / 2;
-                radialProgress2.q(round - i18, round2 - i18, round + i18, round2 + i18);
+                int i19 = dp2 / 2;
+                radialProgress2.q(round - i19, round2 - i19, round + i19, round2 + i19);
+                i10 = 1;
                 radialProgress2.o(z4Var2.e.f, true);
                 radialProgress2.draw(canvas2);
             }
@@ -365,11 +373,12 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
                 }
                 canvas.restore();
             }
-            i13++;
+            i14++;
             w4Var = this;
             canvas2 = canvas;
-            i11 = 0;
-            i12 = 1;
+            i13 = i10;
+            c11 = c10;
+            i12 = 0;
         }
         canvas.restore();
     }
@@ -383,8 +392,8 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             q3 q3Var = this.N;
             a aVar = this.a;
             x3 x3Var = q3Var.a;
-            x3Var.i4 = aVar;
-            x3Var.o3.r(0);
+            x3Var.Z3 = aVar;
+            x3Var.f3.k(0);
             return;
         }
         if (i10 < 0 || i10 >= m10.size() || !((u) m10.get(i10)).a()) {
@@ -432,7 +441,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             arrayList.add(z4Var);
         }
         while (arrayList.size() > m10.size()) {
-            z4 z4Var2 = (z4) hg.c.w(1, arrayList);
+            z4 z4Var2 = (z4) hg.c.x(1, arrayList);
             z4Var2.a.onDetachedFromWindow();
             z4Var2.b.onDetachedFromWindow();
             z4Var2.c = null;
@@ -450,13 +459,13 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             ImageView h = h();
             h.setImageResource(R.drawable.iv_media_dots);
             h.setOnClickListener(new t4(this, 0));
-            addView(h, w7.z5.e(32, 32, 51));
+            addView(h, w7.x5.e(32, 32, 51));
             arrayList2.add(h);
         }
         this.w.bringToFront();
         this.x.bringToFront();
         while (arrayList2.size() > m10.size()) {
-            ImageView imageView = (ImageView) hg.c.w(1, arrayList2);
+            ImageView imageView = (ImageView) hg.c.x(1, arrayList2);
             removeView(imageView);
             this.K.remove(imageView);
             this.L.remove(imageView);
@@ -552,15 +561,15 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         fh.d dVar;
         ImageView imageView;
         ImageView imageView2;
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         float f7;
         float f10;
         float f11;
         float clamp;
         int paddingTop = getPaddingTop();
         j(canvas);
-        org.telegram.ui.Components.e6 e6Var = this.U;
-        float f12 = e6Var.c;
+        org.telegram.ui.Components.g6 g6Var = this.U;
+        float f12 = g6Var.c;
         ArrayList arrayList = this.y;
         if (arrayList.size() >= 2 && f12 > 0.001f) {
             if (k0 == null) {
@@ -592,16 +601,16 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             canvas.clipRect(paddingLeft, (getPaddingTop() + this.P) - AndroidUtilities.dp(f10), max + paddingLeft, getPaddingTop() + this.P);
             for (int i10 = 0; i10 < size; i10++) {
                 float max2 = Math.max(0.0f, 1.0f - Math.abs(i10 - f13));
-                k0.setAlpha((int) com.google.android.gms.internal.vision.e2.B(max2, 95.0f, 160.0f, f12));
+                k0.setAlpha((int) com.google.android.gms.internal.vision.e2.A(max2, 95.0f, 160.0f, f12));
                 canvas.drawCircle(AndroidUtilities.dp(f11) + clamp + (AndroidUtilities.dp(f7) * i10), dp, (AndroidUtilities.dp(1.0f) * max2) + AndroidUtilities.dp(2.0f), k0);
             }
             canvas.restore();
         }
         q3 q3Var = this.N;
-        if (q3Var != null && (textSelectionHelper = q3Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y() && (getParent() instanceof RecyclerView)) {
+        if (q3Var != null && (textSelectionHelper = q3Var.a.getTextSelectionHelper()) != null && textSelectionHelper.x() && (getParent() instanceof RecyclerView)) {
             ((RecyclerView) getParent()).getClass();
             int R = RecyclerView.R(this);
-            if (R >= 0 && R > textSelectionHelper.u0 && R <= textSelectionHelper.x0) {
+            if (R >= 0 && R > textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
                 canvas.drawRect(getPaddingLeft(), paddingTop, getWidth() - getPaddingRight(), paddingTop + this.P, this.s);
             }
         }
@@ -609,11 +618,11 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             int width = getWidth();
             int height = getHeight();
             if (width > 0 && height > 0) {
-                if (canvas.isHardwareAccelerated() && !dVar.r) {
+                if (canvas.isHardwareAccelerated() && !dVar.n) {
                     try {
                         j(dVar.a(width, height));
                     } finally {
-                        dVar.c();
+                        dVar.b();
                     }
                 }
                 int i11 = 0;
@@ -635,7 +644,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
                 i(canvas, imageView2);
             }
         }
-        if (e6Var.i) {
+        if (g6Var.i) {
             requestLayout();
         }
     }
@@ -647,7 +656,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         int i14 = i12 - i10;
         int max = Math.max(0, (i14 - paddingLeft) - paddingRight);
         int i15 = i14 - paddingRight;
-        int dp = o8.b(this.a) > 0 ? AndroidUtilities.dp(16.0f) : 0;
+        int dp = n8.b(this.a) > 0 ? AndroidUtilities.dp(16.0f) : 0;
         this.v.g(paddingLeft - dp, paddingRight - dp, i14, getPaddingTop() + this.P);
         int dp2 = AndroidUtilities.dp(6.0f);
         int i16 = i15 - dp2;
@@ -693,13 +702,13 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0328  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x039a  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x03f3 A[LOOP:1: B:24:0x03eb->B:26:0x03f3, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x040f A[EDGE_INSN: B:27:0x040f->B:28:0x040f BREAK  A[LOOP:1: B:24:0x03eb->B:26:0x03f3], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0413  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0325  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0396  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x03ef A[LOOP:1: B:24:0x03e7->B:26:0x03ef, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x040b A[EDGE_INSN: B:27:0x040b->B:28:0x040b BREAK  A[LOOP:1: B:24:0x03e7->B:26:0x03ef], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x040f  */
     /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x03a1  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x039d  */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -709,31 +718,35 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         int i13;
         int i14;
         int i15;
+        int i16;
         MessageObject.GroupedMessagePosition[] groupedMessagePositionArr;
         int round;
-        int i16;
-        MessageObject.GroupedMessagePosition[] groupedMessagePositionArr2;
         int i17;
-        float[] fArr;
+        MessageObject.GroupedMessagePosition[] groupedMessagePositionArr2;
         int i18;
+        float[] fArr;
         int i19;
-        int dp;
         int i20;
-        int size;
         int i21;
+        int i22;
+        int dp;
+        int i23;
+        int size;
+        int i24;
         ArrayList arrayList;
         int size2 = View.MeasureSpec.getSize(i10);
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
         int max = Math.max(0, (size2 - paddingLeft) - paddingRight);
         float f7 = l() ? 1.0f : 0.0f;
-        org.telegram.ui.Components.e6 e6Var = this.U;
-        float d = e6Var.d(f7, false);
+        org.telegram.ui.Components.g6 g6Var = this.U;
+        float d = g6Var.d(f7, false);
         ArrayList arrayList2 = this.F;
         arrayList2.clear();
         int paddingTop = getPaddingTop();
         ArrayList arrayList3 = this.y;
         int size3 = arrayList3.size();
+        int i25 = 1;
         if (size3 == 0) {
             int dp2 = (AndroidUtilities.dp(200.0f) - getPaddingTop()) - getPaddingBottom();
             this.S = dp2;
@@ -742,148 +755,158 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         } else {
             if (size3 != 1) {
                 float[] fArr2 = new float[size3];
-                for (int i22 = 0; i22 < size3; i22++) {
-                    z4 z4Var = (z4) arrayList3.get(i22);
-                    int i23 = z4Var.e == null ? 0 : z4Var.d() ? z4Var.e.k : z4Var.e.j;
+                int i26 = 0;
+                while (i26 < size3) {
+                    z4 z4Var = (z4) arrayList3.get(i26);
                     if (z4Var.e == null) {
-                        i18 = 0;
+                        i20 = i25;
+                        i19 = 0;
+                    } else {
+                        i19 = z4Var.d() ? z4Var.e.k : z4Var.e.j;
+                        i20 = i25;
+                    }
+                    if (z4Var.e == null) {
+                        i21 = 0;
                     } else {
                         boolean d10 = z4Var.d();
                         u uVar = z4Var.e;
-                        i18 = d10 ? uVar.j : uVar.k;
+                        i21 = d10 ? uVar.j : uVar.k;
                     }
-                    fArr2[i22] = (i23 <= 0 || i18 <= 0) ? 1.0f : i23 / i18;
+                    fArr2[i26] = (i19 <= 0 || i21 <= 0) ? 1.0f : i19 / i21;
+                    i26++;
+                    i25 = i20;
                 }
+                i12 = i25;
                 MessageObject.GroupedMessagePosition[] computeGrouped = RichMessageLayout.computeGrouped(fArr2);
-                int i24 = 0;
+                int i27 = 0;
                 for (MessageObject.GroupedMessagePosition groupedMessagePosition : computeGrouped) {
-                    i24 = Math.max(i24, (int) groupedMessagePosition.maxY);
+                    i27 = Math.max(i27, (int) groupedMessagePosition.maxY);
                 }
-                int i25 = i24 + 1;
-                float[] fArr3 = new float[i25];
+                int i28 = i27 + 1;
+                float[] fArr3 = new float[i28];
                 int length = computeGrouped.length;
-                i12 = paddingLeft;
-                int i26 = 0;
-                while (i26 < length) {
-                    int i27 = i26;
-                    MessageObject.GroupedMessagePosition groupedMessagePosition2 = computeGrouped[i27];
-                    int i28 = paddingRight;
+                i13 = paddingLeft;
+                int i29 = 0;
+                while (i29 < length) {
+                    int i30 = i29;
+                    MessageObject.GroupedMessagePosition groupedMessagePosition2 = computeGrouped[i30];
+                    int i31 = paddingRight;
                     byte b10 = groupedMessagePosition2.minY;
-                    int i29 = i25;
+                    int i32 = i28;
                     if (b10 == groupedMessagePosition2.maxY) {
                         fArr3[b10] = Math.max(fArr3[b10], groupedMessagePosition2.ph);
                     }
-                    i26 = i27 + 1;
-                    paddingRight = i28;
-                    i25 = i29;
+                    i29 = i30 + 1;
+                    paddingRight = i31;
+                    i28 = i32;
                 }
-                i13 = paddingRight;
-                int i30 = i25;
+                i14 = paddingRight;
+                int i33 = i28;
                 int length2 = computeGrouped.length;
-                int i31 = 0;
-                while (i31 < length2) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition3 = computeGrouped[i31];
-                    int i32 = groupedMessagePosition3.minY;
-                    int i33 = length2;
+                int i34 = 0;
+                while (i34 < length2) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition3 = computeGrouped[i34];
+                    int i35 = groupedMessagePosition3.minY;
+                    int i36 = length2;
                     byte b11 = groupedMessagePosition3.maxY;
-                    if (i32 != b11) {
-                        int i34 = (b11 - i32) + 1;
-                        i17 = i31;
+                    if (i35 != b11) {
+                        int i37 = (b11 - i35) + 1;
+                        i18 = i34;
                         float[] fArr4 = groupedMessagePosition3.siblingHeights;
-                        if (fArr4 == null || fArr4.length != i34) {
+                        if (fArr4 == null || fArr4.length != i37) {
                             fArr = fArr3;
-                            float f10 = groupedMessagePosition3.ph / i34;
-                            while (i32 <= groupedMessagePosition3.maxY) {
-                                fArr[i32] = Math.max(fArr[i32], f10);
-                                i32++;
+                            float f10 = groupedMessagePosition3.ph / i37;
+                            while (i35 <= groupedMessagePosition3.maxY) {
+                                fArr[i35] = Math.max(fArr[i35], f10);
+                                i35++;
                             }
-                            i31 = i17 + 1;
-                            length2 = i33;
+                            i34 = i18 + 1;
+                            length2 = i36;
                             fArr3 = fArr;
                         } else {
-                            int i35 = 0;
-                            while (i35 < i34) {
-                                int i36 = groupedMessagePosition3.minY + i35;
-                                int i37 = i35;
+                            int i38 = 0;
+                            while (i38 < i37) {
+                                int i39 = groupedMessagePosition3.minY + i38;
+                                int i40 = i38;
                                 float[] fArr5 = fArr3;
-                                fArr5[i36] = Math.max(fArr3[i36], groupedMessagePosition3.siblingHeights[i37]);
-                                i35 = i37 + 1;
+                                fArr5[i39] = Math.max(fArr3[i39], groupedMessagePosition3.siblingHeights[i40]);
+                                i38 = i40 + 1;
                                 fArr3 = fArr5;
                             }
                         }
                     } else {
-                        i17 = i31;
+                        i18 = i34;
                     }
                     fArr = fArr3;
-                    i31 = i17 + 1;
-                    length2 = i33;
+                    i34 = i18 + 1;
+                    length2 = i36;
                     fArr3 = fArr;
                 }
                 float[] fArr6 = fArr3;
                 Point point = AndroidUtilities.displaySize;
                 float max2 = Math.max(point.x, point.y) * 0.5f;
-                int[] iArr = new int[i24 + 2];
+                int[] iArr = new int[i27 + 2];
                 float f11 = 0.0f;
-                for (int i38 = 0; i38 <= i24; i38++) {
-                    iArr[i38] = Math.round(f11 * max2);
-                    f11 += fArr6[i38];
+                for (int i41 = 0; i41 <= i27; i41++) {
+                    iArr[i41] = Math.round(f11 * max2);
+                    f11 += fArr6[i41];
                 }
-                iArr[i30] = Math.round(f11 * max2);
+                iArr[i33] = Math.round(f11 * max2);
                 int dp3 = AndroidUtilities.dp(2.0f);
-                int i39 = 0;
-                while (i39 < computeGrouped.length) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition4 = computeGrouped[i39];
-                    int i40 = iArr[groupedMessagePosition4.minY];
-                    int i41 = iArr[groupedMessagePosition4.maxY + 1] - i40;
-                    int i42 = dp3;
+                int i42 = 0;
+                while (i42 < computeGrouped.length) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition4 = computeGrouped[i42];
+                    int i43 = iArr[groupedMessagePosition4.minY];
+                    int i44 = iArr[groupedMessagePosition4.maxY + 1] - i43;
+                    int i45 = dp3;
                     if (groupedMessagePosition4.leftSpanOffset > 0) {
                         round = Math.round((r2 * max) / 1000.0f);
-                        i15 = i41;
+                        i16 = i44;
                         groupedMessagePositionArr = computeGrouped;
                     } else {
-                        i15 = i41;
-                        int i43 = 0;
-                        int i44 = 0;
-                        while (i43 < computeGrouped.length) {
-                            if (i43 == i39) {
-                                i16 = i43;
+                        i16 = i44;
+                        int i46 = 0;
+                        int i47 = 0;
+                        while (i46 < computeGrouped.length) {
+                            if (i46 == i42) {
+                                i17 = i46;
                                 groupedMessagePositionArr2 = computeGrouped;
                             } else {
-                                MessageObject.GroupedMessagePosition groupedMessagePosition5 = computeGrouped[i43];
-                                i16 = i43;
+                                MessageObject.GroupedMessagePosition groupedMessagePosition5 = computeGrouped[i46];
+                                i17 = i46;
                                 byte b12 = groupedMessagePosition5.minY;
                                 groupedMessagePositionArr2 = computeGrouped;
                                 byte b13 = groupedMessagePosition4.minY;
                                 if (b12 <= b13 && groupedMessagePosition5.maxY >= b13 && groupedMessagePosition5.minX < groupedMessagePosition4.minX) {
-                                    i44 += groupedMessagePosition5.pw;
+                                    i47 += groupedMessagePosition5.pw;
                                 }
                             }
-                            i43 = i16 + 1;
+                            i46 = i17 + 1;
                             computeGrouped = groupedMessagePositionArr2;
                         }
                         groupedMessagePositionArr = computeGrouped;
-                        round = Math.round((i44 * max) / 1000.0f);
+                        round = Math.round((i47 * max) / 1000.0f);
                     }
-                    arrayList2.add(new RectF(round, i40 + paddingTop, Math.max(0, (groupedMessagePosition4.flags & 2) != 0 ? max - round : Math.round((groupedMessagePosition4.pw * max) / 1000.0f) - i42) + round, Math.max(0, (groupedMessagePosition4.flags & 8) == 0 ? i15 - i42 : i15) + r15));
-                    i39++;
-                    dp3 = i42;
+                    arrayList2.add(new RectF(round, i43 + paddingTop, Math.max(0, (groupedMessagePosition4.flags & 2) != 0 ? max - round : Math.round((groupedMessagePosition4.pw * max) / 1000.0f) - i45) + round, Math.max(0, (groupedMessagePosition4.flags & 8) == 0 ? i16 - i45 : i16) + r15));
+                    i42++;
+                    dp3 = i45;
                     iArr = iArr;
                     computeGrouped = groupedMessagePositionArr;
                 }
-                this.Q = iArr[i30];
+                this.Q = iArr[i33];
                 this.R = max;
                 float f12 = 0.0f;
-                for (int i45 = 0; i45 < size3; i45++) {
-                    z4 z4Var2 = (z4) arrayList3.get(i45);
-                    int i46 = z4Var2.e == null ? 0 : z4Var2.d() ? z4Var2.e.k : z4Var2.e.j;
+                for (int i48 = 0; i48 < size3; i48++) {
+                    z4 z4Var2 = (z4) arrayList3.get(i48);
+                    int i49 = z4Var2.e == null ? 0 : z4Var2.d() ? z4Var2.e.k : z4Var2.e.j;
                     if (z4Var2.e == null) {
-                        i14 = 0;
+                        i15 = 0;
                     } else {
                         boolean d11 = z4Var2.d();
                         u uVar2 = z4Var2.e;
-                        i14 = d11 ? uVar2.j : uVar2.k;
+                        i15 = d11 ? uVar2.j : uVar2.k;
                     }
-                    f12 = ((i46 <= 0 || i14 <= 0) ? 1.0f : i46 / i14) + f12;
+                    f12 = ((i49 <= 0 || i15 <= 0) ? 1.0f : i49 / i15) + f12;
                 }
                 int max3 = (int) (this.R / Math.max(0.5f, f12 / size3));
                 Point point2 = AndroidUtilities.displaySize;
@@ -898,91 +921,92 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
                 size = arrayList3.size();
                 if (size != 0) {
                     int paddingTop2 = getPaddingTop();
-                    if (size == 1) {
+                    if (size == i12) {
                         arrayList4.add(new RectF((RectF) arrayList2.get(0)));
                     } else {
                         float f13 = (-this.a0) * this.R;
-                        int i47 = 0;
-                        while (i47 < size && i47 < arrayList2.size()) {
-                            RectF rectF = (RectF) arrayList2.get(i47);
-                            float f14 = ((i47 - this.W) * this.R) + f13;
+                        int i50 = 0;
+                        while (i50 < size && i50 < arrayList2.size()) {
+                            RectF rectF = (RectF) arrayList2.get(i50);
+                            float f14 = ((i50 - this.W) * this.R) + f13;
                             arrayList4.add(new RectF(AndroidUtilities.lerp(rectF.left, f14, d), AndroidUtilities.lerp(rectF.top, paddingTop2, d), AndroidUtilities.lerp(rectF.right, f14 + this.R, d), AndroidUtilities.lerp(rectF.bottom, this.S + paddingTop2, d)));
-                            i47++;
+                            i50++;
                             size = size;
                         }
                     }
                 }
-                int dp4 = o8.b(this.a) <= 0 ? AndroidUtilities.dp(16.0f) : 0;
-                setMeasuredDimension(size2, getPaddingBottom() + getPaddingTop() + this.P + this.v.h(i12 - dp4, i13 - dp4, size2));
+                int dp4 = n8.b(this.a) <= 0 ? AndroidUtilities.dp(16.0f) : 0;
+                setMeasuredDimension(size2, getPaddingBottom() + getPaddingTop() + this.P + this.v.h(i13 - dp4, i14 - dp4, size2));
                 this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 this.x.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                i21 = 0;
+                i24 = 0;
                 while (true) {
                     arrayList = this.E;
-                    if (i21 < arrayList.size()) {
+                    if (i24 < arrayList.size()) {
                         break;
                     }
-                    ((ImageView) arrayList.get(i21)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                    i21++;
+                    ((ImageView) arrayList.get(i24)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+                    i24++;
                 }
-                if (e6Var.i) {
+                if (g6Var.i) {
                     return;
                 }
                 requestLayout();
                 return;
             }
             z4 z4Var3 = (z4) arrayList3.get(0);
-            int i48 = z4Var3.e == null ? 0 : z4Var3.d() ? z4Var3.e.k : z4Var3.e.j;
+            int i51 = z4Var3.e == null ? 0 : z4Var3.d() ? z4Var3.e.k : z4Var3.e.j;
             if (z4Var3.e == null) {
-                i19 = 0;
+                i22 = 0;
             } else {
                 boolean d12 = z4Var3.d();
                 u uVar3 = z4Var3.e;
-                i19 = d12 ? uVar3.j : uVar3.k;
+                i22 = d12 ? uVar3.j : uVar3.k;
             }
-            if (i48 <= 0 || i19 <= 0) {
+            if (i51 <= 0 || i22 <= 0) {
                 dp = (AndroidUtilities.dp(200.0f) - getPaddingTop()) - getPaddingBottom();
             } else {
-                dp = (int) ((max / Math.max(1, i48)) * i19);
+                dp = (int) ((max / Math.max(1, i51)) * i22);
                 Point point3 = AndroidUtilities.displaySize;
                 int max5 = (int) (Math.max(point3.x, point3.y) * 0.55f);
                 if (dp > max5) {
-                    i20 = (int) ((max5 / Math.max(1, i19)) * i48);
+                    i23 = (int) ((max5 / Math.max(1, i22)) * i51);
                     dp = max5;
-                    arrayList2.add(new RectF((max - i20) / 2, paddingTop, r4 + i20, paddingTop + dp));
+                    arrayList2.add(new RectF((max - i23) / 2, paddingTop, r4 + i23, paddingTop + dp));
                     this.Q = dp;
-                    this.R = i20;
+                    this.R = i23;
                     this.S = dp;
                 }
             }
-            i20 = max;
-            arrayList2.add(new RectF((max - i20) / 2, paddingTop, r4 + i20, paddingTop + dp));
+            i23 = max;
+            arrayList2.add(new RectF((max - i23) / 2, paddingTop, r4 + i23, paddingTop + dp));
             this.Q = dp;
-            this.R = i20;
+            this.R = i23;
             this.S = dp;
         }
-        i12 = paddingLeft;
-        i13 = paddingRight;
+        i13 = paddingLeft;
+        i14 = paddingRight;
+        i12 = 1;
         this.P = Math.round(AndroidUtilities.lerp(this.Q, this.S, d));
         ArrayList arrayList42 = this.G;
         arrayList42.clear();
         size = arrayList3.size();
         if (size != 0) {
         }
-        if (o8.b(this.a) <= 0) {
+        if (n8.b(this.a) <= 0) {
         }
-        setMeasuredDimension(size2, getPaddingBottom() + getPaddingTop() + this.P + this.v.h(i12 - dp4, i13 - dp4, size2));
+        setMeasuredDimension(size2, getPaddingBottom() + getPaddingTop() + this.P + this.v.h(i13 - dp4, i14 - dp4, size2));
         this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
         this.x.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-        i21 = 0;
+        i24 = 0;
         while (true) {
             arrayList = this.E;
-            if (i21 < arrayList.size()) {
+            if (i24 < arrayList.size()) {
             }
-            ((ImageView) arrayList.get(i21)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-            i21++;
+            ((ImageView) arrayList.get(i24)).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+            i24++;
         }
-        if (e6Var.i) {
+        if (g6Var.i) {
         }
     }
 

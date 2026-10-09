@@ -1,82 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zs extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ s4.c1 b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewPropertyAnimator d;
-    public final /* synthetic */ dt e;
+public final class zs extends View {
+    public final Paint a;
+    public final Matrix b;
+    public LinearGradient c;
+    public int d;
+    public float e;
+    public float f;
 
-    public zs(dt dtVar, s4.c1 c1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
-        this.e = dtVar;
-        this.b = c1Var;
-        this.d = viewPropertyAnimator;
-        this.c = view;
+    public zs(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new Matrix();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.setAlpha(1.0f);
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), this.e + this.f, this.a);
+    }
+
+    public void setColor(int i10) {
+        if (this.d != i10) {
+            this.d = i10;
+            int alpha = Color.alpha(i10);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 192) / 255), i0.a.k(i10, (alpha * 144) / 255), i0.a.k(i10, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+            this.c = linearGradient;
+            this.a.setShader(linearGradient);
+            this.c.setLocalMatrix(this.b);
+            invalidate();
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.setListener(null);
-                this.c.setAlpha(1.0f);
-                dt dtVar = this.e;
-                s4.c1 c1Var = this.b;
-                dtVar.d(c1Var);
-                dtVar.x.remove(c1Var);
-                dtVar.A();
-                break;
-            default:
-                this.d.setListener(null);
-                dt dtVar2 = this.e;
-                s4.c1 c1Var2 = this.b;
-                dtVar2.u(c1Var2);
-                dtVar2.v.remove(c1Var2);
-                dtVar2.A();
-                View view = c1Var2.a;
-                if (view instanceof org.telegram.ui.Cells.s2) {
-                    ((org.telegram.ui.Cells.s2) view).setMoving(false);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.e.y();
-                break;
-            default:
-                this.e.getClass();
-                break;
-        }
-    }
-
-    public zs(dt dtVar, s4.c1 c1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.e = dtVar;
-        this.b = c1Var;
-        this.c = view;
-        this.d = viewPropertyAnimator;
     }
 }

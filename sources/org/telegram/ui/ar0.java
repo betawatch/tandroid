@@ -1,13 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class ar0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ br0 b;
+import android.text.Editable;
 
-    public /* synthetic */ ar0(br0 br0Var, int i10) {
-        this.a = i10;
-        this.b = br0Var;
-    }
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public interface ar0 {
+    void a();
+
+    void b(Editable editable);
+
+    boolean e();
+
+    void g();
+
+    void h(int i10, boolean z10, boolean z11);
 }

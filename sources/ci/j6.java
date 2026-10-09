@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class j6 extends qg.d {
     public final Paint h;
@@ -15,12 +15,12 @@ public final class j6 extends qg.d {
     public float s;
     public int v;
     public int w;
-    public final /* synthetic */ mb x;
+    public final /* synthetic */ nb x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(mb mbVar, Context context, i6 i6Var) {
+    public j6(nb nbVar, Context context, i6 i6Var) {
         super(context, i6Var);
-        this.x = mbVar;
+        this.x = nbVar;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -39,9 +39,9 @@ public final class j6 extends qg.d {
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0069  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00d6  */
     /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00cf  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x007e  */
     @Override // android.view.View
     /*
@@ -60,14 +60,14 @@ public final class j6 extends qg.d {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        mb mbVar = this.x;
-        qg.j jVar = mbVar.J0;
+        nb nbVar = this.x;
+        qg.j jVar = nbVar.J0;
         if (jVar == null || jVar.r || !jVar.n) {
             i10 = 0;
             i11 = 0;
         } else {
             i10 = jVar.getStickyX();
-            i11 = mbVar.J0.getStickyY();
+            i11 = nbVar.J0.getStickyY();
         }
         if (i10 != 0) {
             this.v = i10;
@@ -169,14 +169,14 @@ public final class j6 extends qg.d {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        mb mbVar = this.x;
-        j6 j6Var = mbVar.R0;
-        if (mbVar.R1 <= 0) {
-            mbVar.R1 = j6Var.getMeasuredWidth();
+        nb nbVar = this.x;
+        j6 j6Var = nbVar.R0;
+        if (nbVar.R1 <= 0) {
+            nbVar.R1 = j6Var.getMeasuredWidth();
         }
-        if (mbVar.S1 <= 0) {
-            mbVar.S1 = j6Var.getMeasuredHeight();
+        if (nbVar.S1 <= 0) {
+            nbVar.S1 = j6Var.getMeasuredHeight();
         }
-        mbVar.H0();
+        nbVar.G0();
     }
 }

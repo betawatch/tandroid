@@ -1,9 +1,86 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class vl0 {
-    public float a;
-    public float b;
-    public float c;
+    public final qm0 a;
+    public boolean d;
+    public final boolean e;
+    public final SparseArray b = new SparseArray();
+    public final HashSet c = new HashSet();
+    public final boolean f = true;
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+
+    public vl0(qm0 qm0Var, boolean z10) {
+        this.a = qm0Var;
+        this.e = z10;
+        qm0Var.setItemsEnterAnimator(this);
+    }
+
+    public final void a() {
+        ArrayList arrayList = this.g;
+        int i10 = 0;
+        if (!arrayList.isEmpty()) {
+            ArrayList arrayList2 = new ArrayList(arrayList);
+            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                ((AnimatorSet) arrayList2.get(i11)).end();
+                ((AnimatorSet) arrayList2.get(i11)).cancel();
+            }
+        }
+        arrayList.clear();
+        while (true) {
+            ArrayList arrayList3 = this.h;
+            int size = arrayList3.size();
+            qm0 qm0Var = this.a;
+            if (i10 >= size) {
+                arrayList3.clear();
+                this.b.clear();
+                qm0Var.invalidate();
+                this.d = true;
+                return;
+            }
+            qm0Var.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver.OnPreDrawListener) arrayList3.get(i10));
+            i10++;
+        }
+    }
+
+    public final void b(int i10) {
+        qm0 qm0Var = this.a;
+        int childCount = qm0Var.getChildCount();
+        View view = null;
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = qm0Var.getChildAt(i11);
+            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof j10)) {
+                view = childAt;
+            }
+        }
+        s4.p0 layoutManager = qm0Var.getLayoutManager();
+        int i12 = 2;
+        if (view != null && layoutManager != null) {
+            qm0Var.removeView(view);
+            this.c.add(view);
+            qm0Var.addView(view);
+            layoutManager.M(view);
+            Animator ofFloat = this.f ? ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f) : ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addListener(new ai.z(this, (j10) view, layoutManager));
+            ofFloat.start();
+            i10--;
+        }
+        org.telegram.ui.zq zqVar = new org.telegram.ui.zq(this, (j10) view, i10, i12);
+        this.h.add(zqVar);
+        qm0Var.getViewTreeObserver().addOnPreDrawListener(zqVar);
+    }
 }

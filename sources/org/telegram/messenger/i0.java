@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((BirthdayController) this.c).lambda$new$1(this.b, (ArrayList) this.d, (BirthdayController.TL_birthdays) this.e);
                 break;
             case 1:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$477((TLObject) this.d, this.b, (MessagesController.ChatlistUpdatesStat) this.e);
+                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$480((TLObject) this.d, this.b, (MessagesController.ChatlistUpdatesStat) this.e);
                 break;
             case 2:
                 ((ContactsController) this.c).lambda$loadPrivacySettings$64((TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
@@ -62,22 +62,22 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((MediaDataController) this.c).lambda$putDiceStickersToCache$90((TLRPC.TL_messages_stickerSet) this.d, (String) this.e, this.b);
                 break;
             case 9:
-                ((MessagesController) this.c).lambda$processLoadedDeleteTask$88((a0.i) this.d, (a0.i) this.e, this.b);
+                ((MessagesController) this.c).lambda$loadMessagesInternal$176(this.b, (TLRPC.TL_messages_getSavedHistory) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 10:
-                ((MessagesController) this.c).lambda$loadFullUser$70((TLRPC.UserFull) this.d, (TLRPC.User) this.e, this.b);
+                ((MessagesController) this.c).lambda$processLoadedDeleteTask$87((a0.i) this.d, (a0.i) this.e, this.b);
                 break;
             case 11:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$184(this.b, (TLRPC.TL_messages_getHistory) this.d, (TLRPC.TL_error) this.e);
+                ((MessagesController) this.c).lambda$loadFullUser$69((TLRPC.UserFull) this.d, (TLRPC.User) this.e, this.b);
                 break;
             case 12:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$182(this.b, (TLRPC.TL_messages_getPeerDialogs) this.d, (TLRPC.TL_error) this.e);
+                ((MessagesController) this.c).lambda$loadMessagesInternal$181(this.b, (TLRPC.TL_messages_getPeerDialogs) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 13:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$177(this.b, (TLRPC.TL_messages_getSavedHistory) this.d, (TLRPC.TL_error) this.e);
+                ((MessagesController) this.c).lambda$loadMessagesInternal$178(this.b, (TLRPC.TL_messages_getReplies) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 14:
-                ((MessagesController) this.c).lambda$loadMessagesInternal$179(this.b, (TLRPC.TL_messages_getReplies) this.d, (TLRPC.TL_error) this.e);
+                ((MessagesController) this.c).lambda$loadMessagesInternal$183(this.b, (TLRPC.TL_messages_getHistory) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 15:
                 ((MessagesStorage) this.c).lambda$hasAuthMessage$176(this.b, (boolean[]) this.d, (CountDownLatch) this.e);

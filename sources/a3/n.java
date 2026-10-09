@@ -1,6 +1,6 @@
 package a3;
 
-import ai.e8;
+import ai.f8;
 import android.content.Context;
 import android.graphics.Point;
 import android.media.MediaCodecInfo;
@@ -30,80 +30,1299 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.c1;
+import u2.b1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class n extends r2.r {
-    public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
+public final class n extends r2.s {
+    public static final int[] M1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
+    public static boolean N1;
     public static boolean O1;
-    public static boolean P1;
-    public int A1;
-    public long B1;
+    public long A1;
+    public x1 B1;
     public x1 C1;
-    public x1 D1;
-    public int E1;
-    public boolean F1;
-    public int G1;
-    public m H1;
-    public y I1;
+    public int D1;
+    public boolean E1;
+    public int F1;
+    public m G1;
+    public y H1;
+    public long I1;
     public long J1;
-    public long K1;
-    public boolean L1;
-    public int M1;
-    public final Context X0;
-    public final boolean Y0;
-    public final of.b Z0;
-    public final int a1;
-    public final boolean b1;
-    public final a0 c1;
-    public final z d1;
-    public final long e1;
-    public final PriorityQueue f1;
-    public l g1;
+    public boolean K1;
+    public int L1;
+    public final Context W0;
+    public final boolean X0;
+    public final pf.b Y0;
+    public final int Z0;
+    public final boolean a1;
+    public final a0 b1;
+    public final z c1;
+    public final long d1;
+    public final PriorityQueue e1;
+    public l f1;
+    public boolean g1;
     public boolean h1;
-    public boolean i1;
-    public o0 j1;
-    public boolean k1;
-    public int l1;
-    public List m1;
-    public Surface n1;
-    public p o1;
-    public e2.w p1;
-    public boolean q1;
+    public o0 i1;
+    public boolean j1;
+    public int k1;
+    public List l1;
+    public Surface m1;
+    public p n1;
+    public e2.w o1;
+    public boolean p1;
+    public int q1;
     public int r1;
-    public int s1;
-    public long t1;
+    public long s1;
+    public int t1;
     public int u1;
     public int v1;
-    public int w1;
-    public p1 x1;
-    public boolean y1;
-    public long z1;
+    public p1 w1;
+    public boolean x1;
+    public long y1;
+    public int z1;
 
     public n(k kVar) {
         super(2, kVar.c, 30.0f);
         Context applicationContext = kVar.a.getApplicationContext();
-        this.X0 = applicationContext;
-        this.a1 = kVar.g;
-        this.j1 = null;
-        this.Z0 = new of.b(kVar.e, kVar.f);
-        this.Y0 = this.j1 == null;
-        this.c1 = new a0(applicationContext, this, kVar.d);
-        this.d1 = new z();
-        this.b1 = "NVIDIA".equals(Build.MANUFACTURER);
-        this.p1 = e2.w.c;
-        this.r1 = 1;
-        this.s1 = 0;
-        this.C1 = x1.d;
-        this.G1 = 0;
-        this.D1 = null;
-        this.E1 = -1000;
+        this.W0 = applicationContext;
+        this.Z0 = kVar.g;
+        this.i1 = null;
+        this.Y0 = new pf.b(kVar.e, kVar.f);
+        this.X0 = this.i1 == null;
+        this.b1 = new a0(applicationContext, this, kVar.d);
+        this.c1 = new z();
+        this.a1 = "NVIDIA".equals(Build.MANUFACTURER);
+        this.o1 = e2.w.c;
+        this.q1 = 1;
+        this.r1 = 0;
+        this.B1 = x1.d;
+        this.F1 = 0;
+        this.C1 = null;
+        this.D1 = -1000;
+        this.I1 = -9223372036854775807L;
         this.J1 = -9223372036854775807L;
-        this.K1 = -9223372036854775807L;
-        this.f1 = new PriorityQueue();
-        this.e1 = -9223372036854775807L;
-        this.x1 = null;
+        this.e1 = new PriorityQueue();
+        this.d1 = -9223372036854775807L;
+        this.w1 = null;
+    }
+
+    public static List A0(Context context, r2.j jVar, b2.s sVar, boolean z10, boolean z11) {
+        String str = sVar.r;
+        if (str == null) {
+            return a1.e;
+        }
+        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(str) && !c2.d.d(context)) {
+            String b10 = r2.x.b(sVar);
+            List a2 = b10 == null ? a1.e : jVar.a(b10, z10, z11);
+            if (!a2.isEmpty()) {
+                return a2;
+            }
+        }
+        return r2.x.f(jVar, sVar, z10, z11);
+    }
+
+    public static int B0(r2.p pVar, b2.s sVar) {
+        int i10 = sVar.s;
+        List list = sVar.u;
+        if (i10 == -1) {
+            return z0(pVar, sVar);
+        }
+        int size = list.size();
+        int i11 = 0;
+        for (int i12 = 0; i12 < size; i12++) {
+            i11 += ((byte[]) list.get(i12)).length;
+        }
+        return sVar.s + i11;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0741, code lost:
+    
+        if (r0.equals("ELUGA_Ray_X") == false) goto L101;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08c8, code lost:
+    
+        if (r13.equals("JSN-L21") == false) goto L664;
+     */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[FALL_THROUGH] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean y0(String str) {
+        boolean z10;
+        boolean z11;
+        boolean z12 = false;
+        if (str.startsWith("OMX.google")) {
+            return false;
+        }
+        synchronized (n.class) {
+            try {
+                if (!N1) {
+                    int i10 = Build.VERSION.SDK_INT;
+                    char c10 = 28;
+                    if (i10 <= 28) {
+                        String str2 = Build.DEVICE;
+                        str2.getClass();
+                        switch (str2.hashCode()) {
+                            case -1339091551:
+                                if (str2.equals("dangal")) {
+                                    z11 = false;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case -1220081023:
+                                if (str2.equals("dangalFHD")) {
+                                    z11 = true;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case -1220066608:
+                                if (str2.equals("dangalUHD")) {
+                                    z11 = 2;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case -1012436106:
+                                if (str2.equals("oneday")) {
+                                    z11 = 3;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case -760312546:
+                                if (str2.equals("aquaman")) {
+                                    z11 = 4;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case -64886864:
+                                if (str2.equals("magnolia")) {
+                                    z11 = 5;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case 3415681:
+                                if (str2.equals("once")) {
+                                    z11 = 6;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            case 825323514:
+                                if (str2.equals("machuca")) {
+                                    z11 = 7;
+                                    break;
+                                }
+                                z11 = -1;
+                                break;
+                            default:
+                                z11 = -1;
+                                break;
+                        }
+                        switch (z11) {
+                            case false:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                                z12 = true;
+                                break;
+                        }
+                        O1 = z12;
+                        N1 = true;
+                    }
+                    if (i10 > 27 || !"HWEML".equals(Build.DEVICE)) {
+                        String str3 = Build.MODEL;
+                        str3.getClass();
+                        switch (str3.hashCode()) {
+                            case -349662828:
+                                if (str3.equals("AFTJMST12")) {
+                                    z10 = false;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case -321033677:
+                                if (str3.equals("AFTKMST12")) {
+                                    z10 = true;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 2006354:
+                                if (str3.equals("AFTA")) {
+                                    z10 = 2;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 2006367:
+                                if (str3.equals("AFTN")) {
+                                    z10 = 3;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 2006371:
+                                if (str3.equals("AFTR")) {
+                                    z10 = 4;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 1785421873:
+                                if (str3.equals("AFTEU011")) {
+                                    z10 = 5;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 1785421876:
+                                if (str3.equals("AFTEU014")) {
+                                    z10 = 6;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 1798172390:
+                                if (str3.equals("AFTSO001")) {
+                                    z10 = 7;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 2119412532:
+                                if (str3.equals("AFTEUFF014")) {
+                                    z10 = 8;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            default:
+                                z10 = -1;
+                                break;
+                        }
+                        switch (z10) {
+                            default:
+                                if (i10 <= 26) {
+                                    String str4 = Build.DEVICE;
+                                    str4.getClass();
+                                    switch (str4.hashCode()) {
+                                        case -2144781245:
+                                            if (str4.equals("GIONEE_SWW1609")) {
+                                                c10 = 0;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -2144781185:
+                                            if (str4.equals("GIONEE_SWW1627")) {
+                                                c10 = 1;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -2144781160:
+                                            if (str4.equals("GIONEE_SWW1631")) {
+                                                c10 = 2;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -2097309513:
+                                            if (str4.equals("K50a40")) {
+                                                c10 = 3;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -2022874474:
+                                            if (str4.equals("CP8676_I02")) {
+                                                c10 = 4;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1978993182:
+                                            if (str4.equals("NX541J")) {
+                                                c10 = 5;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1978990237:
+                                            if (str4.equals("NX573J")) {
+                                                c10 = 6;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1936688988:
+                                            if (str4.equals("PGN528")) {
+                                                c10 = 7;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1936688066:
+                                            if (str4.equals("PGN610")) {
+                                                c10 = '\b';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1936688065:
+                                            if (str4.equals("PGN611")) {
+                                                c10 = '\t';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1931988508:
+                                            if (str4.equals("AquaPowerM")) {
+                                                c10 = '\n';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1885099851:
+                                            if (str4.equals("RAIJIN")) {
+                                                c10 = 11;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1696512866:
+                                            if (str4.equals("XT1663")) {
+                                                c10 = '\f';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1680025915:
+                                            if (str4.equals("ComioS1")) {
+                                                c10 = '\r';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1615810839:
+                                            if (str4.equals("Phantom6")) {
+                                                c10 = 14;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1600724499:
+                                            if (str4.equals("pacificrim")) {
+                                                c10 = 15;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1554255044:
+                                            if (str4.equals("vernee_M5")) {
+                                                c10 = 16;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1481772737:
+                                            if (str4.equals("panell_dl")) {
+                                                c10 = 17;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1481772730:
+                                            if (str4.equals("panell_ds")) {
+                                                c10 = 18;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1481772729:
+                                            if (str4.equals("panell_dt")) {
+                                                c10 = 19;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1320080169:
+                                            if (str4.equals("GiONEE_GBL7319")) {
+                                                c10 = 20;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1217592143:
+                                            if (str4.equals("BRAVIA_ATV2")) {
+                                                c10 = 21;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1180384755:
+                                            if (str4.equals("iris60")) {
+                                                c10 = 22;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1139198265:
+                                            if (str4.equals("Slate_Pro")) {
+                                                c10 = 23;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -1052835013:
+                                            if (str4.equals("namath")) {
+                                                c10 = 24;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -993250464:
+                                            if (str4.equals("A10-70F")) {
+                                                c10 = 25;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -993250458:
+                                            if (str4.equals("A10-70L")) {
+                                                c10 = 26;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -965403638:
+                                            if (str4.equals("s905x018")) {
+                                                c10 = 27;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -958336948:
+                                            break;
+                                        case -879245230:
+                                            if (str4.equals("tcl_eu")) {
+                                                c10 = 29;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -842500323:
+                                            if (str4.equals("nicklaus_f")) {
+                                                c10 = 30;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -821392978:
+                                            if (str4.equals("A7000-a")) {
+                                                c10 = 31;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -797483286:
+                                            if (str4.equals("SVP-DTV15")) {
+                                                c10 = ' ';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -794946968:
+                                            if (str4.equals("watson")) {
+                                                c10 = '!';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -788334647:
+                                            if (str4.equals("whyred")) {
+                                                c10 = '\"';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -782144577:
+                                            if (str4.equals("OnePlus5T")) {
+                                                c10 = '#';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -575125681:
+                                            if (str4.equals("GiONEE_CBL7513")) {
+                                                c10 = '$';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -521118391:
+                                            if (str4.equals("GIONEE_GBL7360")) {
+                                                c10 = '%';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -430914369:
+                                            if (str4.equals("Pixi4-7_3G")) {
+                                                c10 = '&';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -290434366:
+                                            if (str4.equals("taido_row")) {
+                                                c10 = '\'';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -282781963:
+                                            if (str4.equals("BLACK-1X")) {
+                                                c10 = '(';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -277133239:
+                                            if (str4.equals("Z12_PRO")) {
+                                                c10 = ')';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -173639913:
+                                            if (str4.equals("ELUGA_A3_Pro")) {
+                                                c10 = '*';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case -56598463:
+                                            if (str4.equals("woods_fn")) {
+                                                c10 = '+';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2126:
+                                            if (str4.equals("C1")) {
+                                                c10 = ',';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2564:
+                                            if (str4.equals("Q5")) {
+                                                c10 = '-';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2715:
+                                            if (str4.equals("V1")) {
+                                                c10 = '.';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2719:
+                                            if (str4.equals("V5")) {
+                                                c10 = '/';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3091:
+                                            if (str4.equals("b5")) {
+                                                c10 = '0';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3483:
+                                            if (str4.equals("mh")) {
+                                                c10 = '1';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 73405:
+                                            if (str4.equals("JGZ")) {
+                                                c10 = '2';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 75537:
+                                            if (str4.equals("M04")) {
+                                                c10 = '3';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 75739:
+                                            if (str4.equals("M5c")) {
+                                                c10 = '4';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 76779:
+                                            if (str4.equals("MX6")) {
+                                                c10 = '5';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 78669:
+                                            if (str4.equals("P85")) {
+                                                c10 = '6';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 79305:
+                                            if (str4.equals("PLE")) {
+                                                c10 = '7';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 80618:
+                                            if (str4.equals("QX1")) {
+                                                c10 = '8';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 88274:
+                                            if (str4.equals("Z80")) {
+                                                c10 = '9';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 98846:
+                                            if (str4.equals("cv1")) {
+                                                c10 = ':';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 98848:
+                                            if (str4.equals("cv3")) {
+                                                c10 = ';';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 99329:
+                                            if (str4.equals("deb")) {
+                                                c10 = '<';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 101481:
+                                            if (str4.equals("flo")) {
+                                                c10 = '=';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1513190:
+                                            if (str4.equals("1601")) {
+                                                c10 = '>';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1514184:
+                                            if (str4.equals("1713")) {
+                                                c10 = '?';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1514185:
+                                            if (str4.equals("1714")) {
+                                                c10 = '@';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133089:
+                                            if (str4.equals("F01H")) {
+                                                c10 = 'A';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133091:
+                                            if (str4.equals("F01J")) {
+                                                c10 = 'B';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133120:
+                                            if (str4.equals("F02H")) {
+                                                c10 = 'C';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133151:
+                                            if (str4.equals("F03H")) {
+                                                c10 = 'D';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133182:
+                                            if (str4.equals("F04H")) {
+                                                c10 = 'E';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2133184:
+                                            if (str4.equals("F04J")) {
+                                                c10 = 'F';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2436959:
+                                            if (str4.equals("P681")) {
+                                                c10 = 'G';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2463773:
+                                            if (str4.equals("Q350")) {
+                                                c10 = 'H';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2464648:
+                                            if (str4.equals("Q427")) {
+                                                c10 = 'I';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2689555:
+                                            if (str4.equals("XE2X")) {
+                                                c10 = 'J';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3154429:
+                                            if (str4.equals("fugu")) {
+                                                c10 = 'K';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3284551:
+                                            if (str4.equals("kate")) {
+                                                c10 = 'L';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3351335:
+                                            if (str4.equals("mido")) {
+                                                c10 = 'M';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 3386211:
+                                            if (str4.equals("p212")) {
+                                                c10 = 'N';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 41325051:
+                                            if (str4.equals("MEIZU_M5")) {
+                                                c10 = 'O';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 51349633:
+                                            if (str4.equals("601LV")) {
+                                                c10 = 'P';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 51350594:
+                                            if (str4.equals("602LV")) {
+                                                c10 = 'Q';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 55178625:
+                                            if (str4.equals("Aura_Note_2")) {
+                                                c10 = 'R';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 61542055:
+                                            if (str4.equals("A1601")) {
+                                                c10 = 'S';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 65355429:
+                                            if (str4.equals("E5643")) {
+                                                c10 = 'T';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66214468:
+                                            if (str4.equals("F3111")) {
+                                                c10 = 'U';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66214470:
+                                            if (str4.equals("F3113")) {
+                                                c10 = 'V';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66214473:
+                                            if (str4.equals("F3116")) {
+                                                c10 = 'W';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66215429:
+                                            if (str4.equals("F3211")) {
+                                                c10 = 'X';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66215431:
+                                            if (str4.equals("F3213")) {
+                                                c10 = 'Y';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66215433:
+                                            if (str4.equals("F3215")) {
+                                                c10 = 'Z';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 66216390:
+                                            if (str4.equals("F3311")) {
+                                                c10 = '[';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 76402249:
+                                            if (str4.equals("PRO7S")) {
+                                                c10 = '\\';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 76404105:
+                                            if (str4.equals("Q4260")) {
+                                                c10 = ']';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 76404911:
+                                            if (str4.equals("Q4310")) {
+                                                c10 = '^';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 80963634:
+                                            if (str4.equals("V23GB")) {
+                                                c10 = '_';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 82882791:
+                                            if (str4.equals("X3_HK")) {
+                                                c10 = '`';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 98715550:
+                                            if (str4.equals("i9031")) {
+                                                c10 = 'a';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 101370885:
+                                            if (str4.equals("l5460")) {
+                                                c10 = 'b';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 102844228:
+                                            if (str4.equals("le_x6")) {
+                                                c10 = 'c';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 165221241:
+                                            if (str4.equals("A2016a40")) {
+                                                c10 = 'd';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 182191441:
+                                            if (str4.equals("CPY83_I00")) {
+                                                c10 = 'e';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 245388979:
+                                            if (str4.equals("marino_f")) {
+                                                c10 = 'f';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 287431619:
+                                            if (str4.equals("griffin")) {
+                                                c10 = 'g';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 307593612:
+                                            if (str4.equals("A7010a48")) {
+                                                c10 = 'h';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 308517133:
+                                            if (str4.equals("A7020a48")) {
+                                                c10 = 'i';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 316215098:
+                                            if (str4.equals("TB3-730F")) {
+                                                c10 = 'j';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 316215116:
+                                            if (str4.equals("TB3-730X")) {
+                                                c10 = 'k';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 316246811:
+                                            if (str4.equals("TB3-850F")) {
+                                                c10 = 'l';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 316246818:
+                                            if (str4.equals("TB3-850M")) {
+                                                c10 = 'm';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 407160593:
+                                            if (str4.equals("Pixi5-10_4G")) {
+                                                c10 = 'n';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 507412548:
+                                            if (str4.equals("QM16XE_U")) {
+                                                c10 = 'o';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 793982701:
+                                            if (str4.equals("GIONEE_WBL5708")) {
+                                                c10 = 'p';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 794038622:
+                                            if (str4.equals("GIONEE_WBL7365")) {
+                                                c10 = 'q';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 794040393:
+                                            if (str4.equals("GIONEE_WBL7519")) {
+                                                c10 = 'r';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 835649806:
+                                            if (str4.equals("manning")) {
+                                                c10 = 's';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 917340916:
+                                            if (str4.equals("A7000plus")) {
+                                                c10 = 't';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 958008161:
+                                            if (str4.equals("j2xlteins")) {
+                                                c10 = 'u';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1060579533:
+                                            if (str4.equals("panell_d")) {
+                                                c10 = 'v';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1150207623:
+                                            if (str4.equals("LS-5017")) {
+                                                c10 = 'w';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1176899427:
+                                            if (str4.equals("itel_S41")) {
+                                                c10 = 'x';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1280332038:
+                                            if (str4.equals("hwALE-H")) {
+                                                c10 = 'y';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1306947716:
+                                            if (str4.equals("EverStar_S")) {
+                                                c10 = 'z';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1349174697:
+                                            if (str4.equals("htc_e56ml_dtul")) {
+                                                c10 = '{';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1522194893:
+                                            if (str4.equals("woods_f")) {
+                                                c10 = '|';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1691543273:
+                                            if (str4.equals("CPH1609")) {
+                                                c10 = '}';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1691544261:
+                                            if (str4.equals("CPH1715")) {
+                                                c10 = '~';
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1709443163:
+                                            if (str4.equals("iball8735_9806")) {
+                                                c10 = 127;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1865889110:
+                                            if (str4.equals("santoni")) {
+                                                c10 = 128;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1906253259:
+                                            if (str4.equals("PB2-670M")) {
+                                                c10 = 129;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 1977196784:
+                                            if (str4.equals("Infinix-X572")) {
+                                                c10 = 130;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2006372676:
+                                            if (str4.equals("BRAVIA_ATV3_4K")) {
+                                                c10 = 131;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2019281702:
+                                            if (str4.equals("DM-01K")) {
+                                                c10 = 132;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2029784656:
+                                            if (str4.equals("HWBLN-H")) {
+                                                c10 = 133;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2030379515:
+                                            if (str4.equals("HWCAM-H")) {
+                                                c10 = 134;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2033393791:
+                                            if (str4.equals("ASUS_X00AD_2")) {
+                                                c10 = 135;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2047190025:
+                                            if (str4.equals("ELUGA_Note")) {
+                                                c10 = 136;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2047252157:
+                                            if (str4.equals("ELUGA_Prim")) {
+                                                c10 = 137;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2048319463:
+                                            if (str4.equals("HWVNS-H")) {
+                                                c10 = 138;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        case 2048855701:
+                                            if (str4.equals("HWWAS-H")) {
+                                                c10 = 139;
+                                                break;
+                                            }
+                                            c10 = 65535;
+                                            break;
+                                        default:
+                                            c10 = 65535;
+                                            break;
+                                    }
+                                    switch (c10) {
+                                    }
+                                }
+                                break;
+                            case false:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                            case true:
+                                break;
+                        }
+                        O1 = z12;
+                        N1 = true;
+                    }
+                    z12 = true;
+                    O1 = z12;
+                    N1 = true;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return O1;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -114,7 +1333,7 @@ public final class n extends r2.r {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int A0(r2.o oVar, b2.s sVar) {
+    public static int z0(r2.p pVar, b2.s sVar) {
         int i10 = sVar.y;
         int i11 = sVar.z;
         if (i10 != -1 && i11 != -1) {
@@ -193,7 +1412,7 @@ public final class n extends r2.r {
                     return Math.max(TLObject.FLAG_21, ((i10 * i11) * 3) / 4);
                 case 4:
                     String str2 = Build.MODEL;
-                    if (!"BRAVIA 4K 2015".equals(str2) && (!"Amazon".equals(Build.MANUFACTURER) || (!"KFSOWI".equals(str2) && (!"AFTS".equals(str2) || !oVar.f)))) {
+                    if (!"BRAVIA 4K 2015".equals(str2) && (!"Amazon".equals(Build.MANUFACTURER) || (!"KFSOWI".equals(str2) && (!"AFTS".equals(str2) || !pVar.f)))) {
                         return ((e2.d0.f(i11, 16) * e2.d0.f(i10, 16)) * 768) / 4;
                     }
                     break;
@@ -204,1287 +1423,52 @@ public final class n extends r2.r {
         return -1;
     }
 
-    public static List B0(Context context, r2.i iVar, b2.s sVar, boolean z10, boolean z11) {
-        String str = sVar.r;
-        if (str == null) {
-            return a1.e;
-        }
-        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(str) && !c2.d.d(context)) {
-            String b10 = r2.x.b(sVar);
-            List a2 = b10 == null ? a1.e : iVar.a(b10, z10, z11);
-            if (!a2.isEmpty()) {
-                return a2;
-            }
-        }
-        return r2.x.f(iVar, sVar, z10, z11);
-    }
-
-    public static int C0(r2.o oVar, b2.s sVar) {
-        int i10 = sVar.s;
-        List list = sVar.u;
-        if (i10 == -1) {
-            return A0(oVar, sVar);
-        }
-        int size = list.size();
-        int i11 = 0;
-        for (int i12 = 0; i12 < size; i12++) {
-            i11 += ((byte[]) list.get(i12)).length;
-        }
-        return sVar.s + i11;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0742, code lost:
-    
-        if (r0.equals("ELUGA_Ray_X") == false) goto L101;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cc, code lost:
-    
-        if (r13.equals("JSN-L21") == false) goto L664;
-     */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[FALL_THROUGH] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean z0(String str) {
-        char c10;
-        char c11;
-        boolean z10 = false;
-        if (str.startsWith("OMX.google")) {
-            return false;
-        }
-        synchronized (n.class) {
-            try {
-                if (!O1) {
-                    int i10 = Build.VERSION.SDK_INT;
-                    char c12 = 28;
-                    if (i10 <= 28) {
-                        String str2 = Build.DEVICE;
-                        str2.getClass();
-                        switch (str2.hashCode()) {
-                            case -1339091551:
-                                if (str2.equals("dangal")) {
-                                    c11 = 0;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case -1220081023:
-                                if (str2.equals("dangalFHD")) {
-                                    c11 = 1;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case -1220066608:
-                                if (str2.equals("dangalUHD")) {
-                                    c11 = 2;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case -1012436106:
-                                if (str2.equals("oneday")) {
-                                    c11 = 3;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case -760312546:
-                                if (str2.equals("aquaman")) {
-                                    c11 = 4;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case -64886864:
-                                if (str2.equals("magnolia")) {
-                                    c11 = 5;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case 3415681:
-                                if (str2.equals("once")) {
-                                    c11 = 6;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            case 825323514:
-                                if (str2.equals("machuca")) {
-                                    c11 = 7;
-                                    break;
-                                }
-                                c11 = 65535;
-                                break;
-                            default:
-                                c11 = 65535;
-                                break;
-                        }
-                        switch (c11) {
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                            case 7:
-                                z10 = true;
-                                break;
-                        }
-                        P1 = z10;
-                        O1 = true;
-                    }
-                    if (i10 > 27 || !"HWEML".equals(Build.DEVICE)) {
-                        String str3 = Build.MODEL;
-                        str3.getClass();
-                        switch (str3.hashCode()) {
-                            case -349662828:
-                                if (str3.equals("AFTJMST12")) {
-                                    c10 = 0;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case -321033677:
-                                if (str3.equals("AFTKMST12")) {
-                                    c10 = 1;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 2006354:
-                                if (str3.equals("AFTA")) {
-                                    c10 = 2;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 2006367:
-                                if (str3.equals("AFTN")) {
-                                    c10 = 3;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 2006371:
-                                if (str3.equals("AFTR")) {
-                                    c10 = 4;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 1785421873:
-                                if (str3.equals("AFTEU011")) {
-                                    c10 = 5;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 1785421876:
-                                if (str3.equals("AFTEU014")) {
-                                    c10 = 6;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 1798172390:
-                                if (str3.equals("AFTSO001")) {
-                                    c10 = 7;
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            case 2119412532:
-                                if (str3.equals("AFTEUFF014")) {
-                                    c10 = '\b';
-                                    break;
-                                }
-                                c10 = 65535;
-                                break;
-                            default:
-                                c10 = 65535;
-                                break;
-                        }
-                        switch (c10) {
-                            default:
-                                if (i10 <= 26) {
-                                    String str4 = Build.DEVICE;
-                                    str4.getClass();
-                                    switch (str4.hashCode()) {
-                                        case -2144781245:
-                                            if (str4.equals("GIONEE_SWW1609")) {
-                                                c12 = 0;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -2144781185:
-                                            if (str4.equals("GIONEE_SWW1627")) {
-                                                c12 = 1;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -2144781160:
-                                            if (str4.equals("GIONEE_SWW1631")) {
-                                                c12 = 2;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -2097309513:
-                                            if (str4.equals("K50a40")) {
-                                                c12 = 3;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -2022874474:
-                                            if (str4.equals("CP8676_I02")) {
-                                                c12 = 4;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1978993182:
-                                            if (str4.equals("NX541J")) {
-                                                c12 = 5;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1978990237:
-                                            if (str4.equals("NX573J")) {
-                                                c12 = 6;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1936688988:
-                                            if (str4.equals("PGN528")) {
-                                                c12 = 7;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1936688066:
-                                            if (str4.equals("PGN610")) {
-                                                c12 = '\b';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1936688065:
-                                            if (str4.equals("PGN611")) {
-                                                c12 = '\t';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1931988508:
-                                            if (str4.equals("AquaPowerM")) {
-                                                c12 = '\n';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1885099851:
-                                            if (str4.equals("RAIJIN")) {
-                                                c12 = 11;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1696512866:
-                                            if (str4.equals("XT1663")) {
-                                                c12 = '\f';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1680025915:
-                                            if (str4.equals("ComioS1")) {
-                                                c12 = '\r';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1615810839:
-                                            if (str4.equals("Phantom6")) {
-                                                c12 = 14;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1600724499:
-                                            if (str4.equals("pacificrim")) {
-                                                c12 = 15;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1554255044:
-                                            if (str4.equals("vernee_M5")) {
-                                                c12 = 16;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1481772737:
-                                            if (str4.equals("panell_dl")) {
-                                                c12 = 17;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1481772730:
-                                            if (str4.equals("panell_ds")) {
-                                                c12 = 18;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1481772729:
-                                            if (str4.equals("panell_dt")) {
-                                                c12 = 19;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1320080169:
-                                            if (str4.equals("GiONEE_GBL7319")) {
-                                                c12 = 20;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1217592143:
-                                            if (str4.equals("BRAVIA_ATV2")) {
-                                                c12 = 21;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1180384755:
-                                            if (str4.equals("iris60")) {
-                                                c12 = 22;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1139198265:
-                                            if (str4.equals("Slate_Pro")) {
-                                                c12 = 23;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -1052835013:
-                                            if (str4.equals("namath")) {
-                                                c12 = 24;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -993250464:
-                                            if (str4.equals("A10-70F")) {
-                                                c12 = 25;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -993250458:
-                                            if (str4.equals("A10-70L")) {
-                                                c12 = 26;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -965403638:
-                                            if (str4.equals("s905x018")) {
-                                                c12 = 27;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -958336948:
-                                            break;
-                                        case -879245230:
-                                            if (str4.equals("tcl_eu")) {
-                                                c12 = 29;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -842500323:
-                                            if (str4.equals("nicklaus_f")) {
-                                                c12 = 30;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -821392978:
-                                            if (str4.equals("A7000-a")) {
-                                                c12 = 31;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -797483286:
-                                            if (str4.equals("SVP-DTV15")) {
-                                                c12 = ' ';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -794946968:
-                                            if (str4.equals("watson")) {
-                                                c12 = '!';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -788334647:
-                                            if (str4.equals("whyred")) {
-                                                c12 = '\"';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -782144577:
-                                            if (str4.equals("OnePlus5T")) {
-                                                c12 = '#';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -575125681:
-                                            if (str4.equals("GiONEE_CBL7513")) {
-                                                c12 = '$';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -521118391:
-                                            if (str4.equals("GIONEE_GBL7360")) {
-                                                c12 = '%';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -430914369:
-                                            if (str4.equals("Pixi4-7_3G")) {
-                                                c12 = '&';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -290434366:
-                                            if (str4.equals("taido_row")) {
-                                                c12 = '\'';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -282781963:
-                                            if (str4.equals("BLACK-1X")) {
-                                                c12 = '(';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -277133239:
-                                            if (str4.equals("Z12_PRO")) {
-                                                c12 = ')';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -173639913:
-                                            if (str4.equals("ELUGA_A3_Pro")) {
-                                                c12 = '*';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case -56598463:
-                                            if (str4.equals("woods_fn")) {
-                                                c12 = '+';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2126:
-                                            if (str4.equals("C1")) {
-                                                c12 = ',';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2564:
-                                            if (str4.equals("Q5")) {
-                                                c12 = '-';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2715:
-                                            if (str4.equals("V1")) {
-                                                c12 = '.';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2719:
-                                            if (str4.equals("V5")) {
-                                                c12 = '/';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3091:
-                                            if (str4.equals("b5")) {
-                                                c12 = '0';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3483:
-                                            if (str4.equals("mh")) {
-                                                c12 = '1';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 73405:
-                                            if (str4.equals("JGZ")) {
-                                                c12 = '2';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 75537:
-                                            if (str4.equals("M04")) {
-                                                c12 = '3';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 75739:
-                                            if (str4.equals("M5c")) {
-                                                c12 = '4';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 76779:
-                                            if (str4.equals("MX6")) {
-                                                c12 = '5';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 78669:
-                                            if (str4.equals("P85")) {
-                                                c12 = '6';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 79305:
-                                            if (str4.equals("PLE")) {
-                                                c12 = '7';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 80618:
-                                            if (str4.equals("QX1")) {
-                                                c12 = '8';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 88274:
-                                            if (str4.equals("Z80")) {
-                                                c12 = '9';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 98846:
-                                            if (str4.equals("cv1")) {
-                                                c12 = ':';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 98848:
-                                            if (str4.equals("cv3")) {
-                                                c12 = ';';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 99329:
-                                            if (str4.equals("deb")) {
-                                                c12 = '<';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 101481:
-                                            if (str4.equals("flo")) {
-                                                c12 = '=';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1513190:
-                                            if (str4.equals("1601")) {
-                                                c12 = '>';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1514184:
-                                            if (str4.equals("1713")) {
-                                                c12 = '?';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1514185:
-                                            if (str4.equals("1714")) {
-                                                c12 = '@';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133089:
-                                            if (str4.equals("F01H")) {
-                                                c12 = 'A';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133091:
-                                            if (str4.equals("F01J")) {
-                                                c12 = 'B';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133120:
-                                            if (str4.equals("F02H")) {
-                                                c12 = 'C';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133151:
-                                            if (str4.equals("F03H")) {
-                                                c12 = 'D';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133182:
-                                            if (str4.equals("F04H")) {
-                                                c12 = 'E';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2133184:
-                                            if (str4.equals("F04J")) {
-                                                c12 = 'F';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2436959:
-                                            if (str4.equals("P681")) {
-                                                c12 = 'G';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2463773:
-                                            if (str4.equals("Q350")) {
-                                                c12 = 'H';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2464648:
-                                            if (str4.equals("Q427")) {
-                                                c12 = 'I';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2689555:
-                                            if (str4.equals("XE2X")) {
-                                                c12 = 'J';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3154429:
-                                            if (str4.equals("fugu")) {
-                                                c12 = 'K';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3284551:
-                                            if (str4.equals("kate")) {
-                                                c12 = 'L';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3351335:
-                                            if (str4.equals("mido")) {
-                                                c12 = 'M';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 3386211:
-                                            if (str4.equals("p212")) {
-                                                c12 = 'N';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 41325051:
-                                            if (str4.equals("MEIZU_M5")) {
-                                                c12 = 'O';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 51349633:
-                                            if (str4.equals("601LV")) {
-                                                c12 = 'P';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 51350594:
-                                            if (str4.equals("602LV")) {
-                                                c12 = 'Q';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 55178625:
-                                            if (str4.equals("Aura_Note_2")) {
-                                                c12 = 'R';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 61542055:
-                                            if (str4.equals("A1601")) {
-                                                c12 = 'S';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 65355429:
-                                            if (str4.equals("E5643")) {
-                                                c12 = 'T';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66214468:
-                                            if (str4.equals("F3111")) {
-                                                c12 = 'U';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66214470:
-                                            if (str4.equals("F3113")) {
-                                                c12 = 'V';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66214473:
-                                            if (str4.equals("F3116")) {
-                                                c12 = 'W';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66215429:
-                                            if (str4.equals("F3211")) {
-                                                c12 = 'X';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66215431:
-                                            if (str4.equals("F3213")) {
-                                                c12 = 'Y';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66215433:
-                                            if (str4.equals("F3215")) {
-                                                c12 = 'Z';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 66216390:
-                                            if (str4.equals("F3311")) {
-                                                c12 = '[';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 76402249:
-                                            if (str4.equals("PRO7S")) {
-                                                c12 = '\\';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 76404105:
-                                            if (str4.equals("Q4260")) {
-                                                c12 = ']';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 76404911:
-                                            if (str4.equals("Q4310")) {
-                                                c12 = '^';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 80963634:
-                                            if (str4.equals("V23GB")) {
-                                                c12 = '_';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 82882791:
-                                            if (str4.equals("X3_HK")) {
-                                                c12 = '`';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 98715550:
-                                            if (str4.equals("i9031")) {
-                                                c12 = 'a';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 101370885:
-                                            if (str4.equals("l5460")) {
-                                                c12 = 'b';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 102844228:
-                                            if (str4.equals("le_x6")) {
-                                                c12 = 'c';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 165221241:
-                                            if (str4.equals("A2016a40")) {
-                                                c12 = 'd';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 182191441:
-                                            if (str4.equals("CPY83_I00")) {
-                                                c12 = 'e';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 245388979:
-                                            if (str4.equals("marino_f")) {
-                                                c12 = 'f';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 287431619:
-                                            if (str4.equals("griffin")) {
-                                                c12 = 'g';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 307593612:
-                                            if (str4.equals("A7010a48")) {
-                                                c12 = 'h';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 308517133:
-                                            if (str4.equals("A7020a48")) {
-                                                c12 = 'i';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 316215098:
-                                            if (str4.equals("TB3-730F")) {
-                                                c12 = 'j';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 316215116:
-                                            if (str4.equals("TB3-730X")) {
-                                                c12 = 'k';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 316246811:
-                                            if (str4.equals("TB3-850F")) {
-                                                c12 = 'l';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 316246818:
-                                            if (str4.equals("TB3-850M")) {
-                                                c12 = 'm';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 407160593:
-                                            if (str4.equals("Pixi5-10_4G")) {
-                                                c12 = 'n';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 507412548:
-                                            if (str4.equals("QM16XE_U")) {
-                                                c12 = 'o';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 793982701:
-                                            if (str4.equals("GIONEE_WBL5708")) {
-                                                c12 = 'p';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 794038622:
-                                            if (str4.equals("GIONEE_WBL7365")) {
-                                                c12 = 'q';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 794040393:
-                                            if (str4.equals("GIONEE_WBL7519")) {
-                                                c12 = 'r';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 835649806:
-                                            if (str4.equals("manning")) {
-                                                c12 = 's';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 917340916:
-                                            if (str4.equals("A7000plus")) {
-                                                c12 = 't';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 958008161:
-                                            if (str4.equals("j2xlteins")) {
-                                                c12 = 'u';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1060579533:
-                                            if (str4.equals("panell_d")) {
-                                                c12 = 'v';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1150207623:
-                                            if (str4.equals("LS-5017")) {
-                                                c12 = 'w';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1176899427:
-                                            if (str4.equals("itel_S41")) {
-                                                c12 = 'x';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1280332038:
-                                            if (str4.equals("hwALE-H")) {
-                                                c12 = 'y';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1306947716:
-                                            if (str4.equals("EverStar_S")) {
-                                                c12 = 'z';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1349174697:
-                                            if (str4.equals("htc_e56ml_dtul")) {
-                                                c12 = '{';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1522194893:
-                                            if (str4.equals("woods_f")) {
-                                                c12 = '|';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1691543273:
-                                            if (str4.equals("CPH1609")) {
-                                                c12 = '}';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1691544261:
-                                            if (str4.equals("CPH1715")) {
-                                                c12 = '~';
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1709443163:
-                                            if (str4.equals("iball8735_9806")) {
-                                                c12 = 127;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1865889110:
-                                            if (str4.equals("santoni")) {
-                                                c12 = 128;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1906253259:
-                                            if (str4.equals("PB2-670M")) {
-                                                c12 = 129;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 1977196784:
-                                            if (str4.equals("Infinix-X572")) {
-                                                c12 = 130;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2006372676:
-                                            if (str4.equals("BRAVIA_ATV3_4K")) {
-                                                c12 = 131;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2019281702:
-                                            if (str4.equals("DM-01K")) {
-                                                c12 = 132;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2029784656:
-                                            if (str4.equals("HWBLN-H")) {
-                                                c12 = 133;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2030379515:
-                                            if (str4.equals("HWCAM-H")) {
-                                                c12 = 134;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2033393791:
-                                            if (str4.equals("ASUS_X00AD_2")) {
-                                                c12 = 135;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2047190025:
-                                            if (str4.equals("ELUGA_Note")) {
-                                                c12 = 136;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2047252157:
-                                            if (str4.equals("ELUGA_Prim")) {
-                                                c12 = 137;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2048319463:
-                                            if (str4.equals("HWVNS-H")) {
-                                                c12 = 138;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        case 2048855701:
-                                            if (str4.equals("HWWAS-H")) {
-                                                c12 = 139;
-                                                break;
-                                            }
-                                            c12 = 65535;
-                                            break;
-                                        default:
-                                            c12 = 65535;
-                                            break;
-                                    }
-                                    switch (c12) {
-                                    }
-                                }
-                                break;
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                            case 7:
-                            case '\b':
-                                break;
-                        }
-                        P1 = z10;
-                        O1 = true;
-                    }
-                    z10 = true;
-                    P1 = z10;
-                    O1 = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return P1;
-    }
-
-    @Override // r2.r
-    public final i2.h D(r2.o oVar, b2.s sVar, b2.s sVar2) {
-        i2.h b10 = oVar.b(sVar, sVar2);
-        int i10 = b10.e;
-        l lVar = this.g1;
-        lVar.getClass();
-        if (sVar2.y > lVar.a || sVar2.z > lVar.b) {
-            i10 |= 256;
-        }
-        if (C0(oVar, sVar2) > lVar.c) {
-            i10 |= 64;
-        }
-        int i11 = i10;
-        return new i2.h(oVar.a, sVar, sVar2, i11 != 0 ? 0 : b10.d, i11);
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:29:0x0056  */
     /* JADX WARN: Removed duplicated region for block: B:32:0x0070 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:64:0x0059  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Surface D0(r2.o oVar) {
+    public final Surface C0(r2.p pVar) {
         boolean z10;
-        o oVar2;
-        o0 o0Var = this.j1;
+        o oVar;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             return o0Var.c();
         }
-        Surface surface = this.n1;
+        Surface surface = this.m1;
         if (surface != null) {
             return surface;
         }
-        if (Build.VERSION.SDK_INT >= 35 && oVar.h) {
+        if (Build.VERSION.SDK_INT >= 35 && pVar.h) {
             return null;
         }
-        e2.d.g(L0(oVar));
-        p pVar = this.o1;
-        if (pVar != null && pVar.a != oVar.f && pVar != null) {
-            pVar.release();
-            this.o1 = null;
+        e2.d.g(L0(pVar));
+        p pVar2 = this.n1;
+        if (pVar2 != null && pVar2.a != pVar.f && pVar2 != null) {
+            pVar2.release();
+            this.n1 = null;
         }
-        if (this.o1 == null) {
-            Context context = this.X0;
-            boolean z11 = oVar.f;
+        if (this.n1 == null) {
+            Context context = this.W0;
+            boolean z11 = pVar.f;
             boolean z12 = false;
             if (!z11) {
                 int i10 = p.d;
             } else if (!p.b(context)) {
                 z10 = false;
                 e2.d.g(z10);
-                oVar2 = new o("ExoPlayer:PlaceholderSurface");
+                oVar = new o("ExoPlayer:PlaceholderSurface");
                 int i11 = !z11 ? p.d : 0;
-                oVar2.start();
-                Handler handler = new Handler(oVar2.getLooper(), oVar2);
-                oVar2.b = handler;
-                oVar2.a = new e2.j(handler);
-                synchronized (oVar2) {
-                    oVar2.b.obtainMessage(1, i11, 0).sendToTarget();
-                    while (oVar2.e == null && oVar2.d == null && oVar2.c == null) {
+                oVar.start();
+                Handler handler = new Handler(oVar.getLooper(), oVar);
+                oVar.b = handler;
+                oVar.a = new e2.j(handler);
+                synchronized (oVar) {
+                    oVar.b.obtainMessage(1, i11, 0).sendToTarget();
+                    while (oVar.e == null && oVar.d == null && oVar.c == null) {
                         try {
-                            oVar2.wait();
+                            oVar.wait();
                         } catch (InterruptedException unused) {
                             z12 = true;
                         }
@@ -1493,37 +1477,64 @@ public final class n extends r2.r {
                 if (z12) {
                     Thread.currentThread().interrupt();
                 }
-                RuntimeException runtimeException = oVar2.d;
+                RuntimeException runtimeException = oVar.d;
                 if (runtimeException != null) {
                     throw runtimeException;
                 }
-                Error error = oVar2.c;
+                Error error = oVar.c;
                 if (error != null) {
                     throw error;
                 }
-                p pVar2 = oVar2.e;
-                pVar2.getClass();
-                this.o1 = pVar2;
+                p pVar3 = oVar.e;
+                pVar3.getClass();
+                this.n1 = pVar3;
             }
             z10 = true;
             e2.d.g(z10);
-            oVar2 = new o("ExoPlayer:PlaceholderSurface");
+            oVar = new o("ExoPlayer:PlaceholderSurface");
             if (!z11) {
             }
-            oVar2.start();
-            Handler handler2 = new Handler(oVar2.getLooper(), oVar2);
-            oVar2.b = handler2;
-            oVar2.a = new e2.j(handler2);
-            synchronized (oVar2) {
+            oVar.start();
+            Handler handler2 = new Handler(oVar.getLooper(), oVar);
+            oVar.b = handler2;
+            oVar.a = new e2.j(handler2);
+            synchronized (oVar) {
             }
         }
-        return this.o1;
+        return this.n1;
     }
 
-    @Override // r2.r
-    public final r2.n E(IllegalStateException illegalStateException, r2.o oVar) {
-        Surface surface = this.n1;
-        i iVar = new i(illegalStateException, oVar);
+    @Override // r2.s
+    public final i2.h D(r2.p pVar, b2.s sVar, b2.s sVar2) {
+        i2.h b10 = pVar.b(sVar, sVar2);
+        int i10 = b10.e;
+        l lVar = this.f1;
+        lVar.getClass();
+        if (sVar2.y > lVar.a || sVar2.z > lVar.b) {
+            i10 |= 256;
+        }
+        if (B0(pVar, sVar2) > lVar.c) {
+            i10 |= 64;
+        }
+        int i11 = i10;
+        return new i2.h(pVar.a, sVar, sVar2, i11 != 0 ? 0 : b10.d, i11);
+    }
+
+    public final boolean D0(r2.p pVar) {
+        if (this.i1 != null) {
+            return true;
+        }
+        Surface surface = this.m1;
+        if (surface == null || !surface.isValid()) {
+            return (Build.VERSION.SDK_INT >= 35 && pVar.h) || L0(pVar);
+        }
+        return true;
+    }
+
+    @Override // r2.s
+    public final r2.o E(IllegalStateException illegalStateException, r2.p pVar) {
+        Surface surface = this.m1;
+        i iVar = new i(illegalStateException, pVar);
         System.identityHashCode(surface);
         if (surface != null) {
             surface.isValid();
@@ -1531,124 +1542,138 @@ public final class n extends r2.r {
         return iVar;
     }
 
-    public final boolean E0(r2.o oVar) {
-        if (this.j1 != null) {
-            return true;
-        }
-        Surface surface = this.n1;
-        if (surface == null || !surface.isValid()) {
-            return (Build.VERSION.SDK_INT >= 35 && oVar.h) || L0(oVar);
-        }
-        return true;
-    }
-
-    public final boolean F0(h2.h hVar) {
+    public final boolean E0(h2.h hVar) {
         if (k() || hVar.isLastSample()) {
             return true;
         }
-        long j3 = this.K1;
-        return j3 == -9223372036854775807L || j3 - (hVar.e - this.P0.c) <= 100000;
+        long j3 = this.J1;
+        return j3 == -9223372036854775807L || j3 - (hVar.e - this.O0.c) <= 100000;
     }
 
-    public final void G0() {
-        if (this.u1 > 0) {
+    public final void F0() {
+        if (this.t1 > 0) {
             this.h.getClass();
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j3 = elapsedRealtime - this.t1;
-            int i10 = this.u1;
-            of.b bVar = this.Z0;
+            long j3 = elapsedRealtime - this.s1;
+            int i10 = this.t1;
+            pf.b bVar = this.Y0;
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
                 handler.post(new i0(bVar, i10, j3));
             }
-            this.u1 = 0;
-            this.t1 = elapsedRealtime;
+            this.t1 = 0;
+            this.s1 = elapsedRealtime;
         }
     }
 
-    public final void H0() {
-        int i10;
-        r2.l lVar;
-        if (!this.F1 || (i10 = Build.VERSION.SDK_INT) < 23 || (lVar = this.b0) == null) {
-            return;
-        }
-        this.H1 = new m(this, lVar);
-        if (i10 >= 33) {
-            Bundle bundle = new Bundle();
-            bundle.putInt("tunnel-peek", 1);
-            lVar.setParameters(bundle);
+    public final void G0() {
+        if (this.E1) {
+            int i10 = Build.VERSION.SDK_INT;
+            r2.m mVar = this.b0;
+            if (mVar == null) {
+                return;
+            }
+            this.G1 = new m(this, mVar);
+            if (i10 >= 33) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("tunnel-peek", 1);
+                mVar.setParameters(bundle);
+            }
         }
     }
 
-    public final void I0(r2.l lVar, int i10, long j3) {
+    public final void H0(long j3) {
+        Surface surface;
+        x0(j3);
+        x1 x1Var = this.B1;
+        boolean equals = x1Var.equals(x1.d);
+        pf.b bVar = this.Y0;
+        if (!equals && !x1Var.equals(this.C1)) {
+            this.C1 = x1Var;
+            bVar.V(x1Var);
+        }
+        this.N0.e++;
+        a0 a0Var = this.b1;
+        boolean z10 = a0Var.e != 3;
+        a0Var.e = 3;
+        a0Var.l.getClass();
+        a0Var.g = e2.d0.P(SystemClock.elapsedRealtime());
+        if (z10 && (surface = this.m1) != null) {
+            bVar.R(surface);
+            this.p1 = true;
+        }
+        c0(j3);
+    }
+
+    public final void I0(r2.m mVar, int i10, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.g(i10, j3);
+        mVar.f(i10, j3);
         Trace.endSection();
-        this.O0.e++;
-        this.v1 = 0;
-        if (this.j1 == null) {
-            x1 x1Var = this.C1;
+        this.N0.e++;
+        this.u1 = 0;
+        if (this.i1 == null) {
+            x1 x1Var = this.B1;
             boolean equals = x1Var.equals(x1.d);
-            of.b bVar = this.Z0;
-            if (!equals && !x1Var.equals(this.D1)) {
-                this.D1 = x1Var;
-                bVar.S(x1Var);
+            pf.b bVar = this.Y0;
+            if (!equals && !x1Var.equals(this.C1)) {
+                this.C1 = x1Var;
+                bVar.V(x1Var);
             }
-            a0 a0Var = this.c1;
+            a0 a0Var = this.b1;
             boolean z10 = a0Var.e != 3;
             a0Var.e = 3;
             a0Var.l.getClass();
-            a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
-            if (!z10 || (surface = this.n1) == null) {
+            a0Var.g = e2.d0.P(SystemClock.elapsedRealtime());
+            if (!z10 || (surface = this.m1) == null) {
                 return;
             }
-            bVar.M(surface);
-            this.q1 = true;
+            bVar.R(surface);
+            this.p1 = true;
         }
     }
 
     public final void J0(Object obj) {
         Surface surface = obj instanceof Surface ? (Surface) obj : null;
-        Surface surface2 = this.n1;
-        of.b bVar = this.Z0;
+        Surface surface2 = this.m1;
+        pf.b bVar = this.Y0;
         if (surface2 == surface) {
             if (surface != null) {
-                x1 x1Var = this.D1;
+                x1 x1Var = this.C1;
                 if (x1Var != null) {
-                    bVar.S(x1Var);
+                    bVar.V(x1Var);
                 }
-                Surface surface3 = this.n1;
-                if (surface3 == null || !this.q1) {
+                Surface surface3 = this.m1;
+                if (surface3 == null || !this.p1) {
                     return;
                 }
-                bVar.M(surface3);
+                bVar.R(surface3);
                 return;
             }
             return;
         }
-        this.n1 = surface;
-        o0 o0Var = this.j1;
-        a0 a0Var = this.c1;
+        this.m1 = surface;
+        o0 o0Var = this.i1;
+        a0 a0Var = this.b1;
         if (o0Var == null) {
             a0Var.h(surface);
         }
-        this.q1 = false;
+        this.p1 = false;
         int i10 = this.n;
-        r2.l lVar = this.b0;
-        if (lVar != null && this.j1 == null) {
-            r2.o oVar = this.i0;
-            oVar.getClass();
-            boolean E0 = E0(oVar);
+        r2.m mVar = this.b0;
+        if (mVar != null && this.i1 == null) {
+            r2.p pVar = this.i0;
+            pVar.getClass();
+            boolean D0 = D0(pVar);
             int i11 = Build.VERSION.SDK_INT;
-            if (i11 < 23 || !E0 || this.h1) {
-                j0();
-                U();
+            if (!D0 || this.g1) {
+                i0();
+                T();
             } else {
-                Surface D0 = D0(oVar);
-                if (i11 >= 23 && D0 != null) {
+                Surface C0 = C0(pVar);
+                if (C0 != null) {
                     try {
-                        lVar.k(D0);
+                        mVar.j(C0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new x(th2);
@@ -1657,57 +1682,57 @@ public final class n extends r2.r {
                     if (i11 < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.e();
+                    mVar.e();
                 }
             }
         }
         if (surface != null) {
-            x1 x1Var2 = this.D1;
+            x1 x1Var2 = this.C1;
             if (x1Var2 != null) {
-                bVar.S(x1Var2);
+                bVar.V(x1Var2);
             }
         } else {
-            this.D1 = null;
-            o0 o0Var2 = this.j1;
+            this.C1 = null;
+            o0 o0Var2 = this.i1;
             if (o0Var2 != null) {
                 o0Var2.k();
             }
         }
         if (i10 == 2) {
-            o0 o0Var3 = this.j1;
+            o0 o0Var3 = this.i1;
             if (o0Var3 != null) {
                 o0Var3.q(true);
             } else {
                 a0Var.c(true);
             }
         }
-        H0();
+        G0();
     }
 
     public final boolean K0(long j3, long j10, boolean z10, boolean z11) {
-        if (this.j1 != null && this.Y0) {
-            j10 -= -this.J1;
+        if (this.i1 != null && this.X0) {
+            j10 -= -this.I1;
         }
         if (j3 < -500000 && !z10) {
-            c1 c1Var = this.r;
-            c1Var.getClass();
-            int j11 = c1Var.j(j10 - this.v);
+            b1 b1Var = this.r;
+            b1Var.getClass();
+            int j11 = b1Var.j(j10 - this.v);
             if (j11 != 0) {
-                PriorityQueue priorityQueue = this.f1;
+                PriorityQueue priorityQueue = this.e1;
                 if (z11) {
-                    i2.g gVar = this.O0;
+                    i2.g gVar = this.N0;
                     int i10 = gVar.d + j11;
                     gVar.d = i10;
-                    gVar.f += this.w1;
+                    gVar.f += this.v1;
                     gVar.d = priorityQueue.size() + i10;
                 } else {
-                    this.O0.j++;
-                    N0(priorityQueue.size() + j11, this.w1);
+                    this.N0.j++;
+                    N0(priorityQueue.size() + j11, this.v1);
                 }
                 if (J()) {
-                    U();
+                    T();
                 }
-                o0 o0Var = this.j1;
+                o0 o0Var = this.i1;
                 if (o0Var != null) {
                     o0Var.m(false);
                 }
@@ -1717,36 +1742,24 @@ public final class n extends r2.r {
         return false;
     }
 
-    @Override // r2.r
+    @Override // r2.s
     public final int L(h2.h hVar) {
         if (Build.VERSION.SDK_INT >= 34) {
-            return ((this.x1 == null && !this.F1) || hVar.e >= this.w || F0(hVar)) ? 0 : 32;
+            return ((this.w1 == null && !this.E1) || hVar.e >= this.w || E0(hVar)) ? 0 : 32;
         }
         return 0;
     }
 
-    public final boolean L0(r2.o oVar) {
-        if (Build.VERSION.SDK_INT < 23 || this.F1 || z0(oVar.a)) {
+    public final boolean L0(r2.p pVar) {
+        if (this.E1 || y0(pVar.a)) {
             return false;
         }
-        return !oVar.f || p.b(this.X0);
+        return !pVar.f || p.b(this.W0);
     }
 
-    @Override // r2.r
-    public final boolean M() {
-        return this.F1 && Build.VERSION.SDK_INT < 23;
-    }
-
-    public final void M0(r2.l lVar, int i10) {
-        Trace.beginSection("skipVideoBuffer");
-        lVar.c(i10);
-        Trace.endSection();
-        this.O0.f++;
-    }
-
-    @Override // r2.r
-    public final float N(float f7, b2.s sVar, b2.s[] sVarArr) {
-        r2.o oVar;
+    @Override // r2.s
+    public final float M(float f7, b2.s sVar, b2.s[] sVarArr) {
+        r2.p pVar;
         float f10 = -1.0f;
         for (b2.s sVar2 : sVarArr) {
             float f11 = sVar2.C;
@@ -1755,19 +1768,19 @@ public final class n extends r2.r {
             }
         }
         float f12 = f10 == -1.0f ? -1.0f : f10 * f7;
-        if (this.x1 == null || (oVar = this.i0) == null) {
+        if (this.w1 == null || (pVar = this.i0) == null) {
             return f12;
         }
         int i10 = sVar.y;
         int i11 = sVar.z;
         float f13 = -3.4028235E38f;
-        if (oVar.i) {
-            float f14 = oVar.l;
-            if (f14 != -3.4028235E38f && oVar.j == i10 && oVar.k == i11) {
+        if (pVar.i) {
+            float f14 = pVar.l;
+            if (f14 != -3.4028235E38f && pVar.j == i10 && pVar.k == i11) {
                 f13 = f14;
             } else {
                 float f15 = 1024.0f;
-                if (!oVar.g(i10, i11, 1024.0f)) {
+                if (!pVar.g(i10, i11, 1024.0f)) {
                     f13 = 0.0f;
                     while (true) {
                         float f16 = f15 - f13;
@@ -1775,7 +1788,7 @@ public final class n extends r2.r {
                             break;
                         }
                         float f17 = (f16 / 2.0f) + f13;
-                        if (oVar.g(i10, i11, f17)) {
+                        if (pVar.g(i10, i11, f17)) {
                             f13 = f17;
                         } else {
                             f15 = f17;
@@ -1784,49 +1797,56 @@ public final class n extends r2.r {
                 } else {
                     f13 = 1024.0f;
                 }
-                oVar.l = f13;
-                oVar.j = i10;
-                oVar.k = i11;
+                pVar.l = f13;
+                pVar.j = i10;
+                pVar.k = i11;
             }
         }
         return f12 != -1.0f ? Math.max(f12, f13) : f13;
     }
 
-    public final void N0(int i10, int i11) {
-        i2.g gVar = this.O0;
-        gVar.h += i10;
-        int i12 = i10 + i11;
-        gVar.g += i12;
-        this.u1 += i12;
-        int i13 = this.v1 + i12;
-        this.v1 = i13;
-        gVar.i = Math.max(i13, gVar.i);
-        int i14 = this.a1;
-        if (i14 <= 0 || this.u1 < i14) {
-            return;
-        }
-        G0();
+    public final void M0(r2.m mVar, int i10) {
+        Trace.beginSection("skipVideoBuffer");
+        mVar.c(i10);
+        Trace.endSection();
+        this.N0.f++;
     }
 
-    @Override // r2.r
-    public final ArrayList O(r2.i iVar, b2.s sVar, boolean z10) {
-        List B0 = B0(this.X0, iVar, sVar, z10, this.F1);
+    @Override // r2.s
+    public final ArrayList N(r2.j jVar, b2.s sVar, boolean z10) {
+        List A0 = A0(this.W0, jVar, sVar, z10, this.E1);
         HashMap hashMap = r2.x.a;
-        ArrayList arrayList = new ArrayList(B0);
-        Collections.sort(arrayList, new e8(new r2.s(sVar, 0), 3));
+        ArrayList arrayList = new ArrayList(A0);
+        Collections.sort(arrayList, new f8(new m4.w(sVar, 28), 3));
         return arrayList;
     }
 
-    public final void O0(long j3) {
-        i2.g gVar = this.O0;
-        gVar.k += j3;
-        gVar.l++;
-        this.z1 += j3;
-        this.A1++;
+    public final void N0(int i10, int i11) {
+        i2.g gVar = this.N0;
+        gVar.h += i10;
+        int i12 = i10 + i11;
+        gVar.g += i12;
+        this.t1 += i12;
+        int i13 = this.u1 + i12;
+        this.u1 = i13;
+        gVar.i = Math.max(i13, gVar.i);
+        int i14 = this.Z0;
+        if (i14 <= 0 || this.t1 < i14) {
+            return;
+        }
+        F0();
     }
 
-    @Override // r2.r
-    public final com.google.firebase.messaging.n Q(r2.o oVar, b2.s sVar, MediaCrypto mediaCrypto, float f7) {
+    public final void O0(long j3) {
+        i2.g gVar = this.N0;
+        gVar.k += j3;
+        gVar.l++;
+        this.y1 += j3;
+        this.z1++;
+    }
+
+    @Override // r2.s
+    public final com.google.firebase.messaging.n P(r2.p pVar, b2.s sVar, MediaCrypto mediaCrypto, float f7) {
         b2.j jVar;
         int i10;
         l lVar;
@@ -1834,21 +1854,22 @@ public final class n extends r2.r {
         MediaCodecInfo.VideoCapabilities videoCapabilities;
         int i11;
         int i12;
+        char c10;
         boolean z10;
-        int A0;
-        String str = oVar.c;
+        int z02;
+        String str = pVar.c;
         b2.s[] sVarArr = this.s;
         sVarArr.getClass();
         int i13 = sVar.y;
         float f10 = sVar.C;
         b2.j jVar2 = sVar.H;
         int i14 = sVar.z;
-        int C0 = C0(oVar, sVar);
+        int B0 = B0(pVar, sVar);
         if (sVarArr.length == 1) {
-            if (C0 != -1 && (A0 = A0(oVar, sVar)) != -1) {
-                C0 = Math.min((int) (C0 * 1.5f), A0);
+            if (B0 != -1 && (z02 = z0(pVar, sVar)) != -1) {
+                B0 = Math.min((int) (B0 * 1.5f), z02);
             }
-            lVar = new l(i13, i14, C0);
+            lVar = new l(i13, i14, B0);
             jVar = jVar2;
             i10 = i14;
         } else {
@@ -1865,22 +1886,24 @@ public final class n extends r2.r {
                     a2.G = jVar2;
                     sVar2 = new b2.s(a2);
                 }
-                i2.h b10 = oVar.b(sVar, sVar2);
+                i2.h b10 = pVar.b(sVar, sVar2);
                 int i18 = length;
                 int i19 = sVar2.z;
                 if (b10.d != 0) {
                     int i20 = sVar2.y;
                     i12 = i17;
+                    c10 = 65535;
                     z11 |= i20 == -1 || i19 == -1;
                     i15 = Math.max(i15, i20);
                     i16 = Math.max(i16, i19);
-                    C0 = Math.max(C0, C0(oVar, sVar2));
+                    B0 = Math.max(B0, B0(pVar, sVar2));
                 } else {
                     i12 = i17;
+                    c10 = 65535;
                 }
+                length = i18;
                 i17 = i12 + 1;
                 sVarArr = sVarArr2;
-                length = i18;
             }
             if (z11) {
                 e2.a.n("MediaCodecVideoRenderer", "Resolutions unknown. Codec max resolution: " + i15 + "x" + i16);
@@ -1895,7 +1918,7 @@ public final class n extends r2.r {
                     if (i23 >= 9) {
                         break;
                     }
-                    int i24 = N1[i23];
+                    int i24 = M1[i23];
                     int i25 = i23;
                     int i26 = (int) (i24 * f11);
                     if (i24 <= i21 || i26 <= i22) {
@@ -1908,7 +1931,7 @@ public final class n extends r2.r {
                         i24 = i26;
                     }
                     int i27 = i22;
-                    MediaCodecInfo.CodecCapabilities codecCapabilities = oVar.d;
+                    MediaCodecInfo.CodecCapabilities codecCapabilities = pVar.d;
                     if (codecCapabilities == null || (videoCapabilities = codecCapabilities.getVideoCapabilities()) == null) {
                         i11 = i21;
                         point = null;
@@ -1920,7 +1943,7 @@ public final class n extends r2.r {
                     }
                     if (point != null) {
                         i10 = i14;
-                        if (oVar.g(point.x, point.y, f10)) {
+                        if (pVar.g(point.x, point.y, f10)) {
                             break;
                         }
                     } else {
@@ -1940,17 +1963,17 @@ public final class n extends r2.r {
                     b2.r a10 = sVar.a();
                     a10.x = i15;
                     a10.y = i16;
-                    C0 = Math.max(C0, A0(oVar, new b2.s(a10)));
+                    B0 = Math.max(B0, z0(pVar, new b2.s(a10)));
                     e2.a.n("MediaCodecVideoRenderer", "Codec max resolution adjusted to: " + i15 + "x" + i16);
                 }
             } else {
                 jVar = jVar2;
                 i10 = i14;
             }
-            lVar = new l(i15, i16, C0);
+            lVar = new l(i15, i16, B0);
         }
-        this.g1 = lVar;
-        int i28 = this.F1 ? this.G1 : 0;
+        this.f1 = lVar;
+        int i28 = this.E1 ? this.F1 : 0;
         MediaFormat mediaFormat = new MediaFormat();
         mediaFormat.setString("mime", str);
         mediaFormat.setInteger("width", i13);
@@ -1981,13 +2004,11 @@ public final class n extends r2.r {
         mediaFormat.setInteger("max-height", lVar.b);
         e2.d.n(mediaFormat, "max-input-size", lVar.c);
         int i29 = Build.VERSION.SDK_INT;
-        if (i29 >= 23) {
-            mediaFormat.setInteger("priority", 0);
-            if (f7 != -1.0f) {
-                mediaFormat.setFloat("operating-rate", f7);
-            }
+        mediaFormat.setInteger("priority", 0);
+        if (f7 != -1.0f) {
+            mediaFormat.setFloat("operating-rate", f7);
         }
-        if (this.b1) {
+        if (this.a1) {
             z10 = true;
             mediaFormat.setInteger("no-post-process", 1);
             mediaFormat.setInteger("auto-frc", 0);
@@ -1999,18 +2020,18 @@ public final class n extends r2.r {
             mediaFormat.setInteger("audio-session-id", i28);
         }
         if (i29 >= 35) {
-            mediaFormat.setInteger("importance", Math.max(0, -this.E1));
+            mediaFormat.setInteger("importance", Math.max(0, -this.D1));
         }
-        Surface D0 = D0(oVar);
-        if (this.j1 != null && !e2.d0.L(this.X0)) {
+        Surface C0 = C0(pVar);
+        if (this.i1 != null && !e2.d0.K(this.W0)) {
             mediaFormat.setInteger("allow-frame-drop", 0);
         }
-        return new com.google.firebase.messaging.n(oVar, mediaFormat, sVar, D0, mediaCrypto, null);
+        return new com.google.firebase.messaging.n(pVar, mediaFormat, sVar, C0, mediaCrypto, null);
     }
 
-    @Override // r2.r
-    public final void R(h2.h hVar) {
-        if (this.i1) {
+    @Override // r2.s
+    public final void Q(h2.h hVar) {
+        if (this.h1) {
             ByteBuffer byteBuffer = hVar.f;
             byteBuffer.getClass();
             if (byteBuffer.remaining() >= 7) {
@@ -2025,45 +2046,45 @@ public final class n extends r2.r {
                         byte[] bArr = new byte[byteBuffer.remaining()];
                         byteBuffer.get(bArr);
                         byteBuffer.position(0);
-                        r2.l lVar = this.b0;
-                        lVar.getClass();
+                        r2.m mVar = this.b0;
+                        mVar.getClass();
                         Bundle bundle = new Bundle();
                         bundle.putByteArray("hdr10-plus-info", bArr);
-                        lVar.setParameters(bundle);
+                        mVar.setParameters(bundle);
                     }
                 }
             }
         }
     }
 
-    @Override // r2.r
-    public final boolean W(b2.s sVar) {
-        o0 o0Var = this.j1;
+    @Override // r2.s
+    public final boolean V(b2.s sVar) {
+        o0 o0Var = this.i1;
         if (o0Var == null || o0Var.v()) {
             return true;
         }
         try {
-            return this.j1.d(sVar);
+            return this.i1.d(sVar);
         } catch (n0 e7) {
             throw d(e7, sVar, false, 7000);
         }
     }
 
-    @Override // r2.r
-    public final void X(Exception exc) {
+    @Override // r2.s
+    public final void W(Exception exc) {
         e2.a.f("MediaCodecVideoRenderer", "Video codec error", exc);
-        of.b bVar = this.Z0;
+        pf.b bVar = this.Y0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new a1.e(3, bVar, exc));
+            handler.post(new a1.f(3, bVar, exc));
         }
     }
 
-    @Override // r2.r
-    public final void Y(long j3, long j10, String str) {
+    @Override // r2.s
+    public final void X(long j3, long j10, String str) {
         String str2;
         MediaCodecInfo.CodecProfileLevel[] codecProfileLevelArr;
-        of.b bVar = this.Z0;
+        pf.b bVar = this.Y0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
             str2 = str;
@@ -2071,12 +2092,12 @@ public final class n extends r2.r {
         } else {
             str2 = str;
         }
-        this.h1 = z0(str2);
-        r2.o oVar = this.i0;
-        oVar.getClass();
+        this.g1 = y0(str2);
+        r2.p pVar = this.i0;
+        pVar.getClass();
         boolean z10 = false;
-        if (Build.VERSION.SDK_INT >= 29 && "video/x-vnd.on2.vp9".equals(oVar.b)) {
-            MediaCodecInfo.CodecCapabilities codecCapabilities = oVar.d;
+        if (Build.VERSION.SDK_INT >= 29 && "video/x-vnd.on2.vp9".equals(pVar.b)) {
+            MediaCodecInfo.CodecCapabilities codecCapabilities = pVar.d;
             if (codecCapabilities == null || (codecProfileLevelArr = codecCapabilities.profileLevels) == null) {
                 codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[0];
             }
@@ -2093,41 +2114,41 @@ public final class n extends r2.r {
                 i10++;
             }
         }
-        this.i1 = z10;
-        H0();
+        this.h1 = z10;
+        G0();
     }
 
-    @Override // r2.r
-    public final void Z(String str) {
-        of.b bVar = this.Z0;
+    @Override // r2.s
+    public final void Y(String str) {
+        pf.b bVar = this.Y0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new a1.e(4, bVar, str));
+            handler.post(new a1.f(4, bVar, str));
         }
     }
 
-    @Override // r2.r
-    public final i2.h a0(n4.y yVar) {
-        i2.h a02 = super.a0(yVar);
-        b2.s sVar = (b2.s) yVar.c;
+    @Override // r2.s
+    public final i2.h Z(n4.x xVar) {
+        i2.h Z = super.Z(xVar);
+        b2.s sVar = (b2.s) xVar.c;
         sVar.getClass();
-        of.b bVar = this.Z0;
+        pf.b bVar = this.Y0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new k0(bVar, sVar, a02, 0));
+            handler.post(new k0(bVar, sVar, Z, 0));
         }
-        return a02;
+        return Z;
     }
 
-    @Override // r2.r
-    public final void b0(b2.s sVar, MediaFormat mediaFormat) {
+    @Override // r2.s
+    public final void a0(b2.s sVar, MediaFormat mediaFormat) {
         int integer;
         int i10;
-        r2.l lVar = this.b0;
-        if (lVar != null) {
-            lVar.j(this.r1);
+        r2.m mVar = this.b0;
+        if (mVar != null) {
+            mVar.i(this.q1);
         }
-        if (this.F1) {
+        if (this.E1) {
             i10 = sVar.y;
             integer = sVar.z;
         } else {
@@ -2145,26 +2166,26 @@ public final class n extends r2.r {
             integer = i10;
             i10 = i12;
         }
-        this.C1 = new x1(f7, i10, integer);
-        o0 o0Var = this.j1;
-        if (o0Var == null || !this.L1) {
-            this.c1.g(sVar.C);
+        this.B1 = new x1(f7, i10, integer);
+        o0 o0Var = this.i1;
+        if (o0Var == null || !this.K1) {
+            this.b1.g(sVar.C);
         } else {
             b2.r a2 = sVar.a();
             a2.x = i10;
             a2.y = integer;
             a2.D = f7;
             b2.s sVar2 = new b2.s(a2);
-            int i13 = this.l1;
-            List list = this.m1;
+            int i13 = this.k1;
+            List list = this.l1;
             if (list == null) {
                 e9.g0 g0Var = e9.i0.b;
                 list = a1.e;
             }
-            o0Var.l(sVar2, this.P0.b, i13, list);
-            this.l1 = 2;
+            o0Var.l(sVar2, this.O0.b, i13, list);
+            this.k1 = 2;
         }
-        this.L1 = false;
+        this.K1 = false;
     }
 
     @Override // i2.f, i2.j1
@@ -2176,8 +2197,8 @@ public final class n extends r2.r {
         if (i10 == 7) {
             obj.getClass();
             y yVar = (y) obj;
-            this.I1 = yVar;
-            o0 o0Var = this.j1;
+            this.H1 = yVar;
+            o0 o0Var = this.i1;
             if (o0Var != null) {
                 o0Var.u(yVar);
                 return;
@@ -2187,10 +2208,10 @@ public final class n extends r2.r {
         if (i10 == 10) {
             obj.getClass();
             int intValue = ((Integer) obj).intValue();
-            if (this.G1 != intValue) {
-                this.G1 = intValue;
-                if (this.F1) {
-                    j0();
+            if (this.F1 != intValue) {
+                this.F1 = intValue;
+                if (this.E1) {
+                    i0();
                     return;
                 }
                 return;
@@ -2200,10 +2221,10 @@ public final class n extends r2.r {
         if (i10 == 4) {
             obj.getClass();
             int intValue2 = ((Integer) obj).intValue();
-            this.r1 = intValue2;
-            r2.l lVar = this.b0;
-            if (lVar != null) {
-                lVar.j(intValue2);
+            this.q1 = intValue2;
+            r2.m mVar = this.b0;
+            if (mVar != null) {
+                mVar.i(intValue2);
                 return;
             }
             return;
@@ -2211,13 +2232,13 @@ public final class n extends r2.r {
         if (i10 == 5) {
             obj.getClass();
             int intValue3 = ((Integer) obj).intValue();
-            this.s1 = intValue3;
-            o0 o0Var2 = this.j1;
+            this.r1 = intValue3;
+            o0 o0Var2 = this.i1;
             if (o0Var2 != null) {
                 o0Var2.j(intValue3);
                 return;
             }
-            e0 e0Var = this.c1.b;
+            e0 e0Var = this.b1.b;
             if (e0Var.j == intValue3) {
                 return;
             }
@@ -2229,15 +2250,15 @@ public final class n extends r2.r {
             obj.getClass();
             List list = (List) obj;
             if (list.equals(v1.a)) {
-                o0 o0Var3 = this.j1;
+                o0 o0Var3 = this.i1;
                 if (o0Var3 == null || !o0Var3.v()) {
                     return;
                 }
-                this.j1.t();
+                this.i1.t();
                 return;
             }
-            this.m1 = list;
-            o0 o0Var4 = this.j1;
+            this.l1 = list;
+            o0 o0Var4 = this.i1;
             if (o0Var4 != null) {
                 o0Var4.o(list);
                 return;
@@ -2250,10 +2271,10 @@ public final class n extends r2.r {
             if (wVar.a == 0 || wVar.b == 0) {
                 return;
             }
-            this.p1 = wVar;
-            o0 o0Var5 = this.j1;
+            this.o1 = wVar;
+            o0 o0Var5 = this.i1;
             if (o0Var5 != null) {
-                Surface surface = this.n1;
+                Surface surface = this.m1;
                 e2.d.h(surface);
                 o0Var5.s(surface, wVar);
                 return;
@@ -2263,27 +2284,27 @@ public final class n extends r2.r {
         switch (i10) {
             case 16:
                 obj.getClass();
-                this.E1 = ((Integer) obj).intValue();
-                r2.l lVar2 = this.b0;
-                if (lVar2 != null && Build.VERSION.SDK_INT >= 35) {
+                this.D1 = ((Integer) obj).intValue();
+                r2.m mVar2 = this.b0;
+                if (mVar2 != null && Build.VERSION.SDK_INT >= 35) {
                     Bundle bundle = new Bundle();
-                    bundle.putInt("importance", Math.max(0, -this.E1));
-                    lVar2.setParameters(bundle);
+                    bundle.putInt("importance", Math.max(0, -this.D1));
+                    mVar2.setParameters(bundle);
                     break;
                 }
                 break;
             case 17:
-                Surface surface2 = this.n1;
+                Surface surface2 = this.m1;
                 J0(null);
                 obj.getClass();
                 ((n) obj).c(1, surface2);
                 break;
             case 18:
-                boolean z10 = this.x1 != null;
+                boolean z10 = this.w1 != null;
                 p1 p1Var = (p1) obj;
-                this.x1 = p1Var;
+                this.w1 = p1Var;
                 if (z10 != (p1Var != null)) {
-                    w0(this.c0);
+                    v0(this.c0);
                     break;
                 }
                 break;
@@ -2298,92 +2319,67 @@ public final class n extends r2.r {
         }
     }
 
-    @Override // r2.r
-    public final void d0(long j3) {
-        super.d0(j3);
-        if (this.F1) {
+    @Override // r2.s
+    public final void c0(long j3) {
+        super.c0(j3);
+        if (this.E1) {
             return;
         }
-        this.w1--;
+        this.v1--;
+    }
+
+    @Override // r2.s
+    public final void d0() {
+        o0 o0Var = this.i1;
+        if (o0Var != null) {
+            o0Var.i();
+            if (this.I1 == -9223372036854775807L) {
+                this.I1 = this.O0.b;
+            }
+            this.i1.h(-this.I1);
+        } else {
+            this.b1.f(2);
+        }
+        this.K1 = true;
+        G0();
     }
 
     @Override // i2.f
     public final void e() {
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var == null) {
-            a0 a0Var = this.c1;
+            a0 a0Var = this.b1;
             if (a0Var.e == 0) {
                 a0Var.e = 1;
                 return;
             }
             return;
         }
-        int i10 = this.l1;
+        int i10 = this.k1;
         if (i10 == 0 || i10 == 1) {
-            this.l1 = 0;
+            this.k1 = 0;
         } else {
             o0Var.w();
         }
     }
 
-    @Override // r2.r
-    public final void e0() {
-        o0 o0Var = this.j1;
-        if (o0Var != null) {
-            o0Var.i();
-            if (this.J1 == -9223372036854775807L) {
-                this.J1 = this.P0.b;
-            }
-            this.j1.h(-this.J1);
-        } else {
-            this.c1.f(2);
-        }
-        this.L1 = true;
-        H0();
-    }
-
-    @Override // r2.r
-    public final void f0(h2.h hVar) {
-        Surface surface;
-        this.M1 = 0;
+    @Override // r2.s
+    public final void e0(h2.h hVar) {
+        this.L1 = 0;
         int L = L(hVar);
-        int i10 = Build.VERSION.SDK_INT;
-        if ((i10 < 34 || (L & 32) == 0) && !this.F1) {
-            this.w1++;
+        if ((Build.VERSION.SDK_INT < 34 || (L & 32) == 0) && !this.E1) {
+            this.v1++;
         }
-        if (i10 >= 23 || !this.F1) {
-            return;
-        }
-        long j3 = hVar.e;
-        y0(j3);
-        x1 x1Var = this.C1;
-        boolean equals = x1Var.equals(x1.d);
-        of.b bVar = this.Z0;
-        if (!equals && !x1Var.equals(this.D1)) {
-            this.D1 = x1Var;
-            bVar.S(x1Var);
-        }
-        this.O0.e++;
-        a0 a0Var = this.c1;
-        boolean z10 = a0Var.e != 3;
-        a0Var.e = 3;
-        a0Var.l.getClass();
-        a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
-        if (z10 && (surface = this.n1) != null) {
-            bVar.M(surface);
-            this.q1 = true;
-        }
-        d0(j3);
     }
 
-    @Override // r2.r
-    public final boolean h0(long j3, long j10, r2.l lVar, ByteBuffer byteBuffer, int i10, int i11, int i12, long j11, boolean z10, boolean z11, b2.s sVar) {
+    @Override // r2.s
+    public final boolean g0(long j3, long j10, r2.m mVar, ByteBuffer byteBuffer, int i10, int i11, int i12, long j11, boolean z10, boolean z11, b2.s sVar) {
         int i13;
-        lVar.getClass();
-        long j12 = j11 - this.P0.c;
+        mVar.getClass();
+        long j12 = j11 - this.O0.c;
         int i14 = 0;
         while (true) {
-            PriorityQueue priorityQueue = this.f1;
+            PriorityQueue priorityQueue = this.e1;
             Long l4 = (Long) priorityQueue.peek();
             if (l4 == null || l4.longValue() >= j11) {
                 break;
@@ -2392,56 +2388,56 @@ public final class n extends r2.r {
             priorityQueue.poll();
         }
         N0(i14, 0);
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             if (!z10 || z11) {
-                return o0Var.n(j11, new j(this, lVar, i10, j12));
+                return o0Var.n(j11, new j(this, mVar, i10, j12));
             }
-            M0(lVar, i10);
+            M0(mVar, i10);
             return true;
         }
-        int a2 = this.c1.a(j11, j3, j10, this.P0.b, z10, z11, this.d1);
-        z zVar = this.d1;
+        int a2 = this.b1.a(j11, j3, j10, this.O0.b, z10, z11, this.c1);
+        z zVar = this.c1;
         if (a2 == 0) {
             this.h.getClass();
             long nanoTime = System.nanoTime();
-            y yVar = this.I1;
+            y yVar = this.H1;
             if (yVar != null) {
                 yVar.a(j12, nanoTime, sVar, this.d0);
             }
-            I0(lVar, i10, nanoTime);
+            I0(mVar, i10, nanoTime);
             O0(zVar.a);
             return true;
         }
         if (a2 == 1) {
             long j13 = zVar.b;
             long j14 = zVar.a;
-            if (j13 == this.B1) {
-                M0(lVar, i10);
+            if (j13 == this.A1) {
+                M0(mVar, i10);
             } else {
-                y yVar2 = this.I1;
+                y yVar2 = this.H1;
                 if (yVar2 != null) {
                     i13 = i10;
                     yVar2.a(j12, j13, sVar, this.d0);
                 } else {
                     i13 = i10;
                 }
-                I0(lVar, i13, j13);
+                I0(mVar, i13, j13);
             }
             O0(j14);
-            this.B1 = j13;
+            this.A1 = j13;
             return true;
         }
         if (a2 == 2) {
             Trace.beginSection("dropVideoBuffer");
-            lVar.c(i10);
+            mVar.c(i10);
             Trace.endSection();
             N0(0, 1);
             O0(zVar.a);
             return true;
         }
         if (a2 == 3) {
-            M0(lVar, i10);
+            M0(mVar, i10);
             O0(zVar.a);
             return true;
         }
@@ -2456,9 +2452,9 @@ public final class n extends r2.r {
         return "MediaCodecVideoRenderer";
     }
 
-    @Override // r2.r
-    public final void k0() {
-        o0 o0Var = this.j1;
+    @Override // r2.s
+    public final void j0() {
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             o0Var.i();
         }
@@ -2466,75 +2462,75 @@ public final class n extends r2.r {
 
     @Override // i2.f
     public final boolean l() {
-        if (!this.K0) {
+        if (!this.J0) {
             return false;
         }
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         return o0Var == null || o0Var.b();
     }
 
-    @Override // r2.r, i2.f
+    @Override // r2.s
+    public final void l0() {
+        super.l0();
+        this.e1.clear();
+        this.v1 = 0;
+        this.L1 = 0;
+        this.x1 = false;
+    }
+
+    @Override // r2.s, i2.f
     public final boolean m() {
         boolean m10 = super.m();
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             return o0Var.r(m10);
         }
-        if (m10 && (this.b0 == null || this.F1)) {
+        if (m10 && (this.b0 == null || this.E1)) {
             return true;
         }
-        return this.c1.b(m10);
+        return this.b1.b(m10);
     }
 
-    @Override // r2.r
-    public final void m0() {
-        super.m0();
-        this.f1.clear();
-        this.w1 = 0;
-        this.M1 = 0;
-        this.y1 = false;
-    }
-
-    @Override // r2.r, i2.f
+    @Override // r2.s, i2.f
     public final void o() {
-        of.b bVar = this.Z0;
-        this.D1 = null;
-        this.K1 = -9223372036854775807L;
-        H0();
-        this.q1 = false;
-        this.H1 = null;
-        this.y1 = true;
+        pf.b bVar = this.Y0;
+        this.C1 = null;
+        this.J1 = -9223372036854775807L;
+        G0();
+        this.p1 = false;
+        this.G1 = null;
+        this.x1 = true;
         try {
             super.o();
         } finally {
-            bVar.w(this.O0);
-            bVar.S(x1.d);
+            bVar.F(this.N0);
+            bVar.V(x1.d);
         }
     }
 
     @Override // i2.f
     public final void p(boolean z10, boolean z11) {
         o0 o0Var;
-        this.O0 = new i2.g();
+        this.N0 = new i2.g();
         n1 n1Var = this.d;
         n1Var.getClass();
         boolean z12 = n1Var.b;
-        e2.d.g((z12 && this.G1 == 0) ? false : true);
-        if (this.F1 != z12) {
-            this.F1 = z12;
-            j0();
+        e2.d.g((z12 && this.F1 == 0) ? false : true);
+        if (this.E1 != z12) {
+            this.E1 = z12;
+            i0();
         }
-        i2.g gVar = this.O0;
-        of.b bVar = this.Z0;
+        i2.g gVar = this.N0;
+        pf.b bVar = this.Y0;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
             handler.post(new j0(bVar, gVar, 0));
         }
-        boolean z13 = this.k1;
-        a0 a0Var = this.c1;
+        boolean z13 = this.j1;
+        a0 a0Var = this.b1;
         if (!z13) {
-            if (this.m1 != null && this.j1 == null) {
-                q qVar = new q(this.X0, a0Var);
+            if (this.l1 != null && this.i1 == null) {
+                q qVar = new q(this.W0, a0Var);
                 qVar.a = true;
                 e2.x xVar = this.h;
                 xVar.getClass();
@@ -2555,11 +2551,11 @@ public final class n extends r2.r {
                     sparseArray.put(0, rVar);
                     o0Var = rVar;
                 }
-                this.j1 = o0Var;
+                this.i1 = o0Var;
             }
-            this.k1 = true;
+            this.j1 = true;
         }
-        o0 o0Var2 = this.j1;
+        o0 o0Var2 = this.i1;
         if (o0Var2 == null) {
             e2.x xVar2 = this.h;
             xVar2.getClass();
@@ -2568,32 +2564,56 @@ public final class n extends r2.r {
             return;
         }
         o0Var2.g(new a6.i(this, 1));
-        y yVar = this.I1;
+        y yVar = this.H1;
         if (yVar != null) {
-            this.j1.u(yVar);
+            this.i1.u(yVar);
         }
-        if (this.n1 != null && !this.p1.equals(e2.w.c)) {
-            this.j1.s(this.n1, this.p1);
+        if (this.m1 != null && !this.o1.equals(e2.w.c)) {
+            this.i1.s(this.m1, this.o1);
         }
-        this.j1.j(this.s1);
-        this.j1.a(this.Z);
-        List list = this.m1;
+        this.i1.j(this.r1);
+        this.i1.a(this.Z);
+        List list = this.l1;
         if (list != null) {
-            this.j1.o(list);
+            this.i1.o(list);
         }
-        this.l1 = !z11 ? 1 : 0;
-        this.S0 = true;
+        this.k1 = !z11 ? 1 : 0;
+        this.R0 = true;
     }
 
-    @Override // r2.r, i2.f
+    @Override // r2.s
+    public final boolean p0(h2.h hVar) {
+        boolean z10 = false;
+        if (!E0(hVar)) {
+            boolean z11 = hVar.e < this.w;
+            if (z11 && !hVar.hasSupplementalData()) {
+                if (hVar.notDependedOn()) {
+                    hVar.clear();
+                    z10 = true;
+                }
+                if (z10) {
+                    if (z11) {
+                        this.N0.d++;
+                    } else {
+                        this.e1.add(Long.valueOf(hVar.e));
+                        this.L1++;
+                    }
+                }
+                return z10;
+            }
+        }
+        return false;
+    }
+
+    @Override // r2.s, i2.f
     public final void q(long j3, boolean z10) {
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null && !z10) {
             o0Var.m(true);
         }
         super.q(j3, z10);
-        o0 o0Var2 = this.j1;
-        a0 a0Var = this.c1;
+        o0 o0Var2 = this.i1;
+        a0 a0Var = this.b1;
         if (o0Var2 == null) {
             e0 e0Var = a0Var.b;
             e0Var.m = 0L;
@@ -2605,57 +2625,38 @@ public final class n extends r2.r {
             a0Var.i = -9223372036854775807L;
         }
         if (z10) {
-            o0 o0Var3 = this.j1;
+            o0 o0Var3 = this.i1;
             if (o0Var3 != null) {
                 o0Var3.q(false);
             } else {
                 a0Var.c(false);
             }
         }
-        H0();
-        this.v1 = 0;
+        G0();
+        this.u1 = 0;
     }
 
-    @Override // r2.r
-    public final boolean q0(h2.h hVar) {
-        boolean z10 = false;
-        if (!F0(hVar)) {
-            boolean z11 = hVar.e < this.w;
-            if (z11 && !hVar.hasSupplementalData()) {
-                if (hVar.notDependedOn()) {
-                    hVar.clear();
-                    z10 = true;
-                }
-                if (z10) {
-                    if (z11) {
-                        this.O0.d++;
-                    } else {
-                        this.f1.add(Long.valueOf(hVar.e));
-                        this.M1++;
-                    }
-                }
-                return z10;
-            }
+    @Override // r2.s
+    public final boolean q0() {
+        b2.s sVar = this.c0;
+        if (this.w1 == null || this.x1 || this.E1) {
+            return true;
         }
-        return false;
+        return (sVar != null && sVar.t > 0) || this.S0 || this.H0 != -9223372036854775807L;
     }
 
     @Override // i2.f
     public final void r() {
-        o0 o0Var = this.j1;
-        if (o0Var == null || !this.Y0) {
+        o0 o0Var = this.i1;
+        if (o0Var == null || !this.X0) {
             return;
         }
         o0Var.release();
     }
 
-    @Override // r2.r
-    public final boolean r0() {
-        b2.s sVar = this.c0;
-        if (this.x1 == null || this.y1 || this.F1) {
-            return true;
-        }
-        return (sVar != null && sVar.t > 0) || this.T0 || this.I0 != -9223372036854775807L;
+    @Override // r2.s
+    public final boolean r0(r2.p pVar) {
+        return D0(pVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -2663,119 +2664,102 @@ public final class n extends r2.r {
     public final void s() {
         try {
             try {
-                this.x0 = false;
-                l0();
-                j0();
+                this.w0 = false;
+                k0();
+                i0();
             } finally {
-                hg.c.z(this.V, null);
+                hg.c.A(this.V, null);
                 this.V = null;
             }
         } finally {
-            this.k1 = false;
-            this.J1 = -9223372036854775807L;
-            p pVar = this.o1;
+            this.j1 = false;
+            this.I1 = -9223372036854775807L;
+            p pVar = this.n1;
             if (pVar != null) {
                 pVar.release();
-                this.o1 = null;
+                this.n1 = null;
             }
         }
     }
 
-    @Override // r2.r
-    public final boolean s0(r2.o oVar) {
-        return E0(oVar);
-    }
-
-    @Override // i2.f
-    public final void t() {
-        this.u1 = 0;
-        this.h.getClass();
-        this.t1 = SystemClock.elapsedRealtime();
-        this.z1 = 0L;
-        this.A1 = 0;
-        o0 o0Var = this.j1;
-        if (o0Var != null) {
-            o0Var.f();
-        } else {
-            this.c1.d();
-        }
-    }
-
-    @Override // r2.r
-    public final boolean t0() {
-        r2.o oVar = this.i0;
-        if (this.j1 != null && oVar != null) {
-            String str = oVar.a;
+    @Override // r2.s
+    public final boolean s0() {
+        r2.p pVar = this.i0;
+        if (this.i1 != null && pVar != null) {
+            String str = pVar.a;
             if (str.equals("c2.mtk.avc.decoder") || str.equals("c2.mtk.hevc.decoder")) {
                 return true;
             }
         }
-        return super.t0();
+        return super.s0();
+    }
+
+    @Override // i2.f
+    public final void t() {
+        this.t1 = 0;
+        this.h.getClass();
+        this.s1 = SystemClock.elapsedRealtime();
+        this.y1 = 0L;
+        this.z1 = 0;
+        o0 o0Var = this.i1;
+        if (o0Var != null) {
+            o0Var.f();
+        } else {
+            this.b1.d();
+        }
     }
 
     @Override // i2.f
     public final void u() {
-        G0();
-        int i10 = this.A1;
+        F0();
+        int i10 = this.z1;
         if (i10 != 0) {
-            long j3 = this.z1;
-            of.b bVar = this.Z0;
+            long j3 = this.y1;
+            pf.b bVar = this.Y0;
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
                 handler.post(new i0(bVar, j3, i10));
             }
-            this.z1 = 0L;
-            this.A1 = 0;
+            this.y1 = 0L;
+            this.z1 = 0;
         }
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             o0Var.e();
         } else {
-            this.c1.e();
+            this.b1.e();
         }
     }
 
-    @Override // r2.r, i2.f
-    public final void v(b2.s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
-        super.v(sVarArr, j3, j10, f0Var);
-        k1 k1Var = this.F;
-        if (k1Var.p()) {
-            this.K1 = -9223372036854775807L;
-        } else {
-            f0Var.getClass();
-            this.K1 = k1Var.g(f0Var.a, new h1()).d;
-        }
-    }
-
-    @Override // r2.r
-    public final int v0(r2.i iVar, b2.s sVar) {
+    @Override // r2.s
+    public final int u0(r2.j jVar, b2.s sVar) {
         boolean z10;
         int i10 = 0;
         if (!r0.m(sVar.r)) {
             return hg.c.b(0, 0, 0, 0);
         }
         boolean z11 = sVar.v != null;
-        Context context = this.X0;
-        List B0 = B0(context, iVar, sVar, z11, false);
-        if (z11 && B0.isEmpty()) {
-            B0 = B0(context, iVar, sVar, false, false);
+        Context context = this.W0;
+        List A0 = A0(context, jVar, sVar, z11, false);
+        if (z11 && A0.isEmpty()) {
+            A0 = A0(context, jVar, sVar, false, false);
         }
-        if (B0.isEmpty()) {
+        if (A0.isEmpty()) {
             return hg.c.b(1, 0, 0, 0);
         }
         int i11 = sVar.S;
         if (i11 != 0 && i11 != 2) {
             return hg.c.b(2, 0, 0, 0);
         }
-        r2.o oVar = (r2.o) B0.get(0);
-        boolean e7 = oVar.e(sVar);
+        r2.p pVar = (r2.p) A0.get(0);
+        boolean e7 = pVar.e(sVar);
         if (!e7) {
-            for (int i12 = 1; i12 < B0.size(); i12++) {
-                r2.o oVar2 = (r2.o) B0.get(i12);
-                if (oVar2.e(sVar)) {
-                    oVar = oVar2;
+            for (int i12 = 1; i12 < A0.size(); i12++) {
+                r2.p pVar2 = (r2.p) A0.get(i12);
+                if (pVar2.e(sVar)) {
                     z10 = false;
                     e7 = true;
+                    pVar = pVar2;
                     break;
                 }
             }
@@ -2783,20 +2767,20 @@ public final class n extends r2.r {
         z10 = true;
         int i13 = 3;
         int i14 = e7 ? 4 : 3;
-        int i15 = oVar.f(sVar) ? 16 : 8;
-        int i16 = oVar.g ? 64 : 0;
+        int i15 = pVar.f(sVar) ? 16 : 8;
+        int i16 = pVar.g ? 64 : 0;
         int i17 = z10 ? 128 : 0;
         if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(sVar.r) && !c2.d.d(context)) {
             i17 = 256;
         }
         if (e7) {
-            List B02 = B0(context, iVar, sVar, z11, true);
-            if (!B02.isEmpty()) {
+            List A02 = A0(context, jVar, sVar, z11, true);
+            if (!A02.isEmpty()) {
                 HashMap hashMap = r2.x.a;
-                ArrayList arrayList = new ArrayList(B02);
-                Collections.sort(arrayList, new e8(new r2.s(sVar, i10), i13));
-                r2.o oVar3 = (r2.o) arrayList.get(0);
-                if (oVar3.e(sVar) && oVar3.f(sVar)) {
+                ArrayList arrayList = new ArrayList(A02);
+                Collections.sort(arrayList, new f8(new m4.w(sVar, 28), i13));
+                r2.p pVar3 = (r2.p) arrayList.get(0);
+                if (pVar3.e(sVar) && pVar3.f(sVar)) {
                     i10 = 32;
                 }
             }
@@ -2804,9 +2788,21 @@ public final class n extends r2.r {
         return i14 | i15 | i10 | i16 | i17;
     }
 
-    @Override // r2.r, i2.f
+    @Override // r2.s, i2.f
+    public final void v(b2.s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
+        super.v(sVarArr, j3, j10, f0Var);
+        k1 k1Var = this.F;
+        if (k1Var.p()) {
+            this.J1 = -9223372036854775807L;
+        } else {
+            f0Var.getClass();
+            this.J1 = k1Var.g(f0Var.a, new h1()).d;
+        }
+    }
+
+    @Override // r2.s, i2.f
     public final void x(long j3, long j10) {
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             try {
                 o0Var.p(j3, j10);
@@ -2817,14 +2813,14 @@ public final class n extends r2.r {
         super.x(j3, j10);
     }
 
-    @Override // r2.r, i2.f
+    @Override // r2.s, i2.f
     public final void z(float f7, float f10) {
         super.z(f7, f10);
-        o0 o0Var = this.j1;
+        o0 o0Var = this.i1;
         if (o0Var != null) {
             o0Var.a(f7);
         } else {
-            this.c1.i(f7);
+            this.b1.i(f7);
         }
     }
 }

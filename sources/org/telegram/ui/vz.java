@@ -10,16 +10,16 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class vz extends FrameLayout {
     public FrameLayout a;
-    public org.telegram.ui.ActionBar.i5 b;
-    public org.telegram.ui.ActionBar.i5 c;
+    public org.telegram.ui.ActionBar.j5 b;
+    public org.telegram.ui.ActionBar.j5 c;
     public ImageView d;
-    public ci.f9 e;
-    public ai.p4 f;
-    public ai.p4 h;
+    public ci.g9 e;
+    public ai.q4 f;
+    public ai.q4 h;
     public TextView n;
     public org.telegram.ui.ActionBar.n2 r;
     public String s;

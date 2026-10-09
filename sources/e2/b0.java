@@ -2,7 +2,7 @@ package e2;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b0 {
     public long a;
@@ -44,15 +44,15 @@ public final class b0 {
             long j10 = this.c;
             if (j10 != -9223372036854775807L) {
                 String str = d0.a;
-                long Y = d0.Y(j10, 90000L, 1000000L, RoundingMode.DOWN);
-                long j11 = (4294967296L + Y) / 8589934592L;
+                long X = d0.X(j10, 90000L, 1000000L, RoundingMode.DOWN);
+                long j11 = (4294967296L + X) / 8589934592L;
                 long j12 = ((j11 - 1) * 8589934592L) + j3;
                 long j13 = (j11 * 8589934592L) + j3;
-                j3 = Math.abs(j12 - Y) < Math.abs(j13 - Y) ? j12 : j13;
+                j3 = Math.abs(j12 - X) < Math.abs(j13 - X) ? j12 : j13;
             }
             long j14 = j3;
             String str2 = d0.a;
-            return a(d0.Y(j14, 1000000L, 90000L, RoundingMode.DOWN));
+            return a(d0.X(j14, 1000000L, 90000L, RoundingMode.DOWN));
         } catch (Throwable th2) {
             throw th2;
         }
@@ -65,15 +65,15 @@ public final class b0 {
         long j10 = this.c;
         if (j10 != -9223372036854775807L) {
             String str = d0.a;
-            long Y = d0.Y(j10, 90000L, 1000000L, RoundingMode.DOWN);
-            long j11 = Y / 8589934592L;
+            long X = d0.X(j10, 90000L, 1000000L, RoundingMode.DOWN);
+            long j11 = X / 8589934592L;
             Long.signum(j11);
             long j12 = (j11 * 8589934592L) + j3;
-            j3 = j12 >= Y ? j12 : ((j11 + 1) * 8589934592L) + j3;
+            j3 = j12 >= X ? j12 : ((j11 + 1) * 8589934592L) + j3;
         }
         long j13 = j3;
         String str2 = d0.a;
-        return a(d0.Y(j13, 1000000L, 90000L, RoundingMode.DOWN));
+        return a(d0.X(j13, 1000000L, 90000L, RoundingMode.DOWN));
     }
 
     public final synchronized long d() {

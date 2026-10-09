@@ -1,39 +1,25 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r2 b;
-
-    public /* synthetic */ p2(r2 r2Var, int i10) {
-        this.a = i10;
-        this.b = r2Var;
+public final class p2 extends TLRPC.TL_messageMediaStory {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.user_id = inputSerializedData.readInt64(z10);
+        this.id = inputSerializedData.readInt32(z10);
+        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                r2 r2Var = this.b;
-                r2Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r2Var.n = floatValue;
-                View view = r2Var.b;
-                view.setAlpha(1.0f - floatValue);
-                view.setScaleX(1.0f - r2Var.n);
-                view.setScaleY(1.0f - r2Var.n);
-                r2Var.c.setColorFilter(new PorterDuffColorFilter(i0.a.d(r2Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
-                r2Var.a.invalidate();
-                break;
-        }
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-946147809);
+        outputSerializedData.writeInt64(this.user_id);
+        outputSerializedData.writeInt32(this.id);
+        this.storyItem.serializeToStream(outputSerializedData);
     }
 }

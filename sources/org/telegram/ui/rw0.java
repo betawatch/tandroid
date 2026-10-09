@@ -1,38 +1,49 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rw0 implements Comparator {
+public final class rw0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ PopupNotificationActivity b;
 
-    public /* synthetic */ rw0(MessagesController messagesController, int i10) {
+    public /* synthetic */ rw0(PopupNotificationActivity popupNotificationActivity, int i10) {
         this.a = i10;
-        this.b = messagesController;
+        this.b = popupNotificationActivity;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        ex0 ex0Var = (ex0) obj;
-        ex0 ex0Var2 = (ex0) obj2;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                MessagesController messagesController = this.b;
-                i10 = messagesController.businessFeaturesTypesToPosition.get(ex0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController.businessFeaturesTypesToPosition.get(ex0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                PopupNotificationActivity popupNotificationActivity = this.b;
+                FrameLayout frameLayout = popupNotificationActivity.f;
+                if (frameLayout != null) {
+                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                int A = org.telegram.messenger.bi.A(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                FrameLayout frameLayout2 = popupNotificationActivity.f;
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), A, popupNotificationActivity.f.getPaddingRight(), A);
                 break;
             default:
-                MessagesController messagesController2 = this.b;
-                i10 = messagesController2.premiumFeaturesTypesToPosition.get(ex0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
-                i11 = messagesController2.premiumFeaturesTypesToPosition.get(ex0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                PopupNotificationActivity popupNotificationActivity2 = this.b;
+                popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                if (!popupNotificationActivity2.c() && !popupNotificationActivity2.X) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
+                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(48.0f);
+                    marginLayoutParams.width = -1;
+                    marginLayoutParams.height = -1;
+                    popupNotificationActivity2.n.setLayoutParams(marginLayoutParams);
+                    popupNotificationActivity2.a(0);
+                    break;
+                }
                 break;
         }
-        return i10 - i11;
+        return true;
     }
 }

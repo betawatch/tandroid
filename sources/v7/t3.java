@@ -1,13 +1,18 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class t3 implements ia.d {
     public static final t3 a = new t3();
-    public static final ia.c b = new ia.c("identifiedLanguage", hg.c.m(sa.e.l(h.class, new e(1))));
+    public static final ia.c b = new ia.c("confidence", hg.c.m(sc.v.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("languageCode", hg.c.m(sc.v.l(h.class, new e(2))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {
-        ((ia.e) obj2).a(b, ((e7) obj).a);
+        d7 d7Var = (d7) obj;
+        ia.e eVar = (ia.e) obj2;
+        d7Var.getClass();
+        eVar.a(b, null);
+        eVar.a(c, d7Var.a);
     }
 }

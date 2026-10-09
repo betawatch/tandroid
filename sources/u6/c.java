@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c {
     static {
@@ -44,7 +44,7 @@ public abstract class c {
                     JSONArray jSONArray = (JSONArray) obj;
                     JSONArray jSONArray2 = (JSONArray) obj2;
                     if (jSONArray.length() == jSONArray2.length()) {
-                        while (i10 < jSONArray.length()) {
+                        for (0; i10 < jSONArray.length(); i10 + 1) {
                             i10 = a(jSONArray.get(i10), jSONArray2.get(i10)) ? i10 + 1 : 0;
                         }
                         return true;

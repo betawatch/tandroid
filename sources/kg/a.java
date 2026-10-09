@@ -1,22 +1,22 @@
 package kg;
 
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class a extends f {
-    public final d6 q;
+    public final e6 q;
     public final Paint r;
     public int s;
 
-    public a(jg.a aVar, d6 d6Var) {
+    public a(jg.a aVar, e6 e6Var) {
         super(aVar, false, null);
         Paint paint = new Paint();
         this.r = paint;
         this.s = 0;
-        this.q = d6Var;
+        this.q = e6Var;
         Paint paint2 = this.c;
         Paint.Style style = Paint.Style.STROKE;
         paint2.setStyle(style);
@@ -27,6 +27,6 @@ public final class a extends f {
     @Override // kg.f
     public final void a() {
         super.a();
-        this.s = i0.a.d(0.3f, i6.v0(i6.d6, this.q), this.m);
+        this.s = i0.a.d(0.3f, i6.w0(i6.d6, this.q), this.m);
     }
 }

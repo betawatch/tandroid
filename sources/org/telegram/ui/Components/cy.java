@@ -1,16 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class cy extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+public final class cy extends w7.y5 {
+    public final /* synthetic */ a00 a;
+
+    public cy(a00 a00Var) {
+        this.a = a00Var;
+    }
+
+    @Override // w7.y5
+    public final void a() {
+        a00 a00Var = this.a;
+        a00Var.f0 = false;
+        a00Var.P.z1();
+    }
+
+    @Override // w7.y5
+    public final void b() {
+        a00 a00Var = this.a;
+        a00Var.P.z1();
+        a00Var.f0 = true;
     }
 }

@@ -1,10 +1,11 @@
 package y4;
 
 import a0.f;
+import a1.g;
 import android.os.Parcel;
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends b {
     public final SparseIntArray d;
@@ -28,7 +29,7 @@ public final class c extends b {
         if (i10 == this.f) {
             i10 = this.g;
         }
-        return new c(parcel, dataPosition, i10, a4.a.t(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
+        return new c(parcel, dataPosition, i10, g.t(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
     }
 
     @Override // y4.b

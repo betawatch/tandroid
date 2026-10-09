@@ -1,34 +1,9 @@
 package df;
 
-import q3.h;
-import xe.b;
-import ye.d;
+import cf.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public boolean b(bf.a aVar) {
-        return this instanceof ye.a;
-    }
-
-    public boolean c() {
-        return this instanceof b;
-    }
-
-    public abstract bf.a e();
-
-    public boolean f() {
-        return this instanceof ye.a;
-    }
-
-    public abstract h h(d dVar);
-
-    public void d() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void g(cf.a aVar) {
-    }
+public interface a {
+    void a(String str, p pVar);
 }

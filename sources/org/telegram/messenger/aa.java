@@ -1,50 +1,32 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 c;
 
-    public /* synthetic */ aa(MessagesController messagesController, long j3, ArrayList arrayList, int i10) {
+    public /* synthetic */ aa(int i10, Context context, org.telegram.ui.ActionBar.b2 b2Var) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = j3;
-        this.d = arrayList;
+        this.b = context;
+        this.c = b2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markAllTopicsAsRead$7(this.d, this.c);
+                MessagesController.lambda$convertToMegaGroup$261(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$generateJoinMessage$368(this.c, this.d);
-                break;
-            case 2:
-                this.b.lambda$getDifference$354(this.c, this.d);
-                break;
-            case 3:
-                this.b.lambda$processUpdateArray$418(this.c, this.d);
-                break;
-            case 4:
-                this.b.lambda$deleteMessagesByPush$369(this.d, this.c);
+                MessagesController.lambda$convertToGigaGroup$266(this.b, this.c);
                 break;
             default:
-                this.b.lambda$getDifference$355(this.c, this.d);
+                SecretChatHelper.lambda$startSecretChat$24(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ aa(MessagesController messagesController, ArrayList arrayList, long j3, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.d = arrayList;
-        this.c = j3;
     }
 }

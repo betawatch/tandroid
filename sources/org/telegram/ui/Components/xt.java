@@ -1,28 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xt implements Utilities.Callback {
-    public final /* synthetic */ eu a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class xt {
+    public int a;
+    public Object b;
 
-    public /* synthetic */ xt(eu euVar, int i10, int i11) {
-        this.a = euVar;
-        this.b = i10;
-        this.c = i11;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        eu euVar = this.a;
-        Editable text = euVar.getText();
-        int i10 = this.b;
-        text.replace(i10, this.c, charSequence);
-        euVar.setSelection(i10, charSequence.length() + i10);
+    public boolean a(int i10) {
+        if (((yf.i) this.b) != null && this.a == i10) {
+            return false;
+        }
+        this.a = i10;
+        this.b = new yf.i(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i10, i10}, null, Shader.TileMode.CLAMP);
+        return true;
     }
 }

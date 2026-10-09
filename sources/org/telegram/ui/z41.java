@@ -1,48 +1,66 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z41 implements r0.n, org.telegram.ui.ActionBar.a2 {
+public final class z41 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c51 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
-    public /* synthetic */ z41(c51 c51Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z41(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
+        super(1);
         this.a = i10;
-        this.b = c51Var;
-    }
-
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        c51 c51Var = this.b;
-        c51Var.e = defaultWindowInsets;
-        c51Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        c51Var.b.requestLayout();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
+        switch (i10) {
             case 1:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b.c0;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
-                    break;
-                }
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
                 break;
             default:
-                c51 c51Var = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var3 = c51Var.c0;
-                if (b2Var3 != null) {
-                    b2Var3.dismiss();
-                    c51Var.c0 = null;
-                }
-                c51Var.dismiss();
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
                 break;
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Z) {
+                    onAppear.addListener(new ep0(this, 18));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new y11(this, 4));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Z) {
+                    onDisappear.addListener(new ep0(this, 19));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new y11(this, 5));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

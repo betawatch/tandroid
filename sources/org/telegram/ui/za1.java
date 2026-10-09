@@ -1,30 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class za1 extends org.telegram.ui.Components.a61 {
-    public final /* synthetic */ StickersActivity b;
+public final class za1 extends la1 {
+    public final int v;
+    public final int w;
+    public int x;
+    public xh y;
 
-    public za1(StickersActivity stickersActivity) {
-        this.b = stickersActivity;
+    public za1(Context context, int i10, int i11, ig.f fVar, int i12) {
+        super(context, i11, fVar, null);
+        this.v = i10;
+        this.w = i12;
     }
 
-    @Override // org.telegram.ui.Components.a61
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+    @Override // org.telegram.ui.la1
+    public final void b(na1 na1Var) {
         int i10;
-        StickersActivity stickersActivity = this.b;
-        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
+        if (na1Var == null || (i10 = this.x) < 0) {
+            return;
+        }
+        na1Var.a(this.v, this.w, i10, this.y);
     }
 
-    @Override // org.telegram.ui.Components.a61
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        int i10;
-        StickersActivity stickersActivity = this.b;
-        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
+    @Override // org.telegram.ui.la1
+    public final void c() {
+    }
+
+    @Override // org.telegram.ui.la1
+    public final void f() {
     }
 }

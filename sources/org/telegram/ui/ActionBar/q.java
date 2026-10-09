@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.c9;
+import ai.d9;
 import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -14,9 +14,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.bi;
-import org.telegram.ui.Components.k8;
+import org.telegram.ui.Components.m8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class q implements Runnable {
         switch (i10) {
             case 0:
                 Drawable drawable = ActionBarLayout.p1;
-                AndroidUtilities.runOnUIThread((c9) obj);
+                AndroidUtilities.runOnUIThread((d9) obj);
                 break;
             case 1:
                 v0 v0Var = (v0) obj;
@@ -59,11 +59,11 @@ public final /* synthetic */ class q implements Runnable {
                 break;
             case 5:
                 View view = (View) obj;
-                if (view instanceof j5) {
-                    j5 j5Var = (j5) view;
-                    if (!j5Var.a) {
-                        j5Var.a = true;
-                        j5Var.invalidate();
+                if (view instanceof k5) {
+                    k5 k5Var = (k5) view;
+                    if (!k5Var.a) {
+                        k5Var.a = true;
+                        k5Var.invalidate();
                         break;
                     }
                 }
@@ -144,7 +144,7 @@ public final /* synthetic */ class q implements Runnable {
             case 15:
                 Drawable drawable2 = (Drawable) obj;
                 i6.d = null;
-                i6.N();
+                i6.O();
                 if (!i6.b) {
                     i6.i(drawable2);
                     i6.h(drawable2);
@@ -155,12 +155,12 @@ public final /* synthetic */ class q implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                bi.l(1, (n2) obj);
+                bi.n(1, (n2) obj);
                 break;
             case 18:
-                k8 k8Var = (k8) i6.e5.remove((MessageObject) obj);
-                if (k8Var != null) {
-                    k8Var.i = null;
+                m8 m8Var = (m8) i6.e5.remove((MessageObject) obj);
+                if (m8Var != null) {
+                    m8Var.i = null;
                     break;
                 }
                 break;

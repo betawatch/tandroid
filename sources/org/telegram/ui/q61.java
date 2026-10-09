@@ -1,24 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class q61 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r61 b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ q61(r61 r61Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class q61 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t61 b;
+
+    public /* synthetic */ q61(t61 t61Var, int i10) {
         this.a = i10;
-        this.b = r61Var;
+        this.b = t61Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                super/*android.widget.PopupWindow*/.dismiss();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t61 t61Var = this.b;
+                t61Var.N = floatValue;
+                t61Var.V.h0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t61 t61Var2 = this.b;
+                t61Var2.N = floatValue2;
+                t61Var2.V.h0.invalidate();
                 break;
             default:
-                this.b.dismiss();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t61 t61Var3 = this.b;
+                t61Var3.N = floatValue3;
+                t61Var3.V.h0.invalidate();
                 break;
         }
     }

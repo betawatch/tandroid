@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k {
     public ViewParent a;
@@ -78,7 +78,7 @@ public final class k {
         iArr3[0] = 0;
         iArr3[1] = 0;
         if (e7 instanceof l) {
-            ((l) e7).t(viewGroup, i10, i11, iArr3, i12);
+            ((l) e7).E(viewGroup, i10, i11, iArr3, i12);
         } else if (i12 == 0) {
             try {
                 e7.onNestedPreScroll(viewGroup, i10, i11, iArr3);
@@ -122,12 +122,12 @@ public final class k {
                     iArr3 = iArr2;
                 }
                 if (e7 instanceof m) {
-                    ((m) e7).n(viewGroup, i10, i11, i12, i13, i14, iArr3);
+                    ((m) e7).j(viewGroup, i10, i11, i12, i13, i14, iArr3);
                 } else {
                     iArr3[0] = iArr3[0] + i12;
                     iArr3[1] = iArr3[1] + i13;
                     if (e7 instanceof l) {
-                        ((l) e7).o(viewGroup, i10, i11, i12, i13, i14);
+                        ((l) e7).c(viewGroup, i10, i11, i12, i13, i14);
                     } else if (i14 == 0) {
                         try {
                             e7.onNestedScroll(viewGroup, i10, i11, i12, i13);
@@ -219,7 +219,7 @@ public final class k {
             boolean z10 = e7 instanceof l;
             ViewGroup viewGroup = this.c;
             if (z10) {
-                ((l) e7).m(i10, viewGroup);
+                ((l) e7).o(i10, viewGroup);
             } else if (i10 == 0) {
                 try {
                     e7.onStopNestedScroll(viewGroup);

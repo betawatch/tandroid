@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class m3 {
     public boolean A;
@@ -21,10 +21,10 @@ public class m3 {
     public String H;
     public float I;
     public org.telegram.ui.i4 J;
-    public ei.b1 K;
+    public ei.a1 K;
     public boolean L;
-    public ei.f5 a;
-    public org.telegram.ui.web.z0 b;
+    public ei.e5 a;
+    public org.telegram.ui.web.y0 b;
     public org.telegram.ui.m3 c;
     public Object d;
     public boolean e;
@@ -52,9 +52,9 @@ public class m3 {
 
     public final void a() {
         try {
-            org.telegram.ui.web.z0 z0Var = this.b;
-            if (z0Var != null) {
-                z0Var.destroy();
+            org.telegram.ui.web.y0 y0Var = this.b;
+            if (y0Var != null) {
+                y0Var.destroy();
                 this.b = null;
             }
             org.telegram.ui.i4 i4Var = this.J;
@@ -70,7 +70,7 @@ public class m3 {
         if (this.J != null) {
             return TextUtils.isEmpty(this.E) ? LocaleController.getString(R.string.WebEmpty) : this.E;
         }
-        ei.f5 f5Var = this.a;
-        return f5Var == null ? "" : UserObject.getUserName(MessagesController.getInstance(f5Var.a).getUser(Long.valueOf(this.a.c)));
+        ei.e5 e5Var = this.a;
+        return e5Var == null ? "" : e5Var.g == 6 ? e5Var.e : UserObject.getUserName(MessagesController.getInstance(e5Var.a).getUser(Long.valueOf(this.a.c)));
     }
 }

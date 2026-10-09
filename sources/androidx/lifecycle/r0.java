@@ -4,7 +4,7 @@ import android.app.Application;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r0 extends q0 {
     public static r0 e;
@@ -15,23 +15,17 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 H(Class cls, v1.b bVar) {
-        if (this.d != null) {
-            return f(cls);
-        }
-        Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
+    public final p0 a(Class cls) {
+        Application application = this.d;
         if (application != null) {
-            return a(cls, application);
+            return b(cls, application);
         }
-        if (a.class.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
-        }
-        return super.f(cls);
+        throw new UnsupportedOperationException("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
     }
 
-    public final p0 a(Class cls, Application application) {
+    public final p0 b(Class cls, Application application) {
         if (!a.class.isAssignableFrom(cls)) {
-            return super.f(cls);
+            return super.a(cls);
         }
         try {
             p0 p0Var = (p0) cls.getConstructor(Application.class).newInstance(application);
@@ -49,11 +43,17 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 f(Class cls) {
-        Application application = this.d;
-        if (application != null) {
-            return a(cls, application);
+    public final p0 h(Class cls, v1.b bVar) {
+        if (this.d != null) {
+            return a(cls);
         }
-        throw new UnsupportedOperationException("AndroidViewModelFactory constructed with empty constructor works only with create(modelClass: Class<T>, extras: CreationExtras).");
+        Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
+        if (application != null) {
+            return b(cls, application);
+        }
+        if (a.class.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("CreationExtras must have an application by `APPLICATION_KEY`");
+        }
+        return super.a(cls);
     }
 }

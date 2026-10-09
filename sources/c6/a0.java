@@ -3,7 +3,7 @@ package c6;
 import android.os.Parcel;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a = 0;
@@ -26,24 +26,24 @@ public final /* synthetic */ class a0 implements com.google.android.gms.common.a
                 n6.l.j("Not active connection", this.b.F != 1);
                 if (this.d != null) {
                     g6.f fVar = (g6.f) wVar.u();
-                    Parcel O0 = fVar.O0();
-                    O0.writeString(this.c);
-                    fVar.T0(O0, 12);
+                    Parcel N0 = fVar.N0();
+                    N0.writeString(this.c);
+                    fVar.S0(N0, 12);
                 }
                 taskCompletionSource.setResult(null);
                 break;
             default:
                 n6.l.j("Not active connection", this.b.F != 1);
                 g6.f fVar2 = (g6.f) wVar.u();
-                Parcel O02 = fVar2.O0();
+                Parcel N02 = fVar2.N0();
                 String str = this.c;
-                O02.writeString(str);
-                fVar2.T0(O02, 12);
+                N02.writeString(str);
+                fVar2.S0(N02, 12);
                 if (this.d != null) {
                     g6.f fVar3 = (g6.f) wVar.u();
-                    Parcel O03 = fVar3.O0();
-                    O03.writeString(str);
-                    fVar3.T0(O03, 11);
+                    Parcel N03 = fVar3.N0();
+                    N03.writeString(str);
+                    fVar3.S0(N03, 11);
                 }
                 taskCompletionSource.setResult(null);
                 break;

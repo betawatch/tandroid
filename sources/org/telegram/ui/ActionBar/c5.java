@@ -1,64 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.FrameLayout;
-import java.util.List;
+import org.telegram.ui.sn;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface c5 {
-    n2 getBackgroundFragment();
+public final class c5 {
+    public final h6 a;
+    public final int b;
+    public final boolean c;
+    public final boolean d;
+    public boolean e;
+    public Runnable h;
+    public sn i;
+    public sn j;
+    public un k;
+    public e6 m;
+    public boolean f = true;
+    public boolean g = true;
+    public long l = 200;
 
-    f3 getBottomSheet();
-
-    List getFragmentStack();
-
-    n2 getLastFragment();
-
-    e5 getMessageDrawableOutMediaStart();
-
-    e5 getMessageDrawableOutStart();
-
-    FrameLayout getOverlayContainerView();
-
-    Activity getParentActivity();
-
-    List getPulledDialogs();
-
-    n2 getSafeLastFragment();
-
-    float getThemeAnimationValue();
-
-    ViewGroup getView();
-
-    Window getWindow();
-
-    void setBackgroundView(View view);
-
-    void setDelegate(z4 z4Var);
-
-    void setDrawerLayoutContainer(y3 y3Var);
-
-    void setFragmentPanTranslationOffset(int i10);
-
-    void setFragmentStack(List list);
-
-    void setHighlightActionButtons(boolean z10);
-
-    void setInBubbleMode(boolean z10);
-
-    void setIsSheet(boolean z10);
-
-    void setNavigationBarColor(int i10);
-
-    void setPulledDialogs(List list);
-
-    void setRemoveActionBarExtraHeight(boolean z10);
-
-    void setUseAlphaAnimations(boolean z10);
-
-    void setWindow(Window window);
+    public c5(h6 h6Var, int i10, boolean z10, boolean z11) {
+        this.a = h6Var;
+        this.b = i10;
+        this.c = z10;
+        this.d = z11;
+    }
 }

@@ -1,86 +1,31 @@
 package ci;
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.VideoEncodingService;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class r0 implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final File b;
-    public MessageObject c;
-    public final p0 d;
-    public final q0 e;
-    public final o0 f;
+public final /* synthetic */ class r0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s0 b;
 
-    public r0(int i10, k8 k8Var, File file, p0 p0Var, q0 q0Var, o0 o0Var) {
+    public /* synthetic */ r0(s0 s0Var, int i10) {
         this.a = i10;
-        this.b = file;
-        this.d = p0Var;
-        this.e = q0Var;
-        this.f = o0Var;
-        if (this.c != null) {
-            return;
-        }
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingStarted);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileNewChunkAvailable);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingFailed);
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = 1;
-        tL_message.attachPath = file.getAbsolutePath();
-        this.c = new MessageObject(i10, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
-        k8Var.s(new ai.y1(this, 7));
+        this.b = s0Var;
     }
 
-    public final void a(boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        int i10 = this.a;
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingStarted);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileNewChunkAvailable);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingFailed);
-        if (z10) {
-            MediaController.getInstance().cancelVideoConvert(this.c);
-        }
-        this.c = null;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.filePreparingStarted) {
-            return;
-        }
-        if (i10 != NotificationCenter.fileNewChunkAvailable) {
-            if (i10 == NotificationCenter.filePreparingFailed && ((MessageObject) objArr[0]) == this.c) {
-                a(false);
-                try {
-                    File file = this.b;
-                    if (file != null) {
-                        file.delete();
-                    }
-                } catch (Exception unused) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                s0 s0Var = this.b;
+                if (s0Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) s0Var.getParent()).removeView(s0Var);
+                    break;
                 }
-                this.f.run();
-                return;
-            }
-            return;
-        }
-        if (((MessageObject) objArr[0]) == this.c) {
-            ((Long) objArr[2]).getClass();
-            long longValue = ((Long) objArr[3]).longValue();
-            Float f7 = (Float) objArr[4];
-            f7.getClass();
-            this.e.run(f7);
-            if (longValue > 0) {
-                this.d.run();
-                VideoEncodingService.stop();
-                a(false);
-            }
+                break;
+            default:
+                this.b.a();
+                break;
         }
     }
 }

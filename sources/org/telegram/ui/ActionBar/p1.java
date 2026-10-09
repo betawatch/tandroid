@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class p1 {
-    public static final tr w = ji.n.V;
+    public static final hs w = ji.n.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -140,7 +140,7 @@ public abstract class p1 {
         this.d.requestLayout();
         boolean z10 = this.s;
         e(0.0f, z10 ? 1.0f : 0.0f, z10);
-        if (!(this instanceof zg.k)) {
+        if (!(this instanceof zg.n)) {
             this.a.setTranslationY(0.0f);
         }
         f();

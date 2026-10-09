@@ -2,15 +2,15 @@ package org.telegram.ui;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oe implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yn b;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ oe(yn ynVar, int i10) {
+    public /* synthetic */ oe(zn znVar, int i10) {
         this.a = i10;
-        this.b = ynVar;
+        this.b = znVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -18,38 +18,38 @@ public final /* synthetic */ class oe implements ValueAnimator.AnimatorUpdateLis
         switch (this.a) {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yn ynVar = this.b;
-                ynVar.I8 = floatValue;
-                qm qmVar = ynVar.V0;
-                if (qmVar != null) {
-                    qmVar.invalidate();
-                    ynVar.v0.invalidate();
+                zn znVar = this.b;
+                znVar.K8 = floatValue;
+                sm smVar = znVar.X0;
+                if (smVar != null) {
+                    smVar.invalidate();
+                    znVar.x0.invalidate();
                     break;
                 }
                 break;
             case 1:
-                yn ynVar2 = this.b;
-                ynVar2.getClass();
-                ynVar2.g3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ynVar2.kc();
+                zn znVar2 = this.b;
+                znVar2.getClass();
+                znVar2.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar2.pc();
                 break;
             case 2:
-                yn ynVar3 = this.b;
-                ynVar3.getClass();
-                ynVar3.g3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ynVar3.kc();
+                zn znVar3 = this.b;
+                znVar3.getClass();
+                znVar3.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar3.pc();
                 break;
             case 3:
-                yn ynVar4 = this.b;
-                ynVar4.getClass();
-                ynVar4.Ba = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ynVar4.o9();
+                zn znVar4 = this.b;
+                znVar4.getClass();
+                znVar4.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar4.t9();
                 break;
             default:
-                yn ynVar5 = this.b;
-                ynVar5.getClass();
-                ynVar5.Ba = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ynVar5.o9();
+                zn znVar5 = this.b;
+                znVar5.getClass();
+                znVar5.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar5.t9();
                 break;
         }
     }

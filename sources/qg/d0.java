@@ -1,25 +1,25 @@
 package qg;
 
-import org.telegram.ui.dr0;
-import org.telegram.ui.vt0;
+import org.telegram.ui.bu0;
+import org.telegram.ui.ir0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class d0 implements pg.e1 {
-    public final /* synthetic */ dr0 a;
-    public final /* synthetic */ vt0 b;
+public final class d0 implements pg.d1 {
+    public final /* synthetic */ ir0 a;
+    public final /* synthetic */ bu0 b;
 
-    public d0(vt0 vt0Var, dr0 dr0Var) {
-        this.b = vt0Var;
-        this.a = dr0Var;
+    public d0(bu0 bu0Var, ir0 ir0Var) {
+        this.b = bu0Var;
+        this.a = ir0Var;
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final void a() {
         this.a.run();
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final void b() {
         e0 e0Var = this.b.X0;
         if (e0Var != null) {
@@ -27,40 +27,40 @@ public final class d0 implements pg.e1 {
         }
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final void c() {
-        vt0 vt0Var = this.b;
-        if (vt0Var.k1) {
-            vt0Var.k1 = false;
+        bu0 bu0Var = this.b;
+        if (bu0Var.k1) {
+            bu0Var.k1 = false;
         } else {
-            vt0Var.t1.b(1);
-            vt0Var.b((pg.m) pg.m.a.get(0));
+            bu0Var.t1.b(1);
+            bu0Var.b((pg.m) pg.m.a.get(0));
         }
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final boolean d() {
-        vt0 vt0Var = this.b;
-        boolean z10 = vt0Var.S0 == null;
+        bu0 bu0Var = this.b;
+        boolean z10 = bu0Var.S0 == null;
         if (!z10) {
-            vt0Var.s0(null, true);
+            bu0Var.s0(null, true);
         }
         return z10;
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final void e() {
-        vt0 vt0Var = this.b;
-        vt0Var.F0.a.j();
-        vt0Var.l1.setViewHidden(false);
+        bu0 bu0Var = this.b;
+        bu0Var.F0.a.e();
+        bu0Var.l1.setViewHidden(false);
     }
 
-    @Override // pg.e1
+    @Override // pg.d1
     public final void f() {
-        vt0 vt0Var = this.b;
-        if (vt0Var.S0 != null) {
-            vt0Var.s0(null, true);
+        bu0 bu0Var = this.b;
+        if (bu0Var.S0 != null) {
+            bu0Var.s0(null, true);
         }
-        vt0Var.l1.setViewHidden(true);
+        bu0Var.l1.setViewHidden(true);
     }
 }

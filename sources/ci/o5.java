@@ -1,211 +1,56 @@
 package ci;
 
 import android.content.Context;
-import android.util.SparseIntArray;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.oh;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o5 implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class o5 extends FrameLayout {
+    public final /* synthetic */ nb a;
 
-    public /* synthetic */ o5(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o5(nb nbVar, Context context) {
+        super(context);
+        this.a = nbVar;
+        setWillNotDraw(false);
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                q6 q6Var = (q6) this.b;
-                boolean[] zArr = (boolean[]) this.c;
-                y5 y5Var = (y5) this.d;
-                Integer num = (Integer) obj;
-                j6 j6Var = q6Var.R0;
-                d6 d6Var = q6Var.G1;
-                if (num.intValue() == 0) {
-                    zArr[0] = false;
-                    q6Var.L0(null, new bi.v(q6Var, 5));
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() == 5) {
-                    zArr[0] = false;
-                    kd.a(true, new ai.g3(3, q6Var, y5Var));
-                    return Boolean.FALSE;
-                }
-                if (num.intValue() == 2) {
-                    y5Var.dismiss();
-                    kc kcVar = ((mb) q6Var).A2;
-                    kcVar.c1.L.b(true);
-                    kcVar.w();
-                    kcVar.t(true);
-                    kcVar.f(true);
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() == 1) {
-                    zArr[0] = false;
-                    c8 c8Var = new c8(q6Var.getContext(), false, null, new ai.y1(q6Var, 12), new ai.d());
-                    c8Var.setOnDismissListener(new f5(q6Var, 2));
-                    c8Var.show();
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() == 3) {
-                    q6Var.l2 = true;
-                    q6Var.d0(q6Var.l0(true));
-                    return Boolean.TRUE;
-                }
-                if (num.intValue() != 4) {
-                    return Boolean.FALSE;
-                }
-                if (!UserConfig.getInstance(q6Var.F1).isPremium()) {
-                    try {
-                        y5Var.container.performHapticFeedback(3);
-                    } catch (Exception unused) {
-                    }
-                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new f5(q6Var, 1))).k(true);
-                    return Boolean.FALSE;
-                }
-                int i10 = 0;
-                for (int i11 = 0; i11 < j6Var.getChildCount(); i11++) {
-                    if (j6Var.getChildAt(i11) instanceof qg.q0) {
-                        i10++;
-                    }
-                }
-                if (i10 >= 3) {
-                    new org.telegram.ui.Components.yc(y5Var.container, d6Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
-                    return Boolean.FALSE;
-                }
-                zArr[0] = false;
-                q6Var.K0(null);
-                y5Var.dismiss();
-                return Boolean.TRUE;
-            case 1:
-                final org.telegram.ui.Components.e0 e0Var = (org.telegram.ui.Components.e0) this.b;
-                final org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.c;
-                Context context = (Context) this.d;
-                org.telegram.ui.Components.c0 c0Var = (org.telegram.ui.Components.c0) obj;
-                TL_aicompose.AiComposeTone aiComposeTone = c0Var.e;
-                if (!(aiComposeTone instanceof TL_aicompose.TL_aiComposeTone)) {
-                    return Boolean.FALSE;
-                }
-                final TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
-                b80 F = b80.F(e0Var.container, d6Var2, c0Var);
-                F.W(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, d6Var2)));
-                final int i12 = 0;
-                F.l(R.drawable.msg_edit, LocaleController.getString(R.string.AIEditorEditStyle), new Runnable() { // from class: org.telegram.ui.Components.f
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                e0 e0Var2 = e0Var;
-                                y yVar = new y(e0Var2.getContext(), d6Var2);
-                                TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                                yVar.j0 = tL_aiComposeTone2;
-                                yVar.h0 = Long.valueOf(tL_aiComposeTone2.emoji_id);
-                                yVar.W();
-                                yVar.a0.setText(yVar.j0.title);
-                                yVar.b0.setText(yVar.j0.prompt);
-                                yVar.d0.a(yVar.j0.author_id != 0, false);
-                                yVar.e.setTitle(LocaleController.getString(R.string.AIEditorEditStyle));
-                                yVar.g0.setText(LocaleController.getString(R.string.AIEditorStyleEdit));
-                                yVar.U();
-                                yVar.m0.N(false);
-                                yVar.l0 = new e(e0Var2, 2);
-                                yVar.show();
-                                break;
-                            default:
-                                e0 e0Var3 = e0Var;
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, d6Var2);
-                                alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
-                                alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.o(21, e0Var3, tL_aiComposeTone));
-                                alertDialog$Builder.d(-1);
-                                alertDialog$Builder.o();
-                                break;
-                        }
-                    }
-                }, tL_aiComposeTone.creator);
-                F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ActionBar.m5(e0Var, tL_aiComposeTone, context, d6Var2, 15), false);
-                F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new oh(23, e0Var, tL_aiComposeTone));
-                final int i13 = 1;
-                F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                e0 e0Var2 = e0Var;
-                                y yVar = new y(e0Var2.getContext(), d6Var2);
-                                TL_aicompose.TL_aiComposeTone tL_aiComposeTone2 = tL_aiComposeTone;
-                                yVar.j0 = tL_aiComposeTone2;
-                                yVar.h0 = Long.valueOf(tL_aiComposeTone2.emoji_id);
-                                yVar.W();
-                                yVar.a0.setText(yVar.j0.title);
-                                yVar.b0.setText(yVar.j0.prompt);
-                                yVar.d0.a(yVar.j0.author_id != 0, false);
-                                yVar.e.setTitle(LocaleController.getString(R.string.AIEditorEditStyle));
-                                yVar.g0.setText(LocaleController.getString(R.string.AIEditorStyleEdit));
-                                yVar.U();
-                                yVar.m0.N(false);
-                                yVar.l0 = new e(e0Var2, 2);
-                                yVar.show();
-                                break;
-                            default:
-                                e0 e0Var3 = e0Var;
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e0Var3.getContext(), 0, d6Var2);
-                                alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
-                                alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.o(21, e0Var3, tL_aiComposeTone));
-                                alertDialog$Builder.d(-1);
-                                alertDialog$Builder.o();
-                                break;
-                        }
-                    }
-                });
-                F.Z();
-                return Boolean.TRUE;
-            case 2:
-                String str = (String) this.b;
-                String str2 = (String) this.c;
-                MessageObject messageObject = ((rh.g) this.d).b;
-                return rh.c.d((View) obj, str, str2, messageObject.getDocument(), messageObject);
-            default:
-                zl0 zl0Var = (zl0) this.b;
-                Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
-                SparseIntArray sparseIntArray = (SparseIntArray) this.d;
-                View view = (View) obj;
-                try {
-                    if (view.getParent() != zl0Var) {
-                        return Boolean.FALSE;
-                    }
-                    Boolean bool = (Boolean) callbackReturn.run(view);
-                    boolean booleanValue = bool.booleanValue();
-                    s4.c1 T = zl0Var.T(view);
-                    if (T != null) {
-                        sparseIntArray.put(T.f, booleanValue ? 1 : 0);
-                    }
-                    return bool;
-                } catch (Exception unused2) {
-                    return Boolean.FALSE;
-                }
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        nb nbVar = this.a;
+        Paint paint = nbVar.r1;
+        qg.o1 o1Var = nbVar.l1;
+        paint.setAlpha((int) ((1.0f - nbVar.t1) * o1Var.getAlpha() * 20.0f));
+        RectF rectF = AndroidUtilities.rectTmp;
+        o1Var.b(rectF);
+        float translationY = o1Var.getTranslationY() + nbVar.T0.getTranslationY() + o1Var.getTop() + r4.getTop();
+        float f7 = rectF.left;
+        qg.t1 t1Var = nbVar.m1;
+        rectF.set(AndroidUtilities.lerp(f7, t1Var.getLeft(), nbVar.t1), AndroidUtilities.lerp(rectF.top + translationY, t1Var.getTop() - t1Var.getTranslationY(), nbVar.t1), AndroidUtilities.lerp(rectF.right, t1Var.getRight(), nbVar.t1), AndroidUtilities.lerp(translationY + rectF.bottom, t1Var.getBottom() - t1Var.getTranslationY(), nbVar.t1));
+        float dp = AndroidUtilities.dp(AndroidUtilities.lerp(32, 16, nbVar.t1));
+        Paint paint2 = nbVar.s1;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * nbVar.t1));
+        canvas.drawRoundRect(rectF, dp, dp, paint2);
+        paint2.setAlpha(alpha);
+        canvas.drawRoundRect(rectF, dp, dp, paint);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            nb nbVar = this.a;
+            if (nbVar.u1) {
+                nbVar.O0(false);
+                return true;
+            }
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -7,10 +7,10 @@ import h2.h;
 import ii.b0;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
-import n4.y;
+import n4.x;
 import u2.f0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends i2.f {
     public final k0.b I;
@@ -53,7 +53,7 @@ public final class f extends i2.f {
         return k0.b.c(sVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0146, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0143, code lost:
     
         if (r14 == ((r0 * r1.Q) - 1)) goto L79;
      */
@@ -171,14 +171,14 @@ public final class f extends i2.f {
     
         if (r2 == null) goto L93;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x0110, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x010f, code lost:
     
         if (r2 == false) goto L81;
      */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0088  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0124  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0128  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -190,8 +190,8 @@ public final class f extends i2.f {
         int i10;
         h hVar2;
         if (!this.X || this.Y == null) {
-            y yVar = this.c;
-            yVar.o();
+            x xVar = this.c;
+            xVar.u();
             b bVar = this.T;
             if (bVar != null && this.Q != 3 && !this.L) {
                 if (this.U == null) {
@@ -208,9 +208,9 @@ public final class f extends i2.f {
                     this.Q = 3;
                     return false;
                 }
-                int w10 = w(yVar, this.U, 0);
+                int w10 = w(xVar, this.U, 0);
                 if (w10 == -5) {
-                    s sVar2 = (s) yVar.c;
+                    s sVar2 = (s) xVar.c;
                     e2.d.h(sVar2);
                     this.S = sVar2;
                     this.b0 = true;
@@ -218,7 +218,7 @@ public final class f extends i2.f {
                     return true;
                 }
                 if (w10 == -4) {
-                    this.U.d();
+                    this.U.c();
                     ByteBuffer byteBuffer = this.U.c;
                     if (byteBuffer == null || byteBuffer.remaining() <= 0) {
                         h hVar4 = this.U;
@@ -435,11 +435,11 @@ public final class f extends i2.f {
             return;
         }
         if (this.S == null) {
-            y yVar = this.c;
-            yVar.o();
+            x xVar = this.c;
+            xVar.u();
             h hVar = this.J;
             hVar.clear();
-            int w10 = w(yVar, hVar, 2);
+            int w10 = w(xVar, hVar, 2);
             if (w10 != -5) {
                 if (w10 == -4) {
                     e2.d.g(hVar.isEndOfStream());
@@ -449,7 +449,7 @@ public final class f extends i2.f {
                 }
                 return;
             }
-            s sVar = (s) yVar.c;
+            s sVar = (s) xVar.c;
             e2.d.h(sVar);
             this.S = sVar;
             this.b0 = true;

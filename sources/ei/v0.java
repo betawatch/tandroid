@@ -1,29 +1,128 @@
 package ei;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.z6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class v0 implements LocationListener {
-    public final /* synthetic */ LocationManager a;
-    public final /* synthetic */ LocationListener[] b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ x0 d;
+public final class v0 extends Drawable implements z6 {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final ImageReceiver d;
+    public final ImageReceiver e;
+    public final Drawable f;
 
-    public v0(x0 x0Var, LocationManager locationManager, LocationListener[] locationListenerArr, Utilities.Callback callback) {
-        this.d = x0Var;
-        this.a = locationManager;
-        this.b = locationListenerArr;
-        this.c = callback;
+    public v0(Context context, TLRPC.User user, TLRPC.User user2) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        ImageReceiver imageReceiver = new ImageReceiver();
+        this.d = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver();
+        this.e = imageReceiver2;
+        new RectF();
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setColor(-1);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
+        this.f = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.x0(null, i6.L5, false), PorterDuff.Mode.SRC_IN));
+        j9 j9Var = new j9((e6) null);
+        j9Var.r(user);
+        imageReceiver.setForUserOrChat(user, j9Var);
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(25.0f));
+        j9 j9Var2 = new j9((e6) null);
+        j9Var2.r(user2);
+        imageReceiver2.setForUserOrChat(user2, j9Var2);
+        imageReceiver2.setRoundRadius(AndroidUtilities.dp(25.0f));
     }
 
-    @Override // android.location.LocationListener
-    public final void onLocationChanged(Location location) {
-        this.a.removeUpdates(this.b[0]);
-        this.d.getClass();
-        this.c.run(x0.h(location));
+    @Override // org.telegram.ui.Components.z6
+    public final void a(fk0 fk0Var) {
+        this.e.setParentView(fk0Var);
+        this.d.setParentView(fk0Var);
+    }
+
+    @Override // org.telegram.ui.Components.z6
+    public final void b(ImageReceiver imageReceiver) {
+        this.d.onDetachedFromWindow();
+        this.e.onDetachedFromWindow();
+    }
+
+    @Override // org.telegram.ui.Components.z6
+    public final void c(ImageReceiver imageReceiver) {
+        this.d.onAttachedToWindow();
+        this.e.onAttachedToWindow();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int x02 = i6.x0(null, i6.L5, false);
+        Paint paint = this.b;
+        paint.setColor(x02);
+        float dp = AndroidUtilities.dp(136.0f) / 2.0f;
+        float centerY = bounds.centerY() - AndroidUtilities.dp(25.0f);
+        float dp2 = AndroidUtilities.dp(50.0f);
+        float dp3 = AndroidUtilities.dp(50.0f);
+        ImageReceiver imageReceiver = this.d;
+        imageReceiver.setImageCoords(bounds.centerX() - dp, centerY, dp2, dp3);
+        imageReceiver.draw(canvas);
+        float centerX = (bounds.centerX() - dp) + AndroidUtilities.dp(41.0f);
+        float dp4 = AndroidUtilities.dp(16.0f) + bounds.centerY();
+        canvas.drawCircle(centerX, dp4, AndroidUtilities.dp(14.0f), paint);
+        canvas.drawCircle(centerX, dp4, AndroidUtilities.dp(12.0f), this.c);
+        int dp5 = (int) (dp4 + AndroidUtilities.dp(9.0f));
+        Drawable drawable = this.f;
+        drawable.setBounds((int) (centerX - AndroidUtilities.dp(9.0f)), (int) (dp4 - AndroidUtilities.dp(9.0f)), (int) (centerX + AndroidUtilities.dp(9.0f)), dp5);
+        drawable.draw(canvas);
+        float centerX2 = bounds.centerX() - AndroidUtilities.dp(3.33f);
+        float centerY2 = bounds.centerY() - AndroidUtilities.dp(7.0f);
+        float dp6 = AndroidUtilities.dp(3.33f) + bounds.centerX();
+        float centerY3 = bounds.centerY();
+        Paint paint2 = this.a;
+        canvas.drawLine(centerX2, centerY2, dp6, centerY3, paint2);
+        canvas.drawLine(bounds.centerX() - AndroidUtilities.dp(3.33f), AndroidUtilities.dp(7.0f) + bounds.centerY(), AndroidUtilities.dp(3.33f) + bounds.centerX(), bounds.centerY(), paint2);
+        float centerY4 = bounds.centerY() - AndroidUtilities.dp(25.0f);
+        float dp7 = AndroidUtilities.dp(50.0f);
+        float dp8 = AndroidUtilities.dp(50.0f);
+        ImageReceiver imageReceiver2 = this.e;
+        imageReceiver2.setImageCoords((bounds.centerX() + dp) - AndroidUtilities.dp(50.0f), centerY4, dp7, dp8);
+        imageReceiver2.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h1 extends k1 {
     public final e b;
@@ -28,7 +28,7 @@ public final class h1 extends k1 {
     @Override // com.google.android.gms.common.api.internal.k1
     public final void b(Exception exc) {
         try {
-            this.b.o(new Status(10, a4.a.D(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
+            this.b.o(new Status(10, a1.g.D(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
         } catch (IllegalStateException e7) {
             Log.w("ApiCallRunner", "Exception reporting failure", e7);
         }

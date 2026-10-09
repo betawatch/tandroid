@@ -1,13 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a0 {
-    public static final int a;
+public class a0 extends Handler {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a0(Looper looper, int i10) {
+        super(looper);
+        switch (i10) {
+            case 2:
+                super(looper);
+                Looper.getMainLooper();
+                break;
+            case 3:
+            default:
+                Looper.getMainLooper();
+                break;
+            case 4:
+                super(looper);
+                Looper.getMainLooper();
+                break;
+        }
+    }
 
-    static {
-        a = Build.VERSION.SDK_INT >= 23 ? 67108864 : 0;
+    public a0(Looper looper, Handler.Callback callback) {
+        super(looper, callback);
+        Looper.getMainLooper();
     }
 }

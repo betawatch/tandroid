@@ -3,14 +3,14 @@ package tg;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ AtomicBoolean b;
-    public final /* synthetic */ nf.e c;
+    public final /* synthetic */ of.e c;
 
-    public /* synthetic */ f(AtomicBoolean atomicBoolean, nf.e eVar, int i10) {
+    public /* synthetic */ f(AtomicBoolean atomicBoolean, of.e eVar, int i10) {
         this.a = i10;
         this.b = atomicBoolean;
         this.c = eVar;
@@ -18,7 +18,7 @@ public final /* synthetic */ class f implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        nf.e eVar;
+        of.e eVar;
         switch (this.a) {
             case 0:
                 if (!this.b.get()) {

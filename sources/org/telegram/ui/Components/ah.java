@@ -1,39 +1,47 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ah {
-    public static final ah a;
-    public static final ah b;
-    public static final ah c;
-    public static final ah d;
-    public static final ah e;
-    public static final ah f;
-    public static final /* synthetic */ ah[] h;
+public final class ah extends HashMap {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        ah ahVar = new ah("VOICE", 0);
-        a = ahVar;
-        ah ahVar2 = new ah("VIDEO", 1);
-        b = ahVar2;
-        ah ahVar3 = new ah("STICKER", 2);
-        c = ahVar3;
-        ah ahVar4 = new ah("KEYBOARD", 3);
-        d = ahVar4;
-        ah ahVar5 = new ah("SMILE", 4);
-        e = ahVar5;
-        ah ahVar6 = new ah("GIF", 5);
-        f = ahVar6;
-        h = new ah[]{ahVar, ahVar2, ahVar3, ahVar4, ahVar5, ahVar6};
+    public /* synthetic */ ah(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static ah valueOf(String str) {
-        return (ah) Enum.valueOf(ah.class, str);
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                int i10 = ((dh) this.b).v;
+                ck0 ck0Var = (ck0) super.get(obj);
+                if (ck0Var != null) {
+                    return ck0Var;
+                }
+                ch chVar = (ch) obj;
+                ck0 ck0Var2 = new ck0(chVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
+                put(chVar, ck0Var2);
+                return ck0Var2;
+            default:
+                return super.get(obj);
+        }
     }
 
-    public static ah[] values() {
-        return (ah[]) h.clone();
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object put(Object obj, Object obj2) {
+        switch (this.a) {
+            case 1:
+                String str = (String) obj;
+                String str2 = (String) obj2;
+                ((zc.g) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
+                return (String) super.put(str, str2);
+            default:
+                return super.put(obj, obj2);
+        }
     }
 }

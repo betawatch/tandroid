@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class m {
     public int[] a;
@@ -177,9 +177,9 @@ public class m {
         if (iArr.length <= 8 || i11 >= iArr.length / 3) {
             if (i10 < i13) {
                 int i14 = i10 + 1;
-                hd.f.b(i10, i14, i11, iArr, iArr);
+                id.f.b(i10, i14, i11, iArr, iArr);
                 Object[] objArr2 = this.b;
-                hd.f.c(i12, i14 << 1, i11 << 1, objArr2, objArr2);
+                id.f.c(i12, i14 << 1, i11 << 1, objArr2, objArr2);
             }
             Object[] objArr3 = this.b;
             int i15 = i13 << 1;
@@ -197,13 +197,13 @@ public class m {
                 throw new ConcurrentModificationException();
             }
             if (i10 > 0) {
-                hd.f.b(0, 0, i10, iArr, this.a);
-                hd.f.c(0, 0, i12, objArr, this.b);
+                id.f.b(0, 0, i10, iArr, this.a);
+                id.f.c(0, 0, i12, objArr, this.b);
             }
             if (i10 < i13) {
                 int i17 = i10 + 1;
-                hd.f.b(i10, i17, i11, iArr, this.a);
-                hd.f.c(i12, i17 << 1, i11 << 1, objArr, this.b);
+                id.f.b(i10, i17, i11, iArr, this.a);
+                id.f.c(i12, i17 << 1, i11 << 1, objArr, this.b);
             }
         }
         if (i11 != this.c) {
@@ -297,9 +297,9 @@ public class m {
         if (i12 < i10) {
             int[] iArr2 = this.a;
             int i14 = i12 + 1;
-            hd.f.b(i14, i12, i10, iArr2, iArr2);
+            id.f.b(i14, i12, i10, iArr2, iArr2);
             Object[] objArr2 = this.b;
-            hd.f.c(i14 << 1, i12 << 1, this.c << 1, objArr2, objArr2);
+            id.f.c(i14 << 1, i12 << 1, this.c << 1, objArr2, objArr2);
         }
         int i15 = this.c;
         if (i10 == i15) {

@@ -1,46 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.net.Uri;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p2 implements Runnable {
+public final /* synthetic */ class p2 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ p2(Context context, String str, long j3, boolean z10, nf.e eVar) {
-        this.d = context;
-        this.e = str;
-        this.b = j3;
-        this.c = z10;
-        this.f = eVar;
+    public /* synthetic */ p2(Runnable runnable, boolean[] zArr) {
+        this.c = runnable;
+        this.b = zArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                Context context = (Context) this.d;
-                String str = (String) this.e;
-                nf.f.q(context, Uri.parse(str), this.b == 0, this.c, (nf.e) this.f);
+                Runnable runnable = this.c;
+                if (runnable != null && this.b[0]) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                j8.z((j8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    Runnable runnable2 = this.c;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    public /* synthetic */ p2(j8 j8Var, long j3, boolean z10, TLRPC.Document document, Runnable runnable) {
-        this.d = j8Var;
-        this.b = j3;
-        this.c = z10;
-        this.e = document;
-        this.f = runnable;
+    public /* synthetic */ p2(boolean[] zArr, Runnable runnable) {
+        this.b = zArr;
+        this.c = runnable;
     }
 }

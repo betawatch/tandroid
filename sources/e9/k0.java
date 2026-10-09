@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class k0 implements Map, Serializable, j$.util.Map {
     public transient m0 a;
@@ -24,7 +24,7 @@ public abstract class k0 implements Map, Serializable, j$.util.Map {
         }
         Set<Map.Entry> entrySet = map.entrySet();
         a5.a aVar = new a5.a(entrySet != null ? entrySet.size() : 4, 5);
-        if (e2.u(entrySet)) {
+        if (e2.t(entrySet)) {
             int size = (entrySet.size() + aVar.b) * 2;
             Object[] objArr = (Object[]) aVar.c;
             if (size > objArr.length) {
@@ -32,9 +32,9 @@ public abstract class k0 implements Map, Serializable, j$.util.Map {
             }
         }
         for (Map.Entry entry : entrySet) {
-            aVar.u(entry.getKey(), entry.getValue());
+            aVar.w(entry.getKey(), entry.getValue());
         }
-        return aVar.d();
+        return aVar.f();
     }
 
     public abstract c1 b();

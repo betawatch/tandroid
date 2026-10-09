@@ -1,41 +1,54 @@
 package ei;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.zl0;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.bi;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class k extends g61 {
-    static {
-        g61.setup(new k());
+public final class k extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
+
+    public k(Context context, e6 e6Var, boolean z10) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = i6.G6;
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(i10, e6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, x5.a(24.0f, 20.0f, 11.46f, 0.0f, 0.0f, 24, 51));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, x5.a(-2.0f, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f, -1, 23));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextColor(i6.w0(i10, e6Var));
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 14.0f);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, x5.t(-1, -2, 55, 0, 0, 0, 1), context);
+        this.c = h;
+        bi.o(i6.z6, e6Var, h, 1, 14.0f);
+        linearLayout.addView(h, x5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 
-    public static h61 a(int i10, String str, String str2) {
-        h61 K = h61.K(k.class);
-        K.k = i10;
-        K.l = str;
-        K.m = str2;
-        return K;
+    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
+        this.a.setImageResource(i10);
+        this.b.setText(charSequence);
+        this.c.setText(charSequence2);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
-        ((l) view).a(h61Var.l, h61Var.m, h61Var.k);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
-        return new l(context, d6Var, false);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean isClickable() {
-        return false;
+    public void setText(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

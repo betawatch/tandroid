@@ -1,13 +1,13 @@
 package lb;
 
+import a1.g;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -206,7 +206,7 @@ public class a implements Closeable {
     }
 
     public final void D(String str) {
-        StringBuilder v = a4.a.v(str);
+        StringBuilder v = g.v(str);
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat("malformed-json"));
@@ -215,8 +215,8 @@ public class a implements Closeable {
 
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
-        StringBuilder w10 = a4.a.w("Expected ", str, " but was ");
-        w10.append(hg.c.C(x()));
+        StringBuilder w10 = g.w("Expected ", str, " but was ");
+        w10.append(hg.c.D(x()));
         w10.append(m());
         w10.append("\nSee ");
         w10.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -261,71 +261,71 @@ public class a implements Closeable {
         this.a.close();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:106:0x019f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x01a0, code lost:
     
         if (l(r14) != false) goto L96;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x01a1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x01a2, code lost:
     
         if (r12 != 2) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x01a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x01a4, code lost:
     
         if (r13 == false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x01a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x01aa, code lost:
     
         if (r7 != Long.MIN_VALUE) goto L146;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x01ab, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x01ac, code lost:
     
         if (r19 == false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x01af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x01b0, code lost:
     
         if (r7 != 0) goto L149;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x01b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x01b2, code lost:
     
         if (r19 != false) goto L153;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x01b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x01b4, code lost:
     
         if (r19 == false) goto L151;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x01b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x01b7, code lost:
     
         r7 = -r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x01b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x01b8, code lost:
     
-        r24.n = r7;
-        r24.c += r9;
+        r23.n = r7;
+        r23.c += r9;
         r9 = 15;
-        r24.h = 15;
+        r23.h = 15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x01c3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x01c4, code lost:
     
         if (r12 == 2) goto L158;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x01c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x01c7, code lost:
     
         if (r12 == 4) goto L158;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x01c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x01ca, code lost:
     
         if (r12 != 7) goto L96;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x01cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x01cc, code lost:
     
-        r24.r = r9;
+        r23.r = r9;
         r9 = 16;
-        r24.h = 16;
+        r23.h = 16;
      */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0116 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01f5 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0117 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01f6 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01f7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -448,22 +448,21 @@ public class a implements Closeable {
                     str = "false";
                     str2 = "FALSE";
                     i10 = 6;
+                } else if (c11 == 'n' || c11 == 'N') {
+                    str = "null";
+                    str2 = "NULL";
+                    i10 = 7;
                 } else {
-                    if (c11 == 'n' || c11 == 'N') {
-                        str = BuildConfig.BETA_URL;
-                        str2 = "NULL";
-                        i10 = 7;
-                    }
                     i10 = 0;
                     if (i10 == 0) {
                         return i10;
                     }
                     int i15 = this.c;
                     int i16 = this.d;
+                    boolean z10 = true;
                     long j3 = 0;
                     int i17 = 0;
                     char c12 = 0;
-                    boolean z10 = true;
                     boolean z11 = false;
                     while (true) {
                         if (i15 + i17 == i16) {
@@ -964,7 +963,7 @@ public class a implements Closeable {
             i10 = d();
         }
         if (i10 != 7) {
-            throw E(BuildConfig.BETA_URL);
+            throw E("null");
         }
         this.h = 0;
         int[] iArr = this.y;

@@ -3,8 +3,9 @@ package org.telegram.ui.Cells;
 import android.R;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Components.yh0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +35,9 @@ public final /* synthetic */ class b1 implements Runnable {
                 break;
             case 3:
                 u1 u1Var2 = this.b;
-                pb.c cVar = u1Var2.w;
-                cVar.a(u1Var2.Qd);
-                cVar.a(u1Var2.Rd);
+                yh0 yh0Var = u1Var2.w;
+                yh0Var.a(u1Var2.Qd);
+                yh0Var.a(u1Var2.Rd);
                 u1Var2.H3();
                 MessageObject messageObject = u1Var2.y7;
                 if (messageObject != null) {

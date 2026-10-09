@@ -20,7 +20,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static volatile ArrayList a;
@@ -37,7 +37,7 @@ public abstract class d {
     }
 
     public static a0.f c(File file, Context context) {
-        h f7;
+        g f7;
         a0.f fVar = new a0.f(0);
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
@@ -141,7 +141,7 @@ public abstract class d {
         return arrayList;
     }
 
-    public static h f(XmlPullParser xmlPullParser, Context context) {
+    public static g f(XmlPullParser xmlPullParser, Context context) {
         Intent intent;
         if (!xmlPullParser.getName().equals("target")) {
             return null;
@@ -225,7 +225,7 @@ public abstract class d {
         if (intentArr == null || intentArr.length == 0) {
             throw new IllegalArgumentException("Shortcut must have an intent");
         }
-        return new h(cVar, b15, b16);
+        return new g(cVar, b15, b16);
     }
 
     public static void g(XmlSerializer xmlSerializer, String str, String str2) {
@@ -235,11 +235,11 @@ public abstract class d {
         xmlSerializer.attribute(null, str, str2);
     }
 
-    public static void h(XmlSerializer xmlSerializer, h hVar) {
+    public static void h(XmlSerializer xmlSerializer, g gVar) {
         xmlSerializer.startTag(null, "target");
-        g0.c cVar = hVar.c;
-        String str = hVar.b;
-        String str2 = hVar.a;
+        g0.c cVar = gVar.c;
+        String str = gVar.b;
+        String str2 = gVar.a;
         g(xmlSerializer, "id", cVar.b);
         g(xmlSerializer, "short_label", cVar.e.toString());
         g(xmlSerializer, "rank", Integer.toString(cVar.m));

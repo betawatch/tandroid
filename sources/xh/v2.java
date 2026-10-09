@@ -8,10 +8,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class v2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ i4 b;
@@ -25,12 +25,18 @@ public final /* synthetic */ class v2 implements Utilities.Callback2 {
         this.d = arrayList;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v27, types: [int] */
+    /* JADX WARN: Type inference failed for: r2v29 */
+    /* JADX WARN: Type inference failed for: r2v31 */
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         String str;
         String str2;
+        boolean z10;
         String str3;
         int i10 = this.a;
+        boolean z11 = false;
         String str4 = " ";
         ArrayList arrayList = this.d;
         String[] strArr = this.c;
@@ -49,20 +55,20 @@ public final /* synthetic */ class v2 implements Utilities.Callback2 {
                     i11++;
                     TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
                     boolean contains = v3Var.l.contains(Long.valueOf(stargiftattributepattern.document.id));
-                    boolean z10 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe) || bi.u(" ", lowerCase, stargiftattributepattern.name.toLowerCase()) || bi.u(" ", translitSafe, stargiftattributepattern.name.toLowerCase())) {
+                    boolean z12 = !contains;
+                    if (TextUtils.isEmpty(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe) || bi.w(" ", lowerCase, stargiftattributepattern.name.toLowerCase()) || bi.w(" ", translitSafe, stargiftattributepattern.name.toLowerCase())) {
                         Integer num = (Integer) v3Var.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = s3.a;
-                        h61 K = h61.K(s3.class);
-                        K.G = stargiftattributepattern;
-                        K.l = lowerCase;
-                        K.z = intValue;
+                        p61 J = p61.J(s3.class);
+                        J.G = stargiftattributepattern;
+                        J.l = lowerCase;
+                        J.z = intValue;
                         if (!TextUtils.isEmpty(lowerCase)) {
-                            z10 = (isEmpty || contains) ? false : true;
+                            z12 = (isEmpty || contains) ? false : true;
                         }
-                        K.L(z10);
-                        arrayList2.add(K);
+                        J.K(z12);
+                        arrayList2.add(J);
                     }
                 }
                 if (arrayList2.isEmpty()) {
@@ -83,25 +89,25 @@ public final /* synthetic */ class v2 implements Utilities.Callback2 {
                     i13++;
                     TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj4;
                     boolean contains2 = v3Var2.k.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
-                    boolean z11 = !contains2;
+                    boolean z13 = !contains2;
                     if (TextUtils.isEmpty(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(lowerCase2) || stargiftattributebackdrop.name.toLowerCase().startsWith(translitSafe2)) {
                         str2 = str;
                     } else {
                         str2 = str;
-                        str = (bi.u(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || bi.u(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
+                        str = (bi.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || bi.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
                     }
                     Integer num2 = (Integer) v3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                     int intValue2 = num2 == null ? 0 : num2.intValue();
                     int i14 = i3.a;
-                    h61 K2 = h61.K(i3.class);
-                    K2.G = stargiftattributebackdrop;
-                    K2.l = lowerCase2;
-                    K2.z = intValue2;
+                    p61 J2 = p61.J(i3.class);
+                    J2.G = stargiftattributebackdrop;
+                    J2.l = lowerCase2;
+                    J2.z = intValue2;
                     if (!TextUtils.isEmpty(lowerCase2)) {
-                        z11 = (isEmpty2 || contains2) ? false : true;
+                        z13 = (isEmpty2 || contains2) ? false : true;
                     }
-                    K2.L(z11);
-                    arrayList3.add(K2);
+                    J2.K(z13);
+                    arrayList3.add(J2);
                 }
                 if (arrayList3.isEmpty()) {
                     arrayList3.add(k3.a(LocaleController.getString(R.string.Gift2ResaleFiltersBackdropEmpty)));
@@ -121,24 +127,27 @@ public final /* synthetic */ class v2 implements Utilities.Callback2 {
                     i15++;
                     TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj5;
                     boolean contains3 = v3Var3.j.contains(Long.valueOf(stargiftattributemodel.document.id));
-                    boolean z12 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe3) || bi.u(str4, lowerCase3, stargiftattributemodel.name.toLowerCase()) || bi.u(str4, translitSafe3, stargiftattributemodel.name.toLowerCase())) {
+                    boolean z14 = !contains3;
+                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe3) || bi.w(str4, lowerCase3, stargiftattributemodel.name.toLowerCase()) || bi.w(str4, translitSafe3, stargiftattributemodel.name.toLowerCase())) {
+                        z10 = z11;
                         str3 = str4;
                         Integer num3 = (Integer) v3Var3.m.get(Long.valueOf(stargiftattributemodel.document.id));
-                        int intValue3 = num3 == null ? 0 : num3.intValue();
+                        ?? intValue3 = num3 == null ? z10 : num3.intValue();
                         int i16 = p3.a;
-                        h61 K3 = h61.K(p3.class);
-                        K3.G = stargiftattributemodel;
-                        K3.l = lowerCase3;
-                        K3.z = intValue3;
+                        p61 J3 = p61.J(p3.class);
+                        J3.G = stargiftattributemodel;
+                        J3.l = lowerCase3;
+                        J3.z = intValue3;
                         if (!TextUtils.isEmpty(lowerCase3)) {
-                            z12 = (isEmpty3 || contains3) ? false : true;
+                            z14 = (isEmpty3 || contains3) ? z10 : true;
                         }
-                        K3.L(z12);
-                        arrayList4.add(K3);
+                        J3.K(z14);
+                        arrayList4.add(J3);
                     } else {
+                        z10 = z11;
                         str3 = str4;
                     }
+                    z11 = z10;
                     str4 = str3;
                 }
                 if (arrayList4.isEmpty()) {

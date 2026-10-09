@@ -1,38 +1,35 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.ChatObject;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ap implements org.telegram.ui.Components.i90 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ hp b;
+public final class ap extends org.telegram.ui.Components.ep0 {
+    public final /* synthetic */ ip r;
 
-    public ap(hp hpVar, Context context) {
-        this.b = hpVar;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ap(ip ipVar, Context context, yd ydVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, ydVar, e6Var, false);
+        this.r = ipVar;
     }
 
-    @Override // org.telegram.ui.Components.i90
-    public final void c() {
-        this.b.W(true);
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.r.L && super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.i90
-    public final void h() {
-        hp hpVar = this.b;
-        org.telegram.ui.Components.f70 f70Var = new org.telegram.ui.Components.f70(this.a, hpVar.m0, hpVar.Z, hpVar.p0, hpVar, hpVar.a0, true, ChatObject.isChannel(hpVar.Y));
-        hp hpVar2 = this.b;
-        hpVar2.q0 = f70Var;
-        hpVar2.q0.show();
+    @Override // android.widget.ScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.r.L && super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.i90
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.Components.i90
-    public final /* synthetic */ void i() {
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

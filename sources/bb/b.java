@@ -1,5 +1,6 @@
 package bb;
 
+import ae.d0;
 import android.util.Log;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -10,13 +11,12 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
-import rd.p;
-import v7.t7;
-import zd.c0;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b extends kd.j implements p {
+public final class b extends ld.j implements p {
     public final /* synthetic */ int a = 1;
     public int b;
     public /* synthetic */ Object c;
@@ -25,7 +25,7 @@ public final class b extends kd.j implements p {
     public final /* synthetic */ Object f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(aa.a aVar, Map map, b bVar, c cVar, id.c cVar2) {
+    public b(aa.a aVar, Map map, b bVar, c cVar, jd.c cVar2) {
         super(2, cVar2);
         this.d = aVar;
         this.c = map;
@@ -34,8 +34,8 @@ public final class b extends kd.j implements p {
     }
 
     /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.Object, java.util.Map] */
-    @Override // kd.a
-    public final id.c create(Object obj, id.c cVar) {
+    @Override // ld.a
+    public final jd.c create(Object obj, jd.c cVar) {
         switch (this.a) {
             case 0:
                 b bVar = new b((d) this.f, cVar);
@@ -46,13 +46,13 @@ public final class b extends kd.j implements p {
         }
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                return ((b) create((JSONObject) obj, (id.c) obj2)).invokeSuspend(gd.i.a);
+                return ((b) create((JSONObject) obj, (jd.c) obj2)).invokeSuspend(hd.i.a);
             default:
-                return ((b) create((c0) obj, (id.c) obj2)).invokeSuspend(gd.i.a);
+                return ((b) create((d0) obj, (jd.c) obj2)).invokeSuspend(hd.i.a);
         }
     }
 
@@ -66,7 +66,7 @@ public final class b extends kd.j implements p {
     /* JADX WARN: Removed duplicated region for block: B:76:0x0212  */
     /* JADX WARN: Removed duplicated region for block: B:85:0x01f0  */
     /* JADX WARN: Type inference failed for: r8v4, types: [java.lang.Object, java.util.Map] */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -80,18 +80,18 @@ public final class b extends kd.j implements p {
         Object obj2;
         Object obj3;
         Object obj4;
-        gd.i iVar;
+        hd.i iVar;
         Object c10;
         switch (this.a) {
             case 0:
                 l lVar = ((d) this.f).c;
-                jd.a aVar = jd.a.a;
+                kd.a aVar = kd.a.a;
                 int i10 = this.b;
                 n1.d dVar = l.f;
-                gd.i iVar2 = gd.i.a;
+                hd.i iVar2 = hd.i.a;
                 switch (i10) {
                     case 0:
-                        t7.b(obj);
+                        a8.b(obj);
                         JSONObject jSONObject = (JSONObject) this.c;
                         Log.d("SessionConfigFetcher", "Fetched settings: " + jSONObject);
                         kotlin.jvm.internal.p pVar6 = new kotlin.jvm.internal.p();
@@ -132,7 +132,7 @@ public final class b extends kd.j implements p {
                             this.e = pVar7;
                             this.b = 1;
                             Object c11 = lVar.c(l.c, bool, this);
-                            if (c11 != jd.a.a) {
+                            if (c11 != kd.a.a) {
                                 c11 = iVar2;
                             }
                             if (c11 == aVar) {
@@ -150,7 +150,7 @@ public final class b extends kd.j implements p {
                                 this.e = null;
                                 this.b = 2;
                                 Object c12 = lVar.c(l.e, (Integer) obj2, this);
-                                if (c12 != jd.a.a) {
+                                if (c12 != kd.a.a) {
                                     c12 = iVar2;
                                 }
                                 if (c12 == aVar) {
@@ -164,7 +164,7 @@ public final class b extends kd.j implements p {
                                 this.e = null;
                                 this.b = 3;
                                 Object c13 = lVar.c(l.d, (Double) obj3, this);
-                                if (c13 != jd.a.a) {
+                                if (c13 != kd.a.a) {
                                     c13 = iVar2;
                                 }
                                 if (c13 == aVar) {
@@ -182,7 +182,7 @@ public final class b extends kd.j implements p {
                                 this.e = null;
                                 this.b = 6;
                                 c10 = lVar.c(l.g, l4, this);
-                                if (c10 != jd.a.a) {
+                                if (c10 != kd.a.a) {
                                 }
                                 if (c10 == aVar) {
                                 }
@@ -193,7 +193,7 @@ public final class b extends kd.j implements p {
                             this.e = null;
                             this.b = 4;
                             Object c14 = lVar.c(dVar, (Integer) obj4, this);
-                            if (c14 != jd.a.a) {
+                            if (c14 != kd.a.a) {
                                 c14 = iVar2;
                             }
                             if (c14 == aVar) {
@@ -207,7 +207,7 @@ public final class b extends kd.j implements p {
                                 this.e = null;
                                 this.b = 5;
                                 Object c15 = lVar.c(dVar, num, this);
-                                if (c15 != jd.a.a) {
+                                if (c15 != kd.a.a) {
                                     c15 = iVar2;
                                 }
                                 if (c15 == aVar) {
@@ -220,7 +220,7 @@ public final class b extends kd.j implements p {
                             this.e = null;
                             this.b = 6;
                             c10 = lVar.c(l.g, l42, this);
-                            if (c10 != jd.a.a) {
+                            if (c10 != kd.a.a) {
                                 c10 = iVar2;
                             }
                             if (c10 == aVar) {
@@ -243,7 +243,7 @@ public final class b extends kd.j implements p {
                         pVar3 = (kotlin.jvm.internal.p) this.e;
                         pVar5 = (kotlin.jvm.internal.p) this.d;
                         pVar4 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        a8.b(obj);
                         pVar = pVar5;
                         pVar2 = pVar4;
                         obj2 = pVar.a;
@@ -259,7 +259,7 @@ public final class b extends kd.j implements p {
                     case 2:
                         pVar3 = (kotlin.jvm.internal.p) this.d;
                         pVar2 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        a8.b(obj);
                         obj3 = pVar2.a;
                         if (((Double) obj3) != null) {
                         }
@@ -269,13 +269,13 @@ public final class b extends kd.j implements p {
                         break;
                     case 3:
                         pVar3 = (kotlin.jvm.internal.p) this.c;
-                        t7.b(obj);
+                        a8.b(obj);
                         obj4 = pVar3.a;
                         if (((Integer) obj4) == null) {
                         }
                         break;
                     case 4:
-                        t7.b(obj);
+                        a8.b(obj);
                         iVar = iVar2;
                         if (iVar == null) {
                         }
@@ -285,39 +285,39 @@ public final class b extends kd.j implements p {
                         this.e = null;
                         this.b = 6;
                         c10 = lVar.c(l.g, l422, this);
-                        if (c10 != jd.a.a) {
+                        if (c10 != kd.a.a) {
                         }
                         if (c10 == aVar) {
                         }
                         return iVar2;
                     case 5:
-                        t7.b(obj);
+                        a8.b(obj);
                         Long l4222 = new Long(System.currentTimeMillis());
                         this.c = null;
                         this.d = null;
                         this.e = null;
                         this.b = 6;
                         c10 = lVar.c(l.g, l4222, this);
-                        if (c10 != jd.a.a) {
+                        if (c10 != kd.a.a) {
                         }
                         if (c10 == aVar) {
                         }
                         return iVar2;
                     case 6:
-                        t7.b(obj);
+                        a8.b(obj);
                         return iVar2;
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
             default:
                 c cVar = (c) this.f;
-                jd.a aVar2 = jd.a.a;
+                kd.a aVar2 = kd.a.a;
                 int i11 = this.b;
-                gd.i iVar3 = gd.i.a;
+                hd.i iVar3 = hd.i.a;
                 try {
                     if (i11 == 0) {
-                        t7.b(obj);
-                        URLConnection openConnection = aa.a.d((aa.a) this.d).openConnection();
+                        a8.b(obj);
+                        URLConnection openConnection = aa.a.c((aa.a) this.d).openConnection();
                         kotlin.jvm.internal.i.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");
@@ -353,12 +353,12 @@ public final class b extends kd.j implements p {
                             }
                         }
                     } else if (i11 == 1 || i11 == 2) {
-                        t7.b(obj);
+                        a8.b(obj);
                     } else {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        t7.b(obj);
+                        a8.b(obj);
                     }
                 } catch (Exception e11) {
                     String message = e11.getMessage();
@@ -376,7 +376,7 @@ public final class b extends kd.j implements p {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, id.c cVar) {
+    public b(d dVar, jd.c cVar) {
         super(2, cVar);
         this.f = dVar;
     }

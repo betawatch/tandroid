@@ -1,28 +1,27 @@
 package v7;
 
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.os.Build;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class r {
-    public static KeyguardManager a(Context context) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return androidx.biometric.g0.a(context);
+    public static boolean a(e0.n0 n0Var, e0.n0 n0Var2) {
+        if (n0Var == null && n0Var2 == null) {
+            return true;
         }
-        Object systemService = context.getSystemService("keyguard");
-        if (systemService instanceof KeyguardManager) {
-            return (KeyguardManager) systemService;
-        }
-        return null;
-    }
-
-    public static boolean b(Context context) {
-        KeyguardManager a2 = a(context);
-        if (a2 == null) {
+        if (n0Var == null || n0Var2 == null) {
             return false;
         }
-        return Build.VERSION.SDK_INT >= 23 ? androidx.biometric.g0.b(a2) : androidx.biometric.f0.a(a2);
+        String str = n0Var.d;
+        String str2 = n0Var2.d;
+        return (str == null && str2 == null) ? Objects.equals(Objects.toString(n0Var.a), Objects.toString(n0Var2.a)) && Objects.equals(n0Var.c, n0Var2.c) && Boolean.valueOf(n0Var.e).equals(Boolean.valueOf(n0Var2.e)) && Boolean.valueOf(n0Var.f).equals(Boolean.valueOf(n0Var2.f)) : Objects.equals(str, str2);
+    }
+
+    public static int b(e0.n0 n0Var) {
+        if (n0Var == null) {
+            return 0;
+        }
+        String str = n0Var.d;
+        return str != null ? str.hashCode() : Objects.hash(n0Var.a, n0Var.c, Boolean.valueOf(n0Var.e), Boolean.valueOf(n0Var.f));
     }
 }

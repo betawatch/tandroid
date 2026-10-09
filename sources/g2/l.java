@@ -7,7 +7,7 @@ import c3.h0;
 import java.math.RoundingMode;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l implements k4.b {
     public int a;
@@ -75,10 +75,10 @@ public final class l implements k4.b {
             long j12 = this.d;
             long j13 = qVar.b;
             String str = e2.d0.a;
-            long Y = j11 + e2.d0.Y(j12, 1000000L, j13, RoundingMode.DOWN);
+            long X = j11 + e2.d0.X(j12, 1000000L, j13, RoundingMode.DOWN);
             int i14 = i13 * i12;
             int i15 = this.c - i14;
-            ((h0) this.f).c(Y, 1, i14, i15, null);
+            ((h0) this.f).c(X, 1, i14, i15, null);
             this.d += i13;
             this.c = i15;
         }
@@ -87,7 +87,7 @@ public final class l implements k4.b {
 
     @Override // k4.b
     public void c(int i10, long j3) {
-        ((c3.q) this.e).X1(new k4.f((e2.q) this.g, 1, i10, j3));
+        ((c3.q) this.e).d2(new k4.f((e2.q) this.g, 1, i10, j3));
         ((h0) this.f).b((b2.s) this.h);
     }
 

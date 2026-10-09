@@ -16,11 +16,13 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import n4.y;
+import m.f3;
+import n4.x;
 import n6.l;
+import org.telegram.ui.ActionBar.b5;
 import q9.n;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -50,13 +52,13 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList y3 = new o0.a(12, context, new k2.e(ComponentDiscoveryService.class, 14)).y();
+        ArrayList j3 = new b5(context, new f3(ComponentDiscoveryService.class, 14), false, 11).j();
         Trace.endSection();
         Trace.beginSection("Runtime");
         r9.j jVar2 = r9.j.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(y3);
+        arrayList.addAll(j3);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));
@@ -71,7 +73,7 @@ public final class h {
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
-        this.h = gVar.d(na.c.class);
+        this.h = gVar.c(na.c.class);
         e eVar = new e(this);
         a();
         if (atomicBoolean.get()) {
@@ -223,9 +225,9 @@ public final class h {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.m(this.b, "name");
-        yVar.m(this.c, "options");
-        return yVar.toString();
+        x xVar = new x(this);
+        xVar.o(this.b, "name");
+        xVar.o(this.c, "options");
+        return xVar.toString();
     }
 }

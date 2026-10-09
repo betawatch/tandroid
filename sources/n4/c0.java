@@ -1,39 +1,70 @@
 package n4;
 
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.provider.Settings;
+import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public class c0 {
-    public final String a;
-    public final int b;
-    public final int c;
+public final class c0 {
+    public static final boolean b = Log.isLoggable("MediaSessionManager", 3);
+    public static final Object c = new Object();
+    public static volatile c0 d;
+    public y a;
 
-    public c0(String str, int i10, int i11) {
-        this.a = str;
-        this.b = i10;
-        this.c = i11;
+    public static c0 a(Context context) {
+        c0 c0Var;
+        synchronized (c) {
+            try {
+                if (d == null) {
+                    Context applicationContext = context.getApplicationContext();
+                    c0 c0Var2 = new c0();
+                    y yVar = new y();
+                    yVar.a = applicationContext;
+                    yVar.b = applicationContext.getContentResolver();
+                    c0Var2.a = yVar;
+                    d = c0Var2;
+                }
+                c0Var = d;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return c0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    public final boolean b(z zVar) {
+        y yVar = this.a;
+        b0 b0Var = zVar.a;
+        Context context = yVar.a;
+        int i10 = b0Var.b;
+        String str = b0Var.a;
+        int i11 = b0Var.c;
+        if (context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", i10, i11) == 0) {
             return true;
         }
-        if (!(obj instanceof c0)) {
-            return false;
+        try {
+            if (context.getPackageManager().getApplicationInfo(str, 0) != null) {
+                if (yVar.a(b0Var, "android.permission.STATUS_BAR_SERVICE") || yVar.a(b0Var, "android.permission.MEDIA_CONTENT_CONTROL") || i11 == 1000) {
+                    return true;
+                }
+                String string = Settings.Secure.getString(yVar.b, "enabled_notification_listeners");
+                if (string != null) {
+                    for (String str2 : string.split(":")) {
+                        ComponentName unflattenFromString = ComponentName.unflattenFromString(str2);
+                        if (unflattenFromString != null && unflattenFromString.getPackageName().equals(str)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        } catch (PackageManager.NameNotFoundException unused) {
+            if (y.c) {
+                Log.d("MediaSessionManager", "Package " + str + " doesn't exist");
+            }
         }
-        c0 c0Var = (c0) obj;
-        int i10 = c0Var.c;
-        String str = c0Var.a;
-        int i11 = c0Var.b;
-        int i12 = this.c;
-        String str2 = this.a;
-        int i13 = this.b;
-        return (i13 < 0 || i11 < 0) ? TextUtils.equals(str2, str) && i12 == i10 : TextUtils.equals(str2, str) && i13 == i11 && i12 == i10;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, Integer.valueOf(this.c));
+        return false;
     }
 }

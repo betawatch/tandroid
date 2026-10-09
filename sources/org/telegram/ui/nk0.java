@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ok0 b;
-    public final /* synthetic */ String c;
+public final class nk0 extends org.telegram.ui.Cells.r8 {
+    public ImageView R;
 
-    public /* synthetic */ nk0(ok0 ok0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ok0Var;
-        this.c = str;
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
+        int A = org.telegram.messenger.bi.A(24.0f, i13 - i11, 2);
+        this.R.layout(dp, A, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + A);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ok0 ok0Var = this.b;
-                String str = this.c;
-                ok0Var.getClass();
-                AndroidUtilities.runOnUIThread(new nk0(ok0Var, str, 1));
-                break;
-            default:
-                ok0 ok0Var2 = this.b;
-                String str2 = this.c;
-                gg.c2 c2Var = ok0Var2.h;
-                int i10 = ok0Var2.n.s;
-                c2Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.searchQueue.postRunnable(new nf0(ok0Var2, str2, new ArrayList(ok0Var2.n.w), 8));
-                break;
-        }
+    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.R.measure(i10, i11);
     }
 }

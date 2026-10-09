@@ -7,9 +7,8 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import w7.g0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends o6.a {
     public static final Parcelable.Creator<d> CREATOR = new v(17);
@@ -54,28 +53,28 @@ public final class d extends o6.a {
         List list = this.c;
         int size = list == null ? 0 : list.size();
         String valueOf = String.valueOf(this.e);
-        StringBuilder x10 = a4.a.x("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
+        StringBuilder x10 = a1.g.x("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
         x10.append(size);
         x10.append(", senderAppIdentifier: ");
         x10.append(this.d);
         x10.append(", senderAppLaunchUrl: ");
-        a4.a.A(x10, valueOf, ", iconUrl: ", this.f, ", type: ");
+        a1.g.A(x10, valueOf, ", iconUrl: ", this.f, ", type: ");
         x10.append(this.h);
         return x10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
-        g0.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
-        g0.l(parcel, 6, this.d);
-        g0.k(parcel, 7, this.e, i10);
-        g0.l(parcel, 8, this.f);
-        g0.l(parcel, 9, this.h);
-        g0.a(parcel, 10, this.n);
-        g0.a(parcel, 11, this.r);
-        g0.r(parcel, q6);
+        int q6 = w7.d0.q(parcel, 20293);
+        w7.d0.l(parcel, 2, this.a);
+        w7.d0.l(parcel, 3, this.b);
+        w7.d0.n(parcel, 5, DesugarCollections.unmodifiableList(this.c));
+        w7.d0.l(parcel, 6, this.d);
+        w7.d0.k(parcel, 7, this.e, i10);
+        w7.d0.l(parcel, 8, this.f);
+        w7.d0.l(parcel, 9, this.h);
+        w7.d0.a(parcel, 10, this.n);
+        w7.d0.a(parcel, 11, this.r);
+        w7.d0.r(parcel, q6);
     }
 }

@@ -1,6 +1,6 @@
 package ii;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,10 +16,10 @@ public final /* synthetic */ class c1 implements Runnable {
         switch (this.a) {
             case 0:
                 i1 i1Var = this.b;
-                l4 l4Var = i1Var.R;
-                if (l4Var != null && i1Var.d != null) {
+                m4 m4Var = i1Var.R;
+                if (m4Var != null && i1Var.d != null) {
                     i1Var.S = true;
-                    l4Var.b().setPressed(false);
+                    m4Var.b().setPressed(false);
                     try {
                         i1Var.performHapticFeedback(0);
                     } catch (Exception unused) {

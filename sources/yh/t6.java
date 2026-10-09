@@ -1,66 +1,61 @@
 package yh;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RadialGradient;
 import android.graphics.RectF;
-import android.widget.LinearLayout;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class t6 extends LinearLayout {
-    public final Path a;
-    public final /* synthetic */ Matrix b;
-    public final /* synthetic */ RadialGradient c;
-    public final /* synthetic */ Paint d;
-    public final /* synthetic */ org.telegram.ui.Components.o5 e;
+public final class t6 extends y9 {
+    public vh.f G;
+    public Path H;
+    public RectF I;
+    public Drawable J;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t6(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.o5 o5Var) {
-        super(context);
-        this.b = matrix;
-        this.c = radialGradient;
-        this.d = paint;
-        this.e = o5Var;
-        this.a = new Path();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        float dp = AndroidUtilities.dp(10.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, AndroidUtilities.dp(2.0f) + 1, getWidth(), getHeight() + dp);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        Matrix matrix = this.b;
-        matrix.reset();
-        matrix.postTranslate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        this.c.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
-        canvas.save();
-        canvas.translate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        k0.a(canvas, 0, this.e, getWidth(), AndroidUtilities.dp(180.0f), 1.0f, 1.0f);
-        canvas.restore();
+        Canvas canvas2;
+        RectF rectF = this.I;
+        Path path = this.H;
+        Drawable drawable = this.J;
         super.dispatchDraw(canvas);
-        canvas.restore();
+        if (this.G == null) {
+            this.G = vh.f.e(this);
+        }
+        if (this.G != null) {
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            path.rewind();
+            path.addRoundRect(rectF, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
+            canvas2 = canvas;
+            this.G.c(canvas2, this, getWidth(), getHeight(), 1.0f, false);
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
+        }
+        drawable.setBounds((getWidth() - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
+        drawable.draw(canvas2);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.y9, android.view.View
     public final void onAttachedToWindow() {
+        vh.f fVar = this.G;
+        if (fVar != null) {
+            fVar.a(this);
+        }
         super.onAttachedToWindow();
-        this.e.a();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.y9, android.view.View
     public final void onDetachedFromWindow() {
+        vh.f fVar = this.G;
+        if (fVar != null) {
+            fVar.b(this);
+        }
         super.onDetachedFromWindow();
-        this.e.b();
     }
 }

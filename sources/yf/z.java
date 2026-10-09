@@ -2,9 +2,8 @@ package yf;
 
 import java.io.OutputStream;
 import java.util.Arrays;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class z extends OutputStream {
     public byte[] a;
@@ -25,7 +24,7 @@ public final class z extends OutputStream {
                 if (i10 < 0) {
                     throw new OutOfMemoryError();
                 }
-                length = i10 > 2147483639 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 2147483639;
+                length = i10 > 2147483639 ? Integer.MAX_VALUE : 2147483639;
             }
             this.a = Arrays.copyOf(bArr, length);
         }

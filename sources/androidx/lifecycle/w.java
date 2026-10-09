@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -49,7 +49,7 @@ public abstract class w {
                     kotlin.jvm.internal.i.d(name, "this as java.lang.String).substring(startIndex)");
                 }
                 kotlin.jvm.internal.i.d(name, "if (fullPackage.isEmpty(…g(fullPackage.length + 1)");
-                String concat = xd.j.g(name, ".", "_").concat("_LifecycleAdapter");
+                String concat = yd.j.g(name, ".", "_").concat("_LifecycleAdapter");
                 if (fullPackage.length() != 0) {
                     concat = fullPackage + '.' + concat;
                 }
@@ -64,7 +64,7 @@ public abstract class w {
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, hd.h.b(constructor));
+                hashMap2.put(cls, id.h.b(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;

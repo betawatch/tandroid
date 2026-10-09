@@ -1,177 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xh extends zl0 {
-    public final /* synthetic */ int e3;
-    public final Paint f3;
-    public final Paint g3;
-    public boolean h3;
-    public boolean i3;
-    public final Object j3;
-    public final Object k3;
+public final class xh implements org.telegram.ui.ar0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ yi d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xh(Context context, int i10) {
-        super(context, null);
-        this.e3 = i10;
-        switch (i10) {
-            case 1:
-                super(context, null);
-                Paint paint = new Paint(1);
-                this.f3 = paint;
-                Paint paint2 = new Paint(1);
-                this.g3 = paint2;
-                this.j3 = new e6(this);
-                this.k3 = new e6(this);
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode));
-                paint2.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode));
-                break;
-            default:
-                tr trVar = tr.h;
-                this.j3 = new le.b(this, trVar, 320L);
-                this.k3 = new le.b(this, trVar, 320L);
-                Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{0, -16777216}, (float[]) null, tileMode2);
-                LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{-16777216, 0}, (float[]) null, tileMode2);
-                Paint paint3 = new Paint(1);
-                this.f3 = paint3;
-                Paint paint4 = new Paint(1);
-                this.g3 = paint4;
-                paint3.setShader(linearGradient);
-                PorterDuff.Mode mode = PorterDuff.Mode.DST_IN;
-                paint3.setXfermode(new PorterDuffXfermode(mode));
-                paint4.setShader(linearGradient2);
-                paint4.setXfermode(new PorterDuffXfermode(mode));
-                break;
+    public xh(yi yiVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = yiVar;
+        this.b = hashMap;
+        this.c = arrayList;
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final void h(int i10, boolean z10, boolean z11) {
+        if (z10) {
+            return;
+        }
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty() || this.a) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                ((org.telegram.ui.zn) this.d.f0).g8(i10, arrayList, z11);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i11));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+            String str = searchImage.imagePath;
+            if (str != null) {
+                sendingMediaInfo.path = str;
+            } else {
+                sendingMediaInfo.searchImage = searchImage;
+            }
+            sendingMediaInfo.thumbPath = searchImage.thumbPath;
+            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+            CharSequence charSequence = searchImage.caption;
+            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+            sendingMediaInfo.entities = searchImage.entities;
+            sendingMediaInfo.masks = searchImage.stickers;
+            sendingMediaInfo.ttl = searchImage.ttl;
+            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+            if (botInlineResult != null && searchImage.type == 1) {
+                sendingMediaInfo.inlineResult = botInlineResult;
+                sendingMediaInfo.params = searchImage.params;
+            }
+            searchImage.date = (int) (System.currentTimeMillis() / 1000);
+            i11++;
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.e3) {
-            case 0:
-                this.i3 = false;
-                this.h3 = false;
-                super.dispatchDraw(canvas);
-                ((le.b) this.j3).a(this.h3, true);
-                ((le.b) this.k3).a(this.i3, true);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                int d = (int) (((e6) this.j3).d(this.h3 ? 1.0f : 0.0f, false) * 255.0f);
-                Paint paint = this.f3;
-                paint.setAlpha(d);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f), paint);
-                int d10 = (int) (((e6) this.k3).d(this.i3 ? 1.0f : 0.0f, false) * 255.0f);
-                Paint paint2 = this.g3;
-                paint2.setAlpha(d10);
-                canvas.save();
-                canvas.translate(0.0f, getHeight() - AndroidUtilities.dp(8.0f));
-                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(8.0f), paint2);
-                canvas.restore();
-                break;
-        }
+    @Override // org.telegram.ui.ar0
+    public final void a() {
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.e3) {
-            case 0:
-                float x10 = view.getX();
-                float width = view.getWidth() + x10;
-                boolean z10 = true;
-                boolean z11 = x10 < ((float) AndroidUtilities.dp(10.0f));
-                boolean z12 = width > ((float) (getMeasuredWidth() - AndroidUtilities.dp(10.0f)));
-                if (!z11 && !z12) {
-                    z10 = false;
-                }
-                this.h3 |= z11;
-                this.i3 |= z12;
-                canvas.save();
-                if (z10) {
-                    canvas.clipRect(AndroidUtilities.dp(19.0f), 0, getMeasuredWidth() - AndroidUtilities.dp(19.0f), getMeasuredHeight());
-                }
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                if (z11) {
-                    float dp = AndroidUtilities.dp(11.0f);
-                    canvas.saveLayer(dp, getPaddingTop(), AndroidUtilities.dp(19.0f), getMeasuredHeight() - getPaddingBottom(), null);
-                    super.drawChild(canvas, view, j3);
-                    canvas.save();
-                    canvas.translate(com.google.android.gms.internal.vision.e2.b(1.0f, ((le.b) this.j3).e, AndroidUtilities.dp(8.0f), dp), 0.0f);
-                    canvas.drawPaint(this.f3);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                if (z12) {
-                    float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(19.0f);
-                    canvas.saveLayer(measuredWidth, getPaddingTop(), getMeasuredWidth() - AndroidUtilities.dp(11.0f), getMeasuredHeight() - getPaddingBottom(), null);
-                    super.drawChild(canvas, view, j3);
-                    canvas.save();
-                    canvas.translate(com.google.android.gms.internal.vision.e2.z(1.0f, ((le.b) this.k3).e, AndroidUtilities.dp(8.0f), measuredWidth), 0.0f);
-                    canvas.drawPaint(this.g3);
-                    canvas.restore();
-                    canvas.restore();
-                }
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
+    @Override // org.telegram.ui.ar0
+    public final void b(Editable editable) {
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i10) {
-        switch (this.e3) {
-            case 1:
-                boolean canScrollVertically = canScrollVertically(-1);
-                boolean canScrollVertically2 = canScrollVertically(1);
-                if (canScrollVertically != this.h3 || canScrollVertically2 != this.i3) {
-                    this.h3 = canScrollVertically;
-                    this.i3 = canScrollVertically2;
-                    invalidate();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.e3) {
-            case 0:
-                int childCount = getChildCount();
-                int size = (View.MeasureSpec.getSize(i10) - getPaddingLeft()) - getPaddingRight();
-                float f7 = 0.0f;
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt = getChildAt(i12);
-                    if (childAt instanceof si) {
-                        f7 = ((si) childAt).a.c() + f7;
-                    }
-                }
-                int floor = (size <= f7 || childCount <= 0) ? 0 : (int) Math.floor((r1 - f7) / childCount);
-                for (int i13 = 0; i13 < childCount; i13++) {
-                    View childAt2 = getChildAt(i13);
-                    if (childAt2 instanceof si) {
-                        ((si) childAt2).a.setAdditionalWidth(floor);
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ void g() {
     }
 }

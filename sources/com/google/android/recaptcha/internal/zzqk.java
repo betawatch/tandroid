@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import a4.a;
+import a1.g;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 class zzqk extends zzqj {
     protected final byte[] zza;
@@ -39,7 +39,7 @@ class zzqk extends zzqj {
             throw new IllegalArgumentException("Length too large: " + zzd + zzd());
         }
         if (zzd > zzqkVar.zzd()) {
-            throw new IllegalArgumentException(a.m(zzd, zzqkVar.zzd(), "Ran off end of other: 0, ", ", "));
+            throw new IllegalArgumentException(g.m(zzd, zzqkVar.zzd(), "Ran off end of other: 0, ", ", "));
         }
         byte[] bArr = this.zza;
         byte[] bArr2 = zzqkVar.zza;

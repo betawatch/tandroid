@@ -3,19 +3,19 @@ package xg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import ci.aa;
+import ci.ba;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ aa c;
+    public final /* synthetic */ ba c;
 
-    public /* synthetic */ h(aa aaVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ h(ba baVar, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.c = aaVar;
+        this.c = baVar;
         this.b = arrayList;
     }
 
@@ -27,16 +27,16 @@ public final class h extends AnimatorListenerAdapter {
                 while (true) {
                     ArrayList arrayList = this.b;
                     int size = arrayList.size();
-                    aa aaVar = this.c;
+                    ba baVar = this.c;
                     if (i10 >= size) {
-                        aaVar.getClass();
-                        aaVar.h.clear();
-                        aaVar.b = null;
-                        aaVar.c = false;
-                        ((i) aaVar.n).b.setAllowDrawCursor(true);
+                        baVar.getClass();
+                        baVar.h.clear();
+                        baVar.b = null;
+                        baVar.c = false;
+                        ((i) baVar.n).b.setAllowDrawCursor(true);
                         break;
                     } else {
-                        aaVar.removeView((View) arrayList.get(i10));
+                        baVar.removeView((View) arrayList.get(i10));
                         i10++;
                     }
                 }
@@ -45,15 +45,15 @@ public final class h extends AnimatorListenerAdapter {
                 while (true) {
                     ArrayList arrayList2 = this.b;
                     int size2 = arrayList2.size();
-                    aa aaVar2 = this.c;
+                    ba baVar2 = this.c;
                     if (i11 >= size2) {
-                        aaVar2.h.clear();
-                        aaVar2.b = null;
-                        aaVar2.c = false;
-                        ((i) aaVar2.n).b.setAllowDrawCursor(true);
+                        baVar2.h.clear();
+                        baVar2.b = null;
+                        baVar2.c = false;
+                        ((i) baVar2.n).b.setAllowDrawCursor(true);
                         break;
                     } else {
-                        aaVar2.removeView((View) arrayList2.get(i11));
+                        baVar2.removeView((View) arrayList2.get(i11));
                         i11++;
                     }
                 }

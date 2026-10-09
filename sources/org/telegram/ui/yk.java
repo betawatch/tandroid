@@ -1,30 +1,20 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class yk extends fz {
+    public final /* synthetic */ zn N;
 
-    public /* synthetic */ yk(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yk(zn znVar, zn znVar2, FrameLayout frameLayout, wj wjVar, int i10, long j3, long j10) {
+        super(znVar2, frameLayout, wjVar, i10, j3, j10);
+        this.N = znVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.a) {
-            case 0:
-                kVar = ((org.telegram.ui.ActionBar.n2) ((zk) this.b).d).actionBar;
-                kVar.invalidate();
-                break;
-            default:
-                ((ta1) this.b).n0();
-                break;
-        }
-        return true;
+    @Override // org.telegram.ui.fz
+    public final void h() {
+        this.N.yc();
     }
 }

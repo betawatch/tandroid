@@ -15,7 +15,7 @@ import e9.i0;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -30,10 +30,10 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final boolean b(p pVar) {
+    public final boolean a(p pVar) {
         switch (this.a) {
             case 0:
-                return ((o) this.b).b(pVar);
+                return ((o) this.b).a(pVar);
             default:
                 return true;
         }
@@ -52,14 +52,14 @@ public final class a implements o {
                 ((o) this.b).g(qVar);
                 break;
             default:
-                h0 Z1 = qVar.Z1(0, 3);
-                qVar.X1(new t(-9223372036854775807L));
-                qVar.e1();
+                h0 f22 = qVar.f2(0, 3);
+                qVar.d2(new t(-9223372036854775807L));
+                qVar.k1();
                 s sVar = (s) this.b;
                 r a2 = sVar.a();
                 a2.q = r0.n("text/x-unknown");
                 a2.j = sVar.r;
-                hg.c.s(a2, Z1);
+                hg.c.s(a2, f22);
                 break;
         }
     }
@@ -105,7 +105,7 @@ public final class a implements o {
         this.b = sVar;
     }
 
-    private final void a() {
+    private final void b() {
     }
 
     private final void d(long j3, long j10) {

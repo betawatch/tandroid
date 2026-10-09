@@ -27,15 +27,18 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.sw0;
-import org.telegram.ui.Components.tw0;
-import org.telegram.ui.Components.uw0;
-import org.telegram.ui.wq0;
+import org.telegram.ui.Components.ax0;
+import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.zw0;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.br0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,56 +59,47 @@ public final /* synthetic */ class s2 implements Runnable {
         this.h = hashSet;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x02ba  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x02c8  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x0481  */
-    /* JADX WARN: Removed duplicated region for block: B:230:0x0540  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x0508 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x04f1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:304:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:339:0x047a A[Catch: Exception -> 0x0400, TRY_ENTER, TRY_LEAVE, TryCatch #24 {Exception -> 0x0400, blocks: (B:313:0x03fc, B:339:0x047a), top: B:306:0x03ec }] */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0473 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0557 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:358:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x0550 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x01e6  */
-    /* JADX WARN: Type inference failed for: r2v1, types: [android.net.Uri] */
-    /* JADX WARN: Type inference failed for: r2v2 */
-    /* JADX WARN: Type inference failed for: r2v3 */
-    /* JADX WARN: Type inference failed for: r2v4, types: [java.io.InputStream] */
-    /* JADX WARN: Type inference failed for: r2v5, types: [java.io.InputStream] */
-    /* JADX WARN: Type inference failed for: r4v2, types: [java.io.OutputStream] */
-    /* JADX WARN: Type inference failed for: r4v4 */
-    /* JADX WARN: Type inference failed for: r4v42 */
-    /* JADX WARN: Type inference failed for: r8v1, types: [android.content.ContentResolver] */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:120:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0307  */
+    /* JADX WARN: Removed duplicated region for block: B:148:0x0315  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x04c9  */
+    /* JADX WARN: Removed duplicated region for block: B:248:0x0585  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x054e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:294:0x0539 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:321:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x04c2 A[Catch: Exception -> 0x043c, TRY_ENTER, TRY_LEAVE, TryCatch #21 {Exception -> 0x043c, blocks: (B:330:0x044a, B:356:0x04c2), top: B:323:0x043a }] */
+    /* JADX WARN: Removed duplicated region for block: B:357:0x04bd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x059a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:372:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:373:0x0595 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
         String str;
-        ?? r42;
         FileOutputStream fileOutputStream;
+        InputStream inputStream;
         String extensionFromMimeType;
-        final String str2;
+        String str2;
         int i10;
         int i11;
-        final int i12;
+        int i12;
         int i13;
         final int i14;
-        MediaMetadataRetriever mediaMetadataRetriever;
+        final int i15;
         int ceil;
-        int i15;
-        final int i16;
+        int i16;
         final int i17;
         final int i18;
         final int i19;
+        final int i20;
+        final String str3;
         Pair<Integer, Integer> imageOrientation;
-        int i20;
-        String readRes;
         int i21;
+        String readRes;
+        int i22;
         boolean z10;
         TLRPC.Photo photo;
         TLRPC.Photo photo2;
@@ -113,102 +107,90 @@ public final /* synthetic */ class s2 implements Runnable {
         switch (this.a) {
             case 0:
                 final x3 x3Var = (x3) this.d;
-                ?? r22 = (Uri) this.e;
-                String str3 = (String) this.f;
+                Uri uri = (Uri) this.e;
+                String str4 = (String) this.f;
                 final a aVar = (a) this.h;
-                InputStream inputStream = null;
+                InputStream inputStream2 = null;
                 r5 = null;
-                MediaMetadataRetriever mediaMetadataRetriever2 = null;
+                MediaMetadataRetriever mediaMetadataRetriever = null;
                 try {
-                    str = AndroidUtilities.getPath(r22);
+                    str = AndroidUtilities.getPath(uri);
                 } catch (Exception e7) {
                     FileLog.e(e7);
                     str = null;
                 }
                 final boolean z11 = this.c;
-                int i22 = this.b;
-                if (str == null || !sa.e.u(str)) {
+                int i23 = this.b;
+                if (str == null || !sc.v.u(str)) {
                     Context context = x3Var.getContext();
                     try {
-                        try {
-                            if (context != null) {
+                        if (context != null) {
+                            try {
+                                inputStream = context.getContentResolver().openInputStream(uri);
+                            } catch (Exception e10) {
+                                e = e10;
+                                inputStream = null;
+                                fileOutputStream = null;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                fileOutputStream = null;
+                                if (inputStream2 != null) {
+                                }
+                                if (fileOutputStream == null) {
+                                }
+                            }
+                            if (inputStream != null) {
+                                if (str4 != null) {
+                                    try {
+                                        extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str4);
+                                    } catch (Exception e11) {
+                                        e = e11;
+                                        fileOutputStream = null;
+                                        FileLog.e(e);
+                                        if (inputStream != null) {
+                                        }
+                                        if (fileOutputStream != null) {
+                                        }
+                                        str = null;
+                                        str2 = str;
+                                        if (str2 == null) {
+                                        }
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                        fileOutputStream = null;
+                                        inputStream2 = inputStream;
+                                        if (inputStream2 != null) {
+                                        }
+                                        if (fileOutputStream == null) {
+                                        }
+                                    }
+                                } else {
+                                    extensionFromMimeType = null;
+                                }
+                                if (TextUtils.isEmpty(extensionFromMimeType)) {
+                                    extensionFromMimeType = z11 ? "mp4" : "jpg";
+                                }
+                                File file = new File(FileLoader.getDirectory(4), "rich_external_" + (-i23) + "_" + SharedConfig.getLastLocalId() + "." + extensionFromMimeType);
+                                fileOutputStream = new FileOutputStream(file);
                                 try {
-                                    r22 = context.getContentResolver().openInputStream(r22);
-                                } catch (Exception e10) {
-                                    e = e10;
-                                    r22 = 0;
-                                    fileOutputStream = null;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    r42 = 0;
-                                    if (inputStream != null) {
+                                    try {
+                                        AndroidUtilities.copyFile(inputStream, fileOutputStream);
+                                        str = file.getAbsolutePath();
                                         try {
                                             inputStream.close();
                                         } catch (Exception unused) {
                                         }
-                                    }
-                                    if (r42 != 0) {
-                                        throw th;
-                                    }
-                                    try {
-                                        r42.close();
-                                        throw th;
-                                    } catch (Exception unused2) {
-                                        throw th;
-                                    }
-                                }
-                                if (r22 != 0) {
-                                    if (str3 != null) {
-                                        try {
-                                            extensionFromMimeType = MimeTypeMap.getSingleton().getExtensionFromMimeType(str3);
-                                        } catch (Exception e11) {
-                                            e = e11;
-                                            fileOutputStream = null;
-                                            FileLog.e(e);
-                                            if (r22 != 0) {
-                                            }
-                                            if (fileOutputStream != null) {
-                                            }
-                                            str = null;
-                                            str2 = str;
-                                            if (str2 == null) {
-                                            }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            str3 = null;
-                                            inputStream = r22;
-                                            r42 = str3;
-                                            if (inputStream != null) {
-                                            }
-                                            if (r42 != 0) {
-                                            }
-                                        }
-                                    } else {
-                                        extensionFromMimeType = null;
-                                    }
-                                    if (TextUtils.isEmpty(extensionFromMimeType)) {
-                                        extensionFromMimeType = z11 ? "mp4" : "jpg";
-                                    }
-                                    File file = new File(FileLoader.getDirectory(4), "rich_external_" + (-i22) + "_" + SharedConfig.getLastLocalId() + "." + extensionFromMimeType);
-                                    fileOutputStream = new FileOutputStream(file);
-                                    try {
-                                        AndroidUtilities.copyFile((InputStream) r22, fileOutputStream);
-                                        str = file.getAbsolutePath();
-                                        try {
-                                            r22.close();
-                                        } catch (Exception unused3) {
-                                        }
                                         try {
                                             fileOutputStream.close();
-                                        } catch (Exception unused4) {
+                                        } catch (Exception unused2) {
                                         }
                                     } catch (Exception e12) {
                                         e = e12;
                                         FileLog.e(e);
-                                        if (r22 != 0) {
+                                        if (inputStream != null) {
                                             try {
-                                                r22.close();
-                                            } catch (Exception unused5) {
+                                                inputStream.close();
+                                            } catch (Exception unused3) {
                                             }
                                         }
                                         if (fileOutputStream != null) {
@@ -222,203 +204,206 @@ public final /* synthetic */ class s2 implements Runnable {
                                             return;
                                         }
                                     }
-                                } else if (r22 != 0) {
-                                    r22.close();
+                                } catch (Throwable th4) {
+                                    th = th4;
+                                    inputStream2 = inputStream;
+                                    if (inputStream2 != null) {
+                                        try {
+                                            inputStream2.close();
+                                        } catch (Exception unused4) {
+                                        }
+                                    }
+                                    if (fileOutputStream == null) {
+                                        throw th;
+                                    }
+                                    try {
+                                        fileOutputStream.close();
+                                        throw th;
+                                    } catch (Exception unused5) {
+                                        throw th;
+                                    }
                                 }
+                            } else if (inputStream != null) {
+                                inputStream.close();
                             }
-                        } catch (Throwable th4) {
-                            th = th4;
                         }
                     } catch (Exception unused6) {
                     }
                     str = null;
                 }
                 str2 = str;
-                if (str2 == null || !sa.e.u(str2)) {
+                if (str2 == null || !sc.v.u(str2)) {
                     return;
                 }
                 if (z11) {
                     try {
                         try {
-                            mediaMetadataRetriever = new MediaMetadataRetriever();
-                        } catch (Exception e13) {
-                            e = e13;
-                        }
-                        try {
+                            MediaMetadataRetriever mediaMetadataRetriever2 = new MediaMetadataRetriever();
                             try {
-                                mediaMetadataRetriever.setDataSource(str2);
-                                String extractMetadata = mediaMetadataRetriever.extractMetadata(18);
-                                String extractMetadata2 = mediaMetadataRetriever.extractMetadata(19);
-                                String extractMetadata3 = mediaMetadataRetriever.extractMetadata(9);
-                                i11 = extractMetadata != null ? Integer.parseInt(extractMetadata) : 0;
-                                if (extractMetadata2 != null) {
-                                    try {
-                                        i13 = Integer.parseInt(extractMetadata2);
-                                    } catch (Exception e14) {
-                                        e = e14;
-                                        mediaMetadataRetriever2 = mediaMetadataRetriever;
-                                        i10 = 0;
-                                        FileLog.e(e);
-                                        if (mediaMetadataRetriever2 != null) {
-                                        }
-                                        i12 = i22;
-                                        i13 = i10;
-                                        i14 = 0;
-                                        if (z11) {
-                                        }
-                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                x3 x3Var2 = x3.this;
-                                                x3Var2.getClass();
-                                                boolean z12 = z11;
-                                                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
-                                                photoEntry.setOrientation(i18, i17);
-                                                a aVar2 = aVar;
-                                                if (aVar2 == null || !x3.E3(aVar2.b)) {
-                                                    x3Var2.g2(photoEntry);
-                                                } else {
-                                                    x3Var2.U1(aVar2, photoEntry);
-                                                }
-                                            }
-                                        });
-                                        return;
-                                    }
-                                } else {
-                                    i13 = 0;
-                                }
-                                if (extractMetadata3 != null) {
-                                    try {
-                                        ceil = (int) Math.ceil(Long.parseLong(extractMetadata3) / 1000.0d);
-                                    } catch (Exception e15) {
-                                        e = e15;
-                                        i10 = i13;
-                                        mediaMetadataRetriever2 = mediaMetadataRetriever;
-                                        FileLog.e(e);
-                                        if (mediaMetadataRetriever2 != null) {
-                                        }
-                                        i12 = i22;
-                                        i13 = i10;
-                                        i14 = 0;
-                                        if (z11) {
-                                        }
-                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                x3 x3Var2 = x3.this;
-                                                x3Var2.getClass();
-                                                boolean z12 = z11;
-                                                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
-                                                photoEntry.setOrientation(i18, i17);
-                                                a aVar2 = aVar;
-                                                if (aVar2 == null || !x3.E3(aVar2.b)) {
-                                                    x3Var2.g2(photoEntry);
-                                                } else {
-                                                    x3Var2.U1(aVar2, photoEntry);
-                                                }
-                                            }
-                                        });
-                                        return;
-                                    }
-                                } else {
-                                    ceil = 0;
-                                }
                                 try {
-                                    mediaMetadataRetriever.release();
-                                } catch (Exception unused7) {
-                                }
-                                i12 = i22;
-                                i14 = ceil;
-                            } catch (Throwable th5) {
-                                th = th5;
-                                mediaMetadataRetriever2 = mediaMetadataRetriever;
-                                if (mediaMetadataRetriever2 != null) {
+                                    mediaMetadataRetriever2.setDataSource(str2);
+                                    String extractMetadata = mediaMetadataRetriever2.extractMetadata(18);
+                                    String extractMetadata2 = mediaMetadataRetriever2.extractMetadata(19);
+                                    String extractMetadata3 = mediaMetadataRetriever2.extractMetadata(9);
+                                    i11 = extractMetadata != null ? Integer.parseInt(extractMetadata) : 0;
+                                    if (extractMetadata2 != null) {
+                                        try {
+                                            i12 = Integer.parseInt(extractMetadata2);
+                                        } catch (Exception e13) {
+                                            e = e13;
+                                            mediaMetadataRetriever = mediaMetadataRetriever2;
+                                            i10 = 0;
+                                            FileLog.e(e);
+                                            if (mediaMetadataRetriever != null) {
+                                            }
+                                            i12 = i10;
+                                            i13 = 0;
+                                            i14 = i23;
+                                            i15 = 0;
+                                            if (z11) {
+                                            }
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    x3 x3Var2 = x3.this;
+                                                    x3Var2.getClass();
+                                                    boolean z12 = z11;
+                                                    MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str3, z12 ? i15 : 0, z12, i18, i20, 0L);
+                                                    photoEntry.setOrientation(i19, i17);
+                                                    a aVar2 = aVar;
+                                                    if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                                        x3Var2.g2(photoEntry);
+                                                    } else {
+                                                        x3Var2.U1(aVar2, photoEntry);
+                                                    }
+                                                }
+                                            });
+                                            return;
+                                        }
+                                    } else {
+                                        i12 = 0;
+                                    }
+                                    if (extractMetadata3 != null) {
+                                        try {
+                                            ceil = (int) Math.ceil(Long.parseLong(extractMetadata3) / 1000.0d);
+                                        } catch (Exception e14) {
+                                            e = e14;
+                                            i10 = i12;
+                                            mediaMetadataRetriever = mediaMetadataRetriever2;
+                                            FileLog.e(e);
+                                            if (mediaMetadataRetriever != null) {
+                                                try {
+                                                    mediaMetadataRetriever.release();
+                                                } catch (Exception unused7) {
+                                                }
+                                            }
+                                            i12 = i10;
+                                            i13 = 0;
+                                            i14 = i23;
+                                            i15 = 0;
+                                            if (z11) {
+                                            }
+                                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
+                                                @Override // java.lang.Runnable
+                                                public final void run() {
+                                                    x3 x3Var2 = x3.this;
+                                                    x3Var2.getClass();
+                                                    boolean z12 = z11;
+                                                    MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str3, z12 ? i15 : 0, z12, i18, i20, 0L);
+                                                    photoEntry.setOrientation(i19, i17);
+                                                    a aVar2 = aVar;
+                                                    if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                                        x3Var2.g2(photoEntry);
+                                                    } else {
+                                                        x3Var2.U1(aVar2, photoEntry);
+                                                    }
+                                                }
+                                            });
+                                            return;
+                                        }
+                                    } else {
+                                        ceil = 0;
+                                    }
                                     try {
                                         mediaMetadataRetriever2.release();
                                     } catch (Exception unused8) {
                                     }
+                                    i13 = 0;
+                                    i14 = i23;
+                                    i15 = ceil;
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    mediaMetadataRetriever = mediaMetadataRetriever2;
+                                    if (mediaMetadataRetriever != null) {
+                                        try {
+                                            mediaMetadataRetriever.release();
+                                        } catch (Exception unused9) {
+                                        }
+                                    }
+                                    throw th;
                                 }
-                                throw th;
+                            } catch (Exception e15) {
+                                e = e15;
+                                i11 = 0;
+                                mediaMetadataRetriever = mediaMetadataRetriever2;
+                                i10 = 0;
                             }
                         } catch (Exception e16) {
                             e = e16;
-                            mediaMetadataRetriever2 = mediaMetadataRetriever;
                             i10 = 0;
                             i11 = 0;
-                            FileLog.e(e);
-                            if (mediaMetadataRetriever2 != null) {
-                                try {
-                                    mediaMetadataRetriever2.release();
-                                } catch (Exception unused9) {
-                                }
-                            }
-                            i12 = i22;
-                            i13 = i10;
-                            i14 = 0;
-                            if (z11) {
-                            }
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    x3 x3Var2 = x3.this;
-                                    x3Var2.getClass();
-                                    boolean z12 = z11;
-                                    MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
-                                    photoEntry.setOrientation(i18, i17);
-                                    a aVar2 = aVar;
-                                    if (aVar2 == null || !x3.E3(aVar2.b)) {
-                                        x3Var2.g2(photoEntry);
-                                    } else {
-                                        x3Var2.U1(aVar2, photoEntry);
-                                    }
-                                }
-                            });
-                            return;
                         }
                     } catch (Throwable th6) {
                         th = th6;
                     }
                 } else {
-                    i12 = i22;
+                    i12 = 0;
                     i13 = 0;
-                    i14 = 0;
                     i11 = 0;
+                    i14 = i23;
+                    i15 = 0;
                 }
                 if (z11) {
+                    i20 = i12;
+                    i17 = i13;
+                    str3 = str2;
+                    i18 = i11;
+                    i19 = i17;
+                } else {
                     try {
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inJustDecodeBounds = true;
                         BitmapFactory.decodeFile(str2, options);
                         i11 = options.outWidth;
-                        i13 = options.outHeight;
+                        i12 = options.outHeight;
                     } catch (Exception e17) {
                         FileLog.e(e17);
                     }
                     try {
                         imageOrientation = AndroidUtilities.getImageOrientation(str2);
-                        i15 = ((Integer) imageOrientation.first).intValue();
+                        i16 = ((Integer) imageOrientation.first).intValue();
                     } catch (Exception e18) {
                         e = e18;
-                        i15 = 0;
+                        i16 = i13;
                     }
                     try {
                         i17 = ((Integer) imageOrientation.second).intValue();
-                        i16 = i11;
                     } catch (Exception e19) {
                         e = e19;
                         FileLog.e(e);
-                        i16 = i11;
-                        i17 = 0;
-                        i18 = i15;
-                        i19 = i13;
+                        i17 = i13;
+                        i18 = i11;
+                        i19 = i16;
+                        i20 = i12;
+                        str3 = str2;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
                             @Override // java.lang.Runnable
                             public final void run() {
                                 x3 x3Var2 = x3.this;
                                 x3Var2.getClass();
                                 boolean z12 = z11;
-                                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
-                                photoEntry.setOrientation(i18, i17);
+                                MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str3, z12 ? i15 : 0, z12, i18, i20, 0L);
+                                photoEntry.setOrientation(i19, i17);
                                 a aVar2 = aVar;
                                 if (aVar2 == null || !x3.E3(aVar2.b)) {
                                     x3Var2.g2(photoEntry);
@@ -429,13 +414,10 @@ public final /* synthetic */ class s2 implements Runnable {
                         });
                         return;
                     }
-                    i18 = i15;
-                    i19 = i13;
-                } else {
-                    i19 = i13;
-                    i16 = i11;
-                    i18 = 0;
-                    i17 = 0;
+                    i18 = i11;
+                    i19 = i16;
+                    i20 = i12;
+                    str3 = str2;
                 }
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: ii.v2
                     @Override // java.lang.Runnable
@@ -443,8 +425,8 @@ public final /* synthetic */ class s2 implements Runnable {
                         x3 x3Var2 = x3.this;
                         x3Var2.getClass();
                         boolean z12 = z11;
-                        MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
-                        photoEntry.setOrientation(i18, i17);
+                        MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str3, z12 ? i15 : 0, z12, i18, i20, 0L);
+                        photoEntry.setOrientation(i19, i17);
                         a aVar2 = aVar;
                         if (aVar2 == null || !x3.E3(aVar2.b)) {
                             x3Var2.g2(photoEntry);
@@ -455,34 +437,34 @@ public final /* synthetic */ class s2 implements Runnable {
                 });
                 return;
             case 1:
-                ki.q qVar = (ki.q) this.d;
+                ki.r rVar = (ki.r) this.d;
                 Size size = (Size) this.e;
-                int i23 = this.b;
+                int i24 = this.b;
                 boolean z12 = this.c;
                 RuntimeException[] runtimeExceptionArr = (RuntimeException[]) this.f;
                 CountDownLatch countDownLatch = (CountDownLatch) this.h;
                 try {
                     try {
-                        qVar.a = size;
-                        qVar.f = i23;
-                        qVar.g = z12;
-                        SurfaceTexture surfaceTexture = qVar.n;
+                        rVar.a = size;
+                        rVar.f = i24;
+                        rVar.g = z12;
+                        SurfaceTexture surfaceTexture = rVar.n;
                         if (surfaceTexture != null) {
                             surfaceTexture.setDefaultBufferSize(size.getWidth(), size.getHeight());
                         }
-                        qVar.g();
-                        ki.a0 a0Var = qVar.x;
-                        if (a0Var != null) {
-                            a0Var.v(size, i23);
+                        rVar.g();
+                        ki.b0 b0Var = rVar.x;
+                        if (b0Var != null) {
+                            b0Var.v(size, i24);
                         }
-                        ki.m mVar = qVar.e;
+                        ki.n nVar = rVar.e;
                         StringBuilder sb2 = new StringBuilder("GL input updated: input=");
                         sb2.append(size);
                         sb2.append(", crop=");
-                        sb2.append(i23);
+                        sb2.append(i24);
                         sb2.append(", filter=");
-                        sb2.append(qVar.f == qVar.c ? "NEAREST" : "LINEAR");
-                        mVar.b(sb2.toString());
+                        sb2.append(rVar.f == rVar.c ? "NEAREST" : "LINEAR");
+                        nVar.b(sb2.toString());
                     } catch (Throwable th7) {
                         countDownLatch.countDown();
                         throw th7;
@@ -496,127 +478,129 @@ public final /* synthetic */ class s2 implements Runnable {
                 ((ContactsController) this.d).lambda$processLoadedContacts$36(this.b, (ArrayList) this.e, (ArrayList) this.f, (a0.i) this.h, this.c);
                 return;
             case 3:
-                ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$65((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
+                ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$68((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
                 return;
             case 4:
-                uw0 uw0Var = (uw0) this.d;
+                ax0 ax0Var = (ax0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.h;
-                RLottieNative[] rLottieNativeArr = uw0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = uw0Var.i1;
-                int[] iArr = uw0Var.e;
-                if (uw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new sw0(uw0Var, 0));
+                RLottieNative[] rLottieNativeArr = ax0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = ax0Var.i1;
+                int[] iArr = ax0Var.e;
+                if (ax0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new yw0(ax0Var, 0));
                     return;
                 }
                 boolean z13 = false;
-                int i24 = 0;
+                int i25 = 0;
                 while (true) {
                     int length = rLottieNativeArr2.length + 2;
-                    int i25 = this.b;
-                    if (i24 >= length) {
+                    int i26 = this.b;
+                    if (i25 >= length) {
                         if (z13) {
-                            AndroidUtilities.runOnUIThread(new sw0(uw0Var, 1));
+                            AndroidUtilities.runOnUIThread(new yw0(ax0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(uw0Var, this.c, i25, u1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.n0(ax0Var, this.c, i26, u1Var));
                             return;
                         }
                     }
-                    if (i24 <= 2) {
-                        if (rLottieNativeArr2[i24] == null) {
-                            if (i24 == 0) {
-                                int i26 = uw0Var.b1;
-                                i20 = i26 == 1 ? 5 : i26 == 2 ? 6 : i26 == 3 ? 7 : i26 == 4 ? 4 : 3;
-                            } else if (i24 == 1) {
-                                int i27 = uw0Var.c1;
-                                i20 = i27 == 1 ? 11 : i27 == 2 ? 12 : i27 == 3 ? 13 : i27 == 4 ? 10 : 9;
+                    if (i25 <= 2) {
+                        if (rLottieNativeArr2[i25] == null) {
+                            if (i25 == 0) {
+                                int i27 = ax0Var.b1;
+                                i21 = i27 == 1 ? 5 : i27 == 2 ? 6 : i27 == 3 ? 7 : i27 == 4 ? 4 : 3;
+                            } else if (i25 == 1) {
+                                int i28 = ax0Var.c1;
+                                i21 = i28 == 1 ? 11 : i28 == 2 ? 12 : i28 == 3 ? 13 : i28 == 4 ? 10 : 9;
                             } else {
-                                int i28 = uw0Var.d1;
-                                i20 = i28 == 1 ? 17 : i28 == 2 ? 18 : i28 == 3 ? 19 : i28 == 4 ? 16 : 15;
+                                int i29 = ax0Var.d1;
+                                i21 = i29 == 1 ? 17 : i29 == 2 ? 18 : i29 == 3 ? 19 : i29 == 4 ? 16 : 15;
                             }
-                            TLRPC.Document document = tL_messages_stickerSet.documents.get(i20);
+                            TLRPC.Document document = tL_messages_stickerSet.documents.get(i21);
                             readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                             if (TextUtils.isEmpty(readRes)) {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
-                                if (i24 <= 2) {
-                                    rLottieNativeArr2[i24] = b10;
-                                    uw0Var.j1[i24] = iArr[0];
+                                if (i25 <= 2) {
+                                    rLottieNativeArr2[i25] = b10;
+                                    ax0Var.j1[i25] = iArr[0];
                                 } else {
-                                    rLottieNativeArr[i24 == 3 ? (char) 0 : (char) 4] = b10;
-                                    uw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    rLottieNativeArr[i25 == 3 ? (char) 0 : (char) 4] = b10;
+                                    ax0Var.g1[i25 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new tw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new zw0(document, i26, messageObject, u1Var, tL_messages_stickerSet, 0));
                                 z13 = true;
                             }
                         }
-                    } else if (rLottieNativeArr[i24] == null) {
-                        i20 = i24 == 3 ? 1 : 2;
-                        TLRPC.Document document2 = tL_messages_stickerSet.documents.get(i20);
+                    } else if (rLottieNativeArr[i25] == null) {
+                        i21 = i25 == 3 ? 1 : 2;
+                        TLRPC.Document document2 = tL_messages_stickerSet.documents.get(i21);
                         readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document2, true), 0);
                         if (TextUtils.isEmpty(readRes)) {
                         }
                     }
-                    i24++;
+                    i25++;
                 }
             case 5:
                 Activity activity = (Activity) this.d;
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) this.e;
                 TLRPC.GroupCall groupCall = (TLRPC.GroupCall) this.f;
                 HashSet hashSet = (HashSet) this.h;
-                org.telegram.ui.Components.voip.g2.a = 0L;
-                org.telegram.ui.Components.voip.g2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
+                org.telegram.ui.Components.voip.f2.a = 0L;
+                org.telegram.ui.Components.voip.f2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
-            default:
-                wq0 wq0Var = (wq0) this.d;
-                String str4 = (String) this.f;
+            case 6:
+                br0 br0Var = (br0) this.d;
+                String str5 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = wq0Var.h;
-                ArrayList arrayList = wq0Var.f;
-                ArrayList arrayList2 = wq0Var.n;
+                HashMap hashMap = br0Var.h;
+                ArrayList arrayList = br0Var.f;
+                ArrayList arrayList2 = br0Var.n;
                 int size2 = arrayList2.size();
-                int i29 = 0;
+                int i30 = 0;
+                int i31 = 0;
                 while (true) {
-                    if (i29 < size2) {
-                        if (((String) arrayList2.get(i29)).equalsIgnoreCase(str4)) {
-                            arrayList2.remove(i29);
+                    if (i31 < size2) {
+                        if (((String) arrayList2.get(i31)).equalsIgnoreCase(str5)) {
+                            arrayList2.remove(i31);
                         } else {
-                            i29++;
+                            i31++;
                         }
                     }
                 }
-                arrayList2.add(0, str4);
+                arrayList2.add(0, str5);
                 while (arrayList2.size() > 20) {
-                    a4.a.y(1, arrayList2);
+                    a1.g.y(1, arrayList2);
                 }
-                wq0Var.c0();
-                if (this.b != wq0Var.y) {
+                br0Var.c0();
+                if (this.b != br0Var.y) {
                     return;
                 }
                 int size3 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    wq0Var.w = messages_botresults.next_offset;
+                    br0Var.w = messages_botresults.next_offset;
                     int size4 = messages_botresults.results.size();
-                    i21 = 0;
-                    for (int i30 = 0; i30 < size4; i30++) {
-                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i30);
+                    int i32 = 0;
+                    i22 = 0;
+                    while (i32 < size4) {
+                        TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(i32);
                         boolean z14 = this.c;
                         if ((z14 || "photo".equals(botInlineResult.type)) && ((!z14 || "gif".equals(botInlineResult.type)) && !hashMap.containsKey(botInlineResult.id))) {
                             MediaController.SearchImage searchImage = new MediaController.SearchImage();
                             if (z14 && botInlineResult.document != null) {
-                                for (int i31 = 0; i31 < botInlineResult.document.attributes.size(); i31++) {
-                                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i31);
+                                for (int i33 = i30; i33 < botInlineResult.document.attributes.size(); i33++) {
+                                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i33);
                                     if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
                                         searchImage.width = documentAttribute.w;
                                         searchImage.height = documentAttribute.h;
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, wq0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, br0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -641,15 +625,15 @@ public final /* synthetic */ class s2 implements Runnable {
                                     searchImage.thumbPhotoSize = closestPhotoSizeWithSize3;
                                 }
                             } else if (botInlineResult.content != null) {
-                                int i32 = 0;
+                                int i34 = 0;
                                 while (true) {
-                                    if (i32 < botInlineResult.content.attributes.size()) {
-                                        TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i32);
+                                    if (i34 < botInlineResult.content.attributes.size()) {
+                                        TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i34);
                                         if (documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) {
                                             searchImage.width = documentAttribute2.w;
                                             searchImage.height = documentAttribute2.h;
                                         } else {
-                                            i32++;
+                                            i34++;
                                         }
                                     }
                                 }
@@ -673,21 +657,23 @@ public final /* synthetic */ class s2 implements Runnable {
                             searchImage.params.put("bot_name", UserObject.getPublicUsername(user));
                             arrayList.add(searchImage);
                             hashMap.put(searchImage.id, searchImage);
-                            i21++;
+                            i22++;
                         }
+                        i32++;
+                        i30 = 0;
                     }
-                    wq0Var.s = size3 == arrayList.size() || wq0Var.w == null;
+                    br0Var.s = size3 == arrayList.size() || br0Var.w == null;
                 } else {
-                    i21 = 0;
+                    i22 = 0;
                 }
-                wq0Var.r = false;
-                if (i21 != 0) {
-                    wq0Var.L.s(size3, i21);
-                } else if (wq0Var.s) {
+                br0Var.r = false;
+                if (i22 != 0) {
+                    br0Var.L.s(size3, i22);
+                } else if (br0Var.s) {
                     z10 = true;
-                    wq0Var.L.u(arrayList.size() - 1);
+                    br0Var.L.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        wq0Var.N.e(false, z10);
+                        br0Var.N.e(false, z10);
                         return;
                     }
                     return;
@@ -696,6 +682,31 @@ public final /* synthetic */ class s2 implements Runnable {
                 if (arrayList.size() > 0) {
                 }
                 break;
+            default:
+                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) this.d;
+                org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.e;
+                TL_wallet.proofChallenge proofchallenge = (TL_wallet.proofChallenge) this.f;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.h;
+                boolean z15 = this.c;
+                int i35 = this.b;
+                WalletEngine2.ImportedWalletProof importedWalletProof = null;
+                try {
+                    try {
+                        WalletEngine2.ImportedWalletProof createImportProof = z15 ? WalletEngine2.createImportProof(h0Var, proofchallenge.domain, proofchallenge.payload, i35) : WalletEngine2.createOwnershipProof(h0Var, proofchallenge.domain, proofchallenge.payload, i35);
+                        h0Var.close();
+                        importedWalletProof = createImportProof;
+                        e = null;
+                    } catch (Exception e21) {
+                        e = e21;
+                        org.telegram.ui.Wallet.k0.j("createImportProof", e);
+                        h0Var.close();
+                    }
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.k(k0Var, importedWalletProof, e, callback2));
+                    return;
+                } catch (Throwable th8) {
+                    h0Var.close();
+                    throw th8;
+                }
         }
     }
 
@@ -719,9 +730,9 @@ public final /* synthetic */ class s2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ s2(ki.q qVar, Size size, int i10, boolean z10, RuntimeException[] runtimeExceptionArr, CountDownLatch countDownLatch) {
+    public /* synthetic */ s2(ki.r rVar, Size size, int i10, boolean z10, RuntimeException[] runtimeExceptionArr, CountDownLatch countDownLatch) {
         this.a = 1;
-        this.d = qVar;
+        this.d = rVar;
         this.e = size;
         this.b = i10;
         this.c = z10;
@@ -739,13 +750,23 @@ public final /* synthetic */ class s2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ s2(wq0 wq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+    public /* synthetic */ s2(br0 br0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
         this.a = 6;
-        this.d = wq0Var;
+        this.d = br0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;
         this.c = z10;
         this.h = user;
+    }
+
+    public /* synthetic */ s2(org.telegram.ui.Wallet.k0 k0Var, boolean z10, org.telegram.ui.Wallet.h0 h0Var, TL_wallet.proofChallenge proofchallenge, int i10, Utilities.Callback2 callback2) {
+        this.a = 7;
+        this.d = k0Var;
+        this.c = z10;
+        this.e = h0Var;
+        this.f = proofchallenge;
+        this.b = i10;
+        this.h = callback2;
     }
 }

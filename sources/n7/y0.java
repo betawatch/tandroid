@@ -2,9 +2,9 @@ package n7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class y0 extends d1 {
+public final class y0 extends c1 {
     public final long a;
 
     public y0(long j3) {
@@ -13,12 +13,12 @@ public final class y0 extends d1 {
 
     @Override // java.lang.Comparable
     public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        d1 d1Var = (d1) obj;
-        if (zza() != d1Var.zza()) {
-            return zza() - d1Var.zza();
+        c1 c1Var = (c1) obj;
+        if (zza() != c1Var.zza()) {
+            return zza() - c1Var.zza();
         }
         long abs = Math.abs(this.a);
-        long abs2 = Math.abs(((y0) d1Var).a);
+        long abs2 = Math.abs(((y0) c1Var).a);
         if (abs < abs2) {
             return -1;
         }
@@ -40,8 +40,8 @@ public final class y0 extends d1 {
         return Long.toString(this.a);
     }
 
-    @Override // n7.d1
+    @Override // n7.c1
     public final int zza() {
-        return d1.c(this.a >= 0 ? (byte) 0 : (byte) 32);
+        return c1.c(this.a >= 0 ? (byte) 0 : (byte) 32);
     }
 }

@@ -15,13 +15,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.web.w;
+import pg.e0;
 import v7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class i extends w7.m {
-    public static final w b = new w(11);
+public final class i extends w7.l {
+    public static final e0 b = new e0(3);
     public final g a;
 
     public i(g gVar) {
@@ -521,14 +521,14 @@ public final class i extends w7.m {
         int A2 = vVar.A();
         int x10 = vVar.x();
         int x11 = vVar.x();
-        a4.h hVar = new a4.h();
-        hVar.p(vVar);
+        a4.g gVar = new a4.g();
+        gVar.p(vVar);
         int i11 = ((i10 - 10) * 8) / (x10 + x11);
         int[] iArr = new int[i11];
         int[] iArr2 = new int[i11];
         for (int i12 = 0; i12 < i11; i12++) {
-            int i13 = hVar.i(x10);
-            int i14 = hVar.i(x11);
+            int i13 = gVar.i(x10);
+            int i14 = gVar.i(x11);
             iArr[i12] = i13;
             iArr2[i12] = i14;
         }
@@ -663,7 +663,11 @@ public final class i extends w7.m {
     
         if ((r10 & 1) != 0) goto L45;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x0085, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
+    
+        r4 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0087, code lost:
     
         if ((r10 & 128) != 0) goto L45;
      */
@@ -710,8 +714,8 @@ public final class i extends w7.m {
                         i13 = (i12 & 32) != 0 ? 1 : 0;
                     } else {
                         i13 = 0;
+                        z11 = false;
                     }
-                    z11 = false;
                     if (z11) {
                         i13 += 4;
                     }
@@ -732,7 +736,7 @@ public final class i extends w7.m {
         }
     }
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }

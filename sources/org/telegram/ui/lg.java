@@ -1,139 +1,83 @@
 package org.telegram.ui;
 
-import android.text.style.CharacterStyle;
-import java.io.Serializable;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lg implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ yn b;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 c;
-    public final /* synthetic */ nf.e d;
-    public final /* synthetic */ Serializable e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class lg implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ lg(yn ynVar, xi xiVar, org.telegram.ui.Cells.u1 u1Var, String str, CharacterStyle characterStyle) {
-        this.b = ynVar;
-        this.d = xiVar;
-        this.c = u1Var;
-        this.e = str;
-        this.f = characterStyle;
+    public /* synthetic */ lg(Object obj, float f7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        boolean z10;
-        boolean z11;
-        long j3;
-        Boolean bool;
-        boolean z12;
-        TL_iv.RichMessage richMessage;
-        TLRPC.Message message;
-        org.telegram.ui.Cells.u1 u1Var;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                String str = (String) this.e;
-                CharacterStyle characterStyle = (CharacterStyle) this.f;
-                TLObject tLObject = (TLObject) obj;
-                Boolean bool2 = (Boolean) obj2;
-                this.d.b();
-                if (tLObject instanceof TLRPC.User) {
-                    j3 = ((TLRPC.User) tLObject).id;
-                    z10 = false;
-                    z11 = true;
-                } else if (tLObject instanceof TLRPC.Chat) {
-                    TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                    long j10 = -chat.id;
-                    z10 = ChatObject.isChannelAndNotMegaGroup(chat);
-                    j3 = j10;
-                    z11 = false;
-                } else {
-                    z10 = false;
-                    z11 = false;
-                    j3 = 0;
+                zn znVar = (zn) this.c;
+                znVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar.H8 = floatValue;
+                znVar.L8 = floatValue / this.b;
+                View view = znVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
                 }
-                yn ynVar = this.b;
-                org.telegram.ui.Cells.u1 u1Var2 = this.c;
-                org.telegram.ui.Components.b80 I = org.telegram.ui.Components.b80.I(ynVar, u1Var2);
-                org.telegram.ui.Components.sm0 sm0Var = new org.telegram.ui.Components.sm0(ynVar.getParentActivity(), ynVar.ca);
-                I.p = new se(sm0Var, 0);
-                if (j3 != 0) {
-                    bool = bool2;
-                    z12 = false;
-                    I.c(z10 ? R.drawable.msg_channel : R.drawable.msg_discussion, LocaleController.getString(z10 ? R.string.ViewChannel : R.string.SendMessage), new gg(ynVar, j3, 2), false);
-                } else {
-                    bool = bool2;
-                    z12 = false;
-                }
-                boolean z13 = z10;
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.ProfileCopyUsername), new af(ynVar, sm0Var, str, 1), z12);
-                if (bool.booleanValue()) {
-                    I.c(R.drawable.outline_gram_24, LocaleController.getString(R.string.BuyUsernameOnFragment), new ue(ynVar, str, 11), z12);
-                }
-                I.k();
-                if (j3 != 0) {
-                    I.n(tLObject, LocaleController.getString(z11 ? R.string.ViewProfile : z13 ? R.string.ViewChannelProfile : R.string.ViewGroupProfile), new gg(ynVar, j3, 3));
-                } else {
-                    I.p(13, AndroidUtilities.dp(200.0f), LocaleController.getString(R.string.NoUsernameFound2));
-                }
-                sm0Var.e(I);
-                sm0Var.f(u1Var2, characterStyle, null, false);
-                ynVar.showDialog(sm0Var);
                 break;
-            default:
-                yi yiVar = (yi) this.d;
-                int[] iArr = (int[]) this.e;
-                MessageObject messageObject = (MessageObject) this.f;
-                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) obj;
-                yn ynVar2 = this.b;
-                if (ynVar2.xb == yiVar) {
-                    iArr[0] = 0;
-                    yiVar.c(false);
-                    if (messages_messages != null) {
-                        ynVar2.getMessagesController().putUsers(messages_messages.users, false);
-                        ynVar2.getMessagesController().putChats(messages_messages.chats, false);
-                        int i10 = 0;
-                        while (true) {
-                            if (i10 < messages_messages.messages.size()) {
-                                TLRPC.Message message2 = messages_messages.messages.get(i10);
-                                if (message2 == null || (richMessage = message2.rich_message) == null) {
-                                    i10++;
-                                }
-                            } else {
-                                richMessage = null;
-                            }
-                        }
-                        if (richMessage != null && (message = messageObject.messageOwner) != null) {
-                            message.rich_message = richMessage;
-                            messageObject.richLayout = null;
-                            kn knVar = ynVar2.mc;
-                            if (knVar != null && (u1Var = this.c) != null) {
-                                knVar.i(u1Var, true, false, true);
-                                break;
-                            }
-                        }
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    View view2 = (View) arrayList.get(i10);
+                    if (view2 != null) {
+                        view2.setTranslationY(this.b * floatValue2);
                     }
                 }
                 break;
+            case 2:
+                ((org.telegram.ui.Components.lo) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 3:
+                ((aw0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                break;
+            case 4:
+                f21 f21Var = (f21) this.c;
+                f21Var.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
+                f21Var.a.setTranslationX(lerp);
+                f21Var.b.setTranslationX(lerp);
+                ImageView imageView = f21Var.c;
+                imageView.setTranslationX(lerp);
+                org.telegram.ui.Components.dq dqVar = f21Var.f;
+                dqVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
+                float f7 = (floatValue3 * 0.5f) + 0.5f;
+                dqVar.setScaleX(f7);
+                dqVar.setScaleY(f7);
+                dqVar.setAlpha(floatValue3);
+                float f10 = 1.0f - floatValue3;
+                float f11 = (f10 * 0.5f) + 0.5f;
+                imageView.setScaleX(f11);
+                imageView.setScaleY(f11);
+                imageView.setAlpha(f10);
+                break;
+            default:
+                org.telegram.ui.Wallet.d3 d3Var = (org.telegram.ui.Wallet.d3) this.c;
+                d3Var.getClass();
+                d3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
+                d3Var.a.invalidate();
+                break;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ lg(yn ynVar, yi yiVar, int[] iArr, org.telegram.ui.Cells.u1 u1Var, MessageObject messageObject) {
-        this.b = ynVar;
-        this.d = yiVar;
-        this.e = iArr;
-        this.c = u1Var;
-        this.f = messageObject;
     }
 }

@@ -1,43 +1,7 @@
 package l5;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class m {
-    public final i5.c a;
-    public final byte[] b;
-
-    public m(i5.c cVar, byte[] bArr) {
-        if (cVar == null) {
-            throw new NullPointerException("encoding is null");
-        }
-        if (bArr == null) {
-            throw new NullPointerException("bytes is null");
-        }
-        this.a = cVar;
-        this.b = bArr;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof m)) {
-            return false;
-        }
-        m mVar = (m) obj;
-        if (this.a.equals(mVar.a)) {
-            return Arrays.equals(this.b, mVar.b);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Arrays.hashCode(this.b);
-    }
-
-    public final String toString() {
-        return "EncodedPayload{encoding=" + this.a + ", bytes=[...]}";
-    }
+public abstract class m {
+    public static final qb.b a = new qb.b(12);
 }

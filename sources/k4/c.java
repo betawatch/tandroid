@@ -17,7 +17,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -29,15 +29,15 @@ public final class c implements o {
     public long g;
 
     @Override // c3.o
-    public final boolean b(p pVar) {
+    public final boolean a(p pVar) {
         return e.a(pVar);
     }
 
     @Override // c3.o
     public final void g(q qVar) {
         this.a = qVar;
-        this.b = qVar.Z1(0, 1);
-        qVar.e1();
+        this.b = qVar.f2(0, 1);
+        qVar.k1();
     }
 
     @Override // c3.o
@@ -59,53 +59,58 @@ public final class c implements o {
     
         if (r9 != 65534) goto L78;
      */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x022a  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x023c  */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x021b, code lost:
+    
+        if (r2 == 32) goto L81;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0229  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x023b  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int m(p pVar, s sVar) {
         byte[] bArr;
-        int B;
+        int i10;
         e2.d.h(this.b);
         String str = d0.a;
-        int i10 = this.c;
-        if (i10 == 0) {
+        int i11 = this.c;
+        int i12 = 4;
+        if (i11 == 0) {
             e2.d.g(pVar.getPosition() == 0);
-            int i11 = this.f;
-            if (i11 != -1) {
-                pVar.o(i11);
+            int i13 = this.f;
+            if (i13 != -1) {
+                pVar.r(i13);
                 this.c = 4;
                 return 0;
             }
             if (!e.a(pVar)) {
                 throw s0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.o((int) (pVar.g() - pVar.getPosition()));
+            pVar.r((int) (pVar.j() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
         long j3 = -1;
-        if (i10 == 1) {
+        if (i11 == 1) {
             v vVar = new v(8);
             d b10 = d.b(pVar, vVar);
             if (b10.a != 1685272116) {
-                pVar.m();
+                pVar.q();
             } else {
-                pVar.h(8);
+                pVar.l(8);
                 vVar.J(0);
-                pVar.b(0, 8, vVar.a);
+                pVar.a(0, 8, vVar.a);
                 j3 = vVar.m();
-                pVar.o(((int) b10.b) + 8);
+                pVar.r(((int) b10.b) + 8);
             }
             this.d = j3;
             this.c = 2;
             return 0;
         }
-        if (i10 != 2) {
-            if (i10 != 3) {
-                if (i10 != 4) {
+        if (i11 != 2) {
+            if (i11 != 3) {
+                if (i11 != 4) {
                     throw new IllegalStateException();
                 }
                 e2.d.g(this.g != -1);
@@ -114,9 +119,9 @@ public final class c implements o {
                 bVar.getClass();
                 return bVar.b(pVar, position) ? -1 : 0;
             }
-            pVar.m();
+            pVar.q();
             d b11 = e.b(1684108385, pVar, new v(8));
-            pVar.o(8);
+            pVar.r(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -139,7 +144,7 @@ public final class c implements o {
         v vVar2 = new v(16);
         long j11 = e.b(1718449184, pVar, vVar2).b;
         e2.d.g(j11 >= 16);
-        pVar.b(0, 16, vVar2.a);
+        pVar.a(0, 16, vVar2.a);
         vVar2.J(0);
         int q6 = vVar2.q();
         int q10 = vVar2.q();
@@ -147,11 +152,11 @@ public final class c implements o {
         vVar2.p();
         int q11 = vVar2.q();
         int q12 = vVar2.q();
-        int i12 = ((int) j11) - 16;
-        if (i12 > 0) {
-            bArr = new byte[i12];
-            pVar.b(0, i12, bArr);
-            if (q6 == 65534 && i12 == 24) {
+        int i14 = ((int) j11) - 16;
+        if (i14 > 0) {
+            bArr = new byte[i14];
+            pVar.a(0, i14, bArr);
+            if (q6 == 65534 && i14 == 24) {
                 v vVar3 = new v(bArr);
                 vVar3.q();
                 int q13 = vVar3.q();
@@ -175,7 +180,7 @@ public final class c implements o {
         } else {
             bArr = d0.b;
         }
-        pVar.o((int) (pVar.g() - pVar.getPosition()));
+        pVar.r((int) (pVar.j() - pVar.getPosition()));
         e2.q qVar = new e2.q();
         qVar.a = q10;
         qVar.b = p5;
@@ -190,21 +195,17 @@ public final class c implements o {
             this.e = new l(this.a, this.b, qVar, "audio/g711-mlaw", -1);
         } else {
             if (q6 != 1) {
-                if (q6 == 3) {
-                    if (q12 == 32) {
-                        B = 4;
-                        if (B == 0) {
-                            throw s0.c("Unsupported WAV format type: " + q6);
-                        }
-                        this.e = new l(this.a, this.b, qVar, "audio/raw", B);
-                    }
+                if (q6 != 3) {
                 }
-                B = 0;
-                if (B == 0) {
+                i10 = 0;
+                if (i10 != 0) {
+                    throw s0.c("Unsupported WAV format type: " + q6);
                 }
+                this.e = new l(this.a, this.b, qVar, "audio/raw", i10);
             }
-            B = d0.B(q12, ByteOrder.LITTLE_ENDIAN);
-            if (B == 0) {
+            i12 = d0.A(q12, ByteOrder.LITTLE_ENDIAN);
+            i10 = i12;
+            if (i10 != 0) {
             }
         }
         this.c = 3;

@@ -4,9 +4,8 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends b {
     public static final Logger m = Logger.getLogger(d.class.getName());
@@ -76,7 +75,7 @@ public final class d extends b {
         sb2.append(e5.b.c(0, bArr));
         sb2.append(", profileLevelIndicationDescriptors=");
         ArrayList arrayList = this.k;
-        sb2.append(arrayList == null ? BuildConfig.BETA_URL : Arrays.asList(arrayList).toString());
+        sb2.append(arrayList == null ? "null" : Arrays.asList(arrayList).toString());
         sb2.append('}');
         return sb2.toString();
     }

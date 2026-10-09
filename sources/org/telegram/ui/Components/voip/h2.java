@@ -1,69 +1,85 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.transition.TransitionSet;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import w7.z5;
+import org.telegram.ui.Components.mx0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class h2 extends FrameLayout {
-    public String a;
-    public final ImageView b;
-    public final TextView c;
-    public boolean d;
-    public final r1 e;
-    public final RectF f;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class h2 extends LinearLayout {
+    public HashMap a;
+    public ArrayList b;
+    public ArrayList c;
+    public TransitionSet d;
+    public boolean e;
+    public boolean f;
+    public Runnable h;
+    public q1 n;
+    public TextPaint r;
 
-    public h2(Context context, r1 r1Var, int i10) {
-        super(context);
-        this.f = new RectF();
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        this.e = r1Var;
-        r1Var.a(this);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, z5.d(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 14.0f);
-        addView(textView, z5.d(-2, -2.0f, 16, i10 == 0 ? 14.0f : 36.0f, 2.0f, 14.0f, 2.0f));
+    public final void a(int i10, String str, String str2) {
+        HashMap hashMap = this.a;
+        if (hashMap.get(str2) != null) {
+            return;
+        }
+        g2 g2Var = new g2(getContext(), this.n, i10);
+        g2Var.a = str2;
+        int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
+        TextView textView = g2Var.c;
+        StaticLayout c10 = mx0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, dp, 10, true);
+        if (c10 != null) {
+            dp = 0;
+            for (int i11 = 0; i11 < c10.getLineCount(); i11++) {
+                dp = (int) Math.max(dp, Math.ceil(c10.getLineWidth(i11)));
+            }
+        }
+        textView.setMaxWidth(dp);
+        textView.setText(str);
+        g2Var.b.setImageResource(i10);
+        hashMap.put(str2, g2Var);
+        if (this.e) {
+            this.b.add(g2Var);
+        } else {
+            this.f = true;
+            addView(g2Var, x5.t(-2, -2, 1, 4, 0, 0, 4));
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.f;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x10 = ((View) getParent()).getX() + getX();
-        float y3 = ((View) getParent()).getY() + getY();
-        r1 r1Var = this.e;
-        r1Var.d(x10, y3);
-        Paint paint = r1Var.l;
-        int alpha = (this.d ? paint : r1Var.b()).getAlpha();
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-        (this.d ? paint : r1Var.b()).setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.d ? paint : r1Var.b());
-        if (!this.d) {
-            paint = r1Var.b();
+    public final CharSequence b(String str) {
+        return str == null ? "" : TextUtils.ellipsize(str, this.r, AndroidUtilities.dp(300.0f), TextUtils.TruncateAt.END);
+    }
+
+    public final void c(String str) {
+        g2 g2Var = (g2) this.a.remove(str);
+        this.n.m.remove(g2Var);
+        if (g2Var != null) {
+            if (!this.e) {
+                this.f = true;
+                removeView(g2Var);
+            } else {
+                if (this.b.remove(g2Var)) {
+                    return;
+                }
+                this.c.add(g2Var);
+            }
         }
-        paint.setAlpha(alpha);
-        if (r1Var.e) {
-            int alpha2 = ((Paint) r1Var.d.a).getAlpha();
-            ((Paint) r1Var.d.a).setAlpha(255);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), (Paint) r1Var.d.a);
-            ((Paint) r1Var.d.a).setAlpha(alpha2);
-        }
-        canvas.restore();
-        super.dispatchDraw(canvas);
+    }
+
+    public int getChildsHight() {
+        int childCount = getChildCount();
+        return org.telegram.messenger.q.D(32.0f, childCount, childCount > 0 ? AndroidUtilities.dp(16.0f) : 0);
+    }
+
+    public void setOnViewsUpdated(Runnable runnable) {
+        this.h = runnable;
     }
 }

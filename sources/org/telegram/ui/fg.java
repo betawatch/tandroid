@@ -1,50 +1,108 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.SystemClock;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.tl.TL_keyboard;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fg implements View.OnLongClickListener {
+public final /* synthetic */ class fg implements bh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ sm b;
 
-    public /* synthetic */ fg(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ fg(sm smVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = smVar;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.a
+    public final void b(ah.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // bh.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                yn ynVar = (yn) this.b;
-                TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
-                MessageObject messageObject = (MessageObject) this.d;
-                ai.p4 p4Var = (ai.p4) this.e;
-                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) zf.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
-                if (ynVar.getParentActivity() == null) {
-                    return false;
+                sm smVar = this.b;
+                zn znVar = smVar.J0;
+                zn znVar2 = znVar.da;
+                sm smVar2 = znVar2 != null ? znVar2.X0 : znVar.X0;
+                float f7 = znVar.yc.e;
+                int i10 = (int) ((1.0f - f7) * 255.0f);
+                int i11 = (int) (255.0f * f7);
+                if (f7 > 0.0f) {
+                    canvas.drawColor(org.telegram.ui.ActionBar.i6.m1(f7 * 0.85f, znVar.getThemedColor(org.telegram.ui.ActionBar.i6.d6)));
                 }
-                if ((ynVar.M0.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !zf.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
-                    return false;
+                gh.d.b(new fg(smVar, 1), canvas, rectF, znVar.x0, smVar2, i10);
+                ai.w0 w0Var = znVar.L3;
+                if (w0Var != null) {
+                    gh.d.b(w0Var, canvas, rectF, w0Var, smVar2, i11);
                 }
-                ynVar.Y9(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
-                try {
-                    p4Var.performHapticFeedback(0, 1);
-                } catch (Exception unused) {
+                ci.h1 h1Var = znVar.q1;
+                if (h1Var != null && h1Var.getVisibility() == 0) {
+                    int childCount = znVar.q1.getChildCount();
+                    for (int i12 = 0; i12 < childCount; i12++) {
+                        View childAt = znVar.q1.getChildAt(i12);
+                        if ((childAt instanceof bo) && childAt.getVisibility() == 0) {
+                            bo boVar = (bo) childAt;
+                            ao aoVar = boVar.a;
+                            sm smVar3 = aoVar.X0;
+                            Objects.requireNonNull(smVar3);
+                            gh.d.a(new fg(smVar3, 0), canvas, rectF, aoVar.X0, boVar);
+                        }
+                    }
+                    break;
                 }
-                return true;
+                break;
             default:
-                return org.telegram.ui.Components.xi.w((org.telegram.ui.Components.xi) this.b, (Context) this.c, (org.telegram.ui.ActionBar.d6) this.d, (org.telegram.ui.ActionBar.n2) this.e, view);
+                long uptimeMillis = SystemClock.uptimeMillis();
+                zn znVar3 = this.b.J0;
+                if (znVar3.x0.Z0()) {
+                    znVar3.x0.f(canvas, rectF);
+                    break;
+                } else {
+                    znVar3.x0.x1(canvas, rectF);
+                    for (int i13 = 0; i13 < znVar3.x0.getChildCount(); i13++) {
+                        View childAt2 = znVar3.x0.getChildAt(i13);
+                        if (!zn.e2(znVar3, childAt2, rectF)) {
+                            if (childAt2 instanceof org.telegram.ui.Cells.u1) {
+                                canvas.save();
+                                canvas.translate(childAt2.getX(), childAt2.getY());
+                                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt2;
+                                if (u1Var.C1()) {
+                                    canvas.save();
+                                    canvas.translate(0.0f, u1Var.V);
+                                    u1Var.D1(canvas, true, false);
+                                    canvas.restore();
+                                }
+                                canvas.restore();
+                                znVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                                if (u1Var.U2()) {
+                                    canvas.save();
+                                    canvas.translate(u1Var.getX(), u1Var.getY());
+                                    u1Var.X1(canvas);
+                                    canvas.restore();
+                                }
+                            } else if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                                znVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                                canvas.save();
+                                canvas.translate(childAt2.getX(), childAt2.getY());
+                                ((org.telegram.ui.Cells.w0) childAt2).C(canvas);
+                                canvas.restore();
+                            } else {
+                                znVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                            }
+                        }
+                    }
+                    znVar3.x0.y1(canvas, rectF);
+                    break;
+                }
         }
     }
 }

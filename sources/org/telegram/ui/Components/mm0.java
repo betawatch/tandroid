@@ -1,101 +1,176 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseIntArray;
+import android.view.View;
+import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mm0 extends ix0 {
-    public float d;
-    public final Paint f;
-    public boolean a = false;
-    public long b = 0;
-    public boolean c = false;
-    public int e = 1;
+public abstract class mm0 extends yl0 {
+    public SparseIntArray c;
+    public SparseIntArray d;
+    public SparseIntArray e;
+    public int f;
+    public int h;
+    public final ArrayList n = new ArrayList();
 
-    public mm0(boolean z10) {
+    public mm0() {
+        L();
+    }
+
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        int b10 = d1Var.b();
+        return V(S(b10), Q(b10), d1Var);
+    }
+
+    public final void L() {
+        SparseIntArray sparseIntArray = this.d;
+        if (sparseIntArray == null) {
+            this.d = new SparseIntArray();
+            this.c = new SparseIntArray();
+            this.e = new SparseIntArray();
+        } else {
+            sparseIntArray.clear();
+            this.c.clear();
+            this.e.clear();
+        }
+        this.h = -1;
+        this.f = -1;
+    }
+
+    public abstract int M(int i10);
+
+    public int N(int i10, int i11) {
+        return Objects.hash(Integer.valueOf((-49612) * i10), O(i10, i11));
+    }
+
+    public abstract Object O(int i10, int i11);
+
+    public abstract int P(int i10, int i11);
+
+    public final int Q(int i10) {
+        int i11 = this.c.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int i12 = this.f;
+        if (i12 < 0) {
+            i12 = R();
+            this.f = i12;
+        }
+        int i13 = 0;
+        int i14 = 0;
+        while (i13 < i12) {
+            int U = U(i13) + i14;
+            if (i10 >= i14 && i10 < U) {
+                int i15 = i10 - i14;
+                this.c.put(i10, i15);
+                return i15;
+            }
+            i13++;
+            i14 = U;
+        }
+        return -1;
+    }
+
+    public abstract int R();
+
+    public final int S(int i10) {
+        int i11 = this.d.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int i12 = this.f;
+        if (i12 < 0) {
+            i12 = R();
+            this.f = i12;
+        }
+        int i13 = 0;
+        int i14 = 0;
+        while (i13 < i12) {
+            int U = U(i13) + i14;
+            if (i10 >= i14 && i10 < U) {
+                this.d.put(i10, i13);
+                return i13;
+            }
+            i13++;
+            i14 = U;
+        }
+        return -1;
+    }
+
+    public abstract View T(int i10, View view);
+
+    public final int U(int i10) {
+        int i11 = this.e.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int M = M(i10);
+        this.e.put(i10, M);
+        return M;
+    }
+
+    public abstract boolean V(int i10, int i11, s4.d1 d1Var);
+
+    public abstract void W(int i10, int i11, s4.d1 d1Var);
+
+    public final void X(boolean z10) {
+        ArrayList arrayList = this.n;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        L();
+        arrayList.clear();
+        int i10 = this.f;
+        if (i10 < 0) {
+            i10 = R();
+            this.f = i10;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            int U = U(i11);
+            for (int i12 = 0; i12 < U; i12++) {
+                arrayList.add(Integer.valueOf(N(i11, i12)));
+            }
+        }
         if (z10) {
-            this.f = new Paint(1);
+            s4.o.c(new gg.g(this, arrayList2, 3), true).b(this);
+        } else {
+            super.l();
         }
     }
 
-    @Override // org.telegram.ui.Components.ix0
-    public final void b(int i10) {
-        Paint paint = this.f;
-        if (paint != null) {
-            paint.setColor(i10);
+    @Override // s4.i0
+    public final int h() {
+        int i10 = this.h;
+        if (i10 >= 0) {
+            return i10;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ix0
-    public final void c(boolean z10) {
-        this.a = z10;
-    }
-
-    @Override // org.telegram.ui.Components.ix0
-    public final void d() {
-        this.b = System.currentTimeMillis();
-        this.c = true;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.f;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.i6.c2;
+        this.h = 0;
+        int i11 = this.f;
+        if (i11 < 0) {
+            i11 = R();
+            this.f = i11;
         }
-        paint.setAlpha(((int) (this.d * 200.0f)) + 55);
-        canvas.drawCircle(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.a ? 8.0f : 9.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.c) {
-            long currentTimeMillis = System.currentTimeMillis();
-            long j3 = currentTimeMillis - this.b;
-            this.b = currentTimeMillis;
-            if (j3 > 50) {
-                j3 = 50;
-            }
-            float f7 = this.d;
-            int i10 = this.e;
-            float f10 = ((i10 * j3) / 400.0f) + f7;
-            this.d = f10;
-            if (i10 > 0 && f10 >= 1.0f) {
-                this.e = -1;
-                this.d = 1.0f;
-            } else if (i10 < 0 && f10 <= 0.0f) {
-                this.e = 1;
-                this.d = 0.0f;
-            }
-            a();
+        for (int i12 = 0; i12 < i11; i12++) {
+            this.h = U(i12) + this.h;
         }
+        return this.h;
     }
 
-    @Override // org.telegram.ui.Components.ix0
-    public final void e() {
-        this.c = false;
+    @Override // s4.i0
+    public final int j(int i10) {
+        return P(S(i10), Q(i10));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(10.0f);
+    @Override // s4.i0
+    public void l() {
+        X(false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(12.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        W(S(i10), Q(i10), d1Var);
     }
 }

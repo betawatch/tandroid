@@ -1,83 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gz implements bz {
-    public String a;
-    public int b;
-    public final ArrayList c = new ArrayList();
-    public final HashMap d = new HashMap();
-    public final HashMap e = new HashMap();
-    public final HashMap f = new HashMap();
-    public final ArrayList h = new ArrayList();
-    public final ArrayList n = new ArrayList();
-    public final ArrayList r = new ArrayList(0);
-    public final ArrayList s = new ArrayList(0);
-    public final LongSparseArray v = new LongSparseArray(0);
-    public final /* synthetic */ iz w;
+public final class gz extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final RadialProgressView c;
+    public boolean d;
+    public final /* synthetic */ a00 e;
 
-    public gz(iz izVar) {
-        this.w = izVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gz(a00 a00Var, Context context) {
+        super(context);
+        this.e = a00Var;
+        ImageView imageView = new ImageView(getContext());
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.gif_empty);
+        int i10 = org.telegram.ui.ActionBar.i6.Le;
+        imageView.setColorFilter(new PorterDuffColorFilter(a00Var.B(i10), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.x5.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, 17));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        org.telegram.messenger.bi.j(16.0f, R.string.NoGIFsFound, 1, textView);
+        textView.setTextColor(a00Var.B(i10));
+        addView(textView, w7.x5.a(-2.0f, 0.0f, 42.0f, 0.0f, 0.0f, -2, 17));
+        RadialProgressView radialProgressView = new RadialProgressView(context, a00Var.Z1);
+        this.c = radialProgressView;
+        radialProgressView.setVisibility(8);
+        radialProgressView.setProgressColor(a00Var.B(org.telegram.ui.ActionBar.i6.h6));
+        addView(radialProgressView, w7.x5.e(-2, -2, 17));
     }
 
-    public final boolean a() {
-        return this.w.Q.G0.F;
-    }
-
-    public final void b(Runnable runnable, boolean z10) {
-        String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new ci.dd(this, z10, runnable, 2), z10);
-    }
-
-    @Override // org.telegram.ui.Components.bz
-    public final void d() {
-        if (a()) {
-            return;
+    public final void a(boolean z10) {
+        if (this.d != z10) {
+            this.d = z10;
+            this.a.setVisibility(z10 ? 8 : 0);
+            this.b.setVisibility(z10 ? 8 : 0);
+            this.c.setVisibility(z10 ? 0 : 8);
         }
-        this.w.Q.G0.e(true);
-        Utilities.raceCallbacks(new aq(this, 16), new fz(this, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        iz izVar = this.w;
-        nz nzVar = izVar.Q;
-        if (TextUtils.isEmpty(izVar.N)) {
-            s4.h0 adapter = nzVar.D0.getAdapter();
-            ez ezVar = nzVar.y0;
-            if (adapter != ezVar) {
-                nzVar.D0.setAdapter(ezVar);
-            }
-            izVar.l();
-            return;
-        }
-        int i10 = 1;
-        int i11 = izVar.M + 1;
-        izVar.M = i11;
-        this.b = i11;
-        this.a = izVar.N;
-        izVar.y = false;
-        this.c.clear();
-        this.d.clear();
-        this.e.clear();
-        this.f.clear();
-        this.h.clear();
-        this.r.clear();
-        this.s.clear();
-        this.v.clear();
-        nzVar.G0.e(true);
-        if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new aq(this, 16), new fz(this, i10));
-        } else {
-            Utilities.raceCallbacks(new aq(this, 16), new fz(this, 2), new fz(this, 3), new fz(this, 4), new fz(this, 5), new fz(this, 6), new fz(this, 7));
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.bi.A(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 }

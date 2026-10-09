@@ -2,22 +2,22 @@ package qb;
 
 import android.os.HandlerThread;
 import android.os.Looper;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Object b = new Object();
     public static f c;
-    public final c0 a;
+    public final a0 a;
 
     public f(Looper looper) {
-        c0 c0Var = new c0(looper);
+        a0 a0Var = new a0(looper);
         Looper.getMainLooper();
-        this.a = c0Var;
+        this.a = a0Var;
     }
 
     public static f a() {
@@ -39,7 +39,7 @@ public final class f {
 
     public static Task b(Callable callable) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        m.a.execute(new i9.s(25, callable, taskCompletionSource));
+        m.a.execute(new i9.s(26, callable, taskCompletionSource));
         return taskCompletionSource.getTask();
     }
 }

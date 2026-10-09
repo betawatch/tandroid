@@ -1,32 +1,40 @@
 package w7;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class n9 {
-    public static boolean a(e9.l1 l1Var, Collection collection) {
-        collection.getClass();
-        if (collection instanceof z7.l) {
-            collection = ((z7.l) collection).zza();
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x005d, code lost:
+    
+        if (r8 > 4611686018427387903L) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final long a(int i10, zd.c unit) {
+        kotlin.jvm.internal.i.e(unit, "unit");
+        if (unit.compareTo(zd.c.d) <= 0) {
+            long a2 = o9.a(i10, unit, zd.c.b) << 1;
+            int i11 = zd.a.d;
+            int i12 = zd.b.a;
+            return a2;
         }
-        boolean z10 = false;
-        if (!(collection instanceof Set) || collection.size() <= l1Var.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z10 |= l1Var.remove(it.next());
-            }
-            return z10;
+        long j3 = i10;
+        zd.c cVar = zd.c.b;
+        long a10 = o9.a(4611686018426999999L, cVar, unit);
+        if ((-a10) <= j3 && j3 <= a10) {
+            long a11 = o9.a(j3, unit, cVar) << 1;
+            int i13 = zd.a.d;
+            int i14 = zd.b.a;
+            return a11;
         }
-        Iterator<E> it2 = l1Var.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z10 = true;
-            }
-        }
-        return z10;
+        zd.c targetUnit = zd.c.c;
+        kotlin.jvm.internal.i.e(targetUnit, "targetUnit");
+        long convert = targetUnit.a.convert(j3, unit.a);
+        long j10 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
+        convert = j10;
+        long j11 = (convert << 1) + 1;
+        int i15 = zd.a.d;
+        int i16 = zd.b.a;
+        return j11;
     }
 }

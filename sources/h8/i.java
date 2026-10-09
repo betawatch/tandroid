@@ -7,11 +7,11 @@ import android.os.Parcel;
 import org.telegram.messenger.GoogleMapsProvider;
 import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.d0;
-import org.telegram.messenger.g4;
 import org.telegram.messenger.h4;
 import org.telegram.messenger.i4;
+import org.telegram.messenger.j4;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i extends b8.b {
     public final /* synthetic */ int b = 1;
@@ -23,7 +23,7 @@ public final class i extends b8.b {
     }
 
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         s7.a iVar;
         boolean lambda$setOnMarkerClickListener$1;
         i8.f fVar;
@@ -64,24 +64,24 @@ public final class i extends b8.b {
                         fVar = queryLocalInterface2 instanceof i8.f ? (i8.f) queryLocalInterface2 : new i8.f(readStrongBinder2, "com.google.android.gms.maps.internal.IGoogleMapDelegate", 9);
                     }
                     s7.b.a(parcel);
-                    i4 i4Var = (i4) ((f) this.c);
-                    i4Var.a.lambda$getMapAsync$0(i4Var.b, new c(fVar));
+                    j4 j4Var = (j4) ((f) this.c);
+                    j4Var.a.lambda$getMapAsync$0(j4Var.b, new c(fVar));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 3:
                 if (i10 == 1) {
-                    x6.a L0 = x6.b.L0(parcel.readStrongBinder());
+                    x6.a K0 = x6.b.K0(parcel.readStrongBinder());
                     s7.b.a(parcel);
-                    ((g4) this.c).b.accept((Location) x6.b.M0(L0));
+                    ((h4) this.c).b.accept((Location) x6.b.L0(K0));
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             case 4:
                 if (i10 == 1) {
-                    ((h4) this.c).a.run();
+                    ((i4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -97,14 +97,14 @@ public final class i extends b8.b {
                 break;
             case 6:
                 if (i10 == 1) {
-                    ((h4) this.c).a.run();
+                    ((i4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
                 break;
             default:
                 if (i10 == 1) {
-                    ((h4) this.c).a.run();
+                    ((i4) this.c).a.run();
                     parcel2.writeNoException();
                     break;
                 }
@@ -132,26 +132,26 @@ public final class i extends b8.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(g4 g4Var) {
-        super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 10);
-        this.c = g4Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i(h4 h4Var) {
+        super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener", 10);
+        this.c = h4Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(i4 i4Var) {
         super("com.google.android.gms.maps.internal.IOnCameraMoveListener", 10);
-        this.c = h4Var;
+        this.c = i4Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(h4 h4Var, byte b10) {
+    public i(i4 i4Var, byte b10) {
         super("com.google.android.gms.maps.internal.IOnMapLoadedCallback", 10);
-        this.c = h4Var;
+        this.c = i4Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(h4 h4Var, char c10) {
+    public i(i4 i4Var, char c10) {
         super("com.google.android.gms.maps.internal.IOnCameraIdleListener", 10);
-        this.c = h4Var;
+        this.c = i4Var;
     }
 }

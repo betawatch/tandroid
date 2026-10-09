@@ -1,109 +1,118 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.os.Build;
-import android.widget.FrameLayout;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotchInfoUtils;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fi0 extends FrameLayout {
-    public final Paint a;
-    public final Path b;
-    public final ei0 c;
-    public float d;
-    public float e;
-    public float f;
-    public boolean h;
-    public NotchInfoUtils.NotchInfo n;
+public final class fi0 {
+    public int a;
+    public final bd b;
+    public final g6 e;
+    public Drawable i;
+    public Drawable j;
+    public ck0 k;
+    public l11 l;
+    public ia0 r;
+    public boolean s;
+    public boolean t;
+    public int u;
+    public long w;
+    public int x;
+    public final /* synthetic */ ii0 y;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
+    public final RectF f = new RectF();
+    public final RectF g = new RectF();
+    public final Rect h = new Rect();
+    public float m = 1.0f;
+    public boolean n = false;
+    public boolean o = false;
+    public boolean p = false;
+    public final float q = 1.0f;
+    public int v = 0;
 
-    public fi0(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        paint.setColor(-16777216);
-        if (Build.VERSION.SDK_INT < 31 || SharedConfig.getDevicePerformanceClass() < 1) {
-            this.c = new ci0(this);
-        } else {
-            this.c = new di0(this, SharedConfig.getDevicePerformanceClass() == 2 ? 1.0f : 1.5f);
-        }
-        setIntensity(15.0f);
-        setBlurIntensity(0.0f);
-        setWillNotDraw(false);
+    public fi0(ii0 ii0Var) {
+        this.y = ii0Var;
+        this.b = new bd(ii0Var);
+        this.e = new g6(ii0Var, 0L, 250L, hs.f);
     }
 
-    public static /* synthetic */ void a(fi0 fi0Var, Canvas canvas) {
-        canvas.save();
-        canvas.translate(0.0f, AndroidUtilities.dp(32.0f));
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (!this.h) {
-            super.draw(canvas);
-        } else {
-            this.c.c(new pv(this, 13), canvas);
-        }
-    }
-
-    public float getAvatarEndScale() {
-        float min;
-        int dp;
-        NotchInfoUtils.NotchInfo notchInfo = this.n;
-        if (notchInfo == null) {
-            return 0.8f;
-        }
-        if (notchInfo.isLikelyCircle) {
-            min = notchInfo.bounds.width() - AndroidUtilities.dp(2.0f);
-            dp = AndroidUtilities.dp(100.0f);
-        } else {
-            min = Math.min(notchInfo.bounds.width(), this.n.bounds.height());
-            dp = AndroidUtilities.dp(100.0f);
-        }
-        return Math.min(0.8f, min / dp);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        NotchInfoUtils.NotchInfo info = NotchInfoUtils.getInfo(getContext());
-        this.n = info;
-        if ((info != null && info.gravity != 17) || getWidth() > getHeight()) {
-            this.n = null;
-        }
-        this.c.d(i10, i11);
-    }
-
-    public void setBlurIntensity(float f7) {
-        this.f = f7;
-        this.c.b(f7);
-        invalidate();
-    }
-
-    public void setGooeyEnabled(boolean z10) {
-        if (this.h == z10) {
+    public final void a() {
+        float d = this.e.d(1.0f, false);
+        if (d == 1.0f) {
+            this.n = false;
+            if (this.o) {
+                this.p = true;
+                return;
+            }
             return;
         }
-        this.h = z10;
-        invalidate();
+        RectF rectF = this.g;
+        float f7 = rectF.left;
+        RectF rectF2 = this.f;
+        float lerp = AndroidUtilities.lerp(f7, rectF2.left, d);
+        RectF rectF3 = this.d;
+        rectF3.left = lerp;
+        rectF3.right = AndroidUtilities.lerp(rectF.right, rectF2.right, d);
     }
 
-    public void setIntensity(float f7) {
-        this.d = f7;
-        this.c.a(f7);
-        invalidate();
+    public final float b() {
+        boolean z10 = this.o;
+        g6 g6Var = this.e;
+        if (z10) {
+            return 1.0f - g6Var.d(1.0f, false);
+        }
+        if (this.n) {
+            return g6Var.d(1.0f, false);
+        }
+        return 1.0f;
     }
 
-    public void setPullProgress(float f7) {
-        this.e = f7;
-        invalidate();
+    public final void c(String str) {
+        l11 l11Var = new l11(str, 11.0f, AndroidUtilities.bold());
+        l11Var.n(3);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        l11Var.a();
+        this.l = l11Var;
+    }
+
+    public final void d(int i10, int i11, int i12) {
+        ii0 ii0Var = this.y;
+        if (i10 != 0) {
+            ck0 ck0Var = new ck0(i10, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
+            ck0Var.R(ii0Var);
+            ck0Var.start();
+            this.k = ck0Var;
+        } else {
+            this.k = null;
+        }
+        this.i = i11 != 0 ? ii0Var.getResources().getDrawable(i11).mutate() : null;
+        this.j = i12 != 0 ? ii0Var.getResources().getDrawable(i12).mutate() : null;
+        ck0 ck0Var2 = this.k;
+        Rect rect = this.h;
+        if (ck0Var2 != null) {
+            ck0Var2.setBounds(rect);
+        }
+        Drawable drawable = this.i;
+        if (drawable != null) {
+            drawable.setBounds(rect);
+        }
+        Drawable drawable2 = this.j;
+        if (drawable2 != null) {
+            drawable2.setBounds(rect);
+        }
+    }
+
+    public fi0(ii0 ii0Var, gi0 gi0Var) {
+        this.y = ii0Var;
+        this.b = new bd(ii0Var);
+        this.e = new g6(ii0Var, 0L, 250L, hs.f);
+        d(0, gi0Var.b, gi0Var.c);
+        c(LocaleController.getString(gi0Var.a));
     }
 }

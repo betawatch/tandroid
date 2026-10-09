@@ -1,15 +1,114 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class k0 {
-    public final Object a;
-    public final Object b;
-    public final Object c;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Set;
+import org.telegram.tgnet.TLObject;
 
-    public k0(Object obj, Object obj2, Object obj3) {
-        this.a = obj;
-        this.b = obj2;
-        this.c = obj3;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public abstract class k0 extends e0 implements Set, j$.util.Set {
+    public static final /* synthetic */ int c = 0;
+    public transient h0 b;
+
+    public static int q(int i10) {
+        int max = Math.max(i10, 2);
+        if (max >= 751619276) {
+            if (max < 1073741824) {
+                return TLObject.FLAG_30;
+            }
+            throw new IllegalArgumentException("collection too large");
+        }
+        int highestOneBit = Integer.highestOneBit(max - 1);
+        do {
+            highestOneBit += highestOneBit;
+        } while (highestOneBit * 0.7d < max);
+        return highestOneBit;
+    }
+
+    public static k0 r(int i10, Object... objArr) {
+        if (i10 == 0) {
+            return t0.s;
+        }
+        if (i10 == 1) {
+            Object obj = objArr[0];
+            obj.getClass();
+            return new u0(obj);
+        }
+        int q6 = q(i10);
+        Object[] objArr2 = new Object[q6];
+        int i11 = q6 - 1;
+        int i12 = 0;
+        int i13 = 0;
+        for (int i14 = 0; i14 < i10; i14++) {
+            Object obj2 = objArr[i14];
+            if (obj2 == null) {
+                throw new NullPointerException(hg.c.h(i14, "at index "));
+            }
+            int hashCode = obj2.hashCode();
+            int a2 = v7.n5.a(hashCode);
+            while (true) {
+                int i15 = a2 & i11;
+                Object obj3 = objArr2[i15];
+                if (obj3 == null) {
+                    objArr[i13] = obj2;
+                    objArr2[i15] = obj2;
+                    i12 += hashCode;
+                    i13++;
+                    break;
+                }
+                if (!obj3.equals(obj2)) {
+                    a2++;
+                }
+            }
+        }
+        Arrays.fill(objArr, i13, i10, (Object) null);
+        if (i13 == 1) {
+            Object obj4 = objArr[0];
+            obj4.getClass();
+            return new u0(obj4);
+        }
+        if (q(i13) < q6 / 2) {
+            return r(i13, objArr);
+        }
+        int length = objArr.length;
+        if (i13 < (length >> 1) + (length >> 2)) {
+            objArr = Arrays.copyOf(objArr, i13);
+        }
+        return new t0(i12, i11, i13, objArr, objArr2);
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if ((obj instanceof k0) && (this instanceof t0) && (((k0) obj) instanceof t0) && hashCode() != obj.hashCode()) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set = (Set) obj;
+            try {
+                if (size() == set.size()) {
+                    return containsAll(set);
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public int hashCode() {
+        Iterator it = iterator();
+        int i10 = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            i10 += next != null ? next.hashCode() : 0;
+        }
+        return i10;
     }
 }

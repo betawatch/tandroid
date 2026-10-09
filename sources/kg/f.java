@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class f {
     public final jg.a a;
@@ -25,9 +25,9 @@ public class f {
     public int m;
     public boolean n;
     public float o;
-    public final d6 p;
+    public final e6 p;
 
-    public f(jg.a aVar, boolean z10, d6 d6Var) {
+    public f(jg.a aVar, boolean z10, e6 e6Var) {
         Paint paint = new Paint(1);
         this.b = paint;
         Paint paint2 = new Paint(1);
@@ -39,7 +39,7 @@ public class f {
         this.g = new Path();
         this.n = true;
         this.o = 1.0f;
-        this.p = d6Var;
+        this.p = e6Var;
         this.a = aVar;
         paint2.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
         Paint.Style style = Paint.Style.STROKE;
@@ -64,11 +64,11 @@ public class f {
     public void a() {
         jg.a aVar = this.a;
         int i10 = aVar.g;
-        d6 d6Var = this.p;
-        if (i10 < 0 || !i6.c1(i10)) {
-            this.m = i0.a.f(i6.v0(i6.d6, d6Var)) < 0.5d ? aVar.i : aVar.h;
+        e6 e6Var = this.p;
+        if (i10 < 0 || !i6.d1(i10)) {
+            this.m = i0.a.f(i6.w0(i6.d6, e6Var)) < 0.5d ? aVar.i : aVar.h;
         } else {
-            this.m = i6.v0(aVar.g, d6Var);
+            this.m = i6.w0(aVar.g, e6Var);
         }
         this.c.setColor(this.m);
         this.b.setColor(this.m);

@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.f70;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.gg;
-import org.telegram.ui.l31;
-import org.telegram.ui.t31;
-import org.telegram.ui.yn;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.t70;
+import org.telegram.ui.c41;
+import org.telegram.ui.le;
+import org.telegram.ui.u31;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,29 +59,29 @@ public final /* synthetic */ class e implements Runnable {
                 ((ConferenceCall) this.c).lambda$poll$7((TL_phone.getGroupCallChainBlocks) this.d, this.b, (TLObject) this.e, (TLRPC.TL_error) this.f, (AtomicBoolean) this.h, (AtomicInteger) this.n);
                 break;
             case 1:
-                f70.n((f70) this.c, (b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
+                t70.p((t70) this.c, (b2) this.d, (Context) this.e, this.b, (TLRPC.TL_chatInviteExported) this.f, (TLRPC.TL_chatInviteImporter) this.h, (TLRPC.ChannelParticipant) this.n);
                 break;
             case 2:
                 TLObject tLObject = (TLObject) this.e;
                 Activity activity = (Activity) this.c;
-                d6 d6Var = (d6) this.d;
+                e6 e6Var = (e6) this.d;
                 byte[] bArr = (byte[]) this.f;
-                yn ynVar = (yn) this.h;
+                zn znVar = (zn) this.h;
                 MessageObject messageObject = (MessageObject) this.n;
-                t31 t31Var = new t31(activity, d6Var, this.b, bArr);
-                t31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
-                t31Var.s = new l31(ynVar, activity, d6Var, messageObject);
-                t31Var.show();
+                c41 c41Var = new c41(activity, e6Var, this.b, bArr);
+                c41Var.P((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
+                c41Var.s = new u31(znVar, activity, e6Var, messageObject);
+                c41Var.show();
                 break;
             default:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
-                yn ynVar2 = (yn) this.c;
+                zn znVar2 = (zn) this.c;
                 TLObject tLObject2 = (TLObject) this.e;
                 TLRPC.FileLocation[] fileLocationArr = (TLRPC.FileLocation[]) this.d;
                 String str = (String) this.h;
                 TLRPC.FileLocation[] fileLocationArr2 = (TLRPC.FileLocation[]) this.n;
                 if (tL_error == null) {
-                    TLRPC.User user = ynVar2.getMessagesController().getUser(Long.valueOf(ynVar2.getUserConfig().getClientUserId()));
+                    TLRPC.User user = znVar2.getMessagesController().getUser(Long.valueOf(znVar2.getUserConfig().getClientUserId()));
                     TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject2;
                     ArrayList<TLRPC.PhotoSize> arrayList = tL_photos_photo.photo.sizes;
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
@@ -99,51 +99,51 @@ public final /* synthetic */ class e implements Runnable {
                     if (closestPhotoSizeWithSize == null || fileLocationArr[0] == null) {
                         z10 = true;
                     } else {
-                        FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(fileLocationArr[0], true).renameTo(FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize, true));
+                        FileLoader.getInstance(znVar2.getCurrentAccount()).getPathToAttach(fileLocationArr[0], true).renameTo(FileLoader.getInstance(znVar2.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize, true));
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(fileLocationArr[0].volume_id);
                         sb2.append("_");
-                        String o9 = a4.a.o(fileLocationArr[0].local_id, "@50_50", sb2);
+                        String o9 = a1.g.o(fileLocationArr[0].local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(closestPhotoSizeWithSize.location.volume_id);
                         sb3.append("_");
                         z10 = true;
-                        ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUserOrChat(ynVar2.getCurrentAccount(), user, 1), false);
+                        ImageLoader.getInstance().replaceImageInCache(o9, a1.g.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUserOrChat(znVar2.getCurrentAccount(), user, 1), false);
                     }
                     if (closestVideoSizeWithSize != null && str != null) {
-                        new File(str).renameTo(FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(closestVideoSizeWithSize, "mp4", z10));
+                        new File(str).renameTo(FileLoader.getInstance(znVar2.getCurrentAccount()).getPathToAttach(closestVideoSizeWithSize, "mp4", z10));
                     } else if (closestPhotoSizeWithSize2 != null && fileLocationArr2[0] != null) {
-                        FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(fileLocationArr2[0], true).renameTo(FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize2, true));
+                        FileLoader.getInstance(znVar2.getCurrentAccount()).getPathToAttach(fileLocationArr2[0], true).renameTo(FileLoader.getInstance(znVar2.getCurrentAccount()).getPathToAttach(closestPhotoSizeWithSize2, true));
                     }
-                    ynVar2.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
+                    znVar2.getMessagesController().getDialogPhotos(user.id).addPhotoAtStart(tL_photos_photo.photo);
                     ArrayList arrayList2 = new ArrayList();
                     arrayList2.add(user);
-                    ynVar2.getMessagesStorage().putUsersAndChats(arrayList2, null, false, true);
-                    MessagesController messagesController = ynVar2.getMessagesController();
+                    znVar2.getMessagesStorage().putUsersAndChats(arrayList2, null, false, true);
+                    MessagesController messagesController = znVar2.getMessagesController();
                     long j3 = this.b;
                     TLRPC.UserFull userFull = messagesController.getUserFull(j3);
                     userFull.profile_photo = tL_photos_photo.photo;
-                    ynVar2.getMessagesStorage().updateUserInfo(userFull, false);
-                    yc.a0(ynVar2).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new gg(j3, ynVar2)), null).j();
+                    znVar2.getMessagesStorage().updateUserInfo(userFull, false);
+                    ad.a0(znVar2).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new le(j3, znVar2)), null).j();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ e(TLObject tLObject, Activity activity, d6 d6Var, long j3, byte[] bArr, yn ynVar, MessageObject messageObject) {
+    public /* synthetic */ e(TLObject tLObject, Activity activity, e6 e6Var, long j3, byte[] bArr, zn znVar, MessageObject messageObject) {
         this.e = tLObject;
         this.c = activity;
-        this.d = d6Var;
+        this.d = e6Var;
         this.b = j3;
         this.f = bArr;
-        this.h = ynVar;
+        this.h = znVar;
         this.n = messageObject;
     }
 
-    public /* synthetic */ e(TLRPC.TL_error tL_error, yn ynVar, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
+    public /* synthetic */ e(TLRPC.TL_error tL_error, zn znVar, TLObject tLObject, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
         this.f = tL_error;
-        this.c = ynVar;
+        this.c = znVar;
         this.e = tLObject;
         this.d = fileLocationArr;
         this.h = str;
@@ -151,8 +151,8 @@ public final /* synthetic */ class e implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ e(f70 f70Var, b2 b2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
-        this.c = f70Var;
+    public /* synthetic */ e(t70 t70Var, b2 b2Var, Context context, long j3, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, TLRPC.ChannelParticipant channelParticipant) {
+        this.c = t70Var;
         this.d = b2Var;
         this.e = context;
         this.b = j3;

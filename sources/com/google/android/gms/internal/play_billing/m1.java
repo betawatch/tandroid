@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.google.android.gms.internal.cast.b5;
+import com.google.android.gms.internal.cast.z4;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import v7.d6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m1 extends d6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
@@ -20,7 +20,7 @@ public final class m1 extends d6 {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a4.a.m(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a1.g.m(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;
@@ -50,7 +50,7 @@ public final class m1 extends d6 {
             System.arraycopy(bArr, 0, this.b, this.d, i10);
             this.d += i10;
         } catch (IndexOutOfBoundsException e7) {
-            throw new b5(this.d, this.c, i10, e7);
+            throw new z4(this.d, this.c, i10, e7);
         }
     }
 
@@ -75,7 +75,7 @@ public final class m1 extends d6 {
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.d = i11 + 4;
         } catch (IndexOutOfBoundsException e7) {
-            throw new b5(i11, this.c, 4, e7);
+            throw new z4(i11, this.c, 4, e7);
         }
     }
 
@@ -98,7 +98,7 @@ public final class m1 extends d6 {
             bArr[i10 + 7] = (byte) (j3 >> 56);
             this.d = i10 + 8;
         } catch (IndexOutOfBoundsException e7) {
-            throw new b5(i10, this.c, 8, e7);
+            throw new z4(i10, this.c, 8, e7);
         }
     }
 
@@ -144,10 +144,10 @@ public final class m1 extends d6 {
                 o(length);
                 d(length, bytes);
             } catch (IndexOutOfBoundsException e10) {
-                throw new b5(e10);
+                throw new z4(e10);
             }
         } catch (IndexOutOfBoundsException e11) {
-            throw new b5(e11);
+            throw new z4(e11);
         }
     }
 
@@ -178,10 +178,10 @@ public final class m1 extends d6 {
                     i10 >>>= 7;
                     i12 = i11;
                 } catch (IndexOutOfBoundsException e7) {
-                    throw new b5(i11, this.c, 1, e7);
+                    throw new z4(i11, this.c, 1, e7);
                 }
             }
-            throw new b5(i11, this.c, 1, e7);
+            throw new z4(i11, this.c, 1, e7);
         }
     }
 
@@ -205,7 +205,7 @@ public final class m1 extends d6 {
                     j10 >>>= 7;
                     i11 = i10;
                 } catch (IndexOutOfBoundsException e7) {
-                    throw new b5(i10, i12, 1, e7);
+                    throw new z4(i10, i12, 1, e7);
                 }
             }
             i10 = i11 + 1;

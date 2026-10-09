@@ -2,19 +2,19 @@ package l2;
 
 import b2.s;
 import e2.d0;
-import n4.y;
-import u2.c1;
+import n4.x;
+import u2.b1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class m implements c1 {
+public final class m implements b1 {
     public final s a;
     public long[] c;
     public boolean d;
     public m2.g e;
     public boolean f;
     public int h;
-    public final y b = new y(27);
+    public final x b = new x(28);
     public long n = -9223372036854775807L;
 
     public m(m2.g gVar, s sVar, boolean z10) {
@@ -47,13 +47,13 @@ public final class m implements c1 {
         }
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         return true;
     }
 
-    @Override // u2.c1
-    public final int f(y yVar, h2.h hVar, int i10) {
+    @Override // u2.b1
+    public final int f(x xVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
         if (z10 && !this.d) {
@@ -61,7 +61,7 @@ public final class m implements c1 {
             return -4;
         }
         if ((i10 & 2) != 0 || !this.f) {
-            yVar.c = this.a;
+            xVar.c = this.a;
             this.f = true;
             return -5;
         }
@@ -81,7 +81,7 @@ public final class m implements c1 {
         return -4;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         int max = Math.max(this.h, d0.a(this.c, j3, true));
         int i10 = max - this.h;
@@ -89,7 +89,7 @@ public final class m implements c1 {
         return i10;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
     }
 }

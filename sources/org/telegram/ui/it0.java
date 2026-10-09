@@ -1,53 +1,128 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class it0 extends OrientationEventListener {
-    public final /* synthetic */ PhotoViewer a;
+public final class it0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public it0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.a = photoViewer;
+    public /* synthetic */ it0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        nt0 nt0Var;
-        Activity activity;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.W3 == null || (nt0Var = photoViewer.y2) == null || nt0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
-            return;
-        }
-        if (i11 != 1) {
-            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
-                photoViewer.Z3 = true;
-                return;
-            }
-            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
-                return;
-            }
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
-            return;
-        }
-        if (i10 >= 240 && i10 <= 300) {
-            photoViewer.Z3 = true;
-            return;
-        }
-        if (!photoViewer.Z3 || i10 <= 0) {
-            return;
-        }
-        if (i10 >= 330 || i10 <= 30) {
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.Components.yi yiVar;
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
+            case 0:
+                photoViewer.p6 = null;
+                org.telegram.ui.Components.vf0 vf0Var = photoViewer.C1;
+                if (vf0Var != null) {
+                    if (vf0Var.b.j()) {
+                        photoViewer.a1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.i6.zf), PorterDuff.Mode.MULTIPLY));
+                    } else {
+                        photoViewer.a1.setColorFilter((ColorFilter) null);
+                    }
+                    photoViewer.g6 = 0.0f;
+                    photoViewer.e0.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                photoViewer.t3 = null;
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.g3();
+                break;
+            case 3:
+                photoViewer.L1.o0(false);
+                bu0 bu0Var = photoViewer.L1;
+                bu0Var.u1.setTypeface(pg.u0.e(bu0Var.P1).j);
+                bu0Var.Z0.setVisibility(0);
+                bu0Var.W0.setVisibility(0);
+                bu0Var.X0.setVisibility(0);
+                org.telegram.ui.Components.he0 he0Var = photoViewer.y4;
+                int childCount = he0Var.getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    he0Var.getChildAt(i11).setVisibility(4);
+                }
+                photoViewer.p6 = null;
+                photoViewer.u4 = 3;
+                photoViewer.f1().L.b(photoViewer.u4 != 0);
+                ci.h4 h4Var = photoViewer.K1;
+                if (h4Var != null) {
+                    h4Var.b(photoViewer.u4 != 3);
+                }
+                photoViewer.o6 = -1;
+                float r22 = photoViewer.r2(false);
+                photoViewer.a6 = r22;
+                photoViewer.e6 = r22;
+                photoViewer.c6 = 0.0f;
+                photoViewer.d6 = 0.0f;
+                photoViewer.w3(r22);
+                photoViewer.t2 = true;
+                photoViewer.e0.invalidate();
+                cv0 cv0Var = photoViewer.d;
+                if (cv0Var == null || !cv0Var.O()) {
+                    photoViewer.S1();
+                    break;
+                }
+                break;
+            case 4:
+                AnimatorSet animatorSet = photoViewer.B1;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    photoViewer.o1.setVisibility(8);
+                    photoViewer.B1 = null;
+                    break;
+                }
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new tk0(this, 21));
+                break;
+            case 6:
+                photoViewer.m6 = 1.0f;
+                Runnable runnable = photoViewer.p4;
+                if (runnable != null) {
+                    zn znVar = photoViewer.l4;
+                    if (znVar == null && (yiVar = photoViewer.a2) != null) {
+                        org.telegram.ui.ActionBar.n2 n2Var = yiVar.f0;
+                        if (n2Var instanceof zn) {
+                            znVar = (zn) n2Var;
+                        }
+                    }
+                    if (znVar != null) {
+                        znVar.k8(runnable);
+                        break;
+                    } else {
+                        runnable.run();
+                        photoViewer.p4 = null;
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                photoViewer.p6 = null;
+                photoViewer.e0.invalidate();
+                break;
+            case 8:
+                photoViewer.y3[0].setTag(null);
+                break;
+            default:
+                photoViewer.y3[0].setTag(null);
+                break;
         }
     }
 }

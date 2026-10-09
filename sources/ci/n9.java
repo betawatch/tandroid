@@ -1,106 +1,73 @@
 package ci;
 
 import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.yn;
+import java.util.HashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n9 implements Runnable {
+public final /* synthetic */ class n9 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ y9 b;
 
-    public /* synthetic */ n9(Object obj, long j3, boolean z10, int i10) {
+    public /* synthetic */ n9(y9 y9Var, int i10) {
         this.a = i10;
-        this.d = obj;
-        this.b = j3;
-        this.c = z10;
+        this.b = y9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         int i10;
-        int i11;
         switch (this.a) {
             case 0:
-                x9 x9Var = (x9) this.d;
-                ea eaVar = x9Var.W;
-                boolean z10 = this.c;
-                long j3 = this.b;
-                if (z10) {
-                    i11 = ((org.telegram.ui.ActionBar.f3) eaVar).currentAccount;
-                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j3), new o9(x9Var, j3, 0), 200);
-                    break;
-                } else {
-                    i10 = ((org.telegram.ui.ActionBar.f3) eaVar).currentAccount;
-                    MessagesController.getInstance(i10).loadFullChat(j3, 0, true);
-                    break;
+                y9 y9Var = this.b;
+                fa faVar = y9Var.W;
+                faVar.c = (TLRPC.InputPeer) obj;
+                HashSet hashSet = faVar.v;
+                hashSet.clear();
+                if (faVar.K && faVar.G) {
+                    faVar.G = false;
                 }
+                Utilities.Callback callback = faVar.W;
+                if (callback != null) {
+                    callback.run(faVar.c);
+                }
+                ia iaVar = faVar.X;
+                if (iaVar != null) {
+                    iaVar.run(new HashSet(hashSet));
+                }
+                y9Var.g(true);
+                break;
             case 1:
-                fi.t0 t0Var = (fi.t0) this.d;
-                t0Var.i = null;
-                a0.i iVar = t0Var.g;
-                long j10 = this.b;
-                iVar.l(j10);
-                ArrayList arrayList = t0Var.j;
-                if (arrayList != null) {
-                    for (int size = arrayList.size() - 1; size >= 0; size--) {
-                        if (DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) t0Var.j.get(size)).peer) == j10) {
-                            t0Var.j.remove(size);
-                        }
-                    }
-                }
-                t0Var.a();
-                fi.s0 s0Var = t0Var.h;
-                if (s0Var != null) {
-                    s0Var.l();
-                }
-                MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new fi.r0(t0Var, 2));
+                fa faVar2 = this.b.W;
+                i10 = ((org.telegram.ui.ActionBar.f3) faVar2).currentAccount;
+                faVar2.h1(new da(5, i10, (ArrayList) obj), new ai.s5(faVar2, 1), false);
                 break;
             case 2:
-                ((MediaDataController) this.d).lambda$markFeaturedStickersByIdAsRead$67(this.c, this.b);
-                break;
-            case 3:
-                ((NotificationsController) this.d).lambda$setOpenedInBubble$4(this.c, this.b);
-                break;
-            case 4:
-                ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
-                break;
-            case 5:
-                yn.d0((yn) this.d, this.b, this.c);
-                break;
-            default:
-                yh.r8 r8Var = (yh.r8) this.d;
-                long j11 = this.b;
-                r8Var.F = j11;
-                r8Var.E = j11;
-                if (this.c) {
-                    ai.m1 m1Var = r8Var.G;
-                    m1Var.c = j11;
-                    r8Var.H.set(m1Var);
-                }
-                r8Var.r();
-                r8Var.I.a(true, true);
-                yh.q8 q8Var = r8Var.y;
-                if (q8Var != null) {
-                    q8Var.setMyPrivacy(r8Var.E);
+                y9 y9Var2 = this.b;
+                fa faVar3 = y9Var2.W;
+                HashSet hashSet2 = faVar3.v;
+                hashSet2.add(Integer.valueOf(((ai.f9) obj).a));
+                y9Var2.g(true);
+                ia iaVar2 = faVar3.X;
+                if (iaVar2 != null) {
+                    iaVar2.run(new HashSet(hashSet2));
                     break;
                 }
                 break;
+            default:
+                String str = (String) obj;
+                y9 y9Var3 = this.b;
+                if (str != null) {
+                    y9Var3.getClass();
+                    if (str.isEmpty()) {
+                        str = null;
+                    }
+                }
+                y9Var3.I = str;
+                y9Var3.g(false);
+                break;
         }
-    }
-
-    public /* synthetic */ n9(Object obj, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.b = j3;
     }
 }

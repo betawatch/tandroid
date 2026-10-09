@@ -1,40 +1,46 @@
 package x4;
 
-import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.VectorDrawable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n extends Drawable.ConstantState {
-    public int a;
-    public m b;
-    public ColorStateList c;
-    public PorterDuff.Mode d;
-    public boolean e;
-    public Bitmap f;
-    public ColorStateList g;
-    public PorterDuff.Mode h;
-    public int i;
-    public boolean j;
-    public boolean k;
-    public Paint l;
+    public final Drawable.ConstantState a;
+
+    public n(Drawable.ConstantState constantState) {
+        this.a = constantState;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final boolean canApplyTheme() {
+        return this.a.canApplyTheme();
+    }
 
     @Override // android.graphics.drawable.Drawable.ConstantState
     public int getChangingConfigurations() {
-        return this.a;
+        return this.a.getChangingConfigurations();
     }
 
     @Override // android.graphics.drawable.Drawable.ConstantState
     public final Drawable newDrawable() {
-        return new p(this);
+        o oVar = new o();
+        oVar.b = (VectorDrawable) this.a.newDrawable();
+        return oVar;
     }
 
     @Override // android.graphics.drawable.Drawable.ConstantState
     public final Drawable newDrawable(Resources resources) {
-        return new p(this);
+        o oVar = new o();
+        oVar.b = (VectorDrawable) this.a.newDrawable(resources);
+        return oVar;
+    }
+
+    @Override // android.graphics.drawable.Drawable.ConstantState
+    public final Drawable newDrawable(Resources resources, Resources.Theme theme) {
+        o oVar = new o();
+        oVar.b = (VectorDrawable) this.a.newDrawable(resources, theme);
+        return oVar;
     }
 }

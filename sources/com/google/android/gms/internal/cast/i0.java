@@ -1,49 +1,15 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class i0 extends j0 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ j0 e;
+public final class i0 {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    public i0(j0 j0Var, int i10, int i11) {
-        this.e = j0Var;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        v7.k5.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0
-    public final int n() {
-        return this.e.o() + this.c + this.d;
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0
-    public final int o() {
-        return this.e.o() + this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.g0
-    public final Object[] p() {
-        return this.e.p();
-    }
-
-    @Override // com.google.android.gms.internal.cast.j0, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final j0 subList(int i10, int i11) {
-        v7.k5.c(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public i0(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
     }
 }

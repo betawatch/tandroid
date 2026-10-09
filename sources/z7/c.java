@@ -2,7 +2,7 @@ package z7;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends x7.d {
     public final Object b;
@@ -26,7 +26,7 @@ public final class c extends x7.d {
             int i11 = this.c;
             Object[] objArr = dVar.c;
             objArr.getClass();
-            if (w7.o9.a(obj, objArr[i11])) {
+            if (w7.i9.a(obj, objArr[i11])) {
                 return;
             }
         }

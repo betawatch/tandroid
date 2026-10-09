@@ -1,15 +1,15 @@
 package yf;
 
 import org.telegram.messenger.AndroidUtilities;
-import rg.s1;
+import rg.x1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n {
     public final m a;
     public long b;
     public boolean c;
-    public final s1 d = new s1(this, 20);
+    public final x1 d = new x1(this, 24);
 
     public n(m mVar) {
         this.a = mVar;
@@ -25,9 +25,9 @@ public final class n {
             return;
         }
         this.c = true;
-        s1 s1Var = this.d;
-        AndroidUtilities.cancelRunOnUIThread(s1Var);
-        AndroidUtilities.runOnUIThread(s1Var, 1000L);
+        x1 x1Var = this.d;
+        AndroidUtilities.cancelRunOnUIThread(x1Var);
+        AndroidUtilities.runOnUIThread(x1Var, 1000L);
     }
 
     public final void b() {

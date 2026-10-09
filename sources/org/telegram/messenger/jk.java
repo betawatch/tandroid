@@ -1,118 +1,118 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.tgnet.TLMethod;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class jk implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ jk(Object obj, Object obj2, org.telegram.ui.ActionBar.f1 f1Var, org.telegram.ui.ActionBar.f1 f1Var2, org.telegram.ui.ActionBar.f1 f1Var3, org.telegram.ui.ActionBar.f1 f1Var4, boolean z10, org.telegram.ui.ActionBar.f1 f1Var5, org.telegram.ui.ActionBar.f1 f1Var6, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = f1Var;
-        this.e = f1Var2;
-        this.f = f1Var3;
-        this.h = f1Var4;
-        this.r = z10;
-        this.n = f1Var5;
-        this.s = f1Var6;
+    public /* synthetic */ jk(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10) {
+        this.c = sendMessagesHelper;
+        this.d = arrayList;
+        this.e = arrayList2;
+        this.f = arrayList3;
+        this.g = delayedMessage;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        ArrayList<TLRPC.Document> arrayList;
+        ArrayList<TLRPC.Document> arrayList2;
         switch (this.a) {
             case 0:
-                ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$86((TLRPC.TL_error) this.c, (TLRPC.Message) this.d, (TLObject) this.e, (MessageObject) this.f, (String) this.h, (HashMap) this.n, this.r, (TLRPC.TL_messages_addPollAnswer) this.s);
+                ((SendMessagesHelper) this.c).lambda$performSendMessageRequestMulti$67((ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (SendMessagesHelper.DelayedMessage) this.g, this.b, (TLObject) obj);
                 break;
             case 1:
-                ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$89((TLRPC.TL_error) this.c, (TLRPC.Message) this.d, (TLObject) this.e, (MessageObject) this.f, (String) this.h, (HashMap) this.n, this.r, (TLRPC.TL_messages_editMessage) this.s);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.b).lambda$performSendMessageRequest$100(this.r, (TLRPC.TL_error) this.c, (TLRPC.Message) this.d, (TLObject) this.e, (MessageObject) this.f, (HashMap) this.n, (String) this.h, (TLObject) this.s);
-                break;
-            case 3:
-                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.b;
-                yh.l5 l5Var = (yh.l5) this.c;
-                org.telegram.ui.ActionBar.f1 f1Var2 = (org.telegram.ui.ActionBar.f1) this.d;
-                org.telegram.ui.ActionBar.f1 f1Var3 = (org.telegram.ui.ActionBar.f1) this.e;
-                org.telegram.ui.ActionBar.f1 f1Var4 = (org.telegram.ui.ActionBar.f1) this.f;
-                org.telegram.ui.ActionBar.f1 f1Var5 = (org.telegram.ui.ActionBar.f1) this.h;
-                org.telegram.ui.ActionBar.f1 f1Var6 = (org.telegram.ui.ActionBar.f1) this.n;
-                org.telegram.ui.ActionBar.f1 f1Var7 = (org.telegram.ui.ActionBar.f1) this.s;
-                if (f1Var != null) {
-                    f1Var.g(LocaleController.getString(l5Var.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l5Var.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                }
-                f1Var2.setChecked(TLObject.hasFlag(l5Var.g, 1));
-                f1Var3.setChecked(TLObject.hasFlag(l5Var.g, 2));
-                f1Var4.setChecked(TLObject.hasFlag(l5Var.g, 4));
-                f1Var5.setChecked(TLObject.hasFlag(l5Var.g, 8));
-                if (this.r) {
-                    f1Var6.setChecked(TLObject.hasFlag(l5Var.g, 256));
-                    f1Var7.setChecked(TLObject.hasFlag(l5Var.g, 512));
+                ProfileActivity profileActivity = (ProfileActivity) this.c;
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) this.d;
+                TLRPC.User user = (TLRPC.User) this.e;
+                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) this.f;
+                String str = (String) this.g;
+                Integer num = (Integer) obj;
+                profileActivity.getClass();
+                boolean z10 = this.b;
+                if (channelParticipant != null) {
+                    profileActivity.A4(num.intValue(), user, chatParticipant, channelParticipant.admin_rights, channelParticipant.banned_rights, channelParticipant.rank, z10);
+                    break;
+                } else {
+                    profileActivity.A4(num.intValue(), user, chatParticipant, null, null, str, z10);
                     break;
                 }
-                break;
             default:
-                xh.j4 j4Var = (xh.j4) this.b;
-                org.telegram.ui.ActionBar.f1 f1Var8 = (org.telegram.ui.ActionBar.f1) this.c;
-                org.telegram.ui.ActionBar.f1 f1Var9 = (org.telegram.ui.ActionBar.f1) this.d;
-                org.telegram.ui.ActionBar.f1 f1Var10 = (org.telegram.ui.ActionBar.f1) this.e;
-                org.telegram.ui.ActionBar.f1 f1Var11 = (org.telegram.ui.ActionBar.f1) this.f;
-                org.telegram.ui.ActionBar.f1 f1Var12 = (org.telegram.ui.ActionBar.f1) this.h;
-                org.telegram.ui.ActionBar.f1 f1Var13 = (org.telegram.ui.ActionBar.f1) this.n;
-                org.telegram.ui.ActionBar.f1 f1Var14 = (org.telegram.ui.ActionBar.f1) this.s;
-                yh.l5 l5Var2 = j4Var.c.Y;
-                f1Var8.g(LocaleController.getString(l5Var2.e ? R.string.Gift2FilterSortByValue : R.string.Gift2FilterSortByDate), l5Var2.e ? R.drawable.menu_sort_value : R.drawable.menu_sort_date, null);
-                f1Var9.setChecked(TLObject.hasFlag(l5Var2.g, 1));
-                f1Var10.setChecked(TLObject.hasFlag(l5Var2.g, 2));
-                f1Var11.setChecked(TLObject.hasFlag(l5Var2.g, 4));
-                f1Var12.setChecked(TLObject.hasFlag(l5Var2.g, 8));
-                if (this.r) {
-                    f1Var13.setChecked(TLObject.hasFlag(l5Var2.g, 256));
-                    f1Var14.setChecked(TLObject.hasFlag(l5Var2.g, 512));
+                k71 k71Var = (k71) this.c;
+                LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
+                String str2 = (String) this.f;
+                HashMap hashMap = (HashMap) this.g;
+                ArrayList arrayList3 = (ArrayList) this.d;
+                Runnable runnable = (Runnable) obj;
+                int i10 = k71Var.V;
+                if (this.b) {
+                    ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
+                    for (int i11 = 0; i11 < stickerSets.size(); i11++) {
+                        if (stickerSets.get(i11).documents != null && (arrayList2 = stickerSets.get(i11).documents) != null) {
+                            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                                String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i12), null);
+                                long j3 = arrayList2.get(i12).id;
+                                if (findAnimatedEmojiEmoticon != null && !linkedHashSet.contains(Long.valueOf(j3)) && str2.contains(findAnimatedEmojiEmoticon.toLowerCase())) {
+                                    linkedHashSet.add(Long.valueOf(j3));
+                                }
+                            }
+                        }
+                    }
+                    ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i10).getFeaturedEmojiSets();
+                    for (int i13 = 0; i13 < featuredEmojiSets.size(); i13++) {
+                        if ((featuredEmojiSets.get(i13) instanceof TLRPC.TL_stickerSetFullCovered) && ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).keywords != null && (arrayList = ((TLRPC.TL_stickerSetFullCovered) featuredEmojiSets.get(i13)).documents) != null) {
+                            for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                                String findAnimatedEmojiEmoticon2 = MessageObject.findAnimatedEmojiEmoticon(arrayList.get(i14), null);
+                                long j10 = arrayList.get(i14).id;
+                                if (findAnimatedEmojiEmoticon2 != null && !linkedHashSet.contains(Long.valueOf(j10)) && str2.contains(findAnimatedEmojiEmoticon2)) {
+                                    linkedHashSet.add(Long.valueOf(j10));
+                                }
+                            }
+                        }
+                    }
+                    runnable.run();
+                    break;
+                } else {
+                    MediaDataController.getInstance(i10).getEmojiSuggestions(k71.a2, str2, false, new ai.h6(k71Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, k71Var.W == 3, false, 30);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ jk(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, TLRPC.Message message, TLObject tLObject, MessageObject messageObject, String str, HashMap hashMap, boolean z10, TLMethod tLMethod, int i10) {
-        this.a = i10;
-        this.b = sendMessagesHelper;
-        this.c = tL_error;
-        this.d = message;
-        this.e = tLObject;
-        this.f = messageObject;
-        this.h = str;
-        this.n = hashMap;
-        this.r = z10;
-        this.s = tLMethod;
+    public /* synthetic */ jk(ProfileActivity profileActivity, TLRPC.ChannelParticipant channelParticipant, TLRPC.User user, TLRPC.ChatParticipant chatParticipant, boolean z10, String str) {
+        this.c = profileActivity;
+        this.d = channelParticipant;
+        this.e = user;
+        this.f = chatParticipant;
+        this.b = z10;
+        this.g = str;
     }
 
-    public /* synthetic */ jk(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.TL_error tL_error, TLRPC.Message message, TLObject tLObject, MessageObject messageObject, HashMap hashMap, String str, TLObject tLObject2) {
-        this.a = 2;
-        this.b = sendMessagesHelper;
-        this.r = z10;
-        this.c = tL_error;
-        this.d = message;
-        this.e = tLObject;
-        this.f = messageObject;
-        this.n = hashMap;
-        this.h = str;
-        this.s = tLObject2;
+    public /* synthetic */ jk(k71 k71Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.c = k71Var;
+        this.b = z10;
+        this.e = linkedHashSet;
+        this.f = str;
+        this.g = hashMap;
+        this.d = arrayList;
     }
 }

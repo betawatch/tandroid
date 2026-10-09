@@ -1,22 +1,56 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.f11;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class z3 {
-    public final float a;
-    public final f11 b;
-    public final f11 c;
+public final /* synthetic */ class z3 implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public z3(float f7, String str, CharSequence charSequence) {
-        this.b = new f11(str, 12.0f, null);
-        this.c = new f11(charSequence, 12.0f, AndroidUtilities.bold());
-        this.a = (a() / 2.0f) + f7;
+    public /* synthetic */ z3(Utilities.Callback callback, boolean[] zArr, Utilities.Callback2 callback2) {
+        this.d = callback;
+        this.b = zArr;
+        this.c = callback2;
     }
 
-    public final float a() {
-        return Math.max(this.b.j(), this.c.j());
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        Long l4 = (Long) obj;
+        Boolean bool = (Boolean) obj2;
+        switch (this.a) {
+            case 0:
+                Utilities.Callback callback = this.d;
+                if (callback != null) {
+                    callback.run(Boolean.TRUE);
+                }
+                this.b[0] = true;
+                Utilities.Callback2 callback2 = this.c;
+                if (callback2 != null) {
+                    callback2.run(bool.booleanValue() ? "paid" : "failed", l4);
+                    break;
+                }
+                break;
+            default:
+                this.b[0] = true;
+                Utilities.Callback2 callback22 = this.c;
+                if (callback22 != null) {
+                    callback22.run(bool.booleanValue() ? "paid" : "failed", l4);
+                }
+                Utilities.Callback callback3 = this.d;
+                if (callback3 != null) {
+                    callback3.run(Boolean.TRUE);
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ z3(boolean[] zArr, Utilities.Callback2 callback2, Utilities.Callback callback) {
+        this.b = zArr;
+        this.c = callback2;
+        this.d = callback;
     }
 }

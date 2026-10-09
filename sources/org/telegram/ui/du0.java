@@ -1,86 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.webkit.CookieManager;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.RadialProgressView;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class du0 extends org.telegram.ui.Components.dg0 {
-    public final Rect M;
-    public final /* synthetic */ PhotoViewer N;
+public final class du0 extends Fade {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ PhotoViewer d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public du0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.f1 f1Var) {
-        super(context);
-        this.N = photoViewer;
-        this.a = UserConfig.selectedAccount;
-        this.v = new ArrayList();
-        this.L = new org.telegram.ui.Components.lc0(this, 11);
-        this.b = photoViewer2;
-        this.r = f1Var;
-        org.telegram.ui.Components.tu tuVar = new org.telegram.ui.Components.tu(this, context, context, 1);
-        this.f = tuVar;
-        tuVar.getSettings().setJavaScriptEnabled(true);
-        tuVar.getSettings().setDomStorageEnabled(true);
-        tuVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        tuVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(tuVar, true);
-        tuVar.setWebViewClient(new org.telegram.ui.Components.zf0(this, 0));
-        addView(tuVar, w7.z5.e(-1, -1, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(17);
-        linearLayout.setVisibility(8);
-        addView(linearLayout, w7.z5.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.y6, null, false, textView, 17);
-        linearLayout.addView(textView, w7.z5.q(-2, -2, 1));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.n6;
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
-        textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
-        int i11 = org.telegram.ui.ActionBar.x5.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.x5.b(org.telegram.ui.ActionBar.i6.w0(null, i10, false))));
-        textView2.setVisibility(8);
-        linearLayout.addView(textView2, w7.z5.t(-2, -2, 1, 0, 8, 0, 0));
-        ci.ab abVar = new ci.ab(this, context, 20);
-        this.h = abVar;
-        abVar.setBackgroundColor(-16777216);
-        abVar.setVisibility(4);
-        addView(abVar, w7.z5.c(-1.0f, -1));
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.n = radialProgressView;
-        radialProgressView.setVisibility(4);
-        addView(radialProgressView, w7.z5.e(-2, -2, 17));
-        this.M = new Rect();
+    public du0(PhotoViewer photoViewer, boolean z10, boolean z11, int i10) {
+        super(1);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
+                break;
+            default:
+                this.d = photoViewer;
+                this.b = z10;
+                this.c = z11;
+                break;
+        }
     }
 
-    public final void j(Canvas canvas, int i10, int i11) {
-        Bitmap bitmap = this.N.C4.getBitmap();
-        if (bitmap != null) {
-            float min = Math.min(i10 / bitmap.getWidth(), i11 / bitmap.getHeight());
-            int width = (int) (bitmap.getWidth() * min);
-            int height = (int) (bitmap.getHeight() * min);
-            int i12 = (i11 - height) / 2;
-            int i13 = (i10 - width) / 2;
-            Rect rect = this.M;
-            rect.set(i13, i12, width + i13, height + i12);
-            canvas.drawBitmap(bitmap, (Rect) null, rect, (Paint) null);
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Q1) {
+                    onAppear.addListener(new ep0(this, 6));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new c3(this, 20));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Q1) {
+                    onDisappear.addListener(new ep0(this, 7));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new c3(this, 21));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

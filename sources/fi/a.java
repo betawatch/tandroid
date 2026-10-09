@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class a extends Drawable {
     public int b;
@@ -21,16 +21,16 @@ public final class a extends Drawable {
     public final void draw(Canvas canvas) {
         float exactCenterX = getBounds().exactCenterX();
         float exactCenterY = getBounds().exactCenterY();
-        int w02 = i6.w0(null, i6.G6, false);
-        int w03 = i6.w0(null, i6.d6, false);
+        int x02 = i6.x0(null, i6.G6, false);
+        int x03 = i6.x0(null, i6.d6, false);
         int i10 = this.b;
         Drawable drawable = this.a;
-        if (i10 != w03) {
-            this.b = w03;
-            drawable.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
+        if (i10 != x03) {
+            this.b = x03;
+            drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
         }
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), i6.l0(i0.a.k(w03, this.c)));
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), i6.l0(i0.a.k(w02, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), i6.m0(i0.a.k(x03, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), i6.m0(i0.a.k(x02, this.c)));
         yf.p.d(drawable, exactCenterX, exactCenterY, 17);
         canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
         canvas.save();

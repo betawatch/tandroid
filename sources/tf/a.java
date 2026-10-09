@@ -1,43 +1,40 @@
 package tf;
 
-import ai.n4;
-import android.os.Trace;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.Iterator;
-import li.h;
-import yf.x;
+import android.content.SharedPreferences;
+import android.os.SystemClock;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.NotificationBadge;
+import w7.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class a {
+    public final SharedPreferences a;
+    public long b;
+    public long c;
+    public int d;
 
-    public /* synthetic */ a(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public a(String str) {
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pip_duration_".concat(str), 0);
+        this.a = sharedPreferences;
+        this.b = sharedPreferences.getLong("estimated", 400L);
+        this.d = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
     }
 
-    @Override // android.view.ViewTreeObserver.OnDrawListener
-    public final void onDraw() {
-        switch (this.a) {
-            case 0:
-                n4 n4Var = (n4) this.b;
-                Trace.beginSection("OnDraw");
-                try {
-                    Iterator it = ((pe.b) n4Var.b).iterator();
-                    while (it.hasNext()) {
-                        ((h) it.next()).a();
-                    }
-                    return;
-                } finally {
-                    Trace.endSection();
-                    n4Var.forceLayout();
-                }
-            default:
-                ((x) this.b).e.incrementAndGet();
-                return;
+    public final void a() {
+        if (this.c == 0) {
+            return;
         }
+        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * o.b(this.d, 0, 9)) / 10);
+        this.c = 0L;
+        this.d++;
+        this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
+    }
+
+    public final float b() {
+        if (this.b > 0) {
+            return o.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
+        }
+        return 0.5f;
     }
 }

@@ -1,104 +1,285 @@
 package ai;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.media.AudioManager;
 import android.os.Build;
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.MediaStreamTrack;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class oa extends View {
-    public Paint a;
-    public boolean b;
-    public q4 c;
-    public org.telegram.ui.Components.e6 d;
-    public org.telegram.ui.Components.e6 e;
-    public float f;
+public abstract class oa extends z4.g {
+    public ArrayList A0;
+    public y5 B0;
+    public boolean C0;
+    public boolean D0;
+    public int E0;
+    public int F0;
+    public Runnable G0;
+    public c6 H0;
+    public int I0;
+    public int J0;
+    public float K0;
+    public boolean L0;
+    public r4 M0;
+    public kc N0;
+    public int O0;
+    public float P0;
+    public long w0;
+    public ArrayList x0;
+    public int y0;
+    public la z0;
 
-    public final void a(boolean z10) {
-        q4 q4Var = this.c;
-        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
-        int streamVolume = audioManager.getStreamVolume(3);
-        float f7 = streamMaxVolume;
-        int max = (int) Math.max(1.0f, f7 / 15.0f);
-        if (z10) {
-            int i10 = streamVolume + max;
-            if (i10 <= streamMaxVolume) {
-                streamMaxVolume = i10;
-            }
-        } else {
-            streamMaxVolume = streamVolume - max;
-            if (streamMaxVolume < 0) {
-                streamMaxVolume = 0;
-            }
-        }
-        audioManager.setStreamVolume(3, streamMaxVolume, 0);
-        float f10 = streamMaxVolume / f7;
-        this.f = f10;
-        if (!this.b) {
-            this.e.d(f10, true);
-        }
-        invalidate();
-        this.b = true;
-        AndroidUtilities.cancelRunOnUIThread(q4Var);
-        AndroidUtilities.runOnUIThread(q4Var, 2000L);
-    }
-
-    public final void b() {
-        q4 q4Var = this.c;
-        AudioManager audioManager = (AudioManager) getContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        int streamMaxVolume = audioManager.getStreamMaxVolume(3);
-        int streamMinVolume = Build.VERSION.SDK_INT >= 28 ? audioManager.getStreamMinVolume(3) : 0;
-        int streamVolume = audioManager.getStreamVolume(3);
-        if (streamVolume <= streamMinVolume) {
-            a(true);
-            return;
-        }
-        if (this.b) {
-            return;
-        }
-        float f7 = streamVolume / streamMaxVolume;
-        this.f = f7;
-        this.e.d(f7, true);
-        this.b = true;
-        invalidate();
-        AndroidUtilities.cancelRunOnUIThread(q4Var);
-        AndroidUtilities.runOnUIThread(q4Var, 2000L);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.a;
-        super.onDraw(canvas);
-        org.telegram.ui.Components.e6 e6Var = this.e;
-        e6Var.d(this.f, false);
-        org.telegram.ui.Components.e6 e6Var2 = this.d;
-        e6Var2.d(this.b ? 1.0f : 0.0f, false);
-        if (e6Var2.c != 0.0f) {
-            float measuredHeight = getMeasuredHeight() / 2.0f;
-            paint.setAlpha((int) (e6Var2.c * 255.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, 0.0f, getMeasuredWidth() * e6Var.c, getMeasuredHeight());
-            canvas.drawRoundRect(rectF, measuredHeight, measuredHeight, paint);
-        }
-    }
-
-    @Override // android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        if (keyEvent.getAction() == 0 && i10 == 24) {
-            a(true);
+    public static boolean C(ArrayList arrayList, ArrayList arrayList2) {
+        if (arrayList == null && arrayList2 == null) {
             return true;
         }
-        if (keyEvent.getAction() != 0 || i10 != 25) {
-            return super.onKeyDown(i10, keyEvent);
+        if (arrayList == null || arrayList2 == null || arrayList.size() != arrayList2.size()) {
+            return false;
         }
-        a(false);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (arrayList.get(i10) != arrayList2.get(i10)) {
+                return false;
+            }
+        }
         return true;
+    }
+
+    public final void A() {
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= getChildCount()) {
+                z10 = true;
+                break;
+            }
+            na naVar = (na) getChildAt(i10);
+            if (naVar.d && !naVar.a.O1.d()) {
+                break;
+            } else {
+                i10++;
+            }
+        }
+        this.N0.l(z10);
+    }
+
+    public final void B() {
+        if (this.O0 >= 0) {
+            for (int i10 = 0; i10 < getChildCount(); i10++) {
+                if (((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem() && getCurrentItem() == this.O0) {
+                    na naVar = (na) getChildAt(i10);
+                    if (!naVar.d) {
+                        this.O0 = -1;
+                        naVar.a(true);
+                        if (this.x0 != null) {
+                            f6 f6Var = naVar.a;
+                            long j3 = naVar.b;
+                            ArrayList arrayList = naVar.c;
+                            f6Var.B1 = j3;
+                            f6Var.z1 = arrayList;
+                            f6Var.o0(0);
+                        } else {
+                            naVar.a.U0(0, naVar.b);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00b8  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void D(int i10, long j3, ArrayList arrayList) {
+        boolean z10;
+        ArrayList arrayList2;
+        kc kcVar = this.N0;
+        la laVar = this.z0;
+        int i11 = 0;
+        if (this.w0 == j3) {
+            ArrayList arrayList3 = this.x0;
+            if (arrayList3 != null || arrayList != null) {
+                if (arrayList3 != null && arrayList != null && arrayList3.size() == arrayList.size()) {
+                    for (int i12 = 0; i12 < arrayList3.size(); i12++) {
+                        if (!C((ArrayList) arrayList3.get(i12), (ArrayList) arrayList.get(i12))) {
+                            break;
+                        }
+                    }
+                }
+            }
+            if (this.y0 == i10) {
+                return;
+            }
+        }
+        if (this.w0 == j3 && this.y0 == i10 && (arrayList2 = this.x0) != null && arrayList != null && arrayList.size() > arrayList2.size()) {
+            for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+                if (C((ArrayList) arrayList2.get(i13), (ArrayList) arrayList.get(i13))) {
+                }
+            }
+            z10 = true;
+            this.w0 = j3;
+            this.x0 = arrayList;
+            this.y0 = i10;
+            if (!z10 && laVar != null) {
+                laVar.g();
+                this.C0 = true;
+                return;
+            }
+            setAdapter(null);
+            setAdapter(laVar);
+            while (i11 < arrayList.size() && !((ArrayList) arrayList.get(i11)).contains(Integer.valueOf(kcVar.P0))) {
+                i11++;
+            }
+            if (kcVar.R0) {
+                i11 = (arrayList.size() - 1) - i11;
+            }
+            setCurrentItem(i11);
+            this.C0 = true;
+        }
+        z10 = false;
+        this.w0 = j3;
+        this.x0 = arrayList;
+        this.y0 = i10;
+        if (!z10) {
+        }
+        setAdapter(null);
+        setAdapter(laVar);
+        while (i11 < arrayList.size()) {
+            i11++;
+        }
+        if (kcVar.R0) {
+        }
+        setCurrentItem(i11);
+        this.C0 = true;
+    }
+
+    public final boolean E(boolean z10) {
+        kc kcVar = this.N0;
+        boolean z11 = false;
+        if (z10) {
+            int currentItem = getCurrentItem();
+            ArrayList arrayList = this.x0;
+            if (arrayList == null) {
+                arrayList = this.A0;
+            }
+            if (currentItem < arrayList.size() - 1) {
+                int currentItem2 = getCurrentItem() + 1;
+                if (kcVar.a && Build.VERSION.SDK_INT < 33) {
+                    z11 = true;
+                }
+                x(currentItem2, !z11);
+                return true;
+            }
+        }
+        if (z10 || getCurrentItem() <= 0) {
+            return false;
+        }
+        int currentItem3 = getCurrentItem() - 1;
+        if (kcVar.a && Build.VERSION.SDK_INT < 33) {
+            z11 = true;
+        }
+        x(currentItem3, !z11);
+        return true;
+    }
+
+    public final void F() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            f6 f6Var = (f6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
+            f6Var.setActive(((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem() && !f6Var.U3);
+        }
+    }
+
+    public long getCurrentDialogId() {
+        if (this.x0 != null) {
+            return this.w0;
+        }
+        if (getCurrentItem() < this.A0.size()) {
+            return ((Long) this.A0.get(getCurrentItem())).longValue();
+        }
+        return 0L;
+    }
+
+    public f6 getCurrentPeerView() {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            if (((Integer) getChildAt(i10).getTag()).intValue() == getCurrentItem()) {
+                return (f6) ((FrameLayout) getChildAt(i10)).getChildAt(0);
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Long> getDialogIds() {
+        return this.A0;
+    }
+
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.D0 && !this.L0) {
+            try {
+                return super.onInterceptTouchEvent(motionEvent);
+            } catch (Exception e7) {
+                FileLog.e(e7);
+            }
+        }
+        return false;
+    }
+
+    @Override // z4.g, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.C0) {
+            this.C0 = false;
+            f6 currentPeerView = getCurrentPeerView();
+            if (currentPeerView != null) {
+                y5 y5Var = this.B0;
+                bc bcVar = (bc) y5Var;
+                bcVar.a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
+            }
+        }
+        B();
+        F();
+    }
+
+    @Override // z4.g, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.D0 && !this.L0) {
+            return super.onTouchEvent(motionEvent);
+        }
+        if (this.L0) {
+            return motionEvent.getAction() == 0 || motionEvent.getAction() == 2;
+        }
+        return false;
+    }
+
+    public void setDelegate(y5 y5Var) {
+        this.B0 = y5Var;
+    }
+
+    public void setHorizontalProgressToDismiss(float f7) {
+        if (Math.abs(f7) > 1.0f || this.P0 == f7) {
+            return;
+        }
+        this.P0 = f7;
+        setCameraDistance(getWidth() * 15);
+        setPivotX(f7 < 0.0f ? getWidth() : 0.0f);
+        setPivotY(getHeight() * 0.5f);
+        setRotationY(f7 * 90.0f);
+    }
+
+    public void setKeyboardHeight(int i10) {
+        if (this.E0 != i10) {
+            this.E0 = i10;
+            f6 currentPeerView = getCurrentPeerView();
+            if (currentPeerView != null) {
+                currentPeerView.requestLayout();
+            }
+        }
+    }
+
+    public void setPaused(boolean z10) {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            ((f6) ((FrameLayout) getChildAt(i10)).getChildAt(0)).setPaused(z10);
+        }
     }
 }

@@ -6,110 +6,110 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
-import ci.i2;
-import k2.v;
+import ci.h2;
+import m4.w;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.c20;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.l41;
-import org.telegram.ui.py0;
-import org.telegram.ui.ug;
-import org.telegram.ui.yn;
-import w7.b6;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.p20;
+import org.telegram.ui.tg;
+import org.telegram.ui.vy0;
+import org.telegram.ui.w51;
+import org.telegram.ui.zn;
+import w7.x5;
 import w7.z5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
     public ViewTreeObserver F;
     public int G;
-    public final le.b H;
-    public final le.b I;
+    public final me.b H;
+    public final me.b I;
     public final c6 a;
     public final b b;
     public final d c;
-    public final yn d;
+    public final zn d;
     public final FrameLayout.LayoutParams e;
-    public final i5 f;
+    public final j5 f;
     public e h;
     public u1 n;
     public int r;
-    public ug s;
-    public final l41 v;
-    public final l41 w;
+    public tg s;
+    public final w51 v;
+    public final w51 w;
     public final int x;
     public final int[] y;
 
-    public c(Activity activity, d6 d6Var, yn ynVar) {
+    public c(Activity activity, e6 e6Var, zn znVar) {
         super(activity);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(0, -2);
         this.e = layoutParams;
         this.y = new int[2];
         this.E = new Rect();
-        int i10 = 28;
-        v vVar = new v(this, i10);
-        tr trVar = tr.h;
-        this.H = new le.b(0, vVar, trVar, 380L, false);
-        this.I = new le.b(0, new v(this, i10), trVar, 380L, false);
-        this.d = ynVar;
-        this.x = ynVar.getMessagesController().config.pollAnswerLengthMax.get();
-        c6 c6Var = new c6(this, activity, d6Var, 2);
+        int i10 = 27;
+        w wVar = new w(this, i10);
+        hs hsVar = hs.h;
+        this.H = new me.b(0, wVar, hsVar, 380L, false);
+        this.I = new me.b(0, new w(this, i10), hsVar, 380L, false);
+        this.d = znVar;
+        this.x = znVar.getMessagesController().config.pollAnswerLengthMax.get();
+        c6 c6Var = new c6(this, activity, e6Var, 2);
         this.a = c6Var;
         c6Var.setAllowTextEntitiesIntersection(true);
-        c6Var.setTextColor(i6.v0(i6.G6, d6Var));
-        c6Var.setLinkTextColor(i6.v0(i6.gc, d6Var));
-        c6Var.setHintTextColor(i6.v0(i6.H6, d6Var));
+        c6Var.setTextColor(i6.w0(i6.G6, e6Var));
+        c6Var.setLinkTextColor(i6.w0(i6.gc, e6Var));
+        c6Var.setHintTextColor(i6.w0(i6.H6, e6Var));
         c6Var.setHint(LocaleController.getString(R.string.PollAddAnOptionHint));
         c6Var.setTextSize(1, 15.0f);
         c6Var.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
         c6Var.setBackground(null);
         c6Var.setImeOptions(268435462);
         c6Var.setInputType(c6Var.getInputType() | 16384);
-        c6Var.addTextChangedListener(new i2(this, 16));
+        c6Var.addTextChangedListener(new h2(this, 19));
         b bVar = new b(activity);
         this.b = bVar;
         int i11 = i6.Vh;
-        bVar.setBackground(i6.f0(i6.v0(i11, d6Var), 1, -1));
-        b6.a(bVar);
+        bVar.setBackground(i6.g0(i6.w0(i11, e6Var), 1, -1));
+        z5.a(bVar);
         d dVar = new d(getContext(), 36);
         this.c = dVar;
-        dVar.setBackground(i6.f0(i6.v0(i11, d6Var), 1, -1));
-        dVar.setOnClickListener(new py0(15, this, ynVar));
-        b6.a(dVar);
-        i5 i5Var = new i5(getContext());
-        this.f = i5Var;
-        i5Var.setTextSize(13);
-        i5Var.setGravity(17);
-        i5Var.setTranslationY(AndroidUtilities.dp(44.0f));
-        i5Var.setVisibility(8);
-        l41 l41Var = new l41(activity, 10);
-        this.w = l41Var;
-        addView(l41Var, layoutParams);
-        l41 l41Var2 = new l41(activity, 9);
-        this.v = l41Var2;
-        l41Var.addView(l41Var2, z5.c(-2.0f, -1));
-        l41Var2.addView(i5Var, z5.e(54, 24, 53));
-        l41Var2.addView(bVar, z5.e(44, 44, 51));
-        l41Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        l41Var2.addView(c6Var, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
+        dVar.setBackground(i6.g0(i6.w0(i11, e6Var), 1, -1));
+        dVar.setOnClickListener(new vy0(21, this, znVar));
+        z5.a(dVar);
+        j5 j5Var = new j5(getContext());
+        this.f = j5Var;
+        j5Var.setTextSize(13);
+        j5Var.setGravity(17);
+        j5Var.setTranslationY(AndroidUtilities.dp(44.0f));
+        j5Var.setVisibility(8);
+        w51 w51Var = new w51(activity, 9);
+        this.w = w51Var;
+        addView(w51Var, layoutParams);
+        w51 w51Var2 = new w51(activity, 8);
+        this.v = w51Var2;
+        w51Var.addView(w51Var2, x5.d(-2.0f, -1));
+        w51Var2.addView(j5Var, x5.e(54, 24, 53));
+        w51Var2.addView(bVar, x5.e(44, 44, 51));
+        w51Var2.addView(dVar, x5.a(44.0f, 0.0f, 0.0f, 5.0f, 0.0f, 44, 53));
+        w51Var2.addView(c6Var, x5.a(-2.0f, 39.0f, 0.0f, 47.0f, 0.0f, -1, 119));
         c6Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
     }
 
     public static void a(c cVar) {
-        i5 i5Var = cVar.f;
-        c20.d(i5Var, cVar.H.e);
+        j5 j5Var = cVar.f;
+        p20.d(j5Var, cVar.H.e);
         int i10 = i6.A6;
-        yn ynVar = cVar.d;
-        i5Var.setTextColor(i0.a.d(cVar.I.e, i6.v0(i10, ynVar.getResourceProvider()), i6.v0(i6.p7, ynVar.getResourceProvider())));
+        zn znVar = cVar.d;
+        j5Var.setTextColor(i0.a.d(cVar.I.e, i6.w0(i10, znVar.getResourceProvider()), i6.w0(i6.p7, znVar.getResourceProvider())));
     }
 
     public e getAttachedMedia() {
@@ -155,18 +155,18 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
                 int width = rect.width();
                 FrameLayout.LayoutParams layoutParams = this.e;
                 int i12 = layoutParams.width;
-                l41 l41Var = this.w;
+                w51 w51Var = this.w;
                 if (i12 != width) {
                     layoutParams.width = width;
-                    l41Var.setLayoutParams(layoutParams);
+                    w51Var.setLayoutParams(layoutParams);
                 }
-                l41Var.setTranslationX(rect.left);
-                l41Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
+                w51Var.setTranslationX(rect.left);
+                w51Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
                 return true;
             }
-            ug ugVar = this.s;
-            if (ugVar != null) {
-                ugVar.run();
+            tg tgVar = this.s;
+            if (tgVar != null) {
+                tgVar.run();
                 this.s = null;
             }
         }

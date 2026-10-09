@@ -10,7 +10,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.a2, Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class b implements OnSuccessListener, GenericProvid
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         b2Var.dismiss();
     }
 

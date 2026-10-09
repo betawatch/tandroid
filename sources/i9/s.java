@@ -1,11 +1,11 @@
 package i9;
 
+import ae.a1;
 import android.app.Application;
 import android.graphics.Typeface;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
-import androidx.recyclerview.widget.RecyclerView;
 import c5.g0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.lang.ref.ReferenceQueue;
@@ -18,21 +18,18 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.v8;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.gz;
-import org.telegram.ui.lr;
-import org.telegram.ui.nm;
-import org.telegram.ui.nr;
-import org.telegram.ui.rr;
-import org.telegram.ui.yn;
-import s4.c1;
-import s4.m0;
-import v7.l8;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.fz;
+import org.telegram.ui.mr;
+import org.telegram.ui.pr;
+import org.telegram.ui.qm;
+import org.telegram.ui.tr;
+import org.telegram.ui.zn;
+import v7.j8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s implements Runnable {
     public final /* synthetic */ int a;
@@ -47,6 +44,24 @@ public final class s implements Runnable {
 
     private final void a() {
         j6.j jVar = (j6.j) this.b;
+        IBinder iBinder = (IBinder) this.c;
+        synchronized (jVar) {
+            if (iBinder == null) {
+                jVar.a("Null service connection");
+                return;
+            }
+            try {
+                jVar.c = new n4.x(iBinder);
+                jVar.a = 2;
+                ((ScheduledExecutorService) jVar.f.c).execute(new j6.h(jVar, 0));
+            } catch (RemoteException e7) {
+                jVar.a(e7.getMessage());
+            }
+        }
+    }
+
+    private final void b() {
+        j6.j jVar = (j6.j) this.b;
         int i10 = ((j6.k) this.c).a;
         synchronized (jVar) {
             j6.k kVar = (j6.k) jVar.e.get(i10);
@@ -55,17 +70,6 @@ public final class s implements Runnable {
                 jVar.e.remove(i10);
                 kVar.b(new cc.k("Timed out waiting for response", null));
                 jVar.c();
-            }
-        }
-    }
-
-    private final void b() {
-        try {
-            c();
-        } catch (Error e7) {
-            synchronized (((r9.i) this.c).b) {
-                ((r9.i) this.c).c = 1;
-                throw e7;
             }
         }
     }
@@ -173,7 +177,7 @@ public final class s implements Runnable {
                     }
                 }
                 try {
-                    rVar.onSuccess(l8.a(wVar));
+                    rVar.onSuccess(j8.a(wVar));
                     return;
                 } catch (ExecutionException e7) {
                     rVar.h(e7.getCause());
@@ -183,7 +187,7 @@ public final class s implements Runnable {
                     return;
                 }
             case 1:
-                ((zd.m) this.b).D((ae.e) this.c);
+                ((ae.m) this.c).D((a1) this.b);
                 return;
             case 2:
                 androidx.biometric.x xVar = ((androidx.biometric.p) this.c).l0;
@@ -193,6 +197,9 @@ public final class s implements Runnable {
                 xVar.e.c((androidx.biometric.s) this.b);
                 return;
             case 3:
+                ((ae.m) this.b).D((be.e) this.c);
+                return;
+            case 4:
                 c5.c cVar = (c5.c) this.b;
                 c5.h hVar = (c5.h) this.c;
                 if (((c5.q) cVar.f.c) != null) {
@@ -202,7 +209,7 @@ public final class s implements Runnable {
                     com.google.android.gms.internal.play_billing.u.h("BillingClient", "No valid listener is set in BroadcastManager");
                     return;
                 }
-            case 4:
+            case 5:
                 Future future = (Future) this.b;
                 if (future.isDone() || future.isCancelled()) {
                     return;
@@ -215,7 +222,7 @@ public final class s implements Runnable {
                     return;
                 }
                 return;
-            case 5:
+            case 6:
                 c5.c cVar2 = (c5.c) this.b;
                 org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
                 c5.h hVar2 = g0.i;
@@ -224,15 +231,15 @@ public final class s implements Runnable {
                 com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
                 d0Var.a(hVar2, new c5.s(vVar, vVar));
                 return;
-            case 6:
+            case 7:
                 c5.c cVar3 = (c5.c) this.b;
                 c5.p pVar2 = (c5.p) this.c;
                 c5.h hVar3 = g0.i;
                 cVar3.y(24, 9, hVar3);
                 com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-                pVar2.b(hVar3, com.google.android.gms.internal.play_billing.v.e);
+                pVar2.a(hVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
-            case 7:
+            case 8:
                 c6.e0 e0Var = ((c6.d0) this.b).b;
                 g6.d dVar = (g6.d) this.c;
                 g6.b bVar = c6.e0.G;
@@ -289,7 +296,7 @@ public final class s implements Runnable {
                 }
                 e0Var.m = false;
                 return;
-            case 8:
+            case 9:
                 c6.e0 e0Var2 = ((c6.d0) this.b).b;
                 g6.c cVar4 = (g6.c) this.c;
                 g6.b bVar3 = c6.e0.G;
@@ -307,24 +314,24 @@ public final class s implements Runnable {
                 }
                 e0Var2.n = false;
                 return;
-            case 9:
-                ((com.google.android.gms.internal.cast.r) this.b).N0((p4.r) this.c);
-                return;
             case 10:
-                ((e0.f) this.b).a = this.c;
+                ((com.google.android.gms.internal.cast.r) this.b).M0((p4.r) this.c);
                 return;
             case 11:
-                ((Application) this.b).unregisterActivityLifecycleCallbacks((e0.f) this.c);
+                ((e0.d) this.b).a = this.c;
                 return;
             case 12:
+                ((Application) this.b).unregisterActivityLifecycleCallbacks((e0.d) this.c);
+                return;
+            case 13:
                 Object obj2 = this.c;
                 Object obj3 = this.b;
                 try {
-                    Method method = e0.g.d;
+                    Method method = e0.e.d;
                     if (method != null) {
                         method.invoke(obj3, obj2, Boolean.FALSE, "AppCompat recreation");
                     } else {
-                        e0.g.e.invoke(obj3, obj2, Boolean.FALSE);
+                        e0.e.e.invoke(obj3, obj2, Boolean.FALSE);
                     }
                     return;
                 } catch (RuntimeException e10) {
@@ -336,14 +343,14 @@ public final class s implements Runnable {
                     Log.e("ActivityRecreator", "Exception while invoking performStopActivity", th4);
                     return;
                 }
-            case 13:
-                ee.i iVar = (ee.i) this.c;
-                zd.a0 a0Var = iVar.c;
+            case 14:
+                fe.i iVar = (fe.i) this.c;
+                ae.b0 b0Var = iVar.c;
                 while (true) {
                     try {
                         ((Runnable) this.b).run();
                     } catch (Throwable th5) {
-                        zd.e0.m(id.i.a, th5);
+                        ae.g0.m(th5, jd.i.a);
                     }
                     Runnable f7 = iVar.f();
                     if (f7 == null) {
@@ -351,13 +358,13 @@ public final class s implements Runnable {
                     }
                     this.b = f7;
                     i10++;
-                    if (i10 >= 16 && a0Var.e()) {
-                        a0Var.c(iVar, this);
+                    if (i10 >= 16 && b0Var.e()) {
+                        b0Var.c(iVar, this);
                         return;
                     }
                 }
                 break;
-            case 14:
+            case 15:
                 g6.v vVar2 = (g6.v) this.b;
                 g6.d dVar4 = (g6.d) this.c;
                 g6.b bVar4 = g6.v.n0;
@@ -414,7 +421,7 @@ public final class s implements Runnable {
                 }
                 vVar2.e0 = false;
                 return;
-            case 15:
+            case 16:
                 g6.v vVar3 = (g6.v) this.b;
                 g6.c cVar5 = (g6.c) this.c;
                 g6.b bVar6 = g6.v.n0;
@@ -432,27 +439,13 @@ public final class s implements Runnable {
                 }
                 vVar3.d0 = false;
                 return;
-            case 16:
-                j6.j jVar = (j6.j) this.b;
-                IBinder iBinder = (IBinder) this.c;
-                synchronized (jVar) {
-                    if (iBinder == null) {
-                        jVar.a("Null service connection");
-                    } else {
-                        try {
-                            jVar.c = new n4.y(iBinder);
-                            jVar.a = 2;
-                            ((ScheduledExecutorService) jVar.f.c).execute(new j6.h(jVar, i10));
-                        } catch (RemoteException e11) {
-                            jVar.a(e11.getMessage());
-                        }
-                    }
-                }
-                return;
             case 17:
                 a();
                 return;
             case 18:
+                b();
+                return;
+            case 19:
                 ji.n nVar = (ji.n) this.c;
                 ArrayList arrayList = (ArrayList) this.b;
                 int size = arrayList.size();
@@ -464,32 +457,32 @@ public final class s implements Runnable {
                 arrayList.clear();
                 nVar.v.remove(arrayList);
                 return;
-            case 19:
-                a4.m mVar = (a4.m) this.b;
+            case 20:
+                xa.d dVar7 = (xa.d) this.b;
                 Typeface typeface = (Typeface) this.c;
-                e2.a0 a0Var2 = (e2.a0) mVar.b;
-                if (a0Var2 != null) {
-                    a0Var2.e(typeface);
+                e2.a0 a0Var = (e2.a0) dVar7.b;
+                if (a0Var != null) {
+                    a0Var.g(typeface);
                     return;
                 }
-                return;
-            case 20:
-                ((c5.z) this.b).accept(this.c);
                 return;
             case 21:
-                yn ynVar = ((nm) this.c).c;
-                if (this == ynVar.H5) {
-                    ynVar.Xa((CharSequence) this.b, false);
-                    ynVar.H5 = null;
+                ((c5.z) this.b).accept(this.c);
+                return;
+            case 22:
+                zn znVar = ((qm) this.c).c;
+                if (this == znVar.J5) {
+                    znVar.cb((CharSequence) this.b, false);
+                    znVar.J5 = null;
                     return;
                 }
                 return;
-            case 22:
+            case 23:
                 v8 v8Var = (v8) this.b;
                 boolean z20 = v8Var.d.h;
                 v8Var.setChecked(!z20);
-                rr rrVar = ((nr) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = rrVar.E;
+                tr trVar = ((pr) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = trVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -504,16 +497,16 @@ public final class s implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                AndroidUtilities.updateVisibleRows(rrVar.c);
-                lr w02 = rrVar.w0();
-                rrVar.B0();
-                rrVar.A0(w02);
-                return;
-            case 23:
-                ((rc) this.b).j();
-                ((gz) this.c).E = null;
+                AndroidUtilities.updateVisibleRows(trVar.c);
+                mr w02 = trVar.w0();
+                trVar.B0();
+                trVar.A0(w02);
                 return;
             case 24:
+                ((tc) this.b).j();
+                ((fz) this.c).E = null;
+                return;
+            case 25:
                 ReferenceQueue referenceQueue = (ReferenceQueue) this.b;
                 while (!((Set) this.c).isEmpty()) {
                     try {
@@ -526,20 +519,20 @@ public final class s implements Runnable {
                     }
                 }
                 return;
-            case 25:
+            case 26:
                 Callable callable = (Callable) this.b;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.c;
                 try {
                     taskCompletionSource.setResult(callable.call());
                     return;
-                } catch (mb.a e12) {
-                    taskCompletionSource.setException(e12);
+                } catch (mb.a e11) {
+                    taskCompletionSource.setException(e11);
                     return;
-                } catch (Exception e13) {
-                    taskCompletionSource.setException(new mb.a("Internal error has occurred when executing ML Kit tasks", e13));
+                } catch (Exception e12) {
+                    taskCompletionSource.setException(new mb.a("Internal error has occurred when executing ML Kit tasks", e12));
                     return;
                 }
-            case 26:
+            case 27:
                 qb.i iVar2 = (qb.i) this.b;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
                 int decrementAndGet = iVar2.b.decrementAndGet();
@@ -549,50 +542,36 @@ public final class s implements Runnable {
                     iVar2.c.set(false);
                 }
                 t7.n.a.clear();
-                t7.t.a.clear();
+                t7.s.a.clear();
                 taskCompletionSource2.setResult(null);
                 return;
-            case 27:
-                com.google.firebase.messaging.m mVar2 = (com.google.firebase.messaging.m) this.b;
-                n6.l.k(((Thread) ((AtomicReference) mVar2.d).getAndSet(Thread.currentThread())) == null);
+            case 28:
+                com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) this.b;
+                n6.l.k(((Thread) ((AtomicReference) mVar.d).getAndSet(Thread.currentThread())) == null);
                 try {
                     ((Runnable) this.c).run();
-                    ((AtomicReference) mVar2.d).set(null);
-                    mVar2.y();
+                    ((AtomicReference) mVar.d).set(null);
+                    mVar.B();
                     return;
                 } catch (Throwable th6) {
                     try {
-                        ((AtomicReference) mVar2.d).set(null);
-                        mVar2.y();
+                        ((AtomicReference) mVar.d).set(null);
+                        mVar.B();
                     } catch (Throwable th7) {
                         th6.addSuppressed(th7);
                     }
                     throw th6;
                 }
-            case 28:
-                b();
-                return;
             default:
-                s4.u uVar = (s4.u) this.b;
-                c1 c1Var = uVar.e;
-                s4.y yVar = (s4.y) this.c;
-                RecyclerView recyclerView = yVar.H;
-                if (recyclerView == null || !recyclerView.G || uVar.v || c1Var.b() == -1) {
+                try {
+                    c();
                     return;
-                }
-                m0 itemAnimator = yVar.H.getItemAnimator();
-                if (itemAnimator == null || !itemAnimator.k()) {
-                    ArrayList arrayList2 = yVar.F;
-                    int size2 = arrayList2.size();
-                    for (int i16 = 0; i16 < size2; i16++) {
-                        if (((s4.u) arrayList2.get(i16)).w) {
-                        }
+                } catch (Error e13) {
+                    synchronized (((r9.i) this.c).b) {
+                        ((r9.i) this.c).c = 1;
+                        throw e13;
                     }
-                    yVar.x.q(c1Var);
-                    return;
                 }
-                yVar.H.post(this);
-                return;
         }
     }
 
@@ -601,19 +580,19 @@ public final class s implements Runnable {
             case 0:
                 aa.a aVar = new aa.a(s.class.getSimpleName(), 13);
                 r rVar = (r) this.c;
-                of.b bVar = new of.b(13, false);
-                ((of.b) aVar.d).c = bVar;
-                aVar.d = bVar;
-                bVar.b = rVar;
+                n4.x xVar = new n4.x(11, false);
+                ((n4.x) aVar.d).c = xVar;
+                aVar.d = xVar;
+                xVar.b = rVar;
                 return aVar.toString();
-            case 28:
+            case 29:
                 Runnable runnable = (Runnable) this.b;
                 if (runnable != null) {
                     return "SequentialExecutorWorker{running=" + runnable + "}";
                 }
                 StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
                 int i10 = ((r9.i) this.c).c;
-                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
+                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
                 sb2.append("}");
                 return sb2.toString();
             default:
@@ -628,13 +607,7 @@ public final class s implements Runnable {
     }
 
     public s(r9.i iVar) {
-        this.a = 28;
-        this.c = iVar;
-    }
-
-    public s(s4.y yVar, s4.u uVar, int i10) {
         this.a = 29;
-        this.c = yVar;
-        this.b = uVar;
+        this.c = iVar;
     }
 }

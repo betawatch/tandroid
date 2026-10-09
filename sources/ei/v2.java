@@ -1,86 +1,146 @@
 package ei;
 
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.view.View;
-import androidx.appcompat.widget.SearchView;
-import ci.qc;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.BotFullscreenButtons;
-import org.telegram.messenger.beta.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.f8;
+import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.ni0;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.s60;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.wt0;
+import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class v2 implements View.OnLayoutChangeListener {
+public final class v2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ v2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ v2(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        int i18 = this.a;
-        Object obj = this.b;
-        switch (i18) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        long cameraFlipElapsedMs;
+        switch (this.a) {
             case 0:
-                view.removeOnLayoutChangeListener(this);
-                l3 l3Var = (l3) obj;
-                BotFullscreenButtons botFullscreenButtons = l3Var.m0;
-                b3 b3Var = l3Var.v;
-                b3Var.setSwipeOffsetY(b3Var.getHeight());
-                l3Var.e.setAlpha(1.0f);
-                if (l3Var.G0 != Float.MAX_VALUE) {
-                    b3Var.setSwipeOffsetAnimationDisallowed(true);
-                    b3Var.setOffsetY(l3Var.G0);
-                    b3Var.setSwipeOffsetAnimationDisallowed(false);
+                k3 k3Var = (k3) this.c;
+                k3Var.P.setColor(this.b);
+                k3Var.B();
+                k3Var.e.invalidate();
+                org.telegram.ui.d3 d3Var = k3Var.U0;
+                if (d3Var != null) {
+                    d3Var.b(AndroidUtilities.computePerceivedBrightness(k3Var.P.getColor()) <= 0.721f, false);
+                    k3Var.U0.setBackgroundColor(k3Var.P.getColor());
                 }
-                l3Var.x.o(true, true);
-                final AnimationNotificationsLocker animationNotificationsLocker = new AnimationNotificationsLocker();
-                animationNotificationsLocker.lock();
-                if (l3Var.F0 || l3Var.m()) {
-                    b3Var.f(b3Var.getTopActionBarOffsetY() + (-b3Var.getOffsetY()), false, new qc(animationNotificationsLocker, 14));
-                } else {
-                    o1.k kVar = new o1.k(b3Var, q4.b0, 0.0f);
-                    o1.l lVar = new o1.l(0.0f);
-                    lVar.a(0.75f);
-                    lVar.b(500.0f);
-                    kVar.u = lVar;
-                    kVar.a(new o1.f() { // from class: ei.u2
-                        @Override // o1.f
-                        public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-                            AnimationNotificationsLocker.this.unlock();
-                        }
-                    });
-                    kVar.f();
-                }
-                b3Var.K = true;
-                if (l3Var.d0 && botFullscreenButtons != null) {
-                    botFullscreenButtons.setAlpha(0.0f);
-                    botFullscreenButtons.animate().alpha(1.0f).setDuration(220L).start();
-                    break;
-                }
+                k3Var.G();
                 break;
             case 1:
-                hg.n.b0((hg.n) obj);
-                break;
-            default:
-                SearchView searchView = (SearchView) obj;
-                SearchView.SearchAutoComplete searchAutoComplete = searchView.F;
-                View view2 = searchView.N;
-                if (view2.getWidth() > 1) {
-                    Resources resources = searchView.getContext().getResources();
-                    int paddingLeft = searchView.H.getPaddingLeft();
-                    Rect rect = new Rect();
-                    boolean a2 = m.s3.a(searchView);
-                    int dimensionPixelSize = searchView.f0 ? resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_icon_width) + resources.getDimensionPixelSize(R.dimen.abc_dropdownitem_text_padding_left) : 0;
-                    searchAutoComplete.getDropDownBackground().getPadding(rect);
-                    searchAutoComplete.setDropDownHorizontalOffset(a2 ? -rect.left : paddingLeft - (rect.left + dimensionPixelSize));
-                    searchAutoComplete.setDropDownWidth((((view2.getWidth() + rect.left) + rect.right) + dimensionPixelSize) - paddingLeft);
+                p4 p4Var = (p4) this.c;
+                b3 b3Var = p4Var.n;
+                if (b3Var.getWebView() != null) {
+                    b3Var.getWebView().setScrollY(this.b);
+                }
+                if (animator == p4Var.r) {
+                    p4Var.r = null;
                     break;
                 }
+                break;
+            case 2:
+                ii.w4 w4Var = (ii.w4) this.c;
+                w4Var.W = this.b;
+                w4Var.a0 = 0.0f;
+                w4Var.requestLayout();
+                w4Var.invalidate();
+                break;
+            case 3:
+                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) this.c;
+                if (!e4Var.c()) {
+                    e4Var.b(this.b);
+                }
+                e4Var.d0 = null;
+                break;
+            case 4:
+                ((q6) this.c).u(this.b);
+                break;
+            case 5:
+                ((f8) this.c).a[this.b].setVisibility(8);
+                break;
+            case 6:
+                ((gq) this.c).a[this.b].animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(hs.g).setStartDelay(0L).setDuration(100L).start();
+                break;
+            case 7:
+                ry ryVar = (ry) this.c;
+                rg.p0 p0Var = ryVar.h;
+                int i10 = this.b;
+                p0Var.setVisibility(i10 == 1 ? 0 : 8);
+                ryVar.e.setVisibility(i10 == 2 ? 0 : 8);
+                ryVar.f.setVisibility(i10 == 3 ? 0 : 8);
+                break;
+            case 8:
+                s60 s60Var = (s60) this.c;
+                FrameLayout frameLayout = s60Var.x;
+                if (this.b == s60Var.r0) {
+                    frameLayout.animate().setListener(null);
+                    frameLayout.setRotationY(0.0f);
+                    s60Var.m0 = false;
+                    StringBuilder sb2 = new StringBuilder("RoundVideo camera flip completed: elapsedMs=");
+                    cameraFlipElapsedMs = s60Var.getCameraFlipElapsedMs();
+                    sb2.append(cameraFlipElapsedMs);
+                    FileLog.d(sb2.toString());
+                    s60Var.x();
+                    break;
+                }
+                break;
+            case 9:
+                ni0 ni0Var = (ni0) this.c;
+                ni0Var.H = null;
+                ni0Var.P.d1.delete(this.b);
+                break;
+            case 10:
+                zq zqVar = (zq) this.c;
+                ((vl0) zqVar.d).b.remove(this.b);
+                vl0 vl0Var = (vl0) zqVar.d;
+                vl0Var.d = true;
+                vl0Var.a.invalidate();
+                break;
+            case 11:
+                wt0 wt0Var = (wt0) this.c;
+                wt0Var.e.O1.remove(this.b);
+                wt0Var.a.invalidate();
+                break;
+            default:
+                org.telegram.ui.Components.voip.d1 d1Var = (org.telegram.ui.Components.voip.d1) this.c;
+                d1Var.x = -1;
+                d1Var.v = this.b;
+                d1Var.s = 0.0f;
+                d1Var.U = null;
+                d1Var.e();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 7:
+                ry ryVar = (ry) this.c;
+                ryVar.h.setVisibility(0);
+                ryVar.e.setVisibility(0);
+                ryVar.f.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

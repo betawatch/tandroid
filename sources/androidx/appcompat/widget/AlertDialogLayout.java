@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -42,7 +42,7 @@ public class AlertDialogLayout extends w1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int y3;
+        int z11;
         int i14;
         int i15;
         int paddingLeft = getPaddingLeft();
@@ -70,7 +70,7 @@ public class AlertDialogLayout extends w1 {
                 WeakHashMap weakHashMap = i0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    y3 = hg.c.y(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
+                    z11 = hg.c.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft;
@@ -81,10 +81,10 @@ public class AlertDialogLayout extends w1 {
                     childAt.layout(i15, i21, measuredWidth + i15, i21 + measuredHeight2);
                     paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i21;
                 } else {
-                    y3 = paddingRight - measuredWidth;
+                    z11 = paddingRight - measuredWidth;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 }
-                i15 = y3 - i14;
+                i15 = z11 - i14;
                 if (h(i19)) {
                 }
                 int i212 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;

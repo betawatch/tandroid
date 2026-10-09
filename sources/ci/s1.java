@@ -1,208 +1,79 @@
 package ci;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
+import android.app.Activity;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.ft;
-import org.telegram.ui.pt;
+import org.telegram.ui.Components.hz;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.bu;
+import org.telegram.ui.fp;
+import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class s1 implements pt {
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ MessageObject A() {
-        return null;
+public final /* synthetic */ class s1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ s1(v1 v1Var, boolean z10, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
+        this.a = 0;
+        this.c = v1Var;
+        this.b = z10;
+        this.d = tL_messages_getInlineBotResults;
+        this.e = str;
     }
 
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean B() {
-        return false;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new t1((v1) this.c, tLObject, this.b, (TLRPC.TL_messages_getInlineBotResults) this.d, (String) this.e, 0));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new i2.c1((ke) this.c, tL_error, (TwoStepVerificationActivity) this.d, (Activity) this.e, this.b, tLObject, 6));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new t1(this.c, this.d, tLObject, this.e, this.b, 15));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new i2.c1((fp) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 9));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new t1((hz) this.c, (String) this.e, this.b, (String) this.d, tLObject));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new i2.c1((bu) this.c, tLObject, (d) this.d, this.b, (HashSet) this.e, tL_error, 11));
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean D() {
-        return false;
+    public /* synthetic */ s1(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
-        return false;
+    public /* synthetic */ s1(hz hzVar, String str, boolean z10, String str2) {
+        this.a = 4;
+        this.c = hzVar;
+        this.e = str;
+        this.b = z10;
+        this.d = str2;
     }
 
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ String G(boolean z10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean I() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean J() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean N(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ Boolean P(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean Q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ TLRPC.PollAnswer h() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean i() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ b80 j(m6 m6Var) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final boolean l() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final boolean m(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ boolean y() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void C(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void F(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void H(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void k(SendMessagesHelper.ImportingSticker importingSticker) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void o(String str) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void p(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void r(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void v(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void z(String str) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void f(CharSequence charSequence, String str, ft ftVar) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.pt
-    public final /* synthetic */ void n(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
+    public /* synthetic */ s1(bu buVar, d dVar, boolean z10, HashSet hashSet) {
+        this.a = 5;
+        this.c = buVar;
+        this.d = dVar;
+        this.b = z10;
+        this.e = hashSet;
     }
 }

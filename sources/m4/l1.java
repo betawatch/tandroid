@@ -1,38 +1,65 @@
 package m4;
 
-import android.media.session.MediaSession;
 import android.os.Bundle;
+import android.os.SystemClock;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l1 {
-    public static final String b;
-    public static final String c;
-    public final m1 a;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public static final String h;
+    public final int a;
+    public final Bundle b;
+    public final long c;
+    public final j1 d;
 
     static {
-        b2.l0.a("media3.session");
         String str = e2.d0.a;
-        b = Integer.toString(0, 36);
-        c = Integer.toString(1, 36);
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
+        h = Integer.toString(3, 36);
     }
 
-    public l1(int i10, String str, a1 a1Var, Bundle bundle, MediaSession.Token token) {
-        this.a = new m1(i10, str, a1Var, bundle, token);
+    public l1(int i10) {
+        this(i10, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof l1) {
-            return this.a.equals(((l1) obj).a);
+    public static l1 a(Bundle bundle) {
+        j1 j1Var;
+        int i10 = bundle.getInt(e, -1);
+        Bundle bundle2 = bundle.getBundle(f);
+        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
+        Bundle bundle3 = bundle.getBundle(h);
+        if (bundle3 != null) {
+            int i11 = bundle3.getInt(j1.d, MediaDataController.MAX_STYLE_RUNS_COUNT);
+            String string = bundle3.getString(j1.e, "");
+            Bundle bundle4 = bundle3.getBundle(j1.f);
+            if (bundle4 == null) {
+                bundle4 = Bundle.EMPTY;
+            }
+            j1Var = new j1(string, i11, bundle4);
+        } else {
+            j1Var = i10 != 0 ? new j1(i10) : null;
         }
-        return false;
+        j1 j1Var2 = j1Var;
+        if (bundle2 == null) {
+            bundle2 = Bundle.EMPTY;
+        }
+        return new l1(i10, bundle2, j3, j1Var2);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString();
+    public l1(int i10, Bundle bundle, long j3, j1 j1Var) {
+        e2.d.b(j1Var == null || i10 < 0);
+        this.a = i10;
+        this.b = new Bundle(bundle);
+        this.c = j3;
+        if (j1Var == null && i10 < 0) {
+            j1Var = new j1(i10);
+        }
+        this.d = j1Var;
     }
 }

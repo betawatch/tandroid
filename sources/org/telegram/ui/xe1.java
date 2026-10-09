@@ -1,24 +1,117 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.HashSet;
+import android.os.Vibrator;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_forum;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xe1 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
+public final class xe1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ bf1 a;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                HashSet hashSet = wf1.n1;
-                break;
-            default:
-                int[][] iArr = WallpapersListActivity.i0;
-                break;
+    public xe1(bf1 bf1Var) {
+        this.a = bf1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        bf1 bf1Var = this.a;
+        if (i10 == -1) {
+            bf1Var.finishFragment();
+            return;
         }
-        return true;
+        if (i10 == 1) {
+            String obj = bf1Var.e.getText() == null ? null : bf1Var.e.getText().toString();
+            if (TextUtils.isEmpty(obj)) {
+                Vibrator vibrator = (Vibrator) bf1Var.getParentActivity().getSystemService("vibrator");
+                if (vibrator != null) {
+                    vibrator.vibrate(200L);
+                }
+                AndroidUtilities.shakeView(bf1Var.e);
+                return;
+            }
+            if (bf1Var.r) {
+                return;
+            }
+            org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(bf1Var.getParentActivity(), 3, null);
+            b2Var.q(500L);
+            bf1Var.r = true;
+            TL_forum.TL_messages_createForumTopic tL_messages_createForumTopic = new TL_forum.TL_messages_createForumTopic();
+            tL_messages_createForumTopic.peer = bf1Var.getMessagesController().getInputPeer(bf1Var.a);
+            tL_messages_createForumTopic.title = obj;
+            long j3 = bf1Var.b;
+            if (j3 != 0) {
+                tL_messages_createForumTopic.icon_emoji_id = j3;
+                tL_messages_createForumTopic.flags |= 8;
+            }
+            tL_messages_createForumTopic.random_id = Utilities.random.nextLong();
+            tL_messages_createForumTopic.icon_color = bf1Var.E;
+            tL_messages_createForumTopic.flags |= 1;
+            i13 = ((org.telegram.ui.ActionBar.n2) bf1Var).currentAccount;
+            ConnectionsManager.getInstance(i13).sendRequest(tL_messages_createForumTopic, new ns0(this, obj, b2Var, 11));
+            return;
+        }
+        if (i10 == 2) {
+            String obj2 = bf1Var.e.getText() != null ? bf1Var.e.getText().toString() : null;
+            if (TextUtils.isEmpty(obj2)) {
+                Vibrator vibrator2 = (Vibrator) bf1Var.getParentActivity().getSystemService("vibrator");
+                if (vibrator2 != null) {
+                    vibrator2.vibrate(200L);
+                }
+                AndroidUtilities.shakeView(bf1Var.e);
+                return;
+            }
+            if (!bf1Var.w.title.equals(obj2) || bf1Var.w.icon_emoji_id != bf1Var.b) {
+                TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic = new TL_forum.TL_messages_editForumTopic();
+                tL_messages_editForumTopic.peer = bf1Var.getMessagesController().getInputPeer(bf1Var.a);
+                TLRPC.TL_forumTopic tL_forumTopic = bf1Var.w;
+                tL_messages_editForumTopic.topic_id = tL_forumTopic.id;
+                if (!tL_forumTopic.title.equals(obj2)) {
+                    tL_messages_editForumTopic.title = obj2;
+                    tL_messages_editForumTopic.flags |= 1;
+                }
+                long j10 = bf1Var.w.icon_emoji_id;
+                long j11 = bf1Var.b;
+                if (j10 != j11) {
+                    tL_messages_editForumTopic.icon_emoji_id = j11;
+                    tL_messages_editForumTopic.flags |= 2;
+                }
+                i11 = ((org.telegram.ui.ActionBar.n2) bf1Var).currentAccount;
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editForumTopic, new ai.v7(8));
+            }
+            if (bf1Var.d != null) {
+                TLRPC.TL_forumTopic tL_forumTopic2 = bf1Var.w;
+                if (tL_forumTopic2.id == 1 && (!r12.d.h) != tL_forumTopic2.hidden) {
+                    TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic2 = new TL_forum.TL_messages_editForumTopic();
+                    tL_messages_editForumTopic2.peer = bf1Var.getMessagesController().getInputPeer(bf1Var.a);
+                    tL_messages_editForumTopic2.topic_id = bf1Var.w.id;
+                    tL_messages_editForumTopic2.hidden = !bf1Var.d.d.h;
+                    tL_messages_editForumTopic2.flags |= 8;
+                    i12 = ((org.telegram.ui.ActionBar.n2) bf1Var).currentAccount;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_editForumTopic2, new ai.v7(8));
+                }
+            }
+            TLRPC.TL_forumTopic tL_forumTopic3 = bf1Var.w;
+            long j12 = bf1Var.b;
+            tL_forumTopic3.icon_emoji_id = j12;
+            if (j12 != 0) {
+                tL_forumTopic3.flags |= 1;
+            } else {
+                tL_forumTopic3.flags &= -2;
+            }
+            tL_forumTopic3.title = obj2;
+            if (bf1Var.d != null) {
+                tL_forumTopic3.hidden = !r0.d.h;
+            }
+            bf1Var.getMessagesController().getTopicsController().onTopicEdited(bf1Var.a, bf1Var.w);
+            bf1Var.finishFragment();
+        }
     }
 }

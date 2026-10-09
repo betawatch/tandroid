@@ -2,61 +2,90 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class yt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.wm0 b;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ yt0(org.telegram.ui.Components.wm0 wm0Var, int i10) {
+    public yt0(PhotoViewer photoViewer, int i10) {
+        this.b = photoViewer;
         this.a = i10;
-        this.b = wm0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.Q1.getNextView().setText((CharSequence) null);
-                wt0 wt0Var = photoViewer.T1;
-                wt0Var.l0 = false;
-                if (wt0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) wt0Var.o0.getLayoutParams()).topMargin = wt0Var.m0;
-                    wt0Var.m0 = -1;
-                    wt0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
-                break;
+        float min;
+        int i10;
+        PhotoViewer photoViewer = this.b;
+        photoViewer.q6 = null;
+        photoViewer.P0.setVisibility(8);
+        photoViewer.S0.setVisibility(8);
+        photoViewer.n0.setVisibility(8);
+        photoViewer.F.setVisibility(8);
+        photoViewer.e1.setVisibility(8);
+        photoViewer.f1.setVisibility(8);
+        photoViewer.g1.setVisibility(8);
+        org.telegram.ui.Components.vf0 vf0Var = photoViewer.C1;
+        if (vf0Var != null) {
+            vf0Var.setVisibility(4);
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                wt0 wt0Var = ((PhotoViewer) this.b.b).T1;
-                Method method = wt0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(wt0Var, null);
-                        break;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        photoViewer.o1.setVisibility(8);
+        photoViewer.o1.setAlpha(0.0f);
+        photoViewer.o1.setTranslationY(-AndroidUtilities.dp(10.0f));
+        photoViewer.O0.setRotationX(0.0f);
+        photoViewer.o1.setEnabled(false);
+        photoViewer.K = false;
+        if (photoViewer.i2) {
+            photoViewer.Q1.setVisibility(4);
         }
+        int i11 = photoViewer.c2;
+        if (i11 == 0 || i11 == 4 || ((i11 == 2 || i11 == 5) && photoViewer.g7.size() > 1)) {
+            photoViewer.N0.setVisibility(8);
+            photoViewer.O0.setVisibility(8);
+            photoViewer.s3();
+        }
+        Bitmap bitmap = photoViewer.C4.getBitmap();
+        if (photoViewer.c2 == 11) {
+            photoViewer.i6 = photoViewer.Y5;
+            photoViewer.h6 = photoViewer.X5;
+            photoViewer.j6 = photoViewer.a6;
+            photoViewer.k6 = photoViewer.b6;
+            photoViewer.f6 = 0.0f;
+        }
+        if (bitmap != null) {
+            float bitmapWidth = photoViewer.C4.getBitmapWidth();
+            float bitmapHeight = photoViewer.C4.getBitmapHeight();
+            float min2 = Math.min(photoViewer.k1(2) / bitmapWidth, photoViewer.h1(2, false) / bitmapHeight);
+            if (photoViewer.c2 == 1) {
+                photoViewer.d6 = -AndroidUtilities.dp(36.0f);
+                min = photoViewer.l1(false);
+            } else {
+                photoViewer.d6 = (-AndroidUtilities.dp(93.0f)) + (!photoViewer.s ? AndroidUtilities.statusBarHeight / 2 : 0);
+                MediaController.CropState cropState = photoViewer.X4.c;
+                min = (cropState == null || !((i10 = cropState.transformRotation) == 90 || i10 == 270)) ? Math.min(photoViewer.k1(photoViewer.u4) / bitmapWidth, photoViewer.i1() / bitmapHeight) : Math.min(photoViewer.k1(photoViewer.u4) / bitmapHeight, photoViewer.i1() / bitmapWidth);
+            }
+            photoViewer.e6 = min2 / min;
+            Rect rect = photoViewer.s2;
+            photoViewer.c6 = (rect.left / 2) - (rect.right / 2);
+            photoViewer.n6 = System.currentTimeMillis();
+            photoViewer.R6 = true;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        photoViewer.p6 = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer, org.telegram.ui.Components.u6.g, 0.0f, 1.0f), ObjectAnimator.ofFloat(photoViewer.I1.getToolsView(), (Property<FrameLayout, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(186.0f), 0.0f));
+        photoViewer.p6.setDuration(200L);
+        photoViewer.p6.addListener(new ep0(this, 4));
+        photoViewer.p6.start();
     }
 }

@@ -1,0 +1,180 @@
+package yh;
+
+import android.graphics.Bitmap;
+import android.view.View;
+import ci.cb;
+import ci.kb;
+import ci.l8;
+import ci.lc;
+import ci.ob;
+import ci.yb;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class w0 implements Utilities.Callback3 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+
+    public /* synthetic */ w0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback3
+    public final void run(Object obj, Object obj2, Object obj3) {
+        int i10;
+        ci.t tVar;
+        switch (this.a) {
+            case 0:
+                ((s3) this.b).q2((View) obj2, (CharSequence) obj, ((Boolean) obj3).booleanValue());
+                break;
+            case 1:
+                s3.w0((s3) this.b, (ArrayList) obj, (Utilities.Callback2) obj2, (Runnable) obj3);
+                break;
+            default:
+                lc lcVar = (lc) this.b;
+                Boolean bool = (Boolean) obj;
+                ArrayList arrayList = (ArrayList) obj2;
+                ArrayList arrayList2 = (ArrayList) obj3;
+                if (lcVar.f0 == 0 && arrayList != null && !arrayList.isEmpty() && lcVar.p2 == null && !lcVar.W && lcVar.I()) {
+                    lcVar.H1 = null;
+                    lcVar.I1 = null;
+                    lcVar.J1 = null;
+                    if (bool.booleanValue()) {
+                        if (arrayList.size() + lcVar.A0.getFilledCount() > lcVar.A0.getTotalCount()) {
+                            int size = arrayList.size() + lcVar.A0.getFilledCount();
+                            ArrayList a2 = ci.t.a();
+                            int size2 = a2.size();
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 < size2) {
+                                    Object obj4 = a2.get(i11);
+                                    i11++;
+                                    tVar = (ci.t) obj4;
+                                    if (tVar.e.size() >= size) {
+                                    }
+                                } else {
+                                    tVar = null;
+                                }
+                            }
+                            if (tVar == null) {
+                                lcVar.A0.o(null);
+                                lcVar.A0.e();
+                                lcVar.I0.setSelected((ci.t) null);
+                                ob obVar = lcVar.B0;
+                                if (obVar != null) {
+                                    obVar.recordHevc = !lcVar.A0.j();
+                                }
+                                lcVar.I0.a(false, true);
+                                lcVar.l0(true);
+                                break;
+                            } else {
+                                yb ybVar = lcVar.A0;
+                                lcVar.z0 = tVar;
+                                ybVar.o(tVar);
+                                lcVar.I0.setSelected(tVar);
+                                int indexOf = ci.t.a().indexOf(tVar);
+                                if (indexOf >= 0) {
+                                    lcVar.I0.a.u0(indexOf);
+                                }
+                                ob obVar2 = lcVar.B0;
+                                if (obVar2 != null) {
+                                    obVar2.recordHevc = !lcVar.A0.j();
+                                }
+                                lcVar.G0.setDrawable(new ci.u(tVar, false));
+                                lcVar.b0(lcVar.H0, lcVar.I0.e, true);
+                                lcVar.O0.e(lcVar.A0.j() ? lcVar.A0.getFilledProgress() : 0.0f, true);
+                            }
+                        }
+                    }
+                    lcVar.L1 = true;
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 < arrayList.size()) {
+                            l8 l4 = l8.l((MediaController.PhotoEntry) arrayList.get(i12));
+                            l4.M0 = (Bitmap) arrayList2.get(i12);
+                            l4.J0 = lcVar.v0;
+                            l4.K0 = lcVar.w0;
+                            l4.A();
+                            if (!bool.booleanValue()) {
+                                if (lcVar.K1 == null) {
+                                    lcVar.K1 = l4;
+                                } else {
+                                    if (lcVar.H1 == null) {
+                                        ArrayList arrayList3 = new ArrayList();
+                                        lcVar.H1 = arrayList3;
+                                        arrayList3.add(lcVar.K1);
+                                    }
+                                    if (lcVar.H1.size() < 10) {
+                                        lcVar.H1.add(l4);
+                                    }
+                                }
+                                i12++;
+                            } else if (lcVar.A0.l(l4)) {
+                                lcVar.K1 = l8.a(lcVar.A0.getLayout(), lcVar.A0.getContent());
+                            } else {
+                                i12++;
+                            }
+                        }
+                    }
+                    if (lcVar.H1 != null) {
+                        lcVar.h0(false, true);
+                        lcVar.Q0.a(lcVar.O1);
+                        ci.j7 j7Var = lcVar.O0;
+                        boolean z10 = lcVar.O1 == 1;
+                        j7Var.n0 = -1.0f;
+                        j7Var.o0 = z10;
+                        j7Var.invalidate();
+                        lcVar.I1 = new ArrayList();
+                        lcVar.J1 = new ArrayList();
+                        for (int i13 = 0; i13 < lcVar.H1.size(); i13 = com.google.android.gms.internal.vision.e2.e(i13, i13, 1, lcVar.J1)) {
+                            lcVar.I1.add(Integer.valueOf(i13));
+                        }
+                        lcVar.A0.n(null);
+                        lcVar.I0.a(false, true);
+                        lcVar.l0(true);
+                        lcVar.e(false);
+                        lcVar.J(1, true);
+                        cb cbVar = lcVar.d1;
+                        if (cbVar != null) {
+                            androidx.fragment.app.a0 a0Var = cbVar.h;
+                            if (!cbVar.I && !cbVar.M && (i10 = MessagesController.getGlobalMainSettings().getInt("multistorieshint", 0)) < 3) {
+                                MessagesController.getGlobalMainSettings().edit().putInt("multistorieshint", i10 + 1).apply();
+                                AndroidUtilities.cancelRunOnUIThread(a0Var);
+                                cbVar.I = true;
+                                cbVar.invalidate();
+                                AndroidUtilities.runOnUIThread(a0Var, 5500L);
+                            }
+                        }
+                        kb kbVar = lcVar.M0;
+                        if (kbVar != null) {
+                            lcVar.l2 = kbVar.e.e0();
+                            lcVar.m2 = lcVar.M0.getSelectedAlbum();
+                            break;
+                        }
+                    } else {
+                        l8 l8Var = lcVar.K1;
+                        if (l8Var != null) {
+                            l8Var.B();
+                        }
+                        lcVar.I0.a(false, true);
+                        lcVar.l0(true);
+                        lcVar.e(false);
+                        kb kbVar2 = lcVar.M0;
+                        if (kbVar2 != null) {
+                            lcVar.l2 = kbVar2.e.e0();
+                            lcVar.m2 = lcVar.M0.getSelectedAlbum();
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
+    }
+}

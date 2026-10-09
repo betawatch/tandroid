@@ -6,12 +6,14 @@ import java.util.Locale;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.b7;
 import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.a20;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -37,9 +39,22 @@ public final /* synthetic */ class c implements Utilities.CallbackReturn {
                 return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
             case 5:
                 View view = (View) obj;
-                return Boolean.valueOf(((view instanceof e9) || (view instanceof b7) || (view instanceof a20) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+                return Boolean.valueOf(((view instanceof e9) || (view instanceof b7) || (view instanceof z10) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
+            case 6:
+                return Boolean.valueOf(c71.K(((Integer) obj).intValue()));
+            case 7:
+                TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
+                exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;
+                return exportsecretphrase;
+            case 8:
+                TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
+                replacewallet.wallet = new TL_wallet.inputWalletNew();
+                replacewallet.password = (TLRPC.InputCheckPasswordSRP) obj;
+                return replacewallet;
             default:
-                return Boolean.valueOf(w61.K(((Integer) obj).intValue()));
+                TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
+                disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;
+                return disablebackup;
         }
     }
 }

@@ -6,7 +6,6 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -16,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class z4 {
     public static ColorMatrixColorFilter f;
@@ -26,10 +25,10 @@ public final class z4 {
     public final RadialProgress2 d;
     public u e;
 
-    public z4(w4 w4Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public z4(w4 w4Var, org.telegram.ui.ActionBar.e6 e6Var) {
         this.a = new ImageReceiver(w4Var);
         this.b = new ImageReceiver(w4Var);
-        RadialProgress2 radialProgress2 = new RadialProgress2(w4Var, d6Var);
+        RadialProgress2 radialProgress2 = new RadialProgress2(w4Var, e6Var);
         this.d = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
@@ -50,15 +49,15 @@ public final class z4 {
             return;
         }
         int i10 = AndroidUtilities.displaySize.x;
-        String l4 = a4.a.l(i10, i10, "_");
+        String l4 = a1.g.l(i10, i10, "_");
         StringBuilder sb3 = new StringBuilder();
         u uVar2 = this.e;
         if (uVar2 == null) {
-            sb2 = BuildConfig.BETA_URL;
+            sb2 = "null";
         } else {
             String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
             if (uVar2.e != null) {
-                StringBuilder j3 = sa.e.j(str, ":local:");
+                StringBuilder j3 = sc.v.j(str, ":local:");
                 j3.append(this.e.e);
                 sb2 = j3.toString();
             } else {
@@ -75,7 +74,7 @@ public final class z4 {
                         }
                     }
                 }
-                StringBuilder j11 = sa.e.j(str, ":");
+                StringBuilder j11 = sc.v.j(str, ":");
                 j11.append(this.e.a);
                 j11.append(":");
                 j11.append(j10);

@@ -5,39 +5,39 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.h10;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class d3 extends yn {
-    public boolean Kc;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique Lc;
-    public final /* synthetic */ long Mc;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class d3 extends zn {
+    public boolean Qc;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique Rc;
+    public final /* synthetic */ long Sc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d3(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
         super(bundle);
-        this.Lc = tL_starGiftUnique;
-        this.Mc = j3;
-        this.Kc = false;
+        this.Rc = tL_starGiftUnique;
+        this.Sc = j3;
+        this.Qc = false;
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.Kc) {
+        if (this.Qc) {
             return;
         }
-        this.Kc = true;
-        rc O = yc.a0(this).O(this.Lc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Mc)));
+        this.Qc = true;
+        tc O = ad.a0(this).O(this.Rc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Sc)));
         O.r = false;
         O.j();
-        u00 u00Var = this.k9;
-        if (u00Var != null) {
-            u00Var.c(true);
+        h10 h10Var = this.m9;
+        if (h10Var != null) {
+            h10Var.c(true);
         }
     }
 }

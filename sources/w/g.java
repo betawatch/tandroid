@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.util.ArrayMap;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.p0;
+import e0.n0;
 import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -24,8 +24,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import org.telegram.ui.Cells.c1;
+import sc.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -75,20 +76,20 @@ public abstract class g {
     public static Object b(Bundle bundle, e eVar) {
         String string = bundle.getString("tag_value");
         if (string == null) {
-            throw new f(a4.a.q("Missing enum name [", string, "]"), eVar);
+            throw new f(a1.g.q("Missing enum name [", string, "]"), eVar);
         }
         String string2 = bundle.getString("tag_class_name");
         if (string2 == null) {
-            throw new f(a4.a.q("Missing enum className [", string2, "]"), eVar);
+            throw new f(a1.g.q("Missing enum className [", string2, "]"), eVar);
         }
         try {
             return g(Class.forName(string2), "valueOf", eVar).invoke(null, string);
         } catch (ClassNotFoundException e7) {
-            throw new f(a4.a.q("Enum class [", string2, "] not found"), eVar, e7);
+            throw new f(a1.g.q("Enum class [", string2, "] not found"), eVar, e7);
         } catch (IllegalArgumentException e10) {
-            throw new f(c1.k("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e10);
+            throw new f(c1.i("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e10);
         } catch (ReflectiveOperationException e11) {
-            throw new f(a4.a.q("Enum of class [", string2, "] missing valueOf method"), eVar, e11);
+            throw new f(a1.g.q("Enum of class [", string2, "] missing valueOf method"), eVar, e11);
         }
     }
 
@@ -265,7 +266,7 @@ public abstract class g {
                     eVar2.close();
                     return binder;
                 case 10:
-                    p0 a10 = p0.a(bundle);
+                    n0 a10 = n0.a(bundle);
                     eVar2.close();
                     return a10;
                 default:
@@ -379,14 +380,14 @@ public abstract class g {
                 i10++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String v = sa.e.v(field.getDeclaringClass().getName(), field.getName());
+                String v = v.v(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
                         bundle.putParcelable(v, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e7) {
-                    throw new f(sa.e.i("Field is not accessible: ", v), eVar, e7);
+                    throw new f(v.i("Field is not accessible: ", v), eVar, e7);
                 }
             }
             return bundle;
@@ -513,12 +514,12 @@ public abstract class g {
                 if (obj.getClass().isArray()) {
                     throw new f("Object serializing contains an array, use a list or a set instead", eVar2);
                 }
-                if (!(obj instanceof p0)) {
+                if (!(obj instanceof n0)) {
                     Bundle m10 = m(obj, eVar2);
                     eVar2.close();
                     return m10;
                 }
-                Bundle c10 = ((p0) obj).c();
+                Bundle c10 = ((n0) obj).c();
                 c10.putInt("tag_class_type", 10);
                 eVar2.close();
                 return c10;

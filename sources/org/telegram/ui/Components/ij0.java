@@ -1,182 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.text.TextUtils;
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class ij0 extends kj0 {
-    public volatile RLottieNative U0;
-    public boolean V0;
-    public boolean W0;
-    public volatile boolean X0;
-    public boolean Y0;
-    public final int Z0;
-    public int a1;
+public final class ij0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jj0 b;
 
-    public ij0(String str, int i10, int i11) {
-        super(i10, i11);
-        String readRes;
-        this.Z0 = -1;
-        this.J = 1;
-        if ("🎲".equals(str)) {
-            readRes = AndroidUtilities.readRes(R.raw.diceloop);
-            this.Z0 = 60;
-        } else {
-            readRes = "🎯".equals(str) ? AndroidUtilities.readRes(R.raw.dartloop) : null;
-        }
-        getPaint().setFlags(2);
-        if (TextUtils.isEmpty(readRes)) {
-            return;
-        }
-        this.m0 = RLottieNative.b(readRes, this.e, null, null);
+    public /* synthetic */ ij0(jj0 jj0Var, int i10) {
+        this.a = i10;
+        this.b = jj0Var;
     }
 
-    @Override // org.telegram.ui.Components.kj0
-    public int B(Bitmap bitmap, boolean z10) {
-        RLottieNative rLottieNative;
-        int i10 = this.J;
-        if (i10 == 1) {
-            rLottieNative = this.m0;
-        } else if (i10 == 2) {
-            rLottieNative = this.U0;
-            if (this.X0) {
-                this.a0 = this.a1 - 1;
-            }
-        } else {
-            rLottieNative = this.m0;
-        }
-        return rLottieNative.c(this.a0, bitmap, z10) < 0 ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public void C(boolean z10) {
-        this.k0 = false;
-        this.l0 = true;
-        n();
-        l();
-        if (this.Y0 || this.V0) {
-            this.W0 = true;
-            return;
-        }
-        if (this.P != null || this.x0) {
-            this.V = true;
-            return;
-        }
-        D(z10);
-        yf.e eVar = this.B0;
-        if (eVar != null) {
-            RandomAccessFile randomAccessFile = eVar.s;
-            if (randomAccessFile != null) {
-                try {
-                    randomAccessFile.close();
-                } catch (IOException e7) {
-                    e7.printStackTrace();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                jj0 jj0Var = this.b;
+                AnimatorSet animatorSet = jj0Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    jj0Var.s = null;
+                    jj0Var.getClass();
+                    break;
                 }
-                eVar.s = null;
-            }
-            eVar.r = true;
-            this.B0 = null;
-        }
-        E();
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final void D(boolean z10) {
-        RLottieNative rLottieNative = this.m0;
-        RLottieNative rLottieNative2 = this.U0;
-        this.m0 = null;
-        this.U0 = null;
-        if (rLottieNative == null && rLottieNative2 == null) {
-            return;
-        }
-        yw ywVar = new yw(26, rLottieNative, rLottieNative2);
-        if (z10) {
-            DispatchQueuePoolBackground.execute(ywVar);
-        } else {
-            Utilities.globalQueue.postRunnable(ywVar);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public void i() {
-        int i10 = this.J;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                int i11 = this.a0 + 1;
-                if (i11 < this.a1) {
-                    this.a0 = i11;
-                    return;
-                } else {
-                    this.N = true;
-                    this.M++;
-                    return;
+                break;
+            case 2:
+                jj0 jj0Var2 = this.b;
+                AnimatorSet animatorSet2 = jj0Var2.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    jj0Var2.s = null;
+                    jj0Var2.getClass();
+                    break;
                 }
-            }
-            return;
-        }
-        int i12 = this.a0 + 1;
-        int i13 = this.Z0;
-        if (i13 == -1) {
-            i13 = this.e[0];
-        }
-        if (i12 < i13) {
-            this.a0 = i12;
-            return;
-        }
-        this.a0 = 0;
-        this.N = false;
-        if (this.U0 != null) {
-            this.J = 2;
-        }
-        if (this.y) {
-            this.x = null;
-            this.y = false;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.kj0
-    public int j() {
-        if (this.l0) {
-            return 3;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        jj0 jj0Var = this.b;
+        switch (i10) {
+            case 0:
+                AnimatorSet animatorSet = jj0Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    jj0Var.h = null;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = jj0Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    jj0Var.s = null;
+                    if (jj0Var.w) {
+                        jj0Var.setLayerType(0, null);
+                    }
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = jj0Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    jj0Var.s = null;
+                    AndroidUtilities.runOnUIThread(new bd0(this, 14));
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
         }
-        return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public void p() {
-        if (this.V) {
-            n();
-            if (this.P == null && this.m0 != null) {
-                D(true);
-            }
-        }
-        if (this.m0 == null && this.U0 == null && this.B0 == null) {
-            E();
-            return;
-        }
-        this.T = true;
-        if (!v()) {
-            stop();
-        }
-        if (this.k0) {
-            I();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final boolean w() {
-        return this.Y0;
-    }
-
-    @Override // org.telegram.ui.Components.kj0
-    public final boolean z() {
-        return false;
     }
 }

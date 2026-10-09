@@ -1,115 +1,121 @@
 package org.telegram.ui;
 
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class uz0 extends org.telegram.ui.Components.r6 {
-    public final /* synthetic */ ProfileActivity b;
+public final class uz0 extends k71 {
+    public final /* synthetic */ b71[] d2;
+    public final /* synthetic */ ProfileActivity e2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz0(ProfileActivity profileActivity) {
-        super("avatarAnimationProgress", 0);
-        this.b = profileActivity;
+    public uz0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, b71[] b71VarArr) {
+        super(profileActivity2, activity, true, num, i10, true, e6Var, i11);
+        this.e2 = profileActivity;
+        this.d2 = b71VarArr;
     }
 
-    @Override // org.telegram.ui.Components.r6
-    public final void c(Object obj, float f7) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.v0 v0Var;
-        int v02;
-        ProfileActivity profileActivity = this.b;
-        profileActivity.E5 = f7;
-        Drawable[] drawableArr = profileActivity.E;
-        Drawable[] drawableArr2 = profileActivity.I;
-        Drawable[] drawableArr3 = profileActivity.y;
-        lz0 lz0Var = profileActivity.u0;
-        if (lz0Var != null) {
-            lz0Var.setActionBarActionMode(f7);
+    @Override // org.telegram.ui.k71
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        int i10;
+        if (tL_starGiftUnique == null) {
+            return true;
         }
-        yh.h0 h0Var = profileActivity.v0;
-        if (h0Var != null) {
-            h0Var.setActionBarActionMode(f7);
-        }
-        profileActivity.d1.invalidate();
-        int v03 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.vh, profileActivity.z0);
-        int i10 = org.telegram.ui.ActionBar.i6.Oi;
-        int v04 = org.telegram.ui.ActionBar.i6.v0(i10, profileActivity.z0);
-        int offsetColor = AndroidUtilities.getOffsetColor(v03, v04, f7, 1.0f);
-        profileActivity.f[1].setTextColor(offsetColor);
-        Drawable drawable = profileActivity.x;
-        if (drawable != null) {
-            if (profileActivity.Q5 != null) {
-                offsetColor = -1;
+        i10 = ((org.telegram.ui.ActionBar.n2) this.e2).currentAccount;
+        return yh.m5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+    }
+
+    @Override // org.telegram.ui.k71
+    public final long getDialogId() {
+        return this.e2.a();
+    }
+
+    @Override // org.telegram.ui.k71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        TLRPC.EmojiStatus emojiStatus;
+        int i10;
+        int i11;
+        int i12;
+        ProfileActivity profileActivity = this.e2;
+        org.telegram.ui.Components.q5[] q5VarArr = profileActivity.G;
+        b71[] b71VarArr = this.d2;
+        if (tL_starGiftUnique != null) {
+            i10 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
+            TL_stars.SavedStarGift n10 = yh.m5.y(i10, false).n(tL_starGiftUnique.id);
+            if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
+                MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
+                Context context = getContext();
+                i11 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
+                i12 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
+                yh.s3 s3Var = new yh.s3(context, i11, UserConfig.getInstance(i12).getClientUserId(), profileActivity.z0, null);
+                s3Var.l2(n10, null);
+                s3Var.o2();
+                s3Var.show();
+                b71 b71Var = b71VarArr[0];
+                if (b71Var != null) {
+                    profileActivity.B5 = null;
+                    b71Var.dismiss();
+                    return;
+                }
+                return;
             }
-            drawable.setColorFilter(offsetColor, PorterDuff.Mode.MULTIPLY);
-        }
-        if (profileActivity.L != null) {
-            profileActivity.L.b(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h8, profileActivity.z0), v04, f7, 1.0f));
-        }
-        int v05 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0);
-        int v06 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y8, profileActivity.z0);
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar.A(AndroidUtilities.getOffsetColor(v05, v06, f7, 1.0f), false);
-        MessagesController.PeerColor peerColor = profileActivity.Q5;
-        int v07 = peerColor != null ? 1090519039 : peerColor != null ? 553648127 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.f8, profileActivity.z0);
-        int v08 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z8, profileActivity.z0);
-        kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar2.z(AndroidUtilities.getOffsetColor(v07, v08, f7, 1.0f), false);
-        profileActivity.d1.invalidate();
-        profileActivity.T0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));
-        profileActivity.Q0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));
-        profileActivity.R0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));
-        profileActivity.S0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));
-        if (drawableArr3[0] != null) {
-            drawableArr3[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zh, profileActivity.z0), org.telegram.ui.ActionBar.i6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr3[1] != null) {
-            MessagesController.PeerColor peerColor2 = profileActivity.Q5;
-            if (peerColor2 != null) {
-                v02 = org.telegram.ui.ActionBar.i6.b(0.1f, org.telegram.ui.ActionBar.i6.I.q() ? -0.1f : -0.08f, i0.a.d(0.4f, peerColor2.getColor2(), profileActivity.Q5.hasColor6(org.telegram.ui.ActionBar.i6.I.q()) ? profileActivity.Q5.getColor5() : profileActivity.Q5.getColor3()));
-            } else {
-                v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zh, profileActivity.z0);
+            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+            emojiStatus = tL_inputEmojiStatusCollectible;
+            if (num != null) {
+                tL_inputEmojiStatusCollectible.flags |= 1;
+                tL_inputEmojiStatusCollectible.until = num.intValue();
+                emojiStatus = tL_inputEmojiStatusCollectible;
             }
-            drawableArr3[1].setColorFilter(AndroidUtilities.getOffsetColor(v02, org.telegram.ui.ActionBar.i6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
+        } else if (l4 == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
+        } else {
+            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+            tL_emojiStatus.document_id = l4.longValue();
+            emojiStatus = tL_emojiStatus;
+            if (num != null) {
+                tL_emojiStatus.flags |= 1;
+                tL_emojiStatus.until = num.intValue();
+                emojiStatus = tL_emojiStatus;
+            }
         }
-        if (drawableArr2[0] != null) {
-            drawableArr2[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Ah, profileActivity.z0), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
+        profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
+        MessagesController messagesController = profileActivity.getMessagesController();
+        TLRPC.Chat chat = profileActivity.E2;
+        messagesController.updateEmojiStatus(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
+        for (int i13 = 0; i13 < 2; i13++) {
+            org.telegram.ui.Components.q5 q5Var = q5VarArr[i13];
+            if (q5Var != null) {
+                if (l4 == null && profileActivity.E2 == null) {
+                    q5Var.g(profileActivity.Y3(i13), true);
+                } else if (l4 != null) {
+                    q5Var.j(l4.longValue(), true);
+                } else {
+                    q5Var.g(null, true);
+                }
+                q5VarArr[i13].m(tL_starGiftUnique != null, true);
+            }
         }
-        if (drawableArr2[1] != null) {
-            drawableArr2[1].setColorFilter(AndroidUtilities.getOffsetColor(profileActivity.Q5 == null ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Ah, profileActivity.z0) : -1, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr[0] != null) {
-            drawableArr[0].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zh, profileActivity.z0), org.telegram.ui.ActionBar.i6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
-        }
-        if (drawableArr[1] != null) {
-            drawableArr[1].setColorFilter(AndroidUtilities.getOffsetColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zh, profileActivity.z0), org.telegram.ui.ActionBar.i6.v0(i10, profileActivity.z0), f7, 1.0f), PorterDuff.Mode.MULTIPLY);
+        if (l4 != null) {
+            org.telegram.ui.Cells.o oVar = profileActivity.d0;
+            zg.n0 n0Var = new zg.n0();
+            long longValue = l4.longValue();
+            n0Var.g = longValue;
+            n0Var.h = longValue;
+            oVar.a(n0Var);
         }
         profileActivity.X4();
-        ProfileActivity profileActivity2 = profileActivity.o0.n;
-        if (profileActivity2.L0) {
-            v0Var = profileActivity2.Q0;
-        } else if (profileActivity2.N0) {
-            v0Var = profileActivity2.S0;
-        } else {
-            v0Var = profileActivity2.U0;
-            if (v0Var == null) {
-                v0Var = null;
-            }
+        profileActivity.Z4();
+        b71 b71Var2 = b71VarArr[0];
+        if (b71Var2 != null) {
+            profileActivity.B5 = null;
+            b71Var2.dismiss();
         }
-        if (v0Var != null) {
-            if (profileActivity.M0 || profileActivity.N0 || profileActivity.L0) {
-                profileActivity.l4(0, profileActivity.y3(), true);
-            }
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(this.b.E5);
     }
 }

@@ -2,7 +2,7 @@ package m;
 
 import androidx.appcompat.widget.Toolbar;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e3 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,8 +17,8 @@ public final /* synthetic */ class e3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                g3 g3Var = this.b.e0;
-                l.m mVar = g3Var == null ? null : g3Var.b;
+                h3 h3Var = this.b.e0;
+                l.m mVar = h3Var == null ? null : h3Var.b;
                 if (mVar != null) {
                     mVar.collapseActionView();
                     break;

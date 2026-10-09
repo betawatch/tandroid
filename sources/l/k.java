@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import r0.j0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -167,7 +167,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                xVar.c(this, z10);
+                xVar.d(this, z10);
             }
         }
         this.s = false;
@@ -223,7 +223,7 @@ public class k implements Menu {
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.M(kVar, menuItem);
+        return iVar != null && iVar.A(kVar, menuItem);
     }
 
     public boolean f(m mVar) {
@@ -351,7 +351,7 @@ public class k implements Menu {
                 if (xVar == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    z10 |= xVar.d();
+                    z10 |= xVar.c();
                 }
             }
             ArrayList arrayList = this.i;

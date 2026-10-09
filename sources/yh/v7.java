@@ -1,62 +1,48 @@
 package yh;
 
-import android.util.Log;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h61;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v7 implements Utilities.Callback5, e2.h, i5.e {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class v7 extends e8 {
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ int n0;
+    public final /* synthetic */ h8 o0;
 
-    public /* synthetic */ v7(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v7(h8 h8Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, int i10) {
+        super(context, e6Var);
+        this.o0 = h8Var;
+        this.m0 = z10;
+        this.n0 = i10;
     }
 
-    @Override // e2.h
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 1:
-                z3.h hVar = (z3.h) this.b;
-                z3.a aVar = (z3.a) obj;
-                z3.g gVar = new z3.g(aVar.b, ob.a.C2(aVar.a, aVar.c));
-                hVar.c.add(gVar);
-                long j3 = hVar.j;
-                if (j3 == -9223372036854775807L || aVar.d >= j3) {
-                    hVar.a(gVar);
-                    break;
-                }
-                break;
-            default:
-                ((e9.f0) this.b).b((z3.a) obj);
-                break;
+    @Override // yh.e8
+    public final void e(int i10) {
+        long j3 = i10;
+        h8 h8Var = this.o0;
+        h8Var.u(j3);
+        ci.d dVar = h8Var.x;
+        if (dVar != null) {
+            dVar.g(p7.W0(false, LocaleController.formatString(R.string.StarsReactionSend, LocaleController.formatNumber(j3, ',')), h8Var.R), true, true);
+        }
+        if (this.m0) {
+            ai.m1 m1Var = h8Var.G;
+            m1Var.g = j3;
+            h8Var.H.set(m1Var);
+            int i11 = this.n0;
+            f(ai.g0.b(i11, i10, 3), ai.g0.b(i11, i10, 4), true);
         }
     }
 
-    @Override // i5.e
-    public Object apply(Object obj) {
-        ((k2.e) this.b).getClass();
-        String c10 = za.b0.b.c((za.a0) obj);
-        kotlin.jvm.internal.i.d(c10, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: ".concat(c10));
-        byte[] bytes = c10.getBytes(xd.a.a);
-        kotlin.jvm.internal.i.d(bytes, "this as java.lang.String).getBytes(charset)");
-        return bytes;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        w7 w7Var = (w7) this.b;
-        h61 h61Var = (h61) obj;
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        w7Var.getClass();
-        if (h61Var.G instanceof TL_stars.StarsTransaction) {
-            z7.n1(w7Var.getContext(), false, 0L, w7Var.c, (TL_stars.StarsTransaction) h61Var.G, w7Var.b);
+    @Override // yh.e8
+    public final void setValue(int i10) {
+        super.setValue(i10);
+        if (this.m0) {
+            int i11 = this.n0;
+            f(ai.g0.b(i11, i10, 3), ai.g0.b(i11, i10, 4), true);
         }
     }
 }

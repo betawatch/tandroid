@@ -7,7 +7,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class bh extends bm {
     final /* synthetic */ Bundle a;
@@ -49,7 +49,7 @@ final class bh extends bm {
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(a2);
-            xVar.H0(obtain, 6);
+            xVar.G0(obtain, 6);
         } catch (RemoteException e7) {
             bn bnVar2 = this.e;
             int i11 = this.d;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c extends qh.e {
     public final String b;
@@ -58,14 +58,14 @@ public final class c extends qh.e {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setColor(i6.w0(null, i6.Bi, false));
+        textPaint.setColor(i6.x0(null, i6.Bi, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
     public static b d(View view, String str, String str2, TLRPC.Document document, MessageObject messageObject) {
         b bVar = new b();
-        bVar.a.setColor(i6.w0(null, i6.G6, false));
-        bVar.b.setColor(i6.w0(null, i6.y6, false));
+        bVar.a.setColor(i6.x0(null, i6.G6, false));
+        bVar.b.setColor(i6.x0(null, i6.y6, false));
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(21.0f));
@@ -135,7 +135,7 @@ public final class c extends qh.e {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(AndroidUtilities.dp(13.0f));
             textPaint.setTypeface(AndroidUtilities.bold());
-            textPaint.setColor(i6.w0(null, i6.Bi, false));
+            textPaint.setColor(i6.x0(null, i6.Bi, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, AndroidUtilities.dp(34.0f), TextUtils.TruncateAt.END), textPaint, AndroidUtilities.dp(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

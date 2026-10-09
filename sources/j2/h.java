@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Random;
 import u2.f0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h {
     public static final s h = new s(4);
@@ -205,7 +205,7 @@ public final class h {
                 c11.e = true;
                 aVar.b.g(aVar.d.a, this.b);
                 this.b.d(aVar.d.b);
-                Math.max(0L, d0.e0(0L) + d0.e0(this.b.e));
+                Math.max(0L, d0.d0(0L) + d0.d0(this.b.e));
                 this.d.getClass();
             }
         }

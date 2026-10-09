@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MessageCustomParamsHelper {
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Params_v1 extends TLObject {
         private static final int VERSION = 1;
         int flags;
@@ -22,7 +22,12 @@ public class MessageCustomParamsHelper {
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             int readInt32 = inputSerializedData.readInt32(true);
             this.flags = readInt32;
-            if ((readInt32 & 1) != 0) {
+            TLRPC.MessageAction messageAction = this.message.action;
+            if (messageAction instanceof TLRPC.TL_messageActionGramTransfer) {
+                TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageAction;
+                tL_messageActionGramTransfer.comment_encrypted_preparing = !tL_messageActionGramTransfer.comment_encrypted && TLObject.hasFlag(readInt32, 16384);
+            }
+            if ((this.flags & 1) != 0) {
                 this.message.voiceTranscription = inputSerializedData.readString(z10);
             }
             TLRPC.Message message = this.message;
@@ -148,7 +153,9 @@ public class MessageCustomParamsHelper {
             this.flags = flag2;
             int flag3 = TLObject.setFlag(flag2, 4096, message.translatedSummaryLanguage != null);
             this.flags = flag3;
-            this.flags = TLObject.setFlag(flag3, 8192, message.translatedRichMessage != null);
+            int flag4 = TLObject.setFlag(flag3, 8192, message.translatedRichMessage != null);
+            this.flags = flag4;
+            this.flags = TLObject.setFlag(flag4, 16384, MessageCustomParamsHelper.isCommentEncryptionPreparing(message));
         }
     }
 
@@ -174,8 +181,14 @@ public class MessageCustomParamsHelper {
         message2.translatedSummaryLanguage = message.translatedSummaryLanguage;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static boolean isCommentEncryptionPreparing(TLRPC.Message message) {
+        TLRPC.MessageAction messageAction = message.action;
+        return (messageAction instanceof TLRPC.TL_messageActionGramTransfer) && ((TLRPC.TL_messageActionGramTransfer) messageAction).comment_encrypted_preparing;
+    }
+
     public static boolean isEmpty(TLRPC.Message message) {
-        return message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0;
+        return !isCommentEncryptionPreparing(message) && message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0;
     }
 
     public static void readLocalParams(TLRPC.Message message, NativeByteBuffer nativeByteBuffer) {

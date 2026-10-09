@@ -1,55 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.TextureView;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class b60 extends TextureView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class b60 {
+    public final ByteBuffer[] a = new ByteBuffer[10];
+    public final long[] b = new long[10];
+    public final int[] c = new int[10];
+    public int d;
+    public int e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b60(Object obj, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        ki.r0 r0Var;
-        switch (this.a) {
-            case 0:
-                e60 e60Var = (e60) this.b;
-                if (!e60Var.A0 && (r0Var = e60Var.R) != null && r0Var.a == 3) {
-                    e60Var.A0 = true;
-                    try {
-                        e60Var.y0 = SystemClock.elapsedRealtimeNanos();
-                        e60Var.w();
-                    } finally {
-                        e60Var.A0 = false;
-                    }
-                }
-                super.invalidate();
-                return;
-            default:
-                super.invalidate();
-                return;
-        }
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                vh.f fVar = (vh.f) this.b;
-                setMeasuredDimension(fVar.g, fVar.h);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    public b60() {
+        for (int i10 = 0; i10 < 10; i10++) {
+            this.a[i10] = ByteBuffer.allocateDirect(2048);
+            this.a[i10].order(ByteOrder.nativeOrder());
         }
     }
 }

@@ -8,7 +8,7 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class AudioDecoder {
     private static final int TIMEOUT_USEC = 0;
@@ -22,7 +22,7 @@ public class AudioDecoder {
     private long startTimeUs;
     private int trackIndex;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class DecodedBufferData {
         public ByteBuffer byteBuffer = null;
         public int index = -1;
@@ -271,7 +271,7 @@ public class AudioDecoder {
             StringBuilder sb2 = new StringBuilder("StartTimeUs(");
             sb2.append(this.startTimeUs);
             sb2.append(") must be less than or equal to EndTimeUs(");
-            throw new RuntimeException(a4.a.s(sb2, this.endTimeUs, ")"));
+            throw new RuntimeException(a1.g.s(sb2, this.endTimeUs, ")"));
         }
         this.extractor.seekTo(j3, 0);
         this.decoder.start();

@@ -1,75 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ProfileActivity c;
+public final class wz0 extends nq {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ TLRPC.User e1;
+    public final /* synthetic */ ProfileActivity f1;
 
-    public /* synthetic */ wz0(ProfileActivity profileActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.c = profileActivity;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wz0(ProfileActivity profileActivity, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, TLRPC.User user) {
+        super(j3, j10, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
+        this.f1 = profileActivity;
+        this.d1 = zArr;
+        this.e1 = user;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.f0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        org.telegram.ui.Cells.z3 z3Var;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.c;
-                boolean z10 = this.b;
-                ProfileActivity.n1(profileActivity, z10);
-                profileActivity.Y.setClickable(true);
-                if (z10) {
-                    org.telegram.ui.ActionBar.v0 v0Var = profileActivity.U0;
-                    if (v0Var.F.getWidth() != 0 && !v0Var.e.isFocused()) {
-                        v0Var.e.requestFocus();
-                        AndroidUtilities.showKeyboard(v0Var.e);
-                    }
-                }
-                profileActivity.k4(true);
-                profileActivity.V1 = null;
-                profileActivity.fragmentView.invalidate();
-                if (z10) {
-                    profileActivity.U4 = true;
-                    profileActivity.F4();
-                    Activity parentActivity = profileActivity.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) profileActivity).classGuid;
-                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                    profileActivity.P.setPreventMoving(false);
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.f0 != null && (z3Var = profileActivity2.g0) != null) {
-                    if (!this.b) {
-                        z3Var.setVisibility(4);
-                    }
-                    profileActivity2.f0 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            ProfileActivity profileActivity = this.f1;
+            if (org.telegram.ui.Components.ad.a(profileActivity)) {
+                org.telegram.ui.Components.ad.C(profileActivity, this.e1.first_name).j();
+            }
         }
     }
 }

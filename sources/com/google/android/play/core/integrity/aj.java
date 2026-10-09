@@ -8,7 +8,6 @@ import a9.n0;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
@@ -20,7 +19,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class aj {
     final a9.e a;
@@ -115,7 +114,7 @@ final class aj {
         try {
             byte[] decode = Base64.decode(integrityTokenRequest.nonce(), 10);
             Long cloudProjectNumber = integrityTokenRequest.cloudProjectNumber();
-            if (Build.VERSION.SDK_INT >= 23 && (integrityTokenRequest instanceof ao)) {
+            if (integrityTokenRequest instanceof ao) {
             }
             this.b.b("requestIntegrityToken(%s)", integrityTokenRequest);
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();

@@ -1,126 +1,39 @@
 package xh;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.w9;
-import w7.z5;
-import yh.z7;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final w9 a;
-    public final p6 b;
-    public final p6 c;
-    public final p6 d;
-    public final rq[] e;
-    public boolean f;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class k implements TextWatcher {
+    public final /* synthetic */ View[] a;
+    public final /* synthetic */ o b;
 
-    public k(Context context, d6 d6Var) {
-        super(context);
-        this.e = new rq[1];
-        setOrientation(0);
-        p6 p6Var = new p6(context, false, false, false);
-        this.c = p6Var;
-        int i10 = i6.G6;
-        p6Var.setTextColor(i6.v0(i10, d6Var));
-        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        p6Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        p6Var.setEllipsizeByGradient(true);
-        p6 p6Var2 = new p6(context, false, false, false);
-        this.d = p6Var2;
-        p6Var2.setTextColor(i6.v0(i6.y6, d6Var));
-        p6Var2.setTextSize(AndroidUtilities.dp(15.0f));
-        w9 w9Var = new w9(context);
-        this.a = w9Var;
-        p6 p6Var3 = new p6(context, false, false, false);
-        this.b = p6Var3;
-        p6Var3.setTextSize(AndroidUtilities.dp(15.0f));
-        p6Var3.setPadding(AndroidUtilities.dp(20.0f), 0, 0, 0);
-        p6Var3.setTextColor(i6.v0(i10, d6Var));
-        p6Var3.setTypeface(AndroidUtilities.bold());
-        p6Var3.setGravity(17);
-        addView(p6Var3, z5.o(66, -2, 0.0f, 16));
-        addView(w9Var, z5.o(32, 32, 0.0f, 16));
-        addView(p6Var, z5.o(0, -2, 1.0f, 16));
-        addView(p6Var2, z5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+    public k(o oVar, View[] viewArr) {
+        this.b = oVar;
+        this.a = viewArr;
     }
 
-    public final void a(long j3, boolean z10) {
-        this.d.c(z7.d1(false, org.telegram.messenger.q.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
-    }
-
-    public final void b(int i10, boolean z10, boolean z11) {
-        p6 p6Var = this.b;
-        if (!z10 || i10 > 3) {
-            if (i10 >= 10000) {
-                p6Var.setTextSize(AndroidUtilities.dp(12.0f));
-            } else if (i10 >= 1000) {
-                p6Var.setTextSize(AndroidUtilities.dp(14.0f));
-            } else {
-                p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-            }
-            p6Var.c(Integer.toString(i10), z11, true);
-            return;
-        }
-        if (i10 == 1) {
-            p6Var.c(Emoji.replaceWithRestrictedEmoji("🥇", p6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
-        } else if (i10 == 2) {
-            p6Var.c(Emoji.replaceWithRestrictedEmoji("🥈", p6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
-        } else if (i10 == 3) {
-            p6Var.c(Emoji.replaceWithRestrictedEmoji("🥉", p6Var.getPaint().getFontMetricsInt(), (Runnable) null), z11, true);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        View[] viewArr = this.a;
+        try {
+            boolean z10 = ((long) Integer.parseInt(editable.toString())) >= this.b.l0.getMinimumBid();
+            viewArr[0].animate().alpha(z10 ? 1.0f : 0.6f).setDuration(180L).start();
+            viewArr[0].setEnabled(z10);
+            viewArr[0].setClickable(z10);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
-    public final void c(TLRPC.User user) {
-        h9 h9Var = new h9((d6) null);
-        h9Var.r(user);
-        w9 w9Var = this.a;
-        w9Var.e(user, h9Var);
-        w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        this.c.setText(UserObject.getUserName(user));
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        this.b.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.f) {
-            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), i6.k0);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

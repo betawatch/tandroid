@@ -1,100 +1,46 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vi extends AnimatorListenerAdapter {
+public final /* synthetic */ class vi implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yn b;
+    public final /* synthetic */ wi b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.kl0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ zg.n0 n;
 
-    public /* synthetic */ vi(yn ynVar, int i10) {
-        this.a = i10;
-        this.b = ynVar;
+    public /* synthetic */ vi(wi wiVar, int i10, boolean z10, org.telegram.ui.Components.kl0 kl0Var, float f7, float f10, zg.n0 n0Var, int i11) {
+        this.a = i11;
+        this.b = wiVar;
+        this.c = i10;
+        this.d = z10;
+        this.e = kl0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = n0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        sj sjVar;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                yn ynVar = this.b;
-                org.telegram.ui.Components.k60 k60Var = ynVar.Z2;
-                if (k60Var != null) {
-                    k60Var.setIsMessageTransition(false);
-                    ynVar.Z2.c(true);
-                    ynVar.Z2.setVisibility(4);
-                    break;
-                }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                yn ynVar2 = this.b;
-                ynVar2.y9 = dp;
-                ynVar2.o9();
-                break;
-            case 2:
-                yn ynVar3 = this.b;
-                if (ynVar3.fragmentView != null && (sjVar = ynVar3.v0) != null) {
-                    sjVar.invalidate();
-                    ynVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.N.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new bj(this, 3), 2000L);
-                break;
-            case 5:
-                yn ynVar4 = this.b;
-                if (animator.equals(ynVar4.e3)) {
-                    ynVar4.e3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                yn ynVar5 = this.b;
-                if (animator.equals(ynVar5.e3)) {
-                    ynVar5.e3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                yn ynVar6 = this.b;
-                if (animator.equals(ynVar6.f3)) {
-                    ynVar6.g3 = 1.0f;
-                    ynVar6.kc();
-                    ynVar6.f3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                yn ynVar7 = this.b;
-                if (animator.equals(ynVar7.f3)) {
-                    ynVar7.g3 = 0.0f;
-                    ynVar7.kc();
-                    ynVar7.f3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.R4 = null;
-                break;
-            case 10:
-                yn ynVar8 = this.b;
-                ynVar8.Ba = 1.0f;
-                ynVar8.W.setVisibility(4);
-                ynVar8.M0.setVisibility(4);
-                ynVar8.o9();
+                AndroidUtilities.runOnUIThread(new vi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
                 break;
             default:
-                yn ynVar9 = this.b;
-                ynVar9.Ba = 0.0f;
-                ynVar9.o9();
+                zn znVar = this.b.s;
+                org.telegram.ui.Cells.a0 t82 = znVar.t8(this.c, true);
+                if (this.d) {
+                    i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+                    zg.j0.d(znVar, this.e, t82, null, this.f, this.h, this.n, i10, 1);
+                    zg.j0.f();
+                    break;
+                }
                 break;
         }
     }

@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-import ai.q4;
+import ai.r4;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.view.Window;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class p extends s implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler k0;
@@ -25,7 +25,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean w0;
     public boolean x0;
     public boolean y0;
-    public final q4 l0 = new q4(this, 5);
+    public final r4 l0 = new r4(this, 5);
     public final m m0 = new m(this);
     public final n n0 = new n(this);
     public int o0 = 0;
@@ -33,7 +33,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean q0 = true;
     public boolean r0 = true;
     public int s0 = -1;
-    public final a6.m u0 = new a6.m(this, 5);
+    public final pb.c u0 = new pb.c(this, 6);
     public boolean z0 = false;
 
     @Override // androidx.fragment.app.s
@@ -86,7 +86,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                                 }
                             } else {
                                 n10 = n();
-                                if (e2.u(n10)) {
+                                if (e2.t(n10)) {
                                     this.v0.setOwnerActivity((Activity) n10);
                                 }
                                 this.v0.setCancelable(this.q0);
@@ -97,7 +97,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                         }
                         O.requestWindowFeature(1);
                         n10 = n();
-                        if (e2.u(n10)) {
+                        if (e2.t(n10)) {
                         }
                         this.v0.setCancelable(this.q0);
                         this.v0.setOnCancelListener(this.m0);
@@ -237,7 +237,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     }
 
     @Override // androidx.fragment.app.s
-    public final v7.b0 h() {
+    public final v7.x h() {
         return new o(this, new o(this));
     }
 

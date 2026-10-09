@@ -9,63 +9,54 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.ActionMode;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class s7 {
     public static p0.c a(m.z0 z0Var) {
-        int i10;
-        int i11;
-        int i12 = Build.VERSION.SDK_INT;
-        if (i12 >= 28) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 28) {
             return new p0.c(b5.d.p(z0Var));
         }
         TextPaint textPaint = new TextPaint(z0Var.getPaint());
-        if (i12 >= 23) {
-            i10 = 1;
-            i11 = 1;
-        } else {
-            i10 = 0;
-            i11 = 0;
-        }
         TextDirectionHeuristic textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR;
-        if (i12 >= 23) {
-            i10 = e0.b.d(z0Var);
-            i11 = e0.b.h(z0Var);
-        }
+        int breakStrategy = z0Var.getBreakStrategy();
+        int hyphenationFrequency = z0Var.getHyphenationFrequency();
         if (z0Var.getTransformationMethod() instanceof PasswordTransformationMethod) {
             textDirectionHeuristic = TextDirectionHeuristics.LTR;
-        } else if (i12 < 28 || (z0Var.getInputType() & 15) != 3) {
-            boolean z10 = z0Var.getLayoutDirection() == 1;
-            switch (z0Var.getTextDirection()) {
-                case 2:
-                    textDirectionHeuristic = TextDirectionHeuristics.ANYRTL_LTR;
-                    break;
-                case 3:
-                    textDirectionHeuristic = TextDirectionHeuristics.LTR;
-                    break;
-                case 4:
-                    textDirectionHeuristic = TextDirectionHeuristics.RTL;
-                    break;
-                case 5:
-                    textDirectionHeuristic = TextDirectionHeuristics.LOCALE;
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
-                    break;
-                default:
-                    if (z10) {
+        } else {
+            if (i10 < 28 || (z0Var.getInputType() & 15) != 3) {
+                boolean z10 = z0Var.getLayoutDirection() == 1;
+                switch (z0Var.getTextDirection()) {
+                    case 2:
+                        textDirectionHeuristic = TextDirectionHeuristics.ANYRTL_LTR;
+                        break;
+                    case 3:
+                        textDirectionHeuristic = TextDirectionHeuristics.LTR;
+                        break;
+                    case 4:
+                        textDirectionHeuristic = TextDirectionHeuristics.RTL;
+                        break;
+                    case 5:
+                        textDirectionHeuristic = TextDirectionHeuristics.LOCALE;
+                        break;
+                    case 6:
+                        break;
+                    case 7:
                         textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
                         break;
-                    }
-                    break;
+                    default:
+                        if (z10) {
+                            textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.v.e(z0Var.getTextLocale()))[0].codePointAt(0));
+                textDirectionHeuristic = (directionality == 1 || directionality == 2) ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR;
             }
-        } else {
-            byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.v.e(z0Var.getTextLocale()))[0].codePointAt(0));
-            textDirectionHeuristic = (directionality == 1 || directionality == 2) ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR;
         }
-        return new p0.c(textPaint, textDirectionHeuristic, i10, i11);
+        return new p0.c(textPaint, textDirectionHeuristic, breakStrategy, hyphenationFrequency);
     }
 
     public static void b(int i10, TextView textView) {

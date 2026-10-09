@@ -1,60 +1,49 @@
 package ei;
 
-import android.content.Context;
-import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class c3 extends org.telegram.ui.web.c1 {
-    public final /* synthetic */ l3 S0;
+public final /* synthetic */ class c3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c3(l3 l3Var, Context context, d6 d6Var, int i10) {
-        super(i10, context, d6Var, true);
-        this.S0 = l3Var;
+    public /* synthetic */ c3(f3 f3Var, int i10) {
+        this.a = i10;
+        this.b = f3Var;
     }
 
-    @Override // org.telegram.ui.web.c1
-    public final void E(String str, boolean z10) {
-        l3 l3Var = this.S0;
-        Paint paint = l3Var.P;
-        if (z10) {
-            l3Var.i();
-            l3Var.U0.a(UserObject.getUserName(MessagesController.getInstance(l3Var.G).getUser(Long.valueOf(l3Var.H))), str);
-            l3Var.U0.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
-            l3Var.U0.setBackgroundColor(paint.getColor());
-            l3Var.T0 = str;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                f3 f3Var = this.b;
+                k3 k3Var = f3Var.d;
+                toggleuseremojistatuspermission.bot = MessagesController.getInstance(k3Var.G).getInputUser(k3Var.H);
+                toggleuseremojistatuspermission.enabled = false;
+                ConnectionsManager.getInstance(k3Var.G).sendRequest(toggleuseremojistatuspermission, new d3(f3Var, 1));
+                break;
+            case 1:
+                k3 k3Var2 = this.b.d;
+                w0.e(k3Var2.getContext(), k3Var2.G, k3Var2.H).l(false, null);
+                break;
+            default:
+                k3 k3Var3 = this.b.d;
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && U.getParentLayout() != null) {
+                    org.telegram.ui.ActionBar.d5 parentLayout = U.getParentLayout();
+                    U.presentFragment(ProfileActivity.m4(k3Var3.H));
+                    AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionLocation");
+                    k3Var3.k(true);
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.d3 d3Var = l3Var.U0;
-        l3Var.S0 = z10;
-        AndroidUtilities.updateViewVisibilityAnimated(d3Var, z10, 1.0f, false);
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.web.c1
-    public final void K(org.telegram.ui.web.z0 z0Var) {
-        l3 l3Var = this.S0;
-        l3Var.v.setWebView(z0Var);
-        b1 b1Var = l3Var.B0;
-        if (b1Var != null) {
-            b1Var.k = z0Var;
-        }
-        l3Var.m0.setWebView(z0Var);
-        l3Var.F();
-    }
-
-    @Override // org.telegram.ui.web.c1
-    public final void L(org.telegram.ui.web.z0 z0Var) {
-        l3 l3Var = this.S0;
-        b1 b1Var = l3Var.B0;
-        if (b1Var != null && b1Var.k == z0Var) {
-            b1Var.k = null;
-            b1Var.b();
-        }
-        l3Var.m0.setWebView(null);
     }
 }

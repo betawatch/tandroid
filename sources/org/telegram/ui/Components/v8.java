@@ -1,34 +1,30 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class v8 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e9 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ v8(e9 e9Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class v8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g9 b;
+
+    public /* synthetic */ v8(g9 g9Var, int i10) {
         this.a = i10;
-        this.b = e9Var;
+        this.b = g9Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                if (i10 == -1) {
-                    e9.S(this.b);
-                    break;
-                }
+                super.onAnimationEnd(animator);
+                this.b.f = false;
                 break;
             default:
-                e9 e9Var = this.b;
-                if (i10 == -1) {
-                    e9.S(e9Var);
-                }
-                if (i10 == 1) {
-                    e9Var.f0();
-                    break;
-                }
+                g9 g9Var = this.b;
+                g9Var.i0(g9Var.F ? 1.0f : 0.0f, false);
+                g9Var.F = false;
                 break;
         }
     }

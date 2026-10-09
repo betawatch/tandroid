@@ -1,6 +1,6 @@
 package tg;
 
-import ai.n6;
+import ai.o6;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
@@ -14,18 +14,18 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.o20;
-import org.telegram.ui.py0;
-import w7.z5;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.m20;
+import org.telegram.ui.vy0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class s0 extends cb {
+public final class s0 extends eb {
     public final ArrayList X;
     public final ArrayList Y;
     public final TLRPC.Chat Z;
@@ -51,36 +51,36 @@ public final class s0 extends cb {
                 this.Y.add(tL_myBoost2);
             }
         }
-        o20 o20Var = new o20(getContext(), this.resourcesProvider, this.d);
-        o20Var.setClickable(true);
-        o20Var.setOrientation(1);
-        o20Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        o20Var.setBackgroundColor(i6.v0(i6.h5, this.resourcesProvider));
+        m20 m20Var = new m20(getContext(), this.resourcesProvider, this.d);
+        m20Var.setClickable(true);
+        m20Var.setOrientation(1);
+        m20Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        m20Var.setBackgroundColor(i6.w0(i6.h5, this.resourcesProvider));
         d0 d0Var = new d0(getContext(), this.resourcesProvider);
         this.a0 = d0Var;
         d0Var.k();
         d0Var.setCounterColor(-6785796);
-        d0Var.setOnClickListener(new py0(17, this, chat));
-        o20Var.addView(d0Var, z5.q(-1, 48, 87));
+        d0Var.setOnClickListener(new vy0(23, this, chat));
+        m20Var.addView(d0Var, x5.q(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
-        viewGroup.addView(o20Var, z5.f(-2.0f, 87, i11, 0, i11, 0));
-        zl0 zl0Var = this.d;
+        viewGroup.addView(m20Var, x5.f(-2.0f, 87, i11, 0, i11, 0));
+        qm0 qm0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        zl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new n6(24, this, chat));
+        qm0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
+        this.d.setOnItemClickListener(new o6(24, this, chat));
         fixNavigationBar();
-        L();
-        Q(false);
-        rc.a(this.container, new k0());
+        O();
+        T(false);
+        tc.a(this.container, new k0());
     }
 
-    public static void N(s0 s0Var, TLRPC.Chat chat, View view) {
+    public static void Q(s0 s0Var, TLRPC.Chat chat, View view) {
         ArrayList arrayList = s0Var.X;
         if (view instanceof xg.l) {
             xg.l lVar = (xg.l) view;
             if (lVar.getBoost().cooldown_until_date > 0) {
-                new yc(s0Var.container, s0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
+                new ad(s0Var.container, s0Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
                 return;
             }
             if (arrayList.contains(lVar.getBoost())) {
@@ -89,12 +89,17 @@ public final class s0 extends cb {
                 arrayList.add(lVar.getBoost());
             }
             lVar.c(arrayList.contains(lVar.getBoost()), true);
-            s0Var.Q(true);
+            s0Var.T(true);
             s0Var.b0.a(arrayList, chat);
         }
     }
 
-    public final void Q(boolean z10) {
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return LocaleController.getString(R.string.BoostingReassignBoost);
+    }
+
+    public final void T(boolean z10) {
         d0 d0Var = this.a0;
         d0Var.setShowZero(false);
         ArrayList arrayList = this.X;
@@ -124,13 +129,8 @@ public final class s0 extends cb {
         this.c0.start();
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
+    @Override // org.telegram.ui.Components.eb
+    public final pm0 x(qm0 qm0Var) {
         return new m0(this);
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.BoostingReassignBoost);
     }
 }

@@ -1,45 +1,10 @@
 package ed;
 
-import bf.p;
-import com.google.android.gms.internal.vision.e2;
-import java.util.regex.Pattern;
-import t7.s;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c extends h {
-    public static final Pattern e = Pattern.compile("`+");
-    public static final Pattern f = Pattern.compile("^`+");
-
-    @Override // ed.h
-    public final p b() {
-        String a2;
-        String a10 = a(f);
-        if (a10 == null) {
-            return null;
-        }
-        int i10 = this.d;
-        do {
-            a2 = a(e);
-            if (a2 == null) {
-                this.d = i10;
-                return f(a10);
-            }
-        } while (!a2.equals(a10));
-        bf.d dVar = new bf.d(0);
-        String replace = this.c.substring(i10, this.d - a10.length()).replace('\n', ' ');
-        if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
-            int length = replace.length();
-            if (s.b(' ', replace, 0, length) != length) {
-                replace = e2.i(1, 1, replace);
-            }
-        }
-        dVar.h = replace;
-        return dVar;
-    }
-
-    @Override // ed.h
-    public final char d() {
-        return '`';
+public final class c extends d {
+    @Override // ed.d, ed.k
+    public final String toString() {
+        return a1.g.t(new StringBuilder("<![CDATA["), this.c, "]]>");
     }
 }

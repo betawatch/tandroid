@@ -1,158 +1,231 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.provider.Settings;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.AnimationUtils;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sg0 extends Drawable {
-    public final Paint a;
-    public final int b;
-    public boolean c;
-    public float d;
-    public long e;
-    public View f;
-    public int g = 255;
-    public float h = 300.0f;
+public abstract class sg0 extends FrameLayout {
+    public float E;
+    public boolean F;
+    public boolean G;
+    public int H;
+    public int I;
+    public float J;
+    public boolean K;
+    public bd0 L;
+    public int a;
+    public PhotoViewer b;
+    public LinearLayout c;
+    public TextView d;
+    public TextView e;
+    public fv f;
+    public ci.bb h;
+    public RadialProgressView n;
+    public View r;
+    public String s;
+    public ArrayList v;
+    public String w;
+    public boolean x;
+    public TLRPC.WebPage y;
 
-    public sg0(int i10) {
-        this.b = AndroidUtilities.dp(i10);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
-    }
-
-    public final void a(boolean z10, boolean z11) {
-        if (this.c != z10) {
-            this.c = z10;
-            if (!z11) {
-                this.d = z10 ? 1.0f : 0.0f;
-            }
-            this.e = AnimationUtils.currentAnimationTimeMillis();
-            invalidateSelf();
+    public static void a(org.telegram.ui.ju0 ju0Var, String str) {
+        int videoDuration = ju0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = ju0Var.v;
+        arrayList.clear();
+        if (videoDuration <= 15) {
+            return;
+        }
+        String[] split = str.split("\\|");
+        String t10 = a1.g.t(new StringBuilder(), split[0].split("\\$")[0], "2/");
+        String str2 = split[0].split("\\$N")[1];
+        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
+        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
+        for (int i10 = 0; i10 < ceil; i10++) {
+            Locale locale = Locale.ROOT;
+            arrayList.add(t10 + "M" + i10 + str2 + "&sigh=" + str3);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
-    @Override // android.graphics.drawable.Drawable
+    public final void b(boolean z10) {
+        bd0 bd0Var = this.L;
+        if (!z10 && this.G) {
+            AndroidUtilities.runOnUIThread(bd0Var, 500L);
+        } else {
+            if (!z10 || this.G) {
+                return;
+            }
+            AndroidUtilities.cancelRunOnUIThread(bd0Var);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void draw(Canvas canvas) {
-        int i10;
-        Canvas canvas2;
-        le0 le0Var;
-        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        long j3 = currentAnimationTimeMillis - this.e;
-        this.e = currentAnimationTimeMillis;
-        if (j3 > 18) {
-            j3 = 16;
+    public final String c(int i10) {
+        float f7;
+        int i11;
+        ArrayList arrayList = this.v;
+        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        if (videoDuration > 100) {
+            if (videoDuration <= 250) {
+                i11 = ((int) (i10 / 2.0f)) / 25;
+            } else if (videoDuration <= 500) {
+                i11 = ((int) (i10 / 4.0f)) / 25;
+            } else if (videoDuration <= 1000) {
+                i11 = ((int) (i10 / 5.0f)) / 25;
+            } else {
+                f7 = i10 / 10.0f;
+            }
+            if (i11 >= arrayList.size()) {
+                return (String) arrayList.get(i11);
+            }
+            return null;
         }
-        boolean z10 = this.c;
+        f7 = i10;
+        i11 = (int) (f7 / 25.0f);
+        if (i11 >= arrayList.size()) {
+        }
+    }
+
+    public final boolean d() {
+        return this.x;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.K) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    public final boolean e() {
+        boolean z10 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
+        if (!z10 && !Settings.canDrawOverlays(getContext())) {
+            g5.A((Activity) getContext(), null, false);
+            return false;
+        }
+        if (this.n.getVisibility() == 0) {
+            return false;
+        }
+        if (gh0.p0.P) {
+            gh0.j(false);
+            AndroidUtilities.runOnUIThread(new ng0(this, 0), 300L);
+            return true;
+        }
+        this.h.setVisibility(0);
+        Activity activity = (Activity) getContext();
+        fv fvVar = this.f;
+        TLRPC.WebPage webPage = this.y;
+        if (gh0.x(z10, activity, this, fvVar, webPage.embed_width, webPage.embed_height, false)) {
+            gh0.w(PhotoViewer.t1());
+        }
+        return true;
+    }
+
+    public final void f() {
+        if (this.G && this.x) {
+            h("pauseVideo();");
+            this.G = false;
+            b(true);
+        }
+    }
+
+    public final void g() {
+        if (this.G || !this.x) {
+            return;
+        }
+        h("playVideo();");
+        this.G = true;
+        b(false);
+    }
+
+    public float getBufferedPosition() {
+        return this.J;
+    }
+
+    public int getCurrentPosition() {
+        return this.I;
+    }
+
+    public int getVideoDuration() {
+        return this.H;
+    }
+
+    public WebView getWebView() {
+        return this.f;
+    }
+
+    public final void h(String str) {
+        this.f.evaluateJavascript(str, null);
+    }
+
+    public final void i(long j3) {
+        boolean z10 = this.G;
+        this.I = (int) j3;
         if (z10) {
-            float f7 = this.d;
-            if (f7 < 1.0f) {
-                float f10 = (j3 / this.h) + f7;
-                this.d = f10;
-                if (f10 >= 1.0f) {
-                    this.d = 1.0f;
-                } else {
-                    View view = this.f;
-                    if (view != null) {
-                        view.invalidate();
-                    }
-                    invalidateSelf();
-                }
-                Rect bounds = getBounds();
-                i10 = this.g;
-                if (i10 != 255) {
-                    canvas.save();
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                    canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
-                }
-                canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
-                float f11 = this.d * 500.0f;
-                float interpolation = f11 >= 100.0f ? tr.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (tr.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
-                int i11 = this.b;
-                canvas2.scale((i11 * 1.45f) / AndroidUtilities.dp(28.0f), (i11 * 1.5f) / AndroidUtilities.dp(28.0f));
-                canvas2.rotate(interpolation);
-                le0Var = org.telegram.ui.ActionBar.i6.x3;
-                if (le0Var != null) {
-                    Paint paint = this.a;
-                    le0Var.b(canvas2, paint, f11);
-                    canvas2.scale(1.0f, -1.0f);
-                    org.telegram.ui.ActionBar.i6.x3.b(canvas2, paint, f11);
-                }
-                canvas2.restore();
+            f();
+        }
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new ai.j(this, j3, 23), 100L);
+            return;
+        }
+        h("seekTo(" + Math.round(j3 / 1000.0f) + ", true);");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        fv fvVar = this.f;
+        if (fvVar.getParent() == this) {
+            TLRPC.WebPage webPage = this.y;
+            int i12 = webPage.embed_width;
+            if (i12 == 0) {
+                i12 = 100;
             }
+            int i13 = webPage.embed_height;
+            int i14 = i13 != 0 ? i13 : 100;
+            int size = View.MeasureSpec.getSize(i10);
+            int size2 = View.MeasureSpec.getSize(i11);
+            float f7 = i12;
+            float f10 = i14;
+            float min = Math.min(size / f7, size2 / f10);
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) fvVar.getLayoutParams();
+            int i15 = (int) (f7 * min);
+            layoutParams.width = i15;
+            int i16 = (int) (f10 * min);
+            layoutParams.height = i16;
+            layoutParams.topMargin = (size2 - i16) / 2;
+            layoutParams.leftMargin = (size - i15) / 2;
         }
-        if (!z10) {
-            float f12 = this.d;
-            if (f12 > 0.0f) {
-                float f13 = f12 - (j3 / this.h);
-                this.d = f13;
-                if (f13 <= 0.0f) {
-                    this.d = 0.0f;
-                } else {
-                    View view2 = this.f;
-                    if (view2 != null) {
-                        view2.invalidate();
-                    }
-                    invalidateSelf();
-                }
-            }
-        }
-        Rect bounds2 = getBounds();
-        i10 = this.g;
-        if (i10 != 255) {
-        }
-        canvas2.translate(com.google.android.gms.internal.vision.e2.z(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
-        float f112 = this.d * 500.0f;
-        if (f112 >= 100.0f) {
-        }
-        int i112 = this.b;
-        canvas2.scale((i112 * 1.45f) / AndroidUtilities.dp(28.0f), (i112 * 1.5f) / AndroidUtilities.dp(28.0f));
-        canvas2.rotate(interpolation);
-        le0Var = org.telegram.ui.ActionBar.i6.x3;
-        if (le0Var != null) {
-        }
-        canvas2.restore();
+        super.onMeasure(i10, i11);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.b;
+    public void setPlaybackSpeed(float f7) {
+        this.E = f7;
+        if (this.n.getVisibility() == 0) {
+            this.F = true;
+        } else if (this.x) {
+            h("setPlaybackSpeed(" + f7 + ");");
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.g = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    public void setTouchDisabled(boolean z10) {
+        this.K = z10;
     }
 }

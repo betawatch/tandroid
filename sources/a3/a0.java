@@ -5,7 +5,7 @@ import android.hardware.display.DisplayManager;
 import android.os.SystemClock;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a0 {
     public final n a;
@@ -35,14 +35,15 @@ public final class a0 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:125:0x0155, code lost:
     
-        if (r30 >= r34) goto L74;
+        if (r29 >= r33) goto L74;
      */
     /* JADX WARN: Code restructure failed: missing block: B:136:0x007a, code lost:
     
-        if ((r10 == 0 ? false : r7.g[(int) ((r10 - 1) % 15)]) != false) goto L24;
+        if ((r9 == 0 ? false : r7.g[(int) ((r9 - 1) % 15)]) != false) goto L24;
      */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x015c A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x015d  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x015c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x015d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -51,30 +52,31 @@ public final class a0 {
         long j14;
         long j15;
         boolean z12;
-        long j16;
-        long j17;
         int i10;
+        long j16;
         int i11;
+        int i12;
+        long j17;
         long j18;
-        long j19;
         zVar.a = -9223372036854775807L;
         zVar.b = -9223372036854775807L;
         if (this.d && this.f == -9223372036854775807L) {
             this.f = j10;
         }
+        int i13 = 0;
         if (this.h != j3) {
             e0 e0Var = this.b;
             j13 = -9223372036854775807L;
-            long j20 = e0Var.n;
-            if (j20 != -1) {
-                e0Var.p = j20;
+            long j19 = e0Var.n;
+            if (j19 != -1) {
+                e0Var.p = j19;
                 e0Var.q = e0Var.o;
             }
             e0Var.m++;
             h hVar = e0Var.a;
             j14 = -1;
-            long j21 = j3 * 1000;
-            hVar.a.b(j21);
+            long j20 = j3 * 1000;
+            hVar.a.b(j20);
             if (hVar.a.a()) {
                 hVar.c = false;
                 j15 = 0;
@@ -83,12 +85,12 @@ public final class a0 {
                 if (hVar.d != -9223372036854775807L) {
                     if (hVar.c) {
                         g gVar = hVar.b;
-                        long j22 = gVar.d;
+                        long j21 = gVar.d;
                     }
                     hVar.b.c();
                     hVar.b.b(hVar.d);
                     hVar.c = true;
-                    hVar.b.b(j21);
+                    hVar.b.b(j20);
                 }
             }
             if (hVar.c && hVar.b.a()) {
@@ -97,7 +99,7 @@ public final class a0 {
                 hVar.b = gVar2;
                 hVar.c = false;
             }
-            hVar.d = j21;
+            hVar.d = j20;
             hVar.e = hVar.a.a() ? 0 : hVar.e + 1;
             e0Var.c();
             this.h = j3;
@@ -106,24 +108,25 @@ public final class a0 {
             j14 = -1;
             j15 = 0;
         }
-        long j23 = (long) ((j3 - j10) / this.k);
+        long j22 = (long) ((j3 - j10) / this.k);
         if (this.d) {
             this.l.getClass();
-            j23 -= e2.d0.Q(SystemClock.elapsedRealtime()) - j11;
+            j22 -= e2.d0.P(SystemClock.elapsedRealtime()) - j11;
         }
+        long j23 = j22;
         zVar.a = j23;
         if (!z10 || z11) {
             if (this.m) {
                 if (this.i == j13 || this.j) {
-                    int i12 = this.e;
-                    if (i12 != 0) {
-                        if (i12 != 1) {
-                            if (i12 != 2) {
-                                if (i12 != 3) {
+                    int i14 = this.e;
+                    if (i14 != 0) {
+                        if (i14 != 1) {
+                            if (i14 != 2) {
+                                if (i14 != 3) {
                                     throw new IllegalStateException();
                                 }
                                 this.l.getClass();
-                                long Q = e2.d0.Q(SystemClock.elapsedRealtime()) - this.g;
+                                long P = e2.d0.P(SystemClock.elapsedRealtime()) - this.g;
                                 if (this.d) {
                                     long j24 = this.f;
                                     if (j24 != j13) {
@@ -150,31 +153,26 @@ public final class a0 {
                     e0 e0Var2 = this.b;
                     long j25 = (zVar.a * 1000) + nanoTime;
                     if (e0Var2.p == j14 || !e0Var2.a.a.a()) {
-                        j16 = nanoTime;
-                        j17 = -30000;
                         i10 = 3;
+                        j16 = -30000;
                         i11 = 2;
+                        i12 = 1;
                     } else {
                         h hVar2 = e0Var2.a;
                         if (hVar2.a.a()) {
                             g gVar3 = hVar2.a;
-                            long j26 = gVar3.e;
-                            j17 = -30000;
-                            if (j26 == j15) {
-                                j19 = j15;
-                                i10 = 3;
-                            } else {
-                                i10 = 3;
-                                j19 = gVar3.f / j26;
-                            }
-                        } else {
-                            j17 = -30000;
                             i10 = 3;
-                            j19 = j13;
+                            j16 = -30000;
+                            long j26 = gVar3.e;
+                            j18 = j26 == j15 ? j15 : gVar3.f / j26;
+                        } else {
+                            i10 = 3;
+                            j16 = -30000;
+                            j18 = j13;
                         }
                         i11 = 2;
-                        j16 = nanoTime;
-                        long j27 = e0Var2.q + ((long) (((e0Var2.m - e0Var2.p) * j19) / e0Var2.i));
+                        i12 = 1;
+                        long j27 = e0Var2.q + ((long) (((e0Var2.m - e0Var2.p) * j18) / e0Var2.i));
                         if (Math.abs(j25 - j27) <= 20000000) {
                             j25 = j27;
                         } else {
@@ -193,26 +191,35 @@ public final class a0 {
                             long j30 = e0Var2.k;
                             long j31 = (((j25 - j29) / j30) * j30) + j29;
                             if (j25 <= j31) {
-                                j18 = j31 - j30;
+                                j17 = j31 - j30;
                             } else {
-                                j18 = j31;
+                                j17 = j31;
                                 j31 = j30 + j31;
                             }
-                            if (j31 - j25 >= j25 - j18) {
-                                j31 = j18;
+                            if (j31 - j25 >= j25 - j17) {
+                                j31 = j17;
                             }
                             j25 = j31 - e0Var2.l;
                         }
                     }
                     zVar.b = j25;
-                    long j32 = (j25 - j16) / 1000;
+                    long j32 = (j25 - nanoTime) / 1000;
                     zVar.a = j32;
-                    boolean z13 = (this.i == j13 || this.j) ? false : true;
+                    boolean z13 = (this.i == j13 || this.j) ? 0 : i12;
                     if (this.a.K0(j32, j10, z11, z13)) {
                         return 4;
                     }
                     long j33 = zVar.a;
-                    return (j33 > j17 ? 1 : (j33 == j17 ? 0 : -1)) < 0 && !z11 ? z13 ? i10 : i11 : j33 > 50000 ? 5 : 1;
+                    if (j33 < j16 && !z11) {
+                        i13 = i12;
+                    }
+                    if (i13 != 0) {
+                        return z13 != 0 ? i10 : i11;
+                    }
+                    if (j33 > 50000) {
+                        return 5;
+                    }
+                    return i12;
                 }
                 z12 = false;
                 if (!z12) {
@@ -262,7 +269,7 @@ public final class a0 {
     public final void d() {
         this.d = true;
         this.l.getClass();
-        this.g = e2.d0.Q(SystemClock.elapsedRealtime());
+        this.g = e2.d0.P(SystemClock.elapsedRealtime());
         e0 e0Var = this.b;
         e0Var.d = true;
         e0Var.m = 0L;

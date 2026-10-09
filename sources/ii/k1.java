@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ah;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.zi0;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.bh;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.dj0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,44 +40,44 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                i2 i2Var = this.b.P.Q3;
+                i2 i2Var = this.b.P.H3;
                 if (i2Var != null) {
                     i2Var.k();
                     break;
                 }
                 break;
             case 3:
-                i2 i2Var2 = this.b.P.Q3;
+                i2 i2Var2 = this.b.P.H3;
                 if (i2Var2 != null) {
                     i2Var2.i();
                     break;
                 }
                 break;
             case 4:
-                e2.S(this.b);
+                e2.U(this.b);
                 break;
             case 5:
                 e2 e2Var2 = this.b;
                 if (!e2Var2.B0) {
                     if (e2Var2.A0 == null) {
-                        nz nzVar = new nz(e2Var2, true, false, false, e2Var2.getParentActivity(), true, null, e2Var2.O, true, e2Var2.getResourceProvider(), false, false);
-                        e2Var2.A0 = nzVar;
-                        nzVar.setVisibility(8);
-                        nz nzVar2 = e2Var2.A0;
-                        nzVar2.w2 = false;
-                        nzVar2.setDelegate(new v1(e2Var2));
+                        a00 a00Var = new a00(e2Var2, true, false, false, e2Var2.getParentActivity(), true, null, e2Var2.O, true, e2Var2.getResourceProvider(), false, false);
+                        e2Var2.A0 = a00Var;
+                        a00Var.setVisibility(8);
+                        a00 a00Var2 = e2Var2.A0;
+                        a00Var2.w2 = false;
+                        a00Var2.setDelegate(new v1(e2Var2));
                         int indexOfChild = e2Var2.O.indexOfChild(e2Var2.a0);
                         if (indexOfChild < 0) {
                             indexOfChild = e2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams e7 = w7.z5.e(-1, e2Var2.j0(), 87);
+                        FrameLayout.LayoutParams e7 = w7.x5.e(-1, e2Var2.j0(), 87);
                         e7.bottomMargin = e2Var2.T0;
                         e2Var2.O.addView(e2Var2.A0, indexOfChild, e7);
                     }
                     int j02 = e2Var2.j0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) e2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = w7.z5.e(-1, j02, 87);
+                        layoutParams = w7.x5.e(-1, j02, 87);
                     } else {
                         layoutParams.height = j02;
                     }
@@ -91,7 +91,7 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                         AndroidUtilities.hideKeyboard(Q2);
                     }
                     e2Var2.h0();
-                    e2Var2.b0.j(ah.d, true);
+                    e2Var2.b0.j(bh.d, true);
                     break;
                 } else {
                     e2Var2.k0(true);
@@ -105,12 +105,12 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 6:
                 final e2 e2Var3 = this.b;
-                b80 b80Var = e2Var3.x0;
-                if (b80Var != null) {
-                    b80Var.u();
+                p80 p80Var = e2Var3.x0;
+                if (p80Var != null) {
+                    p80Var.u();
                     e2Var3.x0 = null;
                 }
-                final b80 H = b80.H(e2Var3, view);
+                final p80 H = p80.H(e2Var3, view);
                 H.Q = true;
                 a R2 = e2Var3.P.R2();
                 H.j(R2 == null || !R2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new n1(e2Var3, R2, 5));
@@ -170,14 +170,14 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 7:
                 e2 e2Var4 = this.b;
-                b80 b80Var2 = e2Var4.x0;
+                p80 p80Var2 = e2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (b80Var2 != null) {
-                    b80Var2.u();
+                if (p80Var2 != null) {
+                    p80Var2.u();
                     e2Var4.x0 = null;
                 }
                 x3 x3Var2 = e2Var4.P;
-                q5 q5Var = x3Var2.p4;
+                q5 q5Var = x3Var2.g4;
                 if (q5Var == null && (S2 = x3Var2.S2()) != null && S2.getModel() != null) {
                     View findFocus = e2Var4.P.findFocus();
                     if ((findFocus instanceof i1) && (o9 = S2.o((i1) findFocus)) != null) {
@@ -202,10 +202,10 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 8:
                 e2 e2Var5 = this.b;
-                b80 b80Var3 = e2Var5.x0;
+                p80 p80Var3 = e2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (b80Var3 != null) {
-                    b80Var3.u();
+                if (p80Var3 != null) {
+                    p80Var3.u();
                     e2Var5.x0 = null;
                 }
                 a R22 = e2Var5.P.R2();
@@ -215,19 +215,19 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                r.S(e2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.g3(21, e2Var5, pageblockmath), e2Var5.getResourceProvider());
+                r.X(e2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.h3(21, e2Var5, pageblockmath), e2Var5.getResourceProvider());
                 break;
             case 9:
                 e2 e2Var6 = this.b;
-                e2Var6.P.i4 = null;
+                e2Var6.P.Z3 = null;
                 e2Var6.o0(90, 0);
                 break;
             case 10:
                 e2 e2Var7 = this.b;
                 e2Var7.r0();
-                zi0 zi0Var = e2Var7.O0;
-                if (zi0Var != null) {
-                    zi0Var.h(true);
+                dj0 dj0Var = e2Var7.O0;
+                if (dj0Var != null) {
+                    dj0Var.h(true);
                     e2Var7.O0 = null;
                     break;
                 }

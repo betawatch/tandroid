@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import id.c;
+import ae.d0;
+import hd.i;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
-import zd.c0;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzae extends j implements p {
     Object zza;
@@ -28,14 +28,14 @@ final class zzae extends j implements p {
         this.zzf = list;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         return new zzae(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzae) create((c0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzae) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0034, code lost:
@@ -50,7 +50,7 @@ final class zzae extends j implements p {
     
         if (r5 != r0) goto L9;
      */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -59,7 +59,7 @@ final class zzae extends j implements p {
         a aVar = a.a;
         int i10 = this.zzb;
         if (i10 == 0) {
-            t7.b(obj);
+            a8.b(obj);
             zzhkVar = this.zzc;
             zzar zzarVar = this.zzd;
             String str = this.zze;
@@ -68,12 +68,12 @@ final class zzae extends j implements p {
             obj = zzarVar.zzc(str, this);
         } else {
             if (i10 != 1) {
-                t7.b(obj);
+                a8.b(obj);
                 this.zzf.add((zzat) obj);
                 return i.a;
             }
             zzhkVar = (zzhk) this.zza;
-            t7.b(obj);
+            a8.b(obj);
         }
         this.zza = null;
         this.zzb = 2;

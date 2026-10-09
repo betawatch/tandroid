@@ -1,178 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.Arrays;
+import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class io extends LinearLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final TextView b;
-    public final ArrayList c;
-    public final ArrayList d;
+public final class io extends org.telegram.ui.Cells.d6 {
+    public final /* synthetic */ jo F;
 
-    public io(Activity activity, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity);
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.d = new ArrayList();
-        this.a = d6Var;
-        int dp = AndroidUtilities.dp(18.0f);
-        Paint H = d6Var != null ? d6Var.H("paintChatActionBackground") : null;
-        H = H == null ? org.telegram.ui.ActionBar.i6.S0("paintChatActionBackground") : H;
-        int i11 = org.telegram.ui.ActionBar.i6.a;
-        setBackground(new org.telegram.ui.ActionBar.u5(this, view, dp, H));
-        setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
-        setOrientation(1);
-        if (i10 == 0) {
-            TextView textView = new TextView(activity);
-            this.b = textView;
-            textView.setTextSize(1, 15.0f);
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ic, d6Var));
-            textView.setGravity(1);
-            textView.setMaxWidth(AndroidUtilities.dp(210.0f));
-            arrayList.add(textView);
-            addView(textView, w7.z5.q(-2, -2, 49));
-        } else if (i10 == 1) {
-            TextView textView2 = new TextView(activity);
-            this.b = textView2;
-            textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ic, d6Var));
-            textView2.setGravity(1);
-            textView2.setMaxWidth(AndroidUtilities.dp(210.0f));
-            arrayList.add(textView2);
-            addView(textView2, w7.z5.q(-2, -2, 49));
-        } else {
-            nj0 nj0Var = new nj0(activity);
-            nj0Var.setAutoRepeat(true);
-            nj0Var.f(R.raw.utyan_saved_messages, 120, 120, null);
-            nj0Var.d();
-            addView(nj0Var, w7.z5.t(-2, -2, 49, 0, 2, 0, 0));
-        }
-        TextView textView3 = new TextView(activity);
-        if (i10 == 0) {
-            textView3.setText(LocaleController.getString(R.string.EncryptedDescriptionTitle));
-            textView3.setTextSize(1, 15.0f);
-        } else if (i10 == 1) {
-            textView3.setText(LocaleController.getString(R.string.GroupEmptyTitle2));
-            textView3.setTextSize(1, 15.0f);
-        } else {
-            textView3.setText(LocaleController.getString(R.string.ChatYourSelfTitle));
-            textView3.setTextSize(1, 16.0f);
-            textView3.setTypeface(AndroidUtilities.bold());
-            textView3.setGravity(1);
-        }
-        textView3.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ic, d6Var));
-        arrayList.add(textView3);
-        textView3.setMaxWidth(AndroidUtilities.dp(260.0f));
-        addView(textView3, w7.z5.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
-        for (int i12 = 0; i12 < 4; i12++) {
-            LinearLayout e7 = org.telegram.messenger.q.e(activity, 0);
-            addView(e7, w7.z5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
-            ImageView imageView = new ImageView(activity);
-            int i13 = org.telegram.ui.ActionBar.i6.ic;
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(i13, this.a), PorterDuff.Mode.MULTIPLY));
-            if (i10 == 0) {
-                imageView.setImageResource(R.drawable.ic_lock_white);
-            } else if (i10 == 2) {
-                imageView.setImageResource(R.drawable.list_circle);
-            } else {
-                imageView.setImageResource(R.drawable.groups_overview_check);
-            }
-            this.d.add(imageView);
-            TextView textView4 = new TextView(activity);
-            textView4.setTextSize(1, 15.0f);
-            textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(i13, this.a));
-            this.c.add(textView4);
-            textView4.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            textView4.setMaxWidth(AndroidUtilities.dp(260.0f));
-            if (i12 != 0) {
-                if (i12 != 1) {
-                    if (i12 != 2) {
-                        if (i12 == 3) {
-                            if (i10 == 0) {
-                                textView4.setText(LocaleController.getString(R.string.EncryptedDescription4));
-                            } else if (i10 == 2) {
-                                textView4.setText(LocaleController.getString(R.string.ChatYourSelfDescription4));
-                            } else {
-                                textView4.setText(LocaleController.getString(R.string.GroupDescription4));
-                            }
-                        }
-                    } else if (i10 == 0) {
-                        textView4.setText(LocaleController.getString(R.string.EncryptedDescription3));
-                    } else if (i10 == 2) {
-                        textView4.setText(LocaleController.getString(R.string.ChatYourSelfDescription3));
-                    } else {
-                        textView4.setText(LocaleController.getString(R.string.GroupDescription3));
-                    }
-                } else if (i10 == 0) {
-                    textView4.setText(LocaleController.getString(R.string.EncryptedDescription2));
-                } else if (i10 == 2) {
-                    textView4.setText(LocaleController.getString(R.string.ChatYourSelfDescription2));
-                } else {
-                    textView4.setText(LocaleController.getString(R.string.GroupDescription2));
-                }
-            } else if (i10 == 0) {
-                textView4.setText(LocaleController.getString(R.string.EncryptedDescription1));
-            } else if (i10 == 2) {
-                textView4.setText(LocaleController.getString(R.string.ChatYourSelfDescription1));
-            } else {
-                textView4.setText(LocaleController.getString(R.string.GroupDescription1));
-            }
-            if (LocaleController.isRTL) {
-                e7.addView(textView4, w7.z5.n(-2, -2));
-                if (i10 == 0) {
-                    e7.addView(imageView, w7.z5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
-                } else if (i10 == 2) {
-                    e7.addView(imageView, w7.z5.k(8.0f, 7.0f, 0.0f, 0.0f, -2, -2));
-                } else {
-                    e7.addView(imageView, w7.z5.k(8.0f, 3.0f, 0.0f, 0.0f, -2, -2));
-                }
-            } else {
-                if (i10 == 0) {
-                    e7.addView(imageView, w7.z5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
-                } else if (i10 == 2) {
-                    e7.addView(imageView, w7.z5.k(0.0f, 8.0f, 8.0f, 0.0f, -2, -2));
-                } else {
-                    e7.addView(imageView, w7.z5.k(0.0f, 4.0f, 8.0f, 0.0f, -2, -2));
-                }
-                e7.addView(textView4, w7.z5.n(-2, -2));
-            }
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public io(jo joVar, Context context, int i10, bo boVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i10, boVar, e6Var);
+        this.F = joVar;
     }
 
-    public void setStatusText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.Cells.d6
+    public final boolean e() {
+        lo loVar = this.F.d;
+        fc1 fc1Var = loVar.s;
+        View F = fc1Var.F(this);
+        s4.d1 T = F == null ? null : fc1Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = loVar.M;
+            if (i10 == loVar.J && b10 == (loVar.t0 + i10) - 1) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public void setTextColor(int i10) {
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i12 >= arrayList.size()) {
-                break;
-            }
-            ((TextView) arrayList.get(i12)).setTextColor(i10);
-            i12++;
+    @Override // org.telegram.ui.Cells.d6
+    public final boolean f(org.telegram.ui.Cells.d6 d6Var) {
+        int b10;
+        lo loVar = this.F.d;
+        fc1 fc1Var = loVar.s;
+        View F = fc1Var.F(d6Var);
+        s4.d1 T = F == null ? null : fc1Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
         }
-        while (true) {
-            ArrayList arrayList2 = this.d;
-            if (i11 >= arrayList2.size()) {
+        return loVar.L[b10 - loVar.t0];
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
+        lo loVar = this.F.d;
+        if (loVar.n && c6Var.isFocused() && c6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
                 return;
             }
-            ((ImageView) arrayList2.get(i11)).setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ic, this.a), PorterDuff.Mode.MULTIPLY));
-            i11++;
+            org.telegram.ui.zn.n8(menu, ((org.telegram.ui.zn) loVar.b.f0).h, false, true, true, true);
         }
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void h(org.telegram.ui.Cells.d6 d6Var, boolean z10) {
+        int b10;
+        lo loVar = this.F.d;
+        if (z10 && loVar.c0 && !loVar.b0) {
+            Arrays.fill(loVar.L, false);
+            loVar.s.getChildCount();
+            for (int i10 = loVar.t0; i10 < loVar.t0 + loVar.M; i10++) {
+                s4.d1 K = loVar.s.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.d6) {
+                        ((org.telegram.ui.Cells.d6) view).r.a(false, true);
+                    }
+                }
+            }
+        }
+        super.h(d6Var, z10);
+        fc1 fc1Var = loVar.s;
+        View F = fc1Var.F(d6Var);
+        s4.d1 T = F == null ? null : fc1Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            loVar.L[b10 - loVar.t0] = z10;
+        }
+        loVar.W();
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void i(boolean z10) {
+        lo.P(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void j(org.telegram.ui.Cells.d6 d6Var) {
+        lo.Q(this.F.d, d6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final void k(org.telegram.ui.Cells.c6 c6Var) {
+        this.F.d.b.w1(c6Var, true);
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final boolean l(ArrayList arrayList) {
+        lo loVar = this.F.d;
+        if (!arrayList.isEmpty()) {
+            loVar.s.getClass();
+            int R = RecyclerView.R(this) - loVar.t0;
+            if (R >= 0) {
+                org.telegram.ui.Cells.c6 c6Var = this.d;
+                c6Var.getText().replace(c6Var.getSelectionStart(), c6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < loVar.J) {
+                    for (int length = loVar.K.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = loVar.K;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    loVar.K[i10] = (CharSequence) arrayList.remove(0);
+                    loVar.M++;
+                    i10++;
+                }
+                loVar.k0();
+                loVar.k0 = (loVar.t0 + i10) - 1;
+                loVar.s.setItemAnimator(loVar.v);
+                loVar.r.l();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.d6
+    public final boolean p() {
+        return this.F.d.c0;
     }
 }

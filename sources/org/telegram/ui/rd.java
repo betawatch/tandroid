@@ -1,104 +1,26 @@
 package org.telegram.ui;
 
 import android.view.View;
-import android.widget.EditText;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd implements View.OnFocusChangeListener {
+public final /* synthetic */ class rd implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b;
 
-    public /* synthetic */ rd(Object obj, int i10) {
+    public /* synthetic */ rd(org.telegram.ui.ActionBar.f3 f3Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = f3Var;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                ae aeVar = ((me) this.b).K0;
-                float f7 = z10 ? 1.0f : 0.0f;
-                aeVar.b(f7, f7, true);
+                this.b.dismiss();
                 break;
-            case 1:
-                uy uyVar = (uy) this.b;
-                if (z10) {
-                    uyVar.Y.b(true);
-                    break;
-                }
-                break;
-            case 2:
-                ug0 ug0Var = ((ee0) this.b).W;
-                if (z10) {
-                    ug0Var.c.setEditText((EditText) view);
-                    ug0Var.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 3:
-                org.telegram.ui.Components.ld0 ld0Var = (org.telegram.ui.Components.ld0) this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                ld0Var.b(f10, f10, true);
-                break;
-            case 4:
-                org.telegram.ui.Components.ld0 ld0Var2 = ((ne0) this.b).x;
-                float f11 = z10 ? 1.0f : 0.0f;
-                ld0Var2.b(f11, f11, true);
-                break;
-            case 5:
-                org.telegram.ui.Components.ld0 ld0Var3 = ((ve0) this.b).b;
-                float f12 = z10 ? 1.0f : 0.0f;
-                ld0Var3.b(f12, f12, true);
-                break;
-            case 6:
-                ug0 ug0Var2 = ((ye0) this.b).y;
-                if (z10) {
-                    ug0Var2.c.setEditText((EditText) view);
-                    ug0Var2.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 7:
-                org.telegram.ui.Components.ld0 ld0Var4 = ((jf0) this.b).a;
-                float f13 = z10 ? 1.0f : 0.0f;
-                ld0Var4.b(f13, f13, true);
-                break;
-            case 8:
-                ug0 ug0Var3 = ((xf0) this.b).s0;
-                if (z10) {
-                    ug0Var3.c.setEditText((EditText) view);
-                    ug0Var3.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.Components.ld0 ld0Var5 = ((tg0) this.b).e;
-                float f14 = z10 ? 1.0f : 0.0f;
-                ld0Var5.b(f14, f14, true);
-                break;
-            case 10:
-                org.telegram.ui.Components.ld0 ld0Var6 = ((PasscodeActivity) this.b).f;
-                float f15 = z10 ? 1.0f : 0.0f;
-                ld0Var6.b(f15, f15, true);
-                break;
-            case 11:
-                ud1 ud1Var = (ud1) this.b;
-                if (!z10) {
-                    ud1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
-                    break;
-                } else {
-                    ud1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
-                    break;
-                }
             default:
-                org.telegram.ui.Components.ld0 ld0Var7 = ((TwoStepVerificationActivity) this.b).v;
-                float f16 = z10 ? 1.0f : 0.0f;
-                ld0Var7.b(f16, f16, true);
+                this.b.dismiss();
                 break;
         }
     }

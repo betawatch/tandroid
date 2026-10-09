@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -28,7 +28,7 @@ public abstract class h {
     public static ExecutorService a(String str) {
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new c5.w(str, new AtomicLong(1L)), new ThreadPoolExecutor.DiscardPolicy()));
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        Runtime.getRuntime().addShutdownHook(new Thread(new u(str, unconfigurableExecutorService), "Crashlytics Shutdown Hook for ".concat(str)));
+        Runtime.getRuntime().addShutdownHook(new Thread(new t(str, unconfigurableExecutorService), "Crashlytics Shutdown Hook for ".concat(str)));
         return unconfigurableExecutorService;
     }
 
@@ -107,7 +107,7 @@ public abstract class h {
     public static boolean h() {
         boolean g10 = g();
         String str = Build.TAGS;
-        if ((g10 || str == null || !str.contains("test-keys")) && !sa.e.u("/system/app/Superuser.apk")) {
+        if ((g10 || str == null || !str.contains("test-keys")) && !sc.v.u("/system/app/Superuser.apk")) {
             return !g10 && new File("/system/xbin/su").exists();
         }
         return true;

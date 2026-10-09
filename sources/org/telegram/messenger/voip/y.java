@@ -1,34 +1,30 @@
 package org.telegram.messenger.voip;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ ArrayList e;
-    public final /* synthetic */ String f;
+    public final /* synthetic */ HashSet c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ y(VoIPService voIPService, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, String str, int i10) {
+    public /* synthetic */ y(VoIPService voIPService, HashSet hashSet, String str, int i10) {
         this.a = i10;
         this.b = voIPService;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.e = arrayList3;
-        this.f = str;
+        this.c = hashSet;
+        this.d = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$startConferenceGroupCall$47(this.c, this.d, this.e, this.f);
+                this.b.lambda$startConferenceGroupCall$42(this.c, this.d);
                 break;
             default:
-                this.b.lambda$startConferenceGroupCall$39(this.c, this.d, this.e, this.f);
+                this.b.lambda$startConferenceGroupCall$50(this.c, this.d);
                 break;
         }
     }

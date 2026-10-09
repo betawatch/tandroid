@@ -2,9 +2,9 @@ package r2;
 
 import android.os.HandlerThread;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements d9.i {
+public final /* synthetic */ class b implements d9.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -13,7 +13,7 @@ public final /* synthetic */ class b implements d9.i {
         this.b = i10;
     }
 
-    @Override // d9.i
+    @Override // d9.j
     public final Object get() {
         switch (this.a) {
             case 0:

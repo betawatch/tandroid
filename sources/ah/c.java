@@ -5,20 +5,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
-import li.o;
-import li.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
     public int b;
     public int c;
-    public pe.b d;
-    public pe.b e;
-    public hh.k f;
+    public qe.b d;
+    public qe.b e;
+    public hh.j f;
     public ViewGroup g;
-    public p h;
+    public li.e h;
     public boolean i;
 
     public c(fh.a aVar) {
@@ -34,36 +32,36 @@ public final class c {
     }
 
     public final ch.d c(View view, dh.a aVar, boolean z10) {
-        ch.d b10 = this.a.b();
-        if (this.i && Build.VERSION.SDK_INT >= 33 && (b10 instanceof ch.e)) {
-            ch.e eVar = (ch.e) b10;
-            eVar.Q = new j(eVar.L);
+        ch.d l4 = this.a.l();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (l4 instanceof ch.e)) {
+            ch.e eVar = (ch.e) l4;
+            eVar.P = new i(eVar.K);
         }
-        b10.w(aVar);
+        l4.o(aVar);
         int i10 = this.b;
         int i11 = this.c;
-        b10.j = i10;
-        b10.k = i11;
-        pe.b bVar = this.e;
+        l4.h = i10;
+        l4.i = i11;
+        qe.b bVar = this.e;
         if (bVar != null && view != null) {
             bVar.add(view);
         }
-        p pVar = this.h;
-        if (pVar != null && view != null) {
-            pVar.c.add(new o(view, b10));
+        li.e eVar2 = this.h;
+        if (eVar2 != null && view != null) {
+            eVar2.d.add(new li.d(view, l4));
         }
         if (this.f != null && this.g != null && view != null) {
-            this.f.d(view, this.g, new b(0, b10, new WeakReference(view)), z10);
+            this.f.d(view, this.g, new b(0, l4, new WeakReference(view)), z10);
         }
-        pe.b bVar2 = this.d;
+        qe.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.add(b10);
+            bVar2.add(l4);
         }
-        return b10;
+        return l4;
     }
 
     public final void d() {
-        pe.b bVar = this.e;
+        qe.b bVar = this.e;
         if (bVar != null) {
             Iterator it = bVar.iterator();
             while (it.hasNext()) {
@@ -72,16 +70,12 @@ public final class c {
         }
     }
 
-    public final void e(p pVar) {
-        this.h = pVar;
-    }
-
-    public final void f(pe.b bVar) {
+    public final void e(qe.b bVar) {
         this.e = bVar;
     }
 
-    public final void g(hh.k kVar, ViewGroup viewGroup) {
-        this.f = kVar;
+    public final void f(hh.j jVar, ViewGroup viewGroup) {
+        this.f = jVar;
         this.g = viewGroup;
     }
 }

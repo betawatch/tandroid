@@ -1,126 +1,65 @@
 package ci;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.app.Activity;
+import android.graphics.Matrix;
 import android.view.View;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.ff0;
-import org.telegram.ui.h40;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class zb extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class zb extends b7 {
+    public final /* synthetic */ lc C0;
 
-    public /* synthetic */ zb(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb(lc lcVar, Activity activity, org.telegram.ui.Components.ma maVar, a7 a7Var) {
+        super(activity, maVar, a7Var);
+        this.C0 = lcVar;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        GroupCallMessage groupCallMessage;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        switch (this.a) {
-            case 0:
-                ((ac) this.b).S1.T();
-                break;
-            case 1:
-                lh.c cVar = (lh.c) this.b;
-                lh.a aVar = cVar.I;
-                if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((h40) aVar).a(groupCallMessage);
-                    break;
+    @Override // ci.b7
+    public final void b() {
+        l8 l8Var = this.d;
+        if (l8Var != null && !l8Var.u) {
+            if (this.n != null) {
+                Matrix matrix = l8Var.n0;
+                Matrix matrix2 = this.W;
+                matrix2.set(matrix);
+                float width = 1.0f / getWidth();
+                int i10 = this.d.k0;
+                if (i10 < 0) {
+                    i10 = this.f;
                 }
-                break;
-            case 2:
-                org.telegram.ui.Cells.y1 y1Var = (org.telegram.ui.Cells.y1) this.b;
-                nf.f.s(y1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.ra) y1Var.M).e.r);
-                break;
-            case 3:
-                ((org.telegram.ui.wb) this.b).finishFragment();
-                break;
-            case 4:
-                ((org.telegram.ui.r1) this.b).run();
-                break;
-            case 5:
-                ((org.telegram.ui.Components.yc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-            case 6:
-                ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
-                break;
-            case 7:
-                ((ff0) this.b).q(false);
-                break;
-            case 8:
-                rg.k0 k0Var = ((rg.d0) this.b).c;
-                org.telegram.ui.ActionBar.n2 n2Var = k0Var.n;
-                long j3 = k0Var.a0;
-                d6Var = ((org.telegram.ui.ActionBar.f3) k0Var).resourcesProvider;
-                tg.m.m(n2Var, d6Var, j3, null);
-                break;
-        }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                break;
-            case 1:
-                break;
-            case 2:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 3:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 4:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 5:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 6:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 7:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 8:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                int i10 = org.telegram.ui.ActionBar.i6.gc;
-                d6Var = ((org.telegram.ui.ActionBar.f3) ((rg.d0) this.b).c).resourcesProvider;
-                textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                Integer num = ((rg.m1) this.b).u0;
-                if (num != null) {
-                    textPaint.setColor(num.intValue());
-                    break;
+                float f7 = width * i10;
+                float height = 1.0f / getHeight();
+                int i11 = this.d.l0;
+                if (i11 < 0) {
+                    i11 = this.h;
                 }
-                break;
+                matrix2.preScale(f7, height * i11);
+                matrix2.postScale(getWidth() / this.d.i0, getHeight() / this.d.j0);
+                Matrix matrix3 = this.j0;
+                matrix3.reset();
+                this.i0.invert(matrix3);
+                this.n.setTransform(matrix2);
+                this.n.invalidate();
+            }
+            invalidate();
         }
+        this.C0.i();
     }
 
-    private final void a(View view) {
-    }
-
-    private final void b(TextPaint textPaint) {
+    @Override // ci.b7
+    public final void i() {
+        nb nbVar;
+        lc lcVar = this.C0;
+        l8 l8Var = lcVar.K1;
+        if (l8Var == null || !l8Var.u || !l8Var.K || (nbVar = lcVar.v1) == null || nbVar.R0 == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < lcVar.v1.R0.getChildCount(); i10++) {
+            View childAt = lcVar.v1.R0.getChildAt(i10);
+            if (childAt instanceof qg.e1) {
+                ((qg.e1) childAt).s();
+            }
+        }
     }
 }

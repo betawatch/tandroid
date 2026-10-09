@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g2 implements o2 {
     public final l0 a;
@@ -17,7 +17,7 @@ public final class g2 implements o2 {
     @Override // com.google.android.gms.internal.vision.o2
     public final boolean a(Object obj) {
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 
@@ -26,14 +26,14 @@ public final class g2 implements o2 {
         this.b.getClass();
         ((f1) obj).zzb.e = false;
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 
     @Override // com.google.android.gms.internal.vision.o2
     public final void c(Object obj, y1 y1Var) {
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 
@@ -49,12 +49,12 @@ public final class g2 implements o2 {
     }
 
     @Override // com.google.android.gms.internal.vision.o2
-    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.m mVar) {
+    public final void f(Object obj, byte[] bArr, int i10, int i11, com.google.android.gms.internal.clearcut.l lVar) {
         f1 f1Var = (f1) obj;
         if (f1Var.zzb == r2.f) {
             f1Var.zzb = r2.b();
         }
-        throw a4.a.j(obj);
+        throw a1.g.j(obj);
     }
 
     @Override // com.google.android.gms.internal.vision.o2
@@ -79,8 +79,7 @@ public final class g2 implements o2 {
         int i11 = 0;
         for (int i12 = 0; i12 < r2Var.a; i12++) {
             int i13 = r2Var.b[i12] >>> 3;
-            q0 q0Var = (q0) r2Var.c[i12];
-            i11 += r0.J(3, q0Var) + r0.S(2, i13) + (r0.T(8) << 1);
+            i11 += r0.J(3, (q0) r2Var.c[i12]) + r0.S(2, i13) + (r0.T(8) << 1);
         }
         r2Var.d = i11;
         return i11;

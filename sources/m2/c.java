@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements t2.a {
     public final long a;
@@ -19,13 +19,13 @@ public final class c implements t2.a {
     public final long f;
     public final long g;
     public final long h;
-    public final lf.g i;
+    public final c5.a i;
     public final d0 j;
     public final Uri k;
     public final i l;
     public final List m;
 
-    public c(long j3, long j10, long j11, boolean z10, long j12, long j13, long j14, long j15, i iVar, lf.g gVar, d0 d0Var, Uri uri, ArrayList arrayList) {
+    public c(long j3, long j10, long j11, boolean z10, long j12, long j13, long j14, long j15, i iVar, c5.a aVar, d0 d0Var, Uri uri, ArrayList arrayList) {
         this.a = j3;
         this.b = j10;
         this.c = j11;
@@ -35,7 +35,7 @@ public final class c implements t2.a {
         this.g = j14;
         this.h = j15;
         this.l = iVar;
-        this.i = gVar;
+        this.i = aVar;
         this.k = uri;
         this.j = d0Var;
         this.m = arrayList;
@@ -100,18 +100,23 @@ public final class c implements t2.a {
     }
 
     public final long c(int i10) {
+        long j3;
+        long j10;
         List list = this.m;
-        if (i10 != list.size() - 1) {
-            return ((h) list.get(i10 + 1)).b - ((h) list.get(i10)).b;
+        if (i10 == list.size() - 1) {
+            j3 = this.b;
+            if (j3 == -9223372036854775807L) {
+                return -9223372036854775807L;
+            }
+            j10 = ((h) list.get(i10)).b;
+        } else {
+            j3 = ((h) list.get(i10 + 1)).b;
+            j10 = ((h) list.get(i10)).b;
         }
-        long j3 = this.b;
-        if (j3 == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        return j3 - ((h) list.get(i10)).b;
+        return j3 - j10;
     }
 
     public final long d(int i10) {
-        return e2.d0.Q(c(i10));
+        return e2.d0.P(c(i10));
     }
 }

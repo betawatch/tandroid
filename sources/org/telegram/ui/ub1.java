@@ -1,15 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ub1 extends org.telegram.ui.Cells.k0 {
-    public final /* synthetic */ zb1 e;
+public final /* synthetic */ class ub1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ub1(zb1 zb1Var, Context context) {
-        super(context);
-        this.e = zb1Var;
+    public /* synthetic */ ub1(ThemeActivity themeActivity, int i10) {
+        this.a = i10;
+        this.b = themeActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemeActivity themeActivity = this.b;
+                themeActivity.b.e1(new qb1(themeActivity, 0), 700, true);
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.i6.x, org.telegram.ui.ActionBar.i6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
+                    }
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new n31(14, themeActivity2, str));
+                break;
+        }
     }
 }

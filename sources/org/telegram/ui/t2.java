@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class t2 extends HorizontalScrollView {
     public final /* synthetic */ t70 a;
@@ -44,11 +44,11 @@ public final class t2 extends HorizontalScrollView {
             t70Var.f = null;
         }
         this.b.a();
-        org.telegram.ui.Cells.q9 q9Var = ((i4) t70Var).O0;
-        if (q9Var == null || !q9Var.y()) {
+        org.telegram.ui.Cells.o9 o9Var = ((i4) t70Var).O0;
+        if (o9Var == null || !o9Var.x()) {
             return;
         }
-        q9Var.x();
+        o9Var.w();
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View

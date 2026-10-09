@@ -1,11 +1,11 @@
 package g6;
 
-import ai.q4;
+import ai.r4;
 import android.os.Looper;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o {
     public static final Object i = new Object();
@@ -13,10 +13,10 @@ public final class o {
     public final long b;
     public final String c;
     public n g;
-    public q4 h;
+    public r4 h;
     public long e = -1;
     public long f = 0;
-    public final c0 d = new c0(Looper.getMainLooper(), 0);
+    public final a0 d = new a0(Looper.getMainLooper(), 0);
 
     public o(long j3, String str) {
         this.b = j3;
@@ -39,17 +39,17 @@ public final class o {
             this.f = currentTimeMillis;
         }
         if (nVar2 != null) {
-            nVar2.q(this.c, j10, j11, currentTimeMillis);
+            nVar2.n(this.c, j10, j11, currentTimeMillis);
         }
         synchronized (obj) {
             try {
-                q4 q4Var = this.h;
-                if (q4Var != null) {
-                    this.d.removeCallbacks(q4Var);
+                r4 r4Var = this.h;
+                if (r4Var != null) {
+                    this.d.removeCallbacks(r4Var);
                 }
-                q4 q4Var2 = new q4(this, 20);
-                this.h = q4Var2;
-                this.d.postDelayed(q4Var2, this.b);
+                r4 r4Var2 = new r4(this, 20);
+                this.h = r4Var2;
+                this.d.postDelayed(r4Var2, this.b);
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -98,14 +98,14 @@ public final class o {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
                     n6.l.h(nVar);
-                    nVar.A(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    nVar.w(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;
                 synchronized (obj2) {
-                    q4 q4Var = this.h;
-                    if (q4Var != null) {
-                        this.d.removeCallbacks(q4Var);
+                    r4 r4Var = this.h;
+                    if (r4Var != null) {
+                        this.d.removeCallbacks(r4Var);
                         this.h = null;
                     }
                 }

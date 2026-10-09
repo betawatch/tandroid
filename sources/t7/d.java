@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
-import w7.m7;
+import w7.o7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d extends a implements List, RandomAccess, j$.util.List {
     public static final b b = new b(g.e, 0);
@@ -43,7 +43,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
             int size = size();
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
-                    while (i10 < size) {
+                    for (0; i10 < size; i10 + 1) {
                         Object obj2 = get(i10);
                         Object obj3 = list.get(i10);
                         i10 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i10 + 1 : 0;
@@ -125,7 +125,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: q */
     public d subList(int i10, int i11) {
-        m7.c(i10, i11, size());
+        o7.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? g.e : new c(this, i10, i12);
     }
@@ -133,7 +133,7 @@ public abstract class d extends a implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: r, reason: merged with bridge method [inline-methods] */
     public final b listIterator(int i10) {
-        m7.b(i10, size());
+        o7.b(i10, size());
         return isEmpty() ? b : new b(this, i10);
     }
 

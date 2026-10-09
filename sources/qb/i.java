@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class i {
     public final com.google.firebase.messaging.m a;
@@ -34,7 +34,7 @@ public abstract class i {
         }
         final CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(cancellationTokenSource.getToken());
-        this.a.w(new Runnable() { // from class: qb.q
+        this.a.z(new Runnable() { // from class: qb.q
             @Override // java.lang.Runnable
             public final void run() {
                 Callable callable2 = callable;
@@ -100,7 +100,7 @@ public abstract class i {
     public final void d(Executor executor) {
         n6.l.k(this.b.get() > 0);
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.w(new i9.s(26, this, taskCompletionSource), executor);
+        this.a.z(new i9.s(27, this, taskCompletionSource), executor);
         taskCompletionSource.getTask();
     }
 }

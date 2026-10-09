@@ -1,22 +1,12 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
-        kotlin.jvm.internal.i.e(pVar, "<this>");
-        if (pVar instanceof kd.a) {
-            return ((kd.a) pVar).create(cVar, cVar2);
+    public static boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
         }
-        id.h context = cVar2.getContext();
-        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
-    }
-
-    public static id.c b(id.c cVar) {
-        id.c intercepted;
-        kotlin.jvm.internal.i.e(cVar, "<this>");
-        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
-        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
+        return true;
     }
 }

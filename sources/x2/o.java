@@ -9,7 +9,7 @@ import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o extends n {
     public final int E;
@@ -32,22 +32,22 @@ public final class o extends n {
     public final int y;
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x012d  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0118 A[EDGE_INSN: B:142:0x0118->B:80:0x0118 BREAK  A[LOOP:1: B:72:0x00fd->B:140:0x0115], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:146:0x00bd A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0113 A[EDGE_INSN: B:142:0x0113->B:80:0x0113 BREAK  A[LOOP:1: B:72:0x00f8->B:140:0x0110], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x00bc A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00cf A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00e2  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00aa  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00cc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x0192  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -65,7 +65,7 @@ public final class o extends n {
         int i18;
         boolean z13;
         i iVar2;
-        char c10;
+        boolean z14;
         int i19;
         b2.s sVar2;
         int i20;
@@ -77,10 +77,10 @@ public final class o extends n {
         int i24;
         int i25;
         this.f = iVar;
-        boolean z14 = iVar.p0;
+        boolean z15 = iVar.p0;
         i0 i0Var = iVar.m;
         i0 i0Var2 = iVar.n;
-        int i26 = z14 ? 24 : 16;
+        int i26 = z15 ? 24 : 16;
         int i27 = 0;
         this.H = false;
         if (z10 && (((i23 = (sVar3 = this.d).y) == -1 || i23 <= iVar.a) && ((i24 = sVar3.z) == -1 || i24 <= iVar.b))) {
@@ -105,8 +105,8 @@ public final class o extends n {
                             size = i0Var2.size();
                             i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                             if (i14 < size) {
-                                i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                                 i16 = 0;
+                                i14 = Integer.MAX_VALUE;
                                 break;
                             } else {
                                 i16 = p.d(this.d, (String) i0Var2.get(i14), false);
@@ -122,7 +122,7 @@ public final class o extends n {
                         int i29 = this.d.f;
                         int i30 = iVar.o;
                         y0 y0Var = p.l;
-                        this.E = (i29 == 0 && i29 == i30) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i29 & i30);
+                        this.E = (i29 == 0 && i29 == i30) ? Integer.MAX_VALUE : Integer.bitCount(i29 & i30);
                         int i31 = this.d.f;
                         this.F = (i31 == 0 && (i31 & 1) == 0) ? false : true;
                         this.G = p.d(this.d, str, p.g(str) != null);
@@ -149,54 +149,54 @@ public final class o extends n {
                             switch (str2.hashCode()) {
                                 case -1851077871:
                                     if (str2.equals("video/dolby-vision")) {
-                                        c10 = 0;
+                                        z14 = false;
                                         break;
                                     }
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                                 case -1662735862:
                                     if (str2.equals("video/av01")) {
-                                        c10 = 1;
+                                        z14 = true;
                                         break;
                                     }
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                                 case -1662541442:
                                     if (str2.equals("video/hevc")) {
-                                        c10 = 2;
+                                        z14 = 2;
                                         break;
                                     }
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                                 case 1331836730:
                                     if (str2.equals(MediaController.VIDEO_MIME_TYPE)) {
-                                        c10 = 3;
+                                        z14 = 3;
                                         break;
                                     }
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                                 case 1599127257:
                                     if (str2.equals("video/x-vnd.on2.vp9")) {
-                                        c10 = 4;
+                                        z14 = 4;
                                         break;
                                     }
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                                 default:
-                                    c10 = 65535;
+                                    z14 = -1;
                                     break;
                             }
-                            switch (c10) {
-                                case 0:
+                            switch (z14) {
+                                case false:
                                     i18 = 5;
                                     break;
-                                case 2:
+                                case true:
                                     i18 = 3;
                                     break;
-                                case 3:
+                                case true:
                                     i18 = 1;
                                     break;
-                                case 4:
+                                case true:
                                     i18 = 2;
                                     break;
                             }
@@ -241,7 +241,7 @@ public final class o extends n {
                 int i292 = this.d.f;
                 int i302 = iVar.o;
                 y0 y0Var2 = p.l;
-                this.E = (i292 == 0 && i292 == i302) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i292 & i302);
+                this.E = (i292 == 0 && i292 == i302) ? Integer.MAX_VALUE : Integer.bitCount(i292 & i302);
                 int i312 = this.d.f;
                 this.F = (i312 == 0 && (i312 & 1) == 0) ? false : true;
                 this.G = p.d(this.d, str, p.g(str) != null);
@@ -295,7 +295,7 @@ public final class o extends n {
             int i2922 = this.d.f;
             int i3022 = iVar.o;
             y0 y0Var22 = p.l;
-            this.E = (i2922 == 0 && i2922 == i3022) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i2922 & i3022);
+            this.E = (i2922 == 0 && i2922 == i3022) ? Integer.MAX_VALUE : Integer.bitCount(i2922 & i3022);
             int i3122 = this.d.f;
             this.F = (i3122 == 0 && (i3122 & 1) == 0) ? false : true;
             this.G = p.d(this.d, str, p.g(str) != null);
@@ -342,7 +342,7 @@ public final class o extends n {
         int i29222 = this.d.f;
         int i30222 = iVar.o;
         y0 y0Var222 = p.l;
-        this.E = (i29222 == 0 && i29222 == i30222) ? ConnectionsManager.DEFAULT_DATACENTER_ID : Integer.bitCount(i29222 & i30222);
+        this.E = (i29222 == 0 && i29222 == i30222) ? Integer.MAX_VALUE : Integer.bitCount(i29222 & i30222);
         int i31222 = this.d.f;
         this.F = (i31222 == 0 && (i31222 & 1) == 0) ? false : true;
         this.G = p.d(this.d, str, p.g(str) != null);

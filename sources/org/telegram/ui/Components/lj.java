@@ -1,57 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.pd1;
-import org.telegram.ui.yi1;
-import org.telegram.ui.zi1;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lj extends org.telegram.ui.Cells.eb {
-    public final /* synthetic */ int w;
-    public final /* synthetic */ yl0 x;
+public final class lj extends s4.e0 {
+    public final /* synthetic */ bi.l r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lj(yl0 yl0Var, Context context, int i10) {
-        super(context, 5);
-        this.w = i10;
-        this.x = yl0Var;
+    public lj(bi.l lVar, Context context) {
+        super(context);
+        this.r = lVar;
     }
 
-    @Override // org.telegram.ui.Cells.eb
-    public final void a(int i10, Object obj) {
-        switch (this.w) {
-            case 0:
-                q0.a aVar = ((mj) ((ab) this.x).f).x;
-                if (aVar != null) {
-                    aVar.accept(obj);
-                    break;
-                }
-                break;
-            case 1:
-                WallpapersListActivity.r0(((yi1) this.x).d, this, obj, i10);
-                break;
-            default:
-                ((zi1) this.x).E.presentFragment(new pd1(obj, null, true));
-                break;
-        }
+    @Override // s4.e0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.q.A(7.0f, ((nj) this.r.R).n.getPaddingTop(), super.k(i10, view));
     }
 
-    @Override // org.telegram.ui.Cells.eb
-    public boolean b(Object obj, int i10) {
-        switch (this.w) {
-            case 1:
-                return WallpapersListActivity.s0(((yi1) this.x).d, this, obj, i10);
-            default:
-                return super.b(obj, i10);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lj(ab abVar, Context context) {
-        super(context, 1);
-        this.w = 0;
-        this.x = abVar;
+    @Override // s4.e0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

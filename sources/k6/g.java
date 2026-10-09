@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -28,9 +28,9 @@ public abstract class g {
         try {
             if (!c) {
                 try {
-                    PackageInfo b10 = w6.b.a(context).b(64, "com.google.android.gms");
-                    h.b(context);
-                    if (b10 == null || h.d(b10, false) || !h.d(b10, true)) {
+                    PackageInfo d10 = w6.b.a(context).d(64, "com.google.android.gms");
+                    h.c(context);
+                    if (d10 == null || h.f(d10, false) || !h.f(d10, true)) {
                         b = false;
                     } else {
                         b = true;
@@ -48,12 +48,12 @@ public abstract class g {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:100:0x00d7  */
     /* JADX WARN: Removed duplicated region for block: B:52:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x00e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -114,13 +114,13 @@ public abstract class g {
                         }
                     }
                     packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-                    h.b(context);
-                    if (h.d(packageInfo2, true)) {
+                    h.c(context);
+                    if (h.f(packageInfo2, true)) {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
                         if (z10) {
                             n6.l.h(packageInfo);
-                            if (!h.d(packageInfo, true)) {
+                            if (!h.f(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }
                         }
@@ -147,8 +147,8 @@ public abstract class g {
                 }
             }
             packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-            h.b(context);
-            if (h.d(packageInfo2, true)) {
+            h.c(context);
+            if (h.f(packageInfo2, true)) {
             }
             return 9;
         } catch (PackageManager.NameNotFoundException unused3) {

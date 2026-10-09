@@ -1,44 +1,48 @@
 package f0;
 
-import android.net.Uri;
-import androidx.core.content.FileProvider;
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
+import android.content.LocusId;
+import android.os.Build;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
-    public final HashMap b = new HashMap();
+    public final LocusId b;
 
     public f(String str) {
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("id cannot be empty");
+        }
         this.a = str;
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.b = e.a(str);
+        } else {
+            this.b = null;
+        }
     }
 
-    public final File a(Uri uri) {
-        String encodedPath = uri.getEncodedPath();
-        int indexOf = encodedPath.indexOf(47, 1);
-        if (indexOf == -1) {
-            throw new IllegalArgumentException("Unable to find path from root: " + uri);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        String decode = Uri.decode(encodedPath.substring(1, indexOf));
-        String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
-        File file = (File) this.b.get(decode);
-        if (file == null) {
-            throw new IllegalArgumentException("Unable to find configured root for " + uri);
+        if (obj == null || f.class != obj.getClass()) {
+            return false;
         }
-        File file2 = new File(file, decode2);
-        try {
-            File canonicalFile = file2.getCanonicalFile();
-            String path = canonicalFile.getPath();
-            String path2 = file.getPath();
-            if (FileProvider.a(path).startsWith(FileProvider.a(path2) + '/')) {
-                return canonicalFile;
-            }
-            throw new SecurityException("Resolved path jumped beyond configured root");
-        } catch (IOException unused) {
-            throw new IllegalArgumentException("Failed to resolve canonical path for " + file2);
-        }
+        String str = ((f) obj).a;
+        String str2 = this.a;
+        return str2 == null ? str == null : str2.equals(str);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        return 31 + (str == null ? 0 : str.hashCode());
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("LocusIdCompat[");
+        sb2.append(this.a.length() + "_chars");
+        sb2.append("]");
+        return sb2.toString();
     }
 }

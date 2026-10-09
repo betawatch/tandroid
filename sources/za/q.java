@@ -1,85 +1,43 @@
 package za;
 
-import android.app.ActivityManager;
-import android.app.Application;
-import android.content.Context;
-import android.os.Build;
-import android.os.Process;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class q {
-    public static ArrayList a(Context context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        int i10 = context.getApplicationInfo().uid;
-        String str = context.getApplicationInfo().processName;
-        Object systemService = context.getSystemService("activity");
-        ActivityManager activityManager = systemService instanceof ActivityManager ? (ActivityManager) systemService : null;
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager != null ? activityManager.getRunningAppProcesses() : null;
-        if (runningAppProcesses == null) {
-            runningAppProcesses = hd.o.a;
-        }
-        ArrayList f7 = hd.g.f(runningAppProcesses);
-        ArrayList arrayList = new ArrayList();
-        int size = f7.size();
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = f7.get(i12);
-            i12++;
-            if (((ActivityManager.RunningAppProcessInfo) obj).uid == i10) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList arrayList2 = new ArrayList(hd.i.d(arrayList));
-        int size2 = arrayList.size();
-        while (i11 < size2) {
-            Object obj2 = arrayList.get(i11);
-            i11++;
-            ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
-            String str2 = runningAppProcessInfo.processName;
-            kotlin.jvm.internal.i.d(str2, "runningAppProcessInfo.processName");
-            arrayList2.add(new p(str2, runningAppProcessInfo.pid, runningAppProcessInfo.importance, kotlin.jvm.internal.i.a(runningAppProcessInfo.processName, str)));
-        }
-        return arrayList2;
+public final class q {
+    public final String a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+
+    public q(String str, int i10, int i11, boolean z10) {
+        this.a = str;
+        this.b = i10;
+        this.c = i11;
+        this.d = z10;
     }
 
-    public static p b(Context context) {
-        Object obj;
-        kotlin.jvm.internal.i.e(context, "context");
-        int myPid = Process.myPid();
-        ArrayList a2 = a(context);
-        int size = a2.size();
-        int i10 = 0;
-        while (true) {
-            if (i10 >= size) {
-                obj = null;
-                break;
-            }
-            obj = a2.get(i10);
-            i10++;
-            if (((p) obj).b == myPid) {
-                break;
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        p pVar = (p) obj;
-        return pVar == null ? new p(c(), myPid, 0, false) : pVar;
+        if (!(obj instanceof q)) {
+            return false;
+        }
+        q qVar = (q) obj;
+        return kotlin.jvm.internal.i.a(this.a, qVar.a) && this.b == qVar.b && this.c == qVar.c && this.d == qVar.d;
     }
 
-    public static String c() {
-        String processName;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 33) {
-            String myProcessName = Process.myProcessName();
-            kotlin.jvm.internal.i.d(myProcessName, "myProcessName()");
-            return myProcessName;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final int hashCode() {
+        int hashCode = ((((this.a.hashCode() * 31) + this.b) * 31) + this.c) * 31;
+        boolean z10 = this.d;
+        int i10 = z10;
+        if (z10 != 0) {
+            i10 = 1;
         }
-        if (i10 >= 28 && (processName = Application.getProcessName()) != null) {
-            return processName;
-        }
-        String a2 = u6.d.a();
-        return a2 != null ? a2 : "";
+        return hashCode + i10;
+    }
+
+    public final String toString() {
+        return "ProcessDetails(processName=" + this.a + ", pid=" + this.b + ", importance=" + this.c + ", isDefaultProcess=" + this.d + ')';
     }
 }

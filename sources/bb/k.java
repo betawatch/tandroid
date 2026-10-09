@@ -1,43 +1,43 @@
 package bb;
 
-import rd.p;
-import v7.t7;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class k extends kd.j implements p {
+public final class k extends ld.j implements p {
     public /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ n1.d c;
     public final /* synthetic */ l d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(Object obj, n1.d dVar, l lVar, id.c cVar) {
+    public k(Object obj, n1.d dVar, l lVar, jd.c cVar) {
         super(2, cVar);
         this.b = obj;
         this.c = dVar;
         this.d = lVar;
     }
 
-    @Override // kd.a
-    public final id.c create(Object obj, id.c cVar) {
+    @Override // ld.a
+    public final jd.c create(Object obj, jd.c cVar) {
         k kVar = new k(this.b, this.c, this.d, cVar);
         kVar.a = obj;
         return kVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final Object invoke(Object obj, Object obj2) {
-        k kVar = (k) create((n1.b) obj, (id.c) obj2);
-        gd.i iVar = gd.i.a;
+        k kVar = (k) create((n1.b) obj, (jd.c) obj2);
+        hd.i iVar = hd.i.a;
         kVar.invokeSuspend(iVar);
         return iVar;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
-        t7.b(obj);
+        kd.a aVar = kd.a.a;
+        a8.b(obj);
         n1.b bVar = (n1.b) this.a;
         n1.d key = this.c;
         Object obj2 = this.b;
@@ -54,6 +54,6 @@ public final class k extends kd.j implements p {
             bVar.a.remove(key);
         }
         l.a(this.d, bVar);
-        return gd.i.a;
+        return hd.i.a;
     }
 }

@@ -1,33 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatMessageSharedResources;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mc0 extends org.telegram.ui.ActionBar.i5 {
-    public final Paint M0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 N0;
+public final class mc0 extends org.telegram.ui.Cells.u1 {
+    public final /* synthetic */ oc0 Ge;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mc0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.N0 = d6Var;
-        this.M0 = new Paint(1);
+    public mc0(oc0 oc0Var, Context context, int i10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i10, false, chatMessageSharedResources, e6Var);
+        this.Ge = oc0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.K5, this.N0);
-        Paint paint = this.M0;
-        paint.setColor(v02);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    @Override // org.telegram.ui.Cells.u1
+    public final void X3(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, boolean z10, boolean z11, boolean z12, boolean z13) {
+        super.X3(messageObject, groupedMessages, z10, z11, z12, z13);
+        pc0.b(this.Ge.c, this);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, org.telegram.ui.Cells.a0, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.Ge.c.f.invalidate();
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        pc0.b(this.Ge.c, this);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        super.invalidate(i10, i11, i12, i13);
+        this.Ge.c.f.invalidate();
     }
 }

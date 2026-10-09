@@ -12,14 +12,14 @@ import android.graphics.Rect;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.bv;
 import org.telegram.ui.cv;
-import org.telegram.ui.dv;
-import org.telegram.ui.fv;
-import org.telegram.ui.yn;
+import org.telegram.ui.ev;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -41,11 +41,11 @@ public final /* synthetic */ class v7 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.rc rcVar;
+        org.telegram.ui.Components.tc tcVar;
         int i10;
         int i11;
         int i12;
-        kj0 kj0Var;
+        ck0 ck0Var;
         int i13 = this.a;
         boolean z10 = this.b;
         int i14 = this.d;
@@ -60,32 +60,32 @@ public final /* synthetic */ class v7 implements Runnable {
                 ((MediaDataController) obj3).lambda$toggleStickerSets$118(this.c, (TLObject) obj2, (org.telegram.ui.ActionBar.n2) obj, this.b, this.d);
                 break;
             case 1:
-                ((SendMessagesHelper) obj3).lambda$performSendMessageRequest$99(this.b, (TLRPC.Message) obj2, this.c, (ArrayList) obj, this.d);
+                ((SendMessagesHelper) obj3).lambda$performSendMessageRequest$102(this.b, (TLRPC.Message) obj2, this.c, (ArrayList) obj, this.d);
                 break;
             case 2:
                 ArrayList arrayList = (ArrayList) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
-                yn ynVar = ((org.telegram.ui.jl) obj3).b;
+                zn znVar = ((org.telegram.ui.ol) obj3).b;
                 if (z10) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-                    MessagesController.getNotificationsSettings(i10).edit().remove("pin_" + ynVar.R5).commit();
-                    ynVar.xc(0, true);
-                    rcVar = null;
+                    i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+                    MessagesController.getNotificationsSettings(i10).edit().remove("pin_" + znVar.T5).commit();
+                    znVar.Cc(0, true);
+                    tcVar = null;
                 } else {
-                    rcVar = null;
-                    ynVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(ynVar.R5), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i15), Boolean.valueOf(ynVar.Q4));
+                    tcVar = null;
+                    znVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(znVar.T5), arrayList, Boolean.TRUE, arrayList2, null, 0, Integer.valueOf(i15), Boolean.valueOf(znVar.S4));
                 }
-                if (i14 == ynVar.A3) {
-                    ynVar.y3 = rcVar;
+                if (i14 == znVar.C3) {
+                    znVar.A3 = tcVar;
                     break;
                 }
                 break;
             case 3:
-                org.telegram.ui.Components.pa paVar = (org.telegram.ui.Components.pa) obj3;
+                org.telegram.ui.Components.ra raVar = (org.telegram.ui.Components.ra) obj3;
                 Bitmap bitmap = (Bitmap) obj2;
                 String str = (String) obj;
-                Paint paint = paVar.c;
-                int i18 = paVar.d;
+                Paint paint = raVar.c;
+                int i18 = raVar.d;
                 if (bitmap != null && !bitmap.isRecycled()) {
                     float width = bitmap.getWidth() / bitmap.getHeight();
                     int round = (int) Math.round(Math.sqrt(width * 324.0f));
@@ -128,55 +128,55 @@ public final /* synthetic */ class v7 implements Runnable {
                         canvas.drawRect(f11, f7, f13, f12, paint);
                         canvas.drawRect(0.0f, f12, f13, i21 + i18, paint);
                     }
-                    AndroidUtilities.runOnUIThread(new ci.u1(paVar, str, createBitmap, this.b, bitmap));
+                    AndroidUtilities.runOnUIThread(new ci.t1(raVar, str, createBitmap, this.b, bitmap));
                     break;
                 }
                 break;
             default:
-                dv dvVar = (dv) obj3;
+                cv cvVar = (cv) obj3;
                 Context context = (Context) obj2;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
-                fv fvVar = dvVar.c;
-                fvVar.b();
-                org.telegram.ui.Cells.r8 r8Var = fvVar.e;
-                fvVar.d();
-                int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q6, false);
-                kj0 kj0Var2 = fvVar.d;
-                kj0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                ev evVar = cvVar.c;
+                evVar.b();
+                org.telegram.ui.Cells.r8 r8Var = evVar.e;
+                evVar.d();
+                int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q6, false);
+                ck0 ck0Var2 = evVar.d;
+                ck0Var2.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new z51(dvVar, i15, w02));
-                ofFloat.addListener(new org.telegram.ui.u0(dvVar, w02, i17));
+                ofFloat.addUpdateListener(new h61(cvVar, i15, x02));
+                ofFloat.addListener(new org.telegram.ui.u0(cvVar, x02, i17));
                 ofFloat.setDuration(350L);
                 ofFloat.start();
-                int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false);
+                int x03 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false);
                 Activity activity = context instanceof Activity ? (Activity) context : null;
                 if ((activity != null ? activity.getWindow() : null) != null) {
-                    ValueAnimator valueAnimator = fvVar.h;
+                    ValueAnimator valueAnimator = evVar.h;
                     if (valueAnimator != null && valueAnimator.isRunning()) {
-                        fvVar.h.cancel();
+                        evVar.h.cancel();
                     }
-                    ValueAnimator valueAnimator2 = fvVar.h;
+                    ValueAnimator valueAnimator2 = evVar.h;
                     if (valueAnimator2 != null && valueAnimator2.isRunning()) {
-                        i14 = fvVar.n;
+                        i14 = evVar.n;
                     }
                     int i22 = i14;
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    fvVar.h = ofFloat2;
+                    evVar.h = ofFloat2;
                     float f14 = z10 ? 50.0f : 200.0f;
-                    kj0Var = kj0Var2;
-                    ofFloat2.addUpdateListener(new cv(dvVar, f14, i22, w03, activity));
-                    fvVar.h.addListener(new org.telegram.ui.u0(activity, w03, i16));
-                    fvVar.h.setDuration(350L);
-                    fvVar.h.start();
+                    ck0Var = ck0Var2;
+                    ofFloat2.addUpdateListener(new bv(cvVar, f14, i22, x03, activity));
+                    evVar.h.addListener(new org.telegram.ui.u0(activity, x03, i16));
+                    evVar.h.setDuration(350L);
+                    evVar.h.start();
                 } else {
-                    kj0Var = kj0Var2;
+                    ck0Var = ck0Var2;
                 }
-                if (org.telegram.ui.ActionBar.i6.f1()) {
-                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), kj0Var, true);
+                if (org.telegram.ui.ActionBar.i6.g1()) {
+                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), ck0Var, true);
                 } else {
-                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), kj0Var, true);
+                    r8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), ck0Var, true);
                 }
-                org.telegram.ui.ActionBar.i6.F1(n2Var);
+                org.telegram.ui.ActionBar.i6.G1(n2Var);
                 break;
         }
     }
@@ -190,8 +190,8 @@ public final /* synthetic */ class v7 implements Runnable {
         this.d = i11;
     }
 
-    public /* synthetic */ v7(org.telegram.ui.jl jlVar, boolean z10, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
-        this.e = jlVar;
+    public /* synthetic */ v7(org.telegram.ui.ol olVar, boolean z10, ArrayList arrayList, ArrayList arrayList2, int i10, int i11) {
+        this.e = olVar;
         this.b = z10;
         this.f = arrayList;
         this.h = arrayList2;
@@ -199,8 +199,8 @@ public final /* synthetic */ class v7 implements Runnable {
         this.d = i11;
     }
 
-    public /* synthetic */ v7(org.telegram.ui.Components.pa paVar, Bitmap bitmap, int i10, int i11, String str, boolean z10) {
-        this.e = paVar;
+    public /* synthetic */ v7(org.telegram.ui.Components.ra raVar, Bitmap bitmap, int i10, int i11, String str, boolean z10) {
+        this.e = raVar;
         this.f = bitmap;
         this.c = i10;
         this.d = i11;
@@ -208,8 +208,8 @@ public final /* synthetic */ class v7 implements Runnable {
         this.b = z10;
     }
 
-    public /* synthetic */ v7(dv dvVar, int i10, Context context, int i11, boolean z10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.e = dvVar;
+    public /* synthetic */ v7(cv cvVar, int i10, Context context, int i11, boolean z10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.e = cvVar;
         this.c = i10;
         this.f = context;
         this.d = i11;

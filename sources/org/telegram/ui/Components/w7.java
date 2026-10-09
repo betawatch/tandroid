@@ -1,46 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class w7 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
+public final class w7 extends qm0 {
+    public boolean V2;
+    public final /* synthetic */ l8 W2;
 
-    public /* synthetic */ w7(j8 j8Var, int i10) {
-        this.a = i10;
-        this.b = j8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w7(l8 l8Var, Context context) {
+        super(context, null);
+        this.W2 = l8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 2:
-                this.b.C0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.Components.qm0
+    public final boolean E0(float f7) {
+        l8 l8Var = this.W2;
+        return f7 < l8Var.E.getY() - ((float) l8Var.n.getTop());
+    }
+
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        l8 l8Var = this.W2;
+        int i14 = l8Var.s0;
+        if (i14 != -1 && !l8Var.c.n0) {
+            this.V2 = true;
+            l8Var.r.h1(i14, l8Var.t0 - l8Var.n.getPaddingTop());
+            super.onLayout(false, i10, i11, i12, i13);
+            this.V2 = false;
+            l8Var.s0 = -1;
+            return;
+        }
+        if (l8Var.r0) {
+            l8Var.r0 = false;
+            this.V2 = true;
+            if (l8Var.x0(true)) {
+                super.onLayout(false, i10, i11, i12, i13);
+            }
+            this.V2 = false;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.m0 = false;
-                break;
-            case 1:
-                j8 j8Var = this.b;
-                j8Var.i0.setVisibility(4);
-                j8Var.j0.setImageBitmap(null);
-                j8Var.m0 = false;
-                break;
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.V2) {
+            return;
         }
-    }
-
-    private final void a(Animator animator) {
+        super.requestLayout();
     }
 }

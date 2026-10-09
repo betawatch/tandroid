@@ -1,48 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v11 {
-    public final View a;
-    public final ArrayList b;
-    public final Runnable c;
-    public Runnable d;
-    public final Bitmap e;
-    public final Matrix f;
-    public float g;
-
-    public v11(View view, Runnable runnable) {
-        this.g = 1.0f;
-        this.a = view;
-        this.b = null;
-        this.c = null;
-        this.d = runnable;
-        this.e = null;
-        this.f = null;
+public class v11 extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
+        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z10) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
+            }
+        }
     }
 
-    public v11(ArrayList arrayList, gg.t tVar) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = arrayList;
-        this.c = null;
-        this.d = tVar;
-        this.e = null;
-        this.f = null;
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        if (!(view instanceof TextView)) {
+            throw new IllegalArgumentException();
+        }
+        super.addView(view, i10, layoutParams);
     }
 
-    public v11(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = null;
-        this.c = runnable;
-        this.d = runnable2;
-        this.f = matrix;
-        this.e = bitmap;
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
     }
 }

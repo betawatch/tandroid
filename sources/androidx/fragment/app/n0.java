@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n0 extends androidx.lifecycle.p0 {
-    public static final qb.b j = new qb.b(3);
+    public static final t7.t j = new t7.t();
     public final boolean g;
     public final HashMap d = new HashMap();
     public final HashMap e = new HashMap();

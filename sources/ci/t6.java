@@ -16,15 +16,15 @@ import android.text.TextPaint;
 import android.text.style.ImageSpan;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class t6 extends View {
     public final Paint a;
@@ -35,7 +35,7 @@ public final class t6 extends View {
     public final int f;
     public final int h;
     public final boolean n;
-    public final org.telegram.ui.Components.e6 r;
+    public final org.telegram.ui.Components.g6 r;
     public boolean s;
     public float v;
     public ValueAnimator w;
@@ -51,7 +51,7 @@ public final class t6 extends View {
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 220L, tr.h);
+        this.r = new org.telegram.ui.Components.g6(this, 0L, 220L, hs.h);
         this.s = true;
         this.n = z10;
         paint.setColor(-15098625);
@@ -147,7 +147,7 @@ public final class t6 extends View {
                 this.w = ofFloat;
                 ofFloat.addUpdateListener(new ai.a(this, 22));
                 this.w.addListener(new ai.b(this, 16));
-                this.w.setInterpolator(new OvershootInterpolator(1.5f));
+                bi.l(1.5f, this.w);
                 this.w.setDuration(350L);
                 this.w.start();
             }

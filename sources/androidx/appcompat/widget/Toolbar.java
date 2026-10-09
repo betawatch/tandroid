@@ -1,6 +1,6 @@
 package androidx.appcompat.widget;
 
-import ai.q4;
+import ai.r4;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -23,12 +23,11 @@ import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
 import androidx.fragment.app.c0;
 import androidx.mediarouter.app.x;
-import ii.n4;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-import k2.e;
+import k2.g0;
 import l.k;
 import l.m;
 import la.h;
@@ -41,18 +40,19 @@ import m.j3;
 import m.k1;
 import m.k3;
 import m.l3;
+import m.m3;
 import m.o2;
-import m.s3;
+import m.t3;
 import m.u;
 import m.v;
 import m.z0;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import v7.v7;
-import w7.p;
+import v7.s7;
+import w7.n;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -77,20 +77,20 @@ public class Toolbar extends ViewGroup {
     public ActionMenuView a;
     public ArrayList a0;
     public z0 b;
-    public final e b0;
+    public final g0 b0;
     public z0 c;
-    public l3 c0;
+    public m3 c0;
     public u d;
     public m.h d0;
     public v e;
-    public g3 e0;
+    public h3 e0;
     public final Drawable f;
     public boolean f0;
     public OnBackInvokedCallback g0;
     public final CharSequence h;
     public OnBackInvokedDispatcher h0;
     public boolean i0;
-    public final q4 j0;
+    public final r4 j0;
     public u n;
     public View r;
     public Context s;
@@ -116,40 +116,40 @@ public class Toolbar extends ViewGroup {
         return new k.h(getContext());
     }
 
-    public static h3 h() {
-        h3 h3Var = new h3(-2, -2);
-        h3Var.b = 0;
-        h3Var.a = 8388627;
-        return h3Var;
+    public static i3 h() {
+        i3 i3Var = new i3(-2, -2);
+        i3Var.b = 0;
+        i3Var.a = 8388627;
+        return i3Var;
     }
 
-    public static h3 i(ViewGroup.LayoutParams layoutParams) {
-        boolean z10 = layoutParams instanceof h3;
+    public static i3 i(ViewGroup.LayoutParams layoutParams) {
+        boolean z10 = layoutParams instanceof i3;
         if (z10) {
-            h3 h3Var = (h3) layoutParams;
-            h3 h3Var2 = new h3(h3Var);
-            h3Var2.b = 0;
-            h3Var2.b = h3Var.b;
-            return h3Var2;
+            i3 i3Var = (i3) layoutParams;
+            i3 i3Var2 = new i3(i3Var);
+            i3Var2.b = 0;
+            i3Var2.b = i3Var.b;
+            return i3Var2;
         }
         if (z10) {
-            h3 h3Var3 = new h3((h3) layoutParams);
-            h3Var3.b = 0;
-            return h3Var3;
+            i3 i3Var3 = new i3((i3) layoutParams);
+            i3Var3.b = 0;
+            return i3Var3;
         }
         if (!(layoutParams instanceof ViewGroup.MarginLayoutParams)) {
-            h3 h3Var4 = new h3(layoutParams);
-            h3Var4.b = 0;
-            return h3Var4;
+            i3 i3Var4 = new i3(layoutParams);
+            i3Var4.b = 0;
+            return i3Var4;
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
-        h3 h3Var5 = new h3(marginLayoutParams);
-        h3Var5.b = 0;
-        ((ViewGroup.MarginLayoutParams) h3Var5).leftMargin = marginLayoutParams.leftMargin;
-        ((ViewGroup.MarginLayoutParams) h3Var5).topMargin = marginLayoutParams.topMargin;
-        ((ViewGroup.MarginLayoutParams) h3Var5).rightMargin = marginLayoutParams.rightMargin;
-        ((ViewGroup.MarginLayoutParams) h3Var5).bottomMargin = marginLayoutParams.bottomMargin;
-        return h3Var5;
+        i3 i3Var5 = new i3(marginLayoutParams);
+        i3Var5.b = 0;
+        ((ViewGroup.MarginLayoutParams) i3Var5).leftMargin = marginLayoutParams.leftMargin;
+        ((ViewGroup.MarginLayoutParams) i3Var5).topMargin = marginLayoutParams.topMargin;
+        ((ViewGroup.MarginLayoutParams) i3Var5).rightMargin = marginLayoutParams.rightMargin;
+        ((ViewGroup.MarginLayoutParams) i3Var5).bottomMargin = marginLayoutParams.bottomMargin;
+        return i3Var5;
     }
 
     public static int k(View view) {
@@ -171,9 +171,9 @@ public class Toolbar extends ViewGroup {
         if (!z10) {
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = getChildAt(i11);
-                h3 h3Var = (h3) childAt.getLayoutParams();
-                if (h3Var.b == 0 && s(childAt)) {
-                    int i12 = h3Var.a;
+                i3 i3Var = (i3) childAt.getLayoutParams();
+                if (i3Var.b == 0 && s(childAt)) {
+                    int i12 = i3Var.a;
                     WeakHashMap weakHashMap2 = i0.a;
                     int layoutDirection = getLayoutDirection();
                     int absoluteGravity2 = Gravity.getAbsoluteGravity(i12, layoutDirection) & 7;
@@ -189,9 +189,9 @@ public class Toolbar extends ViewGroup {
         }
         for (int i13 = childCount - 1; i13 >= 0; i13--) {
             View childAt2 = getChildAt(i13);
-            h3 h3Var2 = (h3) childAt2.getLayoutParams();
-            if (h3Var2.b == 0 && s(childAt2)) {
-                int i14 = h3Var2.a;
+            i3 i3Var2 = (i3) childAt2.getLayoutParams();
+            if (i3Var2.b == 0 && s(childAt2)) {
+                int i14 = i3Var2.a;
                 WeakHashMap weakHashMap3 = i0.a;
                 int layoutDirection2 = getLayoutDirection();
                 int absoluteGravity3 = Gravity.getAbsoluteGravity(i14, layoutDirection2) & 7;
@@ -207,7 +207,7 @@ public class Toolbar extends ViewGroup {
 
     public final void b(View view, boolean z10) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        h3 h = layoutParams == null ? h() : !checkLayoutParams(layoutParams) ? i(layoutParams) : (h3) layoutParams;
+        i3 h = layoutParams == null ? h() : !checkLayoutParams(layoutParams) ? i(layoutParams) : (i3) layoutParams;
         h.b = 1;
         if (!z10 || this.r == null) {
             addView(view, h);
@@ -223,7 +223,7 @@ public class Toolbar extends ViewGroup {
             this.n = uVar;
             uVar.setImageDrawable(this.f);
             this.n.setContentDescription(this.h);
-            h3 h = h();
+            i3 h = h();
             h.a = (this.y & 112) | 8388611;
             h.b = 2;
             this.n.setLayoutParams(h);
@@ -233,7 +233,7 @@ public class Toolbar extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
-        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof h3);
+        return super.checkLayoutParams(layoutParams) && (layoutParams instanceof i3);
     }
 
     public final void d() {
@@ -257,7 +257,7 @@ public class Toolbar extends ViewGroup {
         if (actionMenuView.F == null) {
             k kVar = (k) actionMenuView.getMenu();
             if (this.e0 == null) {
-                this.e0 = new g3(this);
+                this.e0 = new h3(this);
             }
             this.a.setExpandedActionViewsExclusive(true);
             kVar.b(this.e0, this.s);
@@ -272,10 +272,10 @@ public class Toolbar extends ViewGroup {
             actionMenuView.setPopupTheme(this.v);
             this.a.setOnMenuItemClickListener(this.b0);
             ActionMenuView actionMenuView2 = this.a;
-            n4 n4Var = new n4(this, 6);
+            f3 f3Var = new f3(this, 0);
             actionMenuView2.getClass();
-            actionMenuView2.K = n4Var;
-            h3 h = h();
+            actionMenuView2.K = f3Var;
+            i3 h = h();
             h.a = (this.y & 112) | 8388613;
             this.a.setLayoutParams(h);
             b(this.a, false);
@@ -285,7 +285,7 @@ public class Toolbar extends ViewGroup {
     public final void g() {
         if (this.d == null) {
             this.d = new u(getContext(), null, R.attr.toolbarNavigationButtonStyle);
-            h3 h = h();
+            i3 h = h();
             h.a = (this.y & 112) | 8388611;
             this.d.setLayoutParams(h);
         }
@@ -472,65 +472,65 @@ public class Toolbar extends ViewGroup {
     public k1 getWrapper() {
         Drawable drawable;
         if (this.c0 == null) {
-            l3 l3Var = new l3();
-            l3Var.n = 0;
-            l3Var.a = this;
-            l3Var.h = getTitle();
-            l3Var.i = getSubtitle();
-            l3Var.g = l3Var.h != null;
-            l3Var.f = getNavigationIcon();
-            h Q = h.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
-            TypedArray typedArray = (TypedArray) Q.c;
-            l3Var.o = Q.A(15);
+            m3 m3Var = new m3();
+            m3Var.n = 0;
+            m3Var.a = this;
+            m3Var.h = getTitle();
+            m3Var.i = getSubtitle();
+            m3Var.g = m3Var.h != null;
+            m3Var.f = getNavigationIcon();
+            h R = h.R(getContext(), null, f.a.a, R.attr.actionBarStyle);
+            TypedArray typedArray = (TypedArray) R.c;
+            m3Var.o = R.G(15);
             CharSequence text = typedArray.getText(27);
             if (!TextUtils.isEmpty(text)) {
-                l3Var.g = true;
-                l3Var.h = text;
-                if ((l3Var.b & 8) != 0) {
+                m3Var.g = true;
+                m3Var.h = text;
+                if ((m3Var.b & 8) != 0) {
                     setTitle(text);
-                    if (l3Var.g) {
-                        i0.l(getRootView(), text);
+                    if (m3Var.g) {
+                        i0.k(getRootView(), text);
                     }
                 }
             }
             CharSequence text2 = typedArray.getText(25);
             if (!TextUtils.isEmpty(text2)) {
-                l3Var.i = text2;
-                if ((l3Var.b & 8) != 0) {
+                m3Var.i = text2;
+                if ((m3Var.b & 8) != 0) {
                     setSubtitle(text2);
                 }
             }
-            Drawable A = Q.A(20);
-            if (A != null) {
-                l3Var.e = A;
-                l3Var.c();
+            Drawable G = R.G(20);
+            if (G != null) {
+                m3Var.e = G;
+                m3Var.c();
             }
-            Drawable A2 = Q.A(17);
-            if (A2 != null) {
-                l3Var.d = A2;
-                l3Var.c();
+            Drawable G2 = R.G(17);
+            if (G2 != null) {
+                m3Var.d = G2;
+                m3Var.c();
             }
-            if (l3Var.f == null && (drawable = l3Var.o) != null) {
-                l3Var.f = drawable;
-                if ((l3Var.b & 4) != 0) {
+            if (m3Var.f == null && (drawable = m3Var.o) != null) {
+                m3Var.f = drawable;
+                if ((m3Var.b & 4) != 0) {
                     setNavigationIcon(drawable);
                 } else {
                     setNavigationIcon((Drawable) null);
                 }
             }
-            l3Var.a(typedArray.getInt(10, 0));
+            m3Var.a(typedArray.getInt(10, 0));
             int resourceId = typedArray.getResourceId(9, 0);
             if (resourceId != 0) {
                 View inflate = LayoutInflater.from(getContext()).inflate(resourceId, (ViewGroup) this, false);
-                View view = l3Var.c;
-                if (view != null && (l3Var.b & 16) != 0) {
+                View view = m3Var.c;
+                if (view != null && (m3Var.b & 16) != 0) {
                     removeView(view);
                 }
-                l3Var.c = inflate;
-                if (inflate != null && (l3Var.b & 16) != 0) {
+                m3Var.c = inflate;
+                if (inflate != null && (m3Var.b & 16) != 0) {
                     addView(inflate);
                 }
-                l3Var.a(l3Var.b | 16);
+                m3Var.a(m3Var.b | 16);
             }
             int layoutDimension = typedArray.getLayoutDimension(13, 0);
             if (layoutDimension > 0) {
@@ -568,27 +568,27 @@ public class Toolbar extends ViewGroup {
             if (resourceId4 != 0) {
                 setPopupTheme(resourceId4);
             }
-            Q.R();
-            if (R.string.abc_action_bar_up_description != l3Var.n) {
-                l3Var.n = R.string.abc_action_bar_up_description;
+            R.S();
+            if (R.string.abc_action_bar_up_description != m3Var.n) {
+                m3Var.n = R.string.abc_action_bar_up_description;
                 if (TextUtils.isEmpty(getNavigationContentDescription())) {
-                    int i10 = l3Var.n;
-                    l3Var.j = i10 != 0 ? getContext().getString(i10) : null;
-                    l3Var.b();
+                    int i10 = m3Var.n;
+                    m3Var.j = i10 != 0 ? getContext().getString(i10) : null;
+                    m3Var.b();
                 }
             }
-            l3Var.j = getNavigationContentDescription();
-            setNavigationOnClickListener(new k3(l3Var));
-            this.c0 = l3Var;
+            m3Var.j = getNavigationContentDescription();
+            setNavigationOnClickListener(new l3(m3Var));
+            this.c0 = m3Var;
         }
         return this.c0;
     }
 
     public final int j(int i10, View view) {
-        h3 h3Var = (h3) view.getLayoutParams();
+        i3 i3Var = (i3) view.getLayoutParams();
         int measuredHeight = view.getMeasuredHeight();
         int i11 = i10 > 0 ? (measuredHeight - i10) / 2 : 0;
-        int i12 = h3Var.a & 112;
+        int i12 = i3Var.a & 112;
         if (i12 != 16 && i12 != 48 && i12 != 80) {
             i12 = this.M & 112;
         }
@@ -596,18 +596,18 @@ public class Toolbar extends ViewGroup {
             return getPaddingTop() - i11;
         }
         if (i12 == 80) {
-            return (((getHeight() - getPaddingBottom()) - measuredHeight) - ((ViewGroup.MarginLayoutParams) h3Var).bottomMargin) - i11;
+            return (((getHeight() - getPaddingBottom()) - measuredHeight) - ((ViewGroup.MarginLayoutParams) i3Var).bottomMargin) - i11;
         }
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
         int height = getHeight();
         int i13 = (((height - paddingTop) - paddingBottom) - measuredHeight) / 2;
-        int i14 = ((ViewGroup.MarginLayoutParams) h3Var).topMargin;
+        int i14 = ((ViewGroup.MarginLayoutParams) i3Var).topMargin;
         if (i13 < i14) {
             i13 = i14;
         } else {
             int i15 = (((height - paddingBottom) - measuredHeight) - i13) - paddingTop;
-            int i16 = ((ViewGroup.MarginLayoutParams) h3Var).bottomMargin;
+            int i16 = ((ViewGroup.MarginLayoutParams) i3Var).bottomMargin;
             if (i15 < i16) {
                 i13 = Math.max(0, i13 - (i16 - i15));
             }
@@ -641,14 +641,14 @@ public class Toolbar extends ViewGroup {
     }
 
     public final int o(View view, int i10, int i11, int[] iArr) {
-        h3 h3Var = (h3) view.getLayoutParams();
-        int i12 = ((ViewGroup.MarginLayoutParams) h3Var).leftMargin - iArr[0];
+        i3 i3Var = (i3) view.getLayoutParams();
+        int i12 = ((ViewGroup.MarginLayoutParams) i3Var).leftMargin - iArr[0];
         int max = Math.max(0, i12) + i10;
         iArr[0] = Math.max(0, -i12);
         int j3 = j(i11, view);
         int measuredWidth = view.getMeasuredWidth();
         view.layout(max, j3, max + measuredWidth, view.getMeasuredHeight() + j3);
-        return measuredWidth + ((ViewGroup.MarginLayoutParams) h3Var).rightMargin + max;
+        return measuredWidth + ((ViewGroup.MarginLayoutParams) i3Var).rightMargin + max;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -696,9 +696,9 @@ public class Toolbar extends ViewGroup {
     /* JADX WARN: Removed duplicated region for block: B:35:0x0106  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x028f A[LOOP:0: B:39:0x028d->B:40:0x028f, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:44:0x02a7 A[LOOP:1: B:43:0x02a5->B:44:0x02a7, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x02c6 A[LOOP:2: B:47:0x02c4->B:48:0x02c6, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x030c  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0319 A[LOOP:3: B:56:0x0317->B:57:0x0319, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x02c7 A[LOOP:2: B:47:0x02c5->B:48:0x02c7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x030d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x031a A[LOOP:3: B:56:0x0318->B:57:0x031a, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:63:0x0127  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x012e  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x0164  */
@@ -792,58 +792,58 @@ public class Toolbar extends ViewGroup {
                     z11 = z12;
                     i16 = 0;
                 } else {
-                    h3 h3Var = (h3) this.b.getLayoutParams();
+                    i3 i3Var = (i3) this.b.getLayoutParams();
                     z11 = z12;
-                    i16 = this.b.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) h3Var).topMargin + ((ViewGroup.MarginLayoutParams) h3Var).bottomMargin;
+                    i16 = this.b.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) i3Var).topMargin + ((ViewGroup.MarginLayoutParams) i3Var).bottomMargin;
                 }
                 if (!s11) {
-                    h3 h3Var2 = (h3) this.c.getLayoutParams();
-                    i16 = this.c.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) h3Var2).topMargin + ((ViewGroup.MarginLayoutParams) h3Var2).bottomMargin + i16;
+                    i3 i3Var2 = (i3) this.c.getLayoutParams();
+                    i16 = this.c.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) i3Var2).topMargin + ((ViewGroup.MarginLayoutParams) i3Var2).bottomMargin + i16;
                 }
                 if (!s10 || s11) {
                     z0 z0Var = !s10 ? this.b : this.c;
                     z0 z0Var2 = !s11 ? this.c : this.b;
-                    h3 h3Var3 = (h3) z0Var.getLayoutParams();
-                    h3 h3Var4 = (h3) z0Var2.getLayoutParams();
+                    i3 i3Var3 = (i3) z0Var.getLayoutParams();
+                    i3 i3Var4 = (i3) z0Var2.getLayoutParams();
                     int i29 = i16;
                     boolean z13 = (!s10 && this.b.getMeasuredWidth() > 0) || (s11 && this.c.getMeasuredWidth() > 0);
                     i17 = this.M & 112;
                     int i30 = max;
                     if (i17 != 48) {
-                        paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) h3Var3).topMargin + this.H;
+                        paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) i3Var3).topMargin + this.H;
                     } else if (i17 != 80) {
                         int i31 = (((height - paddingTop2) - paddingBottom) - i29) / 2;
-                        int i32 = ((ViewGroup.MarginLayoutParams) h3Var3).topMargin + this.H;
+                        int i32 = ((ViewGroup.MarginLayoutParams) i3Var3).topMargin + this.H;
                         if (i31 < i32) {
                             i31 = i32;
                         } else {
                             int i33 = (((height - paddingBottom) - i29) - i31) - paddingTop2;
-                            int i34 = ((ViewGroup.MarginLayoutParams) h3Var3).bottomMargin;
+                            int i34 = ((ViewGroup.MarginLayoutParams) i3Var3).bottomMargin;
                             int i35 = this.I;
                             if (i33 < i34 + i35) {
-                                i31 = Math.max(0, i31 - ((((ViewGroup.MarginLayoutParams) h3Var4).bottomMargin + i35) - i33));
+                                i31 = Math.max(0, i31 - ((((ViewGroup.MarginLayoutParams) i3Var4).bottomMargin + i35) - i33));
                             }
                         }
                         paddingTop = paddingTop2 + i31;
                     } else {
-                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) h3Var4).bottomMargin) - this.I) - i29;
+                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) i3Var4).bottomMargin) - this.I) - i29;
                     }
                     if (z11) {
                         int i36 = (z13 ? this.F : 0) - iArr[0];
                         max = Math.max(0, i36) + i30;
                         iArr[0] = Math.max(0, -i36);
                         if (s10) {
-                            h3 h3Var5 = (h3) this.b.getLayoutParams();
+                            i3 i3Var5 = (i3) this.b.getLayoutParams();
                             int measuredWidth = this.b.getMeasuredWidth() + max;
                             int measuredHeight = this.b.getMeasuredHeight() + paddingTop;
                             this.b.layout(max, paddingTop, measuredWidth, measuredHeight);
                             i18 = measuredWidth + this.G;
-                            paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) h3Var5).bottomMargin;
+                            paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) i3Var5).bottomMargin;
                         } else {
                             i18 = max;
                         }
                         if (s11) {
-                            int i37 = paddingTop + ((ViewGroup.MarginLayoutParams) ((h3) this.c.getLayoutParams())).topMargin;
+                            int i37 = paddingTop + ((ViewGroup.MarginLayoutParams) ((i3) this.c.getLayoutParams())).topMargin;
                             int measuredWidth2 = this.c.getMeasuredWidth() + max;
                             this.c.layout(max, i37, measuredWidth2, this.c.getMeasuredHeight() + i37);
                             i19 = measuredWidth2 + this.G;
@@ -858,17 +858,17 @@ public class Toolbar extends ViewGroup {
                         min2 -= Math.max(0, i38);
                         iArr[1] = Math.max(0, -i38);
                         if (s10) {
-                            h3 h3Var6 = (h3) this.b.getLayoutParams();
+                            i3 i3Var6 = (i3) this.b.getLayoutParams();
                             int measuredWidth3 = min2 - this.b.getMeasuredWidth();
                             int measuredHeight2 = this.b.getMeasuredHeight() + paddingTop;
                             this.b.layout(measuredWidth3, paddingTop, min2, measuredHeight2);
                             i20 = measuredWidth3 - this.G;
-                            paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) h3Var6).bottomMargin;
+                            paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) i3Var6).bottomMargin;
                         } else {
                             i20 = min2;
                         }
                         if (s11) {
-                            int i39 = paddingTop + ((ViewGroup.MarginLayoutParams) ((h3) this.c.getLayoutParams())).topMargin;
+                            int i39 = paddingTop + ((ViewGroup.MarginLayoutParams) ((i3) this.c.getLayoutParams())).topMargin;
                             this.c.layout(min2 - this.c.getMeasuredWidth(), i39, min2, this.c.getMeasuredHeight() + i39);
                             i21 = min2 - this.G;
                         } else {
@@ -901,10 +901,10 @@ public class Toolbar extends ViewGroup {
                 int i43 = 0;
                 while (i25 < size3) {
                     View view = (View) arrayList.get(i25);
-                    h3 h3Var7 = (h3) view.getLayoutParams();
+                    i3 i3Var7 = (i3) view.getLayoutParams();
                     int i44 = i41;
-                    int i45 = ((ViewGroup.MarginLayoutParams) h3Var7).leftMargin - i42;
-                    int i46 = ((ViewGroup.MarginLayoutParams) h3Var7).rightMargin - i44;
+                    int i45 = ((ViewGroup.MarginLayoutParams) i3Var7).leftMargin - i42;
+                    int i46 = ((ViewGroup.MarginLayoutParams) i3Var7).rightMargin - i44;
                     int max2 = Math.max(0, i45);
                     int max3 = Math.max(0, i46);
                     int max4 = Math.max(0, -i45);
@@ -954,8 +954,8 @@ public class Toolbar extends ViewGroup {
         }
         if (!s11) {
         }
-        h3 h3Var32 = (h3) z0Var.getLayoutParams();
-        h3 h3Var42 = (h3) z0Var2.getLayoutParams();
+        i3 i3Var32 = (i3) z0Var.getLayoutParams();
+        i3 i3Var42 = (i3) z0Var2.getLayoutParams();
         int i292 = i16;
         if (s10) {
         }
@@ -1003,7 +1003,7 @@ public class Toolbar extends ViewGroup {
         int i16;
         int i17;
         int i18;
-        boolean a2 = s3.a(this);
+        boolean a2 = t3.a(this);
         int i19 = !a2 ? 1 : 0;
         int i20 = 0;
         if (s(this.d)) {
@@ -1051,7 +1051,7 @@ public class Toolbar extends ViewGroup {
         int childCount = getChildCount();
         for (int i21 = 0; i21 < childCount; i21++) {
             View childAt = getChildAt(i21);
-            if (((h3) childAt.getLayoutParams()).b == 0 && s(childAt)) {
+            if (((i3) childAt.getLayoutParams()).b == 0 && s(childAt)) {
                 max3 += q(childAt, i10, max3, i11, 0, iArr);
                 int max4 = Math.max(i13, l(childAt) + childAt.getMeasuredHeight());
                 i14 = View.combineMeasuredStates(i14, childAt.getMeasuredState());
@@ -1066,24 +1066,24 @@ public class Toolbar extends ViewGroup {
         if (s(this.b)) {
             q(this.b, i10, i22 + i24, i11, i23, iArr);
             int k10 = k(this.b) + this.b.getMeasuredWidth();
-            i18 = l(this.b) + this.b.getMeasuredHeight();
-            i16 = View.combineMeasuredStates(i14, this.b.getMeasuredState());
-            i17 = k10;
+            i16 = l(this.b) + this.b.getMeasuredHeight();
+            i17 = View.combineMeasuredStates(i14, this.b.getMeasuredState());
+            i18 = k10;
         } else {
-            i16 = i14;
-            i17 = 0;
+            i16 = 0;
+            i17 = i14;
             i18 = 0;
         }
         if (s(this.c)) {
-            i17 = Math.max(i17, q(this.c, i10, i22 + i24, i11, i23 + i18, iArr));
-            i18 += l(this.c) + this.c.getMeasuredHeight();
-            i16 = View.combineMeasuredStates(i16, this.c.getMeasuredState());
+            i18 = Math.max(i18, q(this.c, i10, i22 + i24, i11, i23 + i16, iArr));
+            i16 += l(this.c) + this.c.getMeasuredHeight();
+            i17 = View.combineMeasuredStates(i17, this.c.getMeasuredState());
         }
-        int max5 = Math.max(i13, i18);
-        int paddingRight = getPaddingRight() + getPaddingLeft() + i22 + i17;
+        int max5 = Math.max(i13, i16);
+        int paddingRight = getPaddingRight() + getPaddingLeft() + i22 + i18;
         int paddingBottom = getPaddingBottom() + getPaddingTop() + max5;
-        int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingRight, getSuggestedMinimumWidth()), i10, (-16777216) & i16);
-        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingBottom, getSuggestedMinimumHeight()), i11, i16 << 16);
+        int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingRight, getSuggestedMinimumWidth()), i10, (-16777216) & i17);
+        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingBottom, getSuggestedMinimumHeight()), i11, i17 << 16);
         if (this.f0) {
             int childCount2 = getChildCount();
             for (int i25 = 0; i25 < childCount2; i25++) {
@@ -1100,22 +1100,22 @@ public class Toolbar extends ViewGroup {
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
         MenuItem findItem;
-        if (!(parcelable instanceof j3)) {
+        if (!(parcelable instanceof k3)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        j3 j3Var = (j3) parcelable;
-        super.onRestoreInstanceState(j3Var.a);
+        k3 k3Var = (k3) parcelable;
+        super.onRestoreInstanceState(k3Var.a);
         ActionMenuView actionMenuView = this.a;
         k kVar = actionMenuView != null ? actionMenuView.F : null;
-        int i10 = j3Var.c;
+        int i10 = k3Var.c;
         if (i10 != 0 && this.e0 != null && kVar != null && (findItem = kVar.findItem(i10)) != null) {
             findItem.expandActionView();
         }
-        if (j3Var.d) {
-            q4 q4Var = this.j0;
-            removeCallbacks(q4Var);
-            post(q4Var);
+        if (k3Var.d) {
+            r4 r4Var = this.j0;
+            removeCallbacks(r4Var);
+            post(r4Var);
         }
     }
 
@@ -1163,14 +1163,14 @@ public class Toolbar extends ViewGroup {
     public final Parcelable onSaveInstanceState() {
         m.h hVar;
         m mVar;
-        j3 j3Var = new j3(super.onSaveInstanceState());
-        g3 g3Var = this.e0;
-        if (g3Var != null && (mVar = g3Var.b) != null) {
-            j3Var.c = mVar.a;
+        k3 k3Var = new k3(super.onSaveInstanceState());
+        h3 h3Var = this.e0;
+        if (h3Var != null && (mVar = h3Var.b) != null) {
+            k3Var.c = mVar.a;
         }
         ActionMenuView actionMenuView = this.a;
-        j3Var.d = (actionMenuView == null || (hVar = actionMenuView.J) == null || !hVar.g()) ? false : true;
-        return j3Var;
+        k3Var.d = (actionMenuView == null || (hVar = actionMenuView.J) == null || !hVar.g()) ? false : true;
+        return k3Var;
     }
 
     @Override // android.view.View
@@ -1193,14 +1193,14 @@ public class Toolbar extends ViewGroup {
     }
 
     public final int p(View view, int i10, int i11, int[] iArr) {
-        h3 h3Var = (h3) view.getLayoutParams();
-        int i12 = ((ViewGroup.MarginLayoutParams) h3Var).rightMargin - iArr[1];
+        i3 i3Var = (i3) view.getLayoutParams();
+        int i12 = ((ViewGroup.MarginLayoutParams) i3Var).rightMargin - iArr[1];
         int max = i10 - Math.max(0, i12);
         iArr[1] = Math.max(0, -i12);
         int j3 = j(i11, view);
         int measuredWidth = view.getMeasuredWidth();
         view.layout(max - measuredWidth, j3, max, view.getMeasuredHeight() + j3);
-        return max - (measuredWidth + ((ViewGroup.MarginLayoutParams) h3Var).leftMargin);
+        return max - (measuredWidth + ((ViewGroup.MarginLayoutParams) i3Var).leftMargin);
     }
 
     public final int q(View view, int i10, int i11, int i12, int i13, int[] iArr) {
@@ -1244,7 +1244,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setCollapseIcon(int i10) {
-        setCollapseIcon(v7.b(getContext(), i10));
+        setCollapseIcon(s7.b(getContext(), i10));
     }
 
     public void setCollapsible(boolean z10) {
@@ -1277,7 +1277,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setLogo(int i10) {
-        setLogo(v7.b(getContext(), i10));
+        setLogo(s7.b(getContext(), i10));
     }
 
     public void setLogoDescription(int i10) {
@@ -1289,7 +1289,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setNavigationIcon(int i10) {
-        setNavigationIcon(v7.b(getContext(), i10));
+        setNavigationIcon(s7.b(getContext(), i10));
     }
 
     public void setNavigationOnClickListener(View.OnClickListener onClickListener) {
@@ -1353,24 +1353,24 @@ public class Toolbar extends ViewGroup {
         boolean z10;
         OnBackInvokedDispatcher onBackInvokedDispatcher;
         if (Build.VERSION.SDK_INT >= 33) {
-            OnBackInvokedDispatcher a2 = f3.a(this);
-            g3 g3Var = this.e0;
+            OnBackInvokedDispatcher a2 = g3.a(this);
+            h3 h3Var = this.e0;
             int i10 = 0;
-            if (g3Var != null && g3Var.b != null && a2 != null) {
+            if (h3Var != null && h3Var.b != null && a2 != null) {
                 WeakHashMap weakHashMap = i0.a;
                 if (isAttachedToWindow() && this.i0) {
                     z10 = true;
                     if (!z10 && this.h0 == null) {
                         if (this.g0 == null) {
-                            this.g0 = f3.b(new e3(this, i10));
+                            this.g0 = g3.b(new e3(this, i10));
                         }
-                        f3.c(a2, this.g0);
+                        g3.c(a2, this.g0);
                         this.h0 = a2;
                         return;
                     }
                     if (!z10 || (onBackInvokedDispatcher = this.h0) == null) {
                     }
-                    f3.d(onBackInvokedDispatcher, this.g0);
+                    g3.d(onBackInvokedDispatcher, this.g0);
                     this.h0 = null;
                     return;
                 }
@@ -1390,13 +1390,13 @@ public class Toolbar extends ViewGroup {
     @Override // android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         Context context = getContext();
-        h3 h3Var = new h3(context, attributeSet);
-        h3Var.a = 0;
+        i3 i3Var = new i3(context, attributeSet);
+        i3Var.a = 0;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.b);
-        h3Var.a = obtainStyledAttributes.getInt(0, 0);
+        i3Var.a = obtainStyledAttributes.getInt(0, 0);
         obtainStyledAttributes.recycle();
-        h3Var.b = 0;
-        return h3Var;
+        i3Var.b = 0;
+        return i3Var;
     }
 
     public void setCollapseContentDescription(CharSequence charSequence) {
@@ -1459,7 +1459,7 @@ public class Toolbar extends ViewGroup {
         u uVar = this.d;
         if (uVar != null) {
             uVar.setContentDescription(charSequence);
-            p.a(this.d, charSequence);
+            n.a(this.d, charSequence);
         }
     }
 
@@ -1574,13 +1574,13 @@ public class Toolbar extends ViewGroup {
         this.V = new int[2];
         this.W = new h(new e3(this, 1));
         this.a0 = new ArrayList();
-        this.b0 = new e(this, 3);
-        this.j0 = new q4(this, 26);
+        this.b0 = new g0(this, 4);
+        this.j0 = new r4(this, 26);
         Context context2 = getContext();
         int[] iArr = f.a.x;
-        h Q = h.Q(context2, attributeSet, iArr, i10);
-        i0.j(this, context, iArr, attributeSet, (TypedArray) Q.c, i10);
-        TypedArray typedArray = (TypedArray) Q.c;
+        h R = h.R(context2, attributeSet, iArr, i10);
+        i0.i(this, context, iArr, attributeSet, (TypedArray) R.c, i10);
+        TypedArray typedArray = (TypedArray) R.c;
         this.w = typedArray.getResourceId(28, 0);
         this.x = typedArray.getResourceId(19, 0);
         this.M = typedArray.getInteger(0, 8388627);
@@ -1628,7 +1628,7 @@ public class Toolbar extends ViewGroup {
         }
         this.K = typedArray.getDimensionPixelOffset(10, TLObject.FLAG_31);
         this.L = typedArray.getDimensionPixelOffset(6, TLObject.FLAG_31);
-        this.f = Q.A(4);
+        this.f = R.G(4);
         this.h = typedArray.getText(3);
         CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
@@ -1640,34 +1640,34 @@ public class Toolbar extends ViewGroup {
         }
         this.s = getContext();
         setPopupTheme(typedArray.getResourceId(17, 0));
-        Drawable A = Q.A(16);
-        if (A != null) {
-            setNavigationIcon(A);
+        Drawable G = R.G(16);
+        if (G != null) {
+            setNavigationIcon(G);
         }
         CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable A2 = Q.A(11);
-        if (A2 != null) {
-            setLogo(A2);
+        Drawable G2 = R.G(11);
+        if (G2 != null) {
+            setLogo(G2);
         }
         CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (typedArray.hasValue(29)) {
-            setTitleTextColor(Q.y(29));
+            setTitleTextColor(R.E(29));
         }
         if (typedArray.hasValue(20)) {
-            setSubtitleTextColor(Q.y(20));
+            setSubtitleTextColor(R.E(20));
         }
         if (typedArray.hasValue(14)) {
             getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());
         }
-        Q.R();
+        R.S();
     }
 
-    public void setOnMenuItemClickListener(i3 i3Var) {
+    public void setOnMenuItemClickListener(j3 j3Var) {
     }
 }

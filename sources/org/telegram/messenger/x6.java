@@ -1,34 +1,41 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x6 implements RequestDelegate {
+public final /* synthetic */ class x6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ MediaDataController b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ BaseController e;
 
-    public /* synthetic */ x6(BaseController baseController, int i10, String str, String str2, int i11) {
-        this.a = i11;
-        this.e = baseController;
-        this.b = i10;
+    public /* synthetic */ x6(MediaDataController mediaDataController, String str, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
         this.c = str;
-        this.d = str2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$213(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$fetchNewEmojiKeywords$208(this.c);
+                break;
+            case 1:
+                this.b.lambda$fetchNewEmojiKeywords$210(this.c);
+                break;
+            case 2:
+                this.b.lambda$fetchNewEmojiKeywords$212(this.c);
+                break;
+            case 3:
+                this.b.lambda$fetchNewEmojiKeywords$209(this.c);
+                break;
+            case 4:
+                this.b.lambda$fetchNewEmojiKeywords$214(this.c);
+                break;
+            case 5:
+                this.b.lambda$putEmojiKeywords$215(this.c);
                 break;
             default:
-                ((MessagesController) this.e).lambda$checkPromoInfoInternal$169(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$processLoadedDiceStickers$86(this.c);
                 break;
         }
     }

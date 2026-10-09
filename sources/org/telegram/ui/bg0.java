@@ -1,26 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t3 b;
+    public final /* synthetic */ fg0 b;
 
-    public /* synthetic */ bg0(t3 t3Var, int i10) {
+    public /* synthetic */ bg0(fg0 fg0Var, int i10) {
         this.a = i10;
-        this.b = t3Var;
+        this.b = fg0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                this.b.run("CANCELLED");
+                wg0 wg0Var = this.b.v;
+                wg0Var.u1(0, true, null, true);
+                wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 1:
+                wg0 wg0Var2 = this.b.v;
+                wg0Var2.u1(0, true, null, true);
+                wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                break;
+            case 2:
+                this.b.p();
+                break;
+            case 3:
+                this.b.b.setLoading(false);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new bg0(this.b, 0));
+                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
+                wg0 wg0Var3 = this.b.v;
+                i10 = ((org.telegram.ui.ActionBar.n2) wg0Var3).currentAccount;
+                premiumPreviewFragment.setCurrentAccount(i10);
+                wg0Var3.presentFragment(premiumPreviewFragment);
                 break;
         }
     }

@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLObject;
 import v7.u5;
 import v7.w5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a0 extends com.google.android.gms.internal.cast.l0 {
+public final class a0 extends com.google.android.gms.internal.cast.j0 {
     public static final a0 n = new a0(null, new Object[0], 0);
     public final transient Object e;
     public final transient Object[] f;
@@ -22,33 +22,46 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x01b3  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x01be  */
+    /* JADX WARN: Type inference failed for: r16v10 */
+    /* JADX WARN: Type inference failed for: r16v11 */
+    /* JADX WARN: Type inference failed for: r16v12 */
+    /* JADX WARN: Type inference failed for: r16v13 */
+    /* JADX WARN: Type inference failed for: r16v4 */
     /* JADX WARN: Type inference failed for: r4v6 */
-    /* JADX WARN: Type inference failed for: r4v7, types: [java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r4v8, types: [java.lang.Object[]] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static a0 b(int i10, Object[] objArr, a5.a aVar) {
         int i11;
-        char c10;
-        char c11;
-        char c12;
-        short[] sArr;
         boolean z10;
-        int i12 = i10;
+        int i12;
+        char c10;
+        Object obj;
+        char c11;
+        short[] sArr;
+        boolean z11;
+        int i13;
+        ?? r16;
+        boolean z12;
+        boolean z13;
+        int i14 = i10;
         Object[] objArr2 = objArr;
-        if (i12 == 0) {
+        if (i14 == 0) {
             return n;
         }
-        Object obj = null;
-        int i13 = 1;
-        if (i12 == 1) {
+        Object obj2 = null;
+        boolean z14 = false;
+        int i15 = 1;
+        if (i14 == 1) {
             Objects.requireNonNull(objArr2[0]);
             Objects.requireNonNull(objArr2[1]);
             return new a0(null, objArr2, 1);
         }
-        u5.b(i12, objArr2.length >> 1);
-        int max = Math.max(i12, 2);
+        u5.b(i14, objArr2.length >> 1);
+        char c12 = 2;
+        int max = Math.max(i14, 2);
         if (max < 751619276) {
             i11 = Integer.highestOneBit(max - 1);
             do {
@@ -60,171 +73,206 @@ public final class a0 extends com.google.android.gms.internal.cast.l0 {
                 throw new IllegalArgumentException("collection too large");
             }
         }
-        if (i12 == 1) {
+        if (i14 == 1) {
             Objects.requireNonNull(objArr2[0]);
             Objects.requireNonNull(objArr2[1]);
+            z13 = false;
+            i14 = 1;
             i12 = 1;
-            c10 = 0;
-            c11 = 1;
         } else {
-            int i14 = i11 - 1;
+            int i16 = i11 - 1;
             if (i11 <= 128) {
                 byte[] bArr = new byte[i11];
                 Arrays.fill(bArr, (byte) -1);
-                int i15 = 0;
-                int i16 = 0;
-                while (i15 < i12) {
-                    int i17 = i16 + i16;
-                    int i18 = i15 + i15;
-                    Object obj2 = objArr2[i18];
-                    Objects.requireNonNull(obj2);
-                    Object obj3 = objArr2[i18 ^ i13];
+                int i17 = 0;
+                int i18 = 0;
+                while (i17 < i14) {
+                    int i19 = i18 + i18;
+                    int i20 = i17 + i17;
+                    Object obj3 = objArr2[i20];
                     Objects.requireNonNull(obj3);
-                    int a2 = w5.a(obj2.hashCode());
+                    Object obj4 = objArr2[i20 ^ i15];
+                    Objects.requireNonNull(obj4);
+                    int a2 = w5.a(obj3.hashCode());
                     while (true) {
-                        int i19 = a2 & i14;
-                        int i20 = bArr[i19] & 255;
-                        if (i20 == 255) {
-                            bArr[i19] = (byte) i17;
-                            if (i16 < i15) {
-                                objArr2[i17] = obj2;
-                                objArr2[i17 ^ 1] = obj3;
+                        int i21 = a2 & i16;
+                        z11 = z14;
+                        i13 = i15;
+                        int i22 = bArr[i21] & 255;
+                        if (i22 == 255) {
+                            bArr[i21] = (byte) i19;
+                            if (i18 < i17) {
+                                objArr2[i19] = obj3;
+                                objArr2[i19 ^ 1] = obj4;
                             }
-                            i16++;
+                            i18++;
                         } else {
-                            if (obj2.equals(objArr2[i20])) {
-                                int i21 = i20 ^ 1;
-                                Object obj4 = objArr2[i21];
-                                Objects.requireNonNull(obj4);
-                                s sVar = new s(obj2, obj3, obj4);
-                                objArr2[i21] = obj3;
-                                obj = sVar;
+                            if (obj3.equals(objArr2[i22])) {
+                                int i23 = i22 ^ 1;
+                                Object obj5 = objArr2[i23];
+                                Objects.requireNonNull(obj5);
+                                s sVar = new s(obj3, obj4, obj5);
+                                objArr2[i23] = obj4;
+                                obj2 = sVar;
                                 break;
                             }
-                            a2 = i19 + 1;
+                            a2 = i21 + 1;
+                            z14 = z11;
+                            i15 = i13;
                         }
                     }
-                    i15++;
-                    i13 = 1;
+                    i17++;
+                    z14 = z11;
+                    i15 = i13;
                 }
-                c10 = 0;
-                c11 = 1;
-                if (i16 == i12) {
+                z10 = z14;
+                i12 = i15;
+                if (i18 == i14) {
+                    c10 = 2;
                     obj = bArr;
-                } else {
-                    sArr = new Object[]{bArr, Integer.valueOf(i16), obj};
-                    obj = sArr;
+                    r16 = z10;
+                    z12 = obj instanceof Object[];
+                    Object obj6 = obj;
+                    if (z12) {
+                        Object[] objArr3 = (Object[]) obj;
+                        s sVar2 = (s) objArr3[c10];
+                        if (aVar == null) {
+                            throw sVar2.a();
+                        }
+                        aVar.d = sVar2;
+                        Object obj7 = objArr3[r16];
+                        int intValue = ((Integer) objArr3[i12]).intValue();
+                        objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
+                        obj6 = obj7;
+                        i14 = intValue;
+                    }
+                    return new a0(obj6, objArr2, i14);
                 }
+                sArr = new Object[3];
+                sArr[z10 ? 1 : 0] = bArr;
+                sArr[i12] = Integer.valueOf(i18);
+                sArr[2] = obj2;
+                obj2 = sArr;
+                z13 = z10;
             } else {
-                c10 = 0;
-                c11 = 1;
+                z10 = false;
+                i12 = 1;
                 if (i11 > 32768) {
                     int[] iArr = new int[i11];
                     Arrays.fill(iArr, -1);
-                    int i22 = 0;
-                    for (int i23 = 0; i23 < i12; i23++) {
-                        int i24 = i22 + i22;
-                        int i25 = i23 + i23;
-                        Object obj5 = objArr2[i25];
-                        Objects.requireNonNull(obj5);
-                        Object obj6 = objArr2[i25 ^ 1];
-                        Objects.requireNonNull(obj6);
-                        int a10 = w5.a(obj5.hashCode());
+                    int i24 = 0;
+                    int i25 = 0;
+                    while (i24 < i14) {
+                        int i26 = i25 + i25;
+                        int i27 = i24 + i24;
+                        Object obj8 = objArr2[i27];
+                        Objects.requireNonNull(obj8);
+                        Object obj9 = objArr2[i27 ^ 1];
+                        Objects.requireNonNull(obj9);
+                        int a10 = w5.a(obj8.hashCode());
                         while (true) {
-                            int i26 = a10 & i14;
-                            int i27 = iArr[i26];
-                            if (i27 == -1) {
-                                iArr[i26] = i24;
-                                if (i22 < i23) {
-                                    objArr2[i24] = obj5;
-                                    objArr2[i24 ^ 1] = obj6;
+                            int i28 = a10 & i16;
+                            int i29 = iArr[i28];
+                            if (i29 == -1) {
+                                iArr[i28] = i26;
+                                if (i25 < i24) {
+                                    objArr2[i26] = obj8;
+                                    objArr2[i26 ^ 1] = obj9;
                                 }
-                                i22++;
+                                i25++;
+                                c11 = c12;
                             } else {
-                                if (obj5.equals(objArr2[i27])) {
-                                    int i28 = i27 ^ 1;
-                                    Object obj7 = objArr2[i28];
-                                    Objects.requireNonNull(obj7);
-                                    s sVar2 = new s(obj5, obj6, obj7);
-                                    objArr2[i28] = obj6;
-                                    obj = sVar2;
+                                c11 = c12;
+                                if (obj8.equals(objArr2[i29])) {
+                                    int i30 = i29 ^ 1;
+                                    Object obj10 = objArr2[i30];
+                                    Objects.requireNonNull(obj10);
+                                    s sVar3 = new s(obj8, obj9, obj10);
+                                    objArr2[i30] = obj9;
+                                    obj2 = sVar3;
                                     break;
                                 }
-                                a10 = i26 + 1;
+                                a10 = i28 + 1;
+                                c12 = c11;
                             }
                         }
+                        i24++;
+                        c12 = c11;
                     }
-                    c12 = 2;
-                    obj = i22 == i12 ? iArr : new Object[]{iArr, Integer.valueOf(i22), obj};
-                    z10 = obj instanceof Object[];
-                    Object obj8 = obj;
-                    if (z10) {
-                        Object[] objArr3 = (Object[]) obj;
-                        s sVar3 = (s) objArr3[c12];
-                        if (aVar == null) {
-                            throw sVar3.a();
-                        }
-                        aVar.d = sVar3;
-                        Object obj9 = objArr3[c10];
-                        int intValue = ((Integer) objArr3[c11]).intValue();
-                        objArr2 = Arrays.copyOf(objArr2, intValue + intValue);
-                        obj8 = obj9;
-                        i12 = intValue;
+                    c10 = c12;
+                    if (i25 == i14) {
+                        obj = iArr;
+                        r16 = z10;
+                    } else {
+                        Object[] objArr4 = new Object[3];
+                        objArr4[0] = iArr;
+                        objArr4[1] = Integer.valueOf(i25);
+                        objArr4[c10] = obj2;
+                        obj = objArr4;
+                        r16 = z10;
                     }
-                    return new a0(obj8, objArr2, i12);
+                    z12 = obj instanceof Object[];
+                    Object obj62 = obj;
+                    if (z12) {
+                    }
+                    return new a0(obj62, objArr2, i14);
                 }
                 sArr = new short[i11];
                 Arrays.fill(sArr, (short) -1);
-                int i29 = 0;
-                for (int i30 = 0; i30 < i12; i30++) {
-                    int i31 = i29 + i29;
-                    int i32 = i30 + i30;
-                    Object obj10 = objArr2[i32];
-                    Objects.requireNonNull(obj10);
-                    Object obj11 = objArr2[i32 ^ 1];
+                int i31 = 0;
+                for (int i32 = 0; i32 < i14; i32++) {
+                    int i33 = i31 + i31;
+                    int i34 = i32 + i32;
+                    Object obj11 = objArr2[i34];
                     Objects.requireNonNull(obj11);
-                    int a11 = w5.a(obj10.hashCode());
+                    Object obj12 = objArr2[i34 ^ 1];
+                    Objects.requireNonNull(obj12);
+                    int a11 = w5.a(obj11.hashCode());
                     while (true) {
-                        int i33 = a11 & i14;
-                        char c13 = (char) sArr[i33];
+                        int i35 = a11 & i16;
+                        char c13 = (char) sArr[i35];
                         if (c13 == 65535) {
-                            sArr[i33] = (short) i31;
-                            if (i29 < i30) {
-                                objArr2[i31] = obj10;
-                                objArr2[i31 ^ 1] = obj11;
+                            sArr[i35] = (short) i33;
+                            if (i31 < i32) {
+                                objArr2[i33] = obj11;
+                                objArr2[i33 ^ 1] = obj12;
                             }
-                            i29++;
+                            i31++;
                         } else {
-                            if (obj10.equals(objArr2[c13])) {
-                                int i34 = c13 ^ 1;
-                                Object obj12 = objArr2[i34];
-                                Objects.requireNonNull(obj12);
-                                s sVar4 = new s(obj10, obj11, obj12);
-                                objArr2[i34] = obj11;
-                                obj = sVar4;
+                            if (obj11.equals(objArr2[c13])) {
+                                int i36 = c13 ^ 1;
+                                Object obj13 = objArr2[i36];
+                                Objects.requireNonNull(obj13);
+                                s sVar4 = new s(obj11, obj12, obj13);
+                                objArr2[i36] = obj12;
+                                obj2 = sVar4;
                                 break;
                             }
-                            a11 = i33 + 1;
+                            a11 = i35 + 1;
                         }
                     }
                 }
-                if (i29 != i12) {
-                    obj = new Object[]{sArr, Integer.valueOf(i29), obj};
+                if (i31 != i14) {
+                    obj2 = new Object[]{sArr, Integer.valueOf(i31), obj2};
+                    z13 = z10;
                 }
-                obj = sArr;
+                obj2 = sArr;
+                z13 = z10;
             }
         }
-        c12 = 2;
-        z10 = obj instanceof Object[];
-        Object obj82 = obj;
-        if (z10) {
+        c10 = 2;
+        obj = obj2;
+        r16 = z13;
+        z12 = obj instanceof Object[];
+        Object obj622 = obj;
+        if (z12) {
         }
-        return new a0(obj82, objArr2, i12);
+        return new a0(obj622, objArr2, i14);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:5:0x009e A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:7:0x009f A[RETURN] */
-    @Override // com.google.android.gms.internal.cast.l0, java.util.Map
+    @Override // com.google.android.gms.internal.cast.j0, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

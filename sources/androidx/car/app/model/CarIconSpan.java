@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class CarIconSpan extends CarSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -52,7 +52,7 @@ public final class CarIconSpan extends CarSpan {
         StringBuilder sb2 = new StringBuilder("[icon: ");
         sb2.append(this.mIcon);
         sb2.append(", alignment: ");
-        return a4.a.t(sb2, alignmentToString(this.mAlignment), "]");
+        return a1.g.t(sb2, alignmentToString(this.mAlignment), "]");
     }
 
     public static CarIconSpan create(CarIcon carIcon, int i10) {

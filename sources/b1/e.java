@@ -2,11 +2,11 @@ package b1;
 
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import gd.i;
-import rd.p;
-import v7.g0;
+import hd.i;
+import sd.p;
+import v7.c0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements p {
     public final /* synthetic */ int a;
@@ -15,45 +15,45 @@ public final /* synthetic */ class e implements p {
         this.a = i10;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final Object invoke(Object obj, Object obj2) {
-        id.b bVar;
+        jd.b bVar;
         int i10 = this.a;
         i iVar = i.a;
         switch (i10) {
             case 0:
-                rd.a f7 = (rd.a) obj2;
+                sd.a f7 = (sd.a) obj2;
                 kotlin.jvm.internal.i.e(f7, "f");
                 int i11 = d.d;
-                g0.a((CancellationSignal) obj, f7);
+                c0.a((CancellationSignal) obj, f7);
                 return iVar;
             case 1:
-                rd.a f10 = (rd.a) obj2;
+                sd.a f10 = (sd.a) obj2;
                 kotlin.jvm.internal.i.e(f10, "f");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.g.a((CancellationSignal) obj)) {
+                if (!a1.h.a((CancellationSignal) obj)) {
                     f10.invoke();
                 }
                 return iVar;
             case 2:
-                rd.a f11 = (rd.a) obj2;
+                sd.a f11 = (sd.a) obj2;
                 kotlin.jvm.internal.i.e(f11, "f");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.g.a((CancellationSignal) obj)) {
+                if (!a1.h.a((CancellationSignal) obj)) {
                     f11.invoke();
                 }
                 return iVar;
             case 3:
-                rd.a f12 = (rd.a) obj2;
+                sd.a f12 = (sd.a) obj2;
                 kotlin.jvm.internal.i.e(f12, "f");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (!a1.g.a((CancellationSignal) obj)) {
+                if (!a1.h.a((CancellationSignal) obj)) {
                     f12.invoke();
                 }
                 return iVar;
             case 4:
                 String acc = (String) obj;
-                id.f element = (id.f) obj2;
+                jd.f element = (jd.f) obj2;
                 kotlin.jvm.internal.i.e(acc, "acc");
                 kotlin.jvm.internal.i.e(element, "element");
                 if (acc.length() == 0) {
@@ -61,25 +61,25 @@ public final /* synthetic */ class e implements p {
                 }
                 return acc + ", " + element;
             default:
-                id.h acc2 = (id.h) obj;
-                id.f element2 = (id.f) obj2;
+                jd.h acc2 = (jd.h) obj;
+                jd.f element2 = (jd.f) obj2;
                 kotlin.jvm.internal.i.e(acc2, "acc");
                 kotlin.jvm.internal.i.e(element2, "element");
-                id.h minusKey = acc2.minusKey(element2.getKey());
-                id.i iVar2 = id.i.a;
+                jd.h minusKey = acc2.minusKey(element2.getKey());
+                jd.i iVar2 = jd.i.a;
                 if (minusKey == iVar2) {
                     return element2;
                 }
-                id.d dVar = id.d.a;
-                id.e eVar = (id.e) minusKey.get(dVar);
+                jd.d dVar = jd.d.a;
+                jd.e eVar = (jd.e) minusKey.get(dVar);
                 if (eVar == null) {
-                    bVar = new id.b(element2, minusKey);
+                    bVar = new jd.b(element2, minusKey);
                 } else {
-                    id.h minusKey2 = minusKey.minusKey(dVar);
+                    jd.h minusKey2 = minusKey.minusKey(dVar);
                     if (minusKey2 == iVar2) {
-                        return new id.b(eVar, element2);
+                        return new jd.b(eVar, element2);
                     }
-                    bVar = new id.b(eVar, new id.b(element2, minusKey2));
+                    bVar = new jd.b(eVar, new jd.b(element2, minusKey2));
                 }
                 return bVar;
         }

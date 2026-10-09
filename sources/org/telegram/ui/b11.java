@@ -1,58 +1,143 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class b11 {
-    public final String a;
-    public final Runnable b;
-    public final String c;
-    public final String[] d;
-    public final int e;
-    public final int f;
-    public int g;
-    public String h;
+public final class b11 extends View {
+    public final RectF a;
+    public final TextPaint b;
+    public final Paint c;
+    public final ValueAnimator d;
+    public final float[] e;
+    public final z4.a f;
+    public boolean h;
+    public final /* synthetic */ ProfileActivity n;
 
-    public b11(String str, int i10, int i11, Runnable runnable) {
-        this(i10, str, null, null, null, i11, runnable);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b11(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.n = profileActivity;
+        this.a = new RectF();
+        this.e = new float[]{0.0f, 1.0f};
+        z4.a adapter = profileActivity.n0.getAdapter();
+        this.f = adapter;
+        setVisibility(8);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTypeface(Typeface.SANS_SERIF);
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTextSize(AndroidUtilities.dpf2(15.0f));
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setColor(637534208);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.d = ofFloat;
+        ofFloat.setInterpolator(org.telegram.ui.Components.hs.j);
+        ofFloat.addUpdateListener(new c3(this, 29));
+        ofFloat.addListener(new f70(5, this, profileActivity.n1));
+        profileActivity.n0.b(new a11(this));
+        adapter.a.registerObserver(new h1.a(this, 2));
     }
 
-    public final void a(String str) {
-        this.h = str;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof b11) && this.f == ((b11) obj).f;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.g);
-        serializedData.writeInt32(1);
-        serializedData.writeInt32(this.f);
-        return Utilities.bytesToHex(serializedData.toByteArray());
-    }
-
-    public b11(int i10, String str, String str2, int i11, Runnable runnable) {
-        this(i10, str, null, str2, null, i11, runnable);
-    }
-
-    public b11(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
-        this(i10, str, str2, str3, null, i11, runnable);
-    }
-
-    public b11(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
-        this.f = i10;
-        this.a = str;
-        this.c = str2;
-        this.b = runnable;
-        this.e = i11;
-        if (str3 != null && str4 != null) {
-            this.d = new String[]{str3, str4};
-        } else if (str3 != null) {
-            this.d = new String[]{str3};
+    public final void a(boolean z10) {
+        org.telegram.ui.ActionBar.k kVar;
+        int i10;
+        org.telegram.ui.ActionBar.k kVar2;
+        ProfileActivity profileActivity = this.n;
+        if (z10) {
+            z01 z01Var = profileActivity.N;
+            z01Var.J = z01Var.L;
+            z01Var.K = z01Var.M;
+            z01Var.N = 0.0f;
+            z01Var.O = 1;
         }
+        profileActivity.N.invalidate();
+        float measureText = this.b.measureText(((String) this.f.d(profileActivity.n0.getCurrentItem())).toString());
+        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(54.0f);
+        RectF rectF = this.a;
+        rectF.right = measuredWidth;
+        rectF.left = measuredWidth - (AndroidUtilities.dpf2(16.0f) + measureText);
+        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+        if (kVar != null) {
+            kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
+            if (kVar2.getOccupyStatusBar()) {
+                i10 = AndroidUtilities.statusBarHeight;
+                float dp = AndroidUtilities.dp(15.0f) + i10;
+                rectF.top = dp;
+                rectF.bottom = dp + AndroidUtilities.dp(26.0f);
+                setPivotX(rectF.centerX());
+                setPivotY(rectF.centerY());
+                invalidate();
+            }
+        }
+        i10 = 0;
+        float dp2 = AndroidUtilities.dp(15.0f) + i10;
+        rectF.top = dp2;
+        rectF.bottom = dp2 + AndroidUtilities.dp(26.0f);
+        setPivotX(rectF.centerX());
+        setPivotY(rectF.centerY());
+        invalidate();
+    }
+
+    public final void b(float f7) {
+        ProfileActivity profileActivity = this.n;
+        boolean z10 = profileActivity.p2 && profileActivity.n0.getRealCount() > 20;
+        if (z10 != this.h) {
+            this.h = z10;
+            ValueAnimator valueAnimator = this.d;
+            valueAnimator.cancel();
+            float animatedFraction = valueAnimator.getAnimatedFraction();
+            float[] fArr = this.e;
+            float lerp = AndroidUtilities.lerp(fArr, animatedFraction);
+            if (f7 <= 0.0f) {
+                valueAnimator.setDuration(0L);
+            } else if (z10) {
+                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f7));
+            } else {
+                valueAnimator.setDuration((long) ((250.0f * lerp) / f7));
+            }
+            fArr[0] = lerp;
+            fArr[1] = z10 ? 1.0f : 0.0f;
+            valueAnimator.start();
+        }
+    }
+
+    public final void c() {
+        pz0 pz0Var;
+        ProfileActivity profileActivity = this.n;
+        if (profileActivity.T0 == null || (pz0Var = profileActivity.n0) == null || !profileActivity.p2) {
+            return;
+        }
+        if (pz0Var.getRealPosition() == 0) {
+            profileActivity.T0.r(33);
+            profileActivity.T0.K(36);
+        } else {
+            profileActivity.T0.K(33);
+            profileActivity.T0.r(36);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float dpf2 = AndroidUtilities.dpf2(12.0f);
+        Paint paint = this.c;
+        RectF rectF = this.a;
+        canvas.drawRoundRect(rectF, dpf2, dpf2, paint);
+        canvas.drawText(((String) this.f.d(this.n.n0.getCurrentItem())).toString(), rectF.centerX(), AndroidUtilities.dpf2(18.5f) + rectF.top, this.b);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        a(false);
     }
 }

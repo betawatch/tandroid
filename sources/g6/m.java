@@ -6,14 +6,13 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Iterator;
 import java.util.regex.Pattern;
-import n4.y;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.w7;
+import v7.t7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
@@ -126,7 +125,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = w7.b(num);
+            String b11 = t7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -137,7 +136,7 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new y(this, nVar, false, 16));
+        this.q.a(b10, new n4.x(this, nVar, false, 18));
     }
 
     public final long e(double d, long j3, long j10) {
@@ -182,7 +181,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a4.a.k(it);
+                throw a1.g.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -197,7 +196,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a4.a.k(it);
+                throw a1.g.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -212,7 +211,7 @@ public final class m extends p {
             e6.h hVar = (e6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a4.a.k(it);
+                throw a1.g.k(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -240,7 +239,7 @@ public final class m extends p {
             }
             Iterator it2 = hVar.h.iterator();
             if (it2.hasNext()) {
-                throw a4.a.k(it2);
+                throw a1.g.k(it2);
             }
             Iterator it3 = hVar.i.iterator();
             while (it3.hasNext()) {

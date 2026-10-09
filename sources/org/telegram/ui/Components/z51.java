@@ -1,45 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class z51 {
+    public final /* synthetic */ i61 a;
+    public final /* synthetic */ l61 b;
 
-    public z51(org.telegram.ui.dv dvVar, int i10, int i11) {
-        this.a = 1;
-        this.d = dvVar;
-        this.b = i10;
-        this.c = i11;
+    public z51(l61 l61Var, i61 i61Var) {
+        this.b = l61Var;
+        this.a = i61Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
-                d61 d61Var = (d61) this.d;
-                d61Var.N = true;
-                d61Var.n.scrollBy(0, floatValue - this.b);
-                d61Var.N = false;
-                this.b = floatValue;
-                break;
-            default:
-                ((org.telegram.ui.dv) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
-                break;
+    public final int a() {
+        return this.b.s.v;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        l61 l61Var = this.b;
+        b61 b61Var = l61Var.n;
+        if (z10) {
+            s4.i0 adapter = b61Var.getAdapter();
+            gg.f2 f2Var = l61Var.v;
+            if (adapter != f2Var) {
+                b61Var.setAdapter(f2Var);
+                if (b61Var.getAdapter().h() <= 0) {
+                    l61Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-b61Var.getPaddingTop()) + l61Var.E, false);
+                    return;
+                }
+                return;
+            }
         }
-    }
-
-    public z51(d61 d61Var, int i10) {
-        this.a = 0;
-        this.d = d61Var;
-        this.c = i10;
-        this.b = 0;
+        if (z10) {
+            return;
+        }
+        s4.i0 adapter2 = b61Var.getAdapter();
+        k61 k61Var = l61Var.s;
+        if (adapter2 == k61Var) {
+            return;
+        }
+        b61Var.setAdapter(k61Var);
+        if (b61Var.getAdapter().h() <= 0) {
+        }
     }
 }

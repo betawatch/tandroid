@@ -1,111 +1,85 @@
 package ei;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.w61;
-import w7.z5;
+import android.net.Uri;
+import android.text.TextUtils;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class e5 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public final long a;
-    public org.telegram.ui.ActionBar.g2 b;
-    public e71 c;
+public final class e5 {
+    public int a;
+    public long b;
+    public long c;
+    public long d;
+    public String e;
+    public String f;
+    public int g;
+    public int h;
+    public long i;
+    public TLRPC.BotApp j;
+    public boolean k;
+    public String l;
+    public TLRPC.User m;
+    public int n;
+    public boolean o;
+    public boolean p;
+    public TLObject q;
+    public long r;
 
-    public e5(long j3) {
-        super(null);
-        this.a = j3;
-    }
-
-    public final void S(ArrayList arrayList, w61 w61Var) {
-        yh.n e7 = yh.p.g(this.currentAccount).e(this.a);
-        ArrayList arrayList2 = e7.e;
-        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            Object obj = arrayList2.get(i10);
-            int i11 = b4.a;
-            h61 K = h61.K(b4.class);
-            K.G = obj;
-            K.r = false;
-            arrayList.add(K);
-        }
-        if (e7.h) {
-            arrayList.add(h61.p(29));
-            arrayList.add(h61.p(29));
-            arrayList.add(h61.p(29));
-        }
-    }
-
-    public final void T(h61 h61Var) {
-        Object obj = h61Var.G;
-        if (obj instanceof TL_payments.starRefProgram) {
-            f4.L0(getParentActivity(), this.currentAccount, (TL_payments.starRefProgram) obj, this.a, this.resourceProvider, false);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        org.telegram.ui.ActionBar.g2 g2Var = new org.telegram.ui.ActionBar.g2(false);
-        this.b = g2Var;
-        kVar.setBackButtonDrawable(g2Var);
-        this.b.k = 240.0f;
-        this.actionBar.setActionBarMenuOnItemClick(new u(this, 2));
-        this.actionBar.setBackgroundColor(i6.w0(null, i6.d6, false));
-        org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        int i10 = i6.G6;
-        kVar2.A(i6.w0(null, i10, false), false);
-        this.actionBar.A(i6.w0(null, i10, false), true);
-        this.actionBar.z(i6.w0(null, i6.z8, false), false);
-        this.actionBar.setTitleColor(i6.w0(null, i10, false));
-        this.actionBar.setTitle(LocaleController.getString(R.string.ChannelAffiliatePrograms));
-        mw0 mw0Var = new mw0(context, null);
-        e71 e71Var = new e71(this, new bi.v(this, 18), new f(this, 1), null);
-        this.c = e71Var;
-        mw0Var.addView(e71Var, z5.e(-1, -1, 119));
-        this.fragmentView = mw0Var;
-        return mw0Var;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        e71 e71Var;
-        if (i10 == NotificationCenter.channelSuggestedBotsUpdate && ((Long) objArr[0]).longValue() == this.a && (e71Var = this.c) != null && (e71Var.getAdapter() instanceof w61)) {
-            ((w61) this.c.getAdapter()).N(true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isLightStatusBar() {
-        if (getLastStoryViewer() == null || getLastStoryViewer().H0) {
-            int w02 = i6.w0(null, i6.d6, false);
-            if (this.actionBar.s()) {
-                w02 = i6.w0(null, i6.w8, false);
-            }
-            if (i0.a.f(w02) > 0.699999988079071d) {
-                return true;
+    public static e5 b(int i10, long j3, long j10, String str, String str2, int i11, int i12, long j11, TLRPC.BotApp botApp, boolean z10, String str3, TLRPC.User user, int i13, boolean z11, boolean z12) {
+        e5 e5Var = new e5();
+        e5Var.a = i10;
+        e5Var.b = j3;
+        e5Var.c = j10;
+        e5Var.e = str;
+        e5Var.f = str2;
+        e5Var.g = i11;
+        e5Var.h = i12;
+        e5Var.i = j11;
+        e5Var.j = botApp;
+        e5Var.k = z10;
+        e5Var.l = str3;
+        e5Var.m = user;
+        e5Var.n = i13;
+        e5Var.o = z11;
+        e5Var.p = z12;
+        if (!z11 && !z12 && !TextUtils.isEmpty(str2)) {
+            try {
+                Uri parse = Uri.parse(str2);
+                e5Var.o = TextUtils.equals(parse.getQueryParameter("mode"), "compact");
+                e5Var.p = TextUtils.equals(parse.getQueryParameter("mode"), "fullscreen");
+                return e5Var;
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
-        return false;
+        return e5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.channelSuggestedBotsUpdate);
-        return super.onFragmentCreate();
+    public final void a(TLObject tLObject) {
+        this.q = tLObject;
+        this.r = System.currentTimeMillis();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentDestroy() {
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.channelSuggestedBotsUpdate);
-        super.onFragmentDestroy();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof e5)) {
+            return false;
+        }
+        e5 e5Var = (e5) obj;
+        if (this.a != e5Var.a || this.b != e5Var.b || this.c != e5Var.c || !TextUtils.equals(this.f, e5Var.f) || this.g != e5Var.g || this.h != e5Var.h) {
+            return false;
+        }
+        TLRPC.BotApp botApp = this.j;
+        long j3 = botApp == null ? 0L : botApp.id;
+        TLRPC.BotApp botApp2 = e5Var.j;
+        if (j3 != (botApp2 == null ? 0L : botApp2.id) || this.k != e5Var.k || !TextUtils.equals(this.l, e5Var.l)) {
+            return false;
+        }
+        TLRPC.User user = this.m;
+        long j10 = user == null ? 0L : user.id;
+        TLRPC.User user2 = e5Var.m;
+        return j10 == (user2 != null ? user2.id : 0L) && this.n == e5Var.n;
     }
 }

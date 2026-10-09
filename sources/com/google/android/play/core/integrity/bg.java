@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -50,7 +50,7 @@ final class bg extends bm {
             obtain.writeInt(1);
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);
-            xVar.H0(obtain, 3);
+            xVar.G0(obtain, 3);
         } catch (RemoteException e7) {
             bn bnVar2 = this.e;
             StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = this.a;

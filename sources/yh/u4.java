@@ -1,45 +1,67 @@
 package yh;
 
-import android.content.DialogInterface;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u4 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
+public final /* synthetic */ class u4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ m5 b;
     public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ Utilities.Callback f;
 
-    public /* synthetic */ u4(Utilities.Callback2 callback2, boolean[] zArr, int i10) {
-        this.a = i10;
-        this.b = callback2;
+    public /* synthetic */ u4(m5 m5Var, int i10, Utilities.Callback callback, boolean[] zArr, Utilities.Callback callback2) {
+        this.b = m5Var;
+        this.d = i10;
+        this.e = callback;
         this.c = zArr;
+        this.f = callback2;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null && !this.c[0]) {
-                    callback2.run(0L, Boolean.FALSE);
-                    break;
+                if (this.d > 0) {
+                    this.b.S();
                 }
-                break;
-            case 1:
-                Utilities.Callback2 callback22 = this.b;
-                if (callback22 != null && !this.c[0]) {
-                    callback22.run(Boolean.FALSE, null);
+                Utilities.Callback callback = this.e;
+                if (callback != null) {
+                    callback.run(Boolean.TRUE);
+                }
+                this.c[0] = true;
+                Utilities.Callback callback2 = this.f;
+                if (callback2 != null) {
+                    callback2.run(bool.booleanValue() ? "paid" : "failed");
                     break;
                 }
                 break;
             default:
-                Utilities.Callback2 callback23 = this.b;
-                if (callback23 != null && !this.c[0]) {
-                    callback23.run(Boolean.FALSE, null);
+                this.c[0] = true;
+                if (this.d > 0) {
+                    this.b.S();
+                }
+                Utilities.Callback callback3 = this.e;
+                if (callback3 != null) {
+                    callback3.run(bool.booleanValue() ? "paid" : "failed");
+                }
+                Utilities.Callback callback4 = this.f;
+                if (callback4 != null) {
+                    callback4.run(Boolean.TRUE);
                     break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ u4(m5 m5Var, boolean[] zArr, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+        this.b = m5Var;
+        this.c = zArr;
+        this.d = i10;
+        this.e = callback;
+        this.f = callback2;
     }
 }

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import androidx.car.app.navigation.model.Maneuver;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a extends b8.b implements f0 {
     public a() {
@@ -17,51 +17,51 @@ public abstract class a extends b8.b implements f0 {
     }
 
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         switch (i10) {
             case 2:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 3:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 4:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 5:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 6:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 7:
                 t0 t0Var = (t0) f8.a.a(parcel, t0.CREATOR);
                 f8.a.b(parcel);
                 q0(t0Var);
                 break;
             case 8:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 9:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 10:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 11:
                 f8.a.b(parcel);
                 D();
                 break;
             case 12:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 13:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 14:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 15:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 16:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 17:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 18:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 19:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 20:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 21:
             case 24:
             case 25:
@@ -71,33 +71,33 @@ public abstract class a extends b8.b implements f0 {
             default:
                 return false;
             case 22:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 23:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 26:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 27:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 28:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 29:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 34:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 35:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 36:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 37:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case 38:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case Maneuver.TYPE_DESTINATION /* 39 */:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
             case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                throw sa.e.k(parcel);
+                throw sc.v.k(parcel);
         }
         parcel2.writeNoException();
         return true;

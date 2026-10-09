@@ -9,7 +9,7 @@ import c3.p;
 import c3.s;
 import e2.d;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -35,9 +35,9 @@ public final class a {
         return 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00cc, code lost:
     
-        return c(r27, r8, r28);
+        return c(r28, r8, r29);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -54,22 +54,22 @@ public final class a {
             i iVar = this.b;
             if (j12 <= j13) {
                 this.c = null;
-                iVar.g();
+                iVar.d();
                 return c(pVar, j3, sVar);
             }
             long position = j11 - pVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            pVar.o((int) position);
-            pVar.m();
-            h c10 = iVar.c(pVar, fVar.b);
-            int i10 = c10.a;
-            long j14 = c10.b;
-            long j15 = c10.c;
+            pVar.r((int) position);
+            pVar.q();
+            h b10 = iVar.b(pVar, fVar.b);
+            int i10 = b10.a;
+            long j14 = b10.b;
+            long j15 = b10.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.g();
+                iVar.d();
                 return c(pVar, j11, sVar);
             }
             if (i10 == -2) {
@@ -83,10 +83,10 @@ public final class a {
                     }
                     long position2 = j15 - pVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        pVar.o((int) position2);
+                        pVar.r((int) position2);
                     }
                     this.c = null;
-                    iVar.g();
+                    iVar.d();
                     return c(pVar, j15, sVar);
                 }
                 fVar.e = j14;
@@ -100,7 +100,7 @@ public final class a {
         f fVar = this.c;
         if (fVar == null || fVar.a != j3) {
             e eVar = this.a;
-            this.c = new f(j3, eVar.a.m(j3), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j3, eVar.a.c(j3), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

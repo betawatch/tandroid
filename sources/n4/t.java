@@ -1,27 +1,14 @@
 package n4;
 
-import android.media.session.MediaSessionManager;
-import android.text.TextUtils;
+import android.content.Context;
+import android.media.session.MediaSession;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public class t extends s {
+public final class t extends s {
     @Override // n4.r
-    public final a0 c() {
-        MediaSessionManager.RemoteUserInfo currentControllerInfo = this.a.getCurrentControllerInfo();
-        a0 a0Var = new a0();
-        String packageName = currentControllerInfo.getPackageName();
-        if (packageName == null) {
-            throw new NullPointerException("package shouldn't be null");
-        }
-        if (TextUtils.isEmpty(packageName)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        a0Var.a = new b0(currentControllerInfo.getPackageName(), currentControllerInfo.getPid(), currentControllerInfo.getUid());
-        return a0Var;
-    }
-
-    @Override // n4.r
-    public final void d(a0 a0Var) {
+    public final MediaSession a(Context context, String str, Bundle bundle) {
+        return ah.e.f(context, str, bundle);
     }
 }

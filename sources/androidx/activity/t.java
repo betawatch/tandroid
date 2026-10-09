@@ -2,7 +2,7 @@ package androidx.activity;
 
 import androidx.fragment.app.b0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class t implements c {
     public final b0 a;
@@ -14,11 +14,11 @@ public final class t implements c {
         this.a = onBackPressedCallback;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, rd.a] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, sd.a] */
     @Override // androidx.activity.c
     public final void cancel() {
         v vVar = this.b;
-        hd.e eVar = vVar.b;
+        id.e eVar = vVar.b;
         b0 b0Var = this.a;
         eVar.remove(b0Var);
         if (kotlin.jvm.internal.i.a(vVar.c, b0Var)) {

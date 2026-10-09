@@ -1,95 +1,88 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
+import android.util.Property;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class me extends FrameLayout {
+public final class me extends Property {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ me(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
-        super(context);
+    public me(ChatActivityEnterView chatActivityEnterView, int i10) {
+        super(Float.class, "emoji_button_scale");
         this.a = i10;
-        this.b = chatActivityEnterView;
+        switch (i10) {
+            case 1:
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_scale");
+                break;
+            case 2:
+                this.b = chatActivityEnterView;
+                super(Float.class, "emoji_button_alpha");
+                break;
+            case 3:
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_layout_translation_x");
+                break;
+            case 4:
+                this.b = chatActivityEnterView;
+                super(Float.class, "message_text_translation_x");
+                break;
+            default:
+                this.b = chatActivityEnterView;
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
         switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                ei.g4 g4Var = chatActivityEnterView.k0;
-                return (g4Var == null || g4Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.k0.dispatchTouchEvent(motionEvent);
+                return Float.valueOf(this.b.h);
             case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.J || chatActivityEnterView2.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (view == chatActivityEnterView.J0 && chatActivityEnterView.h0) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j3);
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                setPivotX(i10 - AndroidUtilities.dp(22.0f));
-                setPivotY(i11 - AndroidUtilities.dp(22.0f));
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.J || chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
+                return Float.valueOf(this.b.E);
             case 2:
-                super.setVisibility(i10);
-                this.b.P1(true);
+                return Float.valueOf(this.b.n);
+            case 3:
+                return Float.valueOf(this.b.x);
+            default:
+                return Float.valueOf(this.b.G);
+        }
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.h = floatValue;
+                chatActivityEnterView.D1();
+                break;
+            case 1:
+                float floatValue2 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                chatActivityEnterView2.E = floatValue2;
+                chatActivityEnterView2.y1();
+                break;
+            case 2:
+                float floatValue3 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView3 = this.b;
+                chatActivityEnterView3.n = floatValue3;
+                chatActivityEnterView3.D1();
+                break;
+            case 3:
+                float floatValue4 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView4 = this.b;
+                chatActivityEnterView4.x = floatValue4;
+                chatActivityEnterView4.y1();
                 break;
             default:
-                super.setVisibility(i10);
+                float floatValue5 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView5 = this.b;
+                chatActivityEnterView5.G = floatValue5;
+                chatActivityEnterView5.H1();
                 break;
         }
     }

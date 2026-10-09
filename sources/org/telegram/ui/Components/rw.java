@@ -1,38 +1,107 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class rw extends s4.n0 {
-    public final /* synthetic */ nz a;
+public final class rw extends Drawable {
+    public final /* synthetic */ int a;
+    public RectF b;
+    public Paint c;
 
-    public rw(nz nzVar) {
-        this.a = nzVar;
+    public /* synthetic */ rw(int i10, byte b10) {
+        this.a = i10;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        recyclerView.getClass();
-        int R = RecyclerView.R(view);
-        nz nzVar = this.a;
-        s4.h0 adapter = nzVar.h0.getAdapter();
-        sy syVar = nzVar.n0;
-        if (adapter == syVar && R == syVar.I) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                RectF rectF = this.b;
+                rectF.set(0.0f, 0.0f, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(8.0f), this.c);
+                break;
+            case 1:
+                RectF rectF2 = this.b;
+                rectF2.set(getBounds());
+                float height = rectF2.height() * 0.2f;
+                canvas.drawRoundRect(rectF2, height, height, this.c);
+                break;
+            case 2:
+                RectF rectF3 = this.b;
+                rectF3.set(getBounds());
+                rectF3.inset(AndroidUtilities.dp(1.0f), (rectF3.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
+                canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
+                break;
+            default:
+                RectF rectF4 = this.b;
+                rectF4.set(getBounds());
+                rectF4.inset(0.0f, (rectF4.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
+                canvas.drawRoundRect(rectF4, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
+                break;
         }
-        if (R == 0) {
-            syVar.getClass();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
         }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = AndroidUtilities.dp(2.0f);
-        ty tyVar = nzVar.i0;
-        syVar.getClass();
-        rect.right = tyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.c.setAlpha(i10);
+                break;
+            case 1:
+                this.c.setAlpha(i10);
+                break;
+            case 2:
+                this.c.setAlpha(i10);
+                break;
+            default:
+                this.c.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 1:
+                this.c.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public rw() {
+        this.a = 1;
+        this.b = new RectF();
+        this.c = new Paint(1);
+    }
+
+    public rw(int i10) {
+        this.a = 0;
+        Paint paint = new Paint();
+        this.c = paint;
+        this.b = new RectF();
+        paint.setAlpha(45);
+        paint.setColor(i10);
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

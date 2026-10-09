@@ -1,18 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z50 extends org.telegram.ui.Cells.w3 {
-    @Override // org.telegram.ui.Cells.w3, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (AndroidUtilities.isTablet()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
-        } else {
-            super.onMeasure(i10, i11);
+public final class z50 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ a60 h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(a60 a60Var, Context context) {
+        super(context, false);
+        this.h = a60Var;
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        g60 g60Var = this.h.M;
+        if (g60Var.Q.getVisibility() == 0 && g60Var.P2) {
+            g60.O(g60Var, this, true);
         }
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        g60.O(this.h.M, this, false);
     }
 }

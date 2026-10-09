@@ -4,7 +4,7 @@ import android.media.AudioAttributes;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e {
     public static final e h = new e(0, 0, 1, 1, 0, false);
@@ -62,7 +62,7 @@ public final class e {
             AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(this.a).setFlags(this.b).setUsage(this.c);
             int i10 = Build.VERSION.SDK_INT;
             if (i10 >= 29) {
-                c.k(usage, this.d);
+                c.j(usage, this.d);
             }
             if (i10 >= 32) {
                 d.b(usage, this.e);

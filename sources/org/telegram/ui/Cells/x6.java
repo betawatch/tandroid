@@ -7,12 +7,12 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.text.style.ImageSpan;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.c41;
+import org.telegram.ui.Components.i41;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class x6 extends ImageSpan {
-    public static c41 b;
+    public static i41 b;
     public final /* synthetic */ int a = 1;
 
     public /* synthetic */ x6(Drawable drawable) {
@@ -84,10 +84,10 @@ public final class x6 extends ImageSpan {
     */
     public x6() {
         super(r0, 0);
-        c41 c41Var = b;
-        if (c41Var == null) {
-            c41Var = new c41(org.telegram.ui.ActionBar.i6.o2);
-            b = c41Var;
+        i41 i41Var = b;
+        if (i41Var == null) {
+            i41Var = new i41(org.telegram.ui.ActionBar.i6.o2);
+            b = i41Var;
         }
         float textSize = org.telegram.ui.ActionBar.i6.o2.getTextSize() * 0.89f;
         int i10 = (int) (0.02f * textSize);

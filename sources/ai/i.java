@@ -10,13 +10,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.vh;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.cd;
-import org.telegram.ui.w31;
+import org.telegram.ui.bd;
+import org.telegram.ui.f41;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,15 +44,15 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof hg.x1) {
-                    ((hg.x1) view2).c.invalidate();
+                if (view2 instanceof hg.y1) {
+                    ((hg.y1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof hg.x1) {
-                    ((hg.x1) view3).d.a(false, true);
+                if (view3 instanceof hg.y1) {
+                    ((hg.y1) view3).d.a(false, true);
                     break;
                 }
                 break;
@@ -66,10 +66,10 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 int i10 = org.telegram.ui.ActionBar.l3.r;
                 break;
             case 8:
-                int i11 = org.telegram.ui.Cells.wa.f;
+                int i11 = org.telegram.ui.Cells.ua.f;
                 break;
             case 9:
-                cd.Y0((View) obj);
+                bd.Y0((View) obj);
                 break;
             case 10:
                 View view4 = (View) obj;
@@ -102,8 +102,8 @@ public final /* synthetic */ class i implements Utilities.Callback {
                     h5Var.b.invalidate();
                     h5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof hg.x1) {
-                    ((hg.x1) view7).c.invalidate();
+                } else if (view7 instanceof hg.y1) {
+                    ((hg.y1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();
@@ -137,7 +137,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new uh(27));
+                    AndroidUtilities.runOnUIThread(new vh(27));
                     break;
                 }
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 20:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(w31.X());
+                hashSet.addAll(f41.Y());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -154,7 +154,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                w31.s = false;
+                f41.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
                         MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();
@@ -186,7 +186,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ i(cd cdVar) {
+    public /* synthetic */ i(bd bdVar) {
         this.a = 9;
     }
 }

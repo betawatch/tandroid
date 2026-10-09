@@ -1,85 +1,175 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.graphics.RectF;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.HashSet;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gl extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ yn c;
+public final class gl implements org.telegram.ui.Components.jl0 {
+    public final /* synthetic */ zn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gl(yn ynVar, Activity activity) {
-        super(activity);
-        this.c = ynVar;
-        setOnLongClickListener(new v(this, 2));
+    public gl(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        yn ynVar = this.c;
-        if (view == ynVar.x2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.i5[] i5VarArr = ynVar.B2;
-        if (view != i5VarArr[0] && view != i5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j3);
-            if (view == ynVar.x2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild2;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        yn ynVar = this.c;
-        if (!ynVar.y2) {
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
+    
+        if (r5 == null) goto L26;
+     */
+    @Override // org.telegram.ui.Components.jl0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void m(View view, zg.n0 n0Var, boolean z10, boolean z11) {
+        TLRPC.Document f7;
+        boolean z12;
+        HashSet hashSet;
+        int i10;
+        int i11;
+        MessageObject messageObject;
+        TLRPC.Message message;
+        zn znVar = this.a;
+        SparseArray[] sparseArrayArr = znVar.W5;
+        if (znVar.bb == null) {
             return;
         }
+        if (znVar.a() == znVar.getUserConfig().getClientUserId() && !znVar.getUserConfig().isPremium()) {
+            new rg.y0((org.telegram.ui.ActionBar.n2) znVar, 24, true).show();
+            znVar.C7(false);
+            return;
+        }
+        boolean contains = znVar.bb.getSelectedReactions().contains(n0Var);
+        HashSet hashSet2 = new HashSet();
         int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = ynVar.F2;
-            if (i12 >= animatorSetArr.length) {
-                ynVar.y2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
+        boolean z13 = false;
+        boolean z14 = false;
+        int i13 = 0;
+        while (i12 < sparseArrayArr.length) {
+            boolean z15 = z13;
+            boolean z16 = z14;
+            int i14 = i13;
+            int i15 = 0;
+            while (i15 < sparseArrayArr[i12].size()) {
+                MessageObject messageObject2 = (MessageObject) sparseArrayArr[i12].valueAt(i15);
+                if (messageObject2.hasValidGroupId()) {
+                    MessageObject.GroupedMessages c92 = znVar.c9(messageObject2);
+                    if (c92 != null && !hashSet2.contains(Long.valueOf(c92.groupId))) {
+                        hashSet2.add(Long.valueOf(c92.groupId));
+                        messageObject2 = c92.findPrimaryMessageObject();
+                    }
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    i15 = i11 + 1;
+                    hashSet2 = hashSet;
+                    contains = z12;
+                    i12 = i10;
+                }
+                if (messageObject2.hasReaction(n0Var) == contains) {
+                    hashSet = hashSet2;
+                    messageObject = messageObject2;
+                    z12 = contains;
+                    i10 = i12;
+                    i11 = i15;
+                    znVar.eb(znVar.t8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, n0Var, false, false, false, true);
+                    if (!z12) {
+                        i14++;
+                    }
+                } else {
+                    z12 = contains;
+                    hashSet = hashSet2;
+                    i10 = i12;
+                    i11 = i15;
+                    messageObject = messageObject2;
+                }
+                if (messageObject.messageOwner != null) {
+                    boolean z17 = znVar.A0.N;
+                    if (z17) {
+                        MessageObject messageObject3 = (MessageObject) znVar.o6[0].get(messageObject.getId());
+                        if (messageObject3 != null && (message = messageObject3.messageOwner) != null) {
+                            message.reactions = messageObject.messageOwner.reactions;
+                        }
+                    } else if (!z17 && znVar.q3 != null) {
+                        z15 = true;
+                    }
+                }
+                if (znVar.A0.N && !messageObject.hasReaction(znVar.q3)) {
+                    MessageObject.GroupedMessages c93 = znVar.c9(messageObject);
+                    if (c93 != null) {
+                        for (int i16 = 0; i16 < c93.messages.size(); i16++) {
+                            znVar.getMediaDataController().removeMessageFromResults(c93.messages.get(i16).getId());
+                        }
+                    } else {
+                        znVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
+                    }
+                    gg.n1 n1Var = znVar.M3;
+                    if (n1Var != null) {
+                        n1Var.l();
+                    }
+                    z15 = true;
+                    z16 = true;
+                }
+                i15 = i11 + 1;
+                hashSet2 = hashSet;
+                contains = z12;
+                i12 = i10;
             }
             i12++;
+            z13 = z15;
+            z14 = z16;
+            i13 = i14;
+        }
+        if (z13) {
+            znVar.oc(z14);
+        }
+        znVar.C7(true);
+        if (i13 > 0) {
+            long j3 = n0Var.g;
+            if (j3 == 0) {
+                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(n0Var.f);
+                if (tL_availableReaction == null) {
+                    return;
+                } else {
+                    f7 = tL_availableReaction.activate_animation;
+                }
+            } else {
+                f7 = org.telegram.ui.Components.s5.f(UserConfig.selectedAccount, j3);
+            }
+            if (f7 == null) {
+                return;
+            }
+            org.telegram.ui.Components.ad.a0(znVar).y(i13, f7, null).k(true);
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        yn ynVar = this.c;
-        if (action == 1) {
-            ynVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            ynVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.jl0
+    public final /* synthetic */ boolean o() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public final /* synthetic */ boolean v() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public final /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

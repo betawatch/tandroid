@@ -1,66 +1,74 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wt extends ShapeDrawable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class wt implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yt b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wt(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
-        super(rectShape);
-        this.b = editTextBoldCursor;
+    public /* synthetic */ wt(yt ytVar, int i10) {
+        this.a = i10;
+        this.b = ytVar;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        Bitmap bitmap;
         switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                if (!editTextBoldCursor.drawInMaim) {
-                    super.draw(canvas);
+                yt ytVar = this.b;
+                try {
+                    i10 = ytVar.w + 0;
+                    bitmap = ytVar.b;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    ytVar.E = true;
+                }
+                if (bitmap != null) {
+                    if (bitmap.getWidth() == ytVar.x) {
+                        if (ytVar.b.getHeight() != i10) {
+                        }
+                        ytVar.b.eraseColor(0);
+                        ytVar.c.save();
+                        ytVar.c.translate(0.0f, 0);
+                        ytVar.c(ytVar.c);
+                        ytVar.c.restore();
+                        ytVar.b.prepareToDraw();
+                        AndroidUtilities.runOnUIThread(ytVar.H);
+                        break;
+                    }
+                }
+                Bitmap bitmap2 = ytVar.b;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                }
+                ytVar.b = Bitmap.createBitmap(ytVar.x, i10, Bitmap.Config.ARGB_8888);
+                ytVar.c = new Canvas(ytVar.b);
+                ytVar.b.eraseColor(0);
+                ytVar.c.save();
+                ytVar.c.translate(0.0f, 0);
+                ytVar.c(ytVar.c);
+                ytVar.c.restore();
+                ytVar.b.prepareToDraw();
+                AndroidUtilities.runOnUIThread(ytVar.H);
+            default:
+                yt ytVar2 = this.b;
+                ytVar2.f = false;
+                ytVar2.g();
+                if (!ytVar2.a) {
+                    ytVar2.j();
                     break;
-                } else {
-                    editTextBoldCursor.cursorDrawn = true;
+                } else if (ytVar2.v == ytVar2.J) {
+                    ytVar2.G = true;
                     break;
                 }
-            default:
-                super.draw(canvas);
-                this.b.cursorDrawn = true;
                 break;
         }
-    }
-
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                i10 = this.b.cursorSize;
-                return AndroidUtilities.dp(i10 + 20);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        float f7;
-        switch (this.a) {
-            case 0:
-                f7 = this.b.cursorWidth;
-                return AndroidUtilities.dp(f7);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    public wt(EditTextBoldCursor editTextBoldCursor) {
-        this.b = editTextBoldCursor;
     }
 }

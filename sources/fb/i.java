@@ -3,10 +3,12 @@ package fb;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import j$.util.Objects;
+import java.net.Inet6Address;
+import java.net.InetAddress;
 import java.util.Comparator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i implements Comparator {
     public final /* synthetic */ int a;
@@ -15,8 +17,22 @@ public final class i implements Comparator {
         this.a = i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0052 A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0054 A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x005f, code lost:
+    
+        if (r0 == null) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x006a, code lost:
+    
+        return -1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:?, code lost:
+    
+        return 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0068, code lost:
+    
+        if (r0 != false) goto L35;
+     */
     @Override // java.util.Comparator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -28,7 +44,7 @@ public final class i implements Comparator {
             case 1:
                 Runnable runnable = (Runnable) obj;
                 Runnable runnable2 = (Runnable) obj2;
-                return (runnable2 instanceof ff.b ? ((ff.b) runnable2).a : 1) - (runnable instanceof ff.b ? ((ff.b) runnable).a : 1);
+                return (runnable2 instanceof gf.b ? ((gf.b) runnable2).a : 1) - (runnable instanceof gf.b ? ((gf.b) runnable).a : 1);
             case 2:
                 Map.Entry entry = (Map.Entry) obj;
                 Map.Entry entry2 = (Map.Entry) obj2;
@@ -50,24 +66,28 @@ public final class i implements Comparator {
                 s4.p pVar = (s4.p) obj;
                 s4.p pVar2 = (s4.p) obj2;
                 RecyclerView recyclerView = pVar.d;
-                if ((recyclerView == null) != (pVar2.d == null)) {
-                    return recyclerView == null ? 1 : -1;
+                if ((recyclerView == null) == (pVar2.d == null)) {
+                    boolean z10 = pVar.a;
+                    if (z10 == pVar2.a) {
+                        int i11 = pVar2.b - pVar.b;
+                        if (i11 != 0) {
+                            return i11;
+                        }
+                        int i12 = pVar.c - pVar2.c;
+                        if (i12 != 0) {
+                            return i12;
+                        }
+                        return 0;
+                    }
                 }
-                boolean z10 = pVar.a;
-                if (z10 == pVar2.a) {
-                    int i11 = pVar2.b - pVar.b;
-                    if (i11 != 0) {
-                        return i11;
-                    }
-                    int i12 = pVar.c - pVar2.c;
-                    if (i12 != 0) {
-                        return i12;
-                    }
+                break;
+            case 6:
+                InetAddress inetAddress = (InetAddress) obj;
+                if (inetAddress.getClass() == ((InetAddress) obj2).getClass()) {
                     return 0;
                 }
-                if (z10) {
-                }
-            case 6:
+                return inetAddress instanceof Inet6Address ? -1 : 1;
+            case 7:
                 return ((z4.c) obj).b - ((z4.c) obj2).b;
             default:
                 z4.d dVar = (z4.d) ((View) obj).getLayoutParams();

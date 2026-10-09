@@ -1,159 +1,208 @@
 package ci;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.bi;
-import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.vv;
-import org.telegram.ui.Components.wv;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.Components.zx;
-import org.telegram.ui.di0;
-import org.telegram.ui.oj0;
-import org.telegram.ui.qp0;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.ft;
+import org.telegram.ui.pt;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class r1 extends s4.n0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ r1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+public final class r1 implements pt {
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ MessageObject A() {
+        return null;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        switch (this.a) {
-            case 0:
-                y1 y1Var = ((z1) this.b).e;
-                recyclerView.getClass();
-                rect.right = y1Var.E1(RecyclerView.R(view)) ? 0 : AndroidUtilities.dp(4.0f);
-                rect.bottom = AndroidUtilities.dp(4.0f);
-                break;
-            case 1:
-                org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) this.b;
-                int b10 = recyclerView.T(view).b();
-                if (b10 == 0) {
-                    rect.left = AndroidUtilities.dp(18.0f);
-                }
-                if (b10 != tVar.getAdapter().h() - 1) {
-                    int h = tVar.getAdapter().h();
-                    if (h != 4) {
-                        rect.right = AndroidUtilities.dp(24.0f);
-                        break;
-                    } else {
-                        rect.right = bi.A(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
-                        break;
-                    }
-                } else {
-                    rect.right = AndroidUtilities.dp(18.0f);
-                    break;
-                }
-            case 2:
-                v vVar = ((wv) this.b).h;
-                if (!(view instanceof vv)) {
-                    vVar.getClass();
-                    if (RecyclerView.R(view) == 1) {
-                        rect.top = AndroidUtilities.dp(14.0f);
-                        break;
-                    }
-                } else {
-                    rect.left = -vVar.getPaddingLeft();
-                    rect.right = -vVar.getPaddingRight();
-                    break;
-                }
-                break;
-            case 3:
-                nz nzVar = (nz) this.b;
-                zx zxVar = nzVar.P;
-                if (!(view instanceof org.telegram.ui.Cells.o8)) {
-                    if (!(view instanceof zl0) && !(view instanceof fy)) {
-                        if (view instanceof org.telegram.ui.Components.w9) {
-                            rect.bottom = AndroidUtilities.dp(12.0f);
-                            break;
-                        }
-                    } else {
-                        rect.left = -zxVar.getPaddingLeft();
-                        rect.right = -zxVar.getPaddingRight();
-                        if (view instanceof fy) {
-                            rect.top = AndroidUtilities.dp(8.0f);
-                            break;
-                        }
-                    }
-                } else {
-                    rect.left = AndroidUtilities.dp(5.0f);
-                    rect.right = AndroidUtilities.dp(5.0f);
-                    recyclerView.getClass();
-                    if (RecyclerView.R(view) + 1 > nzVar.R.E && !UserConfig.getInstance(nzVar.c1).isPremium() && !nzVar.U0) {
-                        rect.top = AndroidUtilities.dp(10.0f);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                recyclerView.getClass();
-                if (RecyclerView.R(view) == ((ArrayList) this.b).size() - 1) {
-                    rect.bottom = AndroidUtilities.dp(4.0f);
-                    break;
-                }
-                break;
-            case 5:
-                recyclerView.getClass();
-                if (RecyclerView.R(view) == ((di0) this.b).c.size() - 1) {
-                    rect.bottom = AndroidUtilities.dp(4.0f);
-                    break;
-                }
-                break;
-            case 6:
-                super.a(rect, view, recyclerView, z0Var);
-                recyclerView.getClass();
-                int R = RecyclerView.R(view);
-                oj0 oj0Var = (oj0) this.b;
-                if (R == oj0Var.c0.size()) {
-                    rect.bottom = oj0Var.l0;
-                    break;
-                }
-                break;
-            case 7:
-                recyclerView.getClass();
-                int R2 = RecyclerView.R(view);
-                qp0 qp0Var = (qp0) this.b;
-                int i10 = qp0Var.b0;
-                if (R2 >= i10) {
-                    int i11 = qp0Var.f0;
-                    if (R2 < i10 + i11) {
-                        int i12 = R2 - i10;
-                        int i13 = i12 / 3;
-                        boolean z10 = i13 == 0;
-                        boolean z11 = i13 == (i11 - 1) / 3;
-                        int i14 = i12 % 3;
-                        boolean z12 = i14 == 0;
-                        boolean z13 = i14 == 2;
-                        rect.top = z10 ? AndroidUtilities.dp(8.0f) : 0;
-                        rect.bottom = z11 ? AndroidUtilities.dp(8.0f) : 0;
-                        rect.left = z12 ? AndroidUtilities.dp(10.0f) : 0;
-                        rect.right = z13 ? AndroidUtilities.dp(10.0f) : 0;
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.a(rect, view, recyclerView, z0Var);
-                recyclerView.getClass();
-                int R3 = RecyclerView.R(view);
-                tg.z0 z0Var2 = (tg.z0) this.b;
-                if (R3 == z0Var2.d0.size()) {
-                    rect.bottom = z0Var2.p0;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean B() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean E(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ String G(boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean I() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean J() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean N(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ Boolean P(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean Q() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ TLRPC.PollAnswer h() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean i() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ p80 j(m6 m6Var) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final boolean l() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final boolean m(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ boolean y() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void C(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void F(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void H(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void O(String str) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void k(SendMessagesHelper.ImportingSticker importingSticker) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void o(String str) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void p(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void r(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void v(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void z(String str) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void f(CharSequence charSequence, String str, ft ftVar) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.pt
+    public final /* synthetic */ void n(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
     }
 }

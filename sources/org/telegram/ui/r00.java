@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class r00 extends org.telegram.ui.Components.cb {
+public final class r00 extends org.telegram.ui.Components.eb {
     public final MessagesController.DialogFilter X;
     public final ArrayList Y;
     public final FrameLayout Z;
@@ -35,53 +35,58 @@ public final class r00 extends org.telegram.ui.Components.cb {
         if (arrayList != null) {
             arrayList2.addAll(arrayList);
         }
-        S(false);
-        this.e.setTitle(P(null));
-        fixNavigationBar(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false));
+        V(false);
+        this.e.setTitle(S(null));
+        fixNavigationBar(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h5, false));
         TextView textView = new TextView(getContext());
         this.b0 = textView;
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
         textView.setTypeface(AndroidUtilities.bold());
-        textView.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.i6.Oh));
+        textView.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.i6.Oh));
         textView.setText(LocaleController.getString(R.string.FolderLinkShareButton));
         textView.setGravity(17);
-        textView.setOnClickListener(new a(this, 22));
-        FrameLayout.LayoutParams d = w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
-        int i10 = d.leftMargin;
+        textView.setOnClickListener(new a(this, 21));
+        FrameLayout.LayoutParams a2 = w7.x5.a(48.0f, 16.0f, 10.0f, 16.0f, 10.0f, -1, 87);
+        int i10 = a2.leftMargin;
         int i11 = this.backgroundPaddingLeft;
-        d.leftMargin = i10 + i11;
-        d.rightMargin += i11;
-        this.containerView.addView(textView, d);
+        a2.leftMargin = i10 + i11;
+        a2.rightMargin += i11;
+        this.containerView.addView(textView, a2);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.Z = frameLayout;
-        this.containerView.addView(frameLayout, w7.z5.d(-1, 100.0f, 80, 6.0f, 0.0f, 6.0f, 0.0f));
-        R();
+        this.containerView.addView(frameLayout, w7.x5.a(100.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 80));
+        U();
     }
 
-    public static void Q(org.telegram.ui.ActionBar.n2 n2Var, MessagesController.DialogFilter dialogFilter, g10 g10Var) {
+    public static void T(org.telegram.ui.ActionBar.n2 n2Var, MessagesController.DialogFilter dialogFilter, uz uzVar) {
         long currentTimeMillis = System.currentTimeMillis();
         TL_chatlists.TL_chatlists_getExportedInvites tL_chatlists_getExportedInvites = new TL_chatlists.TL_chatlists_getExportedInvites();
         TL_chatlists.TL_inputChatlistDialogFilter tL_inputChatlistDialogFilter = new TL_chatlists.TL_inputChatlistDialogFilter();
         tL_chatlists_getExportedInvites.chatlist = tL_inputChatlistDialogFilter;
         tL_inputChatlistDialogFilter.filter_id = dialogFilter.id;
-        n2Var.getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new org.telegram.messenger.ja(n2Var, dialogFilter, g10Var, currentTimeMillis, 5));
+        n2Var.getConnectionsManager().sendRequest(tL_chatlists_getExportedInvites, new org.telegram.messenger.ma(n2Var, dialogFilter, uzVar, currentTimeMillis, 5));
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void E(org.telegram.ui.Components.mw0 mw0Var) {
-        org.telegram.ui.Components.zl0 zl0Var = this.d;
-        zl0Var.setOverScrollMode(2);
-        zl0Var.setOnItemClickListener(new i(this, 10));
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return S(null);
+    }
+
+    @Override // org.telegram.ui.Components.eb
+    public final void H(org.telegram.ui.Components.sw0 sw0Var) {
+        org.telegram.ui.Components.qm0 qm0Var = this.d;
+        qm0Var.setOverScrollMode(2);
+        qm0Var.setOnItemClickListener(new i(this, 10));
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
-        jVar.o(org.telegram.ui.Components.tr.h);
+        jVar.o(org.telegram.ui.Components.hs.h);
         jVar.n(350L);
-        zl0Var.setItemAnimator(jVar);
+        qm0Var.setItemAnimator(jVar);
     }
 
-    public final void O() {
+    public final void R() {
         MessagesController.DialogFilter dialogFilter;
         org.telegram.ui.ActionBar.n2 n2Var;
         ArrayList<TLRPC.InputPeer> arrayList = new ArrayList<>();
@@ -113,7 +118,7 @@ public final class r00 extends org.telegram.ui.Components.cb {
         n2Var.getConnectionsManager().sendRequest(tL_chatlists_exportChatlistInvite, new m(this, 7));
     }
 
-    public final CharSequence P(vh.n nVar) {
+    public final CharSequence S(vh.n nVar) {
         Object obj;
         MessagesController.DialogFilter dialogFilter = this.X;
         if (dialogFilter != null) {
@@ -125,13 +130,13 @@ public final class r00 extends org.telegram.ui.Components.cb {
         return LocaleController.formatSpannable(R.string.FolderLinkShareTitle2, obj);
     }
 
-    public final void R() {
+    public final void U() {
         ArrayList arrayList = this.Y;
         this.b0.setVisibility(arrayList.isEmpty() ? 0 : 8);
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), arrayList.isEmpty() ? AndroidUtilities.dp(68.0f) : 0);
     }
 
-    public final void S(boolean z10) {
+    public final void V(boolean z10) {
         ArrayList arrayList = this.c0;
         arrayList.clear();
         ArrayList arrayList2 = this.d0;
@@ -161,15 +166,10 @@ public final class r00 extends org.telegram.ui.Components.cb {
         }
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final org.telegram.ui.Components.yl0 v(org.telegram.ui.Components.zl0 zl0Var) {
+    @Override // org.telegram.ui.Components.eb
+    public final org.telegram.ui.Components.pm0 x(org.telegram.ui.Components.qm0 qm0Var) {
         p00 p00Var = new p00(this);
         this.a0 = p00Var;
         return p00Var;
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return P(null);
     }
 }

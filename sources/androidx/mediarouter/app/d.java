@@ -1,18 +1,17 @@
 package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
-import ii.n4;
 import j$.util.DesugarCollections;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends p4.s {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g.u b;
+    public final /* synthetic */ g.t b;
 
-    public /* synthetic */ d(g.u uVar, int i10) {
+    public /* synthetic */ d(g.t tVar, int i10) {
         this.a = i10;
-        this.b = uVar;
+        this.b = tVar;
     }
 
     @Override // p4.s
@@ -32,7 +31,7 @@ public final class d extends p4.s {
 
     @Override // p4.s
     public final void e(p4.v vVar) {
-        n4 b10;
+        l2.f b10;
         p4.o oVar;
         switch (this.a) {
             case 0:
@@ -112,21 +111,21 @@ public final class d extends p4.s {
     public void k(p4.v vVar) {
         g0 g0Var;
         int i10 = this.a;
-        g.u uVar = this.b;
+        g.t tVar = this.b;
         switch (i10) {
             case 1:
-                u uVar2 = (u) uVar;
-                SeekBar seekBar = (SeekBar) uVar2.h0.get(vVar);
+                u uVar = (u) tVar;
+                SeekBar seekBar = (SeekBar) uVar.h0.get(vVar);
                 int i11 = vVar.p;
                 int i12 = u.F0;
-                if (seekBar != null && uVar2.c0 != vVar) {
+                if (seekBar != null && uVar.c0 != vVar) {
                     seekBar.setProgress(i11);
                     break;
                 }
                 break;
             case 3:
                 int i13 = o0.j0;
-                o0 o0Var = (o0) uVar;
+                o0 o0Var = (o0) tVar;
                 if (o0Var.M != vVar && (g0Var = (g0) o0Var.L.get(vVar.c)) != null) {
                     int i14 = g0Var.v.p;
                     g0Var.u(i14 == 0);

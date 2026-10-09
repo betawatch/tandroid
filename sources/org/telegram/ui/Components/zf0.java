@@ -1,244 +1,493 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.net.Uri;
-import android.net.http.SslError;
-import android.text.TextUtils;
-import android.view.View;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import java.io.ByteArrayInputStream;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fj1;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zf0 extends WebViewClient {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class zf0 extends FrameLayout {
+    public static final float N = AndroidUtilities.dp(20.0f);
+    public static final float O = AndroidUtilities.dp(30.0f);
+    public static final float P = AndroidUtilities.dp(30.0f);
+    public boolean E;
+    public boolean F;
+    public boolean G;
+    public int H;
+    public Paint I;
+    public Paint J;
+    public boolean K;
+    public yf0 L;
+    public int M;
+    public PointF a;
+    public float b;
+    public float c;
+    public mw0 d;
+    public PointF e;
+    public float f;
+    public float h;
+    public float n;
+    public RectF r;
+    public float s;
+    public float v;
+    public float w;
+    public float x;
+    public boolean y;
 
-    public /* synthetic */ zf0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public static float a(float f7) {
+        return (f7 * 3.1415927f) / 180.0f;
     }
 
-    public boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return false;
+    public static float b(MotionEvent motionEvent) {
+        if (motionEvent.getPointerCount() != 2) {
+            return 0.0f;
         }
-        Uri parse = Uri.parse(str);
-        if (!"tg".equals(parse.getScheme())) {
-            return false;
-        }
-        ((fj1) this.b).getClass();
-        ((fj1) this.b).finishFragment(false);
-        try {
-            Intent intent = new Intent("android.intent.action.VIEW", parse);
-            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
-            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
-            ApplicationLoader.applicationContext.startActivity(intent);
-            return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return true;
-        }
+        float x10 = motionEvent.getX(0);
+        float y3 = motionEvent.getY(0);
+        float x11 = x10 - motionEvent.getX(1);
+        float y10 = y3 - motionEvent.getY(1);
+        return (float) Math.sqrt((y10 * y10) + (x11 * x11));
     }
 
-    @Override // android.webkit.WebViewClient
-    public void onLoadResource(WebView webView, String str) {
-        switch (this.a) {
-            case 1:
-                if (!a(str)) {
-                    super.onLoadResource(webView, str);
-                    break;
-                }
-                break;
-            default:
-                super.onLoadResource(webView, str);
-                break;
-        }
+    private PointF getActualCenterPoint() {
+        float width = getWidth();
+        mw0 mw0Var = this.d;
+        float f7 = mw0Var.a;
+        float f10 = (this.e.x * f7) + ((width - f7) / 2.0f);
+        int i10 = !this.K ? AndroidUtilities.statusBarHeight : 0;
+        float height = getHeight();
+        float f11 = mw0Var.b;
+        float z10 = com.google.android.gms.internal.vision.e2.z(height, f11, 2.0f, i10);
+        float f12 = mw0Var.a;
+        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.q.x(f12, f11, 2.0f, z10));
     }
 
-    @Override // android.webkit.WebViewClient
-    public void onPageFinished(WebView webView, String str) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                super.onPageFinished(webView, str);
-                org.telegram.ui.du0 du0Var = (org.telegram.ui.du0) obj;
-                View view = du0Var.r;
-                if (!du0Var.x) {
-                    du0Var.n.setVisibility(4);
-                    du0Var.h.setVisibility(4);
-                    view.setEnabled(true);
-                    view.setAlpha(1.0f);
-                    break;
-                }
-                break;
-            case 1:
-                super.onPageFinished(webView, str);
-                fj1 fj1Var = (fj1) obj;
-                wq wqVar = fj1Var.c;
-                if (wqVar != null && wqVar.getVisibility() == 0) {
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    fj1Var.b.getContentView().setVisibility(0);
-                    fj1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(fj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(fj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(fj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new org.telegram.ui.ap0(this, 28));
-                    animatorSet.setDuration(150L);
-                    animatorSet.start();
-                    break;
-                }
-                break;
-            default:
-                super.onPageFinished(webView, str);
-                break;
-        }
+    private float getActualInnerRadius() {
+        mw0 mw0Var = this.d;
+        return Math.min(mw0Var.a, mw0Var.b) * this.f;
     }
 
-    @Override // android.webkit.WebViewClient
-    public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    qi.j jVar = (qi.j) this.b;
-                    if (webView == jVar.o) {
-                        jVar.f();
-                        break;
+    private float getActualOuterRadius() {
+        mw0 mw0Var = this.d;
+        return Math.min(mw0Var.a, mw0Var.b) * this.h;
+    }
+
+    public final void c(int i10, MotionEvent motionEvent) {
+        boolean z10 = this.K;
+        float x10 = motionEvent.getX();
+        float y3 = motionEvent.getY();
+        PointF actualCenterPoint = getActualCenterPoint();
+        float f7 = x10 - actualCenterPoint.x;
+        float f10 = y3 - actualCenterPoint.y;
+        float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
+        mw0 mw0Var = this.d;
+        float min = Math.min(mw0Var.a, mw0Var.b);
+        float f11 = this.f * min;
+        float f12 = this.h * min;
+        float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * f10) + (Math.cos(a(this.n) + 1.5707963267948966d) * f7));
+        if (i10 == 1) {
+            this.s = motionEvent.getX();
+            this.v = motionEvent.getY();
+            boolean z11 = Math.abs(f12 - f11) < N;
+            float f13 = P;
+            float f14 = z11 ? 0.0f : f13;
+            float f15 = z11 ? 0.0f : f13;
+            int i11 = this.H;
+            float f16 = O;
+            if (i11 != 0) {
+                if (i11 == 1) {
+                    if (sqrt < f16) {
+                        this.M = 2;
+                        this.a = actualCenterPoint;
+                        return;
+                    }
+                    if (sqrt > f11 - f13 && sqrt < f14 + f11) {
+                        this.M = 3;
+                        this.b = sqrt;
+                        this.c = f11;
+                        return;
+                    } else {
+                        if (sqrt <= f12 - f15 || sqrt >= f13 + f12) {
+                            return;
+                        }
+                        this.M = 4;
+                        this.b = sqrt;
+                        this.c = f12;
+                        return;
                     }
                 }
-                break;
-            default:
-                super.onReceivedError(webView, webResourceRequest, webResourceError);
-                break;
+                return;
+            }
+            if (sqrt < f16) {
+                this.M = 2;
+                this.a = actualCenterPoint;
+                return;
+            }
+            float f17 = f11 - f13;
+            if (abs > f17 && abs < f14 + f11) {
+                this.M = 3;
+                this.b = abs;
+                this.c = f11;
+                return;
+            } else if (abs > f12 - f15 && abs < f12 + f13) {
+                this.M = 4;
+                this.b = abs;
+                this.c = f12;
+                return;
+            } else {
+                if (abs <= f17 || abs >= f12 + f13) {
+                    this.M = 6;
+                    return;
+                }
+                return;
+            }
+        }
+        if (i10 != 2) {
+            if (i10 == 3 || i10 == 4 || i10 == 5) {
+                this.M = 1;
+                return;
+            }
+            return;
+        }
+        int i12 = this.H;
+        if (i12 == 0) {
+            int c10 = m1.j.c(this.M);
+            if (c10 == 1) {
+                float f18 = x10 - this.s;
+                float f19 = y3 - this.v;
+                float width = (getWidth() - mw0Var.a) / 2.0f;
+                int i13 = !z10 ? AndroidUtilities.statusBarHeight : 0;
+                float height = getHeight();
+                float f20 = mw0Var.b;
+                float z12 = com.google.android.gms.internal.vision.e2.z(height, f20, 2.0f, i13);
+                PointF pointF = new PointF(Math.max(width, Math.min(mw0Var.a + width, this.a.x + f18)), Math.max(z12, Math.min(f20 + z12, this.a.y + f19)));
+                float f21 = pointF.x - width;
+                float f22 = mw0Var.a;
+                this.e = new PointF(f21 / f22, (((f22 - mw0Var.b) / 2.0f) + (pointF.y - z12)) / f22);
+            } else if (c10 == 2) {
+                this.f = Math.min(Math.max(0.1f, (this.c + (abs - this.b)) / min), this.h - 0.02f);
+            } else if (c10 == 3) {
+                this.h = Math.max(this.f + 0.02f, (this.c + (abs - this.b)) / min);
+            } else if (c10 == 5) {
+                float f23 = x10 - this.s;
+                float f24 = y3 - this.v;
+                boolean z13 = x10 > actualCenterPoint.x;
+                boolean z14 = y3 > actualCenterPoint.y;
+                boolean z15 = Math.abs(f24) > Math.abs(f23);
+                this.n = (((((float) Math.sqrt((f24 * f24) + (f23 * f23))) * ((((z13 || z14 ? !z13 || z14 ? !(z13 && z14) ? !(!z15 ? f23 < 0.0f : f24 < 0.0f) : !(!z15 ? f23 < 0.0f : f24 > 0.0f) : !z15 ? f23 > 0.0f : f24 > 0.0f : !z15 ? f23 > 0.0f : f24 < 0.0f) ? 0 : 1) * 2) - 1)) / 3.1415927f) / 1.15f) + this.n;
+                this.s = x10;
+                this.v = y3;
+            }
+        } else if (i12 == 1) {
+            int c11 = m1.j.c(this.M);
+            if (c11 == 1) {
+                float f25 = x10 - this.s;
+                float f26 = y3 - this.v;
+                float width2 = (getWidth() - mw0Var.a) / 2.0f;
+                int i14 = !z10 ? AndroidUtilities.statusBarHeight : 0;
+                float height2 = getHeight();
+                float f27 = mw0Var.b;
+                float z16 = com.google.android.gms.internal.vision.e2.z(height2, f27, 2.0f, i14);
+                PointF pointF2 = new PointF(Math.max(width2, Math.min(mw0Var.a + width2, this.a.x + f25)), Math.max(z16, Math.min(f27 + z16, this.a.y + f26)));
+                float f28 = pointF2.x - width2;
+                float f29 = mw0Var.a;
+                this.e = new PointF(f28 / f29, (((f29 - mw0Var.b) / 2.0f) + (pointF2.y - z16)) / f29);
+            } else if (c11 == 2) {
+                this.f = Math.min(Math.max(0.1f, (this.c + (sqrt - this.b)) / min), this.h - 0.02f);
+            } else if (c11 == 3) {
+                this.h = Math.max(this.f + 0.02f, (this.c + (sqrt - this.b)) / min);
+            }
+        }
+        invalidate();
+        yf0 yf0Var = this.L;
+        if (yf0Var != null) {
+            PointF pointF3 = this.e;
+            float f30 = this.f;
+            float f31 = this.h;
+            float a2 = a(this.n) + 1.5707964f;
+            kg0 kg0Var = ((cg0) yf0Var).a;
+            kg0Var.a0 = f31;
+            kg0Var.b0 = pointF3;
+            kg0Var.c0 = f30;
+            kg0Var.d0 = a2;
+            l00 l00Var = kg0Var.l0;
+            if (l00Var != null) {
+                l00Var.e(false, false, false);
+            }
         }
     }
 
-    @Override // android.webkit.WebViewClient
-    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    qi.j jVar = (qi.j) this.b;
-                    if (webView == jVar.o) {
-                        jVar.f();
-                        break;
+    public final void d(int i10, MotionEvent motionEvent) {
+        if (i10 == 1) {
+            this.w = b(motionEvent);
+            this.x = 1.0f;
+            this.M = 5;
+        } else if (i10 != 2) {
+            if (i10 == 3 || i10 == 4 || i10 == 5) {
+                this.M = 1;
+                return;
+            }
+            return;
+        }
+        float b10 = b(motionEvent);
+        float e7 = a1.g.e(b10 - this.w, AndroidUtilities.density, 0.01f, this.x);
+        this.x = e7;
+        float max = Math.max(0.1f, this.f * e7);
+        this.f = max;
+        this.h = Math.max(max + 0.02f, this.h * this.x);
+        this.x = 1.0f;
+        this.w = b10;
+        invalidate();
+        yf0 yf0Var = this.L;
+        if (yf0Var != null) {
+            PointF pointF = this.e;
+            float f7 = this.f;
+            float f10 = this.h;
+            float a2 = a(this.n) + 1.5707964f;
+            kg0 kg0Var = ((cg0) yf0Var).a;
+            kg0Var.a0 = f10;
+            kg0Var.b0 = pointF;
+            kg0Var.c0 = f7;
+            kg0Var.d0 = a2;
+            l00 l00Var = kg0Var.l0;
+            if (l00Var != null) {
+                l00Var.e(false, false, false);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint;
+        Canvas canvas2 = canvas;
+        Paint paint2 = this.J;
+        RectF rectF = this.r;
+        Paint paint3 = paint2;
+        Paint paint4 = this.I;
+        super.onDraw(canvas);
+        PointF actualCenterPoint = getActualCenterPoint();
+        float actualInnerRadius = getActualInnerRadius();
+        float actualOuterRadius = getActualOuterRadius();
+        canvas2.translate(actualCenterPoint.x, actualCenterPoint.y);
+        int i10 = this.H;
+        int i11 = 0;
+        if (i10 == 0) {
+            canvas2.rotate(this.n);
+            float dp = AndroidUtilities.dp(6.0f);
+            float dp2 = AndroidUtilities.dp(12.0f);
+            float dp3 = AndroidUtilities.dp(1.5f);
+            int i12 = 0;
+            while (i12 < 30) {
+                float f7 = dp2 + dp;
+                float f10 = i12 * f7;
+                float f11 = -actualInnerRadius;
+                float f12 = f10 + dp2;
+                float f13 = dp3 - actualInnerRadius;
+                canvas2.drawRect(f10, f11, f12, f13, paint4);
+                float f14 = ((-i12) * f7) - dp;
+                float f15 = f14 - dp2;
+                canvas.drawRect(f15, f11, f14, f13, paint4);
+                float f16 = dp3 + actualInnerRadius;
+                float f17 = actualInnerRadius;
+                canvas.drawRect(f10, f17, f12, f16, paint4);
+                canvas.drawRect(f15, f17, f14, f16, paint4);
+                i12++;
+                actualInnerRadius = f17;
+                canvas2 = canvas;
+            }
+            float dp4 = AndroidUtilities.dp(6.0f);
+            while (i11 < 64) {
+                float f18 = dp4 + dp;
+                float f19 = i11 * f18;
+                float f20 = -actualOuterRadius;
+                float f21 = dp4 + f19;
+                float f22 = dp3 - actualOuterRadius;
+                canvas.drawRect(f19, f20, f21, f22, paint4);
+                float f23 = ((-i11) * f18) - dp;
+                float f24 = f23 - dp4;
+                canvas.drawRect(f24, f20, f23, f22, paint4);
+                float f25 = dp3 + actualOuterRadius;
+                float f26 = actualOuterRadius;
+                canvas.drawRect(f19, f26, f21, f25, paint4);
+                canvas.drawRect(f24, f26, f23, f25, paint4);
+                i11++;
+                actualOuterRadius = f26;
+            }
+            paint = paint4;
+        } else {
+            paint = paint4;
+            if (i10 == 1) {
+                float f27 = -actualInnerRadius;
+                rectF.set(f27, f27, actualInnerRadius, actualInnerRadius);
+                int i13 = 0;
+                while (i13 < 22) {
+                    Paint paint5 = paint3;
+                    canvas.drawArc(rectF, i13 * 16.35f, 10.2f, false, paint5);
+                    i13++;
+                    paint3 = paint5;
+                }
+                Paint paint6 = paint3;
+                float f28 = -actualOuterRadius;
+                rectF.set(f28, f28, actualOuterRadius, actualOuterRadius);
+                while (i11 < 64) {
+                    canvas.drawArc(rectF, 5.62f * i11, 3.6f, false, paint6);
+                    i11++;
+                }
+            }
+        }
+        canvas.drawCircle(0.0f, 0.0f, AndroidUtilities.dp(8.0f), paint);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0018, code lost:
+    
+        if (r2 != 6) goto L11;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r15v10 */
+    /* JADX WARN: Type inference failed for: r15v11 */
+    /* JADX WARN: Type inference failed for: r15v12 */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r15v3 */
+    /* JADX WARN: Type inference failed for: r15v4 */
+    /* JADX WARN: Type inference failed for: r15v5 */
+    /* JADX WARN: Type inference failed for: r15v6 */
+    /* JADX WARN: Type inference failed for: r15v7 */
+    /* JADX WARN: Type inference failed for: r15v8 */
+    /* JADX WARN: Type inference failed for: r15v9 */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ?? r15;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked != 5) {
+                        }
                     }
-                }
-                break;
-            default:
-                super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        switch (this.a) {
-            case 2:
-                sslErrorHandler.cancel();
-                qi.j jVar = (qi.j) this.b;
-                if (webView == jVar.o) {
-                    jVar.f();
-                    break;
-                }
-                break;
-            default:
-                super.onReceivedSslError(webView, sslErrorHandler, sslError);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        switch (this.a) {
-            case 2:
-                qi.j jVar = (qi.j) this.b;
-                if (webView != jVar.o) {
-                    return true;
-                }
-                jVar.f();
-                return true;
-            default:
-                return super.onRenderProcessGone(webView, renderProcessGoneDetail);
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        switch (this.a) {
-            case 0:
-                String uri = webResourceRequest.getUrl().toString();
-                if (!((org.telegram.ui.du0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
-                    return null;
-                }
-                Utilities.externalNetworkQueue.postRunnable(new org.telegram.messenger.video.o(this, uri, webResourceRequest, 28));
-                return null;
-            case 1:
-            default:
-                return super.shouldInterceptRequest(webView, webResourceRequest);
-            case 2:
-                Uri url = webResourceRequest.getUrl();
-                if ("http".equalsIgnoreCase(url.getScheme()) || "https".equalsIgnoreCase(url.getScheme())) {
-                    qi.j jVar = (qi.j) this.b;
-                    jVar.getClass();
-                    String path = url.getPath();
-                    if (!"https".equalsIgnoreCase(url.getScheme()) || !jVar.c.equalsIgnoreCase(url.getHost()) || url.getUserInfo() != null || ((url.getPort() != -1 && url.getPort() != 443) || path == null || !path.startsWith(jVar.d))) {
-                        return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
-                    }
-                }
-                return null;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        switch (this.a) {
-            case 0:
-                if (!((org.telegram.ui.du0) this.b).x) {
-                    break;
                 } else {
-                    nf.f.s(webView.getContext(), str);
-                    break;
+                    if (this.y) {
+                        c(2, motionEvent);
+                        return true;
+                    }
+                    if (this.E) {
+                        d(2, motionEvent);
+                        return true;
+                    }
                 }
-            case 1:
-                if (a(str) || super.shouldOverrideUrlLoading(webView, str)) {
-                }
-                break;
+                return true;
+            }
+            if (this.y) {
+                c(3, motionEvent);
+                this.y = false;
+            } else if (this.E) {
+                this.M = 1;
+                this.E = false;
+            }
+            this.F = true;
+            this.G = true;
+            return true;
         }
-        return super.shouldOverrideUrlLoading(webView, str);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
-        switch (this.a) {
-            case 2:
-                if (webResourceRequest.isForMainFrame()) {
-                    qi.j jVar = (qi.j) this.b;
-                    Uri url = webResourceRequest.getUrl();
-                    if (url != null) {
-                        if (jVar.g.equals(url.toString())) {
-                            return false;
+        if (motionEvent.getPointerCount() != 1) {
+            if (this.y) {
+                c(3, motionEvent);
+                this.F = true;
+                this.y = false;
+            }
+            if (motionEvent.getPointerCount() != 2) {
+                this.M = 1;
+                this.G = true;
+                this.E = false;
+                return true;
+            }
+            if (!this.G || this.E) {
+                return true;
+            }
+            d(1, motionEvent);
+            this.E = true;
+            return true;
+        }
+        if (this.F && !this.y) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            PointF actualCenterPoint = getActualCenterPoint();
+            PointF pointF = new PointF(x10 - actualCenterPoint.x, y3 - actualCenterPoint.y);
+            float f7 = pointF.x;
+            float f10 = pointF.y;
+            float sqrt = (float) Math.sqrt((f10 * f10) + (f7 * f7));
+            float actualInnerRadius = getActualInnerRadius();
+            float actualOuterRadius = getActualOuterRadius();
+            boolean z10 = Math.abs(actualOuterRadius - actualInnerRadius) < N;
+            float f11 = P;
+            float f12 = z10 ? 0.0f : f11;
+            float f13 = z10 ? 0.0f : f11;
+            int i10 = this.H;
+            float f14 = O;
+            if (i10 == 0) {
+                float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * pointF.y) + (Math.cos(a(this.n) + 1.5707963267948966d) * pointF.x));
+                if (sqrt < f14) {
+                    r15 = 1;
+                    this.y = true;
+                } else {
+                    r15 = 1;
+                    float f15 = actualInnerRadius - f11;
+                    if (abs <= f15 || abs >= actualInnerRadius + f12) {
+                        if (abs > actualOuterRadius - f13 && abs < actualOuterRadius + f11) {
+                            this.y = true;
+                        } else if (abs <= f15 || abs >= actualOuterRadius + f11) {
+                            r15 = 1;
+                            this.y = true;
+                        }
+                        r15 = 1;
+                    } else {
+                        this.y = true;
+                    }
+                }
+            } else {
+                boolean z11 = true;
+                r15 = z11;
+                if (i10 == 1) {
+                    if (sqrt < f14) {
+                        this.y = true;
+                        r15 = z11;
+                    } else if (sqrt <= actualInnerRadius - f11 || sqrt >= actualInnerRadius + f12) {
+                        r15 = z11;
+                        if (sqrt > actualOuterRadius - f13) {
+                            r15 = z11;
+                            if (sqrt < actualOuterRadius + f11) {
+                                this.y = true;
+                                r15 = z11;
+                            }
                         }
                     } else {
-                        jVar.getClass();
+                        this.y = true;
+                        r15 = z11;
                     }
                 }
-                return true;
-            default:
-                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+            }
+            this.F = false;
+            if (!this.y) {
+                return r15;
+            }
+            c(r15, motionEvent);
+            return r15;
         }
+        return true;
+    }
+
+    public void setDelegate(yf0 yf0Var) {
+        this.L = yf0Var;
+    }
+
+    public void setType(int i10) {
+        this.H = i10;
+        invalidate();
     }
 }

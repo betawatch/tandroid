@@ -1,29 +1,50 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ yn d;
+public final class vl extends uu0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ zn c;
 
-    public vl(yn ynVar, boolean z10, boolean z11, boolean z12) {
-        this.d = ynVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    public vl(zn znVar, ArrayList arrayList, boolean[] zArr) {
+        this.c = znVar;
+        this.a = arrayList;
+        this.b = zArr;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        yn ynVar = this.d;
-        ynVar.K2 = null;
-        ynVar.H2.setVisibility(this.a ? 0 : 4);
-        ynVar.J2.setVisibility(this.b ? 0 : 4);
-        ynVar.I2.setVisibility(this.c ? 0 : 4);
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        ArrayList arrayList = this.a;
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            if (!this.b[size]) {
+                arrayList.remove(size);
+            }
+        }
+        this.c.ib(arrayList, i11, z10, z11);
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final boolean x(int i10) {
+        return this.b[i10];
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return i10;
     }
 }

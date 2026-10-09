@@ -1,61 +1,30 @@
 package v7;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.os.Build;
+import android.os.CancellationSignal;
+import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static Boolean a;
-    public static Boolean b;
-    public static Boolean c;
-    public static Boolean d;
-    public static Boolean e;
-    public static Boolean f;
-    public static Boolean g;
-
-    public static boolean a(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (f == null) {
-            f = Boolean.valueOf(Build.VERSION.SDK_INT >= 26 && packageManager.hasSystemFeature("android.hardware.type.automotive"));
+    public static void a(CancellationSignal cancellationSignal, sd.a onResultOrException) {
+        kotlin.jvm.internal.i.e(onResultOrException, "onResultOrException");
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.h.a(cancellationSignal)) {
+            return;
         }
-        return f.booleanValue();
+        onResultOrException.invoke();
     }
 
-    public static boolean b(Resources resources) {
-        boolean z10 = false;
-        if (resources == null) {
+    public static boolean b(int i10, sd.p pVar, sd.l lVar, CancellationSignal cancellationSignal) {
+        if (i10 == -1) {
             return false;
         }
-        if (d == null) {
-            Configuration configuration = resources.getConfiguration();
-            if ((configuration.screenLayout & 15) <= 3 && configuration.smallestScreenWidthDp >= 600) {
-                z10 = true;
-            }
-            d = Boolean.valueOf(z10);
+        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
+        pVar2.a = new w0.h(hg.c.i(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        if (i10 == 0) {
+            pVar2.a = new w0.g("activity is cancelled by the user.");
         }
-        return d.booleanValue();
-    }
-
-    public static boolean c(Context context) {
-        Resources resources = context.getResources();
-        if (resources == null) {
-            return false;
-        }
-        if (b == null) {
-            b = Boolean.valueOf((resources.getConfiguration().screenLayout & 15) > 3 || b(resources));
-        }
-        return b.booleanValue();
-    }
-
-    public static boolean d(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (g == null) {
-            g = Boolean.valueOf(packageManager.hasSystemFeature("com.google.android.tv") || packageManager.hasSystemFeature("android.hardware.type.television") || packageManager.hasSystemFeature("android.software.leanback"));
-        }
-        return g.booleanValue();
+        pVar.invoke(cancellationSignal, new b1.c(lVar, pVar2, 1));
+        return true;
     }
 }

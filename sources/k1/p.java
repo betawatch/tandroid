@@ -1,15 +1,15 @@
 package k1;
 
 import org.telegram.tgnet.TLObject;
-import v7.t7;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p implements ce.c {
+public final class p implements de.c {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ce.c b;
+    public final /* synthetic */ de.c b;
 
-    public p(ce.c cVar, za.y yVar) {
+    public p(de.c cVar, za.a0 a0Var) {
         this.b = cVar;
     }
 
@@ -17,18 +17,18 @@ public final class p implements ce.c {
     /* JADX WARN: Removed duplicated region for block: B:16:0x0038  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0074  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0080  */
-    @Override // ce.c
+    @Override // de.c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object a(Object obj, kd.c cVar) {
+    public final Object b(Object obj, ld.c cVar) {
         o oVar;
         int i10;
-        za.x xVar;
+        za.y yVar;
         int i11;
         int i12 = this.a;
-        gd.i iVar = gd.i.a;
-        ce.c cVar2 = this.b;
+        hd.i iVar = hd.i.a;
+        de.c cVar2 = this.b;
         switch (i12) {
             case 0:
                 if (cVar instanceof o) {
@@ -37,16 +37,16 @@ public final class p implements ce.c {
                     if ((i13 & TLObject.FLAG_31) != 0) {
                         oVar.b = i13 - TLObject.FLAG_31;
                         Object obj2 = oVar.a;
-                        jd.a aVar = jd.a.a;
+                        kd.a aVar = kd.a.a;
                         i10 = oVar.b;
                         if (i10 == 0) {
                             if (i10 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            t7.b(obj2);
+                            a8.b(obj2);
                             return iVar;
                         }
-                        t7.b(obj2);
+                        a8.b(obj2);
                         b0 b0Var = (b0) obj;
                         if (b0Var instanceof h) {
                             throw ((h) b0Var).a;
@@ -57,53 +57,53 @@ public final class p implements ce.c {
                         if (b0Var instanceof b) {
                             Object obj3 = ((b) b0Var).a;
                             oVar.b = 1;
-                            return cVar2.a(obj3, oVar) == aVar ? aVar : iVar;
+                            return cVar2.b(obj3, oVar) == aVar ? aVar : iVar;
                         }
                         if (b0Var instanceof c0) {
                             throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
                         }
-                        throw new androidx.car.app.j();
+                        throw new ae.x();
                     }
                 }
                 oVar = new o(this, cVar);
                 Object obj22 = oVar.a;
-                jd.a aVar2 = jd.a.a;
+                kd.a aVar2 = kd.a.a;
                 i10 = oVar.b;
                 if (i10 == 0) {
                 }
             default:
-                if (cVar instanceof za.x) {
-                    xVar = (za.x) cVar;
-                    int i14 = xVar.b;
+                if (cVar instanceof za.y) {
+                    yVar = (za.y) cVar;
+                    int i14 = yVar.b;
                     if ((i14 & TLObject.FLAG_31) != 0) {
-                        xVar.b = i14 - TLObject.FLAG_31;
-                        Object obj4 = xVar.a;
-                        jd.a aVar3 = jd.a.a;
-                        i11 = xVar.b;
+                        yVar.b = i14 - TLObject.FLAG_31;
+                        Object obj4 = yVar.a;
+                        kd.a aVar3 = kd.a.a;
+                        i11 = yVar.b;
                         if (i11 == 0) {
                             if (i11 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            t7.b(obj4);
+                            a8.b(obj4);
                             return iVar;
                         }
-                        t7.b(obj4);
-                        za.u uVar = za.y.e;
-                        za.m mVar = new za.m((String) ((n1.b) obj).a(za.v.a));
-                        xVar.b = 1;
-                        return cVar2.a(mVar, xVar) == aVar3 ? aVar3 : iVar;
+                        a8.b(obj4);
+                        za.v vVar = za.a0.e;
+                        za.n nVar = new za.n((String) ((n1.b) obj).a(za.w.a));
+                        yVar.b = 1;
+                        return cVar2.b(nVar, yVar) == aVar3 ? aVar3 : iVar;
                     }
                 }
-                xVar = new za.x(this, cVar);
-                Object obj42 = xVar.a;
-                jd.a aVar32 = jd.a.a;
-                i11 = xVar.b;
+                yVar = new za.y(this, cVar);
+                Object obj42 = yVar.a;
+                kd.a aVar32 = kd.a.a;
+                i11 = yVar.b;
                 if (i11 == 0) {
                 }
         }
     }
 
-    public p(ce.c cVar) {
+    public p(de.c cVar) {
         this.b = cVar;
     }
 }

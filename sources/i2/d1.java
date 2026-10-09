@@ -2,12 +2,12 @@ package i2;
 
 import ai.s1;
 import android.util.Pair;
-import ei.m3;
+import ei.l3;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class d1 implements u2.k0, n2.l {
+public final class d1 implements u2.j0, n2.k {
     public final f1 a;
     public final /* synthetic */ g1 b;
 
@@ -16,7 +16,7 @@ public final class d1 implements u2.k0, n2.l {
         this.a = f1Var;
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void a(int i10, u2.f0 f0Var, int i11) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -24,7 +24,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void b(int i10, u2.f0 f0Var, Exception exc) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -32,7 +32,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void c(int i10, u2.f0 f0Var, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -40,7 +40,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void d(int i10, u2.f0 f0Var, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -48,7 +48,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void e(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -56,7 +56,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void f(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -64,7 +64,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void g(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -72,15 +72,15 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void h(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, int i11) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
-            this.b.i.c(new m3(this, l4, tVar, b0Var, i11, 4));
+            this.b.i.c(new l3(this, l4, tVar, b0Var, i11, 4));
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void i(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -88,7 +88,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // u2.k0
+    @Override // u2.j0
     public final void j(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {
@@ -96,7 +96,7 @@ public final class d1 implements u2.k0, n2.l {
         }
     }
 
-    @Override // n2.l
+    @Override // n2.k
     public final void k(int i10, u2.f0 f0Var) {
         Pair l4 = l(i10, f0Var);
         if (l4 != null) {

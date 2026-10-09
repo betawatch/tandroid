@@ -1,6 +1,6 @@
 package ii;
 
-import ai.g7;
+import ai.h7;
 import j$.util.Comparator$-CC;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.function.ToIntFunction;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class j6 {
     public final TL_iv.pageBlockTable a;
@@ -162,126 +162,152 @@ public final class j6 {
         int i13;
         TL_iv.pageBlockTable pageblocktable = this.a;
         ArrayList<TL_iv.pageTableRow> arrayList = pageblocktable.rows;
-        this.b = arrayList == null ? 0 : arrayList.size();
         int i14 = 0;
+        this.b = arrayList == null ? 0 : arrayList.size();
         int i15 = 0;
+        int i16 = 0;
         while (true) {
             i10 = this.b;
-            if (i14 >= i10) {
+            if (i15 >= i10) {
                 break;
             }
-            TL_iv.pageTableRow pagetablerow = pageblocktable.rows.get(i14);
-            int i16 = 0;
-            for (int i17 = 0; i17 < pagetablerow.cells.size(); i17++) {
-                i16 += n(pagetablerow.cells.get(i17));
+            TL_iv.pageTableRow pagetablerow = pageblocktable.rows.get(i15);
+            int i17 = 0;
+            for (int i18 = 0; i18 < pagetablerow.cells.size(); i18++) {
+                i17 += n(pagetablerow.cells.get(i18));
             }
-            if (i16 > i15) {
-                i15 = i16;
+            if (i17 > i16) {
+                i16 = i17;
             }
-            i14++;
+            i15++;
         }
-        TL_iv.pageTableCell[][] pagetablecellArr = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, Math.max(i10, 1), Math.max(i15, 1));
-        int[] iArr = {Math.max(this.b, 1), Math.max(i15, 1)};
+        int i19 = 1;
+        TL_iv.pageTableCell[][] pagetablecellArr = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, Math.max(i10, 1), Math.max(i16, 1));
+        int[] iArr = {Math.max(this.b, 1), Math.max(i16, 1)};
         Class cls = Integer.TYPE;
         int[][] iArr2 = (int[][]) Array.newInstance((Class<?>) cls, iArr);
-        int[][] iArr3 = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.b, 1), Math.max(i15, 1));
-        for (int i18 = 0; i18 < iArr2.length; i18++) {
-            for (int i19 = 0; i19 < iArr2[0].length; i19++) {
-                iArr2[i18][i19] = -1;
-                iArr3[i18][i19] = -1;
+        int[][] iArr3 = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.b, 1), Math.max(i16, 1));
+        for (int i20 = 0; i20 < iArr2.length; i20++) {
+            for (int i21 = 0; i21 < iArr2[0].length; i21++) {
+                iArr2[i20][i21] = -1;
+                iArr3[i20][i21] = -1;
             }
         }
-        int i20 = 0;
-        int i21 = 0;
+        int i22 = 0;
+        int i23 = 0;
         while (true) {
             i11 = this.b;
-            if (i20 >= i11) {
+            if (i22 >= i11) {
                 break;
             }
-            TL_iv.pageTableRow pagetablerow2 = pageblocktable.rows.get(i20);
-            int i22 = 0;
-            int i23 = 0;
-            while (i22 < pagetablerow2.cells.size()) {
-                TL_iv.pageTableCell pagetablecell2 = pagetablerow2.cells.get(i22);
+            TL_iv.pageTableRow pagetablerow2 = pageblocktable.rows.get(i22);
+            int i24 = i19;
+            int i25 = i14;
+            int i26 = i25;
+            while (i25 < pagetablerow2.cells.size()) {
+                TL_iv.pageTableCell pagetablecell2 = pagetablerow2.cells.get(i25);
                 int n10 = n(pagetablecell2);
-                int i24 = pagetablecell2.rowspan;
-                if (i24 == 0) {
-                    i24 = 1;
+                int i27 = i14;
+                int i28 = pagetablecell2.rowspan;
+                if (i28 == 0) {
+                    i28 = i24;
                 }
-                while (i23 < i15 && pagetablecellArr[i20][i23] != null) {
-                    i23++;
+                while (i26 < i16 && pagetablecellArr[i22][i26] != null) {
+                    i26++;
                 }
-                int i25 = i23 + n10;
-                if (i25 > i15) {
-                    i15 = Math.max(i25, i15 * 2);
+                int i29 = i26 + n10;
+                if (i29 > i16) {
+                    i16 = Math.max(i29, i16 * 2);
                     pagetablecell = pagetablecell2;
-                    i12 = i24;
-                    TL_iv.pageTableCell[][] pagetablecellArr2 = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, pagetablecellArr.length, i15);
-                    int i26 = 0;
-                    while (i26 < pagetablecellArr.length) {
-                        TL_iv.pageTableCell[] pagetablecellArr3 = pagetablecellArr[i26];
-                        int i27 = i26;
-                        System.arraycopy(pagetablecellArr3, 0, pagetablecellArr2[i27], 0, pagetablecellArr3.length);
-                        i26 = i27 + 1;
+                    int length = pagetablecellArr.length;
+                    i12 = i28;
+                    int[] iArr4 = new int[2];
+                    iArr4[i24] = i16;
+                    iArr4[i27] = length;
+                    TL_iv.pageTableCell[][] pagetablecellArr2 = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, iArr4);
+                    int i30 = i27;
+                    while (i30 < pagetablecellArr.length) {
+                        TL_iv.pageTableCell[] pagetablecellArr3 = pagetablecellArr[i30];
+                        int i31 = i30;
+                        int i32 = i22;
+                        int i33 = i27;
+                        System.arraycopy(pagetablecellArr3, i33, pagetablecellArr2[i31], i33, pagetablecellArr3.length);
+                        i30 = i31 + 1;
                         pagetablecellArr = pagetablecellArr;
-                        i20 = i20;
+                        i22 = i32;
+                        i27 = 0;
                     }
-                    i13 = i20;
-                    iArr2 = e(iArr2, i15);
-                    iArr3 = e(iArr3, i15);
+                    i13 = i22;
+                    iArr2 = e(iArr2, i16);
+                    iArr3 = e(iArr3, i16);
                     pagetablecellArr = pagetablecellArr2;
                 } else {
                     pagetablecell = pagetablecell2;
-                    i12 = i24;
-                    i13 = i20;
+                    i12 = i28;
+                    i13 = i22;
                 }
-                for (int i28 = i13; i28 < i13 + i12 && i28 < this.b; i28++) {
-                    for (int i29 = i23; i29 < i25; i29++) {
-                        pagetablecellArr[i28][i29] = pagetablecell;
-                        iArr2[i28][i29] = i13;
-                        iArr3[i28][i29] = i23;
+                for (int i34 = i13; i34 < i13 + i12 && i34 < this.b; i34++) {
+                    for (int i35 = i26; i35 < i29; i35++) {
+                        pagetablecellArr[i34][i35] = pagetablecell;
+                        iArr2[i34][i35] = i13;
+                        iArr3[i34][i35] = i26;
                     }
                 }
-                if (i25 > i21) {
-                    i21 = i25;
+                if (i29 > i23) {
+                    i23 = i29;
                 }
-                i22++;
-                i23 = i25;
-                i20 = i13;
+                i25++;
+                i26 = i29;
+                i22 = i13;
+                i14 = 0;
             }
-            i20++;
+            i22++;
+            i19 = i24;
+            i14 = 0;
         }
-        this.c = i21;
-        this.d = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, Math.max(i11, 1), Math.max(this.c, 1));
-        this.e = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.b, 1), Math.max(this.c, 1));
-        this.f = (int[][]) Array.newInstance((Class<?>) cls, Math.max(this.b, 1), Math.max(this.c, 1));
-        for (int i30 = 0; i30 < this.b; i30++) {
-            for (int i31 = 0; i31 < this.c; i31++) {
+        this.c = i23;
+        int max = Math.max(i11, i19);
+        int[] iArr5 = new int[2];
+        iArr5[i19] = Math.max(this.c, i19);
+        iArr5[0] = max;
+        this.d = (TL_iv.pageTableCell[][]) Array.newInstance((Class<?>) TL_iv.pageTableCell.class, iArr5);
+        int max2 = Math.max(this.b, i19);
+        int[] iArr6 = new int[2];
+        iArr6[i19] = Math.max(this.c, i19);
+        iArr6[0] = max2;
+        this.e = (int[][]) Array.newInstance((Class<?>) cls, iArr6);
+        int max3 = Math.max(this.b, i19);
+        int[] iArr7 = new int[2];
+        iArr7[i19] = Math.max(this.c, i19);
+        iArr7[0] = max3;
+        this.f = (int[][]) Array.newInstance((Class<?>) cls, iArr7);
+        for (int i36 = 0; i36 < this.b; i36++) {
+            for (int i37 = 0; i37 < this.c; i37++) {
                 TL_iv.pageTableCell[][] pagetablecellArr4 = this.d;
-                pagetablecellArr4[i30][i31] = pagetablecellArr[i30][i31];
-                this.e[i30][i31] = iArr2[i30][i31];
-                this.f[i30][i31] = iArr3[i30][i31];
-                if (pagetablecellArr4[i30][i31] == null) {
+                pagetablecellArr4[i36][i37] = pagetablecellArr[i36][i37];
+                this.e[i36][i37] = iArr2[i36][i37];
+                this.f[i36][i37] = iArr3[i36][i37];
+                if (pagetablecellArr4[i36][i37] == null) {
                     TL_iv.pageTableCell f7 = f();
-                    this.d[i30][i31] = f7;
-                    this.e[i30][i31] = i30;
-                    this.f[i30][i31] = i31;
-                    pageblocktable.rows.get(i30).cells.add(f7);
+                    this.d[i36][i37] = f7;
+                    this.e[i36][i37] = i36;
+                    this.f[i36][i37] = i37;
+                    pageblocktable.rows.get(i36).cells.add(f7);
                 }
             }
         }
         ArrayList arrayList2 = this.g;
         arrayList2.clear();
         LinkedHashSet linkedHashSet = new LinkedHashSet();
-        for (int i32 = 0; i32 < this.b; i32++) {
-            int i33 = 0;
+        for (int i38 = 0; i38 < this.b; i38++) {
+            int i39 = 0;
             while (true) {
-                int i34 = this.c;
-                if (i33 < i34) {
-                    if (i32 >= 0 && i33 >= 0 && i32 < this.b && i33 < i34 && this.e[i32][i33] == i32 && this.f[i32][i33] == i33 && linkedHashSet.add(this.d[i32][i33])) {
-                        arrayList2.add(this.d[i32][i33]);
+                int i40 = this.c;
+                if (i39 < i40) {
+                    if (i38 >= 0 && i39 >= 0 && i38 < this.b && i39 < i40 && this.e[i38][i39] == i38 && this.f[i38][i39] == i39 && linkedHashSet.add(this.d[i38][i39])) {
+                        arrayList2.add(this.d[i38][i39]);
                     }
-                    i33++;
+                    i39++;
                 }
             }
         }
@@ -370,7 +396,7 @@ public final class j6 {
                             arrayList.add(new Object[]{pagetablecell4, Integer.valueOf(i14)});
                         }
                     }
-                    Collections.sort(arrayList, Comparator$-CC.comparingInt(new g7(3)));
+                    Collections.sort(arrayList, Comparator$-CC.comparingInt(new h7(3)));
                     pagetablerow.cells.clear();
                     int size2 = arrayList.size();
                     int i15 = 0;

@@ -4,7 +4,7 @@ import android.os.Looper;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b0 implements n6.b {
     public final WeakReference a;
@@ -27,11 +27,11 @@ public final class b0 implements n6.b {
         n6.l.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == g0Var.a.o.h);
         lock.lock();
         try {
-            if (g0Var.i(0)) {
+            if (g0Var.h(0)) {
                 if (!aVar.c()) {
                     g0Var.f(aVar, this.b, this.c);
                 }
-                if (g0Var.j()) {
+                if (g0Var.i()) {
                     g0Var.g();
                 }
             }

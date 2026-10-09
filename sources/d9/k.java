@@ -1,44 +1,44 @@
 package d9;
 
-import a3.s;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class k implements i {
-    public static final s d = new s(1);
-    public final Object a = new Object();
-    public volatile i b;
-    public Object c;
+public final class k implements j, Serializable {
+    public final transient Object a = new Object();
+    public final j b;
+    public volatile transient boolean c;
+    public transient Object d;
 
-    public k(i iVar) {
-        this.b = iVar;
+    public k(j jVar) {
+        this.b = jVar;
     }
 
-    @Override // d9.i
+    @Override // d9.j
     public final Object get() {
-        i iVar = this.b;
-        s sVar = d;
-        if (iVar != sVar) {
+        if (!this.c) {
             synchronized (this.a) {
                 try {
-                    if (this.b != sVar) {
+                    if (!this.c) {
                         Object obj = this.b.get();
-                        this.c = obj;
-                        this.b = sVar;
+                        this.d = obj;
+                        this.c = true;
                         return obj;
                     }
                 } finally {
                 }
             }
         }
-        return this.c;
+        return this.d;
     }
 
     public final String toString() {
-        Object obj = this.b;
+        Object obj;
         StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
-        if (obj == d) {
-            obj = "<supplier that returned " + this.c + ">";
+        if (this.c) {
+            obj = "<supplier that returned " + this.d + ">";
+        } else {
+            obj = this.b;
         }
         sb2.append(obj);
         sb2.append(")");

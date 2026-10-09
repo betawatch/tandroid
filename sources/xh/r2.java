@@ -1,6 +1,6 @@
 package xh;
 
-import ai.o5;
+import ai.p5;
 import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -8,40 +8,41 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import w7.z5;
-import yh.l5;
-import yh.u5;
+import w7.b6;
+import w7.x5;
+import yh.e5;
+import yh.m5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final class r2 extends org.telegram.ui.ActionBar.f3 {
     public long b;
 
-    public r2(Context context, long j3, TL_stars.SavedStarGift savedStarGift, d6 d6Var, Utilities.Callback0Return callback0Return) {
-        super(1, context, d6Var, false);
+    public r2(Context context, long j3, TL_stars.SavedStarGift savedStarGift, e6 e6Var, Utilities.Callback0Return callback0Return) {
+        super(1, context, e6Var, false);
         this.b = 0L;
         fixNavigationBar();
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView b10 = w7.d6.b(context, 20.0f, i6.G6, true, d6Var);
+        TextView b10 = b6.b(context, 20.0f, i6.G6, true, e6Var);
         b10.setText(LocaleController.getString(R.string.Gift2UnpinAlertTitle));
-        linearLayout.addView(b10, z5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView b11 = w7.d6.b(context, 14.0f, i6.y6, false, d6Var);
+        linearLayout.addView(b10, x5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+        TextView b11 = b6.b(context, 14.0f, i6.y6, false, e6Var);
         b11.setText(LocaleController.getString(R.string.Gift2UnpinAlertSubtitle));
-        linearLayout.addView(b11, z5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
-        ci.d dVar = new ci.d(context, d6Var, true);
-        l5 G = u5.y(this.currentAccount, false).G(j3, true);
-        q2 q2Var = new q2(context, this.currentAccount, 0, false, new ai.m0(22, this, G), new rg.x(15, this, dVar), null, d6Var);
+        linearLayout.addView(b11, x5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
+        ci.d dVar = new ci.d(context, e6Var, true);
+        e5 G = m5.y(this.currentAccount, false).G(j3, true);
+        q2 q2Var = new q2(context, this.currentAccount, 0, false, new qh.r(2, this, G), new qg.x1(18, this, dVar), null, e6Var);
         q2Var.setSpanCount(3);
         q2Var.setOverScrollMode(2);
         q2Var.setScrollEnabled(false);
-        linearLayout.addView(q2Var, z5.k(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
+        linearLayout.addView(q2Var, x5.k(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
         dVar.g(LocaleController.getString(R.string.Gift2UnpinAlertButton), false, true);
-        linearLayout.addView(dVar, z5.k(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
+        linearLayout.addView(dVar, x5.k(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
         dVar.setEnabled(false);
-        dVar.setOnClickListener(new o5(this, G, savedStarGift, callback0Return, 16));
+        dVar.setOnClickListener(new p5(this, G, savedStarGift, callback0Return, 16));
         setCustomView(linearLayout);
     }
 }

@@ -3,7 +3,7 @@ package ii;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
     public final /* synthetic */ int a;
@@ -18,16 +18,16 @@ public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusCh
     public final void onGlobalFocusChanged(View view, View view2) {
         switch (this.a) {
             case 0:
-                ((r) this.b).Y();
+                ((r) this.b).c0();
                 break;
             case 1:
                 ((e2) this.b).w0();
                 break;
             case 2:
                 x3 x3Var = (x3) this.b;
-                x3Var.h3 = (view2 == null || x3Var.F(view2) == null) ? false : true;
+                x3Var.Y2 = (view2 == null || x3Var.F(view2) == null) ? false : true;
                 if (view2 instanceof i1) {
-                    x3Var.S3 = (i1) view2;
+                    x3Var.J3 = (i1) view2;
                     break;
                 }
                 break;

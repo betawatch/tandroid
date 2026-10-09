@@ -1,76 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ef extends AnimatorListenerAdapter {
+public final class ef extends ImageView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ChatActivityEnterView c;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ ef(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ef(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = z10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (animator.equals(chatActivityEnterView.s2)) {
-                    chatActivityEnterView.s2 = null;
-                    break;
-                }
+            case 0:
+                super.onLayout(z10, i10, i11, i12, i13);
+                post(new le(this.b, 5));
                 break;
             default:
-                super.onAnimationCancel(animator);
+                super.onLayout(z10, i10, i11, i12, i13);
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        bf bfVar;
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 2:
+                if (getAlpha() <= 0.0f) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
         switch (this.a) {
             case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (chatActivityEnterView.l5) {
-                    chatActivityEnterView.w1.setVisibility(this.b ? 0 : 8);
+                super.setAlpha(f7);
+                cf cfVar = this.b.J1;
+                if (cfVar != null) {
+                    cfVar.setTranslationX(cfVar.a);
                     break;
                 }
                 break;
             case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                if (animator.equals(chatActivityEnterView2.s2)) {
-                    chatActivityEnterView2.p1.setVisibility(8);
-                    if (this.b && (bfVar = chatActivityEnterView2.J1) != null) {
-                        bfVar.setVisibility(8);
-                    }
-                    chatActivityEnterView2.s2 = null;
-                    break;
-                }
-                break;
-            case 2:
-                ChatActivityEnterView chatActivityEnterView3 = this.c;
-                chatActivityEnterView3.M1 = null;
-                if (!this.b) {
-                    chatActivityEnterView3.J1.setVisibility(8);
+                super.setAlpha(f7);
+                cf cfVar2 = this.b.J1;
+                if (cfVar2 != null) {
+                    cfVar2.setTranslationX(cfVar2.a);
                     break;
                 }
                 break;
             default:
-                float f7 = this.b ? 1.0f : 0.0f;
-                ChatActivityEnterView chatActivityEnterView4 = this.c;
-                chatActivityEnterView4.w0 = f7;
-                fg fgVar = chatActivityEnterView4.U0;
-                if (fgVar != null) {
-                    fgVar.X();
+                super.setAlpha(f7);
+                xe xeVar = this.b.Z0;
+                if (xeVar != null) {
+                    xeVar.invalidate();
                     break;
                 }
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i10);
+                xe xeVar = this.b.Z0;
+                if (xeVar != null) {
+                    xeVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

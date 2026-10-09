@@ -6,12 +6,13 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import ci.u5;
 import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Set;
 import q9.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements pa.b {
     public final /* synthetic */ int a;
@@ -36,7 +37,7 @@ public final /* synthetic */ class d implements pa.b {
                 ua.a aVar = new ua.a();
                 int i10 = Build.VERSION.SDK_INT;
                 if (i10 >= 24) {
-                    context = i10 >= 24 ? f0.b.a(context) : null;
+                    context = i10 >= 24 ? f0.a.a(context) : null;
                 }
                 SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.common.prefs:" + d, 0);
                 boolean z10 = true;
@@ -59,7 +60,7 @@ public final /* synthetic */ class d implements pa.b {
                 q9.g gVar = (q9.g) this.c;
                 q9.a aVar2 = (q9.a) this.b;
                 q9.d dVar = aVar2.f;
-                cf.c cVar = new cf.c();
+                u5 u5Var = new u5();
                 HashSet hashSet = new HashSet();
                 HashSet hashSet2 = new HashSet();
                 HashSet hashSet3 = new HashSet();
@@ -89,13 +90,13 @@ public final /* synthetic */ class d implements pa.b {
                 if (!set2.isEmpty()) {
                     hashSet.add(r.a(ma.a.class));
                 }
-                cVar.a = DesugarCollections.unmodifiableSet(hashSet);
-                cVar.b = DesugarCollections.unmodifiableSet(hashSet2);
-                cVar.c = DesugarCollections.unmodifiableSet(hashSet3);
-                cVar.d = DesugarCollections.unmodifiableSet(hashSet4);
+                u5Var.a = DesugarCollections.unmodifiableSet(hashSet);
+                u5Var.b = DesugarCollections.unmodifiableSet(hashSet2);
+                u5Var.c = DesugarCollections.unmodifiableSet(hashSet3);
+                u5Var.d = DesugarCollections.unmodifiableSet(hashSet4);
                 DesugarCollections.unmodifiableSet(hashSet5);
-                cVar.e = gVar;
-                return dVar.E(cVar);
+                u5Var.e = gVar;
+                return dVar.y0(u5Var);
         }
     }
 

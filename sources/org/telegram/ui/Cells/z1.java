@@ -12,51 +12,51 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z1 extends LinearLayout {
     public final ImageView a;
-    public final org.telegram.ui.Components.p6 b;
+    public final org.telegram.ui.Components.r6 b;
     public final View c;
 
     public z1(a2 a2Var, Context context, int i10) {
         super(context);
         int i11 = org.telegram.ui.ActionBar.i6.G6;
-        org.telegram.ui.ActionBar.d6 d6Var = a2Var.b;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(i11, d6Var);
+        org.telegram.ui.ActionBar.e6 e6Var = a2Var.b;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(i11, e6Var);
         if (i10 != 0) {
             ImageView imageView = new ImageView(context);
             this.a = imageView;
-            imageView.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
+            imageView.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
             imageView.setImageResource(i10);
         }
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, true, false);
-        this.b = p6Var;
-        p6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        p6Var.setTextColor(v02);
-        p6Var.setIncludeFontPadding(false);
-        p6Var.setTypeface(AndroidUtilities.bold());
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(context, false, true, false);
+        this.b = r6Var;
+        r6Var.setTextSize(AndroidUtilities.dp(13.0f));
+        r6Var.setTextColor(w02);
+        r6Var.setIncludeFontPadding(false);
+        r6Var.setTypeface(AndroidUtilities.bold());
         View view = new View(context);
         this.c = view;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
         if (LocaleController.isRTL) {
-            addView(view, w7.z5.t(16, 16, 16, 11, 0, 3, 0));
-            addView(p6Var, w7.z5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
+            addView(view, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
+            addView(r6Var, w7.x5.t(-2, 16, 16, 0, 0, this.a != null ? 3 : 11, 0));
             View view2 = this.a;
             if (view2 != null) {
-                addView(view2, w7.z5.t(16, 16, 16, 0, 0, 11, 0));
+                addView(view2, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
             }
         } else {
             View view3 = this.a;
             if (view3 != null) {
-                addView(view3, w7.z5.t(16, 16, 16, 11, 0, 3, 0));
+                addView(view3, w7.x5.t(16, 16, 16, 11, 0, 3, 0));
             }
-            addView(p6Var, w7.z5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
-            addView(view, w7.z5.t(16, 16, 16, 0, 0, 11, 0));
+            addView(r6Var, w7.x5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(view, w7.x5.t(16, 16, 16, 0, 0, 11, 0));
         }
-        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var), 16, 16));
+        setBackground(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, e6Var), 16, 16));
         setClickable(true);
     }
 

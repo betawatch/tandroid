@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
@@ -89,7 +89,7 @@ public final class TemplateWrapper {
         StringBuilder sb2 = new StringBuilder("[template: ");
         sb2.append(this.mTemplate);
         sb2.append(", ID: ");
-        return a4.a.t(sb2, this.mId, "]");
+        return a1.g.t(sb2, this.mId, "]");
     }
 
     public static TemplateWrapper wrap(x0 x0Var, String str) {

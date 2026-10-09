@@ -1,9 +1,8 @@
 package androidx.credentials.playservices;
 
-import a1.b;
 import a1.e;
-import a1.g;
-import ai.g6;
+import a1.h;
+import ai.h6;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CancellationSignal;
@@ -16,6 +15,9 @@ import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.identitycredentials.GetCredentialRequest;
 import com.google.android.gms.tasks.Task;
+import ei.c5;
+import g7.b;
+import h7.g;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -25,21 +27,19 @@ import k6.d;
 import kotlin.jvm.internal.i;
 import kotlin.jvm.internal.p;
 import org.json.JSONException;
-import rd.l;
+import sd.l;
 import v0.j;
-import v0.o;
+import v0.n;
 import v0.q;
 import v0.r;
-import v0.s;
 import w0.a;
 import w0.c;
-import w0.h;
-import w7.i8;
+import w7.g8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
-    public static final g Companion = new g();
+    public static final h Companion = new h();
     public static final int MIN_GMS_APK_VERSION = 230815045;
     public static final int MIN_GMS_APK_VERSION_DIGITAL_CRED = 243100000;
     public static final int MIN_GMS_APK_VERSION_RESTORE_CRED = 242200000;
@@ -58,19 +58,19 @@ public final class CredentialProviderPlayServicesImpl implements j {
         return this.googleApiAvailability.d(context, i10);
     }
 
-    private static final gd.i onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Boolean bool) {
+    private static final hd.i onClearCredential$lambda$10(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Boolean bool) {
         Companion.getClass();
-        if (!g.a(cancellationSignal)) {
+        if (!h.a(cancellationSignal)) {
             onClearCredential$lambda$10$lambda$9(executor, iVar);
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i onClearCredential$lambda$10$lambda$9(Executor executor, v0.i iVar) {
+    public static final hd.i onClearCredential$lambda$10$lambda$9(Executor executor, v0.i iVar) {
         Log.i(TAG, "Cleared restore credential successfully!");
-        executor.execute(new b(iVar, 0));
-        return gd.i.a;
+        executor.execute(new e(iVar, 0));
+        return hd.i.a;
     }
 
     private static final void onClearCredential$lambda$14(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e7) {
@@ -82,16 +82,16 @@ public final class CredentialProviderPlayServicesImpl implements j {
             pVar.a = new a("The restore credential internal service had a failure.");
         }
         Companion.getClass();
-        if (g.a(cancellationSignal)) {
+        if (h.a(cancellationSignal)) {
             return;
         }
         onClearCredential$lambda$14$lambda$13(executor, iVar, pVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i onClearCredential$lambda$14$lambda$13(Executor executor, v0.i iVar, p pVar) {
-        executor.execute(new e(1, iVar, pVar));
-        return gd.i.a;
+    public static final hd.i onClearCredential$lambda$14$lambda$13(Executor executor, v0.i iVar, p pVar) {
+        executor.execute(new a1.f(1, iVar, pVar));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -99,19 +99,19 @@ public final class CredentialProviderPlayServicesImpl implements j {
         iVar.onError(pVar.a);
     }
 
-    private static final gd.i onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, g7.b bVar) {
+    private static final hd.i onClearCredential$lambda$17(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, b bVar) {
         Companion.getClass();
-        if (!g.a(cancellationSignal)) {
+        if (!h.a(cancellationSignal)) {
             onClearCredential$lambda$17$lambda$16(executor, iVar);
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i onClearCredential$lambda$17$lambda$16(Executor executor, v0.i iVar) {
+    public static final hd.i onClearCredential$lambda$17$lambda$16(Executor executor, v0.i iVar) {
         Log.i(TAG, "During clear credential, signed out successfully!");
-        executor.execute(new b(iVar, 4));
-        return gd.i.a;
+        executor.execute(new e(iVar, 4));
+        return hd.i.a;
     }
 
     private static final void onClearCredential$lambda$19(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, v0.a aVar, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception it) {
@@ -120,9 +120,9 @@ public final class CredentialProviderPlayServicesImpl implements j {
         credentialProviderPlayServicesImpl.runFallbackClearCredFlow(aVar, cancellationSignal, executor, iVar);
     }
 
-    private static final gd.i onClearCredential$lambda$7(Executor executor, v0.i iVar) {
-        executor.execute(new b(iVar, 5));
-        return gd.i.a;
+    private static final hd.i onClearCredential$lambda$7(Executor executor, v0.i iVar) {
+        executor.execute(new e(iVar, 5));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -130,9 +130,9 @@ public final class CredentialProviderPlayServicesImpl implements j {
         iVar.onError(new a("clearCredentialStateAsync no provider dependencies found - please ensure the desired provider dependencies are added", "androidx.credentials.TYPE_CLEAR_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION"));
     }
 
-    private static final gd.i onCreateCredential$lambda$5(Executor executor, v0.i iVar) {
-        executor.execute(new b(iVar, 1));
-        return gd.i.a;
+    private static final hd.i onCreateCredential$lambda$5(Executor executor, v0.i iVar) {
+        executor.execute(new e(iVar, 1));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -140,28 +140,28 @@ public final class CredentialProviderPlayServicesImpl implements j {
         iVar.onError(new c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
     }
 
-    private static final gd.i onGetCredential$lambda$1(Executor executor, v0.i iVar) {
-        executor.execute(new b(iVar, 3));
-        return gd.i.a;
+    private static final hd.i onGetCredential$lambda$1(Executor executor, v0.i iVar) {
+        executor.execute(new e(iVar, 3));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onGetCredential$lambda$1$lambda$0(v0.i iVar) {
-        iVar.onError(new h("this device requires a Google Play Services update for the given feature to be supported", 1));
+        iVar.onError(new w0.h("this device requires a Google Play Services update for the given feature to be supported", 1));
     }
 
-    private static final gd.i onGetCredential$lambda$3(Executor executor, v0.i iVar) {
-        executor.execute(new b(iVar, 2));
-        return gd.i.a;
+    private static final hd.i onGetCredential$lambda$3(Executor executor, v0.i iVar) {
+        executor.execute(new e(iVar, 2));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onGetCredential$lambda$3$lambda$2(v0.i iVar) {
-        iVar.onError(new h("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+        iVar.onError(new w0.h("getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
     }
 
     private final void runFallbackClearCredFlow(v0.a aVar, final CancellationSignal cancellationSignal, final Executor executor, final v0.i iVar) {
-        i7.b a2 = i8.a(this.context);
+        i7.b a2 = g8.a(this.context);
         int i10 = 0;
         a2.a.getSharedPreferences("com.google.android.gms.signin", 0).edit().clear().apply();
         Set set = m.a;
@@ -174,13 +174,13 @@ public final class CredentialProviderPlayServicesImpl implements j {
         com.google.android.gms.common.api.internal.h.a();
         v e7 = w.e();
         e7.d = new k6.c[]{i7.d.a};
-        e7.c = new a6.i(a2, 27);
+        e7.c = new pb.c(a2, 24);
         e7.b = false;
         e7.a = 1554;
-        a2.e(1, e7.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
-            @Override // rd.l
+        a2.e(1, e7.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.b
+            @Override // sd.l
             public final Object invoke(Object obj) {
-                gd.i runFallbackClearCredFlow$lambda$22;
+                hd.i runFallbackClearCredFlow$lambda$22;
                 runFallbackClearCredFlow$lambda$22 = CredentialProviderPlayServicesImpl.runFallbackClearCredFlow$lambda$22(cancellationSignal, executor, iVar, (Void) obj);
                 return runFallbackClearCredFlow$lambda$22;
             }
@@ -188,36 +188,36 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Void r32) {
+    public static final hd.i runFallbackClearCredFlow$lambda$22(CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Void r32) {
         Companion.getClass();
-        if (!g.a(cancellationSignal)) {
+        if (!h.a(cancellationSignal)) {
             runFallbackClearCredFlow$lambda$22$lambda$21(executor, iVar);
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, v0.i iVar) {
+    public static final hd.i runFallbackClearCredFlow$lambda$22$lambda$21(Executor executor, v0.i iVar) {
         Log.i(TAG, "During clear credential, signed out successfully!");
-        executor.execute(new b(iVar, 6));
-        return gd.i.a;
+        executor.execute(new e(iVar, 6));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void runFallbackClearCredFlow$lambda$27(CredentialProviderPlayServicesImpl credentialProviderPlayServicesImpl, CancellationSignal cancellationSignal, Executor executor, v0.i iVar, Exception e7) {
         i.e(e7, "e");
         Companion.getClass();
-        if (g.a(cancellationSignal)) {
+        if (h.a(cancellationSignal)) {
             return;
         }
         runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(e7, executor, iVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final gd.i runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, v0.i iVar) {
+    public static final hd.i runFallbackClearCredFlow$lambda$27$lambda$26$lambda$25(Exception exc, Executor executor, v0.i iVar) {
         Log.w(TAG, "During clear credential sign out failed with " + exc);
-        executor.execute(new e(0, iVar, exc));
-        return gd.i.a;
+        executor.execute(new a1.f(0, iVar, exc));
+        return hd.i.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -245,9 +245,9 @@ public final class CredentialProviderPlayServicesImpl implements j {
         i.e(request, "request");
         i.e(executor, "executor");
         i.e(callback, "callback");
-        g gVar = Companion;
-        gVar.getClass();
-        if (g.a(cancellationSignal)) {
+        h hVar = Companion;
+        hVar.getClass();
+        if (h.a(cancellationSignal)) {
             return;
         }
         if (!(request instanceof v0.e)) {
@@ -262,19 +262,19 @@ public final class CredentialProviderPlayServicesImpl implements j {
             dVar.h = cancellationSignal;
             dVar.f = callback;
             dVar.g = executor;
-            gVar.getClass();
-            if (g.a(cancellationSignal)) {
+            hVar.getClass();
+            if (h.a(cancellationSignal)) {
                 return;
             }
             g7.f fVar = new g7.f("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", eVar.a, eVar.b, null, eVar.d, null);
-            h7.g gVar2 = new h7.g(context, h7.g.k, aVar, com.google.android.gms.common.api.i.c);
+            g gVar = new g(context, g.k, aVar, com.google.android.gms.common.api.i.c);
             v e7 = w.e();
             e7.d = new k6.c[]{q7.b.b};
-            e7.c = new a4.m(fVar, 18);
+            e7.c = new a4.l(fVar, 19);
             e7.a = 32704;
-            Task e10 = gVar2.e(1, e7.a());
+            Task e10 = gVar.e(1, e7.a());
             i.d(e10, "doWrite(...)");
-            e10.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 28)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
+            e10.addOnSuccessListener(new a1.c(new e1.b(cancellationSignal, dVar, executor, callback, 0), 27)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
             return;
         }
         v0.e eVar2 = (v0.e) request;
@@ -284,18 +284,18 @@ public final class CredentialProviderPlayServicesImpl implements j {
         eVar3.g = executor;
         try {
             c7.v d = eVar3.d(eVar2);
-            gVar.getClass();
-            if (g.a(cancellationSignal)) {
+            hVar.getClass();
+            if (h.a(cancellationSignal)) {
                 return;
             }
             b7.a aVar2 = new b7.a(context, b7.a.k, aVar, new com.google.android.gms.common.api.internal.a());
             v e11 = w.e();
-            e11.c = new a4.m(aVar2, d, 4);
+            e11.c = new a4.l(aVar2, d);
             e11.a = 5407;
             aVar2.e(0, e11.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar3), 26)).addOnFailureListener(new ah.b(9, eVar3, cancellationSignal));
         } catch (JSONException e12) {
             Companion.getClass();
-            if (g.a(cancellationSignal)) {
+            if (h.a(cancellationSignal)) {
                 return;
             }
             Executor executor2 = eVar3.g;
@@ -307,7 +307,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             }
         } catch (Throwable th2) {
             Companion.getClass();
-            if (g.a(cancellationSignal)) {
+            if (h.a(cancellationSignal)) {
                 return;
             }
             Executor executor3 = eVar3.g;
@@ -320,20 +320,20 @@ public final class CredentialProviderPlayServicesImpl implements j {
         }
     }
 
-    public void onGetCredential(Context context, r pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, q pendingGetCredentialHandle, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(pendingGetCredentialHandle, "pendingGetCredentialHandle");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onPrepareCredential(o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onPrepareCredential(n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(request, "request");
         i.e(executor, "executor");
         i.e(callback, "callback");
     }
 
-    public void onSignalCredentialState(s request, Executor executor, v0.i iVar) {
+    public void onSignalCredentialState(r request, Executor executor, v0.i iVar) {
         i.e(request, "request");
         throw null;
     }
@@ -353,24 +353,24 @@ public final class CredentialProviderPlayServicesImpl implements j {
     }
 
     @Override // v0.j
-    public void onGetCredential(Context context, o request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
+    public void onGetCredential(Context context, n request, CancellationSignal cancellationSignal, Executor executor, v0.i callback) {
         i.e(context, "context");
         i.e(request, "request");
-        List<q> list = request.a;
+        List<v0.p> list = request.a;
         i.e(executor, "executor");
         i.e(callback, "callback");
         Companion.getClass();
-        if (g.a(cancellationSignal)) {
+        if (h.a(cancellationSignal)) {
             return;
         }
-        for (q qVar : list) {
+        for (v0.p pVar : list) {
         }
         Companion.getClass();
-        for (q qVar2 : list) {
+        for (v0.p pVar2 : list) {
         }
         if (!isAvailableOnDevice(PRE_U_MIN_GMS_APK_VERSION)) {
             Companion.getClass();
-            for (q qVar3 : list) {
+            for (v0.p pVar3 : list) {
             }
             new c1.e(context).g(request, cancellationSignal, executor, callback);
             return;
@@ -380,29 +380,29 @@ public final class CredentialProviderPlayServicesImpl implements j {
         aVar.f = callback;
         aVar.g = executor;
         Companion.getClass();
-        if (g.a(cancellationSignal)) {
+        if (h.a(cancellationSignal)) {
             return;
         }
-        Bundle i10 = a4.a.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
+        Bundle i10 = a1.g.i("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
         i10.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", request.b);
         i10.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
-        List<q> list2 = list;
-        ArrayList arrayList = new ArrayList(hd.i.d(list2));
-        for (q qVar4 : list2) {
-            qVar4.getClass();
-            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", qVar4.a, qVar4.b, "", "", ""));
+        List<v0.p> list2 = list;
+        ArrayList arrayList = new ArrayList(id.i.d(list2));
+        for (v0.p pVar4 : list2) {
+            pVar4.getClass();
+            arrayList.add(new g7.h("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar4.a, pVar4.b, "", "", ""));
         }
         GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, i10, null, new ResultReceiver(null));
         Context context2 = aVar.e;
         i.e(context2, "context");
-        h7.g gVar = new h7.g(context2, h7.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
+        g gVar = new g(context2, g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
         v e7 = w.e();
         e7.d = new k6.c[]{q7.b.a};
-        e7.c = new a6.m(getCredentialRequest, 21);
+        e7.c = new pb.c(getCredentialRequest, 23);
         e7.a = 32701;
         Task e10 = gVar.e(0, e7.a());
         i.d(e10, "doRead(...)");
-        e10.addOnSuccessListener(new ei.f(new e1.b(cancellationSignal, aVar, executor, callback, 1), 2)).addOnFailureListener(new g6(request, aVar, callback, executor, cancellationSignal));
+        e10.addOnSuccessListener(new c5(new e1.b(cancellationSignal, aVar, executor, callback, 1), 1)).addOnFailureListener(new h6(request, aVar, callback, executor, cancellationSignal));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

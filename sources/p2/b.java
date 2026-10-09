@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.SystemClock;
 import b2.s0;
 import c5.b0;
-import com.google.android.gms.internal.cast.b5;
+import com.google.android.gms.internal.cast.z4;
 import e2.d0;
 import e9.i0;
 import g2.x;
@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.web.x1;
+import org.telegram.ui.web.w1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements y2.g {
     public final Uri a;
@@ -62,6 +62,49 @@ public final class b implements y2.g {
         return true;
     }
 
+    @Override // y2.g
+    public final void C(y2.i iVar, long j3, long j10, int i10) {
+        u2.t tVar;
+        y2.o oVar = (y2.o) iVar;
+        if (i10 == 0) {
+            long j11 = oVar.a;
+            tVar = new u2.t(oVar.b);
+        } else {
+            long j12 = oVar.a;
+            Uri uri = oVar.d.c;
+            tVar = new u2.t(j10);
+        }
+        this.w.f.u(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // y2.g
+    public final void F(y2.i iVar, long j3, long j10) {
+        y2.o oVar = (y2.o) iVar;
+        p pVar = (p) oVar.f;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        if (pVar instanceof l) {
+            f((l) pVar, tVar);
+            this.w.f.q(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        } else {
+            s0 b10 = s0.b("Loaded playlist has unexpected type.", null);
+            this.s = b10;
+            this.w.f.s(tVar, 4, b10, true);
+        }
+        this.w.c.getClass();
+    }
+
+    @Override // y2.g
+    public final void O0(y2.i iVar, long j3, long j10, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j11 = oVar.a;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        c cVar = this.w;
+        cVar.c.getClass();
+        cVar.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
     public final Uri b() {
         l lVar = this.d;
         Uri uri = this.a;
@@ -98,11 +141,11 @@ public final class b implements y2.g {
 
     public final void d(Uri uri) {
         c cVar = this.w;
-        y2.n V = cVar.b.V(cVar.s, this.d);
+        y2.n y3 = cVar.b.y(cVar.s, this.d);
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, V);
-        this.b.f(oVar, this, cVar.c.L3(oVar.c));
+        y2.o oVar = new y2.o(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, y3);
+        this.b.f(oVar, this, cVar.c.m3(oVar.c));
     }
 
     public final void e(Uri uri) {
@@ -120,15 +163,15 @@ public final class b implements y2.g {
             d(uri);
         } else {
             this.r = true;
-            this.w.n.postDelayed(new x1(3, this, uri), j3 - elapsedRealtime);
+            this.w.n.postDelayed(new w1(3, this, uri), j3 - elapsedRealtime);
         }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x027e  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x027f  */
     /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x025a  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x01ee  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x00d0  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x011d  */
@@ -140,16 +183,17 @@ public final class b implements y2.g {
     public final void f(l lVar, u2.t tVar) {
         boolean z10;
         CopyOnWriteArrayList copyOnWriteArrayList;
+        boolean z11;
         long j3;
         long j10;
         long j11;
         int i10;
         i0 i0Var;
         l lVar2;
-        b5 b5Var;
+        z4 z4Var;
         long j12;
-        b5 b5Var2;
-        boolean z11;
+        z4 z4Var2;
+        boolean z12;
         k kVar;
         int size;
         int size2;
@@ -170,21 +214,25 @@ public final class b implements y2.g {
                 if (z10) {
                     if (!lVar.o) {
                         copyOnWriteArrayList = copyOnWriteArrayList2;
+                        z11 = true;
                         lVar2 = lVar3;
                         j12 = j15;
                     } else if (lVar3.o) {
                         lVar2 = lVar3;
                         copyOnWriteArrayList = copyOnWriteArrayList2;
                         j12 = j15;
-                        b5Var = null;
+                        z4Var = null;
+                        z11 = true;
                     } else {
+                        z11 = true;
                         copyOnWriteArrayList = copyOnWriteArrayList2;
                         j12 = j15;
                         lVar2 = new l(lVar3.d, lVar3.a, lVar3.b, lVar3.e, lVar3.g, lVar3.h, lVar3.i, lVar3.j, lVar3.k, lVar3.l, lVar3.m, lVar3.n, lVar3.c, true, lVar3.p, lVar3.q, lVar3.r, lVar3.s, lVar3.v, lVar3.t, lVar3.w);
                     }
-                    b5Var = null;
+                    z4Var = null;
                 } else {
                     copyOnWriteArrayList = copyOnWriteArrayList2;
+                    z11 = true;
                     if (lVar.p) {
                         j3 = lVar.h;
                     } else {
@@ -223,7 +271,7 @@ public final class b implements y2.g {
                                     i10 = lVar.j;
                                     i0Var = i0Var2;
                                 }
-                                b5Var = null;
+                                z4Var = null;
                                 j12 = j15;
                                 lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
                             }
@@ -233,14 +281,14 @@ public final class b implements y2.g {
                     j10 = j3;
                     if (lVar.i) {
                     }
-                    b5Var = null;
+                    z4Var = null;
                     j12 = j15;
                     lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
                 }
                 this.d = lVar2;
                 Uri uri = this.a;
                 if (lVar2 == lVar3) {
-                    this.s = b5Var;
+                    this.s = z4Var;
                     this.f = elapsedRealtime;
                     if (uri.equals(cVar.v)) {
                         if (cVar.w == null) {
@@ -258,18 +306,18 @@ public final class b implements y2.g {
                     long size5 = j12 + lVar.r.size();
                     l lVar6 = this.d;
                     if (size5 < lVar6.k) {
-                        b5Var2 = new b5();
-                        z11 = true;
+                        z4Var2 = new z4();
+                        z12 = z11;
                     } else {
-                        b5Var2 = ((double) (elapsedRealtime - this.f)) > ((double) d0.e0(lVar6.m)) * 3.5d ? new b5() : b5Var;
-                        z11 = false;
+                        z4Var2 = ((double) (elapsedRealtime - this.f)) > ((double) d0.d0(lVar6.m)) * 3.5d ? new z4() : z4Var;
+                        z12 = false;
                     }
-                    if (b5Var2 != null) {
-                        this.s = b5Var2;
-                        b0 b0Var = new b0(b5Var2, 1, 11);
+                    if (z4Var2 != null) {
+                        this.s = z4Var2;
+                        b0 b0Var = new b0(z4Var2, z11 ? 1 : 0, 15);
                         Iterator it2 = copyOnWriteArrayList.iterator();
                         while (it2.hasNext()) {
-                            ((t) it2.next()).b(uri, b0Var, z11);
+                            ((t) it2.next()).b(uri, b0Var, z12);
                         }
                     }
                 }
@@ -285,7 +333,7 @@ public final class b implements y2.g {
                             j19 /= 2;
                         }
                     }
-                    this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                    this.h = (d0.d0(j16) + elapsedRealtime) - tVar.a;
                     if (this.d.o) {
                         return;
                     }
@@ -299,7 +347,7 @@ public final class b implements y2.g {
                     j19 /= 2;
                 }
                 j16 = j19;
-                this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                this.h = (d0.d0(j16) + elapsedRealtime) - tVar.a;
                 if (this.d.o) {
                 }
             }
@@ -322,13 +370,13 @@ public final class b implements y2.g {
         if (!kVar.e) {
         }
         j162 = j192;
-        this.h = (d0.e0(j162) + elapsedRealtime) - tVar.a;
+        this.h = (d0.d0(j162) + elapsedRealtime) - tVar.a;
         if (this.d.o) {
         }
     }
 
     @Override // y2.g
-    public final k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d y(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         y2.o oVar = (y2.o) iVar;
         long j11 = oVar.a;
         int i11 = oVar.c;
@@ -345,70 +393,27 @@ public final class b implements y2.g {
                 c(false);
                 a5.a aVar = cVar.f;
                 String str = d0.a;
-                aVar.r(tVar, i11, iOException, true);
+                aVar.s(tVar, i11, iOException, true);
                 return dVar;
             }
         }
-        b0 b0Var = new b0(iOException, i10, 11);
+        b0 b0Var = new b0(iOException, i10, 15);
         Iterator it = cVar.e.iterator();
         boolean z12 = false;
         while (it.hasNext()) {
             z12 |= !((t) it.next()).b(this.a, b0Var, false);
         }
-        qb.b bVar = cVar.c;
+        rb.a aVar2 = cVar.c;
         if (z12) {
-            bVar.getClass();
-            long M3 = qb.b.M3(b0Var);
-            dVar = M3 != -9223372036854775807L ? new k4.d(0, M3, false) : y2.l.f;
+            aVar2.getClass();
+            long n32 = rb.a.n3(b0Var);
+            dVar = n32 != -9223372036854775807L ? new k4.d(0, n32, false) : y2.l.f;
         }
         boolean a2 = dVar.a();
-        cVar.f.r(tVar, i11, iOException, !a2);
+        cVar.f.s(tVar, i11, iOException, !a2);
         if (!a2) {
-            bVar.getClass();
+            aVar2.getClass();
         }
         return dVar;
-    }
-
-    @Override // y2.g
-    public final void x(y2.i iVar, long j3, long j10, int i10) {
-        u2.t tVar;
-        y2.o oVar = (y2.o) iVar;
-        if (i10 == 0) {
-            long j11 = oVar.a;
-            tVar = new u2.t(oVar.b);
-        } else {
-            long j12 = oVar.a;
-            Uri uri = oVar.d.c;
-            tVar = new u2.t(j10);
-        }
-        this.w.f.s(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
-    }
-
-    @Override // y2.g
-    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        c cVar = this.w;
-        cVar.c.getClass();
-        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    @Override // y2.g
-    public final void y(y2.i iVar, long j3, long j10) {
-        y2.o oVar = (y2.o) iVar;
-        p pVar = (p) oVar.f;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        if (pVar instanceof l) {
-            f((l) pVar, tVar);
-            this.w.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        } else {
-            s0 b10 = s0.b("Loaded playlist has unexpected type.", null);
-            this.s = b10;
-            this.w.f.r(tVar, 4, b10, true);
-        }
-        this.w.c.getClass();
     }
 }

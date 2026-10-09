@@ -6,13 +6,13 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class k1 extends FrameLayout {
     public final Drawable a;
 
-    public k1(Context context, d6 d6Var) {
-        this(context, i6.H8, d6Var);
+    public k1(Context context, e6 e6Var) {
+        this(context, i6.H8, e6Var);
     }
 
     @Override // android.view.View
@@ -30,11 +30,11 @@ public final class k1 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k1(Context context, int i10, d6 d6Var) {
+    public k1(Context context, int i10, e6 e6Var) {
         super(context);
-        int v02 = i6.v0(i10, d6Var);
-        int v03 = i6.v0(i6.b7, d6Var);
-        this.a = i6.U0(getContext(), R.drawable.greydivider, v03);
-        setBackgroundColor(v02);
+        int w02 = i6.w0(i10, e6Var);
+        int w03 = i6.w0(i6.b7, e6Var);
+        this.a = i6.V0(getContext(), R.drawable.greydivider, w03);
+        setBackgroundColor(w02);
     }
 }

@@ -1,69 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityEvent;
-import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n30 extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class n30 implements Runnable {
+    public final /* synthetic */ o30 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n30(Object obj, Context context, int i10, int i11) {
-        super(context);
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public n30(o30 o30Var) {
+        this.a = o30Var;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.onDraw(canvas);
-                org.telegram.ui.z10 z10Var = (org.telegram.ui.z10) this.c;
-                u90 u90Var = z10Var.s;
-                if (z10Var.r) {
-                    int i10 = this.b / 2;
-                    u90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
-                    u90Var.draw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null || !sharedInstance.isMicMute()) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        switch (this.a) {
-            case 0:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                if (accessibilityEvent.getEventType() == 32768) {
-                    ((o30) this.c).c.b.x(this.b, true);
-                    break;
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityEvent(accessibilityEvent);
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.z10) this.c).s || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
+        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
+            o30 o30Var = this.a;
+            AndroidUtilities.runOnUIThread(o30Var.f, 90L);
+            try {
+                o30Var.performHapticFeedback(3, 2);
+            } catch (Exception unused) {
+            }
+            o30Var.c = true;
         }
     }
 }

@@ -8,24 +8,25 @@ import android.graphics.RectF;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import m.f3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class w1 extends View {
-    public pg.f1 E;
+    public pg.e1 E;
     public float F;
     public float G;
-    public pg.t1 H;
+    public pg.s1 H;
     public Runnable I;
     public boolean J;
     public v1 K;
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final k2.e d;
+    public final f3 d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -33,9 +34,9 @@ public final class w1 extends View {
     public float r;
     public long s;
     public boolean v;
-    public final e6 w;
-    public final e6 x;
-    public final e6 y;
+    public final g6 w;
+    public final g6 x;
+    public final g6 y;
 
     public w1(Context context) {
         super(context);
@@ -46,12 +47,12 @@ public final class w1 extends View {
         this.c = new Path();
         this.e = new RectF();
         this.v = true;
-        this.w = new e6(this);
-        this.x = new e6(this);
-        this.y = new e6(this);
-        this.H = new pg.t1(1.0f, 0.016773745f, -1);
+        this.w = new g6(this);
+        this.x = new g6(this);
+        this.y = new g6(this);
+        this.H = new pg.s1(1.0f, 0.016773745f, -1);
         this.J = true;
-        this.d = new k2.e(context, new u1(this));
+        this.d = new f3(context, new u1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -78,8 +79,8 @@ public final class w1 extends View {
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x01c3  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0211  */
     /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0087  */
     @Override // android.view.View
@@ -134,17 +135,17 @@ public final class w1 extends View {
                         }
                         canvas.save();
                         float dp4 = AndroidUtilities.dp(32.0f);
-                        tr trVar = tr.f;
-                        canvas.translate(trVar.getInterpolation(this.r) * dp4, rectF.top);
+                        hs hsVar = hs.f;
+                        canvas.translate(hsVar.getInterpolation(this.r) * dp4, rectF.top);
                         canvas.drawPath(path, this.a);
                         canvas.restore();
                         float f12 = (d - d10) / (d11 - d10);
                         float f13 = dp2 * 1.5f;
-                        a(trVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        a(hsVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.o.a(com.google.android.gms.internal.vision.e2.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
-                            pg.f1 f1Var = this.E;
-                            float f14 = f1Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                            pg.e1 e1Var = this.E;
+                            float f14 = e1Var.c.g.a;
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.w(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -185,17 +186,17 @@ public final class w1 extends View {
                 }
                 canvas.save();
                 float dp42 = AndroidUtilities.dp(32.0f);
-                tr trVar2 = tr.f;
-                canvas.translate(trVar2.getInterpolation(this.r) * dp42, rectF3.top);
+                hs hsVar2 = hs.f;
+                canvas.translate(hsVar2.getInterpolation(this.r) * dp42, rectF3.top);
                 canvas.drawPath(path2, this.a);
                 canvas.restore();
                 float f122 = (d - d10) / (d11 - d10);
                 float f132 = dp22 * 1.5f;
-                a(trVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                a(hsVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.o.a(com.google.android.gms.internal.vision.e2.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
-                    pg.f1 f1Var2 = this.E;
-                    float f142 = f1Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, f1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.x(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                    pg.e1 e1Var2 = this.E;
+                    float f142 = e1Var2.c.g.a;
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * com.google.android.gms.internal.vision.e2.w(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -238,13 +239,13 @@ public final class w1 extends View {
         }
         canvas.save();
         float dp422 = AndroidUtilities.dp(32.0f);
-        tr trVar22 = tr.f;
-        canvas.translate(trVar22.getInterpolation(this.r) * dp422, rectF32.top);
+        hs hsVar22 = hs.f;
+        canvas.translate(hsVar22.getInterpolation(this.r) * dp422, rectF32.top);
         canvas.drawPath(path22, this.a);
         canvas.restore();
         float f1222 = (d - d10) / (d11 - d10);
         float f1322 = dp222 * 1.5f;
-        a(trVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.q.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        a(hsVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.o.a(com.google.android.gms.internal.vision.e2.y(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {
@@ -274,8 +275,8 @@ public final class w1 extends View {
         invalidate();
     }
 
-    public void setColorSwatch(pg.t1 t1Var) {
-        this.H = t1Var;
+    public void setColorSwatch(pg.s1 s1Var) {
+        this.H = s1Var;
         invalidate();
     }
 
@@ -288,8 +289,8 @@ public final class w1 extends View {
         this.I = runnable;
     }
 
-    public void setRenderView(pg.f1 f1Var) {
-        this.E = f1Var;
+    public void setRenderView(pg.e1 e1Var) {
+        this.E = e1Var;
     }
 
     public void setShowPreview(boolean z10) {

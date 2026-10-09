@@ -1,23 +1,51 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface x40 {
-    void B(float f7);
+public final class x40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z40 b;
 
-    void I(boolean z10, boolean z11);
+    public /* synthetic */ x40(z40 z40Var, int i10) {
+        this.a = i10;
+        this.b = z40Var;
+    }
 
-    void N();
-
-    void O(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize);
-
-    boolean e();
-
-    org.telegram.ui.yu0 getCloseIntoObject();
-
-    String getInitialSearchString();
-
-    boolean t();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                z40 z40Var = this.b;
+                z40Var.f = null;
+                if (!z40Var.H) {
+                    nq nqVar = new nq(this, 21);
+                    z40Var.h = nqVar;
+                    AndroidUtilities.runOnUIThread(nqVar, z40Var.n == 0 ? 10000L : 2000L);
+                    break;
+                }
+                break;
+            case 1:
+                z40 z40Var2 = this.b;
+                z40Var2.f = null;
+                if (!z40Var2.H) {
+                    nq nqVar2 = new nq(this, 22);
+                    z40Var2.h = nqVar2;
+                    AndroidUtilities.runOnUIThread(nqVar2, z40Var2.E);
+                    break;
+                }
+                break;
+            default:
+                z40 z40Var3 = this.b;
+                z40Var3.setVisibility(4);
+                z40Var3.getClass();
+                z40Var3.e = null;
+                z40Var3.d = null;
+                z40Var3.f = null;
+                break;
+        }
+    }
 }

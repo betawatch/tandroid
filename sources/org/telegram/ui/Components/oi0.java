@@ -1,50 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class oi0 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ ri0 b;
+public interface oi0 {
+    void a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi0(ri0 ri0Var, Activity activity) {
-        super(activity);
-        this.b = ri0Var;
-        this.a = false;
-    }
+    void b(boolean z10);
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        ri0 ri0Var = this.b;
-        gd0 gd0Var = ri0Var.H;
-        gd0 gd0Var2 = ri0Var.G;
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        gd0Var2.setItemCount(i12);
-        gd0Var.setItemCount(i12);
-        gd0Var2.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
-        gd0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * i12;
-        this.a = false;
-        int size = View.MeasureSpec.getSize(i10);
-        ri0Var.N = size;
-        if (size != 0) {
-            ri0Var.c(false);
-        }
-        super.onMeasure(i10, i11);
-    }
+    void c();
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
-    }
+    void d();
 }

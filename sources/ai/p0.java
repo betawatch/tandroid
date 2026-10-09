@@ -5,11 +5,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -20,13 +20,13 @@ public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ p0(int i10, Context context, long j3, long j10, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ p0(int i10, Context context, long j3, long j10, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.e6 e6Var) {
         this.d = i10;
         this.e = context;
         this.b = j3;
         this.c = j10;
         this.f = f3VarArr;
-        this.h = d6Var;
+        this.h = e6Var;
     }
 
     @Override // java.lang.Runnable
@@ -39,7 +39,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 o1Var.c(this.d);
                 if (!"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error.text)) {
                     if (!"GROUPCALL_INVALID".equalsIgnoreCase(tL_error.text)) {
-                        new yc(o1Var.b, new d()).d0(tL_error, true);
+                        new ad(o1Var.b, new d()).f0(tL_error, true);
                         break;
                     } else {
                         d2 d2Var = o1Var.P;
@@ -53,37 +53,37 @@ public final /* synthetic */ class p0 implements Runnable {
                     d dVar = new d();
                     long j3 = this.c;
                     long j10 = this.b;
-                    new yh.n7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
+                    new yh.e7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
                     break;
                 }
                 break;
             case 1:
-                ((MessagesController) this.e).lambda$deleteSavedDialog$144(this.b, this.c, (TLRPC.InputPeer) this.f, this.d, (int[]) this.h);
+                ((MessagesController) this.e).lambda$deleteSavedDialog$143(this.b, this.c, (TLRPC.InputPeer) this.f, this.d, (int[]) this.h);
                 break;
             case 2:
-                b80 b80Var = (b80) this.e;
+                p80 p80Var = (p80) this.e;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.h;
-                b80Var.u();
+                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.h;
+                p80Var.u();
                 int i10 = this.d;
                 MessagesController messagesController = MessagesController.getInstance(i10);
                 long j11 = this.b;
                 long j12 = this.c;
                 boolean isDialogMuted = messagesController.isDialogMuted(j11, j12);
                 NotificationsController.getInstance(i10).muteDialog(j11, j12, !isDialogMuted);
-                if (yc.a(n2Var)) {
-                    yc.z(n2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, d6Var).j();
+                if (ad.a(n2Var)) {
+                    ad.z(n2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, e6Var).j();
                     break;
                 }
                 break;
             default:
                 Context context2 = (Context) this.e;
                 org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.f;
-                org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.h;
+                org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) this.h;
                 int i11 = this.d;
-                yh.p g10 = yh.p.g(i11);
+                yh.o g10 = yh.o.g(i11);
                 long j13 = this.b;
-                g10.f(context2, j13, this.c, new ei.r3(f3VarArr, context2, i11, j13, d6Var2, 2));
+                g10.f(context2, j13, this.c, new ei.q3(f3VarArr, context2, i11, j13, e6Var2, 2));
                 break;
         }
     }
@@ -106,12 +106,12 @@ public final /* synthetic */ class p0 implements Runnable {
         this.h = iArr;
     }
 
-    public /* synthetic */ p0(b80 b80Var, int i10, long j3, long j10, yn ynVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.e = b80Var;
+    public /* synthetic */ p0(p80 p80Var, int i10, long j3, long j10, zn znVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.e = p80Var;
         this.d = i10;
         this.b = j3;
         this.c = j10;
-        this.f = ynVar;
-        this.h = d6Var;
+        this.f = znVar;
+        this.h = e6Var;
     }
 }

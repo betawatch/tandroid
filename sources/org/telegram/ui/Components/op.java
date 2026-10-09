@@ -1,26 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class op {
-    public final org.telegram.ui.ActionBar.c4 a;
-    public Drawable b;
-    public int c;
-    public boolean d;
-    public Bitmap e;
+public final class op implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ cq b;
 
-    public op(org.telegram.ui.ActionBar.c4 c4Var) {
-        this.a = c4Var;
+    public op(cq cqVar) {
+        this.b = cqVar;
     }
 
-    public final String a() {
-        org.telegram.ui.ActionBar.c4 c4Var = this.a;
-        if (c4Var == null || c4Var.a) {
-            return null;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        cq cqVar = this.b;
+        cqVar.S = floatValue;
+        cqVar.R.invalidate();
+        if (this.a || cqVar.S <= 0.5f) {
+            return;
         }
-        return c4Var.e;
+        this.a = true;
     }
 }

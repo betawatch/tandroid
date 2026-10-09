@@ -3,15 +3,16 @@ package hg;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.qc;
+import ci.rc;
+import ei.c5;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.zl0;
-import w7.z5;
+import org.telegram.ui.Components.k71;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class i1 extends n2 {
     public final CharSequence a;
@@ -19,9 +20,9 @@ public final class i1 extends n2 {
     public final int c;
     public final int d;
     public final int e;
-    public qc f;
-    public gg.x1 h;
-    public e71 n;
+    public rc f;
+    public gg.w1 h;
+    public k71 n;
     public boolean r;
 
     public i1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -34,51 +35,41 @@ public final class i1 extends n2 {
         this.r = !arrayList.isEmpty();
     }
 
-    public final boolean S() {
+    public final boolean U() {
         ArrayList arrayList = this.b;
         return arrayList.size() == 1 && ((f1) arrayList.get(0)).a == 0 && ((f1) arrayList.get(0)).b == 1439;
     }
 
-    public final boolean T() {
+    public final boolean V() {
         ArrayList arrayList = this.b;
         if (arrayList.size() >= this.e) {
             return false;
         }
-        return arrayList.isEmpty() || S() || ((f1) c.g(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return arrayList.isEmpty() || U() || ((f1) c.g(1, arrayList)).b < Math.min(1438, this.d + (-2));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(this.a);
-        this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 15));
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 15));
         FrameLayout frameLayout = new FrameLayout(context);
-        e71 e71Var = new e71(this, new bi.v(this, 28), new ei.f(this, 5), null);
-        this.n = e71Var;
-        e71Var.r1();
-        this.n.setSectionsDrawBackground(true);
-        frameLayout.addView(this.n, z5.c(-1.0f, -1));
+        frameLayout.setBackgroundColor(i6.x0(null, i6.a7, false));
+        k71 k71Var = new k71(this, new bi.v(this, 28), new c5(this, 4), null);
+        this.n = k71Var;
+        k71Var.p1();
+        this.actionBar.setAdaptiveBackground(this.n);
+        frameLayout.addView(this.n, x5.d(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final zl0 getListViewForSimpleGlass() {
-        return this.n;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyHidden() {
-        gg.x1 x1Var = this.h;
-        if (x1Var != null) {
-            x1Var.run();
+        gg.w1 w1Var = this.h;
+        if (w1Var != null) {
+            w1Var.run();
         }
         super.onBecomeFullyHidden();
     }
@@ -94,9 +85,9 @@ public final class i1 extends n2 {
             return;
         }
         arrayList.clear();
-        qc qcVar = this.f;
-        if (qcVar != null) {
-            qcVar.run();
+        rc rcVar = this.f;
+        if (rcVar != null) {
+            rcVar.run();
         }
     }
 }

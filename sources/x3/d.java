@@ -14,22 +14,31 @@ import e9.g0;
 import e9.i0;
 import java.util.Arrays;
 import java.util.List;
-import u2.y0;
+import u2.x0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
     public i b;
     public boolean c;
 
+    @Override // c3.o
     public final boolean a(p pVar) {
+        try {
+            return b(pVar);
+        } catch (s0 unused) {
+            return false;
+        }
+    }
+
+    public final boolean b(p pVar) {
         boolean z10;
         f fVar = new f();
         if (fVar.a(pVar, true) && (fVar.a & 2) == 2) {
             int min = Math.min(fVar.e, 8);
             v vVar = new v(min);
-            pVar.b(0, min, vVar.a);
+            pVar.a(0, min, vVar.a);
             vVar.J(0);
             if (vVar.a() >= 5 && vVar.x() == 127 && vVar.z() == 1179402563) {
                 this.b = new c();
@@ -52,15 +61,6 @@ public final class d implements o {
             return true;
         }
         return false;
-    }
-
-    @Override // c3.o
-    public final boolean b(p pVar) {
-        try {
-            return a(pVar);
-        } catch (s0 unused) {
-            return false;
-        }
     }
 
     @Override // c3.o
@@ -91,7 +91,7 @@ public final class d implements o {
                 iVar.e = j11;
                 g gVar = iVar.d;
                 String str = d0.a;
-                gVar.C(j11);
+                gVar.l(j11);
                 iVar.h = 2;
             }
         }
@@ -103,29 +103,29 @@ public final class d implements o {
         return a1.e;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0176 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0177  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0175 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0176  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int m(p pVar, s sVar) {
-        v vVar;
         int i10;
+        v vVar;
         byte[] bArr;
         e2.d.h(this.a);
         if (this.b == null) {
-            if (!a(pVar)) {
+            if (!b(pVar)) {
                 throw s0.a(null, "Failed to determine bitstream type");
             }
-            pVar.m();
+            pVar.q();
         }
         if (!this.c) {
-            h0 Z1 = this.a.Z1(0, 1);
-            this.a.e1();
+            h0 f22 = this.a.f2(0, 1);
+            this.a.k1();
             i iVar = this.b;
             iVar.c = this.a;
-            iVar.b = Z1;
+            iVar.b = f22;
             iVar.d(true);
             this.c = true;
         }
@@ -137,7 +137,7 @@ public final class d implements o {
         long j3 = -1;
         if (i11 != 0) {
             if (i11 == 1) {
-                pVar.o((int) iVar2.f);
+                pVar.r((int) iVar2.f);
                 iVar2.h = 2;
                 return 0;
             }
@@ -147,18 +147,18 @@ public final class d implements o {
                 }
                 throw new IllegalStateException();
             }
-            long b10 = iVar2.d.b(pVar);
-            if (b10 >= 0) {
-                sVar.a = b10;
+            long c10 = iVar2.d.c(pVar);
+            if (c10 >= 0) {
+                sVar.a = c10;
                 return 1;
             }
-            if (b10 < -1) {
-                iVar2.a(-(b10 + 2));
+            if (c10 < -1) {
+                iVar2.a(-(c10 + 2));
             }
             if (!iVar2.l) {
                 b0 d = iVar2.d.d();
                 e2.d.h(d);
-                iVar2.c.X1(d);
+                iVar2.c.d2(d);
                 h0 h0Var = iVar2.b;
                 d.l();
                 h0Var.getClass();
@@ -170,22 +170,22 @@ public final class d implements o {
             }
             iVar2.k = 0L;
             v vVar2 = eVar.b;
-            long b11 = iVar2.b(vVar2);
-            if (b11 >= 0) {
+            long b10 = iVar2.b(vVar2);
+            if (b10 >= 0) {
                 long j10 = iVar2.g;
-                if (j10 + b11 >= iVar2.e) {
+                if (j10 + b10 >= iVar2.e) {
                     iVar2.b.d(vVar2.c, vVar2);
                     iVar2.b.c((j10 * 1000000) / iVar2.i, 1, vVar2.c, 0, null);
                     iVar2.e = -1L;
                 }
             }
-            iVar2.g += b11;
+            iVar2.g += b10;
             return 0;
         }
         while (true) {
-            boolean b12 = eVar.b(pVar);
+            boolean b11 = eVar.b(pVar);
             v vVar3 = eVar.b;
-            if (!b12) {
+            if (!b11) {
                 iVar2.h = 3;
                 return -1;
             }
@@ -203,9 +203,9 @@ public final class d implements o {
                     iVar2.b.b(sVar2);
                     iVar2.m = true;
                 }
-                y0 y0Var = (y0) iVar2.j.c;
-                if (y0Var != null) {
-                    iVar2.d = y0Var;
+                x0 x0Var = (x0) iVar2.j.c;
+                if (x0Var != null) {
+                    iVar2.d = x0Var;
                 } else {
                     if (pVar.getLength() != j11) {
                         f fVar = eVar.a;
@@ -214,8 +214,8 @@ public final class d implements o {
                         long length = pVar.getLength();
                         long j14 = fVar.d + fVar.e;
                         long j15 = fVar.b;
-                        vVar = vVar3;
                         i10 = 2;
+                        vVar = vVar3;
                         iVar2.d = new b(iVar2, j13, length, j14, j15, z10);
                         iVar2.h = i10;
                         bArr = vVar.a;
@@ -225,10 +225,10 @@ public final class d implements o {
                         vVar.H(vVar.c, Arrays.copyOf(bArr, Math.max(65025, vVar.c)));
                         return 0;
                     }
-                    iVar2.d = new rb.a(25);
+                    iVar2.d = new na.d(26);
                 }
-                vVar = vVar3;
                 i10 = 2;
+                vVar = vVar3;
                 iVar2.h = i10;
                 bArr = vVar.a;
                 if (bArr.length != 65025) {

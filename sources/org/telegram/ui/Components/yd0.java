@@ -1,42 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Typeface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zd0 b;
+public final class yd0 extends zd0 {
+    public final ci.g2 L;
 
-    public /* synthetic */ yd0(zd0 zd0Var, int i10) {
-        this.a = i10;
-        this.b = zd0Var;
+    public yd0(Context context) {
+        super(context, null);
+        ci.g2 g2Var = new ci.g2(this, context, 5);
+        this.L = g2Var;
+        g2Var.setTextSize(1, 18.0f);
+        g2Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        g2Var.setHintTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.H6, false));
+        g2Var.setBackground(null);
+        g2Var.setSingleLine(true);
+        g2Var.setInputType(1);
+        g2Var.setTypeface(Typeface.DEFAULT);
+        g2Var.setCursorColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.l6, false));
+        g2Var.setCursorWidth(1.5f);
+        g2Var.setPadding(AndroidUtilities.dp(15.0f), 0, AndroidUtilities.dp(15.0f), 0);
+        e(g2Var);
+        addView(g2Var, w7.x5.e(-1, -2, 16));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                ee0 ee0Var = this.b.d;
-                ee0Var.P = 1.0f;
-                ee0Var.f(1.0f);
-                break;
-            default:
-                zd0 zd0Var = this.b;
-                Runnable runnable = zd0Var.c;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                if (SharedConfig.passcodeType == 1 && zd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = zd0Var.d.r) != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(zd0Var.d.r);
-                    break;
-                }
-                break;
-        }
+    public EditTextBoldCursor getEditText() {
+        return this.L;
+    }
+
+    public void setHint(String str) {
+        setText(str);
     }
 }

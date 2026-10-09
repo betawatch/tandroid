@@ -1,10 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class pq0 extends s4.s {
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
-        return false;
+public final class pq0 extends s4.t0 {
+    public final /* synthetic */ br0 a;
+
+    public pq0(br0 br0Var) {
+        this.a = br0Var;
+    }
+
+    @Override // s4.t0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 1) {
+            AndroidUtilities.hideKeyboard(this.a.getParentActivity().getCurrentFocus());
+        }
+    }
+
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        br0 br0Var = this.a;
+        if (br0Var.J == null) {
+            int L0 = br0Var.M.L0();
+            int abs = L0 == -1 ? 0 : Math.abs(br0Var.M.N0() - L0) + 1;
+            if (abs <= 0 || L0 + abs <= br0Var.M.B() - 2 || br0Var.r || br0Var.s) {
+                return;
+            }
+            br0Var.d0(br0Var.v, br0Var.w, br0Var.a == 1, true);
+        }
     }
 }

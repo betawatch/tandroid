@@ -7,11 +7,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.media.session.b0;
+import android.support.v4.media.session.a0;
 import android.text.TextUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class MediaMetadataCompat implements Parcelable {
     public static final Parcelable.Creator<MediaMetadataCompat> CREATOR;
@@ -66,7 +66,7 @@ public final class MediaMetadataCompat implements Parcelable {
     public MediaMetadataCompat(Bundle bundle) {
         Bundle bundle2 = new Bundle(bundle);
         this.a = bundle2;
-        b0.a(bundle2);
+        a0.a(bundle2);
     }
 
     public final MediaDescriptionCompat a() {
@@ -171,6 +171,6 @@ public final class MediaMetadataCompat implements Parcelable {
     }
 
     public MediaMetadataCompat(Parcel parcel) {
-        this.a = parcel.readBundle(b0.class.getClassLoader());
+        this.a = parcel.readBundle(a0.class.getClassLoader());
     }
 }

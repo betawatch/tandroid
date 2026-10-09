@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e4 extends FrameLayout {
-    public final org.telegram.ui.Components.zo0 a;
+    public final org.telegram.ui.Components.kp0 a;
     public final int b;
     public final int c;
     public int d;
@@ -28,12 +28,12 @@ public final class e4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.zo0 zo0Var = new org.telegram.ui.Components.zo0(context, null, false);
-        this.a = zo0Var;
-        zo0Var.setReportChanges(true);
-        zo0Var.setSeparatorsCount(19);
-        zo0Var.setDelegate(new g(this, 3));
-        addView(zo0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.kp0 kp0Var = new org.telegram.ui.Components.kp0(context, null, false);
+        this.a = kp0Var;
+        kp0Var.setReportChanges(true);
+        kp0Var.setSeparatorsCount(19);
+        kp0Var.setDelegate(new g(this, 3));
+        addView(kp0Var, w7.x5.a(38.0f, 5.0f, 5.0f, 39.0f, 0.0f, -1, 51));
     }
 
     @Override // android.view.View
@@ -46,9 +46,9 @@ public final class e4 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         int i10 = org.telegram.ui.ActionBar.i6.I6;
         this.f.getClass();
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i10, false);
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, i10, false);
         TextPaint textPaint = this.e;
-        textPaint.setColor(w02);
+        textPaint.setColor(x02);
         canvas.drawText("" + SharedConfig.ivFontSize, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
     }
 

@@ -1,55 +1,160 @@
 package s4;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Cells.m2;
+import org.telegram.ui.az;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class w extends GestureDetector.SimpleOnGestureListener {
-    public boolean a = true;
-    public final /* synthetic */ y b;
+public abstract class w {
+    public static final m2 b = new m2(1);
+    public static final m2 c = new m2(2);
+    public int a = -1;
 
-    public w(y yVar) {
-        this.b = yVar;
+    public static int c(int i10, int i11) {
+        int i12;
+        int i13 = i10 & 789516;
+        if (i13 == 0) {
+            return i10;
+        }
+        int i14 = i10 & (~i13);
+        if (i11 == 0) {
+            i12 = i13 << 2;
+        } else {
+            int i15 = i13 << 1;
+            i14 |= (-789517) & i15;
+            i12 = (i15 & 789516) << 2;
+        }
+        return i14 | i12;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
+    public static int l(int i10, int i11) {
+        int i12 = i11 | i10;
+        return (i10 << 16) | (i11 << 8) | i12;
+    }
+
+    public void a(RecyclerView recyclerView, d1 d1Var) {
+        View view = d1Var.a;
+        Object tag = view.getTag();
+        if (tag instanceof Float) {
+            float floatValue = ((Float) tag).floatValue();
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.a0.h(view, floatValue);
+        }
+        view.setTag(null);
+        view.setTranslationX(0.0f);
+        view.setTranslationY(0.0f);
+    }
+
+    public int b(int i10, int i11) {
+        int i12;
+        int i13 = i10 & 3158064;
+        if (i13 == 0) {
+            return i10;
+        }
+        int i14 = i10 & (~i13);
+        if (i11 == 0) {
+            i12 = i13 >> 2;
+        } else {
+            int i15 = i13 >> 1;
+            i14 |= (-3158065) & i15;
+            i12 = (i15 & 3158064) >> 2;
+        }
+        return i14 | i12;
+    }
+
+    public long d(RecyclerView recyclerView, int i10, float f7, float f10) {
+        n0 itemAnimator = recyclerView.getItemAnimator();
+        return itemAnimator == null ? i10 == 8 ? 200L : 250L : i10 == 8 ? itemAnimator.j() : itemAnimator.d;
+    }
+
+    public abstract int e(RecyclerView recyclerView, d1 d1Var);
+
+    public float g() {
+        return 0.5f;
+    }
+
+    public final int i(int i10, int i11, long j3) {
+        if (this.a == -1) {
+            this.a = AndroidUtilities.dp(20.0f);
+        }
+        int interpolation = (int) (b.getInterpolation(j3 <= 500 ? j3 / 500.0f : 1.0f) * ((int) (c.getInterpolation(Math.min(1.0f, (Math.abs(i11) * 1.0f) / i10)) * ((int) Math.signum(i11)) * this.a)));
+        return interpolation == 0 ? i11 > 0 ? 1 : -1 : interpolation;
+    }
+
+    public boolean j() {
         return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        c1 T;
-        if (this.a) {
-            y yVar = this.b;
-            View k10 = yVar.k(motionEvent);
-            v vVar = yVar.x;
-            if (k10 == null || (T = yVar.H.T(k10)) == null) {
-                return;
-            }
-            RecyclerView recyclerView = yVar.H;
-            int e7 = vVar.e(recyclerView, T);
+    public boolean k() {
+        return !(this instanceof az);
+    }
+
+    public void m(Canvas canvas, RecyclerView recyclerView, d1 d1Var, float f7, float f10, int i10, boolean z10) {
+        View view = d1Var.a;
+        if (z10 && view.getTag() == null) {
             WeakHashMap weakHashMap = r0.i0.a;
-            if ((vVar.b(e7, recyclerView.getLayoutDirection()) & 16711680) != 0) {
-                int pointerId = motionEvent.getPointerId(0);
-                int i10 = yVar.w;
-                if (pointerId == i10) {
-                    int findPointerIndex = motionEvent.findPointerIndex(i10);
-                    float x10 = motionEvent.getX(findPointerIndex);
-                    float y3 = motionEvent.getY(findPointerIndex);
-                    yVar.d = x10;
-                    yVar.e = y3;
-                    yVar.r = 0.0f;
-                    yVar.n = 0.0f;
-                    if (vVar.k()) {
-                        yVar.p(T, 2);
+            Float valueOf = Float.valueOf(r0.a0.e(view));
+            int childCount = recyclerView.getChildCount();
+            float f11 = 0.0f;
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = recyclerView.getChildAt(i11);
+                if (childAt != view) {
+                    WeakHashMap weakHashMap2 = r0.i0.a;
+                    float e7 = r0.a0.e(childAt);
+                    if (e7 > f11) {
+                        f11 = e7;
                     }
                 }
             }
+            r0.a0.h(view, f11 + 1.0f);
+            view.setTag(valueOf);
         }
+        view.setTranslationX(f7);
+        view.setTranslationY(f10);
+    }
+
+    public abstract boolean n(RecyclerView recyclerView, d1 d1Var, d1 d1Var2);
+
+    public void o(RecyclerView recyclerView, d1 d1Var, d1 d1Var2, int i10, int i11, int i12) {
+        View view = d1Var2.a;
+        p0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof d0) {
+            ((d0) layoutManager).b1(d1Var.a, view, i11, i12);
+            return;
+        }
+        if (layoutManager.d()) {
+            if (p0.x(view) <= recyclerView.getPaddingLeft()) {
+                recyclerView.u0(i10);
+            }
+            if (p0.y(view) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
+                recyclerView.u0(i10);
+            }
+        }
+        if (layoutManager.e()) {
+            if (p0.z(view) <= recyclerView.getPaddingTop()) {
+                recyclerView.u0(i10);
+            }
+            if (p0.v(view) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
+                recyclerView.u0(i10);
+            }
+        }
+    }
+
+    public abstract void q(d1 d1Var);
+
+    public float f(float f7) {
+        return f7;
+    }
+
+    public float h(float f7) {
+        return f7;
+    }
+
+    public void p(d1 d1Var, int i10) {
     }
 }

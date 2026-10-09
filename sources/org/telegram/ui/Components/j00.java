@@ -1,72 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j00 {
-    public int a;
-    public CharSequence b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final /* synthetic */ n00 h;
+public final /* synthetic */ class j00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    public j00(n00 n00Var, int i10, Spannable spannable, boolean z10) {
-        this.h = n00Var;
+    public /* synthetic */ j00(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
         this.a = i10;
-        this.b = spannable;
-        this.g = z10;
+        this.e = obj;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
-    public final int a(boolean z10) {
-        int i10;
-        int i11;
-        CharSequence charSequence = this.b;
-        n00 n00Var = this.h;
-        int ceil = (int) Math.ceil(ci.e4.g(charSequence, n00Var.b));
-        this.c = ceil;
-        int i12 = 0;
-        if (z10) {
-            i10 = ((org.telegram.ui.ly) n00Var.J).a(this.a);
-            if (i10 < 0) {
-                i10 = 0;
-            }
-            if (z10) {
-                this.d = i10;
-            }
-        } else {
-            i10 = this.d;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l00 l00Var = (l00) this.e;
+                if (this.b) {
+                    p00 p00Var = l00Var.J;
+                    p00Var.a = true;
+                    p00Var.b = true;
+                }
+                if (this.c) {
+                    l00Var.x = true;
+                }
+                long currentTimeMillis = System.currentTimeMillis();
+                if (this.d || Math.abs(l00Var.a0 - currentTimeMillis) > 30) {
+                    l00Var.a0 = currentTimeMillis;
+                    l00Var.d0.run();
+                    break;
+                }
+                break;
+            default:
+                ((org.telegram.ui.wg0) this.e).w1(this.b, this.c, this.d);
+                break;
         }
-        if (i10 > 0) {
-            i11 = AndroidUtilities.dp(-2.0f) + AndroidUtilities.dp(10.0f) + Math.max(AndroidUtilities.dp(7.333f), (int) Math.ceil(n00Var.c.measureText(String.format("%d", Integer.valueOf(i10)))));
-        } else {
-            if (!this.e && n00Var.n) {
-                i12 = AndroidUtilities.dp(12.333f);
-            }
-            i11 = i12;
-        }
-        return Math.max(AndroidUtilities.dp(16.0f), ceil + i11);
-    }
-
-    public final void b(String str) {
-        TextPaint textPaint = this.h.b;
-        if (TextUtils.equals(this.b, str)) {
-            return;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        this.b = spannableStringBuilder;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false);
-        this.b = replaceEmoji;
-        this.b = MessageObject.replaceAnimatedEmoji(replaceEmoji, null, textPaint.getFontMetricsInt());
-        this.g = false;
     }
 }

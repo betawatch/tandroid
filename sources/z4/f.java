@@ -3,7 +3,7 @@ package z4;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends i1.c {
     public static final Parcelable.Creator<f> CREATOR = new i1.b(4);
@@ -23,7 +23,7 @@ public final class f extends i1.c {
         StringBuilder sb2 = new StringBuilder("FragmentPager.SavedState{");
         sb2.append(Integer.toHexString(System.identityHashCode(this)));
         sb2.append(" position=");
-        return a4.a.o(this.c, "}", sb2);
+        return a1.g.o(this.c, "}", sb2);
     }
 
     @Override // i1.c, android.os.Parcelable

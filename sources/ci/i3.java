@@ -1,20 +1,28 @@
 package ci;
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class i3 extends s4.s0 {
-    public final /* synthetic */ w3 a;
+public final class i3 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ v3 a;
 
-    public i3(w3 w3Var) {
-        this.a = w3Var;
+    public i3(v3 v3Var) {
+        this.a = v3Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        w3 w3Var = this.a;
-        w3Var.getClass();
-        w3Var.invalidate();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        v3 v3Var = this.a;
+        if (i10 != -1) {
+            if (i10 >= 10) {
+                v3Var.e((MediaController.AlbumEntry) v3Var.g0.get(i10 - 10), false);
+            }
+        } else {
+            Runnable runnable = v3Var.V;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
     }
 }

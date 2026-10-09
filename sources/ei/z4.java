@@ -1,27 +1,29 @@
 package ei;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class z4 extends org.telegram.ui.ActionBar.n2 {
-    @Override // org.telegram.ui.ActionBar.n2
-    public final Context getContext() {
-        return AndroidUtilities.findActivity(LaunchActivity.G1);
+public final /* synthetic */ class z4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a5 b;
+
+    public /* synthetic */ z4(a5 a5Var, int i10) {
+        this.a = i10;
+        this.b = a5Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final int getCurrentAccount() {
-        return this.currentAccount;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final Activity getParentActivity() {
-        Activity findActivity = AndroidUtilities.findActivity(ApplicationLoader.applicationContext);
-        return findActivity == null ? LaunchActivity.G1 : findActivity;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a5 a5Var = this.b;
+                if (a5Var.w) {
+                    a5Var.d();
+                    break;
+                }
+                break;
+            default:
+                this.b.invalidateSelf();
+                break;
+        }
     }
 }

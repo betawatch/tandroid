@@ -1,143 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class v01 extends View {
-    public final RectF a;
-    public final TextPaint b;
-    public final Paint c;
-    public final ValueAnimator d;
-    public final float[] e;
-    public final z4.a f;
-    public boolean h;
-    public final /* synthetic */ ProfileActivity n;
+    public int a;
+    public int b;
+    public final /* synthetic */ y01 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v01(ProfileActivity profileActivity, Context context) {
+    public v01(y01 y01Var, Context context) {
         super(context);
-        this.n = profileActivity;
-        this.a = new RectF();
-        this.e = new float[]{0.0f, 1.0f};
-        z4.a adapter = profileActivity.n0.getAdapter();
-        this.f = adapter;
-        setVisibility(8);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTypeface(Typeface.SANS_SERIF);
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTextSize(AndroidUtilities.dpf2(15.0f));
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setColor(637534208);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.d = ofFloat;
-        ofFloat.setInterpolator(org.telegram.ui.Components.tr.j);
-        ofFloat.addUpdateListener(new c3(this, 28));
-        ofFloat.addListener(new g70(5, this, profileActivity.n1));
-        profileActivity.n0.b(new u01(this));
-        adapter.a.registerObserver(new h1.a(this, 2));
+        this.c = y01Var;
+        this.a = 0;
+        this.b = 0;
     }
 
-    public final void a(boolean z10) {
-        org.telegram.ui.ActionBar.k kVar;
-        int i10;
-        org.telegram.ui.ActionBar.k kVar2;
-        ProfileActivity profileActivity = this.n;
-        if (z10) {
-            t01 t01Var = profileActivity.N;
-            t01Var.J = t01Var.L;
-            t01Var.K = t01Var.M;
-            t01Var.N = 0.0f;
-            t01Var.O = 1;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.b;
+        ProfileActivity profileActivity = this.c.e;
+        if (i12 != profileActivity.a.getMeasuredHeight()) {
+            this.a = 0;
         }
-        profileActivity.N.invalidate();
-        float measureText = this.b.measureText(((String) this.f.d(profileActivity.n0.getCurrentItem())).toString());
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(54.0f);
-        RectF rectF = this.a;
-        rectF.right = measuredWidth;
-        rectF.left = measuredWidth - (AndroidUtilities.dpf2(16.0f) + measureText);
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        if (kVar != null) {
-            kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            if (kVar2.getOccupyStatusBar()) {
-                i10 = AndroidUtilities.statusBarHeight;
-                float dp = AndroidUtilities.dp(15.0f) + i10;
-                rectF.top = dp;
-                rectF.bottom = dp + AndroidUtilities.dp(26.0f);
-                setPivotX(rectF.centerX());
-                setPivotY(rectF.centerY());
-                invalidate();
-            }
-        }
-        i10 = 0;
-        float dp2 = AndroidUtilities.dp(15.0f) + i10;
-        rectF.top = dp2;
-        rectF.bottom = dp2 + AndroidUtilities.dp(26.0f);
-        setPivotX(rectF.centerX());
-        setPivotY(rectF.centerY());
-        invalidate();
-    }
-
-    public final void b(float f7) {
-        ProfileActivity profileActivity = this.n;
-        boolean z10 = profileActivity.p2 && profileActivity.n0.getRealCount() > 20;
-        if (z10 != this.h) {
-            this.h = z10;
-            ValueAnimator valueAnimator = this.d;
-            valueAnimator.cancel();
-            float animatedFraction = valueAnimator.getAnimatedFraction();
-            float[] fArr = this.e;
-            float lerp = AndroidUtilities.lerp(fArr, animatedFraction);
-            if (f7 <= 0.0f) {
-                valueAnimator.setDuration(0L);
-            } else if (z10) {
-                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f7));
-            } else {
-                valueAnimator.setDuration((long) ((250.0f * lerp) / f7));
-            }
-            fArr[0] = lerp;
-            fArr[1] = z10 ? 1.0f : 0.0f;
-            valueAnimator.start();
-        }
-    }
-
-    public final void c() {
-        jz0 jz0Var;
-        ProfileActivity profileActivity = this.n;
-        if (profileActivity.T0 == null || (jz0Var = profileActivity.n0) == null || !profileActivity.p2) {
+        this.b = profileActivity.a.getMeasuredHeight();
+        int childCount = profileActivity.a.getChildCount();
+        if (childCount != profileActivity.d.e.N2) {
+            setMeasuredDimension(profileActivity.a.getMeasuredWidth(), this.a);
             return;
         }
-        if (jz0Var.getRealPosition() == 0) {
-            profileActivity.T0.r(33);
-            profileActivity.T0.K(36);
-        } else {
-            profileActivity.T0.K(33);
-            profileActivity.T0.r(36);
+        int i13 = 0;
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = profileActivity.a.getChildAt(i14);
+            profileActivity.a.getClass();
+            int R = RecyclerView.R(childAt);
+            if (R >= 0 && R != profileActivity.C3) {
+                i13 += profileActivity.a.getChildAt(i14).getMeasuredHeight();
+            }
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float dpf2 = AndroidUtilities.dpf2(12.0f);
-        Paint paint = this.c;
-        RectF rectF = this.a;
-        canvas.drawRoundRect(rectF, dpf2, dpf2, paint);
-        canvas.drawText(((String) this.f.d(this.n.n0.getCurrentItem())).toString(), rectF.centerX(), AndroidUtilities.dpf2(18.5f) + rectF.top, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        a(false);
+        View view = profileActivity.fragmentView;
+        int measuredHeight = (((view == null ? 0 : view.getMeasuredHeight()) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - i13;
+        if (measuredHeight > profileActivity.T3()) {
+            measuredHeight = 0;
+        }
+        int i15 = measuredHeight > 0 ? measuredHeight : 0;
+        int measuredWidth = profileActivity.a.getMeasuredWidth();
+        this.a = i15;
+        setMeasuredDimension(measuredWidth, i15);
     }
 }

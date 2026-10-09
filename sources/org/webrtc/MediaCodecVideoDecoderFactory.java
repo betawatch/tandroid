@@ -2,11 +2,10 @@ package org.webrtc;
 
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
-import android.os.Build;
 import java.util.ArrayList;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
     private static final String TAG = "MediaCodecVideoDecoderFactory";
@@ -47,10 +46,7 @@ class MediaCodecVideoDecoderFactory implements VideoDecoderFactory {
 
     private boolean isH264HighProfileSupported(MediaCodecInfo mediaCodecInfo) {
         String name = mediaCodecInfo.getName();
-        if (name.startsWith("OMX.qcom.")) {
-            return true;
-        }
-        return Build.VERSION.SDK_INT >= 23 && name.startsWith("OMX.Exynos.");
+        return name.startsWith("OMX.qcom.") || name.startsWith("OMX.Exynos.");
     }
 
     private boolean isSupportedCodec(MediaCodecInfo mediaCodecInfo, VideoCodecMimeType videoCodecMimeType) {

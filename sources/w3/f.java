@@ -1,15 +1,17 @@
 package w3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f {
-    public final long a;
-    public final boolean b;
+    public final int a;
+    public final int b;
     public final int c;
+    public final int d;
 
-    public f(int i10, long j3, boolean z10) {
-        this.a = j3;
-        this.b = z10;
-        this.c = i10;
+    public f(int i10, int i11, int i12, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
     }
 }

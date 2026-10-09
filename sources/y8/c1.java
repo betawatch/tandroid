@@ -3,9 +3,9 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.a9;
+import w7.v8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -33,7 +33,7 @@ public final class c1 extends o6.a {
         }
         if (obj != null && c1.class == obj.getClass()) {
             c1 c1Var = (c1) obj;
-            if (a9.a(this.a, c1Var.a) && a9.a(this.b, c1Var.b) && a9.a(this.c, c1Var.c) && a9.a(this.d, c1Var.d) && a9.a(this.e, c1Var.e) && a9.a(this.f, c1Var.f) && a9.a(this.h, c1Var.h)) {
+            if (v8.a(this.a, c1Var.a) && v8.a(this.b, c1Var.b) && v8.a(this.c, c1Var.c) && v8.a(this.d, c1Var.d) && v8.a(this.e, c1Var.e) && v8.a(this.f, c1Var.f) && v8.a(this.h, c1Var.h)) {
                 return true;
             }
         }
@@ -47,25 +47,25 @@ public final class c1 extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.h);
         String valueOf2 = String.valueOf(this.c);
-        StringBuilder x10 = a4.a.x("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
+        StringBuilder x10 = a1.g.x("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
         x10.append(this.e);
         x10.append("', starRating=");
         x10.append(this.f);
         x10.append(", wearDetails=");
-        a4.a.A(x10, valueOf, ", deepLinkUri='", this.a, "', icon=");
-        return a4.a.t(x10, valueOf2, "}");
+        a1.g.A(x10, valueOf, ", deepLinkUri='", this.a, "', icon=");
+        return a1.g.t(x10, valueOf2, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.l(parcel, 1, this.a);
-        w7.g0.l(parcel, 2, this.b);
-        w7.g0.k(parcel, 3, this.c, i10);
-        w7.g0.l(parcel, 4, this.d);
-        w7.g0.l(parcel, 5, this.e);
-        w7.g0.e(parcel, 6, this.f);
-        w7.g0.k(parcel, 7, this.h, i10);
-        w7.g0.r(parcel, q6);
+        int q6 = w7.d0.q(parcel, 20293);
+        w7.d0.l(parcel, 1, this.a);
+        w7.d0.l(parcel, 2, this.b);
+        w7.d0.k(parcel, 3, this.c, i10);
+        w7.d0.l(parcel, 4, this.d);
+        w7.d0.l(parcel, 5, this.e);
+        w7.d0.e(parcel, 6, this.f);
+        w7.d0.k(parcel, 7, this.h, i10);
+        w7.d0.r(parcel, q6);
     }
 }

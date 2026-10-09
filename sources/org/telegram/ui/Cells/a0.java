@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.pw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements jw0 {
+public abstract class a0 extends ViewGroup implements pw0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public ai.q4 d;
+    public ai.r4 d;
     public Runnable e;
 
     public a0(Context context) {
@@ -26,7 +26,7 @@ public abstract class a0 extends ViewGroup implements jw0 {
         setHapticFeedbackEnabled(true);
     }
 
-    public static float n(Drawable drawable, float f7, float f10, float f11) {
+    public static float o(Drawable drawable, float f7, float f10, float f11) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f11) / drawable.getIntrinsicHeight();
         int i10 = (int) f7;
         int i11 = (int) f10;
@@ -34,17 +34,17 @@ public abstract class a0 extends ViewGroup implements jw0 {
         return intrinsicWidth;
     }
 
-    public static void o(int i10, int i11, Drawable drawable) {
+    public static void p(int i10, int i11, Drawable drawable) {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    public static void p(Drawable drawable, float f7, float f10) {
+    public static void q(Drawable drawable, float f7, float f10) {
         int i10 = (int) f7;
         int i11 = (int) f10;
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.jw0
+    @Override // org.telegram.ui.Components.pw0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -77,9 +77,9 @@ public abstract class a0 extends ViewGroup implements jw0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        ai.q4 q4Var = this.d;
-        if (q4Var != null) {
-            removeCallbacks(q4Var);
+        ai.r4 r4Var = this.d;
+        if (r4Var != null) {
+            removeCallbacks(r4Var);
         }
     }
 
@@ -91,13 +91,13 @@ public abstract class a0 extends ViewGroup implements jw0 {
         return true;
     }
 
-    public final void q() {
+    public final void r() {
         if (this.a) {
             return;
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new ai.q4(this, 28);
+            this.d = new ai.r4(this, 28);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

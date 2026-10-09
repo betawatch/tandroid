@@ -1,207 +1,163 @@
 package ci;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.zl0;
+import java.util.Calendar;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.iw;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.oz0;
+import org.telegram.ui.FiltersSetupActivity;
+import org.telegram.ui.c20;
+import org.telegram.ui.cz;
+import org.telegram.ui.nn0;
+import org.telegram.ui.rt;
+import org.telegram.ui.rw;
+import org.telegram.ui.y10;
+import org.telegram.ui.zy;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class p1 extends zl0 {
-    public bl0 e3;
-    public boolean f3;
-    public float g3;
-    public float h3;
-    public boolean i3;
-    public final SparseArray j3;
-    public final ArrayList k3;
-    public final ArrayList l3;
-    public final ArrayList m3;
-    public final ArrayList n3;
-    public final PorterDuffColorFilter o3;
+public final /* synthetic */ class p1 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public p1(Context context) {
-        super(context, null);
-        this.i3 = false;
-        this.j3 = new SparseArray();
-        this.k3 = new ArrayList();
-        this.l3 = new ArrayList();
-        this.m3 = new ArrayList();
-        this.n3 = new ArrayList();
-        this.o3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+    public /* synthetic */ p1(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public static void x1(p1 p1Var, int i10, int i11) {
-        if (p1Var.e3 == null || !(p1Var.getLayoutManager() instanceof s4.s)) {
-            return;
-        }
-        s4.s sVar = (s4.s) p1Var.getLayoutManager();
-        View m10 = sVar.m(i10);
-        int L0 = sVar.L0();
-        if ((m10 == null && Math.abs(i10 - L0) > sVar.J * 9.0f) || !SharedConfig.animationsEnabled()) {
-            p1Var.e3.b = sVar.L0() < i10 ? 0 : 1;
-            p1Var.e3.d(i10, i11, false, false);
-        } else {
-            m1 m1Var = new m1(p1Var, p1Var.getContext(), 0);
-            m1Var.a = i10;
-            m1Var.p = i11;
-            sVar.w0(m1Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        SparseArray sparseArray;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        n1 n1Var;
-        if (getVisibility() != 0) {
-            return;
-        }
-        int saveCount = canvas.getSaveCount();
-        canvas.save();
-        canvas.clipRect(0.0f, this.g3, getWidth(), this.h3);
-        if (!this.f3) {
-            super.dispatchDraw(canvas);
-            canvas.restore();
-            return;
-        }
-        Rect rect = this.G1;
-        if (!rect.isEmpty()) {
-            this.D1.setBounds(rect);
-            canvas.save();
-            q0.a aVar = this.o2;
-            if (aVar != null) {
-                aVar.accept(canvas);
-            }
-            this.D1.draw(canvas);
-            canvas.restore();
-        }
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            sparseArray = this.j3;
-            int size = sparseArray.size();
-            arrayList = this.k3;
-            if (i11 >= size) {
-                break;
-            }
-            ArrayList arrayList3 = (ArrayList) sparseArray.valueAt(i11);
-            arrayList3.clear();
-            arrayList.add(arrayList3);
-            i11++;
-        }
-        sparseArray.clear();
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt instanceof o1) {
-                o1 o1Var = (o1) childAt;
-                if (o1Var.getY() < this.h3 && o1Var.getY() + o1Var.getHeight() > this.g3) {
-                    int y3 = this.i3 ? (int) o1Var.getY() : o1Var.getTop();
-                    ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
-                    if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.w(1, arrayList) : new ArrayList();
-                        sparseArray.put(y3, arrayList4);
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        boolean s10;
+        boolean s11;
+        int i10;
+        String string;
+        int i11;
+        boolean z10;
+        int i12;
+        int i13;
+        int i14;
+        switch (this.a) {
+            case 0:
+                y1 y1Var = (y1) this.b;
+                ai.g gVar = (ai.g) this.c;
+                rt q6 = rt.q();
+                ai.w0 w0Var = y1Var.b;
+                r1 r1Var = y1Var.f;
+                e6Var = ((org.telegram.ui.ActionBar.f3) y1Var.r).resourcesProvider;
+                return q6.s(motionEvent, w0Var, gVar, r1Var, e6Var);
+            case 1:
+                org.telegram.ui.ActionBar.n1 n1Var = (org.telegram.ui.ActionBar.n1) this.b;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.c;
+                if (motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundDrawable();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(backgroundDrawable.getBounds());
+                    rectF.offset(actionBarPopupWindow$ActionBarPopupWindowLayout.getX(), actionBarPopupWindow$ActionBarPopupWindowLayout.getY());
+                    if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                        n1Var.dismiss();
+                        return true;
                     }
-                    arrayList4.add(o1Var);
                 }
-            }
-        }
-        ArrayList arrayList5 = this.n3;
-        arrayList5.clear();
-        ArrayList arrayList6 = this.m3;
-        arrayList5.addAll(arrayList6);
-        arrayList6.clear();
-        canvas.save();
-        canvas.clipRect(0, getPaddingTop(), getWidth(), getHeight() - getPaddingBottom());
-        long currentTimeMillis = System.currentTimeMillis();
-        int i13 = 0;
-        while (true) {
-            int size2 = sparseArray.size();
-            arrayList2 = this.l3;
-            if (i13 >= size2) {
-                break;
-            }
-            ArrayList arrayList7 = (ArrayList) sparseArray.valueAt(i13);
-            o1 o1Var2 = (o1) arrayList7.get(i10);
-            int R = RecyclerView.R(o1Var2);
-            while (true) {
-                if (i10 >= arrayList5.size()) {
-                    n1Var = null;
-                    break;
-                } else {
-                    if (((n1) arrayList5.get(i10)).M == R) {
-                        n1Var = (n1) arrayList5.get(i10);
-                        arrayList5.remove(i10);
-                        break;
+                return false;
+            case 2:
+                org.telegram.ui.Components.k8 k8Var = (org.telegram.ui.Components.k8) this.b;
+                org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) this.c;
+                if (motionEvent.getAction() != 0) {
+                    return false;
+                }
+                org.telegram.ui.Components.l8 l8Var = k8Var.n;
+                l8Var.H.r(l8Var.n.T(xVar));
+                return false;
+            case 3:
+                s10 = rt.q().s(motionEvent, r0.h, (mn) this.c, r0.N, ((iw) this.b).resourcesProvider);
+                return s10;
+            case 4:
+                s11 = rt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((oz0) this.b).b);
+                return s11;
+            case 5:
+                zy zyVar = (zy) this.b;
+                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) this.c;
+                zyVar.getClass();
+                if (motionEvent.getAction() != 0) {
+                    return false;
+                }
+                cz czVar = zyVar.d;
+                czVar.c.r(czVar.b.T(g4Var));
+                return false;
+            case 6:
+                c20 c20Var = (c20) this.b;
+                y10 y10Var = (y10) this.c;
+                if (motionEvent.getAction() != 0) {
+                    return false;
+                }
+                FiltersSetupActivity filtersSetupActivity = c20Var.e;
+                filtersSetupActivity.c.r(filtersSetupActivity.a.T(y10Var));
+                return false;
+            default:
+                nn0 nn0Var = (nn0) this.b;
+                Context context = (Context) this.c;
+                int i15 = 0;
+                if (nn0Var.getParentActivity() == null) {
+                    return false;
+                }
+                if (motionEvent.getAction() == 1) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.get(1);
+                    calendar.get(2);
+                    calendar.get(5);
+                    try {
+                        EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+                        if (intValue == 8) {
+                            z10 = false;
+                            string = LocaleController.getString(R.string.PassportSelectExpiredDate);
+                            i11 = 0;
+                            i15 = 20;
+                            i10 = 0;
+                        } else {
+                            i10 = -120;
+                            string = LocaleController.getString(R.string.PassportSelectBithdayDate);
+                            i11 = -18;
+                            z10 = false;
+                        }
+                        String[] split = editTextBoldCursor.getText().toString().split("\\.");
+                        if (split.length == 3) {
+                            i12 = Utilities.parseInt((CharSequence) split[z10 ? 1 : 0]).intValue();
+                            i14 = Utilities.parseInt((CharSequence) split[1]).intValue();
+                            i13 = Utilities.parseInt((CharSequence) split[2]).intValue();
+                        } else {
+                            i12 = -1;
+                            i13 = -1;
+                            i14 = -1;
+                        }
+                        if (intValue == 8) {
+                            z10 = true;
+                        }
+                        AlertDialog$Builder w10 = org.telegram.ui.Components.g5.w(context, i10, i15, i11, i12, i14, i13, string, z10, new gg.c2(nn0Var, intValue, editTextBoldCursor, 15));
+                        if (intValue == 8) {
+                            w10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new rw(23, nn0Var, editTextBoldCursor));
+                        }
+                        nn0Var.showDialog(w10.a);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
-                    i10++;
                 }
-            }
-            if (n1Var == null) {
-                if (arrayList2.isEmpty()) {
-                    n1Var = new n1(this);
-                    n1Var.l(7);
-                } else {
-                    n1Var = (n1) hg.c.w(1, arrayList2);
-                }
-                n1Var.M = R;
-                n1Var.e();
-            }
-            arrayList6.add(n1Var);
-            n1Var.O = arrayList7;
-            canvas.save();
-            canvas.translate(o1Var2.getLeft(), o1Var2.getY());
-            n1Var.N = o1Var2.getLeft();
-            int measuredWidth = getMeasuredWidth() - (o1Var2.getLeft() * 2);
-            int measuredHeight = o1Var2.getMeasuredHeight();
-            if (measuredWidth > 0 && measuredHeight > 0) {
-                n1Var.a(canvas, currentTimeMillis, measuredWidth, measuredHeight, getAlpha());
-            }
-            canvas.restore();
-            i13++;
-            i10 = 0;
-        }
-        for (int i14 = 0; i14 < arrayList5.size(); i14++) {
-            if (arrayList2.size() < 3) {
-                arrayList2.add((n1) arrayList5.get(i14));
-                ((n1) arrayList5.get(i14)).O = null;
-                ((n1) arrayList5.get(i14)).k();
-            } else {
-                ((n1) arrayList5.get(i14)).f();
-            }
-        }
-        arrayList5.clear();
-        for (int i15 = 0; i15 < getChildCount(); i15++) {
-            View childAt2 = getChildAt(i15);
-            if (childAt2 != null && !(childAt2 instanceof o1) && childAt2.getY() <= getHeight() - getPaddingBottom() && childAt2.getY() + childAt2.getHeight() >= getPaddingTop()) {
-                canvas.save();
-                canvas.translate((int) childAt2.getX(), (int) childAt2.getY());
-                childAt2.draw(canvas);
-                canvas.restore();
-            }
-        }
-        canvas.restore();
-        canvas.restoreToCount(saveCount);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void setLayoutManager(s4.o0 o0Var) {
-        super.setLayoutManager(o0Var);
-        this.e3 = null;
-        if (o0Var instanceof s4.c0) {
-            bl0 bl0Var = new bl0(this, (s4.c0) o0Var);
-            this.e3 = bl0Var;
-            bl0Var.i = new l1(this, 0);
-            bl0Var.h = new a1.c(this, 15);
+                return true;
         }
     }
 }

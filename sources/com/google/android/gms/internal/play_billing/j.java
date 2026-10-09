@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -39,36 +39,39 @@ public enum j {
     public static final a0 c;
     public final int a;
 
-    /* JADX WARN: Multi-variable type inference failed */
     static {
-        a5.a aVar = new a5.a((char) (0 == true ? 1 : 0), 3);
+        char c10 = 0;
+        a5.a aVar = new a5.a(c10, 3);
         aVar.c = new Object[8];
         aVar.b = 0;
-        for (j jVar : values()) {
+        j[] values = values();
+        int length = values.length;
+        for (int i10 = c10; i10 < length; i10++) {
+            j jVar = values[i10];
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i10 = aVar.b + 1;
+            int i11 = aVar.b + 1;
             Object[] objArr = (Object[]) aVar.c;
-            int length = objArr.length;
-            int i11 = i10 + i10;
-            if (i11 > length) {
-                if (i11 > length) {
-                    length = length + (length >> 1) + 1;
-                    if (length < i11) {
-                        int highestOneBit = Integer.highestOneBit(i11 - 1);
-                        length = highestOneBit + highestOneBit;
+            int length2 = objArr.length;
+            int i12 = i11 + i11;
+            if (i12 > length2) {
+                if (i12 > length2) {
+                    length2 = length2 + (length2 >> 1) + 1;
+                    if (length2 < i12) {
+                        int highestOneBit = Integer.highestOneBit(i12 - 1);
+                        length2 = highestOneBit + highestOneBit;
                     }
-                    if (length < 0) {
-                        length = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    if (length2 < 0) {
+                        length2 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                aVar.c = Arrays.copyOf(objArr, length);
+                aVar.c = Arrays.copyOf(objArr, length2);
             }
             Object[] objArr2 = (Object[]) aVar.c;
-            int i12 = aVar.b;
-            int i13 = i12 + i12;
-            objArr2[i13] = valueOf;
-            objArr2[i13 + 1] = jVar;
-            aVar.b = i12 + 1;
+            int i13 = aVar.b;
+            int i14 = i13 + i13;
+            objArr2[i14] = valueOf;
+            objArr2[i14 + 1] = jVar;
+            aVar.b = i13 + 1;
         }
         s sVar = (s) aVar.d;
         if (sVar != null) {

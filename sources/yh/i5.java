@@ -1,244 +1,172 @@
 package yh;
 
+import android.content.Context;
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.nc;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i5 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k5 b;
+public final class i5 {
+    public final org.telegram.ui.ActionBar.n2 a;
+    public final long b;
+    public final tc c;
+    public final nc d;
+    public final rc e;
+    public final mc f;
+    public int g;
+    public long h;
+    public ai.j3 i;
+    public final ArrayList j = new ArrayList();
+    public final HashSet k = new HashSet();
+    public final long l = System.currentTimeMillis();
+    public boolean m = true;
+    public boolean n;
+    public boolean o;
+    public final h5 p;
 
-    public /* synthetic */ i5(k5 k5Var, int i10) {
-        this.a = i10;
-        this.b = k5Var;
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Runnable, yh.h5] */
+    public i5(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
+        final int i10 = 0;
+        ?? r22 = new Runnable(this) { // from class: yh.h5
+            public final /* synthetic */ i5 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        i5 i5Var = this.b;
+                        if (!i5Var.n && !i5Var.o && i5Var.m) {
+                            i5Var.n = true;
+                            ai.j3 j3Var = i5Var.i;
+                            if (j3Var != null) {
+                                j3Var.run(i5Var.k);
+                            }
+                            if (i5Var.e != null) {
+                                i5Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        this.p = r22;
+        this.a = n2Var;
+        this.b = j3;
+        Context t10 = m5.t(n2Var);
+        nc ncVar = new nc(t10, n2Var.getResourceProvider());
+        this.d = ncVar;
+        ncVar.c(R.raw.stars_topup, new String[0]);
+        mc mcVar = new mc(t10, n2Var.getResourceProvider());
+        this.f = mcVar;
+        mcVar.b = 3000L;
+        mcVar.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Gi, n2Var.getResourceProvider()));
+        rc rcVar = new rc(t10, n2Var.getResourceProvider(), true, false);
+        this.e = rcVar;
+        rcVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        final int i11 = 1;
+        rcVar.a = new Runnable(this) { // from class: yh.h5
+            public final /* synthetic */ i5 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        i5 i5Var = this.b;
+                        if (!i5Var.n && !i5Var.o && i5Var.m) {
+                            i5Var.n = true;
+                            ai.j3 j3Var = i5Var.i;
+                            if (j3Var != null) {
+                                j3Var.run(i5Var.k);
+                            }
+                            if (i5Var.e != null) {
+                                i5Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        rcVar.addView(mcVar, w7.x5.a(20.0f, 0.0f, 0.0f, 12.0f, 0.0f, 20, 21));
+        rcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        ncVar.setButton(rcVar);
+        tc b10 = ad.a0(n2Var).b(ncVar, -1);
+        this.c = b10;
+        b10.r = false;
+        b10.k(true);
+        final int i12 = 0;
+        b10.v = new Runnable(this) { // from class: yh.h5
+            public final /* synthetic */ i5 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        i5 i5Var = this.b;
+                        if (!i5Var.n && !i5Var.o && i5Var.m) {
+                            i5Var.n = true;
+                            ai.j3 j3Var = i5Var.i;
+                            if (j3Var != null) {
+                                j3Var.run(i5Var.k);
+                            }
+                            if (i5Var.e != null) {
+                                i5Var.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        AndroidUtilities.cancelRunOnUIThread(r22);
+        AndroidUtilities.runOnUIThread(r22, 3000L);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final k5 k5Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i11 = i10;
-                        TLObject tLObject2 = tLObject;
-                        k5 k5Var2 = k5Var;
-                        switch (i11) {
-                            case 0:
-                                long j3 = k5Var2.b;
-                                int i12 = k5Var2.a;
-                                ArrayList arrayList = k5Var2.e;
-                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
-                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
-                                        k5Var2.j();
-                                        k5Var2.d = true;
-                                        k5Var2.c = false;
-                                        NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var2);
-                                        break;
-                                    }
-                                } else {
-                                    arrayList.clear();
-                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
-                                    k5Var2.j();
-                                    int size = arrayList.size();
-                                    int i13 = 0;
-                                    while (i13 < size) {
-                                        Object obj = arrayList.get(i13);
-                                        i13++;
-                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                                        if (k5Var2.e(tL_starGiftCollection.collection_id) == null) {
-                                            l5 l5Var = new l5(i12, j3, false);
-                                            int i14 = tL_starGiftCollection.collection_id;
-                                            l5Var.c = true;
-                                            l5Var.d = i14;
-                                            k5Var2.h.put(Integer.valueOf(i14), l5Var);
-                                        }
-                                    }
-                                    k5Var2.d = true;
-                                    k5Var2.c = false;
-                                    NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var2);
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                k5Var2.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f7 = k5Var2.f(tL_starGiftCollection2.collection_id);
-                                    if (f7 >= 0) {
-                                        k5Var2.e.set(f7, tL_starGiftCollection2);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                k5Var2.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f10 = k5Var2.f(tL_starGiftCollection3.collection_id);
-                                    if (f10 >= 0) {
-                                        k5Var2.e.set(f10, tL_starGiftCollection3);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i11 = 1;
-                final k5 k5Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i112 = i11;
-                        TLObject tLObject2 = tLObject;
-                        k5 k5Var22 = k5Var2;
-                        switch (i112) {
-                            case 0:
-                                long j3 = k5Var22.b;
-                                int i12 = k5Var22.a;
-                                ArrayList arrayList = k5Var22.e;
-                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
-                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
-                                        k5Var22.j();
-                                        k5Var22.d = true;
-                                        k5Var22.c = false;
-                                        NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var22);
-                                        break;
-                                    }
-                                } else {
-                                    arrayList.clear();
-                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
-                                    k5Var22.j();
-                                    int size = arrayList.size();
-                                    int i13 = 0;
-                                    while (i13 < size) {
-                                        Object obj = arrayList.get(i13);
-                                        i13++;
-                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                                        if (k5Var22.e(tL_starGiftCollection.collection_id) == null) {
-                                            l5 l5Var = new l5(i12, j3, false);
-                                            int i14 = tL_starGiftCollection.collection_id;
-                                            l5Var.c = true;
-                                            l5Var.d = i14;
-                                            k5Var22.h.put(Integer.valueOf(i14), l5Var);
-                                        }
-                                    }
-                                    k5Var22.d = true;
-                                    k5Var22.c = false;
-                                    NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var22);
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                k5Var22.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f7 = k5Var22.f(tL_starGiftCollection2.collection_id);
-                                    if (f7 >= 0) {
-                                        k5Var22.e.set(f7, tL_starGiftCollection2);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                k5Var22.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f10 = k5Var22.f(tL_starGiftCollection3.collection_id);
-                                    if (f10 >= 0) {
-                                        k5Var22.e.set(f10, tL_starGiftCollection3);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final k5 k5Var3 = this.b;
-                k5Var3.getClass();
-                final int i12 = 2;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j5
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i112 = i12;
-                        TLObject tLObject2 = tLObject;
-                        k5 k5Var22 = k5Var3;
-                        switch (i112) {
-                            case 0:
-                                long j3 = k5Var22.b;
-                                int i122 = k5Var22.a;
-                                ArrayList arrayList = k5Var22.e;
-                                if (!(tLObject2 instanceof TL_stars.TL_starGiftCollections)) {
-                                    if (tLObject2 instanceof TL_stars.TL_starGiftCollectionsNotModified) {
-                                        k5Var22.j();
-                                        k5Var22.d = true;
-                                        k5Var22.c = false;
-                                        NotificationCenter.getInstance(i122).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var22);
-                                        break;
-                                    }
-                                } else {
-                                    arrayList.clear();
-                                    arrayList.addAll(((TL_stars.TL_starGiftCollections) tLObject2).collections);
-                                    k5Var22.j();
-                                    int size = arrayList.size();
-                                    int i13 = 0;
-                                    while (i13 < size) {
-                                        Object obj = arrayList.get(i13);
-                                        i13++;
-                                        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
-                                        if (k5Var22.e(tL_starGiftCollection.collection_id) == null) {
-                                            l5 l5Var = new l5(i122, j3, false);
-                                            int i14 = tL_starGiftCollection.collection_id;
-                                            l5Var.c = true;
-                                            l5Var.d = i14;
-                                            k5Var22.h.put(Integer.valueOf(i14), l5Var);
-                                        }
-                                    }
-                                    k5Var22.d = true;
-                                    k5Var22.c = false;
-                                    NotificationCenter.getInstance(i122).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var22);
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                k5Var22.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f7 = k5Var22.f(tL_starGiftCollection2.collection_id);
-                                    if (f7 >= 0) {
-                                        k5Var22.e.set(f7, tL_starGiftCollection2);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                k5Var22.getClass();
-                                if (tLObject2 instanceof TL_stars.TL_starGiftCollection) {
-                                    TL_stars.TL_starGiftCollection tL_starGiftCollection3 = (TL_stars.TL_starGiftCollection) tLObject2;
-                                    int f10 = k5Var22.f(tL_starGiftCollection3.collection_id);
-                                    if (f10 >= 0) {
-                                        k5Var22.e.set(f10, tL_starGiftCollection3);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    public final void a() {
+        if (this.n || this.o) {
+            return;
+        }
+        this.o = true;
+        ArrayList arrayList = this.j;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+        if (this.e != null) {
+            this.c.b();
         }
     }
 }

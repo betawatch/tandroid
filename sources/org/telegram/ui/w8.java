@@ -1,102 +1,45 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.FrameLayout;
+import android.os.Build;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w8 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final class w8 extends s4.t0 {
+    public boolean a;
+    public final /* synthetic */ j9 b;
 
-    public /* synthetic */ w8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.q90 q90Var, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.a = 0;
-        this.b = i10;
-        this.c = inputGroupCall;
-        this.d = strArr;
-        this.e = frameLayout;
-        this.f = q90Var;
-        this.g = f3Var;
-        this.h = d6Var;
+    public w8(j9 j9Var) {
+        this.b = j9Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i10 = this.a;
-        Object obj = this.h;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        Object obj6 = this.c;
-        switch (i10) {
-            case 0:
-                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj6;
-                String[] strArr = (String[]) obj5;
-                FrameLayout frameLayout = (FrameLayout) obj4;
-                org.telegram.ui.Components.q90 q90Var = (org.telegram.ui.Components.q90) obj3;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj2;
-                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
-                boolean z10 = tLObject instanceof TLRPC.Updates;
-                int i11 = this.b;
-                if (z10) {
-                    MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
-                }
-                TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
-                exportgroupcallinvite.call = inputGroupCall;
-                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new ci.gd(strArr, frameLayout, q90Var, f3Var, d6Var, 1));
-                break;
-            case 1:
-                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj6;
-                int[] iArr = (int[]) obj5;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj4;
-                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj3;
-                String str = (String) obj2;
-                String str2 = (String) obj;
-                ArrayList arrayList = ExternalActionActivity.x;
-                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
-                if (authorizationform == null) {
-                    AndroidUtilities.runOnUIThread(new uq(externalActionActivity, b2Var, tL_error, 5));
-                    break;
-                } else {
-                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                    int i12 = this.b;
-                    iArr[0] = ConnectionsManager.getInstance(i12).sendRequest(getpassword, new w8(externalActionActivity, b2Var, i12, authorizationform, getauthorizationform, str, str2, 2));
-                    break;
-                }
-            case 2:
-                ArrayList arrayList2 = ExternalActionActivity.x;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.y5((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.b2) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.jb((dg0) obj6, tLObject, tL_error, (c5.k) obj5, this.b, (c5.o) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
-                break;
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ah.h hVar;
+        j9 j9Var = this.b;
+        ArrayList arrayList = j9Var.G;
+        int L0 = j9Var.c.L0();
+        int abs = L0 == -1 ? 0 : Math.abs(j9Var.c.N0() - L0) + 1;
+        if (abs > 0) {
+            int size = j9Var.d.W2.x.size();
+            if (!j9Var.J && !j9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(12, this, (f9) hg.c.g(1, arrayList)));
+            }
         }
-    }
-
-    public /* synthetic */ w8(KeyEvent.Callback callback, Object obj, int i10, Object obj2, TLObject tLObject, String str, Object obj3, int i11) {
-        this.a = i11;
-        this.c = callback;
-        this.d = obj;
-        this.b = i10;
-        this.e = obj2;
-        this.f = tLObject;
-        this.g = str;
-        this.h = obj3;
+        View childAt = recyclerView.getChildAt(0);
+        int top = childAt != null ? childAt.getTop() : 0;
+        if (i11 != 0 && this.a) {
+            j9Var.f.e(i11 < 0, true);
+        }
+        this.a = true;
+        j9Var.r.b(L0 != 0 || top < j9Var.d.getPaddingTop(), true);
+        if (Build.VERSION.SDK_INT < 31 || (hVar = j9Var.Y) == null) {
+            return;
+        }
+        hVar.f(i10, i11);
+        j9Var.f0();
     }
 }

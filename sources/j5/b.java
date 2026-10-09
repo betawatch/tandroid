@@ -1,5 +1,6 @@
 package j5;
 
+import a4.l;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -20,7 +21,6 @@ import k5.h;
 import k5.i;
 import k5.j;
 import k5.k;
-import k5.l;
 import k5.n;
 import k5.o;
 import k5.q;
@@ -32,12 +32,12 @@ import k5.v;
 import ka.d;
 import m5.e;
 import org.telegram.messenger.MediaDataController;
-import w7.h6;
+import w7.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements e {
-    public final k2.e a;
+    public final l a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -52,7 +52,7 @@ public final class b implements e {
         dVar.a(i.class, cVar);
         f fVar = f.a;
         dVar.a(s.class, fVar);
-        dVar.a(l.class, fVar);
+        dVar.a(k5.l.class, fVar);
         k5.d dVar2 = k5.d.a;
         dVar.a(q.class, dVar2);
         dVar.a(j.class, dVar2);
@@ -66,7 +66,7 @@ public final class b implements e {
         dVar.a(v.class, gVar);
         dVar.a(n.class, gVar);
         dVar.d = true;
-        this.a = new k2.e(dVar, 1);
+        this.a = new l(dVar, 26);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);
@@ -79,7 +79,7 @@ public final class b implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e7) {
-            throw new IllegalArgumentException(sa.e.i("Invalid url: ", str), e7);
+            throw new IllegalArgumentException(sc.v.i("Invalid url: ", str), e7);
         }
     }
 
@@ -148,7 +148,7 @@ public final class b implements e {
             try {
                 i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e7) {
-                h6.b("CctTransportBackend", "Unable to find version code for package", e7);
+                i6.b("CctTransportBackend", "Unable to find version code for package", e7);
             }
             c10.c("application_build", Integer.toString(i11));
             return c10.g();

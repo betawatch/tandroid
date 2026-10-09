@@ -1,50 +1,60 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class o0 extends j0 {
-    public static final o0 e = new o0(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class o0 extends k0 {
+    public final transient j0 d;
+    public final transient Object[] e;
+    public final transient int f;
 
-    public o0(int i10, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
+    public o0(j0 j0Var, Object[] objArr, int i10) {
+        this.d = j0Var;
+        this.e = objArr;
+        this.f = i10;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        v7.k5.a(i10, this.d);
-        Object obj = this.c[i10];
-        obj.getClass();
-        return obj;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.d.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // com.google.android.gms.internal.cast.j0, com.google.android.gms.internal.cast.g0
+    @Override // com.google.android.gms.internal.cast.e0
     public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i10 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i10);
-        return i10;
+        h0 h0Var = this.b;
+        if (h0Var == null) {
+            h0Var = s();
+            this.b = h0Var;
+        }
+        return h0Var.i(objArr);
     }
 
-    @Override // com.google.android.gms.internal.cast.g0
-    public final int n() {
-        return this.d;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        h0 h0Var = this.b;
+        if (h0Var == null) {
+            h0Var = s();
+            this.b = h0Var;
+        }
+        return h0Var.listIterator(0);
     }
 
-    @Override // com.google.android.gms.internal.cast.g0
-    public final int o() {
-        return 0;
+    public final h0 s() {
+        return new n0(this);
     }
 
-    @Override // com.google.android.gms.internal.cast.g0
-    public final Object[] p() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.d;
+        return this.f;
     }
 }

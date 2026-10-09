@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class es extends EditTextBoldCursor {
-    public static final org.telegram.ui.Components.fw0 I;
-    public static final org.telegram.ui.Components.fw0 J;
-    public static final org.telegram.ui.Components.fw0 K;
-    public static final org.telegram.ui.Components.fw0 L;
+    public static final org.telegram.ui.Components.lw0 I;
+    public static final org.telegram.ui.Components.lw0 J;
+    public static final org.telegram.ui.Components.lw0 K;
+    public static final org.telegram.ui.Components.lw0 L;
     public Canvas E;
     public ValueAnimator F;
     public ValueAnimator G;
@@ -40,18 +40,18 @@ public abstract class es extends EditTextBoldCursor {
     public Bitmap y;
 
     static {
-        org.telegram.ui.Components.fw0 fw0Var = new org.telegram.ui.Components.fw0(new m4(11), new m4(12));
-        fw0Var.c = 100.0f;
-        I = fw0Var;
-        org.telegram.ui.Components.fw0 fw0Var2 = new org.telegram.ui.Components.fw0(new m4(13), new m4(14));
-        fw0Var2.c = 100.0f;
-        J = fw0Var2;
-        org.telegram.ui.Components.fw0 fw0Var3 = new org.telegram.ui.Components.fw0(new m4(15), new m4(16));
-        fw0Var3.c = 100.0f;
-        K = fw0Var3;
-        org.telegram.ui.Components.fw0 fw0Var4 = new org.telegram.ui.Components.fw0(new m4(17), new m4(18));
-        fw0Var4.c = 100.0f;
-        L = fw0Var4;
+        org.telegram.ui.Components.lw0 lw0Var = new org.telegram.ui.Components.lw0(new nr(1), new nr(2));
+        lw0Var.c = 100.0f;
+        I = lw0Var;
+        org.telegram.ui.Components.lw0 lw0Var2 = new org.telegram.ui.Components.lw0(new nr(3), new nr(4));
+        lw0Var2.c = 100.0f;
+        J = lw0Var2;
+        org.telegram.ui.Components.lw0 lw0Var3 = new org.telegram.ui.Components.lw0(new nr(5), new nr(6));
+        lw0Var3.c = 100.0f;
+        K = lw0Var3;
+        org.telegram.ui.Components.lw0 lw0Var4 = new org.telegram.ui.Components.lw0(new nr(7), new nr(8));
+        lw0Var4.c = 100.0f;
+        L = lw0Var4;
     }
 
     public static void k(o1.k kVar, float f7) {
@@ -63,7 +63,7 @@ public abstract class es extends EditTextBoldCursor {
             lVar2.a(1.0f);
             lVar2.i = f7;
             kVar.u = lVar2;
-            kVar.f();
+            kVar.h();
         }
     }
 
@@ -99,13 +99,13 @@ public abstract class es extends EditTextBoldCursor {
             this.e = 1.0f;
             return;
         }
-        o1.l l4 = org.telegram.ui.Cells.c1.l(1.0f, 500.0f, 0.75f);
-        l4.i = 100.0f;
-        kVar.u = l4;
+        o1.l j3 = org.telegram.ui.Cells.c1.j(1.0f, 500.0f, 0.75f);
+        j3.i = 100.0f;
+        kVar.u = j3;
         kVar.b = 100.0f;
         kVar.c = true;
         kVar.a = 4000.0f;
-        kVar.f();
+        kVar.h();
     }
 
     public final void m() {
@@ -130,12 +130,12 @@ public abstract class es extends EditTextBoldCursor {
         this.w = 0.0f;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.G = ofFloat;
-        ofFloat.addUpdateListener(new c3(this, 7));
+        ofFloat.addUpdateListener(new c3(this, 8));
         this.G.setDuration(220L);
         this.G.start();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.f.c();
@@ -166,7 +166,7 @@ public abstract class es extends EditTextBoldCursor {
                 if (!isFocused() || csVar == null) {
                     requestFocus();
                 } else {
-                    ClipboardManager clipboardManager = (ClipboardManager) f0.e.f(getContext(), ClipboardManager.class);
+                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(ClipboardManager.class);
                     if (clipboardManager == null || clipboardManager.getPrimaryClipDescription() == null || (primaryClipDescription = clipboardManager.getPrimaryClipDescription()) == null) {
                         return false;
                     }

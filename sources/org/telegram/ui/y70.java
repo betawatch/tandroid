@@ -5,7 +5,7 @@ import android.view.TextureView;
 import org.telegram.messenger.Intro;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class y70 implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final class y70 implements TextureView.SurfaceTextureListener {
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
         switch (this.a) {
             case 0:
-                c80 c80Var = (c80) this.b;
-                if (c80Var.I == null && surfaceTexture != null) {
-                    c80Var.I = new a80(c80Var, surfaceTexture);
+                d80 d80Var = (d80) this.b;
+                if (d80Var.I == null && surfaceTexture != null) {
+                    d80Var.I = new b80(d80Var, surfaceTexture);
                     Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
-                    c80Var.I.postRunnable(new g10(this, 11));
-                    a80 a80Var = c80Var.I;
-                    a80Var.postRunnable(a80Var.w);
+                    d80Var.I.postRunnable(new uz(this, 12));
+                    b80 b80Var = d80Var.I;
+                    b80Var.postRunnable(b80Var.w);
                     break;
                 }
                 break;
@@ -37,21 +37,21 @@ public final class y70 implements TextureView.SurfaceTextureListener {
     public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 0:
-                c80 c80Var = (c80) this.b;
-                a80 a80Var = c80Var.I;
-                if (a80Var == null) {
+                d80 d80Var = (d80) this.b;
+                b80 b80Var = d80Var.I;
+                if (b80Var == null) {
                     return true;
                 }
-                a80Var.postRunnable(new g10(a80Var, 13));
-                c80Var.I = null;
+                b80Var.postRunnable(new uz(b80Var, 14));
+                d80Var.I = null;
                 return true;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
                 if (photoViewer.B2 != null) {
-                    org.telegram.ui.Components.rg0 rg0Var = org.telegram.ui.Components.rg0.p0;
-                    if (rg0Var.P && org.telegram.ui.Components.rg0.p() != null && org.telegram.ui.Components.rg0.p().b.a != 0) {
-                        (rg0Var != null ? rg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
-                        (rg0Var != null ? rg0Var.l0 : null).setVisibility(0);
+                    org.telegram.ui.Components.gh0 gh0Var = org.telegram.ui.Components.gh0.p0;
+                    if (gh0Var.P && org.telegram.ui.Components.gh0.p() != null && org.telegram.ui.Components.gh0.p().b.a != 0) {
+                        (gh0Var != null ? gh0Var.l0 : null).setSurfaceTexture(surfaceTexture);
+                        (gh0Var != null ? gh0Var.l0 : null).setVisibility(0);
                         return false;
                     }
                     if (photoViewer.F3) {
@@ -73,7 +73,7 @@ public final class y70 implements TextureView.SurfaceTextureListener {
     public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
         switch (this.a) {
             case 0:
-                if (((c80) this.b).I != null) {
+                if (((d80) this.b).I != null) {
                     Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
                     break;
                 }

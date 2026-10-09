@@ -10,59 +10,59 @@ import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import le.d;
-import le.e;
+import me.d;
+import me.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.wp;
-import w7.z5;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.jq;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout implements d {
-    public final le.b a;
-    public final le.b b;
+    public final me.b a;
+    public final me.b b;
     public ImageView c;
     public ImageView d;
-    public wp e;
-    public d6 f;
+    public jq e;
+    public e6 f;
     public float h;
     public ch.d n;
 
     public a(Context context) {
         super(context);
-        tr trVar = tr.h;
-        this.a = new le.b(0, this, trVar, 320L, false);
-        this.b = new le.b(1, this, trVar, 320L, true);
+        hs hsVar = hs.h;
+        this.a = new me.b(0, this, hsVar, 320L, false);
+        this.b = new me.b(1, this, hsVar, 320L, true);
         this.h = 1.0f;
     }
 
-    public static a c(c cVar, Context context, dh.a aVar, d6 d6Var) {
-        int v02 = i6.v0(i6.Wk, d6Var);
+    public static a c(c cVar, Context context, dh.a aVar, e6 e6Var) {
+        int w02 = i6.w0(i6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = d6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
-        aVar2.setIconColor(v02);
+        aVar2.setIconColor(w02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = i6.l1(0.15f, v02);
+        int m12 = i6.m1(0.15f, w02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.X(dp, m12, dp2, dp2, dp2, dp2));
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, dh.a aVar, d6 d6Var, int i10, int i11) {
-        int v02 = i6.v0(i6.Wk, d6Var);
+    public static a d(Context context, c cVar, dh.a aVar, e6 e6Var, int i10, int i11) {
+        int w02 = i6.w0(i6.Wk, e6Var);
         a aVar2 = new a(context);
-        aVar2.f = d6Var;
+        aVar2.f = e6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
-        aVar2.setIconColor(v02);
+        aVar2.setIconColor(w02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = i6.l1(0.15f, v02);
+        int m12 = i6.m1(0.15f, w02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.X(dp, m12, dp2, dp2, dp2, dp2));
         return aVar2;
     }
 
@@ -75,18 +75,6 @@ public final class a extends FrameLayout implements d {
             this.c.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f7));
             this.c.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f7) * this.h);
             this.c.setVisibility(f7 > 0.0f ? 0 : 8);
-        }
-    }
-
-    @Override // le.d
-    public final void a0(int i10, float f7, float f10, e eVar) {
-        if (i10 == 0) {
-            a();
-            b();
-        }
-        if (i10 == 1) {
-            a();
-            b();
         }
     }
 
@@ -130,7 +118,7 @@ public final class a extends FrameLayout implements d {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, z5.e(i11, i11, 17));
+            addView(this.c, x5.e(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);
@@ -139,16 +127,28 @@ public final class a extends FrameLayout implements d {
     public final void g() {
         ch.d dVar = this.n;
         if (dVar != null) {
-            dVar.k();
+            dVar.v();
             invalidate();
         }
         int i10 = i6.Wk;
-        int v02 = i6.v0(i10, this.f);
-        setIconColor(i6.v0(i10, this.f));
+        int w02 = i6.w0(i10, this.f);
+        setIconColor(i6.w0(i10, this.f));
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = i6.l1(0.15f, v02);
+        int m12 = i6.m1(0.15f, w02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
+        setBackground(i6.X(dp, m12, dp2, dp2, dp2, dp2));
+    }
+
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, e eVar) {
+        if (i10 == 0) {
+            a();
+            b();
+        }
+        if (i10 == 1) {
+            a();
+            b();
+        }
     }
 
     @Override // android.view.View
@@ -159,8 +159,8 @@ public final class a extends FrameLayout implements d {
 
     public void setBlurredBackgroundDrawable(ch.d dVar) {
         this.n = dVar;
-        dVar.x(AndroidUtilities.dp(6.0f));
-        this.n.y(AndroidUtilities.dp(22.0f));
+        dVar.p(AndroidUtilities.dp(6.0f));
+        this.n.q(AndroidUtilities.dp(22.0f));
     }
 
     @Override // android.view.View
@@ -193,7 +193,7 @@ public final class a extends FrameLayout implements d {
         }
     }
 
-    @Override // le.d
-    public final /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

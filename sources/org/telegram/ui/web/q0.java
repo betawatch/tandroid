@@ -1,51 +1,218 @@
 package org.telegram.ui.web;
 
-import android.webkit.GeolocationPermissions;
+import android.graphics.RectF;
+import android.view.View;
+import ci.b6;
+import java.io.File;
+import java.util.ArrayList;
+import m.f3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.c6;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.og0;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Wallet.n5;
+import org.telegram.ui.bb1;
+import org.telegram.ui.po;
+import qg.w2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements q0.a {
+public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
-    public final /* synthetic */ GeolocationPermissions.Callback c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ q0(w0 w0Var, GeolocationPermissions.Callback callback, String str, int i10) {
+    public /* synthetic */ q0(Object obj, int i10) {
         this.a = i10;
-        this.b = w0Var;
-        this.c = callback;
-        this.d = str;
+        this.b = obj;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        Boolean bool = (Boolean) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                w0 w0Var = this.b;
-                if (w0Var.a != null) {
-                    w0Var.a = null;
-                    boolean booleanValue = bool.booleanValue();
-                    GeolocationPermissions.Callback callback = this.c;
-                    String str = this.d;
-                    if (!booleanValue) {
-                        callback.invoke(str, false, false);
-                        break;
-                    } else {
-                        c1.a(w0Var.e.Q, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new q0(w0Var, callback, str, 1));
-                        break;
+                ((ru) this.b).requestFocus();
+                return;
+            case 1:
+                of.f.s(((u0) this.b).b.e.getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                return;
+            case 2:
+                f1 f1Var = (f1) this.b;
+                Utilities.searchQueue.postRunnable(new og0(f1Var, new ArrayList(f1Var.h.e), f1Var.h.n));
+                return;
+            case 3:
+                ((HttpGetFileTask) this.b).lambda$doInBackground$1();
+                return;
+            case 4:
+                ((org.telegram.ui.Cells.o1) this.b).invalidateSelf();
+                return;
+            case 5:
+                z1 z1Var = (z1) this.b;
+                File databasePath = ApplicationLoader.applicationContext.getDatabasePath("webview.db");
+                long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
+                File databasePath2 = ApplicationLoader.applicationContext.getDatabasePath("webviewCache.db");
+                if (databasePath2 != null && databasePath2.exists()) {
+                    length += databasePath2.length();
+                }
+                File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
+                if (file.exists()) {
+                    length += z1.Z(file, Boolean.FALSE);
+                }
+                File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
+                if (file2.exists()) {
+                    length += z1.Z(file2, null);
+                }
+                File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
+                AndroidUtilities.runOnUIThread(new po(z1Var, length, file3.exists() ? z1.Z(file3, Boolean.TRUE) : 0L, 1));
+                return;
+            case 6:
+                ((boolean[]) this.b)[0] = true;
+                return;
+            case 7:
+                ((p4.e) this.b).k();
+                return;
+            case 8:
+                ((p4.g) this.b).n = -1;
+                return;
+            case 9:
+                ((tl0) this.b).b();
+                return;
+            case 10:
+                f3 f3Var = ((pg.r0) this.b).b.a;
+                if (f3Var != null) {
+                    f3Var.g();
+                    return;
+                }
+                return;
+            case 11:
+                pg.s0 s0Var = ((pg.r0) this.b).b;
+                if (s0Var.d == null) {
+                    s0Var.L = null;
+                    return;
+                }
+                int currentColor = s0Var.f.getCurrentColor();
+                s0Var.l(s0Var.b, false, false);
+                a5.a d = s0Var.d(s0Var.b, currentColor, new RectF(s0Var.h));
+                s0Var.b();
+                pg.h1 h1Var = s0Var.d;
+                RectF rectF = new RectF();
+                s0Var.h = rectF;
+                h1Var.a(rectF);
+                s0Var.p(s0Var.e(h1Var, currentColor, new RectF(s0Var.h)), false);
+                s0Var.p(d, false);
+                s0Var.e(h1Var, currentColor, null);
+                s0Var.d = null;
+                s0Var.J = 0.0f;
+                s0Var.L = null;
+                return;
+            case 12:
+                ((pg.c1) ((n5) this.b).b).y.a.a();
+                return;
+            case 13:
+                pg.u1 u1Var = ((pg.v1) this.b).a;
+                if (u1Var != null) {
+                    u1Var.e();
+                    return;
+                }
+                return;
+            case 14:
+                ph.c cVar = (ph.c) this.b;
+                ph.b bVar = cVar.c;
+                if (bVar == ph.b.b) {
+                    cVar.a(ph.b.a, true);
+                    return;
+                } else {
+                    if (bVar == ph.b.c) {
+                        cVar.a(ph.b.d, true);
+                        return;
+                    }
+                    return;
+                }
+            case 15:
+                b6 b6Var = (b6) this.b;
+                b6Var.x0 = true;
+                b6Var.s();
+                return;
+            case 16:
+                ((View) this.b).performClick();
+                return;
+            case 17:
+                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((qg.m2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
+                return;
+            case 18:
+                AndroidUtilities.showKeyboard(((w2) this.b).q0);
+                return;
+            case 19:
+                AndroidUtilities.showKeyboard(((qh.c) this.b).a);
+                return;
+            case 20:
+                qh.c cVar2 = (qh.c) ((c6) this.b).d;
+                org.telegram.ui.Cells.u1 u1Var2 = cVar2.n;
+                if (u1Var2 == null || u1Var2.getDelegate() == null) {
+                    return;
+                }
+                cVar2.n.getDelegate().K1(cVar2.n, false);
+                return;
+            case 21:
+                ((qh.q) this.b).c.W2.N(true);
+                return;
+            case 22:
+                ((qh.p) this.b).a();
+                return;
+            case 23:
+                r2.f fVar = (r2.f) this.b;
+                synchronized (fVar.a) {
+                    try {
+                        if (fVar.m) {
+                            return;
+                        }
+                        long j3 = fVar.l - 1;
+                        fVar.l = j3;
+                        if (j3 > 0) {
+                            return;
+                        }
+                        if (j3 < 0) {
+                            fVar.b(new IllegalStateException());
+                            return;
+                        } else {
+                            fVar.a();
+                            return;
+                        }
+                    } finally {
                     }
                 }
-                break;
+            case 24:
+                com.google.firebase.messaging.s sVar = (com.google.firebase.messaging.s) this.b;
+                ((s5.g) ((t5.c) sVar.e)).f(new r5.d(sVar, 2));
+                return;
+            case 25:
+                rg.j0 j0Var = ((rg.c0) this.b).c;
+                j0Var.n.presentFragment(bb1.d0(j0Var.t1(), true));
+                return;
+            case 26:
+                fk0 fk0Var = ((rg.p0) this.b).y;
+                fk0Var.getAnimatedDrawable().N(0, true, false);
+                fk0Var.d();
+                return;
+            case 27:
+                ((rg.w0) this.b).b.B();
+                return;
+            case 28:
+                rg.p1 p1Var = (rg.p1) this.b;
+                int size = 1073741823 - (1073741823 % p1Var.V2.size());
+                s4.d0 d0Var = p1Var.W2;
+                p1Var.j3 = size;
+                d0Var.h1(size, (p1Var.getMeasuredHeight() - p1Var.getChildAt(0).getMeasuredHeight()) >> 1);
+                p1Var.x1(null, false);
+                return;
             default:
-                w0 w0Var2 = this.b;
-                w0Var2.getClass();
-                this.c.invoke(this.d, bool.booleanValue(), false);
-                if (bool.booleanValue()) {
-                    w0Var2.e.Q.T = true;
-                    break;
-                }
-                break;
+                ((rg.r1) this.b).invalidate();
+                return;
         }
     }
 }

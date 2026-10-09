@@ -1,53 +1,52 @@
 package a3;
 
-import ai.a5;
-import ai.aa;
-import ai.ac;
+import ai.a8;
 import ai.b2;
+import ai.b5;
+import ai.ba;
+import ai.bc;
 import ai.c2;
 import ai.d2;
-import ai.db;
-import ai.e6;
-import ai.e7;
-import ai.ic;
+import ai.eb;
+import ai.f6;
+import ai.f7;
 import ai.jc;
-import ai.k7;
-import ai.kb;
-import ai.m2;
-import ai.ma;
-import ai.mb;
-import ai.p9;
-import ai.sb;
-import ai.sc;
-import ai.u4;
-import ai.x5;
-import ai.x7;
-import ai.xb;
-import ai.z7;
+import ai.kc;
+import ai.l7;
+import ai.lb;
+import ai.n2;
+import ai.na;
+import ai.nb;
+import ai.q9;
+import ai.tb;
+import ai.tc;
+import ai.v4;
+import ai.y5;
+import ai.y7;
+import ai.yb;
 import android.content.Context;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.os.Trace;
 import androidx.fragment.app.v0;
-import ci.b1;
-import ci.e4;
-import ci.l9;
+import ci.a1;
+import ci.d4;
+import ci.m9;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.jx;
-import org.telegram.ui.uy;
-import v7.h8;
-import v7.i8;
-import w7.b8;
+import org.telegram.ui.kx;
+import org.telegram.ui.ty;
+import v7.d8;
+import v7.g8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -63,18 +62,18 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.B();
+                ((f) this.b).g.K();
                 return;
             case 1:
                 ((w) this.b).k--;
                 return;
             case 2:
-                uy uyVar = ((jx) this.b).O0;
-                if (uyVar.L && uyVar.g4().G()) {
-                    uyVar.E0.h();
+                ty tyVar = ((kx) this.b).O0;
+                if (tyVar.L && tyVar.U3().G()) {
+                    tyVar.E0.h();
                     return;
                 } else {
-                    uyVar.G4(true, true);
+                    tyVar.u4(true, true);
                     return;
                 }
             case 3:
@@ -85,32 +84,32 @@ public final /* synthetic */ class d implements Runnable {
                 NotificationCenter.getInstance(d2Var.e).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2Var.g()));
                 return;
             case 5:
-                m2 m2Var = (m2) this.b;
-                m2Var.H = false;
-                m2Var.p(false);
-                m2Var.T = false;
+                n2 n2Var = (n2) this.b;
+                n2Var.H = false;
+                n2Var.o(false);
+                n2Var.T = false;
                 return;
             case 6:
-                ((u4) this.b).a.Q0();
+                ((v4) this.b).a.Q0();
                 return;
             case 7:
-                e6 e6Var = ((a5) this.b).x;
-                x5 x5Var = e6Var.Q1;
-                if (x5Var != null) {
-                    if (e6Var.T1 || e6Var.U1 || e6Var.V1) {
-                        if (e6Var.O1.e) {
-                            ((ic) e6Var.M2.c).loopBack();
+                f6 f6Var = ((b5) this.b).x;
+                y5 y5Var = f6Var.Q1;
+                if (y5Var != null) {
+                    if (f6Var.T1 || f6Var.U1 || f6Var.V1) {
+                        if (f6Var.O1.e) {
+                            ((jc) f6Var.M2.c).loopBack();
                             return;
                         } else {
-                            e6Var.W0 = 0L;
+                            f6Var.W0 = 0L;
                             return;
                         }
                     }
-                    jc jcVar = ((ac) x5Var).d;
-                    if (jcVar.n0.getCurrentPeerView().d1(true) || jcVar.n0.E(true)) {
+                    kc kcVar = ((bc) y5Var).d;
+                    if (kcVar.n0.getCurrentPeerView().d1(true) || kcVar.n0.E(true)) {
                         return;
                     }
-                    jcVar.q(true);
+                    kcVar.q(true);
                     return;
                 }
                 return;
@@ -128,111 +127,111 @@ public final /* synthetic */ class d implements Runnable {
                 AndroidUtilities.vibrateCursor(profileStoriesView);
                 return;
             case 10:
-                k7.a(((e7) this.b).d);
+                l7.a(((f7) this.b).d);
                 return;
             case 11:
-                x7 x7Var = (x7) this.b;
-                if (x7Var.isShowing()) {
-                    x7Var.q(true);
+                y7 y7Var = (y7) this.b;
+                if (y7Var.isShowing()) {
+                    y7Var.s(true);
                     return;
                 }
                 return;
             case 12:
-                ((l9) this.b).run();
+                ((m9) this.b).run();
                 return;
             case 13:
-                b1 b1Var = (b1) this.b;
-                b1Var.c(b1Var.b);
-                b1Var.c = false;
+                a1 a1Var = (a1) this.b;
+                a1Var.c(a1Var.b);
+                a1Var.c = false;
                 return;
             case 14:
-                p9 p9Var = (p9) this.b;
-                p9Var.c();
-                p9Var.a(true);
+                q9 q9Var = (q9) this.b;
+                q9Var.c();
+                q9Var.a(true);
                 return;
             case 15:
-                ((z7) this.b).run(null);
+                ((a8) this.b).run(null);
                 return;
             case 16:
-                ((aa) this.b).onDetachedFromWindow();
+                ((ba) this.b).onDetachedFromWindow();
                 return;
             case 17:
-                ma maVar = (ma) this.b;
-                ArrayList arrayList = maVar.c;
+                na naVar = (na) this.b;
+                ArrayList arrayList = naVar.c;
                 if (arrayList != null) {
-                    maVar.a.z1 = arrayList;
+                    naVar.a.z1 = arrayList;
                 }
-                e6 e6Var2 = maVar.a;
-                long j3 = maVar.b;
-                if (e6Var2.B1 == j3 && e6Var2.z1 == null) {
+                f6 f6Var2 = naVar.a;
+                long j3 = naVar.b;
+                if (f6Var2.B1 == j3 && f6Var2.z1 == null) {
                     return;
                 }
-                e6Var2.B1 = j3;
-                e6Var2.j1();
-                e6Var2.i1();
-                e6Var2.f1(true);
-                TL_stories.PeerStories peerStories = e6Var2.J0.Q0;
+                f6Var2.B1 = j3;
+                f6Var2.j1();
+                f6Var2.i1();
+                f6Var2.f1(true);
+                TL_stories.PeerStories peerStories = f6Var2.J0.Q0;
                 if (peerStories != null) {
-                    e6Var2.S1.S(peerStories, true);
+                    f6Var2.S1.S(peerStories, true);
                     return;
                 }
-                ai.l9 l9Var = e6Var2.S1;
-                TL_stories.PeerStories y3 = l9Var.y(j3);
+                ai.m9 m9Var = f6Var2.S1;
+                TL_stories.PeerStories y3 = m9Var.y(j3);
                 if (y3 == null) {
-                    y3 = l9Var.z(j3);
+                    y3 = m9Var.z(j3);
                     z10 = true;
                 }
-                l9Var.S(y3, z10);
+                m9Var.S(y3, z10);
                 return;
             case 18:
-                ((n90) this.b).d(true);
+                ((ba0) this.b).d(true);
                 return;
             case 19:
-                ((db) this.b).requestLayout();
+                ((eb) this.b).requestLayout();
                 return;
             case 20:
-                mb mbVar = (mb) this.b;
-                e4 e4Var = mbVar.c;
-                if (e4Var != null) {
-                    e4Var.e(true);
-                    mbVar.c = null;
+                nb nbVar = (nb) this.b;
+                d4 d4Var = nbVar.c;
+                if (d4Var != null) {
+                    d4Var.e(true);
+                    nbVar.c = null;
                 }
-                mbVar.b(false);
+                nbVar.b(false);
                 return;
             case 21:
-                kb kbVar = (kb) this.b;
-                if (kbVar.v) {
-                    kbVar.E = true;
-                    kbVar.F = System.currentTimeMillis();
+                lb lbVar = (lb) this.b;
+                if (lbVar.v) {
+                    lbVar.E = true;
+                    lbVar.F = System.currentTimeMillis();
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                    kbVar.e = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 771751935, 771751935, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
-                    kbVar.f = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 553648127, 553648127, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
-                    kbVar.invalidate();
+                    lbVar.e = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 771751935, 771751935, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    lbVar.f = new LinearGradient(0.0f, 0.0f, 40.0f, 0.0f, new int[]{16777215, 553648127, 553648127, 16777215}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, tileMode);
+                    lbVar.invalidate();
                     return;
                 }
                 return;
             case 22:
-                jc jcVar2 = ((sb) this.b).b;
+                kc kcVar2 = ((tb) this.b).b;
                 try {
-                    xb xbVar = jcVar2.s;
-                    if (xbVar == null) {
+                    yb ybVar = kcVar2.s;
+                    if (ybVar == null) {
                         return;
                     }
-                    if (jcVar2.b) {
-                        AndroidUtilities.removeFromParent(xbVar);
+                    if (kcVar2.b) {
+                        AndroidUtilities.removeFromParent(ybVar);
                     } else {
-                        jcVar2.n.removeView(xbVar);
+                        kcVar2.n.removeView(ybVar);
                     }
-                    jcVar2.s = null;
+                    kcVar2.s = null;
                     return;
                 } catch (Exception unused) {
                     return;
                 }
             case 23:
-                ((xb) this.b).I0.K(true);
+                ((yb) this.b).I0.K(true);
                 return;
             case 24:
-                ((sc) this.b).c();
+                ((tc) this.b).c();
                 return;
             case 25:
                 ((androidx.activity.l) this.b).invalidateOptionsMenu();
@@ -257,7 +256,7 @@ public final /* synthetic */ class d implements Runnable {
                             return;
                         }
                         try {
-                            o0.i d = pVar.d();
+                            o0.h d = pVar.d();
                             int i11 = d.e;
                             if (i11 == 2) {
                                 synchronized (pVar.d) {
@@ -269,28 +268,28 @@ public final /* synthetic */ class d implements Runnable {
                             try {
                                 int i12 = n0.g.a;
                                 Trace.beginSection("EmojiCompat.FontRequestEmojiCompatConfig.buildTypeface");
-                                t7.u uVar = pVar.c;
+                                ob.a aVar = pVar.c;
                                 Context context = pVar.a;
-                                uVar.getClass();
-                                o0.i[] iVarArr = {d};
-                                h8 h8Var = i0.e.a;
-                                b8.a("TypefaceCompat.createFromFontInfo");
+                                aVar.getClass();
+                                o0.h[] hVarArr = {d};
+                                d8 d8Var = i0.e.a;
+                                w7.a8.a("TypefaceCompat.createFromFontInfo");
                                 try {
-                                    Typeface b10 = i0.e.a.b(context, iVarArr, 0);
+                                    Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e7 = i8.e(pVar.a, d.a);
+                                    MappedByteBuffer e7 = g8.e(pVar.a, d.a);
                                     if (e7 == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }
                                     try {
                                         Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(b10, v7.y.a(e7));
+                                        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(b10, v7.u.a(e7));
                                         Trace.endSection();
                                         synchronized (pVar.d) {
                                             try {
-                                                v7.x xVar = pVar.h;
-                                                if (xVar != null) {
-                                                    xVar.b(sVar);
+                                                v7.t tVar = pVar.h;
+                                                if (tVar != null) {
+                                                    tVar.b(sVar);
                                                 }
                                             } finally {
                                             }
@@ -309,9 +308,9 @@ public final /* synthetic */ class d implements Runnable {
                         } catch (Throwable th3) {
                             synchronized (pVar.d) {
                                 try {
-                                    v7.x xVar2 = pVar.h;
-                                    if (xVar2 != null) {
-                                        xVar2.a(th3);
+                                    v7.t tVar2 = pVar.h;
+                                    if (tVar2 != null) {
+                                        tVar2.a(th3);
                                     }
                                     pVar.b();
                                     return;

@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
+import ae.g0;
 import android.app.Application;
 import com.google.android.gms.tasks.Task;
-import id.c;
-import zd.e0;
+import jd.c;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzdz {
     private static zzeh zza;
@@ -26,7 +26,7 @@ public final class zzdz {
     }
 
     public static final Task zzc(Application application, String str, long j3) {
-        return zzbv.zza(e0.c(zza(application).zza().zza(), new zzdx(application, str, j3, null)));
+        return zzbv.zza(g0.c(zza(application).zza().zza(), new zzdx(application, str, j3, null)));
     }
 
     public static final Object zzd(Application application, String str, c cVar) {
@@ -34,6 +34,6 @@ public final class zzdz {
     }
 
     public static final Task zze(Application application, String str) {
-        return zzbv.zza(e0.c(zza(application).zza().zza(), new zzdy(application, str, null)));
+        return zzbv.zza(g0.c(zza(application).zza().zza(), new zzdy(application, str, null)));
     }
 }

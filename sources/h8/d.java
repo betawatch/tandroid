@@ -1,5 +1,6 @@
 package h8;
 
+import ae.x;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -8,7 +9,7 @@ import android.os.StrictMode;
 import android.widget.FrameLayout;
 import n6.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d extends FrameLayout {
     private final j zza;
@@ -55,9 +56,9 @@ public abstract class d extends FrameLayout {
         }
         try {
             i8.g gVar = (i8.g) aVar.c;
-            gVar.S0(gVar.O0(), 5);
+            gVar.R0(gVar.N0(), 5);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new x(e7);
         }
     }
 
@@ -70,12 +71,12 @@ public abstract class d extends FrameLayout {
                 Bundle bundle2 = new Bundle();
                 i8.d.c(bundle, bundle2);
                 i8.g gVar = (i8.g) aVar.c;
-                Parcel O0 = gVar.O0();
-                s7.b.b(O0, bundle2);
-                gVar.S0(O0, 10);
+                Parcel N0 = gVar.N0();
+                s7.b.b(N0, bundle2);
+                gVar.R0(N0, 10);
                 i8.d.c(bundle2, bundle);
             } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+                throw new x(e7);
             }
         }
     }
@@ -87,9 +88,9 @@ public abstract class d extends FrameLayout {
             aVar.getClass();
             try {
                 i8.g gVar = (i8.g) aVar.c;
-                gVar.S0(gVar.O0(), 11);
+                gVar.R0(gVar.N0(), 11);
             } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+                throw new x(e7);
             }
         }
     }
@@ -99,9 +100,9 @@ public abstract class d extends FrameLayout {
         if (aVar != null) {
             try {
                 i8.g gVar = (i8.g) aVar.c;
-                gVar.S0(gVar.O0(), 6);
+                gVar.R0(gVar.N0(), 6);
             } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+                throw new x(e7);
             }
         }
     }
@@ -115,9 +116,9 @@ public abstract class d extends FrameLayout {
         }
         try {
             i8.g gVar = (i8.g) aVar.c;
-            gVar.S0(gVar.O0(), 4);
+            gVar.R0(gVar.N0(), 4);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new x(e7);
         }
     }
 
@@ -142,16 +143,16 @@ public abstract class d extends FrameLayout {
             Bundle bundle3 = new Bundle();
             i8.d.c(bundle, bundle3);
             i8.g gVar = (i8.g) aVar.c;
-            Parcel O0 = gVar.O0();
-            s7.b.b(O0, bundle3);
-            Parcel N0 = gVar.N0(O0, 7);
-            if (N0.readInt() != 0) {
-                bundle3.readFromParcel(N0);
+            Parcel N0 = gVar.N0();
+            s7.b.b(N0, bundle3);
+            Parcel M0 = gVar.M0(N0, 7);
+            if (M0.readInt() != 0) {
+                bundle3.readFromParcel(M0);
             }
-            N0.recycle();
+            M0.recycle();
             i8.d.c(bundle3, bundle);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new x(e7);
         }
     }
 
@@ -170,9 +171,9 @@ public abstract class d extends FrameLayout {
         }
         try {
             i8.g gVar = (i8.g) aVar.c;
-            gVar.S0(gVar.O0(), 13);
+            gVar.R0(gVar.N0(), 13);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new x(e7);
         }
     }
 }

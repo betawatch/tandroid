@@ -3,16 +3,16 @@ package za;
 import android.os.Build;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
     public final String b;
     public final String c;
-    public final p d;
+    public final q d;
     public final ArrayList e;
 
-    public a(String str, String versionName, String appBuildVersion, p pVar, ArrayList arrayList) {
+    public a(String str, String versionName, String appBuildVersion, q qVar, ArrayList arrayList) {
         String deviceManufacturer = Build.MANUFACTURER;
         kotlin.jvm.internal.i.e(versionName, "versionName");
         kotlin.jvm.internal.i.e(appBuildVersion, "appBuildVersion");
@@ -20,7 +20,7 @@ public final class a {
         this.a = str;
         this.b = versionName;
         this.c = appBuildVersion;
-        this.d = pVar;
+        this.d = qVar;
         this.e = arrayList;
     }
 
@@ -40,7 +40,7 @@ public final class a {
     }
 
     public final int hashCode() {
-        return this.e.hashCode() + ((this.d.hashCode() + a4.a.h(a4.a.h(a4.a.h(this.a.hashCode() * 31, 31, this.b), 31, this.c), 31, Build.MANUFACTURER)) * 31);
+        return this.e.hashCode() + ((this.d.hashCode() + a1.g.h(a1.g.h(a1.g.h(this.a.hashCode() * 31, 31, this.b), 31, this.c), 31, Build.MANUFACTURER)) * 31);
     }
 
     public final String toString() {

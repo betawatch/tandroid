@@ -5,7 +5,7 @@ import c3.p;
 import e2.v;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -27,7 +27,7 @@ public final class f {
         v vVar = this.g;
         vVar.G(27);
         try {
-            z11 = pVar.f(vVar.a, 0, 27, z10);
+            z11 = pVar.h(vVar.a, 0, 27, z10);
         } catch (EOFException e7) {
             if (!z10) {
                 throw e7;
@@ -46,7 +46,7 @@ public final class f {
                 this.d = x10 + 27;
                 vVar.G(x10);
                 try {
-                    z12 = pVar.f(vVar.a, 0, this.c, z10);
+                    z12 = pVar.h(vVar.a, 0, this.c, z10);
                 } catch (EOFException e10) {
                     if (!z10) {
                         throw e10;
@@ -70,7 +70,7 @@ public final class f {
 
     public final boolean b(p pVar, long j3) {
         boolean z10;
-        e2.d.b(pVar.getPosition() == pVar.g());
+        e2.d.b(pVar.getPosition() == pVar.j());
         v vVar = this.g;
         vVar.G(4);
         while (true) {
@@ -78,7 +78,7 @@ public final class f {
                 break;
             }
             try {
-                z10 = pVar.f(vVar.a, 0, 4, true);
+                z10 = pVar.h(vVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
@@ -87,10 +87,10 @@ public final class f {
             }
             vVar.J(0);
             if (vVar.z() == 1332176723) {
-                pVar.m();
+                pVar.q();
                 return true;
             }
-            pVar.o(1);
+            pVar.r(1);
         }
         do {
             if (j3 != -1 && pVar.getPosition() >= j3) {

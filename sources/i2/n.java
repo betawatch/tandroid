@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n extends b2.u0 {
     public final u2.f0 E;
@@ -45,7 +45,7 @@ public final class n extends b2.u0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public n(int i10, Throwable th2, int i11, String str, int i12, b2.s sVar, int i13, u2.f0 f0Var, boolean z10) {
-        this(TextUtils.isEmpty(null) ? r0 : sa.e.v(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, f0Var, SystemClock.elapsedRealtime(), z10);
+        this(TextUtils.isEmpty(null) ? r0 : sc.v.v(r0, ": null"), th2, i11, i10, r5, r6, r7, i13, f0Var, SystemClock.elapsedRealtime(), z10);
         String str2;
         int i14;
         b2.s sVar2;

@@ -1,6 +1,6 @@
 package x3;
 
-import a4.m;
+import a4.l;
 import b2.p0;
 import b2.r;
 import b2.r0;
@@ -8,20 +8,21 @@ import b2.s;
 import b2.s0;
 import c3.j0;
 import c3.z;
-import e0.i0;
+import e0.g0;
 import e2.v;
+import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n7.z0;
+import n6.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j extends i {
-    public i0 n;
+    public g0 n;
     public int o;
     public boolean p;
     public z q;
-    public m r;
+    public l r;
 
     @Override // x3.i
     public final void a(long j3) {
@@ -37,11 +38,11 @@ public final class j extends i {
         if ((b10 & 1) == 1) {
             return -1L;
         }
-        i0 i0Var = this.n;
-        e2.d.h(i0Var);
-        int i10 = i0Var.a;
-        z zVar = (z) i0Var.b;
-        int i11 = !((j0[]) i0Var.e)[(b10 >> 1) & (255 >>> (8 - i10))].b ? zVar.e : zVar.f;
+        g0 g0Var = this.n;
+        e2.d.h(g0Var);
+        int i10 = g0Var.a;
+        z zVar = (z) g0Var.b;
+        int i11 = !((j0[]) g0Var.e)[(b10 >> 1) & (255 >>> (8 - i10))].b ? zVar.e : zVar.f;
         long j3 = this.p ? (this.o + i11) / 4 : 0;
         byte[] bArr = vVar.a;
         int length = bArr.length;
@@ -65,10 +66,10 @@ public final class j extends i {
 
     /* JADX WARN: Type inference failed for: r1v59, types: [byte[], java.io.Serializable] */
     @Override // x3.i
-    public final boolean c(v vVar, long j3, z0 z0Var) {
-        i0 i0Var;
+    public final boolean c(v vVar, long j3, t tVar) {
+        g0 g0Var;
         if (this.n != null) {
-            ((s) z0Var.b).getClass();
+            ((s) tVar.b).getClass();
             return false;
         }
         z zVar = this.q;
@@ -100,8 +101,8 @@ public final class j extends i {
             zVar2.g = copyOf;
             this.q = zVar2;
         } else {
-            m mVar = this.r;
-            if (mVar == null) {
+            l lVar = this.r;
+            if (lVar == null) {
                 this.r = c3.b.v(vVar, true, true);
             } else {
                 int i12 = vVar.c;
@@ -111,239 +112,245 @@ public final class j extends i {
                 int i14 = 5;
                 c3.b.x(5, vVar, false);
                 int x12 = vVar.x() + 1;
-                a4.h hVar = new a4.h(vVar.a);
-                hVar.t(vVar.b * 8);
-                int i15 = 0;
+                a4.g gVar = new a4.g(vVar.a);
+                int i15 = 8;
+                gVar.t(vVar.b * 8);
+                int i16 = 0;
                 while (true) {
-                    int i16 = 16;
-                    if (i15 >= x12) {
-                        int i17 = 6;
-                        int i18 = hVar.i(6) + 1;
-                        for (int i19 = 0; i19 < i18; i19++) {
-                            if (hVar.i(16) != 0) {
+                    int i17 = 16;
+                    if (i16 < x12) {
+                        int i18 = i15;
+                        if (gVar.i(24) != 5653314) {
+                            throw s0.a(null, "expected code book to start with [0x56, 0x43, 0x42] at " + ((gVar.d * 8) + gVar.e));
+                        }
+                        int i19 = gVar.i(16);
+                        int i20 = gVar.i(24);
+                        if (gVar.h()) {
+                            gVar.t(i14);
+                            int i21 = 0;
+                            while (i21 < i20) {
+                                int i22 = 0;
+                                for (int i23 = i20 - i21; i23 > 0; i23 >>>= 1) {
+                                    i22++;
+                                }
+                                i21 += gVar.i(i22);
+                            }
+                        } else {
+                            boolean h = gVar.h();
+                            for (int i24 = 0; i24 < i20; i24++) {
+                                if (!h) {
+                                    gVar.t(i14);
+                                } else if (gVar.h()) {
+                                    gVar.t(i14);
+                                }
+                            }
+                        }
+                        int i25 = gVar.i(4);
+                        if (i25 > 2) {
+                            throw s0.a(null, "lookup type greater than 2 not decodable: " + i25);
+                        }
+                        if (i25 == 1 || i25 == 2) {
+                            gVar.t(32);
+                            gVar.t(32);
+                            int i26 = gVar.i(4) + 1;
+                            gVar.t(1);
+                            gVar.t((int) ((i25 == 1 ? i19 != 0 ? (long) Math.floor(Math.pow(i20, 1.0d / i19)) : 0L : i20 * i19) * i26));
+                        }
+                        i16++;
+                        i15 = i18;
+                        i14 = 5;
+                    } else {
+                        int i27 = i15;
+                        int i28 = 6;
+                        int i29 = gVar.i(6) + 1;
+                        for (int i30 = 0; i30 < i29; i30++) {
+                            if (gVar.i(16) != 0) {
                                 throw s0.a(null, "placeholder of time domain transforms not zeroed out");
                             }
                         }
-                        int i20 = 1;
-                        int i21 = hVar.i(6) + 1;
-                        int i22 = 0;
+                        int i31 = 1;
+                        int i32 = gVar.i(6) + 1;
+                        int i33 = 0;
                         while (true) {
-                            int i23 = 3;
-                            if (i22 < i21) {
-                                int i24 = hVar.i(i16);
-                                if (i24 == 0) {
-                                    int i25 = 8;
-                                    hVar.t(8);
-                                    hVar.t(16);
-                                    hVar.t(16);
-                                    hVar.t(6);
-                                    hVar.t(8);
-                                    int i26 = hVar.i(4) + 1;
-                                    int i27 = 0;
-                                    while (i27 < i26) {
-                                        hVar.t(i25);
-                                        i27++;
-                                        i25 = 8;
+                            int i34 = 3;
+                            if (i33 < i32) {
+                                int i35 = gVar.i(i17);
+                                if (i35 == 0) {
+                                    int i36 = i27;
+                                    gVar.t(i36);
+                                    gVar.t(16);
+                                    gVar.t(16);
+                                    gVar.t(6);
+                                    gVar.t(i36);
+                                    int i37 = gVar.i(4) + 1;
+                                    int i38 = 0;
+                                    while (i38 < i37) {
+                                        gVar.t(i36);
+                                        i38++;
+                                        i36 = 8;
                                     }
                                 } else {
-                                    if (i24 != i20) {
-                                        throw s0.a(null, "floor type greater than 1 not decodable: " + i24);
+                                    if (i35 != i31) {
+                                        throw s0.a(null, "floor type greater than 1 not decodable: " + i35);
                                     }
-                                    int i28 = hVar.i(5);
-                                    int[] iArr = new int[i28];
-                                    int i29 = -1;
-                                    for (int i30 = 0; i30 < i28; i30++) {
-                                        int i31 = hVar.i(i10);
-                                        iArr[i30] = i31;
-                                        if (i31 > i29) {
-                                            i29 = i31;
+                                    int i39 = gVar.i(5);
+                                    int[] iArr = new int[i39];
+                                    int i40 = -1;
+                                    for (int i41 = 0; i41 < i39; i41++) {
+                                        int i42 = gVar.i(i10);
+                                        iArr[i41] = i42;
+                                        if (i42 > i40) {
+                                            i40 = i42;
                                         }
                                     }
-                                    int i32 = i29 + 1;
-                                    int[] iArr2 = new int[i32];
-                                    int i33 = 0;
-                                    while (i33 < i32) {
-                                        iArr2[i33] = hVar.i(i23) + 1;
-                                        int i34 = hVar.i(2);
-                                        int i35 = 8;
-                                        if (i34 > 0) {
-                                            hVar.t(8);
+                                    int i43 = i40 + 1;
+                                    int[] iArr2 = new int[i43];
+                                    int i44 = 0;
+                                    while (i44 < i43) {
+                                        iArr2[i44] = gVar.i(i34) + 1;
+                                        int i45 = gVar.i(2);
+                                        int i46 = i27;
+                                        if (i45 > 0) {
+                                            gVar.t(i46);
                                         }
                                         int[] iArr3 = iArr2;
-                                        int i36 = 0;
-                                        for (int i37 = 1; i36 < (i37 << i34); i37 = 1) {
-                                            hVar.t(i35);
-                                            i36++;
-                                            i35 = 8;
+                                        int i47 = 0;
+                                        for (int i48 = 1; i47 < (i48 << i45); i48 = 1) {
+                                            gVar.t(i46);
+                                            i47++;
+                                            i46 = 8;
                                         }
-                                        i33++;
+                                        i44++;
                                         iArr2 = iArr3;
-                                        i23 = 3;
+                                        i27 = 8;
+                                        i34 = 3;
                                     }
                                     int[] iArr4 = iArr2;
-                                    hVar.t(2);
-                                    int i38 = hVar.i(4);
-                                    int i39 = 0;
-                                    int i40 = 0;
-                                    for (int i41 = 0; i41 < i28; i41++) {
-                                        i39 += iArr4[iArr[i41]];
-                                        while (i40 < i39) {
-                                            hVar.t(i38);
-                                            i40++;
+                                    gVar.t(2);
+                                    int i49 = gVar.i(4);
+                                    int i50 = 0;
+                                    int i51 = 0;
+                                    for (int i52 = 0; i52 < i39; i52++) {
+                                        i50 += iArr4[iArr[i52]];
+                                        while (i51 < i50) {
+                                            gVar.t(i49);
+                                            i51++;
                                         }
                                     }
                                 }
-                                i22++;
-                                i17 = 6;
+                                i33++;
+                                i27 = 8;
+                                i28 = 6;
                                 i10 = 4;
-                                i16 = 16;
-                                i20 = 1;
+                                i17 = 16;
+                                i31 = 1;
                             } else {
-                                int i42 = hVar.i(i17) + 1;
-                                int i43 = 0;
-                                while (i43 < i42) {
-                                    if (hVar.i(16) > 2) {
+                                int i53 = gVar.i(i28) + 1;
+                                int i54 = 0;
+                                while (i54 < i53) {
+                                    if (gVar.i(16) > 2) {
                                         throw s0.a(null, "residueType greater than 2 is not decodable");
                                     }
-                                    hVar.t(24);
-                                    hVar.t(24);
-                                    hVar.t(24);
-                                    int i44 = hVar.i(i17) + 1;
-                                    int i45 = 8;
-                                    hVar.t(8);
-                                    int[] iArr5 = new int[i44];
-                                    for (int i46 = 0; i46 < i44; i46++) {
-                                        iArr5[i46] = ((hVar.h() ? hVar.i(5) : 0) * 8) + hVar.i(3);
+                                    gVar.t(24);
+                                    gVar.t(24);
+                                    gVar.t(24);
+                                    int i55 = gVar.i(i28) + 1;
+                                    int i56 = 8;
+                                    gVar.t(8);
+                                    int[] iArr5 = new int[i55];
+                                    for (int i57 = 0; i57 < i55; i57++) {
+                                        iArr5[i57] = ((gVar.h() ? gVar.i(5) : 0) * 8) + gVar.i(3);
                                     }
-                                    int i47 = 0;
-                                    while (i47 < i44) {
-                                        int i48 = 0;
-                                        while (i48 < i45) {
-                                            if ((iArr5[i47] & (1 << i48)) != 0) {
-                                                hVar.t(i45);
+                                    int i58 = 0;
+                                    while (i58 < i55) {
+                                        int i59 = 0;
+                                        while (i59 < i56) {
+                                            if ((iArr5[i58] & (1 << i59)) != 0) {
+                                                gVar.t(i56);
                                             }
-                                            i48++;
-                                            i45 = 8;
+                                            i59++;
+                                            i56 = 8;
                                         }
-                                        i47++;
-                                        i45 = 8;
+                                        i58++;
+                                        i56 = 8;
                                     }
-                                    i43++;
-                                    i17 = 6;
+                                    i54++;
+                                    i28 = 6;
                                 }
-                                int i49 = hVar.i(i17) + 1;
-                                for (int i50 = 0; i50 < i49; i50++) {
-                                    int i51 = hVar.i(16);
-                                    if (i51 != 0) {
-                                        e2.a.e("VorbisUtil", "mapping type other than 0 not supported: " + i51);
+                                int i60 = gVar.i(i28) + 1;
+                                for (int i61 = 0; i61 < i60; i61++) {
+                                    int i62 = gVar.i(16);
+                                    if (i62 != 0) {
+                                        e2.a.e("VorbisUtil", "mapping type other than 0 not supported: " + i62);
                                     } else {
-                                        int i52 = hVar.h() ? hVar.i(4) + 1 : 1;
-                                        if (hVar.h()) {
-                                            int i53 = hVar.i(8) + 1;
-                                            for (int i54 = 0; i54 < i53; i54++) {
-                                                int i55 = i13 - 1;
-                                                int i56 = 0;
-                                                for (int i57 = i55; i57 > 0; i57 >>>= 1) {
-                                                    i56++;
+                                        int i63 = gVar.h() ? gVar.i(4) + 1 : 1;
+                                        if (gVar.h()) {
+                                            int i64 = gVar.i(8) + 1;
+                                            for (int i65 = 0; i65 < i64; i65++) {
+                                                int i66 = i13 - 1;
+                                                int i67 = 0;
+                                                for (int i68 = i66; i68 > 0; i68 >>>= 1) {
+                                                    i67++;
                                                 }
-                                                hVar.t(i56);
-                                                int i58 = 0;
-                                                while (i55 > 0) {
-                                                    i58++;
-                                                    i55 >>>= 1;
+                                                gVar.t(i67);
+                                                int i69 = 0;
+                                                while (i66 > 0) {
+                                                    i69++;
+                                                    i66 >>>= 1;
                                                 }
-                                                hVar.t(i58);
+                                                gVar.t(i69);
                                             }
                                         }
-                                        if (hVar.i(2) != 0) {
+                                        if (gVar.i(2) != 0) {
                                             throw s0.a(null, "to reserved bits must be zero after mapping coupling steps");
                                         }
-                                        if (i52 > 1) {
-                                            for (int i59 = 0; i59 < i13; i59++) {
-                                                hVar.t(4);
+                                        if (i63 > 1) {
+                                            for (int i70 = 0; i70 < i13; i70++) {
+                                                gVar.t(4);
                                             }
                                         }
-                                        for (int i60 = 0; i60 < i52; i60++) {
-                                            hVar.t(8);
-                                            hVar.t(8);
-                                            hVar.t(8);
+                                        for (int i71 = 0; i71 < i63; i71++) {
+                                            gVar.t(8);
+                                            gVar.t(8);
+                                            gVar.t(8);
                                         }
                                     }
                                 }
-                                int i61 = hVar.i(6);
-                                int i62 = i61 + 1;
-                                j0[] j0VarArr = new j0[i62];
-                                for (int i63 = 0; i63 < i62; i63++) {
-                                    boolean h = hVar.h();
-                                    hVar.i(16);
-                                    hVar.i(16);
-                                    hVar.i(8);
-                                    j0VarArr[i63] = new j0(h);
+                                int i72 = gVar.i(6);
+                                int i73 = i72 + 1;
+                                j0[] j0VarArr = new j0[i73];
+                                for (int i74 = 0; i74 < i73; i74++) {
+                                    boolean h10 = gVar.h();
+                                    gVar.i(16);
+                                    gVar.i(16);
+                                    gVar.i(8);
+                                    j0VarArr[i74] = new j0(h10);
                                 }
-                                if (!hVar.h()) {
+                                if (!gVar.h()) {
                                     throw s0.a(null, "framing bit after modes not set as expected");
                                 }
-                                int i64 = 0;
-                                while (i61 > 0) {
-                                    i64++;
-                                    i61 >>>= 1;
+                                int i75 = 0;
+                                while (i72 > 0) {
+                                    i75++;
+                                    i72 >>>= 1;
                                 }
-                                i0Var = new i0(zVar, mVar, bArr, j0VarArr, i64);
+                                g0Var = new g0(zVar, lVar, bArr, j0VarArr, i75);
                             }
                         }
-                    } else {
-                        if (hVar.i(24) != 5653314) {
-                            throw s0.a(null, "expected code book to start with [0x56, 0x43, 0x42] at " + ((hVar.d * 8) + hVar.e));
-                        }
-                        int i65 = hVar.i(16);
-                        int i66 = hVar.i(24);
-                        if (hVar.h()) {
-                            hVar.t(i14);
-                            int i67 = 0;
-                            while (i67 < i66) {
-                                int i68 = 0;
-                                for (int i69 = i66 - i67; i69 > 0; i69 >>>= 1) {
-                                    i68++;
-                                }
-                                i67 += hVar.i(i68);
-                            }
-                        } else {
-                            boolean h10 = hVar.h();
-                            for (int i70 = 0; i70 < i66; i70++) {
-                                if (!h10) {
-                                    hVar.t(i14);
-                                } else if (hVar.h()) {
-                                    hVar.t(i14);
-                                }
-                            }
-                        }
-                        int i71 = hVar.i(4);
-                        if (i71 > 2) {
-                            throw s0.a(null, "lookup type greater than 2 not decodable: " + i71);
-                        }
-                        if (i71 == 1 || i71 == 2) {
-                            hVar.t(32);
-                            hVar.t(32);
-                            int i72 = hVar.i(4) + 1;
-                            hVar.t(1);
-                            hVar.t((int) ((i71 == 1 ? i65 != 0 ? (long) Math.floor(Math.pow(i66, 1.0d / i65)) : 0L : i66 * i65) * i72));
-                        }
-                        i15++;
-                        i14 = 5;
                     }
                 }
             }
         }
-        i0Var = null;
-        this.n = i0Var;
-        if (i0Var == null) {
+        g0Var = null;
+        this.n = g0Var;
+        if (g0Var == null) {
             return true;
         }
-        z zVar3 = (z) i0Var.b;
+        z zVar3 = (z) g0Var.b;
         ArrayList arrayList = new ArrayList();
         arrayList.add((byte[]) zVar3.g);
-        arrayList.add((byte[]) i0Var.d);
-        p0 r10 = c3.b.r(e9.i0.w((String[]) ((m) i0Var.c).b));
+        arrayList.add((byte[]) g0Var.d);
+        p0 r10 = c3.b.r(i0.w((String[]) ((l) g0Var.c).b));
         r rVar = new r();
         rVar.p = r0.n("audio/ogg");
         rVar.q = r0.n("audio/vorbis");
@@ -353,7 +360,7 @@ public final class j extends i {
         rVar.J = zVar3.b;
         rVar.t = arrayList;
         rVar.k = r10;
-        z0Var.b = new s(rVar);
+        tVar.b = new s(rVar);
         return true;
     }
 

@@ -1,31 +1,28 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.UUID;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class r0 {
-    public static final g6.b i = new g6.b("ClientCastAnalytics", null);
-    public static final boolean j = true;
-    public final d6.g a;
-    public final u b;
-    public final d c;
-    public Long e;
-    public l5.s g;
-    public int h = 1;
-    public final String d = UUID.randomUUID().toString();
-    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
+public final class r0 extends h0 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public r0(Context context, g6.r rVar, d6.g gVar, u uVar, d dVar) {
-        this.a = gVar;
-        this.b = uVar;
-        this.c = dVar;
+    public r0(int i10, int i11, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
+        this.e = i11;
     }
 
-    public final void a(u1 u1Var, int i10) {
-        this.f.execute(new androidx.activity.g(this, u1Var, i10, 3));
+    @Override // java.util.List
+    public final Object get(int i10) {
+        v7.k5.a(i10, this.e);
+        Object obj = this.c[i10 + i10 + this.d];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

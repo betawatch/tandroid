@@ -3,7 +3,7 @@ package e9;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f1 extends k0 {
     public static final f1 h = new f1(null, new Object[0], 0);
@@ -18,126 +18,139 @@ public final class f1 extends k0 {
     }
 
     public static Object f(Object[] objArr, int i10, int i11, int i12) {
+        int i13;
         j0 j0Var = null;
-        int i13 = 1;
+        int i14 = 1;
         if (i10 == 1) {
             Objects.requireNonNull(objArr[i12]);
             Objects.requireNonNull(objArr[i12 ^ 1]);
             return null;
         }
-        int i14 = i11 - 1;
+        int i15 = i11 - 1;
         if (i11 <= 128) {
             byte[] bArr = new byte[i11];
             Arrays.fill(bArr, (byte) -1);
-            int i15 = 0;
-            for (int i16 = 0; i16 < i10; i16++) {
-                int i17 = (i16 * 2) + i12;
-                int i18 = (i15 * 2) + i12;
-                Object obj = objArr[i17];
+            int i16 = 0;
+            for (int i17 = 0; i17 < i10; i17++) {
+                int i18 = (i17 * 2) + i12;
+                int i19 = (i16 * 2) + i12;
+                Object obj = objArr[i18];
                 Objects.requireNonNull(obj);
-                Object obj2 = objArr[i17 ^ 1];
+                Object obj2 = objArr[i18 ^ 1];
                 Objects.requireNonNull(obj2);
                 int s10 = q.s(obj.hashCode());
                 while (true) {
-                    int i19 = s10 & i14;
-                    int i20 = bArr[i19] & 255;
-                    if (i20 == 255) {
-                        bArr[i19] = (byte) i18;
-                        if (i15 < i16) {
-                            objArr[i18] = obj;
-                            objArr[i18 ^ 1] = obj2;
+                    int i20 = s10 & i15;
+                    int i21 = bArr[i20] & 255;
+                    if (i21 == 255) {
+                        bArr[i20] = (byte) i19;
+                        if (i16 < i17) {
+                            objArr[i19] = obj;
+                            objArr[i19 ^ 1] = obj2;
                         }
-                        i15++;
+                        i16++;
                     } else {
-                        if (obj.equals(objArr[i20])) {
-                            int i21 = i20 ^ 1;
-                            Object obj3 = objArr[i21];
+                        if (obj.equals(objArr[i21])) {
+                            int i22 = i21 ^ 1;
+                            Object obj3 = objArr[i22];
                             Objects.requireNonNull(obj3);
                             j0Var = new j0(obj, obj2, obj3);
-                            objArr[i21] = obj2;
+                            objArr[i22] = obj2;
                             break;
                         }
-                        s10 = i19 + 1;
+                        s10 = i20 + 1;
                     }
                 }
             }
-            return i15 == i10 ? bArr : new Object[]{bArr, Integer.valueOf(i15), j0Var};
+            return i16 == i10 ? bArr : new Object[]{bArr, Integer.valueOf(i16), j0Var};
         }
         if (i11 <= 32768) {
             short[] sArr = new short[i11];
             Arrays.fill(sArr, (short) -1);
-            int i22 = 0;
-            for (int i23 = 0; i23 < i10; i23++) {
-                int i24 = (i23 * 2) + i12;
-                int i25 = (i22 * 2) + i12;
-                Object obj4 = objArr[i24];
+            int i23 = 0;
+            for (int i24 = 0; i24 < i10; i24++) {
+                int i25 = (i24 * 2) + i12;
+                int i26 = (i23 * 2) + i12;
+                Object obj4 = objArr[i25];
                 Objects.requireNonNull(obj4);
-                Object obj5 = objArr[i24 ^ 1];
+                Object obj5 = objArr[i25 ^ 1];
                 Objects.requireNonNull(obj5);
                 int s11 = q.s(obj4.hashCode());
                 while (true) {
-                    int i26 = s11 & i14;
-                    int i27 = sArr[i26] & 65535;
-                    if (i27 == 65535) {
-                        sArr[i26] = (short) i25;
-                        if (i22 < i23) {
-                            objArr[i25] = obj4;
-                            objArr[i25 ^ 1] = obj5;
+                    int i27 = s11 & i15;
+                    int i28 = sArr[i27] & 65535;
+                    if (i28 == 65535) {
+                        sArr[i27] = (short) i26;
+                        if (i23 < i24) {
+                            objArr[i26] = obj4;
+                            objArr[i26 ^ 1] = obj5;
                         }
-                        i22++;
+                        i23++;
                     } else {
-                        if (obj4.equals(objArr[i27])) {
-                            int i28 = i27 ^ 1;
-                            Object obj6 = objArr[i28];
+                        if (obj4.equals(objArr[i28])) {
+                            int i29 = i28 ^ 1;
+                            Object obj6 = objArr[i29];
                             Objects.requireNonNull(obj6);
                             j0Var = new j0(obj4, obj5, obj6);
-                            objArr[i28] = obj5;
+                            objArr[i29] = obj5;
                             break;
                         }
-                        s11 = i26 + 1;
+                        s11 = i27 + 1;
                     }
                 }
             }
-            return i22 == i10 ? sArr : new Object[]{sArr, Integer.valueOf(i22), j0Var};
+            return i23 == i10 ? sArr : new Object[]{sArr, Integer.valueOf(i23), j0Var};
         }
         int[] iArr = new int[i11];
         Arrays.fill(iArr, -1);
-        int i29 = 0;
         int i30 = 0;
-        while (i29 < i10) {
-            int i31 = (i29 * 2) + i12;
+        int i31 = 0;
+        while (i30 < i10) {
             int i32 = (i30 * 2) + i12;
-            Object obj7 = objArr[i31];
+            int i33 = (i31 * 2) + i12;
+            Object obj7 = objArr[i32];
             Objects.requireNonNull(obj7);
-            Object obj8 = objArr[i31 ^ i13];
+            Object obj8 = objArr[i32 ^ i14];
             Objects.requireNonNull(obj8);
             int s12 = q.s(obj7.hashCode());
             while (true) {
-                int i33 = s12 & i14;
-                int i34 = iArr[i33];
-                if (i34 == -1) {
-                    iArr[i33] = i32;
-                    if (i30 < i29) {
-                        objArr[i32] = obj7;
-                        objArr[i32 ^ 1] = obj8;
+                int i34 = s12 & i15;
+                int i35 = iArr[i34];
+                if (i35 == -1) {
+                    iArr[i34] = i33;
+                    if (i31 < i30) {
+                        objArr[i33] = obj7;
+                        objArr[i33 ^ 1] = obj8;
                     }
-                    i30++;
+                    i31++;
+                    i13 = i14;
                 } else {
-                    if (obj7.equals(objArr[i34])) {
-                        int i35 = i34 ^ 1;
-                        Object obj9 = objArr[i35];
+                    i13 = i14;
+                    if (obj7.equals(objArr[i35])) {
+                        int i36 = i35 ^ 1;
+                        Object obj9 = objArr[i36];
                         Objects.requireNonNull(obj9);
                         j0Var = new j0(obj7, obj8, obj9);
-                        objArr[i35] = obj8;
+                        objArr[i36] = obj8;
                         break;
                     }
-                    s12 = i33 + 1;
+                    s12 = i34 + 1;
+                    i14 = i13;
                 }
             }
-            i29++;
-            i13 = 1;
+            i30++;
+            i14 = i13;
         }
-        return i30 == i10 ? iArr : new Object[]{iArr, Integer.valueOf(i30), j0Var};
+        int i37 = i14;
+        if (i31 == i10) {
+            return iArr;
+        }
+        Integer valueOf = Integer.valueOf(i31);
+        Object[] objArr2 = new Object[3];
+        objArr2[0] = iArr;
+        objArr2[i37] = valueOf;
+        objArr2[2] = j0Var;
+        return objArr2;
     }
 
     public static Object g(Object obj, Object[] objArr, int i10, int i11, Object obj2) {

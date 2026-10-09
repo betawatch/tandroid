@@ -15,10 +15,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.oz;
-import org.telegram.ui.rj0;
+import org.telegram.ui.Components.b00;
+import org.telegram.ui.vj0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -74,7 +74,7 @@ public final class t1 {
     public boolean N1;
     public boolean N2;
     public int O;
-    public org.telegram.ui.Components.v5 O0;
+    public org.telegram.ui.Components.x5 O0;
     public int O1;
     public boolean O2;
     public int P;
@@ -88,9 +88,9 @@ public final class t1 {
     public StaticLayout R0;
     public boolean R2;
     public boolean S;
-    public org.telegram.ui.Components.v5 S0;
+    public org.telegram.ui.Components.x5 S0;
     public float S1;
-    public boolean S2;
+    public int S2;
     public StaticLayout T;
     public boolean T0;
     public float T1;
@@ -98,11 +98,11 @@ public final class t1 {
     public boolean U;
     public StaticLayout U0;
     public float U1;
-    public int U2;
+    public boolean U2;
     public StaticLayout V;
     public StaticLayout V0;
     public float V1;
-    public boolean V2;
+    public int V2;
     public float W;
     public int W0;
     public boolean W1;
@@ -110,7 +110,7 @@ public final class t1 {
     public int X;
     public int X0;
     public int X1;
-    public int X2;
+    public boolean X2;
     public int Y;
     public int Y0;
     public int Y1;
@@ -132,7 +132,7 @@ public final class t1 {
     public boolean c0;
     public MessageObject.TextLayoutBlocks c1;
     public StaticLayout c2;
-    public boolean c3;
+    public HashSet c3;
     public float d;
     public float d0;
     public boolean d1;
@@ -142,7 +142,7 @@ public final class t1 {
     public String e0;
     public boolean e1;
     public boolean e2;
-    public HashSet e3;
+    public boolean e3;
     public float f;
     public boolean f0;
     public int f1;
@@ -167,7 +167,7 @@ public final class t1 {
     public float j0;
     public int j1;
     public boolean j2;
-    public boolean j3;
+    public StaticLayout j3;
     public String k;
     public float k0;
     public boolean k1;
@@ -177,17 +177,16 @@ public final class t1 {
     public float l0;
     public boolean l1;
     public boolean l2;
-    public StaticLayout l3;
+    public org.telegram.ui.Components.x5 l3;
     public StaticLayout m;
     public float m0;
     public boolean m1;
     public float m2;
-    public org.telegram.ui.Components.v5 m3;
+    public final /* synthetic */ u1 m3;
     public StaticLayout n;
     public float n0;
     public boolean n1;
     public float n2;
-    public final /* synthetic */ u1 n3;
     public boolean o;
     public float o0;
     public float o1;
@@ -245,7 +244,7 @@ public final class t1 {
     public final StaticLayout[] y2 = new StaticLayout[2];
 
     public t1(u1 u1Var) {
-        this.n3 = u1Var;
+        this.m3 = u1Var;
     }
 
     public static void b(t1 t1Var) {
@@ -254,29 +253,29 @@ public final class t1 {
         t1Var.R1 = (float) Math.pow(max, 0.5d);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:406:0x036f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:406:0x036d, code lost:
     
         if (r6 == (r11 == null ? 0 : r11.textWidth)) goto L198;
      */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0595  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x059d  */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x05a5  */
-    /* JADX WARN: Removed duplicated region for block: B:252:0x05b1  */
-    /* JADX WARN: Removed duplicated region for block: B:255:0x05bc  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x05c7  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x05d2  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x05ec  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x05f5  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x05fe  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x0607  */
-    /* JADX WARN: Removed duplicated region for block: B:280:0x060f  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x0625  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0664  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x066d  */
-    /* JADX WARN: Removed duplicated region for block: B:310:0x0696  */
-    /* JADX WARN: Removed duplicated region for block: B:317:0x06ab  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x06b6  */
-    /* JADX WARN: Removed duplicated region for block: B:332:0x0656  */
+    /* JADX WARN: Removed duplicated region for block: B:243:0x0593  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x059b  */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x05a3  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x05af  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x05ba  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x05c5  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x05d0  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x05ea  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x05f3  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x05fc  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x0605  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x060d  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0623  */
+    /* JADX WARN: Removed duplicated region for block: B:295:0x0662  */
+    /* JADX WARN: Removed duplicated region for block: B:298:0x066b  */
+    /* JADX WARN: Removed duplicated region for block: B:310:0x0694  */
+    /* JADX WARN: Removed duplicated region for block: B:317:0x06a9  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x06b4  */
+    /* JADX WARN: Removed duplicated region for block: B:332:0x0654  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x00e6  */
     /* JADX WARN: Removed duplicated region for block: B:58:0x0106  */
     /*
@@ -298,9 +297,9 @@ public final class t1 {
         StaticLayout staticLayout;
         o0 o0Var;
         RichMessageLayout richMessageLayout;
-        org.telegram.ui.Components.x5 x5Var;
-        u1 u1Var = this.n3;
-        zg.n0 n0Var = u1Var.N;
+        org.telegram.ui.Components.z5 z5Var;
+        u1 u1Var = this.m3;
+        zg.o0 o0Var2 = u1Var.N;
         ArrayList arrayList = u1Var.o7;
         boolean z13 = false;
         if (!this.v0) {
@@ -327,18 +326,18 @@ public final class t1 {
                     String charSequence = u1Var.y7.textLayoutBlocks.get(i14).textLayout == null ? null : u1Var.y7.textLayoutBlocks.get(i14).textLayout.getText().toString();
                     String charSequence2 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout == null ? null : ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout.getText().toString();
                     if ((charSequence != null || charSequence2 == null) && ((charSequence == null || charSequence2 != null) && charSequence.equals(charSequence2))) {
-                        org.telegram.ui.Components.v5 v5Var = u1Var.pc;
-                        if (v5Var != null) {
+                        org.telegram.ui.Components.x5 x5Var = u1Var.pc;
+                        if (x5Var != null) {
                             StaticLayout staticLayout2 = u1Var.y7.textLayoutBlocks.get(i14).textLayout;
                             StaticLayout staticLayout3 = ((MessageObject.TextLayoutBlock) this.I0.get(i14)).textLayout;
-                            HashMap hashMap = v5Var.b;
-                            if (staticLayout3 != null && (x5Var = (org.telegram.ui.Components.x5) hashMap.remove(staticLayout3)) != null) {
-                                ArrayList arrayList4 = x5Var.b;
-                                x5Var.a = staticLayout2;
+                            HashMap hashMap = x5Var.b;
+                            if (staticLayout3 != null && (z5Var = (org.telegram.ui.Components.z5) hashMap.remove(staticLayout3)) != null) {
+                                ArrayList arrayList4 = z5Var.b;
+                                z5Var.a = staticLayout2;
                                 for (int i15 = 0; i15 < arrayList4.size(); i15++) {
-                                    ((org.telegram.ui.Components.u5) arrayList4.get(i15)).c = staticLayout2;
+                                    ((org.telegram.ui.Components.w5) arrayList4.get(i15)).c = staticLayout2;
                                 }
-                                hashMap.put(staticLayout2, x5Var);
+                                hashMap.put(staticLayout2, z5Var);
                             }
                         }
                     }
@@ -348,11 +347,11 @@ public final class t1 {
                     ArrayList arrayList5 = this.I0;
                     this.H0 = arrayList5;
                     this.N0 = this.o2;
-                    this.O0 = org.telegram.ui.Components.z5.update(0, (View) u1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
-                    u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
+                    this.O0 = org.telegram.ui.Components.b6.update(0, (View) u1Var, this.O0, (ArrayList<MessageObject.TextLayoutBlock>) arrayList5, true);
+                    u1Var.pc = org.telegram.ui.Components.b6.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
                     z10 = true;
                 } else {
-                    u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
+                    u1Var.pc = org.telegram.ui.Components.b6.update(0, u1Var, u1Var.pc, u1Var.y7.textLayoutBlocks);
                 }
             }
             z16 = false;
@@ -366,8 +365,8 @@ public final class t1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            rj0 rj0Var = u1Var.ie;
-            boolean z17 = rj0Var != null && rj0Var.h;
+            vj0 vj0Var = u1Var.ie;
+            boolean z17 = vj0Var != null && vj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(u1Var);
@@ -397,7 +396,6 @@ public final class t1 {
             this.P2 = true;
             z10 = true;
         }
-        this.Q2 = false;
         StaticLayout staticLayout4 = u1Var.D9;
         if (staticLayout4 != this.E2) {
             CharSequence text = staticLayout4 != null ? staticLayout4.getText() : null;
@@ -407,7 +405,7 @@ public final class t1 {
                 StaticLayout staticLayout6 = this.E2;
                 this.R0 = staticLayout6;
                 this.J2 = this.I2;
-                this.S0 = org.telegram.ui.Components.z5.update(0, (View) u1Var, false, this.S0, true, staticLayout6);
+                this.S0 = org.telegram.ui.Components.b6.update(0, (View) u1Var, false, this.S0, true, staticLayout6);
                 z10 = true;
             }
         }
@@ -425,7 +423,7 @@ public final class t1 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) string);
                     spannableStringBuilder.append(text2.subSequence(string.length(), text2.length()));
-                    spannableStringBuilder.setSpan(new oz(z13), 0, string.length(), 0);
+                    spannableStringBuilder.setSpan(new b00(z13), 0, string.length(), 0);
                     this.V0 = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.i6.T2, AndroidUtilities.dp(100.0f) + u1Var.qb, alignment, 1.0f, 0.0f, false);
                     this.Y0 = u1Var.pb - this.X0;
                 } else {
@@ -558,10 +556,10 @@ public final class t1 {
             this.a1 = true;
             MessageObject.TextLayoutBlocks textLayoutBlocks6 = this.c1;
             this.b1 = textLayoutBlocks6;
-            this.O0 = org.telegram.ui.Components.z5.update(0, u1Var, (org.telegram.ui.Components.v5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
-            org.telegram.ui.Components.v5 v5Var2 = u1Var.pc;
+            this.O0 = org.telegram.ui.Components.b6.update(0, u1Var, (org.telegram.ui.Components.x5) null, textLayoutBlocks6 == null ? null : textLayoutBlocks6.textLayoutBlocks);
+            org.telegram.ui.Components.x5 x5Var2 = u1Var.pc;
             MessageObject.TextLayoutBlocks textLayoutBlocks7 = u1Var.c4;
-            u1Var.pc = org.telegram.ui.Components.z5.update(0, u1Var, v5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
+            u1Var.pc = org.telegram.ui.Components.b6.update(0, u1Var, x5Var2, textLayoutBlocks7 == null ? null : textLayoutBlocks7.textLayoutBlocks);
             if (this.E0 != u1Var.G8 || this.d1 != z19) {
                 this.s0 = true;
                 this.q0 = this.e;
@@ -697,42 +695,42 @@ public final class t1 {
                     this.q2 = i10;
                     z10 = true;
                 }
-                i11 = this.W2;
+                i11 = this.V2;
                 if (i11 != u1Var.e2) {
-                    this.V2 = true;
-                    this.X2 = i11;
+                    this.U2 = true;
+                    this.W2 = i11;
                     z10 = true;
                 }
-                i12 = this.T2;
+                i12 = this.S2;
                 if (i12 != u1Var.f2) {
-                    this.Y2 = true;
-                    this.U2 = i12;
+                    this.X2 = true;
+                    this.T2 = i12;
                     z10 = true;
                 }
-                if (this.Z2 != (u1Var.getPrimaryMessageObject() == null && u1Var.getPrimaryMessageObject().factCheckExpanded)) {
-                    this.a3 = true;
+                if (this.Y2 != (u1Var.getPrimaryMessageObject() == null && u1Var.getPrimaryMessageObject().factCheckExpanded)) {
+                    this.Z2 = true;
                     z10 = true;
                 }
-                if (this.R2 != u1Var.N1) {
-                    this.S2 = true;
+                if (this.Q2 != u1Var.N1) {
+                    this.R2 = true;
                     z10 = true;
                 }
-                if (this.b3 != u1Var.ha) {
-                    this.c3 = true;
+                if (this.a3 != u1Var.ha) {
+                    this.b3 = true;
                     z10 = true;
                 }
-                hashSet = this.d3;
+                hashSet = this.c3;
                 messageObject = u1Var.y7;
                 if (!MessageObject.expandedQuotesEquals(hashSet, messageObject != null ? messageObject.expandedQuotes : null)) {
-                    this.f3 = true;
-                    this.e3 = this.d3;
+                    this.e3 = true;
+                    this.d3 = this.c3;
                     z10 = true;
                 }
-                z12 = this.g3;
+                z12 = this.f3;
                 messageObject2 = u1Var.y7;
                 if (z12 != (messageObject2 == null && messageObject2.expandedExplanation)) {
-                    this.i3 = true;
-                    this.h3 = z12;
+                    this.h3 = true;
+                    this.g3 = z12;
                     z10 = true;
                 }
                 if (messageObject2 != null || this.w2 == messageObject2.needDrawForwarded()) {
@@ -742,13 +740,13 @@ public final class t1 {
                         this.G2 = i13;
                     }
                     u1Var.t4();
-                    if (n0Var.a()) {
+                    if (o0Var2.a()) {
                         z10 = true;
                     }
                     if (u1Var.y7.isRoundVideo()) {
                         float dp2 = u1Var.M8 - AndroidUtilities.dp(28 - (u1Var.J ? 2 : 0));
-                        if (!n0Var.s) {
-                            dp2 -= n0Var.p;
+                        if (!o0Var2.s) {
+                            dp2 -= o0Var2.p;
                         }
                         float f16 = this.q;
                         if (dp2 != f16) {
@@ -766,11 +764,11 @@ public final class t1 {
                         }
                     }
                     messageObject3 = u1Var.y7;
-                    if ((messageObject3 == null && messageObject3.translated) != this.j3 || u1Var.J2 == null || (staticLayout = this.k3) == null) {
+                    if ((messageObject3 == null && messageObject3.translated) != this.i3 || u1Var.J2 == null || (staticLayout = this.j3) == null) {
                         return z10;
                     }
-                    this.l3 = staticLayout;
-                    this.m3 = org.telegram.ui.Components.z5.update(0, (View) u1Var, false, this.m3, staticLayout);
+                    this.k3 = staticLayout;
+                    this.l3 = org.telegram.ui.Components.b6.update(0, (View) u1Var, false, this.l3, staticLayout);
                     return true;
                 }
                 this.t2 = true;
@@ -784,14 +782,14 @@ public final class t1 {
                 this.B2 = this.C2;
                 z10 = true;
                 u1Var.t4();
-                if (n0Var.a()) {
+                if (o0Var2.a()) {
                 }
                 if (u1Var.y7.isRoundVideo()) {
                 }
                 if (u1Var.C9 != null) {
                 }
                 messageObject3 = u1Var.y7;
-                if ((messageObject3 == null && messageObject3.translated) != this.j3) {
+                if ((messageObject3 == null && messageObject3.translated) != this.i3) {
                 }
                 return z10;
             }
@@ -814,23 +812,23 @@ public final class t1 {
         i10 = this.p2;
         if (i10 != u1Var.p0) {
         }
-        i11 = this.W2;
+        i11 = this.V2;
         if (i11 != u1Var.e2) {
         }
-        i12 = this.T2;
+        i12 = this.S2;
         if (i12 != u1Var.f2) {
         }
-        if (this.Z2 != (u1Var.getPrimaryMessageObject() == null && u1Var.getPrimaryMessageObject().factCheckExpanded)) {
+        if (this.Y2 != (u1Var.getPrimaryMessageObject() == null && u1Var.getPrimaryMessageObject().factCheckExpanded)) {
         }
-        if (this.R2 != u1Var.N1) {
+        if (this.Q2 != u1Var.N1) {
         }
-        if (this.b3 != u1Var.ha) {
+        if (this.a3 != u1Var.ha) {
         }
-        hashSet = this.d3;
+        hashSet = this.c3;
         messageObject = u1Var.y7;
         if (!MessageObject.expandedQuotesEquals(hashSet, messageObject != null ? messageObject.expandedQuotes : null)) {
         }
-        z12 = this.g3;
+        z12 = this.f3;
         messageObject2 = u1Var.y7;
         if (z12 != (messageObject2 == null && messageObject2.expandedExplanation)) {
         }
@@ -840,31 +838,23 @@ public final class t1 {
         if (i13 != u1Var.Lc) {
         }
         u1Var.t4();
-        if (n0Var.a()) {
+        if (o0Var2.a()) {
         }
         if (u1Var.y7.isRoundVideo()) {
         }
         if (u1Var.C9 != null) {
         }
         messageObject3 = u1Var.y7;
-        if ((messageObject3 == null && messageObject3.translated) != this.j3) {
+        if ((messageObject3 == null && messageObject3.translated) != this.i3) {
         }
         return z10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0061  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final int g() {
-        int i10;
         boolean z10;
+        int i10;
         boolean z11;
-        MessageObject messageObject;
-        u1 u1Var = this.n3;
+        u1 u1Var = this.m3;
         boolean z12 = true;
         if (!u1Var.y7.isOutOwner()) {
             if (!u1Var.y7.isSending() && !u1Var.y7.isEditing()) {
@@ -873,56 +863,50 @@ public final class t1 {
             return (z12 ? 4 : 0) | (u1Var.y7.isSendError() ? 8 : 0);
         }
         if (u1Var.y7.isSending() || u1Var.y7.isEditing()) {
+            z10 = true;
             i10 = 0;
             z12 = false;
-            z10 = true;
+            z11 = false;
+        } else if (u1Var.y7.isSendError()) {
+            z11 = true;
+            i10 = 0;
+            z12 = false;
+            z10 = false;
         } else {
-            if (u1Var.y7.isSendError()) {
-                i10 = 0;
-                z12 = false;
-                z10 = false;
-                z11 = true;
-                messageObject = u1Var.y7;
-                if (!messageObject.notime || messageObject.isQuickReply()) {
-                    i10 = 0;
-                    z12 = false;
-                    z10 = false;
-                }
-                return (!z12 ? 2 : 0) | i10 | (z10 ? 4 : 0) | (z11 ? 8 : 0);
-            }
             if (u1Var.y7.isSent()) {
-                MessageObject messageObject2 = u1Var.y7;
-                i10 = (messageObject2.scheduled || messageObject2.isUnread()) ? 0 : 1;
+                MessageObject messageObject = u1Var.y7;
+                i10 = (messageObject.scheduled || messageObject.isUnread()) ? 0 : 1;
+                z10 = false;
             } else {
                 i10 = 0;
                 z12 = false;
+                z10 = false;
             }
+            z11 = z10;
+        }
+        MessageObject messageObject2 = u1Var.y7;
+        if (messageObject2.notime || messageObject2.isQuickReply()) {
+            i10 = 0;
+            z12 = false;
             z10 = false;
         }
-        z11 = false;
-        messageObject = u1Var.y7;
-        if (!messageObject.notime) {
-        }
-        i10 = 0;
-        z12 = false;
-        z10 = false;
-        return (!z12 ? 2 : 0) | i10 | (z10 ? 4 : 0) | (z11 ? 8 : 0);
+        return (z12 ? 2 : 0) | i10 | (z10 ? 4 : 0) | (z11 ? 8 : 0);
     }
 
     public final void h() {
         o0 o0Var;
         this.v0 = true;
-        u1 u1Var = this.n3;
+        u1 u1Var = this.m3;
         ArrayList arrayList = u1Var.o7;
-        ai.l4 l4Var = u1Var.S0;
-        this.a = l4Var.getImageX();
-        this.b = l4Var.getImageY();
-        this.c = l4Var.getImageWidth();
-        this.d = l4Var.getImageHeight();
-        System.arraycopy(l4Var.getRoundRadius(), 0, this.t0, 0, 4);
-        org.telegram.ui.ActionBar.e5 e5Var = u1Var.t8;
-        if (e5Var != null) {
-            this.D0.set(e5Var.getBounds());
+        ai.m4 m4Var = u1Var.S0;
+        this.a = m4Var.getImageX();
+        this.b = m4Var.getImageY();
+        this.c = m4Var.getImageWidth();
+        this.d = m4Var.getImageHeight();
+        System.arraycopy(m4Var.getRoundRadius(), 0, this.t0, 0, 4);
+        org.telegram.ui.ActionBar.f5 f5Var = u1Var.t8;
+        if (f5Var != null) {
+            this.D0.set(f5Var.getBounds());
         }
         this.E0 = u1Var.G8;
         MessageObject messageObject = u1Var.y7;
@@ -996,9 +980,9 @@ public final class t1 {
         this.H2 = i10;
         this.C2 = u1Var.gb;
         this.i1 = u1Var.getCurrentBackgroundLeft();
-        org.telegram.ui.ActionBar.e5 e5Var2 = u1Var.t8;
-        if (e5Var2 != null) {
-            this.j1 = e5Var2.getBounds().right;
+        org.telegram.ui.ActionBar.f5 f5Var2 = u1Var.t8;
+        if (f5Var2 != null) {
+            this.j1 = f5Var2.getBounds().right;
         }
         MessageObject messageObject4 = u1Var.y7;
         this.o2 = messageObject4 != null ? messageObject4.textXOffset : 0.0f;
@@ -1013,20 +997,20 @@ public final class t1 {
         }
         this.M2 = u1Var.Za;
         this.N2 = u1Var.ab;
-        this.T2 = u1Var.f2;
-        this.Z2 = u1Var.getPrimaryMessageObject() != null && u1Var.getPrimaryMessageObject().factCheckExpanded;
-        this.R2 = u1Var.N1;
-        this.W2 = u1Var.e2;
-        this.b3 = u1Var.ha;
-        this.d3 = u1Var.getPrimaryMessageObject() != null ? u1Var.getPrimaryMessageObject().expandedQuotes : null;
+        this.S2 = u1Var.f2;
+        this.Y2 = u1Var.getPrimaryMessageObject() != null && u1Var.getPrimaryMessageObject().factCheckExpanded;
+        this.Q2 = u1Var.N1;
+        this.V2 = u1Var.e2;
+        this.a3 = u1Var.ha;
+        this.c3 = u1Var.getPrimaryMessageObject() != null ? u1Var.getPrimaryMessageObject().expandedQuotes : null;
         MessageObject messageObject5 = u1Var.y7;
-        this.g3 = messageObject5 != null && messageObject5.expandedExplanation;
-        this.j3 = messageObject5 != null && messageObject5.translated;
-        this.k3 = u1Var.J2;
+        this.f3 = messageObject5 != null && messageObject5.expandedExplanation;
+        this.i3 = messageObject5 != null && messageObject5.translated;
+        this.j3 = u1Var.J2;
     }
 
     public final void i() {
-        u1 u1Var = this.n3;
+        u1 u1Var = this.m3;
         StaticLayout[] staticLayoutArr = u1Var.fb;
         StaticLayout staticLayout = staticLayoutArr[0];
         StaticLayout[] staticLayoutArr2 = this.x2;
@@ -1041,8 +1025,8 @@ public final class t1 {
     }
 
     public final void j() {
-        u1 u1Var = this.n3;
-        ai.l4 l4Var = u1Var.S0;
+        u1 u1Var = this.m3;
+        ai.m4 m4Var = u1Var.S0;
         this.g = false;
         this.B = false;
         this.w0 = false;
@@ -1057,12 +1041,12 @@ public final class t1 {
             if (f7 != 0.0f) {
                 float f10 = this.p0;
                 if (f10 != 0.0f) {
-                    l4Var.setImageCoords(this.m0, this.n0, f7, f10);
+                    m4Var.setImageCoords(this.m0, this.n0, f7, f10);
                 }
             }
         }
         if (this.B0) {
-            l4Var.setRoundRadius(this.A0);
+            m4Var.setRoundRadius(this.A0);
         }
         this.m0 = 0.0f;
         this.n0 = 0.0f;
@@ -1080,7 +1064,6 @@ public final class t1 {
         this.F0 = false;
         this.O2 = false;
         this.P2 = false;
-        this.Q2 = false;
         this.H0 = null;
         RichMessageLayout richMessageLayout = this.L0;
         if (richMessageLayout != null) {
@@ -1093,7 +1076,7 @@ public final class t1 {
         this.a1 = false;
         this.C0 = false;
         this.b1 = null;
-        org.telegram.ui.Components.z5.release(u1Var, this.O0);
+        org.telegram.ui.Components.b6.release(u1Var, this.O0);
         this.O0 = null;
         this.s0 = false;
         this.J1 = false;
@@ -1128,32 +1111,32 @@ public final class t1 {
         this.k2 = false;
         this.l2 = false;
         this.r2 = false;
-        this.Y2 = false;
-        this.a3 = false;
-        this.f3 = false;
-        this.i3 = false;
-        this.S2 = false;
-        this.c3 = false;
+        this.X2 = false;
+        this.Z2 = false;
+        this.e3 = false;
+        this.h3 = false;
+        this.R2 = false;
+        this.b3 = false;
         this.t2 = false;
         this.F2 = false;
         StaticLayout[] staticLayoutArr = this.y2;
         staticLayoutArr[0] = null;
         staticLayoutArr[1] = null;
         this.p = false;
-        zg.n0 n0Var = u1Var.N;
-        ArrayList arrayList = n0Var.v;
-        ArrayList arrayList2 = n0Var.w;
+        zg.o0 o0Var = u1Var.N;
+        ArrayList arrayList = o0Var.v;
+        ArrayList arrayList2 = o0Var.w;
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((zg.k0) arrayList2.get(i10)).b();
+            ((zg.l0) arrayList2.get(i10)).b();
         }
         arrayList2.clear();
-        n0Var.j = false;
-        n0Var.k = false;
-        n0Var.l = false;
+        o0Var.j = false;
+        o0Var.k = false;
+        o0Var.l = false;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            ((zg.k0) arrayList.get(i11)).c = 0;
+            ((zg.l0) arrayList.get(i11)).c = 0;
         }
-        this.l3 = null;
-        org.telegram.ui.Components.z5.release(u1Var, this.m3);
+        this.k3 = null;
+        org.telegram.ui.Components.b6.release(u1Var, this.l3);
     }
 }

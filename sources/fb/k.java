@@ -5,7 +5,7 @@ import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k extends AbstractSet {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class k extends AbstractSet {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0034 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0033 A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     /*
@@ -76,8 +76,7 @@ public final class k extends AbstractSet {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0042  */
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -86,33 +85,32 @@ public final class k extends AbstractSet {
         l a2;
         switch (this.a) {
             case 0:
-                if (!(obj instanceof Map.Entry)) {
-                    return false;
-                }
-                Map.Entry entry = (Map.Entry) obj;
-                Object key = entry.getKey();
-                m mVar = this.b;
-                l lVar = null;
-                if (key != null) {
-                    try {
-                        a2 = mVar.a(key, false);
-                    } catch (ClassCastException unused) {
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    Object key = entry.getKey();
+                    m mVar = this.b;
+                    l lVar = null;
+                    if (key != null) {
+                        try {
+                            a2 = mVar.a(key, false);
+                        } catch (ClassCastException unused) {
+                        }
+                        if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
+                            lVar = a2;
+                        }
+                        if (lVar == null) {
+                            mVar.c(lVar, true);
+                            break;
+                        }
                     }
-                    if (a2 != null && Objects.equals(a2.n, entry.getValue())) {
+                    a2 = null;
+                    if (a2 != null) {
                         lVar = a2;
                     }
-                    if (lVar != null) {
-                        return false;
+                    if (lVar == null) {
                     }
-                    mVar.c(lVar, true);
-                    return true;
                 }
-                a2 = null;
-                if (a2 != null) {
-                    lVar = a2;
-                }
-                if (lVar != null) {
-                }
+                break;
             default:
                 m mVar2 = this.b;
                 l lVar2 = null;
@@ -125,8 +123,12 @@ public final class k extends AbstractSet {
                 if (lVar2 != null) {
                     mVar2.c(lVar2, true);
                 }
-                return lVar2 != null;
+                if (lVar2 != null) {
+                    break;
+                }
+                break;
         }
+        return true;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

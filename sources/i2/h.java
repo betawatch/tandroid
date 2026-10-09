@@ -2,7 +2,7 @@ package i2;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
@@ -39,6 +39,6 @@ public final class h {
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + ((this.b.hashCode() + a4.a.h((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
+        return this.c.hashCode() + ((this.b.hashCode() + a1.g.h((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
     }
 }

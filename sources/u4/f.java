@@ -1,207 +1,122 @@
 package u4;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.PersistableBundle;
-import android.text.TextUtils;
-import androidx.core.graphics.drawable.IconCompat;
+import android.util.Log;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import c0.l;
-import c5.v;
-import e0.p0;
-import i9.w;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import com.google.mlkit.vision.common.internal.MobileVisionBase;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
+import n6.t;
+import org.telegram.ui.ActionBar.b5;
+import w7.ga;
+import w7.ha;
+import w7.oa;
+import w7.pa;
+import w9.m;
+import w9.o;
+import w9.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class f implements Runnable {
+public final class f implements Callable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ l c;
-    public final /* synthetic */ ShortcutInfoCompatSaverImpl d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ f(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, ArrayList arrayList, l lVar, int i10) {
+    public /* synthetic */ f(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.d = shortcutInfoCompatSaverImpl;
-        this.b = arrayList;
-        this.c = lVar;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0037, code lost:
-    
-        if (r4 != 5) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x011e, code lost:
-    
-        throw new java.lang.IllegalArgumentException("Shortcut must have an intent");
-     */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011f A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        String str;
-        String str2;
-        g0.c cVar;
-        p0[] p0VarArr;
-        PersistableBundle persistableBundle;
-        switch (this.a) {
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        ha haVar;
+        int i10 = this.a;
+        boolean z10 = false;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i10) {
             case 0:
-                ArrayList arrayList = this.b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (true) {
-                    ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = this.d;
-                    if (i10 >= size) {
-                        shortcutInfoCompatSaverImpl.h(this.c);
-                        return;
+                return (g) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
+            case 1:
+                b5 b5Var = (b5) obj;
+                m mVar = (m) b5Var.c;
+                Boolean bool = (Boolean) obj2;
+                if (bool.booleanValue()) {
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
                     }
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    String str3 = (String) obj;
-                    shortcutInfoCompatSaverImpl.b.remove(str3);
-                    w wVar = (w) shortcutInfoCompatSaverImpl.c.remove(str3);
-                    if (wVar != null) {
-                        wVar.cancel(false);
+                    boolean booleanValue = bool.booleanValue();
+                    r rVar = mVar.b;
+                    if (!booleanValue) {
+                        rVar.getClass();
+                        throw new IllegalStateException("An invalid data collection token was used.");
                     }
+                    rVar.h.trySetResult(null);
+                    Executor executor = (Executor) mVar.e.b;
+                    return ((Task) b5Var.b).onSuccessTask(executor, new t(this, executor, z10, 23));
                 }
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
+                }
+                Iterator it = ba.c.e(mVar.g.b.listFiles(m.r)).iterator();
+                while (it.hasNext()) {
+                    ((File) it.next()).delete();
+                }
+                ba.c cVar = ((ba.b) mVar.m.b).b;
+                ba.b.a(ba.c.e(cVar.d.listFiles()));
+                ba.b.a(ba.c.e(cVar.e.listFiles()));
+                ba.b.a(ba.c.e(cVar.f.listFiles()));
+                mVar.q.trySetResult(null);
+                return Tasks.forResult(null);
+            case 2:
+                m.a((m) obj, (String) obj2, Boolean.FALSE);
+                return null;
+            case 3:
+                return o.a((o) obj, (da.c) obj2);
             default:
-                ArrayList arrayList2 = this.b;
-                int size2 = arrayList2.size();
-                int i11 = 0;
-                while (true) {
-                    ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl2 = this.d;
-                    if (i11 >= size2) {
-                        shortcutInfoCompatSaverImpl2.h(this.c);
-                        return;
+                MobileVisionBase mobileVisionBase = (MobileVisionBase) obj2;
+                vb.a aVar = (vb.a) obj;
+                HashMap hashMap = ha.f;
+                pa.b();
+                int i11 = oa.a;
+                pa.b();
+                if (Boolean.parseBoolean("")) {
+                    HashMap hashMap2 = ha.f;
+                    if (hashMap2.get("detectorTaskWithResource#run") == null) {
+                        hashMap2.put("detectorTaskWithResource#run", new ha("detectorTaskWithResource#run"));
                     }
-                    int i12 = i11 + 1;
-                    g0.c cVar2 = (g0.c) arrayList2.get(i11);
-                    Set set = cVar2.j;
-                    if (set != null && !set.isEmpty()) {
-                        IconCompat iconCompat = cVar2.h;
-                        if (iconCompat != null) {
-                            int i13 = iconCompat.i();
-                            if (i13 != 1) {
-                                if (i13 != 2) {
-                                    break;
-                                } else {
-                                    str = shortcutInfoCompatSaverImpl2.a.getResources().getResourceName(iconCompat.g());
-                                    str2 = null;
-                                    cVar = new g0.c();
-                                    cVar.a = cVar2.a;
-                                    cVar.b = cVar2.b;
-                                    Intent[] intentArr = cVar2.c;
-                                    cVar.c = (Intent[]) Arrays.copyOf(intentArr, intentArr.length);
-                                    cVar.d = cVar2.d;
-                                    cVar.e = cVar2.e;
-                                    cVar.f = cVar2.f;
-                                    cVar.g = cVar2.g;
-                                    cVar.h = cVar2.h;
-                                    cVar.k = cVar2.k;
-                                    cVar.l = cVar2.l;
-                                    cVar.m = cVar2.m;
-                                    p0VarArr = cVar2.i;
-                                    if (p0VarArr != null) {
-                                        cVar.i = (p0[]) Arrays.copyOf(p0VarArr, p0VarArr.length);
-                                    }
-                                    if (cVar2.j != null) {
-                                        cVar.j = new HashSet(cVar2.j);
-                                    }
-                                    persistableBundle = cVar2.n;
-                                    if (persistableBundle != null) {
-                                        cVar.n = persistableBundle;
-                                    }
-                                    cVar.h = null;
-                                    if (TextUtils.isEmpty(cVar.e)) {
-                                        throw new IllegalArgumentException("Shortcut must have a non-empty label");
-                                    }
-                                    Intent[] intentArr2 = cVar.c;
-                                    if (intentArr2 != null && intentArr2.length != 0) {
-                                        h hVar = new h(cVar, str, str2);
-                                        Bitmap f7 = str2 != null ? cVar2.h.f() : null;
-                                        String str4 = cVar2.b;
-                                        shortcutInfoCompatSaverImpl2.b.put(str4, hVar);
-                                        if (f7 != null) {
-                                            v vVar = new v(shortcutInfoCompatSaverImpl2, f7, str2, false, 11);
-                                            l lVar = new l();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new e(lVar, vVar, false, 4));
-                                            w wVar2 = (w) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
-                                            if (wVar2 != null) {
-                                                wVar2.cancel(false);
-                                            }
-                                            lVar.a(new v(this, str4, lVar, false, 10), shortcutInfoCompatSaverImpl2.d);
-                                        }
-                                    }
-                                }
-                            }
-                            str2 = new File(shortcutInfoCompatSaverImpl2.g, UUID.randomUUID().toString()).getAbsolutePath();
-                            str = null;
-                            cVar = new g0.c();
-                            cVar.a = cVar2.a;
-                            cVar.b = cVar2.b;
-                            Intent[] intentArr3 = cVar2.c;
-                            cVar.c = (Intent[]) Arrays.copyOf(intentArr3, intentArr3.length);
-                            cVar.d = cVar2.d;
-                            cVar.e = cVar2.e;
-                            cVar.f = cVar2.f;
-                            cVar.g = cVar2.g;
-                            cVar.h = cVar2.h;
-                            cVar.k = cVar2.k;
-                            cVar.l = cVar2.l;
-                            cVar.m = cVar2.m;
-                            p0VarArr = cVar2.i;
-                            if (p0VarArr != null) {
-                            }
-                            if (cVar2.j != null) {
-                            }
-                            persistableBundle = cVar2.n;
-                            if (persistableBundle != null) {
-                            }
-                            cVar.h = null;
-                            if (TextUtils.isEmpty(cVar.e)) {
-                            }
-                        }
-                        str = null;
-                        str2 = null;
-                        cVar = new g0.c();
-                        cVar.a = cVar2.a;
-                        cVar.b = cVar2.b;
-                        Intent[] intentArr32 = cVar2.c;
-                        cVar.c = (Intent[]) Arrays.copyOf(intentArr32, intentArr32.length);
-                        cVar.d = cVar2.d;
-                        cVar.e = cVar2.e;
-                        cVar.f = cVar2.f;
-                        cVar.g = cVar2.g;
-                        cVar.h = cVar2.h;
-                        cVar.k = cVar2.k;
-                        cVar.l = cVar2.l;
-                        cVar.m = cVar2.m;
-                        p0VarArr = cVar2.i;
-                        if (p0VarArr != null) {
-                        }
-                        if (cVar2.j != null) {
-                        }
-                        persistableBundle = cVar2.n;
-                        if (persistableBundle != null) {
-                        }
-                        cVar.h = null;
-                        if (TextUtils.isEmpty(cVar.e)) {
-                        }
-                    }
-                    i11 = i12;
+                    haVar = (ha) hashMap2.get("detectorTaskWithResource#run");
+                } else {
+                    haVar = ga.h;
                 }
-                break;
+                haVar.a();
+                try {
+                    Object e7 = mobileVisionBase.b.e(aVar);
+                    haVar.close();
+                    return e7;
+                } catch (Throwable th2) {
+                    try {
+                        haVar.close();
+                    } catch (Throwable th3) {
+                        try {
+                            Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th2, th3);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    throw th2;
+                }
         }
+    }
+
+    public /* synthetic */ f(MobileVisionBase mobileVisionBase, vb.a aVar) {
+        this.a = 4;
+        this.b = mobileVisionBase;
+        this.c = aVar;
     }
 }

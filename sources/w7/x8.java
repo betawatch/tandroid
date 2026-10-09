@@ -1,15 +1,12 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class x8 {
-    public static final Exception a(x0.a aVar, String str, Exception exc) {
-        if (exc instanceof y0.a) {
-            return new y0.a(aVar, str);
+    public static String a(String str) {
+        if ("null".equals(str) || "".equals(str)) {
+            return null;
         }
-        if (exc instanceof y0.b) {
-            return new y0.b(aVar, str);
-        }
-        throw new z0.a();
+        return str;
     }
 }

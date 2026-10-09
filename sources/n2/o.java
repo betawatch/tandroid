@@ -1,51 +1,13 @@
 package n2;
 
-import java.util.UUID;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class o implements h {
-    public final g a;
+public final class o {
+    public final byte[] a;
+    public final String b;
 
-    public o(g gVar) {
-        this.a = gVar;
-    }
-
-    @Override // n2.h
-    public final UUID c() {
-        return b2.i.a;
-    }
-
-    @Override // n2.h
-    public final boolean d() {
-        return false;
-    }
-
-    @Override // n2.h
-    public final int e() {
-        return 1;
-    }
-
-    @Override // n2.h
-    public final boolean f(String str) {
-        return false;
-    }
-
-    @Override // n2.h
-    public final g g() {
-        return this.a;
-    }
-
-    @Override // n2.h
-    public final h2.b h() {
-        return null;
-    }
-
-    @Override // n2.h
-    public final void a(k kVar) {
-    }
-
-    @Override // n2.h
-    public final void b(k kVar) {
+    public o(String str, byte[] bArr) {
+        this.a = bArr;
+        this.b = str;
     }
 }

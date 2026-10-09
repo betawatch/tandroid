@@ -1,23 +1,100 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesStorage;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class by0 implements org.telegram.ui.ActionBar.r0, MessagesStorage.StringCallback {
-    public final /* synthetic */ ry0 a;
+public final class by0 extends y9 implements NotificationCenter.NotificationCenterDelegate {
+    public final int G;
+    public int H;
+    public String I;
 
-    public /* synthetic */ by0(ry0 ry0Var) {
-        this.a = ry0Var;
+    public by0(Context context, int i10) {
+        super(context);
+        this.I = AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME;
+        this.G = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.r0
-    public void m(int i10) {
-        ry0.B(this.a, i10);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad) {
+            if (this.I.equals((String) objArr[0])) {
+                t();
+            }
+        }
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        new a50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        t();
+        NotificationCenter.getInstance(this.G).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.G).removeObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    public void setStickerNum(int i10) {
+        if (this.H != i10) {
+            this.H = i10;
+            t();
+        }
+    }
+
+    public void setStickerPackName(String str) {
+        this.I = str;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0054  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void t() {
+        TLRPC.Document document;
+        SvgHelper.SvgDrawable svgThumb;
+        int i10 = this.G;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(this.I);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(this.I);
+        }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        if (tL_messages_stickerSet != null) {
+            int size = tL_messages_stickerSet.documents.size();
+            int i11 = this.H;
+            if (size > i11) {
+                document = tL_messages_stickerSet.documents.get(i11);
+                svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.i6.c7, 0.2f) : null;
+                if (svgThumb != null) {
+                    svgThumb.overrideWidthAndHeight(512, 512);
+                }
+                if (document == null) {
+                    i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
+                    return;
+                } else {
+                    this.a.clearImage();
+                    MediaDataController.getInstance(i10).loadStickersByEmojiOrName(this.I, false, tL_messages_stickerSet == null);
+                    return;
+                }
+            }
+        }
+        document = null;
+        svgThumb = document != null ? DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.i6.c7, 0.2f) : null;
+        if (svgThumb != null) {
+        }
+        if (document == null) {
+        }
     }
 }

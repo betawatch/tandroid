@@ -1,10 +1,10 @@
 package com.google.android.recaptcha;
 
-import a4.a;
+import a1.g;
 import kotlin.jvm.internal.e;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class RecaptchaAction {
     public static final Companion Companion = new Companion(null);
@@ -12,7 +12,7 @@ public final class RecaptchaAction {
     public static final RecaptchaAction SIGNUP = new RecaptchaAction("signup");
     private final String action;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class Companion {
         private Companion() {
         }
@@ -65,7 +65,7 @@ public final class RecaptchaAction {
     }
 
     public String toString() {
-        return a.t(new StringBuilder("RecaptchaAction(action="), this.action, ")");
+        return g.t(new StringBuilder("RecaptchaAction(action="), this.action, ")");
     }
 
     public /* synthetic */ RecaptchaAction(String str, e eVar) {

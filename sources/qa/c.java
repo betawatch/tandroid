@@ -17,19 +17,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import n6.l;
-import n7.z0;
+import n6.t;
 import org.json.JSONException;
 import org.json.JSONObject;
 import q9.n;
-import t7.u;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final k9.h a;
     public final sa.c b;
-    public final z0 c;
+    public final t c;
     public final j d;
     public final n e;
     public final h f;
@@ -47,13 +46,13 @@ public final class c implements d {
     public c(k9.h hVar, pa.b bVar, ExecutorService executorService, r9.i iVar) {
         hVar.a();
         sa.c cVar = new sa.c(hVar.a, bVar);
-        z0 z0Var = new z0(hVar);
-        if (u.b == null) {
-            u.b = new u();
+        t tVar = new t(hVar);
+        if (ob.a.b == null) {
+            ob.a.b = new ob.a(23);
         }
-        u uVar = u.b;
+        ob.a aVar = ob.a.b;
         if (j.d == null) {
-            j.d = new j(uVar);
+            j.d = new j(aVar);
         }
         j jVar = j.d;
         n nVar = new n(new q9.c(hVar, 2));
@@ -63,7 +62,7 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = z0Var;
+        this.c = tVar;
         this.d = jVar;
         this.e = nVar;
         this.f = hVar2;
@@ -85,32 +84,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.u(r2);
+        r4.J(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b y3;
+        ra.b V;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 e7 = z0.e(hVar.a);
+                t a2 = t.a(hVar.a);
                 try {
-                    y3 = this.c.y();
-                    int i10 = y3.b;
+                    V = this.c.V();
+                    int i10 = V.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
-                    if (e7 != null) {
-                        e7.z();
+                    if (a2 != null) {
+                        a2.Z();
                     }
                 } catch (Throwable th2) {
-                    if (e7 != null) {
-                        e7.z();
+                    if (a2 != null) {
+                        a2.Z();
                     }
                     throw th2;
                 }
@@ -118,7 +117,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(y3);
+        k(V);
         this.i.execute(new b(this, 1));
     }
 
@@ -162,7 +161,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     a5.a a10 = sa.b.a();
                     a10.b = 3;
-                    f7 = a10.b();
+                    f7 = a10.e();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -171,7 +170,7 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         a5.a a11 = sa.b.a();
                         a11.b = 2;
-                        f7 = a11.b();
+                        f7 = a11.e();
                     }
                 }
             }
@@ -238,15 +237,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 e7 = z0.e(hVar.a);
+                t a2 = t.a(hVar.a);
                 try {
-                    this.c.u(bVar);
-                    if (e7 != null) {
-                        e7.z();
+                    this.c.J(bVar);
+                    if (a2 != null) {
+                        a2.Z();
                     }
                 } catch (Throwable th2) {
-                    if (e7 != null) {
-                        e7.z();
+                    if (a2 != null) {
+                        a2.Z();
                     }
                     throw th2;
                 }

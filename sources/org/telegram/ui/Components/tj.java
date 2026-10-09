@@ -1,27 +1,12 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ContactsController;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tj implements zj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsController.Contact b;
+public interface tj {
+    void a(TLRPC.User user, boolean z10, int i10, long j3);
 
-    public /* synthetic */ tj(ContactsController.Contact contact, int i10) {
-        this.a = i10;
-        this.b = contact;
-    }
-
-    @Override // org.telegram.ui.Components.zj
-    public final String run() {
-        switch (this.a) {
-            case 0:
-                ContactsController.Contact contact = this.b;
-                return contact.phones.isEmpty() ? "" : gf.b.c().b(contact.phones.get(0));
-            default:
-                ContactsController.Contact contact2 = this.b;
-                return contact2.phones.isEmpty() ? "" : gf.b.c().b(contact2.phones.get(0));
-        }
-    }
+    void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11);
 }

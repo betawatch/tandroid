@@ -1,51 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class t51 extends AnimatorListenerAdapter {
+public final /* synthetic */ class t51 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ a71 c;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ t51(a71 a71Var, boolean z10, int i10) {
+    public /* synthetic */ t51(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
         this.a = i10;
-        this.c = a71Var;
-        this.b = z10;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                a71 a71Var = this.c;
-                n51 n51Var = a71Var.i0;
-                boolean z10 = this.b;
-                n51Var.setVisibility(z10 ? 0 : 8);
-                a71Var.h0.setVisibility(z10 ? 8 : 0);
-                a71Var.E1 = null;
-                if (!z10 && (arrayList2 = a71Var.A1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = a71Var.D1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    a71Var.q0.E(false);
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
                 }
-                if (!z10 && (arrayList = a71Var.B1) != null) {
-                    arrayList.clear();
-                    break;
-                }
+                this.c.run();
                 break;
             default:
-                a71 a71Var2 = this.c;
-                a71Var2.j0.setVisibility((this.b && a71Var2.i0.getVisibility() == 0) ? 0 : 8);
-                a71Var2.H1 = null;
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
+                }
+                this.c.run();
                 break;
         }
     }

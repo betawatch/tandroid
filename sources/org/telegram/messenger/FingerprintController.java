@@ -1,8 +1,8 @@
 package org.telegram.messenger;
 
-import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.fingerprint.FingerprintManager;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyPermanentlyInvalidatedException;
 import java.security.InvalidAlgorithmParameterException;
@@ -12,7 +12,7 @@ import java.security.KeyStoreException;
 import java.util.Locale;
 import javax.crypto.Cipher;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
@@ -63,7 +63,7 @@ public class FingerprintController {
                 keyPairGenerator2.initialize(new KeyGenParameterSpec.Builder(KEY_ALIAS, 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
                 keyPairGenerator2.generateKeyPair();
                 setLocale(locale);
-                AndroidUtilities.runOnUIThread(new x3(1, z10));
+                AndroidUtilities.runOnUIThread(new y3(1, z10));
             } catch (InvalidAlgorithmParameterException e7) {
                 FileLog.e(e7);
             } catch (Exception e10) {
@@ -128,14 +128,44 @@ public class FingerprintController {
         resources.updateConfiguration(configuration, resources.getDisplayMetrics());
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0027  */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static void checkKeyReady(boolean z10) {
+        boolean z11;
+        FingerprintManager fingerprintManager;
         if (isKeyReady() || !AndroidUtilities.isKeyguardSecure()) {
             return;
         }
-        Context context = ApplicationLoader.applicationContext;
-        xf.a aVar = xf.b.a;
-        if (aVar.H0(context) && aVar.c(ApplicationLoader.applicationContext)) {
-            Utilities.globalQueue.postRunnable(new x3(0, z10));
+        boolean z12 = false;
+        try {
+            fingerprintManager = (FingerprintManager) ApplicationLoader.applicationContext.getSystemService("fingerprint");
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+        if (fingerprintManager != null) {
+            z11 = fingerprintManager.isHardwareDetected();
+            if (z11) {
+                return;
+            }
+            try {
+                FingerprintManager fingerprintManager2 = (FingerprintManager) ApplicationLoader.applicationContext.getSystemService("fingerprint");
+                if (fingerprintManager2 != null) {
+                    z12 = fingerprintManager2.hasEnrolledFingerprints();
+                }
+            } catch (Exception e10) {
+                FileLog.e(e10);
+            }
+            if (z12) {
+                Utilities.globalQueue.postRunnable(new y3(0, z10));
+                return;
+            }
+            return;
+        }
+        z11 = false;
+        if (z11) {
         }
     }
 }

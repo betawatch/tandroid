@@ -1,36 +1,6 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ yq b;
-
-    public n10(yq yqVar) {
-        this.b = yqVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((x10) this.b.d).l0.unlock();
-                break;
-            default:
-                yq yqVar = this.b;
-                View view = yqVar.b;
-                view.setAlpha(1.0f);
-                s4.o0.x0(view);
-                ((x10) yqVar.d).b.removeView(view);
-                break;
-        }
-    }
-
-    public n10(yq yqVar, s4.o0 o0Var) {
-        this.b = yqVar;
-    }
+public interface n10 {
 }

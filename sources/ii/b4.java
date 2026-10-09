@@ -4,10 +4,10 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.o9;
 import org.telegram.ui.t70;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class b4 extends HorizontalScrollView {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final class b4 extends HorizontalScrollView {
 
     @Override // android.view.View
     public void onScrollChanged(int i10, int i11, int i12, int i13) {
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         switch (this.a) {
             case 1:
                 super.onScrollChanged(i10, i11, i12, i13);
                 d3 d3Var = ((q5) this.b).E;
-                if (d3Var != null && (textSelectionHelper = d3Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y()) {
-                    textSelectionHelper.x();
+                if (d3Var != null && (textSelectionHelper = d3Var.a.getTextSelectionHelper()) != null && textSelectionHelper.x()) {
+                    textSelectionHelper.w();
                 }
                 invalidate();
                 break;

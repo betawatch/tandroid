@@ -1,35 +1,58 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ug0 implements Comparator {
-    public final /* synthetic */ ch0 a;
+public final class ug0 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final TextView c;
+    public final boolean d;
 
-    public ug0(ch0 ch0Var) {
-        this.a = ch0Var;
+    public ug0(Context context) {
+        super(context);
+        this.d = true;
+        setBackgroundColor(-15066598);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(-1);
+        textView.setGravity(17);
+        textView.setBackground(org.telegram.ui.ActionBar.i6.g0(-12763843, 0, -1));
+        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
+        textView.setTypeface(AndroidUtilities.bold());
+        addView(textView, w7.x5.e(-2, -1, 51));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(-1);
+        textView2.setGravity(17);
+        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.g0(-12763843, 0, -1));
+        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
+        textView2.setTypeface(AndroidUtilities.bold());
+        addView(textView2, w7.x5.e(-2, -1, 53));
+        TextView textView3 = new TextView(context);
+        this.c = textView3;
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setTextSize(1, 13.0f);
+        textView3.setTextColor(-1);
+        textView3.setGravity(17);
+        textView3.setBackgroundResource(R.drawable.photobadge);
+        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
+        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
+        addView(textView3, w7.x5.a(23.0f, 0.0f, 0.0f, 7.0f, 0.0f, -2, 53));
     }
 
-    public final int a(bh0 bh0Var) {
-        ch0 ch0Var = this.a;
-        int size = ch0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(ch0Var.r.answers.get(i10).option, bh0Var.d)) {
-                return i10;
-            }
-        }
-        return 0;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((bh0) obj);
-        int a10 = a((bh0) obj2);
-        if (a2 > a10) {
-            return 1;
-        }
-        return a2 < a10 ? -1 : 0;
+    public final void a() {
+        this.c.setVisibility(8);
+        this.b.setTextColor(this.d ? -1 : -15095832);
     }
 }

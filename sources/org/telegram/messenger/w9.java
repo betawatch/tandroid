@@ -1,37 +1,50 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w9 implements Utilities.Callback2 {
+public final /* synthetic */ class w9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ w9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ w9(MessagesController messagesController, long j3, ArrayList arrayList, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = callback2;
+        this.d = j3;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleChatNoForwards$278(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$deleteMessagesByPush$368(this.c, this.d);
                 break;
             case 1:
-                this.b.lambda$fetchCommunityPendingJoinRequests$246(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$markAllTopicsAsRead$7(this.c, this.d);
                 break;
             case 2:
-                this.b.lambda$fetchCommunityJoinedChats$247(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$getDifference$353(this.d, this.c);
+                break;
+            case 3:
+                this.b.lambda$generateJoinMessage$367(this.d, this.c);
+                break;
+            case 4:
+                this.b.lambda$processUpdateArray$421(this.d, this.c);
                 break;
             default:
-                this.b.lambda$fetchChatsToAddToCommunity$252(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$getDifference$354(this.d, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ w9(MessagesController messagesController, ArrayList arrayList, long j3, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = arrayList;
+        this.d = j3;
     }
 }

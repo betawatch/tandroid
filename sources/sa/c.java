@@ -26,8 +26,10 @@ import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.c1;
+import qa.e;
+import sc.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -45,7 +47,7 @@ public final class c {
         try {
             return new URL("https://firebaseinstallations.googleapis.com/v1/" + str);
         } catch (MalformedURLException e7) {
-            throw new qa.e(e7.getMessage());
+            throw new e(e7.getMessage());
         }
     }
 
@@ -82,7 +84,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", c1.k("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : e.i(", ", str)));
+        Log.w("Firebase-Installations", c1.i("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : v.i(", ", str)));
     }
 
     public static long d(String str) {
@@ -122,9 +124,9 @@ public final class c {
                         jsonReader.skipValue();
                     }
                 }
-                b b10 = a2.b();
+                b e7 = a2.e();
                 jsonReader.endObject();
-                bVar = b10;
+                bVar = e7;
             } else {
                 jsonReader.skipValue();
             }
@@ -154,7 +156,7 @@ public final class c {
         jsonReader.close();
         inputStream.close();
         a2.b = 1;
-        return a2.b();
+        return a2.e();
     }
 
     public static void g(HttpURLConnection httpURLConnection, String str, String str2) {
@@ -205,7 +207,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo b10;
+        PackageInfo d10;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -233,8 +235,8 @@ public final class c {
             }
             String str2 = null;
             try {
-                b10 = w6.b.a(context).b(64, context.getPackageName());
-                signatureArr = b10.signatures;
+                d10 = w6.b.a(context).d(64, context.getPackageName());
+                signatureArr = d10.signatures;
             } catch (PackageManager.NameNotFoundException e11) {
                 Log.e("ContentValues", "No such package: " + context.getPackageName(), e11);
             }
@@ -255,7 +257,7 @@ public final class c {
                     i10++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(d10.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {
@@ -280,7 +282,7 @@ public final class c {
             httpURLConnection.addRequestProperty("x-goog-api-key", str);
             return httpURLConnection;
         } catch (IOException unused2) {
-            throw new qa.e("Firebase Installations Service is unavailable. Please try again later.");
+            throw new e("Firebase Installations Service is unavailable. Please try again later.");
         }
     }
 }

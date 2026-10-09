@@ -4,9 +4,9 @@ import android.graphics.RenderNode;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import s4.c1;
+import s4.d1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final /* synthetic */ h h;
@@ -16,20 +16,20 @@ public final class e extends d {
         this.e = -1;
     }
 
-    @Override // s4.h0
-    public final c1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.i0
+    public final d1 x(ViewGroup viewGroup, int i10) {
         c cVar = new c(viewGroup.getContext());
         cVar.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
         b bVar = new b(cVar);
         h hVar = this.h;
-        View view = hVar.Y0;
-        RenderNode renderNode = hVar.W0;
-        float f7 = hVar.X0;
+        View view = hVar.W0;
+        RenderNode renderNode = hVar.U0;
+        float f7 = hVar.V0;
         c cVar2 = bVar.v;
         cVar2.G = view;
         cVar2.E = renderNode;
         cVar2.F = f7;
-        cVar2.setDelegate(hVar.a1);
+        cVar2.setDelegate(hVar.Y0);
         return bVar;
     }
 }

@@ -1,37 +1,34 @@
 package org.telegram.messenger;
 
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y6 implements Runnable {
+public final /* synthetic */ class y6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ BaseController e;
 
-    public /* synthetic */ y6(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
-        this.a = i10;
-        this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
+    public /* synthetic */ y6(BaseController baseController, int i10, String str, String str2, int i11) {
+        this.a = i11;
+        this.e = baseController;
+        this.b = i10;
+        this.c = str;
+        this.d = str2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$saveStickerSetIntoCache$40(this.c);
-                break;
-            case 1:
-                this.b.lambda$loadGroupStickerSet$45(this.c);
-                break;
-            case 2:
-                this.b.lambda$loadGroupStickerSet$43(this.c);
-                break;
-            case 3:
-                this.b.lambda$putSetToCache$47(this.c);
+                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$213(this.b, this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$replaceStickerSet$28(this.c);
+                ((MessagesController) this.e).lambda$checkPromoInfoInternal$168(this.b, this.c, this.d, tLObject, tL_error);
                 break;
         }
     }

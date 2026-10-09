@@ -1,93 +1,41 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.content.DialogInterface;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class fd implements Runnable {
-    public final /* synthetic */ MessagesController a;
-    public final /* synthetic */ TLRPC.User[] b;
-    public final /* synthetic */ double c;
-    public final /* synthetic */ double d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ ConnectionsManager f;
-    public final /* synthetic */ dd h;
-    public final /* synthetic */ String n;
+public final /* synthetic */ class fd implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ fd(MessagesController messagesController, TLRPC.User[] userArr, double d, double d10, int[] iArr, ConnectionsManager connectionsManager, dd ddVar, String str) {
-        this.a = messagesController;
-        this.b = userArr;
-        this.c = d;
-        this.d = d10;
-        this.e = iArr;
-        this.f = connectionsManager;
-        this.h = ddVar;
-        this.n = str;
+    public /* synthetic */ fd(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        tL_messages_getInlineBotResults.bot = this.a.getInputUser(this.b[0]);
-        tL_messages_getInlineBotResults.query = "";
-        tL_messages_getInlineBotResults.offset = "";
-        tL_messages_getInlineBotResults.flags |= 1;
-        TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
-        tL_messages_getInlineBotResults.geo_point = tL_inputGeoPoint;
-        final double d = this.c;
-        tL_inputGeoPoint.lat = d;
-        final double d10 = this.d;
-        tL_inputGeoPoint._long = d10;
-        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-        final int[] iArr = this.e;
-        final dd ddVar = this.h;
-        final String str = this.n;
-        iArr[0] = this.f.sendRequest(tL_messages_getInlineBotResults, new RequestDelegate() { // from class: ci.cd
-            @Override // org.telegram.tgnet.RequestDelegate
-            public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-                final int[] iArr2 = iArr;
-                final dd ddVar2 = ddVar;
-                final double d11 = d;
-                final double d12 = d10;
-                final String str2 = str;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.bd
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        iArr2[0] = 0;
-                        TLObject tLObject2 = tLObject;
-                        boolean z10 = tLObject2 instanceof TLRPC.messages_BotResults;
-                        dd ddVar3 = ddVar2;
-                        if (z10) {
-                            TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject2;
-                            if (!messages_botresults.results.isEmpty()) {
-                                TLRPC.BotInlineResult botInlineResult = messages_botresults.results.get(0);
-                                String str3 = botInlineResult.title;
-                                try {
-                                    float parseFloat = Float.parseFloat(botInlineResult.description);
-                                    jd jdVar = new jd();
-                                    jdVar.a = d11;
-                                    jdVar.b = d12;
-                                    jdVar.c = str3;
-                                    jdVar.d = parseFloat;
-                                    kd.a = str2;
-                                    kd.b = jdVar;
-                                    ddVar3.run(jdVar);
-                                    return;
-                                } catch (Exception unused) {
-                                    ddVar3.run(null);
-                                    return;
-                                }
-                            }
-                        }
-                        ddVar3.run(null);
-                    }
-                });
-            }
-        });
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ((y8) this.b).run();
+                break;
+            case 1:
+                ((ai.s1) this.b).run();
+                break;
+            case 2:
+                ((HttpGetFileTask) this.b).cancel(true);
+                break;
+            case 3:
+                fi.t0 t0Var = (fi.t0) this.b;
+                ConnectionsManager.getInstance(t0Var.d).cancelRequest(t0Var.r, true);
+                t0Var.q = null;
+                t0Var.r = 0;
+                break;
+            default:
+                ((lg.p) this.b).I = false;
+                break;
+        }
     }
 }

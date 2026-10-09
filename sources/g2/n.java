@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -30,13 +30,27 @@ public final class n implements h {
         this.b = new ArrayList();
     }
 
-    public static void i(h hVar, c0 c0Var) {
+    public static void d(h hVar, c0 c0Var) {
         if (hVar != null) {
             hVar.addTransferListener(c0Var);
         }
     }
 
-    public final void a(h hVar) {
+    @Override // g2.h
+    public final void addTransferListener(c0 c0Var) {
+        c0Var.getClass();
+        this.c.addTransferListener(c0Var);
+        this.b.add(c0Var);
+        d(this.d, c0Var);
+        d(this.e, c0Var);
+        d(this.f, c0Var);
+        d(this.h, c0Var);
+        d(this.n, c0Var);
+        d(this.r, c0Var);
+        d(this.s, c0Var);
+    }
+
+    public final void b(h hVar) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.b;
@@ -46,20 +60,6 @@ public final class n implements h {
             hVar.addTransferListener((c0) arrayList.get(i10));
             i10++;
         }
-    }
-
-    @Override // g2.h
-    public final void addTransferListener(c0 c0Var) {
-        c0Var.getClass();
-        this.c.addTransferListener(c0Var);
-        this.b.add(c0Var);
-        i(this.d, c0Var);
-        i(this.e, c0Var);
-        i(this.f, c0Var);
-        i(this.h, c0Var);
-        i(this.n, c0Var);
-        i(this.r, c0Var);
-        i(this.s, c0Var);
     }
 
     @Override // g2.h
@@ -104,14 +104,14 @@ public final class n implements h {
                 if (this.d == null) {
                     t tVar = new t(false);
                     this.d = tVar;
-                    a(tVar);
+                    b(tVar);
                 }
                 this.v = this.d;
             } else {
                 if (this.e == null) {
                     b bVar = new b(context);
                     this.e = bVar;
-                    a(bVar);
+                    b(bVar);
                 }
                 this.v = this.e;
             }
@@ -119,14 +119,14 @@ public final class n implements h {
             if (this.e == null) {
                 b bVar2 = new b(context);
                 this.e = bVar2;
-                a(bVar2);
+                b(bVar2);
             }
             this.v = this.e;
         } else if ("content".equals(scheme)) {
             if (this.f == null) {
                 e eVar = new e(context);
                 this.f = eVar;
-                a(eVar);
+                b(eVar);
             }
             this.v = this.f;
         } else {
@@ -137,7 +137,7 @@ public final class n implements h {
                     try {
                         h hVar2 = (h) Class.forName("androidx.media3.datasource.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
                         this.h = hVar2;
-                        a(hVar2);
+                        b(hVar2);
                     } catch (ClassNotFoundException unused) {
                         e2.a.n("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
                     } catch (Exception e7) {
@@ -152,21 +152,21 @@ public final class n implements h {
                 if (this.n == null) {
                     e0 e0Var = new e0();
                     this.n = e0Var;
-                    a(e0Var);
+                    b(e0Var);
                 }
                 this.v = this.n;
             } else if ("data".equals(scheme)) {
                 if (this.r == null) {
                     f fVar = new f(false);
                     this.r = fVar;
-                    a(fVar);
+                    b(fVar);
                 }
                 this.v = this.r;
             } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
                 if (this.s == null) {
                     a0 a0Var = new a0(context);
                     this.s = a0Var;
-                    a(a0Var);
+                    b(a0Var);
                 }
                 this.v = this.s;
             } else {

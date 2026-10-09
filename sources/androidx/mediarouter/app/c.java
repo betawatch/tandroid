@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.l20;
-import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.n20;
-import org.telegram.ui.Components.o20;
-import org.telegram.ui.Components.p20;
+import org.telegram.ui.Components.a30;
+import org.telegram.ui.Components.b30;
+import org.telegram.ui.Components.c30;
+import org.telegram.ui.Components.y20;
+import org.telegram.ui.Components.z20;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final class c extends Handler {
                 }
             case 3:
                 m4.r rVar2 = (m4.r) msg.obj;
-                qi.f fVar = (qi.f) this.b;
+                oi.f fVar = (oi.f) this.b;
                 if (fVar.A(rVar2)) {
                     m4.q qVar = rVar2.d;
                     e2.d.h(qVar);
@@ -174,12 +174,12 @@ public final class c extends Handler {
                             return;
                         }
                         try {
-                            byte[] X = bVar.b.X(bVar.u, (byte[]) obj2);
-                            if (bVar.v != null && X != null && X.length != 0) {
-                                bVar.v = X;
+                            byte[] C = bVar.b.C(bVar.u, (byte[]) obj2);
+                            if (bVar.v != null && C != null && C.length != 0) {
+                                bVar.v = C;
                             }
                             bVar.o = 4;
-                            bVar.i(new m4.o0(23));
+                            bVar.i(new m4.q0(17));
                             return;
                         } catch (Exception e7) {
                             e = e7;
@@ -194,16 +194,16 @@ public final class c extends Handler {
                     return;
                 }
                 n2.b bVar2 = (n2.b) this.b;
-                of.b bVar3 = bVar2.c;
+                pf.b bVar3 = bVar2.c;
                 if (obj == bVar2.x) {
                     if (bVar2.o == 2 || bVar2.k()) {
                         bVar2.x = null;
                         if (obj2 instanceof Exception) {
-                            bVar3.I((Exception) obj2, false);
+                            bVar3.M((Exception) obj2, false);
                             return;
                         }
                         try {
-                            bVar2.b.j0((byte[]) obj2);
+                            bVar2.b.H((byte[]) obj2);
                             bVar3.c = null;
                             HashSet hashSet = (HashSet) bVar3.b;
                             e9.i0 v = e9.i0.v(hashSet);
@@ -217,7 +217,7 @@ public final class c extends Handler {
                             }
                             return;
                         } catch (Exception e11) {
-                            bVar3.I(e11, true);
+                            bVar3.M(e11, true);
                             return;
                         }
                     }
@@ -229,7 +229,7 @@ public final class c extends Handler {
                 if (bArr == null) {
                     return;
                 }
-                ArrayList arrayList = ((n2.f) this.b).w;
+                ArrayList arrayList = ((n2.e) this.b).w;
                 int size = arrayList.size();
                 int i14 = 0;
                 while (i14 < size) {
@@ -257,66 +257,66 @@ public final class c extends Handler {
                     if (rVar == null || pVar != rVar.b() || cVar == null) {
                         return;
                     }
-                    rVar.d((n4.a0) msg.obj);
+                    rVar.d((n4.z) msg.obj);
                     ((n4.p) this.b).a(rVar, cVar);
                     rVar.d(null);
                     return;
                 }
                 return;
             case 7:
-                n20 n20Var = (n20) this.b;
-                m20 m20Var = n20Var.g;
+                a30 a30Var = (a30) this.b;
+                z20 z20Var = a30Var.g;
                 int i15 = msg.what;
                 if (i15 == 1) {
-                    m20Var.getClass();
+                    z20Var.getClass();
                     return;
                 }
                 if (i15 == 2) {
-                    n20Var.f.removeMessages(3);
-                    n20Var.j = false;
-                    n20Var.k = true;
-                    m20Var.onLongPress(n20Var.n);
+                    a30Var.f.removeMessages(3);
+                    a30Var.j = false;
+                    a30Var.k = true;
+                    z20Var.onLongPress(a30Var.n);
                     return;
                 }
                 if (i15 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                l20 l20Var = n20Var.h;
-                if (l20Var != null) {
-                    if (n20Var.i) {
-                        n20Var.j = true;
+                y20 y20Var = a30Var.h;
+                if (y20Var != null) {
+                    if (a30Var.i) {
+                        a30Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) l20Var).a2(n20Var.n);
+                        ((PhotoViewer) y20Var).a2(a30Var.n);
                         return;
                     }
                 }
                 return;
             case 8:
-                o20 o20Var = (o20) this.b;
-                p20 p20Var = o20Var.f;
+                b30 b30Var = (b30) this.b;
+                c30 c30Var = b30Var.f;
                 int i16 = msg.what;
                 if (i16 == 1) {
-                    p20Var.onShowPress(o20Var.m);
+                    c30Var.onShowPress(b30Var.m);
                     return;
                 }
                 if (i16 == 2) {
-                    o20Var.e.removeMessages(3);
-                    o20Var.i = false;
-                    o20Var.j = true;
-                    p20Var.onLongPress(o20Var.m);
+                    b30Var.e.removeMessages(3);
+                    b30Var.i = false;
+                    b30Var.j = true;
+                    c30Var.onLongPress(b30Var.m);
                     return;
                 }
                 if (i16 != 3) {
                     throw new RuntimeException("Unknown message " + msg);
                 }
-                p20 p20Var2 = o20Var.g;
-                if (p20Var2 != null) {
-                    if (o20Var.h) {
-                        o20Var.i = true;
+                c30 c30Var2 = b30Var.g;
+                if (c30Var2 != null) {
+                    if (b30Var.h) {
+                        b30Var.i = true;
                         return;
                     } else {
-                        p20Var2.onSingleTapConfirmed(o20Var.m);
+                        c30Var2.onSingleTapConfirmed(b30Var.m);
                         return;
                     }
                 }
@@ -355,10 +355,10 @@ public final class c extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                n2.c cVar3 = (n2.c) h3Var.f;
-                if (cVar3 != null) {
+                k2.g0 g0Var = (k2.g0) h3Var.f;
+                if (g0Var != null) {
                     b2.p pVar2 = (b2.p) h3Var.n;
-                    p4.e eVar = (p4.e) cVar3.b;
+                    p4.e eVar = (p4.e) g0Var.b;
                     p4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, pVar2);
@@ -382,7 +382,7 @@ public final class c extends Handler {
                     str = "";
                 }
                 Log.d("SessionLifecycleClient", "Session update received: ".concat(str));
-                zd.e0.q(zd.e0.b((id.h) this.b), new za.t(str, objArr == true ? 1 : 0, i10));
+                ae.g0.q(ae.g0.b((jd.h) this.b), new za.u(str, objArr == true ? 1 : 0, i10));
                 return;
         }
     }
@@ -395,7 +395,7 @@ public final class c extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(id.h hVar) {
+    public c(jd.h hVar) {
         super(Looper.getMainLooper());
         this.a = 12;
         this.b = hVar;
@@ -409,7 +409,7 @@ public final class c extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(Looper looper, qi.f fVar) {
+    public c(Looper looper, oi.f fVar) {
         super(looper);
         this.a = 3;
         this.b = fVar;

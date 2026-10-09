@@ -2,29 +2,29 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o0 {
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x013f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0150  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0161  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x016a  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x018a  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x01a4  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x01af  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x01b6  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01d8  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01de  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x01e9  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01ff  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0206  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0139 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0170  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x017c  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0188  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01ad  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x01b4  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x01d6  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01dc  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01fd  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0138 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -70,60 +70,60 @@ public final class o0 {
                             ((Double) value).getClass();
                             i13 = 8;
                             int i15 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15, i15, y3, i11);
+                            i11 = a1.g.g(i15, i15, y3, i11);
                         case 1:
                             ((Float) value).getClass();
                             i13 = 4;
                             int i152 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152, i152, y3, i11);
+                            i11 = a1.g.g(i152, i152, y3, i11);
                         case 2:
                             i13 = j.A(((Long) value).longValue());
                             int i1522 = i13 + y11 + i14;
-                            i11 = a4.a.g(i1522, i1522, y3, i11);
+                            i11 = a1.g.g(i1522, i1522, y3, i11);
                         case 3:
                             i13 = j.A(((Long) value).longValue());
                             int i15222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15222, i15222, y3, i11);
+                            i11 = a1.g.g(i15222, i15222, y3, i11);
                         case 4:
                             i13 = j.w(((Integer) value).intValue());
                             int i152222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152222, i152222, y3, i11);
+                            i11 = a1.g.g(i152222, i152222, y3, i11);
                         case 5:
                             ((Long) value).getClass();
                             i13 = 8;
                             int i1522222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i1522222, i1522222, y3, i11);
+                            i11 = a1.g.g(i1522222, i1522222, y3, i11);
                         case 6:
                             ((Integer) value).getClass();
                             i13 = 4;
                             int i15222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15222222, i15222222, y3, i11);
+                            i11 = a1.g.g(i15222222, i15222222, y3, i11);
                         case 7:
                             ((Boolean) value).getClass();
                             int i152222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152222222, i152222222, y3, i11);
+                            i11 = a1.g.g(i152222222, i152222222, y3, i11);
                         case 8:
                             if (value instanceof g) {
                                 size2 = ((g) value).size();
                                 z11 = j.z(size2);
                                 i13 = z11 + size2;
                                 int i1522222222 = i13 + y11 + i14;
-                                i11 = a4.a.g(i1522222222, i1522222222, y3, i11);
+                                i11 = a1.g.g(i1522222222, i1522222222, y3, i11);
                             } else {
                                 i13 = j.x((String) value);
                                 int i15222222222 = i13 + y11 + i14;
-                                i11 = a4.a.g(i15222222222, i15222222222, y3, i11);
+                                i11 = a1.g.g(i15222222222, i15222222222, y3, i11);
                             }
                         case 9:
                             i13 = ((a) value).a();
                             int i152222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152222222222, i152222222222, y3, i11);
+                            i11 = a1.g.g(i152222222222, i152222222222, y3, i11);
                         case 10:
                             size2 = ((a) value).a();
                             z11 = j.z(size2);
                             i13 = z11 + size2;
                             int i1522222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i1522222222222, i1522222222222, y3, i11);
+                            i11 = a1.g.g(i1522222222222, i1522222222222, y3, i11);
                         case 11:
                             if (value instanceof g) {
                                 size2 = ((g) value).size();
@@ -134,35 +134,35 @@ public final class o0 {
                             }
                             i13 = z11 + size2;
                             int i15222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15222222222222, i15222222222222, y3, i11);
+                            i11 = a1.g.g(i15222222222222, i15222222222222, y3, i11);
                         case 12:
                             i13 = j.z(((Integer) value).intValue());
                             int i152222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152222222222222, i152222222222222, y3, i11);
+                            i11 = a1.g.g(i152222222222222, i152222222222222, y3, i11);
                         case 13:
                             i13 = j.w(((Integer) value).intValue());
                             int i1522222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i1522222222222222, i1522222222222222, y3, i11);
+                            i11 = a1.g.g(i1522222222222222, i1522222222222222, y3, i11);
                         case 14:
                             ((Integer) value).getClass();
                             i13 = 4;
                             int i15222222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15222222222222222, i15222222222222222, y3, i11);
+                            i11 = a1.g.g(i15222222222222222, i15222222222222222, y3, i11);
                         case 15:
                             ((Long) value).getClass();
                             i13 = 8;
                             int i152222222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i152222222222222222, i152222222222222222, y3, i11);
+                            i11 = a1.g.g(i152222222222222222, i152222222222222222, y3, i11);
                         case 16:
                             int intValue = ((Integer) value).intValue();
                             i13 = j.z((intValue >> 31) ^ (intValue << 1));
                             int i1522222222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i1522222222222222222, i1522222222222222222, y3, i11);
+                            i11 = a1.g.g(i1522222222222222222, i1522222222222222222, y3, i11);
                         case 17:
                             long longValue = ((Long) value).longValue();
                             i13 = j.A((longValue >> 63) ^ (longValue << 1));
                             int i15222222222222222222 = i13 + y11 + i14;
-                            i11 = a4.a.g(i15222222222222222222, i15222222222222222222, y3, i11);
+                            i11 = a1.g.g(i15222222222222222222, i15222222222222222222, y3, i11);
                         default:
                             throw new RuntimeException("There is no way to get here, but the compiler thinks otherwise.");
                     }

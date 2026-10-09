@@ -8,7 +8,7 @@ import hg.c;
 import java.util.Arrays;
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 final class WebRtcAudioUtils {
     private static final String TAG = "WebRtcAudioUtilsExternal";
@@ -130,9 +130,6 @@ final class WebRtcAudioUtils {
     }
 
     private static void logAudioDeviceInfo(String str, AudioManager audioManager) {
-        if (Build.VERSION.SDK_INT < 23) {
-            return;
-        }
         AudioDeviceInfo[] devices = audioManager.getDevices(3);
         if (devices.length == 0) {
             return;
@@ -200,10 +197,8 @@ final class WebRtcAudioUtils {
     }
 
     private static void logIsStreamMute(String str, AudioManager audioManager, int i10, StringBuilder sb2) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            sb2.append(", muted=");
-            sb2.append(audioManager.isStreamMute(i10));
-        }
+        sb2.append(", muted=");
+        sb2.append(audioManager.isStreamMute(i10));
     }
 
     public static String modeToString(int i10) {

@@ -1,39 +1,15 @@
 package xh;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import org.telegram.messenger.FileLog;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class j implements TextWatcher {
-    public final /* synthetic */ View[] a;
-    public final /* synthetic */ m b;
-
-    public j(m mVar, View[] viewArr) {
-        this.b = mVar;
-        this.a = viewArr;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        View[] viewArr = this.a;
-        try {
-            boolean z10 = ((long) Integer.parseInt(editable.toString())) >= this.b.l0.getMinimumBid();
-            viewArr[0].animate().alpha(z10 ? 1.0f : 0.6f).setDuration(180L).start();
-            viewArr[0].setEnabled(z10);
-            viewArr[0].setClickable(z10);
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class j extends ci.d {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.W) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        return false;
     }
 }

@@ -14,16 +14,16 @@ import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import com.google.android.gms.internal.vision.e2;
-import f0.f;
+import f0.d;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParserException;
-import sa.e;
+import sc.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -32,7 +32,7 @@ public class FileProvider extends ContentProvider {
     public final Object a;
     public final int b;
     public String c;
-    public f d;
+    public d d;
 
     public FileProvider() {
         this(0);
@@ -42,17 +42,17 @@ public class FileProvider extends ContentProvider {
         return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : e2.i(1, 0, str);
     }
 
-    public static f c(Context context, String str, int i10) {
-        f fVar;
+    public static d c(Context context, String str, int i10) {
+        d dVar;
         HashMap hashMap = h;
         synchronized (hashMap) {
             try {
-                fVar = (f) hashMap.get(str);
-                if (fVar == null) {
+                dVar = (d) hashMap.get(str);
+                if (dVar == null) {
                     try {
                         try {
-                            fVar = e(context, str, i10);
-                            hashMap.put(str, fVar);
+                            dVar = e(context, str, i10);
+                            hashMap.put(str, dVar);
                         } catch (IOException e7) {
                             throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e7);
                         }
@@ -64,11 +64,11 @@ public class FileProvider extends ContentProvider {
                 throw th2;
             }
         }
-        return fVar;
+        return dVar;
     }
 
     public static Uri d(Context context, String str, File file) {
-        f c10 = c(context, str, 0);
+        d c10 = c(context, str, 0);
         try {
             String canonicalPath = file.getCanonicalPath();
             Map.Entry entry = null;
@@ -79,7 +79,7 @@ public class FileProvider extends ContentProvider {
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(e.i("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(v.i("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
             return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
@@ -88,11 +88,11 @@ public class FileProvider extends ContentProvider {
         }
     }
 
-    public static f e(Context context, String str, int i10) {
-        f fVar = new f(str);
+    public static d e(Context context, String str, int i10) {
+        d dVar = new d(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(e.i("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(v.i("Couldn't find meta-data for provider with authority ", str));
         }
         if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
@@ -106,7 +106,7 @@ public class FileProvider extends ContentProvider {
         while (true) {
             int next = loadXmlMetaData.next();
             if (next == 1) {
-                return fVar;
+                return dVar;
             }
             if (next == 2) {
                 String name = loadXmlMetaData.getName();
@@ -148,7 +148,7 @@ public class FileProvider extends ContentProvider {
                         throw new IllegalArgumentException("Name must not be empty");
                     }
                     try {
-                        fVar.b.put(attributeValue, file.getCanonicalFile());
+                        dVar.b.put(attributeValue, file.getCanonicalFile());
                     } catch (IOException e7) {
                         throw new IllegalArgumentException("Failed to resolve canonical path for " + file, e7);
                     }
@@ -180,8 +180,8 @@ public class FileProvider extends ContentProvider {
         }
     }
 
-    public final f b() {
-        f fVar;
+    public final d b() {
+        d dVar;
         synchronized (this.a) {
             try {
                 if (this.c == null) {
@@ -190,12 +190,12 @@ public class FileProvider extends ContentProvider {
                 if (this.d == null) {
                     this.d = c(getContext(), this.c, this.b);
                 }
-                fVar = this.d;
+                dVar = this.d;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return fVar;
+        return dVar;
     }
 
     @Override // android.content.ContentProvider
@@ -243,7 +243,7 @@ public class FileProvider extends ContentProvider {
             i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(e.i("Invalid mode: ", str));
+                throw new IllegalArgumentException(v.i("Invalid mode: ", str));
             }
             i10 = 1006632960;
         }

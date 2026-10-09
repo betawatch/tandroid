@@ -9,11 +9,11 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.n11;
-import org.telegram.ui.Components.o11;
+import org.telegram.ui.Components.t11;
+import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public abstract class e5 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -30,6 +30,7 @@ public abstract class e5 {
     /* JADX WARN: Multi-variable type inference failed */
     public static ArrayList b(CharSequence charSequence) {
         int i10;
+        boolean z10;
         ArrayList arrayList = new ArrayList();
         if (charSequence == null) {
             TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
@@ -55,22 +56,25 @@ public abstract class e5 {
         while (i13 < size) {
             int i14 = iArr[i13];
             i13++;
+            boolean z11 = true;
             int i15 = i13 < size ? iArr[i13] - 1 : length;
             CodeHighlighting.Span span = spanned == null ? null : (CodeHighlighting.Span) a(spanned, i14, i15, CodeHighlighting.Span.class);
-            fj0 fj0Var = (spanned == null || span != null) ? 0 : (fj0) a(spanned, i14, i15, fj0.class);
-            if (span == null && fj0Var == 0) {
+            xj0 xj0Var = (spanned == null || span != null) ? 0 : (xj0) a(spanned, i14, i15, xj0.class);
+            if (span == null && xj0Var == 0) {
                 CharSequence subSequence = charSequence.subSequence(i14, i15);
                 TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
                 pageblockparagraph2.text = h6.f(subSequence);
                 arrayList.add(pageblockparagraph2);
             } else {
-                CodeHighlighting.Span span2 = span != null ? span : fj0Var;
+                CodeHighlighting.Span span2 = span != null ? span : xj0Var;
                 while (true) {
                     if (i13 >= size) {
                         i10 = length;
+                        z10 = z11;
                         break;
                     }
                     int i16 = iArr[i13];
+                    z10 = z11;
                     int i17 = i13 + 1;
                     if (i17 < size) {
                         i10 = length;
@@ -78,11 +82,12 @@ public abstract class e5 {
                     } else {
                         i10 = length;
                     }
-                    if ((span != null ? a(spanned, i16, length, CodeHighlighting.Span.class) : a(spanned, i16, length, fj0.class)) != span2) {
+                    if ((span != null ? a(spanned, i16, length, CodeHighlighting.Span.class) : a(spanned, i16, length, xj0.class)) != span2) {
                         break;
                     }
                     i15 = length;
                     i13 = i17;
+                    z11 = z10;
                     length = i10;
                 }
                 CharSequence subSequence2 = charSequence.subSequence(i14, i15);
@@ -99,7 +104,7 @@ public abstract class e5 {
                     TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                     pageblockblockquote.text = h6.f(subSequence2);
                     pageblockblockquote.caption = new TL_iv.textEmpty();
-                    pageblockblockquote.collapsed = fj0Var != 0 && fj0Var.e;
+                    pageblockblockquote.collapsed = (xj0Var == 0 || !xj0Var.e) ? false : z10;
                     arrayList.add(pageblockblockquote);
                 }
                 length = i10;
@@ -201,7 +206,7 @@ public abstract class e5 {
                                 TL_iv.PageListOrderedItem pageListOrderedItem2 = pageListOrderedItem;
                                 SpannableStringBuilder r12 = pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemText ? h6.r(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem2).text, null, true) : pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemBlocks ? c(((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem2).blocks) : null;
                                 if (r12 != null) {
-                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(sa.e.v(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
+                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(sc.v.v(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
                                     spannableStringBuilder4.append((CharSequence) r12);
                                     arrayList7.add(spannableStringBuilder4);
                                 }
@@ -376,7 +381,7 @@ public abstract class e5 {
         if (spannableStringBuilder2.length() == 0) {
             return null;
         }
-        fj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+        xj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
         return spannableStringBuilder2;
     }
 
@@ -409,7 +414,7 @@ public abstract class e5 {
                     TL_iv.PageBlock pageBlock2 = aVar.b;
                     boolean z11 = (pageBlock2 instanceof TL_iv.pageBlockBlockquote) && ((TL_iv.pageBlockBlockquote) pageBlock2).collapsed;
                     if (spannableStringBuilder.length() > 0) {
-                        fj0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
+                        xj0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
                     }
                     arrayList.add(spannableStringBuilder);
                 } else {
@@ -428,7 +433,7 @@ public abstract class e5 {
                     i11++;
                 }
                 if (spannableStringBuilder2.length() > 0) {
-                    fj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+                    xj0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
                 }
                 arrayList.add(spannableStringBuilder2);
                 i10 = i11;
@@ -454,9 +459,9 @@ public abstract class e5 {
             return spannableStringBuilder;
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        n11 n11Var = new n11();
-        n11Var.a = i10;
-        spannableStringBuilder2.setSpan(new o11(n11Var, 0), 0, spannableStringBuilder2.length(), 33);
+        t11 t11Var = new t11();
+        t11Var.a = i10;
+        spannableStringBuilder2.setSpan(new u11(t11Var, 0), 0, spannableStringBuilder2.length(), 33);
         return spannableStringBuilder2;
     }
 }

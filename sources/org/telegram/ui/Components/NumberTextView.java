@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -58,6 +58,7 @@ public class NumberTextView extends View {
         String sb2;
         String sb3;
         boolean z11;
+        float f7;
         int i11;
         String str;
         if (this.f == i10 && z10) {
@@ -94,6 +95,7 @@ public class NumberTextView extends View {
         this.s = measureText;
         boolean z12 = this.n && this.r != measureText;
         this.f = i10;
+        float f10 = 0.0f;
         this.e = 0.0f;
         int i14 = 0;
         while (i14 < sb3.length()) {
@@ -103,9 +105,11 @@ public class NumberTextView extends View {
             if (z12 || substring2 == null || !substring2.equals(substring)) {
                 if (z12 && substring2 == null) {
                     i11 = i15;
+                    f7 = f10;
                     str = substring;
                     arrayList.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 } else {
+                    f7 = f10;
                     i11 = i15;
                     str = substring;
                 }
@@ -113,15 +117,18 @@ public class NumberTextView extends View {
             } else {
                 arrayList2.add((StaticLayout) arrayList.get(i14));
                 arrayList.set(i14, null);
+                f7 = f10;
                 i11 = i15;
             }
+            f10 = f7;
             i14 = i11;
         }
+        float f11 = f10;
         if (z10 && !arrayList.isEmpty()) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, 0.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f11);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new hd0(this, i12));
+            this.d.addListener(new vd0(this, i12));
             this.d.start();
         }
         invalidate();
@@ -245,6 +252,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(id0 id0Var) {
+    public void setOnTextWidthProgressChangedListener(wd0 wd0Var) {
     }
 }

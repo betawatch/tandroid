@@ -1,21 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public interface j6 {
-    void a(Object obj);
+public final class j6 {
+    public static final j6 e = new j6(new int[0], new Object[0], false);
+    public final int[] a;
+    public final Object[] b;
+    public int c = -1;
+    public boolean d;
 
-    int b(h5 h5Var);
+    public j6(int[] iArr, Object[] objArr, boolean z10) {
+        this.a = iArr;
+        this.b = objArr;
+        this.d = z10;
+    }
 
-    boolean c(h5 h5Var, h5 h5Var2);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof j6)) {
+            return false;
+        }
+        return true;
+    }
 
-    void d(Object obj, Object obj2);
-
-    void e(Object obj, w5 w5Var);
-
-    boolean f(Object obj);
-
-    int g(v4 v4Var);
-
-    h5 zzc();
+    public final int hashCode() {
+        return 506991;
+    }
 }

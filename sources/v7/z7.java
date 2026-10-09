@@ -1,25 +1,10 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class z7 {
-    public static long[] a(long[]... jArr) {
-        long j3 = 0;
-        for (long[] jArr2 : jArr) {
-            j3 += jArr2.length;
-        }
-        int i10 = (int) j3;
-        t6.b(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i10));
-        long[] jArr3 = new long[i10];
-        int i11 = 0;
-        for (long[] jArr4 : jArr) {
-            System.arraycopy(jArr4, 0, jArr3, i11, jArr4.length);
-            i11 += jArr4.length;
-        }
-        return jArr3;
-    }
-
-    public static int b(long j3) {
-        return (int) (j3 ^ (j3 >>> 32));
+    public static hd.g a(sd.a initializer) {
+        kotlin.jvm.internal.i.e(initializer, "initializer");
+        return new hd.g(initializer);
     }
 }

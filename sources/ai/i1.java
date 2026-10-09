@@ -10,14 +10,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class i1 extends LinearLayout {
-    public yh.l8 a;
+    public yh.b8 a;
     public final Path b;
     public final Paint c;
     public long d;
-    public final org.telegram.ui.Components.e6 e;
+    public final org.telegram.ui.Components.g6 e;
     public final /* synthetic */ l1 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -27,7 +27,7 @@ public final class i1 extends LinearLayout {
         this.b = new Path();
         this.c = new Paint(1);
         this.d = 0L;
-        this.e = new org.telegram.ui.Components.e6(this, 0L, 1000L, new LinearInterpolator());
+        this.e = new org.telegram.ui.Components.g6(this, 0L, 1000L, new LinearInterpolator());
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -50,11 +50,11 @@ public final class i1 extends LinearLayout {
             long j3 = this.d;
             n1 n1Var3 = l1Var.f;
             long j10 = n1Var3.b;
-            org.telegram.ui.Components.e6 e6Var = this.e;
+            org.telegram.ui.Components.g6 g6Var = this.e;
             if (j3 != j10) {
-                e6Var.d(n1Var3.a(), true);
+                g6Var.d(n1Var3.a(), true);
             }
-            float d = e6Var.d(l1Var.f.a(), false);
+            float d = g6Var.d(l1Var.f.a(), false);
             this.d = l1Var.f.b;
             Paint paint = this.c;
             paint.setColor(b11);
@@ -65,12 +65,12 @@ public final class i1 extends LinearLayout {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new yh.l8(1, MediaDataController.MAX_LINKS_COUNT);
+            this.a = new yh.b8(1, MediaDataController.MAX_LINKS_COUNT);
         }
         this.a.f(0, 0, getWidth(), getHeight());
-        yh.l8 l8Var = this.a;
-        l8Var.h = 30.0f;
-        l8Var.d();
+        yh.b8 b8Var = this.a;
+        b8Var.h = 30.0f;
+        b8Var.d();
         this.a.b(canvas2, -1, 0.85f);
         invalidate();
         canvas2.restore();

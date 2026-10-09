@@ -1,44 +1,25 @@
 package xh;
 
-import org.telegram.ui.Components.p6;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class d0 extends FrameLayout {
+    public final /* synthetic */ float a;
 
-    public /* synthetic */ d0(j0 j0Var, int i10) {
-        this.a = i10;
-        this.b = j0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(Context context, float f7) {
+        super(context);
+        this.a = f7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j0 j0Var = this.b;
-                ph.i iVar = j0Var.h;
-                hh.g gVar = j0Var.f;
-                if (gVar != null) {
-                    gVar.d();
-                }
-                i0 i0Var = j0Var.H;
-                if (i0Var != null) {
-                    i0Var.setTranslationY(-iVar.c());
-                }
-                p6 p6Var = j0Var.w;
-                if (p6Var != null) {
-                    p6Var.setTranslationY(-iVar.c());
-                }
-                j0Var.o();
-                break;
-            case 1:
-                this.b.H.performClick();
-                break;
-            default:
-                this.b.dismiss();
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

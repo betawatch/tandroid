@@ -11,10 +11,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.p11;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.v11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class t2 implements Runnable {
         Object obj3 = this.d;
         switch (i12) {
             case 0:
-                ((FileLoadOperation) obj3).lambda$getDownloadedLengthFromOffset$4((long[]) obj2, this.b, this.c, (CountDownLatch) obj);
+                ((FileLoadOperation) obj3).lambda$getDownloadedLengthFromOffset$5((long[]) obj2, this.b, this.c, (CountDownLatch) obj);
                 break;
             case 1:
-                ((GiftAuctionController) obj3).lambda$sendBid$6((Utilities.Callback2) obj2, this.b, (xh.l) obj, this.c);
+                ((GiftAuctionController) obj3).lambda$sendBid$6((Utilities.Callback2) obj2, this.b, (xh.n) obj, this.c);
                 break;
             case 2:
                 ((MediaController) obj3).lambda$trimCurrentRecording$26((File) obj2, this.b, this.c, (Runnable) obj);
@@ -69,11 +69,11 @@ public final /* synthetic */ class t2 implements Runnable {
                 ((TopicsController) obj3).lambda$loadTopic$27(this.b, (ArrayList) obj2, this.c, (Runnable) obj);
                 break;
             case 7:
-                ((b80) obj3).u();
+                ((p80) obj3).u();
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new p11(bundle, (org.telegram.ui.ActionBar.d6) obj));
+                ((org.telegram.ui.ActionBar.n2) obj2).presentFragment(new v11(bundle, (org.telegram.ui.ActionBar.e6) obj));
                 break;
             default:
                 tg.a0 a0Var = (tg.a0) obj3;
@@ -81,7 +81,7 @@ public final /* synthetic */ class t2 implements Runnable {
                 TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = (TL_stories.TL_prepaidStarsGiveaway) obj;
                 int l4 = tg.s.l(a0Var.m0);
                 int i13 = a0Var.j0;
-                int i14 = vg.u.s;
+                int i14 = vg.u.v;
                 boolean z10 = i13 == 1;
                 a0Var.q0.b(true);
                 ArrayList arrayList = a0Var.c0;
@@ -174,7 +174,7 @@ public final /* synthetic */ class t2 implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = messagesController.getInputPeer(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.s5(vVar, messagesController, yVar, 18));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.t5(vVar, messagesController, yVar, 18));
                 break;
         }
     }
@@ -206,12 +206,12 @@ public final /* synthetic */ class t2 implements Runnable {
         this.c = j10;
     }
 
-    public /* synthetic */ t2(GiftAuctionController giftAuctionController, Utilities.Callback2 callback2, long j3, xh.l lVar, long j10) {
+    public /* synthetic */ t2(GiftAuctionController giftAuctionController, Utilities.Callback2 callback2, long j3, xh.n nVar, long j10) {
         this.a = 1;
         this.d = giftAuctionController;
         this.e = callback2;
         this.b = j3;
-        this.f = lVar;
+        this.f = nVar;
         this.c = j10;
     }
 }

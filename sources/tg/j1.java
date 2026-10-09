@@ -1,17 +1,17 @@
 package tg;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.fb0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.tb0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class j1 extends ci.d {
     public final /* synthetic */ m1 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(m1 m1Var, Context context, d6 d6Var) {
-        super(context, d6Var, true);
+    public j1(m1 m1Var, Context context, e6 e6Var) {
+        super(context, e6Var, true);
         this.h0 = m1Var;
     }
 
@@ -21,8 +21,8 @@ public final class j1 extends ci.d {
         boolean z10 = m1Var.t0 == 0.0f;
         m1Var.t0 = f7;
         if (z10) {
-            m1Var.u0 = new fb0(m1Var, 2);
-            m1Var.g0(false);
+            m1Var.u0 = new tb0(m1Var, 2);
+            m1Var.h0(false);
         }
         return f7;
     }

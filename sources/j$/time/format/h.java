@@ -19,7 +19,7 @@ public final class h implements f {
         int a10 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
         if (longValue >= -62167219200L) {
             long j3 = longValue - 253402300800L;
-            long S = 1 + j$.com.android.tools.r8.a.S(j3, 315569520000L);
+            long S = j$.com.android.tools.r8.a.S(j3, 315569520000L) + 1;
             LocalDateTime K = LocalDateTime.K(j$.com.android.tools.r8.a.R(j3, 315569520000L) - 62167219200L, 0, ZoneOffset.UTC);
             if (S > 0) {
                 sb2.append('+');

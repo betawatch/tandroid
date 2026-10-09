@@ -4,8 +4,8 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import ci.ed;
-import ci.n9;
+import ci.fd;
+import ci.o9;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -19,28 +19,28 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.m9;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
-    public final d6 b;
-    public final yc c;
+    public final e6 b;
+    public final ad c;
     public final int d;
     public final long e;
     public final TLRPC.Chat f;
     public s0 h;
-    public n9 i;
+    public o9 i;
     public String k;
     public int l;
     public boolean m;
@@ -52,14 +52,14 @@ public final class t0 implements gi.e {
     public final a0.i g = new a0.i();
     public ArrayList j = new ArrayList();
 
-    public t0(Context context, d6 d6Var, yc ycVar, int i10, long j3) {
+    public t0(Context context, e6 e6Var, ad adVar, int i10, long j3) {
         this.a = context;
-        this.b = d6Var;
-        this.c = ycVar;
+        this.b = e6Var;
+        this.c = adVar;
         this.d = i10;
         this.e = j3;
         this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
-        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.p(j3, "community_requests_last_view_time_"), 0L);
+        this.o = MessagesController.getMainSettings(i10).getLong(a1.g.p(j3, "community_requests_last_view_time_"), 0L);
     }
 
     public final void a() {
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(e71 e71Var) {
-        if (this.m || this.n || e71Var.e3.N0() + 10 <= e71Var.f3.x.size()) {
+    public final void b(k71 k71Var) {
+        if (this.m || this.n || k71Var.V2.N0() + 10 <= k71Var.W2.x.size()) {
             return;
         }
         d();
@@ -105,11 +105,11 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    h61 K = h61.K(gi.g.class);
-                    K.G = new gi.f(peerDialogId, user, z10);
-                    K.H = this;
-                    K.j = !z11;
-                    arrayList.add(K);
+                    p61 J = p61.J(gi.g.class);
+                    J.G = new gi.f(peerDialogId, user, z10);
+                    J.H = this;
+                    J.j = !z11;
+                    arrayList.add(J);
                 }
                 i10++;
             }
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(h61.p(29));
+        arrayList.add(p61.n(29));
     }
 
     public final void d() {
@@ -140,22 +140,22 @@ public final class t0 implements gi.e {
         TextView textView;
         if (this.q == null && this.r == 0) {
             if (z11) {
-                b2 P = e5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
-                P.show();
-                if (z10 || (textView = (TextView) P.d(-1)) == null) {
+                b2 O = g5.O(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(7, this, z10));
+                O.show();
+                if (z10 || (textView = (TextView) O.d(-1)) == null) {
                     return;
                 }
-                textView.setTextColor(i6.w0(null, i6.q7, false));
+                textView.setTextColor(i6.x0(null, i6.q7, false));
                 return;
             }
-            n9 n9Var = this.i;
-            if (n9Var != null) {
-                n9Var.run();
+            o9 o9Var = this.i;
+            if (o9Var != null) {
+                o9Var.run();
             }
             this.i = null;
             b2 b2Var = new b2(this.a, 3, this.b);
             this.q = b2Var;
-            b2Var.setOnCancelListener(new ed(this, 3));
+            b2Var.setOnCancelListener(new fd(this, 3));
             this.q.q(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new r0(this, 0));
         }
@@ -168,53 +168,53 @@ public final class t0 implements gi.e {
         a();
         s0 s0Var = this.h;
         if (s0Var != null) {
-            s0Var.l();
+            s0Var.n();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j3)));
-        n9 n9Var = this.i;
-        if (n9Var != null) {
-            n9Var.run();
+        o9 o9Var = this.i;
+        if (o9Var != null) {
+            o9Var.run();
         }
-        this.i = new n9(this, j3, z10, 1);
+        this.i = new o9(this, j3, z10, 1);
         Context context = this.a;
-        d6 d6Var = this.b;
-        qc qcVar = new qc(context, d6Var, false);
+        e6 e6Var = this.b;
+        sc scVar = new sc(context, e6Var, false);
         TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j3);
-        k9 k9Var = qcVar.a;
+        m9 m9Var = scVar.a;
         if (userOrChat != null) {
-            k9Var.setCount(1);
-            k9Var.b(0, userOrChat, UserConfig.selectedAccount);
+            m9Var.setCount(1);
+            m9Var.b(0, userOrChat, UserConfig.selectedAccount);
             i10 = 1;
         } else {
             i10 = 0;
         }
-        k9Var.setTranslationX(AndroidUtilities.dp(7.0f));
-        k9Var.setScaleX(1.333f);
-        k9Var.setScaleY(1.333f);
-        k9Var.a(false);
-        q90 q90Var = qcVar.b;
-        q90Var.setSingleLine(false);
-        q90Var.setMaxLines(2);
-        q90Var.setTextSize(1, 14.0f);
-        q90Var.setText(replaceTags);
-        if (q90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        m9Var.setTranslationX(AndroidUtilities.dp(7.0f));
+        m9Var.setScaleX(1.333f);
+        m9Var.setScaleY(1.333f);
+        m9Var.a(false);
+        ea0 ea0Var = scVar.b;
+        ea0Var.setSingleLine(false);
+        ea0Var.setMaxLines(2);
+        ea0Var.setTextSize(1, 14.0f);
+        ea0Var.setText(replaceTags);
+        if (ea0Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) q90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) ea0Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) q90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) ea0Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {
-            k9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
+            m9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
         }
-        pc pcVar = new pc(context, d6Var, true, true);
-        pcVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        pcVar.a = new ai.j(this, j3, 9);
-        pcVar.b = this.i;
-        qcVar.setButton(pcVar);
-        this.c.b(qcVar, 5000).j();
+        rc rcVar = new rc(context, e6Var, true, true);
+        rcVar.e(LocaleController.getString(R.string.UndoNoCaps));
+        rcVar.a = new ai.j(this, j3, 9);
+        rcVar.b = this.i;
+        scVar.setButton(rcVar);
+        this.c.b(scVar, 5000).j();
     }
 }

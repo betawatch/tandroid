@@ -1,14 +1,15 @@
 package i2;
 
 import android.util.Pair;
+import ei.c5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class w0 {
     public final j2.f c;
     public final e2.z d;
-    public final ei.f e;
+    public final c5 e;
     public long f;
     public int g;
     public boolean h;
@@ -24,10 +25,10 @@ public final class w0 {
     public final b2.j1 b = new b2.j1();
     public ArrayList q = new ArrayList();
 
-    public w0(j2.f fVar, e2.z zVar, ei.f fVar2) {
+    public w0(j2.f fVar, e2.z zVar, c5 c5Var) {
         this.c = fVar;
         this.d = zVar;
-        this.e = fVar2;
+        this.e = c5Var;
     }
 
     public static u2.f0 o(b2.k1 k1Var, Object obj, long j3, long j10, b2.j1 j1Var, b2.h1 h1Var) {
@@ -93,8 +94,8 @@ public final class w0 {
     }
 
     public final v0 c(b2.k1 k1Var, u0 u0Var, long j3) {
-        b2.h1 h1Var;
         long j10;
+        b2.h1 h1Var;
         b2.k1 k1Var2;
         Object obj;
         long j11;
@@ -146,8 +147,8 @@ public final class w0 {
                 }
                 j15 = ((Long) j16.second).longValue();
             } else {
-                h1Var = h1Var2;
                 j10 = 0;
+                h1Var = h1Var2;
                 k1Var2 = k1Var;
             }
             int i14 = f0Var.b;
@@ -333,13 +334,13 @@ public final class w0 {
         this.d.c(new gg.t(this, u10, u0Var2 == null ? null : u0Var2.g.a, 13));
     }
 
-    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.e1] */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.d1] */
     public final void m(long j3) {
         u0 u0Var = this.l;
         if (u0Var != null) {
             e2.d.g(u0Var.m == null);
             if (u0Var.e) {
-                u0Var.a.r(j3 - u0Var.p);
+                u0Var.a.s(j3 - u0Var.p);
             }
         }
     }

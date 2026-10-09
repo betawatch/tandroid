@@ -17,34 +17,34 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.e6 b;
     public final b0 c;
     public int d;
     public boolean e;
     public int f;
-    public final e6 h;
-    public ci.o5 n;
+    public final g6 h;
+    public ci.n5 n;
 
-    public d0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+    public d0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         super(context);
         this.a = i10;
-        this.b = d6Var;
-        b0 b0Var = new b0(this, context, d6Var);
+        this.b = e6Var;
+        b0 b0Var = new b0(this, context, e6Var);
         this.c = b0Var;
         b0Var.setOrientation(0);
-        this.h = new e6(b0Var, 0L, 320L, tr.h);
+        this.h = new g6(b0Var, 0L, 320L, hs.h);
         if (!z10) {
-            addView(b0Var, w7.z5.e(-1, -1, 119));
+            addView(b0Var, w7.x5.e(-1, -1, 119));
             return;
         }
         HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
         horizontalScrollView.setFillViewport(true);
         horizontalScrollView.addView(b0Var);
-        addView(horizontalScrollView, w7.z5.e(-1, -1, 119));
+        addView(horizontalScrollView, w7.x5.e(-1, -1, 119));
     }
 
     public final void a(int i10, String str, Utilities.Callback callback) {
@@ -57,7 +57,7 @@ public final class d0 extends FrameLayout {
         c0Var.h.setImageResource(i10);
         c0Var.n.setText(str);
         c0Var.setOnClickListener(new a0(childCount, 0, callback));
-        b0Var.addView(c0Var, w7.z5.o(0, -1, 1.0f, 119));
+        b0Var.addView(c0Var, w7.x5.o(0, -1, 1.0f, 119));
     }
 
     public final void b(TL_aicompose.AiComposeTone aiComposeTone, Utilities.Callback callback) {
@@ -66,14 +66,14 @@ public final class d0 extends FrameLayout {
         c0Var.c = this.d;
         c0Var.e();
         TextView textView = c0Var.n;
-        w9 w9Var = c0Var.h;
+        y9 y9Var = c0Var.h;
         if (aiComposeTone == null) {
             c0Var.d = false;
             c0Var.e();
             int i10 = R.drawable.tone_create;
             String string = LocaleController.getString(R.string.AIEditorStyleNewCreate);
             c0Var.f = false;
-            w9Var.setImageResource(i10);
+            y9Var.setImageResource(i10);
             textView.setText(string);
         } else if (aiComposeTone instanceof z) {
             c0Var.d = false;
@@ -81,26 +81,26 @@ public final class d0 extends FrameLayout {
             int i11 = R.drawable.iv_prompt;
             String string2 = LocaleController.getString(R.string.AIEditorStylePrompt);
             c0Var.f = false;
-            w9Var.setImageResource(i11);
+            y9Var.setImageResource(i11);
             textView.setText(string2);
         } else {
             String str = aiComposeTone.title;
             long j3 = aiComposeTone.emoji_id;
             c0Var.f = true;
-            w9Var.setColorFilter(null);
-            w9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
+            y9Var.setColorFilter(null);
+            y9Var.setImageDrawable(Emoji.getEmojiDrawable(null));
             textView.setText(str);
             int i12 = c0Var.a;
             if (ConnectionsManager.getInstance(i12).isTestBackend()) {
                 for (int i13 = 0; i13 < 4 && (!UserConfig.getInstance(i13).isClientActivated() || ConnectionsManager.getInstance(i13).isTestBackend()); i13++) {
                 }
             }
-            w9Var.setAnimatedEmojiDrawable(new q5(9, i12, j3));
+            y9Var.setAnimatedEmojiDrawable(new s5(9, i12, j3));
         }
-        c0Var.setOnClickListener(new org.telegram.ui.qf(10, callback, aiComposeTone));
-        c0Var.setOnLongClickListener(new ai.q3(1, this, c0Var));
+        c0Var.setOnClickListener(new org.telegram.ui.sf(10, callback, aiComposeTone));
+        c0Var.setOnLongClickListener(new ai.r3(1, this, c0Var));
         b0 b0Var = this.c;
-        b0Var.addView(c0Var, w7.z5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
+        b0Var.addView(c0Var, w7.x5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
     }
 
     public final void c(int i10) {
@@ -112,14 +112,14 @@ public final class d0 extends FrameLayout {
         if (i10 >= 0 && i10 < b0Var.getChildCount()) {
             View childAt = b0Var.getChildAt(i10);
             if (childAt instanceof c0) {
-                w9 w9Var = ((c0) childAt).h;
-                if (w9Var.getAnimatedEmojiDrawable() != null) {
-                    ai.l4 l4Var = w9Var.getAnimatedEmojiDrawable().k;
-                    if (l4Var != null) {
-                        l4Var.startAnimation();
+                y9 y9Var = ((c0) childAt).h;
+                if (y9Var.getAnimatedEmojiDrawable() != null) {
+                    ai.m4 m4Var = y9Var.getAnimatedEmojiDrawable().k;
+                    if (m4Var != null) {
+                        m4Var.startAnimation();
                     }
                 } else {
-                    w9Var.getImageReceiver().startAnimation();
+                    y9Var.getImageReceiver().startAnimation();
                 }
             }
         }
@@ -147,11 +147,11 @@ public final class d0 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.e) {
-            Paint T0 = org.telegram.ui.ActionBar.i6.T0("paintDivider", this.b);
-            if (T0 == null) {
-                T0 = org.telegram.ui.ActionBar.i6.k0;
+            Paint U0 = org.telegram.ui.ActionBar.i6.U0("paintDivider", this.b);
+            if (U0 == null) {
+                U0 = org.telegram.ui.ActionBar.i6.k0;
             }
-            canvas.drawRect(AndroidUtilities.dp(10.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(10.0f), getHeight(), T0);
+            canvas.drawRect(AndroidUtilities.dp(10.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(10.0f), getHeight(), U0);
         }
     }
 

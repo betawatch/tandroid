@@ -1,21 +1,22 @@
 package e1;
 
+import a1.h;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import ci.x8;
+import ci.y8;
 import g7.e;
 import g7.g;
 import java.util.concurrent.Executor;
-import rd.l;
+import sd.l;
 import v0.f;
 import v0.i;
-import w7.w7;
+import w7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -32,7 +33,7 @@ public final /* synthetic */ class b implements l {
         this.d = iVar;
     }
 
-    @Override // rd.l
+    @Override // sd.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
@@ -46,8 +47,8 @@ public final /* synthetic */ class b implements l {
                 i iVar = this.d;
                 if (pendingIntent == null && gVar == null) {
                     CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (!a1.g.a(cancellationSignal)) {
-                        executor.execute(new a1.b(iVar, 9));
+                    if (!h.a(cancellationSignal)) {
+                        executor.execute(new a1.e(iVar, 9));
                     }
                 } else {
                     if (pendingIntent != null) {
@@ -58,7 +59,7 @@ public final /* synthetic */ class b implements l {
                             context.startActivity(intent);
                         } catch (Exception unused) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
-                            if (!a1.g.a(cancellationSignal)) {
+                            if (!h.a(cancellationSignal)) {
                                 Executor executor2 = dVar.g;
                                 if (executor2 == null) {
                                     kotlin.jvm.internal.i.h("executor");
@@ -69,29 +70,29 @@ public final /* synthetic */ class b implements l {
                         }
                     }
                     if (gVar != null) {
-                        v0.c a2 = w7.a(gVar.a, gVar.b);
+                        v0.c a2 = v7.a(gVar.a, gVar.b);
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
-                            if (!a1.g.a(cancellationSignal)) {
-                                executor.execute(new x8(9, iVar, (f) a2));
+                            if (!h.a(cancellationSignal)) {
+                                executor.execute(new y8(9, iVar, (f) a2));
                             }
                         }
                     }
                     if (pendingIntent == null) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!a1.g.a(cancellationSignal)) {
-                            executor.execute(new a1.b(iVar, 8));
+                        if (!h.a(cancellationSignal)) {
+                            executor.execute(new a1.e(iVar, 8));
                         }
                     }
                 }
-                return gd.i.a;
+                return hd.i.a;
             default:
                 f1.a aVar = (f1.a) this.e;
                 Context context2 = aVar.e;
                 g7.l lVar = (g7.l) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 CancellationSignal cancellationSignal2 = this.b;
-                if (!a1.g.a(cancellationSignal2)) {
+                if (!h.a(cancellationSignal2)) {
                     Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
                     b1.d.a(aVar.i, intent2, "BEGIN_SIGN_IN");
                     intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", lVar.a);
@@ -99,12 +100,12 @@ public final /* synthetic */ class b implements l {
                         context2.startActivity(intent2);
                     } catch (Exception unused2) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
-                        if (!a1.g.a(cancellationSignal2)) {
-                            this.c.execute(new a1.b(this.d, 10));
+                        if (!h.a(cancellationSignal2)) {
+                            this.c.execute(new a1.e(this.d, 10));
                         }
                     }
                 }
-                return gd.i.a;
+                return hd.i.a;
         }
     }
 }

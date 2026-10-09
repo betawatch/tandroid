@@ -7,24 +7,25 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.p3;
+import m.q3;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g extends n6.g {
     public final w5.b U;
 
-    public g(Context context, Looper looper, p3 p3Var, w5.b bVar, k kVar, l lVar) {
-        super(context, looper, 68, p3Var, kVar, lVar, 0);
+    public g(Context context, Looper looper, q3 q3Var, w5.b bVar, k kVar, l lVar) {
+        super(context, looper, 68, q3Var, kVar, lVar, 0);
         bVar = bVar == null ? w5.b.c : bVar;
-        o0.a aVar = new o0.a(21, (byte) 0);
-        aVar.b = Boolean.FALSE;
+        b5 b5Var = new b5(19, (byte) 0);
+        b5Var.b = Boolean.FALSE;
         w5.b bVar2 = w5.b.c;
         bVar.getClass();
-        aVar.b = Boolean.valueOf(bVar.a);
-        aVar.c = bVar.b;
-        aVar.c = e.a();
-        this.U = new w5.b(aVar);
+        b5Var.b = Boolean.valueOf(bVar.a);
+        b5Var.c = bVar.b;
+        b5Var.c = e.a();
+        this.U = new w5.b(b5Var);
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c

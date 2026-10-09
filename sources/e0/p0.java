@@ -1,65 +1,45 @@
 package e0;
 
+import android.app.RemoteInput;
+import android.os.Build;
 import android.os.Bundle;
-import androidx.core.graphics.drawable.IconCompat;
-import j$.util.Objects;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p0 {
-    public CharSequence a;
-    public IconCompat b;
-    public String c;
-    public String d;
-    public boolean e;
-    public boolean f;
+    public final CharSequence a;
+    public final Bundle b;
+    public final HashSet c;
 
-    public static p0 a(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle("icon");
-        CharSequence charSequence = bundle.getCharSequence("name");
-        IconCompat a2 = bundle2 != null ? IconCompat.a(bundle2) : null;
-        String string = bundle.getString("uri");
-        String string2 = bundle.getString("key");
-        boolean z10 = bundle.getBoolean("isBot");
-        boolean z11 = bundle.getBoolean("isImportant");
-        p0 p0Var = new p0();
-        p0Var.a = charSequence;
-        p0Var.b = a2;
-        p0Var.c = string;
-        p0Var.d = string2;
-        p0Var.e = z10;
-        p0Var.f = z11;
-        return p0Var;
+    public p0(String str, Bundle bundle, HashSet hashSet) {
+        this.a = str;
+        this.b = bundle;
+        this.c = hashSet;
     }
 
-    public final CharSequence b() {
-        return this.a;
-    }
-
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putCharSequence("name", this.a);
-        IconCompat iconCompat = this.b;
-        bundle.putBundle("icon", iconCompat != null ? iconCompat.l() : null);
-        bundle.putString("uri", this.c);
-        bundle.putString("key", this.d);
-        bundle.putBoolean("isBot", this.e);
-        bundle.putBoolean("isImportant", this.f);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof p0)) {
-            return false;
+    public static RemoteInput[] a(p0[] p0VarArr) {
+        if (p0VarArr == null) {
+            return null;
         }
-        p0 p0Var = (p0) obj;
-        String str = this.d;
-        String str2 = p0Var.d;
-        return (str == null && str2 == null) ? Objects.equals(Objects.toString(this.a), Objects.toString(p0Var.a)) && Objects.equals(this.c, p0Var.c) && Boolean.valueOf(this.e).equals(Boolean.valueOf(p0Var.e)) && Boolean.valueOf(this.f).equals(Boolean.valueOf(p0Var.f)) : Objects.equals(str, str2);
-    }
-
-    public final int hashCode() {
-        String str = this.d;
-        return str != null ? str.hashCode() : Objects.hash(this.a, this.c, Boolean.valueOf(this.e), Boolean.valueOf(this.f));
+        RemoteInput[] remoteInputArr = new RemoteInput[p0VarArr.length];
+        for (int i10 = 0; i10 < p0VarArr.length; i10++) {
+            p0 p0Var = p0VarArr[i10];
+            p0Var.getClass();
+            RemoteInput.Builder addExtras = new RemoteInput.Builder(NotificationsController.EXTRA_VOICE_REPLY).setLabel(p0Var.a).setChoices(null).setAllowFreeFormInput(true).addExtras(p0Var.b);
+            if (Build.VERSION.SDK_INT >= 26) {
+                Iterator it = p0Var.c.iterator();
+                while (it.hasNext()) {
+                    w6.a.c(addExtras, (String) it.next());
+                }
+            }
+            if (Build.VERSION.SDK_INT >= 29) {
+                b2.c.m(addExtras);
+            }
+            remoteInputArr[i10] = addExtras.build();
+        }
+        return remoteInputArr;
     }
 }

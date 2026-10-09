@@ -1,13 +1,13 @@
 package x7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k3 implements ia.d {
     public static final k3 a = new k3();
-    public static final ia.c b = new ia.c("imageFormat", hg.c.m(sa.e.n(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("originalImageSize", hg.c.m(sa.e.n(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("compressedImageSize", hg.c.m(sa.e.n(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("isOdmlImage", hg.c.m(sa.e.n(c0.class, new z(4))));
+    public static final ia.c b = new ia.c("imageFormat", hg.c.m(sc.v.n(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("originalImageSize", hg.c.m(sc.v.n(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("compressedImageSize", hg.c.m(sc.v.n(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("isOdmlImage", hg.c.m(sc.v.n(c0.class, new z(4))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

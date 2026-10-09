@@ -1,15 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.messenger.MessagesStorage;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hy0 extends org.telegram.ui.ou0 {
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean P() {
-        return true;
+public final /* synthetic */ class hy0 implements org.telegram.ui.ActionBar.r0, MessagesStorage.StringCallback {
+    public final /* synthetic */ xy0 a;
+
+    public /* synthetic */ hy0(xy0 xy0Var) {
+        this.a = xy0Var;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean z() {
-        return false;
+    @Override // org.telegram.ui.ActionBar.r0
+    public void m(int i10) {
+        xy0.E(this.a, i10);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new o50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
     }
 }

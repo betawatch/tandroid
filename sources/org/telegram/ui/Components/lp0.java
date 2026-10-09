@@ -1,27 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lp0 extends s4.s0 {
-    public final /* synthetic */ gf a;
-
-    public lp0(gf gfVar) {
-        this.a = gfVar;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        gf gfVar = this.a;
-        View view = gfVar.u;
-        boolean z10 = gfVar.w.I0() != 0;
-        Boolean bool = gfVar.x;
-        if (bool == null || z10 != bool.booleanValue()) {
-            view.animate().cancel();
-            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
-            gfVar.x = Boolean.valueOf(z10);
-        }
-    }
+public final class lp0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
 }

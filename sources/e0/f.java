@@ -1,71 +1,55 @@
 package e0;
 
 import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import w7.x6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class f implements Application.ActivityLifecycleCallbacks {
-    public Object a;
-    public Activity b;
-    public final int c;
-    public boolean d = false;
-    public boolean e = false;
-    public boolean f = false;
+public abstract class f extends Activity implements androidx.lifecycle.t, r0.j {
+    public final androidx.lifecycle.v a = new androidx.lifecycle.v(this);
 
-    public f(Activity activity) {
-        this.b = activity;
-        this.c = activity.hashCode();
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityDestroyed(Activity activity) {
-        if (this.b == activity) {
-            this.b = null;
-            this.e = true;
+    @Override // android.app.Activity, android.view.Window.Callback
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        View decorView = getWindow().getDecorView();
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (x6.a(decorView, event)) {
+            return true;
         }
+        return x6.b(this, decorView, this, event);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityPaused(Activity activity) {
-        if (!this.e || this.f || this.d) {
-            return;
+    @Override // android.app.Activity, android.view.Window.Callback
+    public final boolean dispatchKeyShortcutEvent(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        View decorView = getWindow().getDecorView();
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (x6.a(decorView, event)) {
+            return true;
         }
-        Object obj = this.a;
-        try {
-            Object obj2 = g.c.get(activity);
-            if (obj2 == obj && activity.hashCode() == this.c) {
-                g.g.postAtFrontOfQueue(new i9.s(12, g.b.get(activity), obj2));
-                this.f = true;
-                this.a = null;
-            }
-        } catch (Throwable th2) {
-            Log.e("ActivityRecreator", "Exception while fetching field values", th2);
-        }
+        return super.dispatchKeyShortcutEvent(event);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStarted(Activity activity) {
-        if (this.b == activity) {
-            this.d = true;
-        }
+    @Override // r0.j
+    public final boolean i(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        return super.dispatchKeyEvent(event);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityResumed(Activity activity) {
+    @Override // android.app.Activity
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        int i10 = androidx.lifecycle.h0.b;
+        androidx.lifecycle.f0.b(this);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStopped(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    @Override // android.app.Activity
+    public void onSaveInstanceState(Bundle outState) {
+        kotlin.jvm.internal.i.e(outState, "outState");
+        this.a.g();
+        super.onSaveInstanceState(outState);
     }
 }

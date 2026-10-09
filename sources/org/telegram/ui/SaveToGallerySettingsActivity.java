@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int a;
@@ -27,8 +27,8 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     public int f;
     public int h;
     public int maxVideoSizeRow;
-    public i41 n;
-    public org.telegram.ui.Components.zl0 r;
+    public r41 n;
+    public org.telegram.ui.Components.qm0 r;
     public final ArrayList s;
     public LongSparseArray v;
 
@@ -38,12 +38,12 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         this.v = new LongSparseArray();
     }
 
-    public final SaveToGallerySettingsHelper.Settings W() {
+    public final SaveToGallerySettingsHelper.Settings X() {
         SaveToGallerySettingsHelper.DialogException dialogException = this.c;
         return dialogException != null ? dialogException : SaveToGallerySettingsHelper.getSettings(this.a);
     }
 
-    public final void X() {
+    public final void Y() {
         if (this.d) {
             return;
         }
@@ -57,7 +57,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         getUserConfig().updateSaveGalleryExceptions(this.a, saveGalleryExceptions);
     }
 
-    public final void Y() {
+    public final void Z() {
         ArrayList arrayList;
         this.maxVideoSizeRow = -1;
         this.addExceptionRow = -1;
@@ -73,14 +73,14 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         }
         arrayList2.clear();
         if (this.c != null) {
-            arrayList2.add(new j41(9));
-            arrayList2.add(new j41(3));
+            arrayList2.add(new s41(9));
+            arrayList2.add(new s41(3));
         }
-        arrayList2.add(new j41(5, LocaleController.getString(R.string.SaveToGallery)));
+        arrayList2.add(new s41(5, LocaleController.getString(R.string.SaveToGallery)));
         this.e = arrayList2.size();
-        arrayList2.add(new j41(6));
+        arrayList2.add(new s41(6));
         this.f = arrayList2.size();
-        arrayList2.add(new j41(6));
+        arrayList2.add(new s41(6));
         if (this.c != null) {
             str = LocaleController.getString(R.string.SaveToGalleryHintCurrent);
         } else {
@@ -93,52 +93,51 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
                 str = LocaleController.getString(R.string.SaveToGalleryHintGroup);
             }
         }
-        arrayList2.add(new j41(7, str));
-        if (W().saveVideo) {
-            arrayList2.add(new j41(5, LocaleController.getString(R.string.MaxVideoSize)));
+        arrayList2.add(new s41(7, str));
+        if (X().saveVideo) {
+            arrayList2.add(new s41(5, LocaleController.getString(R.string.MaxVideoSize)));
             this.maxVideoSizeRow = arrayList2.size();
-            arrayList2.add(new j41(8));
+            arrayList2.add(new s41(8));
             this.h = arrayList2.size();
-            arrayList2.add(new j41(7));
+            arrayList2.add(new s41(7));
         } else {
             this.h = -1;
         }
         if (this.c == null) {
             this.v = getUserConfig().getSaveGalleryExceptions(this.a);
             this.addExceptionRow = arrayList2.size();
-            arrayList2.add(new j41(1));
+            arrayList2.add(new s41(1));
             int i11 = 0;
             boolean z11 = false;
             while (i11 < this.v.size()) {
-                arrayList2.add(new j41((SaveToGallerySettingsHelper.DialogException) this.v.valueAt(i11)));
+                arrayList2.add(new s41((SaveToGallerySettingsHelper.DialogException) this.v.valueAt(i11)));
                 i11++;
                 z11 = true;
             }
             if (z11) {
-                arrayList2.add(new j41(3));
+                arrayList2.add(new s41(3));
                 this.deleteAllExceptionsRow = arrayList2.size();
-                arrayList2.add(new j41(4));
+                arrayList2.add(new s41(4));
             }
-            arrayList2.add(new j41(10));
+            arrayList2.add(new s41(10));
         }
-        i41 i41Var = this.n;
-        if (i41Var != null) {
+        r41 r41Var = this.n;
+        if (r41Var != null) {
             if (arrayList != null) {
-                i41Var.E(arrayList, arrayList2);
+                r41Var.E(arrayList, arrayList2);
             } else {
-                i41Var.l();
+                r41Var.l();
             }
         }
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        int i10 = 1;
-        setHasOwnBackground(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        hg.c.u(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 27));
+        int i10 = 0;
+        hg.c.v(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 28));
         if (this.c == null) {
             int i11 = this.a;
             if (i11 == 1) {
@@ -153,50 +152,40 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
         } else {
             this.actionBar.setTitle(LocaleController.getString(R.string.SaveToGalleryException));
         }
-        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        this.r = zl0Var;
-        zl0Var.r1();
-        this.r.setSectionsDrawBackground(true);
+        org.telegram.ui.Components.qm0 qm0Var = new org.telegram.ui.Components.qm0(context, null);
+        this.r = qm0Var;
+        qm0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.r);
         s4.j jVar = new s4.j();
         jVar.n(400L);
-        jVar.o(org.telegram.ui.Components.tr.h);
+        jVar.o(org.telegram.ui.Components.hs.h);
         jVar.C = false;
         jVar.m = false;
         this.r.setItemAnimator(jVar);
-        this.r.setLayoutManager(new s4.c0());
-        org.telegram.ui.Components.zl0 zl0Var2 = this.r;
-        i41 i41Var = new i41(this);
-        this.n = i41Var;
-        zl0Var2.setAdapter(i41Var);
-        this.r.setOnItemClickListener(new g41(this));
-        this.r.setOnItemLongClickListener(new g41(this));
+        this.r.setLayoutManager(new s4.d0());
+        org.telegram.ui.Components.qm0 qm0Var2 = this.r;
+        r41 r41Var = new r41(this);
+        this.n = r41Var;
+        qm0Var2.setAdapter(r41Var);
+        this.r.setOnItemClickListener(new o41(this));
+        this.r.setOnItemLongClickListener(new o41(this));
         frameLayout.addView(this.r);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false));
         if (this.c != null) {
             FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
-            frameLayout2.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.i6.Oh));
+            frameLayout2.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{8.0f}, org.telegram.ui.ActionBar.i6.Oh));
             TextView textView = new TextView(getParentActivity());
             textView.setTextSize(1, 14.0f);
             textView.setText(LocaleController.getString(this.d ? R.string.AddException : R.string.SaveException));
             textView.setGravity(17);
             textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
-            frameLayout2.addView(textView, w7.z5.e(-2, -2, 17));
-            frameLayout2.setOnClickListener(new y31(this, i10));
-            frameLayout.addView(frameLayout2, w7.z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+            frameLayout2.addView(textView, w7.x5.e(-2, -2, 17));
+            frameLayout2.setOnClickListener(new p41(this, i10));
+            frameLayout.addView(frameLayout2, w7.x5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
         }
-        Y();
+        Z();
         return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
-        return this.r;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -225,6 +214,6 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        Y();
+        Z();
     }
 }

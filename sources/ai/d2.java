@@ -27,7 +27,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class d2 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static d2 W;
@@ -172,7 +172,7 @@ public final class d2 implements NotificationCenter.NotificationCenterDelegate, 
             DispatchQueue dispatchQueue = Utilities.globalQueue;
             NativeInstance nativeInstance = this.E;
             Objects.requireNonNull(nativeInstance);
-            dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
+            dispatchQueue.postRunnable(new org.telegram.messenger.voip.t0(nativeInstance, 3));
             this.M.clear();
             this.E = null;
         }
@@ -232,7 +232,7 @@ public final class d2 implements NotificationCenter.NotificationCenterDelegate, 
             return;
         }
         int i10 = 0;
-        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.g2.d("live_" + this.f.id), 0L, false, SharedConfig.noiseSupression, new p1(this, i10), new w1(i10), new p1(this, 2), new p1(this, 3), new p1(this, 4), new p1(this, 5), false);
+        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.f2.d("live_" + this.f.id), 0L, false, SharedConfig.noiseSupression, new p1(this, i10), new w1(i10), new p1(this, 2), new p1(this, 3), new p1(this, 4), new p1(this, 5), false);
         this.E = makeGroup;
         makeGroup.setOnStateUpdatedListener(new c2(this));
         this.E.resetGroupInstance(false, false);
@@ -243,8 +243,8 @@ public final class d2 implements NotificationCenter.NotificationCenterDelegate, 
         if (groupCall != null && groupCall.creator) {
             return true;
         }
-        int i10 = this.e;
         long j3 = this.b;
+        int i10 = this.e;
         return j3 >= 0 ? UserConfig.getInstance(i10).getClientUserId() == j3 : ChatObject.canUserDoAction(MessagesController.getInstance(i10).getChat(Long.valueOf(-j3)), 14);
     }
 
@@ -369,8 +369,8 @@ public final class d2 implements NotificationCenter.NotificationCenterDelegate, 
 
     public final void v(float f7) {
         float clamp01 = Utilities.clamp01(f7);
-        m2 m2Var = m2.Z;
-        if (m2Var.S && m2Var.v == this) {
+        n2 n2Var = n2.Z;
+        if (n2Var.S && n2Var.v == this) {
             clamp01 = 1.0f;
         }
         FileLog.d("setVolume(" + clamp01 + ")");

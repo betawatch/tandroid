@@ -1,7 +1,7 @@
 package gg;
 
-import ai.c9;
-import ei.m3;
+import ai.d9;
+import ei.l3;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -13,14 +13,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.fr0;
-import org.telegram.ui.Components.i40;
+import org.telegram.ui.Components.rr0;
+import org.telegram.ui.Components.v40;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.f9;
-import org.telegram.ui.fa;
-import org.telegram.ui.gy0;
+import org.telegram.ui.c9;
+import org.telegram.ui.ea;
+import org.telegram.ui.ly0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,10 +39,10 @@ public final /* synthetic */ class u implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                i0 i0Var = (i0) this.d;
+                h0 h0Var = (h0) this.d;
                 String str = (String) this.c;
-                i0Var.getClass();
-                AndroidUtilities.runOnUIThread(new c9(i0Var, this.b, tLObject, str, 4));
+                h0Var.getClass();
+                AndroidUtilities.runOnUIThread(new d9(h0Var, this.b, tLObject, str, 4));
                 break;
             case 1:
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$34(this.b, (String) this.c, tLObject, tL_error);
@@ -51,22 +51,22 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new c9((f9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                AndroidUtilities.runOnUIThread(new d9((c9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new m3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
+                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new c9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
+                AndroidUtilities.runOnUIThread(new d9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new c9((i40) this.d, this.b, tLObject, (String) this.c, 20));
+                AndroidUtilities.runOnUIThread(new d9((v40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((fr0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new d9((rr0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new gy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new ly0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
@@ -81,8 +81,8 @@ public final /* synthetic */ class u implements RequestDelegate {
                         String str2 = tL_premiumGiftCodeOption.store_product;
                         if (str2 != null) {
                             c5.a aVar = new c5.a();
-                            aVar.b = "inapp";
-                            aVar.a = str2;
+                            aVar.c = "inapp";
+                            aVar.b = str2;
                             arrayList2.add(aVar.a());
                         }
                     }
@@ -92,7 +92,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                         AndroidUtilities.runOnUIThread(new tg.n(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new fa(arrayList, chat, i11, callback, 9));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new ea(arrayList, chat, i11, callback, 9));
                         break;
                     }
                 }

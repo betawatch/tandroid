@@ -1,6 +1,6 @@
 package tg;
 
-import ai.z5;
+import ai.a6;
 import android.os.CountDownTimer;
 import android.view.View;
 import java.util.ArrayList;
@@ -8,10 +8,10 @@ import java.util.Date;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.i5;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.ActionBar.j5;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class l0 extends CountDownTimer {
     public final /* synthetic */ s0 a;
@@ -25,7 +25,7 @@ public final class l0 extends CountDownTimer {
     @Override // android.os.CountDownTimer
     public final void onTick(long j3) {
         s0 s0Var = this.a;
-        zl0 zl0Var = s0Var.d;
+        qm0 qm0Var = s0Var.d;
         ArrayList arrayList = s0Var.Y;
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size = arrayList.size();
@@ -44,28 +44,28 @@ public final class l0 extends CountDownTimer {
         if (arrayList2.isEmpty()) {
             return;
         }
-        for (int i11 = 0; i11 < zl0Var.getChildCount(); i11++) {
-            View childAt = zl0Var.getChildAt(i11);
+        for (int i11 = 0; i11 < qm0Var.getChildCount(); i11++) {
+            View childAt = qm0Var.getChildAt(i11);
             if (childAt instanceof xg.l) {
                 xg.l lVar = (xg.l) childAt;
                 if (arrayList2.contains(lVar.getBoost())) {
-                    i5 i5Var = lVar.e;
-                    z5 z5Var = lVar.d;
-                    int i12 = lVar.I.cooldown_until_date;
+                    j5 j5Var = lVar.e;
+                    a6 a6Var = lVar.d;
+                    int i12 = lVar.J.cooldown_until_date;
                     if (i12 > 0) {
                         lVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, xg.l.f((i12 * 1000) - System.currentTimeMillis())));
-                        z5Var.setAlpha(0.65f);
-                        i5Var.setAlpha(0.65f);
+                        a6Var.setAlpha(0.65f);
+                        j5Var.setAlpha(0.65f);
                         lVar.i(0.3f, false);
                     } else {
-                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.I.expires * 1000))));
-                        if (z5Var.getAlpha() < 1.0f) {
-                            z5Var.animate().alpha(1.0f).start();
-                            i5Var.animate().alpha(1.0f).start();
+                        lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.J.expires * 1000))));
+                        if (a6Var.getAlpha() < 1.0f) {
+                            a6Var.animate().alpha(1.0f).start();
+                            j5Var.animate().alpha(1.0f).start();
                             lVar.i(1.0f, true);
                         } else {
-                            z5Var.setAlpha(1.0f);
-                            i5Var.setAlpha(1.0f);
+                            a6Var.setAlpha(1.0f);
+                            j5Var.setAlpha(1.0f);
                             lVar.i(1.0f, false);
                         }
                     }

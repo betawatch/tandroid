@@ -1,44 +1,16 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] c;
+public final class o6 extends of.e {
+    public final /* synthetic */ ci.d d;
 
-    public /* synthetic */ o6(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
-        this.c = f3VarArr;
+    public o6(ci.d dVar) {
+        this.d = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.c[0].setFocusable(true);
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.runOnUIThread(new o2(editTextBoldCursor, 6));
-                break;
-            case 1:
-                AndroidUtilities.hideKeyboard(this.b);
-                this.c[0].dismiss();
-                break;
-            default:
-                AndroidUtilities.hideKeyboard(this.b);
-                this.c[0].dismiss();
-                break;
-        }
-    }
-
-    public /* synthetic */ o6(org.telegram.ui.ActionBar.f3[] f3VarArr, EditTextBoldCursor editTextBoldCursor) {
-        this.a = 0;
-        this.c = f3VarArr;
-        this.b = editTextBoldCursor;
+    @Override // of.e
+    public final void b() {
+        this.d.setLoading(false);
     }
 }

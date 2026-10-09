@@ -1,29 +1,22 @@
 package ai;
 
-import android.graphics.Paint;
-import android.text.style.LineHeightSpan;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.hd0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class jb implements LineHeightSpan {
-    public final /* synthetic */ int a;
+public final class jb extends hd0 {
+    public final /* synthetic */ int R0;
 
-    public /* synthetic */ jb(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jb(int i10, int i11) {
+        super(i10);
+        this.R0 = i11;
     }
 
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i10, int i11, int i12, int i13, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                fontMetricsInt.ascent -= AndroidUtilities.dp(2.0f);
-                fontMetricsInt.top -= AndroidUtilities.dp(2.0f);
-                break;
-            default:
-                fontMetricsInt.descent = AndroidUtilities.dp(4.0f) + fontMetricsInt.descent;
-                fontMetricsInt.ascent = fontMetricsInt.ascent;
-                break;
+    @Override // org.telegram.ui.hd0
+    public final boolean g0() {
+        switch (this.R0) {
         }
+        return true;
     }
 }

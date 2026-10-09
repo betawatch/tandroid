@@ -18,10 +18,11 @@ import android.view.MotionEvent;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.ed;
+import ci.fd;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import k2.g0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLoader;
@@ -36,9 +37,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.z71;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -55,13 +56,13 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public u71 d;
+    public z71 d;
     public g e;
     public final RectF f;
     public final RectF h;
     public float n;
     public final boolean r;
-    public final k2.e s;
+    public final g0 s;
     public final Matrix v;
     public Bitmap w;
     public boolean x;
@@ -77,9 +78,9 @@ public class p extends FrameLayout implements a {
         this.f = new RectF();
         this.h = new RectF();
         this.c = new Matrix();
-        k2.e eVar = new k2.e(2, false);
-        eVar.b = new float[8];
-        this.s = eVar;
+        g0 g0Var = new g0(3);
+        g0Var.b = new float[8];
+        this.s = g0Var;
         this.v = new Matrix();
         this.F = false;
         ImageView imageView = new ImageView(context);
@@ -172,8 +173,8 @@ public class p extends FrameLayout implements a {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00f8 A[Catch: all -> 0x019b, TryCatch #0 {all -> 0x019b, blocks: (B:3:0x000c, B:5:0x007c, B:7:0x0082, B:9:0x0089, B:15:0x00f4, B:17:0x00f8, B:19:0x014b, B:20:0x011d, B:22:0x00eb, B:24:0x0197), top: B:2:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x011d A[Catch: all -> 0x019b, TryCatch #0 {all -> 0x019b, blocks: (B:3:0x000c, B:5:0x007c, B:7:0x0082, B:9:0x0089, B:15:0x00f4, B:17:0x00f8, B:19:0x014b, B:20:0x011d, B:22:0x00eb, B:24:0x0197), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00f4 A[Catch: all -> 0x018e, TryCatch #0 {all -> 0x018e, blocks: (B:3:0x000c, B:5:0x007c, B:7:0x0082, B:9:0x0089, B:15:0x00f0, B:17:0x00f4, B:19:0x013d, B:20:0x0115, B:22:0x00e7, B:24:0x018a), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0115 A[Catch: all -> 0x018e, TryCatch #0 {all -> 0x018e, blocks: (B:3:0x000c, B:5:0x007c, B:7:0x0082, B:9:0x0089, B:15:0x00f0, B:17:0x00f4, B:19:0x013d, B:20:0x0115, B:22:0x00e7, B:24:0x018a), top: B:2:0x000c }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -185,6 +186,7 @@ public class p extends FrameLayout implements a {
         try {
             Bitmap decodeFile = BitmapFactory.decodeFile(str);
             Matrix matrix2 = new Matrix();
+            char c11 = 2;
             matrix2.postTranslate((-decodeFile.getWidth()) / 2, (-decodeFile.getHeight()) / 2);
             float max = 1.0f / (Math.max(decodeFile.getWidth(), decodeFile.getHeight()) / Math.max(i10, i11));
             matrix2.postScale(max, max);
@@ -201,10 +203,19 @@ public class p extends FrameLayout implements a {
                 int i14 = 0;
                 while (i14 < size) {
                     VideoEditedInfo.MediaEntity mediaEntity = (VideoEditedInfo.MediaEntity) arrayList.get(i14);
-                    float[] fArr = {((mediaEntity.width / 2.0f) + mediaEntity.x) * decodeFile.getWidth(), ((mediaEntity.height / 2.0f) + mediaEntity.y) * decodeFile.getHeight(), mediaEntity.textViewX * decodeFile.getWidth(), mediaEntity.textViewY * decodeFile.getHeight()};
+                    float width = ((mediaEntity.width / 2.0f) + mediaEntity.x) * decodeFile.getWidth();
+                    float height = ((mediaEntity.height / 2.0f) + mediaEntity.y) * decodeFile.getHeight();
+                    char c12 = c11;
+                    float width2 = mediaEntity.textViewX * decodeFile.getWidth();
+                    float height2 = mediaEntity.textViewY * decodeFile.getHeight();
+                    float[] fArr = new float[4];
+                    fArr[0] = width;
+                    fArr[1] = height;
+                    fArr[c12] = width2;
+                    fArr[3] = height2;
                     matrix2.mapPoints(fArr);
-                    int width = decodeFile.getWidth();
-                    int height = decodeFile.getHeight();
+                    int width3 = decodeFile.getWidth();
+                    int height3 = decodeFile.getHeight();
                     if (f11 != 90.0f) {
                         if (f11 == 270.0f) {
                         }
@@ -215,35 +226,37 @@ public class p extends FrameLayout implements a {
                         } else {
                             c10 = 1;
                             float f13 = i12;
-                            float f14 = width;
+                            float f14 = width3;
                             mediaEntity.viewWidth = (int) ((mediaEntity.viewWidth / f13) * f14);
                             float f15 = i13;
-                            float f16 = height;
+                            float f16 = height3;
                             mediaEntity.viewHeight = (int) ((mediaEntity.viewHeight / f15) * f16);
                             mediaEntity.width = ((mediaEntity.width * f13) / f14) * f12 * f7;
                             mediaEntity.height = ((mediaEntity.height * f15) / f16) * f12 * f7;
                         }
                         mediaEntity.x = (fArr[0] / bitmap.getWidth()) - (mediaEntity.width / 2.0f);
                         mediaEntity.y = (fArr[c10] / bitmap.getHeight()) - (mediaEntity.height / 2.0f);
-                        mediaEntity.textViewX = fArr[2] / bitmap.getWidth();
+                        mediaEntity.textViewX = fArr[c12] / bitmap.getWidth();
                         mediaEntity.textViewY = fArr[3] / bitmap.getHeight();
                         mediaEntity.rotation = (float) (mediaEntity.rotation - ((f10 + f11) * 0.017453292519943295d));
                         i14++;
                         i12 = i10;
                         i13 = i11;
+                        c11 = c12;
                     }
-                    width = decodeFile.getHeight();
-                    height = decodeFile.getWidth();
+                    width3 = decodeFile.getHeight();
+                    height3 = decodeFile.getWidth();
                     if (mediaEntity.type != 1) {
                     }
                     mediaEntity.x = (fArr[0] / bitmap.getWidth()) - (mediaEntity.width / 2.0f);
                     mediaEntity.y = (fArr[c10] / bitmap.getHeight()) - (mediaEntity.height / 2.0f);
-                    mediaEntity.textViewX = fArr[2] / bitmap.getWidth();
+                    mediaEntity.textViewX = fArr[c12] / bitmap.getWidth();
                     mediaEntity.textViewY = fArr[3] / bitmap.getHeight();
                     mediaEntity.rotation = (float) (mediaEntity.rotation - ((f10 + f11) * 0.017453292519943295d));
                     i14++;
                     i12 = i10;
                     i13 = i11;
+                    c11 = c12;
                 }
             }
             decodeFile.recycle();
@@ -324,8 +337,8 @@ public class p extends FrameLayout implements a {
         d(rectF);
         o oVar = this.M;
         if (oVar != null) {
-            oVar.n0(false);
-            this.M.S(true);
+            oVar.S(false);
+            this.M.D(true);
         }
     }
 
@@ -345,7 +358,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            q.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            q.o(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -463,9 +476,9 @@ public class p extends FrameLayout implements a {
         float f11 = (cropWidth - a2) / 2.0f;
         n nVar = this.L;
         float f12 = nVar.e;
-        k2.e eVar = this.s;
-        float[] fArr = (float[]) eVar.b;
-        float[] fArr2 = (float[]) eVar.b;
+        g0 g0Var = this.s;
+        float[] fArr = (float[]) g0Var.b;
+        float[] fArr2 = (float[]) g0Var.b;
         float f13 = rectF2.left;
         fArr[0] = f13;
         float f14 = rectF2.top;
@@ -552,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        u71 u71Var = this.d;
-        if (u71Var != null) {
-            return u71Var.getVideoHeight();
+        z71 z71Var = this.d;
+        if (z71Var != null) {
+            return z71Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -565,9 +578,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        u71 u71Var = this.d;
-        if (u71Var != null) {
-            return u71Var.getVideoWidth();
+        z71 z71Var = this.d;
+        if (z71Var != null) {
+            return z71Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -685,7 +698,7 @@ public class p extends FrameLayout implements a {
             if (!n.c(nVar2) && f11 == 0.0f && this.a.getLockAspectRatio() == 0.0f && !this.L.j) {
                 z10 = true;
             }
-            oVar.n0(z10);
+            oVar.S(z10);
         }
         return this.L.j;
     }
@@ -719,8 +732,8 @@ public class p extends FrameLayout implements a {
         this.n = 0.0f;
         o oVar = this.M;
         if (oVar != null) {
-            oVar.n0(true);
-            this.M.S(false);
+            oVar.S(true);
+            this.M.D(false);
         }
     }
 
@@ -748,7 +761,7 @@ public class p extends FrameLayout implements a {
             e(true, false, false, false);
             o oVar = this.M;
             if (oVar != null) {
-                oVar.n0(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
+                oVar.S(f12 == 0.0f && cropAreaView.getLockAspectRatio() == 0.0f && !this.L.j);
             }
             if (((int) this.L.h) != 0) {
                 return true;
@@ -782,7 +795,7 @@ public class p extends FrameLayout implements a {
         alertDialog$Builder.f(strArr, new j(i11, this, numArr));
         b2 b2Var = alertDialog$Builder.a;
         b2Var.setCanceledOnTouchOutside(true);
-        b2Var.setOnCancelListener(new ed(this, i10));
+        b2Var.setOnCancelListener(new fd(this, i10));
         b2Var.show();
     }
 
@@ -807,7 +820,7 @@ public class p extends FrameLayout implements a {
                     this.n = 0.0f;
                     o oVar = this.M;
                     if (oVar != null) {
-                        oVar.n0(false);
+                        oVar.S(false);
                     }
                 }
                 try {
@@ -916,7 +929,7 @@ public class p extends FrameLayout implements a {
         matrix.postTranslate(cropAreaView.getCropCenterX(), cropAreaView.getCropCenterY());
         if (!this.x || this.J || z10) {
             q();
-            this.M.F();
+            this.M.w();
         }
         invalidate();
     }

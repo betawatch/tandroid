@@ -1,1666 +1,313 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.os.SystemClock;
-import android.text.InputFilter;
-import android.text.method.PasswordTransformationMethod;
-import android.util.Property;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FingerprintController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class ee0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public static final int[] a0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
-    public final ImageView E;
-    public final View F;
+public final class ee0 extends HorizontalScrollView {
+    public int E;
+    public int F;
     public int G;
-    public int H;
-    public final nj0 I;
-    public final Rect J;
-    public de0 K;
-    public o1.k L;
-    public final LinkedList M;
-    public final LinkedList N;
-    public final ArrayList O;
-    public float P;
-    public int Q;
-    public final org.telegram.ui.Cells.t6 R;
-    public int S;
-    public ci.i4 T;
-    public boolean U;
-    public ValueAnimator V;
-    public final int[] W;
-    public Drawable a;
-    public final FrameLayout b;
-    public final TextView c;
-    public final FrameLayout d;
-    public final ai.w5 e;
-    public final ArrayList f;
-    public final FrameLayout h;
-    public final ce0 n;
-    public final EditTextBoldCursor r;
-    public final ci.i9 s;
-    public final ci.m6 v;
-    public final TextView w;
-    public final TextView x;
-    public final ImageView y;
+    public final org.telegram.ui.ActionBar.e6 H;
+    public int I;
+    public final g6 J;
+    public final g6 K;
+    public final LinearLayout.LayoutParams a;
+    public final ai.o7 b;
+    public z4.e c;
+    public final LinearLayout d;
+    public z4.g e;
+    public int f;
+    public int h;
+    public float n;
+    public final Paint r;
+    public int s;
+    public int v;
+    public boolean w;
+    public int x;
+    public int y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ee0(Context context) {
+    public ee0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        int i10;
-        int[] iArr = a0;
-        final int i11 = 0;
-        this.G = 0;
-        this.J = new Rect();
-        this.M = new LinkedList();
-        this.N = new LinkedList();
-        this.O = new ArrayList();
-        this.Q = -12;
-        this.R = new org.telegram.ui.Cells.t6(this, 18);
-        this.U = true;
-        this.W = new int[2];
+        this.b = new ai.o7(this, 2);
+        this.h = 0;
+        this.n = 0.0f;
+        this.s = -10066330;
+        this.v = 436207616;
+        this.w = false;
+        this.x = AndroidUtilities.dp(52.0f);
+        this.y = AndroidUtilities.dp(8.0f);
+        this.E = AndroidUtilities.dp(2.0f);
+        this.F = AndroidUtilities.dp(12.0f);
+        this.G = AndroidUtilities.dp(24.0f);
+        this.I = 0;
+        hs hsVar = hs.h;
+        this.J = new g6(this, 350L, hsVar);
+        this.K = new g6(this, 350L, hsVar);
+        this.H = e6Var;
+        setFillViewport(true);
         setWillNotDraw(false);
-        setVisibility(8);
-        ci.m6 m6Var = new ci.m6(this, context);
-        this.v = m6Var;
-        m6Var.setWillNotDraw(false);
-        addView(m6Var, w7.z5.c(-1.0f, -1));
-        nj0 nj0Var = new nj0(context);
-        this.I = nj0Var;
-        nj0Var.f(R.raw.passcode_lock, 58, 58, null);
-        nj0Var.setAutoRepeat(false);
-        addView(nj0Var, w7.z5.e(58, 58, 51));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.h = frameLayout;
-        m6Var.addView(frameLayout, w7.z5.c(-1.0f, -1));
-        TextView textView = new TextView(context);
-        this.w = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 18.33f);
-        textView.setGravity(1);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setAlpha(0.0f);
-        TextView i12 = org.telegram.ui.Cells.c1.i(frameLayout, textView, w7.z5.d(-2, -2.0f, 81, 0.0f, 0.0f, 0.0f, 128.0f), context);
-        this.x = i12;
-        i12.setTextColor(-1);
-        i12.setTextSize(1, 15.0f);
-        i12.setGravity(1);
-        i12.setVisibility(4);
-        m6Var.addView(i12, w7.z5.e(-2, -2, 17));
-        ci.i9 i9Var = new ci.i9(this, context);
-        this.s = i9Var;
-        frameLayout.addView(i9Var, w7.z5.d(-1, -2.0f, 81, 70.0f, 0.0f, 70.0f, 46.0f));
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.r = editTextBoldCursor;
-        editTextBoldCursor.setTextSize(1, 36.0f);
-        editTextBoldCursor.setTextColor(-1);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setGravity(1);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setTypeface(Typeface.DEFAULT);
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setCursorColor(-1);
-        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(32.0f));
-        frameLayout.addView(editTextBoldCursor, w7.z5.d(-1, -2.0f, 81, 70.0f, 0.0f, 70.0f, 0.0f));
-        editTextBoldCursor.setOnEditorActionListener(new e1(this, 3));
-        editTextBoldCursor.addTextChangedListener(new ci.i2(this, 10));
-        editTextBoldCursor.setCustomSelectionActionModeCallback(new ii.d1(2));
-        ImageView imageView = new ImageView(context);
-        this.y = imageView;
-        imageView.setImageResource(R.drawable.passcode_check);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setBackgroundResource(R.drawable.bar_selector_lock);
-        frameLayout.addView(imageView, w7.z5.d(60, 60.0f, 85, 0.0f, 0.0f, 10.0f, 4.0f));
-        imageView.setContentDescription(LocaleController.getString(R.string.Done));
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vd0
-            public final /* synthetic */ ee0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LinkedList linkedList;
-                LinkedList linkedList2;
-                int i13;
-                boolean z10;
-                LinkedList linkedList3;
-                int i14;
-                int i15;
-                int i16;
-                boolean z11;
-                boolean z12;
-                int i17 = i11;
-                ee0 ee0Var = this.b;
-                switch (i17) {
-                    case 0:
-                        ee0Var.k(false);
-                        break;
-                    case 1:
-                        ee0Var.c();
-                        break;
-                    default:
-                        LinkedList linkedList4 = ee0Var.N;
-                        LinkedList linkedList5 = ee0Var.M;
-                        ci.i9 i9Var2 = ee0Var.s;
-                        if (ee0Var.U) {
-                            int intValue = ((Integer) view.getTag()).intValue();
-                            switch (intValue) {
-                                case 0:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("0");
-                                    z10 = false;
-                                    break;
-                                case 1:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("1");
-                                    z10 = false;
-                                    break;
-                                case 2:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("2");
-                                    z10 = false;
-                                    break;
-                                case 3:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("3");
-                                    z10 = false;
-                                    break;
-                                case 4:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("4");
-                                    z10 = false;
-                                    break;
-                                case 5:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("5");
-                                    z10 = false;
-                                    break;
-                                case 6:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("6");
-                                    z10 = false;
-                                    break;
-                                case 7:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("7");
-                                    z10 = false;
-                                    break;
-                                case 8:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("8");
-                                    z10 = false;
-                                    break;
-                                case 9:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    i9Var2.b("9");
-                                    z10 = false;
-                                    break;
-                                case 10:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    ee0Var.c();
-                                    z10 = false;
-                                    break;
-                                case 11:
-                                    ArrayList arrayList = (ArrayList) i9Var2.c;
-                                    Property property = View.TRANSLATION_Y;
-                                    Property property2 = View.ALPHA;
-                                    Property property3 = View.SCALE_Y;
-                                    Property property4 = View.SCALE_X;
-                                    ArrayList arrayList2 = (ArrayList) i9Var2.b;
-                                    Property property5 = View.TRANSLATION_X;
-                                    StringBuilder sb2 = (StringBuilder) i9Var2.d;
-                                    if (sb2.length() == 0) {
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i13 = intValue;
-                                        z10 = false;
-                                        break;
-                                    } else {
-                                        try {
-                                            i9Var2.performHapticFeedback(3);
-                                        } catch (Exception e7) {
-                                            FileLog.e(e7);
-                                        }
-                                        ArrayList arrayList3 = new ArrayList();
-                                        int length = sb2.length() - 1;
-                                        if (length != 0) {
-                                            sb2.deleteCharAt(length);
-                                        }
-                                        linkedList = linkedList4;
-                                        int i18 = length;
-                                        while (i18 < 4) {
-                                            TextView textView2 = (TextView) arrayList2.get(i18);
-                                            if (textView2.getAlpha() != 0.0f) {
-                                                linkedList3 = linkedList5;
-                                                i14 = intValue;
-                                                i15 = 1;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property4, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property5, i9Var2.c(i18)));
-                                            } else {
-                                                linkedList3 = linkedList5;
-                                                i14 = intValue;
-                                                i15 = 1;
-                                            }
-                                            TextView textView3 = (TextView) arrayList.get(i18);
-                                            if (textView3.getAlpha() != 0.0f) {
-                                                float[] fArr = new float[i15];
-                                                fArr[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property4, fArr));
-                                                float[] fArr2 = new float[i15];
-                                                fArr2[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, fArr2));
-                                                float[] fArr3 = new float[i15];
-                                                fArr3[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property2, fArr3));
-                                                float[] fArr4 = new float[i15];
-                                                fArr4[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property, fArr4));
-                                                float c10 = i9Var2.c(i18);
-                                                i16 = i18;
-                                                float[] fArr5 = new float[i15];
-                                                fArr5[0] = c10;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property5, fArr5));
-                                            } else {
-                                                i16 = i18;
-                                            }
-                                            i18 = i16 + 1;
-                                            linkedList5 = linkedList3;
-                                            intValue = i14;
-                                        }
-                                        linkedList2 = linkedList5;
-                                        i13 = intValue;
-                                        if (length == 0) {
-                                            sb2.deleteCharAt(length);
-                                        }
-                                        for (int i19 = 0; i19 < length; i19++) {
-                                            arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList2.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                            arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                        }
-                                        kf kfVar = (kf) i9Var2.f;
-                                        if (kfVar != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(kfVar);
-                                            i9Var2.f = null;
-                                        }
-                                        AnimatorSet animatorSet = (AnimatorSet) i9Var2.e;
-                                        if (animatorSet != null) {
-                                            animatorSet.cancel();
-                                        }
-                                        AnimatorSet animatorSet2 = new AnimatorSet();
-                                        i9Var2.e = animatorSet2;
-                                        animatorSet2.setDuration(150L);
-                                        ((AnimatorSet) i9Var2.e).playTogether(arrayList3);
-                                        ((AnimatorSet) i9Var2.e).addListener(new ae0(i9Var2, 1));
-                                        ((AnimatorSet) i9Var2.e).start();
-                                        ee0.a((ee0) i9Var2.h);
-                                        z10 = true;
-                                        break;
-                                    }
-                                default:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i13 = intValue;
-                                    z10 = false;
-                                    break;
-                            }
-                            if (((StringBuilder) i9Var2.d).length() == 4) {
-                                ee0Var.k(false);
-                            }
-                            int i20 = 11;
-                            int i21 = i13;
-                            if (i21 != 11) {
-                                Drawable drawable = ee0Var.a;
-                                if (drawable instanceof pc0) {
-                                    pc0 pc0Var = (pc0) drawable;
-                                    pc0Var.D = null;
-                                    pc0Var.z();
-                                    float f7 = pc0Var.h;
-                                    if (i21 == 10) {
-                                        if (z10) {
-                                            pc0Var.y();
-                                            z12 = true;
-                                        } else {
-                                            z12 = false;
-                                        }
-                                        z11 = false;
-                                    } else {
-                                        z11 = true;
-                                        pc0Var.x(true);
-                                        z12 = true;
-                                    }
-                                    if (z12) {
-                                        if (f7 >= 1.0f) {
-                                            ee0Var.b(pc0Var);
-                                            break;
-                                        } else {
-                                            ci.y0 y0Var = new ci.y0(ee0Var, z11, pc0Var, 21);
-                                            LinkedList linkedList6 = linkedList2;
-                                            linkedList6.offer(y0Var);
-                                            LinkedList linkedList7 = linkedList;
-                                            linkedList7.offer(Boolean.valueOf(z11));
-                                            ArrayList arrayList4 = new ArrayList();
-                                            ArrayList arrayList5 = new ArrayList();
-                                            for (int i22 = 0; i22 < linkedList6.size(); i22++) {
-                                                Runnable runnable = (Runnable) linkedList6.get(i22);
-                                                Boolean bool = (Boolean) linkedList7.get(i22);
-                                                if (bool != null && bool.booleanValue() != z11) {
-                                                    arrayList4.add(runnable);
-                                                    arrayList5.add(Integer.valueOf(i22));
-                                                }
-                                            }
-                                            int size = arrayList4.size();
-                                            int i23 = 0;
-                                            while (i23 < size) {
-                                                Object obj = arrayList4.get(i23);
-                                                i23++;
-                                                linkedList6.remove((Runnable) obj);
-                                            }
-                                            Collections.sort(arrayList5, new org.telegram.ui.ff(i20));
-                                            int size2 = arrayList5.size();
-                                            int i24 = 0;
-                                            while (i24 < size2) {
-                                                Object obj2 = arrayList5.get(i24);
-                                                i24++;
-                                                linkedList7.remove(((Integer) obj2).intValue());
-                                            }
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        ImageView imageView2 = new ImageView(context);
-        this.E = imageView2;
-        imageView2.setImageResource(R.drawable.fingerprint);
-        imageView2.setScaleType(scaleType);
-        imageView2.setBackgroundResource(R.drawable.bar_selector_lock);
-        frameLayout.addView(imageView2, w7.z5.d(60, 60.0f, 83, 10.0f, 0.0f, 0.0f, 4.0f));
-        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrFingerprint));
-        final int i13 = 1;
-        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vd0
-            public final /* synthetic */ ee0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                LinkedList linkedList;
-                LinkedList linkedList2;
-                int i132;
-                boolean z10;
-                LinkedList linkedList3;
-                int i14;
-                int i15;
-                int i16;
-                boolean z11;
-                boolean z12;
-                int i17 = i13;
-                ee0 ee0Var = this.b;
-                switch (i17) {
-                    case 0:
-                        ee0Var.k(false);
-                        break;
-                    case 1:
-                        ee0Var.c();
-                        break;
-                    default:
-                        LinkedList linkedList4 = ee0Var.N;
-                        LinkedList linkedList5 = ee0Var.M;
-                        ci.i9 i9Var2 = ee0Var.s;
-                        if (ee0Var.U) {
-                            int intValue = ((Integer) view.getTag()).intValue();
-                            switch (intValue) {
-                                case 0:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("0");
-                                    z10 = false;
-                                    break;
-                                case 1:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("1");
-                                    z10 = false;
-                                    break;
-                                case 2:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("2");
-                                    z10 = false;
-                                    break;
-                                case 3:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("3");
-                                    z10 = false;
-                                    break;
-                                case 4:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("4");
-                                    z10 = false;
-                                    break;
-                                case 5:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("5");
-                                    z10 = false;
-                                    break;
-                                case 6:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("6");
-                                    z10 = false;
-                                    break;
-                                case 7:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("7");
-                                    z10 = false;
-                                    break;
-                                case 8:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("8");
-                                    z10 = false;
-                                    break;
-                                case 9:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    i9Var2.b("9");
-                                    z10 = false;
-                                    break;
-                                case 10:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    ee0Var.c();
-                                    z10 = false;
-                                    break;
-                                case 11:
-                                    ArrayList arrayList = (ArrayList) i9Var2.c;
-                                    Property property = View.TRANSLATION_Y;
-                                    Property property2 = View.ALPHA;
-                                    Property property3 = View.SCALE_Y;
-                                    Property property4 = View.SCALE_X;
-                                    ArrayList arrayList2 = (ArrayList) i9Var2.b;
-                                    Property property5 = View.TRANSLATION_X;
-                                    StringBuilder sb2 = (StringBuilder) i9Var2.d;
-                                    if (sb2.length() == 0) {
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        z10 = false;
-                                        break;
-                                    } else {
-                                        try {
-                                            i9Var2.performHapticFeedback(3);
-                                        } catch (Exception e7) {
-                                            FileLog.e(e7);
-                                        }
-                                        ArrayList arrayList3 = new ArrayList();
-                                        int length = sb2.length() - 1;
-                                        if (length != 0) {
-                                            sb2.deleteCharAt(length);
-                                        }
-                                        linkedList = linkedList4;
-                                        int i18 = length;
-                                        while (i18 < 4) {
-                                            TextView textView2 = (TextView) arrayList2.get(i18);
-                                            if (textView2.getAlpha() != 0.0f) {
-                                                linkedList3 = linkedList5;
-                                                i14 = intValue;
-                                                i15 = 1;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property4, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f));
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property5, i9Var2.c(i18)));
-                                            } else {
-                                                linkedList3 = linkedList5;
-                                                i14 = intValue;
-                                                i15 = 1;
-                                            }
-                                            TextView textView3 = (TextView) arrayList.get(i18);
-                                            if (textView3.getAlpha() != 0.0f) {
-                                                float[] fArr = new float[i15];
-                                                fArr[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property4, fArr));
-                                                float[] fArr2 = new float[i15];
-                                                fArr2[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, fArr2));
-                                                float[] fArr3 = new float[i15];
-                                                fArr3[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property2, fArr3));
-                                                float[] fArr4 = new float[i15];
-                                                fArr4[0] = 0.0f;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property, fArr4));
-                                                float c10 = i9Var2.c(i18);
-                                                i16 = i18;
-                                                float[] fArr5 = new float[i15];
-                                                fArr5[0] = c10;
-                                                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property5, fArr5));
-                                            } else {
-                                                i16 = i18;
-                                            }
-                                            i18 = i16 + 1;
-                                            linkedList5 = linkedList3;
-                                            intValue = i14;
-                                        }
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        if (length == 0) {
-                                            sb2.deleteCharAt(length);
-                                        }
-                                        for (int i19 = 0; i19 < length; i19++) {
-                                            arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList2.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                            arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                        }
-                                        kf kfVar = (kf) i9Var2.f;
-                                        if (kfVar != null) {
-                                            AndroidUtilities.cancelRunOnUIThread(kfVar);
-                                            i9Var2.f = null;
-                                        }
-                                        AnimatorSet animatorSet = (AnimatorSet) i9Var2.e;
-                                        if (animatorSet != null) {
-                                            animatorSet.cancel();
-                                        }
-                                        AnimatorSet animatorSet2 = new AnimatorSet();
-                                        i9Var2.e = animatorSet2;
-                                        animatorSet2.setDuration(150L);
-                                        ((AnimatorSet) i9Var2.e).playTogether(arrayList3);
-                                        ((AnimatorSet) i9Var2.e).addListener(new ae0(i9Var2, 1));
-                                        ((AnimatorSet) i9Var2.e).start();
-                                        ee0.a((ee0) i9Var2.h);
-                                        z10 = true;
-                                        break;
-                                    }
-                                default:
-                                    linkedList = linkedList4;
-                                    linkedList2 = linkedList5;
-                                    i132 = intValue;
-                                    z10 = false;
-                                    break;
-                            }
-                            if (((StringBuilder) i9Var2.d).length() == 4) {
-                                ee0Var.k(false);
-                            }
-                            int i20 = 11;
-                            int i21 = i132;
-                            if (i21 != 11) {
-                                Drawable drawable = ee0Var.a;
-                                if (drawable instanceof pc0) {
-                                    pc0 pc0Var = (pc0) drawable;
-                                    pc0Var.D = null;
-                                    pc0Var.z();
-                                    float f7 = pc0Var.h;
-                                    if (i21 == 10) {
-                                        if (z10) {
-                                            pc0Var.y();
-                                            z12 = true;
-                                        } else {
-                                            z12 = false;
-                                        }
-                                        z11 = false;
-                                    } else {
-                                        z11 = true;
-                                        pc0Var.x(true);
-                                        z12 = true;
-                                    }
-                                    if (z12) {
-                                        if (f7 >= 1.0f) {
-                                            ee0Var.b(pc0Var);
-                                            break;
-                                        } else {
-                                            ci.y0 y0Var = new ci.y0(ee0Var, z11, pc0Var, 21);
-                                            LinkedList linkedList6 = linkedList2;
-                                            linkedList6.offer(y0Var);
-                                            LinkedList linkedList7 = linkedList;
-                                            linkedList7.offer(Boolean.valueOf(z11));
-                                            ArrayList arrayList4 = new ArrayList();
-                                            ArrayList arrayList5 = new ArrayList();
-                                            for (int i22 = 0; i22 < linkedList6.size(); i22++) {
-                                                Runnable runnable = (Runnable) linkedList6.get(i22);
-                                                Boolean bool = (Boolean) linkedList7.get(i22);
-                                                if (bool != null && bool.booleanValue() != z11) {
-                                                    arrayList4.add(runnable);
-                                                    arrayList5.add(Integer.valueOf(i22));
-                                                }
-                                            }
-                                            int size = arrayList4.size();
-                                            int i23 = 0;
-                                            while (i23 < size) {
-                                                Object obj = arrayList4.get(i23);
-                                                i23++;
-                                                linkedList6.remove((Runnable) obj);
-                                            }
-                                            Collections.sort(arrayList5, new org.telegram.ui.ff(i20));
-                                            int size2 = arrayList5.size();
-                                            int i24 = 0;
-                                            while (i24 < size2) {
-                                                Object obj2 = arrayList5.get(i24);
-                                                i24++;
-                                                linkedList7.remove(((Integer) obj2).intValue());
-                                            }
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        View view = new View(context);
-        this.F = view;
-        view.setBackgroundColor(822083583);
-        frameLayout.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 87));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.d = frameLayout2;
-        m6Var.addView(frameLayout2, w7.z5.e(-1, -1, 51));
-        ai.w5 w5Var = new ai.w5(context, 17);
-        this.e = w5Var;
-        frameLayout2.addView(w5Var, w7.z5.e(-2, -2, 17));
-        FrameLayout frameLayout3 = new FrameLayout(context);
-        this.b = frameLayout3;
-        w5Var.addView(frameLayout3, w7.z5.e(-2, -2, 49));
-        TextView f7 = org.telegram.messenger.q.f(context, 1, 15.0f);
-        f7.setTypeface(AndroidUtilities.bold());
-        f7.setTextColor(-1);
-        f7.setText(LocaleController.getString(R.string.UnlockToUse));
-        TextView i14 = org.telegram.ui.Cells.c1.i(frameLayout3, f7, w7.z5.d(-2, -2.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f), context);
-        this.c = i14;
-        i14.setTextSize(1, 14.0f);
-        i14.setTextColor(-1);
-        i14.setText(LocaleController.getString(R.string.EnterPINorFingerprint));
-        frameLayout3.addView(i14, w7.z5.d(-2, -2.0f, 49, 0.0f, 23.0f, 0.0f, 0.0f));
-        this.f = new ArrayList(10);
-        int i15 = 0;
-        while (true) {
-            if (i15 >= 12) {
-                break;
-            }
-            ce0 ce0Var = new ce0(context);
-            w7.b6.b(ce0Var, 0.15f, 1.5f);
-            ce0Var.setTag(Integer.valueOf(i15));
-            if (i15 == 11) {
-                int dp = AndroidUtilities.dp(30.0f);
-                ce0Var.setBackground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, 0, 654311423, 654311423));
-                ce0Var.setImage(R.drawable.filled_clear);
-                ce0Var.setOnLongClickListener(new p10(this, 1));
-                ce0Var.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
-                l(ce0Var, R.id.passcode_btn_0);
-            } else if (i15 == 10) {
-                this.n = ce0Var;
-                int dp2 = AndroidUtilities.dp(30.0f);
-                ce0Var.setBackground(org.telegram.ui.ActionBar.i6.i0(dp2, dp2, dp2, dp2, 0, 654311423, 654311423));
-                ce0Var.setContentDescription(LocaleController.getString(R.string.AccDescrFingerprint));
-                ce0Var.setImage(R.drawable.fingerprint);
-                l(ce0Var, R.id.passcode_btn_1);
-            } else {
-                int dp3 = AndroidUtilities.dp(30.0f);
-                ce0Var.setBackground(org.telegram.ui.ActionBar.i6.i0(dp3, dp3, dp3, dp3, 654311423, 1291845631, 1291845631));
-                ce0Var.setContentDescription(i15 + "");
-                ce0Var.setNum(i15);
-                if (i15 == 0) {
-                    l(ce0Var, R.id.passcode_btn_backspace);
-                } else if (i15 == 9) {
-                    Activity findActivity = AndroidUtilities.findActivity(getContext());
-                    if (Build.VERSION.SDK_INT >= 23 && findActivity != null && SharedConfig.useFingerprintLock) {
-                        try {
-                            Context context2 = ApplicationLoader.applicationContext;
-                            xf.a aVar = xf.b.a;
-                            if (aVar.H0(context2) && aVar.c(context2) && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()) {
-                                l(ce0Var, R.id.passcode_btn_fingerprint);
-                            }
-                        } catch (Throwable th2) {
-                            FileLog.e(th2);
-                        }
-                    }
-                    l(ce0Var, R.id.passcode_btn_0);
-                } else {
-                    l(ce0Var, iArr[i15 + 1]);
-                }
-            }
-            ce0Var.setId(iArr[i15]);
-            final int i16 = 2;
-            ce0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vd0
-                public final /* synthetic */ ee0 b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    LinkedList linkedList;
-                    LinkedList linkedList2;
-                    int i132;
-                    boolean z10;
-                    LinkedList linkedList3;
-                    int i142;
-                    int i152;
-                    int i162;
-                    boolean z11;
-                    boolean z12;
-                    int i17 = i16;
-                    ee0 ee0Var = this.b;
-                    switch (i17) {
-                        case 0:
-                            ee0Var.k(false);
-                            break;
-                        case 1:
-                            ee0Var.c();
-                            break;
-                        default:
-                            LinkedList linkedList4 = ee0Var.N;
-                            LinkedList linkedList5 = ee0Var.M;
-                            ci.i9 i9Var2 = ee0Var.s;
-                            if (ee0Var.U) {
-                                int intValue = ((Integer) view2.getTag()).intValue();
-                                switch (intValue) {
-                                    case 0:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("0");
-                                        z10 = false;
-                                        break;
-                                    case 1:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("1");
-                                        z10 = false;
-                                        break;
-                                    case 2:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("2");
-                                        z10 = false;
-                                        break;
-                                    case 3:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("3");
-                                        z10 = false;
-                                        break;
-                                    case 4:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("4");
-                                        z10 = false;
-                                        break;
-                                    case 5:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("5");
-                                        z10 = false;
-                                        break;
-                                    case 6:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("6");
-                                        z10 = false;
-                                        break;
-                                    case 7:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("7");
-                                        z10 = false;
-                                        break;
-                                    case 8:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("8");
-                                        z10 = false;
-                                        break;
-                                    case 9:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        i9Var2.b("9");
-                                        z10 = false;
-                                        break;
-                                    case 10:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        ee0Var.c();
-                                        z10 = false;
-                                        break;
-                                    case 11:
-                                        ArrayList arrayList = (ArrayList) i9Var2.c;
-                                        Property property = View.TRANSLATION_Y;
-                                        Property property2 = View.ALPHA;
-                                        Property property3 = View.SCALE_Y;
-                                        Property property4 = View.SCALE_X;
-                                        ArrayList arrayList2 = (ArrayList) i9Var2.b;
-                                        Property property5 = View.TRANSLATION_X;
-                                        StringBuilder sb2 = (StringBuilder) i9Var2.d;
-                                        if (sb2.length() == 0) {
-                                            linkedList = linkedList4;
-                                            linkedList2 = linkedList5;
-                                            i132 = intValue;
-                                            z10 = false;
-                                            break;
-                                        } else {
-                                            try {
-                                                i9Var2.performHapticFeedback(3);
-                                            } catch (Exception e7) {
-                                                FileLog.e(e7);
-                                            }
-                                            ArrayList arrayList3 = new ArrayList();
-                                            int length = sb2.length() - 1;
-                                            if (length != 0) {
-                                                sb2.deleteCharAt(length);
-                                            }
-                                            linkedList = linkedList4;
-                                            int i18 = length;
-                                            while (i18 < 4) {
-                                                TextView textView2 = (TextView) arrayList2.get(i18);
-                                                if (textView2.getAlpha() != 0.0f) {
-                                                    linkedList3 = linkedList5;
-                                                    i142 = intValue;
-                                                    i152 = 1;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property4, 0.0f));
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 0.0f));
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f));
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f));
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property5, i9Var2.c(i18)));
-                                                } else {
-                                                    linkedList3 = linkedList5;
-                                                    i142 = intValue;
-                                                    i152 = 1;
-                                                }
-                                                TextView textView3 = (TextView) arrayList.get(i18);
-                                                if (textView3.getAlpha() != 0.0f) {
-                                                    float[] fArr = new float[i152];
-                                                    fArr[0] = 0.0f;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property4, fArr));
-                                                    float[] fArr2 = new float[i152];
-                                                    fArr2[0] = 0.0f;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, fArr2));
-                                                    float[] fArr3 = new float[i152];
-                                                    fArr3[0] = 0.0f;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property2, fArr3));
-                                                    float[] fArr4 = new float[i152];
-                                                    fArr4[0] = 0.0f;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property, fArr4));
-                                                    float c10 = i9Var2.c(i18);
-                                                    i162 = i18;
-                                                    float[] fArr5 = new float[i152];
-                                                    fArr5[0] = c10;
-                                                    arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property5, fArr5));
-                                                } else {
-                                                    i162 = i18;
-                                                }
-                                                i18 = i162 + 1;
-                                                linkedList5 = linkedList3;
-                                                intValue = i142;
-                                            }
-                                            linkedList2 = linkedList5;
-                                            i132 = intValue;
-                                            if (length == 0) {
-                                                sb2.deleteCharAt(length);
-                                            }
-                                            for (int i19 = 0; i19 < length; i19++) {
-                                                arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList2.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                                arrayList3.add(ObjectAnimator.ofFloat((TextView) arrayList.get(i19), (Property<TextView, Float>) property5, i9Var2.c(i19)));
-                                            }
-                                            kf kfVar = (kf) i9Var2.f;
-                                            if (kfVar != null) {
-                                                AndroidUtilities.cancelRunOnUIThread(kfVar);
-                                                i9Var2.f = null;
-                                            }
-                                            AnimatorSet animatorSet = (AnimatorSet) i9Var2.e;
-                                            if (animatorSet != null) {
-                                                animatorSet.cancel();
-                                            }
-                                            AnimatorSet animatorSet2 = new AnimatorSet();
-                                            i9Var2.e = animatorSet2;
-                                            animatorSet2.setDuration(150L);
-                                            ((AnimatorSet) i9Var2.e).playTogether(arrayList3);
-                                            ((AnimatorSet) i9Var2.e).addListener(new ae0(i9Var2, 1));
-                                            ((AnimatorSet) i9Var2.e).start();
-                                            ee0.a((ee0) i9Var2.h);
-                                            z10 = true;
-                                            break;
-                                        }
-                                    default:
-                                        linkedList = linkedList4;
-                                        linkedList2 = linkedList5;
-                                        i132 = intValue;
-                                        z10 = false;
-                                        break;
-                                }
-                                if (((StringBuilder) i9Var2.d).length() == 4) {
-                                    ee0Var.k(false);
-                                }
-                                int i20 = 11;
-                                int i21 = i132;
-                                if (i21 != 11) {
-                                    Drawable drawable = ee0Var.a;
-                                    if (drawable instanceof pc0) {
-                                        pc0 pc0Var = (pc0) drawable;
-                                        pc0Var.D = null;
-                                        pc0Var.z();
-                                        float f72 = pc0Var.h;
-                                        if (i21 == 10) {
-                                            if (z10) {
-                                                pc0Var.y();
-                                                z12 = true;
-                                            } else {
-                                                z12 = false;
-                                            }
-                                            z11 = false;
-                                        } else {
-                                            z11 = true;
-                                            pc0Var.x(true);
-                                            z12 = true;
-                                        }
-                                        if (z12) {
-                                            if (f72 >= 1.0f) {
-                                                ee0Var.b(pc0Var);
-                                                break;
-                                            } else {
-                                                ci.y0 y0Var = new ci.y0(ee0Var, z11, pc0Var, 21);
-                                                LinkedList linkedList6 = linkedList2;
-                                                linkedList6.offer(y0Var);
-                                                LinkedList linkedList7 = linkedList;
-                                                linkedList7.offer(Boolean.valueOf(z11));
-                                                ArrayList arrayList4 = new ArrayList();
-                                                ArrayList arrayList5 = new ArrayList();
-                                                for (int i22 = 0; i22 < linkedList6.size(); i22++) {
-                                                    Runnable runnable = (Runnable) linkedList6.get(i22);
-                                                    Boolean bool = (Boolean) linkedList7.get(i22);
-                                                    if (bool != null && bool.booleanValue() != z11) {
-                                                        arrayList4.add(runnable);
-                                                        arrayList5.add(Integer.valueOf(i22));
-                                                    }
-                                                }
-                                                int size = arrayList4.size();
-                                                int i23 = 0;
-                                                while (i23 < size) {
-                                                    Object obj = arrayList4.get(i23);
-                                                    i23++;
-                                                    linkedList6.remove((Runnable) obj);
-                                                }
-                                                Collections.sort(arrayList5, new org.telegram.ui.ff(i20));
-                                                int size2 = arrayList5.size();
-                                                int i24 = 0;
-                                                while (i24 < size2) {
-                                                    Object obj2 = arrayList5.get(i24);
-                                                    i24++;
-                                                    linkedList7.remove(((Integer) obj2).intValue());
-                                                }
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            break;
-                    }
-                }
-            });
-            this.f.add(ce0Var);
-            i15++;
-        }
-        for (i10 = 11; i10 >= 0; i10--) {
-            this.e.addView((FrameLayout) this.f.get(i10), w7.z5.e(60, 60, 51));
-        }
-        d();
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        addView(linearLayout);
+        Paint paint = new Paint();
+        this.r = paint;
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        this.a = new LinearLayout.LayoutParams(-2, -1);
     }
 
-    public static void a(ee0 ee0Var) {
-        FrameLayout frameLayout = ee0Var.b;
-        ci.i9 i9Var = ee0Var.s;
-        boolean z10 = i9Var == null || ((StringBuilder) i9Var.d).length() > 0;
-        if (frameLayout != null) {
-            frameLayout.animate().cancel();
-            org.telegram.messenger.bi.r(frameLayout.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(z10 ? 0.8f : 1.0f).scaleY(z10 ? 0.8f : 1.0f), tr.h, 320L);
-        }
-    }
-
-    public static void l(ce0 ce0Var, int i10) {
-        ce0Var.setNextFocusForwardId(i10);
-        if (Build.VERSION.SDK_INT >= 22) {
-            ce0Var.setAccessibilityTraversalBefore(i10);
-        }
-    }
-
-    public final void b(pc0 pc0Var) {
-        o1.k kVar = this.L;
-        if (kVar != null && kVar.f) {
-            kVar.c();
-        }
-        o1.j jVar = new o1.j(0.0f);
-        pc0Var.D = new pv(jVar, 9);
-        pc0Var.z();
-        o1.k kVar2 = new o1.k(jVar);
-        kVar2.u = org.telegram.ui.Cells.c1.l(100.0f, 300.0f, 1.0f);
-        this.L = kVar2;
-        int i10 = 4;
-        kVar2.a(new ei.n4(i10, this, pc0Var));
-        this.L.b(new k7(pc0Var, i10));
-        this.L.f();
-    }
-
-    public final void c() {
-        Activity findActivity;
-        ge0 ge0Var;
-        if (Build.VERSION.SDK_INT >= 23 && (findActivity = AndroidUtilities.findActivity(getContext())) != null && this.n.getVisibility() == 0 && !ApplicationLoader.mainInterfacePaused) {
-            if (findActivity instanceof LaunchActivity) {
-                LaunchActivity launchActivity = (LaunchActivity) findActivity;
-                ArrayList arrayList = launchActivity.B0;
-                if (!arrayList.isEmpty() || (ge0Var = launchActivity.A0) == null) {
-                    if (hg.c.g(1, arrayList) != this) {
-                        return;
-                    }
-                } else if (this != ge0Var.b) {
-                    return;
-                }
-            }
-            try {
-                if (new aa.a(new k6.h(getContext(), 1)).f(15) == 0 && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()) {
-                    a6.m mVar = new a6.m(LaunchActivity.G1, f0.e.e(getContext()), new wd0(this));
-                    j6.l lVar = new j6.l(2);
-                    lVar.b = LocaleController.getString(R.string.UnlockToUse);
-                    lVar.d = LocaleController.getString(R.string.UsePIN);
-                    lVar.a = 15;
-                    mVar.a(lVar.d(), null);
-                    m(false);
-                }
-            } catch (Exception e7) {
-                FileLog.e(e7);
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x006c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void d() {
-        Activity findActivity = AndroidUtilities.findActivity(getContext());
-        boolean z10 = false;
-        if (Build.VERSION.SDK_INT < 23 || findActivity == null || !SharedConfig.useFingerprintLock) {
-            this.n.setVisibility(8);
-        } else {
-            try {
-                Context context = ApplicationLoader.applicationContext;
-                xf.a aVar = xf.b.a;
-                if (aVar.H0(context) && aVar.c(context) && FingerprintController.isKeyReady() && !FingerprintController.checkDeviceFingerprintsChanged()) {
-                    try {
-                        this.n.setVisibility(0);
-                        z10 = true;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        z10 = true;
-                        FileLog.e(th);
-                        this.n.setVisibility(8);
-                        if (SharedConfig.passcodeType == 1) {
-                        }
-                        this.c.setText(LocaleController.getString(!z10 ? R.string.EnterPINorFingerprint : R.string.EnterPIN));
-                    }
-                } else {
-                    this.n.setVisibility(8);
-                }
-            } catch (Throwable th3) {
-                th = th3;
-            }
-        }
-        if (SharedConfig.passcodeType == 1) {
-            this.E.setVisibility(this.n.getVisibility());
-        }
-        this.c.setText(LocaleController.getString(!z10 ? R.string.EnterPINorFingerprint : R.string.EnterPIN));
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 != NotificationCenter.didGenerateFingerprintKeyPair) {
-            if (i10 != NotificationCenter.passcodeDismissed || objArr[0] == this) {
-                return;
-            }
-            setVisibility(8);
+    public static void a(ee0 ee0Var, int i10, int i11) {
+        View childAt;
+        if (ee0Var.f == 0 || (childAt = ee0Var.d.getChildAt(i10)) == null) {
             return;
         }
-        d();
-        if (((Boolean) objArr[0]).booleanValue() && SharedConfig.appLocked) {
-            c();
+        int left = childAt.getLeft() + i11;
+        if (i10 > 0 || i11 > 0) {
+            left -= ee0Var.x;
         }
+        if (left != ee0Var.I) {
+            ee0Var.I = left;
+            ee0Var.scrollTo(left, 0);
+        }
+    }
+
+    public final void b(int i10, CharSequence charSequence) {
+        de0 de0Var = new de0(this, getContext(), i10);
+        de0Var.setTextSize(1, 14.0f);
+        de0Var.setTypeface(AndroidUtilities.bold());
+        de0Var.setTextColor(c(0.6f));
+        de0Var.setFocusable(true);
+        de0Var.setGravity(17);
+        de0Var.setText(charSequence);
+        w7.z5.b(de0Var, 0.025f, 1.2f);
+        de0Var.setOnClickListener(new ci.m4(this, i10, 11));
+        de0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        this.d.addView(de0Var, w7.x5.k(10.0f, 0.0f, 10.0f, 0.0f, -2, -2));
+        de0Var.setSelected(i10 == this.h);
+    }
+
+    public final int c(float f7) {
+        return i0.a.k(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Wk, this.H), (int) (f7 * 255.0f));
+    }
+
+    public final void d() {
+        this.d.removeAllViews();
+        this.f = this.e.getAdapter().b();
+        for (int i10 = 0; i10 < this.f; i10++) {
+            if (this.e.getAdapter() instanceof ce0) {
+                ((ce0) this.e.getAdapter()).getClass();
+                b(i10, this.e.getAdapter().d(i10));
+            } else {
+                b(i10, this.e.getAdapter().d(i10));
+            }
+        }
+        e();
+        getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.j(this, 5));
     }
 
     public final void e() {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (elapsedRealtime > SharedConfig.lastUptimeMillis) {
-            long j3 = SharedConfig.passcodeRetryInMs - (elapsedRealtime - SharedConfig.lastUptimeMillis);
-            SharedConfig.passcodeRetryInMs = j3;
-            if (j3 < 0) {
-                SharedConfig.passcodeRetryInMs = 0L;
+        int i10 = 0;
+        while (i10 < this.f) {
+            View childAt = this.d.getChildAt(i10);
+            childAt.setLayoutParams(this.a);
+            if (this.w) {
+                childAt.setPadding(0, 0, 0, 0);
+                childAt.setLayoutParams(new LinearLayout.LayoutParams(-1, -1, 1.0f));
+            } else if (this.e.getAdapter() instanceof ce0) {
+                ((ty) ((ce0) this.e.getAdapter())).getClass();
+                int dp = AndroidUtilities.dp(i10 == 1 ? 12.0f : 18.0f);
+                childAt.setPadding(dp, 0, dp, 0);
+            } else {
+                int i11 = this.G;
+                childAt.setPadding(i11, 0, i11, 0);
             }
+            i10++;
         }
-        SharedConfig.lastUptimeMillis = elapsedRealtime;
-        SharedConfig.saveConfig();
-        long j10 = SharedConfig.passcodeRetryInMs;
-        EditTextBoldCursor editTextBoldCursor = this.r;
-        FrameLayout frameLayout = this.h;
-        org.telegram.ui.Cells.t6 t6Var = this.R;
-        TextView textView = this.x;
-        if (j10 <= 0) {
-            AndroidUtilities.cancelRunOnUIThread(t6Var);
-            if (textView.getVisibility() == 0) {
-                textView.setVisibility(4);
-                frameLayout.setVisibility(0);
-                m(true);
-                if (SharedConfig.passcodeType == 1) {
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                    return;
-                }
-                return;
-            }
+    }
+
+    public int getDividerPadding() {
+        return this.F;
+    }
+
+    public int getIndicatorColor() {
+        return this.s;
+    }
+
+    public int getIndicatorHeight() {
+        return this.y;
+    }
+
+    public int getScrollOffset() {
+        return this.x;
+    }
+
+    public boolean getShouldExpand() {
+        return this.w;
+    }
+
+    public int getTabPaddingLeftRight() {
+        return this.G;
+    }
+
+    public int getUnderlineColor() {
+        return this.v;
+    }
+
+    public int getUnderlineHeight() {
+        return this.E;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d;
+        float d10;
+        int i10;
+        if (isInEditMode() || this.f == 0) {
+            super.onDraw(canvas);
             return;
         }
-        int max = Math.max(1, (int) Math.ceil(j10 / 1000.0d));
-        if (max != this.S) {
-            textView.setText(LocaleController.formatString(R.string.TooManyTries, LocaleController.formatPluralString("Seconds", max, new Object[0])));
-            this.S = max;
+        int height = getHeight();
+        int i11 = this.E;
+        LinearLayout linearLayout = this.d;
+        Paint paint = this.r;
+        if (i11 != 0) {
+            paint.setColor(this.v);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, height - this.E, linearLayout.getWidth(), height);
+            float f7 = this.E / 2.0f;
+            canvas.drawRoundRect(rectF, f7, f7, paint);
         }
-        if (textView.getVisibility() != 0) {
-            textView.setVisibility(0);
-            frameLayout.setVisibility(4);
-            m(false);
-            AndroidUtilities.hideKeyboard(editTextBoldCursor);
-        }
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 100L);
-    }
-
-    public final boolean g() {
-        ci.i4 i4Var = this.T;
-        if (i4Var == null || !i4Var.c()) {
-            return true;
-        }
-        AndroidUtilities.hideKeyboard(this.r);
-        return false;
-    }
-
-    public final void i() {
-        e();
-        if (this.x.getVisibility() != 0) {
-            if (SharedConfig.passcodeType == 1) {
-                EditTextBoldCursor editTextBoldCursor = this.r;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                }
-                AndroidUtilities.runOnUIThread(new td0(this, 0), 200L);
-            }
-            c();
-        }
-    }
-
-    public final void j(boolean z10, int i10, int i11, org.telegram.ui.h90 h90Var) {
-        View currentFocus;
-        boolean z11;
-        int i12;
-        int i13;
-        d();
-        e();
-        Activity findActivity = AndroidUtilities.findActivity(getContext());
-        int i14 = SharedConfig.passcodeType;
-        TextView textView = this.x;
-        EditTextBoldCursor editTextBoldCursor = this.r;
-        if (i14 == 1) {
-            if (!z10 && textView.getVisibility() != 0 && editTextBoldCursor != null) {
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-            }
-        } else if (findActivity != null && (currentFocus = findActivity.getCurrentFocus()) != null) {
-            currentFocus.clearFocus();
-            AndroidUtilities.hideKeyboard(findActivity.getCurrentFocus());
-        }
-        if (getVisibility() == 0) {
-            return;
-        }
-        setTranslationY(0.0f);
-        v9 v9Var = null;
-        this.a = null;
-        boolean z12 = org.telegram.ui.ActionBar.i6.r0() instanceof pc0;
-        ci.m6 m6Var = this.v;
-        if (z12) {
-            z11 = !org.telegram.ui.ActionBar.i6.I.q();
-            this.a = org.telegram.ui.ActionBar.i6.r0();
-            m6Var.setBackgroundColor(-1090519040);
-        } else {
-            if (!org.telegram.ui.ActionBar.i6.W || "CJz3BZ6YGEYBAAAABboWp6SAv04".equals(org.telegram.ui.ActionBar.i6.H0()) || "qeZWES8rGVIEAAAARfWlK1lnfiI".equals(org.telegram.ui.ActionBar.i6.H0())) {
-                if (!"d".equals(org.telegram.ui.ActionBar.i6.H0())) {
-                    String H0 = org.telegram.ui.ActionBar.i6.H0();
-                    if (!org.telegram.ui.ActionBar.i6.j0 && !"CJz3BZ6YGEYBAAAABboWp6SAv04".equals(H0) && !"qeZWES8rGVIEAAAARfWlK1lnfiI".equals(H0)) {
-                        Drawable r02 = org.telegram.ui.ActionBar.i6.r0();
-                        this.a = r02;
-                        if (r02 instanceof v9) {
-                            m6Var.setBackgroundColor(570425344);
-                        } else if (r02 != null) {
-                            m6Var.setBackgroundColor(-1090519040);
-                        } else {
-                            m6Var.setBackgroundColor(-11436898);
-                        }
-                    }
-                }
-                m6Var.setBackgroundColor(-11436898);
+        View childAt = linearLayout.getChildAt(this.h);
+        if (childAt != null) {
+            float paddingLeft = childAt.getPaddingLeft() + childAt.getLeft();
+            float right = childAt.getRight() - childAt.getPaddingRight();
+            float f10 = this.n;
+            g6 g6Var = this.K;
+            g6 g6Var2 = this.J;
+            if (f10 <= 0.0f || (i10 = this.h) >= this.f - 1) {
+                d = g6Var2.d(paddingLeft, false);
+                d10 = g6Var.d(right, false);
             } else {
-                org.telegram.ui.ActionBar.a6 a6Var = org.telegram.ui.ActionBar.i6.I.i0;
-                if (a6Var != null && (i12 = a6Var.d) != 0 && (i13 = a6Var.e) != 0) {
-                    v9Var = new v9(v9.d(a6Var.h), new int[]{i12, i13});
+                View childAt2 = linearLayout.getChildAt(i10 + 1);
+                float paddingLeft2 = childAt2.getPaddingLeft() + childAt2.getLeft();
+                float right2 = childAt2.getRight() - childAt2.getPaddingRight();
+                float f11 = this.n;
+                float f12 = 1.0f - f11;
+                d = (paddingLeft * f12) + (paddingLeft2 * f11);
+                d10 = (f12 * right) + (f11 * right2);
+                g6Var2.d(d, true);
+                g6Var.d(d10, true);
+                if (childAt instanceof de0) {
+                    de0 de0Var = (de0) childAt;
+                    de0Var.setTextColor(de0Var.a.c(AndroidUtilities.lerp(0.6f, 0.8f, 1.0f - this.n)));
                 }
-                this.a = v9Var;
-                if (v9Var == null) {
-                    this.a = org.telegram.ui.ActionBar.i6.r0();
-                }
-                if (this.a instanceof v9) {
-                    m6Var.setBackgroundColor(570425344);
-                } else {
-                    m6Var.setBackgroundColor(-1090519040);
+                if (childAt2 instanceof de0) {
+                    de0 de0Var2 = (de0) childAt2;
+                    de0Var2.setTextColor(de0Var2.a.c(AndroidUtilities.lerp(0.6f, 0.8f, this.n)));
                 }
             }
-            z11 = false;
-        }
-        Drawable drawable = this.a;
-        if (drawable instanceof pc0) {
-            pc0 pc0Var = (pc0) drawable;
-            int[] iArr = pc0Var.a;
-            if (z11) {
-                int[] iArr2 = new int[iArr.length];
-                for (int i15 = 0; i15 < iArr.length; i15++) {
-                    iArr2[i15] = org.telegram.ui.ActionBar.i6.b(0.14f, 0.0f, iArr[i15]);
-                }
-                iArr = iArr2;
-            }
-            this.a = new pc0(false, iArr[0], iArr[1], iArr[2], iArr[3]);
-            if (pc0Var.u == null || pc0Var.q >= 0) {
-                m6Var.setBackgroundColor(570425344);
-            } else {
-                m6Var.setBackgroundColor(2130706432);
-            }
-            ((pc0) this.a).r(m6Var);
-        }
-        this.w.setText(LocaleController.getString(R.string.AppLocked));
-        int i16 = SharedConfig.passcodeType;
-        ImageView imageView = this.E;
-        ImageView imageView2 = this.y;
-        ai.w5 w5Var = this.e;
-        ci.i9 i9Var = this.s;
-        if (i16 == 0) {
-            if (textView.getVisibility() != 0) {
-                w5Var.setVisibility(0);
-            }
-            editTextBoldCursor.setVisibility(8);
-            i9Var.setVisibility(0);
-            imageView2.setVisibility(8);
-            imageView.setVisibility(8);
-        } else if (i16 == 1) {
-            editTextBoldCursor.setFilters(new InputFilter[0]);
-            editTextBoldCursor.setInputType(129);
-            w5Var.setVisibility(8);
-            editTextBoldCursor.setFocusable(true);
-            editTextBoldCursor.setFocusableInTouchMode(true);
-            editTextBoldCursor.setVisibility(0);
-            i9Var.setVisibility(8);
-            imageView2.setVisibility(0);
-            imageView.setVisibility(this.n.getVisibility());
-        }
-        setVisibility(0);
-        editTextBoldCursor.setTransformationMethod(PasswordTransformationMethod.getInstance());
-        editTextBoldCursor.setText("");
-        ci.i9.a(i9Var, false);
-        if (z10) {
-            setAlpha(0.0f);
-            getViewTreeObserver().addOnGlobalLayoutListener(new zd0(this, i10, i11, h90Var));
-            requestLayout();
-        } else {
-            setAlpha(1.0f);
-            this.P = 1.0f;
-            f(1.0f);
-            nj0 nj0Var = this.I;
-            nj0Var.setScaleX(1.0f);
-            nj0Var.setScaleY(1.0f);
-            nj0Var.i();
-            nj0Var.getAnimatedDrawable().N(38, false, false);
-            if (h90Var != null) {
-                h90Var.run();
+            if (this.y != 0) {
+                paint.setColor(this.s);
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(d - AndroidUtilities.dp(11.0f), getPaddingTop(), d10 + AndroidUtilities.dp(11.0f), height - getPaddingBottom());
+                rectF2.offset(getPaddingLeft(), 0.0f);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
             }
         }
-        setOnTouchListener(new bi.d(19));
+        super.onDraw(canvas);
     }
 
-    public final void k(boolean z10) {
-        EditTextBoldCursor editTextBoldCursor = this.r;
-        if (!z10) {
-            if (SharedConfig.passcodeRetryInMs > 0) {
-                return;
-            }
-            int i10 = SharedConfig.passcodeType;
-            ci.i9 i9Var = this.s;
-            String sb2 = i10 == 0 ? ((StringBuilder) i9Var.d).toString() : i10 == 1 ? editTextBoldCursor.getText().toString() : "";
-            int length = sb2.length();
-            FrameLayout frameLayout = this.b;
-            if (length == 0) {
-                BotWebViewVibrationEffect.NOTIFICATION_ERROR.vibrate();
-                int i11 = -this.Q;
-                this.Q = i11;
-                AndroidUtilities.shakeViewSpring(frameLayout, i11);
-                return;
-            }
-            if (!SharedConfig.checkPasscode(sb2)) {
-                SharedConfig.increaseBadPasscodeTries();
-                if (SharedConfig.passcodeRetryInMs > 0) {
-                    e();
-                }
-                editTextBoldCursor.setText("");
-                ci.i9.a(i9Var, true);
-                BotWebViewVibrationEffect.NOTIFICATION_ERROR.vibrate();
-                int i12 = -this.Q;
-                this.Q = i12;
-                AndroidUtilities.shakeViewSpring(frameLayout, i12);
-                Drawable drawable = this.a;
-                if (drawable instanceof pc0) {
-                    pc0 pc0Var = (pc0) drawable;
-                    o1.k kVar = this.L;
-                    if (kVar != null) {
-                        kVar.c();
-                        pc0Var.h = 1.0f;
-                        pc0Var.z();
-                    }
-                    if (pc0Var.h >= 1.0f) {
-                        pc0Var.m(true);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            }
-        }
-        SharedConfig.badPasscodeTries = 0;
-        editTextBoldCursor.clearFocus();
-        AndroidUtilities.hideKeyboard(editTextBoldCursor);
-        if (Build.VERSION.SDK_INT >= 23 && FingerprintController.isKeyReady() && FingerprintController.checkDeviceFingerprintsChanged()) {
-            FingerprintController.deleteInvalidKey();
-        }
-        SharedConfig.appLocked = false;
-        SharedConfig.saveConfig();
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetPasscode, new Object[0]);
-        setOnTouchListener(null);
-        de0 de0Var = this.K;
-        if (de0Var != null) {
-            de0Var.m(this);
-        }
-        nj0 nj0Var = this.I;
-        nj0Var.getAnimatedDrawable().P(71);
-        nj0Var.getAnimatedDrawable().N(37, false, false);
-        nj0Var.d();
-        AndroidUtilities.runOnUIThread(new td0(this, 1));
-    }
-
-    public final void m(boolean z10) {
-        ValueAnimator valueAnimator = this.V;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.U = z10;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.e.getAlpha(), z10 ? 1.0f : 0.0f);
-        this.V = ofFloat;
-        ofFloat.addUpdateListener(new ud0(this, 1));
-        this.V.addListener(new da(16, this, z10));
-        this.V.setInterpolator(tr.h);
-        this.V.setDuration(320L);
-        this.V.start();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didGenerateFingerprintKeyPair);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.passcodeDismissed);
-        if (this.T == null && (getParent() instanceof View)) {
-            this.T = new ci.i4((View) getParent(), false, new y2(this, 9));
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didGenerateFingerprintKeyPair);
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.passcodeDismissed);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        View rootView = getRootView();
-        int height = (rootView.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.getViewInset(rootView);
-        Rect rect = this.J;
-        getWindowVisibleDisplayFrame(rect);
-        this.G = height - (rect.bottom - rect.top);
-        if (SharedConfig.passcodeType == 1 && (AndroidUtilities.isTablet() || getContext().getResources().getConfiguration().orientation != 2)) {
-            FrameLayout frameLayout = this.h;
-            int intValue = frameLayout.getTag() != null ? ((Integer) frameLayout.getTag()).intValue() : 0;
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
-            layoutParams.topMargin = ((intValue + layoutParams.height) - (this.G / 2)) - AndroidUtilities.statusBarHeight;
-            frameLayout.setLayoutParams(layoutParams);
-        }
-        super.onLayout(z10, i10, i11, i12, i13);
-        TextView textView = this.w;
-        int[] iArr = this.W;
-        textView.getLocationInWindow(iArr);
-        boolean isTablet = AndroidUtilities.isTablet();
-        nj0 nj0Var = this.I;
-        if (isTablet || getContext().getResources().getConfiguration().orientation != 2) {
-            int dp = iArr[1] - AndroidUtilities.dp(100.0f);
-            this.H = dp;
-            nj0Var.setTranslationY(dp);
-        } else {
-            int dp2 = iArr[1] - AndroidUtilities.dp(100.0f);
-            this.H = dp2;
-            nj0Var.setTranslationY(dp2);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int i12;
-        float f7;
-        float f10;
-        int size = View.MeasureSpec.getSize(i10);
-        int i13 = AndroidUtilities.displaySize.y;
-        int dp = AndroidUtilities.dp(28.0f);
-        int dp2 = AndroidUtilities.dp(16.0f);
-        int dp3 = AndroidUtilities.dp(60.0f);
-        boolean z10 = !AndroidUtilities.isTablet() && getContext().getResources().getConfiguration().orientation == 2;
-        View view = this.F;
-        if (view != null) {
-            view.setVisibility(SharedConfig.passcodeType == 1 ? 0 : 8);
-        }
-        nj0 nj0Var = this.I;
-        ai.w5 w5Var = this.e;
-        FrameLayout frameLayout = this.d;
-        FrameLayout frameLayout2 = this.h;
-        if (z10) {
-            if (SharedConfig.passcodeType == 0) {
-                f7 = 2.0f;
-                f10 = size / 2.0f;
-            } else {
-                f7 = 2.0f;
-                f10 = size;
-            }
-            nj0Var.setTranslationX((f10 / f7) - AndroidUtilities.dp(29.0f));
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout2.getLayoutParams();
-            layoutParams.width = SharedConfig.passcodeType == 0 ? size / 2 : size;
-            layoutParams.height = AndroidUtilities.dp(180.0f);
-            layoutParams.topMargin = org.telegram.messenger.bi.z(140.0f, i13, 2) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
-            frameLayout2.setLayoutParams(layoutParams);
-            FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
-            layoutParams2.height = i13;
-            int i14 = size / 2;
-            layoutParams2.leftMargin = i14;
-            layoutParams2.topMargin = AndroidUtilities.statusBarHeight;
-            layoutParams2.width = i14;
-            frameLayout.setLayoutParams(layoutParams2);
-            FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) w5Var.getLayoutParams();
-            layoutParams3.height = (Math.max(0, 3) * dp2) + (dp3 * 4) + AndroidUtilities.dp(82.0f);
-            layoutParams3.width = (Math.max(0, 2) * dp) + (dp3 * 3);
-            layoutParams3.gravity = 17;
-            w5Var.setLayoutParams(layoutParams3);
-        } else {
-            nj0Var.setTranslationX((size / 2.0f) - AndroidUtilities.dp(29.0f));
-            int i15 = AndroidUtilities.statusBarHeight;
-            if (AndroidUtilities.isTablet()) {
-                if (size > AndroidUtilities.dp(498.0f)) {
-                    i12 = org.telegram.messenger.bi.z(498.0f, size, 2);
-                    size = AndroidUtilities.dp(498.0f);
-                } else {
-                    i12 = 0;
-                }
-                if (i13 > AndroidUtilities.dp(528.0f)) {
-                    i15 = org.telegram.messenger.bi.z(528.0f, i13, 2);
-                    i13 = AndroidUtilities.dp(528.0f);
-                }
-            } else {
-                i12 = 0;
-            }
-            FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) frameLayout2.getLayoutParams();
-            layoutParams4.height = (i13 / 3) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
-            layoutParams4.width = size;
-            layoutParams4.topMargin = i15;
-            layoutParams4.leftMargin = i12;
-            frameLayout2.setTag(Integer.valueOf(i15));
-            frameLayout2.setLayoutParams(layoutParams4);
-            int i16 = layoutParams4.topMargin + layoutParams4.height;
-            FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) w5Var.getLayoutParams();
-            layoutParams5.height = (Math.max(0, 3) * dp2) + (dp3 * 4) + AndroidUtilities.dp(82.0f);
-            layoutParams5.width = (Math.max(0, 2) * dp) + (dp3 * 3);
-            if (AndroidUtilities.isTablet()) {
-                layoutParams5.gravity = 17;
-            } else {
-                layoutParams5.gravity = 49;
-            }
-            w5Var.setLayoutParams(layoutParams5);
-            int i17 = i13 - layoutParams5.height;
-            FrameLayout.LayoutParams layoutParams6 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
-            layoutParams6.leftMargin = i12;
-            if (AndroidUtilities.isTablet()) {
-                layoutParams6.topMargin = (i13 - i17) / 2;
-            } else {
-                layoutParams6.topMargin = i16;
-            }
-            layoutParams6.width = size;
-            layoutParams6.height = -1;
-            frameLayout.setLayoutParams(layoutParams6);
-        }
-        int dp4 = AndroidUtilities.dp(z10 ? 52.0f : 82.0f);
-        int i18 = 0;
-        while (i18 < 12) {
-            int i19 = 10;
-            if (i18 != 0) {
-                i19 = i18 == 10 ? 11 : i18 == 11 ? 9 : i18 - 1;
-            }
-            FrameLayout frameLayout3 = (FrameLayout) this.f.get(i18);
-            FrameLayout.LayoutParams layoutParams7 = (FrameLayout.LayoutParams) frameLayout3.getLayoutParams();
-            layoutParams7.topMargin = ((dp3 + dp2) * (i19 / 3)) + dp4;
-            layoutParams7.leftMargin = (dp3 + dp) * (i19 % 3);
-            frameLayout3.setLayoutParams(layoutParams7);
-            i18++;
-        }
         super.onMeasure(i10, i11);
+        if (!this.w || View.MeasureSpec.getMode(i10) == 0) {
+            return;
+        }
+        this.d.measure(getMeasuredWidth() | TLObject.FLAG_30, i11);
     }
 
-    public void setDelegate(de0 de0Var) {
-        this.K = de0Var;
+    @Override // android.widget.HorizontalScrollView, android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        if (this.w) {
+            return;
+        }
+        post(new bd0(this, 3));
     }
 
-    public void f(float f7) {
+    public void setDividerPadding(int i10) {
+        this.F = i10;
+        invalidate();
     }
 
-    public void h() {
+    public void setIndicatorColor(int i10) {
+        this.s = i10;
+        invalidate();
+    }
+
+    public void setIndicatorColorResource(int i10) {
+        this.s = getResources().getColor(i10);
+        invalidate();
+    }
+
+    public void setIndicatorHeight(int i10) {
+        this.y = i10;
+        invalidate();
+    }
+
+    public void setOnPageChangeListener(z4.e eVar) {
+        this.c = eVar;
+    }
+
+    public void setScrollOffset(int i10) {
+        this.x = i10;
+        invalidate();
+    }
+
+    public void setShouldExpand(boolean z10) {
+        this.w = z10;
+        this.d.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        e();
+        requestLayout();
+    }
+
+    public void setTabPaddingLeftRight(int i10) {
+        this.G = i10;
+        e();
+    }
+
+    public void setUnderlineColor(int i10) {
+        this.v = i10;
+        invalidate();
+    }
+
+    public void setUnderlineColorResource(int i10) {
+        this.v = getResources().getColor(i10);
+        invalidate();
+    }
+
+    public void setUnderlineHeight(int i10) {
+        this.E = i10;
+        invalidate();
+    }
+
+    public void setViewPager(z4.g gVar) {
+        this.e = gVar;
+        if (gVar.getAdapter() == null) {
+            throw new IllegalStateException("ViewPager does not have adapter instance.");
+        }
+        gVar.setOnPageChangeListener(this.b);
+        d();
     }
 }

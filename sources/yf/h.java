@@ -8,7 +8,7 @@ import android.view.View;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h implements Choreographer.FrameCallback {
     public static final long[] s;
@@ -16,79 +16,82 @@ public final class h implements Choreographer.FrameCallback {
     public final Choreographer a;
     public final LinkedHashSet b;
     public final SparseArray c;
-    public final pe.b d;
-    public final pe.b e;
-    public final pe.b f;
+    public final qe.b d;
+    public final qe.b e;
+    public final qe.b f;
     public long h;
     public long n;
     public int r;
 
     static {
+        int i10;
         boolean z10;
         long j3;
-        int i10 = 60;
+        int i11 = 60;
         long[] jArr = new long[60];
-        int i11 = 0;
-        while (i11 < i10) {
-            int i12 = i11 + 1;
-            int i13 = 2;
-            int i14 = 1;
-            for (int i15 = 2; i15 <= i10; i15++) {
-                if (i10 % i15 == 0 && Math.abs(i15 - i12) < Math.abs(i14 - i12)) {
-                    i14 = i15;
+        int i12 = 0;
+        while (i12 < i11) {
+            int i13 = i12 + 1;
+            int i14 = 2;
+            int i15 = 1;
+            for (int i16 = 2; i16 <= i11; i16++) {
+                if (i11 % i16 == 0 && Math.abs(i16 - i13) < Math.abs(i15 - i13)) {
+                    i15 = i16;
                 }
             }
-            int i16 = i10 / i14;
+            int i17 = i11 / i15;
             long j10 = 0;
-            for (int i17 = 0; i17 < i10; i17 += i16) {
-                j10 |= 1 << i17;
+            for (int i18 = 0; i18 < i11; i18 += i17) {
+                j10 |= 1 << i18;
             }
-            int i18 = i12 - i14;
-            int abs = Math.abs(i18);
-            int i19 = 0;
-            while (i19 < abs) {
-                int i20 = (((i19 * 2) + 1) * 60) / (abs * 2);
-                int i21 = 0;
-                while (i21 < i10) {
-                    int i22 = 0;
-                    while (i22 < i13) {
-                        int i23 = ((i20 + (i22 == 0 ? i21 : -i21)) + 60) % 60;
-                        long j11 = 1 << i23;
-                        if (i18 <= 0) {
-                            if ((j10 & j11) != 0) {
-                                j3 = (~j11) & j10;
-                                j10 = j3;
-                                z10 = true;
-                                break;
+            int i19 = i13 - i15;
+            int abs = Math.abs(i19);
+            int i20 = 0;
+            while (i20 < abs) {
+                int i21 = (((i20 * 2) + 1) * 60) / (abs * 2);
+                int i22 = 0;
+                while (true) {
+                    i10 = i11;
+                    if (i22 < i11) {
+                        int i23 = 0;
+                        while (i23 < i14) {
+                            int i24 = ((i21 + (i23 == 0 ? i22 : -i22)) + 60) % 60;
+                            long j11 = 1 << i24;
+                            if (i19 <= 0) {
+                                if ((j10 & j11) != 0) {
+                                    j3 = (~j11) & j10;
+                                    j10 = j3;
+                                    z10 = true;
+                                    break;
+                                }
+                                i23++;
+                                i14 = 2;
+                            } else {
+                                if ((j10 & j11) == 0 && (i17 % 2 != 0 || i24 % 2 != 0)) {
+                                    j3 = j11 | j10;
+                                    j10 = j3;
+                                    z10 = true;
+                                    break;
+                                }
+                                i23++;
+                                i14 = 2;
                             }
-                            i22++;
-                            i13 = 2;
-                        } else {
-                            if ((j10 & j11) == 0 && (i16 % 2 != 0 || i23 % 2 != 0)) {
-                                j3 = j11 | j10;
-                                j10 = j3;
-                                z10 = true;
-                                break;
-                            }
-                            i22++;
-                            i13 = 2;
                         }
+                        z10 = false;
+                        if (z10) {
+                            break;
+                        }
+                        i22++;
+                        i11 = i10;
+                        i14 = 2;
                     }
-                    z10 = false;
-                    if (z10) {
-                        break;
-                    }
-                    i21++;
-                    i10 = 60;
-                    i13 = 2;
                 }
-                i19++;
-                i10 = 60;
-                i13 = 2;
+                i20++;
+                i11 = i10;
+                i14 = 2;
             }
-            jArr[i11] = j10;
-            i11 = i12;
-            i10 = 60;
+            jArr[i12] = j10;
+            i12 = i13;
         }
         s = jArr;
     }
@@ -98,9 +101,9 @@ public final class h implements Choreographer.FrameCallback {
         this.a = choreographer;
         this.b = new LinkedHashSet();
         this.c = new SparseArray();
-        this.d = new pe.b();
-        this.e = new pe.b();
-        this.f = new pe.b();
+        this.d = new qe.b();
+        this.e = new qe.b();
+        this.f = new qe.b();
         choreographer.postFrameCallback(this);
     }
 
@@ -155,7 +158,7 @@ public final class h implements Choreographer.FrameCallback {
                     }
                     f fVar = (f) sparseArray.valueAt(i10);
                     if ((fVar.a & j12) != 0) {
-                        pe.b bVar = fVar.d;
+                        qe.b bVar = fVar.d;
                         if (bVar != null) {
                             fVar.d = null;
                             Iterator it = bVar.iterator();
@@ -179,12 +182,12 @@ public final class h implements Choreographer.FrameCallback {
                 while (it4.hasNext()) {
                     ((g) it4.next()).doFrame(j3);
                 }
-                pe.b bVar2 = this.f;
+                qe.b bVar2 = this.f;
                 Iterator it5 = bVar2.iterator();
                 while (it5.hasNext()) {
                     ((View) it5.next()).invalidate();
                 }
-                pe.b bVar3 = this.d;
+                qe.b bVar3 = this.d;
                 Iterator it6 = bVar3.iterator();
                 while (it6.hasNext()) {
                     ((Drawable) it6.next()).invalidateSelf();
@@ -193,7 +196,7 @@ public final class h implements Choreographer.FrameCallback {
                 bVar3.clear();
                 linkedHashSet.clear();
                 if (this.r % 2 == 0) {
-                    pe.b bVar4 = this.e;
+                    qe.b bVar4 = this.e;
                     Iterator it7 = bVar4.iterator();
                     while (it7.hasNext()) {
                         ((Drawable) it7.next()).invalidateSelf();
@@ -265,7 +268,7 @@ public final class h implements Choreographer.FrameCallback {
             if (i10 >= sparseArray.size()) {
                 return;
             }
-            pe.b bVar = ((f) sparseArray.valueAt(i10)).d;
+            qe.b bVar = ((f) sparseArray.valueAt(i10)).d;
             if (bVar != null && bVar.remove(runnable)) {
                 return;
             } else {

@@ -1,57 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.PhotoViewer;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l81 b;
+public interface h81 {
+    void onError(k81 k81Var, Exception exc);
 
-    public /* synthetic */ h81(l81 l81Var, int i10) {
-        this.a = i10;
-        this.b = l81Var;
-    }
+    void onRenderedFirstFrame();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l81 l81Var = this.b;
-                l81Var.h = 0.0f;
-                d6 d6Var = l81Var.b;
-                if (d6Var != null) {
-                    d6Var.u();
-                    l81Var.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                l81 l81Var2 = this.b;
-                l81Var2.a = true;
-                l81Var2.e = null;
-                if (l81Var2.b != null) {
-                    l81Var2.s = true;
-                    PhotoViewer photoViewer = l81Var2.M.a;
-                    if (photoViewer.u3) {
-                        photoViewer.b3(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                l81 l81Var3 = this.b;
-                l81Var3.a = true;
-                l81Var3.e = null;
-                if (l81Var3.b != null) {
-                    l81Var3.s = true;
-                    PhotoViewer photoViewer2 = l81Var3.M.a;
-                    if (photoViewer2.u3) {
-                        photoViewer2.b3(true);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+    void onRenderedFirstFrame(j2.a aVar);
+
+    void onSeekFinished(j2.a aVar);
+
+    void onSeekStarted(j2.a aVar);
+
+    void onStateChanged(boolean z10, int i10);
+
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateLis
                     if (p1Var.r) {
                         floatValue3 = 1.0f - floatValue3;
                     }
-                    float z10 = (int) com.google.android.gms.internal.vision.e2.z(1.0f, floatValue3, p1Var.q, p1Var.p * floatValue3);
-                    if (!(p1Var instanceof zg.k)) {
-                        p1Var.a.setTranslationY(z10);
+                    float y3 = (int) com.google.android.gms.internal.vision.e2.y(1.0f, floatValue3, p1Var.q, p1Var.p * floatValue3);
+                    if (!(p1Var instanceof zg.n)) {
+                        p1Var.a.setTranslationY(y3);
                     }
-                    p1Var.e(-z10, floatValue3, p1Var.s);
+                    p1Var.e(-y3, floatValue3, p1Var.s);
                     break;
                 }
                 break;

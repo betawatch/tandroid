@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,19 +42,19 @@ public final /* synthetic */ class t1 implements RequestDelegate {
                 ((MediaDataController) this.b).lambda$loadAttachMenuBots$4((Runnable) this.c, tLObject, tL_error);
                 break;
             case 6:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$495((ArrayList) this.c, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$498((ArrayList) this.c, tLObject, tL_error);
                 break;
             case 7:
-                ((MessagesController) this.b).lambda$changeChatTitle$317((Runnable) this.c, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$changeChatTitle$316((Runnable) this.c, tLObject, tL_error);
                 break;
             case 8:
                 ((SavedMessagesController) this.b).lambda$loadDialogs$3((ArrayList) this.c, tLObject, tL_error);
                 break;
             case 9:
-                ((SendMessagesHelper) this.b).lambda$sendReaction$35((Runnable) this.c, tLObject, tL_error);
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$53((SendMessagesHelper.DelayedMessage) this.c, tLObject, tL_error);
                 break;
             case 10:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$50((SendMessagesHelper.DelayedMessage) this.c, tLObject, tL_error);
+                ((SendMessagesHelper) this.b).lambda$sendReaction$38((Runnable) this.c, tLObject, tL_error);
                 break;
             default:
                 ((UserNameResolver) this.b).lambda$resolve$1((String) this.c, tLObject, tL_error);

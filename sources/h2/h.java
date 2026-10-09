@@ -4,7 +4,7 @@ import b2.l0;
 import b2.s;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class h extends a {
     public s a;
@@ -60,6 +60,17 @@ public class h extends a {
         this.c = a2;
     }
 
+    public final void c() {
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.f;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
+    }
+
     @Override // h2.a
     public void clear() {
         super.clear();
@@ -72,16 +83,5 @@ public class h extends a {
             byteBuffer2.clear();
         }
         this.d = false;
-    }
-
-    public final void d() {
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer != null) {
-            byteBuffer.flip();
-        }
-        ByteBuffer byteBuffer2 = this.f;
-        if (byteBuffer2 != null) {
-            byteBuffer2.flip();
-        }
     }
 }

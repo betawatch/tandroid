@@ -5,16 +5,17 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
+import e0.r;
 import java.util.ArrayList;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    private e0.t builder;
+    private r builder;
     private Handler handler;
     private Runnable runnable;
 
@@ -82,7 +83,7 @@ public class LocationSharingService extends Service implements NotificationCente
         this.builder.p(format);
         this.builder.f(format);
         if (z10) {
-            new e0.n0(ApplicationLoader.applicationContext).d(6, this.builder.b());
+            new e0.l0(ApplicationLoader.applicationContext).e(null, 6, this.builder.b());
         }
     }
 
@@ -92,7 +93,7 @@ public class LocationSharingService extends Service implements NotificationCente
         if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new u5(this, 1));
+        handler.post(new v5(this, 1));
     }
 
     @Override // android.app.Service
@@ -105,9 +106,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        u5 u5Var = new u5(this, 0);
-        this.runnable = u5Var;
-        handler.postDelayed(u5Var, 1000L);
+        v5 v5Var = new v5(this, 0);
+        this.runnable = v5Var;
+        handler.postDelayed(v5Var, 1000L);
     }
 
     @Override // android.app.Service
@@ -118,7 +119,7 @@ public class LocationSharingService extends Service implements NotificationCente
             handler.removeCallbacks(this.runnable);
         }
         stopForeground(true);
-        new e0.n0(ApplicationLoader.applicationContext).b(6);
+        new e0.l0(ApplicationLoader.applicationContext).b(6, null);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.liveLocationsChanged);
     }
 
@@ -133,16 +134,16 @@ public class LocationSharingService extends Service implements NotificationCente
                 intent2.setAction("org.tmessages.openlocations");
                 intent2.addCategory("android.intent.category.LAUNCHER");
                 PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160);
-                e0.t tVar = new e0.t(ApplicationLoader.applicationContext, null);
-                this.builder = tVar;
-                tVar.E.when = System.currentTimeMillis();
-                e0.t tVar2 = this.builder;
-                tVar2.E.icon = R.drawable.live_loc;
-                tVar2.g = activity;
+                r rVar = new r(ApplicationLoader.applicationContext, null);
+                this.builder = rVar;
+                rVar.E.when = System.currentTimeMillis();
+                r rVar2 = this.builder;
+                rVar2.E.icon = R.drawable.live_loc;
+                rVar2.g = activity;
                 NotificationsController.checkOtherNotificationsChannel();
-                e0.t tVar3 = this.builder;
-                tVar3.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
-                tVar3.g(LocaleController.getString(R.string.AppName));
+                r rVar3 = this.builder;
+                rVar3.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
+                rVar3.g(LocaleController.getString(R.string.AppName));
                 this.builder.a(0, LocaleController.getString(R.string.StopLiveLocation), PendingIntent.getBroadcast(ApplicationLoader.applicationContext, 2, new Intent(ApplicationLoader.applicationContext, (Class<?>) StopLiveLocationReceiver.class), 167772160));
             }
             updateNotification(false);

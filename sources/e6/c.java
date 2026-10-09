@@ -2,10 +2,11 @@ package e6;
 
 import android.os.Looper;
 import android.util.SparseIntArray;
-import ci.o2;
+import ci.n2;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
+import d6.c0;
 import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -23,8 +24,8 @@ public final class c {
     public final s f;
     public final ArrayList g;
     public final ArrayDeque h;
-    public final c0 i;
-    public final o2 j;
+    public final a0 i;
+    public final n2 j;
     public BasePendingResult k;
     public BasePendingResult l;
     public final Set m = DesugarCollections.synchronizedSet(new HashSet());
@@ -37,10 +38,10 @@ public final class c {
         this.e = new SparseIntArray();
         this.g = new ArrayList();
         this.h = new ArrayDeque(20);
-        this.i = new c0(Looper.getMainLooper(), 0);
+        this.i = new a0(Looper.getMainLooper(), 0);
         int i10 = 1;
-        this.j = new o2(this, i10);
-        hVar.p(new d6.c0(this, i10));
+        this.j = new n2(this, i10);
+        hVar.p(new c0(this, i10));
         this.f = new s(this);
         this.b = e();
         d();

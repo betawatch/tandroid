@@ -1,36 +1,23 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.Context;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class o8 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = p8.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
-                }
-                a2 = p8.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
-        }
+    public static q9.a a(String str, String str2) {
+        xa.a aVar = new xa.a(str, str2);
+        b2.i0 a2 = q9.a.a(xa.a.class);
+        a2.b = 1;
+        a2.f = new m4.w(aVar, 18);
+        return a2.b();
     }
 
-    public static void b(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : p8.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String c(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return p8.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return p8.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+    public static q9.a b(String str, j2.e eVar) {
+        b2.i0 a2 = q9.a.a(xa.a.class);
+        a2.b = 1;
+        a2.a(q9.j.a(Context.class));
+        a2.f = new qg.x1(14, str, eVar);
+        return a2.b();
     }
 }

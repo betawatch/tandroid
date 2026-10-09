@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class a10 implements TextWatcher {
     public final /* synthetic */ c10 a;
@@ -23,10 +23,10 @@ public final class a10 implements TextWatcher {
         f10 f10Var = this.a.e;
         if (!TextUtils.equals(editable, f10Var.w)) {
             f10Var.n = !TextUtils.isEmpty(editable);
-            f10Var.w = org.telegram.ui.Components.z5.onlyEmojiSpans(editable);
+            f10Var.w = org.telegram.ui.Components.b6.onlyEmojiSpans(editable);
             t00 t00Var = f10Var.I;
             if (t00Var != null) {
-                t00Var.e(org.telegram.ui.Components.z5.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
+                t00Var.e(org.telegram.ui.Components.b6.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
             }
             u00 u00Var = f10Var.J;
             if (u00Var != null) {
@@ -41,7 +41,7 @@ public final class a10 implements TextWatcher {
             kVar = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
             CharSequence charSequence = f10Var.w;
             kVar2 = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
-            kVar.setTitle(org.telegram.ui.Components.z5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
+            kVar.setTitle(org.telegram.ui.Components.b6.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
         }
         f10Var.i0(true);
     }

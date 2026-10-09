@@ -4,7 +4,7 @@ import java.util.Arrays;
 import n6.l;
 import v7.k;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -36,24 +36,24 @@ public final class a {
     }
 
     public final String toString() {
-        k kVar = new k(a.class.getSimpleName(), 12);
-        k kVar2 = new k(11, false);
+        k kVar = new k(a.class.getSimpleName(), 13);
+        k kVar2 = new k(12, false);
         ((k) kVar.d).d = kVar2;
         kVar.d = kVar2;
         kVar2.c = this.a;
         kVar2.b = "text";
         String valueOf = String.valueOf(this.b);
-        y7.a aVar = new y7.a(11, false);
+        y7.a aVar = new y7.a(12, false);
         ((k) kVar.d).d = aVar;
         kVar.d = aVar;
         aVar.c = valueOf;
         aVar.b = "confidence";
         String valueOf2 = String.valueOf(this.c);
-        y7.a aVar2 = new y7.a(11, false);
+        y7.a aVar2 = new y7.a(12, false);
         ((k) kVar.d).d = aVar2;
         aVar2.c = valueOf2;
         aVar2.b = "index";
-        k kVar3 = new k(11, false);
+        k kVar3 = new k(12, false);
         aVar2.d = kVar3;
         kVar.d = kVar3;
         kVar3.c = this.d;

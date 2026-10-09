@@ -1,18 +1,55 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class ex0 {
-    public final int a;
-    public final int b;
-    public final CharSequence c;
-    public final String d;
-    public int e;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-    public ex0(int i10, int i11, String str, String str2) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ex0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ ex0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
         this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
+        this.b = obj;
+        this.c = viewGroup;
+        this.d = obj2;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                jx0 jx0Var = (jx0) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
+                PremiumPreviewFragment premiumPreviewFragment = jx0Var.n;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = this.c;
+                view.setAlpha(floatValue);
+                view.setScaleX(floatValue);
+                view.setScaleY(floatValue);
+                float animatedFraction = valueAnimator2.getAnimatedFraction();
+                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
+                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
+                    if (childAt != jx0Var.e) {
+                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == jx0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
+                    }
+                }
+                break;
+            default:
+                lb1 lb1Var = (lb1) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                org.telegram.ui.Components.xi xiVar = (org.telegram.ui.Components.xi) this.d;
+                lb1Var.getClass();
+                lb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(lb1Var.a);
+                xiVar.invalidate();
+                break;
+        }
     }
 }

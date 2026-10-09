@@ -2,13 +2,13 @@ package ai;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class y0 extends s4.j {
-    public final /* synthetic */ r3 F;
+    public final /* synthetic */ s3 F;
 
-    public y0(r3 r3Var) {
-        this.F = r3Var;
+    public y0(s3 s3Var) {
+        this.F = s3Var;
     }
 
     @Override // s4.j
@@ -22,7 +22,7 @@ public final class y0 extends s4.j {
     }
 
     @Override // s4.j
-    public final void P(s4.c1 c1Var) {
+    public final void P(s4.d1 d1Var) {
         this.F.c.invalidate();
     }
 }

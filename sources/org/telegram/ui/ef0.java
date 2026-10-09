@@ -1,28 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ef0 implements View.OnAttachStateChangeListener {
-    public boolean b;
-    public final /* synthetic */ ff0 d;
-    public long a = System.currentTimeMillis();
-    public final df0 c = new df0(this, 0);
+public final /* synthetic */ class ef0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ff0 b;
 
-    public ef0(ff0 ff0Var) {
-        this.d = ff0Var;
+    public /* synthetic */ ef0(ff0 ff0Var, int i10) {
+        this.a = i10;
+        this.b = ff0Var;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.b = true;
-        view.post(this.c);
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.b = false;
-        view.removeCallbacks(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ff0 ff0Var = this.b;
+                gf0 gf0Var = ff0Var.d;
+                if (ff0Var.b) {
+                    boolean z10 = gf0Var.K;
+                    org.telegram.ui.Components.ck0 ck0Var = gf0Var.J;
+                    jd jdVar = gf0Var.n;
+                    if (z10 && System.currentTimeMillis() - ff0Var.a >= 10000) {
+                        jdVar.setAnimation(ck0Var);
+                        ck0Var.N(0, false, false);
+                        ck0Var.t0 = new ef0(ff0Var, 1);
+                        jdVar.d();
+                        ff0Var.a = System.currentTimeMillis();
+                    }
+                    jdVar.postDelayed(ff0Var.c, 1000L);
+                    break;
+                }
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new ef0(this.b, 2));
+                break;
+            default:
+                gf0 gf0Var2 = this.b.d;
+                org.telegram.ui.Components.ck0 ck0Var2 = gf0Var2.I;
+                ck0Var2.N(0, false, false);
+                gf0Var2.n.setAnimation(ck0Var2);
+                break;
+        }
     }
 }

@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import gd.c;
-import gd.g;
+import hd.c;
+import hd.g;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import kotlin.jvm.internal.i;
-import v7.s7;
+import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzii {
     private final c zza;
 
     public zzii() {
         int i10 = zzby.zza;
-        this.zza = s7.a(zzih.zza);
+        this.zza = z7.a(zzih.zza);
     }
 
     public final HttpURLConnection zza(String str) {

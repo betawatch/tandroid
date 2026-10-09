@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u {
     public final SharedPreferences a;
@@ -43,6 +43,6 @@ public final class u {
     }
 
     public u(int i10, int i11) {
-        this.a = ApplicationLoader.applicationContext.getSharedPreferences(a4.a.m(i10, i11, "pip_layout_", "_"), 0);
+        this.a = ApplicationLoader.applicationContext.getSharedPreferences(a1.g.m(i10, i11, "pip_layout_", "_"), 0);
     }
 }

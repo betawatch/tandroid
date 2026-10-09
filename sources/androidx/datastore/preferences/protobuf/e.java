@@ -1,10 +1,10 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.google.android.gms.internal.cast.z4;
+import com.google.android.gms.internal.cast.x4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -12,9 +12,9 @@ public final class e implements Iterator {
     public final int c;
     public final /* synthetic */ Object d;
 
-    public e(z4 z4Var) {
-        this.d = z4Var;
-        this.c = z4Var.o();
+    public e(x4 x4Var) {
+        this.d = x4Var;
+        this.c = x4Var.o();
     }
 
     @Override // java.util.Iterator
@@ -64,13 +64,13 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i11 + 1;
-                return Byte.valueOf(((z4) this.d).n(i11));
+                return Byte.valueOf(((x4) this.d).n(i11));
             case 2:
                 try {
-                    com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
+                    com.google.android.gms.internal.clearcut.n nVar = (com.google.android.gms.internal.clearcut.n) this.d;
                     int i12 = this.b;
                     this.b = i12 + 1;
-                    return Byte.valueOf(oVar.o(i12));
+                    return Byte.valueOf(nVar.o(i12));
                 } catch (IndexOutOfBoundsException e7) {
                     throw new NoSuchElementException(e7.getMessage());
                 }
@@ -116,9 +116,9 @@ public final class e implements Iterator {
         }
     }
 
-    public e(com.google.android.gms.internal.clearcut.o oVar) {
-        this.d = oVar;
-        this.c = oVar.size();
+    public e(com.google.android.gms.internal.clearcut.n nVar) {
+        this.d = nVar;
+        this.c = nVar.size();
     }
 
     public e(com.google.android.gms.internal.play_billing.l1 l1Var) {

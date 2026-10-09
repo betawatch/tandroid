@@ -1,79 +1,48 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x9 implements RequestDelegate {
+public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ x9(MessagesController messagesController, long j3, int i10) {
-        this.a = i10;
+    public /* synthetic */ x9(int i10, long j3, long j10, MessagesController messagesController) {
+        this.a = 2;
         this.b = messagesController;
-        this.c = j3;
+        this.d = j3;
+        this.e = j10;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessageAsRead2$235(this.c, tLObject, tL_error);
+                long j3 = this.d;
+                long j10 = this.e;
+                this.b.lambda$sendTyping$170(this.c, j3, j10);
                 break;
             case 1:
-                this.b.lambda$markMessageAsRead2$236(this.c, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$pinDialog$364(this.c, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$saveWallpaperToServer$121(this.c, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$updateTimerProc$160(this.c, tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$deleteUserPhoto$115(this.c, tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$reorderPinnedDialogs$363(this.c, tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$loadPeerSettings$80(this.c, tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$setChannelSlowMode$94(this.c, tLObject, tL_error);
-                break;
-            case 9:
-                this.b.lambda$loadChannelAdmins$65(this.c, tLObject, tL_error);
-                break;
-            case 10:
-                this.b.lambda$deleteDialog$141(this.c, tLObject, tL_error);
-                break;
-            case 11:
-                this.b.lambda$addDialogToFolder$198(this.c, tLObject, tL_error);
-                break;
-            case 12:
-                this.b.lambda$setDefaultSendAs$275(this.c, tLObject, tL_error);
-                break;
-            case 13:
-                this.b.lambda$deleteMessages$122(this.c, tLObject, tL_error);
-                break;
-            case 14:
-                this.b.lambda$deleteMessages$123(this.c, tLObject, tL_error);
-                break;
-            case 15:
-                this.b.lambda$deleteMessages$125(this.c, tLObject, tL_error);
-                break;
-            case 16:
-                this.b.lambda$setBoostsToUnblockRestrictions$96(this.c, tLObject, tL_error);
+                long j11 = this.d;
+                long j12 = this.e;
+                this.b.lambda$sendTyping$172(this.c, j11, j12);
                 break;
             default:
-                this.b.lambda$markDialogAsUnread$360(this.c, tLObject, tL_error);
+                long j13 = this.e;
+                int i10 = this.c;
+                this.b.lambda$checkDeletingTask$83(this.d, j13, i10);
                 break;
         }
+    }
+
+    public /* synthetic */ x9(MessagesController messagesController, int i10, long j3, long j10, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = i10;
+        this.d = j3;
+        this.e = j10;
     }
 }

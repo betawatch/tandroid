@@ -1,6 +1,6 @@
 package m;
 
-import ai.q4;
+import ai.r4;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -30,7 +30,7 @@ public class r1 extends ListView {
     public final boolean r;
     public boolean s;
     public u0.d v;
-    public q4 w;
+    public r4 w;
 
     public r1(Context context, boolean z10) {
         super(context, null, R.attr.dropDownListViewStyle);
@@ -57,8 +57,8 @@ public class r1 extends ListView {
             dividerHeight = 0;
         }
         int count = adapter.getCount();
-        View view = null;
         int i13 = 0;
+        View view = null;
         for (int i14 = 0; i14 < count; i14++) {
             int itemViewType = adapter.getItemViewType(i14);
             if (itemViewType != i13) {
@@ -85,13 +85,10 @@ public class r1 extends ListView {
         return i12;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0010, code lost:
-    
-        if (r3 != 3) goto L8;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x017d  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x014d A[ADDED_TO_REGION] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -104,7 +101,53 @@ public class r1 extends ListView {
         boolean z12 = true;
         if (actionMasked == 1) {
             z10 = false;
-        } else if (actionMasked == 2) {
+        } else {
+            if (actionMasked != 2) {
+                if (actionMasked != 3) {
+                    z10 = true;
+                    z12 = false;
+                    if (z10 || z12) {
+                        this.s = false;
+                        setPressed(false);
+                        drawableStateChanged();
+                        childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+                        if (childAt2 != null) {
+                            childAt2.setPressed(false);
+                        }
+                    }
+                    if (z10) {
+                        u0.d dVar = this.v;
+                        if (dVar != null) {
+                            if (dVar.F) {
+                                dVar.d();
+                            }
+                            dVar.F = false;
+                        }
+                    } else {
+                        if (this.v == null) {
+                            this.v = new u0.d(this);
+                        }
+                        u0.d dVar2 = this.v;
+                        boolean z13 = dVar2.F;
+                        dVar2.F = true;
+                        dVar2.onTouch(this, motionEvent);
+                    }
+                    return z10;
+                }
+                z12 = false;
+                z10 = false;
+                if (z10) {
+                }
+                this.s = false;
+                setPressed(false);
+                drawableStateChanged();
+                childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+                if (childAt2 != null) {
+                }
+                if (z10) {
+                }
+                return z10;
+            }
             z10 = true;
         }
         int findPointerIndex = motionEvent.findPointerIndex(i10);
@@ -132,8 +175,8 @@ public class r1 extends ListView {
                     childAt3.setPressed(true);
                 }
                 Drawable selector = getSelector();
-                boolean z13 = (selector == null || pointToPosition == -1) ? false : true;
-                if (z13) {
+                boolean z14 = (selector == null || pointToPosition == -1) ? false : true;
+                if (z14) {
                     selector.setVisible(false, false);
                 }
                 int left = childAt3.getLeft();
@@ -160,14 +203,14 @@ public class r1 extends ListView {
                     z11 = false;
                 }
                 if (childAt3.isEnabled() != z11) {
-                    boolean z14 = !z11;
+                    boolean z15 = !z11;
                     if (n0.a.a()) {
-                        o1.b(this, z14);
+                        o1.b(this, z15);
                     } else {
                         Field field2 = q1.a;
                         if (field2 != null) {
                             try {
-                                field2.set(this, Boolean.valueOf(z14));
+                                field2.set(this, Boolean.valueOf(z15));
                             } catch (IllegalAccessException e10) {
                                 e10.printStackTrace();
                             }
@@ -177,7 +220,7 @@ public class r1 extends ListView {
                         refreshDrawableState();
                     }
                 }
-                if (z13) {
+                if (z14) {
                     float exactCenterX = rect.exactCenterX();
                     float exactCenterY = rect.exactCenterY();
                     selector.setVisible(getVisibility() == 0, false);
@@ -198,31 +241,15 @@ public class r1 extends ListView {
                 z12 = false;
                 z10 = true;
             }
-            if (z10 || z12) {
-                this.s = false;
-                setPressed(false);
-                drawableStateChanged();
-                childAt2 = getChildAt(this.f - getFirstVisiblePosition());
-                if (childAt2 != null) {
-                    childAt2.setPressed(false);
-                }
+            if (z10) {
+            }
+            this.s = false;
+            setPressed(false);
+            drawableStateChanged();
+            childAt2 = getChildAt(this.f - getFirstVisiblePosition());
+            if (childAt2 != null) {
             }
             if (z10) {
-                u0.d dVar = this.v;
-                if (dVar != null) {
-                    if (dVar.F) {
-                        dVar.d();
-                    }
-                    dVar.F = false;
-                }
-            } else {
-                if (this.v == null) {
-                    this.v = new u0.d(this);
-                }
-                u0.d dVar2 = this.v;
-                boolean z15 = dVar2.F;
-                dVar2.F = true;
-                dVar2.onTouch(this, motionEvent);
             }
             return z10;
         }
@@ -302,9 +329,9 @@ public class r1 extends ListView {
         }
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 10 && this.w == null) {
-            q4 q4Var = new q4(this, 25);
-            this.w = q4Var;
-            post(q4Var);
+            r4 r4Var = new r4(this, 25);
+            this.w = r4Var;
+            post(r4Var);
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
         if (actionMasked != 9 && actionMasked != 7) {
@@ -343,11 +370,11 @@ public class r1 extends ListView {
         if (motionEvent.getAction() == 0) {
             this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        q4 q4Var = this.w;
-        if (q4Var != null) {
-            r1 r1Var = (r1) q4Var.b;
+        r4 r4Var = this.w;
+        if (r4Var != null) {
+            r1 r1Var = (r1) r4Var.b;
             r1Var.w = null;
-            r1Var.removeCallbacks(q4Var);
+            r1Var.removeCallbacks(r4Var);
         }
         return super.onTouchEvent(motionEvent);
     }

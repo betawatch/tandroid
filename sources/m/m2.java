@@ -17,9 +17,8 @@ import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.r8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
@@ -148,7 +147,7 @@ public final class m2 {
             if (!this.f) {
                 this.f = true;
                 Drawable g10 = g(context, R.drawable.abc_vector_test);
-                if (g10 == null || (!(g10 instanceof x4.p) && !"android.graphics.drawable.VectorDrawable".equals(g10.getClass().getName()))) {
+                if (g10 == null || (!(g10 instanceof x4.o) && !"android.graphics.drawable.VectorDrawable".equals(g10.getClass().getName()))) {
                     this.f = false;
                     throw new IllegalStateException("This app has been built with an incorrect configuration. Please configure your build for VectorDrawableCompat.");
                 }
@@ -270,30 +269,30 @@ public final class m2 {
         this.g = nVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00e4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Drawable m(Context context, int i10, boolean z10, Drawable drawable) {
-        int i11;
         boolean z11;
+        int round;
         PorterDuffColorFilter h10;
-        ColorStateList i12 = i(context, i10);
+        ColorStateList i11 = i(context, i10);
         PorterDuff.Mode mode = null;
-        if (i12 != null) {
+        if (i11 != null) {
             int[] iArr = l1.a;
-            Drawable d = r8.d(drawable.mutate());
-            d.setTintList(i12);
+            Drawable mutate = drawable.mutate();
+            mutate.setTintList(i11);
             if (this.g != null && i10 == R.drawable.abc_switch_thumb_material) {
                 mode = PorterDuff.Mode.MULTIPLY;
             }
             if (mode != null) {
-                d.setTintMode(mode);
+                mutate.setTintMode(mode);
             }
-            return d;
+            return mutate;
         }
         com.google.firebase.messaging.n nVar = this.g;
-        int i13 = R.attr.colorControlNormal;
+        int i12 = R.attr.colorControlNormal;
         if (nVar != null) {
             if (i10 == R.drawable.abc_seekbar_track_material) {
                 LayerDrawable layerDrawable = (LayerDrawable) drawable;
@@ -322,40 +321,40 @@ public final class m2 {
             PorterDuff.Mode mode4 = q.b;
             if (!com.google.firebase.messaging.n.f(i10, (int[]) nVar2.a)) {
                 if (com.google.firebase.messaging.n.f(i10, (int[]) nVar2.c)) {
-                    i11 = -1;
-                    z11 = true;
-                    i13 = R.attr.colorControlActivated;
+                    i12 = R.attr.colorControlActivated;
                 } else {
                     boolean f7 = com.google.firebase.messaging.n.f(i10, (int[]) nVar2.d);
-                    i13 = android.R.attr.colorBackground;
+                    i12 = android.R.attr.colorBackground;
                     if (f7) {
                         mode4 = PorterDuff.Mode.MULTIPLY;
                     } else if (i10 == R.drawable.abc_list_divider_mtrl_alpha) {
-                        i11 = Math.round(40.8f);
-                        i13 = android.R.attr.colorForeground;
+                        round = Math.round(40.8f);
+                        i12 = android.R.attr.colorForeground;
                         z11 = true;
+                        if (z11) {
+                            int[] iArr2 = l1.a;
+                            Drawable mutate2 = drawable.mutate();
+                            int c11 = a3.c(context, i12);
+                            synchronized (q.class) {
+                                h10 = h(c11, mode4);
+                            }
+                            mutate2.setColorFilter(h10);
+                            if (round != -1) {
+                                mutate2.setAlpha(round);
+                            }
+                            z12 = true;
+                        }
                     } else if (i10 != R.drawable.abc_dialog_material_background) {
-                        i11 = -1;
                         z11 = false;
-                        i13 = 0;
+                        i12 = 0;
+                        round = -1;
+                        if (z11) {
+                        }
                     }
-                }
-                if (z11) {
-                    int[] iArr2 = l1.a;
-                    Drawable mutate = drawable.mutate();
-                    int c11 = a3.c(context, i13);
-                    synchronized (q.class) {
-                        h10 = h(c11, mode4);
-                    }
-                    mutate.setColorFilter(h10);
-                    if (i11 != -1) {
-                        mutate.setAlpha(i11);
-                    }
-                    z12 = true;
                 }
             }
-            i11 = -1;
             z11 = true;
+            round = -1;
             if (z11) {
             }
         }

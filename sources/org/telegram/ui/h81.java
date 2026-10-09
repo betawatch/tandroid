@@ -2,38 +2,38 @@ package org.telegram.ui;
 
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i81 b;
+public final class h81 extends org.telegram.ui.ActionBar.f3 {
+    public static final /* synthetic */ int e = 0;
+    public TLRPC.TL_authorization b;
+    public SessionsActivity c;
+    public org.telegram.ui.Components.fk0 d;
 
-    public /* synthetic */ h81(i81 i81Var, int i10) {
-        this.a = i10;
-        this.b = i81Var;
+    public static void o(h81 h81Var, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h81Var.getContext());
+        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new lg.j(12, h81Var, str));
+        alertDialog$Builder.o();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String sb2;
-        switch (this.a) {
-            case 0:
-                i81 i81Var = this.b;
-                String str = i81Var.b.text;
-                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
-                    StringBuilder sb3 = new StringBuilder();
-                    org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb3);
-                    sb3.append(i81Var.b.text);
-                    sb2 = sb3.toString();
-                } else {
-                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
-                }
-                org.telegram.ui.Components.e5.u0(i81Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
-                break;
-            default:
-                org.telegram.ui.Components.e5.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
-                break;
-        }
+    public static void p(h81 h81Var) {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = h81Var.b;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(h81Var.currentAccount).sendRequest(changeauthorizationsettings, new ai.v7(21));
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.d.d();
     }
 }

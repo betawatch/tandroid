@@ -3,7 +3,7 @@ package c6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d0 extends g6.g {
     public final /* synthetic */ e0 b;
@@ -13,7 +13,7 @@ public final class d0 extends g6.g {
     }
 
     @Override // g6.h
-    public final void B0(String str, byte[] bArr) {
+    public final void A0(String str, byte[] bArr) {
         e0.G.b("IGNORING: Receive (type=binary, ns=%s) <%d bytes>", str, Integer.valueOf(bArr.length));
     }
 
@@ -68,18 +68,18 @@ public final class d0 extends g6.g {
     }
 
     @Override // g6.h
-    public final void u0(g6.d dVar) {
-        e0.k(this.b).post(new i9.s(7, this, dVar));
+    public final void t0(g6.d dVar) {
+        e0.k(this.b).post(new i9.s(8, this, dVar));
     }
 
     @Override // g6.h
-    public final void w0(int i10) {
+    public final void v0(int i10) {
         e0.k(this.b).post(new c0(this, i10, 3));
     }
 
     @Override // g6.h
-    public final void z0(g6.c cVar) {
-        e0.k(this.b).post(new i9.s(8, this, cVar));
+    public final void y0(g6.c cVar) {
+        e0.k(this.b).post(new i9.s(9, this, cVar));
     }
 
     @Override // g6.h

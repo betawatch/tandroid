@@ -35,19 +35,19 @@ public final class u8 extends v8 implements Consumer {
         this.f = obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0059, code lost:
     
         if (r0 == false) goto L32;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x005b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x005b, code lost:
     
         r6.b.set(true);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0060, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0060, code lost:
     
         r7.accept(r6.f);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:?, code lost:
     
         return r2;
      */

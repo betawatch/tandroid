@@ -1,50 +1,26 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Shader;
-import ci.e4;
+import android.view.View;
+import org.telegram.ui.Components.dx0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class e3 extends e4 {
-    public final Paint L0;
-    public final r1 M0;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class e3 extends View {
+    public dx0 a;
+    public boolean b;
 
-    public e3(Activity activity, int i10, r1 r1Var, boolean z10) {
-        super(activity, i10);
-        Paint paint = new Paint(1);
-        this.L0 = paint;
-        this.M0 = r1Var;
-        r1Var.a(this);
-        paint.setPathEffect(new CornerPathEffect(this.v));
-        if (z10) {
-            i();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        dx0 dx0Var;
+        if (this.b || (dx0Var = this.a) == null) {
+            return;
         }
+        dx0Var.b(canvas, this);
     }
 
-    @Override // ci.e4
-    public final void c(Canvas canvas, float f7) {
-        r1 r1Var = this.M0;
-        Shader shader = r1Var.b().getShader();
-        Paint paint = this.L0;
-        paint.setShader(shader);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.F.getAlpha(), r1Var.b().getAlpha()) * f7), 31);
-        Path path = this.t0;
-        canvas.drawPath(path, paint);
-        if (r1Var.e) {
-            paint.setShader(((Paint) r1Var.d.a).getShader());
-            canvas.drawPath(path, paint);
-        }
-        canvas.restore();
-    }
-
-    @Override // ci.e4, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.M0.d(getX(), getY());
-        super.dispatchDraw(canvas);
+    public void setState(boolean z10) {
+        this.b = z10;
+        invalidate();
     }
 }

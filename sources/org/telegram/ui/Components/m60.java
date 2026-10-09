@@ -1,37 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m60 {
-    public final int a;
-    public final int b;
+public final /* synthetic */ class m60 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s60 b;
 
-    public m60(int i10, int i11) {
+    public /* synthetic */ m60(s60 s60Var, int i10) {
         this.a = i10;
-        this.b = i11;
+        this.b = s60Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                s60 s60Var = this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * s60Var.getMeasuredHeight() * 0.5f;
+                s60Var.v0 = floatValue;
+                s60Var.v.setTranslationY(floatValue + s60Var.u0);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s60 s60Var2 = this.b;
+                s60Var2.x0 = floatValue2;
+                ki.t0 t0Var = s60Var2.P;
+                if (t0Var != null) {
+                    t0Var.w(floatValue2);
+                    break;
+                }
+                break;
         }
-        if (obj != null && m60.class == obj.getClass()) {
-            m60 m60Var = (m60) obj;
-            if (this.a == m60Var.a && this.b == m60Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IntSize(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        return a4.a.o(this.b, ")", sb2);
     }
 }

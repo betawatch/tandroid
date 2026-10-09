@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.view.View;
-import ci.z8;
+import ci.a9;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class s2 extends d3 {
     public final /* synthetic */ f3 H;
@@ -38,7 +38,7 @@ public final class s2 extends d3 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        rc.a(this, new z8(5));
+        tc.a(this, new a9(5));
     }
 
     @Override // android.view.View
@@ -51,6 +51,6 @@ public final class s2 extends d3 {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        rc.h(this);
+        tc.h(this);
     }
 }

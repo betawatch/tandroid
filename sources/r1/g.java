@@ -28,7 +28,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import w7.a7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -354,8 +354,6 @@ public final class g {
     
         return;
      */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x018e A[LOOP:0: B:9:0x0034->B:32:0x018e, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0196 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:37:0x00ac A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -395,43 +393,45 @@ public final class g {
                 if (i14 < 0) {
                     throw new IOException("Invalid length");
                 }
-                char c10 = 0;
+                int i16 = 0;
                 HashMap[] hashMapArr = this.e;
                 if (readByte3 == -31) {
                     byte[] bArr = new byte[i14];
                     bVar.readFully(bArr);
-                    int i16 = i15 + i14;
+                    int i17 = i15 + i14;
                     byte[] bArr2 = P;
                     if (bArr2 != null && i14 >= bArr2.length) {
-                        int i17 = 0;
-                        while (i17 < bArr2.length) {
-                            if (bArr[i17] == bArr2[i17]) {
-                                i17++;
-                                c10 = 0;
+                        int i18 = 0;
+                        while (i18 < bArr2.length) {
+                            if (bArr[i18] == bArr2[i18]) {
+                                i18++;
+                                i16 = 0;
                             }
                         }
                         byte[] copyOfRange = Arrays.copyOfRange(bArr, bArr2.length, i14);
                         this.i = i10 + i15 + bArr2.length;
                         u(i11, copyOfRange);
                         x(new b(copyOfRange));
-                        i15 = i16;
+                        i15 = i17;
+                        i14 = 0;
                     }
                     byte[] bArr3 = Q;
                     if (bArr3 != null && i14 >= bArr3.length) {
-                        int i18 = 0;
+                        int i19 = i16;
                         while (true) {
-                            if (i18 >= bArr3.length) {
+                            if (i19 >= bArr3.length) {
                                 int length = i15 + bArr3.length;
                                 byte[] copyOfRange2 = Arrays.copyOfRange(bArr, bArr3.length, i14);
                                 if (b("Xmp") == null) {
-                                    hashMapArr[c10].put("Xmp", new c(length, copyOfRange2, 1, copyOfRange2.length));
+                                    hashMapArr[i16].put("Xmp", new c(length, copyOfRange2, 1, copyOfRange2.length));
                                 }
-                            } else if (bArr[i18] == bArr3[i18]) {
-                                i18++;
+                            } else if (bArr[i19] == bArr3[i19]) {
+                                i19++;
                             }
                         }
                     }
-                    i15 = i16;
+                    i15 = i17;
+                    i14 = 0;
                 } else if (readByte3 != -2) {
                     switch (readByte3) {
                         default:
@@ -461,13 +461,6 @@ public final class g {
                         case -61:
                             break;
                     }
-                    if (i14 >= 0) {
-                        throw new IOException("Invalid length");
-                    }
-                    bVar.a(i14);
-                    i13 = i15 + i14;
-                    i12 = 2;
-                    b10 = -1;
                 } else {
                     byte[] bArr4 = new byte[i14];
                     if (bVar.read(bArr4) != i14) {
@@ -479,25 +472,29 @@ public final class g {
                         byte[] bytes = new String(bArr4, charset).concat(WebViewProviderFactoryBoundaryInterface.MULTI_COOKIE_VALUE_SEPARATOR).getBytes(charset);
                         hashMap.put("UserComment", new c(i12, bytes.length, bytes));
                     }
+                    i14 = 0;
                 }
-                i14 = 0;
-                if (i14 >= 0) {
+                if (i14 < 0) {
+                    throw new IOException("Invalid length");
                 }
+                bVar.a(i14);
+                i13 = i15 + i14;
+                i12 = 2;
+                b10 = -1;
             }
         }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(14:14|15|(4:16|17|18|19)|(16:107|(2:109|110)(1:153)|112|113|(1:115)|116|(3:119|120|(4:125|(3:130|(1:132)(2:140|(1:142))|(3:135|136|137))(2:127|128)|129|121))|118|22|23|24|25|26|(1:92)(1:30)|31|(1:33)(8:35|36|37|38|39|(1:41)(1:77)|42|(1:44)(3:45|(2:46|(2:48|(2:51|52)(1:50))(2:75|76))|(1:54)(4:55|(2:56|(2:58|(1:61)(1:60))(3:66|67|(2:68|(1:74)(2:70|(1:73)(1:72)))))|62|(1:64)(1:65)))))|21|22|23|24|25|26|(1:28)|92|31|(0)(0)) */
     /* JADX WARN: Can't wrap try/catch for region: R(17:14|15|16|17|18|19|(16:107|(2:109|110)(1:153)|112|113|(1:115)|116|(3:119|120|(4:125|(3:130|(1:132)(2:140|(1:142))|(3:135|136|137))(2:127|128)|129|121))|118|22|23|24|25|26|(1:92)(1:30)|31|(1:33)(8:35|36|37|38|39|(1:41)(1:77)|42|(1:44)(3:45|(2:46|(2:48|(2:51|52)(1:50))(2:75|76))|(1:54)(4:55|(2:56|(2:58|(1:61)(1:60))(3:66|67|(2:68|(1:74)(2:70|(1:73)(1:72)))))|62|(1:64)(1:65)))))|21|22|23|24|25|26|(1:28)|92|31|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x00fd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x00fc, code lost:
     
-        if (r5 != null) goto L83;
+        if (r5 != null) goto L82;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:101:0x00ff, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x00fe, code lost:
     
         r5.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x0102, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:102:0x0101, code lost:
     
         throw r0;
      */
@@ -517,27 +514,27 @@ public final class g {
     
         if (r9 < 16) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x00ce, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x00cf, code lost:
     
         if (r8 != null) goto L34;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0103, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x0102, code lost:
     
-        if (r2 != null) goto L86;
+        if (r2 != null) goto L85;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:96:0x0105, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0104, code lost:
     
         r2.close();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x0108, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x0107, code lost:
     
-        r0 = false;
+        r0 = r18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x00f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x00f4, code lost:
     
         r0 = th;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x00f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x00f5, code lost:
     
         r5 = r2;
      */
@@ -552,11 +549,11 @@ public final class g {
         b bVar;
         int i10;
         b bVar2;
-        boolean z10;
+        int i11;
         b bVar3;
         b bVar4;
-        boolean z11;
-        boolean z12;
+        int i12;
+        int i13;
         long readInt;
         byte[] bArr;
         long j3;
@@ -564,17 +561,17 @@ public final class g {
         byte[] bArr2 = new byte[5000];
         bufferedInputStream.read(bArr2);
         bufferedInputStream.reset();
-        int i11 = 0;
+        int i14 = 0;
         while (true) {
             byte[] bArr3 = r;
-            if (i11 >= bArr3.length) {
+            if (i14 >= bArr3.length) {
                 return 4;
             }
-            if (bArr2[i11] != bArr3[i11]) {
+            if (bArr2[i14] != bArr3[i14]) {
                 byte[] bytes = "FUJIFILMCCD-RAW".getBytes(Charset.defaultCharset());
-                for (int i12 = 0; i12 < bytes.length; i12++) {
-                    if (bArr2[i12] != bytes[i12]) {
-                        boolean z13 = true;
+                for (int i15 = 0; i15 < bytes.length; i15++) {
+                    if (bArr2[i15] != bytes[i15]) {
+                        int i16 = 1;
                         try {
                             bVar2 = new b(bArr2);
                             try {
@@ -618,16 +615,16 @@ public final class g {
                             if (j11 >= 8) {
                                 try {
                                     byte[] bArr4 = new byte[4];
-                                    boolean z14 = false;
-                                    boolean z15 = false;
+                                    boolean z10 = false;
+                                    boolean z11 = false;
                                     for (long j12 = 0; j12 < j11 / 4 && bVar2.read(bArr4) == 4; j12++) {
                                         if (j12 != 1) {
                                             if (Arrays.equals(bArr4, t)) {
-                                                z14 = true;
+                                                z10 = true;
                                             } else if (Arrays.equals(bArr4, u)) {
-                                                z15 = true;
+                                                z11 = true;
                                             }
-                                            if (z14 && z15) {
+                                            if (z10 && z11) {
                                                 bVar2.close();
                                                 return 12;
                                             }
@@ -646,9 +643,9 @@ public final class g {
                             this.g = t10;
                             bVar5.b = t10;
                             short readShort = bVar5.readShort();
-                            z10 = readShort != 20306 || readShort == 21330;
+                            i11 = (readShort != 20306 || readShort == 21330) ? 1 : i10;
                             bVar5.close();
-                            if (z10) {
+                            if (i11 != 0) {
                                 return 7;
                             }
                             try {
@@ -657,15 +654,15 @@ public final class g {
                                     ByteOrder t11 = t(bVar6);
                                     this.g = t11;
                                     bVar6.b = t11;
-                                    z11 = bVar6.readShort() == 85;
+                                    i12 = bVar6.readShort() == 85 ? 1 : i10;
                                     bVar6.close();
                                 } catch (Exception unused) {
                                     bVar4 = bVar6;
                                     if (bVar4 != null) {
                                         bVar4.close();
                                     }
-                                    z11 = false;
-                                    if (!z11) {
+                                    i12 = i10;
+                                    if (i12 == 0) {
                                     }
                                 } catch (Throwable th4) {
                                     th = th4;
@@ -681,49 +678,49 @@ public final class g {
                                 th = th5;
                                 bVar3 = null;
                             }
-                            if (!z11) {
+                            if (i12 == 0) {
                                 return 10;
                             }
-                            int i13 = 0;
+                            int i17 = i10;
                             while (true) {
                                 byte[] bArr5 = x;
-                                if (i13 >= bArr5.length) {
-                                    z12 = true;
+                                if (i17 >= bArr5.length) {
+                                    i13 = 1;
                                     break;
                                 }
-                                if (bArr2[i13] != bArr5[i13]) {
-                                    z12 = false;
+                                if (bArr2[i17] != bArr5[i17]) {
+                                    i13 = i10;
                                     break;
                                 }
-                                i13++;
+                                i17++;
                             }
-                            if (z12) {
+                            if (i13 != 0) {
                                 return 13;
                             }
-                            int i14 = 0;
+                            int i18 = i10;
                             while (true) {
                                 byte[] bArr6 = B;
-                                if (i14 >= bArr6.length) {
-                                    int i15 = 0;
+                                if (i18 >= bArr6.length) {
+                                    int i19 = i10;
                                     while (true) {
                                         byte[] bArr7 = C;
-                                        if (i15 >= bArr7.length) {
+                                        if (i19 >= bArr7.length) {
                                             break;
                                         }
-                                        if (bArr2[bArr6.length + i15 + 4] != bArr7[i15]) {
+                                        if (bArr2[bArr6.length + i19 + 4] != bArr7[i19]) {
                                             break;
                                         }
-                                        i15++;
+                                        i19++;
                                     }
                                 } else {
-                                    if (bArr2[i14] != bArr6[i14]) {
+                                    if (bArr2[i18] != bArr6[i18]) {
                                         break;
                                     }
-                                    i14++;
+                                    i18++;
                                 }
                             }
-                            z13 = false;
-                            if (z13) {
+                            i16 = i10;
+                            if (i16 != 0) {
                                 return 14;
                             }
                             return i10;
@@ -738,13 +735,13 @@ public final class g {
                         if (readShort2 != 20306) {
                         }
                         bVar52.close();
-                        if (z10) {
+                        if (i11 != 0) {
                         }
                     }
                 }
                 return 9;
             }
-            i11++;
+            i14++;
         }
     }
 
@@ -1192,32 +1189,33 @@ public final class g {
         v(fVar, i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x016c  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x025e  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0278  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void v(f fVar, int i10) {
         HashMap[] hashMapArr;
+        int i11;
         short s10;
         boolean z10;
-        int i11;
         int i12;
+        int i13;
         long j3;
         long j10;
         boolean z11;
-        int i13;
         int i14;
         short s11;
+        int i15;
         long j11;
         HashMap[] hashMapArr2;
-        int i15;
+        int i16;
         int readUnsignedShort;
         long j12;
-        int i16 = i10;
+        int i17 = i10;
         Integer valueOf = Integer.valueOf(fVar.c);
         HashSet hashSet = this.f;
         hashSet.add(valueOf);
@@ -1239,9 +1237,12 @@ public final class g {
             int readUnsignedShort3 = fVar.readUnsignedShort();
             int readInt = fVar.readInt();
             long j13 = fVar.c + 4;
-            d dVar = (d) K[i16].get(Integer.valueOf(readUnsignedShort2));
+            d dVar = (d) K[i17].get(Integer.valueOf(readUnsignedShort2));
             if (z12) {
-                Log.d("ExifInterface", String.format("ifdType: %d, tagNumber: %d, tagName: %s, dataFormat: %d, numberOfComponents: %d", Integer.valueOf(i16), Integer.valueOf(readUnsignedShort2), dVar != null ? dVar.b : null, Integer.valueOf(readUnsignedShort3), Integer.valueOf(readInt)));
+                i11 = 3;
+                Log.d("ExifInterface", String.format("ifdType: %d, tagNumber: %d, tagName: %s, dataFormat: %d, numberOfComponents: %d", Integer.valueOf(i17), Integer.valueOf(readUnsignedShort2), dVar != null ? dVar.b : null, Integer.valueOf(readUnsignedShort3), Integer.valueOf(readInt)));
+            } else {
+                i11 = 3;
             }
             if (dVar == null) {
                 if (z12) {
@@ -1252,170 +1253,163 @@ public final class g {
             } else {
                 if (readUnsignedShort3 > 0) {
                     if (readUnsignedShort3 < F.length) {
-                        i12 = dVar.c;
+                        i13 = dVar.c;
                         s10 = readShort;
-                        if (i12 == 7 || readUnsignedShort3 == 7 || i12 == readUnsignedShort3 || (i13 = dVar.d) == readUnsignedShort3) {
+                        if (i13 == 7 || readUnsignedShort3 == 7 || i13 == readUnsignedShort3 || (i14 = dVar.d) == readUnsignedShort3) {
                             z10 = z12;
                         } else {
                             z10 = z12;
-                            if (((i12 != 4 && i13 != 4) || readUnsignedShort3 != 3) && (((i12 != 9 && i13 != 9) || readUnsignedShort3 != 8) && ((i12 != 12 && i13 != 12) || readUnsignedShort3 != 11))) {
+                            if (((i13 != 4 && i14 != 4) || readUnsignedShort3 != i11) && (((i13 != 9 && i14 != 9) || readUnsignedShort3 != 8) && ((i13 != 12 && i14 != 12) || readUnsignedShort3 != 11))) {
                                 if (z10) {
                                     Log.d("ExifInterface", "Skip the tag entry since data format (" + E[readUnsignedShort3] + ") is unexpected for tag: " + dVar.b);
                                 }
                             }
                         }
                         if (readUnsignedShort3 != 7) {
-                            i12 = readUnsignedShort3;
+                            i13 = readUnsignedShort3;
                         }
-                        i11 = readInt;
-                        j3 = r9[i12] * i11;
+                        i12 = readInt;
+                        j3 = r9[i13] * i12;
                         if (j3 < 0 || j3 > 2147483647L) {
                             if (z10) {
                                 j10 = j3;
-                                Log.d("ExifInterface", "Skip the tag entry since the number of components is invalid: " + i11);
+                                Log.d("ExifInterface", "Skip the tag entry since the number of components is invalid: " + i12);
                             } else {
                                 j10 = j3;
                             }
-                            j3 = j10;
                             z11 = false;
-                            if (z11) {
-                                fVar.b(j13);
-                                s11 = s12;
-                            } else {
-                                if (j3 > 4) {
-                                    s11 = s12;
-                                    int readInt2 = fVar.readInt();
-                                    hashMapArr2 = hashMapArr;
-                                    if (z10) {
-                                        i15 = readUnsignedShort2;
-                                        Log.d("ExifInterface", "seek to data offset: " + readInt2);
-                                    } else {
-                                        i15 = readUnsignedShort2;
-                                    }
-                                    if (this.d == 7) {
-                                        if ("MakerNote".equals(dVar.b)) {
-                                            this.j = readInt2;
-                                        } else if (i16 == 6 && "ThumbnailImage".equals(dVar.b)) {
-                                            this.k = readInt2;
-                                            this.l = i11;
-                                            c c10 = c.c(6, this.g);
-                                            i14 = i11;
-                                            c a2 = c.a(this.k, this.g);
-                                            j11 = j13;
-                                            c a10 = c.a(this.l, this.g);
-                                            hashMapArr2[4].put("Compression", c10);
-                                            hashMapArr2[4].put("JPEGInterchangeFormat", a2);
-                                            hashMapArr2[4].put("JPEGInterchangeFormatLength", a10);
-                                            fVar.b(readInt2);
-                                        }
-                                    }
-                                    i14 = i11;
-                                    j11 = j13;
-                                    fVar.b(readInt2);
-                                } else {
-                                    i14 = i11;
-                                    s11 = s12;
-                                    j11 = j13;
-                                    hashMapArr2 = hashMapArr;
-                                    i15 = readUnsignedShort2;
-                                }
-                                Integer num = (Integer) N.get(Integer.valueOf(i15));
+                            j3 = j10;
+                        } else {
+                            z11 = true;
+                        }
+                        if (z11) {
+                            s11 = s12;
+                            if (j3 > 4) {
+                                int readInt2 = fVar.readInt();
+                                hashMapArr2 = hashMapArr;
                                 if (z10) {
-                                    Log.d("ExifInterface", "nextIfdType: " + num + " byteCount: " + j3);
+                                    i16 = readUnsignedShort2;
+                                    Log.d("ExifInterface", "seek to data offset: " + readInt2);
+                                } else {
+                                    i16 = readUnsignedShort2;
                                 }
-                                if (num != null) {
-                                    if (i12 != 3) {
-                                        if (i12 == 4) {
-                                            j12 = fVar.readInt() & 4294967295L;
-                                        } else if (i12 == 8) {
-                                            readUnsignedShort = fVar.readShort();
-                                        } else if (i12 == 9 || i12 == 13) {
-                                            readUnsignedShort = fVar.readInt();
-                                        } else {
-                                            j12 = -1;
-                                        }
-                                        if (z10) {
-                                            Log.d("ExifInterface", String.format("Offset: %d, tagName: %s", Long.valueOf(j12), dVar.b));
-                                        }
-                                        if (j12 <= 0) {
-                                            if (!hashSet.contains(Integer.valueOf((int) j12))) {
-                                                fVar.b(j12);
-                                                v(fVar, num.intValue());
-                                            } else if (z10) {
-                                                Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j12 + ")");
-                                            }
-                                        } else if (z10) {
-                                            Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j12);
-                                        }
-                                        fVar.b(j11);
-                                    } else {
-                                        readUnsignedShort = fVar.readUnsignedShort();
+                                if (this.d == 7) {
+                                    if ("MakerNote".equals(dVar.b)) {
+                                        this.j = readInt2;
+                                    } else if (i17 == 6 && "ThumbnailImage".equals(dVar.b)) {
+                                        this.k = readInt2;
+                                        this.l = i12;
+                                        c c10 = c.c(6, this.g);
+                                        i15 = i12;
+                                        c a2 = c.a(this.k, this.g);
+                                        j11 = j13;
+                                        c a10 = c.a(this.l, this.g);
+                                        hashMapArr2[4].put("Compression", c10);
+                                        hashMapArr2[4].put("JPEGInterchangeFormat", a2);
+                                        hashMapArr2[4].put("JPEGInterchangeFormatLength", a10);
+                                        fVar.b(readInt2);
                                     }
-                                    j12 = readUnsignedShort;
+                                }
+                                i15 = i12;
+                                j11 = j13;
+                                fVar.b(readInt2);
+                            } else {
+                                i15 = i12;
+                                j11 = j13;
+                                hashMapArr2 = hashMapArr;
+                                i16 = readUnsignedShort2;
+                            }
+                            Integer num = (Integer) N.get(Integer.valueOf(i16));
+                            if (z10) {
+                                Log.d("ExifInterface", "nextIfdType: " + num + " byteCount: " + j3);
+                            }
+                            if (num != null) {
+                                if (i13 != 3) {
+                                    if (i13 == 4) {
+                                        j12 = fVar.readInt() & 4294967295L;
+                                    } else if (i13 == 8) {
+                                        readUnsignedShort = fVar.readShort();
+                                    } else if (i13 == 9 || i13 == 13) {
+                                        readUnsignedShort = fVar.readInt();
+                                    } else {
+                                        j12 = -1;
+                                    }
                                     if (z10) {
+                                        Log.d("ExifInterface", String.format("Offset: %d, tagName: %s", Long.valueOf(j12), dVar.b));
                                     }
                                     if (j12 <= 0) {
+                                        if (!hashSet.contains(Integer.valueOf((int) j12))) {
+                                            fVar.b(j12);
+                                            v(fVar, num.intValue());
+                                        } else if (z10) {
+                                            Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j12 + ")");
+                                        }
+                                    } else if (z10) {
+                                        Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j12);
                                     }
                                     fVar.b(j11);
                                 } else {
-                                    long j14 = j11;
-                                    int i17 = fVar.c + this.i;
-                                    byte[] bArr = new byte[(int) j3];
-                                    fVar.readFully(bArr);
-                                    c cVar = new c(i17, bArr, i12, i14);
-                                    HashMap hashMap = hashMapArr2[i10];
-                                    String str = dVar.b;
-                                    hashMap.put(str, cVar);
-                                    if ("DNGVersion".equals(str)) {
-                                        this.d = 3;
-                                    }
-                                    if ((("Make".equals(str) || "Model".equals(str)) && cVar.f(this.g).contains("PENTAX")) || ("Compression".equals(str) && cVar.e(this.g) == 65535)) {
-                                        this.d = 8;
-                                    }
-                                    if (fVar.c != j14) {
-                                        fVar.b(j14);
-                                    }
+                                    readUnsignedShort = fVar.readUnsignedShort();
+                                }
+                                j12 = readUnsignedShort;
+                                if (z10) {
+                                }
+                                if (j12 <= 0) {
+                                }
+                                fVar.b(j11);
+                            } else {
+                                long j14 = j11;
+                                int i18 = fVar.c + this.i;
+                                byte[] bArr = new byte[(int) j3];
+                                fVar.readFully(bArr);
+                                c cVar = new c(i18, bArr, i13, i15);
+                                HashMap hashMap = hashMapArr2[i10];
+                                String str = dVar.b;
+                                hashMap.put(str, cVar);
+                                if ("DNGVersion".equals(str)) {
+                                    this.d = 3;
+                                }
+                                if ((("Make".equals(str) || "Model".equals(str)) && cVar.f(this.g).contains("PENTAX")) || ("Compression".equals(str) && cVar.e(this.g) == 65535)) {
+                                    this.d = 8;
+                                }
+                                if (fVar.c != j14) {
+                                    fVar.b(j14);
                                 }
                             }
-                            s12 = (short) (s11 + 1);
-                            i16 = i10;
-                            readShort = s10;
-                            z12 = z10;
                         } else {
-                            z11 = true;
-                            if (z11) {
-                            }
-                            s12 = (short) (s11 + 1);
-                            i16 = i10;
-                            readShort = s10;
-                            z12 = z10;
+                            fVar.b(j13);
+                            s11 = s12;
                         }
+                        s12 = (short) (s11 + 1);
+                        i17 = i10;
+                        readShort = s10;
+                        z12 = z10;
                     }
                 }
                 s10 = readShort;
                 z10 = z12;
-                i11 = readInt;
+                i12 = readInt;
                 if (z10) {
                     Log.d("ExifInterface", "Skip the tag entry since data format is invalid: " + readUnsignedShort3);
                 }
-                i12 = readUnsignedShort3;
-                j3 = 0;
+                i13 = readUnsignedShort3;
                 z11 = false;
+                j3 = 0;
                 if (z11) {
                 }
                 s12 = (short) (s11 + 1);
-                i16 = i10;
+                i17 = i10;
                 readShort = s10;
                 z12 = z10;
             }
-            i11 = readInt;
-            i12 = readUnsignedShort3;
-            j3 = 0;
+            i12 = readInt;
+            i13 = readUnsignedShort3;
             z11 = false;
+            j3 = 0;
             if (z11) {
             }
             s12 = (short) (s11 + 1);
-            i16 = i10;
+            i17 = i10;
             readShort = s10;
             z12 = z10;
         }
@@ -1467,7 +1461,6 @@ public final class g {
             return;
         }
         int e10 = cVar2.e(this.g);
-        int i10 = 1;
         if (e10 != 1) {
             if (e10 == 6) {
                 n(bVar, hashMap);
@@ -1506,36 +1499,33 @@ public final class g {
                 }
                 byte[] bArr = new byte[(int) j3];
                 this.h = true;
+                int i10 = 0;
                 int i11 = 0;
-                int i12 = 0;
-                int i13 = 0;
-                while (i11 < b10.length) {
-                    int i14 = (int) b10[i11];
-                    int i15 = (int) b11[i11];
-                    if (i11 < b10.length - i10 && i14 + i15 != b10[i11 + 1]) {
+                for (int i12 = 0; i12 < b10.length; i12++) {
+                    int i13 = (int) b10[i12];
+                    int i14 = (int) b11[i12];
+                    if (i12 < b10.length - 1 && i13 + i14 != b10[i12 + 1]) {
                         this.h = false;
                     }
-                    int i16 = i14 - i12;
-                    if (i16 < 0) {
+                    int i15 = i13 - i10;
+                    if (i15 < 0) {
                         Log.d("ExifInterface", "Invalid strip offset value");
                         return;
                     }
-                    long j11 = i16;
+                    long j11 = i15;
                     if (bVar.skip(j11) != j11) {
-                        Log.d("ExifInterface", "Failed to skip " + i16 + " bytes.");
+                        Log.d("ExifInterface", "Failed to skip " + i15 + " bytes.");
                         return;
                     }
-                    int i17 = i12 + i16;
-                    byte[] bArr2 = new byte[i15];
-                    if (bVar.read(bArr2) != i15) {
-                        Log.d("ExifInterface", "Failed to read " + i15 + " bytes.");
+                    int i16 = i10 + i15;
+                    byte[] bArr2 = new byte[i14];
+                    if (bVar.read(bArr2) != i14) {
+                        Log.d("ExifInterface", "Failed to read " + i14 + " bytes.");
                         return;
                     }
-                    i12 = i17 + i15;
-                    System.arraycopy(bArr2, 0, bArr, i13, i15);
-                    i13 += i15;
-                    i11++;
-                    i10 = 1;
+                    i10 = i16 + i14;
+                    System.arraycopy(bArr2, 0, bArr, i11, i14);
+                    i11 += i14;
                 }
                 if (this.h) {
                     long j12 = b10[0];

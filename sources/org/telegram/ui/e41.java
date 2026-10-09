@@ -1,112 +1,116 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class e41 extends org.telegram.ui.Components.yl0 {
+public final class e41 extends org.telegram.ui.Components.pm0 {
     public final Context c;
+    public final boolean d;
+    public final /* synthetic */ f41 e;
 
-    public e41(Context context) {
+    public e41(f41 f41Var, Context context, boolean z10) {
+        this.e = f41Var;
         this.c = context;
+        this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        int b10 = c1Var.b();
-        if (b10 != 1) {
-            ri.a aVar = ri.e.b;
-            aVar.a();
-            if (!aVar.d) {
-                return false;
-            }
-            if (b10 != 2 && b10 != 3 && b10 != 4 && b10 != 5 && b10 != 8) {
-                return false;
-            }
-        }
-        return true;
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        return d1Var.f == 0;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
-        return 7;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0 || i10 == 7) {
+        boolean z10 = this.d;
+        f41 f41Var = this.e;
+        if (!z10) {
+            return f41Var.h.size() + (f41Var.e >= 0 ? 1 : 0);
+        }
+        ArrayList arrayList = f41Var.f;
+        if (arrayList == null) {
             return 0;
         }
-        if (i10 == 1 || i10 == 8) {
-            return 1;
-        }
-        return (i10 == 6 || i10 == 9) ? 3 : 2;
+        return arrayList.size();
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        ri.a aVar = ri.e.b;
-        aVar.a();
-        boolean z10 = aVar.d;
-        int i11 = c1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.m4) c1Var.a).setText(i10 == 0 ? LocaleController.getString(R.string.RoundVideoGeneral) : LocaleController.getString(R.string.RoundVideoComposition));
-            return;
-        }
-        if (i11 == 1) {
-            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) c1Var.a;
-            w8Var.setEnabled(i10 == 1 || z10);
-            if (i10 == 1) {
-                w8Var.f(LocaleController.getString(R.string.RoundVideoUseNewRecorder), z10, false);
+    @Override // s4.i0
+    public final int j(int i10) {
+        return (!this.d && i10 == this.e.e) ? 1 : 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0031, code lost:
+    
+        if (r8 == (r3.f.size() - 1)) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0033, code lost:
+    
+        r8 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0057, code lost:
+    
+        if (r8 == (r3.h.size() - 1)) goto L16;
+     */
+    @Override // s4.i0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.d1 d1Var, int i10) {
+        boolean z10;
+        int i11 = d1Var.f;
+        View view = d1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
                 return;
             }
-            String string = LocaleController.getString(R.string.RoundVideoCompositionEnabled);
-            ri.a aVar2 = ri.e.g;
-            aVar2.a();
-            w8Var.f(string, aVar2.d, false);
             return;
         }
-        if (i11 != 2) {
-            ((org.telegram.ui.Cells.e9) c1Var.a).setText(i10 == 6 ? LocaleController.getString(R.string.RoundVideoGeneralInfo) : LocaleController.getString(R.string.RoundVideoCompositionInfo));
+        org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+        boolean z11 = this.d;
+        f41 f41Var = this.e;
+        TranslateController.Language language = null;
+        if (!z11) {
+            int i12 = f41Var.e;
+            if (i12 >= 0 && i10 > i12) {
+                i10--;
+            }
+            if (i10 >= 0 && i10 < f41Var.h.size()) {
+                language = (TranslateController.Language) f41Var.h.get(i10);
+            }
+            z10 = false;
+        } else if (i10 >= 0 && i10 < f41Var.f.size()) {
+            language = (TranslateController.Language) f41Var.f.get(i10);
+        }
+        if (language == null) {
             return;
         }
-        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) c1Var.a;
-        eaVar.setEnabled(z10);
-        if (i10 == 2) {
-            eaVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a4.a.o(((ki.q0) ri.e.c.a()).a, "p", new StringBuilder()), false, true);
-            return;
+        String str = language.ownDisplayName;
+        if (str == null) {
+            str = language.displayName;
         }
-        if (i10 == 3) {
-            String string2 = LocaleController.getString(R.string.RoundVideoCameraResolution);
-            ki.m0 m0Var = (ki.m0) ri.e.d.a();
-            eaVar.c(string2, m0Var == ki.m0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : m0Var == ki.m0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
-        } else if (i10 == 4) {
-            eaVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a4.a.o(((ki.n0) ri.e.e.a()).a, " FPS", new StringBuilder()), false, true);
-        } else {
-            eaVar.c(LocaleController.getString(R.string.RoundVideoBitrate), f41.S(ri.e.f.a()), false, false);
-        }
+        x8Var.b(str, language.displayName, false, !z10);
+        x8Var.setChecked(f41Var.r.contains(language.code));
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        View view;
         Context context = this.c;
         if (i10 == 0) {
-            frameLayout = new org.telegram.ui.Cells.m4(context);
-        } else if (i10 == 1) {
-            frameLayout = new org.telegram.ui.Cells.w8(context);
-        } else if (i10 == 2) {
-            org.telegram.ui.Cells.ea eaVar = new org.telegram.ui.Cells.ea(context);
-            eaVar.setCanDisable(true);
-            frameLayout = eaVar;
+            view = new org.telegram.ui.Cells.x8(context);
+        } else if (i10 != 2) {
+            view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
         } else {
-            frameLayout = new org.telegram.ui.Cells.e9(context);
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = m4Var;
         }
-        frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new org.telegram.ui.Components.il0(frameLayout);
+        return new org.telegram.ui.Components.am0(view);
     }
 }

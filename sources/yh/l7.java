@@ -1,97 +1,79 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tr;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class l7 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final Drawable b;
-    public final Drawable c;
-    public final TextView d;
-    public final org.telegram.ui.Components.p6 e;
-    public SpannableString f;
-    public boolean h;
-    public int n;
-    public final org.telegram.ui.Components.e6 r;
+public final /* synthetic */ class l7 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public l7(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 500L, tr.h);
-        this.a = d6Var;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var), PorterDuff.Mode.SRC_IN));
-        this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
-        setWillNotDraw(false);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        bi.j(15.0f, 1, textView);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
-        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
-        this.e = p6Var;
-        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        p6Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, d6Var));
-        p6Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(p6Var, w7.z5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
+    public /* synthetic */ l7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.r.d(this.n, false);
-        float f7 = LocaleController.isRTL ? -1.0f : 1.0f;
-        float dp = AndroidUtilities.dp(24.0f);
-        float dp2 = AndroidUtilities.dp(24.0f);
-        float dp3 = AndroidUtilities.dp(2.5f);
-        float width = LocaleController.isRTL ? (getWidth() - AndroidUtilities.dp(19.0f)) - dp : AndroidUtilities.dp(19.0f);
-        for (int ceil = ((int) Math.ceil(d)) - 1; ceil >= 0; ceil--) {
-            float clamp = Utilities.clamp(d - ceil, 1.0f, 0.0f);
-            float f10 = (((ceil - 1) - (1.0f - clamp)) * dp3 * f7) + width;
-            float measuredHeight = (getMeasuredHeight() - dp2) / 2.0f;
-            int i10 = (int) f10;
-            int i11 = (int) measuredHeight;
-            int i12 = (int) (f10 + dp);
-            int i13 = (int) (measuredHeight + dp2);
-            Drawable drawable = this.b;
-            drawable.setBounds(i10, i11, i12, i13);
-            int i14 = (int) (clamp * 255.0f);
-            drawable.setAlpha(i14);
-            drawable.draw(canvas);
-            Drawable drawable2 = this.c;
-            drawable2.setBounds(i10, i11, i12, i13);
-            drawable2.setAlpha(i14);
-            drawable2.draw(canvas);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
+            case 0:
+                m7 m7Var = (m7) notificationCenterDelegate;
+                ArrayList arrayList = (ArrayList) obj;
+                int i11 = m7Var.c;
+                int i12 = m7Var.d;
+                long j3 = m7Var.f;
+                int i13 = 0;
+                if (j3 == 0) {
+                    m5 y3 = m5.y(i11, m7Var.e);
+                    ArrayList arrayList2 = y3.q[i12];
+                    int size = arrayList2.size();
+                    int i14 = 0;
+                    while (i14 < size) {
+                        Object obj3 = arrayList2.get(i14);
+                        i14++;
+                        int i15 = i7.a;
+                        p61 J = p61.J(i7.class);
+                        J.G = (TL_stars.StarsTransaction) obj3;
+                        J.q = false;
+                        arrayList.add(J);
+                    }
+                    if (!y3.u[i12]) {
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        break;
+                    }
+                } else {
+                    o g10 = o.g(i11);
+                    ArrayList arrayList3 = g10.k(j3).a[i12];
+                    int size2 = arrayList3.size();
+                    while (i13 < size2) {
+                        Object obj4 = arrayList3.get(i13);
+                        i13++;
+                        int i16 = i7.a;
+                        p61 J2 = p61.J(i7.class);
+                        J2.G = (TL_stars.StarsTransaction) obj4;
+                        J2.q = true;
+                        arrayList.add(J2);
+                    }
+                    if (!g10.k(j3).e[i12]) {
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        arrayList.add(p61.o(arrayList.size(), 7));
+                        break;
+                    }
+                }
+                break;
+            default:
+                hg.f2.V((hg.f2) notificationCenterDelegate, (ArrayList) obj, (c71) obj2);
+                break;
         }
-        if (this.h) {
-            org.telegram.ui.ActionBar.d6 d6Var = this.a;
-            Paint H = d6Var != null ? d6Var.H("paintDivider") : null;
-            if (H == null) {
-                H = org.telegram.ui.ActionBar.i6.k0;
-            }
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), H);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

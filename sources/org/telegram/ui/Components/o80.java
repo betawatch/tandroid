@@ -1,31 +1,12 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u80 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+public interface o80 {
+    void a(RectF rectF);
 
-    public /* synthetic */ o80(u80 u80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i10) {
-        this.a = i10;
-        this.b = u80Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j3;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u80.p(this.b, this.c, this.d);
-                break;
-            default:
-                u80.o(this.b, this.c, this.d);
-                break;
-        }
-    }
+    void b(Canvas canvas, float f7);
 }

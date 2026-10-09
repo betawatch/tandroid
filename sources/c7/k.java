@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(17);
@@ -44,20 +44,20 @@ public final class k extends l {
         cVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            hVar.Z(str, "errorMessage");
+            hVar.a0(str, "errorMessage");
         }
         return hVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
+        int q6 = w7.d0.q(parcel, 20293);
         int i11 = this.a.a;
-        w7.g0.s(parcel, 2, 4);
+        w7.d0.s(parcel, 2, 4);
         parcel.writeInt(i11);
-        w7.g0.l(parcel, 3, this.b);
-        w7.g0.s(parcel, 4, 4);
+        w7.d0.l(parcel, 3, this.b);
+        w7.d0.s(parcel, 4, 4);
         parcel.writeInt(this.c);
-        w7.g0.r(parcel, q6);
+        w7.d0.r(parcel, q6);
     }
 }

@@ -6,27 +6,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-import k2.v;
 import k9.h;
+import m4.w;
 import m9.a;
 import na.e;
-import org.telegram.ui.web.w;
+import pg.e0;
 import q9.b;
 import q9.j;
 import q9.r;
 import qa.c;
 import qa.d;
 import r9.i;
-import w7.q8;
+import w7.o8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static d lambda$getComponents$0(b bVar) {
-        return new c((h) bVar.a(h.class), bVar.d(e.class), (ExecutorService) bVar.g(new r(a.class, ExecutorService.class)), new i((Executor) bVar.g(new r(m9.b.class, Executor.class))));
+        return new c((h) bVar.a(h.class), bVar.c(e.class), (ExecutorService) bVar.g(new r(a.class, ExecutorService.class)), new i((Executor) bVar.g(new r(m9.b.class, Executor.class))));
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -37,12 +37,12 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         a2.a(new j(0, 1, e.class));
         a2.a(new j(new r(a.class, ExecutorService.class), 1, 0));
         a2.a(new j(new r(m9.b.class, Executor.class), 1, 0));
-        a2.f = new w(14);
+        a2.f = new e0(6);
         q9.a b10 = a2.b();
         na.d dVar = new na.d(0);
         i0 a10 = q9.a.a(na.d.class);
         a10.b = 1;
-        a10.f = new v(dVar, 19);
-        return Arrays.asList(b10, a10.b(), q8.a(LIBRARY_NAME, "17.2.0"));
+        a10.f = new w(dVar, 18);
+        return Arrays.asList(b10, a10.b(), o8.a(LIBRARY_NAME, "17.2.0"));
     }
 }

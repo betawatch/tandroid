@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class jt implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
@@ -29,7 +29,14 @@ public final class jt implements View.OnClickListener {
         if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
             pt ptVar = rtVar.l;
             if (ptVar != null) {
-                ptVar.n(rtVar.W, rtVar.Y, rtVar.b0, ((Integer) arrayList.get(intValue)).intValue() == 0, 0, 0);
+                TLRPC.Document document = rtVar.W;
+                String str = rtVar.Y;
+                boolean z10 = true;
+                Object obj = rtVar.b0;
+                if (((Integer) arrayList.get(intValue)).intValue() != 0) {
+                    z10 = false;
+                }
+                ptVar.n(document, str, obj, z10, 0, 0);
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
             pt ptVar2 = rtVar.l;
@@ -39,14 +46,14 @@ public final class jt implements View.OnClickListener {
         } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
             MediaDataController.getInstance(rtVar.r).addRecentSticker(2, rtVar.b0, rtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
-            TLRPC.Document document = rtVar.W;
-            Object obj = rtVar.b0;
-            String str = rtVar.Y;
+            TLRPC.Document document2 = rtVar.W;
+            Object obj2 = rtVar.b0;
+            String str2 = rtVar.Y;
             pt ptVar3 = rtVar.l;
             if (ptVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.e5.L(rtVar.w, ptVar3.a(), new a1.d(ptVar3, document, str, obj, 10));
+                org.telegram.ui.Components.g5.K(rtVar.w, ptVar3.a(), new a1.d(ptVar3, document2, str2, obj2, 10));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
             MediaDataController.getInstance(rtVar.r).addRecentSticker(0, rtVar.b0, rtVar.W, (int) (System.currentTimeMillis() / 1000), true);

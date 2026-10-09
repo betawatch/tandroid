@@ -15,7 +15,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -475,9 +475,9 @@ public class CameraSession {
         configurePhotoCamera();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0064  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0063  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

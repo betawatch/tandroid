@@ -1,10 +1,10 @@
 package c1;
 
 import java.util.concurrent.Executor;
-import rd.l;
+import sd.l;
 import w0.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class b implements l {
         this.b = obj;
     }
 
-    @Override // rd.l
+    @Override // sd.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
@@ -47,8 +47,8 @@ public final /* synthetic */ class b implements l {
                 executor2.execute(new e1.c(dVar, e11, 0));
                 break;
             default:
-                return obj == ((hd.c) this.b) ? "(this Collection)" : String.valueOf(obj);
+                return obj == ((id.c) this.b) ? "(this Collection)" : String.valueOf(obj);
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 }

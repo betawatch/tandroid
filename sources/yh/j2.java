@@ -1,209 +1,114 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class j2 extends View {
-    public final TextPaint a;
-    public final k90 b;
-    public final Paint c;
-    public final Paint d;
-    public StaticLayout e;
-    public boolean f;
+public final class j2 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.g6 d;
+    public final Path e;
+    public final b8 f;
+    public int g;
     public int h;
-    public int n;
-    public BitmapShader r;
-    public Matrix s;
-    public Matrix v;
-    public CharSequence w;
 
-    public j2(Context context) {
-        super(context);
-        this.h = AndroidUtilities.dp(6.0f);
-        this.n = AndroidUtilities.dp(2.0f);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+    public j2() {
         Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
         Paint paint2 = new Paint(1);
-        this.d = paint2;
-        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(9.66f)));
-        this.b = new k90(0);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.g6(1.0f, new f0(this, 2), 0L, 420L, hs.h);
+        this.e = new Path();
+        this.f = new b8(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
     }
 
-    public final void a(int i10, CharSequence charSequence) {
-        if (i10 <= 0) {
-            this.w = charSequence;
+    public final void a(int i10, int i11) {
+        if (this.g == i10 && this.h == i11) {
             return;
         }
-        this.e = new StaticLayout(charSequence, this.a, i10 - AndroidUtilities.dp(18.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        k90 k90Var = this.b;
-        k90Var.rewind();
-        int i11 = this.h;
-        int i12 = this.n;
-        k90Var.e = i11;
-        k90Var.f = i12;
-        if (this.f) {
-            k90Var.e(null, 0, 0.0f, 0.0f);
-            float f7 = Float.MAX_VALUE;
-            float width = this.e.getWidth();
-            float f10 = Float.MIN_VALUE;
-            float f11 = 0.0f;
-            for (int i13 = 0; i13 < this.e.getLineCount(); i13++) {
-                width = Math.min(width, this.e.getLineLeft(i13));
-                f10 = Math.min(f10, this.e.getLineTop(i13));
-                f11 = Math.max(f11, this.e.getLineRight(i13));
-                f7 = Math.max(f7, this.e.getLineBottom(i13));
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i10;
+        this.h = i11;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.d(0.0f, true);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        AndroidUtilities.rectTmp.set(getBounds());
+        float dp = AndroidUtilities.dp(24.0f);
+        int i10 = 0;
+        float d = this.d.d(1.0f, false);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i10 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                b8 b8Var = this.f;
+                b8Var.g(rectF);
+                b8Var.h = 30.0f;
+                b8Var.d();
+                b8Var.a(canvas, org.telegram.ui.ActionBar.i6.m1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                AndroidUtilities.drawStroke(canvas, rectF, dp);
+                return;
             }
-            this.b.addRect(width, f10, f11, this.e.getHeight(), Path.Direction.CW);
-        } else {
-            k90Var.e(this.e, 0, 0.0f, 0.0f);
-            StaticLayout staticLayout = this.e;
-            staticLayout.getSelectionPath(0, staticLayout.getText().length(), k90Var);
-            k90Var.a();
-        }
-        invalidate();
-    }
-
-    public final void b(int i10, TL_stars.SavedStarGift savedStarGift) {
-        if (savedStarGift == null || savedStarGift.from_id == null || !(savedStarGift.gift instanceof TL_stars.TL_starGiftUnique)) {
-            setVisibility(8);
-            return;
-        }
-        setVisibility(0);
-        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
-        long peerDialogId = DialogObject.getPeerDialogId(savedStarGift.from_id);
-        long peerDialogId2 = DialogObject.getPeerDialogId(savedStarGift.gift.owner_id);
-        if (clientUserId == peerDialogId) {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString(savedStarGift.gift.crafted ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(savedStarGift.date))));
-        } else if (clientUserId == peerDialogId2) {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(savedStarGift.date))));
-        } else {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(savedStarGift.date))));
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e != null) {
-            canvas.save();
-            canvas.translate((getWidth() - this.e.getWidth()) / 2.0f, AndroidUtilities.dp(16.0f));
-            Matrix matrix = this.s;
-            if (matrix != null) {
-                matrix.reset();
-                this.v.reset();
-                View view = this;
-                while (view != null) {
-                    this.v.postConcat(view.getMatrix());
-                    view = view.getParent() instanceof View ? (View) view.getParent() : null;
+            if (linearGradientArr[i10] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i10].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i10];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, dp, dp, paint);
                 }
-                this.v.invert(this.s);
-                this.s.preTranslate((-this.h) / 2, -AndroidUtilities.dp(16.0f));
-                this.s.preScale(12.0f, 12.0f);
-                this.r.setLocalMatrix(this.s);
             }
-            Paint paint = this.c;
-            k90 k90Var = this.b;
-            canvas.drawPath(k90Var, paint);
-            int l1 = org.telegram.ui.ActionBar.i6.l1(0.35f, -16777216);
-            Paint paint2 = this.d;
-            paint2.setColor(l1);
-            canvas.drawPath(k90Var, paint2);
-            this.e.draw(canvas);
-            canvas.restore();
+            i10++;
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        CharSequence charSequence = this.w;
-        if (charSequence != null) {
-            a(size, charSequence);
-        }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
-        StaticLayout staticLayout = this.e;
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(staticLayout == null ? 0 : staticLayout.getHeight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-        setPivotX(getMeasuredWidth() / 2.0f);
-        setPivotY(getMeasuredHeight());
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public void set(MessageObject messageObject) {
-        TLRPC.Message message;
-        if (messageObject == null || (message = messageObject.messageOwner) == null || message.action == null) {
-            setVisibility(8);
-            return;
-        }
-        int i10 = messageObject.currentAccount;
-        long clientUserId = UserConfig.getInstance(i10).getClientUserId();
-        TLRPC.MessageAction messageAction = messageObject.messageOwner.action;
-        if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
-            setVisibility(8);
-            return;
-        }
-        if (!(messageAction instanceof TLRPC.TL_messageActionStarGiftUnique)) {
-            setVisibility(8);
-            return;
-        }
-        TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
-        TLRPC.Peer peer = tL_messageActionStarGiftUnique.from_id;
-        if (peer == null) {
-            setVisibility(8);
-            return;
-        }
-        long peerDialogId = DialogObject.getPeerDialogId(peer);
-        long peerDialogId2 = DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.peer);
-        if (clientUserId == peerDialogId) {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString((tL_messageActionStarGiftUnique.craft || tL_messageActionStarGiftUnique.gift.crafted) ? R.string.GiftSelfTopActionCrafted : R.string.GiftSelfTopAction, LocaleController.formatDate(messageObject.messageOwner.date))));
-        } else if (clientUserId == peerDialogId2) {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopAction, DialogObject.getShortName(i10, peerDialogId), LocaleController.formatDate(messageObject.messageOwner.date))));
-        } else {
-            set(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftTopActionFromTo, DialogObject.getShortName(i10, peerDialogId), DialogObject.getShortName(i10, peerDialogId2), LocaleController.formatDate(messageObject.messageOwner.date))));
-        }
-        setVisibility(0);
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 
-    public void setFullRect(boolean z10) {
-        this.f = z10;
-    }
-
-    public void setRoundRadius(float f7) {
-        this.c.setPathEffect(new CornerPathEffect(f7));
-        this.d.setPathEffect(new CornerPathEffect(f7));
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        invalidate();
-    }
-
-    public void set(CharSequence charSequence) {
-        a(getMeasuredWidth(), charSequence);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

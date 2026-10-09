@@ -14,18 +14,18 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class f7 extends Drawable {
     public final Paint a;
-    public final kj0 b;
+    public final ck0 b;
     public final Drawable c;
     public int d;
 
-    public f7(Context context, org.telegram.ui.Components.w9 w9Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        this(context, w9Var, z10, R.drawable.large_repost_story, d6Var);
+    public f7(Context context, org.telegram.ui.Components.y9 y9Var, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
+        this(context, y9Var, z10, R.drawable.large_repost_story, e6Var);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -74,11 +74,11 @@ public final class f7 extends Drawable {
         this.d = i10;
     }
 
-    public f7(Context context, View view, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public f7(Context context, View view, boolean z10, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         Paint paint = new Paint(1);
         this.a = paint;
         this.d = 255;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.hk, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ik, d6Var)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.hk, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.ik, e6Var)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
         if (!z10) {
             this.b = null;
             Drawable mutate = context.getResources().getDrawable(i10).mutate();
@@ -86,10 +86,10 @@ public final class f7 extends Drawable {
             mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
         }
-        kj0 kj0Var = new kj0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.b = kj0Var;
-        kj0Var.R(view);
-        AndroidUtilities.runOnUIThread(new q0(kj0Var, 1), 450L);
+        ck0 ck0Var = new ck0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = ck0Var;
+        ck0Var.R(view);
+        AndroidUtilities.runOnUIThread(new r0(ck0Var, 1), 450L);
         this.c = null;
     }
 

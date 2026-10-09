@@ -1,9 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface tv0 {
-    void a(TLRPC.MessageMedia messageMedia);
+public final class tv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ aw0 b;
+
+    public /* synthetic */ tv0(aw0 aw0Var, int i10) {
+        this.a = i10;
+        this.b = aw0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            default:
+                aw0 aw0Var = this.b;
+                aw0Var.getClass();
+                aw0Var.R.setTranslationY(0.0f);
+                aw0Var.l0();
+                break;
+        }
+    }
 }

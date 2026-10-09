@@ -1,112 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.tgnet.TLRPC;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zw extends gg.m {
-    public final /* synthetic */ ty d0;
-    public final /* synthetic */ uy e0;
+public final class zw extends org.telegram.ui.Components.nj0 {
+    public final /* synthetic */ int f0 = 0;
+    public final /* synthetic */ Object g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zw(uy uyVar, uy uyVar2, Context context, int i10, int i11, boolean z10, ArrayList arrayList, int i12, TLRPC.RequestPeerType requestPeerType, ty tyVar) {
-        super(uyVar2, context, i10, i11, z10, arrayList, i12, requestPeerType);
-        this.e0 = uyVar;
-        this.d0 = tyVar;
+    public zw(fg1 fg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(spannableStringBuilder, spannableStringBuilder2);
+        this.g0 = fg1Var;
     }
 
-    @Override // gg.m
-    public final void J() {
-        this.e0.presentFragment(new l());
-    }
-
-    @Override // gg.m
-    public final void K() {
-        uy uyVar = this.e0;
-        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(uyVar.getParentActivity(), 3, null);
-        TLRPC.RequestPeerType requestPeerType = uyVar.G;
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            Bundle h = org.telegram.ui.Cells.c1.h(0, "step");
-            Boolean bool = uyVar.G.has_username;
-            if (bool != null) {
-                h.putBoolean("forcePublic", bool.booleanValue());
-            }
-            nd ndVar = new nd(h);
-            ndVar.t0 = new o6(uyVar, ndVar, b2Var, 2);
-            uyVar.presentFragment(ndVar);
-            return;
-        }
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
-            Bundle bundle = new Bundle();
-            Boolean bool2 = uyVar.G.bot_participant;
-            bundle.putLongArray("result", (bool2 == null || !bool2.booleanValue()) ? new long[]{uyVar.getUserConfig().getClientUserId()} : new long[]{uyVar.getUserConfig().getClientUserId(), uyVar.H});
-            Boolean bool3 = uyVar.G.forum;
-            bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
-            bundle.putBoolean("canToggleTopics", false);
-            k70 k70Var = new k70(bundle);
-            k70Var.Y = new rx(uyVar, b2Var);
-            uyVar.presentFragment(k70Var);
+    @Override // org.telegram.ui.Components.nj0
+    public final float d() {
+        switch (this.f0) {
+            case 0:
+                return ((sy) this.g0).a.getViewOffset();
+            default:
+                return ((fg1) this.g0).N.d3;
         }
     }
 
-    @Override // gg.m
-    public final void L(TLRPC.User user) {
-        int i10;
-        i10 = ((org.telegram.ui.ActionBar.n2) this.e0).currentAccount;
-        MessagesController.getInstance(i10).openApp(user, 0);
-    }
-
-    @Override // gg.m
-    public final boolean S() {
-        return this.e0.R0 == 0;
-    }
-
-    @Override // gg.m, org.telegram.ui.Cells.o2
-    public final void a(org.telegram.ui.Cells.s2 s2Var) {
-        ty tyVar = this.d0;
-        tyVar.a.getClass();
-        this.e0.x4(s2Var, RecyclerView.R(s2Var), 0.0f, tyVar.d);
-    }
-
-    @Override // gg.m, org.telegram.ui.Cells.o2
-    public final void d(org.telegram.ui.Cells.s2 s2Var) {
-        int i10;
-        if (s2Var.getMessage() != null) {
-            uy uyVar = this.e0;
-            TopicsController topicsController = uyVar.getMessagesController().getTopicsController();
-            long j3 = -s2Var.getDialogId();
-            i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j3, MessageObject.getTopicId(i10, s2Var.getMessage().messageOwner, true));
-            if (findTopic != null) {
-                if (uyVar.l2) {
-                    uyVar.X3(s2Var.getDialogId(), findTopic.id, false, null);
-                } else {
-                    ng.d.m(uyVar, -s2Var.getDialogId(), findTopic, 0);
-                }
-            }
-        }
-    }
-
-    @Override // gg.m, s4.h0
-    public final void l() {
-        h();
-        int i10 = ty.L;
-        try {
-            super.l();
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-        uy uyVar = this.e0;
-        if (uyVar.R0 == 15) {
-            uyVar.j0.setVisibility(this.U ? 8 : 0);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zw(String str, String str2, sy syVar) {
+        super(str, str2);
+        this.g0 = syVar;
     }
 }

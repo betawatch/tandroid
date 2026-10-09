@@ -19,12 +19,12 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.p9;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0 {
+public final class q4 extends a0 implements org.telegram.ui.ActionBar.z5, n9, m0 {
     public static final /* synthetic */ int M = 0;
     public final Drawable E;
     public final View F;
@@ -35,14 +35,14 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
     public int K;
     public final l0 L;
     public final int n;
-    public final org.telegram.ui.ActionBar.d6 r;
+    public final org.telegram.ui.ActionBar.e6 r;
     public final Paint s;
     public final Paint v;
     public final Paint w;
     public final TextPaint x;
     public final ImageReceiver y;
 
-    public q4(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public q4(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.s = new Paint(1);
         this.v = new Paint(1);
@@ -50,7 +50,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         TextPaint textPaint = new TextPaint(1);
         this.x = textPaint;
         this.n = i10;
-        this.r = d6Var;
+        this.r = e6Var;
         setWillNotDraw(false);
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
         textPaint.setTextAlign(Paint.Align.CENTER);
@@ -60,10 +60,10 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         View view = new View(context);
         this.F = view;
         view.setOnClickListener(new ai.v0(this, 29));
-        addView(view, w7.z5.e(-1, -2, 51));
-        l0 l0Var = new l0(context, d6Var, new n4(this, 0));
+        addView(view, w7.x5.e(-1, -2, 51));
+        l0 l0Var = new l0(context, e6Var, new xa.d(this, 26));
         this.L = l0Var;
-        addView(l0Var.a, w7.z5.e(-2, -2, 51));
+        addView(l0Var.a, w7.x5.e(-2, -2, 51));
         e();
     }
 
@@ -100,23 +100,23 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         this.L.c(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.i6.pe;
-        org.telegram.ui.ActionBar.d6 d6Var = this.r;
-        this.s.setColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        this.v.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gd, d6Var));
-        this.w.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.uf, d6Var));
+        org.telegram.ui.ActionBar.e6 e6Var = this.r;
+        this.s.setColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
+        this.v.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Gd, e6Var));
+        this.w.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.uf, e6Var));
         int i11 = org.telegram.ui.ActionBar.i6.G6;
-        this.x.setColor(org.telegram.ui.ActionBar.i6.l1(0.5f, org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
-        this.E.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.l1(0.5f, org.telegram.ui.ActionBar.i6.v0(i11, d6Var)), PorterDuff.Mode.SRC_IN));
+        this.x.setColor(org.telegram.ui.ActionBar.i6.m1(0.5f, org.telegram.ui.ActionBar.i6.w0(i11, e6Var)));
+        this.E.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.m1(0.5f, org.telegram.ui.ActionBar.i6.w0(i11, e6Var)), PorterDuff.Mode.SRC_IN));
         l0 l0Var = this.L;
         if (l0Var != null) {
             l0Var.a();
         }
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         this.L.e(arrayList);
     }
@@ -194,7 +194,7 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         if (getMap() != null) {
             ImageReceiver imageReceiver = this.y;
             canvas2 = canvas;
@@ -203,9 +203,9 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             int centerY = (int) imageReceiver.getCenterY();
             Drawable drawable = this.E;
             if (drawable != null) {
-                int t10 = org.telegram.ui.Cells.c1.t(2, centerX, drawable);
-                int e7 = org.telegram.ui.Cells.c1.e(2, centerY, drawable);
-                drawable.setBounds(t10, e7, drawable.getIntrinsicWidth() + t10, drawable.getIntrinsicHeight() + e7);
+                int s10 = org.telegram.ui.Cells.c1.s(2, centerX, drawable);
+                int c10 = org.telegram.ui.Cells.c1.c(2, centerY, drawable);
+                drawable.setBounds(s10, c10, drawable.getIntrinsicWidth() + s10, drawable.getIntrinsicHeight() + c10);
                 drawable.draw(canvas2);
             }
             TL_iv.pageBlockMap map = getMap();
@@ -228,10 +228,10 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             canvas2 = canvas;
         }
         o4 o4Var = this.G;
-        if (o4Var != null && (textSelectionHelper = ((t3) o4Var).a.getTextSelectionHelper()) != null && textSelectionHelper.y() && (getParent() instanceof RecyclerView)) {
+        if (o4Var != null && (textSelectionHelper = ((t3) o4Var).a.getTextSelectionHelper()) != null && textSelectionHelper.x() && (getParent() instanceof RecyclerView)) {
             ((RecyclerView) getParent()).getClass();
             int R = RecyclerView.R(this);
-            if (R >= 0 && R > textSelectionHelper.u0 && R <= textSelectionHelper.x0) {
+            if (R >= 0 && R > textSelectionHelper.p0 && R <= textSelectionHelper.s0) {
                 canvas2.drawRect(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop() + this.K, this.w);
             }
         }

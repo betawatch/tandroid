@@ -1,121 +1,308 @@
 package ci;
 
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.bi;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.lf;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.te0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class j9 extends og.a {
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public CharSequence f;
-    public TLRPC.User g;
-    public TLRPC.Chat h;
-    public int i;
-    public int j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public int q;
+public final class j9 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
+    public final Object c;
+    public final Object d;
+    public Object e;
+    public Object f;
+    public Object h;
 
-    public j9(int i10, boolean z10) {
-        super(i10, z10);
-        this.p = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j9(te0 te0Var, Context context) {
+        super(context);
+        this.h = te0Var;
+        this.b = new ArrayList(4);
+        this.c = new ArrayList(4);
+        this.d = new StringBuilder(4);
+        for (int i10 = 0; i10 < 4; i10++) {
+            TextView textView = new TextView(context);
+            textView.setTextColor(-1);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextSize(1, 36.0f);
+            textView.setGravity(17);
+            textView.setAlpha(0.0f);
+            textView.setPivotX(AndroidUtilities.dp(25.0f));
+            textView.setPivotY(AndroidUtilities.dp(25.0f));
+            addView(textView, w7.x5.e(50, 50, 51));
+            ((ArrayList) this.b).add(textView);
+            TextView textView2 = new TextView(context);
+            textView2.setTextColor(-1);
+            textView2.setTypeface(AndroidUtilities.bold());
+            textView2.setTextSize(1, 36.0f);
+            textView2.setGravity(17);
+            textView2.setAlpha(0.0f);
+            textView2.setText("•");
+            textView2.setPivotX(AndroidUtilities.dp(25.0f));
+            textView2.setPivotY(AndroidUtilities.dp(25.0f));
+            addView(textView2, w7.x5.e(50, 50, 51));
+            ((ArrayList) this.c).add(textView2);
+        }
     }
 
-    public static j9 b(String str, CharSequence charSequence, int i10) {
-        j9 j9Var = new j9(9, false);
-        j9Var.e = str;
-        j9Var.f = charSequence;
-        j9Var.q = i10;
-        return j9Var;
+    public static void a(j9 j9Var, boolean z10) {
+        ArrayList arrayList = (ArrayList) j9Var.c;
+        ArrayList arrayList2 = (ArrayList) j9Var.b;
+        StringBuilder sb2 = (StringBuilder) j9Var.d;
+        if (sb2.length() == 0) {
+            return;
+        }
+        lf lfVar = (lf) j9Var.f;
+        if (lfVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(lfVar);
+            j9Var.f = null;
+        }
+        AnimatorSet animatorSet = (AnimatorSet) j9Var.e;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            j9Var.e = null;
+        }
+        sb2.delete(0, sb2.length());
+        if (z10) {
+            ArrayList arrayList3 = new ArrayList();
+            for (int i10 = 0; i10 < 4; i10++) {
+                TextView textView = (TextView) arrayList2.get(i10);
+                float alpha = textView.getAlpha();
+                Property property = View.ALPHA;
+                Property property2 = View.SCALE_Y;
+                Property property3 = View.SCALE_X;
+                if (alpha != 0.0f) {
+                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f));
+                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f));
+                    arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
+                }
+                TextView textView2 = (TextView) arrayList.get(i10);
+                if (textView2.getAlpha() != 0.0f) {
+                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, 0.0f));
+                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f));
+                    arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f));
+                }
+            }
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            j9Var.e = animatorSet2;
+            animatorSet2.setDuration(150L);
+            ((AnimatorSet) j9Var.e).playTogether(arrayList3);
+            ((AnimatorSet) j9Var.e).addListener(new pe0(j9Var, 2));
+            ((AnimatorSet) j9Var.e).start();
+        } else {
+            for (int i11 = 0; i11 < 4; i11++) {
+                ((TextView) arrayList2.get(i11)).setAlpha(0.0f);
+                ((TextView) arrayList.get(i11)).setAlpha(0.0f);
+            }
+        }
+        te0.a((te0) j9Var.h);
     }
 
-    public static j9 c() {
-        return new j9(0, false);
+    public void b(String str) {
+        ArrayList arrayList = (ArrayList) this.c;
+        ArrayList arrayList2 = (ArrayList) this.b;
+        StringBuilder sb2 = (StringBuilder) this.d;
+        if (sb2.length() == 4) {
+            return;
+        }
+        try {
+            performHapticFeedback(3);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+        ArrayList arrayList3 = new ArrayList();
+        int length = sb2.length();
+        sb2.append(str);
+        TextView textView = (TextView) arrayList2.get(length);
+        textView.setText(str);
+        textView.setTranslationX(c(length));
+        int i10 = 2;
+        Property property = View.SCALE_X;
+        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f, 1.0f));
+        Property property2 = View.SCALE_Y;
+        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property2, 0.0f, 1.0f));
+        Property property3 = View.ALPHA;
+        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property3, 0.0f, 1.0f));
+        Property property4 = View.TRANSLATION_Y;
+        arrayList3.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property4, AndroidUtilities.dp(20.0f), 0.0f));
+        TextView textView2 = (TextView) arrayList.get(length);
+        textView2.setTranslationX(c(length));
+        textView2.setAlpha(0.0f);
+        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property, 0.0f, 1.0f));
+        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, 0.0f, 1.0f));
+        arrayList3.add(ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property4, AndroidUtilities.dp(20.0f), 0.0f));
+        for (int i11 = length + 1; i11 < 4; i11++) {
+            TextView textView3 = (TextView) arrayList2.get(i11);
+            if (textView3.getAlpha() != 0.0f) {
+                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property, 0.0f));
+                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property2, 0.0f));
+                arrayList3.add(ObjectAnimator.ofFloat(textView3, (Property<TextView, Float>) property3, 0.0f));
+            }
+            TextView textView4 = (TextView) arrayList.get(i11);
+            if (textView4.getAlpha() != 0.0f) {
+                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property, 0.0f));
+                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property2, 0.0f));
+                arrayList3.add(ObjectAnimator.ofFloat(textView4, (Property<TextView, Float>) property3, 0.0f));
+            }
+        }
+        lf lfVar = (lf) this.f;
+        if (lfVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(lfVar);
+        }
+        lf lfVar2 = new lf(this, length, i10);
+        this.f = lfVar2;
+        AndroidUtilities.runOnUIThread(lfVar2, 1500L);
+        for (int i12 = 0; i12 < length; i12++) {
+            TextView textView5 = (TextView) arrayList2.get(i12);
+            Property property5 = View.TRANSLATION_X;
+            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property5, c(i12)));
+            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property, 0.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property2, 0.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property3, 0.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView5, (Property<TextView, Float>) property4, 0.0f));
+            TextView textView6 = (TextView) arrayList.get(i12);
+            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property5, c(i12)));
+            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property, 1.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property2, 1.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property3, 1.0f));
+            arrayList3.add(ObjectAnimator.ofFloat(textView6, (Property<TextView, Float>) property4, 0.0f));
+        }
+        AnimatorSet animatorSet = (AnimatorSet) this.e;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.e = animatorSet2;
+        animatorSet2.setDuration(150L);
+        ((AnimatorSet) this.e).playTogether(arrayList3);
+        ((AnimatorSet) this.e).addListener(new pe0(this, 0));
+        ((AnimatorSet) this.e).start();
+        te0.a((te0) this.h);
     }
 
-    public static j9 d() {
-        j9 j9Var = new j9(-1, false);
-        j9Var.o = -1;
-        return j9Var;
+    public int c(int i10) {
+        return org.telegram.messenger.q.D(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
     }
 
-    public static j9 e() {
-        return new j9(1, false);
+    public void d(boolean z10) {
+        ((ImageView) this.c).setVisibility(z10 ? 0 : 8);
+        TextView textView = (TextView) this.d;
+        boolean z11 = LocaleController.isRTL;
+        textView.setLayoutParams(w7.x5.a(-2.0f, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f, -1, 23));
     }
 
-    public static j9 f() {
-        return new j9(2, false);
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                super.dispatchDraw(canvas);
+                Paint paint = (Paint) this.f;
+                paint.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.d7, (org.telegram.ui.ActionBar.e6) this.b));
+                canvas.drawRect(0.0f, getHeight() - AndroidUtilities.getShadowHeight(), getWidth(), getHeight(), paint);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
     }
 
-    public static j9 g(CharSequence charSequence) {
-        j9 j9Var = new j9(6, false);
-        j9Var.e = charSequence;
-        return j9Var;
+    public void e(String str) {
+        ((TextView) this.d).setText(str);
     }
 
-    public static j9 h(int i10, int i11, boolean z10) {
-        j9 j9Var = new j9(3, false);
-        j9Var.i = i10;
-        j9Var.k = z10;
-        j9Var.j = i11;
-        return j9Var;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                ArrayList arrayList = (ArrayList) this.c;
+                ArrayList arrayList2 = (ArrayList) this.b;
+                lf lfVar = (lf) this.f;
+                if (lfVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(lfVar);
+                    this.f = null;
+                }
+                AnimatorSet animatorSet = (AnimatorSet) this.e;
+                if (animatorSet != null) {
+                    animatorSet.cancel();
+                    this.e = null;
+                }
+                for (int i14 = 0; i14 < 4; i14++) {
+                    if (i14 < ((StringBuilder) this.d).length()) {
+                        TextView textView = (TextView) arrayList2.get(i14);
+                        textView.setAlpha(0.0f);
+                        textView.setScaleX(1.0f);
+                        textView.setScaleY(1.0f);
+                        textView.setTranslationY(0.0f);
+                        textView.setTranslationX(c(i14));
+                        TextView textView2 = (TextView) arrayList.get(i14);
+                        textView2.setAlpha(1.0f);
+                        textView2.setScaleX(1.0f);
+                        textView2.setScaleY(1.0f);
+                        textView2.setTranslationY(0.0f);
+                        textView2.setTranslationX(c(i14));
+                    } else {
+                        ((TextView) arrayList2.get(i14)).setAlpha(0.0f);
+                        ((TextView) arrayList.get(i14)).setAlpha(0.0f);
+                    }
+                }
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
     }
 
-    public static j9 i(TLRPC.User user, boolean z10, boolean z11) {
-        j9 j9Var = new j9(3, true);
-        j9Var.g = user;
-        j9Var.k = z10;
-        j9Var.l = z11;
-        return j9Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || j9.class != obj.getClass()) {
-            return false;
-        }
-        j9 j9Var = (j9) obj;
-        int i10 = this.a;
-        if (i10 != j9Var.a) {
-            return false;
-        }
-        if (i10 == -1 && (this.o != j9Var.o || this.p != j9Var.p)) {
-            return false;
-        }
-        if (i10 == 3 && (this.g != j9Var.g || this.h != j9Var.h || this.i != j9Var.i || this.j != j9Var.j || this.k != j9Var.k || this.m != j9Var.m || this.n != j9Var.n)) {
-            return false;
-        }
-        if (i10 == 0 && this.c != j9Var.c) {
-            return false;
-        }
-        if (i10 == 2 && !TextUtils.equals(this.e, j9Var.e)) {
-            return false;
-        }
-        if (this.a == 8 && !TextUtils.equals(this.e, j9Var.e)) {
-            return false;
-        }
-        int i11 = this.a;
-        if ((i11 == 4 || i11 == 11) && !(TextUtils.equals(this.e, j9Var.e) && TextUtils.equals(this.f, j9Var.f))) {
-            return false;
-        }
-        if (this.a == 6 && (!TextUtils.equals(this.e, j9Var.e) || this.c != j9Var.c)) {
-            return false;
-        }
-        if (this.a == 7 && (this.c != j9Var.c || !TextUtils.equals(this.e, j9Var.e) || this.k != j9Var.k)) {
-            return false;
-        }
-        if (this.a != 9 || (this.q == j9Var.q && this.d == j9Var.d && TextUtils.equals(this.e, j9Var.e) && TextUtils.equals(this.f, j9Var.f))) {
-            return this.a != 10 || this.q == j9Var.q;
-        }
-        return false;
+    public j9(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.f = new Paint(1);
+        this.b = e6Var;
+        TextView textView = new TextView(context);
+        this.d = textView;
+        bi.k(20.0f, 1, textView);
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.j5, e6Var));
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, w7.x5.a(-2.0f, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, -1, 23));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        org.telegram.ui.ActionBar.g2 g2Var = new org.telegram.ui.ActionBar.g2(false);
+        this.e = g2Var;
+        imageView.setImageDrawable(g2Var);
+        g2Var.a(-1);
+        g2Var.b(-1);
+        g2Var.k = 220.0f;
+        addView(imageView, w7.x5.a(24.0f, 16.0f, 0.0f, 16.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        imageView.setOnClickListener(new ai.v0(this, 12));
     }
 }

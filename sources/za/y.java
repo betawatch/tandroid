@@ -1,26 +1,24 @@
 package za;
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class y implements s {
-    public static final u e = new u();
-    public static final m1.c f = w7.r.a(r.a);
-    public final Context a;
-    public final id.h b;
-    public final AtomicReference c;
-    public final o0.a d;
+public final class y extends ld.c {
+    public /* synthetic */ Object a;
+    public int b;
+    public final /* synthetic */ k1.p c;
 
-    public y(Context context, id.h hVar) {
-        kotlin.jvm.internal.i.e(context, "context");
-        this.a = context;
-        this.b = hVar;
-        this.c = new AtomicReference();
-        e.getClass();
-        int i10 = 9;
-        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null)), this);
-        zd.e0.q(zd.e0.b(hVar), new t(this, null, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y(k1.p pVar, ld.c cVar) {
+        super(cVar);
+        this.c = pVar;
+    }
+
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.b |= TLObject.FLAG_31;
+        return this.c.b(null, this);
     }
 }

@@ -5,11 +5,11 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import v7.a8;
 import v7.t6;
-import v7.y7;
+import v7.v7;
+import v7.x7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -25,7 +25,7 @@ public final class v {
 
     public static int b(int i10, int i11, int i12, int i13) {
         byte b10 = (byte) i12;
-        return y7.c((byte) 0, a8.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), a8.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), a8.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
+        return v7.c((byte) 0, x7.a(((i10 & 7) << 2) | ((i11 & 48) >> 4)), x7.a(((((byte) i11) & 15) << 4) | ((b10 & 60) >> 2)), x7.a(((b10 & 3) << 6) | (((byte) i13) & 63)));
     }
 
     public static int d(Charset charset) {
@@ -63,7 +63,7 @@ public final class v {
         if (r10 >= 0) {
             return r10;
         }
-        throw new IllegalStateException(a4.a.p(r10, "Top bit not zero: "));
+        throw new IllegalStateException(a1.g.p(r10, "Top bit not zero: "));
     }
 
     public final int D() {
@@ -96,11 +96,11 @@ public final class v {
         }
         i11 = 0;
         if (i11 == 0) {
-            throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence first byte: "));
+            throw new NumberFormatException(a1.g.p(j3, "Invalid UTF-8 sequence first byte: "));
         }
         for (i10 = 1; i10 < i11; i10++) {
             if ((this.a[this.b + i10] & 192) != 128) {
-                throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence continuation byte: "));
+                throw new NumberFormatException(a1.g.p(j3, "Invalid UTF-8 sequence continuation byte: "));
             }
             j3 = (j3 << 6) | (r3 & 63);
         }
@@ -261,7 +261,7 @@ public final class v {
                 t6.b(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = y7.b(g10 & 255) + this.b;
+                        this.b = v7.b(g10 & 255) + this.b;
                         return c10;
                     }
                 }
@@ -311,18 +311,18 @@ public final class v {
                 i11 = i12;
                 break;
             }
-            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && d0.M(this.a[i11])) {
+            if ((charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) && d0.L(this.a[i11])) {
                 break;
             }
             if (charset.equals(StandardCharsets.UTF_16) || charset.equals(StandardCharsets.UTF_16BE)) {
                 byte[] bArr = this.a;
-                if (bArr[i11] == 0 && d0.M(bArr[i11 + 1])) {
+                if (bArr[i11] == 0 && d0.L(bArr[i11 + 1])) {
                     break;
                 }
             }
             if (charset.equals(StandardCharsets.UTF_16LE)) {
                 byte[] bArr2 = this.a;
-                if (bArr2[i11 + 1] == 0 && d0.M(bArr2[i11])) {
+                if (bArr2[i11 + 1] == 0 && d0.L(bArr2[i11])) {
                     break;
                 }
             }

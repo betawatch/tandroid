@@ -9,19 +9,19 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.hj;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c8 b;
+    public final /* synthetic */ d8 b;
 
-    public /* synthetic */ u7(c8 c8Var, int i10) {
+    public /* synthetic */ u7(d8 d8Var, int i10) {
         this.a = i10;
-        this.b = c8Var;
+        this.b = d8Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
@@ -29,53 +29,53 @@ public final /* synthetic */ class u7 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                w61 w61Var = (w61) obj2;
-                c8 c8Var = this.b;
-                MessagesController.SavedMusicList savedMusicList = c8Var.e0;
-                w61Var.E = 1;
+                c71 c71Var = (c71) obj2;
+                d8 d8Var = this.b;
+                MessagesController.SavedMusicList savedMusicList = d8Var.e0;
+                c71Var.E = 1;
                 int dp = AndroidUtilities.dp(64.0f);
-                arrayList.add(h61.D(AndroidUtilities.dp(64.0f)));
-                if (c8Var.Z || c8Var.h0) {
-                    dp += c8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), c8Var.b0, false, false, -1);
+                arrayList.add(p61.C(AndroidUtilities.dp(64.0f)));
+                if (d8Var.Z || d8Var.h0) {
+                    dp += d8Var.X(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), d8Var.b0, false, false, -1);
                 }
-                if (!c8Var.Z) {
-                    if (TextUtils.isEmpty(c8Var.q0) && !c8Var.h0) {
-                        w61Var.U();
-                        h61 c10 = h61.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
+                if (!d8Var.Z) {
+                    if (TextUtils.isEmpty(d8Var.s0) && !d8Var.h0) {
+                        c71Var.U();
+                        p61 c10 = p61.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
                         c10.q = true;
                         arrayList.add(c10);
-                        w61Var.T();
+                        c71Var.T();
                         dp += AndroidUtilities.dp(50.0f);
                     }
-                    if (!c8Var.h0 && savedMusicList != null) {
-                        dp += c8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchProfile), savedMusicList.list, savedMusicList.loading, !savedMusicList.endReached, 2);
+                    if (!d8Var.h0 && savedMusicList != null) {
+                        dp += d8Var.X(true, arrayList, LocaleController.getString(R.string.AudioSearchProfile), savedMusicList.list, savedMusicList.loading, !savedMusicList.endReached, 2);
                     }
-                    dp = dp + c8Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchChats), c8Var.c0, c8Var.u0 || c8Var.t0, c8Var.s0, 3) + c8Var.W(false, arrayList, LocaleController.getString(R.string.AudioSearchGlobal), c8Var.d0, c8Var.B0 || c8Var.A0, c8Var.z0, 4);
+                    dp = dp + d8Var.X(false, arrayList, LocaleController.getString(R.string.AudioSearchChats), d8Var.c0, d8Var.w0 || d8Var.v0, d8Var.u0, 3) + d8Var.X(false, arrayList, LocaleController.getString(R.string.AudioSearchGlobal), d8Var.d0, d8Var.D0 || d8Var.C0, d8Var.B0, 4);
                 }
-                if (arrayList.size() <= ((c8Var.Z || !TextUtils.isEmpty(c8Var.q0) || c8Var.h0) ? 1 : 2)) {
-                    if (TextUtils.isEmpty(c8Var.q0)) {
+                if (arrayList.size() <= ((d8Var.Z || !TextUtils.isEmpty(d8Var.s0) || d8Var.h0) ? 1 : 2)) {
+                    if (TextUtils.isEmpty(d8Var.s0)) {
                         String string = LocaleController.getString(R.string.NoAudioFound);
                         String string2 = LocaleController.getString(R.string.NoAudioFilesInfo);
-                        int i10 = hj.a;
-                        h61 K = h61.K(hj.class);
-                        K.l = string;
-                        K.m = string2;
-                        arrayList.add(K);
+                        int i10 = ij.a;
+                        p61 J = p61.J(ij.class);
+                        J.l = string;
+                        J.m = string2;
+                        arrayList.add(J);
                     } else {
                         String string3 = LocaleController.getString(R.string.NoAudioFound);
-                        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(c8Var.q0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, c8Var.q0));
-                        int i11 = hj.a;
-                        h61 K2 = h61.K(hj.class);
-                        K2.l = string3;
-                        K2.m = replaceTags;
-                        arrayList.add(K2);
+                        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(d8Var.s0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, d8Var.s0));
+                        int i11 = ij.a;
+                        p61 J2 = p61.J(ij.class);
+                        J2.l = string3;
+                        J2.m = replaceTags;
+                        arrayList.add(J2);
                     }
                 }
-                arrayList.add(h61.C(null));
-                arrayList.add(h61.D(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(p61.B(null));
+                arrayList.add(p61.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
                 break;
             default:
-                c8.P(this.b, (TLRPC.messages_BotResults) obj);
+                d8.Q(this.b, (TLRPC.messages_BotResults) obj);
                 break;
         }
     }

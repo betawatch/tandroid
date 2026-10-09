@@ -1,35 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gn extends nf.e {
-    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
-    public final /* synthetic */ kn e;
+public final class gn implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ aj a;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ ln c;
 
-    public gn(kn knVar, org.telegram.ui.Cells.u1 u1Var) {
-        this.e = knVar;
-        this.d = u1Var;
+    public gn(ln lnVar, aj ajVar, zn znVar) {
+        this.c = lnVar;
+        this.a = ajVar;
+        this.b = znVar;
     }
 
-    @Override // nf.e
-    public final void c(boolean z10) {
-        if (z10) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new dn(this.e.a, 5), 250L);
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 
-    @Override // nf.e
-    public final void d() {
-        kn knVar = this.e;
-        yn ynVar = knVar.a;
-        org.telegram.ui.Cells.u1 u1Var = this.d;
-        ynVar.tb = u1Var.getMessageObject().getId();
-        yn ynVar2 = knVar.a;
-        ynVar2.ub = 2;
-        ynVar2.vb = null;
-        u1Var.invalidate();
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 }

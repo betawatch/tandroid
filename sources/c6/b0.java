@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -31,12 +31,12 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
                 n6.l.j("Not connected to device", e0Var.F == 2);
                 g6.f fVar = (g6.f) wVar.u();
-                Parcel O0 = fVar.O0();
-                O0.writeString(str);
-                O0.writeString(str2);
+                Parcel N0 = fVar.N0();
+                N0.writeString(str);
+                N0.writeString(str2);
                 int i10 = com.google.android.gms.internal.cast.v.a;
-                O0.writeInt(0);
-                fVar.T0(O0, 14);
+                N0.writeInt(0);
+                fVar.S0(N0, 14);
                 synchronized (e0Var.r) {
                     try {
                         if (e0Var.o != null) {
@@ -60,11 +60,11 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 try {
                     hashMap.put(Long.valueOf(incrementAndGet), taskCompletionSource2);
                     g6.f fVar2 = (g6.f) wVar2.u();
-                    Parcel O02 = fVar2.O0();
-                    O02.writeString(str3);
-                    O02.writeString(str4);
-                    O02.writeLong(incrementAndGet);
-                    fVar2.T0(O02, 9);
+                    Parcel N02 = fVar2.N0();
+                    N02.writeString(str3);
+                    N02.writeString(str4);
+                    N02.writeLong(incrementAndGet);
+                    fVar2.S0(N02, 9);
                     return;
                 } catch (RemoteException e7) {
                     hashMap.remove(Long.valueOf(incrementAndGet));

@@ -1,12 +1,13 @@
 package s4;
 
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class t0 {
-    public final ArrayList a = new ArrayList();
-    public final int b = 20;
-    public long c = 0;
-    public long d = 0;
+public abstract class t0 {
+    public void a(RecyclerView recyclerView, int i10) {
+    }
+
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+    }
 }

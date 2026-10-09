@@ -1,154 +1,194 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Point;
+import android.text.SpannableString;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nn extends View {
-    public final /* synthetic */ int a;
+public final class nn implements az {
+    public final /* synthetic */ lo a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nn(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public nn(lo loVar) {
+        this.a = loVar;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                if (getAlpha() != 0.0f) {
-                    AndroidUtilities.rectTmp.set(0.0f, 0.0f, getWidth(), getHeight());
-                    invalidate();
-                    break;
-                }
-                break;
-            case 9:
-                super.onDraw(canvas);
-                canvas.drawLine(0.0f, AndroidUtilities.dp(14.0f), 2.0f, getMeasuredHeight() - AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.i6.k0);
-                break;
-            case 16:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-                break;
-            case 17:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-                break;
-            case 18:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-                break;
-            case 19:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-                break;
-            case 27:
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ boolean A() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ int f() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final void i(int i10) {
+        boolean z10 = i10 != 0;
+        lo loVar = this.a;
+        loVar.h1 = z10;
+        loVar.b.u1.requestLayout();
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final boolean k() {
+        EditTextBoldCursor editField;
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+            return false;
+        }
+        editField.dispatchKeyEvent(new KeyEvent(0, 67));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final void l(String str) {
+        EditTextBoldCursor editField;
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+            return;
+        }
+        int selectionEnd = editField.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            CharSequence replaceEmoji = Emoji.replaceEmoji(str, editField.getPaint().getFontMetricsInt(), false);
+            editField.setText(editField.getText().insert(selectionEnd, replaceEmoji));
+            int length = selectionEnd + replaceEmoji.length();
+            editField.setSelection(length, length);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                break;
-            case 3:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(60.0f), TLObject.FLAG_30));
-                break;
-            case 4:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 5:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(81.0f), TLObject.FLAG_30));
-                break;
-            case 6:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(8.0f), TLObject.FLAG_30));
-                break;
-            case 7:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 8:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 9:
-            case 16:
-            case 17:
-            case 18:
-            case 19:
-            case 27:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 10:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 11:
-                Point point = AndroidUtilities.displaySize;
-                int i12 = point.x;
-                int i13 = point.y;
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (i13 * (i12 < i13 ? 0.56f : 0.3f)), TLObject.FLAG_30));
-                break;
-            case 12:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(5.0f), TLObject.FLAG_30));
-                break;
-            case 13:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.displaySize.y * 0.4f), TLObject.FLAG_30));
-                break;
-            case 14:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-                break;
-            case 15:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(org.telegram.ui.h60.F3 ? 0.0f : 8.0f), TLObject.FLAG_30));
-                break;
-            case 20:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
-                break;
-            case 21:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(36.0f));
-                break;
-            case 22:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(7.33f), TLObject.FLAG_30));
-                break;
-            case 23:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-                break;
-            case 24:
-                super.onMeasure(i10, i11);
-                setPivotX(getMeasuredWidth() / 2);
-                setPivotY(getMeasuredHeight());
-                break;
-            case 25:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
-            case 26:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(4.0f), TLObject.FLAG_30));
-                break;
-            case 28:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(6.0f), TLObject.FLAG_30));
-                break;
-            case 29:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
-                break;
+    @Override // org.telegram.ui.Components.az
+    public final void n() {
+        lo loVar = this.a;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(loVar.getContext(), 0, loVar.a);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
+        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new s(this, 24));
+        hg.c.p(R.string.Cancel, alertDialog$Builder, null);
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ float p() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
+        EditTextBoldCursor editField;
+        org.telegram.ui.Cells.d6 d6Var = this.a.g1;
+        if (d6Var == null || (editField = d6Var.getEditField()) == null) {
+            return;
+        }
+        int selectionEnd = editField.getSelectionEnd();
+        if (selectionEnd < 0) {
+            selectionEnd = 0;
+        }
+        try {
+            SpannableString spannableString = new SpannableString(str);
+            b6 b6Var = document != null ? new b6(document, editField.getPaint().getFontMetricsInt()) : new b6(j3, editField.getPaint().getFontMetricsInt());
+            b6Var.cacheType = 3;
+            spannableString.setSpan(b6Var, 0, spannableString.length(), 33);
+            editField.setText(editField.getText().insert(selectionEnd, spannableString));
+            int length = selectionEnd + spannableString.length();
+            editField.setSelection(length, length);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
+    @Override // org.telegram.ui.Components.az
+    public final boolean z() {
+        return this.a.h1;
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void o(l61 l61Var) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void s(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void w() {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void y(long j3) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void e(Object obj, Object obj2) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.az
+    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
     }
 }

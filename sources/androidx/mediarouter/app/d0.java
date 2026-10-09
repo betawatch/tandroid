@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class d0 extends g.u {
+public final class d0 extends g.t {
     public final long E;
     public long F;
     public final c G;
@@ -32,9 +32,9 @@ public final class d0 extends g.u {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public d0(Context context) {
-        super(r3, r0 == 0 ? v7.e0.e(r3) : r0);
-        ContextThemeWrapper a2 = v7.e0.a(context, false);
-        int g10 = v7.e0.g(a2, R.attr.mediaRouteTheme);
+        super(r3, r0 == 0 ? v7.a0.e(r3) : r0);
+        ContextThemeWrapper a2 = v7.a0.a(context, false);
+        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
         this.r = p4.r.c;
         this.G = new c(this, 1);
         Context context2 = getContext();
@@ -102,21 +102,21 @@ public final class d0 extends g.u {
         e();
     }
 
-    @Override // g.u, androidx.activity.m, android.app.Dialog
+    @Override // g.t, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.mr_picker_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.n;
-        decorView.setBackgroundColor(f0.e.c(context, v7.e0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(context.getColor(v7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         this.s = new ArrayList();
         ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new x(this, 0));
         this.v = new c0(this);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
         this.w = recyclerView;
         recyclerView.setAdapter(this.v);
-        this.w.setLayoutManager(new s4.c0());
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.d0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        this.w.setLayoutManager(new s4.d0());
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback

@@ -1,254 +1,182 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class r10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FragmentContextView b;
+public final class r10 extends FrameLayout {
+    public final boolean a;
+    public final CharSequence b;
+    public final q10 c;
+    public final a6 d;
+    public final /* synthetic */ s10 e;
 
-    public /* synthetic */ r10(FragmentContextView fragmentContextView, int i10) {
-        this.a = i10;
-        this.b = fragmentContextView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r10(s10 s10Var, Context context, boolean z10, CharSequence charSequence, ArrayList arrayList, boolean z11) {
+        super(context);
+        float f7;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        this.e = s10Var;
+        this.a = z10;
+        String string = LocaleController.getString(R.string.FolderLinkPreviewLeft);
+        String string2 = LocaleController.getString(R.string.FolderLinkPreviewRight);
+        CharSequence spannableStringBuilder = charSequence == null ? "" : new SpannableStringBuilder(charSequence);
+        q10 q10Var = new q10(context);
+        TextPaint textPaint = new TextPaint(1);
+        q10Var.a = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        Paint paint = new Paint(1);
+        q10Var.b = paint;
+        q10Var.c = new Path();
+        float[] fArr = new float[8];
+        q10Var.d = fArr;
+        Paint paint2 = new Paint(1);
+        q10Var.s = paint2;
+        Paint paint3 = new Paint(1);
+        q10Var.v = paint3;
+        q10Var.w = new Matrix();
+        q10Var.x = new Matrix();
+        int i10 = org.telegram.ui.ActionBar.i6.Eh;
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.m1(0.8f, org.telegram.ui.ActionBar.i6.x0(null, i10, false)));
+        textPaint.setTextSize(AndroidUtilities.dp(15.33f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        int i11 = org.telegram.ui.ActionBar.i6.o6;
+        textPaint2.setColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
+        textPaint2.setTextSize(AndroidUtilities.dp(17.0f));
+        textPaint2.setTypeface(AndroidUtilities.bold());
+        paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Th, false));
+        q6 q6Var = new q6(false, true, true);
+        q10Var.y = q6Var;
+        q6Var.n(0.3f, 250L, hs.h);
+        q6Var.setCallback(q10Var);
+        q6Var.w(AndroidUtilities.dp(11.66f));
+        q6Var.u(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        q6Var.x(AndroidUtilities.bold());
+        q6Var.b = 1;
+        int m12 = org.telegram.ui.ActionBar.i6.m1(0.8f, org.telegram.ui.ActionBar.i6.x0(null, i10, false));
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, i11, false);
+        if (string != null) {
+            f7 = 15.33f;
+            l11 l11Var = new l11(q10.a(string), 15.33f, AndroidUtilities.bold());
+            l11Var.s(q10Var);
+            l11Var.a.setColor(m12);
+            q10Var.e = l11Var;
+        } else {
+            f7 = 15.33f;
+        }
+        CharSequence a2 = q10.a(spannableStringBuilder);
+        l11 l11Var2 = new l11(a2, f7, AndroidUtilities.bold());
+        l11Var2.s(q10Var);
+        TextPaint textPaint3 = l11Var2.a;
+        textPaint3.setColor(x02);
+        q10Var.f = l11Var2;
+        l11Var2.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(a2, textPaint3.getFontMetricsInt(), false), arrayList, textPaint3.getFontMetricsInt()));
+        l11Var2.p(z11 ? 26 : 0);
+        if (string2 != null) {
+            l11 l11Var3 = new l11(q10.a(string2), 15.33f, AndroidUtilities.bold());
+            l11Var3.s(q10Var);
+            l11Var3.a.setColor(m12);
+            q10Var.h = l11Var3;
+        }
+        float dp = AndroidUtilities.dp(3.0f);
+        fArr[3] = dp;
+        fArr[2] = dp;
+        fArr[1] = dp;
+        fArr[0] = dp;
+        float dp2 = AndroidUtilities.dp(1.0f);
+        fArr[7] = dp2;
+        fArr[6] = dp2;
+        fArr[5] = dp2;
+        fArr[4] = dp2;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(80.0f), 0.0f, new int[]{-1, 16777215}, new float[]{0.0f, 1.0f}, tileMode);
+        q10Var.n = linearGradient;
+        paint2.setShader(linearGradient);
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint2.setXfermode(new PorterDuffXfermode(mode));
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(80.0f), 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, tileMode);
+        q10Var.r = linearGradient2;
+        paint3.setShader(linearGradient2);
+        paint3.setXfermode(new PorterDuffXfermode(mode));
+        this.c = q10Var;
+        addView(q10Var, w7.x5.a(44.0f, 0.0f, 17.33f, 0.0f, 0.0f, -1, 55));
+        a6 a6Var = new a6(context);
+        int i12 = org.telegram.ui.ActionBar.i6.G6;
+        a6Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
+        a6Var.setTextSize(1, 20.0f);
+        a6Var.setTypeface(AndroidUtilities.bold());
+        a6Var.setGravity(17);
+        a6Var.setLineSpacing(AndroidUtilities.dp(-1.0f), 1.0f);
+        CharSequence replaceEmoji = Emoji.replaceEmoji((CharSequence) new SpannableStringBuilder(charSequence), a6Var.getPaint().getFontMetricsInt(), false, 0.8f);
+        this.b = replaceEmoji;
+        this.b = MessageObject.replaceAnimatedEmoji(replaceEmoji, arrayList, a6Var.getPaint().getFontMetricsInt(), false, 0.8f, 0);
+        a6Var.setText(s10Var.B());
+        a6Var.setCacheType(z11 ? 26 : 0);
+        int i13 = org.telegram.ui.ActionBar.i6.Oh;
+        e6Var = ((org.telegram.ui.ActionBar.f3) s10Var).resourcesProvider;
+        a6Var.setEmojiColor(org.telegram.ui.ActionBar.i6.w0(i13, e6Var));
+        addView(a6Var, w7.x5.a(-2.0f, 32.0f, 78.3f, 32.0f, 0.0f, -1, 48));
+        a6 a6Var2 = new a6(context);
+        this.d = a6Var2;
+        a6Var2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
+        a6Var2.setTextSize(1, 14.0f);
+        a6Var2.setLines(2);
+        a6Var2.setGravity(17);
+        a6Var2.setLineSpacing(0.0f, 1.15f);
+        addView(a6Var2, w7.x5.a(-2.0f, 32.0f, 113.0f, 32.0f, 0.0f, -1, 48));
+        a();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                FragmentContextView fragmentContextView = this.b;
-                AnimatorSet animatorSet = fragmentContextView.f;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    fragmentContextView.setVisibility(8);
-                    fragmentContextView.f = null;
-                    break;
-                }
-                break;
-            case 1:
-                FragmentContextView fragmentContextView2 = this.b;
-                AnimatorSet animatorSet2 = fragmentContextView2.f;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fragmentContextView2.f = null;
-                    break;
-                }
-                break;
-            case 2:
-                FragmentContextView fragmentContextView3 = this.b;
-                fragmentContextView3.t0.unlock();
-                AnimatorSet animatorSet3 = fragmentContextView3.f;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    fragmentContextView3.setVisibility(8);
-                    z10 z10Var = fragmentContextView3.o0;
-                    if (z10Var != null) {
-                        ((kr0) z10Var).a(false);
-                    }
-                    fragmentContextView3.f = null;
-                    if (fragmentContextView3.w0) {
-                        fragmentContextView3.e(false);
-                    } else if (fragmentContextView3.v0) {
-                        fragmentContextView3.a(false);
-                    } else if (fragmentContextView3.x0) {
-                        fragmentContextView3.g(false);
-                    } else if (fragmentContextView3.y0) {
-                        fragmentContextView3.c(false);
-                    }
-                    fragmentContextView3.w0 = false;
-                    fragmentContextView3.v0 = false;
-                    fragmentContextView3.x0 = false;
-                    fragmentContextView3.y0 = false;
-                    break;
-                }
-                break;
-            case 3:
-                FragmentContextView fragmentContextView4 = this.b;
-                fragmentContextView4.t0.unlock();
-                AnimatorSet animatorSet4 = fragmentContextView4.f;
-                if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    z10 z10Var2 = fragmentContextView4.o0;
-                    if (z10Var2 != null) {
-                        ((kr0) z10Var2).a(false);
-                    }
-                    fragmentContextView4.f = null;
-                    if (fragmentContextView4.w0) {
-                        fragmentContextView4.e(false);
-                    } else if (fragmentContextView4.v0) {
-                        fragmentContextView4.a(false);
-                    } else if (fragmentContextView4.x0) {
-                        fragmentContextView4.g(false);
-                    } else if (fragmentContextView4.y0) {
-                        fragmentContextView4.c(false);
-                    }
-                    fragmentContextView4.w0 = false;
-                    fragmentContextView4.v0 = false;
-                    fragmentContextView4.x0 = false;
-                    fragmentContextView4.y0 = false;
-                    break;
-                }
-                break;
-            case 4:
-                FragmentContextView fragmentContextView5 = this.b;
-                fragmentContextView5.t0.unlock();
-                AnimatorSet animatorSet5 = fragmentContextView5.f;
-                if (animatorSet5 != null && animatorSet5.equals(animator)) {
-                    fragmentContextView5.setVisibility(8);
-                    fragmentContextView5.f = null;
-                    if (fragmentContextView5.w0) {
-                        fragmentContextView5.e(false);
-                    } else if (fragmentContextView5.v0) {
-                        fragmentContextView5.a(false);
-                    } else if (fragmentContextView5.x0) {
-                        fragmentContextView5.g(false);
-                    } else if (fragmentContextView5.y0) {
-                        fragmentContextView5.c(false);
-                    }
-                    fragmentContextView5.w0 = false;
-                    fragmentContextView5.v0 = false;
-                    fragmentContextView5.x0 = false;
-                    fragmentContextView5.y0 = false;
-                    break;
-                }
-                break;
-            case 5:
-                FragmentContextView fragmentContextView6 = this.b;
-                fragmentContextView6.t0.unlock();
-                AnimatorSet animatorSet6 = fragmentContextView6.f;
-                if (animatorSet6 != null && animatorSet6.equals(animator)) {
-                    z10 z10Var3 = fragmentContextView6.o0;
-                    if (z10Var3 != null) {
-                        ((kr0) z10Var3).a(false);
-                    }
-                    fragmentContextView6.f = null;
-                    if (fragmentContextView6.w0) {
-                        fragmentContextView6.e(false);
-                    } else if (fragmentContextView6.v0) {
-                        fragmentContextView6.a(false);
-                    } else if (fragmentContextView6.x0) {
-                        fragmentContextView6.g(false);
-                    } else if (fragmentContextView6.y0) {
-                        fragmentContextView6.c(false);
-                    }
-                    fragmentContextView6.w0 = false;
-                    fragmentContextView6.v0 = false;
-                    fragmentContextView6.x0 = false;
-                    fragmentContextView6.y0 = false;
-                    break;
-                }
-                break;
-            case 6:
-                FragmentContextView fragmentContextView7 = this.b;
-                fragmentContextView7.t0.unlock();
-                AnimatorSet animatorSet7 = fragmentContextView7.f;
-                if (animatorSet7 != null && animatorSet7.equals(animator)) {
-                    fragmentContextView7.setVisibility(8);
-                    fragmentContextView7.f = null;
-                    if (fragmentContextView7.w0) {
-                        fragmentContextView7.e(false);
-                    } else if (fragmentContextView7.v0) {
-                        fragmentContextView7.a(false);
-                    } else if (fragmentContextView7.x0) {
-                        fragmentContextView7.g(false);
-                    } else if (fragmentContextView7.y0) {
-                        fragmentContextView7.c(false);
-                    }
-                    fragmentContextView7.w0 = false;
-                    fragmentContextView7.v0 = false;
-                    fragmentContextView7.x0 = false;
-                    fragmentContextView7.y0 = false;
-                    break;
-                }
-                break;
-            case 7:
-                FragmentContextView fragmentContextView8 = this.b;
-                fragmentContextView8.t0.unlock();
-                AnimatorSet animatorSet8 = fragmentContextView8.f;
-                if (animatorSet8 != null && animatorSet8.equals(animator)) {
-                    fragmentContextView8.S = false;
-                    fragmentContextView8.f = null;
-                    fragmentContextView8.e(false);
-                    break;
-                }
-                break;
-            case 8:
-                FragmentContextView fragmentContextView9 = this.b;
-                fragmentContextView9.u0.unlock();
-                AnimatorSet animatorSet9 = fragmentContextView9.f;
-                if (animatorSet9 != null && animatorSet9.equals(animator)) {
-                    fragmentContextView9.f = null;
-                }
-                if (fragmentContextView9.w0) {
-                    fragmentContextView9.e(false);
-                } else if (fragmentContextView9.v0) {
-                    fragmentContextView9.a(false);
-                } else if (fragmentContextView9.x0) {
-                    fragmentContextView9.g(false);
-                } else if (fragmentContextView9.y0) {
-                    fragmentContextView9.c(false);
-                }
-                fragmentContextView9.w0 = false;
-                fragmentContextView9.v0 = false;
-                fragmentContextView9.x0 = false;
-                fragmentContextView9.y0 = false;
-                fragmentContextView9.n();
-                break;
-            case 9:
-                FragmentContextView fragmentContextView10 = this.b;
-                fragmentContextView10.t0.unlock();
-                AnimatorSet animatorSet10 = fragmentContextView10.f;
-                if (animatorSet10 != null && animatorSet10.equals(animator)) {
-                    fragmentContextView10.setVisibility(8);
-                    fragmentContextView10.f = null;
-                    if (fragmentContextView10.w0) {
-                        fragmentContextView10.e(false);
-                    } else if (fragmentContextView10.v0) {
-                        fragmentContextView10.a(false);
-                    } else if (fragmentContextView10.x0) {
-                        fragmentContextView10.g(false);
-                    } else if (fragmentContextView10.y0) {
-                        fragmentContextView10.c(false);
-                    }
-                    fragmentContextView10.w0 = false;
-                    fragmentContextView10.v0 = false;
-                    fragmentContextView10.x0 = false;
-                    fragmentContextView10.y0 = false;
-                    break;
-                }
-                break;
-            case 10:
-                FragmentContextView fragmentContextView11 = this.b;
-                fragmentContextView11.t0.unlock();
-                AnimatorSet animatorSet11 = fragmentContextView11.f;
-                if (animatorSet11 != null && animatorSet11.equals(animator)) {
-                    fragmentContextView11.S = false;
-                    fragmentContextView11.f = null;
-                    fragmentContextView11.a(false);
-                    break;
-                }
-                break;
-            default:
-                FragmentContextView fragmentContextView12 = this.b;
-                fragmentContextView12.u0.unlock();
-                AnimatorSet animatorSet12 = fragmentContextView12.f;
-                if (animatorSet12 != null && animatorSet12.equals(animator)) {
-                    fragmentContextView12.f = null;
-                }
-                if (fragmentContextView12.w0) {
-                    fragmentContextView12.e(false);
-                } else if (fragmentContextView12.v0) {
-                    fragmentContextView12.a(false);
-                } else if (fragmentContextView12.x0) {
-                    fragmentContextView12.g(false);
-                } else if (fragmentContextView12.y0) {
-                    fragmentContextView12.c(false);
-                }
-                fragmentContextView12.w0 = false;
-                fragmentContextView12.v0 = false;
-                fragmentContextView12.x0 = false;
-                fragmentContextView12.y0 = false;
-                fragmentContextView12.n();
-                break;
+    public final void a() {
+        s10 s10Var = this.e;
+        ArrayList arrayList = s10Var.g0;
+        boolean z10 = s10Var.b0;
+        CharSequence charSequence = this.b;
+        a6 a6Var = this.d;
+        if (z10) {
+            a6Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitleRemove, charSequence)));
+            return;
         }
+        if (!this.a) {
+            if (arrayList == null || arrayList.isEmpty()) {
+                a6Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitleAlready, charSequence)));
+                return;
+            } else {
+                a6Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitle, charSequence)));
+                return;
+            }
+        }
+        int size = arrayList != null ? arrayList.size() : 0;
+        q10 q10Var = this.c;
+        q10Var.y.t(size > 0 ? hg.c.h(size, "+") : "", false, true);
+        q10Var.invalidate();
+        if (arrayList == null || arrayList.isEmpty()) {
+            a6Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitleAlready, charSequence)));
+        } else {
+            a6Var.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralSpannable("FolderLinkSubtitleChats", arrayList != null ? arrayList.size() : 0, charSequence)));
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172.0f), TLObject.FLAG_30));
     }
 }

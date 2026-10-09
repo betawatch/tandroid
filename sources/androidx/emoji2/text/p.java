@@ -9,31 +9,31 @@ import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import w7.p6;
+import w7.n6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p implements k {
     public final Context a;
-    public final o0.e b;
-    public final t7.u c;
+    public final o0.d b;
+    public final ob.a c;
     public final Object d = new Object();
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public v7.x h;
+    public v7.t h;
 
-    public p(Context context, o0.e eVar) {
-        p6.a(context, "Context cannot be null");
+    public p(Context context, o0.d dVar) {
+        n6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
-        this.b = eVar;
+        this.b = dVar;
         this.c = q.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(v7.x xVar) {
+    public final void a(v7.t tVar) {
         synchronized (this.d) {
-            this.h = xVar;
+            this.h = tVar;
         }
         c();
     }
@@ -78,27 +78,27 @@ public final class p implements k {
         }
     }
 
-    public final o0.i d() {
+    public final o0.h d() {
         try {
-            t7.u uVar = this.c;
+            ob.a aVar = this.c;
             Context context = this.a;
-            o0.e eVar = this.b;
-            uVar.getClass();
-            Object[] objArr = {eVar};
+            o0.d dVar = this.b;
+            aVar.getClass();
+            Object[] objArr = {dVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
             Objects.requireNonNull(obj);
             arrayList.add(obj);
-            j4.f a2 = o0.d.a(context, DesugarCollections.unmodifiableList(arrayList));
+            j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
                 throw new RuntimeException(hg.c.i(i10, "fetchFonts failed (", ")"));
             }
-            o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
-            if (iVarArr == null || iVarArr.length == 0) {
+            o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
+            if (hVarArr == null || hVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
-            return iVarArr[0];
+            return hVarArr[0];
         } catch (PackageManager.NameNotFoundException e7) {
             throw new RuntimeException("provider not found", e7);
         }

@@ -8,17 +8,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.q90;
-import w7.z5;
+import org.telegram.ui.Components.ea0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class x0 extends LinearLayout {
     public int a;
     public final TextView b;
-    public final q90 c;
+    public final ea0 c;
     public LinearLayout d;
-    public final m0 e;
+    public final l0 e;
     public final ViewGroup f;
     public boolean h;
     public final /* synthetic */ y0 n;
@@ -29,10 +29,10 @@ public final class x0 extends LinearLayout {
         super(context);
         this.n = y0Var;
         setOrientation(1);
-        ViewGroup z10 = y0Var.z(context, i10);
-        this.f = z10;
-        addView(z10);
-        this.e = (m0) z10;
+        ViewGroup C = y0Var.C(context, i10);
+        this.f = C;
+        addView(C);
+        this.e = (l0) C;
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setGravity(1);
@@ -40,16 +40,16 @@ public final class x0 extends LinearLayout {
         textView.setTextColor(y0Var.getThemedColor(i11));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, z5.d(-1, -2.0f, 0, 21.0f, 20.0f, 21.0f, 0.0f));
-        q90 q90Var = new q90(context, null);
-        this.c = q90Var;
-        q90Var.setGravity(1);
-        q90Var.setTextSize(1, 15.0f);
-        q90Var.setTextColor(y0Var.getThemedColor(i11));
+        addView(textView, x5.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
+        ea0 ea0Var = new ea0(context, null);
+        this.c = ea0Var;
+        ea0Var.setGravity(1);
+        ea0Var.setTextSize(1, 15.0f);
+        ea0Var.setTextColor(y0Var.getThemedColor(i11));
         if (!y0Var.E) {
-            q90Var.setLines(2);
+            ea0Var.setLines(2);
         }
-        addView(q90Var, z5.t(-1, -2, 1, 21, 10, 21, 16));
+        addView(ea0Var, x5.t(-1, -2, 1, 21, 10, 21, 16));
         setImportantForAccessibility(2);
         setClipChildren(false);
     }
@@ -86,15 +86,15 @@ public final class x0 extends LinearLayout {
             ((b) viewGroup).setTopOffset(y0Var.L);
         }
         viewGroup.getLayoutParams().height = y0Var.s;
-        q90 q90Var = this.c;
-        q90Var.setVisibility(0);
+        ea0 ea0Var = this.c;
+        ea0Var.setVisibility(0);
         ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
         super.onMeasure(i10, i11);
         if (this.h) {
             viewGroup.getLayoutParams().height = getMeasuredHeight() - AndroidUtilities.dp(16.0f);
             ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
             textView.setVisibility(8);
-            q90Var.setVisibility(8);
+            ea0Var.setVisibility(8);
             super.onMeasure(i10, i11);
         }
     }

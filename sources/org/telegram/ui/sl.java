@@ -1,69 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sl extends ou0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ yn c;
+public final class sl implements jq0 {
+    public final /* synthetic */ zn a;
 
-    public sl(yn ynVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = ynVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    public sl(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return yn.A1(this.c, this.a, null, i10, z10, true);
-    }
-
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean O() {
-        yn ynVar = this.c;
-        if (ynVar.W == null || !ynVar.w9()) {
-            return false;
+    @Override // org.telegram.ui.jq0
+    public final void b() {
+        try {
+            Intent intent = new Intent();
+            intent.setType("video/*");
+            intent.setAction("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.sizeLimit", FileLoader.DEFAULT_MAX_FILE_SIZE);
+            Intent intent2 = new Intent("android.intent.action.PICK");
+            intent2.setType("image/*");
+            Intent createChooser = Intent.createChooser(intent2, null);
+            createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", new Intent[]{intent});
+            this.a.startActivityForResult(createChooser, 1);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        ynVar.W.N();
-        return true;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final MessageObject U() {
-        MessageObject messageObject = this.c.n5;
-        MessageObject messageObject2 = this.a;
-        if (messageObject == messageObject2) {
-            return messageObject2;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final void e(CharSequence charSequence) {
-        this.c.W.e1(charSequence, false);
-    }
-
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        yn ynVar = this.c;
-        if (ynVar.n5 != this.a) {
-            return;
-        }
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
-            ynVar.q(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
-        } else {
-            ynVar.W.d0();
-        }
+    @Override // org.telegram.ui.jq0
+    public final void a(ArrayList arrayList) {
     }
 }

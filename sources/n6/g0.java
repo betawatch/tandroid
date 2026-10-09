@@ -1,133 +1,27 @@
 package n6;
 
-import android.app.PendingIntent;
-import android.content.ContentProviderClient;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.util.Log;
-import java.util.Arrays;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class g0 {
-    public static final Uri d = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").build();
-    public final String a;
-    public final String b;
-    public final boolean c;
+public final class g0 extends o6.a {
+    public static final Parcelable.Creator<g0> CREATOR = new m8.h(19);
+    public Bundle a;
+    public k6.c[] b;
+    public int c;
+    public e d;
 
-    public g0(String str, String str2, boolean z10) {
-        l.f(str);
-        this.a = str;
-        l.f(str2);
-        this.b = str2;
-        this.c = z10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x009a  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00a6 A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Intent a(Context context) {
-        Bundle bundle;
-        PendingIntent pendingIntent;
-        ContentProviderClient acquireUnstableContentProviderClient;
-        Intent intent = null;
-        String str = this.a;
-        if (str == null) {
-            return new Intent().setComponent(null);
-        }
-        if (this.c) {
-            Bundle bundle2 = new Bundle();
-            bundle2.putString("serviceActionBundleKey", str);
-            try {
-                acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(d);
-            } catch (RemoteException e7) {
-                e = e7;
-                bundle = null;
-                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                if (bundle == null) {
-                }
-                if (intent == null) {
-                }
-                if (intent == null) {
-                }
-            } catch (IllegalArgumentException e10) {
-                e = e10;
-                bundle = null;
-                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                if (bundle == null) {
-                }
-                if (intent == null) {
-                }
-                if (intent == null) {
-                }
-            }
-            if (acquireUnstableContentProviderClient == null) {
-                throw new RemoteException("Failed to acquire ContentProviderClient");
-            }
-            try {
-                bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
-                try {
-                } catch (RemoteException e11) {
-                    e = e11;
-                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                    if (bundle == null) {
-                    }
-                    if (intent == null) {
-                    }
-                    if (intent == null) {
-                    }
-                } catch (IllegalArgumentException e12) {
-                    e = e12;
-                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
-                    if (bundle == null) {
-                    }
-                    if (intent == null) {
-                    }
-                    if (intent == null) {
-                    }
-                }
-                if (bundle == null && (intent = (Intent) bundle.getParcelable("serviceResponseIntentKey")) == null && (pendingIntent = (PendingIntent) bundle.getParcelable("serviceMissingResolutionIntentKey")) != null) {
-                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action " + str + " but has possible resolution");
-                    throw new z(new k6.a(25, pendingIntent));
-                }
-                if (intent == null) {
-                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(str));
-                }
-            } finally {
-                acquireUnstableContentProviderClient.release();
-            }
-        }
-        return intent == null ? new Intent(str).setPackage(this.b) : intent;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof g0)) {
-            return false;
-        }
-        g0 g0Var = (g0) obj;
-        return l.l(this.a, g0Var.a) && l.l(this.b, g0Var.b) && l.l(null, null) && this.c == g0Var.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, 4225, Boolean.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        String str = this.a;
-        if (str != null) {
-            return str;
-        }
-        l.h(null);
-        throw null;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.d0.q(parcel, 20293);
+        w7.d0.b(parcel, 1, this.a);
+        w7.d0.o(parcel, 2, this.b, i10);
+        int i11 = this.c;
+        w7.d0.s(parcel, 3, 4);
+        parcel.writeInt(i11);
+        w7.d0.k(parcel, 4, this.d, i10);
+        w7.d0.r(parcel, q6);
     }
 }

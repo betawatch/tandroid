@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -101,7 +101,7 @@ public class RadioButton extends View {
         } else {
             f7 = 2.0f - (f10 / 0.5f);
             float f11 = 1.0f - f7;
-            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f11)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f11)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f11)));
+            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r2) * f11)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f11)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f11)));
             s.setColor(rgb);
             w.setColor(rgb);
         }
@@ -113,7 +113,7 @@ public class RadioButton extends View {
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12 - AndroidUtilities.dp(1.0f), w);
                 canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f7) * (f12 - AndroidUtilities.dp(1.0f)), v);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.gms.internal.vision.e2.z(f12 - AndroidUtilities.dp(1.0f), this.h / 4, f7, this.h / 4), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.gms.internal.vision.e2.y(f12 - AndroidUtilities.dp(1.0f), this.h / 4, f7, this.h / 4), w);
             }
         }
         canvas.restore();

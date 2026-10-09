@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c0 extends l0 {
     public final /* synthetic */ int b = 0;
@@ -20,18 +20,18 @@ public final class c0 extends l0 {
 
     @Override // com.google.android.gms.common.api.internal.l0
     public final void a() {
-        n6.h l0Var;
+        n6.h m0Var;
         int i10 = this.b;
         Object obj = this.d;
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                ((d0) obj).c.d((k6.a) obj2);
+                ((d0) obj).c.e((k6.a) obj2);
                 break;
             default:
                 g0 g0Var = (g0) obj2;
                 o8.h hVar = (o8.h) obj;
-                if (g0Var.i(0)) {
+                if (g0Var.h(0)) {
                     k6.a aVar = hVar.b;
                     if (!aVar.c()) {
                         if (g0Var.w && !aVar.b()) {
@@ -39,31 +39,31 @@ public final class c0 extends l0 {
                             g0Var.g();
                             break;
                         } else {
-                            g0Var.d(aVar);
+                            g0Var.e(aVar);
                             break;
                         }
                     } else {
-                        n6.v vVar = hVar.c;
-                        n6.l.h(vVar);
-                        k6.a aVar2 = vVar.c;
+                        n6.w wVar = hVar.c;
+                        n6.l.h(wVar);
+                        k6.a aVar2 = wVar.c;
                         if (!aVar2.c()) {
                             Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            g0Var.d(aVar2);
+                            g0Var.e(aVar2);
                             break;
                         } else {
                             g0Var.y = true;
-                            IBinder iBinder = vVar.b;
+                            IBinder iBinder = wVar.b;
                             if (iBinder == null) {
-                                l0Var = null;
+                                m0Var = null;
                             } else {
                                 int i11 = n6.a.b;
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                                l0Var = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
+                                m0Var = queryLocalInterface instanceof n6.h ? (n6.h) queryLocalInterface : new n6.m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
                             }
-                            n6.l.h(l0Var);
-                            g0Var.E = l0Var;
-                            g0Var.F = vVar.d;
-                            g0Var.G = vVar.e;
+                            n6.l.h(m0Var);
+                            g0Var.E = m0Var;
+                            g0Var.F = wVar.d;
+                            g0Var.G = wVar.e;
                             g0Var.g();
                             break;
                         }

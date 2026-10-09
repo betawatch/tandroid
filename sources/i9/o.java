@@ -13,15 +13,14 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-import v7.k8;
+import v7.i8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
     public static final s0 e;
-    public static final k8 f;
+    public static final i8 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -30,7 +29,7 @@ public abstract class o extends j9.a implements w {
     static {
         boolean z10;
         Throwable th2;
-        k8 fVar;
+        i8 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -171,12 +170,13 @@ public abstract class o extends j9.a implements w {
             }
         }
         boolean isCancelled = wVar.isCancelled();
+        boolean z10 = true;
         if ((!d) && isCancelled) {
             a aVar2 = a.d;
             Objects.requireNonNull(aVar2);
             return aVar2;
         }
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             try {
                 try {
@@ -188,9 +188,9 @@ public abstract class o extends j9.a implements w {
                         return new b(e);
                     }
                 } catch (InterruptedException unused) {
-                    z10 = true;
+                    z11 = z10;
                 } catch (Throwable th3) {
-                    if (z10) {
+                    if (z11) {
                         Thread.currentThread().interrupt();
                     }
                     throw th3;
@@ -210,7 +210,7 @@ public abstract class o extends j9.a implements w {
                 return new a(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: " + wVar, e12), false);
             }
         }
-        if (z10) {
+        if (z11) {
             Thread.currentThread().interrupt();
         }
         if (!isCancelled) {
@@ -296,8 +296,8 @@ public abstract class o extends j9.a implements w {
             aVar = z10 ? a.c : a.d;
             Objects.requireNonNull(aVar);
         }
-        boolean z11 = false;
         o oVar = this;
+        boolean z11 = false;
         while (true) {
             if (f.b(oVar, obj, aVar)) {
                 g(oVar, z10);
@@ -326,7 +326,7 @@ public abstract class o extends j9.a implements w {
 
     public final void f(StringBuilder sb2, Object obj) {
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else {
             if (obj == this) {
                 sb2.append("this future");
@@ -338,14 +338,15 @@ public abstract class o extends j9.a implements w {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00d1  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:46:0x00c4 -> B:34:0x0082). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00d3  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:46:0x00c6 -> B:34:0x0083). Please report as a decompilation issue!!! */
     @Override // java.util.concurrent.Future
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public Object get(long j3, TimeUnit timeUnit) {
+        boolean z10;
         long j10;
         long nanoTime;
         n nVar = n.c;
@@ -363,10 +364,11 @@ public abstract class o extends j9.a implements w {
             n nVar2 = this.c;
             if (nVar2 != nVar) {
                 n nVar3 = new n();
+                z10 = true;
                 while (true) {
-                    k8 k8Var = f;
-                    k8Var.f(nVar3, nVar2);
-                    if (k8Var.c(this, nVar2, nVar3)) {
+                    i8 i8Var = f;
+                    i8Var.f(nVar3, nVar2);
+                    if (i8Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -400,34 +402,34 @@ public abstract class o extends j9.a implements w {
                     String obj3 = timeUnit.toString();
                     Locale locale = Locale.ROOT;
                     String lowerCase = obj3.toLowerCase(locale);
-                    StringBuilder u10 = a4.a.u(j3, "Waited ", " ");
+                    StringBuilder u10 = a1.g.u(j3, "Waited ", " ");
                     u10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = u10.toString();
                     if (nanos + 1000 < j10) {
-                        String v = sa.e.v(sb2, " (plus ");
+                        String v = sc.v.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
-                        boolean z10 = convert == j10 || nanos2 > 1000;
+                        boolean z11 = (convert == j10 || nanos2 > 1000) ? z10 : false;
                         if (convert > j10) {
                             String str = v + convert + " " + lowerCase;
-                            if (z10) {
-                                str = sa.e.v(str, ",");
+                            if (z11) {
+                                str = sc.v.v(str, ",");
                             }
-                            v = sa.e.v(str, " ");
+                            v = sc.v.v(str, " ");
                         }
-                        if (z10) {
+                        if (z11) {
                             v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = sa.e.v(v, "delay)");
+                        sb2 = sc.v.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(sa.e.v(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(sc.v.v(sb2, " but future completed as timeout expired"));
                     }
-                    throw new TimeoutException(a4.a.D(sb2, " for ", oVar));
+                    throw new TimeoutException(a1.g.D(sb2, " for ", oVar));
                 }
                 Object obj4 = this.a;
-                if ((obj4 != null) && (!(obj4 instanceof e))) {
+                if ((obj4 != null ? z10 : false) && (!(obj4 instanceof e))) {
                     return i(obj4);
                 }
                 if (Thread.interrupted()) {
@@ -442,6 +444,7 @@ public abstract class o extends j9.a implements w {
             Objects.requireNonNull(obj5);
             return i(obj5);
         }
+        z10 = true;
         j10 = 0;
         if (nanos <= j10) {
         }
@@ -605,9 +608,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    k8 k8Var = f;
-                    k8Var.f(nVar3, nVar2);
-                    if (k8Var.c(this, nVar2, nVar3)) {
+                    i8 i8Var = f;
+                    i8Var.f(nVar3, nVar2);
+                    if (i8Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

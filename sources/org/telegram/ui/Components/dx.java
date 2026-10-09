@@ -1,40 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class dx extends ImageView {
-    public final /* synthetic */ nz a;
+public final class dx extends s4.o0 {
+    public final /* synthetic */ a00 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dx(nz nzVar, Context context) {
-        super(context);
-        this.a = nzVar;
+    public dx(a00 a00Var) {
+        this.a = a00Var;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        oy oyVar;
-        int action = motionEvent.getAction();
-        nz nzVar = this.a;
-        if (action == 0) {
-            nzVar.P1 = true;
-            nzVar.Q1 = false;
-            AndroidUtilities.runOnUIThread(new ld(nzVar, 350, 3), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            nzVar.P1 = false;
-            if (!nzVar.Q1 && (oyVar = nzVar.t1) != null && oyVar.k()) {
-                try {
-                    nzVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
+    @Override // s4.o0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.a1 a1Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        a00 a00Var = this.a;
+        s4.i0 adapter = a00Var.h0.getAdapter();
+        ez ezVar = a00Var.n0;
+        if (adapter == ezVar && R == ezVar.I) {
+            rect.set(0, 0, 0, 0);
+            return;
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        if (R == 0) {
+            ezVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        fz fzVar = a00Var.i0;
+        ezVar.getClass();
+        rect.right = fzVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

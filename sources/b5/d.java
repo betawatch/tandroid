@@ -20,8 +20,8 @@ import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import com.google.android.gms.internal.clearcut.g2;
-import e0.p0;
+import com.google.android.gms.internal.clearcut.f2;
+import e0.n0;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.z0;
 import org.telegram.messenger.ApplicationLoader;
@@ -30,17 +30,17 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.x9;
+import org.telegram.ui.w9;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
     public static AtomicInteger b;
     public static boolean c;
     public static int d;
-    public static g2 e;
+    public static f2 e;
 
     public static void A(float f7) {
         BasePendingResult basePendingResult;
@@ -61,7 +61,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(2));
+        basePendingResult.b(new w9(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -88,10 +88,10 @@ public abstract class d {
         }
     }
 
-    public static Person E(p0 p0Var) {
-        Person.Builder name = new Person.Builder().setName(p0Var.a);
-        IconCompat iconCompat = p0Var.b;
-        return name.setIcon(iconCompat != null ? iconCompat.m(null) : null).setUri(p0Var.c).setKey(p0Var.d).setBot(p0Var.e).setImportant(p0Var.f).build();
+    public static Person E(n0 n0Var) {
+        Person.Builder name = new Person.Builder().setName(n0Var.a);
+        IconCompat iconCompat = n0Var.b;
+        return name.setIcon(iconCompat != null ? iconCompat.m(null) : null).setUri(n0Var.c).setKey(n0Var.d).setBot(n0Var.e).setImportant(n0Var.f).build();
     }
 
     public static void a(Notification.Builder builder, Person person) {
@@ -122,10 +122,10 @@ public abstract class d {
     public static void d(boolean z10) {
         Context f7;
         AudioManager audioManager;
-        g2 g2Var = e;
-        if ((g2Var != null) != z10) {
+        f2 f2Var = e;
+        if ((f2Var != null) != z10) {
             if (!z10) {
-                if (g2Var == null || (f7 = f()) == null) {
+                if (f2Var == null || (f7 = f()) == null) {
                     return;
                 }
                 f7.getContentResolver().unregisterContentObserver(e);
@@ -145,9 +145,9 @@ public abstract class d {
             d = audioManager.getStreamVolume(3);
             ContentResolver contentResolver = f10.getContentResolver();
             Uri uri = Settings.System.CONTENT_URI;
-            g2 g2Var2 = new g2(new Handler(), 1);
-            e = g2Var2;
-            contentResolver.registerContentObserver(uri, true, g2Var2);
+            f2 f2Var2 = new f2(new Handler(), 1);
+            e = f2Var2;
+            contentResolver.registerContentObserver(uri, true, f2Var2);
             A(g());
             audioManager.adjustStreamVolume(3, 0, 1);
         }
@@ -269,7 +269,7 @@ public abstract class d {
             b = new AtomicInteger(0);
         }
         b.incrementAndGet();
-        e7.q(new c6.p(j3)).b(new x9(3));
+        e7.q(new c6.p(j3)).b(new w9(3));
     }
 
     public static void w(int i10, TextView textView) {
@@ -296,7 +296,7 @@ public abstract class d {
             } else {
                 basePendingResult2 = e6.h.t();
             }
-            basePendingResult2.b(new x9(0));
+            basePendingResult2.b(new w9(0));
             return;
         }
         n6.l.e("Must be called from the main thread.");
@@ -307,7 +307,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(1));
+        basePendingResult.b(new w9(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i10) {
@@ -333,6 +333,6 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new x9(4));
+        basePendingResult.b(new w9(4));
     }
 }

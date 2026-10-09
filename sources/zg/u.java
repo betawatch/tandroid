@@ -1,42 +1,43 @@
 package zg;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import java.util.ArrayList;
-import yh.s8;
-import yh.t8;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.bd0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ a0 b;
 
-    public /* synthetic */ u(int i10, Object obj, Object obj2) {
+    public /* synthetic */ u(a0 a0Var, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = a0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                z zVar = (z) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    z.g((View) arrayList.get(i10), floatValue);
-                }
-                zVar.m.k0.invalidate();
+                this.b.a.invalidate();
                 break;
             default:
-                t8 t8Var = (t8) this.b;
-                s8 s8Var = (s8) this.c;
-                t8Var.getClass();
-                s8Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t8Var.a1();
+                a0 a0Var = this.b;
+                xh.m mVar = a0Var.c;
+                if (mVar.getParent() != null) {
+                    if (a0Var.d) {
+                        AndroidUtilities.removeFromParent(mVar);
+                    } else {
+                        try {
+                            a0Var.b.removeView(mVar);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    bd0 bd0Var = a0Var.p;
+                    if (bd0Var != null) {
+                        bd0Var.run();
+                        break;
+                    }
+                }
                 break;
         }
     }

@@ -1,17 +1,20 @@
 package ci;
 
-import android.graphics.Rect;
-import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class h3 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        int dp = AndroidUtilities.dp(5.0f);
-        rect.right = dp;
-        rect.bottom = dp;
+public final class h3 extends s4.t0 {
+    public final /* synthetic */ v3 a;
+
+    public h3(v3 v3Var) {
+        this.a = v3Var;
+    }
+
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        v3 v3Var = this.a;
+        v3Var.getClass();
+        v3Var.invalidate();
     }
 }

@@ -1,34 +1,49 @@
 package ci;
 
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public abstract class n0 {
-    public static float[] a;
+public final /* synthetic */ class n0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t0 b;
 
-    public static int a(int i10, boolean z10) {
-        if (a == null) {
-            a = new float[3];
-        }
-        Color.colorToHSV(i10, a);
-        float[] fArr = a;
-        fArr[2] = Utilities.clamp(fArr[2] + (z10 ? -0.05f : 0.07f), 0.85f, 0.15f);
-        float[] fArr2 = a;
-        float f7 = fArr2[1];
-        if (f7 > 0.1f && f7 <= 0.95f) {
-            if (f7 <= 0.5f) {
-                fArr2[1] = Utilities.clamp(f7 + 0.2f, 1.0f, 0.0f);
-            } else if (f7 > 0.8f) {
-                fArr2[1] = Utilities.clamp(f7 - 0.4f, 1.0f, 0.0f);
-            }
-        }
-        return Color.HSVToColor(a);
+    public /* synthetic */ n0(t0 t0Var, int i10) {
+        this.a = i10;
+        this.b = t0Var;
     }
 
-    public static int[] b(Bitmap bitmap, boolean z10) {
-        return new int[]{a(bitmap.getPixel(bitmap.getWidth() / 2, (int) (bitmap.getHeight() * 0.1f)), z10), a(bitmap.getPixel(bitmap.getWidth() / 2, (int) (bitmap.getHeight() * 0.9f)), z10)};
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                break;
+            case 1:
+                t0 t0Var = this.b;
+                t0Var.e = false;
+                q0 q0Var = t0Var.s;
+                if (q0Var != null) {
+                    q0Var.a(true);
+                    t0Var.s = null;
+                }
+                s0 s0Var = t0Var.n;
+                if (s0Var != null) {
+                    s0Var.a();
+                }
+                t0Var.c = false;
+                t0Var.d();
+                break;
+            default:
+                t0 t0Var2 = this.b;
+                if (t0Var2.c && t0Var2.r != null) {
+                    t0Var2.n.b(R.raw.error, 3500, LocaleController.getString("VideoConvertFail"));
+                    t0Var2.c = false;
+                    t0Var2.d();
+                    break;
+                }
+                break;
+        }
     }
 }

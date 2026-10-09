@@ -1,6 +1,6 @@
 package aa;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public final /* synthetic */ int a;
@@ -33,15 +33,33 @@ public final class b {
         switch (this.a) {
             case 2:
                 return this.c + ": " + this.b;
+            case 3:
+                return this.b;
             default:
                 return super.toString();
         }
     }
 
-    public b(String str) {
-        this.a = 1;
-        this.b = str;
-        this.c = 0;
+    public b(String str, int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 3:
+                String[] split = str.split(" +", 3);
+                if (split.length < 2) {
+                    throw new IllegalArgumentException();
+                }
+                String str2 = split[0];
+                this.c = Integer.parseInt(split[1]);
+                if (split.length == 3) {
+                    String str3 = split[2];
+                }
+                this.b = str;
+                return;
+            default:
+                this.b = str;
+                this.c = 0;
+                return;
+        }
     }
 
     public b(String str, int i10, Object[] objArr) {

@@ -2,13 +2,13 @@ package y2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.eb1;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class q {
-    public static final eb1 g = new eb1(18);
-    public static final eb1 h = new eb1(19);
+    public static final mb1 g = new mb1(20);
+    public static final mb1 h = new mb1(21);
     public int d;
     public int e;
     public int f;

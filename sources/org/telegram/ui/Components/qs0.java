@@ -1,182 +1,155 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.util.SparseArray;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qs0 extends org.telegram.ui.ou0 {
-    public final /* synthetic */ qv0 a;
+public final class qs0 extends bi.z {
+    public final /* synthetic */ bw0 G;
 
-    public qs0(qv0 qv0Var) {
-        this.a = qv0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qs0(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, long j3) {
+        super(context, n2Var, j3);
+        this.G = bw0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0124 A[SYNTHETIC] */
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final org.telegram.ui.yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        ImageReceiver imageReceiver;
-        char c10;
-        char c11;
-        org.telegram.ui.Cells.n7 n7Var;
-        MessageObject message;
-        ImageReceiver linkImageView;
-        ImageReceiver photoImage;
-        View pinnedHeader;
-        qv0 qv0Var = this.a;
-        cu0 cu0Var = qv0Var.D1;
-        ct0 ct0Var = qv0Var.R0;
-        ju0[] ju0VarArr = qv0Var.k0;
+    @Override // bi.z
+    public final boolean c(MessageObject messageObject) {
+        bw0 bw0Var = this.G;
+        return bw0Var.Z0[(messageObject.getDialogId() > bw0Var.j1 ? 1 : (messageObject.getDialogId() == bw0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
+    }
+
+    @Override // bi.z
+    public final boolean e(MessageObject messageObject) {
+        bw0 bw0Var = this.G;
+        ArrayList arrayList = bw0Var.N0;
+        NumberTextView numberTextView = bw0Var.A0;
+        SparseArray[] sparseArrayArr = bw0Var.Z0;
         if (messageObject != null) {
-            char c12 = 0;
-            ju0 ju0Var = ju0VarArr[0];
-            int i11 = ju0Var.F;
-            if (i11 == 0 || i11 == 1 || i11 == 3 || i11 == 5) {
-                ps0 ps0Var = ju0Var.h;
-                int childCount = ps0Var.getChildCount();
-                int i12 = -1;
-                int i13 = 0;
-                int i14 = -1;
-                int i15 = -1;
-                while (i13 < childCount) {
-                    View childAt = ps0Var.getChildAt(i13);
-                    int measuredHeight = ju0VarArr[c12].h.getMeasuredHeight();
-                    View view = (View) qv0Var.getParent();
-                    if (view != null) {
-                        imageReceiver = null;
-                        if (qv0Var.getY() + qv0Var.getMeasuredHeight() > view.getMeasuredHeight()) {
-                            measuredHeight -= qv0Var.getBottom() - view.getMeasuredHeight();
-                        }
+            char c10 = messageObject.getDialogId() == bw0Var.j1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) < 0) {
+                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
+                    sparseArrayArr[c10].put(messageObject.getId(), messageObject);
+                    if (!messageObject.canDeleteMessage(false, null)) {
+                        bw0Var.a1++;
+                    }
+                    if (bw0Var.C1) {
+                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
                     } else {
-                        imageReceiver = null;
+                        AndroidUtilities.hideKeyboard(bw0Var.v1.getParentActivity().getCurrentFocus());
+                        int i10 = 8;
+                        bw0Var.l0.setVisibility(bw0Var.a1 == 0 ? 0 : 8);
+                        org.telegram.ui.ActionBar.v0 v0Var = bw0Var.u0;
+                        if (v0Var != null) {
+                            v0Var.setVisibility((bw0Var.getClosestTab() == 8 || bw0Var.getClosestTab() == 13) ? 8 : 0);
+                        }
+                        org.telegram.ui.ActionBar.v0 v0Var2 = bw0Var.v0;
+                        if (v0Var2 != null) {
+                            v0Var2.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.v0 v0Var3 = bw0Var.w0;
+                        if (v0Var3 != null) {
+                            v0Var3.setVisibility(8);
+                        }
+                        org.telegram.ui.ActionBar.v0 v0Var4 = bw0Var.t0;
+                        if (v0Var4 != null) {
+                            if (bw0Var.getClosestTab() != 8 && bw0Var.getClosestTab() != 13) {
+                                i10 = 0;
+                            }
+                            v0Var4.setVisibility(i10);
+                        }
+                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
+                        AnimatorSet animatorSet = new AnimatorSet();
+                        ArrayList arrayList2 = new ArrayList();
+                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                            View view = (View) arrayList.get(i11);
+                            AndroidUtilities.clearDrawableAnimation(view);
+                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
+                        }
+                        animatorSet.playTogether(arrayList2);
+                        animatorSet.setDuration(250L);
+                        animatorSet.start();
+                        bw0Var.b1 = false;
+                        bw0Var.b1(true);
                     }
-                    if (childAt.getTop() < measuredHeight) {
-                        int R = RecyclerView.R(childAt);
-                        if (R < i14 || i14 == i12) {
-                            i14 = R;
-                        }
-                        if (R > i15 || i15 == i12) {
-                            i15 = R;
-                        }
-                        int[] iArr = new int[2];
-                        if (childAt instanceof org.telegram.ui.Cells.t7) {
-                            org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) childAt;
-                            linkImageView = t7Var.c;
-                            MessageObject messageObject2 = t7Var.getMessageObject();
-                            if (messageObject2 != null) {
-                                c10 = 0;
-                                int id2 = messageObject2.getId();
-                                c11 = 1;
-                                if (id2 == messageObject.getId()) {
-                                    t7Var.getLocationInWindow(iArr);
-                                    iArr[0] = Math.round(linkImageView.getImageX()) + iArr[0];
-                                    iArr[1] = Math.round(linkImageView.getImageY()) + iArr[1];
-                                    if (linkImageView != null) {
-                                        org.telegram.ui.yu0 yu0Var = new org.telegram.ui.yu0();
-                                        yu0Var.b = iArr[c10];
-                                        yu0Var.c = iArr[c11];
-                                        yu0Var.d = ps0Var;
-                                        ju0 ju0Var2 = ju0VarArr[c10];
-                                        yu0Var.m = ju0Var2.y;
-                                        ju0Var2.h.getLocationInWindow(iArr);
-                                        yu0Var.n = -iArr[c11];
-                                        yu0Var.a = linkImageView;
-                                        yu0Var.o = true;
-                                        yu0Var.h = linkImageView.getRoundRadius(true);
-                                        yu0Var.e = yu0Var.a.getBitmapSafe();
-                                        yu0Var.d.getLocationInWindow(iArr);
-                                        yu0Var.j = 0;
-                                        yu0Var.q = qv0Var.t1[0].m;
-                                        if (ct0Var != null && ct0Var.getVisibility() == 0) {
-                                            yu0Var.j = AndroidUtilities.dp(36.0f) + yu0Var.j;
-                                        }
-                                        if (PhotoViewer.N1(messageObject) && (pinnedHeader = ps0Var.getPinnedHeader()) != null) {
-                                            int height = (ct0Var == null || ct0Var.getVisibility() != 0) ? 0 : ct0Var.getHeight() - AndroidUtilities.dp(2.5f);
-                                            boolean z12 = childAt instanceof org.telegram.ui.Cells.k7;
-                                            if (z12) {
-                                                height += AndroidUtilities.dp(8.0f);
-                                            }
-                                            int i16 = height - yu0Var.c;
-                                            if (i16 > childAt.getHeight()) {
-                                                ps0Var.scrollBy(0, -(pinnedHeader.getHeight() + i16));
-                                                return yu0Var;
-                                            }
-                                            int height2 = yu0Var.c - ps0Var.getHeight();
-                                            if (z12) {
-                                                height2 -= AndroidUtilities.dp(8.0f);
-                                            }
-                                            if (height2 >= 0) {
-                                                ps0Var.scrollBy(0, childAt.getHeight() + height2);
-                                            }
-                                        }
-                                        return yu0Var;
-                                    }
-                                }
-                                linkImageView = imageReceiver;
-                                if (linkImageView != null) {
-                                }
-                            }
-                        } else {
-                            c10 = 0;
-                            c11 = 1;
-                            if (childAt instanceof org.telegram.ui.Cells.k7) {
-                                org.telegram.ui.Cells.k7 k7Var = (org.telegram.ui.Cells.k7) childAt;
-                                if (k7Var.getMessage().getId() == messageObject.getId()) {
-                                    w9 imageView = k7Var.getImageView();
-                                    photoImage = imageView.getImageReceiver();
-                                    imageView.getLocationInWindow(iArr);
-                                    linkImageView = photoImage;
-                                }
-                                linkImageView = imageReceiver;
-                            } else {
-                                if (childAt instanceof org.telegram.ui.Cells.f2) {
-                                    org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
-                                    MessageObject messageObject3 = (MessageObject) f2Var.getParentObject();
-                                    if (messageObject3 != null && messageObject3.getId() == messageObject.getId()) {
-                                        photoImage = f2Var.getPhotoImage();
-                                        f2Var.getLocationInWindow(iArr);
-                                        linkImageView = photoImage;
-                                    }
-                                } else if ((childAt instanceof org.telegram.ui.Cells.n7) && (message = (n7Var = (org.telegram.ui.Cells.n7) childAt).getMessage()) != null && message.getId() == messageObject.getId()) {
-                                    linkImageView = n7Var.getLinkImageView();
-                                    n7Var.getLocationInWindow(iArr);
-                                }
-                                linkImageView = imageReceiver;
-                            }
-                            if (linkImageView != null) {
-                            }
-                        }
-                    }
-                    i13++;
-                    c12 = 0;
-                    i12 = -1;
+                    j();
+                    return true;
                 }
-                ju0 ju0Var3 = ju0VarArr[0];
-                if (ju0Var3.F != 0 || i14 < 0 || i15 < 0) {
-                    return null;
-                }
-                int i17 = qv0Var.H.f.t1[0].m + i10;
-                if (i17 <= i14) {
-                    ju0Var3.x.h1(i17, 0);
-                    cu0Var.C();
-                    return null;
-                }
-                if (i17 < i15 || i15 < 0) {
-                    return null;
-                }
-                ju0Var3.x.i1(i17, 0, true);
-                cu0Var.C();
-                return null;
             }
         }
-        return null;
+        return false;
+    }
+
+    @Override // bi.z
+    public final boolean g(MessageObject messageObject) {
+        bw0 bw0Var = this.G;
+        ArrayList arrayList = bw0Var.N0;
+        SparseArray[] sparseArrayArr = bw0Var.Z0;
+        if (messageObject != null) {
+            int i10 = 1;
+            char c10 = messageObject.getDialogId() == bw0Var.j1 ? (char) 0 : (char) 1;
+            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) >= 0) {
+                sparseArrayArr[c10].remove(messageObject.getId());
+                if (!messageObject.canDeleteMessage(false, null)) {
+                    bw0Var.a1--;
+                }
+                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
+                    AndroidUtilities.hideKeyboard(bw0Var.v1.getParentActivity().getCurrentFocus());
+                    sparseArrayArr[0].clear();
+                    sparseArrayArr[1].clear();
+                    int i11 = 8;
+                    bw0Var.l0.setVisibility(bw0Var.a1 == 0 ? 0 : 8);
+                    org.telegram.ui.ActionBar.v0 v0Var = bw0Var.u0;
+                    if (v0Var != null) {
+                        v0Var.setVisibility((bw0Var.getClosestTab() == 8 || bw0Var.getClosestTab() == 13) ? 8 : 0);
+                    }
+                    org.telegram.ui.ActionBar.v0 v0Var2 = bw0Var.v0;
+                    if (v0Var2 != null) {
+                        v0Var2.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.v0 v0Var3 = bw0Var.w0;
+                    if (v0Var3 != null) {
+                        v0Var3.setVisibility(8);
+                    }
+                    org.telegram.ui.ActionBar.v0 v0Var4 = bw0Var.t0;
+                    if (v0Var4 != null) {
+                        if (bw0Var.getClosestTab() != 8 && bw0Var.getClosestTab() != 13) {
+                            i11 = 0;
+                        }
+                        v0Var4.setVisibility(i11);
+                    }
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        View view = (View) arrayList.get(i12);
+                        AndroidUtilities.clearDrawableAnimation(view);
+                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
+                    }
+                    animatorSet.playTogether(arrayList2);
+                    animatorSet.setDuration(250L);
+                    animatorSet.start();
+                    bw0Var.b1 = false;
+                    AndroidUtilities.runOnUIThread(new or0(this, i10), 20L);
+                } else {
+                    bw0Var.A0.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
+                }
+                j();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // bi.z
+    public final int getStartedTrackingX() {
+        return this.G.z1;
     }
 }

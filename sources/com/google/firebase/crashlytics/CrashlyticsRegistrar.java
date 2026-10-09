@@ -12,9 +12,9 @@ import java.util.Map;
 import k9.h;
 import q9.j;
 import s0.b;
-import w7.q8;
+import w7.o8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int a = 0;
@@ -27,7 +27,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
             Log.d("SessionsDependencies", "Dependency " + dVar + " already added.");
             return;
         }
-        map.put(dVar, new a(new ie.d(true)));
+        map.put(dVar, new a(new je.d(true)));
         Log.d("SessionsDependencies", "Dependency to " + dVar + " added.");
     }
 
@@ -40,8 +40,8 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         a2.a(new j(0, 2, t9.a.class));
         a2.a(new j(0, 2, l9.a.class));
         a2.a(new j(0, 2, ya.a.class));
-        a2.f = new b(this, 20);
+        a2.f = new b(this, 5);
         a2.c(2);
-        return Arrays.asList(a2.b(), q8.a("fire-cls", "18.6.0"));
+        return Arrays.asList(a2.b(), o8.a("fire-cls", "18.6.0"));
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j3, long j10);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -255,7 +255,7 @@ public class FileUploadOperation {
             StringBuilder sb2 = new StringBuilder("debug_uploading:  response reqId ");
             sb2.append(iArr[0]);
             sb2.append(" time");
-            com.google.android.gms.internal.vision.e2.t(this.uploadingFilePath, sb2);
+            hg.c.t(this.uploadingFilePath, sb2);
         }
         int currentNetworkType = tLObject != null ? tLObject.networkType : ApplicationLoader.getCurrentNetworkType();
         int i15 = this.currentType;
@@ -277,7 +277,7 @@ public class FileUploadOperation {
             this.freeRequestIvs.add(bArr2);
         }
         this.requestTokens.delete(i12);
-        AndroidUtilities.runOnUIThread(new s3(this, iArr, 0));
+        AndroidUtilities.runOnUIThread(new t3(this, iArr, 0));
         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
             this.state = 4;
             this.delegate.didFailedUploadingFile(this);
@@ -315,9 +315,9 @@ public class FileUploadOperation {
                         boolean z10 = this.isBigFile;
                         if ((z10 && j11 % 1048576 == 0) || (!z10 && this.saveInfoTimes == 0)) {
                             SharedPreferences.Editor edit = this.preferences.edit();
-                            edit.putLong(a4.a.t(new StringBuilder(), this.fileKey, "_uploaded"), j11);
+                            edit.putLong(a1.g.t(new StringBuilder(), this.fileKey, "_uploaded"), j11);
                             if (this.isEncrypted) {
-                                edit.putString(a4.a.t(new StringBuilder(), this.fileKey, "_ivc"), Utilities.bytesToHex(bArr2));
+                                edit.putString(a1.g.t(new StringBuilder(), this.fileKey, "_ivc"), Utilities.bytesToHex(bArr2));
                             }
                             edit.commit();
                         }
@@ -396,7 +396,7 @@ public class FileUploadOperation {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$startUploadRequest$8() {
-        Utilities.stageQueue.postRunnable(new r3(this, 2));
+        Utilities.stageQueue.postRunnable(new s3(this, 2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -405,11 +405,11 @@ public class FileUploadOperation {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02ff A[Catch: Exception -> 0x0054, TryCatch #1 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00bb, B:31:0x00bf, B:33:0x00c2, B:34:0x00c4, B:37:0x00cd, B:39:0x00da, B:40:0x00e4, B:42:0x00e8, B:44:0x00f2, B:47:0x0114, B:49:0x014a, B:51:0x014e, B:53:0x0156, B:55:0x015c, B:57:0x01b2, B:60:0x01ea, B:63:0x01fc, B:65:0x01ff, B:67:0x0202, B:71:0x0212, B:73:0x0216, B:79:0x0238, B:82:0x0245, B:84:0x0252, B:86:0x025e, B:88:0x0262, B:89:0x0268, B:91:0x0273, B:93:0x027c, B:97:0x0289, B:99:0x0290, B:101:0x02a7, B:103:0x027a, B:109:0x02ff, B:111:0x0303, B:112:0x0323, B:114:0x032f, B:116:0x0333, B:118:0x033b, B:119:0x033e, B:121:0x0375, B:123:0x0381, B:125:0x0385, B:126:0x039a, B:127:0x0393, B:128:0x03a7, B:130:0x03af, B:135:0x03bc, B:137:0x03c0, B:139:0x03cb, B:140:0x03de, B:143:0x03ed, B:145:0x03f1, B:147:0x03f5, B:148:0x03fb, B:150:0x0406, B:152:0x040a, B:154:0x0412, B:156:0x0425, B:160:0x0432, B:162:0x0439, B:163:0x0465, B:165:0x0469, B:167:0x047e, B:168:0x0485, B:170:0x049b, B:172:0x049f, B:174:0x04a3, B:175:0x04b2, B:189:0x0481, B:190:0x048b, B:192:0x0419, B:194:0x041d, B:195:0x0423, B:198:0x03d5, B:199:0x03e1, B:209:0x0372, B:210:0x02b1, B:212:0x02bc, B:214:0x02d8, B:216:0x02e0, B:219:0x02e9, B:221:0x02ef, B:224:0x0222, B:232:0x0057, B:233:0x039d, B:234:0x03a5, B:237:0x0045, B:8:0x0027, B:201:0x0342, B:204:0x035d), top: B:3:0x0009, inners: #0, #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0381 A[Catch: Exception -> 0x0054, TryCatch #1 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00bb, B:31:0x00bf, B:33:0x00c2, B:34:0x00c4, B:37:0x00cd, B:39:0x00da, B:40:0x00e4, B:42:0x00e8, B:44:0x00f2, B:47:0x0114, B:49:0x014a, B:51:0x014e, B:53:0x0156, B:55:0x015c, B:57:0x01b2, B:60:0x01ea, B:63:0x01fc, B:65:0x01ff, B:67:0x0202, B:71:0x0212, B:73:0x0216, B:79:0x0238, B:82:0x0245, B:84:0x0252, B:86:0x025e, B:88:0x0262, B:89:0x0268, B:91:0x0273, B:93:0x027c, B:97:0x0289, B:99:0x0290, B:101:0x02a7, B:103:0x027a, B:109:0x02ff, B:111:0x0303, B:112:0x0323, B:114:0x032f, B:116:0x0333, B:118:0x033b, B:119:0x033e, B:121:0x0375, B:123:0x0381, B:125:0x0385, B:126:0x039a, B:127:0x0393, B:128:0x03a7, B:130:0x03af, B:135:0x03bc, B:137:0x03c0, B:139:0x03cb, B:140:0x03de, B:143:0x03ed, B:145:0x03f1, B:147:0x03f5, B:148:0x03fb, B:150:0x0406, B:152:0x040a, B:154:0x0412, B:156:0x0425, B:160:0x0432, B:162:0x0439, B:163:0x0465, B:165:0x0469, B:167:0x047e, B:168:0x0485, B:170:0x049b, B:172:0x049f, B:174:0x04a3, B:175:0x04b2, B:189:0x0481, B:190:0x048b, B:192:0x0419, B:194:0x041d, B:195:0x0423, B:198:0x03d5, B:199:0x03e1, B:209:0x0372, B:210:0x02b1, B:212:0x02bc, B:214:0x02d8, B:216:0x02e0, B:219:0x02e9, B:221:0x02ef, B:224:0x0222, B:232:0x0057, B:233:0x039d, B:234:0x03a5, B:237:0x0045, B:8:0x0027, B:201:0x0342, B:204:0x035d), top: B:3:0x0009, inners: #0, #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:200:0x0342 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x02f9  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0232  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02fb A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00b9, B:31:0x00bd, B:33:0x00c0, B:34:0x00c2, B:37:0x00ca, B:39:0x00d7, B:40:0x00e1, B:42:0x00e5, B:44:0x00ef, B:47:0x0110, B:49:0x0146, B:51:0x014a, B:53:0x0152, B:55:0x0158, B:57:0x01ae, B:60:0x01e6, B:63:0x01f8, B:65:0x01fb, B:67:0x01fe, B:71:0x020e, B:73:0x0212, B:79:0x0234, B:82:0x0241, B:84:0x024e, B:86:0x025a, B:88:0x025e, B:89:0x0264, B:91:0x026f, B:93:0x0278, B:97:0x0285, B:99:0x028c, B:101:0x02a3, B:103:0x0276, B:109:0x02fb, B:111:0x02ff, B:112:0x031f, B:114:0x032b, B:116:0x032f, B:118:0x0337, B:119:0x033a, B:121:0x0371, B:123:0x037d, B:125:0x0381, B:126:0x0396, B:127:0x038f, B:128:0x03a3, B:130:0x03ab, B:135:0x03b8, B:137:0x03bc, B:139:0x03c7, B:140:0x03da, B:143:0x03e9, B:145:0x03ed, B:147:0x03f1, B:148:0x03f7, B:150:0x0402, B:152:0x0406, B:154:0x040e, B:156:0x0421, B:160:0x042e, B:162:0x0435, B:163:0x0461, B:165:0x0465, B:167:0x047a, B:168:0x0481, B:170:0x0497, B:172:0x049b, B:174:0x049f, B:175:0x04ae, B:189:0x047d, B:190:0x0487, B:192:0x0415, B:194:0x0419, B:195:0x041f, B:198:0x03d1, B:199:0x03dd, B:209:0x036e, B:210:0x02ad, B:212:0x02b8, B:214:0x02d4, B:216:0x02dc, B:219:0x02e5, B:221:0x02eb, B:224:0x021e, B:232:0x0057, B:233:0x0399, B:234:0x03a1, B:237:0x0045, B:201:0x033e, B:204:0x0359, B:8:0x0027), top: B:3:0x0009, inners: #0, #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x037d A[Catch: Exception -> 0x0054, TryCatch #2 {Exception -> 0x0054, blocks: (B:4:0x0009, B:6:0x0016, B:10:0x004b, B:12:0x0051, B:13:0x005d, B:15:0x0061, B:17:0x006a, B:18:0x006c, B:20:0x0085, B:22:0x008e, B:23:0x0097, B:26:0x00a0, B:29:0x00b9, B:31:0x00bd, B:33:0x00c0, B:34:0x00c2, B:37:0x00ca, B:39:0x00d7, B:40:0x00e1, B:42:0x00e5, B:44:0x00ef, B:47:0x0110, B:49:0x0146, B:51:0x014a, B:53:0x0152, B:55:0x0158, B:57:0x01ae, B:60:0x01e6, B:63:0x01f8, B:65:0x01fb, B:67:0x01fe, B:71:0x020e, B:73:0x0212, B:79:0x0234, B:82:0x0241, B:84:0x024e, B:86:0x025a, B:88:0x025e, B:89:0x0264, B:91:0x026f, B:93:0x0278, B:97:0x0285, B:99:0x028c, B:101:0x02a3, B:103:0x0276, B:109:0x02fb, B:111:0x02ff, B:112:0x031f, B:114:0x032b, B:116:0x032f, B:118:0x0337, B:119:0x033a, B:121:0x0371, B:123:0x037d, B:125:0x0381, B:126:0x0396, B:127:0x038f, B:128:0x03a3, B:130:0x03ab, B:135:0x03b8, B:137:0x03bc, B:139:0x03c7, B:140:0x03da, B:143:0x03e9, B:145:0x03ed, B:147:0x03f1, B:148:0x03f7, B:150:0x0402, B:152:0x0406, B:154:0x040e, B:156:0x0421, B:160:0x042e, B:162:0x0435, B:163:0x0461, B:165:0x0465, B:167:0x047a, B:168:0x0481, B:170:0x0497, B:172:0x049b, B:174:0x049f, B:175:0x04ae, B:189:0x047d, B:190:0x0487, B:192:0x0415, B:194:0x0419, B:195:0x041f, B:198:0x03d1, B:199:0x03dd, B:209:0x036e, B:210:0x02ad, B:212:0x02b8, B:214:0x02d4, B:216:0x02dc, B:219:0x02e5, B:221:0x02eb, B:224:0x021e, B:232:0x0057, B:233:0x0399, B:234:0x03a1, B:237:0x0045, B:201:0x033e, B:204:0x0359, B:8:0x0027), top: B:3:0x0009, inners: #0, #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:200:0x033e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x022e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -755,7 +755,7 @@ public class FileUploadOperation {
                 final int[] iArr = new int[1];
                 final byte[] bArr7 = bArr2;
                 final int i29 = read;
-                iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.t3
+                iArr[0] = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_saveFilePart3, new RequestDelegate() { // from class: org.telegram.messenger.u3
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         FileUploadOperation.this.lambda$startUploadRequest$6(i27, iArr, objectSize, bArr7, i26, i29, i25, j14, tLObject, tL_error);
@@ -774,7 +774,7 @@ public class FileUploadOperation {
                     q.r(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
-                AndroidUtilities.runOnUIThread(new s3(this, iArr, 1));
+                AndroidUtilities.runOnUIThread(new t3(this, iArr, 1));
             }
         } catch (Exception e10) {
             FileLog.e(e10);
@@ -786,14 +786,14 @@ public class FileUploadOperation {
 
     private void storeFileUploadInfo() {
         SharedPreferences.Editor edit = this.preferences.edit();
-        edit.putInt(a4.a.t(new StringBuilder(), this.fileKey, "_time"), this.uploadStartTime);
-        edit.putLong(a4.a.t(new StringBuilder(), this.fileKey, "_size"), this.totalFileSize);
-        edit.putLong(a4.a.t(new StringBuilder(), this.fileKey, "_id"), this.currentFileId);
+        edit.putInt(a1.g.t(new StringBuilder(), this.fileKey, "_time"), this.uploadStartTime);
+        edit.putLong(a1.g.t(new StringBuilder(), this.fileKey, "_size"), this.totalFileSize);
+        edit.putLong(a1.g.t(new StringBuilder(), this.fileKey, "_id"), this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(a4.a.t(new StringBuilder(), this.fileKey, "_iv"), Utilities.bytesToHex(this.iv));
-            edit.putString(a4.a.t(new StringBuilder(), this.fileKey, "_ivc"), Utilities.bytesToHex(this.ivChange));
-            edit.putString(a4.a.t(new StringBuilder(), this.fileKey, "_key"), Utilities.bytesToHex(this.key));
+            edit.putString(a1.g.t(new StringBuilder(), this.fileKey, "_iv"), Utilities.bytesToHex(this.iv));
+            edit.putString(a1.g.t(new StringBuilder(), this.fileKey, "_ivc"), Utilities.bytesToHex(this.ivChange));
+            edit.putString(a1.g.t(new StringBuilder(), this.fileKey, "_key"), Utilities.bytesToHex(this.key));
         }
         edit.commit();
     }
@@ -803,7 +803,7 @@ public class FileUploadOperation {
             return;
         }
         this.state = 2;
-        Utilities.stageQueue.postRunnable(new r3(this, 1));
+        Utilities.stageQueue.postRunnable(new s3(this, 1));
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
         this.delegate.didFailedUploadingFile(this);
         cleanup();
@@ -821,8 +821,8 @@ public class FileUploadOperation {
         if (this.state != 1) {
             return;
         }
-        Utilities.stageQueue.postRunnable(new bi.f(10, this, z10));
-        AndroidUtilities.runOnUIThread(new r3(this, 3));
+        Utilities.stageQueue.postRunnable(new bi.f(11, this, z10));
+        AndroidUtilities.runOnUIThread(new s3(this, 3));
     }
 
     public void setDelegate(FileUploadOperationDelegate fileUploadOperationDelegate) {
@@ -839,6 +839,6 @@ public class FileUploadOperation {
         }
         this.state = 1;
         AutoDeleteMediaTask.lockFile(this.uploadingFilePath);
-        Utilities.stageQueue.postRunnable(new r3(this, 0));
+        Utilities.stageQueue.postRunnable(new s3(this, 0));
     }
 }

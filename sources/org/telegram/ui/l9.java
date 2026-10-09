@@ -1,42 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l9 extends FrameLayout {
-    public final org.telegram.ui.Cells.i6 a;
-    public final org.telegram.ui.Components.ki0 b;
-    public TLRPC.Chat c;
+public final /* synthetic */ class l9 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v9 b;
 
-    public l9(Context context) {
-        super(context);
-        String string = LocaleController.getString(R.string.VoipChatJoin);
-        org.telegram.ui.Components.ki0 ki0Var = new org.telegram.ui.Components.ki0(context);
-        this.b = ki0Var;
-        int ceil = (int) Math.ceil(ki0Var.getPaint().measureText(string));
-        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
-        this.a = i6Var;
-        i6Var.M0 = true;
-        i6Var.E0 = true;
-        i6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(44.0f) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(44.0f) + ceil, 0);
-        int i10 = -AndroidUtilities.dp(4.0f);
-        i6Var.b0 = 0;
-        i6Var.c0 = i10;
-        addView(i6Var, w7.z5.c(-1.0f, -1));
-        ki0Var.setText(string);
-        ki0Var.setTextSize(1, 14.0f);
-        ki0Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
-        ki0Var.setProgressColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Nh, false));
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hl, false);
-        org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Qh, false);
-        ki0Var.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{16.0f}, w02));
-        ki0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(ki0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
+    public /* synthetic */ l9(v9 v9Var, int i10) {
+        this.a = i10;
+        this.b = v9Var;
+    }
+
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                v9 v9Var = this.b;
+                v9Var.E = f7 / 500.0f;
+                v9Var.fragmentView.invalidate();
+                break;
+            default:
+                v9 v9Var2 = this.b;
+                v9Var2.c0 = v9Var2.N ? f7 / 500.0f : 1.0f - (f7 / 500.0f);
+                v9Var2.fragmentView.invalidate();
+                break;
+        }
     }
 }

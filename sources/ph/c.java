@@ -2,14 +2,14 @@ package ph;
 
 import ii.q1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.web.u0;
+import org.telegram.ui.web.q0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c {
     public final q1 a;
     public b c = b.a;
-    public final u0 d = new u0(this, 13);
+    public final q0 d = new q0(this, 14);
     public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
     public c(q1 q1Var) {
@@ -18,14 +18,14 @@ public final class c {
 
     public final void a(b bVar, boolean z10) {
         if (this.c != bVar) {
-            u0 u0Var = this.d;
-            AndroidUtilities.cancelRunOnUIThread(u0Var);
+            q0 q0Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(q0Var);
             this.c = bVar;
             if (z10) {
                 this.a.run(bVar);
             }
             if (bVar == b.b || bVar == b.c) {
-                AndroidUtilities.runOnUIThread(u0Var, this.b);
+                AndroidUtilities.runOnUIThread(q0Var, this.b);
             }
         }
     }

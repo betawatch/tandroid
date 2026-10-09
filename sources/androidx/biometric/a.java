@@ -1,6 +1,7 @@
 package androidx.biometric;
 
 import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
 import android.os.Build;
 import android.security.identity.IdentityCredential;
 import java.lang.ref.WeakReference;
@@ -8,21 +9,19 @@ import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a extends BiometricPrompt.AuthenticationCallback {
+public final class a extends BiometricPrompt$AuthenticationCallback {
     public final /* synthetic */ d a;
 
     public a(d dVar) {
         this.a = dVar;
     }
 
-    @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationError(int i10, CharSequence charSequence) {
         this.a.a(i10, charSequence);
     }
 
-    @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationFailed() {
         WeakReference weakReference = ((v) this.a).a;
         if (weakReference.get() == null || !((x) weakReference.get()).n) {
@@ -35,7 +34,6 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
         x.h(xVar.u, Boolean.TRUE);
     }
 
-    @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationSucceeded(BiometricPrompt.AuthenticationResult authenticationResult) {
         BiometricPrompt.CryptoObject cryptoObject;
         IdentityCredential b10;
@@ -70,7 +68,6 @@ public final class a extends BiometricPrompt.AuthenticationCallback {
         this.a.b(new s(tVar, i11));
     }
 
-    @Override // android.hardware.biometrics.BiometricPrompt.AuthenticationCallback
     public void onAuthenticationHelp(int i10, CharSequence charSequence) {
     }
 }

@@ -1,23 +1,23 @@
 package x2;
 
-import u2.p1;
+import u2.o1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class t {
     public final int a;
     public final int[] b;
-    public final p1[] c;
+    public final o1[] c;
     public final int[] d;
     public final int[][][] e;
-    public final p1 f;
+    public final o1 f;
 
-    public t(int[] iArr, p1[] p1VarArr, int[] iArr2, int[][][] iArr3, p1 p1Var) {
+    public t(int[] iArr, o1[] o1VarArr, int[] iArr2, int[][][] iArr3, o1 o1Var) {
         this.b = iArr;
-        this.c = p1VarArr;
+        this.c = o1VarArr;
         this.e = iArr3;
         this.d = iArr2;
-        this.f = p1Var;
+        this.f = o1Var;
         this.a = iArr.length;
     }
 }

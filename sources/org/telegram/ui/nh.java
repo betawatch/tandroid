@@ -1,35 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nh implements Utilities.Callback {
+public final /* synthetic */ class nh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Long d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ nh(Object obj, long j3, long j10, Long l4, int i10) {
+    public /* synthetic */ nh(int i10, View view) {
         this.a = i10;
-        this.e = obj;
-        this.b = j3;
-        this.c = j10;
-        this.d = l4;
+        this.b = view;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        View view = this.b;
+        switch (i10) {
             case 0:
-                yn.Z((yn) this.e, this.b, this.c, this.d, (Boolean) obj);
+                try {
+                    view.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
+            case 1:
+                view.setBackgroundDrawable(null);
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                AndroidUtilities.removeFromParent(view);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                view.setVisibility(8);
+                break;
+            case 4:
+                SharedConfig.setSuggestStickers(0);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
+                break;
+            case 5:
+                SharedConfig.setSuggestStickers(1);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
                 break;
             default:
-                Boolean bool = (Boolean) obj;
-                i10 = ((org.telegram.ui.ActionBar.n2) ((lj) this.e).b).currentAccount;
-                yh.u5.y(i10, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
+                SharedConfig.setSuggestStickers(2);
+                ((org.telegram.ui.Cells.ca) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
                 break;
         }
     }

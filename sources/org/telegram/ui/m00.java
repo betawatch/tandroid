@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class m00 extends FrameLayout {
     public final TextView a;
@@ -25,26 +25,26 @@ public final class m00 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q6, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q6, false));
         textView.setTextSize(1, 16.0f);
         textView.setText(LocaleController.getString(R.string.CreateNewLink));
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z10 = LocaleController.isRTL;
         textView.setPadding(z10 ? 16 : 0, 0, z10 ? 0 : 16, 0);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-1, -2.0f, 23, z11 ? 0.0f : 64.0f, 0.0f, z11 ? 64.0f : 0.0f, 0.0f));
+        addView(textView, w7.x5.a(-2.0f, z11 ? 0.0f : 64.0f, 0.0f, z11 ? 64.0f : 0.0f, 0.0f, -1, 23));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
         Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Oh, false);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k7, false), mode));
-        imageView.setImageDrawable(new org.telegram.ui.Components.sq(drawable, drawable2));
+        drawable.setColorFilter(new PorterDuffColorFilter(x02, mode));
+        drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.k7, false), mode));
+        imageView.setImageDrawable(new org.telegram.ui.Components.fr(drawable, drawable2));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, w7.z5.d(32, 32.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
+        addView(imageView, w7.x5.a(32.0f, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f, 32, (z12 ? 5 : 3) | 16));
     }
 
     @Override // android.view.View

@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class a3 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         ArticleViewer$WindowView articleViewer$WindowView;
-        org.telegram.ui.Cells.q9 q9Var;
+        org.telegram.ui.Cells.o9 o9Var;
         switch (this.a) {
             case 0:
                 i4 i4Var = this.b;
@@ -35,7 +35,7 @@ public final class a3 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        i4Var.Z(((org.telegram.ui.Components.j11) i4Var.b.i).b);
+                        i4Var.Z(((org.telegram.ui.Components.p11) i4Var.b.i).b);
                         i4Var.b = null;
                         i4Var.d = null;
                         View view = i4Var.f;
@@ -45,13 +45,13 @@ public final class a3 implements Runnable {
                         }
                     } else {
                         View view2 = i4Var.f;
-                        if (view2 != null && i4Var.O0.g0(view2)) {
-                            if (i4Var.f.getTag() == null || i4Var.f.getTag() != "bottomSheet" || (q9Var = i4Var.P0) == null) {
-                                i4Var.O0.m0();
+                        if (view2 != null && i4Var.O0.f0(view2)) {
+                            if (i4Var.f.getTag() == null || i4Var.f.getTag() != "bottomSheet" || (o9Var = i4Var.P0) == null) {
+                                i4Var.O0.l0();
                             } else {
-                                q9Var.m0();
+                                o9Var.l0();
                             }
-                            if (i4Var.O0.y()) {
+                            if (i4Var.O0.x()) {
                                 try {
                                     i4Var.f0.performHapticFeedback(0, 2);
                                     break;
@@ -87,14 +87,14 @@ public final class a3 implements Runnable {
                                     i4Var.A0.setShownFromBottom(false);
                                     TextView textView = new TextView(i4Var.L);
                                     i4Var.B0 = textView;
-                                    textView.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 2, -1));
+                                    textView.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.i6, false), 2, -1));
                                     i4Var.B0.setGravity(16);
                                     i4Var.B0.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                                     i4Var.B0.setTextSize(1, 15.0f);
                                     i4Var.B0.setTypeface(AndroidUtilities.bold());
                                     i4Var.B0.setText(LocaleController.getString(R.string.Copy).toUpperCase());
                                     i4Var.B0.setOnClickListener(new t(i4Var, 5));
-                                    i4Var.A0.addView(i4Var.B0, w7.z5.c(48.0f, -2));
+                                    i4Var.A0.addView(i4Var.B0, w7.x5.d(48.0f, -2));
                                     org.telegram.ui.ActionBar.n1 n1Var2 = new org.telegram.ui.ActionBar.n1(i4Var.A0, -2, -2);
                                     i4Var.H = n1Var2;
                                     n1Var2.b = false;
@@ -106,10 +106,10 @@ public final class a3 implements Runnable {
                                     i4Var.H.getContentView().setFocusableInTouchMode(true);
                                     i4Var.H.setOnDismissListener(new f0(i4Var, 0));
                                 }
-                                i4Var.B0.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false));
+                                i4Var.B0.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.E8, false));
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = i4Var.A0;
                                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G8, false));
+                                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G8, false));
                                 }
                                 i4Var.A0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                                 i4Var.H.setFocusable(true);

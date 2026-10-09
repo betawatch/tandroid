@@ -1,78 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class uh0 implements z4.e {
-    public final /* synthetic */ org.telegram.ui.jz0 a;
+public final /* synthetic */ class uh0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xh0 b;
 
-    public uh0(org.telegram.ui.jz0 jz0Var) {
-        this.a = jz0Var;
+    public /* synthetic */ uh0(xh0 xh0Var, int i10) {
+        this.a = i10;
+        this.b = xh0Var;
     }
 
-    @Override // z4.e
-    public final void a(int i10) {
-        org.telegram.ui.jz0 jz0Var = this.a;
-        int i11 = jz0Var.o1;
-        boolean z10 = i10 >= i11;
-        if (i10 != i11) {
-            jz0Var.o1 = i10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                xh0 xh0Var = this.b;
+                xh0Var.getClass();
+                xh0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xh0Var.c(true);
+                break;
+            default:
+                xh0 xh0Var2 = this.b;
+                xh0Var2.getClass();
+                xh0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xh0Var2.c(true);
+                break;
         }
-        MessagesController.DialogPhotos dialogPhotos = jz0Var.S0;
-        if (dialogPhotos != null) {
-            ai0 ai0Var = jz0Var.D0;
-            dialogPhotos.loadAfter(i10 - (ai0Var != null ? ai0Var.j() : 0), z10);
-        }
-    }
-
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        ImageLocation imageLocation;
-        org.telegram.ui.jz0 jz0Var = this.a;
-        ai0 ai0Var = jz0Var.D0;
-        ArrayList arrayList = jz0Var.W0;
-        jz0Var.B(f7, i10);
-        if (i11 == 0) {
-            int k10 = ai0Var.k(i10);
-            jz0Var.getCurrentItemView();
-            int childCount = jz0Var.getChildCount();
-            for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = jz0Var.getChildAt(i12);
-                if (childAt instanceof w9) {
-                    int k11 = ai0Var.k(ai0Var.d.indexOf(childAt));
-                    ImageReceiver imageReceiver = ((w9) childAt).getImageReceiver();
-                    boolean allowStartAnimation = imageReceiver.getAllowStartAnimation();
-                    if (k11 >= 0 && k11 < arrayList.size()) {
-                        if (k11 == k10) {
-                            if (!allowStartAnimation) {
-                                imageReceiver.setAllowStartAnimation(true);
-                                imageReceiver.startAnimation();
-                            }
-                            ImageLocation imageLocation2 = (ImageLocation) arrayList.get(k11);
-                            if (imageLocation2 != null) {
-                                FileLoader.getInstance(jz0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
-                            }
-                        } else if (allowStartAnimation) {
-                            d6 animation = imageReceiver.getAnimation();
-                            if (animation != null && (imageLocation = (ImageLocation) arrayList.get(k11)) != null) {
-                                animation.y(imageLocation.videoSeekTo, false, true);
-                            }
-                            imageReceiver.setAllowStartAnimation(false);
-                            imageReceiver.stopAnimation();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
     }
 }

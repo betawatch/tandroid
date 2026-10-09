@@ -1,58 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gj extends org.telegram.ui.Components.m40 {
-    public final /* synthetic */ int I;
+public final class gj extends org.telegram.ui.Components.iw {
+    public final /* synthetic */ zn W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gj(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        super(i10, context, d6Var, z10);
-        this.I = i11;
+    public gj(zn znVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
+        super(n2Var, activity, e6Var, arrayList);
+        this.W = znVar;
     }
 
-    @Override // org.telegram.ui.Components.m40
-    public int c() {
-        switch (this.I) {
-            case 0:
-                return AndroidUtilities.dp(56.0f) / 2;
-            default:
-                return super.c();
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.I) {
-            case 1:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    try {
-                        ((ViewGroup) getParent()).removeView(this);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            case 2:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    try {
-                        ((ViewGroup) getParent()).removeView(this);
-                        break;
-                    } catch (Exception unused2) {
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+    @Override // org.telegram.ui.Components.iw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        zn znVar = this.W;
+        znVar.getClass();
+        znVar.j8(false, true, 0.0f);
     }
 }

@@ -12,9 +12,9 @@ import e2.d0;
 import e2.v;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class d implements w3.b {
+public final class d implements w3.c {
     public int a;
     public int b;
     public final Object c;
@@ -24,17 +24,17 @@ public final class d implements w3.b {
         this.c = context;
     }
 
-    @Override // w3.b
+    @Override // w3.c
     public int a() {
         return this.a;
     }
 
-    @Override // w3.b
+    @Override // w3.c
     public int b() {
         return this.b;
     }
 
-    @Override // w3.b
+    @Override // w3.c
     public int c() {
         int i10 = this.a;
         return i10 == -1 ? ((v) this.c).B() : i10;
@@ -89,7 +89,7 @@ public final class d implements w3.b {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).b(0, "com.google.android.gms");
+                packageInfo = w6.b.a((Context) this.c).d(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e7) {
                 Log.w("Metadata", "Failed to find package ".concat(e7.toString()));
                 packageInfo = null;
@@ -148,16 +148,16 @@ public final class d implements w3.b {
         this.c = sparseArray;
     }
 
-    public d(f2.d dVar, s sVar) {
-        v vVar = dVar.c;
+    public d(f2.e eVar, s sVar) {
+        v vVar = eVar.c;
         this.c = vVar;
         vVar.J(12);
         int B = vVar.B();
         if ("audio/raw".equals(sVar.r)) {
-            int t10 = d0.t(sVar.L) * sVar.J;
-            if (B == 0 || B % t10 != 0) {
-                e2.a.n("BoxParsers", "Audio sample size mismatch. stsd sample size: " + t10 + ", stsz sample size: " + B);
-                B = t10;
+            int s10 = d0.s(sVar.L) * sVar.J;
+            if (B == 0 || B % s10 != 0) {
+                e2.a.n("BoxParsers", "Audio sample size mismatch. stsd sample size: " + s10 + ", stsz sample size: " + B);
+                B = s10;
             }
         }
         this.a = B == 0 ? -1 : B;

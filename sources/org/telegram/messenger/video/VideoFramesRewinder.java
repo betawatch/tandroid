@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -42,7 +42,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -97,7 +97,7 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) hg.c.w(1, arrayList));
+            this.frames.add((Frame) hg.c.x(1, arrayList));
         }
         if (arrayList.size() > 0) {
             FileLog.d("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
@@ -110,11 +110,13 @@ public class VideoFramesRewinder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2() {
+        char c10;
         int i10;
         int i11;
         ArrayList arrayList = new ArrayList();
         long currentTimeMillis = System.currentTimeMillis();
         int[] iArr = this.meta;
+        char c11 = 4;
         int i12 = iArr[4];
         int i13 = 0;
         int min = Math.min(this.w / 4, iArr[0]);
@@ -126,13 +128,18 @@ public class VideoFramesRewinder {
             min2 = (int) (min2 * max);
         }
         this.mDecoder.g(this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), false);
+        char c12 = 3;
         long j3 = this.meta[3];
         int i15 = 0;
         int i16 = 0;
-        for (char c10 = 3; this.meta[c10] <= this.until.get() && i15 < this.maxFramesCount && !this.stop.get(); c10 = 3) {
+        while (true) {
+            char c13 = c11;
+            if (this.meta[c12] > this.until.get() || i15 >= this.maxFramesCount || this.stop.get()) {
+                break;
+            }
             float f7 = 1000.0f / i12;
+            char c14 = c12;
             long j10 = j3;
-            char c11 = 3;
             long j11 = (long) ((this.prepareWithSpeed * f7) + j3);
             Frame remove = !this.freeFrames.isEmpty() ? this.freeFrames.remove(i13) : new Frame();
             Bitmap bitmap = remove.bitmap;
@@ -145,17 +152,18 @@ public class VideoFramesRewinder {
                 }
             }
             while (true) {
+                c10 = c14;
                 i10 = i12;
                 i11 = i15;
-                if (this.meta[c11] + ((long) Math.ceil(f7)) >= j11) {
+                if (this.meta[c14] + ((long) Math.ceil(f7)) >= j11) {
                     break;
                 }
-                this.mDecoder.c(null, true, 0.0f, this.meta[4], false);
+                this.mDecoder.c(null, true, 0.0f, this.meta[c13], false);
                 i12 = i10;
+                c14 = c10;
                 i15 = i11;
-                c11 = 3;
             }
-            if (this.mDecoder.c(remove.bitmap, true, 0.0f, this.meta[4], false) == 0) {
+            if (this.mDecoder.c(remove.bitmap, true, 0.0f, this.meta[c13], false) == 0) {
                 i16++;
                 if (i16 > 6) {
                     break;
@@ -163,16 +171,18 @@ public class VideoFramesRewinder {
                     j3 = j10;
                 }
             } else {
-                long j12 = this.meta[3];
+                long j12 = this.meta[c10];
                 remove.position = j12;
                 arrayList.add(remove);
                 j3 = j12;
             }
             i15 = i11 + 1;
+            c11 = c13;
             i12 = i10;
+            c12 = c10;
             i13 = 0;
         }
-        AndroidUtilities.runOnUIThread(new h0(this, arrayList, currentTimeMillis, 9));
+        AndroidUtilities.runOnUIThread(new h0(this, arrayList, currentTimeMillis, 10));
     }
 
     private void prepare(long j3) {

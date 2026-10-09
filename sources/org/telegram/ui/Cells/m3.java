@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.m61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class m3 {
     public boolean a;
@@ -30,7 +30,7 @@ public final class m3 {
     public final void a(u1 u1Var) {
         TLRPC.Message message;
         String str;
-        SpannableStringBuilder e7 = ai.ia.e(R.string.ExpiredStory, false, new Object[0]);
+        SpannableStringBuilder e7 = ai.ja.e(R.string.ExpiredStory, false, new Object[0]);
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
@@ -50,7 +50,7 @@ public final class m3 {
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
@@ -63,7 +63,7 @@ public final class m3 {
                 this.e = 0;
                 this.h = AndroidUtilities.dp(4.0f);
                 this.i = AndroidUtilities.dp(12.0f);
-                this.e = (int) sa.e.d(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
+                this.e = (int) sc.v.d(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
                 this.d = u1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
                 return;
             }

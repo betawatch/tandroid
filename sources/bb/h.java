@@ -1,32 +1,32 @@
 package bb;
 
-import a6.m;
 import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
-import v7.t7;
-import w7.r;
-import za.b0;
+import v7.a8;
+import w7.p;
+import za.d0;
+import za.s;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
-    public static final m1.c d = r.a(za.r.b);
-    public final m a;
+    public static final m1.c d = p.a(s.b);
+    public final pb.c a;
     public final d b;
 
-    public h(k9.h hVar, id.h hVar2, id.h hVar3, qa.d dVar) {
+    public h(k9.h hVar, jd.h hVar2, jd.h hVar3, qa.d dVar) {
         hVar.a();
         Context context = hVar.a;
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
-        b0 b0Var = b0.a;
-        za.b a2 = b0.a(hVar);
-        m mVar = new m(context);
+        d0 d0Var = d0.a;
+        za.b a2 = d0.a(hVar);
+        pb.c cVar = new pb.c(context);
         aa.a aVar = new aa.a(a2, hVar2);
         c.getClass();
         d dVar2 = new d(hVar3, dVar, a2, aVar, d.a(context, f.a[0]));
-        this.a = mVar;
+        this.a = cVar;
         this.b = dVar2;
     }
 
@@ -61,7 +61,7 @@ public final class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object b(kd.c cVar) {
+    public final Object b(ld.c cVar) {
         g gVar;
         int i10;
         h hVar;
@@ -71,11 +71,11 @@ public final class h {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 gVar.d = i11 - TLObject.FLAG_31;
                 Object obj = gVar.b;
-                jd.a aVar = jd.a.a;
+                kd.a aVar = kd.a.a;
                 i10 = gVar.d;
-                gd.i iVar = gd.i.a;
+                hd.i iVar = hd.i.a;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    a8.b(obj);
                     gVar.a = this;
                     gVar.d = 1;
                     this.a.getClass();
@@ -85,12 +85,12 @@ public final class h {
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        t7.b(obj);
+                        a8.b(obj);
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 hVar = gVar.a;
-                t7.b(obj);
+                a8.b(obj);
                 d dVar = hVar.b;
                 gVar.a = null;
                 gVar.d = 2;
@@ -99,9 +99,9 @@ public final class h {
         }
         gVar = new g(this, cVar);
         Object obj2 = gVar.b;
-        jd.a aVar2 = jd.a.a;
+        kd.a aVar2 = kd.a.a;
         i10 = gVar.d;
-        gd.i iVar2 = gd.i.a;
+        hd.i iVar2 = hd.i.a;
         if (i10 != 0) {
         }
         d dVar2 = hVar.b;

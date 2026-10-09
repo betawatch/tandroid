@@ -1,28 +1,94 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class t0 extends j0 {
-    public final transient Object[] c;
-    public final transient int d;
+public final class t0 extends k0 {
+    public static final Object[] r;
+    public static final t0 s;
+    public final transient Object[] d;
     public final transient int e;
+    public final transient Object[] f;
+    public final transient int h;
+    public final transient int n;
 
-    public t0(int i10, int i11, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
-        this.e = i11;
+    static {
+        Object[] objArr = new Object[0];
+        r = objArr;
+        s = new t0(0, 0, 0, objArr, objArr);
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        v7.k5.a(i10, this.e);
-        Object obj = this.c[i10 + i10 + this.d];
-        obj.getClass();
-        return obj;
+    public t0(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
+        this.d = objArr;
+        this.e = i10;
+        this.f = objArr2;
+        this.h = i11;
+        this.n = i12;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj != null) {
+            Object[] objArr = this.f;
+            if (objArr.length != 0) {
+                int a2 = v7.n5.a(obj.hashCode());
+                while (true) {
+                    int i10 = a2 & this.h;
+                    Object obj2 = objArr[i10];
+                    if (obj2 == null) {
+                        return false;
+                    }
+                    if (obj2.equals(obj)) {
+                        return true;
+                    }
+                    a2 = i10 + 1;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // com.google.android.gms.internal.cast.k0, java.util.Collection, java.util.Set
+    public final int hashCode() {
         return this.e;
+    }
+
+    @Override // com.google.android.gms.internal.cast.e0
+    public final int i(Object[] objArr) {
+        Object[] objArr2 = this.d;
+        int i10 = this.n;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        h0 h0Var = this.b;
+        if (h0Var == null) {
+            h0Var = h0.r(this.n, this.d);
+            this.b = h0Var;
+        }
+        return h0Var.listIterator(0);
+    }
+
+    @Override // com.google.android.gms.internal.cast.e0
+    public final int n() {
+        return this.n;
+    }
+
+    @Override // com.google.android.gms.internal.cast.e0
+    public final int o() {
+        return 0;
+    }
+
+    @Override // com.google.android.gms.internal.cast.e0
+    public final Object[] p() {
+        return this.d;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.n;
     }
 }

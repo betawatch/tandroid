@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import android.util.Pair;
 import b2.l1;
 import b2.m1;
-import b2.o1;
 import b2.q1;
 import e2.d0;
 import e9.a1;
@@ -21,27 +20,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.eb1;
-import u2.p1;
+import org.telegram.ui.mb1;
+import u2.o1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p extends u {
-    public static final y0 l = new w(new eb1(11));
+    public static final y0 l = new w(new mb1(13));
     public final Object d;
     public final Context e;
-    public final qb.b f;
+    public final t7.t f;
     public i g;
     public Thread h;
     public k i;
     public b2.e j;
     public Boolean k;
 
-    public p(Context context, qb.b bVar) {
+    public p(Context context, t7.t tVar) {
         i iVar = i.x0;
         this.d = new Object();
         this.e = context != null ? context.getApplicationContext() : null;
-        this.f = bVar;
+        this.f = tVar;
         if (iVar != null) {
             this.g = iVar;
         } else {
@@ -56,9 +55,9 @@ public final class p extends u {
         }
     }
 
-    public static void c(p1 p1Var, i iVar, HashMap hashMap) {
-        for (int i10 = 0; i10 < p1Var.a; i10++) {
-            m1 m1Var = (m1) iVar.D.get(p1Var.a(i10));
+    public static void c(o1 o1Var, i iVar, HashMap hashMap) {
+        for (int i10 = 0; i10 < o1Var.a; i10++) {
+            m1 m1Var = (m1) iVar.D.get(o1Var.a(i10));
             if (m1Var != null) {
                 l1 l1Var = m1Var.a;
                 m1 m1Var2 = (m1) hashMap.get(Integer.valueOf(l1Var.c));
@@ -96,7 +95,7 @@ public final class p extends u {
         if ((i10 & 3584) == 0) {
             return false;
         }
-        o1 o1Var = iVar.u;
+        b2.o1 o1Var = iVar.u;
         if (o1Var.c && (i10 & 2048) == 0) {
             return false;
         }
@@ -119,9 +118,9 @@ public final class p extends u {
         int i13 = 0;
         while (i13 < i12) {
             if (i10 == tVar2.b[i13]) {
-                p1 p1Var = tVar2.c[i13];
-                for (int i14 = 0; i14 < p1Var.a; i14++) {
-                    l1 a2 = p1Var.a(i14);
+                o1 o1Var = tVar2.c[i13];
+                for (int i14 = 0; i14 < o1Var.a; i14++) {
+                    l1 a2 = o1Var.a(i14);
                     a1 b10 = mVar.b(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];

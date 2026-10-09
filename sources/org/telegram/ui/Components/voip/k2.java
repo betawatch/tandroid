@@ -2,22 +2,22 @@ package org.telegram.ui.Components.voip;
 
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class k2 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ n2 a;
+    public final /* synthetic */ m2 a;
 
-    public k2(n2 n2Var) {
-        this.a = n2Var;
+    public k2(m2 m2Var) {
+        this.a = m2Var;
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
-        n2 n2Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = n2Var.R;
+        m2 m2Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = m2Var.S;
         if (pVar != null) {
             pVar.run();
-            n2Var.R = null;
+            m2Var.S = null;
         }
     }
 

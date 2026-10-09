@@ -1,37 +1,22 @@
 package yh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.l11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class t3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ v3 a;
+public final class t3 {
+    public final float a;
+    public final l11 b;
+    public final l11 c;
 
-    public t3(v3 v3Var) {
-        this.a = v3Var;
+    public t3(float f7, String str, CharSequence charSequence) {
+        this.b = new l11(str, 12.0f, null);
+        this.c = new l11(charSequence, 12.0f, AndroidUtilities.bold());
+        this.a = (a() / 2.0f) + f7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        v3 v3Var = this.a;
-        o2 o2Var = v3Var.i0;
-        v3Var.s0 = v3Var.r0;
-        v3Var.d(v3Var.U);
-        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = v3Var.e;
-        int i10 = 2 - v3Var.r0;
-        stargiftattributemodelArr[i10] = (TL_stars.starGiftAttributeModel) v3Var.W.f;
-        z7.f1(v3Var.d[i10].getImageReceiver(), stargiftattributemodelArr[2 - v3Var.r0].document, 160);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) v3Var.a0.f;
-        if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.q5 m10 = org.telegram.ui.Components.q5.m(UserConfig.selectedAccount, 7, stargiftattributepattern.document);
-            m10.m = true;
-            m10.v();
-        }
-        AndroidUtilities.cancelRunOnUIThread(o2Var);
-        AndroidUtilities.runOnUIThread(o2Var, 2500L);
+    public final float a() {
+        return Math.max(this.b.j(), this.c.j());
     }
 }

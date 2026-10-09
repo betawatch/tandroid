@@ -1,62 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class vw0 extends s4.d0 {
-    public final tr r;
-    public int s;
-    public float t;
+public interface vw0 {
+    void g(int i10);
 
-    public vw0(Context context) {
-        super(context);
-        this.r = tr.f;
-        this.t = 1.0f;
-    }
-
-    @Override // s4.d0, s4.y0
-    public final void g(View view, s4.x0 x0Var) {
-        int j3 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
-        if (m10 > 0) {
-            x0Var.b(-j3, -k10, m10, this.r);
-        }
-        AndroidUtilities.runOnUIThread(new gq0(this, 10), Math.max(0, m10));
-    }
-
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        return super.k(i10, view) - this.s;
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return Math.round(Math.min(super.m(i10), 500) * this.t);
-    }
-
-    @Override // s4.d0
-    public final int n(int i10) {
-        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
-    }
-
-    @Override // s4.d0
-    public final void q(s4.x0 x0Var) {
-        PointF a2 = a(this.a);
-        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-            x0Var.d = this.a;
-            h();
-            return;
-        }
-        s4.y0.b(a2);
-        this.k = a2;
-        this.o = (int) (a2.x * 10000.0f);
-        this.p = (int) (a2.y * 10000.0f);
-        x0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
-    }
+    void l();
 }

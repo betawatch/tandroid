@@ -1,40 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gc implements Utilities.Callback {
+public final /* synthetic */ class gc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cd b;
+    public final /* synthetic */ bd b;
 
-    public /* synthetic */ gc(cd cdVar, int i10) {
+    public /* synthetic */ gc(bd bdVar, int i10) {
         this.a = i10;
-        this.b = cdVar;
+        this.b = bdVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
-                cd cdVar = this.b;
-                cdVar.E = wallPaper;
-                cdVar.F = wallPaper;
-                cdVar.G = wallPaper;
-                cdVar.X0(false);
-                cdVar.a1(false);
-                AndroidUtilities.runOnUIThread(new hc(cdVar, 1), 350L);
-                break;
-            case 1:
-                cd.T(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                bd.U(this.b);
                 break;
             default:
-                this.b.W0((TL_stories.TL_premium_boostsStatus) obj);
+                org.telegram.messenger.q.q(R.string.ChannelWallpaperUpdated, org.telegram.ui.Components.ad.a0(this.b), R.raw.done, 36);
                 break;
         }
     }

@@ -2,7 +2,7 @@ package ci;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g7 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class g7 implements Runnable {
                 j7Var.J.c(false);
                 j7Var.K.c(false);
                 j7Var.L.c(false);
-                ((fb) j7Var.a).d(true);
+                ((gb) j7Var.a).e(true);
                 break;
             case 1:
                 long currentTimeMillis = System.currentTimeMillis();
@@ -34,12 +34,12 @@ public final /* synthetic */ class g7 implements Runnable {
                 j7Var2.Q = currentTimeMillis;
                 j7Var2.R = 0L;
                 j7Var2.r0 = true;
-                ((fb) j7Var2.a).a.J0.a(0L, true);
+                ((gb) j7Var2.a).a.J0.a(0L, true);
                 break;
             case 2:
                 j7 j7Var3 = this.b;
                 if (!j7Var3.r0 && !j7Var3.b()) {
-                    if (!kc.d(((fb) j7Var3.a).a)) {
+                    if (!lc.c(((gb) j7Var3.a).a)) {
                         j7Var3.w0 = false;
                         j7Var3.J.c(false);
                         j7Var3.K.c(false);
@@ -48,7 +48,7 @@ public final /* synthetic */ class g7 implements Runnable {
                     } else {
                         j7Var3.z0 = true;
                         j7Var3.A0 = true;
-                        ((fb) j7Var3.a).e(new g7(j7Var3, 4), true);
+                        ((gb) j7Var3.a).f(new g7(j7Var3, 4), true);
                         break;
                     }
                 }
@@ -56,9 +56,9 @@ public final /* synthetic */ class g7 implements Runnable {
             case 3:
                 j7 j7Var4 = this.b;
                 if (!j7Var4.r0 && !j7Var4.b()) {
-                    nb nbVar = ((fb) j7Var4.a).a.B0;
-                    if (nbVar != null) {
-                        nbVar.toggleDual();
+                    ob obVar = ((gb) j7Var4.a).a.B0;
+                    if (obVar != null) {
+                        obVar.toggleDual();
                     }
                     j7Var4.d(360.0f);
                     j7Var4.w0 = false;
@@ -75,7 +75,7 @@ public final /* synthetic */ class g7 implements Runnable {
                 j7Var5.r0 = true;
                 h7 h7Var = j7Var5.a;
                 j7Var5.R = 0L;
-                ((fb) h7Var).a.J0.a(0L, true);
+                ((gb) h7Var).a.J0.a(0L, true);
                 break;
         }
     }

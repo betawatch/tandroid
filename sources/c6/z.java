@@ -2,7 +2,7 @@ package c6;
 
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements com.google.android.gms.common.api.internal.s {
     public static final /* synthetic */ z b = new z(0);
@@ -20,13 +20,13 @@ public final /* synthetic */ class z implements com.google.android.gms.common.ap
         switch (this.a) {
             case 0:
                 g6.b bVar = e0.G;
-                ((g6.f) wVar.u()).W0();
+                ((g6.f) wVar.u()).V0();
                 taskCompletionSource.setResult(null);
                 break;
             default:
                 g6.b bVar2 = e0.G;
                 g6.f fVar = (g6.f) wVar.u();
-                fVar.T0(fVar.O0(), 19);
+                fVar.S0(fVar.N0(), 19);
                 taskCompletionSource.setResult(Boolean.TRUE);
                 break;
         }

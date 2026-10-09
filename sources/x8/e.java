@@ -6,7 +6,7 @@ import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
     public final DataHolder a;
@@ -34,7 +34,7 @@ public final class e implements com.google.android.gms.common.api.q, Iterable, C
 
     @Override // java.lang.Iterable
     public final Iterator iterator() {
-        return new cd.b(this);
+        return new dd.b(this);
     }
 
     public final int n(int i10) {

@@ -21,13 +21,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -46,7 +46,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -137,9 +137,9 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         r7.c cVar = (r7.c) iVar;
         cVar.getClass();
         com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-        e7.c = new k2.e(eVar, 16);
+        e7.c = new m.f3(eVar, 16);
         e7.a = 2426;
-        cVar.e(0, e7.a()).addOnCompleteListener(new g4(aVar, 1));
+        cVar.e(0, e7.a()).addOnCompleteListener(new h4(aVar, 1));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -154,7 +154,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
         e7.c = r7.a.c;
         e7.a = 2414;
-        cVar.e(0, e7.a()).addOnCompleteListener(new g4(aVar, 0));
+        cVar.e(0, e7.a()).addOnCompleteListener(new h4(aVar, 0));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -213,7 +213,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                 iAPIConnectionCallbacks.onConnectionSuspended(i10);
             }
         });
-        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.f4
+        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.g4
             @Override // com.google.android.gms.common.api.l
             public final void onConnectionFailed(k6.a aVar) {
                 ILocationServiceProvider.IAPIOnConnectionFailedListener.this.onConnectionFailed();
@@ -225,8 +225,8 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         if (fVar2.containsKey(eVar2)) {
             aVar = (n8.a) fVar2.get(eVar2);
         }
-        m.p3 p3Var = new m.p3(hashSet, fVar, packageName, name, aVar);
-        Map map = (Map) p3Var.c;
+        m.q3 q3Var = new m.q3(hashSet, fVar, packageName, name, aVar);
+        Map map = (Map) q3Var.c;
         a0.f fVar3 = new a0.f(0);
         a0.f fVar4 = new a0.f(0);
         ArrayList arrayList3 = new ArrayList();
@@ -235,7 +235,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         while (true) {
             a0.b bVar = (a0.b) it;
             if (!bVar.hasNext()) {
-                m.p3 p3Var2 = p3Var;
+                m.q3 q3Var2 = q3Var;
                 a0.f fVar5 = fVar3;
                 a0.f fVar6 = fVar4;
                 ArrayList arrayList4 = arrayList3;
@@ -244,10 +244,10 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                     boolean equals = hashSet.equals(hashSet2);
                     String str = eVar3.c;
                     if (!equals) {
-                        throw new IllegalStateException(a4.a.q("Must not set scopes in GoogleApiClient.Builder when using ", str, ". Set account in GoogleSignInOptions.Builder instead."));
+                        throw new IllegalStateException(a1.g.q("Must not set scopes in GoogleApiClient.Builder when using ", str, ". Set account in GoogleSignInOptions.Builder instead."));
                     }
                 }
-                com.google.android.gms.common.api.internal.j0 j0Var = new com.google.android.gms.common.api.internal.j0(context2, new ReentrantLock(), looper, p3Var2, fVar5, arrayList, arrayList2, fVar6, com.google.android.gms.common.api.internal.j0.f(fVar6.values(), true), arrayList4);
+                com.google.android.gms.common.api.internal.j0 j0Var = new com.google.android.gms.common.api.internal.j0(context2, new ReentrantLock(), looper, q3Var2, fVar5, arrayList, arrayList2, fVar6, com.google.android.gms.common.api.internal.j0.f(fVar6.values(), true), arrayList4);
                 Set set = com.google.android.gms.common.api.m.a;
                 synchronized (set) {
                     set.add(j0Var);
@@ -266,21 +266,21 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
             n6.l.h(dVar3);
             ArrayList arrayList5 = arrayList3;
             Map map2 = map;
-            m.p3 p3Var3 = p3Var;
+            m.q3 q3Var3 = q3Var;
             a0.f fVar8 = fVar3;
             a0.f fVar9 = fVar2;
-            com.google.android.gms.common.api.c a2 = dVar3.a(context2, looper2, p3Var3, obj2, p1Var, p1Var);
+            com.google.android.gms.common.api.c a2 = dVar3.a(context2, looper2, q3Var3, obj2, p1Var, p1Var);
             fVar7.put(eVar4.b, a2);
             if (!a2.a()) {
                 mainLooper = looper2;
-                p3Var = p3Var3;
+                q3Var = q3Var3;
                 fVar4 = fVar7;
             } else {
                 if (eVar3 != null) {
-                    throw new IllegalStateException(a4.a.D(eVar4.c, " cannot be used with ", eVar3.c));
+                    throw new IllegalStateException(a1.g.D(eVar4.c, " cannot be used with ", eVar3.c));
                 }
                 mainLooper = looper2;
-                p3Var = p3Var3;
+                q3Var = q3Var3;
                 fVar4 = fVar7;
                 eVar3 = eVar4;
             }
@@ -330,14 +330,14 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
             mainLooper = Looper.myLooper();
             n6.l.i(mainLooper, "invalid null looper");
         }
-        com.google.android.gms.common.api.internal.p D = xa.c.D(mainLooper, cVar, g8.c.class.getSimpleName());
-        androidx.activity.n nVar = new androidx.activity.n(cVar2, D);
-        o0.a aVar2 = new o0.a(14, nVar, locationRequest);
+        com.google.android.gms.common.api.internal.p N = a6.i.N(mainLooper, cVar, g8.c.class.getSimpleName());
+        androidx.activity.n nVar = new androidx.activity.n(cVar2, N);
+        org.telegram.ui.ActionBar.b5 b5Var = new org.telegram.ui.ActionBar.b5(nVar, locationRequest, false, 13);
         r rVar = new r();
         rVar.b = true;
-        rVar.c = aVar2;
+        rVar.c = b5Var;
         rVar.d = nVar;
-        rVar.e = D;
+        rVar.e = N;
         rVar.a = 2436;
         cVar2.b(rVar.a());
     }

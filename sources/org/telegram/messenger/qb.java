@@ -1,46 +1,44 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qb implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ TLRPC.User d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class qb implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ qb(MessagesController messagesController, int i10, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
-        this.e = messagesController;
-        this.b = i10;
-        this.f = chat;
-        this.d = user;
-        this.c = z10;
+    public /* synthetic */ qb(MessagesController messagesController, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = tLObject;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.e).lambda$pinMessage$130(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
+                this.b.lambda$loadGlobalNotificationsSettings$201(this.c);
+                break;
+            case 1:
+                this.b.lambda$reloadReactionsNotifySettings$203(this.c);
+                break;
+            case 2:
+                this.b.lambda$getContentSettings$504(this.c);
+                break;
+            case 3:
+                this.b.lambda$loadSuggestedFilters$24(this.c);
+                break;
+            case 4:
+                this.b.lambda$loadHintDialogs$194(this.c);
+                break;
+            case 5:
+                this.b.lambda$loadUnreadDialogs$360(this.c);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ii.s2((wq0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
+                this.b.lambda$loadSignUpNotificationsSettings$205(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ qb(wq0 wq0Var, String str, int i10, boolean z10, TLRPC.User user) {
-        this.e = wq0Var;
-        this.f = str;
-        this.b = i10;
-        this.c = z10;
-        this.d = user;
     }
 }

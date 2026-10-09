@@ -7,7 +7,7 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class PlayCoreDialogWrapperActivity extends Activity {
     public ResultReceiver a;
@@ -57,17 +57,17 @@ public class PlayCoreDialogWrapperActivity extends Activity {
         }
         try {
             playCoreDialogWrapperActivity = this;
-        } catch (IntentSender.SendIntentException unused) {
-            playCoreDialogWrapperActivity = this;
-        }
-        try {
-            playCoreDialogWrapperActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
-        } catch (IntentSender.SendIntentException unused2) {
-            ResultReceiver resultReceiver2 = playCoreDialogWrapperActivity.a;
-            if (resultReceiver2 != null) {
-                resultReceiver2.send(3, new Bundle());
+            try {
+                playCoreDialogWrapperActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 0, intent, 0, 0, 0);
+            } catch (IntentSender.SendIntentException unused) {
+                ResultReceiver resultReceiver2 = playCoreDialogWrapperActivity.a;
+                if (resultReceiver2 != null) {
+                    resultReceiver2.send(3, new Bundle());
+                }
+                finish();
             }
-            finish();
+        } catch (IntentSender.SendIntentException unused2) {
+            playCoreDialogWrapperActivity = this;
         }
     }
 

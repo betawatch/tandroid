@@ -1,22 +1,14 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m80 extends FrameLayout {
-    public TextView a;
-
-    @Override // android.widget.FrameLayout, android.view.View
+public final class m80 extends ScrollView {
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.a.setText(charSequence);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
     }
 }

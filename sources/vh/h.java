@@ -5,8 +5,9 @@ import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -25,10 +26,10 @@ public final /* synthetic */ class h implements Runnable {
             case 0:
                 i iVar = this.b;
                 int i10 = iVar.k;
-                o0.a[] aVarArr = iVar.c;
+                b5[] b5VarArr = iVar.c;
                 int i11 = this.c;
-                if (aVarArr[i11] == null) {
-                    aVarArr[i11] = new o0.a(i10);
+                if (b5VarArr[i11] == null) {
+                    b5VarArr[i11] = new b5(i10);
                 }
                 Bitmap bitmap = iVar.e;
                 if (bitmap == null) {
@@ -38,7 +39,7 @@ public final /* synthetic */ class h implements Runnable {
                     bitmap.eraseColor(0);
                 }
                 iVar.a(iVar.f, iVar.o);
-                Utilities.copyBitmaps(iVar.e, (Bitmap) aVarArr[i11].b);
+                Utilities.copyBitmaps(iVar.e, (Bitmap) b5VarArr[i11].b);
                 AndroidUtilities.runOnUIThread(new h(iVar, i11, 1));
                 break;
             default:

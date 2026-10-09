@@ -1,6 +1,6 @@
 package ii;
 
-import ai.o8;
+import ai.p8;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
@@ -11,14 +11,14 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class e0 extends View {
     public final RichMessageLayout.RichButton a;
     public final int b;
     public boolean c;
     public boolean d;
-    public final o8 e;
+    public final p8 e;
     public final /* synthetic */ h0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -28,7 +28,7 @@ public final class e0 extends View {
         this.b = i10;
         RichMessageLayout.RichButton createEditorPageButton = RichMessageLayout.createEditorPageButton(h0Var.n, org.telegram.messenger.q.b(32.0f, AndroidUtilities.displaySize.x, AndroidUtilities.dp(240.0f)), h0Var.r, pageButton, new i2.h0(this, 3));
         this.a = createEditorPageButton;
-        this.e = new o8(this, i10, 10);
+        this.e = new p8(this, i10, 10);
         createEditorPageButton.width = createEditorPageButton.getPreferredWidth();
         setContentDescription(h6.l(pageButton.text));
         setClickable(true);
@@ -71,20 +71,20 @@ public final class e0 extends View {
         f0 f0Var;
         a aVar;
         int actionMasked = motionEvent.getActionMasked();
-        o8 o8Var = this.e;
+        p8 p8Var = this.e;
         RichMessageLayout.RichButton richButton = this.a;
         if (actionMasked == 0) {
             this.c = true;
             this.d = false;
             richButton.setPressed(true);
-            AndroidUtilities.runOnUIThread(o8Var, ViewConfiguration.getLongPressTimeout());
+            AndroidUtilities.runOnUIThread(p8Var, ViewConfiguration.getLongPressTimeout());
             return true;
         }
         if (actionMasked == 1) {
             boolean z10 = this.c && !this.d;
             this.c = false;
             richButton.setPressed(false);
-            AndroidUtilities.cancelRunOnUIThread(o8Var);
+            AndroidUtilities.cancelRunOnUIThread(p8Var);
             if (z10 && (f0Var = (h0Var = this.f).E) != null && (aVar = h0Var.a) != null) {
                 x3 x3Var = ((p3) f0Var).a;
                 TL_iv.PageBlock pageBlock = aVar.b;
@@ -92,7 +92,7 @@ public final class e0 extends View {
                     TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
                     int i10 = this.b;
                     if (i10 >= 0 && i10 < pageblockbuttonrow.buttons.size()) {
-                        i2 i2Var = x3Var.Q3;
+                        i2 i2Var = x3Var.H3;
                         if (i2Var != null) {
                             i2Var.d();
                         }
@@ -110,12 +110,12 @@ public final class e0 extends View {
                             richButtonStyle.link = false;
                             pageButton.style = richButtonStyle;
                         }
-                        x3Var.f3.N(false);
-                        i2 i2Var2 = x3Var.Q3;
+                        x3Var.W2.N(false);
+                        i2 i2Var2 = x3Var.H3;
                         if (i2Var2 != null) {
                             i2Var2.h();
                         }
-                        x3Var.o3.onContentChanged();
+                        x3Var.f3.onContentChanged();
                     }
                 }
             }
@@ -126,13 +126,13 @@ public final class e0 extends View {
                 }
                 this.c = false;
                 richButton.setPressed(false);
-                AndroidUtilities.cancelRunOnUIThread(o8Var);
+                AndroidUtilities.cancelRunOnUIThread(p8Var);
                 return true;
             }
             if (motionEvent.getX() < 0.0f || motionEvent.getY() < 0.0f || motionEvent.getX() > getWidth() || motionEvent.getY() > getHeight()) {
                 this.c = false;
                 richButton.setPressed(false);
-                AndroidUtilities.cancelRunOnUIThread(o8Var);
+                AndroidUtilities.cancelRunOnUIThread(p8Var);
                 return true;
             }
         }

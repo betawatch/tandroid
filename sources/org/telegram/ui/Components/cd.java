@@ -1,133 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.content.Context;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
 import android.graphics.RectF;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class cd {
-    public float A;
-    public float B;
-    public float C;
-    public float D;
-    public final /* synthetic */ ed E;
-    public final Paint a;
-    public Bitmap b;
-    public float c;
-    public float d;
-    public final e6 e;
-    public final e6 f;
-    public float g;
-    public final e6 h;
-    public float i;
-    public final e6 j;
-    public final o6 k;
-    public float l;
-    public final e6 m;
-    public boolean n;
-    public final e6 o;
-    public final Path p;
-    public final Paint q;
-    public final RectF r;
-    public final Paint s;
-    public final Paint t;
-    public final RectF u;
-    public RadialGradient v;
-    public Matrix w;
-    public float x;
-    public float y;
-    public float z;
+public class cd extends ea0 {
+    public final Path L;
+    public final RectF M;
+    public dd N;
+    public dd O;
 
-    public cd(ed edVar) {
-        this.E = edVar;
-        Paint paint = new Paint(3);
-        this.a = paint;
-        paint.setColor(-1);
-        tr trVar = tr.h;
-        this.e = new e6(edVar, 650L, trVar);
-        this.f = new e6(edVar, 650L, trVar);
-        tr trVar2 = tr.g;
-        this.h = new e6(edVar, 0L, 150L, trVar2);
-        this.i = 1.0f;
-        this.j = new e6(edVar, 0L, 150L, trVar2);
-        o6 o6Var = new o6(false, true, true, false);
-        this.k = o6Var;
-        this.m = new e6(edVar, 0L, 150L, trVar2);
-        this.o = new e6(edVar, 0L, 200L, trVar);
-        o6Var.r(-1);
-        o6Var.k(0.35f, 200L, trVar);
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.t(AndroidUtilities.dp(15.0f));
-        o6Var.b = 17;
-        this.p = new Path();
-        Paint paint2 = new Paint(1);
-        this.q = paint2;
-        this.r = new RectF();
-        this.s = new Paint(1);
-        Paint paint3 = new Paint(1);
-        this.t = paint3;
-        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        this.u = new RectF();
+    public cd(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.L = new Path();
+        this.M = new RectF();
     }
 
-    public final void a(Canvas canvas, float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18) {
-        if (f18 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.O == null || getMeasuredWidth() <= 0) {
             return;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        float sqrt = (float) Math.sqrt(2.0d);
-        if (ed.b0 < 0) {
-            ed.b0 = currentTimeMillis;
-        }
-        float f19 = (currentTimeMillis - ed.b0) / 10000.0f;
-        Bitmap bitmap = this.b;
-        if (bitmap != null) {
-            int width = bitmap.getWidth();
-            float f20 = width;
-            float dpf2 = AndroidUtilities.dpf2(15.0f) / f20;
-            float f21 = 7.0f;
-            int floor = (int) Math.floor((f13 % 360.0f) / 7.0f);
-            int ceil = (int) Math.ceil((f14 % 360.0f) / 7.0f);
-            while (floor <= ceil) {
-                float f22 = floor * f21;
-                float sin = (float) (((((Math.sin(2000.0f * f22) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f19)) % 1.0d);
-                float f23 = f20 * sqrt;
-                float f24 = f19;
-                double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
-                float e7 = (float) hg.c.e(ed.a(f22), lerp, f7);
-                int i10 = width;
-                float sin2 = (float) ((Math.sin(ed.a(f22)) * lerp) + f10);
-                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.z6.a(e7, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
-                Paint paint = this.a;
-                paint.setAlpha(max);
-                float f25 = dpf2;
-                float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
-                canvas.save();
-                canvas.translate(e7, sin2);
-                canvas.scale(sin3, sin3);
-                float f26 = -(i10 >> 1);
-                canvas.drawBitmap(this.b, f26, f26, paint);
-                canvas.restore();
-                floor++;
-                sqrt = sqrt;
-                width = i10;
-                f20 = f20;
-                dpf2 = f25;
-                f19 = f24;
-                f21 = 7.0f;
+        SpannableString spannableString = new SpannableString(" btn");
+        spannableString.setSpan(this.O, 1, spannableString.length(), 33);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.O.a()) - AndroidUtilities.dp(4.0f), TextUtils.TruncateAt.END));
+        spannableStringBuilder.append((CharSequence) spannableString);
+        setText(spannableStringBuilder);
+        this.O = null;
+    }
+
+    @Override // org.telegram.ui.Components.ea0, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        Layout layout;
+        dd ddVar;
+        Runnable runnable;
+        dd ddVar2;
+        int action = motionEvent.getAction();
+        float x10 = motionEvent.getX() - getPaddingLeft();
+        int y3 = ((int) motionEvent.getY()) - getPaddingTop();
+        if ((getText() instanceof Spanned) && (layout = getLayout()) != null && y3 >= 0 && y3 < layout.getHeight()) {
+            int lineForVertical = layout.getLineForVertical(y3);
+            Spanned spanned = (Spanned) getText();
+            dd[] ddVarArr = (dd[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), dd.class);
+            for (int i10 = 0; i10 < ddVarArr.length; i10++) {
+                ddVar = ddVarArr[i10];
+                int spanStart = spanned.getSpanStart(ddVar);
+                int spanEnd = spanned.getSpanEnd(ddVar);
+                Path path = this.L;
+                layout.getSelectionPath(spanStart, spanEnd, path);
+                RectF rectF = this.M;
+                path.computeBounds(rectF, true);
+                if (rectF.contains(x10, y3)) {
+                    break;
+                }
             }
         }
+        ddVar = null;
+        if (action == 0) {
+            this.N = ddVar;
+            if (ddVar != null) {
+                ddVar.c(this, true);
+                return true;
+            }
+        } else if (action == 1 || action == 3) {
+            dd ddVar3 = this.N;
+            if (ddVar3 != null) {
+                ddVar3.c(this, false);
+                if (action == 1 && (runnable = this.N.d) != null) {
+                    runnable.run();
+                }
+            }
+            this.N = null;
+        } else if (action == 2 && (ddVar2 = this.N) != null && ddVar2 != ddVar) {
+            ddVar2.c(this, false);
+            this.N = null;
+        }
+        return this.N != null || super.onTouchEvent(motionEvent);
+    }
+
+    public cd(Context context) {
+        super(context, null);
+        this.L = new Path();
+        this.M = new RectF();
     }
 }

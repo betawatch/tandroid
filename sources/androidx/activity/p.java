@@ -3,9 +3,9 @@ package androidx.activity;
 import androidx.fragment.app.b0;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p extends kotlin.jvm.internal.j implements rd.a {
+public final class p extends kotlin.jvm.internal.j implements sd.a {
     public final /* synthetic */ int b;
     public final /* synthetic */ v c;
 
@@ -20,7 +20,7 @@ public final class p extends kotlin.jvm.internal.j implements rd.a {
     /* JADX WARN: Type inference failed for: r3v2 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
-    @Override // rd.a
+    @Override // sd.a
     public final Object invoke() {
         b0 b0Var;
         switch (this.b) {
@@ -31,7 +31,7 @@ public final class p extends kotlin.jvm.internal.j implements rd.a {
                 v vVar = this.c;
                 b0 b0Var2 = vVar.c;
                 if (b0Var2 == null) {
-                    hd.e eVar = vVar.b;
+                    id.e eVar = vVar.b;
                     ListIterator listIterator = eVar.listIterator(eVar.size());
                     while (true) {
                         if (listIterator.hasPrevious()) {
@@ -53,6 +53,6 @@ public final class p extends kotlin.jvm.internal.j implements rd.a {
                 this.c.b();
                 break;
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 }

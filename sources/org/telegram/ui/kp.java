@@ -1,0 +1,74 @@
+package org.telegram.ui;
+
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class kp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ up b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
+    public final /* synthetic */ int d;
+
+    public /* synthetic */ kp(up upVar, org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11) {
+        this.a = i11;
+        this.b = upVar;
+        this.c = b2VarArr;
+        this.d = i10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                if (b2Var != null) {
+                    final int i10 = 1;
+                    final up upVar = this.b;
+                    final int i11 = this.d;
+                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.lp
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    ConnectionsManager.getInstance(upVar.currentAccount).cancelRequest(i11, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(upVar.currentAccount).cancelRequest(i11, true);
+                                    break;
+                            }
+                        }
+                    });
+                    upVar.showDialog(b2VarArr[0]);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
+                if (b2Var2 != null) {
+                    final int i12 = 0;
+                    final up upVar2 = this.b;
+                    final int i13 = this.d;
+                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.lp
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i12) {
+                                case 0:
+                                    ConnectionsManager.getInstance(upVar2.currentAccount).cancelRequest(i13, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(upVar2.currentAccount).cancelRequest(i13, true);
+                                    break;
+                            }
+                        }
+                    });
+                    upVar2.showDialog(b2VarArr2[0]);
+                    break;
+                }
+                break;
+        }
+    }
+}

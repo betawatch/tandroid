@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
+import hd.i;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzbb extends j implements p {
     int zza;
@@ -22,59 +22,59 @@ final class zzbb extends j implements p {
         this.zzc = str;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         zzbb zzbbVar = new zzbb(this.zzb, this.zzc, cVar);
         zzbbVar.zzd = obj;
         return zzbbVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0069, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0067, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0068, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0066, code lost:
     
         return (java.lang.String) r7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0056, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0054, code lost:
     
-        if (((com.google.android.recaptcha.internal.zzhg) r7).zza(r1, r6) != r0) goto L24;
+        if (((com.google.android.recaptcha.internal.zzhg) r7).zza(r1, r6) != r0) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0039, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0037, code lost:
     
-        if (r7 != r0) goto L17;
+        if (r7 != r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0048, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0046, code lost:
     
-        if (r7 != r0) goto L22;
+        if (r7 != r0) goto L21;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0010, code lost:
     
-        if (r1 != 3) goto L27;
+        if (r1 != 3) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0056, code lost:
     
         r7 = r6.zzb;
         r1 = r6.zzc;
         r6.zza = 4;
         r7 = r7.zzm(r1, r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0063, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0061, code lost:
     
-        if (r7 != r0) goto L27;
+        if (r7 != r0) goto L26;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v0, types: [int] */
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -91,7 +91,7 @@ final class zzbb extends j implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            t7.b(obj);
+            a8.b(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -101,13 +101,13 @@ final class zzbb extends j implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            t7.b(obj);
+            a8.b(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            t7.b(obj);
+            a8.b(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            t7.b(obj);
+            a8.b(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

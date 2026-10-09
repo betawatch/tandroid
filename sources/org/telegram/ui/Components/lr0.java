@@ -1,73 +1,59 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.util.Property;
 import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lr0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qv0 b;
+public abstract class lr0 extends FrameLayout {
+    public View a;
+    public org.telegram.ui.ActionBar.j5 b;
+    public org.telegram.ui.ActionBar.j5 c;
+    public ci.bb d;
+    public int e;
+    public AnimatorSet f;
+    public Paint h;
+    public RectF n;
 
-    public /* synthetic */ lr0(qv0 qv0Var, int i10) {
-        this.a = i10;
-        this.b = qv0Var;
+    public final void a(int i10) {
+        if (this.e == i10) {
+            return;
+        }
+        this.e = i10;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.d, (Property<ci.bb, Float>) View.TRANSLATION_X, this.e == 0 ? 0.0f : r0.getMeasuredWidth()));
+        this.f.setDuration(180L);
+        this.f.setInterpolator(hs.g);
+        this.f.addListener(new vd0(this, 13));
+        this.f.start();
+        ((yq0) this).r.a1();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.L(true);
-                break;
-            case 1:
-                this.b.C0(102, view);
-                break;
-            case 2:
-                this.b.C0(100, view);
-                break;
-            case 3:
-                this.b.C0(103, view);
-                break;
-            case 4:
-                this.b.C0(104, view);
-                break;
-            case 5:
-                this.b.C0(101, view);
-                break;
-            case 6:
-                qv0 qv0Var = this.b;
-                ls0 ls0Var = qv0Var.W;
-                gs0 gs0Var = qv0Var.V;
-                if (qv0Var.q0.getAlpha() >= 0.1f) {
-                    if (gs0Var != null && gs0Var.g()) {
-                        gs0Var.i();
-                    }
-                    if (ls0Var != null && ls0Var.w) {
-                        pv0 i12 = qv0Var.i1(qv0Var.h1(qv0Var.getClosestTab()));
-                        ju0 W = qv0Var.W(i12.a);
-                        if (W != null) {
-                            ls0Var.setReorderingAlbums(false);
-                            ps0 ps0Var = W.h;
-                            for (int i10 = 0; i10 < ps0Var.getChildCount(); i10++) {
-                                View childAt = ps0Var.getChildAt(i10);
-                                if (childAt instanceof org.telegram.ui.Cells.t7) {
-                                    ((org.telegram.ui.Cells.t7) childAt).l(false, true);
-                                }
-                            }
-                            ov0 ov0Var = i12.c;
-                            if (ov0Var != null && ov0Var.x) {
-                                ov0Var.x = false;
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b.v1;
-                n2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                ci.kc.E(n2Var.getParentActivity(), n2Var.getCurrentAccount()).R(null);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = (View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(28.0f)) / 2;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).width = size;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
+        layoutParams.width = size;
+        layoutParams.leftMargin = AndroidUtilities.dp(14.0f) + size;
+        ci.bb bbVar = this.d;
+        ((FrameLayout.LayoutParams) bbVar.getLayoutParams()).width = size;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
         }
+        bbVar.setTranslationX(this.e == 0 ? 0.0f : r2.width);
+        super.onMeasure(i10, i11);
     }
 }

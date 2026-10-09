@@ -1,28 +1,50 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.messenger.voip.Instance;
+import org.telegram.messenger.voip.NativeInstance;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q0 implements Runnable {
+public final /* synthetic */ class q0 implements NativeInstance.AudioLevelsCallback, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback, Instance.OnStateUpdatedListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ q0(VoIPService voIPService, int i10) {
-        this.a = i10;
+    public /* synthetic */ q0(VoIPService voIPService, int i10, int i11) {
+        this.a = i11;
         this.b = voIPService;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
+    public void onStateUpdated(int i10, boolean z10) {
+        this.b.lambda$createGroupInstance$80(this.c, i10, z10);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestCurrentTimeCallback
+    public void run(long j3) {
+        this.b.lambda$createGroupInstance$79(this.c, j3);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.RequestBroadcastPartCallback
+    public void run(long j3, long j10, int i10, int i11) {
         switch (this.a) {
-            case 0:
-                this.b.destroyConverting();
-                break;
-            case 1:
-                this.b.lambda$updateConnectionState$82();
+            case 2:
+                this.b.lambda$createGroupInstance$75(this.c, j3, j10, i10, i11);
                 break;
             default:
-                this.b.lambda$onConnectionStateChanged$118();
+                this.b.lambda$createGroupInstance$77(this.c, j3, j10, i10, i11);
                 break;
         }
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.VideoSourcesCallback
+    public void run(long j3, int[] iArr) {
+        this.b.lambda$createGroupInstance$70(this.c, j3, iArr);
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
+        this.b.lambda$createGroupInstance$68(this.c, iArr, fArr, zArr);
     }
 }

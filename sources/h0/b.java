@@ -16,7 +16,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -34,7 +34,7 @@ public abstract class b {
                 return new a5.a((Shader) null, (ColorStateList) null, typedValue.data);
             }
             try {
-                aVar = a5.a.f(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
+                aVar = a5.a.i(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
             } catch (Exception e7) {
                 Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e7);
                 aVar = null;
@@ -116,7 +116,7 @@ public abstract class b {
                 i(xmlResourceParser);
             }
             List h = h(resources, resourceId);
-            return new g(new o0.e(string, string2, string3, h), string4 != null ? new o0.e(string, string2, string4, h) : null, integer, integer2, string5);
+            return new g(new o0.d(string, string2, string3, h), string4 != null ? new o0.d(string, string2, string4, h) : null, integer, integer2, string5);
         }
         ArrayList arrayList = new ArrayList();
         while (xmlResourceParser.next() != 3) {

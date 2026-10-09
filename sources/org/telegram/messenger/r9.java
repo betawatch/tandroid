@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r9 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,34 +15,34 @@ public final /* synthetic */ class r9 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$new$18();
-                break;
-            case 1:
-                this.b.lambda$new$39();
-                break;
-            case 2:
                 this.b.requestIsUserContactBlocked();
                 break;
+            case 1:
+                this.b.lambda$new$508();
+                break;
+            case 2:
+                this.b.lambda$registerForPush$322();
+                break;
             case 3:
-                this.b.lambda$new$505();
+                this.b.lambda$updateTimerProc$157();
                 break;
             case 4:
-                this.b.lambda$updateTimerProc$158();
+                this.b.lambda$updateTimerProc$160();
                 break;
             case 5:
-                this.b.lambda$updateTimerProc$161();
+                this.b.lambda$applyAppConfig$35();
                 break;
             case 6:
                 this.b.lambda$applyAppConfig$36();
                 break;
             case 7:
-                this.b.lambda$applyAppConfig$37();
+                this.b.lambda$processUpdateArray$412();
                 break;
             case 8:
-                this.b.lambda$processUpdates$380();
+                this.b.lambda$processUpdateArray$413();
                 break;
             case 9:
-                this.b.lambda$migrateDialogs$213();
+                this.b.lambda$processUpdateArray$414();
                 break;
             case 10:
                 this.b.lambda$loadRemoteFilters$26();
@@ -57,52 +57,52 @@ public final /* synthetic */ class r9 implements Runnable {
                 this.b.lambda$loadRemoteFilters$29();
                 break;
             case 14:
-                this.b.lambda$cleanup$52();
+                this.b.lambda$migrateDialogs$214();
                 break;
             case 15:
-                this.b.lambda$cleanup$53();
+                this.b.lambda$addWebBrowserException$515();
                 break;
             case 16:
-                this.b.lambda$cleanup$54();
+                this.b.lambda$processUpdates$383();
                 break;
             case 17:
-                this.b.lambda$toggleChannelInvitesHistory$287();
+                this.b.lambda$migrateDialogs$212();
                 break;
             case 18:
-                this.b.lambda$removeWebBrowserException$514();
+                this.b.lambda$cleanup$51();
                 break;
             case 19:
-                this.b.lambda$checkPromoInfoInternal$166();
+                this.b.lambda$cleanup$52();
                 break;
             case 20:
-                this.b.lambda$toggleChatJoinToSend$279();
+                this.b.lambda$cleanup$53();
                 break;
             case 21:
-                this.b.lambda$migrateDialogs$215();
+                this.b.lambda$processLoadedDeleteTask$86();
                 break;
             case 22:
-                this.b.lambda$scheduleTranscriptionUpdate$38();
+                this.b.lambda$didReceivedNotification$41();
                 break;
             case 23:
-                this.b.lambda$processUpdateArray$409();
+                this.b.lambda$removeWebBrowserException$517();
                 break;
             case 24:
-                this.b.lambda$processUpdateArray$410();
+                this.b.lambda$scheduleTranscriptionUpdate$37();
                 break;
             case 25:
-                this.b.lambda$processUpdateArray$411();
+                this.b.lambda$toggleChannelForum$284();
                 break;
             case 26:
-                this.b.lambda$registerForPush$323();
+                this.b.lambda$toggleChannelSignatures$282();
                 break;
             case 27:
-                this.b.lambda$updateEmojiStatusUntil$474();
+                this.b.lambda$updateEmojiStatusUntil$477();
                 break;
             case 28:
-                this.b.lambda$toggleChannelForum$285();
+                this.b.lambda$checkPromoInfoInternal$165();
                 break;
             default:
-                this.b.lambda$toggleChannelSignatures$283();
+                this.b.lambda$markAllTopicsAsRead$5();
                 break;
         }
     }

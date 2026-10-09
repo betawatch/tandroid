@@ -1,40 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+import android.widget.FrameLayout;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import org.telegram.messenger.FileLog;
 
-    public /* synthetic */ tn0(long j3, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class tn0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, yt {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo0 b;
+
+    public /* synthetic */ tn0(vo0 vo0Var, int i10) {
         this.a = i10;
-        this.b = j3;
+        this.b = vo0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.yt
+    public void U0(ut utVar) {
         switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(yn.Q9(this.b));
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(yn.Q9(this.b));
-                    break;
-                }
+            case 2:
+                vo0 vo0Var = this.b;
+                vo0Var.A0 = utVar;
+                vo0Var.f[4].setText(utVar.a);
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
-                if (U3 != null) {
-                    U3.presentFragment(yn.Q9(this.b));
-                    break;
-                }
+                vo0 vo0Var2 = this.b;
+                vo0Var2.A0 = utVar;
+                vo0Var2.f[4].setText(utVar.a);
+                vo0Var2.B0 = utVar.d;
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                vo0 vo0Var = this.b;
+                vo0Var.I0(vo0Var.R0[0]);
+                break;
+            case 2:
+            default:
+                vo0 vo0Var2 = this.b;
+                vo0Var2.D0(true);
+                vo0Var2.z0();
+                break;
+            case 3:
+                this.b.A0(true);
+                break;
+        }
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        vo0 vo0Var = this.b;
+        vo0Var.getClass();
+        if (!task.isSuccessful()) {
+            FileLog.e("isReadyToPay failed", task.getException());
+            return;
+        }
+        FrameLayout frameLayout = vo0Var.O;
+        if (frameLayout != null) {
+            frameLayout.setVisibility(0);
         }
     }
 }

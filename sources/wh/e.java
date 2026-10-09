@@ -1,14 +1,14 @@
 package wh;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ e(n nVar, int i10) {
+    public /* synthetic */ e(l lVar, int i10) {
         this.a = i10;
-        this.b = nVar;
+        this.b = lVar;
     }
 
     @Override // java.lang.Runnable
@@ -18,7 +18,7 @@ public final /* synthetic */ class e implements Runnable {
                 this.b.e();
                 break;
             case 1:
-                n.k(this.b.q, true, true);
+                l.k(this.b.q, true, true);
                 break;
             default:
                 this.b.e();

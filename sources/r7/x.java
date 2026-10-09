@@ -2,7 +2,7 @@ package r7;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class x extends b8.b implements y {
     public x() {
@@ -10,7 +10,7 @@ public abstract class x extends b8.b implements y {
     }
 
     @Override // b8.b
-    public final boolean K0(Parcel parcel, int i10) {
+    public final boolean J0(Parcel parcel, int i10) {
         if (i10 != 1) {
             if (i10 != 2) {
                 return false;

@@ -2,16 +2,16 @@ package pg;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
+    public final /* synthetic */ d0 b;
     public final /* synthetic */ t0 c;
 
-    public /* synthetic */ b0(e0 e0Var, t0 t0Var, int i10) {
+    public /* synthetic */ b0(d0 d0Var, t0 t0Var, int i10) {
         this.a = i10;
-        this.b = e0Var;
+        this.b = d0Var;
         this.c = t0Var;
     }
 
@@ -22,9 +22,9 @@ public final /* synthetic */ class b0 implements Runnable {
                 AndroidUtilities.runOnUIThread(new b0(this.b, this.c, 1));
                 break;
             default:
-                e0 e0Var = this.b;
-                e0Var.getClass();
-                e0Var.i = this.c.a;
+                d0 d0Var = this.b;
+                d0Var.getClass();
+                d0Var.i = this.c.a;
                 break;
         }
     }

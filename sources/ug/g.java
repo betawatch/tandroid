@@ -4,11 +4,11 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.py0;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.vy0;
 import tg.c1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class g extends og.a {
     public TLRPC.User c;
@@ -21,12 +21,12 @@ public final class g extends og.a {
     public int j;
     public boolean k;
     public int l;
-    public py0 m;
-    public py0 n;
+    public vy0 m;
+    public vy0 n;
     public c1 o;
     public c1 p;
     public View q;
-    public sq r;
+    public fr r;
 
     public g(int i10, boolean z10) {
         super(i10, z10);

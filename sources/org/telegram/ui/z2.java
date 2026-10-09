@@ -2,13 +2,13 @@ package org.telegram.ui;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z2 extends org.telegram.ui.ActionBar.m3 {
     @Override // org.telegram.ui.ActionBar.m3
     public final String b() {
-        org.telegram.ui.web.z0 z0Var = this.b;
-        return (z0Var == null || TextUtils.isEmpty(z0Var.getTitle())) ? super.b() : this.b.getTitle();
+        org.telegram.ui.web.y0 y0Var = this.b;
+        return (y0Var == null || TextUtils.isEmpty(y0Var.getTitle())) ? super.b() : this.b.getTitle();
     }
 
     public final void c(m3 m3Var) {
@@ -16,12 +16,12 @@ public final class z2 extends org.telegram.ui.ActionBar.m3 {
             return;
         }
         k3 k3Var = m3Var.f;
-        k3Var.M();
+        k3Var.L();
         this.b = k3Var.getWebView();
         this.d = k3Var.getProxy();
-        org.telegram.ui.web.z0 z0Var = this.b;
-        if (z0Var != null) {
-            z0Var.onPause();
+        org.telegram.ui.web.y0 y0Var = this.b;
+        if (y0Var != null) {
+            y0Var.onPause();
             this.E = this.b.getTitle();
             this.F = this.b.getFavicon();
             this.x = this.b.getUrl();

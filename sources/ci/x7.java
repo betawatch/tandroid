@@ -1,60 +1,59 @@
 package ci;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import j$.util.Objects;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.zl0;
+import android.graphics.Paint;
+import android.view.KeyEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.yi;
+import org.telegram.ui.ii1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x7 implements bh.a {
+public final /* synthetic */ class x7 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ x7(Object obj, int i10) {
+    public /* synthetic */ x7(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = callback;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                c8 c8Var = (c8) this.b;
-                zl0 zl0Var = c8Var.d;
-                gh.d.b(zl0Var, canvas, rectF, zl0Var, c8Var.getContainerView(), 255);
-                break;
-            default:
-                xh.s2 s2Var = (xh.s2) this.b;
-                for (View view : s2Var.h.getViewPages()) {
-                    if (view instanceof xh.o2) {
-                        xh.o2 o2Var = (xh.o2) view;
-                        if (o2Var.h == null) {
-                            final xh.j2 j2Var = o2Var.f;
-                            ViewGroup viewGroup = s2Var.S;
-                            Objects.requireNonNull(j2Var);
-                            o2Var.h = new ah.n(j2Var, viewGroup, new ah.m() { // from class: xh.s1
-                                @Override // ah.m
-                                public final boolean a(Canvas canvas2, View view2, long j3) {
-                                    return e71.this.drawChild(canvas2, view2, j3);
-                                }
-                            });
-                        }
-                        o2Var.h.f(canvas, rectF);
-                    }
+                MessageObject messageObject = (MessageObject) obj;
+                ((d8) this.b).r0 = messageObject;
+                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.q.k(messageObject), messageObject, 0L));
+            case 1:
+                di.d dVar = (di.d) this.b;
+                return dVar.n[((Integer) obj).intValue() % dVar.n.length];
+            case 2:
+                return new ii1(29, (org.telegram.ui.l0) this.b, (Integer) obj);
+            case 3:
+                qg.m0 m0Var = (qg.m0) this.b;
+                if (((Integer) obj).intValue() == 2) {
+                    yi yiVar = new yi(m0Var.getContext(), new qg.x(m0Var), false, false, false, m0Var.Q1);
+                    yiVar.drawNavigationBar = true;
+                    yiVar.P1(LocaleController.getString(R.string.AddImage));
+                    yiVar.c2 = new qg.y(m0Var, yiVar);
+                    yiVar.setOnDismissListener(new e1(7));
+                    yiVar.N1(1, false);
+                    yiVar.t1();
+                    MediaController.forceBroadcastNewPhotos = true;
+                    yiVar.j0.f0();
+                    yiVar.show();
                 }
-                break;
+                return Boolean.TRUE;
+            case 4:
+                Paint[] paintArr = ((vg.r) this.b).h;
+                return paintArr[((Integer) obj).intValue() % paintArr.length];
+            default:
+                yh.r6 r6Var = (yh.r6) this.b;
+                return r6Var.n[((Integer) obj).intValue() % r6Var.n.length];
         }
     }
 }

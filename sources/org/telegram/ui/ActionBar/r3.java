@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.os.Build;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class r3 extends AnimatorListenerAdapter {
     public final /* synthetic */ m3 a;
@@ -33,7 +33,7 @@ public final class r3 extends AnimatorListenerAdapter {
         t3 t3Var = this.b;
         if (viewGroup != null && m3Var.m == null && (i10 = m3Var.g) > 0 && (i11 = m3Var.h) > 0) {
             if (Build.VERSION.SDK_INT >= 26) {
-                w3.g(viewGroup, -m3Var.i, new ai.g3(25, m3Var, t3Var));
+                w3.g(viewGroup, -m3Var.i, new ai.h3(25, m3Var, t3Var));
                 w3Var.b = null;
                 w3Var.invalidate();
                 return;

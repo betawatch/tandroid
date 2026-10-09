@@ -1,249 +1,88 @@
 package ai;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import java.util.ArrayList;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.wo0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.p50;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class u2 implements View.OnAttachStateChangeListener {
+public final class u2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ u2(Object obj, int i10) {
+    public /* synthetic */ u2(Object obj, float f7, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.d = obj;
+        this.b = f7;
+        this.c = runnable;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        switch (this.a) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        Runnable runnable = this.c;
+        float f7 = this.b;
+        Object obj = this.d;
+        switch (i10) {
             case 0:
-                ((v2) this.b).f.onAttachedToWindow();
+                x2 x2Var = (x2) obj;
+                x2Var.n = f7;
+                x2Var.invalidate();
+                if (animator == x2Var.r && runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             case 1:
-                aa.a aVar = (aa.a) this.b;
-                hh.k kVar = (hh.k) aVar.c;
-                ViewTreeObserver viewTreeObserver = ((View) aVar.b).getViewTreeObserver();
-                ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) aVar.d;
-                if (viewTreeObserver2 != viewTreeObserver) {
-                    if (viewTreeObserver2 != null) {
-                        if (viewTreeObserver2.isAlive()) {
-                            ((ViewTreeObserver) aVar.d).removeOnPreDrawListener(kVar);
-                        }
-                        aVar.d = null;
-                    }
-                    aVar.d = viewTreeObserver;
-                    if (viewTreeObserver.isAlive()) {
-                        viewTreeObserver.addOnPreDrawListener(kVar);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-            case 3:
-                break;
-            case 4:
-                ((xh.m2) this.b).a(view);
-                break;
-            case 5:
-                org.telegram.ui.Components.ka kaVar = (org.telegram.ui.Components.ka) this.b;
-                ArrayList arrayList = kaVar.c;
-                arrayList.clear();
-                for (View view2 = kaVar.b; view2 != null; view2 = (View) view2.getParent()) {
-                    arrayList.add(0, view2);
-                    if (!(view2.getParent() instanceof View)) {
-                        break;
-                    }
-                }
-                break;
-            case 6:
-                break;
-            case 7:
-                ((uq) this.b).a();
-                break;
-            case 8:
-                jm0 jm0Var = (jm0) this.b;
-                org.telegram.ui.Components.o5 o5Var = jm0Var.t;
-                if (o5Var != null) {
-                    o5Var.a();
-                }
-                org.telegram.ui.Components.o5 o5Var2 = jm0Var.u;
-                if (o5Var2 != null) {
-                    o5Var2.a();
-                    break;
-                }
-                break;
-            case 9:
-                break;
-            case 10:
-                ((org.telegram.ui.Components.o5) this.b).a();
-                break;
-            case 11:
-                qi.f fVar = (qi.f) this.b;
-                if (view == ((View) fVar.b)) {
-                    fVar.Q(view.getViewTreeObserver());
-                    break;
-                }
-                break;
-            case 12:
-                ((xh.f1) this.b).l.a();
-                break;
-            case 13:
-                xh.q3 q3Var = (xh.q3) this.b;
-                xh.o3 o3Var = q3Var.N;
-                if (o3Var != null) {
-                    o3Var.a(q3Var.c);
-                    break;
-                }
-                break;
-            case 14:
-                xh.t3 t3Var = (xh.t3) this.b;
-                xh.r3 r3Var = t3Var.N;
-                if (r3Var != null) {
-                    r3Var.a(t3Var.c);
-                    break;
-                }
-                break;
-            default:
-                ArrayList arrayList2 = ((yh.k3) this.b).e;
-                int size = arrayList2.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList2.get(i10);
-                    i10++;
-                    yh.i3 i3Var = (yh.i3) obj;
-                    if (i3Var.c) {
-                        i3Var.d.onAttachedToWindow();
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        switch (this.a) {
-            case 0:
-                ((v2) this.b).f.onDetachedFromWindow();
-                break;
-            case 1:
-                aa.a aVar = (aa.a) this.b;
-                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) aVar.d;
-                if (viewTreeObserver != null) {
-                    if (viewTreeObserver.isAlive()) {
-                        ((ViewTreeObserver) aVar.d).removeOnPreDrawListener((hh.k) aVar.c);
-                    }
-                    aVar.d = null;
+                ci.w2 w2Var = (ci.w2) obj;
+                w2Var.h = f7;
+                w2Var.i();
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
                 break;
             case 2:
-                l.e eVar = (l.e) this.b;
-                ViewTreeObserver viewTreeObserver2 = eVar.N;
-                if (viewTreeObserver2 != null) {
-                    if (!viewTreeObserver2.isAlive()) {
-                        eVar.N = view.getViewTreeObserver();
-                    }
-                    eVar.N.removeGlobalOnLayoutListener(eVar.r);
+                ci.lc lcVar = (ci.lc) obj;
+                lcVar.L = null;
+                lcVar.I = f7;
+                lcVar.j();
+                lcVar.r.invalidate();
+                lcVar.n.invalidate();
+                runnable.run();
+                lcVar.P.unlock();
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                NotificationCenter.getGlobalInstance().runDelayedNotifications();
+                lcVar.n();
+                Runnable runnable2 = lcVar.Q;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    lcVar.Q = null;
                 }
-                view.removeOnAttachStateChangeListener(this);
+                lcVar.r.invalidate();
+                lcVar.h0.invalidate();
                 break;
             case 3:
-                l.c0 c0Var = (l.c0) this.b;
-                ViewTreeObserver viewTreeObserver3 = c0Var.E;
-                if (viewTreeObserver3 != null) {
-                    if (!viewTreeObserver3.isAlive()) {
-                        c0Var.E = view.getViewTreeObserver();
-                    }
-                    c0Var.E.removeGlobalOnLayoutListener(c0Var.r);
-                }
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 4:
-                ((xh.m2) this.b).o(view);
-                break;
-            case 5:
-                ((org.telegram.ui.Components.ka) this.b).c.clear();
-                break;
-            case 6:
-                org.telegram.ui.Components.rc rcVar = (org.telegram.ui.Components.rc) this.b;
-                rcVar.e.removeOnAttachStateChangeListener(this);
-                rcVar.c(0L, false);
-                break;
-            case 7:
-                ((uq) this.b).b();
-                break;
-            case 8:
-                jm0 jm0Var = (jm0) this.b;
-                org.telegram.ui.Components.o5 o5Var = jm0Var.t;
-                if (o5Var != null) {
-                    o5Var.b();
-                }
-                org.telegram.ui.Components.o5 o5Var2 = jm0Var.u;
-                if (o5Var2 != null) {
-                    o5Var2.a();
-                    break;
-                }
-                break;
-            case 9:
-                view.removeCallbacks((Runnable) ((wo0) this.b).a.remove(view));
-                view.removeOnAttachStateChangeListener(this);
-                break;
-            case 10:
-                ((org.telegram.ui.Components.o5) this.b).b();
-                break;
-            case 11:
-                qi.f fVar = (qi.f) this.b;
-                if (view == ((View) fVar.b)) {
-                    fVar.Q(null);
-                    break;
-                }
-                break;
-            case 12:
-                ((xh.f1) this.b).l.b();
-                break;
-            case 13:
-                xh.q3 q3Var = (xh.q3) this.b;
-                xh.o3 o3Var = q3Var.N;
-                if (o3Var != null) {
-                    o3Var.o(q3Var.c);
-                    break;
-                }
-                break;
-            case 14:
-                xh.t3 t3Var = (xh.t3) this.b;
-                xh.r3 r3Var = t3Var.N;
-                if (r3Var != null) {
-                    r3Var.o(t3Var.c);
+                p50 p50Var = (p50) obj;
+                p50Var.h = f7;
+                p50Var.a.invalidate();
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
                 break;
             default:
-                ArrayList arrayList = ((yh.k3) this.b).e;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((yh.i3) obj).a();
+                yh.w3 w3Var = (yh.w3) obj;
+                w3Var.y = f7;
+                w3Var.invalidate();
+                if (animator == w3Var.E && runnable != null) {
+                    runnable.run();
+                    break;
                 }
                 break;
         }
-    }
-
-    private final void a(View view) {
-    }
-
-    private final void b(View view) {
-    }
-
-    private final void c(View view) {
-    }
-
-    private final void d(View view) {
     }
 }

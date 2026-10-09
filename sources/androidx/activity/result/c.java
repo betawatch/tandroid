@@ -2,10 +2,14 @@ package androidx.activity.result;
 
 import androidx.fragment.app.f0;
 import java.util.HashMap;
+import t7.o;
+import t7.q;
+import t7.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
+    public static r e;
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
     public final /* synthetic */ f0 c;
@@ -16,6 +20,21 @@ public final class c {
         this.d = fVar;
         this.b = str;
         this.c = f0Var;
+    }
+
+    public static synchronized q b(o oVar) {
+        q qVar;
+        synchronized (c.class) {
+            try {
+                if (e == null) {
+                    e = new r(0);
+                }
+                qVar = (q) e.O0(oVar);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return qVar;
     }
 
     public final void a(Object obj) {

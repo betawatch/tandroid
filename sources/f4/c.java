@@ -20,10 +20,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import v7.f7;
+import v7.b7;
 import v7.p6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -111,16 +111,16 @@ public final class c {
     }
 
     public final boolean f(long j3) {
-        long j10 = this.e;
-        long j11 = this.d;
-        if (j11 == -9223372036854775807L && j10 == -9223372036854775807L) {
+        long j10 = this.d;
+        long j11 = this.e;
+        if (j10 == -9223372036854775807L && j11 == -9223372036854775807L) {
             return true;
         }
-        if (j11 <= j3 && j10 == -9223372036854775807L) {
+        if (j10 <= j3 && j11 == -9223372036854775807L) {
             return true;
         }
-        if (j11 != -9223372036854775807L || j3 >= j10) {
-            return j11 <= j3 && j3 < j10;
+        if (j10 != -9223372036854775807L || j3 >= j11) {
+            return j10 <= j3 && j3 < j11;
         }
         return true;
     }
@@ -140,11 +140,11 @@ public final class c {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x02d1 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x0292  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x02d2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x0294  */
     /* JADX WARN: Removed duplicated region for block: B:80:0x020e  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x021c  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x02ad  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x02af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -152,12 +152,13 @@ public final class c {
         Iterator it;
         int i10;
         c cVar;
-        g a2;
         int i11;
-        float f7;
+        g a2;
         int i12;
+        float f7;
         int i13;
         int i14;
+        int i15;
         Map map2 = map;
         if (f(j3)) {
             String str2 = this.h;
@@ -174,8 +175,8 @@ public final class c {
                     aVar.getClass();
                     f fVar = (f) hashMap.get(str3);
                     fVar.getClass();
-                    int i15 = fVar.j;
-                    g a10 = f7.a(this.f, this.g, map2);
+                    int i16 = fVar.j;
+                    g a10 = b7.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -183,32 +184,32 @@ public final class c {
                         aVar.b = null;
                     }
                     if (a10 != null) {
-                        int i16 = a10.h;
-                        int i17 = 1;
-                        if (((i16 == -1 && a10.i == -1) ? -1 : (i16 == 1 ? (char) 1 : (char) 0) | (a10.i == 1 ? (char) 2 : (char) 0)) != -1) {
-                            int i18 = a10.h;
-                            if (i18 == -1) {
+                        int i17 = a10.h;
+                        int i18 = 1;
+                        if (((i17 == -1 && a10.i == -1) ? -1 : (i17 == 1 ? (char) 1 : (char) 0) | (a10.i == 1 ? (char) 2 : (char) 0)) != -1) {
+                            int i19 = a10.h;
+                            if (i19 == -1) {
                                 if (a10.i == -1) {
-                                    i17 = 1;
-                                    i14 = -1;
-                                    StyleSpan styleSpan = new StyleSpan(i14);
+                                    i15 = -1;
+                                    i18 = 1;
+                                    StyleSpan styleSpan = new StyleSpan(i15);
                                     i10 = 33;
                                     spannableStringBuilder.setSpan(styleSpan, intValue, intValue2, 33);
                                 } else {
-                                    i17 = 1;
+                                    i18 = 1;
                                 }
                             }
-                            i14 = (i18 == i17 ? 1 : 0) | (a10.i == i17 ? 2 : 0);
-                            StyleSpan styleSpan2 = new StyleSpan(i14);
+                            i15 = (i19 == i18 ? i18 : 0) | (a10.i == i18 ? 2 : 0);
+                            StyleSpan styleSpan2 = new StyleSpan(i15);
                             i10 = 33;
                             spannableStringBuilder.setSpan(styleSpan2, intValue, intValue2, 33);
                         } else {
                             i10 = 33;
                         }
-                        if (a10.f == i17) {
+                        if (a10.f == i18) {
                             spannableStringBuilder.setSpan(new StrikethroughSpan(), intValue, intValue2, i10);
                         }
-                        if (a10.g == i17) {
+                        if (a10.g == i18) {
                             spannableStringBuilder.setSpan(new UnderlineSpan(), intValue, intValue2, i10);
                         }
                         if (a10.c) {
@@ -228,28 +229,28 @@ public final class c {
                         }
                         b bVar = a10.r;
                         if (bVar != null) {
-                            int i19 = bVar.a;
-                            if (i19 == -1) {
-                                i19 = (i15 == 2 || i15 == 1) ? 3 : 1;
-                                i13 = 1;
+                            int i20 = bVar.a;
+                            if (i20 == -1) {
+                                i20 = (i16 == 2 || i16 == 1) ? 3 : 1;
+                                i14 = 1;
                             } else {
-                                i13 = bVar.b;
+                                i14 = bVar.b;
                             }
-                            int i20 = bVar.c;
-                            if (i20 == -2) {
-                                i20 = 1;
+                            int i21 = bVar.c;
+                            if (i21 == -2) {
+                                i21 = 1;
                             }
-                            p6.a(new h(i19, i13, i20), spannableStringBuilder, intValue, intValue2);
+                            p6.a(new h(i20, i14, i21), spannableStringBuilder, intValue, intValue2);
                         }
-                        int i21 = a10.m;
-                        if (i21 == 2) {
+                        int i22 = a10.m;
+                        if (i22 == 2) {
                             c cVar2 = this.j;
                             while (true) {
                                 if (cVar2 == null) {
                                     cVar2 = null;
                                     break;
                                 }
-                                g a11 = f7.a(cVar2.f, cVar2.g, map2);
+                                g a11 = b7.a(cVar2.f, cVar2.g, map2);
                                 if (a11 != null && a11.m == 1) {
                                     break;
                                 } else {
@@ -265,7 +266,7 @@ public final class c {
                                         break;
                                     }
                                     c cVar3 = (c) arrayDeque.pop();
-                                    g a12 = f7.a(cVar3.f, cVar3.g, map2);
+                                    g a12 = b7.a(cVar3.f, cVar3.g, map2);
                                     if (a12 != null && a12.m == 3) {
                                         cVar = cVar3;
                                         break;
@@ -275,91 +276,103 @@ public final class c {
                                     }
                                 }
                                 if (cVar != null) {
-                                    if (cVar.c() == 1 && cVar.b(0).b != null) {
-                                        String str5 = cVar.b(0).b;
-                                        String str6 = d0.a;
-                                        g a13 = f7.a(cVar.f, cVar.g, map2);
-                                        int i22 = a13 != null ? a13.n : -1;
-                                        if (i22 == -1 && (a2 = f7.a(cVar2.f, cVar2.g, map2)) != null) {
-                                            i22 = a2.n;
-                                        }
-                                        spannableStringBuilder.setSpan(new d2.g(str5, i22), intValue, intValue2, 33);
-                                        if (a10.q == 1) {
-                                            p6.a(new d2.f(), spannableStringBuilder, intValue, intValue2);
-                                        }
-                                        i11 = a10.j;
-                                        if (i11 == 1) {
-                                            it = it2;
-                                            f7 = 100.0f;
-                                            p6.a(new AbsoluteSizeSpan((int) a10.k, true), spannableStringBuilder, intValue, intValue2);
-                                        } else if (i11 == 2) {
-                                            it = it2;
-                                            f7 = 100.0f;
-                                            p6.a(new RelativeSizeSpan(a10.k), spannableStringBuilder, intValue, intValue2);
-                                        } else if (i11 != 3) {
-                                            it = it2;
-                                            f7 = 100.0f;
-                                        } else {
-                                            float f10 = a10.k / 100.0f;
-                                            RelativeSizeSpan[] relativeSizeSpanArr = (RelativeSizeSpan[]) spannableStringBuilder.getSpans(intValue, intValue2, RelativeSizeSpan.class);
-                                            int length = relativeSizeSpanArr.length;
-                                            float f11 = f10;
-                                            int i23 = 0;
-                                            while (i23 < length) {
-                                                RelativeSizeSpan relativeSizeSpan = relativeSizeSpanArr[i23];
-                                                Iterator it3 = it2;
-                                                if (spannableStringBuilder.getSpanStart(relativeSizeSpan) <= intValue && spannableStringBuilder.getSpanEnd(relativeSizeSpan) >= intValue2) {
-                                                    f11 = relativeSizeSpan.getSizeChange() * f11;
-                                                }
-                                                if (spannableStringBuilder.getSpanStart(relativeSizeSpan) == intValue && spannableStringBuilder.getSpanEnd(relativeSizeSpan) == intValue2) {
-                                                    i12 = i23;
-                                                    if (spannableStringBuilder.getSpanFlags(relativeSizeSpan) == 33) {
-                                                        spannableStringBuilder.removeSpan(relativeSizeSpan);
+                                    if (cVar.c() == 1) {
+                                        i11 = 0;
+                                        if (cVar.b(0).b != null) {
+                                            String str5 = cVar.b(0).b;
+                                            String str6 = d0.a;
+                                            g a13 = b7.a(cVar.f, cVar.g, map2);
+                                            int i23 = a13 != null ? a13.n : -1;
+                                            if (i23 == -1 && (a2 = b7.a(cVar2.f, cVar2.g, map2)) != null) {
+                                                i23 = a2.n;
+                                            }
+                                            spannableStringBuilder.setSpan(new d2.g(str5, i23), intValue, intValue2, 33);
+                                            if (a10.q == 1) {
+                                                p6.a(new d2.f(), spannableStringBuilder, intValue, intValue2);
+                                            }
+                                            i12 = a10.j;
+                                            float f10 = 100.0f;
+                                            if (i12 == 1) {
+                                                it = it2;
+                                                f7 = 100.0f;
+                                                p6.a(new AbsoluteSizeSpan((int) a10.k, true), spannableStringBuilder, intValue, intValue2);
+                                            } else if (i12 == 2) {
+                                                it = it2;
+                                                f7 = 100.0f;
+                                                p6.a(new RelativeSizeSpan(a10.k), spannableStringBuilder, intValue, intValue2);
+                                            } else if (i12 != 3) {
+                                                it = it2;
+                                                f7 = 100.0f;
+                                            } else {
+                                                float f11 = a10.k / 100.0f;
+                                                RelativeSizeSpan[] relativeSizeSpanArr = (RelativeSizeSpan[]) spannableStringBuilder.getSpans(intValue, intValue2, RelativeSizeSpan.class);
+                                                int length = relativeSizeSpanArr.length;
+                                                int i24 = i11;
+                                                float f12 = f11;
+                                                int i25 = i24;
+                                                while (i25 < length) {
+                                                    float f13 = f10;
+                                                    RelativeSizeSpan relativeSizeSpan = relativeSizeSpanArr[i25];
+                                                    Iterator it3 = it2;
+                                                    if (spannableStringBuilder.getSpanStart(relativeSizeSpan) <= intValue && spannableStringBuilder.getSpanEnd(relativeSizeSpan) >= intValue2) {
+                                                        f12 = relativeSizeSpan.getSizeChange() * f12;
                                                     }
-                                                } else {
-                                                    i12 = i23;
+                                                    if (spannableStringBuilder.getSpanStart(relativeSizeSpan) == intValue && spannableStringBuilder.getSpanEnd(relativeSizeSpan) == intValue2) {
+                                                        i13 = i25;
+                                                        if (spannableStringBuilder.getSpanFlags(relativeSizeSpan) == 33) {
+                                                            spannableStringBuilder.removeSpan(relativeSizeSpan);
+                                                        }
+                                                    } else {
+                                                        i13 = i25;
+                                                    }
+                                                    i25 = i13 + 1;
+                                                    f10 = f13;
+                                                    it2 = it3;
                                                 }
-                                                i23 = i12 + 1;
-                                                it2 = it3;
+                                                it = it2;
+                                                f7 = f10;
+                                                spannableStringBuilder.setSpan(new RelativeSizeSpan(f12), intValue, intValue2, 33);
                                             }
-                                            it = it2;
-                                            f7 = 100.0f;
-                                            spannableStringBuilder.setSpan(new RelativeSizeSpan(f11), intValue, intValue2, 33);
+                                            if ("p".equals(this.a)) {
+                                                float f14 = a10.s;
+                                                if (f14 != Float.MAX_VALUE) {
+                                                    aVar.q = (f14 * (-90.0f)) / f7;
+                                                }
+                                                Layout.Alignment alignment = a10.o;
+                                                if (alignment != null) {
+                                                    aVar.c = alignment;
+                                                }
+                                                Layout.Alignment alignment2 = a10.p;
+                                                if (alignment2 != null) {
+                                                    aVar.d = alignment2;
+                                                }
+                                            }
+                                            it2 = it;
                                         }
-                                        if ("p".equals(this.a)) {
-                                            float f12 = a10.s;
-                                            if (f12 != Float.MAX_VALUE) {
-                                                aVar.q = (f12 * (-90.0f)) / f7;
-                                            }
-                                            Layout.Alignment alignment = a10.o;
-                                            if (alignment != null) {
-                                                aVar.c = alignment;
-                                            }
-                                            Layout.Alignment alignment2 = a10.p;
-                                            if (alignment2 != null) {
-                                                aVar.d = alignment2;
-                                            }
-                                        }
-                                        it2 = it;
+                                    } else {
+                                        i11 = 0;
                                     }
                                     e2.a.i("TtmlRenderUtil", "Skipping rubyText node without exactly one text child.");
                                     if (a10.q == 1) {
                                     }
-                                    i11 = a10.j;
-                                    if (i11 == 1) {
+                                    i12 = a10.j;
+                                    float f102 = 100.0f;
+                                    if (i12 == 1) {
                                     }
                                     if ("p".equals(this.a)) {
                                     }
                                     it2 = it;
                                 }
                             }
-                        } else if (i21 == 3 || i21 == 4) {
+                        } else if (i22 == 3 || i22 == 4) {
                             spannableStringBuilder.setSpan(new a(), intValue, intValue2, 33);
                         }
+                        i11 = 0;
                         if (a10.q == 1) {
                         }
-                        i11 = a10.j;
-                        if (i11 == 1) {
+                        i12 = a10.j;
+                        float f1022 = 100.0f;
+                        if (i12 == 1) {
                         }
                         if ("p".equals(this.a)) {
                         }
@@ -369,16 +382,19 @@ public final class c {
                 it = it2;
                 it2 = it;
             }
-            int i24 = 0;
-            while (i24 < c()) {
-                b(i24).h(j3, map2, hashMap, str3, treeMap);
-                i24++;
+            int i26 = 0;
+            while (i26 < c()) {
+                b(i26).h(j3, map2, hashMap, str3, treeMap);
+                i26++;
                 map2 = map;
             }
         }
     }
 
     public final void i(long j3, boolean z10, String str, TreeMap treeMap) {
+        boolean z11;
+        TreeMap treeMap2;
+        long j10;
         HashMap hashMap = this.k;
         hashMap.clear();
         HashMap hashMap2 = this.l;
@@ -409,7 +425,17 @@ public final class c {
             }
             boolean equals = "p".equals(str2);
             for (int i10 = 0; i10 < c(); i10++) {
-                b(i10).i(j3, z10 || equals, str4, treeMap);
+                c b10 = b(i10);
+                if (z10 || equals) {
+                    z11 = true;
+                    treeMap2 = treeMap;
+                    j10 = j3;
+                } else {
+                    z11 = false;
+                    j10 = j3;
+                    treeMap2 = treeMap;
+                }
+                b10.i(j10, z11, str4, treeMap2);
             }
             if (equals) {
                 SpannableStringBuilder e10 = e(str4, treeMap);

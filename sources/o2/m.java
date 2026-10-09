@@ -1,16 +1,16 @@
 package o2;
 
-import com.google.android.gms.internal.cast.b5;
+import com.google.android.gms.internal.cast.z4;
 import e2.d0;
 import java.util.ArrayList;
 import java.util.Iterator;
-import n4.y;
-import u2.c1;
-import v7.y7;
+import n4.x;
+import u2.b1;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class m implements c1 {
+public final class m implements b1 {
     public final int a;
     public final q b;
     public int c = -1;
@@ -20,18 +20,18 @@ public final class m implements c1 {
         this.a = i10;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
         int i10 = this.c;
         q qVar = this.b;
         if (i10 == -2) {
             qVar.e();
-            throw new b5(a4.a.q("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
+            throw new z4(a1.g.q("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
         }
         if (i10 == -1) {
-            qVar.C();
+            qVar.A();
         } else if (i10 != -3) {
-            qVar.C();
+            qVar.A();
             qVar.L[i10].z();
         }
     }
@@ -64,7 +64,7 @@ public final class m implements c1 {
         return (i10 == -1 || i10 == -3 || i10 == -2) ? false : true;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         if (this.c == -3) {
             return true;
@@ -74,11 +74,11 @@ public final class m implements c1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        return !qVar.A() && qVar.L[i10].x(qVar.j0);
+        return !qVar.x() && qVar.L[i10].x(qVar.j0);
     }
 
-    @Override // u2.c1
-    public final int f(y yVar, h2.h hVar, int i10) {
+    @Override // u2.b1
+    public final int f(x xVar, h2.h hVar, int i10) {
         b2.s sVar;
         if (this.c == -3) {
             hVar.addFlag(4);
@@ -88,7 +88,7 @@ public final class m implements c1 {
             int i11 = this.c;
             q qVar = this.b;
             ArrayList arrayList = qVar.y;
-            if (!qVar.A()) {
+            if (!qVar.x()) {
                 int i12 = 0;
                 if (!arrayList.isEmpty()) {
                     int i13 = 0;
@@ -102,21 +102,21 @@ public final class m implements c1 {
                         }
                         i13++;
                     }
-                    d0.V(0, i13, arrayList);
+                    d0.U(0, i13, arrayList);
                     j jVar = (j) arrayList.get(0);
                     b2.s sVar2 = jVar.d;
                     if (!sVar2.equals(qVar.W)) {
-                        qVar.v.k(qVar.b, sVar2, jVar.e, jVar.f, jVar.h);
+                        qVar.v.l(qVar.b, sVar2, jVar.e, jVar.f, jVar.h);
                     }
                     qVar.W = sVar2;
                 }
                 if (arrayList.isEmpty() || ((j) arrayList.get(0)).g()) {
-                    int C = qVar.L[i11].C(yVar, hVar, i10, qVar.j0);
+                    int C = qVar.L[i11].C(xVar, hVar, i10, qVar.j0);
                     if (C == -5) {
-                        b2.s sVar3 = (b2.s) yVar.c;
+                        b2.s sVar3 = (b2.s) xVar.c;
                         sVar3.getClass();
                         if (i11 == qVar.R) {
-                            int b10 = y7.b(qVar.L[i11].B());
+                            int b10 = v7.b(qVar.L[i11].B());
                             while (i12 < arrayList.size() && ((j) arrayList.get(i12)).v != b10) {
                                 i12++;
                             }
@@ -128,7 +128,7 @@ public final class m implements c1 {
                             }
                             sVar3 = sVar3.d(sVar);
                         }
-                        yVar.c = sVar3;
+                        xVar.c = sVar3;
                     }
                     return C;
                 }
@@ -137,7 +137,7 @@ public final class m implements c1 {
         return -3;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         Object next;
         Object obj;
@@ -146,7 +146,7 @@ public final class m implements c1 {
         }
         int i10 = this.c;
         q qVar = this.b;
-        if (qVar.A()) {
+        if (qVar.x()) {
             return 0;
         }
         p pVar = qVar.L[i10];

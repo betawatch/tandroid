@@ -1,57 +1,66 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tg0 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ jg0(tg0 tg0Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class jg0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kg0 b;
+
+    public /* synthetic */ jg0(kg0 kg0Var, int i10) {
         this.a = i10;
-        this.b = tg0Var;
+        this.b = kg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                tg0 tg0Var = this.b;
-                yj0 yj0Var = tg0Var.a;
-                ug0 ug0Var = tg0Var.V;
-                qg0 qg0Var = tg0Var.b;
-                if (qg0Var != null) {
-                    if (ug0Var.c0) {
-                        yj0Var.clearFocus();
-                        qg0Var.clearFocus();
-                    } else if (yj0Var.length() != 0) {
-                        qg0Var.requestFocus();
-                        if (!tg0Var.R) {
-                            qg0Var.setSelection(qg0Var.length());
-                        }
-                        ug0.T0(ug0Var, qg0Var);
-                    } else {
-                        yj0Var.requestFocus();
-                        ug0.T0(ug0Var, yj0Var);
-                    }
-                }
-                if (ug0Var.F == 0) {
-                    tg0Var.u(false);
+                if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+                    this.b.h.requestFocus();
                     break;
                 }
                 break;
-            case 1:
-                tg0 tg0Var2 = this.b;
-                tg0Var2.postDelayed(new jg0(tg0Var2, 2), 200L);
+            default:
+                kg0 kg0Var = this.b;
+                if (kg0Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) kg0Var.getParent()).removeView(kg0Var);
+                }
+                kg0Var.c.setVisibility(0);
                 break;
-            case 2:
-                this.b.h(null);
-                break;
-            case 3:
-                this.b.u(true);
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                kg0 kg0Var = this.b;
+                kg0Var.c.setVisibility(8);
+                int measuredWidth = (int) (kg0Var.b.getMeasuredWidth() / 10.0f);
+                int measuredHeight = (int) (kg0Var.b.getMeasuredHeight() / 10.0f);
+                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(createBitmap);
+                canvas.scale(0.1f, 0.1f);
+                canvas.drawColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
+                kg0Var.b.draw(canvas);
+                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
+                kg0Var.d.setBackground(new BitmapDrawable(kg0Var.getContext().getResources(), createBitmap));
+                kg0Var.d.setAlpha(0.0f);
+                kg0Var.d.setVisibility(0);
+                kg0Var.b.addView(kg0Var);
                 break;
             default:
-                tg0 tg0Var3 = this.b;
-                ug0.T0(tg0Var3.V, tg0Var3.b);
+                super.onAnimationStart(animator);
                 break;
         }
     }

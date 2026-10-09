@@ -3,9 +3,8 @@ package vg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.cg0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class q extends AnimatorListenerAdapter {
     public final /* synthetic */ float[] a;
@@ -27,13 +26,12 @@ public final class q extends AnimatorListenerAdapter {
         float[] fArr = this.a;
         float f7 = 1.0f - fArr[0];
         fArr[0] = 1.0f;
+        this.e.a.b.l = AndroidUtilities.lerp(this.b, this.c, 1.0f);
+        sg.g gVar = this.e.a.b;
+        gVar.f = (f7 * 360.0f * (this.d ? 1 : -1)) + gVar.f;
+        this.e.a.b.b();
         r rVar = this.e;
-        cg0 cg0Var = rVar.a;
-        cg0Var.b.i = AndroidUtilities.lerp(this.b, this.c, 1.0f);
-        sg.a aVar = cg0Var.b;
-        aVar.f = (f7 * 360.0f * (this.d ? 1 : -1)) + aVar.f;
-        aVar.b();
-        rVar.a(cg0Var.b.i);
-        cg0Var.h(750L);
+        rVar.a(rVar.a.b.l);
+        this.e.a.k(750L);
     }
 }

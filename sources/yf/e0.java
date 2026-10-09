@@ -1,32 +1,103 @@
 package yf;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.graphics.RectF;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.ui.mb1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class e0 extends ViewOutlineProvider {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+public abstract class e0 {
+    public static final mb1 a = new mb1(22);
 
-    public e0(int i10, boolean z10, boolean z11, boolean z12, boolean z13) {
-        this.a = z10;
-        this.b = i10;
-        this.c = z11;
-        this.d = z12;
-        this.e = z13;
+    public static int a(ArrayList arrayList, int i10, ArrayList arrayList2) {
+        boolean z10;
+        if (arrayList == null || i10 <= 0) {
+            return 0;
+        }
+        if (i10 > arrayList.size()) {
+            i10 = arrayList.size();
+        }
+        for (int size = arrayList2.size(); size < i10; size++) {
+            arrayList2.add(new RectF());
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            RectF rectF = (RectF) arrayList.get(i11);
+            RectF rectF2 = (RectF) arrayList2.get(i11);
+            if (rectF != null) {
+                rectF2.set(rectF);
+            } else {
+                rectF2.set(0.0f, 0.0f, 0.0f, 0.0f);
+            }
+        }
+        do {
+            int i12 = 0;
+            while (true) {
+                if (i12 >= i10) {
+                    z10 = false;
+                    break;
+                }
+                RectF rectF3 = (RectF) arrayList2.get(i12);
+                i12++;
+                for (int i13 = i12; i13 < i10; i13++) {
+                    RectF rectF4 = (RectF) arrayList2.get(i13);
+                    float f7 = rectF3.left;
+                    float f10 = rectF4.right;
+                    if (f7 <= f10 + 1.0E-4f) {
+                        float f11 = rectF3.right;
+                        float f12 = rectF4.left;
+                        if (f11 >= f12 - 1.0E-4f) {
+                            float f13 = rectF3.top;
+                            float f14 = rectF4.bottom;
+                            if (f13 <= f14 + 1.0E-4f) {
+                                float f15 = rectF3.bottom;
+                                float f16 = rectF4.top;
+                                if (f15 >= f16 - 1.0E-4f) {
+                                    if (f12 < f7) {
+                                        rectF3.left = f12;
+                                    }
+                                    if (f16 < f13) {
+                                        rectF3.top = f16;
+                                    }
+                                    if (f10 > f11) {
+                                        rectF3.right = f10;
+                                    }
+                                    if (f14 > f15) {
+                                        rectF3.bottom = f14;
+                                    }
+                                    int i14 = i10 - 1;
+                                    if (i13 != i14) {
+                                        ((RectF) arrayList2.get(i13)).set((RectF) arrayList2.get(i14));
+                                    }
+                                    i10--;
+                                    z10 = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } while (z10);
+        for (int i15 = i10; i15 < arrayList2.size(); i15++) {
+            RectF rectF5 = (RectF) arrayList2.get(i15);
+            rectF5.top = Float.MAX_VALUE;
+            rectF5.left = Float.MAX_VALUE;
+        }
+        Collections.sort(arrayList2, a);
+        return i10;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        int width = view.getWidth();
-        int height = view.getHeight();
-        boolean z10 = this.a;
-        int i10 = this.b;
-        outline.setRoundRect(-(z10 ? 0 : i10), -(this.c ? 0 : i10), width + (this.d ? 0 : i10), height + (this.e ? 0 : i10), i10);
+    public static float b(float f7) {
+        return 1.0f - w7.o.a(f7, 0.0f, 1.0f);
+    }
+
+    public static boolean c(float[] fArr) {
+        if (fArr != null && fArr.length == 8) {
+            float f7 = fArr[0];
+            if (f7 == fArr[1] && f7 == fArr[2] && f7 == fArr[3] && f7 == fArr[4] && f7 == fArr[5] && f7 == fArr[6] && f7 == fArr[7]) {
+                return true;
+            }
+        }
+        return false;
     }
 }

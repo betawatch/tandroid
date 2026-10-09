@@ -1,43 +1,45 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.app.Activity;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fw implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ uy b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ HashSet f;
+public final /* synthetic */ class fw implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ fw(uy uyVar, int i10, ArrayList arrayList, boolean z10, HashSet hashSet) {
-        this.b = uyVar;
-        this.d = i10;
-        this.c = arrayList;
-        this.e = z10;
-        this.f = hashSet;
+    public /* synthetic */ fw(Activity activity, int i10) {
+        this.a = i10;
+        this.b = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                uy.p0(this.b, this.d, this.c, this.e, this.f);
+                if (bool.booleanValue()) {
+                    if (!org.telegram.ui.Components.ef0.a()) {
+                        org.telegram.ui.Components.ef0.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
                 break;
             default:
-                this.b.A4(this.c, this.d, false, this.e, this.f);
+                if (bool.booleanValue()) {
+                    if (!org.telegram.ui.Components.ef0.a()) {
+                        org.telegram.ui.Components.ef0.f();
+                        break;
+                    } else {
+                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ fw(uy uyVar, ArrayList arrayList, int i10, boolean z10, HashSet hashSet) {
-        this.b = uyVar;
-        this.c = arrayList;
-        this.d = i10;
-        this.e = z10;
-        this.f = hashSet;
     }
 }

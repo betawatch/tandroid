@@ -9,18 +9,17 @@ import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
 import ci.e7;
-import ci.x8;
+import ci.y8;
 import com.google.firebase.messaging.FirebaseMessaging;
-import ii.n4;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.qg;
-import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.rg;
+import org.telegram.ui.Components.sk;
 import p4.s0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -62,10 +61,10 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.u) this.b).c).execute(new x8(13, this, context));
+                ((Executor) ((e2.u) this.b).c).execute(new y8(13, this, context));
                 return;
             case 3:
-                ((g.p) this.b).k();
+                ((g.o) this.b).k();
                 return;
             case 4:
                 try {
@@ -79,21 +78,21 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
                 e7 e7Var = (e7) this.b;
-                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (k2.e) e7Var.i));
+                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (a4.l) e7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((n4) ((m4.k0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((m2.t) ((m4.l0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;
             case 7:
-                qg qgVar = new qg(this, 22);
+                rg rgVar = new rg(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((rk) this.b).r.postDelayed(qgVar, 1000L);
+                    ((sk) this.b).r.postDelayed(rgVar, 1000L);
                     return;
                 } else {
-                    qgVar.run();
+                    rgVar.run();
                     return;
                 }
             case 8:
@@ -103,13 +102,13 @@ public final class g extends BroadcastReceiver {
                 if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
                     String stringExtra = intent.getStringExtra("source_id");
                     intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((pf.c) this.b).c.get(stringExtra);
+                    ArrayList arrayList = (ArrayList) ((qf.c) this.b).c.get(stringExtra);
                     if (arrayList == null) {
                         return;
                     }
                     Iterator it = arrayList.iterator();
                     if (it.hasNext()) {
-                        throw a4.a.k(it);
+                        throw a1.g.k(it);
                     }
                     return;
                 }

@@ -6,7 +6,7 @@ import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,15 +21,15 @@ public final /* synthetic */ class a1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.b0(true);
+                this.b.c0(true);
                 break;
             case 1:
                 this.b.d0.setVisibility(8);
                 break;
             case 2:
                 m1 m1Var = this.b;
-                m1Var.U();
-                m1Var.i0(true, false);
+                m1Var.X();
+                m1Var.j0(true, false);
                 break;
             case 3:
                 h1 h1Var = this.b.Z;
@@ -41,19 +41,19 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             case 5:
                 m1 m1Var2 = this.b;
-                m1Var2.U();
-                m1Var2.i0(true, false);
+                m1Var2.X();
+                m1Var2.j0(true, false);
                 break;
             case 6:
-                this.b.c0(true);
+                this.b.d0(true);
                 break;
             case 7:
                 this.b.d0.setVisibility(8);
                 break;
             case 8:
                 m1 m1Var3 = this.b;
-                m1Var3.U();
-                m1Var3.i0(true, false);
+                m1Var3.X();
+                m1Var3.j0(true, false);
                 break;
             case 9:
                 n2 n2Var = this.b.n;
@@ -65,15 +65,15 @@ public final /* synthetic */ class a1 implements Runnable {
                 }
                 break;
             case 10:
-                this.b.h0(true, true);
+                this.b.i0(true, true);
                 break;
             case 11:
                 this.b.dismiss();
                 break;
             default:
                 m1 m1Var4 = this.b;
-                m1Var4.U();
-                m1Var4.i0(true, false);
+                m1Var4.X();
+                m1Var4.j0(true, false);
                 break;
         }
     }

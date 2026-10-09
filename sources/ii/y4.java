@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class y4 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -73,12 +73,12 @@ public final class y4 implements NotificationCenter.NotificationCenterDelegate {
         d();
         i3 i3Var = this.b;
         x3 x3Var = i3Var.c;
-        IdentityHashMap identityHashMap = x3Var.h4;
+        IdentityHashMap identityHashMap = x3Var.Y3;
         u uVar = i3Var.a;
         identityHashMap.remove(uVar);
         uVar.a = 3;
         x3Var.r4(i3Var.b, uVar);
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     public final void d() {
@@ -119,7 +119,7 @@ public final class y4 implements NotificationCenter.NotificationCenterDelegate {
             int i12 = videoEditedInfo.resultWidth;
             int i13 = videoEditedInfo.resultHeight;
             int ceil = (int) Math.ceil(videoEditedInfo.estimatedDuration / 1000.0d);
-            x3Var.h4.remove(uVar);
+            x3Var.Y3.remove(uVar);
             uVar.b = true;
             uVar.e = str;
             if (i12 > 0) {

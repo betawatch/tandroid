@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -44,7 +44,7 @@ public final class EmojiPack {
     private final int[] rootIds;
     private final byte[][] rootMaps;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class Holder {
         static final EmojiPack INSTANCE = open();
 
@@ -61,7 +61,7 @@ public final class EmojiPack {
     }
 
     private static IllegalStateException damaged(String str) {
-        return new IllegalStateException(sa.e.i("Damaged emoji.pack: ", str));
+        return new IllegalStateException(sc.v.i("Damaged emoji.pack: ", str));
     }
 
     private Bitmap decode(int i10) {
@@ -103,6 +103,7 @@ public final class EmojiPack {
         int i12;
         int i13;
         int i14;
+        int i15;
         byte[] bArr4;
         int entry = entry(i10);
         int u82 = u8(entry + 17);
@@ -124,52 +125,54 @@ public final class EmojiPack {
             i11 = 0;
             i12 = 0;
         }
-        int i15 = entry + 19;
-        int u83 = (u8(i15) >>> 1) & 7;
-        int u84 = (u8(i15) >>> 4) & 7;
+        int i16 = entry + 19;
+        int u83 = (u8(i16) >>> 1) & 7;
+        int u84 = (u8(i16) >>> 4) & 7;
         if (u82 == 4) {
-            for (int i16 = 0; i16 < 4096; i16++) {
-                bArr[i16] = bArr2[sourceIndex(i16, u83)];
+            for (int i17 = 0; i17 < 4096; i17++) {
+                bArr[i17] = bArr2[sourceIndex(i17, u83)];
             }
             return;
         }
-        int i17 = i12 + i11;
+        int i18 = i12 + i11;
         int paletteLength = paletteLength(entry);
-        int i18 = this.buffer.getInt(entry + 4) + paletteLength;
+        int i19 = this.buffer.getInt(entry + 4) + paletteLength;
         int u163 = u16(entry + 8) - paletteLength;
         if (u82 == 5 || u82 == 6) {
             if (u163 < 2) {
                 throw damaged("Truncated split record");
             }
-            int i19 = i18 + 1;
-            int u85 = u8(i18);
+            int i20 = i19 + 1;
+            int u85 = u8(i19);
             u163--;
             if (u85 < 1 || u85 >= 64) {
                 throw damaged("Invalid split position");
             }
             i13 = u85;
-            i18 = i19;
+            i19 = i20;
         } else {
             i13 = 32;
         }
-        readBytes(i18, u163);
+        readBytes(i19, u163);
         if (u8(entry + 16) == 0) {
-            inflate(u163, i17 + 4096);
+            inflate(u163, i18 + 4096);
             byte[] bArr5 = this.decoded;
-            System.arraycopy(bArr5, i17, bArr, 0, 4096);
-            i14 = entry;
+            System.arraycopy(bArr5, i18, bArr, 0, 4096);
+            i15 = entry;
             bArr4 = bArr5;
+            i14 = 0;
         } else {
-            if (u163 <= i17) {
+            i14 = 0;
+            if (u163 <= i18) {
                 throw damaged("Truncated index WebP");
             }
-            i14 = entry;
-            System.arraycopy(this.encoded, 20, this.decoded, 0, i17);
-            Bitmap decodeWebp = decodeWebp(i17 + 20, u163 - i17);
+            i15 = entry;
+            System.arraycopy(this.encoded, 20, this.decoded, 0, i18);
+            Bitmap decodeWebp = decodeWebp(i18 + 20, u163 - i18);
             try {
                 decodeWebp.getPixels(this.pixels, 0, 64, 0, 0, 64, 64);
-                for (int i20 = 0; i20 < 4096; i20++) {
-                    bArr[i20] = (byte) this.pixels[i20];
+                for (int i21 = 0; i21 < 4096; i21++) {
+                    bArr[i21] = (byte) this.pixels[i21];
                 }
                 decodeWebp.recycle();
                 bArr4 = this.decoded;
@@ -179,26 +182,29 @@ public final class EmojiPack {
             }
         }
         if (u82 == 1 || u82 == 2) {
-            for (int i21 = 0; i21 < 4096; i21++) {
-                int i22 = bArr2[sourceIndex(i21, u83)] & 255;
-                if (i22 >= i12) {
+            for (int i22 = 0; i22 < 4096; i22++) {
+                int i23 = bArr2[sourceIndex(i22, u83)] & 255;
+                if (i23 >= i12) {
                     throw damaged("Root index out of range");
                 }
-                int i23 = bArr4[i22] & 255;
-                bArr[i21] = u82 == 1 ? (byte) (i23 ^ (bArr[i21] & 255)) : (byte) ((bArr[i21] & 255) + i23);
+                int i24 = bArr4[i23] & 255;
+                bArr[i22] = u82 == 1 ? (byte) (i24 ^ (bArr[i22] & 255)) : (byte) ((bArr[i22] & 255) + i24);
             }
         } else {
-            int i24 = (u82 == 3 || u82 == 5) ? 6 : 6;
-            for (int i25 = 0; i25 < 4096; i25++) {
-                boolean z10 = u82 != i24 ? (i25 & 63) < i13 : (i25 >>> 6) < i13;
-                int i26 = (z10 ? bArr2[sourceIndex(i25, u83)] : bArr3[sourceIndex(i25, u84)]) & 255;
-                if (i26 >= (z10 ? i12 : i11)) {
+            int i25 = (u82 == 3 || u82 == 5) ? 6 : 6;
+            int i26 = i14;
+            while (i26 < 4096) {
+                int i27 = (u82 != i25 ? (i26 & 63) >= i13 : (i26 >>> 6) >= i13) ? i14 : 1;
+                int i28 = (i27 != 0 ? bArr2[sourceIndex(i26, u83)] : bArr3[sourceIndex(i26, u84)]) & 255;
+                if (i28 >= (i27 != 0 ? i12 : i11)) {
                     throw damaged("Half root index out of range");
                 }
-                bArr[i25] = (byte) ((bArr[i25] & 255) + (bArr4[(z10 ? 0 : i12) + i26] & 255));
+                bArr[i26] = (byte) ((bArr[i26] & 255) + (bArr4[(i27 != 0 ? 0 : i12) + i28] & 255));
+                i26++;
+                i14 = 0;
             }
         }
-        int u164 = u16(i14 + 14);
+        int u164 = u16(i15 + 14);
         if (u164 < 256) {
             for (byte b10 : bArr) {
                 if ((b10 & 255) >= u164) {
@@ -263,8 +269,8 @@ public final class EmojiPack {
                         i21 += 4;
                         i11 = bArr[i25] & 255;
                     } else {
-                        i21 = i25;
                         i11 = 255;
+                        i21 = i25;
                     }
                     this.palette[i22] = (i11 << 24) | (i23 << 16) | (i24 << 8) | i26;
                 }
@@ -460,12 +466,12 @@ public final class EmojiPack {
         return this.buffer.get(i10) & 255;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x00ef  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x00eb  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00ed  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0142 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0144 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

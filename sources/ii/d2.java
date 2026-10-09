@@ -8,10 +8,11 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class d2 extends Drawable implements Drawable.Callback {
     public final Drawable a;
@@ -32,9 +33,9 @@ public final class d2 extends Drawable implements Drawable.Callback {
         drawable.setCallback(this);
         paint.setColor(0);
         if (org.telegram.ui.ActionBar.i6.I.q()) {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.l1(0.3f, -16777216));
+            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.m1(0.3f, -16777216));
         } else {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.l1(0.1f, -16777216));
+            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.m1(0.1f, -16777216));
         }
     }
 
@@ -136,5 +137,18 @@ public final class d2 extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable.Callback
     public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
         unscheduleSelf(runnable);
+    }
+
+    public d2(ShapeDrawable shapeDrawable, float f7, float f10) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new Path();
+        this.d = new RectF();
+        this.e = new Outline();
+        this.f = true;
+        this.a = shapeDrawable;
+        shapeDrawable.setCallback(this);
+        paint.setColor(0);
+        paint.setShadowLayer(f7, 0.0f, f10, 553648128);
     }
 }

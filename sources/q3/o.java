@@ -6,9 +6,9 @@ import e9.a1;
 import e9.i0;
 import j$.util.Objects;
 import java.util.ArrayList;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o extends j {
     public final String b;
@@ -270,7 +270,7 @@ public final class o extends j {
                     m0Var.s = Integer.valueOf(Integer.parseInt((String) i0Var.get(0)));
                     break;
                 case '\f':
-                    Integer g10 = y7.g((String) i0Var.get(0));
+                    Integer g10 = v7.g((String) i0Var.get(0));
                     if (g10 != null) {
                         String a2 = k.a(g10.intValue());
                         if (a2 != null) {
@@ -327,7 +327,7 @@ public final class o extends j {
     }
 
     public final int hashCode() {
-        int h = a4.a.h(527, 31, this.a);
+        int h = a1.g.h(527, 31, this.a);
         String str = this.b;
         return this.c.hashCode() + ((h + (str != null ? str.hashCode() : 0)) * 31);
     }

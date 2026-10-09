@@ -1,77 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class gx0 {
-    public static final Layout.Alignment[] a = Layout.Alignment.values();
+public final class gx0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public static Layout.Alignment a() {
-        Layout.Alignment[] alignmentArr = a;
-        return alignmentArr.length >= 5 ? alignmentArr[4] : Layout.Alignment.ALIGN_OPPOSITE;
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
     }
 
-    public static StaticLayout b(CharSequence charSequence, TextPaint textPaint, int i10, float f7, int i11, int i12) {
-        return c(charSequence, textPaint, i10, Layout.Alignment.ALIGN_NORMAL, f7, false, TextUtils.TruncateAt.END, i11, i12, true);
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
     }
 
-    public static StaticLayout c(CharSequence charSequence, TextPaint textPaint, int i10, Layout.Alignment alignment, float f7, boolean z10, TextUtils.TruncateAt truncateAt, int i11, int i12, boolean z11) {
-        StaticLayout staticLayout;
-        try {
-            if (i12 == 1) {
-                int indexOf = TextUtils.indexOf(charSequence, "\n") - 1;
-                CharSequence ellipsize = TextUtils.ellipsize(indexOf > 0 ? SpannableStringBuilder.valueOf(charSequence.subSequence(0, indexOf)).append((CharSequence) "…") : charSequence, textPaint, i11, TextUtils.TruncateAt.END);
-                return new StaticLayout(ellipsize, 0, ellipsize.length(), textPaint, i10, alignment, 1.0f, f7, z10);
-            }
-            if (Build.VERSION.SDK_INT >= 23) {
-                staticLayout = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(z10).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(1).setHyphenationFrequency(0).build();
-                int i13 = 0;
-                while (true) {
-                    if (i13 >= staticLayout.getLineCount()) {
-                        break;
-                    }
-                    if (staticLayout.getLineRight(i13) > i10) {
-                        staticLayout = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(z10).setEllipsize(null).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(0).setHyphenationFrequency(0).build();
-                        break;
-                    }
-                    i13++;
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
+    }
+
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.fx0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
+                int i10;
+                gx0 gx0Var = gx0.this;
+                int i11 = gx0Var.a;
+                if (i11 <= 0 || (i10 = gx0Var.b) <= 0) {
+                    gx0Var.end();
+                    return;
                 }
-            } else {
-                staticLayout = new StaticLayout(charSequence, textPaint, i10, alignment, 1.0f, f7, z10);
+                int i12 = i11 - 1;
+                gx0Var.a = i12;
+                if (gx0Var.c != null) {
+                    float[] fArr = gx0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        gx0Var.end();
+                        return;
+                    }
+                    float interpolation = gx0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
+                    float[] fArr2 = gx0Var.e;
+                    float f7 = fArr2[0];
+                    gx0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
+                    gx0Var.c.onAnimationUpdate(gx0Var);
+                }
             }
-            if (staticLayout.getLineCount() <= i12) {
-                return staticLayout;
-            }
-            int i14 = i12 - 1;
-            float lineLeft = staticLayout.getLineLeft(i14);
-            float lineWidth = staticLayout.getLineWidth(i14);
-            int offsetForHorizontal = lineLeft != 0.0f ? staticLayout.getOffsetForHorizontal(i14, lineLeft) : staticLayout.getOffsetForHorizontal(i14, lineWidth);
-            if (lineWidth < i11 - AndroidUtilities.dp(10.0f)) {
-                offsetForHorizontal += 3;
-            }
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
-            spannableStringBuilder.append((CharSequence) "…");
-            if (Build.VERSION.SDK_INT >= 23) {
-                return StaticLayout.Builder.obtain(spannableStringBuilder, 0, spannableStringBuilder.length(), textPaint, i10).setAlignment(alignment).setLineSpacing(f7, 1.0f).setIncludePad(z10).setEllipsize(((z5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), z5.class)).length > 0 ? null : truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(z11 ? 1 : 0).setHyphenationFrequency(0).build();
-            }
-            return new StaticLayout(spannableStringBuilder, textPaint, i10, alignment, 1.0f, f7, z10);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return null;
-        }
-    }
-
-    public static StaticLayout d(CharSequence charSequence, TextPaint textPaint, int i10, boolean z10, int i11, int i12) {
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        return Build.VERSION.SDK_INT >= 23 ? StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i11).setAlignment(alignment).setLineSpacing(0.0f, 1.0f).setIncludePad(z10).setEllipsize(truncateAt).setEllipsizedWidth(i11).setMaxLines(i12).setBreakStrategy(1).setHyphenationFrequency(0).build() : c(charSequence, textPaint, i10, alignment, 0.0f, z10, truncateAt, i11, i12, true);
+        });
+        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

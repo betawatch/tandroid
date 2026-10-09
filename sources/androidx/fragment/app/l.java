@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l {
     public final ViewGroup a;
@@ -56,7 +56,7 @@ public final class l {
         if (arrayList.isEmpty()) {
             throw new NoSuchElementException("List is empty.");
         }
-        ((v0) arrayList.get(hd.h.a(arrayList))).getClass();
+        ((v0) arrayList.get(id.h.a(arrayList))).getClass();
         if (arrayList.size() > 0) {
             ((v0) arrayList.get(0)).getClass();
             throw null;
@@ -112,7 +112,7 @@ public final class l {
             Context context = this.a.getContext();
             fVar.getClass();
             kotlin.jvm.internal.i.d(context, "context");
-            of.b b10 = fVar.b(context);
+            pf.b b10 = fVar.b(context);
             if (b10 != null) {
                 if (((AnimatorSet) b10.c) != null) {
                     throw null;
@@ -138,7 +138,7 @@ public final class l {
         }
         synchronized (this.b) {
             try {
-                ArrayList o9 = hd.g.o(this.c);
+                ArrayList o9 = id.g.o(this.c);
                 this.c.clear();
                 int size = o9.size();
                 int i10 = 0;
@@ -174,7 +174,7 @@ public final class l {
                 }
                 if (!this.b.isEmpty()) {
                     f();
-                    ArrayList o10 = hd.g.o(this.b);
+                    ArrayList o10 = id.g.o(this.b);
                     if (o10.isEmpty()) {
                         return;
                     }
@@ -195,7 +195,7 @@ public final class l {
                         Object obj3 = o10.get(i12);
                         i12++;
                         ((v0) obj3).getClass();
-                        hd.m.e(arrayList, null);
+                        id.m.e(arrayList, null);
                     }
                     boolean isEmpty = arrayList.isEmpty();
                     boolean z10 = !isEmpty;
@@ -236,7 +236,7 @@ public final class l {
             try {
                 f();
                 e(this.b);
-                ArrayList o9 = hd.g.o(this.c);
+                ArrayList o9 = id.g.o(this.c);
                 int size = o9.size();
                 int i10 = 0;
                 int i11 = 0;
@@ -261,7 +261,7 @@ public final class l {
                     }
                     v0Var.a(this.a);
                 }
-                ArrayList o10 = hd.g.o(this.b);
+                ArrayList o10 = id.g.o(this.b);
                 int size3 = o10.size();
                 int i13 = 0;
                 while (i13 < size3) {
@@ -303,9 +303,9 @@ public final class l {
         Iterator it = list.iterator();
         while (it.hasNext()) {
             ((v0) it.next()).getClass();
-            hd.m.e(arrayList, null);
+            id.m.e(arrayList, null);
         }
-        List m10 = hd.g.m(hd.g.p(arrayList));
+        List m10 = id.g.m(id.g.p(arrayList));
         int size2 = m10.size();
         for (int i11 = 0; i11 < size2; i11++) {
             u0 u0Var = (u0) m10.get(i11);

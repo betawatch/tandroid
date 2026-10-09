@@ -1,58 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.ImageReceiver;
+import android.opengl.GLES20;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class s50 extends h60 {
-    public ImageReceiver a;
-    public float b;
-    public final /* synthetic */ f60 c;
+public class s50 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s50(f60 f60Var, Context context) {
-        super(context);
-        this.c = f60Var;
-        f60Var.setWillNotDraw(false);
+    public s50(int i10) {
+        int a2 = t50.a(35633, R.raw.round_blur_vert);
+        this.b = a2;
+        int a10 = t50.a(35632, i10);
+        this.c = a10;
+        int glCreateProgram = GLES20.glCreateProgram();
+        GLES20.glAttachShader(glCreateProgram, a2);
+        GLES20.glAttachShader(glCreateProgram, a10);
+        GLES20.glLinkProgram(glCreateProgram);
+        int[] iArr = new int[1];
+        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
+        if (iArr[0] == 0) {
+            GLES20.glDeleteProgram(glCreateProgram);
+            glCreateProgram = 0;
+        }
+        this.a = glCreateProgram;
+        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
+        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
+        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float f7 = this.b;
-        if (f7 != 1.0f) {
-            float f10 = f7 + 0.064f;
-            this.b = f10;
-            if (f10 > 1.0f) {
-                this.b = 1.0f;
-            }
-            invalidate();
-        }
-        if (this.a != null) {
-            canvas.save();
-            float imageWidth = this.a.getImageWidth();
-            int i10 = this.c.S0;
-            if (imageWidth != i10) {
-                float imageWidth2 = i10 / this.a.getImageWidth();
-                canvas.scale(imageWidth2, imageWidth2);
-            }
-            canvas.translate(-this.a.getImageX(), -this.a.getImageY());
-            float alpha = this.a.getAlpha();
-            this.a.setAlpha(this.b);
-            this.a.draw(canvas);
-            this.a.setAlpha(alpha);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.h60
-    public void setImageReceiver(ImageReceiver imageReceiver) {
-        if (this.a == null) {
-            this.b = 0.0f;
-        }
-        this.a = imageReceiver;
-        invalidate();
+    public final void a() {
+        GLES20.glDeleteProgram(this.a);
+        GLES20.glDeleteShader(this.b);
+        GLES20.glDeleteShader(this.c);
     }
 }

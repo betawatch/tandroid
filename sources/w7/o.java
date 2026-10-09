@@ -1,19 +1,13 @@
 package w7;
 
-import android.view.View;
-import android.view.ViewParent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static void a(EditorInfo editorInfo, InputConnection inputConnection, TextView textView) {
-        if (inputConnection == null || editorInfo.hintText != null) {
-            return;
-        }
-        for (ViewParent parent = textView.getParent(); parent instanceof View; parent = parent.getParent()) {
-        }
+    public static float a(float f7, float f10, float f11) {
+        return f7 < f10 ? f10 : f7 > f11 ? f11 : f7;
+    }
+
+    public static int b(int i10, int i11, int i12) {
+        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
     }
 }

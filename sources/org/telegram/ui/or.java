@@ -1,49 +1,54 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class or implements Runnable {
+public final /* synthetic */ class or implements org.telegram.ui.Cells.a5, org.telegram.ui.Components.vw0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qr b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ pr b;
 
-    public /* synthetic */ or(qr qrVar, String str, int i10) {
+    public /* synthetic */ or(pr prVar, int i10) {
         this.a = i10;
-        this.b = qrVar;
-        this.c = str;
+        this.b = prVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.m5 m5Var;
+    @Override // org.telegram.ui.Cells.a5
+    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        tr trVar = this.b.d;
+        return trVar.h0(trVar.a.E(((Integer) b5Var.getTag()).intValue()), !z10, b5Var);
+    }
+
+    @Override // org.telegram.ui.Components.vw0
+    public void g(int i10) {
         switch (this.a) {
-            case 0:
-                qr qrVar = this.b;
-                qrVar.getClass();
-                AndroidUtilities.runOnUIThread(new or(qrVar, this.c, 1));
+            case 1:
+                tr trVar = this.b.d;
+                if (trVar.s != null) {
+                    int i11 = trVar.p1;
+                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
+                    trVar.p1 = i10;
+                    if (z10) {
+                        mr w02 = trVar.w0();
+                        trVar.B0();
+                        trVar.A0(w02);
+                    }
+                    trVar.a.m(trVar.P0);
+                    break;
+                }
                 break;
             default:
-                qr qrVar2 = this.b;
-                qrVar2.n = null;
-                rr rrVar = qrVar2.y;
-                TLRPC.Chat chat = rrVar.r;
-                int i10 = rrVar.e1;
-                ArrayList arrayList = (ChatObject.isChannel(chat) || rrVar.s == null) ? null : new ArrayList(rrVar.s.participants.participants);
-                ArrayList arrayList2 = i10 == 1 ? new ArrayList(rrVar.getContactsController().contacts) : null;
-                String str = this.c;
-                if (arrayList == null && arrayList2 == null) {
-                    qrVar2.s = false;
-                    m5Var = null;
-                } else {
-                    m5Var = new org.telegram.ui.ActionBar.m5(qrVar2, str, arrayList, arrayList2, 14);
-                }
-                qrVar2.h.h(str, i10 != 0, false, true, false, false, ChatObject.isChannel(rrVar.r) ? rrVar.N : 0L, false, rrVar.O, 1, 0L, m5Var);
+                this.b.d.s1 = i10 + 1;
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.vw0
+    public /* synthetic */ void l() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

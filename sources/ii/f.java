@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class f implements Runnable {
                 x3 x3Var = rVar.r;
                 View A1 = x3Var.A1(aVar);
                 if (!(A1 instanceof q4)) {
-                    x3Var.f3.N(false);
+                    x3Var.W2.N(false);
                     break;
                 } else {
                     ((q4) A1).h(aVar, x3Var.getMapDelegate());
@@ -50,14 +50,14 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 6:
                 x3 x3Var2 = rVar.r;
-                ArrayList arrayList = x3.z4;
+                ArrayList arrayList = x3.q4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
                 x3Var2.V4(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 7:
                 x3 x3Var3 = rVar.r;
-                ArrayList arrayList2 = x3.z4;
+                ArrayList arrayList2 = x3.q4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
                 x3Var3.V4(this.c, pageblockpullquote, 0, 0, false, false);

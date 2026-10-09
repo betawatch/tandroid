@@ -19,14 +19,14 @@ import java.util.WeakHashMap;
 import l.k;
 import l.z;
 import m.h;
-import m.s3;
+import m.t3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
-import v7.v7;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -62,11 +62,11 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int y3 = hg.c.y(i12, measuredHeight, 2, i11);
+        int z11 = hg.c.z(i12, measuredHeight, 2, i11);
         if (z10) {
-            view.layout(i10 - measuredWidth, y3, i10, measuredHeight + y3);
+            view.layout(i10 - measuredWidth, z11, i10, measuredHeight + z11);
         } else {
-            view.layout(i10, y3, i10 + measuredWidth, measuredHeight + y3);
+            view.layout(i10, z11, i10 + measuredWidth, measuredHeight + z11);
         }
         return z10 ? -measuredWidth : measuredWidth;
     }
@@ -274,7 +274,7 @@ public class ActionBarContextView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        boolean a2 = s3.a(this);
+        boolean a2 = t3.a(this);
         int paddingRight = a2 ? (i12 - i10) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
         int paddingTop2 = ((i13 - i11) - getPaddingTop()) - getPaddingBottom();
@@ -349,13 +349,13 @@ public class ActionBarContextView extends ViewGroup {
         if (view2 != null) {
             ViewGroup.LayoutParams layoutParams = view2.getLayoutParams();
             int i15 = layoutParams.width;
-            int i16 = i15 != -2 ? TLObject.FLAG_30 : TLObject.FLAG_31;
+            int i16 = i15 != -2 ? 1073741824 : Integer.MIN_VALUE;
             if (i15 >= 0) {
                 paddingLeft = Math.min(i15, paddingLeft);
             }
             int i17 = layoutParams.height;
             if (i17 == -2) {
-                i12 = TLObject.FLAG_31;
+                i12 = Integer.MIN_VALUE;
             }
             if (i17 >= 0) {
                 i14 = Math.min(i17, i14);
@@ -425,7 +425,7 @@ public class ActionBarContextView extends ViewGroup {
     public void setTitle(CharSequence charSequence) {
         this.r = charSequence;
         d();
-        i0.l(this, charSequence);
+        i0.k(this, charSequence);
     }
 
     public void setTitleOptional(boolean z10) {
@@ -460,7 +460,7 @@ public class ActionBarContextView extends ViewGroup {
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i10, 0);
         if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = v7.b(context, resourceId);
+            drawable = s7.b(context, resourceId);
         } else {
             drawable = obtainStyledAttributes.getDrawable(0);
         }

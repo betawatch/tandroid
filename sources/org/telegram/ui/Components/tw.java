@@ -1,65 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.os.Bundle;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.EmojiData;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class tw extends FrameLayout {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ nz b;
+public final /* synthetic */ class tw implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a00 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tw(nz nzVar, Context context, boolean z10) {
-        super(context);
-        this.b = nzVar;
-        this.a = z10;
+    public /* synthetic */ tw(a00 a00Var, int i10) {
+        this.a = i10;
+        this.b = a00Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        nz nzVar = this.b;
-        ax axVar = nzVar.B0;
-        vw vwVar = nzVar.D0;
-        zw zwVar = nzVar.G0;
-        if (this.a || !(view == vwVar || view == zwVar)) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        float y3 = axVar.getY() + axVar.getMeasuredHeight() + 1.0f;
-        if (view == vwVar) {
-            y3 = Math.max(y3, zwVar.getY() + zwVar.getMeasuredHeight() + 1.0f);
-        }
-        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * nzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        nz nzVar = this.b;
-        nzVar.K0 = true;
-        nzVar.X();
-        gg.g1 g1Var = nzVar.T0;
-        if (g1Var != null) {
-            g1Var.a();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        nz nzVar = this.b;
-        nzVar.K0 = false;
-        nzVar.X();
-        gg.g1 g1Var = nzVar.T0;
-        if (g1Var != null) {
-            g1Var.a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a00 a00Var = this.b;
+                a00Var.X(false);
+                a00Var.E();
+                break;
+            case 1:
+                jy jyVar = this.b.R;
+                if (jyVar != null) {
+                    jyVar.F(true);
+                    break;
+                }
+                break;
+            case 2:
+                a00 a00Var2 = this.b;
+                az azVar = a00Var2.t1;
+                if (azVar != null) {
+                    azVar.t(a00Var2.R.h);
+                    break;
+                }
+                break;
+            case 3:
+                az azVar2 = this.b.t1;
+                if (azVar2 != null) {
+                    azVar2.q();
+                    break;
+                }
+                break;
+            case 4:
+                a00 a00Var3 = this.b;
+                a00Var3.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", UserConfig.getInstance(a00Var3.c1).getClientUserId());
+                a00Var3.Y1.presentFragment(new xx(bundle));
+                break;
+            default:
+                a00 a00Var4 = this.b;
+                ArrayList<ny> emojipacks = a00Var4.getEmojipacks();
+                for (int i10 = 0; i10 < emojipacks.size(); i10++) {
+                    if (emojipacks.get(i10).i) {
+                        int i11 = a00Var4.R.s.get(EmojiData.dataColored.length + i10);
+                        a00Var4.P.B0();
+                        a00Var4.U(i11);
+                        a00Var4.G(i11, AndroidUtilities.dp(-9.0f));
+                        a00Var4.o(0, null);
+                    }
+                }
+                break;
         }
     }
 }

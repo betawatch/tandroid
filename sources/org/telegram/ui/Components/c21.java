@@ -1,22 +1,98 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.TextureView;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c21 extends zl0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert e3;
+public final class c21 extends TextureView {
+    public static Boolean f;
+    public a21 a;
+    public final o1.a b;
+    public final ArrayList c;
+    public Runnable d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context, null);
-        this.e3 = editorAlert;
+    public c21(Context context, Runnable runnable) {
+        super(context);
+        this.b = new o1.a(this, 1);
+        this.c = new ArrayList();
+        this.d = runnable;
+        setOpaque(false);
+        setSurfaceTextureListener(new ki.d(this, 3));
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public final boolean F0(float f7) {
-        return f7 >= ((float) ((AndroidUtilities.dp(48.0f) + this.e3.E) + AndroidUtilities.statusBarHeight));
+    public static void b(Runnable runnable) {
+        if (runnable == null) {
+            return;
+        }
+        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
+            AndroidUtilities.runOnUIThread(runnable);
+        } else {
+            runnable.run();
+        }
+    }
+
+    public static boolean c() {
+        if (f == null) {
+            f = Boolean.valueOf(MessagesController.getGlobalMainSettings().getBoolean("nothanos", false));
+        }
+        Boolean bool = f;
+        return bool == null || !bool.booleanValue();
+    }
+
+    public final void a(View view) {
+        int i10 = 0;
+        int i11 = 0;
+        boolean z10 = false;
+        while (true) {
+            ArrayList arrayList = this.c;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            b21 b21Var = (b21) arrayList.get(i11);
+            if (b21Var.a == view) {
+                Runnable runnable = b21Var.d;
+                if (runnable != null) {
+                    b(runnable);
+                    b21Var.d = null;
+                }
+                arrayList.remove(i11);
+                i11--;
+                z10 = true;
+            }
+            i11++;
+        }
+        if (z10) {
+            return;
+        }
+        a21 a21Var = this.a;
+        ArrayList arrayList2 = a21Var.W;
+        if (a21Var.b.get()) {
+            Handler handler = a21Var.getHandler();
+            if (handler != null) {
+                handler.sendMessage(handler.obtainMessage(5, view));
+                return;
+            }
+            while (i10 < arrayList2.size()) {
+                z11 z11Var = (z11) arrayList2.get(i10);
+                if (z11Var.a.contains(view)) {
+                    Runnable runnable2 = z11Var.f;
+                    if (runnable2 != null) {
+                        b(runnable2);
+                        z11Var.f = null;
+                    }
+                    arrayList2.remove(i10);
+                    i10--;
+                }
+                i10++;
+            }
+        }
     }
 }

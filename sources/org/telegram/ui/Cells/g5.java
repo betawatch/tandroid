@@ -11,49 +11,49 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class g5 extends FrameLayout {
-    public final org.telegram.ui.Components.h9 a;
-    public final org.telegram.ui.Components.w9 b;
-    public final org.telegram.ui.ActionBar.i5 c;
-    public final org.telegram.ui.ActionBar.i5 d;
+    public final org.telegram.ui.Components.j9 a;
+    public final org.telegram.ui.Components.y9 b;
+    public final org.telegram.ui.ActionBar.j5 c;
+    public final org.telegram.ui.ActionBar.j5 d;
     public TLRPC.TL_chatInviteImporter e;
     public boolean f;
 
     public g5(Context context, final f5 f5Var, boolean z10) {
         super(context);
-        this.a = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getContext());
-        this.b = w9Var;
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(getContext());
-        this.c = i5Var;
-        org.telegram.ui.ActionBar.i5 i5Var2 = new org.telegram.ui.ActionBar.i5(getContext());
-        this.d = i5Var2;
-        w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(w9Var, w7.z5.d(46, 46.0f, LocaleController.isRTL ? 5 : 3, 12.0f, 8.0f, 12.0f, 0.0f));
-        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        this.a = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(getContext());
+        this.b = y9Var;
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(getContext());
+        this.c = j5Var;
+        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(getContext());
+        this.d = j5Var2;
+        y9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
+        addView(y9Var, w7.x5.a(46.0f, 12.0f, 8.0f, 12.0f, 0.0f, 46, LocaleController.isRTL ? 5 : 3));
+        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         final int i10 = 1;
-        i5Var.setMaxLines(1);
-        i5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
-        i5Var.setTextSize(17);
-        i5Var.setTypeface(AndroidUtilities.bold());
+        j5Var.setMaxLines(1);
+        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        j5Var.setTextSize(17);
+        j5Var.setTypeface(AndroidUtilities.bold());
         boolean z11 = LocaleController.isRTL;
-        addView(i5Var, w7.z5.d(-1, -2.0f, 48, z11 ? 12.0f : 74.0f, 12.0f, z11 ? 74.0f : 12.0f, 0.0f));
-        i5Var2.setGravity(LocaleController.isRTL ? 5 : 3);
-        i5Var2.setMaxLines(1);
-        i5Var2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y6, false));
-        i5Var2.setTextSize(14);
+        addView(j5Var, w7.x5.a(-2.0f, z11 ? 12.0f : 74.0f, 12.0f, z11 ? 74.0f : 12.0f, 0.0f, -1, 48));
+        j5Var2.setGravity(LocaleController.isRTL ? 5 : 3);
+        j5Var2.setMaxLines(1);
+        j5Var2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.y6, false));
+        j5Var2.setTextSize(14);
         boolean z12 = LocaleController.isRTL;
-        addView(i5Var2, w7.z5.d(-1, -2.0f, 48, z12 ? 12.0f : 74.0f, 36.0f, z12 ? 74.0f : 12.0f, 0.0f));
+        addView(j5Var2, w7.x5.a(-2.0f, z12 ? 12.0f : 74.0f, 36.0f, z12 ? 74.0f : 12.0f, 0.0f, -1, 48));
         int dp = AndroidUtilities.dp(17.0f);
         TextView textView = new TextView(getContext());
-        textView.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{16.0f}, org.telegram.ui.ActionBar.i6.Oh));
+        textView.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{16.0f}, org.telegram.ui.ActionBar.i6.Oh));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setMaxLines(1);
         textView.setPadding(dp, 0, dp, 0);
         textView.setText(LocaleController.getString(z10 ? R.string.AddToChannel : R.string.AddToGroup));
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
         textView.setTextSize(14.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.e5
@@ -75,7 +75,7 @@ public final class g5 extends FrameLayout {
                         } else {
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = g5Var.e;
                             if (tL_chatInviteImporter != null) {
-                                ((wh.n) f5Var2).d(tL_chatInviteImporter, true);
+                                ((wh.l) f5Var2).d(tL_chatInviteImporter, true);
                                 break;
                             }
                         }
@@ -89,7 +89,7 @@ public final class g5 extends FrameLayout {
                         } else {
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter2 = g5Var2.e;
                             if (tL_chatInviteImporter2 != null) {
-                                ((wh.n) f5Var3).d(tL_chatInviteImporter2, false);
+                                ((wh.l) f5Var3).d(tL_chatInviteImporter2, false);
                                 break;
                             }
                         }
@@ -98,16 +98,16 @@ public final class g5 extends FrameLayout {
             }
         });
         boolean z13 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-2, 32.0f, z13 ? 5 : 3, z13 ? 0.0f : 73.0f, 62.0f, z13 ? 73.0f : 0.0f, 0.0f));
+        addView(textView, w7.x5.a(32.0f, z13 ? 0.0f : 73.0f, 62.0f, z13 ? 73.0f : 0.0f, 0.0f, -2, z13 ? 5 : 3));
         float measureText = textView.getPaint().measureText(textView.getText().toString()) + (dp * 2);
         TextView textView2 = new TextView(getContext());
         int dp2 = AndroidUtilities.dp(16.0f);
-        textView2.setBackground(org.telegram.ui.ActionBar.i6.i0(dp2, dp2, dp2, dp2, 0, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), -16777216));
+        textView2.setBackground(org.telegram.ui.ActionBar.i6.j0(dp2, dp2, dp2, dp2, 0, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.i6, false), -16777216));
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView2.setMaxLines(1);
         textView2.setPadding(dp, 0, dp, 0);
         textView2.setText(LocaleController.getString(R.string.Dismiss));
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n6, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.n6, false));
         textView2.setTextSize(14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.e5
@@ -129,7 +129,7 @@ public final class g5 extends FrameLayout {
                         } else {
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = g5Var.e;
                             if (tL_chatInviteImporter != null) {
-                                ((wh.n) f5Var2).d(tL_chatInviteImporter, true);
+                                ((wh.l) f5Var2).d(tL_chatInviteImporter, true);
                                 break;
                             }
                         }
@@ -143,7 +143,7 @@ public final class g5 extends FrameLayout {
                         } else {
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter2 = g5Var2.e;
                             if (tL_chatInviteImporter2 != null) {
-                                ((wh.n) f5Var3).d(tL_chatInviteImporter2, false);
+                                ((wh.l) f5Var3).d(tL_chatInviteImporter2, false);
                                 break;
                             }
                         }
@@ -158,7 +158,7 @@ public final class g5 extends FrameLayout {
         addView(textView2, layoutParams);
     }
 
-    public org.telegram.ui.Components.w9 getAvatarImageView() {
+    public org.telegram.ui.Components.y9 getAvatarImageView() {
         return this.b;
     }
 

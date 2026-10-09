@@ -1,34 +1,52 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import android.text.TextUtils;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements Runnable {
+public final /* synthetic */ class yk implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jl b;
-    public final /* synthetic */ IMapsProvider.IMapView c;
+    public final /* synthetic */ gl b;
 
-    public /* synthetic */ yk(jl jlVar, IMapsProvider.IMapView iMapView, int i10) {
+    public /* synthetic */ yk(gl glVar, int i10) {
         this.a = i10;
-        this.b = jlVar;
-        this.c = iMapView;
+        this.b = glVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                jl.Q(this.b, this.c);
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                String str = (String) obj2;
+                gl glVar = this.b;
+                TLRPC.User user = glVar.r;
+                if (!glVar.H) {
+                    glVar.F = false;
+                    if (TextUtils.equals(str, "WALLET_USER_UNAVAILABLE")) {
+                        glVar.G = true;
+                    }
+                    if (walletuseraddress != null && walletuseraddress.user_id == user.id) {
+                        glVar.y = walletuseraddress.address;
+                        glVar.E = walletuseraddress.public_key;
+                    }
+                    glVar.v.a(glVar.y, user);
+                    glVar.g0();
+                    glVar.Y();
+                    break;
+                }
                 break;
             default:
-                IMapsProvider.IMapView iMapView = this.c;
-                try {
-                    iMapView.onCreate(null);
-                } catch (Exception unused) {
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                gl glVar2 = this.b;
+                if (!glVar2.H && wallettransaction != null) {
+                    glVar2.d0 = wallettransaction.fee;
+                    glVar2.h0();
+                    break;
                 }
-                AndroidUtilities.runOnUIThread(new yk(this.b, iMapView, 0));
                 break;
         }
     }

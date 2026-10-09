@@ -1,46 +1,33 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FilePathDatabase b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ CountDownLatch e;
 
-    public /* synthetic */ h3(FilePathDatabase filePathDatabase, long j3, int i10, int i11, String str, int i12) {
-        this.f = filePathDatabase;
-        this.c = j3;
-        this.b = i10;
-        this.d = i11;
-        this.h = str;
-        this.e = i12;
+    public /* synthetic */ h3(FilePathDatabase filePathDatabase, String str, boolean[] zArr, CountDownLatch countDownLatch, int i10) {
+        this.a = i10;
+        this.b = filePathDatabase;
+        this.c = str;
+        this.d = zArr;
+        this.e = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FilePathDatabase) this.f).lambda$putPath$1(this.c, this.b, this.d, (String) this.h, this.e);
+                this.b.lambda$isLocallyCreated$8(this.c, this.d, this.e);
                 break;
             default:
-                ((MessagesStorage) this.f).lambda$updateRepliesCount$194(this.b, this.c, this.d, (ArrayList) this.h, this.e);
+                this.b.lambda$hasAnotherRefOnFile$4(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ h3(MessagesStorage messagesStorage, int i10, long j3, int i11, ArrayList arrayList, int i12) {
-        this.f = messagesStorage;
-        this.b = i10;
-        this.c = j3;
-        this.d = i11;
-        this.h = arrayList;
-        this.e = i12;
     }
 }

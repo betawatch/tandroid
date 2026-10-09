@@ -1,14 +1,14 @@
 package qg;
 
-import org.telegram.ui.vt0;
+import org.telegram.ui.bu0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class f0 implements c {
-    public final /* synthetic */ vt0 a;
+    public final /* synthetic */ bu0 a;
 
-    public f0(vt0 vt0Var) {
-        this.a = vt0Var;
+    public f0(bu0 bu0Var) {
+        this.a = bu0Var;
     }
 
     @Override // qg.c

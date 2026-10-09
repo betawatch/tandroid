@@ -1,10 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ThemeEditorView;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l21 extends iq {
-    @Override // org.telegram.ui.Components.iq
-    public final int a() {
-        return -6182737;
+public final class l21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
+
+    public l21(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        editorAlert.c.setVisibility(4);
+        editorAlert.f.setVisibility(4);
+        editorAlert.s.setVisibility(4);
+        editorAlert.H = false;
     }
 }

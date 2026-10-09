@@ -3,9 +3,9 @@ package com.google.android.gms.common.api;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.f0;
+import w7.c0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class t implements Parcelable.Creator {
     public static final t b = new t(0);
@@ -24,80 +24,80 @@ public final class t implements Parcelable.Creator {
                     parcel.setDataPosition(dataPosition - 4);
                     return g.b;
                 }
-                int z10 = f0.z(parcel);
+                int z10 = c0.z(parcel);
                 h hVar = null;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     if (((char) readInt) != 1) {
-                        f0.y(parcel, readInt);
+                        c0.y(parcel, readInt);
                     } else {
-                        hVar = (h) f0.g(parcel, readInt, h.CREATOR);
+                        hVar = (h) c0.g(parcel, readInt, h.CREATOR);
                     }
                 }
-                f0.m(parcel, z10);
+                c0.m(parcel, z10);
                 return new g(hVar);
             case 1:
-                int z11 = f0.z(parcel);
+                int z11 = c0.z(parcel);
                 int i10 = 0;
+                boolean z12 = true;
                 int i11 = 0;
                 int i12 = 0;
-                boolean z12 = true;
                 while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
                     char c10 = (char) readInt2;
                     if (c10 == 1) {
-                        i10 = f0.u(parcel, readInt2);
+                        i10 = c0.u(parcel, readInt2);
                     } else if (c10 == 2) {
-                        i11 = f0.u(parcel, readInt2);
+                        i11 = c0.u(parcel, readInt2);
                     } else if (c10 == 3) {
-                        i12 = f0.u(parcel, readInt2);
+                        i12 = c0.u(parcel, readInt2);
                     } else if (c10 != 4) {
-                        f0.y(parcel, readInt2);
+                        c0.y(parcel, readInt2);
                     } else {
-                        z12 = f0.n(parcel, readInt2);
+                        z12 = c0.n(parcel, readInt2);
                     }
                 }
-                f0.m(parcel, z11);
+                c0.m(parcel, z11);
                 return new h(i10, i11, i12, z12);
             case 2:
-                int z13 = f0.z(parcel);
+                int z13 = c0.z(parcel);
                 String str = null;
                 int i13 = 0;
                 while (parcel.dataPosition() < z13) {
                     int readInt3 = parcel.readInt();
                     char c11 = (char) readInt3;
                     if (c11 == 1) {
-                        i13 = f0.u(parcel, readInt3);
+                        i13 = c0.u(parcel, readInt3);
                     } else if (c11 != 2) {
-                        f0.y(parcel, readInt3);
+                        c0.y(parcel, readInt3);
                     } else {
-                        str = f0.h(parcel, readInt3);
+                        str = c0.h(parcel, readInt3);
                     }
                 }
-                f0.m(parcel, z13);
+                c0.m(parcel, z13);
                 return new Scope(i13, str);
             default:
-                int z14 = f0.z(parcel);
+                int z14 = c0.z(parcel);
                 String str2 = null;
-                PendingIntent pendingIntent = null;
                 k6.a aVar = null;
                 int i14 = 0;
+                PendingIntent pendingIntent = null;
                 while (parcel.dataPosition() < z14) {
                     int readInt4 = parcel.readInt();
                     char c12 = (char) readInt4;
                     if (c12 == 1) {
-                        i14 = f0.u(parcel, readInt4);
+                        i14 = c0.u(parcel, readInt4);
                     } else if (c12 == 2) {
-                        str2 = f0.h(parcel, readInt4);
+                        str2 = c0.h(parcel, readInt4);
                     } else if (c12 == 3) {
-                        pendingIntent = (PendingIntent) f0.g(parcel, readInt4, PendingIntent.CREATOR);
+                        pendingIntent = (PendingIntent) c0.g(parcel, readInt4, PendingIntent.CREATOR);
                     } else if (c12 != 4) {
-                        f0.y(parcel, readInt4);
+                        c0.y(parcel, readInt4);
                     } else {
-                        aVar = (k6.a) f0.g(parcel, readInt4, k6.a.CREATOR);
+                        aVar = (k6.a) c0.g(parcel, readInt4, k6.a.CREATOR);
                     }
                 }
-                f0.m(parcel, z14);
+                c0.m(parcel, z14);
                 return new Status(i14, str2, pendingIntent, aVar);
         }
     }

@@ -1,632 +1,301 @@
 package u2;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.util.Base64;
-import android.util.JsonReader;
-import android.util.Log;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import java.io.File;
+import i2.q1;
+import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.zv0;
-import org.telegram.ui.zg1;
-import xh.h4;
-import yh.w7;
-import yh.y3;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation, q9.d, a2, GenericProvider, Vector.TLDeserializer, zv0, z9.b {
-    public final /* synthetic */ int a;
+public final class l0 implements d0, c0 {
+    public final d0[] a;
+    public final boolean[] b;
+    public final IdentityHashMap c;
+    public final t7.t d;
+    public final ArrayList e = new ArrayList();
+    public final HashMap f = new HashMap();
+    public c0 h;
+    public o1 n;
+    public d0[] r;
+    public n s;
 
-    public /* synthetic */ l0(int i10) {
-        this.a = i10;
-    }
-
-    public static /* bridge */ /* synthetic */ FingerprintManager b(Object obj) {
-        return (FingerprintManager) obj;
-    }
-
-    @Override // q9.d
-    public Object E(cf.c cVar) {
-        Set q6 = cVar.q(xa.a.class);
-        xa.c cVar2 = xa.c.c;
-        if (cVar2 == null) {
-            synchronized (xa.c.class) {
-                try {
-                    cVar2 = xa.c.c;
-                    if (cVar2 == null) {
-                        cVar2 = new xa.c(0);
-                        xa.c.c = cVar2;
-                    }
-                } finally {
-                }
+    public l0(t7.t tVar, long[] jArr, d0... d0VarArr) {
+        this.d = tVar;
+        this.a = d0VarArr;
+        tVar.getClass();
+        e9.g0 g0Var = e9.i0.b;
+        e9.a1 a1Var = e9.a1.e;
+        this.s = new n(a1Var, a1Var);
+        this.c = new IdentityHashMap();
+        this.r = new d0[0];
+        this.b = new boolean[d0VarArr.length];
+        for (int i10 = 0; i10 < d0VarArr.length; i10++) {
+            long j3 = jArr[i10];
+            if (j3 != 0) {
+                this.b[i10] = true;
+                this.a[i10] = new n1(d0VarArr[i10], j3);
             }
         }
-        return new xa.b(q6, cVar2);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // z9.b
-    public Object a(JsonReader jsonReader) {
-        String str;
-        char c10;
-        char c11;
-        boolean z10 = false;
-        String str2 = null;
-        switch (this.a) {
-            case 27:
-                jsonReader.beginObject();
-                String str3 = null;
-                String str4 = null;
-                while (jsonReader.hasNext()) {
-                    String nextName = jsonReader.nextName();
-                    nextName.getClass();
-                    switch (nextName.hashCode()) {
-                        case -609862170:
-                            if (nextName.equals("libraryName")) {
-                                c10 = 0;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 3002454:
-                            if (nextName.equals("arch")) {
-                                c10 = 1;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        case 230943785:
-                            if (nextName.equals("buildId")) {
-                                c10 = 2;
-                                break;
-                            }
-                            c10 = 65535;
-                            break;
-                        default:
-                            c10 = 65535;
-                            break;
-                    }
-                    switch (c10) {
-                        case 0:
-                            str3 = jsonReader.nextString();
-                            if (str3 == null) {
-                                throw new NullPointerException("Null libraryName");
-                            }
-                            break;
-                        case 1:
-                            str2 = jsonReader.nextString();
-                            if (str2 == null) {
-                                throw new NullPointerException("Null arch");
-                            }
-                            break;
-                        case 2:
-                            str4 = jsonReader.nextString();
-                            if (str4 == null) {
-                                throw new NullPointerException("Null buildId");
-                            }
-                            break;
-                        default:
-                            jsonReader.skipValue();
-                            break;
-                    }
-                }
-                jsonReader.endObject();
-                str = str2 == null ? " arch" : "";
-                if (str3 == null) {
-                    str = str.concat(" libraryName");
-                }
-                if (str4 == null) {
-                    str = sa.e.v(str, " buildId");
-                }
-                if (str.isEmpty()) {
-                    return new y9.c0(str2, str3, str4);
-                }
-                throw new IllegalStateException("Missing required properties:".concat(str));
-            case 28:
-                jsonReader.beginObject();
-                byte[] bArr = null;
-                while (jsonReader.hasNext()) {
-                    String nextName2 = jsonReader.nextName();
-                    nextName2.getClass();
-                    if (nextName2.equals("filename")) {
-                        String nextString = jsonReader.nextString();
-                        if (nextString == null) {
-                            throw new NullPointerException("Null filename");
-                        }
-                        str2 = nextString;
-                    } else if (nextName2.equals("contents")) {
-                        bArr = Base64.decode(jsonReader.nextString(), 2);
-                        if (bArr == null) {
-                            throw new NullPointerException("Null contents");
-                        }
-                    } else {
-                        jsonReader.skipValue();
-                    }
-                }
-                jsonReader.endObject();
-                str = str2 == null ? " filename" : "";
-                if (bArr == null) {
-                    str = str.concat(" contents");
-                }
-                if (str.isEmpty()) {
-                    return new y9.f0(str2, bArr);
-                }
-                throw new IllegalStateException("Missing required properties:".concat(str));
-            default:
-                com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(13, z10);
-                jsonReader.beginObject();
-                while (jsonReader.hasNext()) {
-                    String nextName3 = jsonReader.nextName();
-                    nextName3.getClass();
-                    switch (nextName3.hashCode()) {
-                        case -1536268810:
-                            if (nextName3.equals("parameterKey")) {
-                                c11 = 0;
-                                break;
-                            }
-                            c11 = 65535;
-                            break;
-                        case -1027290370:
-                            if (nextName3.equals("templateVersion")) {
-                                c11 = 1;
-                                break;
-                            }
-                            c11 = 65535;
-                            break;
-                        case 1098747284:
-                            if (nextName3.equals("rolloutVariant")) {
-                                c11 = 2;
-                                break;
-                            }
-                            c11 = 65535;
-                            break;
-                        case 1124454216:
-                            if (nextName3.equals("parameterValue")) {
-                                c11 = 3;
-                                break;
-                            }
-                            c11 = 65535;
-                            break;
-                        default:
-                            c11 = 65535;
-                            break;
-                    }
-                    switch (c11) {
-                        case 0:
-                            String nextString2 = jsonReader.nextString();
-                            if (nextString2 == null) {
-                                throw new NullPointerException("Null parameterKey");
-                            }
-                            sVar.b = nextString2;
-                            break;
-                        case 1:
-                            sVar.e = Long.valueOf(jsonReader.nextLong());
-                            break;
-                        case 2:
-                            jsonReader.beginObject();
-                            String str5 = null;
-                            String str6 = null;
-                            while (jsonReader.hasNext()) {
-                                String nextName4 = jsonReader.nextName();
-                                nextName4.getClass();
-                                if (nextName4.equals("variantId")) {
-                                    str6 = jsonReader.nextString();
-                                    if (str6 == null) {
-                                        throw new NullPointerException("Null variantId");
-                                    }
-                                } else if (nextName4.equals("rolloutId")) {
-                                    str5 = jsonReader.nextString();
-                                    if (str5 == null) {
-                                        throw new NullPointerException("Null rolloutId");
-                                    }
-                                } else {
-                                    jsonReader.skipValue();
-                                }
-                            }
-                            jsonReader.endObject();
-                            String str7 = str5 == null ? " rolloutId" : "";
-                            if (str6 == null) {
-                                str7 = str7.concat(" variantId");
-                            }
-                            if (!str7.isEmpty()) {
-                                throw new IllegalStateException("Missing required properties:".concat(str7));
-                            }
-                            sVar.c = new y9.x0(str5, str6);
-                            break;
-                        case 3:
-                            String nextString3 = jsonReader.nextString();
-                            if (nextString3 == null) {
-                                throw new NullPointerException("Null parameterValue");
-                            }
-                            sVar.d = nextString3;
-                            break;
-                        default:
-                            jsonReader.skipValue();
-                            break;
-                    }
-                }
-                jsonReader.endObject();
-                return sVar.b();
+    @Override // u2.c1
+    public final void D(d1 d1Var) {
+        c0 c0Var = this.h;
+        c0Var.getClass();
+        c0Var.D(this);
+    }
+
+    @Override // u2.d1
+    public final boolean c() {
+        return this.s.c();
+    }
+
+    @Override // u2.d1
+    public final long d() {
+        return this.s.d();
+    }
+
+    @Override // u2.d0
+    public final void g() {
+        for (d0 d0Var : this.a) {
+            d0Var.g();
         }
     }
 
-    @Override // e2.h
-    public void accept(Object obj) {
-        switch (this.a) {
-            case 1:
-                ((z0) obj).b.release();
-                break;
-            default:
-                ((ExecutorService) obj).shutdown();
-                break;
+    @Override // u2.d0
+    public final long h(long j3) {
+        long h = this.r[0].h(j3);
+        int i10 = 1;
+        while (true) {
+            d0[] d0VarArr = this.r;
+            if (i10 >= d0VarArr.length) {
+                return h;
+            }
+            if (d0VarArr[i10].h(h) != h) {
+                throw new IllegalStateException("Unexpected child seekToUs result.");
+            }
+            i10++;
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0141  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0152  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0162  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01a8  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01bd  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01db  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x01f4  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x01e2  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x018b  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0137  */
-    /* JADX WARN: Type inference failed for: r2v3, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r2v31, types: [android.text.Spannable, android.text.SpannableString] */
-    /* JADX WARN: Type inference failed for: r2v4 */
-    /* JADX WARN: Type inference failed for: r2v5 */
-    @Override // d9.e, i5.e
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Object apply(Object obj) {
-        CharSequence charSequence;
-        Bitmap bitmap;
-        String str;
-        float f7;
-        int i10;
-        String str2;
-        int i11;
-        float f10;
-        String str3;
-        boolean z10;
-        int i12;
-        switch (this.a) {
-            case 0:
-                return e9.i0.v(e9.q.w(((d0) obj).o().b, new l0(2)));
-            case 2:
-                return Integer.valueOf(((b2.l1) obj).c);
-            case 9:
-                return Long.valueOf(((z3.a) obj).b);
-            case 10:
-                return Long.valueOf(((z3.a) obj).c);
-            case 11:
-                return (w3.o) obj;
-            case 14:
-                p1 p1Var = (p1) obj;
-                p1Var.getClass();
-                Bundle bundle = new Bundle();
-                String str4 = p1.e;
-                e9.a1 a1Var = p1Var.b;
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>(a1Var.d);
-                e9.g0 listIterator = a1Var.listIterator(0);
-                while (listIterator.hasNext()) {
-                    arrayList.add(((b2.l1) listIterator.next()).c());
-                }
-                bundle.putParcelableArrayList(str4, arrayList);
-                return bundle;
-            case 25:
-                Bundle bundle2 = (Bundle) obj;
-                ?? charSequence2 = bundle2.getCharSequence(d2.b.s);
-                int i13 = 1;
-                if (charSequence2 != 0) {
-                    ArrayList parcelableArrayList = bundle2.getParcelableArrayList(d2.b.t);
-                    if (parcelableArrayList != null) {
-                        charSequence2 = SpannableString.valueOf(charSequence2);
-                        int size = parcelableArrayList.size();
-                        int i14 = 0;
-                        while (i14 < size) {
-                            Object obj2 = parcelableArrayList.get(i14);
-                            i14++;
-                            Bundle bundle3 = (Bundle) obj2;
-                            int i15 = bundle3.getInt(d2.e.a);
-                            int i16 = bundle3.getInt(d2.e.b);
-                            int i17 = bundle3.getInt(d2.e.c);
-                            int i18 = bundle3.getInt(d2.e.d, -1);
-                            Bundle bundle4 = bundle3.getBundle(d2.e.e);
-                            if (i18 == i13) {
-                                bundle4.getClass();
-                                String string = bundle4.getString(d2.g.c);
-                                string.getClass();
-                                charSequence2.setSpan(new d2.g(string, bundle4.getInt(d2.g.d)), i15, i16, i17);
-                            } else if (i18 == 2) {
-                                bundle4.getClass();
-                                charSequence2.setSpan(new d2.h(bundle4.getInt(d2.h.d), bundle4.getInt(d2.h.e), bundle4.getInt(d2.h.f)), i15, i16, i17);
-                            } else if (i18 == 3) {
-                                charSequence2.setSpan(new d2.f(), i15, i16, i17);
-                            } else if (i18 == 4) {
-                                bundle4.getClass();
-                                String string2 = bundle4.getString(d2.i.b);
-                                string2.getClass();
-                                charSequence2.setSpan(new d2.i(string2), i15, i16, i17);
-                            }
-                            i13 = 1;
-                        }
-                    }
-                } else {
-                    charSequence2 = 0;
-                }
-                Layout.Alignment alignment = (Layout.Alignment) bundle2.getSerializable(d2.b.u);
-                Layout.Alignment alignment2 = alignment != null ? alignment : null;
-                Layout.Alignment alignment3 = (Layout.Alignment) bundle2.getSerializable(d2.b.v);
-                Layout.Alignment alignment4 = alignment3 != null ? alignment3 : null;
-                Bitmap bitmap2 = (Bitmap) bundle2.getParcelable(d2.b.w);
-                if (bitmap2 != null) {
-                    bitmap = bitmap2;
-                } else {
-                    byte[] byteArray = bundle2.getByteArray(d2.b.x);
-                    if (byteArray == null) {
-                        charSequence = charSequence2;
-                        bitmap = null;
-                        str = d2.b.y;
-                        if (bundle2.containsKey(str)) {
-                            String str5 = d2.b.z;
-                            if (bundle2.containsKey(str5)) {
-                                f7 = bundle2.getFloat(str);
-                                i10 = bundle2.getInt(str5);
-                                String str6 = d2.b.A;
-                                int i19 = bundle2.containsKey(str6) ? bundle2.getInt(str6) : TLObject.FLAG_31;
-                                String str7 = d2.b.B;
-                                float f11 = bundle2.containsKey(str7) ? bundle2.getFloat(str7) : -3.4028235E38f;
-                                String str8 = d2.b.C;
-                                int i20 = bundle2.containsKey(str8) ? bundle2.getInt(str8) : TLObject.FLAG_31;
-                                str2 = d2.b.E;
-                                if (bundle2.containsKey(str2)) {
-                                    String str9 = d2.b.D;
-                                    if (bundle2.containsKey(str9)) {
-                                        f10 = bundle2.getFloat(str2);
-                                        i11 = bundle2.getInt(str9);
-                                        String str10 = d2.b.F;
-                                        float f12 = !bundle2.containsKey(str10) ? bundle2.getFloat(str10) : -3.4028235E38f;
-                                        String str11 = d2.b.G;
-                                        float f13 = !bundle2.containsKey(str11) ? bundle2.getFloat(str11) : -3.4028235E38f;
-                                        str3 = d2.b.H;
-                                        if (bundle2.containsKey(str3)) {
-                                            z10 = false;
-                                            i12 = -16777216;
-                                        } else {
-                                            i12 = bundle2.getInt(str3);
-                                            z10 = true;
-                                        }
-                                        boolean z11 = bundle2.getBoolean(d2.b.I, false) ? false : z10;
-                                        String str12 = d2.b.J;
-                                        int i21 = !bundle2.containsKey(str12) ? bundle2.getInt(str12) : TLObject.FLAG_31;
-                                        String str13 = d2.b.K;
-                                        float f14 = !bundle2.containsKey(str13) ? bundle2.getFloat(str13) : 0.0f;
-                                        String str14 = d2.b.L;
-                                        return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str14) ? bundle2.getInt(str14) : 0);
-                                    }
-                                }
-                                i11 = TLObject.FLAG_31;
-                                f10 = -3.4028235E38f;
-                                String str102 = d2.b.F;
-                                if (!bundle2.containsKey(str102)) {
-                                }
-                                String str112 = d2.b.G;
-                                if (!bundle2.containsKey(str112)) {
-                                }
-                                str3 = d2.b.H;
-                                if (bundle2.containsKey(str3)) {
-                                }
-                                if (bundle2.getBoolean(d2.b.I, false)) {
-                                }
-                                String str122 = d2.b.J;
-                                if (!bundle2.containsKey(str122)) {
-                                }
-                                String str132 = d2.b.K;
-                                if (!bundle2.containsKey(str132)) {
-                                }
-                                String str142 = d2.b.L;
-                                return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str142) ? bundle2.getInt(str142) : 0);
-                            }
-                        }
-                        f7 = -3.4028235E38f;
-                        i10 = TLObject.FLAG_31;
-                        String str62 = d2.b.A;
-                        if (bundle2.containsKey(str62)) {
-                        }
-                        String str72 = d2.b.B;
-                        if (bundle2.containsKey(str72)) {
-                        }
-                        String str82 = d2.b.C;
-                        if (bundle2.containsKey(str82)) {
-                        }
-                        str2 = d2.b.E;
-                        if (bundle2.containsKey(str2)) {
-                        }
-                        i11 = TLObject.FLAG_31;
-                        f10 = -3.4028235E38f;
-                        String str1022 = d2.b.F;
-                        if (!bundle2.containsKey(str1022)) {
-                        }
-                        String str1122 = d2.b.G;
-                        if (!bundle2.containsKey(str1122)) {
-                        }
-                        str3 = d2.b.H;
-                        if (bundle2.containsKey(str3)) {
-                        }
-                        if (bundle2.getBoolean(d2.b.I, false)) {
-                        }
-                        String str1222 = d2.b.J;
-                        if (!bundle2.containsKey(str1222)) {
-                        }
-                        String str1322 = d2.b.K;
-                        if (!bundle2.containsKey(str1322)) {
-                        }
-                        String str1422 = d2.b.L;
-                        return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str1422) ? bundle2.getInt(str1422) : 0);
-                    }
-                    bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-                }
-                charSequence = null;
-                str = d2.b.y;
-                if (bundle2.containsKey(str)) {
-                }
-                f7 = -3.4028235E38f;
-                i10 = TLObject.FLAG_31;
-                String str622 = d2.b.A;
-                if (bundle2.containsKey(str622)) {
-                }
-                String str722 = d2.b.B;
-                if (bundle2.containsKey(str722)) {
-                }
-                String str822 = d2.b.C;
-                if (bundle2.containsKey(str822)) {
-                }
-                str2 = d2.b.E;
-                if (bundle2.containsKey(str2)) {
-                }
-                i11 = TLObject.FLAG_31;
-                f10 = -3.4028235E38f;
-                String str10222 = d2.b.F;
-                if (!bundle2.containsKey(str10222)) {
-                }
-                String str11222 = d2.b.G;
-                if (!bundle2.containsKey(str11222)) {
-                }
-                str3 = d2.b.H;
-                if (bundle2.containsKey(str3)) {
-                }
-                if (bundle2.getBoolean(d2.b.I, false)) {
-                }
-                String str12222 = d2.b.J;
-                if (!bundle2.containsKey(str12222)) {
-                }
-                String str13222 = d2.b.K;
-                if (!bundle2.containsKey(str13222)) {
-                }
-                String str14222 = d2.b.L;
-                return new d2.b(charSequence, alignment2, alignment4, bitmap, f7, i10, i19, f11, i20, i11, f10, f12, f13, z11, i12, i21, f14, !bundle2.containsKey(str14222) ? bundle2.getInt(str14222) : 0);
-            default:
-                long j3 = ((z3.a) obj).b;
+    @Override // u2.d0
+    public final void i(long j3) {
+        for (d0 d0Var : this.r) {
+            d0Var.i(j3);
+        }
+    }
+
+    @Override // u2.d0
+    public final void k(c0 c0Var, long j3) {
+        this.h = c0Var;
+        ArrayList arrayList = this.e;
+        d0[] d0VarArr = this.a;
+        Collections.addAll(arrayList, d0VarArr);
+        for (d0 d0Var : d0VarArr) {
+            d0Var.k(this, j3);
+        }
+    }
+
+    @Override // u2.d0
+    public final long l() {
+        long j3 = -9223372036854775807L;
+        for (d0 d0Var : this.r) {
+            long l4 = d0Var.l();
+            if (l4 != -9223372036854775807L) {
                 if (j3 == -9223372036854775807L) {
-                    j3 = 0;
+                    for (d0 d0Var2 : this.r) {
+                        if (d0Var2 == d0Var) {
+                            break;
+                        }
+                        if (d0Var2.h(l4) != l4) {
+                            throw new IllegalStateException("Unexpected child seekToUs result.");
+                        }
+                    }
+                    j3 = l4;
+                } else if (l4 != j3) {
+                    throw new IllegalStateException("Conflicting discontinuities.");
                 }
-                return Long.valueOf(j3);
+            } else if (j3 != -9223372036854775807L && d0Var.h(j3) != j3) {
+                throw new IllegalStateException("Unexpected child seekToUs result.");
+            }
+        }
+        return j3;
+    }
+
+    @Override // u2.c0
+    public final void m(d0 d0Var) {
+        ArrayList arrayList = this.e;
+        arrayList.remove(d0Var);
+        if (arrayList.isEmpty()) {
+            d0[] d0VarArr = this.a;
+            int i10 = 0;
+            for (d0 d0Var2 : d0VarArr) {
+                i10 += d0Var2.p().a;
+            }
+            b2.l1[] l1VarArr = new b2.l1[i10];
+            int i11 = 0;
+            for (int i12 = 0; i12 < d0VarArr.length; i12++) {
+                o1 p5 = d0VarArr[i12].p();
+                int i13 = p5.a;
+                int i14 = 0;
+                while (i14 < i13) {
+                    b2.l1 a2 = p5.a(i14);
+                    int i15 = a2.a;
+                    b2.s[] sVarArr = new b2.s[i15];
+                    for (int i16 = 0; i16 < i15; i16++) {
+                        b2.s sVar = a2.d[i16];
+                        b2.r a10 = sVar.a();
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(i12);
+                        sb2.append(":");
+                        String str = sVar.a;
+                        if (str == null) {
+                            str = "";
+                        }
+                        sb2.append(str);
+                        a10.a = sb2.toString();
+                        sVarArr[i16] = new b2.s(a10);
+                    }
+                    b2.l1 l1Var = new b2.l1(i12 + ":" + a2.b, sVarArr);
+                    this.f.put(l1Var, a2);
+                    l1VarArr[i11] = l1Var;
+                    i14++;
+                    i11++;
+                }
+            }
+            this.n = new o1(l1VarArr);
+            c0 c0Var = this.h;
+            c0Var.getClass();
+            c0Var.m(this);
         }
     }
 
-    @Override // q3.g
-    public boolean c(int i10, int i11, int i12, int i13, int i14) {
-        if (i11 == 67 && i12 == 79 && i13 == 77 && (i14 == 77 || i10 == 2)) {
-            return true;
+    @Override // u2.d1
+    public final boolean n(i2.s0 s0Var) {
+        ArrayList arrayList = this.e;
+        if (arrayList.isEmpty()) {
+            return this.s.n(s0Var);
         }
-        if (i11 == 77 && i12 == 76 && i13 == 76) {
-            return i14 == 84 || i10 == 2;
+        int size = arrayList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            ((d0) arrayList.get(i10)).n(s0Var);
         }
         return false;
     }
 
-    @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-        return TLRPC.MessageReplyHeader.TLdeserialize(inputSerializedData, i10, z10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(b2 b2Var, int i10) {
-        switch (this.a) {
-            case 17:
-                b2Var.dismiss();
+    @Override // u2.d0
+    public final long o(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
+        IdentityHashMap identityHashMap;
+        int[] iArr;
+        int[] iArr2 = new int[rVarArr.length];
+        int[] iArr3 = new int[rVarArr.length];
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            int length = rVarArr.length;
+            identityHashMap = this.c;
+            if (i11 >= length) {
                 break;
-            case 18:
-                b2Var.dismiss();
-                break;
-            case 22:
-                y3.d2(new zg1(6, null));
-                break;
-            default:
-                int i11 = y3.q1;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public /* synthetic */ float h(RecyclerView recyclerView) {
-        return org.telegram.ui.Cells.c1.c(recyclerView);
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public RecyclerView i(View view) {
-        return ((w7) view).a;
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public /* synthetic */ void n(RecyclerView recyclerView) {
-        org.telegram.ui.Cells.c1.b(recyclerView);
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        int i10 = h4.k0;
-        return 0;
-    }
-
-    @Override // com.google.android.gms.tasks.Continuation
-    public Object then(Task task) {
-        boolean z10;
-        if (task.isSuccessful()) {
-            w9.b bVar = (w9.b) task.getResult();
-            String str = "Crashlytics report successfully enqueued to DataTransport: " + bVar.b;
-            t9.b bVar2 = t9.b.a;
-            bVar2.b(str);
-            File file = bVar.c;
-            z10 = true;
-            if (file.delete()) {
-                bVar2.b("Deleted report file: " + file.getPath());
-            } else {
-                bVar2.d("Crashlytics could not delete report file: " + file.getPath(), null);
             }
-        } else {
-            Log.w("FirebaseCrashlytics", "Crashlytics report could not be enqueued to DataTransport", task.getException());
-            z10 = false;
+            b1 b1Var = b1VarArr[i11];
+            Integer num = b1Var == null ? null : (Integer) identityHashMap.get(b1Var);
+            iArr2[i11] = num == null ? -1 : num.intValue();
+            x2.r rVar = rVarArr[i11];
+            if (rVar != null) {
+                String str = rVar.b().b;
+                iArr3[i11] = Integer.parseInt(str.substring(0, str.indexOf(":")));
+            } else {
+                iArr3[i11] = -1;
+            }
+            i11++;
         }
-        return Boolean.valueOf(z10);
+        identityHashMap.clear();
+        int length2 = rVarArr.length;
+        b1[] b1VarArr2 = new b1[length2];
+        b1[] b1VarArr3 = new b1[rVarArr.length];
+        x2.r[] rVarArr2 = new x2.r[rVarArr.length];
+        d0[] d0VarArr = this.a;
+        ArrayList arrayList = new ArrayList(d0VarArr.length);
+        long j10 = j3;
+        int i12 = 0;
+        while (i12 < d0VarArr.length) {
+            int i13 = i10;
+            while (i13 < rVarArr.length) {
+                b1VarArr3[i13] = iArr2[i13] == i12 ? b1VarArr[i13] : null;
+                if (iArr3[i13] == i12) {
+                    x2.r rVar2 = rVarArr[i13];
+                    rVar2.getClass();
+                    iArr = iArr2;
+                    b2.l1 l1Var = (b2.l1) this.f.get(rVar2.b());
+                    l1Var.getClass();
+                    rVarArr2[i13] = new k0(rVar2, l1Var);
+                } else {
+                    iArr = iArr2;
+                    rVarArr2[i13] = null;
+                }
+                i13++;
+                iArr2 = iArr;
+            }
+            int[] iArr4 = iArr2;
+            d0[] d0VarArr2 = d0VarArr;
+            int i14 = i12;
+            long o9 = d0VarArr2[i12].o(rVarArr2, zArr, b1VarArr3, zArr2, j10);
+            if (i14 == 0) {
+                j10 = o9;
+            } else if (o9 != j10) {
+                throw new IllegalStateException("Children enabled at different positions.");
+            }
+            boolean z10 = false;
+            for (int i15 = 0; i15 < rVarArr.length; i15++) {
+                if (iArr3[i15] == i14) {
+                    b1 b1Var2 = b1VarArr3[i15];
+                    b1Var2.getClass();
+                    b1VarArr2[i15] = b1VarArr3[i15];
+                    identityHashMap.put(b1Var2, Integer.valueOf(i14));
+                    z10 = true;
+                } else if (iArr4[i15] == i14) {
+                    e2.d.g(b1VarArr3[i15] == null);
+                }
+            }
+            if (z10) {
+                arrayList.add(d0VarArr2[i14]);
+            }
+            i12 = i14 + 1;
+            d0VarArr = d0VarArr2;
+            iArr2 = iArr4;
+            i10 = 0;
+        }
+        int i16 = i10;
+        System.arraycopy(b1VarArr2, i16, b1VarArr, i16, length2);
+        this.r = (d0[]) arrayList.toArray(new d0[i16]);
+        AbstractList w10 = e9.q.w(arrayList, new s0.b(15));
+        this.d.getClass();
+        this.s = new n(arrayList, w10);
+        return j10;
     }
 
-    public /* synthetic */ l0(Object obj, int i10) {
-        this.a = i10;
+    @Override // u2.d0
+    public final o1 p() {
+        o1 o1Var = this.n;
+        o1Var.getClass();
+        return o1Var;
+    }
+
+    @Override // u2.d1
+    public final long q() {
+        return this.s.q();
+    }
+
+    @Override // u2.d0
+    public final long r(long j3, q1 q1Var) {
+        d0[] d0VarArr = this.r;
+        return (d0VarArr.length > 0 ? d0VarArr[0] : this.a[0]).r(j3, q1Var);
+    }
+
+    @Override // u2.d1
+    public final void s(long j3) {
+        this.s.s(j3);
     }
 }

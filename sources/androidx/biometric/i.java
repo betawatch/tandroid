@@ -1,11 +1,12 @@
 package androidx.biometric;
 
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -16,18 +17,25 @@ public final class i implements androidx.lifecycle.a0 {
         this.b = pVar;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00d1, code lost:
+    
+        if (r10 == false) goto L62;
+     */
     @Override // androidx.lifecycle.a0
-    public final void w0(Object obj) {
-        int i10;
-        int i11 = this.a;
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void X(Object obj) {
+        boolean z10;
+        int i10 = this.a;
         p pVar = this.b;
-        switch (i11) {
+        switch (i10) {
             case 0:
                 e eVar = (e) obj;
                 if (eVar != null) {
-                    int i12 = eVar.a;
+                    int i11 = eVar.a;
                     CharSequence charSequence = eVar.b;
-                    switch (i12) {
+                    switch (i11) {
                         case 1:
                         case 2:
                         case 3:
@@ -45,55 +53,63 @@ public final class i implements androidx.lifecycle.a0 {
                             break;
                         case 6:
                         default:
-                            i12 = 8;
+                            i11 = 8;
                             break;
                     }
                     Context n10 = pVar.n();
-                    int i13 = Build.VERSION.SDK_INT;
-                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && v7.r.b(n10) && v7.n.a(pVar.l0.c()))) {
-                        pVar.S();
-                    } else if (pVar.R()) {
-                        if (charSequence == null) {
-                            charSequence = v7.q.a(pVar.n(), i12);
+                    int i12 = Build.VERSION.SDK_INT;
+                    int i13 = 0;
+                    if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
+                        KeyguardManager a2 = f0.a(n10);
+                        if ((a2 == null ? false : f0.b(a2)) && te.b.b(pVar.l0.c())) {
+                            pVar.S();
+                            pVar.l0.d(null);
+                            break;
                         }
-                        if (i12 == 5) {
+                    }
+                    if (pVar.R()) {
+                        if (charSequence == null) {
+                            charSequence = v7.n.a(pVar.n(), i11);
+                        }
+                        if (i11 == 5) {
                             int i14 = pVar.l0.l;
                             if (i14 == 0 || i14 == 3) {
-                                pVar.U(i12, charSequence);
+                                pVar.U(i11, charSequence);
                             }
                             pVar.O();
                         } else {
                             if (pVar.l0.w) {
-                                pVar.T(i12, charSequence);
+                                pVar.T(i11, charSequence);
                             } else {
                                 pVar.W(charSequence);
                                 Handler handler = pVar.k0;
-                                f fVar = new f(pVar, i12, charSequence, 1);
+                                f fVar = new f(pVar, i11, charSequence, 1);
                                 Context n11 = pVar.n();
                                 if (n11 != null) {
                                     String str = Build.MODEL;
-                                    if (i13 == 28 && str != null) {
-                                        i10 = 0;
+                                    if (i12 == 28 && str != null) {
                                         for (String str2 : n11.getResources().getStringArray(R.array.hide_fingerprint_instantly_prefixes)) {
                                             if (str.startsWith(str2)) {
-                                                handler.postDelayed(fVar, i10);
+                                                z10 = true;
+                                                break;
                                             }
                                         }
                                     }
+                                    z10 = false;
+                                    break;
                                 }
-                                i10 = 2000;
-                                handler.postDelayed(fVar, i10);
+                                i13 = 2000;
+                                handler.postDelayed(fVar, i13);
                             }
                             pVar.l0.w = true;
                         }
                     } else {
                         if (charSequence == null) {
-                            charSequence = pVar.q(R.string.default_error_msg) + " " + i12;
+                            charSequence = pVar.q(R.string.default_error_msg) + " " + i11;
                         }
-                        pVar.T(i12, charSequence);
+                        pVar.T(i11, charSequence);
                     }
                     pVar.l0.d(null);
-                    break;
                 }
                 break;
             default:

@@ -6,25 +6,25 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.br0;
-import org.telegram.ui.Components.wg;
+import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.xg;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.uy;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class z1 extends wg {
+public final class z1 extends xg {
     public final /* synthetic */ int l0;
     public final /* synthetic */ Object m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z1(Object obj, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(i10, context, d6Var, true);
+    public /* synthetic */ z1(int i10, int i11, Context context, Object obj, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(i10, context, e6Var, true);
         this.l0 = i11;
         this.m0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.wg
+    @Override // org.telegram.ui.Components.xg
     public boolean d() {
         switch (this.l0) {
             case 0:
@@ -40,7 +40,7 @@ public final class z1 extends wg {
         }
     }
 
-    @Override // org.telegram.ui.Components.wg
+    @Override // org.telegram.ui.Components.xg
     public final boolean f() {
         switch (this.l0) {
             case 0:
@@ -55,13 +55,13 @@ public final class z1 extends wg {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wg
+    @Override // org.telegram.ui.Components.xg
     public int getFillColor() {
         int i10 = this.l0;
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((br0) obj).getThemedColor(org.telegram.ui.ActionBar.i6.S5);
+                return ((mr0) obj).getThemedColor(org.telegram.ui.ActionBar.i6.S5);
             case 3:
             default:
                 return super.getFillColor();
@@ -72,7 +72,7 @@ public final class z1 extends wg {
         }
     }
 
-    @Override // org.telegram.ui.Components.wg
+    @Override // org.telegram.ui.Components.xg
     public boolean j() {
         switch (this.l0) {
             case 2:
@@ -91,7 +91,7 @@ public final class z1 extends wg {
         switch (this.l0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((uy) this.m0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((ty) this.m0).I2.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -103,8 +103,8 @@ public final class z1 extends wg {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(i10, context, d6Var, false);
+    public /* synthetic */ z1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(i10, context, e6Var, false);
         this.l0 = i11;
         this.m0 = notificationCenterDelegate;
     }

@@ -1,24 +1,21 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class x30 extends s4.j {
-    public final /* synthetic */ h60 F;
-
-    public x30(h60 h60Var) {
-        this.F = h60Var;
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        h60 h60Var = this.F;
-        h60Var.Q.invalidate();
-        h60Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
-        viewGroup.invalidate();
-        h60.J0(h60Var);
+public final class x30 extends s4.o0 {
+    @Override // s4.o0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.a1 a1Var) {
+        recyclerView.getClass();
+        RecyclerView.R(view);
+        if (g60.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        }
     }
 }

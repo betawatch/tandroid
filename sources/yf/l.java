@@ -14,16 +14,16 @@ import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.n61;
-import org.telegram.ui.Components.z5;
+import org.telegram.ui.Components.b6;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static SpannableStringBuilder a(String str) {
         try {
-            Spanned fromHtml = Build.VERSION.SDK_INT >= 24 ? Html.fromHtml("<inject>" + str + "</inject>", 63, null, new j(new rb.a(27))) : Html.fromHtml("<inject>" + str + "</inject>", null, new j(new rb.a(27)));
+            Spanned fromHtml = Build.VERSION.SDK_INT >= 24 ? Html.fromHtml("<inject>" + str + "</inject>", 63, null, new j(new qb.b(27))) : Html.fromHtml("<inject>" + str + "</inject>", null, new j(new qb.b(27)));
             if (fromHtml == null) {
                 return null;
             }
@@ -78,11 +78,11 @@ public abstract class l {
                     } else if (i10 == 2 || i10 == 3) {
                         arrayList3.add(kVar);
                     }
-                } else if (obj instanceof z5) {
+                } else if (obj instanceof b6) {
                     TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-                    z5 z5Var = (z5) obj;
-                    tL_messageEntityCustomEmoji.document_id = z5Var.documentId;
-                    tL_messageEntityCustomEmoji.document = z5Var.document;
+                    b6 b6Var = (b6) obj;
+                    tL_messageEntityCustomEmoji.document_id = b6Var.documentId;
+                    tL_messageEntityCustomEmoji.document = b6Var.document;
                     tL_messageEntityCustomEmoji.offset = spanStart;
                     tL_messageEntityCustomEmoji.length = spanEnd - spanStart;
                     arrayList.add(tL_messageEntityCustomEmoji);
@@ -99,7 +99,7 @@ public abstract class l {
                     if (charSequence.equals(url)) {
                         spannableStringBuilder.setSpan(new URLSpan(url), spanStart2, spanEnd2, 33);
                     } else {
-                        spannableStringBuilder.setSpan(new n61(url, null), spanStart2, spanEnd2, 33);
+                        spannableStringBuilder.setSpan(new v61(url, null), spanStart2, spanEnd2, 33);
                     }
                 }
             }
@@ -112,7 +112,7 @@ public abstract class l {
             }
             for (int i12 = 0; i12 < arrayList3.size(); i12++) {
                 k kVar3 = (k) arrayList3.get(i12);
-                fj0.c(spannableStringBuilder, fromHtml.getSpanStart(kVar3), fromHtml.getSpanEnd(kVar3), kVar3.a == 3);
+                xj0.c(spannableStringBuilder, fromHtml.getSpanStart(kVar3), fromHtml.getSpanEnd(kVar3), kVar3.a == 3);
             }
             return spannableStringBuilder;
         } catch (Exception e7) {

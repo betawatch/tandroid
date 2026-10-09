@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class q extends Drawable {
     public final Paint a;
@@ -18,32 +18,32 @@ public final class q extends Drawable {
     public boolean e;
     public boolean f;
     public boolean g;
-    public final kj0 h;
-    public final ac i;
-    public final /* synthetic */ ac j;
+    public final ck0 h;
+    public final bc i;
+    public final /* synthetic */ bc j;
 
-    public q(ac acVar, ac acVar2) {
-        this.j = acVar;
+    public q(bc bcVar, bc bcVar2) {
+        this.j = bcVar;
         Paint paint = new Paint(1);
         this.a = paint;
         this.c = 1.0f;
-        this.i = acVar2;
-        kj0 kj0Var = new kj0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.h = kj0Var;
-        kj0Var.o0 = true;
+        this.i = bcVar2;
+        ck0 ck0Var = new ck0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.h = ck0Var;
+        ck0Var.o0 = true;
         paint.setColor(-2406842);
-        kj0Var.Z = true;
-        kj0Var.Q(-2406842, "Cup Red");
-        kj0Var.Q(-2406842, "Box");
-        kj0Var.o();
+        ck0Var.Z = true;
+        ck0Var.Q(-2406842, "Cup Red");
+        ck0Var.Q(-2406842, "Box");
+        ck0Var.o();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         boolean z10 = this.g;
-        kj0 kj0Var = this.h;
+        ck0 ck0Var = this.h;
         if (z10) {
-            kj0Var.setAlpha((int) (this.b * 255.0f * this.c));
+            ck0Var.setAlpha((int) (this.b * 255.0f * this.c));
         }
         int i10 = (int) (this.b * 255.0f * this.c);
         Paint paint = this.a;
@@ -65,11 +65,11 @@ public final class q extends Drawable {
             }
         }
         this.d = System.currentTimeMillis();
-        kj0Var.setBounds(getBounds());
+        ck0Var.setBounds(getBounds());
         if (this.g) {
-            kj0Var.draw(canvas);
+            ck0Var.draw(canvas);
         }
-        if (!this.g || !kj0Var.u()) {
+        if (!this.g || !ck0Var.u()) {
             canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), AndroidUtilities.dp(5.0f), paint);
         }
         this.j.invalidate();

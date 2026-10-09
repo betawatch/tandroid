@@ -3,15 +3,15 @@ package i2;
 import android.content.Context;
 import android.os.Looper;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
     public final e2.x b;
-    public d9.i c;
+    public d9.j c;
     public final d d;
-    public d9.i e;
-    public d9.i f;
+    public d9.j e;
+    public d9.j f;
     public final d g;
     public final Looper h;
     public final int i;
@@ -54,7 +54,7 @@ public final class p {
         this.p = 15000L;
         this.q = 3000L;
         this.n = p1.b;
-        this.r = new i(e2.d0.Q(20L), e2.d0.Q(500L));
+        this.r = new i(e2.d0.P(20L), e2.d0.P(500L));
         this.b = e2.x.a;
         this.s = 500L;
         this.t = 2000L;

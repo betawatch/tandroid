@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j2 extends View implements org.telegram.ui.Cells.p9, e3 {
+public final class j2 extends View implements org.telegram.ui.Cells.n9, e3 {
     public final t70 a;
     public final g4 b;
     public b3 c;
@@ -28,7 +28,7 @@ public final class j2 extends View implements org.telegram.ui.Cells.p9, e3 {
         this.b = g4Var;
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {

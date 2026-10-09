@@ -2,11 +2,11 @@ package j4;
 
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class w implements g0 {
     public final i a;
-    public final a4.h b = new a4.h(new byte[10], 10);
+    public final a4.g b = new a4.g(new byte[10], 10);
     public int c = 0;
     public int d;
     public e2.b0 e;
@@ -51,24 +51,24 @@ public final class w implements g0 {
         while (vVar.a() > 0) {
             int i16 = this.c;
             if (i16 != 0) {
-                a4.h hVar = this.b;
+                a4.g gVar = this.b;
                 if (i16 != 1) {
                     if (i16 == i13) {
-                        if (d(vVar, hVar.b, Math.min(10, this.i)) && d(vVar, null, this.i)) {
-                            hVar.q(0);
+                        if (d(vVar, gVar.b, Math.min(10, this.i)) && d(vVar, null, this.i)) {
+                            gVar.q(0);
                             this.l = -9223372036854775807L;
                             if (this.f) {
-                                hVar.t(4);
-                                hVar.t(1);
-                                hVar.t(1);
-                                long i17 = (hVar.i(15) << 15) | (hVar.i(3) << 30) | hVar.i(15);
-                                hVar.t(1);
+                                gVar.t(4);
+                                gVar.t(1);
+                                gVar.t(1);
+                                long i17 = (gVar.i(15) << 15) | (gVar.i(3) << 30) | gVar.i(15);
+                                gVar.t(1);
                                 if (!this.h && this.g) {
-                                    hVar.t(4);
-                                    hVar.t(1);
-                                    hVar.t(1);
-                                    hVar.t(1);
-                                    this.e.b((hVar.i(3) << 30) | (hVar.i(15) << 15) | hVar.i(15));
+                                    gVar.t(4);
+                                    gVar.t(1);
+                                    gVar.t(1);
+                                    gVar.t(1);
+                                    this.e.b((gVar.i(3) << 30) | (gVar.i(15) << 15) | gVar.i(15));
                                     this.h = true;
                                 }
                                 this.l = this.e.b(i17);
@@ -101,7 +101,7 @@ public final class w implements g0 {
                             }
                         }
                     }
-                } else if (d(vVar, hVar.b, 9)) {
+                } else if (d(vVar, gVar.b, 9)) {
                     this.c = e() ? 2 : 0;
                     this.d = 0;
                 }
@@ -143,23 +143,23 @@ public final class w implements g0 {
     }
 
     public final boolean e() {
-        a4.h hVar = this.b;
-        hVar.q(0);
-        int i10 = hVar.i(24);
+        a4.g gVar = this.b;
+        gVar.q(0);
+        int i10 = gVar.i(24);
         if (i10 != 1) {
             e2.m(i10, "Unexpected start code prefix: ", "PesReader");
             this.j = -1;
             return false;
         }
-        hVar.t(8);
-        int i11 = hVar.i(16);
-        hVar.t(5);
-        this.k = hVar.h();
-        hVar.t(2);
-        this.f = hVar.h();
-        this.g = hVar.h();
-        hVar.t(6);
-        int i12 = hVar.i(8);
+        gVar.t(8);
+        int i11 = gVar.i(16);
+        gVar.t(5);
+        this.k = gVar.h();
+        gVar.t(2);
+        this.f = gVar.h();
+        this.g = gVar.h();
+        gVar.t(6);
+        int i12 = gVar.i(8);
         this.i = i12;
         if (i11 == 0) {
             this.j = -1;

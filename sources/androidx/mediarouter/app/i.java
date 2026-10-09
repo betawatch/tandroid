@@ -6,11 +6,11 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class i extends androidx.fragment.app.p {
     public boolean A0 = false;
-    public g.u B0;
+    public g.t B0;
     public p4.r C0;
 
     public i() {
@@ -52,17 +52,17 @@ public class i extends androidx.fragment.app.p {
     @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
         this.U = true;
-        g.u uVar = this.B0;
-        if (uVar == null) {
+        g.t tVar = this.B0;
+        if (tVar == null) {
             return;
         }
         if (!this.A0) {
-            h hVar = (h) uVar;
-            hVar.getWindow().setLayout(v7.d0.a(hVar.getContext()), -2);
+            h hVar = (h) tVar;
+            hVar.getWindow().setLayout(v7.z.a(hVar.getContext()), -2);
         } else {
-            d0 d0Var = (d0) uVar;
+            d0 d0Var = (d0) tVar;
             Context context = d0Var.n;
-            d0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.d0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+            d0Var.getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         }
     }
 }

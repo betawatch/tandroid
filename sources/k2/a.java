@@ -5,7 +5,7 @@ import e9.o1;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a d;
@@ -18,7 +18,7 @@ public final class a {
         if (Build.VERSION.SDK_INT >= 33) {
             e9.l0 l0Var = new e9.l0(4);
             for (int i10 = 1; i10 <= 10; i10++) {
-                l0Var.b(Integer.valueOf(e2.d0.s(i10)));
+                l0Var.b(Integer.valueOf(e2.d0.r(i10)));
             }
             aVar = new a(2, l0Var.i());
         } else {

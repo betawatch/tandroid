@@ -2,13 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import com.google.android.play.core.integrity.StandardIntegrityException;
-import gd.c;
-import gd.g;
+import hd.c;
+import hd.g;
 import java.nio.charset.StandardCharsets;
 import kotlin.jvm.internal.e;
-import v7.s7;
+import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
@@ -42,29 +42,29 @@ public final class zzba implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, id.c cVar) {
+    public final /* synthetic */ Object zzc(String str, jd.c cVar) {
         return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, id.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, jd.c cVar) {
         Object zzd;
         zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, id.c cVar) {
+    public final Object zze(String str, jd.c cVar) {
         return new zzhg(new zzax(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, id.c cVar) {
+    public final Object zzf(zzxp zzxpVar, jd.c cVar) {
         return new zzhg(new zzay(this, zzxpVar, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, id.c cVar) {
+    public final Object zzg(Exception exc, jd.c cVar) {
         int i10;
         Throwable cause = exc.getCause();
         if (cause != null) {
@@ -154,7 +154,7 @@ public final class zzba implements zzar {
         this.zzc = true;
         this.zzd = "";
         int i10 = zzby.zza;
-        this.zze = s7.a(zzaz.zza);
+        this.zze = z7.a(zzaz.zza);
     }
 
     public zzba(zzbo zzboVar, zzda zzdaVar, int i10, e eVar) {

@@ -1,36 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ok0 extends ImageReceiver {
-    public final /* synthetic */ int a;
+public final class ok0 extends s4.t0 {
+    public final /* synthetic */ s4.d0 a;
+    public final /* synthetic */ uk0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ok0(int i10, View view) {
-        super(view);
-        this.a = i10;
+    public ok0(uk0 uk0Var, s4.d0 d0Var) {
+        this.b = uk0Var;
+        this.a = d0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
-        switch (this.a) {
-            case 0:
-                if (drawable instanceof kj0) {
-                    ((kj0) drawable).N(0, false, true);
-                }
-                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-            default:
-                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
-                if (imageBitmapByKey && (drawable instanceof kj0)) {
-                    kj0 kj0Var = (kj0) drawable;
-                    kj0Var.N(0, false, true);
-                    kj0Var.stop();
-                }
-                return imageBitmapByKey;
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int loadCount;
+        uk0 uk0Var = this.b;
+        if (uk0Var.w && uk0Var.x && !uk0Var.v) {
+            int N0 = this.a.N0();
+            int h = uk0Var.f.h() - 1;
+            loadCount = uk0Var.getLoadCount();
+            if (N0 >= h - loadCount) {
+                uk0Var.c();
+            }
         }
     }
 }

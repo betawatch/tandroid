@@ -1,21 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r3 implements ia.d {
     public static final r3 a = new r3();
-    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.m(sa.e.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("options", hg.c.m(sa.e.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("identifyLanguageResult", hg.c.m(sa.e.l(h.class, new e(3))));
-    public static final ia.c e = new ia.c("identifyPossibleLanguagesResult", hg.c.m(sa.e.l(h.class, new e(4))));
+
+    static {
+        sc.v.t(sc.v.l(h.class, sc.v.p(3, sc.v.l(h.class, sc.v.p(2, sc.v.l(h.class, new e(1)))))));
+    }
 
     @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        g7 g7Var = (g7) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, g7Var.a);
-        eVar.a(c, g7Var.b);
-        eVar.a(d, g7Var.c);
-        eVar.a(e, null);
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

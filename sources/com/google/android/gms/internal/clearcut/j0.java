@@ -1,27 +1,23 @@
 package com.google.android.gms.internal.clearcut;
 
-/* loaded from: classes.dex */
-public final class j0 extends h0 {
-    @Override // com.google.android.gms.internal.clearcut.h0
-    public final void a(Object obj, long j3) {
-        ((k) ((c0) k1.k(obj, j3))).a = false;
-    }
+import java.nio.charset.Charset;
 
-    @Override // com.google.android.gms.internal.clearcut.h0
-    public final void b(Object obj, long j3, Object obj2) {
-        c0 c0Var = (c0) k1.k(obj, j3);
-        c0 c0Var2 = (c0) k1.k(obj2, j3);
-        int size = c0Var.size();
-        int size2 = c0Var2.size();
-        if (size > 0 && size2 > 0) {
-            if (!((k) c0Var).a) {
-                c0Var = c0Var.f(size2 + size);
-            }
-            c0Var.addAll(c0Var2);
+/* loaded from: classes.dex */
+public final class j0 {
+    public static final v b = new v(1);
+    public final k0 a;
+
+    public j0() {
+        o0 o0Var;
+        try {
+            o0Var = (o0) Class.forName("com.google.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
+        } catch (Exception unused) {
+            o0Var = b;
         }
-        if (size > 0) {
-            c0Var2 = c0Var;
-        }
-        k1.d(obj, j3, c0Var2);
+        o0[] o0VarArr = {v.b, o0Var};
+        k0 k0Var = new k0();
+        k0Var.a = o0VarArr;
+        Charset charset = z.a;
+        this.a = k0Var;
     }
 }

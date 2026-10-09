@@ -1,141 +1,301 @@
 package ci;
 
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.ff0;
-import org.telegram.ui.Components.gf0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.os0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class h0 implements lg.e {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+public final class h0 extends View {
+    public final Paint a;
+    public final Path b;
+    public final RectF c;
+    public final Matrix d;
+    public final Matrix e;
+    public final Matrix f;
+    public final Matrix h;
+    public final Matrix n;
+    public final Matrix r;
+    public final /* synthetic */ i0 s;
 
-    public /* synthetic */ h0(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(i0 i0Var, Context context) {
+        super(context);
+        this.s = i0Var;
+        this.a = new Paint(1);
+        this.b = new Path();
+        this.c = new RectF();
+        this.d = new Matrix();
+        this.e = new Matrix();
+        this.f = new Matrix();
+        this.h = new Matrix();
+        this.n = new Matrix();
+        this.r = new Matrix();
     }
 
-    @Override // lg.e
-    public final boolean a() {
-        int i10 = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (i10) {
-            case 0:
-                j0 j0Var = (j0) frameLayout;
-                j0Var.d.invalidate();
-                return j0Var.f.j();
-            case 1:
-                m0 m0Var = (m0) frameLayout;
-                m0Var.e.invalidate();
-                return m0Var.h.j();
-            default:
-                ff0 ff0Var = ((gf0) frameLayout).a;
-                if (ff0Var == null) {
-                    return false;
+    private float getContainerHeight() {
+        return ((getHeight() - (!(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f)) - this.s.f.y) - AndroidUtilities.dp(32.0f);
+    }
+
+    private float getContainerWidth() {
+        return getWidth() - AndroidUtilities.dp(32.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a0, code lost:
+    
+        if (r15 != false) goto L49;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0060, code lost:
+    
+        if (r15 != false) goto L27;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Matrix matrix, boolean z10) {
+        int currentWidth;
+        int currentHeight;
+        MediaController.CropState cropState;
+        i0 i0Var = this.s;
+        currentWidth = i0Var.getCurrentWidth();
+        currentHeight = i0Var.getCurrentHeight();
+        lg.g gVar = i0Var.w;
+        int i10 = gVar.i;
+        if (i10 == 90 || i10 == 270) {
+            currentHeight = currentWidth;
+            currentWidth = currentHeight;
+        }
+        float f7 = 1.0f;
+        float f10 = 0.0f;
+        float f11 = ((gVar.l - 1.0f) * (z10 ? 1.0f : 0.0f)) + 1.0f;
+        float f12 = currentWidth;
+        float containerWidth = getContainerWidth() / f12;
+        float f13 = currentHeight;
+        if (containerWidth * f13 > getContainerHeight()) {
+            containerWidth = getContainerHeight() / f13;
+        }
+        boolean z11 = (i0Var.x.Q / 90) % 2 == 1;
+        matrix.preTranslate(gVar.d, gVar.e);
+        float f14 = (gVar.f / f11) * containerWidth;
+        l8 l8Var = i0Var.x;
+        if (l8Var != null && (cropState = l8Var.m0) != null) {
+            if (z10) {
+                f7 = cropState.cropScale;
+            }
+            f7 = f14;
+        }
+        matrix.preScale(f7, f7);
+        float f15 = gVar.b;
+        float f16 = gVar.c;
+        if (i0Var.y && z10) {
+            MediaController.CropState cropState2 = i0Var.x.m0;
+            float f17 = cropState2 == null ? 0.0f : !z11 ? cropState2.cropPx : cropState2.cropPy;
+            float f18 = cropState2 == null ? 0.0f : !z11 ? cropState2.cropPy : cropState2.cropPx;
+            f15 = f17;
+            f16 = f18;
+        }
+        matrix.preTranslate(f15 * f12, f16 * f13);
+        l8 l8Var2 = i0Var.x;
+        float f19 = l8Var2.Q + gVar.g + i10;
+        MediaController.CropState cropState3 = l8Var2.m0;
+        if (cropState3 != null) {
+            if (z10) {
+                f10 = cropState3.cropRotate + cropState3.transformRotation;
+            }
+            f10 = f19;
+        }
+        matrix.preRotate(f10);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x01cb, code lost:
+    
+        if (r9.mirrored != false) goto L51;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x022f  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0290  */
+    /* JADX WARN: Removed duplicated region for block: B:49:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01d1  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(Canvas canvas, boolean z10) {
+        float f7;
+        float f10;
+        Canvas canvas2;
+        float f11;
+        boolean z11;
+        boolean z12;
+        i0 i0Var = this.s;
+        int[] iArr = i0Var.s;
+        int[] iArr2 = i0Var.v;
+        b7 b7Var = i0Var.a;
+        if (!z10) {
+            f7 = 255.0f;
+            f10 = 2.0f;
+            canvas2 = canvas;
+        } else {
+            if (i0Var.r >= 1.0f) {
+                return;
+            }
+            f7 = 255.0f;
+            f10 = 2.0f;
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, b7Var.getWidth(), b7Var.getHeight(), (int) (Math.min(1.0f, (1.0f - i0Var.r) * 2.0f) * 255.0f), 31);
+            canvas2.translate(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
+        }
+        canvas2.save();
+        Paint paint = this.a;
+        paint.setColor(-16777216);
+        paint.setAlpha((int) (i0Var.r * f7));
+        canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+        if (i0Var.r < 1.0f && !z10) {
+            Path path = this.b;
+            path.rewind();
+            float width = b7Var.getWidth();
+            float height = b7Var.getHeight();
+            RectF rectF = this.c;
+            rectF.set(0.0f, 0.0f, width, height);
+            rectF.offset(iArr2[0], iArr2[1]);
+            RectF rectF2 = AndroidUtilities.rectTmp;
+            rectF2.set(0.0f, 0.0f, getWidth(), getHeight());
+            AndroidUtilities.lerp(rectF, rectF2, i0Var.r, rectF);
+            float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), 0, i0Var.r);
+            path.addRoundRect(rectF, lerp, lerp, Path.Direction.CW);
+            canvas2.clipPath(path);
+        }
+        float f12 = i0Var.r;
+        Matrix matrix = this.f;
+        matrix.reset();
+        Matrix matrix2 = this.h;
+        matrix2.reset();
+        matrix.preTranslate(-iArr[0], -iArr[1]);
+        matrix.preTranslate(iArr2[0], iArr2[1]);
+        matrix.preScale(b7Var.getWidth() / i0Var.x.i0, b7Var.getHeight() / i0Var.x.j0);
+        matrix.preConcat(i0Var.x.n0);
+        matrix.preTranslate(b7Var.getContentWidth() / f10, b7Var.getContentHeight() / f10);
+        matrix2.preTranslate((getContainerWidth() / f10) + AndroidUtilities.dp(16.0f), org.telegram.messenger.q.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f10, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
+        if (z10) {
+            Matrix matrix3 = this.d;
+            float f13 = i0Var.r;
+            Matrix matrix4 = this.n;
+            AndroidUtilities.lerp(matrix, matrix3, f13, matrix4);
+            matrix4.preRotate(-i0Var.x.Q);
+            Matrix matrix5 = this.r;
+            if (matrix4.invert(matrix5)) {
+                l8 l8Var = i0Var.x;
+                f11 = f10;
+                int i10 = l8Var.Q;
+                MediaController.CropState cropState = l8Var.m0;
+                boolean z13 = ((i10 + (cropState != null ? cropState.transformRotation : 0)) / 90) % 2 == 1;
+                float contentWidth = b7Var.getContentWidth();
+                float contentHeight = b7Var.getContentHeight();
+                MediaController.CropState cropState2 = i0Var.x.m0;
+                float f14 = cropState2 != null ? cropState2.cropPw : 1.0f;
+                float f15 = cropState2 != null ? cropState2.cropPh : 1.0f;
+                float f16 = ((z13 ? contentHeight : contentWidth) * f14) / f11;
+                if (!z13) {
+                    contentWidth = contentHeight;
                 }
-                PhotoViewer photoViewer = ((os0) ff0Var).a;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return photoViewer.N0();
-        }
-    }
-
-    @Override // lg.e
-    public final void b() {
-        switch (this.a) {
-            case 0:
-                ((j0) this.b).f.o();
-                break;
-            case 1:
-                ((m0) this.b).h.o();
-                break;
-            default:
-                ((gf0) this.b).b.o();
-                break;
-        }
-    }
-
-    @Override // lg.e
-    public final void c() {
-        switch (this.a) {
-            case 0:
-                ((j0) this.b).f.a.g(1, true);
-                break;
-            case 1:
-                ((m0) this.b).h.a.g(1, true);
-                break;
-            default:
-                ((gf0) this.b).b.a.g(1, true);
-                break;
-        }
-    }
-
-    @Override // lg.e
-    public final boolean d() {
-        int i10 = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (i10) {
-            case 0:
-                j0 j0Var = (j0) frameLayout;
-                g0 g0Var = j0Var.f;
-                boolean m10 = g0Var.m(-90.0f);
-                g0Var.i();
-                j0Var.d.invalidate();
-                return m10;
-            case 1:
-                m0 m0Var = (m0) frameLayout;
-                g0 g0Var2 = m0Var.h;
-                boolean m11 = g0Var2.m(-90.0f);
-                g0Var2.i();
-                m0Var.e.invalidate();
-                return m11;
-            default:
-                ff0 ff0Var = ((gf0) frameLayout).a;
-                if (ff0Var == null) {
-                    return false;
+                float f17 = (contentWidth * f15) / f11;
+                float lerp2 = AndroidUtilities.lerp(1.0f, 4.0f, f12);
+                canvas2.concat(matrix4);
+                canvas2.clipRect((-f16) * lerp2, (-f17) * lerp2, f16 * lerp2, f17 * lerp2);
+                canvas2.concat(matrix5);
+                z11 = true;
+                a(matrix, z11);
+                a(matrix2, false);
+                org.telegram.ui.Components.g6 g6Var = i0Var.b;
+                if (i0Var.y) {
+                    lg.n nVar = i0Var.f.L;
+                    if (nVar != null) {
+                        z11 = nVar.j;
+                        z12 = z11;
+                    }
+                    z12 = false;
+                } else {
+                    MediaController.CropState cropState3 = i0Var.x.m0;
+                    if (cropState3 != null) {
+                    }
+                    z12 = false;
                 }
-                PhotoViewer photoViewer = ((os0) ff0Var).a;
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return photoViewer.O0(-90.0f, false, null);
-        }
-    }
-
-    @Override // lg.e
-    public final void e() {
-        switch (this.a) {
-            case 0:
-                ((j0) this.b).f.k();
-                break;
-            case 1:
-                ((m0) this.b).h.k();
-                break;
-            default:
-                ((gf0) this.b).b.k();
-                break;
-        }
-    }
-
-    @Override // lg.e
-    public final void f(float f7) {
-        switch (this.a) {
-            case 0:
-                ((j0) this.b).f.setRotation(f7);
-                break;
-            case 1:
-                ((m0) this.b).h.setRotation(f7);
-                break;
-            default:
-                gf0 gf0Var = (gf0) this.b;
-                gf0Var.b.setRotation(f7);
-                gf0Var.getClass();
-                ff0 ff0Var = gf0Var.a;
-                if (ff0Var != null) {
-                    ((os0) ff0Var).a(false);
-                    break;
+                float e7 = g6Var.e(z12);
+                float f18 = 1.0f - (e7 * f11);
+                matrix2.preScale(f18, 1.0f);
+                matrix.preScale(f18, 1.0f);
+                float z14 = org.telegram.messenger.q.z(1.0f, e7, 4.0f * e7, 0.25f);
+                matrix2.preSkew(0.0f, z14);
+                matrix.preSkew(0.0f, z14);
+                matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+                matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+                float f19 = i0Var.r;
+                Matrix matrix6 = this.e;
+                AndroidUtilities.lerp(matrix, matrix2, f19, matrix6);
+                canvas2.concat(matrix6);
+                Paint paint2 = b7Var.Q;
+                Matrix matrix7 = b7Var.W;
+                if (b7Var.n == null) {
+                    canvas2.save();
+                    canvas2.scale(b7Var.getContentWidth() / b7Var.getWidth(), b7Var.getContentHeight() / b7Var.getHeight());
+                    canvas2.concat(b7Var.j0);
+                    b7Var.n.draw(canvas2);
+                    canvas2.restore();
+                } else if (b7Var.a != null && b7Var.d != null) {
+                    matrix7.reset();
+                    matrix7.preScale(b7Var.d.k0 / b7Var.a.getWidth(), b7Var.d.l0 / b7Var.a.getHeight());
+                    paint2.setAlpha(255);
+                    canvas2.drawBitmap(b7Var.a, matrix7, paint2);
                 }
-                break;
+                canvas2.restore();
+                if (z10) {
+                    return;
+                }
+                canvas2.restore();
+                return;
+            }
         }
+        f11 = f10;
+        z11 = true;
+        a(matrix, z11);
+        a(matrix2, false);
+        org.telegram.ui.Components.g6 g6Var2 = i0Var.b;
+        if (i0Var.y) {
+        }
+        float e72 = g6Var2.e(z12);
+        float f182 = 1.0f - (e72 * f11);
+        matrix2.preScale(f182, 1.0f);
+        matrix.preScale(f182, 1.0f);
+        float z142 = org.telegram.messenger.q.z(1.0f, e72, 4.0f * e72, 0.25f);
+        matrix2.preSkew(0.0f, z142);
+        matrix.preSkew(0.0f, z142);
+        matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+        matrix.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
+        float f192 = i0Var.r;
+        Matrix matrix62 = this.e;
+        AndroidUtilities.lerp(matrix, matrix2, f192, matrix62);
+        canvas2.concat(matrix62);
+        Paint paint22 = b7Var.Q;
+        Matrix matrix72 = b7Var.W;
+        if (b7Var.n == null) {
+        }
+        canvas2.restore();
+        if (z10) {
+        }
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.s.x == null) {
+            return;
+        }
+        b(canvas, false);
     }
 }

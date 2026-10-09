@@ -11,9 +11,9 @@ import java.nio.ByteBuffer;
 import java.util.HashSet;
 import la.h;
 import n6.l;
-import sa.e;
+import sc.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends g {
     public final q8.a b;
@@ -44,15 +44,15 @@ public final class c extends g {
         }
     }
 
-    public final SparseArray Z0(h hVar) {
-        ByteBuffer F;
+    public final SparseArray b1(h hVar) {
+        ByteBuffer J;
         a[] n10;
         Bitmap bitmap = (Bitmap) hVar.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
             int i10 = width * height;
-            F = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
+            J = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
             int i11 = i10;
             for (int i12 = 0; i12 < i10; i12++) {
                 int i13 = i12 % width;
@@ -61,26 +61,26 @@ public final class c extends g {
                 float red = Color.red(pixel);
                 float green = Color.green(pixel);
                 float blue = Color.blue(pixel);
-                F.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
+                J.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i14 % 2 == 0 && i13 % 2 == 0) {
-                    float d = e.d(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
-                    float d10 = e.d(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    float d = v.d(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float d10 = v.d(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i15 = i11 + 1;
-                    F.put(i11, (byte) d);
+                    J.put(i11, (byte) d);
                     i11 += 2;
-                    F.put(i15, (byte) d10);
+                    J.put(i15, (byte) d10);
                 }
             }
         } else {
-            F = hVar.F();
+            J = hVar.J();
         }
         synchronized (this.d) {
             if (!this.e) {
                 throw new IllegalStateException("Cannot use detector after release()");
             }
             u2 u2Var = this.c;
-            l.h(F);
-            n10 = u2Var.n(F, g3.b(hVar));
+            l.h(J);
+            n10 = u2Var.n(J, g3.b(hVar));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

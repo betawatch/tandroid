@@ -7,7 +7,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class s6 extends ImageView {
     public final int a;
@@ -18,11 +18,11 @@ public final class s6 extends ImageView {
         super(context);
         this.b = u6Var;
         this.a = i10;
-        setBackground(org.telegram.ui.ActionBar.i6.f0(1090519039, 1, -1));
+        setBackground(org.telegram.ui.ActionBar.i6.g0(1090519039, 1, -1));
         setScaleType(ImageView.ScaleType.CENTER);
         setImageResource(i11);
         setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        setOnClickListener(new n4(this, i10, 1));
+        setOnClickListener(new m4(this, i10, 1));
     }
 
     @Override // android.view.View

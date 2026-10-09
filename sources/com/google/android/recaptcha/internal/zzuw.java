@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzuw {
     private static final zzuw zza = new zzuw(0, new int[0], new Object[0], false);
@@ -165,7 +165,7 @@ public final class zzuw {
             int zzA2 = zzqv.zzA(i13) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zzd = zzqmVar.zzd();
-            i11 += zzA + zzA + zzA2 + e2.w(zzd, zzd, zzA3);
+            i11 += zzA + zzA + zzA2 + e2.v(zzd, zzd, zzA3);
         }
         this.zze = i11;
         return i11;

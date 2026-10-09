@@ -1,60 +1,33 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class wb implements org.telegram.ui.Components.pb {
-    public final float[] a = new float[2];
-    public final /* synthetic */ xb b;
+public final class wb extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yb b;
 
-    public wb(xb xbVar) {
-        this.b = xbVar;
+    public /* synthetic */ wb(yb ybVar, int i10) {
+        this.a = i10;
+        this.b = ybVar;
     }
 
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ boolean a() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final int f(int i10) {
-        jc jcVar = this.b.I0;
-        e6 t10 = jcVar.t();
-        if (t10 == null) {
-            return 0;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                kc kcVar = this.b.I0;
+                kcVar.X = 0.0f;
+                kc.k(kcVar);
+                break;
+            default:
+                kc kcVar2 = this.b.I0;
+                kcVar2.W = 0.0f;
+                kcVar2.Z = 0.0f;
+                kc.k(kcVar2);
+                break;
         }
-        a5 a5Var = t10.c1;
-        xb xbVar = jcVar.s;
-        float[] fArr = this.a;
-        AndroidUtilities.getViewPositionInParent(a5Var, xbVar, fArr);
-        return (int) (r4.getMeasuredHeight() - (fArr[1] + a5Var.getMeasuredHeight()));
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ boolean g(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ int h(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ void b(org.telegram.ui.Components.rc rcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ void c(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.pb
-    public final /* synthetic */ void d(org.telegram.ui.Components.rc rcVar) {
     }
 }

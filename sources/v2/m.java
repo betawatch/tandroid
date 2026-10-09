@@ -4,10 +4,11 @@ import b2.s;
 import c3.h0;
 import g2.b0;
 import org.telegram.tgnet.ConnectionsManager;
-import u2.b1;
-import v7.m7;
+import org.telegram.ui.ActionBar.b5;
+import u2.a1;
+import v7.k7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m extends a {
     public final int E;
@@ -24,30 +25,30 @@ public final class m extends a {
     @Override // y2.i
     public final void a() {
         b0 b0Var = this.r;
-        o0.a aVar = this.x;
-        e2.d.h(aVar);
-        for (b1 b1Var : (b1[]) aVar.c) {
-            if (b1Var.F != 0) {
-                b1Var.F = 0L;
-                b1Var.z = true;
+        b5 b5Var = this.x;
+        e2.d.h(b5Var);
+        for (a1 a1Var : (a1[]) b5Var.b) {
+            if (a1Var.F != 0) {
+                a1Var.F = 0L;
+                a1Var.z = true;
             }
         }
-        h0 K = aVar.K(this.E);
-        K.b(this.F);
+        h0 w10 = b5Var.w(this.E);
+        w10.b(this.F);
         try {
             long open = b0Var.open(this.b.b(this.G));
             if (open != -1) {
                 open += this.G;
             }
             c3.l lVar = new c3.l(this.r, this.G, open);
-            for (int i10 = 0; i10 != -1; i10 = K.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
+            for (int i10 = 0; i10 != -1; i10 = w10.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
                 this.G += i10;
             }
-            K.c(this.h, 1, (int) this.G, 0, null);
-            m7.a(b0Var);
+            w10.c(this.h, 1, (int) this.G, 0, null);
+            k7.a(b0Var);
             this.H = true;
         } catch (Throwable th2) {
-            m7.a(b0Var);
+            k7.a(b0Var);
             throw th2;
         }
     }
@@ -58,6 +59,6 @@ public final class m extends a {
     }
 
     @Override // y2.i
-    public final void q() {
+    public final void v() {
     }
 }

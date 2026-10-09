@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l1 {
     public static final String f;
@@ -49,7 +49,7 @@ public final class l1 {
     }
 
     public static void b(String str, int i10, String str2, String str3) {
-        StringBuilder x10 = a4.a.x("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
+        StringBuilder x10 = a1.g.x("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
         x10.append(str3);
         x10.append("' (track ");
         x10.append(i10);
@@ -182,7 +182,7 @@ public final class l1 {
 
     public final int hashCode() {
         if (this.e == 0) {
-            this.e = Arrays.hashCode(this.d) + a4.a.h(527, 31, this.b);
+            this.e = Arrays.hashCode(this.d) + a1.g.h(527, 31, this.b);
         }
         return this.e;
     }

@@ -3,52 +3,81 @@ package yh;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.y9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class h7 extends FrameLayout {
-    public final org.telegram.ui.Components.p6 a;
-    public final ImageView b;
-    public int c;
-    public boolean d;
+public final class h7 extends LinearLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.e6 b;
+    public final y9 c;
+    public final org.telegram.ui.ActionBar.j5 d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final TextView n;
+    public boolean r;
+    public boolean s;
 
-    public h7(Context context) {
+    public h7(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
-        this.a = p6Var;
-        p6Var.getDrawable().o(true, true, false);
-        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        addView(p6Var, w7.z5.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.arrow_more);
-        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
+        this.a = i10;
+        this.b = e6Var;
+        setOrientation(0);
+        y9 y9Var = new y9(context);
+        this.c = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
+        addView(y9Var, w7.x5.p(46, 46, 0.0f, 19, 13, 0, 13, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, w7.x5.p(-1, -2, 1.0f, 16, 0, 0, 0, 0));
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.d = j5Var;
+        int i11 = org.telegram.ui.ActionBar.i6.G6;
+        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
+        j5Var.setTextSize(16);
+        j5Var.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(j5Var);
+        linearLayout.addView(j5Var, w7.x5.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
+        TextView textView = new TextView(context);
+        this.e = textView;
+        bi.o(i11, e6Var, textView, 1, 13.0f);
+        textView.setVisibility(8);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
+        this.f = h;
+        int i12 = org.telegram.ui.ActionBar.i6.z6;
+        bi.o(i12, e6Var, h, 1, 14.0f);
+        linearLayout.addView(h, w7.x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        addView(linearLayout2, w7.x5.p(-2, -2, 0.0f, 16, 0, 0, 18, 0));
+        TextView textView2 = new TextView(context);
+        this.h = textView2;
+        org.telegram.ui.Cells.c1.n(i11, e6Var, textView2, 1, 16.0f);
+        textView2.setGravity(5);
+        TextView h10 = com.google.android.gms.internal.vision.e2.h(linearLayout2, textView2, w7.x5.t(-1, -2, 5, 0, 0, 0, 1), context);
+        this.n = h10;
+        bi.o(i12, e6Var, h10, 1, 13.0f);
+        h10.setGravity(5);
+        linearLayout2.addView(h10, w7.x5.t(-1, -2, 5, 0, 0, 0, 0));
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    @Override // android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
+        if (this.s) {
+            canvas.drawRect(AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.r ? 68.0f : 58.0f), TLObject.FLAG_30));
     }
 }

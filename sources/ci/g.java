@@ -14,32 +14,32 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.eu;
-import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.md;
-import org.telegram.ui.Components.mu;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.od;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.sw0;
+import org.telegram.ui.Components.vu;
+import org.telegram.ui.Components.zu;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class g extends mu {
-    public org.telegram.ui.Components.oa V;
+public final class g extends zu {
+    public org.telegram.ui.Components.qa V;
     public ch.d W;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 a0;
-    public final /* synthetic */ org.telegram.ui.Components.ka b0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 a0;
+    public final /* synthetic */ org.telegram.ui.Components.ma b0;
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, mw0 mw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ka kaVar) {
-        super(context, mw0Var, null, i10, true, dVar);
+    public g(m mVar, Context context, sw0 sw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.ma maVar) {
+        super(context, sw0Var, null, i10, true, dVar);
         this.c0 = mVar;
-        this.a0 = d6Var;
-        this.b0 = kaVar;
+        this.a0 = e6Var;
+        this.b0 = maVar;
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final boolean b() {
         return true;
     }
@@ -53,27 +53,27 @@ public final class g extends mu {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final void f() {
         super.f();
-        nz emojiView = getEmojiView();
+        a00 emojiView = getEmojiView();
         if (emojiView != null) {
             m mVar = this.c0;
             if (mVar.getEditTextStyle() == 2 || mVar.getEditTextStyle() == 3) {
                 emojiView.w0 = false;
                 emojiView.w2 = false;
                 emojiView.setShouldDrawBackground(false);
-                if (mVar instanceof md) {
+                if (mVar instanceof od) {
                     emojiView.setPadding(0, 0, 0, AndroidUtilities.navigationBarHeight);
                     emojiView.c = 3;
                 }
-                emojiView.Q();
+                emojiView.S();
             }
         }
         if (emojiView != null) {
-            emojiView.F2 = true;
+            emojiView.H2 = true;
             emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new ai.k2(1));
+            emojiView.setOutlineProvider(new ai.l2(1));
         }
     }
 
@@ -81,8 +81,8 @@ public final class g extends mu {
     /* JADX WARN: Type inference failed for: r14v15 */
     /* JADX WARN: Type inference failed for: r14v16 */
     /* JADX WARN: Type inference failed for: r14v17, types: [android.view.View] */
-    @Override // org.telegram.ui.Components.mu
-    public final void g(Canvas canvas, iu iuVar) {
+    @Override // org.telegram.ui.Components.zu
+    public final void g(Canvas canvas, vu vuVar) {
         Bitmap bitmap;
         int i10;
         int i11;
@@ -90,7 +90,7 @@ public final class g extends mu {
         m mVar = this.c0;
         ah.l lVar = mVar.d;
         RectF rectF = mVar.z0;
-        rectF.set(0.0f, 0.0f, iuVar.getWidth(), AndroidUtilities.dp(29.0f) + iuVar.getHeight());
+        rectF.set(0.0f, 0.0f, vuVar.getWidth(), AndroidUtilities.dp(29.0f) + vuVar.getHeight());
         int i12 = 0;
         if (mVar.h0 != null) {
             if (this.W == null) {
@@ -103,16 +103,16 @@ public final class g extends mu {
                     i11 = roundedCorner == null ? 0 : roundedCorner.getRadius();
                     i10 = roundedCorner2 == null ? 0 : roundedCorner2.getRadius();
                 }
-                ch.d c10 = mVar.h0.c(iuVar, null, false);
-                c10.w(eh.b.i(this.a0));
+                ch.d c10 = mVar.h0.c(vuVar, null, false);
+                c10.o(eh.b.i(this.a0));
                 this.W = c10;
-                c10.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
+                c10.s(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
                 ch.d dVar = this.W;
-                dVar.n = true;
-                dVar.B(AndroidUtilities.dp(32.0f));
+                dVar.m = true;
+                dVar.u(AndroidUtilities.dp(32.0f));
                 ch.d dVar2 = this.W;
-                dVar2.l.g = 0.4f;
-                dVar2.u();
+                dVar2.j.g = 0.4f;
+                dVar2.k();
             }
             Rect rect = AndroidUtilities.rectTmp2;
             rectF.round(rect);
@@ -122,9 +122,9 @@ public final class g extends mu {
         }
         if (mVar.g()) {
             if (this.V == null) {
-                this.V = new org.telegram.ui.Components.oa(this.b0, iuVar, 7, false);
+                this.V = new org.telegram.ui.Components.qa(this.b0, vuVar, 7, false);
             }
-            mVar.h(this.V, canvas, mVar.z0, AndroidUtilities.dp(29.0f), false, 0.0f, -iuVar.getY(), false);
+            mVar.h(this.V, canvas, mVar.z0, AndroidUtilities.dp(29.0f), false, 0.0f, -vuVar.getY(), false);
             lVar.k = AndroidUtilities.dp(29.0f);
             lVar.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, AndroidUtilities.dp(29.0f) + ((int) rectF.bottom));
             lVar.draw(canvas);
@@ -137,13 +137,13 @@ public final class g extends mu {
             mVar.t0.postScale(frameLayout.getWidth() / mVar.r0.getWidth(), frameLayout.getHeight() / mVar.r0.getHeight());
             float f7 = 0.0f;
             float f10 = 0.0f;
-            iu iuVar2 = iuVar;
-            while (i12 < 8 && iuVar2 != null) {
-                f7 += iuVar2.getX();
-                f10 += iuVar2.getY();
-                Object parent = iuVar2.getParent();
+            vu vuVar2 = vuVar;
+            while (i12 < 8 && vuVar2 != null) {
+                f7 += vuVar2.getX();
+                f10 += vuVar2.getY();
+                Object parent = vuVar2.getParent();
                 i12++;
-                iuVar2 = parent instanceof View ? (View) parent : 0;
+                vuVar2 = parent instanceof View ? (View) parent : 0;
             }
             mVar.t0.postTranslate(-f7, -f10);
             mVar.s0.setLocalMatrix(mVar.t0);
@@ -154,17 +154,17 @@ public final class g extends mu {
         canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final void p() {
         this.c0.L.a();
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final void q(int i10, int i11) {
         this.c0.s(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final boolean t(int i10) {
         m mVar = this.c0;
         g gVar = mVar.f;
@@ -189,24 +189,24 @@ public final class g extends mu {
             objectAnimator3.cancel();
         }
         gVar.getEditText().setScrollY(mVar.a0);
-        eu editText = gVar.getEditText();
+        ru editText = gVar.getEditText();
         int i11 = mVar.a0;
         mVar.b0 = i10;
         ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", i11, i10);
         mVar.g0 = ofInt;
         ofInt.setDuration(240L);
-        mVar.g0.setInterpolator(tr.h);
+        mVar.g0.setInterpolator(hs.h);
         mVar.g0.addListener(new ai.b(this, 11));
         mVar.g0.start();
         return false;
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final void u() {
         this.c0.L.e = true;
     }
 
-    @Override // org.telegram.ui.Components.mu
+    @Override // org.telegram.ui.Components.zu
     public final void y() {
         this.c0.L.a();
     }

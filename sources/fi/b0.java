@@ -1,9 +1,9 @@
 package fi;
 
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.yn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class b0 implements s0 {
     public final /* synthetic */ n2 a;
@@ -15,20 +15,20 @@ public final class b0 implements s0 {
     }
 
     @Override // fi.s0
-    public final void close() {
-        this.b.d.E(0);
-    }
-
-    @Override // fi.s0
-    public final void k(long j3) {
-        this.a.presentFragment(yn.Q9(j3));
+    public final void a(long j3) {
+        this.a.presentFragment(zn.W9(j3));
         this.b.dismiss();
     }
 
     @Override // fi.s0
-    public final void l() {
+    public final void close() {
+        this.b.d.D(0);
+    }
+
+    @Override // fi.s0
+    public final void n() {
         k0 k0Var = this.b;
-        k0Var.w.d.f3.N(true);
-        k0Var.v.d.f3.N(true);
+        k0Var.w.d.W2.N(true);
+        k0Var.v.d.W2.N(true);
     }
 }

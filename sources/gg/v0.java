@@ -1,63 +1,34 @@
 package gg;
 
-import java.io.File;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.kb0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class v0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.e2 {
+    public final /* synthetic */ j1 a;
 
-    public /* synthetic */ v0(k1 k1Var, CharSequence charSequence, int i10, ArrayList arrayList, boolean z10, boolean z11) {
-        this.e = k1Var;
-        this.f = charSequence;
-        this.c = i10;
-        this.h = arrayList;
-        this.b = z10;
-        this.d = z11;
+    public /* synthetic */ v0(j1 j1Var) {
+        this.a = j1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((k1) this.e).U((CharSequence) this.f, this.c, (ArrayList) this.h, this.b, this.d);
-                break;
-            case 1:
-                ((MediaDataController) this.e).lambda$processLoadedDiceStickers$89(this.b, (TLRPC.TL_messages_stickerSet) this.f, this.c, (String) this.h, this.d);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.q(i6.k1((a6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 15));
-                break;
-        }
-    }
-
-    public /* synthetic */ v0(MediaDataController mediaDataController, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, String str, boolean z11) {
-        this.e = mediaDataController;
-        this.b = z10;
-        this.f = tL_messages_stickerSet;
-        this.c = i10;
-        this.h = str;
-        this.d = z11;
-    }
-
-    public /* synthetic */ v0(a6 a6Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
-        this.e = a6Var;
-        this.f = file;
-        this.c = i10;
-        this.b = z10;
-        this.h = document;
-        this.d = z11;
+    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
+    public void run(ArrayList arrayList, String str) {
+        j1 j1Var = this.a;
+        j1Var.N = arrayList;
+        j1Var.I = null;
+        j1Var.A0 = null;
+        j1Var.x = null;
+        j1Var.y = null;
+        j1Var.J = null;
+        j1Var.Q = null;
+        j1Var.M = null;
+        j1Var.K = null;
+        j1Var.P = null;
+        j1Var.l();
+        kb0 kb0Var = j1Var.V;
+        ArrayList arrayList2 = j1Var.N;
+        kb0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

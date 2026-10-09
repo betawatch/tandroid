@@ -1,66 +1,27 @@
 package ci;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class a8 implements TextWatcher {
-    public final /* synthetic */ c8 a;
+public final class a8 implements View.OnFocusChangeListener {
+    public final /* synthetic */ d8 a;
 
-    public a8(c8 c8Var) {
-        this.a = c8Var;
+    public a8(d8 d8Var) {
+        this.a = d8Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        String obj = editable.toString();
-        c8 c8Var = this.a;
-        c8Var.q0 = obj;
-        if (!c8Var.Z) {
-            String str = c8Var.v0;
-            if (obj == null) {
-                obj = "";
-            }
-            boolean equals = TextUtils.equals(str, obj);
-            boolean z10 = false;
-            if (!equals) {
-                c8Var.Y();
-                String str2 = c8Var.q0;
-                c8Var.u0 = str2 != null && str2.length() > 0;
-            }
-            String str3 = c8Var.G0;
-            String str4 = c8Var.q0;
-            if (!TextUtils.equals(str3, str4 != null ? str4 : "")) {
-                c8Var.X();
-                String str5 = c8Var.q0;
-                if (str5 != null && str5.length() > 3) {
-                    i10 = ((org.telegram.ui.ActionBar.f3) c8Var).currentAccount;
-                    if (!TextUtils.isEmpty(MessagesController.getInstance(i10).config.musicSearchUsername.get())) {
-                        z10 = true;
-                    }
-                }
-                c8Var.B0 = z10;
-            }
-            v7 v7Var = c8Var.x0;
-            AndroidUtilities.cancelRunOnUIThread(v7Var);
-            AndroidUtilities.runOnUIThread(v7Var, 400L);
-            v7 v7Var2 = c8Var.I0;
-            AndroidUtilities.cancelRunOnUIThread(v7Var2);
-            AndroidUtilities.runOnUIThread(v7Var2, 400L);
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            d8 d8Var = this.a;
+            d8Var.i0 = true;
+            s4.d0 d0Var = (s4.d0) d8Var.d.getLayoutManager();
+            ji.o oVar = new ji.o(d8Var.getContext(), 2);
+            oVar.a = 1;
+            oVar.p = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(1.0f);
+            d0Var.w0(oVar);
         }
-        c8Var.o0.N(true);
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

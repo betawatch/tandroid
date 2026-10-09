@@ -1,72 +1,117 @@
 package ai;
 
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.t60;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class la implements z4.e {
-    public final /* synthetic */ jc a;
-    public final /* synthetic */ zb b;
+public final class la extends z4.a {
+    public final ArrayList c = new ArrayList();
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ kc e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+    public final /* synthetic */ ac g;
 
-    public la(zb zbVar, jc jcVar) {
-        this.b = zbVar;
-        this.a = jcVar;
+    public la(ac acVar, Context context, kc kcVar, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.g = acVar;
+        this.d = context;
+        this.e = kcVar;
+        this.f = e6Var;
     }
 
-    @Override // z4.e
-    public final void a(int i10) {
-        zb zbVar = this.b;
-        e6 currentPeerView = zbVar.getCurrentPeerView();
-        if (currentPeerView == null) {
-            return;
-        }
-        ((ac) zbVar.B0).a(currentPeerView.getSelectedPosition(), currentPeerView.getCurrentPeer());
-        zbVar.F();
-        jc jcVar = this.a;
-        fc fcVar = jcVar.t0;
-        if (fcVar != null) {
-            if (i10 < 3) {
-                fcVar.f(false);
-            } else if (i10 > zbVar.z0.b() - 4) {
-                jcVar.t0.f(true);
-            }
-        }
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        FrameLayout frameLayout = (FrameLayout) obj;
+        gVar.removeView(frameLayout);
+        f6 f6Var = (f6) frameLayout.getChildAt(0);
+        AndroidUtilities.removeFromParent(f6Var);
+        this.c.add(f6Var);
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        zb zbVar = this.b;
-        zbVar.I0 = i10;
-        zbVar.J0 = i11 > 0 ? i10 + 1 : i10 - 1;
-        zbVar.K0 = f7;
-        long j3 = UserConfig.getInstance(zbVar.y0).clientUserId;
-        int i12 = zbVar.I0;
-        if (i12 >= 0 && (zbVar.x0 != null ? zbVar.w0 == j3 : !(i12 >= zbVar.A0.size() || ((Long) zbVar.A0.get(zbVar.I0)).longValue() != j3))) {
-            ((ac) zbVar.B0).d(1.0f - zbVar.K0);
-            return;
-        }
-        int i13 = zbVar.J0;
-        if (i13 < 0 || (zbVar.x0 != null ? zbVar.w0 != j3 : i13 >= zbVar.A0.size() || ((Long) zbVar.A0.get(zbVar.J0)).longValue() != j3)) {
-            ((ac) zbVar.B0).d(0.0f);
+    @Override // z4.a
+    public final int b() {
+        ac acVar = this.g;
+        ArrayList arrayList = acVar.x0;
+        return arrayList != null ? arrayList.size() : acVar.A0.size();
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        f6 kaVar;
+        Context context = this.d;
+        ac acVar = this.g;
+        na naVar = new na(acVar, context);
+        ArrayList arrayList = this.c;
+        boolean isEmpty = arrayList.isEmpty();
+        kc kcVar = this.e;
+        if (isEmpty) {
+            kaVar = new ka(this, this.d, kcVar, acVar.H0, this.f);
         } else {
-            ((ac) zbVar.B0).d(zbVar.K0);
+            kaVar = (f6) arrayList.remove(0);
+            kaVar.o1.a.getImageReceiver().setVisible(true, true);
+            if (kaVar.e2 != null) {
+                kaVar.b2.N0();
+                kaVar.b2.setAlpha(1.0f - kaVar.d4);
+            }
+            kl0 kl0Var = kaVar.f2;
+            if (kl0Var != null) {
+                kl0Var.n();
+            }
+            kl0 kl0Var2 = kaVar.r3;
+            if (kl0Var2 != null) {
+                kl0Var2.n();
+            }
+            t60 t60Var = kaVar.J2;
+            if (t60Var != null) {
+                AndroidUtilities.removeFromParent(t60Var);
+                kaVar.J2.c(true);
+                kaVar.J2 = null;
+            }
+            kaVar.setActive(false);
+            kaVar.setIsVisible(false);
+            kaVar.L2 = false;
+            kaVar.O2.d(0.0f, false);
+            kaVar.l1 = null;
+            kaVar.i3 = false;
+            kaVar.p0();
         }
+        naVar.a = kaVar;
+        kaVar.setAccount(acVar.y0);
+        kaVar.setDelegate(acVar.B0);
+        kaVar.setLongpressed(kcVar.a1);
+        naVar.setTag(Integer.valueOf(i10));
+        ArrayList arrayList2 = acVar.x0;
+        if (arrayList2 != null) {
+            if (kcVar.R0) {
+                i10 = (arrayList2.size() - 1) - i10;
+            }
+            ArrayList arrayList3 = (ArrayList) arrayList2.get(i10);
+            naVar.c = arrayList3;
+            e9 e9Var = kcVar.O0;
+            if ((e9Var instanceof w8) || (e9Var instanceof h9)) {
+                MessageObject f7 = e9Var.f(((Integer) arrayList3.get(0)).intValue());
+                naVar.b = f7 == null ? acVar.w0 : f7.getDialogId();
+            } else {
+                naVar.b = acVar.w0;
+            }
+        } else {
+            naVar.c = null;
+            naVar.b = ((Long) acVar.A0.get(i10)).longValue();
+        }
+        naVar.addView(kaVar);
+        kaVar.requestLayout();
+        gVar.addView(naVar);
+        return naVar;
     }
 
-    @Override // z4.e
-    public final void c(int i10) {
-        zb zbVar = this.b;
-        ((ac) zbVar.B0).d.P();
-        Runnable runnable = zbVar.G0;
-        if (runnable != null && i10 == 0) {
-            runnable.run();
-            zbVar.G0 = null;
-        }
-        zbVar.F0 = i10;
-        jc jcVar = zbVar.Q0;
-        if (jcVar.n0.F0 == 1) {
-            AndroidUtilities.cancelRunOnUIThread(jcVar.b1);
-        }
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

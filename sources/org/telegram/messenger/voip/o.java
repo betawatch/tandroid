@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,13 +32,13 @@ public final /* synthetic */ class o implements RequestDelegate {
                 ((GroupCallMessagesController) this.b).lambda$sendCallMessage$5((g) this.c, (GroupCallMessage) this.d, tLObject, tL_error);
                 break;
             case 2:
-                VoIPService.lambda$startConferenceGroupCall$49((ArrayList) this.b, (ArrayList) this.c, (y) this.d, tLObject, tL_error);
+                VoIPService.lambda$startConferenceGroupCall$49((ArrayList) this.b, (ArrayList) this.c, (z) this.d, tLObject, tL_error);
                 break;
             case 3:
                 ((VoIPService) this.b).lambda$startConferenceGroupCall$45((TL_phone.PhoneCall) this.c, (TL_phone.exportGroupCallInvite) this.d, tLObject, tL_error);
                 break;
             default:
-                VoIPService.lambda$startConferenceGroupCall$41((ArrayList) this.b, (ArrayList) this.c, (y) this.d, tLObject, tL_error);
+                VoIPService.lambda$startConferenceGroupCall$41((ArrayList) this.b, (ArrayList) this.c, (z) this.d, tLObject, tL_error);
                 break;
         }
     }

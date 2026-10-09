@@ -10,13 +10,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
-import yh.l5;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.tc;
+import yh.e5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,9 +50,9 @@ public final /* synthetic */ class l0 implements Runnable {
                 s0Var.E = z10;
                 break;
             case 1:
-                yc ycVar = (yc) obj3;
+                ad adVar = (ad) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                d6 d6Var = (d6) obj;
+                e6 e6Var = (e6) obj;
                 int i12 = R.raw.star_premium_2;
                 String string2 = z10 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
                 if (z10) {
@@ -60,18 +60,18 @@ public final /* synthetic */ class l0 implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                rc M = ycVar.M(string2, AndroidUtilities.replaceSingleTag(string, i6.Gi, 0, new tg.c(chat), d6Var), i12);
+                tc M = adVar.M(string2, AndroidUtilities.replaceSingleTag(string, i6.Gi, 0, new tg.c(chat), e6Var), i12);
                 M.j = 5000;
                 M.j();
                 break;
             default:
-                l5 l5Var = (l5) obj3;
+                e5 e5Var = (e5) obj3;
                 TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList = l5Var.l;
-                int i13 = l5Var.a;
-                if (((int[]) obj2)[0] == l5Var.m) {
-                    l5Var.i = false;
-                    l5Var.m = -1;
+                ArrayList arrayList = e5Var.l;
+                int i13 = e5Var.a;
+                if (((int[]) obj2)[0] == e5Var.m) {
+                    e5Var.i = false;
+                    e5Var.m = -1;
                     if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
                         TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
                         MessagesController.getInstance(i13).putUsers(tL_payments_savedStarGifts.users, false);
@@ -80,25 +80,25 @@ public final /* synthetic */ class l0 implements Runnable {
                             arrayList.clear();
                         }
                         arrayList.addAll(tL_payments_savedStarGifts.gifts);
-                        l5Var.k = tL_payments_savedStarGifts.next_offset;
-                        l5Var.n = tL_payments_savedStarGifts.count;
-                        l5Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
-                        l5Var.j = arrayList.size() > l5Var.n || l5Var.k == null;
+                        e5Var.k = tL_payments_savedStarGifts.next_offset;
+                        e5Var.n = tL_payments_savedStarGifts.count;
+                        e5Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
+                        e5Var.j = arrayList.size() > e5Var.n || e5Var.k == null;
                     } else {
-                        l5Var.j = true;
+                        e5Var.j = true;
                     }
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(l5Var.b), l5Var);
+                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(e5Var.b), e5Var);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ l0(yc ycVar, boolean z10, TLRPC.Chat chat, d6 d6Var) {
+    public /* synthetic */ l0(ad adVar, boolean z10, TLRPC.Chat chat, e6 e6Var) {
         this.a = 1;
-        this.c = ycVar;
+        this.c = adVar;
         this.b = z10;
         this.d = chat;
-        this.e = d6Var;
+        this.e = e6Var;
     }
 }

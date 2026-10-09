@@ -1,40 +1,37 @@
 package k2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n4.y b;
-    public final /* synthetic */ i2.g c;
+    public final /* synthetic */ n4.x b;
+    public final /* synthetic */ k c;
 
-    public /* synthetic */ h(n4.y yVar, i2.g gVar, int i10) {
+    public /* synthetic */ h(n4.x xVar, k kVar, int i10) {
         this.a = i10;
-        this.b = yVar;
-        this.c = gVar;
+        this.b = xVar;
+        this.c = kVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        k kVar = this.c;
+        n4.x xVar = this.b;
+        switch (i10) {
             case 0:
-                n4.y yVar = this.b;
-                i2.g gVar = this.c;
-                synchronized (gVar) {
-                }
-                k kVar = (k) yVar.c;
+                j jVar = (j) xVar.c;
                 String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) kVar).a.s;
-                j2.a n10 = fVar.n((u2.f0) fVar.d.e);
-                fVar.q(n10, 1013, new j2.c(n10, gVar, 13));
+                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1032, new j2.e(0, p5, kVar));
                 break;
             default:
-                n4.y yVar2 = this.b;
-                i2.g gVar2 = this.c;
-                k kVar2 = (k) yVar2.c;
+                j jVar2 = (j) xVar.c;
                 String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) kVar2).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1007, new j2.c(p5, gVar2, 6));
+                j2.f fVar2 = ((i2.c0) jVar2).a.s;
+                j2.a p10 = fVar2.p();
+                fVar2.q(p10, 1031, new j2.c(p10, kVar, 17));
                 break;
         }
     }

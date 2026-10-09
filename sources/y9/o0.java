@@ -1,6 +1,6 @@
 package y9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o0 extends n1 {
     public final long a;
@@ -35,7 +35,7 @@ public final class o0 extends n1 {
         long j10 = this.b;
         int hashCode = (((((((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003) ^ this.c.hashCode()) * 1000003;
         String str = this.d;
-        return (str == null ? 0 : str.hashCode()) ^ hashCode;
+        return hashCode ^ (str == null ? 0 : str.hashCode());
     }
 
     public final String toString() {
@@ -46,6 +46,6 @@ public final class o0 extends n1 {
         sb2.append(", name=");
         sb2.append(this.c);
         sb2.append(", uuid=");
-        return a4.a.t(sb2, this.d, "}");
+        return a1.g.t(sb2, this.d, "}");
     }
 }

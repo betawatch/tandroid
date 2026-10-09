@@ -1,46 +1,72 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
+public abstract class tw0 extends sw0 {
+    public Activity w0;
+    public final Rect x0;
+    public int y0;
+    public boolean z0;
 
-    public /* synthetic */ tw0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
-        this.a = i11;
-        this.b = document;
-        this.c = i10;
-        this.d = messageObject;
-        this.e = u1Var;
-        this.f = tL_messages_stickerSet;
+    public tw0(Context context, Activity activity) {
+        super(context, null);
+        this.x0 = new Rect();
+        setActivity(activity);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Document document = this.b;
-                String attachFileName = FileLoader.getAttachFileName(document);
-                int i10 = this.c;
-                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
-                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
-                break;
-            default:
-                TLRPC.Document document2 = this.b;
-                String attachFileName2 = FileLoader.getAttachFileName(document2);
-                int i11 = this.c;
-                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
-                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
-                break;
+    @Override // org.telegram.ui.Components.sw0
+    public int R() {
+        View rootView = getRootView();
+        Rect rect = this.x0;
+        getWindowVisibleDisplayFrame(rect);
+        if (this.z0) {
+            return ((rootView.getHeight() - (rect.top != 0 ? AndroidUtilities.statusBarHeight : 0)) - AndroidUtilities.getViewInset(rootView)) - (rect.bottom - rect.top);
         }
+        int height = (this.w0.getWindow().getDecorView().getHeight() - AndroidUtilities.getViewInset(rootView)) - rootView.getBottom();
+        if (height <= Math.max(AndroidUtilities.dp(10.0f), AndroidUtilities.statusBarHeight)) {
+            return 0;
+        }
+        return height;
+    }
+
+    @Override // org.telegram.ui.Components.sw0
+    public void S() {
+        if (this.n == null && this.r.isEmpty()) {
+            return;
+        }
+        this.y0 = R();
+        Point point = AndroidUtilities.displaySize;
+        post(new ds0(4, this, point.x > point.y));
+    }
+
+    @Override // org.telegram.ui.Components.sw0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.sw0
+    public int getKeyboardHeight() {
+        return this.y0;
+    }
+
+    @Override // org.telegram.ui.Components.sw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        S();
+    }
+
+    public void setActivity(Activity activity) {
+        this.w0 = activity;
+    }
+
+    public void setWithoutWindow(boolean z10) {
+        this.z0 = z10;
     }
 }

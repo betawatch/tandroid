@@ -1,41 +1,112 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class kd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ md b;
-    public final /* synthetic */ boolean c;
+import android.graphics.Paint;
+import java.util.Random;
 
-    public /* synthetic */ kd(md mdVar, boolean z10, int i10) {
-        this.a = i10;
-        this.b = mdVar;
-        this.c = z10;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class kd {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public float[] k;
+    public float[] l;
+    public float[] m;
+    public float[] n;
+    public float[] o;
+    public float[] p;
+    public float[] q;
+    public float[] r;
+    public float[] s;
+    public float[] t;
+    public float[] u;
+    public float[] v;
+    public float[] w;
+    public int x;
+    public int h = -11318601;
+    public final Paint i = new Paint(1);
+    public final Random j = new Random();
+    public int y = 255;
+
+    public final void a() {
+        int i10 = this.h;
+        Paint paint = this.i;
+        paint.setColor(i10);
+        paint.setAlpha((this.g * this.y) / 255);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.c;
-                md mdVar = this.b;
-                if (!z10) {
-                    mdVar.Z0.setVisibility(8);
-                    break;
-                } else {
-                    mdVar.getClass();
-                    break;
-                }
-            default:
-                boolean z11 = this.c;
-                md mdVar2 = this.b;
-                if (!z11) {
-                    mdVar2.V0.setVisibility(8);
-                    break;
-                } else {
-                    mdVar2.getClass();
-                    break;
-                }
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:
+    
+        if (r3 > 1.0f) goto L4;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10) {
+        float f7 = 0.18f / this.x;
+        float f10 = this.k[i10];
+        Random random = this.j;
+        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f10;
+        float[] fArr = this.l;
+        float f11 = nextFloat >= 0.0f ? 1.0f : 0.0f;
+        nextFloat = f11;
+        fArr[i10] = nextFloat;
+        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f7 * 0.35f) + this.m[i10];
+        float[] fArr2 = this.n;
+        float f12 = -f7;
+        if (nextFloat2 < f12) {
+            f7 = f12;
+        } else if (nextFloat2 <= f7) {
+            f7 = nextFloat2;
+        }
+        fArr2[i10] = f7;
+        this.p[i10] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
+    }
+
+    public final void c(int i10) {
+        this.x = i10;
+        this.k = new float[i10];
+        this.l = new float[i10];
+        this.m = new float[i10];
+        this.n = new float[i10];
+        this.o = new float[i10];
+        this.p = new float[i10];
+        this.q = new float[i10];
+        this.r = new float[i10];
+        this.s = new float[i10];
+        this.t = new float[i10];
+        this.u = new float[i10];
+        this.v = new float[i10];
+        this.w = new float[i10];
+        for (int i11 = 0; i11 < this.x; i11++) {
+            float[] fArr = this.k;
+            Random random = this.j;
+            fArr[i11] = random.nextFloat();
+            this.m[i11] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
+            b(i11);
+            this.o[i11] = random.nextFloat();
+        }
+        a();
+    }
+
+    public final void d(float f7) {
+        for (int i10 = 0; i10 < this.x; i10++) {
+            float[] fArr = this.o;
+            float f10 = fArr[i10];
+            float f11 = this.p[i10];
+            jd jdVar = ld.H;
+            float f12 = (f11 * f7 * 8.2f) + (0.8f * f11) + f10;
+            fArr[i10] = f12;
+            if (f12 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                this.k[i10] = this.l[i10];
+                this.m[i10] = this.n[i10];
+                b(i10);
+            }
         }
     }
 }

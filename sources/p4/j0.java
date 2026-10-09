@@ -10,10 +10,11 @@ import android.view.Display;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.Locale;
+import m.f3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList I;
@@ -43,7 +44,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new l2.g(new ComponentName("android", k0.class.getName()), 12));
+        super(context, new f3(new ComponentName("android", k0.class.getName()), 12));
         this.G = new ArrayList();
         this.H = new ArrayList();
         this.r = eVar;

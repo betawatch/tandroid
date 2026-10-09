@@ -1,226 +1,101 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.util.SparseArray;
-import android.widget.EditText;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public interface qg {
+    void B1(CharSequence charSequence);
 
-    public /* synthetic */ qg(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
+    void B2();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
-        int i10 = this.a;
-        int i11 = 0;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = ((tg) obj).V;
-                if (!MediaController.getInstance().isRecordingPaused()) {
-                    MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
-                }
-                if (chatActivityEnterView.s4) {
-                    chatActivityEnterView.J3 = true;
-                }
-                MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
-                chatActivityEnterView.Z2.a1(0);
-                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.k1;
-                if (slideTextView != null) {
-                    slideTextView.setEnabled(false);
-                    break;
-                }
-                break;
-            case 1:
-                yc ycVar = (yc) obj;
-                new rg.y0(ycVar.W(), 42, ycVar.c).show();
-                break;
-            case 2:
-                AndroidUtilities.removeFromParent((ci.e4) obj);
-                break;
-            case 3:
-                AndroidUtilities.showKeyboard((EditText) obj);
-                break;
-            case 4:
-                SparseArray sparseArray = q5.q;
-                ((q5) obj).v();
-                break;
-            case 5:
-                m5 m5Var = (m5) obj;
-                ArrayList arrayList = new ArrayList(m5Var.c);
-                m5Var.c.clear();
-                MessagesStorage.getInstance(m5Var.e).getStorageQueue().postRunnable(new j5(m5Var, arrayList, i11));
-                m5Var.d = null;
-                break;
-            case 6:
-                ((o5) obj).invalidate();
-                break;
-            case 7:
-                ((o1.k) obj).f();
-                break;
-            case 8:
-                p6 p6Var = (p6) obj;
-                CharSequence charSequence = p6Var.f;
-                if (charSequence != null) {
-                    p6Var.c(charSequence, p6Var.h, true);
-                    p6Var.f = null;
-                    p6Var.h = false;
-                    break;
-                }
-                break;
-            case 9:
-                ((i8) obj).n.n.setVisibility(8);
-                break;
-            case 10:
-                ((o8) obj).c.l1();
-                break;
-            case 11:
-                ga gaVar = (ga) obj;
-                gaVar.o = true;
-                gaVar.d.invalidate();
-                break;
-            case 12:
-                fa faVar = (fa) obj;
-                if (!faVar.a) {
-                    ga gaVar2 = faVar.d;
-                    Bitmap[] bitmapArr = gaVar2.g;
-                    Canvas[] canvasArr = gaVar2.h;
-                    gaVar2.g = gaVar2.f;
-                    gaVar2.h = gaVar2.i;
-                    gaVar2.f = bitmapArr;
-                    gaVar2.i = canvasArr;
-                    gaVar2.k = false;
-                    ci.r6 r6Var = gaVar2.d;
-                    if (r6Var != null) {
-                        r6Var.invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 13:
-                ka kaVar = ((qa) obj).t;
-                if (kaVar != null) {
-                    kaVar.d();
-                    break;
-                }
-                break;
-            case 14:
-                ka kaVar2 = (ka) obj;
-                kaVar2.o = kaVar2.n.b;
-                kaVar2.d();
-                break;
-            case 15:
-                rc rcVar = ((kb) obj).b;
-                vb vbVar = rcVar.e;
-                vbVar.transitionRunningEnter = false;
-                vbVar.onEnterTransitionEnd();
-                if (rcVar.u) {
-                    rcVar.i(true);
-                    break;
-                }
-                break;
-            case 16:
-                jd jdVar = (jd) obj;
-                jdVar.getClass();
-                if (LiteMode.isEnabled(512)) {
-                    jdVar.invalidateSelf();
-                    break;
-                }
-                break;
-            case 17:
-                md mdVar = (md) obj;
-                if (mdVar.o1) {
-                    mdVar.o1 = false;
-                    mdVar.invalidate();
-                    break;
-                }
-                break;
-            case 18:
-                ((Dialog) obj).dismiss();
-                break;
-            case 19:
-                ChatActivityEnterView chatActivityEnterView2 = ((tf) obj).f;
-                int i12 = ChatActivityEnterView.n5;
-                chatActivityEnterView2.p1();
-                break;
-            case 20:
-                ((ch) obj).s = null;
-                break;
-            case 21:
-                ((ki) obj).B0.A1.l();
-                break;
-            case 22:
-                rk rkVar = (rk) ((androidx.mediarouter.app.g) obj).b;
-                try {
-                    File file = rkVar.O;
-                    if (file == null) {
-                        rkVar.M();
-                    } else {
-                        rkVar.L(file);
-                    }
-                    rkVar.T();
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            case 23:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((am) obj).b;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                chatAttachAlertPhotoLayout2.p0(-1, true);
-                break;
-            case 24:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((xl) obj).c;
-                if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
-                    chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
-                    break;
-                }
-                break;
-            case 25:
-                tm tmVar = (tm) obj;
-                xi xiVar = tmVar.b;
-                if (tmVar.Q && (chatAttachAlertPhotoLayout = xiVar.j0) != null) {
-                    org.telegram.ui.ActionBar.f1 f1Var = chatAttachAlertPhotoLayout.c1;
-                    f1Var.setIcon(R.drawable.ic_ab_back);
-                    f1Var.setText(LocaleController.getString(R.string.Back));
-                    f1Var.setRightIcon(0);
-                    break;
-                }
-                break;
-            case 26:
-                xn xnVar = (xn) obj;
-                xnVar.k1 = -1;
-                xnVar.j1 = null;
-                break;
-            case 27:
-                ((ro) obj).k();
-                break;
-            case 28:
-                ((to) obj).setVisibility(8);
-                break;
-            default:
-                ((sp) obj).b.a();
-                break;
-        }
-    }
+    void C(boolean z10);
+
+    boolean C1();
+
+    void F2();
+
+    void G1();
+
+    boolean I0();
+
+    void J();
+
+    void K(CharSequence charSequence, boolean z10, int i10, int i11, long j3);
+
+    void K0(int i10, int i11);
+
+    void L1();
+
+    void M0();
+
+    void O0();
+
+    TLRPC.TL_channels_sendAsPeers P();
+
+    void V(float f7, int i10);
+
+    void Z0();
+
+    void a0();
+
+    void c0(boolean z10);
+
+    void g1(int i10);
+
+    void h();
+
+    int h1();
+
+    TL_stories.StoryItem j1();
+
+    void j2();
+
+    void l();
+
+    boolean l1(long j3);
+
+    void l2(int i10);
+
+    boolean m();
+
+    boolean o1();
+
+    void o2();
+
+    void p2(boolean z10);
+
+    void q0();
+
+    void q2(int i10, int i11, int i12, long j3, long j10, boolean z10);
+
+    void r1(CharSequence charSequence, boolean z10, boolean z11);
+
+    void t1();
+
+    org.telegram.ui.pn u0();
+
+    boolean u1();
+
+    void u2();
+
+    int v();
+
+    void w1();
+
+    TLRPC.Peer x();
+
+    void x1();
+
+    void y();
+
+    void y1();
+
+    void z(float f7);
+
+    void z0();
+
+    void z1(View view, CharSequence charSequence, boolean z10);
 }

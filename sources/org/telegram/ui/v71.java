@@ -1,40 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v71 implements View.OnClickListener {
-    public final /* synthetic */ g81 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ SessionsActivity c;
-    public final /* synthetic */ x71 d;
+public final class v71 extends g.o {
+    public final /* synthetic */ x71 c;
 
-    public v71(x71 x71Var, g81 g81Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
-        this.d = x71Var;
-        this.a = g81Var;
-        this.b = tL_authorization;
-        this.c = sessionsActivity;
+    public v71(x71 x71Var) {
+        this.c = x71Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.c.getParentActivity());
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.TerminateSessionText);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.AreYouSureSessionTitle);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Terminate), new c7(this, this.a, this.b, 21));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        SessionsActivity sessionsActivity = this.c;
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        sessionsActivity.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        x71 x71Var = this.c;
+        org.telegram.ui.Components.d00 d00Var = x71Var.X;
+        org.telegram.ui.Components.c71 c71Var = x71Var.d0;
+        if (c71Var == null) {
+            return d00Var.J;
         }
+        org.telegram.ui.Components.p61 G = c71Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? d00Var.J : i11;
     }
 }

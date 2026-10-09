@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedPrefsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aa0 implements Runnable {
     public final /* synthetic */ LaunchActivity a;
@@ -61,25 +61,25 @@ public final /* synthetic */ class aa0 implements Runnable {
         String str = this.h;
         boolean z11 = this.n;
         boolean z12 = this.r;
-        ei.f5 b10 = ei.f5.b(i10, j3, j3, null, null, 3, 0, 0L, botApp, z10, str, user, 0, z11, z12);
+        ei.e5 b10 = ei.e5.b(i10, j3, j3, null, null, 3, 0, 0L, botApp, z10, str, user, 0, z11, z12);
         if (launchActivity.P() == null || launchActivity.P().k(b10) == null) {
             SharedPrefsHelper.setWebViewConfirmShown(launchActivity.O, user.id, true);
-            ei.l3 l3Var = new ei.l3(launchActivity, n2Var.getResourceProvider());
-            ei.c3 c3Var = l3Var.x;
-            if (c3Var != null) {
-                c3Var.setWasOpenedByLinkIntent(this.s);
+            ei.k3 k3Var = new ei.k3(launchActivity, n2Var.getResourceProvider());
+            ei.b3 b3Var = k3Var.x;
+            if (b3Var != null) {
+                b3Var.setWasOpenedByLinkIntent(this.s);
             }
-            l3Var.w(!z11);
+            k3Var.x(!z11);
             if (z12) {
-                l3Var.x(true, false, l3Var.e0);
+                k3Var.y(true, false, k3Var.e0);
             }
-            l3Var.A0 = false;
-            l3Var.k0 = launchActivity;
-            l3Var.s(n2Var, b10);
-            l3Var.show();
+            k3Var.A0 = false;
+            k3Var.k0 = launchActivity;
+            k3Var.t(n2Var, b10);
+            k3Var.show();
             if (tL_messages_botApp.inactive || this.v) {
-                TLRPC.User user2 = MessagesController.getInstance(l3Var.G).getUser(Long.valueOf(l3Var.H));
-                ArrayList<TLRPC.TL_attachMenuBot> arrayList = MediaDataController.getInstance(l3Var.G).getAttachMenuBots().bots;
+                TLRPC.User user2 = MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H));
+                ArrayList<TLRPC.TL_attachMenuBot> arrayList = MediaDataController.getInstance(k3Var.G).getAttachMenuBots().bots;
                 int size = arrayList.size();
                 int i11 = 0;
                 while (true) {
@@ -90,7 +90,7 @@ public final /* synthetic */ class aa0 implements Runnable {
                     TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
                     i11++;
                     tL_attachMenuBot = tL_attachMenuBot2;
-                    if (tL_attachMenuBot.bot_id == l3Var.H) {
+                    if (tL_attachMenuBot.bot_id == k3Var.H) {
                         break;
                     }
                 }
@@ -98,7 +98,7 @@ public final /* synthetic */ class aa0 implements Runnable {
                     return;
                 }
                 boolean z13 = tL_attachMenuBot.show_in_side_menu;
-                AndroidUtilities.runOnUIThread(new ci.x8(18, l3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
+                AndroidUtilities.runOnUIThread(new ci.y8(18, k3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
             }
         }
     }

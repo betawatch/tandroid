@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class Timer {
     final String name;
@@ -10,7 +10,7 @@ public class Timer {
     public ArrayList<Task> tasks = new ArrayList<>();
     final long startTime = System.currentTimeMillis();
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class Log extends Task {
         public Log(String str) {
             super(str);
@@ -22,7 +22,7 @@ public class Timer {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class Task {
         int pad;
         final String task;
@@ -49,7 +49,7 @@ public class Timer {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.task);
             sb2.append(": ");
-            sb2.append(this.endTime < 0 ? "not done" : a4.a.s(new StringBuilder(), this.endTime - this.startTime, "ms"));
+            sb2.append(this.endTime < 0 ? "not done" : a1.g.s(new StringBuilder(), this.endTime - this.startTime, "ms"));
             return sb2.toString();
         }
     }

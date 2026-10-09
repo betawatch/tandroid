@@ -6,22 +6,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Cells.za;
-import org.telegram.ui.Components.h9;
+import org.telegram.ui.Cells.xa;
+import org.telegram.ui.Components.j9;
 import tg.s;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c extends za {
+public final class c extends xa {
     public final a a0;
     public TL_stories.PrepaidGiveaway b0;
 
     public c(Context context) {
-        super(context, 0, 0, false);
+        super(0, 0, context, false);
         this.a0 = new a(context);
     }
 
-    @Override // org.telegram.ui.Cells.za
+    @Override // org.telegram.ui.Cells.xa
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -30,7 +30,7 @@ public final class c extends za {
         return this.b0;
     }
 
-    @Override // org.telegram.ui.Cells.za, android.view.View
+    @Override // org.telegram.ui.Cells.xa, android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.S) {
             canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, i6.k0);
@@ -40,23 +40,23 @@ public final class c extends za {
     public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
         this.b0 = prepaidGiveaway;
         boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
-        h9 h9Var = this.E;
+        j9 j9Var = this.E;
         if (z10) {
-            h9Var.g(26);
+            j9Var.g(26);
             String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
             a aVar = this.a0;
             aVar.f = valueOf;
             aVar.e = aVar.a.measureText(valueOf);
             aVar.invalidateSelf();
         } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
-            h9Var.g(16);
+            j9Var.g(16);
             int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
             if (i10 == 12) {
-                h9Var.i(-31392, -2796986);
+                j9Var.i(-31392, -2796986);
             } else if (i10 == 6) {
-                h9Var.i(-10703110, -12481584);
+                j9Var.i(-10703110, -12481584);
             } else {
-                h9Var.i(-6631068, -11945404);
+                j9Var.i(-6631068, -11945404);
             }
             String valueOf2 = String.valueOf(s.g() * prepaidGiveaway.quantity);
             a aVar2 = this.a0;

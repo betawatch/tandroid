@@ -3,12 +3,12 @@ package a3;
 import android.content.Context;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k {
     public final Context a;
     public boolean b;
-    public r2.k c;
+    public r2.l c;
     public long d;
     public Handler e;
     public i2.c0 f;
@@ -16,6 +16,6 @@ public final class k {
 
     public k(Context context) {
         this.a = context;
-        this.c = new l5.j(context);
+        this.c = new r2.h(context, 0);
     }
 }

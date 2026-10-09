@@ -9,10 +9,9 @@ import b2.e0;
 import b2.f0;
 import b2.k0;
 import b2.l0;
-import com.google.android.gms.internal.cast.b5;
+import com.google.android.gms.internal.cast.z4;
 import com.google.firebase.messaging.s;
 import g2.c0;
-import ii.n4;
 import j$.util.Objects;
 import java.io.IOException;
 import java.math.RoundingMode;
@@ -22,17 +21,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import t7.u;
+import k2.g0;
+import m.f3;
+import t7.t;
 import u2.d0;
-import u2.t;
-import v7.p7;
+import v7.n7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends u2.a {
     public y2.l A;
     public c0 B;
-    public b5 C;
+    public z4 C;
     public Handler D;
     public e0 E;
     public Uri F;
@@ -49,20 +49,20 @@ public final class h extends u2.a {
     public final boolean h;
     public final g2.g i;
     public final a5.a j;
-    public final ob.a k;
-    public final n2.n l;
-    public final qb.b m;
+    public final t k;
+    public final n2.m l;
+    public final rb.a m;
     public final s n;
     public final long o;
     public final long p;
     public final a5.a q;
     public final y2.n r;
-    public final a4.m s;
+    public final g0 s;
     public final Object t;
     public final SparseArray u;
     public final c v;
     public final c w;
-    public final n4 x;
+    public final f x;
     public final y2.m y;
     public g2.h z;
 
@@ -72,7 +72,7 @@ public final class h extends u2.a {
 
     /* JADX WARN: Type inference failed for: r2v11, types: [l2.c] */
     /* JADX WARN: Type inference failed for: r2v12, types: [l2.c] */
-    public h(k0 k0Var, g2.g gVar, y2.n nVar, a5.a aVar, ob.a aVar2, n2.n nVar2, qb.b bVar, long j3, long j10) {
+    public h(k0 k0Var, g2.g gVar, y2.n nVar, a5.a aVar, t tVar, n2.m mVar, rb.a aVar2, long j3, long j10) {
         this.P = k0Var;
         this.E = k0Var.c;
         f0 f0Var = k0Var.b;
@@ -84,22 +84,22 @@ public final class h extends u2.a {
         this.i = gVar;
         this.r = nVar;
         this.j = aVar;
-        this.l = nVar2;
-        this.m = bVar;
+        this.l = mVar;
+        this.m = aVar2;
         this.o = j3;
         this.p = j10;
-        this.k = aVar2;
+        this.k = tVar;
         this.n = new s(6);
         this.h = false;
         this.q = b(null);
         this.t = new Object();
         this.u = new SparseArray();
-        this.x = new n4(this, 4);
+        this.x = new f(this, 0);
         this.N = -9223372036854775807L;
         this.L = -9223372036854775807L;
-        this.s = new a4.m(this, 26);
+        this.s = new g0(this, 2);
+        this.y = new a4.l(this, 28);
         final int i10 = 0;
-        this.y = new g(this, 0);
         this.v = new Runnable(this) { // from class: l2.c
             public final /* synthetic */ h b;
 
@@ -169,9 +169,9 @@ public final class h extends u2.a {
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
         y2.o oVar = new y2.o(this.z, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
-        a4.m mVar = this.s;
+        g0 g0Var = this.s;
         this.m.getClass();
-        this.A.f(oVar, mVar, 3);
+        this.A.f(oVar, g0Var, 3);
     }
 
     @Override // u2.a
@@ -187,14 +187,14 @@ public final class h extends u2.a {
     public final d0 c(u2.f0 f0Var, y2.d dVar, long j3) {
         int intValue = ((Integer) f0Var.a).intValue() - this.O;
         a5.a b10 = b(f0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
+        n2.j jVar = new n2.j(this.d.c, 0, f0Var);
         int i10 = this.O + intValue;
         m2.c cVar = this.H;
         c0 c0Var = this.B;
         long j10 = this.L;
-        j2.k kVar2 = this.g;
-        e2.d.h(kVar2);
-        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, kVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar2);
+        j2.k kVar = this.g;
+        e2.d.h(kVar);
+        b bVar = new b(i10, cVar, this.n, intValue, this.j, c0Var, this.l, jVar, this.m, b10, j10, this.y, dVar, this.k, this.x, kVar);
         this.u.put(i10, bVar);
         return bVar;
     }
@@ -215,9 +215,9 @@ public final class h extends u2.a {
         Looper myLooper = Looper.myLooper();
         j2.k kVar = this.g;
         e2.d.h(kVar);
-        n2.n nVar = this.l;
-        nVar.C(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.l;
+        mVar.F(myLooper, kVar);
+        mVar.b();
         if (this.h) {
             y(false);
             return;
@@ -235,7 +235,7 @@ public final class h extends u2.a {
         pVar.r = true;
         pVar.d.removeCallbacksAndMessages(null);
         for (v2.h hVar : bVar.H) {
-            hVar.B(bVar);
+            hVar.z(bVar);
         }
         bVar.G = null;
         this.u.remove(bVar.a);
@@ -289,15 +289,15 @@ public final class h extends u2.a {
         if (lVar == null) {
             lVar = new y2.l("SntpClient");
         }
-        lVar.f(new u(), new g(dVar, 24), 1);
+        lVar.f(new rb.a(27), new f3(dVar, 25), 1);
     }
 
     public final void w(y2.o oVar, long j3) {
         long j10 = oVar.a;
         Uri uri = oVar.d.c;
-        t tVar = new t(j3);
+        u2.t tVar = new u2.t(j3);
         this.m.getClass();
-        this.q.o(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.p(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void x(IOException iOException) {
@@ -306,25 +306,33 @@ public final class h extends u2.a {
         y(true);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x0379, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x0377, code lost:
     
         if (r15.a == (-9223372036854775807L)) goto L190;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x016f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0171, code lost:
     
         r11 = r19;
      */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0239  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x03bb  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x03e8  */
-    /* JADX WARN: Removed duplicated region for block: B:197:0x0403  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x01d7  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0255  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x03b8  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x0400  */
     /* JADX WARN: Removed duplicated region for block: B:248:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:249:0x03f5  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x03c0  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x03c5  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x01d2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:249:0x03f2  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x03bd  */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x03c2  */
+    /* JADX WARN: Removed duplicated region for block: B:269:0x01d4 A[SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v17, types: [int] */
+    /* JADX WARN: Type inference failed for: r10v19 */
+    /* JADX WARN: Type inference failed for: r15v10, types: [int] */
+    /* JADX WARN: Type inference failed for: r15v12 */
+    /* JADX WARN: Type inference failed for: r15v9 */
+    /* JADX WARN: Type inference failed for: r5v25, types: [x2.r] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -348,11 +356,12 @@ public final class h extends u2.a {
         float f10;
         float f11;
         float f12;
-        long Q;
+        long P;
         long min;
         boolean z13;
         i c10;
-        boolean z14 = false;
+        boolean z14;
+        boolean z15 = false;
         int i11 = 0;
         while (true) {
             SparseArray sparseArray = this.u;
@@ -367,7 +376,7 @@ public final class h extends u2.a {
                 bVar.K = cVar2;
                 bVar.L = i12;
                 p pVar = bVar.x;
-                pVar.n = z14;
+                pVar.n = z15;
                 pVar.f = cVar2;
                 Iterator it = pVar.e.entrySet().iterator();
                 while (it.hasNext()) {
@@ -377,27 +386,33 @@ public final class h extends u2.a {
                 }
                 v2.h[] hVarArr = bVar.H;
                 if (hVarArr != null) {
-                    for (v2.h hVar : hVarArr) {
-                        l lVar = hVar.e;
+                    int length = hVarArr.length;
+                    for (?? r10 = z15; r10 < length; r10++) {
+                        l lVar = hVarArr[r10].e;
                         j[] jVarArr = lVar.i;
                         try {
                             lVar.k = cVar2;
                             lVar.l = i12;
                             long d = cVar2.d(i12);
                             ArrayList a2 = lVar.a();
-                            for (int i13 = 0; i13 < jVarArr.length; i13++) {
+                            for (?? r15 = z15; r15 < jVarArr.length; r15++) {
                                 try {
-                                    jVarArr[i13] = jVarArr[i13].a(d, (m2.m) a2.get(lVar.j.h(i13)));
+                                    jVarArr[r15] = jVarArr[r15].a(d, (m2.m) a2.get(lVar.j.h(r15)));
                                 } catch (u2.b e7) {
                                     e = e7;
                                     lVar.m = e;
+                                    z15 = false;
                                 }
                             }
                         } catch (u2.b e10) {
                             e = e10;
                         }
+                        z15 = false;
                     }
-                    bVar.G.f(bVar);
+                    z14 = true;
+                    bVar.G.D(bVar);
+                } else {
+                    z14 = true;
                 }
                 bVar.M = cVar2.b(i12).d;
                 for (m mVar : bVar.I) {
@@ -406,29 +421,30 @@ public final class h extends u2.a {
                         if (it2.hasNext()) {
                             m2.g gVar = (m2.g) it2.next();
                             if (gVar.a().equals(mVar.e.a())) {
-                                mVar.b(gVar, cVar2.d && i12 == cVar2.m.size() + (-1));
+                                mVar.b(gVar, (cVar2.d && i12 == cVar2.m.size() + (-1)) ? z14 : false);
                             }
                         }
                     }
                 }
             }
             i11++;
-            z14 = false;
+            z15 = false;
         }
+        int i13 = 1;
         m2.h b10 = this.H.b(0);
         int size = this.H.m.size() - 1;
         m2.h b11 = this.H.b(size);
         long d10 = this.H.d(size);
-        long Q2 = e2.d0.Q(e2.d0.A(this.L));
+        long P2 = e2.d0.P(e2.d0.z(this.L));
         long d11 = this.H.d(0);
         long j20 = b10.b;
         List list = b10.c;
-        long Q3 = e2.d0.Q(j20);
+        long P3 = e2.d0.P(j20);
         boolean u10 = u(b10);
-        long j21 = Q3;
+        long j21 = P3;
         int i14 = 0;
         while (true) {
-            long j22 = Q3;
+            long j22 = P3;
             if (i14 >= list.size()) {
                 j3 = 0;
                 j10 = j21;
@@ -438,19 +454,20 @@ public final class h extends u2.a {
             j3 = 0;
             List list2 = aVar.c;
             int i15 = aVar.b;
-            boolean z15 = (i15 == 1 || i15 == 2) ? false : true;
-            if ((!u10 || !z15) && !list2.isEmpty()) {
+            boolean z16 = (i15 == i13 || i15 == 2) ? false : true;
+            if ((!u10 || !z16) && !list2.isEmpty()) {
                 i c11 = ((m2.m) list2.get(0)).c();
-                if (c11 != null && c11.q0(d11, Q2) != 0) {
-                    j21 = Math.max(j21, c11.a(c11.n(d11, Q2)) + j22);
+                if (c11 != null && c11.y(d11, P2) != 0) {
+                    j21 = Math.max(j21, c11.b(c11.f(d11, P2)) + j22);
                 }
             }
             i14++;
-            Q3 = j22;
+            P3 = j22;
+            i13 = 1;
         }
         long j23 = b11.b;
         List list3 = b11.c;
-        long Q4 = e2.d0.Q(j23);
+        long P4 = e2.d0.P(j23);
         boolean u11 = u(b11);
         long j24 = Long.MAX_VALUE;
         int i16 = 0;
@@ -460,33 +477,33 @@ public final class h extends u2.a {
                 break;
             }
             m2.a aVar2 = (m2.a) list3.get(i16);
-            boolean z16 = u11;
+            boolean z17 = u11;
             List list4 = aVar2.c;
             int i17 = aVar2.b;
-            long j25 = Q4;
+            long j25 = P4;
             if (i17 != 1 && i17 != 2) {
                 z13 = true;
-                if ((z16 || !z13) && !list4.isEmpty()) {
+                if ((z17 || !z13) && !list4.isEmpty()) {
                     c10 = ((m2.m) list4.get(0)).c();
                     if (c10 != null) {
                         j11 = j25 + d10;
                         break;
                     }
-                    long q02 = c10.q0(d10, Q2);
-                    if (q02 == j3) {
+                    long y3 = c10.y(d10, P2);
+                    if (y3 == j3) {
                         j11 = j25;
                         break;
                     } else {
-                        long n10 = (c10.n(d10, Q2) + q02) - 1;
-                        j24 = Math.min(j24, c10.i(n10, d10) + c10.a(n10) + j25);
+                        long f13 = (c10.f(d10, P2) + y3) - 1;
+                        j24 = Math.min(j24, c10.d(f13, d10) + c10.b(f13) + j25);
                     }
                 }
                 i16++;
-                u11 = z16;
-                Q4 = j25;
+                u11 = z17;
+                P4 = j25;
             }
             z13 = false;
-            if (z16) {
+            if (z17) {
             }
             c10 = ((m2.m) list4.get(0)).c();
             if (c10 != null) {
@@ -495,14 +512,14 @@ public final class h extends u2.a {
         if (this.H.d) {
             for (int i18 = 0; i18 < list3.size(); i18++) {
                 i c12 = ((m2.m) ((m2.a) list3.get(i18)).c.get(0)).c();
-                if (c12 != null && !c12.e0()) {
+                if (c12 != null && !c12.t()) {
                 }
             }
             z11 = true;
             if (z11) {
                 long j26 = this.H.f;
                 if (j26 != -9223372036854775807L) {
-                    j10 = Math.max(j10, j11 - e2.d0.Q(j26));
+                    j10 = Math.max(j10, j11 - e2.d0.P(j26));
                 }
             }
             long j27 = j11 - j10;
@@ -514,41 +531,41 @@ public final class h extends u2.a {
                 j14 = j3;
             } else {
                 e2.d.g(cVar.a != -9223372036854775807L);
-                long Q5 = (Q2 - e2.d0.Q(this.H.a)) - j10;
+                long P5 = (P2 - e2.d0.P(this.H.a)) - j10;
                 e0 e0Var = i().c;
-                long e02 = e2.d0.e0(Q5);
+                long d02 = e2.d0.d0(P5);
                 long j28 = e0Var.c;
                 if (j28 != -9223372036854775807L) {
-                    j15 = Math.min(e02, j28);
+                    j15 = Math.min(d02, j28);
                 } else {
                     b2.d0 d0Var = this.H.j;
                     if (d0Var != null) {
                         long j29 = d0Var.c;
                         if (j29 != -9223372036854775807L) {
-                            j15 = Math.min(e02, j29);
+                            j15 = Math.min(d02, j29);
                         }
                     }
-                    j15 = e02;
+                    j15 = d02;
                 }
-                long e03 = e2.d0.e0(Q5 - j27);
-                if (e03 < j3 && j15 > j3) {
-                    e03 = j3;
+                long d03 = e2.d0.d0(P5 - j27);
+                if (d03 < j3 && j15 > j3) {
+                    d03 = j3;
                 }
                 j12 = -9223372036854775807L;
                 long j30 = this.H.c;
                 if (j30 != -9223372036854775807L) {
-                    e03 = Math.min(e03 + j30, e02);
+                    d03 = Math.min(d03 + j30, d02);
                 }
-                long j31 = e03;
+                long j31 = d03;
                 long j32 = e0Var.b;
                 if (j32 != -9223372036854775807L) {
-                    j31 = e2.d0.i(j32, j31, e02);
+                    j31 = e2.d0.i(j32, j31, d02);
                 } else {
                     b2.d0 d0Var2 = this.H.j;
                     if (d0Var2 != null) {
                         long j33 = d0Var2.b;
                         if (j33 != -9223372036854775807L) {
-                            j31 = e2.d0.i(j33, j31, e02);
+                            j31 = e2.d0.i(j33, j31, d02);
                         }
                     }
                 }
@@ -576,31 +593,31 @@ public final class h extends u2.a {
                 if (j36 > j35) {
                     j16 = 2;
                     j17 = j34;
-                    j18 = Q5;
-                    j19 = e2.d0.i(e2.d0.e0(Q5 - Math.min(j38, j27 / 2)), j34, j35);
+                    j18 = P5;
+                    j19 = e2.d0.i(e2.d0.d0(P5 - Math.min(j38, j27 / 2)), j34, j35);
                 } else {
                     j16 = 2;
                     j17 = j34;
-                    j18 = Q5;
+                    j18 = P5;
                     j19 = j36;
                 }
                 z12 = z11;
                 long j39 = j35;
-                float f13 = e0Var.d;
-                if (f13 == -3.4028235E38f) {
-                    b2.d0 d0Var4 = this.H.j;
-                    f13 = d0Var4 != null ? d0Var4.d : -3.4028235E38f;
-                }
-                float f14 = e0Var.e;
+                float f14 = e0Var.d;
                 if (f14 == -3.4028235E38f) {
-                    b2.d0 d0Var5 = this.H.j;
-                    f14 = d0Var5 != null ? d0Var5.e : -3.4028235E38f;
+                    b2.d0 d0Var4 = this.H.j;
+                    f14 = d0Var4 != null ? d0Var4.d : -3.4028235E38f;
                 }
-                if (f13 == -3.4028235E38f && f14 == -3.4028235E38f) {
+                float f15 = e0Var.e;
+                if (f15 == -3.4028235E38f) {
+                    b2.d0 d0Var5 = this.H.j;
+                    f15 = d0Var5 != null ? d0Var5.e : -3.4028235E38f;
+                }
+                if (f14 == -3.4028235E38f && f15 == -3.4028235E38f) {
                     b2.d0 d0Var6 = this.H.j;
                     if (d0Var6 != null) {
-                        f7 = f13;
-                        f10 = f14;
+                        f7 = f14;
+                        f10 = f15;
                     }
                     f12 = 1.0f;
                     f11 = 1.0f;
@@ -611,19 +628,19 @@ public final class h extends u2.a {
                     d0Var7.d = f12;
                     d0Var7.e = f11;
                     this.E = new e0(d0Var7);
-                    long e04 = e2.d0.e0(j10) + this.H.a;
-                    Q = j18 - e2.d0.Q(this.E.a);
+                    long d04 = e2.d0.d0(j10) + this.H.a;
+                    P = j18 - e2.d0.P(this.E.a);
                     min = Math.min(j38, j27 / j16);
-                    if (Q >= min) {
+                    if (P >= min) {
                         j14 = min;
-                        j13 = e04;
+                        j13 = d04;
                     } else {
-                        j13 = e04;
-                        j14 = Q;
+                        j13 = d04;
+                        j14 = P;
                     }
                 } else {
-                    f7 = f13;
-                    f10 = f14;
+                    f7 = f14;
+                    f10 = f15;
                 }
                 f12 = f7;
                 f11 = f10;
@@ -634,15 +651,15 @@ public final class h extends u2.a {
                 d0Var72.d = f12;
                 d0Var72.e = f11;
                 this.E = new e0(d0Var72);
-                long e042 = e2.d0.e0(j10) + this.H.a;
-                Q = j18 - e2.d0.Q(this.E.a);
+                long d042 = e2.d0.d0(j10) + this.H.a;
+                P = j18 - e2.d0.P(this.E.a);
                 min = Math.min(j38, j27 / j16);
-                if (Q >= min) {
+                if (P >= min) {
                 }
             }
-            long Q6 = j10 - e2.d0.Q(b10.b);
+            long P6 = j10 - e2.d0.P(b10.b);
             m2.c cVar4 = this.H;
-            n(new e(cVar4.a, j13, this.L, this.O, Q6, j27, j14, cVar4, i(), !this.H.d ? this.E : null));
+            n(new e(cVar4.a, j13, this.L, this.O, P6, j27, j14, cVar4, i(), !this.H.d ? this.E : null));
             if (this.h) {
                 Handler handler = this.D;
                 c cVar5 = this.w;
@@ -650,18 +667,18 @@ public final class h extends u2.a {
                 if (z12) {
                     Handler handler2 = this.D;
                     m2.c cVar6 = this.H;
-                    long A = e2.d0.A(this.L);
+                    long z18 = e2.d0.z(this.L);
                     int size2 = cVar6.m.size() - 1;
                     m2.h b12 = cVar6.b(size2);
                     long j40 = b12.b;
                     List list5 = b12.c;
-                    long Q7 = e2.d0.Q(j40);
+                    long P7 = e2.d0.P(j40);
                     long d12 = cVar6.d(size2);
-                    long Q8 = e2.d0.Q(A);
-                    long Q9 = e2.d0.Q(cVar6.a);
-                    long Q10 = e2.d0.Q(cVar6.e);
-                    if (Q10 == j12 || Q10 >= 5000000) {
-                        Q10 = 5000000;
+                    long P8 = e2.d0.P(z18);
+                    long P9 = e2.d0.P(cVar6.a);
+                    long P10 = e2.d0.P(cVar6.e);
+                    if (P10 == j12 || P10 >= 5000000) {
+                        P10 = 5000000;
                     }
                     int i19 = 0;
                     while (i19 < list5.size()) {
@@ -672,15 +689,15 @@ public final class h extends u2.a {
                             i10 = i19;
                             i c13 = ((m2.m) list6.get(0)).c();
                             if (c13 != null) {
-                                long p5 = (c13.p(d12, Q8) + (Q9 + Q7)) - Q8;
-                                if (p5 > j3 && (p5 < Q10 - 100000 || (p5 > Q10 && p5 < Q10 + 100000))) {
-                                    Q10 = p5;
+                                long i20 = (c13.i(d12, P8) + (P9 + P7)) - P8;
+                                if (i20 > j3 && (i20 < P10 - 100000 || (i20 > P10 && i20 < P10 + 100000))) {
+                                    P10 = i20;
                                 }
                             }
                         }
                         i19 = i10 + 1;
                     }
-                    handler2.postDelayed(cVar5, p7.b(Q10, 1000L, RoundingMode.CEILING));
+                    handler2.postDelayed(cVar5, n7.b(P10, 1000L, RoundingMode.CEILING));
                 }
                 if (this.I) {
                     A();
@@ -712,16 +729,16 @@ public final class h extends u2.a {
         cVar = this.H;
         if (cVar.d) {
         }
-        long Q62 = j10 - e2.d0.Q(b10.b);
+        long P62 = j10 - e2.d0.P(b10.b);
         m2.c cVar42 = this.H;
-        n(new e(cVar42.a, j13, this.L, this.O, Q62, j272, j14, cVar42, i(), !this.H.d ? this.E : null));
+        n(new e(cVar42.a, j13, this.L, this.O, P62, j272, j14, cVar42, i(), !this.H.d ? this.E : null));
         if (this.h) {
         }
     }
 
-    public final void z(lf.g gVar, y2.n nVar) {
+    public final void z(c5.a aVar, y2.n nVar) {
         g2.h hVar = this.z;
-        Uri parse = Uri.parse(gVar.c);
+        Uri parse = Uri.parse(aVar.c);
         Map map = Collections.EMPTY_MAP;
         e2.d.i(parse, "The uri must be set.");
         this.A.f(new y2.o(hVar, new g2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, nVar), new d(this), 1);

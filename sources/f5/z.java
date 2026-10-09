@@ -1,20 +1,19 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
-import ii.n4;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class z extends a {
-    public static final /* synthetic */ n4 h;
-    public static final /* synthetic */ n4 n;
-    public static final /* synthetic */ n4 r;
+    public static final /* synthetic */ m2.t h;
+    public static final /* synthetic */ m2.t n;
+    public static final /* synthetic */ m2.t r;
     public int e;
     public int[] f;
 
     static {
-        re.a aVar = new re.a(z.class, "VideoMediaHeaderBox.java");
+        se.a aVar = new se.a(z.class, "VideoMediaHeaderBox.java");
         h = aVar.e(aVar.d("getGraphicsmode", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "int"));
         n = aVar.e(aVar.d("getOpcolor", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "[I"));
         r = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.VideoMediaHeaderBox", "", "", "java.lang.String"));
@@ -47,21 +46,21 @@ public final class z extends a {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(r, this, this);
+        com.google.firebase.messaging.s b10 = se.a.b(r, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        e2.q(re.a.b(h, this, this));
+        e2.q(se.a.b(h, this, this));
         sb2.append(this.e);
         sb2.append(";opcolor0=");
-        n4 n4Var = n;
-        e2.q(re.a.b(n4Var, this, this));
+        m2.t tVar = n;
+        e2.q(se.a.b(tVar, this, this));
         sb2.append(this.f[0]);
         sb2.append(";opcolor1=");
-        e2.q(re.a.b(n4Var, this, this));
+        e2.q(se.a.b(tVar, this, this));
         sb2.append(this.f[1]);
         sb2.append(";opcolor2=");
-        e2.q(re.a.b(n4Var, this, this));
-        return a4.a.o(this.f[2], "]", sb2);
+        e2.q(se.a.b(tVar, this, this));
+        return a1.g.o(this.f[2], "]", sb2);
     }
 }

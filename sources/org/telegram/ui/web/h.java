@@ -11,42 +11,41 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.p3;
+import ci.o3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Components.w9;
-import w7.b6;
-import w7.z5;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.y9;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class h extends FrameLayout implements y5 {
-    public final d6 a;
-    public final w9 b;
+public final class h extends FrameLayout implements z5 {
+    public final e6 a;
+    public final y9 b;
     public final LinearLayout c;
     public final FrameLayout.LayoutParams d;
     public final TextView e;
     public final TextView f;
     public final TextView h;
     public final ImageView n;
-    public final p3 r;
+    public final o3 r;
     public int s;
     public final Paint v;
     public boolean w;
 
-    public h(Context context, d6 d6Var) {
+    public h(Context context, e6 e6Var) {
         super(context);
         this.v = new Paint(1);
-        this.a = d6Var;
-        b6.b(this, 0.03f, 1.25f);
-        w9 w9Var = new w9(context);
-        this.b = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-        addView(w9Var, z5.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        this.a = e6Var;
+        w7.z5.b(this, 0.03f, 1.25f);
+        y9 y9Var = new y9(context);
+        this.b = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
+        addView(y9Var, x5.a(32.0f, 10.0f, 8.0f, 8.0f, 8.0f, 32, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
@@ -56,16 +55,16 @@ public final class h extends FrameLayout implements y5 {
         textView.setMaxLines(1);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, z5.q(-1, -2, 51));
+        linearLayout.addView(textView, x5.q(-1, -2, 51));
         TextView textView2 = new TextView(context);
         this.f = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setMaxLines(1);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, z5.t(-1, -2, 51, 0, 3, 0, 0));
-        FrameLayout.LayoutParams d = z5.d(-1, -2.0f, 19, 64.0f, 0.0f, 70.0f, 0.0f);
-        this.d = d;
-        addView(linearLayout, d);
+        linearLayout.addView(textView2, x5.t(-1, -2, 51, 0, 3, 0, 0));
+        FrameLayout.LayoutParams a2 = x5.a(-2.0f, 64.0f, 0.0f, 70.0f, 0.0f, -1, 19);
+        this.d = a2;
+        addView(linearLayout, a2);
         TextView textView3 = new TextView(context);
         this.h = textView3;
         textView3.setTextSize(1, 13.0f);
@@ -73,32 +72,32 @@ public final class h extends FrameLayout implements y5 {
         textView3.setEllipsize(truncateAt);
         textView3.setGravity(5);
         textView3.setTextAlignment(6);
-        addView(textView3, z5.d(-2, -2.0f, 21, 64.0f, -10.0f, 12.0f, 0.0f));
+        addView(textView3, x5.a(-2.0f, 64.0f, -10.0f, 12.0f, 0.0f, -2, 21));
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setImageResource(R.drawable.attach_arrow_right);
-        addView(imageView, z5.d(32, 32.0f, 21, 8.0f, 8.0f, 8.0f, 8.0f));
-        p3 p3Var = new p3(this, getContext(), d6Var, 2);
-        this.r = p3Var;
-        p3Var.b(-1, i6.d6, i6.k7);
-        p3Var.setDrawUnchecked(false);
-        p3Var.setDrawBackgroundAsArc(3);
-        addView(p3Var, z5.d(24, 24.0f, 19, 26.0f, 12.0f, 0.0f, 0.0f));
+        addView(imageView, x5.a(32.0f, 8.0f, 8.0f, 8.0f, 8.0f, 32, 21));
+        o3 o3Var = new o3(this, getContext(), e6Var, 2);
+        this.r = o3Var;
+        o3Var.b(-1, i6.d6, i6.k7);
+        o3Var.setDrawUnchecked(false);
+        o3Var.setDrawBackgroundAsArc(3);
+        addView(o3Var, x5.a(24.0f, 26.0f, 12.0f, 0.0f, 0.0f, 24, 19));
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10 = i6.d6;
-        d6 d6Var = this.a;
-        int v02 = i6.v0(i10, d6Var);
-        int v03 = i6.v0(i6.G6, d6Var);
-        this.s = v03;
-        this.e.setTextColor(v03);
-        this.f.setTextColor(i6.v(v02, i6.l1(0.55f, v03)));
-        this.h.setTextColor(i6.l1(0.55f, v03));
-        this.n.setColorFilter(new PorterDuffColorFilter(i6.l1(0.6f, v03), PorterDuff.Mode.SRC_IN));
-        this.v.setColor(i6.l1(0.1f, v03));
+        e6 e6Var = this.a;
+        int w02 = i6.w0(i10, e6Var);
+        int w03 = i6.w0(i6.G6, e6Var);
+        this.s = w03;
+        this.e.setTextColor(w03);
+        this.f.setTextColor(i6.v(w02, i6.m1(0.55f, w03)));
+        this.h.setTextColor(i6.m1(0.55f, w03));
+        this.n.setColorFilter(new PorterDuffColorFilter(i6.m1(0.6f, w03), PorterDuff.Mode.SRC_IN));
+        this.v.setColor(i6.m1(0.1f, w03));
         this.b.invalidate();
     }
 

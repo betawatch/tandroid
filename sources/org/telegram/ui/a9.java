@@ -1,37 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a9 extends FragmentContextView {
-    public final /* synthetic */ int Q0 = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 R0;
+public final class a9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ org.telegram.ui.Components.ea0 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(m9 m9Var, Context context, m9 m9Var2, y8 y8Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, m9Var2, y8Var, false, d6Var);
-        this.R0 = m9Var;
+    public a9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.ea0 ea0Var, String str) {
+        this.a = atomicBoolean;
+        this.b = ea0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.Q0) {
-            case 0:
-                m9 m9Var = (m9) this.R0;
-                m9Var.L.i(m9Var.M, i10 == 0, true);
-                break;
-            default:
-                wf1 wf1Var = (wf1) this.R0;
-                wf1Var.U0.i(wf1Var.F0, i10 == 0, true);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AtomicBoolean atomicBoolean = this.a;
+        if (atomicBoolean.get()) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(wf1 wf1Var, Context context, wf1 wf1Var2) {
-        super(context, wf1Var2, null, false, null);
-        this.R0 = wf1Var;
+        atomicBoolean.set(true);
+        this.b.setText(this.c);
     }
 }

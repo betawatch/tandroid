@@ -3,7 +3,7 @@ package p0;
 import android.text.SpannableStringBuilder;
 import b2.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -131,61 +131,69 @@ public final class b {
         return -1;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0034, code lost:
+    
+        return 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static int b(CharSequence charSequence) {
         a aVar = new a(charSequence);
         aVar.c = aVar.b;
         int i10 = 0;
-        int i11 = 0;
-        while (aVar.c > 0) {
-            byte a2 = aVar.a();
-            if (a2 != 0) {
-                if (a2 == 1 || a2 == 2) {
-                    if (i10 == 0) {
-                        return 1;
-                    }
-                    if (i11 == 0) {
-                        i11 = i10;
-                    }
-                } else if (a2 != 9) {
-                    switch (a2) {
-                        case 14:
-                        case 15:
-                            if (i11 == i10) {
-                                return -1;
-                            }
-                            i10--;
-                            break;
-                        case 16:
-                        case 17:
-                            if (i11 == i10) {
-                                return 1;
-                            }
-                            i10--;
-                            break;
-                        case 18:
-                            i10++;
-                            break;
-                        default:
-                            if (i11 != 0) {
-                                break;
-                            } else {
-                                i11 = i10;
+        while (true) {
+            int i11 = i10;
+            while (aVar.c > 0) {
+                byte a2 = aVar.a();
+                if (a2 != 0) {
+                    if (a2 == 1 || a2 == 2) {
+                        if (i10 != 0) {
+                            if (i11 == 0) {
                                 break;
                             }
+                        }
+                    } else if (a2 != 9) {
+                        switch (a2) {
+                            case 14:
+                            case 15:
+                                if (i11 == i10) {
+                                    return -1;
+                                }
+                                i10--;
+                                break;
+                            case 16:
+                            case 17:
+                                if (i11 == i10) {
+                                    break;
+                                }
+                                i10--;
+                                break;
+                            case 18:
+                                i10++;
+                                break;
+                            default:
+                                if (i11 != 0) {
+                                    break;
+                                } else {
+                                    break;
+                                }
+                                break;
+                        }
+                    } else {
+                        continue;
                     }
                 } else {
-                    continue;
-                }
-            } else {
-                if (i10 == 0) {
-                    return -1;
-                }
-                if (i11 == 0) {
-                    i11 = i10;
+                    if (i10 == 0) {
+                        return -1;
+                    }
+                    if (i11 == 0) {
+                        break;
+                    }
                 }
             }
+            return 0;
         }
-        return 0;
     }
 
     public final SpannableStringBuilder c(CharSequence charSequence) {

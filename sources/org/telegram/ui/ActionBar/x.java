@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class x implements View.OnClickListener {
                         zVar.o(((Integer) view.getTag()).intValue());
                         break;
                     } else {
-                        kVar.v(v0Var.L(true));
+                        kVar.w(v0Var.L(true));
                         break;
                     }
                 } else if (kVar.u0.a()) {

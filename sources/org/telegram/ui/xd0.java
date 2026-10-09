@@ -1,107 +1,184 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xd0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ee0 b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ fe0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ xd0(ee0 ee0Var, int i10) {
-        this.a = i10;
-        this.b = ee0Var;
+    public /* synthetic */ xd0(fe0 fe0Var, TLRPC.TL_error tL_error, String str, TLObject tLObject) {
+        this.b = fe0Var;
+        this.c = tL_error;
+        this.e = str;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                this.b.p();
-                break;
-            case 1:
-                ee0 ee0Var = this.b;
-                ee0Var.postDelayed(new xd0(ee0Var, 2), 150L);
-                xd0 xd0Var = ee0Var.S;
-                ee0Var.removeCallbacks(xd0Var);
-                ee0Var.postDelayed(xd0Var, 3000L);
-                ee0Var.R = true;
-                break;
-            case 2:
-                be0 be0Var = this.b.a;
-                int i10 = 0;
-                be0Var.e = false;
-                be0Var.f[0].requestFocus();
-                while (true) {
-                    es[] esVarArr = be0Var.f;
-                    if (i10 >= esVarArr.length) {
-                        break;
-                    } else {
-                        esVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                ee0 ee0Var2 = this.b;
-                ee0Var2.postDelayed(new xd0(ee0Var2, 5), 150L);
-                break;
-            case 4:
-                ee0 ee0Var3 = this.b;
-                de0 de0Var = ee0Var3.Q;
-                boolean z10 = false;
-                ee0Var3.R = false;
-                int i11 = 0;
-                while (true) {
-                    es[] esVarArr2 = ee0Var3.a.f;
-                    if (i11 >= esVarArr2.length) {
-                        if (de0Var.getCurrentView() != ee0Var3.e) {
-                            de0Var.showNext();
-                            FrameLayout frameLayout = ee0Var3.h;
-                            if (ee0Var3.f.getVisibility() != 0 && ee0Var3.W.F != 3 && !ee0Var3.P) {
-                                z10 = true;
-                            }
-                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
-                            break;
+                final fe0 fe0Var = this.b;
+                ce0 ce0Var = fe0Var.a;
+                wg0 wg0Var = fe0Var.W;
+                wg0Var.k1(false, true);
+                TLRPC.TL_error tL_error = this.c;
+                String str = this.e;
+                if (tL_error == null) {
+                    fe0Var.E = false;
+                    wg0Var.v1(false, true);
+                    final Bundle bundle = new Bundle();
+                    bundle.putString("phone", fe0Var.I);
+                    bundle.putString("ephone", fe0Var.J);
+                    bundle.putString("phoneFormated", fe0Var.L);
+                    bundle.putString("phoneHash", fe0Var.M);
+                    bundle.putString("code", str);
+                    TLObject tLObject = this.d;
+                    if (tLObject instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject).terms_of_service;
+                        if (tL_help_termsOfService != null) {
+                            wg0Var.p0 = tL_help_termsOfService;
                         }
+                        final int i11 = 0;
+                        fe0Var.o(new Runnable() { // from class: org.telegram.ui.ae0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i11) {
+                                    case 0:
+                                        fe0Var.W.u1(5, true, bundle, false);
+                                        break;
+                                    default:
+                                        fe0Var.W.u1(6, true, bundle, false);
+                                        break;
+                                }
+                            }
+                        });
                     } else {
-                        esVarArr2[i11].i(0.0f);
-                        i11++;
+                        fe0Var.o(new vq(fe0Var, tLObject, bundle, 26));
                     }
-                }
-                break;
-            case 5:
-                be0 be0Var2 = this.b.a;
-                int i12 = 0;
-                be0Var2.e = false;
-                be0Var2.f[0].requestFocus();
-                while (true) {
-                    es[] esVarArr3 = be0Var2.f;
-                    if (i12 >= esVarArr3.length) {
-                        break;
+                } else if (tL_error.text.contains("SESSION_PASSWORD_NEEDED")) {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    i10 = ((org.telegram.ui.ActionBar.n2) wg0Var).currentAccount;
+                    ConnectionsManager.getInstance(i10).sendRequest(getpassword, new vd0(fe0Var, str, 1), 10);
+                } else {
+                    fe0Var.E = false;
+                    wg0Var.v1(false, true);
+                    if (tL_error.text.contains("EMAIL_ADDRESS_INVALID")) {
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailAddressInvalid));
+                    } else if (tL_error.text.contains("PHONE_NUMBER_INVALID")) {
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                    } else if (tL_error.text.contains("CODE_EMPTY") || tL_error.text.contains("CODE_INVALID") || tL_error.text.contains("EMAIL_CODE_INVALID") || tL_error.text.contains("PHONE_CODE_INVALID")) {
+                        yd0 yd0Var = fe0Var.S;
+                        ee0 ee0Var = fe0Var.Q;
+                        try {
+                            ce0Var.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        int i12 = 0;
+                        while (true) {
+                            es[] esVarArr = ce0Var.f;
+                            if (i12 < esVarArr.length) {
+                                esVarArr[i12].setText("");
+                                ce0Var.f[i12].i(1.0f);
+                                i12++;
+                            } else {
+                                if (ee0Var.getCurrentView() == fe0Var.e) {
+                                    ee0Var.showNext();
+                                    AndroidUtilities.updateViewVisibilityAnimated(fe0Var.h, false, 1.0f, true);
+                                }
+                                ce0Var.f[0].requestFocus();
+                                AndroidUtilities.shakeViewSpring(ce0Var, 10.0f, new yd0(fe0Var, 3));
+                                fe0Var.removeCallbacks(yd0Var);
+                                fe0Var.postDelayed(yd0Var, 5000L);
+                                fe0Var.R = true;
+                            }
+                        }
+                    } else if (tL_error.text.contains("EMAIL_TOKEN_INVALID")) {
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.EmailTokenInvalid));
+                    } else if (tL_error.text.contains("EMAIL_VERIFY_EXPIRED")) {
+                        wg0Var.u1(0, true, null, true);
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                    } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                     } else {
-                        esVarArr3[i12].i(0.0f);
-                        i12++;
+                        wg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error.text);
                     }
+                    if (ce0Var.f != null) {
+                        int i13 = 0;
+                        while (true) {
+                            es[] esVarArr2 = ce0Var.f;
+                            if (i13 < esVarArr2.length) {
+                                esVarArr2[i13].setText("");
+                                i13++;
+                            } else {
+                                esVarArr2[0].requestFocus();
+                            }
+                        }
+                    }
+                    ce0Var.e = false;
                 }
-            case 6:
-                this.b.q(true);
-                break;
-            case 7:
-                this.b.r();
+                fe0Var.F = null;
                 break;
             default:
-                ee0 ee0Var4 = this.b;
-                org.telegram.ui.Components.nj0 nj0Var = ee0Var4.w;
-                nj0Var.getAnimatedDrawable().N(0, false, false);
-                nj0Var.d();
-                be0 be0Var3 = ee0Var4.a;
-                if (be0Var3 != null && be0Var3.f != null) {
-                    be0Var3.setText("");
-                    be0Var3.f[0].requestFocus();
+                final fe0 fe0Var2 = this.b;
+                fe0Var2.E = false;
+                wg0 wg0Var2 = fe0Var2.W;
+                wg0Var2.v1(false, true);
+                TLRPC.TL_error tL_error2 = this.c;
+                if (tL_error2 != null) {
+                    wg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                     break;
+                } else {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    if (!TwoStepVerificationActivity.i0(password, true)) {
+                        org.telegram.ui.Components.g5.w0(wg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        final Bundle bundle2 = new Bundle();
+                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                        password.serializeToStream(serializedData);
+                        bundle2.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                        bundle2.putString("phoneFormated", fe0Var2.L);
+                        bundle2.putString("phoneHash", fe0Var2.M);
+                        bundle2.putString("code", this.e);
+                        final int i14 = 1;
+                        fe0Var2.o(new Runnable() { // from class: org.telegram.ui.ae0
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i14) {
+                                    case 0:
+                                        fe0Var2.W.u1(5, true, bundle2, false);
+                                        break;
+                                    default:
+                                        fe0Var2.W.u1(6, true, bundle2, false);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    }
                 }
-                break;
         }
+    }
+
+    public /* synthetic */ xd0(fe0 fe0Var, TLRPC.TL_error tL_error, TLObject tLObject, String str) {
+        this.b = fe0Var;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.e = str;
     }
 }

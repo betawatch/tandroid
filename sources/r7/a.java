@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.s {
     public static final /* synthetic */ a a = new a();
@@ -46,17 +46,17 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                             z zVar = (z) kVar.u();
                             l lVar = new l(2, null, iVar, null, null, null);
                             e eVar = new e(Boolean.TRUE, taskCompletionSource);
-                            Parcel O0 = zVar.O0();
-                            d.c(O0, lVar);
-                            d.d(O0, eVar);
-                            zVar.S0(O0, 89);
+                            Parcel N0 = zVar.N0();
+                            d.c(N0, lVar);
+                            d.d(N0, eVar);
+                            zVar.R0(N0, 89);
                         }
                     }
                     z zVar2 = (z) kVar.u();
                     o oVar = new o(2, null, null, iVar, null, new g(taskCompletionSource), null);
-                    Parcel O02 = zVar2.O0();
-                    d.c(O02, oVar);
-                    zVar2.S0(O02, 59);
+                    Parcel N02 = zVar2.N0();
+                    d.c(N02, oVar);
+                    zVar2.R0(N02, 59);
                 } else {
                     taskCompletionSource.setResult(Boolean.TRUE);
                 }
@@ -91,21 +91,21 @@ public final /* synthetic */ class a implements Continuation, com.google.android
             if (cVar != null && cVar.b() >= 1) {
                 z zVar = (z) kVar.u();
                 f fVar = new f(0, taskCompletionSource);
-                Parcel O0 = zVar.O0();
-                d.c(O0, bVar);
-                d.d(O0, fVar);
-                zVar.S0(O0, 82);
+                Parcel N0 = zVar.N0();
+                d.c(N0, bVar);
+                d.d(N0, fVar);
+                zVar.R0(N0, 82);
                 return;
             }
         }
         z zVar2 = (z) kVar.u();
-        Parcel O02 = zVar2.O0();
+        Parcel N02 = zVar2.N0();
         Parcel obtain = Parcel.obtain();
         try {
             try {
-                zVar2.b.transact(7, O02, obtain, 0);
+                zVar2.b.transact(7, N02, obtain, 0);
                 obtain.readException();
-                O02.recycle();
+                N02.recycle();
                 Location location = (Location) d.a(obtain, Location.CREATOR);
                 obtain.recycle();
                 taskCompletionSource.setResult(location);
@@ -114,7 +114,7 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                 throw e7;
             }
         } catch (Throwable th2) {
-            O02.recycle();
+            N02.recycle();
             throw th2;
         }
     }

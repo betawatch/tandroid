@@ -1,16 +1,61 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class f71 extends s4.j {
-    public final /* synthetic */ k71 F;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-    public f71(k71 k71Var) {
-        this.F = k71Var;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class f71 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ g71 f;
+
+    public f71(g71 g71Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
+        this.f = g71Var;
+        this.a = z10;
+        this.b = runnable;
+        this.c = zArr;
+        this.d = z11;
+        this.e = runnable2;
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        k71.Q(this.F);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        g71 g71Var = this.f;
+        k0 k0Var = g71Var.s;
+        boolean z10 = this.a;
+        float f7 = z10 ? 1.0f : 0.0f;
+        g71Var.I = f7;
+        AndroidUtilities.lerp(g71Var.c, g71Var.d, f7, g71Var.e);
+        k0Var.invalidate();
+        if (!z10) {
+            g71Var.v.setAlpha(g71Var.I);
+        }
+        if (g71Var.I < 0.5f && !z10 && (runnable = this.b) != null) {
+            boolean[] zArr = this.c;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                runnable.run();
+            }
+        }
+        if (!z10) {
+            if (this.d) {
+                g71Var.a.b = false;
+                g71Var.P.h0.invalidate();
+            }
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
+        }
+        g71Var.K = null;
+        k0Var.invalidate();
+        Runnable runnable2 = this.e;
+        if (runnable2 != null) {
+            runnable2.run();
+        }
     }
 }

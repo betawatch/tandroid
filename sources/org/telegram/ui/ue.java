@@ -1,19 +1,22 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.net.Uri;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yn b;
+    public final /* synthetic */ zn b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ ue(yn ynVar, String str, int i10) {
+    public /* synthetic */ ue(zn znVar, String str, int i10) {
         this.a = i10;
-        this.b = ynVar;
+        this.b = znVar;
         this.c = str;
     }
 
@@ -21,51 +24,69 @@ public final /* synthetic */ class ue implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                yn.V0(this.b, this.c);
+                zn.q1(this.b, this.c);
                 break;
             case 1:
-                yn.h1(this.b, this.c);
+                zn.u1(this.b, this.c);
                 break;
             case 2:
-                i4.f(this.c, r1.currentAccount, r1.V0, null, this.b.ca);
+                i4.f(this.c, r1.currentAccount, r1.X0, null, this.b.ea);
                 break;
             case 3:
-                yn ynVar = this.b;
+                zn znVar = this.b;
                 String str = this.c;
                 if (str != null) {
-                    ynVar.getClass();
+                    znVar.getClass();
                     if (str.length() != 0) {
-                        ynVar.getMessagesController().sendBotStart(ynVar.f, str);
+                        znVar.getMessagesController().sendBotStart(znVar.f, str);
                         break;
                     }
                 }
-                ynVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", ynVar.R5, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                znVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", znVar.T5, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
-                this.b.ka(this.c);
+                this.b.qa(this.c);
                 break;
             case 5:
-                this.b.ca(this.c, false);
+                this.b.ia(this.c, false);
                 break;
             case 6:
-                nf.f.s(this.b.getParentActivity(), "tel:" + this.c);
+                of.f.s(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.bi.n(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
+                org.telegram.messenger.bi.p(R.string.PhoneCopied, org.telegram.ui.Components.ad.a0(this.b));
                 break;
             case 8:
-                yn.v1(this.b, this.c);
+                zn.d1(this.b, this.c);
                 break;
             case 9:
-                nf.f.s(this.b.getParentActivity(), "tel:" + this.c);
+                of.f.s(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.bi.n(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
+                org.telegram.messenger.bi.p(R.string.PhoneCopied, org.telegram.ui.Components.ad.a0(this.b));
+                break;
+            case 11:
+                zn znVar2 = this.b;
+                znVar2.getClass();
+                znVar2.presentFragment(new org.telegram.ui.Wallet.j8(this.c));
+                break;
+            case 12:
+                zn znVar3 = this.b;
+                String str2 = znVar3.getMessagesController().tonBlockchainExplorerUrl;
+                if (TextUtils.isEmpty(str2)) {
+                    str2 = "https://tonviewer.com/";
+                } else if (!str2.endsWith("/")) {
+                    str2 = str2.concat("/");
+                }
+                Activity parentActivity = znVar3.getParentActivity();
+                StringBuilder v = a1.g.v(str2);
+                v.append(Uri.encode(this.c));
+                of.f.u(parentActivity, v.toString());
                 break;
             default:
-                nf.f.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
+                of.f.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
                 break;
         }
     }

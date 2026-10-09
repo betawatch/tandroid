@@ -1,77 +1,33 @@
 package yh;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.xv0;
-import org.telegram.ui.Components.zv0;
-import org.telegram.ui.zg1;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements le.d, xv0, zv0, org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ h a;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
 
-    public /* synthetic */ c(h hVar) {
-        this.a = hVar;
+    public /* synthetic */ c(g gVar, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+        this.a = i10;
+        this.b = gVar;
+        this.c = twoStepVerificationActivity;
     }
 
-    @Override // le.d
-    public void a0(int i10, float f7, float f10, le.e eVar) {
-        this.a.s0();
-    }
-
-    @Override // org.telegram.ui.Components.xv0
-    public int b() {
-        return this.a.n;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        h hVar = this.a;
-        hVar.getClass();
-        hVar.presentFragment(new zg1(6, null));
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public /* synthetic */ float h(RecyclerView recyclerView) {
-        return org.telegram.ui.Cells.c1.c(recyclerView);
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public RecyclerView i(View view) {
-        h hVar = this.a;
-        if (hVar.a == 1) {
-            return ((g) view).c;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g gVar = this.b;
+                gVar.Y.setLoading(false);
+                gVar.presentFragment(this.c);
+                break;
+            default:
+                g gVar2 = this.b;
+                gVar2.R.setLoading(false);
+                gVar2.presentFragment(this.c);
+                break;
         }
-        hVar.K.getClass();
-        return ((w7) view).a;
-    }
-
-    @Override // org.telegram.ui.Components.zv0
-    public /* synthetic */ void n(RecyclerView recyclerView) {
-        org.telegram.ui.Cells.c1.b(recyclerView);
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        h.T(this.a, (h61) obj);
-    }
-
-    @Override // le.d
-    public /* synthetic */ void V(float f7, int i10) {
     }
 }

@@ -1,88 +1,73 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rg0 b;
+public final class mg0 extends LinearLayout {
+    public final LinearLayout a;
+    public final LinearLayout b;
 
-    public /* synthetic */ mg0(rg0 rg0Var, int i10) {
-        this.a = i10;
-        this.b = rg0Var;
+    public mg0(Context context) {
+        super(context);
+        setOrientation(0);
+        setGravity(17);
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
+        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
+        this.b = a2;
+        addView(a2, w7.x5.n(-2, -1));
+        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
+        this.a = a10;
+        addView(a10, w7.x5.n(-2, -1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                break;
-            case 1:
-                rg0 rg0Var = this.b;
-                PhotoViewer photoViewer = rg0Var.V;
-                if (photoViewer != null) {
-                    if (rg0Var.r != null) {
-                        rg0Var.Z = r2.getCurrentPosition() / rg0Var.r.getVideoDuration();
-                        rg0Var.a0 = rg0Var.r.getBufferedPosition();
-                    } else {
-                        if (photoViewer.F2 != null) {
-                            float m10 = rg0Var.m();
-                            rg0Var.Z = r1.n() / m10;
-                            rg0Var.a0 = r1.j() / m10;
-                        }
-                    }
-                    rg0Var.b0.invalidate();
-                    AndroidUtilities.runOnUIThread(rg0Var.e0, 500L);
-                    break;
-                }
-                break;
-            case 2:
-                rg0 rg0Var2 = this.b;
-                PhotoViewer photoViewer2 = rg0Var2.V;
-                if (photoViewer2 != null) {
-                    if ((photoViewer2.F2 != null || rg0Var2.r != null) && !rg0Var2.c0 && !rg0Var2.Y && !rg0Var2.w && !rg0Var2.s.isInProgress() && rg0Var2.f0) {
-                        e81 e81Var = rg0Var2.V.F2;
-                        boolean z10 = rg0Var2.g0[0] >= (((float) rg0Var2.t()) * rg0Var2.J) * 0.5f;
-                        long l4 = rg0Var2.l();
-                        long m11 = rg0Var2.m();
-                        if (l4 != -9223372036854775807L && m11 >= 15000) {
-                            dg0 dg0Var = rg0Var2.r;
-                            if (dg0Var != null) {
-                                PhotoViewer photoViewer3 = rg0Var2.V;
-                                photoViewer3.c4.startRewind(dg0Var, z10, rg0Var2.g0[0], photoViewer3.t1, rg0Var2.R);
-                            } else {
-                                PhotoViewer photoViewer4 = rg0Var2.V;
-                                photoViewer4.c4.startRewind(e81Var, z10, rg0Var2.g0[0], photoViewer4.t1, rg0Var2.R);
-                            }
-                            if (!rg0Var2.E) {
-                                rg0Var2.E = true;
-                                rg0Var2.y(true);
-                                if (!rg0Var2.i0) {
-                                    AndroidUtilities.runOnUIThread(rg0Var2.j0, 1500L);
-                                    rg0Var2.i0 = true;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                rg0 rg0Var3 = this.b;
-                PhotoViewer photoViewer5 = rg0Var3.V;
-                if (photoViewer5 != null && photoViewer5.c4.rewinding) {
-                    AndroidUtilities.runOnUIThread(rg0Var3.j0, 1500L);
-                    break;
-                } else {
-                    rg0Var3.E = false;
-                    rg0Var3.y(false);
-                    rg0Var3.i0 = false;
-                    break;
-                }
-                break;
-        }
+    public final LinearLayout a(int i10, String str) {
+        Context context = getContext();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(17);
+        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(i10);
+        linearLayout.addView(imageView, w7.x5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        TextView textView = new TextView(context);
+        textView.setGravity(16);
+        textView.setText(str);
+        textView.setTextSize(2, 14.0f);
+        textView.setSingleLine(true);
+        textView.setTextColor(-1);
+        linearLayout.addView(textView, w7.x5.n(-2, -2));
+        w7.z5.a(linearLayout);
+        return linearLayout;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        LinearLayout linearLayout = this.a;
+        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        int paddingRight = getPaddingRight() + getPaddingLeft();
+        int paddingBottom = getPaddingBottom() + getPaddingTop();
+        int max = Math.max(0, size - paddingRight);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
+        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
+        LinearLayout linearLayout2 = this.b;
+        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
+        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
+        layoutParams2.width = min;
+        layoutParams.width = min;
+        super.onMeasure(i10, i11);
     }
 }

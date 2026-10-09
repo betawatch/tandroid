@@ -1,46 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fd implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class fd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 e;
 
-    public /* synthetic */ fd(MessagesController messagesController, long j3, Utilities.Callback callback, TLRPC.User user, int i10) {
-        this.d = messagesController;
-        this.b = j3;
-        this.e = callback;
-        this.f = user;
-        this.c = i10;
+    public /* synthetic */ fd(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = tLObject;
+        this.d = h6Var;
+        this.e = g6Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$loadFullUser$72(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
+                this.b.lambda$didReceivedNotification$47(this.c, this.d, this.e);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ei.q3((org.telegram.ui.Cells.g6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f, 2));
+                this.b.lambda$didReceivedNotification$45(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ fd(org.telegram.ui.Cells.g6 g6Var, MessagesStorage messagesStorage, long j3, int i10, ArrayList arrayList) {
-        this.d = g6Var;
-        this.e = messagesStorage;
-        this.b = j3;
-        this.c = i10;
-        this.f = arrayList;
     }
 }

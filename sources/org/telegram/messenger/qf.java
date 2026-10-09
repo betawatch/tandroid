@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -33,14 +33,14 @@ public final /* synthetic */ class qf implements Runnable {
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
                 CharSequence charSequence = (CharSequence) this.h;
                 chatActivityEnterView.f0 = null;
-                chatActivityEnterView.q0(true);
-                org.telegram.ui.Components.rf rfVar = chatActivityEnterView.E0;
-                if (rfVar != null) {
-                    rfVar.setText("");
+                chatActivityEnterView.o0(true);
+                org.telegram.ui.Components.sf sfVar = chatActivityEnterView.E0;
+                if (sfVar != null) {
+                    sfVar.setText("");
                 }
-                org.telegram.ui.Components.pg pgVar = chatActivityEnterView.Z2;
-                if (pgVar != null) {
-                    pgVar.H(charSequence, this.b, this.c, this.d, this.e);
+                org.telegram.ui.Components.qg qgVar = chatActivityEnterView.Z2;
+                if (qgVar != null) {
+                    qgVar.K(charSequence, this.b, this.c, this.d, this.e);
                     break;
                 }
                 break;

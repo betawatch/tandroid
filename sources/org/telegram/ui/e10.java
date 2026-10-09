@@ -6,36 +6,36 @@ import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e10 extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.ActionBar.e6 a;
     public final Paint b;
     public final int c;
-    public final org.telegram.ui.Components.f11 d;
+    public final org.telegram.ui.Components.l11 d;
 
-    public e10(String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public e10(String str, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         Paint paint = new Paint(1);
         this.b = paint;
-        this.a = d6Var;
+        this.a = e6Var;
         this.c = i10;
-        this.d = new org.telegram.ui.Components.f11(str, 9.33f, AndroidUtilities.bold());
+        this.d = new org.telegram.ui.Components.l11(str, 9.33f, AndroidUtilities.bold());
         paint.setStyle(Paint.Style.FILL);
     }
 
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int v02 = org.telegram.ui.ActionBar.i6.v0(this.c, this.a);
-        int l1 = org.telegram.ui.ActionBar.i6.l1(0.15f, v02);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(this.c, this.a);
+        int m12 = org.telegram.ui.ActionBar.i6.m1(0.15f, w02);
         Paint paint2 = this.b;
-        paint2.setColor(l1);
+        paint2.setColor(m12);
         float f10 = (i14 + i12) / 2.0f;
         float dp = AndroidUtilities.dp(14.66f);
         RectF rectF = AndroidUtilities.rectTmp;
         float f11 = dp / 2.0f;
         rectF.set(f7, f10 - f11, this.d.l() + f7 + AndroidUtilities.dp(9.33f), f11 + f10);
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
-        this.d.c(f7 + AndroidUtilities.dp(4.66f), f10, 1.0f, v02, canvas);
+        this.d.c(f7 + AndroidUtilities.dp(4.66f), f10, 1.0f, w02, canvas);
     }
 
     @Override // android.text.style.ReplacementSpan

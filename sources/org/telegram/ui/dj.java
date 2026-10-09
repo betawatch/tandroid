@@ -1,37 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class dj extends FrameLayout {
-    public final /* synthetic */ yn a;
+public final class dj implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(yn ynVar, Activity activity) {
-        super(activity);
-        this.a = ynVar;
+    public /* synthetic */ dj(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.A7(true);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                zn znVar = (zn) this.b;
+                znVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                znVar.X0.invalidate();
+                break;
+            case 1:
+                ty tyVar = (ty) this.b;
+                tyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = tyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((xd1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        return super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
-        if (min == 0) {
-            min = AndroidUtilities.dp(300.0f);
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

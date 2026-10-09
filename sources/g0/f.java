@@ -1,5 +1,6 @@
 package g0;
 
+import a1.g;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
@@ -25,7 +26,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.mediarouter.app.g;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +37,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -66,7 +66,7 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            throw g.k(it);
         }
     }
 
@@ -175,6 +175,7 @@ public abstract class f {
                         }
                         arrayList.add(null);
                     } catch (Exception unused) {
+                        continue;
                     }
                 }
             }
@@ -187,11 +188,9 @@ public abstract class f {
 
     public static e j(Context context) {
         if (a == null) {
-            if (Build.VERSION.SDK_INT >= 23) {
-                try {
-                    a = (e) Class.forName("androidx.sharetarget.ShortcutInfoCompatSaverImpl", false, f.class.getClassLoader()).getMethod("getInstance", Context.class).invoke(null, context);
-                } catch (Exception unused) {
-                }
+            try {
+                a = (e) Class.forName("androidx.sharetarget.ShortcutInfoCompatSaverImpl", false, f.class.getClassLoader()).getMethod("getInstance", Context.class).invoke(null, context);
+            } catch (Exception unused) {
             }
             if (a == null) {
                 a = new d();
@@ -239,8 +238,8 @@ public abstract class f {
             }
             List<ShortcutInfo> dynamicShortcuts = shortcutManager.getDynamicShortcuts();
             if (dynamicShortcuts.size() >= g10) {
-                String str = null;
                 int i12 = -1;
+                String str = null;
                 for (ShortcutInfo shortcutInfo : dynamicShortcuts) {
                     if (shortcutInfo.getRank() > i12) {
                         str = shortcutInfo.getId();
@@ -305,7 +304,7 @@ public abstract class f {
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            throw g.k(it);
         }
     }
 
@@ -316,7 +315,7 @@ public abstract class f {
         j(context).d(arrayList);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            throw g.k(it);
         }
     }
 
@@ -364,7 +363,7 @@ public abstract class f {
         if (i10 >= 26) {
             z10 = ((ShortcutManager) context.getSystemService(ShortcutManager.class)).isRequestPinShortcutSupported();
         } else {
-            if (f0.e.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
+            if (f0.c.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
                 Iterator<ResolveInfo> it = context.getPackageManager().queryBroadcastReceivers(new Intent("com.android.launcher.action.INSTALL_SHORTCUT"), 0).iterator();
                 while (it.hasNext()) {
                     String str = it.next().activityInfo.permission;
@@ -436,7 +435,7 @@ public abstract class f {
             if (intentSender == null) {
                 context.sendBroadcast(intent);
             } else {
-                context.sendOrderedBroadcast(intent, null, new g(intentSender, 4), null, -1, null, null);
+                context.sendOrderedBroadcast(intent, null, new androidx.mediarouter.app.g(intentSender, 4), null, -1, null, null);
             }
         }
     }
@@ -463,12 +462,12 @@ public abstract class f {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00e1  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0149  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x012c  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0121  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -643,7 +642,7 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            throw g.k(it);
         }
     }
 }

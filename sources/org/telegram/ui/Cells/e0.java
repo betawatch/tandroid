@@ -5,15 +5,15 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.u90;
+import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.l11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public f11 h;
+    public l11 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,10 +33,10 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public u90 r;
+    public ia0 r;
     public z s;
     public Drawable t;
-    public org.telegram.ui.Components.q5 u;
+    public org.telegram.ui.Components.s5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -55,7 +55,7 @@ public final class e0 {
                 this.a.run();
             }
         }
-        return com.google.android.gms.internal.vision.e2.z(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.gms.internal.vision.e2.y(1.0f, this.w, 0.04f, 0.96f);
     }
 
     public final void b(boolean z10) {
@@ -75,8 +75,8 @@ public final class e0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new org.telegram.ui.u4(this, 6));
-                this.x.setInterpolator(new OvershootInterpolator(2.0f));
+                this.x.addListener(new org.telegram.ui.t4(this, 6));
+                bi.l(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();
             }

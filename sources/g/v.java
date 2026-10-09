@@ -1,61 +1,41 @@
 package g;
 
+import android.R;
 import android.content.Context;
-import android.content.ContextWrapper;
+import android.util.AttributeSet;
 import android.view.View;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.lang.reflect.Constructor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class v implements View.OnClickListener {
-    public final View a;
-    public final String b;
-    public Method c;
-    public Context d;
+public final class v {
+    public static final Class[] b = {Context.class, AttributeSet.class};
+    public static final int[] c = {R.attr.onClick};
+    public static final int[] d = {R.attr.accessibilityHeading};
+    public static final int[] e = {R.attr.accessibilityPaneTitle};
+    public static final int[] f = {R.attr.screenReaderFocusable};
+    public static final String[] g = {"android.widget.", "android.view.", "android.webkit."};
+    public static final a0.m h = new a0.m(0);
+    public final Object[] a = new Object[2];
 
-    public v(View view, String str) {
-        this.a = view;
-        this.b = str;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        Method method;
-        if (this.c == null) {
-            View view2 = this.a;
-            Context context = view2.getContext();
-            while (true) {
-                String str2 = this.b;
-                if (context == null) {
-                    int id2 = view2.getId();
-                    if (id2 == -1) {
-                        str = "";
-                    } else {
-                        str = " with id '" + view2.getContext().getResources().getResourceEntryName(id2) + "'";
-                    }
-                    StringBuilder w10 = a4.a.w("Could not find method ", str2, "(View) in a parent or ancestor Context for android:onClick attribute defined on view ");
-                    w10.append(view2.getClass());
-                    w10.append(str);
-                    throw new IllegalStateException(w10.toString());
-                }
+    public final View a(Context context, String str, String str2) {
+        String concat;
+        a0.m mVar = h;
+        Constructor constructor = (Constructor) mVar.get(str);
+        if (constructor == null) {
+            if (str2 != null) {
                 try {
-                    if (!context.isRestricted() && (method = context.getClass().getMethod(str2, View.class)) != null) {
-                        this.c = method;
-                        this.d = context;
-                    }
-                } catch (NoSuchMethodException unused) {
+                    concat = str2.concat(str);
+                } catch (Exception unused) {
+                    return null;
                 }
-                context = context instanceof ContextWrapper ? ((ContextWrapper) context).getBaseContext() : null;
+            } else {
+                concat = str;
             }
+            constructor = Class.forName(concat, false, context.getClassLoader()).asSubclass(View.class).getConstructor(b);
+            mVar.put(str, constructor);
         }
-        try {
-            this.c.invoke(this.d, view);
-        } catch (IllegalAccessException e7) {
-            throw new IllegalStateException("Could not execute non-public method for android:onClick", e7);
-        } catch (InvocationTargetException e10) {
-            throw new IllegalStateException("Could not execute method for android:onClick", e10);
-        }
+        constructor.setAccessible(true);
+        return (View) constructor.newInstance(this.a);
     }
 }

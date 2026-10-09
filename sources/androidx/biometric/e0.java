@@ -1,6 +1,6 @@
 package androidx.biometric;
 
-import ai.q4;
+import ai.r4;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,11 +19,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class e0 extends androidx.fragment.app.p {
     public final Handler A0 = new Handler(Looper.getMainLooper());
-    public final q4 B0 = new q4(this, 4);
+    public final r4 B0 = new r4(this, 4);
     public x C0;
     public int D0;
     public int E0;
@@ -51,9 +51,9 @@ public class e0 extends androidx.fragment.app.p {
         j6.l lVar = this.C0.f;
         CharSequence charSequence = null;
         CharSequence charSequence2 = lVar != null ? (CharSequence) lVar.b : null;
-        g.c cVar = (g.c) b0Var.c;
-        cVar.d = charSequence2;
-        View inflate = LayoutInflater.from(cVar.a).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
+        g.b bVar = (g.b) b0Var.c;
+        bVar.d = charSequence2;
+        View inflate = LayoutInflater.from(bVar.a).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(R.id.fingerprint_subtitle);
         if (textView != null) {
             this.C0.getClass();
@@ -77,7 +77,7 @@ public class e0 extends androidx.fragment.app.p {
         }
         this.F0 = (ImageView) inflate.findViewById(R.id.fingerprint_icon);
         this.G0 = (TextView) inflate.findViewById(R.id.fingerprint_error);
-        if (v7.n.a(this.C0.c())) {
+        if (te.b.b(this.C0.c())) {
             charSequence = q(R.string.confirm_device_credential_password);
         } else {
             x xVar = this.C0;
@@ -92,10 +92,10 @@ public class e0 extends androidx.fragment.app.p {
             }
         }
         w wVar = new w(this);
-        cVar.f = charSequence;
-        cVar.g = wVar;
-        cVar.k = inflate;
-        g.g e7 = b0Var.e();
+        bVar.f = charSequence;
+        bVar.g = wVar;
+        bVar.k = inflate;
+        g.f e7 = b0Var.e();
         e7.setCanceledOnTouchOutside(false);
         return e7;
     }
@@ -134,7 +134,7 @@ public class e0 extends androidx.fragment.app.p {
             if (xVar.z == null) {
                 xVar.z = new androidx.lifecycle.z();
             }
-            xVar.z.d(this, new xa.c(this, 3));
+            xVar.z.d(this, new xa.d(this, 3));
             x xVar2 = this.C0;
             if (xVar2.A == null) {
                 xVar2.A = new androidx.lifecycle.z();
@@ -145,7 +145,7 @@ public class e0 extends androidx.fragment.app.p {
             this.D0 = P(d0.a());
         } else {
             Context n10 = n();
-            this.D0 = n10 != null ? f0.e.c(n10, R.color.biometric_error_color) : 0;
+            this.D0 = n10 != null ? n10.getColor(R.color.biometric_error_color) : 0;
         }
         this.E0 = P(android.R.attr.textColorSecondary);
     }

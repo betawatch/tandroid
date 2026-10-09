@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
-import w7.z5;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -36,8 +36,8 @@ public final /* synthetic */ class t implements Runnable {
                 TextView textView = new TextView(m0Var.getContext());
                 int i10 = i6.E8;
                 eh.a aVar = m0Var.Q1;
-                textView.setTextColor(i6.v0(i10, aVar));
-                textView.setBackground(i6.K0(false));
+                textView.setTextColor(i6.w0(i10, aVar));
+                textView.setBackground(i6.L0(false));
                 textView.setGravity(16);
                 textView.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(14.0f), 0);
                 textView.setTextSize(1, 14.0f);
@@ -64,7 +64,7 @@ public final /* synthetic */ class t implements Runnable {
                             default:
                                 m0 m0Var3 = m0Var;
                                 m0Var3.getClass();
-                                ((o2) jVar).r(true);
+                                ((p2) jVar).r(true);
                                 org.telegram.ui.ActionBar.n1 n1Var2 = m0Var3.R1;
                                 if (n1Var2 != null && n1Var2.isShowing()) {
                                     m0Var3.R1.d(true);
@@ -74,11 +74,11 @@ public final /* synthetic */ class t implements Runnable {
                         }
                     }
                 });
-                linearLayout.addView(textView, z5.n(-2, 48));
-                if (jVar instanceof v2) {
+                linearLayout.addView(textView, x5.n(-2, 48));
+                if (jVar instanceof w2) {
                     TextView textView2 = new TextView(m0Var.getContext());
-                    textView2.setTextColor(i6.v0(i10, aVar));
-                    textView2.setBackground(i6.K0(false));
+                    textView2.setTextColor(i6.w0(i10, aVar));
+                    textView2.setBackground(i6.L0(false));
                     textView2.setGravity(16);
                     textView2.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                     textView2.setTextSize(1, 14.0f);
@@ -86,12 +86,12 @@ public final /* synthetic */ class t implements Runnable {
                     textView2.setTag(1);
                     textView2.setText(LocaleController.getString(R.string.PaintEdit));
                     textView2.setOnClickListener(new k(m0Var, 2));
-                    linearLayout.addView(textView2, z5.n(-2, 48));
+                    linearLayout.addView(textView2, x5.n(-2, 48));
                 }
-                if (jVar instanceof o2) {
+                if (jVar instanceof p2) {
                     TextView textView3 = new TextView(m0Var.getContext());
-                    textView3.setTextColor(i6.v0(i10, aVar));
-                    textView3.setBackgroundDrawable(i6.K0(false));
+                    textView3.setTextColor(i6.w0(i10, aVar));
+                    textView3.setBackgroundDrawable(i6.L0(false));
                     textView3.setGravity(16);
                     textView3.setEllipsize(truncateAt);
                     textView3.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -116,7 +116,7 @@ public final /* synthetic */ class t implements Runnable {
                                 default:
                                     m0 m0Var3 = m0Var;
                                     m0Var3.getClass();
-                                    ((o2) jVar).r(true);
+                                    ((p2) jVar).r(true);
                                     org.telegram.ui.ActionBar.n1 n1Var2 = m0Var3.R1;
                                     if (n1Var2 != null && n1Var2.isShowing()) {
                                         m0Var3.R1.d(true);
@@ -126,12 +126,12 @@ public final /* synthetic */ class t implements Runnable {
                             }
                         }
                     });
-                    linearLayout.addView(textView3, z5.n(-2, 48));
+                    linearLayout.addView(textView3, x5.n(-2, 48));
                 }
-                if (!(jVar instanceof x1)) {
+                if (!(jVar instanceof y1)) {
                     TextView textView4 = new TextView(m0Var.getContext());
-                    textView4.setTextColor(i6.v0(i10, aVar));
-                    textView4.setBackgroundDrawable(i6.K0(false));
+                    textView4.setTextColor(i6.w0(i10, aVar));
+                    textView4.setBackgroundDrawable(i6.L0(false));
                     textView4.setGravity(16);
                     textView4.setEllipsize(truncateAt);
                     textView4.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(16.0f), 0);
@@ -139,7 +139,7 @@ public final /* synthetic */ class t implements Runnable {
                     textView4.setTag(2);
                     textView4.setText(LocaleController.getString(R.string.PaintDuplicate));
                     textView4.setOnClickListener(new k(m0Var, 3));
-                    linearLayout.addView(textView4, z5.n(-2, 48));
+                    linearLayout.addView(textView4, x5.n(-2, 48));
                 }
                 m0Var.S1.addView(linearLayout);
                 LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) linearLayout.getLayoutParams();

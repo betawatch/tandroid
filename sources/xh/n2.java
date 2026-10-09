@@ -2,50 +2,50 @@ package xh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.ad;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class n2 extends yh.y3 {
-    public final /* synthetic */ int r1;
-    public final /* synthetic */ Object s1;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class n2 extends yh.s3 {
+    public final /* synthetic */ int s1;
+    public final /* synthetic */ Object t1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n2(o2 o2Var, Context context, int i10, long j3, d6 d6Var, int i11) {
-        super(context, i10, j3, d6Var, null);
-        this.r1 = i11;
-        this.s1 = o2Var;
+    public /* synthetic */ n2(o2 o2Var, Context context, int i10, long j3, e6 e6Var, int i11) {
+        super(context, i10, j3, e6Var, null);
+        this.s1 = i11;
+        this.t1 = o2Var;
     }
 
     @Override // org.telegram.ui.ActionBar.f3
     public int getBottomInset() {
-        switch (this.r1) {
+        switch (this.s1) {
             case 3:
-                return ((yh.y3) this.s1).getBottomInset();
+                return ((yh.s3) this.t1).getBottomInset();
             default:
                 return super.getBottomInset();
         }
     }
 
-    @Override // yh.y3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
-    public yc getBulletinFactory() {
-        switch (this.r1) {
+    @Override // yh.s3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
+    public ad getBulletinFactory() {
+        switch (this.s1) {
             case 0:
-                return yc.a0(((o2) this.s1).a.a);
+                return ad.a0(((o2) this.t1).a.a);
             case 1:
-                return yc.a0(((o2) this.s1).a.a);
+                return ad.a0(((o2) this.t1).a.a);
             case 2:
-                return yc.a0(((o2) this.s1).a.a);
+                return ad.a0(((o2) this.t1).a.a);
             default:
                 return super.getBulletinFactory();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(yh.y3 y3Var, Context context, int i10, long j3, d6 d6Var, View view) {
-        super(context, i10, j3, d6Var, view);
-        this.r1 = 3;
-        this.s1 = y3Var;
+    public n2(yh.s3 s3Var, Context context, int i10, long j3, e6 e6Var, View view) {
+        super(context, i10, j3, e6Var, view);
+        this.s1 = 3;
+        this.t1 = s3Var;
     }
 }

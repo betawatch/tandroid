@@ -1,6 +1,6 @@
 package l;
 
-import ai.u2;
+import ai.v2;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -12,7 +12,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.HeaderViewListAdapter;
@@ -22,6 +21,7 @@ import android.widget.TextView;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
+import k2.g0;
 import m.f2;
 import m.g2;
 import m.j2;
@@ -29,7 +29,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -48,17 +48,19 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public final int d;
     public final boolean e;
     public final Handler f;
+    public final androidx.mediarouter.app.j r;
+    public final g0 v;
     public View y;
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
-    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 1);
-    public final u2 s = new u2(this, 2);
-    public final a4.m v = new a4.m(this, 25);
+    public final v2 s = new v2(this, 2);
     public int w = 0;
     public int x = 0;
     public boolean K = false;
 
     public e(Context context, View view, int i10, boolean z10) {
+        this.r = new androidx.mediarouter.app.j(this, r1);
+        this.v = new g0(this, r1);
         this.b = context;
         this.y = view;
         this.d = i10;
@@ -77,7 +79,12 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     }
 
     @Override // l.x
-    public final void c(k kVar, boolean z10) {
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // l.x
+    public final void d(k kVar, boolean z10) {
         ArrayList arrayList = this.n;
         int size = arrayList.size();
         int i10 = 0;
@@ -104,9 +111,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         m.x xVar = j2Var.O;
         kVar2.r(this);
         if (this.P) {
-            if (Build.VERSION.SDK_INT >= 23) {
-                f2.b(xVar, null);
-            }
+            f2.b(xVar, null);
             xVar.setAnimationStyle(0);
         }
         j2Var.dismiss();
@@ -128,7 +133,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         dismiss();
         w wVar = this.M;
         if (wVar != null) {
-            wVar.c(kVar, true);
+            wVar.d(kVar, true);
         }
         ViewTreeObserver viewTreeObserver = this.N;
         if (viewTreeObserver != null) {
@@ -139,11 +144,6 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         this.E.removeOnAttachStateChangeListener(this.s);
         this.O.onDismiss();
-    }
-
-    @Override // l.x
-    public final boolean d() {
-        return false;
     }
 
     @Override // l.b0
@@ -332,28 +332,25 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         this.J = i10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0158, code lost:
-    
-        if (((r2.getWidth() + r12[0]) + r5) > r10.right) goto L70;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x015a, code lost:
-    
-        r2 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x015d, code lost:
-    
-        r2 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0164, code lost:
-    
-        if ((r12[0] - r5) < 0) goto L72;
-     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0170  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x017c  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x01bd  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0172  */
+    /* JADX WARN: Type inference failed for: r17v0 */
+    /* JADX WARN: Type inference failed for: r17v1 */
+    /* JADX WARN: Type inference failed for: r17v5 */
+    /* JADX WARN: Type inference failed for: r17v6 */
+    /* JADX WARN: Type inference failed for: r17v7 */
+    /* JADX WARN: Type inference failed for: r3v0, types: [android.view.LayoutInflater] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void u(k kVar) {
         boolean z10;
-        char c10;
+        boolean z11;
         View view;
         d dVar;
         int i10;
@@ -365,7 +362,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         int i13;
         int firstVisiblePosition;
         Context context = this.b;
-        LayoutInflater from = LayoutInflater.from(context);
+        ?? from = LayoutInflater.from(context);
         h hVar2 = new h(kVar, from, this.e, R.layout.abc_cascading_menu_item_layout);
         if (!a() && this.K) {
             hVar2.c = true;
@@ -420,7 +417,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             }
             if (menuItem == null) {
                 view = null;
-                c10 = 0;
+                z11 = 0;
             } else {
                 r1 r1Var = dVar.a.c;
                 ListAdapter adapter = r1Var.getAdapter();
@@ -434,7 +431,8 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 }
                 int count = hVar.getCount();
                 int i16 = 0;
-                c10 = 0;
+                z11 = 0;
+                z11 = 0;
                 while (true) {
                     if (i16 >= count) {
                         i16 = -1;
@@ -448,7 +446,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 view = (i16 != -1 && (firstVisiblePosition = (i16 + i13) - r1Var.getFirstVisiblePosition()) >= 0 && firstVisiblePosition < r1Var.getChildCount()) ? r1Var.getChildAt(firstVisiblePosition) : null;
             }
         } else {
-            c10 = 0;
+            z11 = 0;
             view = null;
             dVar = null;
         }
@@ -458,71 +456,98 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 if (method != null) {
                     try {
                         Object[] objArr = new Object[1];
-                        objArr[c10] = Boolean.FALSE;
+                        objArr[z11] = Boolean.FALSE;
                         method.invoke(xVar, objArr);
                     } catch (Exception unused) {
                         Log.i("MenuPopupWindow", "Could not invoke setTouchModal() on PopupWindow. Oh well.");
                     }
                 }
             } else {
-                g2.a(xVar, false);
+                g2.a(xVar, z11);
             }
-            int i17 = Build.VERSION.SDK_INT;
-            if (i17 >= 23) {
-                f2.a(xVar, null);
-            }
-            r1 r1Var2 = ((d) hg.c.g(1, arrayList)).a.c;
+            f2.a(xVar, null);
+            r1 r1Var2 = ((d) arrayList.get(arrayList.size() - 1)).a.c;
             int[] iArr = new int[2];
             r1Var2.getLocationOnScreen(iArr);
             Rect rect = new Rect();
             this.E.getWindowVisibleDisplayFrame(rect);
             if (this.F == 1) {
-            }
-            boolean z11 = i10 == 1;
-            this.F = i10;
-            if (i17 >= 26) {
-                j2Var.E = view;
-                i11 = 0;
-                i12 = 0;
-            } else {
-                int[] iArr2 = new int[2];
-                this.y.getLocationOnScreen(iArr2);
-                int[] iArr3 = new int[2];
-                view.getLocationOnScreen(iArr3);
-                if ((this.x & 7) == 5) {
-                    iArr2[0] = this.y.getWidth() + iArr2[0];
-                    iArr3[0] = view.getWidth() + iArr3[0];
+                if (r1Var2.getWidth() + iArr[0] + m10 > rect.right) {
+                    i10 = 0;
+                    boolean z12 = i10 != 1;
+                    this.F = i10;
+                    if (Build.VERSION.SDK_INT < 26) {
+                        j2Var.E = view;
+                        i11 = 0;
+                        i12 = 0;
+                    } else {
+                        int[] iArr2 = new int[2];
+                        this.y.getLocationOnScreen(iArr2);
+                        int[] iArr3 = new int[2];
+                        view.getLocationOnScreen(iArr3);
+                        if ((this.x & 7) == 5) {
+                            iArr2[0] = this.y.getWidth() + iArr2[0];
+                            iArr3[0] = view.getWidth() + iArr3[0];
+                        }
+                        int i17 = iArr3[0] - iArr2[0];
+                        i11 = iArr3[1] - iArr2[1];
+                        i12 = i17;
+                    }
+                    if ((this.x & 5) == 5) {
+                        if (z12) {
+                            width = i12 + view.getWidth();
+                            j2Var.f = width;
+                            j2Var.v = true;
+                            j2Var.s = true;
+                            j2Var.j(i11);
+                        }
+                        width = i12 - m10;
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
+                    } else if (z12) {
+                        width = i12 + m10;
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
+                    } else {
+                        m10 = view.getWidth();
+                        width = i12 - m10;
+                        j2Var.f = width;
+                        j2Var.v = true;
+                        j2Var.s = true;
+                        j2Var.j(i11);
+                    }
                 }
-                int i18 = iArr3[0] - iArr2[0];
-                i11 = iArr3[1] - iArr2[1];
-                i12 = i18;
-            }
-            if ((this.x & 5) != 5) {
-                if (z11) {
-                    width = i12 + view.getWidth();
-                    j2Var.f = width;
-                    j2Var.v = true;
-                    j2Var.s = true;
-                    j2Var.j(i11);
+                i10 = 1;
+                if (i10 != 1) {
                 }
-                width = i12 - m10;
-                j2Var.f = width;
-                j2Var.v = true;
-                j2Var.s = true;
-                j2Var.j(i11);
-            } else if (z11) {
-                width = i12 + m10;
-                j2Var.f = width;
-                j2Var.v = true;
-                j2Var.s = true;
-                j2Var.j(i11);
+                this.F = i10;
+                if (Build.VERSION.SDK_INT < 26) {
+                }
+                if ((this.x & 5) == 5) {
+                }
             } else {
-                m10 = view.getWidth();
-                width = i12 - m10;
-                j2Var.f = width;
-                j2Var.v = true;
-                j2Var.s = true;
-                j2Var.j(i11);
+                if (iArr[0] - m10 >= 0) {
+                    i10 = 0;
+                    if (i10 != 1) {
+                    }
+                    this.F = i10;
+                    if (Build.VERSION.SDK_INT < 26) {
+                    }
+                    if ((this.x & 5) == 5) {
+                    }
+                }
+                i10 = 1;
+                if (i10 != 1) {
+                }
+                this.F = i10;
+                if (Build.VERSION.SDK_INT < 26) {
+                }
+                if ((this.x & 5) == 5) {
+                }
             }
         } else {
             if (this.G) {
@@ -539,7 +564,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         r1 r1Var3 = j2Var.c;
         r1Var3.setOnKeyListener(this);
         if (dVar == null && this.L && kVar.m != null) {
-            FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) r1Var3, false);
+            FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, r1Var3, false);
             TextView textView = (TextView) frameLayout.findViewById(android.R.id.title);
             frameLayout.setEnabled(false);
             textView.setText(kVar.m);

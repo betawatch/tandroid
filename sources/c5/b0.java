@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
+import android.opengl.GLES20;
 import android.os.Message;
 import android.os.Parcel;
 import android.view.ContextThemeWrapper;
@@ -16,24 +17,47 @@ import androidx.appcompat.app.AlertController$RecycleListView;
 import b2.q0;
 import com.google.android.gms.internal.play_billing.h4;
 import j$.util.DesugarCollections;
+import java.net.URI;
+import java.nio.ByteBuffer;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.net.SocketFactory;
+import javax.net.ssl.SSLSocketFactory;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Wallet.f5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements r2.v {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
 
-    public /* synthetic */ b0(char c10, int i10) {
+    public /* synthetic */ b0(int i10, boolean z10, boolean z11) {
         this.a = i10;
     }
 
     @Override // r2.v
-    public boolean Y(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+    public boolean D(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return codecCapabilities.isFeatureRequired(str);
+    }
+
+    @Override // r2.v
+    public int F() {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c).length;
+    }
+
+    @Override // r2.v
+    public boolean X() {
+        return true;
     }
 
     @Override // r2.v
@@ -80,87 +104,177 @@ public final /* synthetic */ class b0 implements r2.v {
         this.b = length;
     }
 
-    @Override // r2.v
-    public int d0() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
-    }
-
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v1, types: [android.widget.ListAdapter] */
     /* JADX WARN: Type inference failed for: r8v3 */
     /* JADX WARN: Type inference failed for: r8v4 */
-    public g.g e() {
-        g.c cVar = (g.c) this.c;
-        g.g gVar = new g.g(cVar.a, this.b);
-        View view = cVar.e;
-        g.f fVar = gVar.f;
+    public g.f e() {
+        g.b bVar = (g.b) this.c;
+        g.f fVar = new g.f(bVar.a, this.b);
+        View view = bVar.e;
+        g.e eVar = fVar.f;
         if (view != null) {
-            fVar.r = view;
+            eVar.r = view;
         } else {
-            CharSequence charSequence = cVar.d;
+            CharSequence charSequence = bVar.d;
             if (charSequence != null) {
-                fVar.d = charSequence;
-                TextView textView = fVar.p;
+                eVar.d = charSequence;
+                TextView textView = eVar.p;
                 if (textView != null) {
                     textView.setText(charSequence);
                 }
             }
-            Drawable drawable = cVar.c;
+            Drawable drawable = bVar.c;
             if (drawable != null) {
-                fVar.n = drawable;
-                ImageView imageView = fVar.o;
+                eVar.n = drawable;
+                ImageView imageView = eVar.o;
                 if (imageView != null) {
                     imageView.setVisibility(0);
-                    fVar.o.setImageDrawable(drawable);
+                    eVar.o.setImageDrawable(drawable);
                 }
             }
         }
-        CharSequence charSequence2 = cVar.f;
+        CharSequence charSequence2 = bVar.f;
         if (charSequence2 != null) {
-            androidx.biometric.w wVar = cVar.g;
-            fVar.getClass();
-            Message obtainMessage = wVar != null ? fVar.z.obtainMessage(-2, wVar) : null;
-            fVar.j = charSequence2;
-            fVar.k = obtainMessage;
+            androidx.biometric.w wVar = bVar.g;
+            eVar.getClass();
+            Message obtainMessage = wVar != null ? eVar.z.obtainMessage(-2, wVar) : null;
+            eVar.j = charSequence2;
+            eVar.k = obtainMessage;
         }
-        if (cVar.i != null) {
-            AlertController$RecycleListView alertController$RecycleListView = (AlertController$RecycleListView) cVar.b.inflate(fVar.v, (ViewGroup) null);
-            int i10 = cVar.l ? fVar.w : fVar.x;
-            Object obj = cVar.i;
+        if (bVar.i != null) {
+            AlertController$RecycleListView alertController$RecycleListView = (AlertController$RecycleListView) bVar.b.inflate(eVar.v, (ViewGroup) null);
+            int i10 = bVar.l ? eVar.w : eVar.x;
+            Object obj = bVar.i;
             ?? r82 = obj;
             if (obj == null) {
-                r82 = new g.e(cVar.a, i10, R.id.text1, null);
+                r82 = new g.d(bVar.a, i10, R.id.text1, null);
             }
-            fVar.s = r82;
-            fVar.t = cVar.m;
-            if (cVar.j != null) {
-                alertController$RecycleListView.setOnItemClickListener(new g.b(cVar, fVar));
+            eVar.s = r82;
+            eVar.t = bVar.m;
+            if (bVar.j != null) {
+                alertController$RecycleListView.setOnItemClickListener(new g.a(bVar, eVar));
             }
-            if (cVar.l) {
+            if (bVar.l) {
                 alertController$RecycleListView.setChoiceMode(1);
             }
-            fVar.e = alertController$RecycleListView;
+            eVar.e = alertController$RecycleListView;
         }
-        View view2 = cVar.k;
+        View view2 = bVar.k;
         if (view2 != null) {
-            fVar.f = view2;
-            fVar.g = false;
+            eVar.f = view2;
+            eVar.g = false;
         }
-        gVar.setCancelable(true);
-        gVar.setCanceledOnTouchOutside(true);
-        gVar.setOnCancelListener(null);
-        gVar.setOnDismissListener(null);
-        l.l lVar = cVar.h;
+        fVar.setCancelable(true);
+        fVar.setCanceledOnTouchOutside(true);
+        fVar.setOnCancelListener(null);
+        fVar.setOnDismissListener(null);
+        l.l lVar = bVar.h;
         if (lVar != null) {
-            gVar.setOnKeyListener(lVar);
+            fVar.setOnKeyListener(lVar);
         }
-        return gVar;
+        return fVar;
     }
 
-    public long f(int i10) {
+    public sc.u f(String str) {
+        Matcher matcher;
+        String str2;
+        Matcher matcher2;
+        boolean z10;
+        String str3;
+        int i10 = this.b;
+        if (str == null) {
+            throw new IllegalArgumentException("The given URI is null.");
+        }
+        if (i10 < 0) {
+            throw new IllegalArgumentException("The given timeout value is negative.");
+        }
+        URI create = URI.create(str);
+        if (create == null) {
+            throw new IllegalArgumentException("The given URI is null.");
+        }
+        if (i10 < 0) {
+            throw new IllegalArgumentException("The given timeout value is negative.");
+        }
+        String scheme = create.getScheme();
+        String userInfo = create.getUserInfo();
+        SecureRandom secureRandom = sc.k.a;
+        String host = create.getHost();
+        if (host == null) {
+            String rawAuthority = create.getRawAuthority();
+            host = (rawAuthority == null || (matcher = Pattern.compile("^(.*@)?([^:]+)(:\\d+)?$").matcher(rawAuthority)) == null || !matcher.matches()) ? null : matcher.group(2);
+            if (host == null) {
+                String uri = create.toString();
+                if (uri == null || (matcher2 = Pattern.compile("^\\w+://([^@/]*@)?([^:/]+)(:\\d+)?(/.*)?$").matcher(uri)) == null || !matcher2.matches()) {
+                    str2 = null;
+                    int port = create.getPort();
+                    String rawPath = create.getRawPath();
+                    String rawQuery = create.getRawQuery();
+                    if (scheme != null || scheme.length() == 0) {
+                        throw new IllegalArgumentException("The scheme part is empty.");
+                    }
+                    if ("wss".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
+                        z10 = true;
+                    } else {
+                        if (!"ws".equalsIgnoreCase(scheme) && !"http".equalsIgnoreCase(scheme)) {
+                            throw new IllegalArgumentException("Bad scheme: ".concat(scheme));
+                        }
+                        z10 = false;
+                    }
+                    if (str2 == null || str2.length() == 0) {
+                        throw new IllegalArgumentException("The host part is empty.");
+                    }
+                    if (rawPath == null || rawPath.length() == 0) {
+                        str3 = "/";
+                    } else {
+                        if (!rawPath.startsWith("/")) {
+                            rawPath = "/".concat(rawPath);
+                        }
+                        str3 = rawPath;
+                    }
+                    int i11 = port >= 0 ? port : z10 ? 443 : 80;
+                    ((qb.b) this.c).getClass();
+                    sc.s sVar = new sc.s(z10 ? SSLSocketFactory.getDefault() : SocketFactory.getDefault(), new sc.a(str2, i11), i10, null, null);
+                    sVar.d = 1;
+                    sVar.e = MediaDataController.MAX_LINKS_COUNT;
+                    sVar.f = true;
+                    if (port >= 0) {
+                        str2 = str2 + ":" + port;
+                    }
+                    if (rawQuery != null) {
+                        str3 = a1.g.D(str3, "?", rawQuery);
+                    }
+                    return new sc.u(z10, userInfo, str2, str3, sVar);
+                }
+                host = matcher2.group(2);
+            }
+        }
+        str2 = host;
+        int port2 = create.getPort();
+        String rawPath2 = create.getRawPath();
+        String rawQuery2 = create.getRawQuery();
+        if (scheme != null) {
+        }
+        throw new IllegalArgumentException("The scheme part is empty.");
+    }
+
+    public void g(int i10) {
+        ByteBuffer allocate = ByteBuffer.allocate(i10);
+        int position = ((ByteBuffer) this.c).position();
+        ((ByteBuffer) this.c).position(0);
+        allocate.put((ByteBuffer) this.c);
+        allocate.position(position);
+        this.c = allocate;
+    }
+
+    public byte h(int i10) {
+        if (i10 < 0 || this.b <= i10) {
+            throw new IndexOutOfBoundsException(String.format("Bad index: index=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(this.b)));
+        }
+        return ((ByteBuffer) this.c).get(i10);
+    }
+
+    public long i(int i10) {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
@@ -169,14 +283,59 @@ public final /* synthetic */ class b0 implements r2.v {
         throw new IndexOutOfBoundsException(j3.toString());
     }
 
-    public synchronized List g() {
+    public boolean j(int i10) {
+        return ((1 << (i10 % 8)) & h(i10 / 8)) != 0;
+    }
+
+    public synchronized List k() {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    public long h(c3.l lVar) {
+    public void l(int i10) {
+        int capacity = ((ByteBuffer) this.c).capacity();
+        int i11 = this.b;
+        if (capacity < i11 + 1) {
+            g(i11 + 1024);
+        }
+        ((ByteBuffer) this.c).put((byte) i10);
+        this.b++;
+    }
+
+    @Override // r2.v
+    public boolean m(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureSupported(str);
+    }
+
+    public void n(byte[] bArr) {
+        int capacity = ((ByteBuffer) this.c).capacity();
+        int i10 = this.b;
+        if (capacity < bArr.length + i10) {
+            g(i10 + bArr.length + 1024);
+        }
+        ((ByteBuffer) this.c).put(bArr);
+        this.b += bArr.length;
+    }
+
+    public int o(int i10, int[] iArr) {
+        int i11 = iArr[0];
+        int i12 = 1;
+        int i13 = 0;
+        int i14 = 0;
+        while (i13 < i10) {
+            if (j(i11 + i13)) {
+                i14 += i12;
+            }
+            i13++;
+            i12 *= 2;
+        }
+        iArr[0] = iArr[0] + i10;
+        return i14;
+    }
+
+    public long p(c3.l lVar) {
         e2.v vVar = (e2.v) this.c;
         int i10 = 0;
-        lVar.f(vVar.a, 0, 1, false);
+        lVar.h(vVar.a, 0, 1, false);
         int i11 = vVar.a[0] & 255;
         if (i11 == 0) {
             return Long.MIN_VALUE;
@@ -188,7 +347,7 @@ public final /* synthetic */ class b0 implements r2.v {
             i13++;
         }
         int i14 = i11 & (~i12);
-        lVar.f(vVar.a, 1, i13, false);
+        lVar.h(vVar.a, 1, i13, false);
         while (i10 < i13) {
             i10++;
             i14 = (vVar.a[i10] & 255) + (i14 << 8);
@@ -197,7 +356,7 @@ public final /* synthetic */ class b0 implements r2.v {
         return i14;
     }
 
-    public void i(Object instance) {
+    public void q(Object instance) {
         Object[] objArr = (Object[]) this.c;
         kotlin.jvm.internal.i.e(instance, "instance");
         int i10 = this.b;
@@ -213,7 +372,19 @@ public final /* synthetic */ class b0 implements r2.v {
         }
     }
 
-    public String j(h4 h4Var) {
+    public byte[] r(int i10, int i11) {
+        int i12 = i11 - i10;
+        if (i12 < 0 || i10 < 0 || this.b < i11) {
+            throw new IllegalArgumentException(String.format("Bad range: beginIndex=%d, endIndex=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(this.b)));
+        }
+        byte[] bArr = new byte[i12];
+        if (i12 != 0) {
+            System.arraycopy(((ByteBuffer) this.c).array(), i10, bArr, 0, i12);
+        }
+        return bArr;
+    }
+
+    public String s(h4 h4Var) {
         d0 d0Var = (d0) this.c;
         int i10 = this.b;
         try {
@@ -225,17 +396,17 @@ public final /* synthetic */ class b0 implements r2.v {
             String str = i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? i10 != 6 ? "QUERY_PRODUCT_DETAILS_ASYNC" : "START_CONNECTION" : "IS_FEATURE_SUPPORTED" : "CONSUME_ASYNC" : "ACKNOWLEDGE_PURCHASE" : "LAUNCH_BILLING_FLOW";
             c0 c0Var = new c0(h4Var);
             com.google.android.gms.internal.play_billing.e eVar = (com.google.android.gms.internal.play_billing.e) gVar;
-            Parcel U0 = eVar.U0();
-            U0.writeString(packageName);
-            U0.writeString(str);
+            Parcel T0 = eVar.T0();
+            T0.writeString(packageName);
+            T0.writeString(str);
             int i11 = com.google.android.gms.internal.play_billing.d.a;
-            U0.writeStrongBinder(c0Var);
+            T0.writeStrongBinder(c0Var);
             try {
-                eVar.b.transact(1, U0, null, 1);
-                U0.recycle();
+                eVar.b.transact(1, T0, null, 1);
+                T0.recycle();
                 return "billingOverrideService.getBillingOverride";
             } catch (Throwable th2) {
-                U0.recycle();
+                T0.recycle();
                 throw th2;
             }
         } catch (Exception e7) {
@@ -246,11 +417,6 @@ public final /* synthetic */ class b0 implements r2.v {
         }
     }
 
-    @Override // r2.v
-    public boolean p0() {
-        return true;
-    }
-
     public String toString() {
         switch (this.a) {
             case 5:
@@ -258,11 +424,6 @@ public final /* synthetic */ class b0 implements r2.v {
             default:
                 return super.toString();
         }
-    }
-
-    @Override // r2.v
-    public boolean y(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureSupported(str);
     }
 
     public /* synthetic */ b0(Object obj, int i10, int i11) {
@@ -279,22 +440,25 @@ public final /* synthetic */ class b0 implements r2.v {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public b0(int i10, byte b10) {
+    public b0(int i10, short s10) {
         this(32, 2);
         this.a = i10;
         switch (i10) {
-            case 8:
+            case 11:
+                this.c = new qb.b();
+                break;
+            case 12:
                 this.c = new e2.v(8);
                 break;
-            case 9:
-            case 11:
+            case 13:
+            case 15:
             default:
                 break;
-            case 10:
+            case 14:
                 this.c = new ArrayList();
                 this.b = 128;
                 break;
-            case 12:
+            case 16:
                 this.b = 0;
                 this.c = new StringBuilder();
                 break;
@@ -304,14 +468,23 @@ public final /* synthetic */ class b0 implements r2.v {
     public b0(int i10, int i11) {
         this.a = i11;
         switch (i11) {
-            case 6:
+            case 7:
                 if (i10 > 0) {
                     this.c = new Object[i10];
                     return;
                 }
                 throw new IllegalArgumentException("The max pool size must be > 0");
+            case 8:
             default:
                 this.c = new long[i10];
+                return;
+            case 9:
+                this.c = ByteBuffer.allocate(i10);
+                this.b = 0;
+                return;
+            case 10:
+                this.c = new CountDownLatch(1);
+                this.b = i10;
                 return;
         }
     }
@@ -324,13 +497,24 @@ public final /* synthetic */ class b0 implements r2.v {
 
     public b0(Context context) {
         this.a = 3;
-        int e7 = g.g.e(context, 0);
-        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e7)));
+        int e7 = g.f.e(context, 0);
+        this.c = new g.b(new ContextThemeWrapper(context, g.f.e(context, e7)));
         this.b = e7;
     }
 
+    public b0(Context context, String str) {
+        this.a = 6;
+        int[] iArr = new int[2];
+        this.c = iArr;
+        j6.l lVar = new j6.l(context, str);
+        this.b = lVar.a;
+        GLES20.glGenBuffers(2, iArr, 0);
+        f5.a((float[]) lVar.d, iArr[0]);
+        f5.a((float[]) lVar.b, iArr[1]);
+    }
+
     public b0(boolean z10, boolean z11, boolean z12) {
-        this.a = 7;
+        this.a = 8;
         this.b = (z10 || z11 || z12) ? 1 : 0;
     }
 }

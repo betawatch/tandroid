@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g {
     public static final g6.b c = new g6.b("SessionManager", null);
@@ -22,9 +22,9 @@ public final class g {
         try {
             y yVar = this.a;
             z zVar = new z(hVar);
-            Parcel O0 = yVar.O0();
-            com.google.android.gms.internal.cast.v.d(O0, zVar);
-            yVar.S0(O0, 2);
+            Parcel N0 = yVar.N0();
+            com.google.android.gms.internal.cast.v.d(N0, zVar);
+            yVar.R0(N0, 2);
         } catch (RemoteException e7) {
             c.a(e7, "Unable to call %s on %s.", "addSessionManagerListener", y.class.getSimpleName());
         }
@@ -36,11 +36,11 @@ public final class g {
         try {
             Log.i(bVar.a, bVar.d("End session for %s", this.b.getPackageName()));
             y yVar = this.a;
-            Parcel O0 = yVar.O0();
+            Parcel N0 = yVar.N0();
             int i10 = com.google.android.gms.internal.cast.v.a;
-            O0.writeInt(1);
-            O0.writeInt(z10 ? 1 : 0);
-            yVar.S0(O0, 6);
+            N0.writeInt(1);
+            N0.writeInt(z10 ? 1 : 0);
+            yVar.R0(N0, 6);
         } catch (RemoteException e7) {
             bVar.a(e7, "Unable to call %s on %s.", "endCurrentSession", y.class.getSimpleName());
         }
@@ -59,10 +59,10 @@ public final class g {
         n6.l.e("Must be called from the main thread.");
         try {
             y yVar = this.a;
-            Parcel Q0 = yVar.Q0(yVar.O0(), 1);
-            x6.a L0 = x6.b.L0(Q0.readStrongBinder());
-            Q0.recycle();
-            return (f) x6.b.M0(L0);
+            Parcel P0 = yVar.P0(yVar.N0(), 1);
+            x6.a K0 = x6.b.K0(P0.readStrongBinder());
+            P0.recycle();
+            return (f) x6.b.L0(K0);
         } catch (RemoteException e7) {
             c.a(e7, "Unable to call %s on %s.", "getWrappedCurrentSession", y.class.getSimpleName());
             return null;

@@ -10,9 +10,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import w7.e0;
+import w7.g0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
@@ -59,12 +59,12 @@ public abstract class i {
         if (tL_messageMediaPoll == null) {
             return null;
         }
-        if (!e0.a(i10, 4)) {
-            if (e0.a(i10, 1)) {
+        if (!g0.a(i10, 4)) {
+            if (g0.a(i10, 1)) {
                 TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
                 return AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2ToastOnlySubscribersCanVote, DialogObject.getShortName(MessagesController.getInstance(i11).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId()))))));
             }
-            if (e0.a(i10, 2)) {
+            if (g0.a(i10, 2)) {
                 return AndroidUtilities.replaceTags(LocaleController.getString(R.string.PollV2ToastOnlySubscribersJoined24hCanVote));
             }
             return null;

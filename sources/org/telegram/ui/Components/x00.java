@@ -1,71 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class x00 extends wo0 {
-    public final boolean d;
+public final class x00 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ View d;
 
-    public x00(boolean z10) {
-        this.d = z10;
+    public /* synthetic */ x00(View view, int i10, float f7, int i11) {
+        this.a = i11;
+        this.d = view;
+        this.b = i10;
+        this.c = f7;
     }
 
-    @Override // org.telegram.ui.Components.wo0
-    public final boolean a() {
-        return k() > j();
-    }
-
-    @Override // org.telegram.ui.Components.wo0
-    public final boolean b() {
-        return k() < i();
-    }
-
-    @Override // org.telegram.ui.Components.wo0
-    public final void c(boolean z10) {
-        float h = h();
-        if (z10) {
-            h *= -1.0f;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                y00 y00Var = (y00) this.d;
+                int i10 = this.b;
+                y00Var.b(i10 == 5 ? 0.0f : -this.c, i10 + 1);
+                y00Var.y = 0.0f;
+                y00Var.invalidate();
+                break;
+            case 1:
+                ((org.telegram.ui.web.u1) this.d).c(this.b, this.c, false);
+                break;
+            default:
+                yh.e8 e8Var = (yh.e8) this.d;
+                e8Var.c0 = this.c;
+                if (e8Var.getValue() != this.b) {
+                    e8Var.e(e8Var.getValue());
+                }
+                e8Var.invalidate();
+                break;
         }
-        l(Math.min(i(), Math.max(j(), k() + h)));
     }
 
-    @Override // org.telegram.ui.Components.wo0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        if (this.d) {
-            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.c.h.a);
-            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
-        }
+    public x00(yh.e8 e8Var, float f7, int i10) {
+        this.a = 2;
+        this.d = e8Var;
+        this.c = f7;
+        this.b = i10;
     }
-
-    @Override // org.telegram.ui.Components.wo0
-    public final boolean g(View view, int i10, Bundle bundle) {
-        if (super.g(view, i10, bundle)) {
-            return true;
-        }
-        if (i10 != ((AccessibilityNodeInfo.AccessibilityAction) s0.c.h.a).getId()) {
-            return false;
-        }
-        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
-        return true;
-    }
-
-    public float h() {
-        return 0.05f;
-    }
-
-    public float i() {
-        return 1.0f;
-    }
-
-    public float j() {
-        return 0.0f;
-    }
-
-    public abstract float k();
-
-    public abstract void l(float f7);
 }

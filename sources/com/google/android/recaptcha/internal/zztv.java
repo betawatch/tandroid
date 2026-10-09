@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import a4.a;
+import a1.g;
 import androidx.car.app.navigation.model.Maneuver;
 import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Field;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zztv<T> implements zzug<T> {
     private static final int[] zza = new int[0];
@@ -97,7 +97,7 @@ final class zztv<T> implements zzug<T> {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder x10 = a.x("Field ", str, " for ", name, " not found. Known fields are ");
+            StringBuilder x10 = g.x("Field ", str, " for ", name, " not found. Known fields are ");
             x10.append(arrays);
             throw new RuntimeException(x10.toString(), e7);
         }
@@ -319,12 +319,12 @@ final class zztv<T> implements zzug<T> {
         return zzf;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:105:0x034f  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x03ab  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x026d  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x028b  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x028e  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x0273  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0350  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x03ad  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x026e  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x028f  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0274  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -361,27 +361,29 @@ final class zztv<T> implements zzug<T> {
         int i29;
         String str;
         int objectFieldOffset;
+        char c10;
         int i30;
         int i31;
         int i32;
+        int i33;
         Field zzC;
         char charAt10;
-        int i33;
         int i34;
         int i35;
         int i36;
         int i37;
+        int i38;
         Object obj;
         Field zzC2;
         Object obj2;
         Field zzC3;
-        int i38;
-        char charAt11;
         int i39;
-        char charAt12;
+        char charAt11;
         int i40;
-        char charAt13;
+        char charAt12;
         int i41;
+        char charAt13;
+        int i42;
         char charAt14;
         if (!(zztpVar instanceof zzue)) {
             throw null;
@@ -390,519 +392,534 @@ final class zztv<T> implements zzug<T> {
         String zzd = zzueVar.zzd();
         int length = zzd.length();
         char charAt15 = zzd.charAt(0);
-        char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+        char c11 = CharacterCompat.MIN_HIGH_SURROGATE;
         if (charAt15 >= 55296) {
-            int i42 = 1;
+            int i43 = 1;
             while (true) {
-                i10 = i42 + 1;
-                if (zzd.charAt(i42) < 55296) {
+                i10 = i43 + 1;
+                if (zzd.charAt(i43) < 55296) {
                     break;
                 }
-                i42 = i10;
+                i43 = i10;
             }
         } else {
             i10 = 1;
         }
-        int i43 = i10 + 1;
+        int i44 = i10 + 1;
         int charAt16 = zzd.charAt(i10);
         if (charAt16 >= 55296) {
-            int i44 = charAt16 & 8191;
-            int i45 = 13;
+            int i45 = charAt16 & 8191;
+            int i46 = 13;
             while (true) {
-                i41 = i43 + 1;
-                charAt14 = zzd.charAt(i43);
+                i42 = i44 + 1;
+                charAt14 = zzd.charAt(i44);
                 if (charAt14 < 55296) {
                     break;
                 }
-                i44 |= (charAt14 & 8191) << i45;
-                i45 += 13;
-                i43 = i41;
+                i45 |= (charAt14 & 8191) << i46;
+                i46 += 13;
+                i44 = i42;
             }
-            charAt16 = i44 | (charAt14 << i45);
-            i43 = i41;
+            charAt16 = i45 | (charAt14 << i46);
+            i44 = i42;
         }
         if (charAt16 == 0) {
-            iArr = zza;
-            i16 = 0;
             i12 = 0;
             i15 = 0;
             charAt = 0;
             i11 = 0;
             i13 = 0;
             i14 = 0;
+            iArr = zza;
+            i16 = 0;
         } else {
-            int i46 = i43 + 1;
-            int charAt17 = zzd.charAt(i43);
+            int i47 = i44 + 1;
+            int charAt17 = zzd.charAt(i44);
             if (charAt17 >= 55296) {
-                int i47 = charAt17 & 8191;
-                int i48 = 13;
+                int i48 = charAt17 & 8191;
+                int i49 = 13;
                 while (true) {
-                    i24 = i46 + 1;
-                    charAt9 = zzd.charAt(i46);
+                    i24 = i47 + 1;
+                    charAt9 = zzd.charAt(i47);
                     if (charAt9 < 55296) {
                         break;
                     }
-                    i47 |= (charAt9 & 8191) << i48;
-                    i48 += 13;
-                    i46 = i24;
+                    i48 |= (charAt9 & 8191) << i49;
+                    i49 += 13;
+                    i47 = i24;
                 }
-                charAt17 = i47 | (charAt9 << i48);
-                i46 = i24;
+                charAt17 = i48 | (charAt9 << i49);
+                i47 = i24;
             }
-            int i49 = i46 + 1;
-            int charAt18 = zzd.charAt(i46);
+            int i50 = i47 + 1;
+            int charAt18 = zzd.charAt(i47);
             if (charAt18 >= 55296) {
-                int i50 = charAt18 & 8191;
-                int i51 = 13;
+                int i51 = charAt18 & 8191;
+                int i52 = 13;
                 while (true) {
-                    i23 = i49 + 1;
-                    charAt8 = zzd.charAt(i49);
+                    i23 = i50 + 1;
+                    charAt8 = zzd.charAt(i50);
                     if (charAt8 < 55296) {
                         break;
                     }
-                    i50 |= (charAt8 & 8191) << i51;
-                    i51 += 13;
-                    i49 = i23;
+                    i51 |= (charAt8 & 8191) << i52;
+                    i52 += 13;
+                    i50 = i23;
                 }
-                charAt18 = i50 | (charAt8 << i51);
-                i49 = i23;
+                charAt18 = i51 | (charAt8 << i52);
+                i50 = i23;
             }
-            int i52 = i49 + 1;
-            int charAt19 = zzd.charAt(i49);
+            int i53 = i50 + 1;
+            int charAt19 = zzd.charAt(i50);
             if (charAt19 >= 55296) {
-                int i53 = charAt19 & 8191;
-                int i54 = 13;
+                int i54 = charAt19 & 8191;
+                int i55 = 13;
                 while (true) {
-                    i22 = i52 + 1;
-                    charAt7 = zzd.charAt(i52);
+                    i22 = i53 + 1;
+                    charAt7 = zzd.charAt(i53);
                     if (charAt7 < 55296) {
                         break;
                     }
-                    i53 |= (charAt7 & 8191) << i54;
-                    i54 += 13;
-                    i52 = i22;
+                    i54 |= (charAt7 & 8191) << i55;
+                    i55 += 13;
+                    i53 = i22;
                 }
-                charAt19 = i53 | (charAt7 << i54);
-                i52 = i22;
+                charAt19 = i54 | (charAt7 << i55);
+                i53 = i22;
             }
-            int i55 = i52 + 1;
-            int charAt20 = zzd.charAt(i52);
+            int i56 = i53 + 1;
+            int charAt20 = zzd.charAt(i53);
             if (charAt20 >= 55296) {
-                int i56 = charAt20 & 8191;
-                int i57 = 13;
+                int i57 = charAt20 & 8191;
+                int i58 = 13;
                 while (true) {
-                    i21 = i55 + 1;
-                    charAt6 = zzd.charAt(i55);
+                    i21 = i56 + 1;
+                    charAt6 = zzd.charAt(i56);
                     if (charAt6 < 55296) {
                         break;
                     }
-                    i56 |= (charAt6 & 8191) << i57;
-                    i57 += 13;
-                    i55 = i21;
+                    i57 |= (charAt6 & 8191) << i58;
+                    i58 += 13;
+                    i56 = i21;
                 }
-                charAt20 = i56 | (charAt6 << i57);
-                i55 = i21;
+                charAt20 = i57 | (charAt6 << i58);
+                i56 = i21;
             }
-            int i58 = i55 + 1;
-            charAt = zzd.charAt(i55);
+            int i59 = i56 + 1;
+            charAt = zzd.charAt(i56);
             if (charAt >= 55296) {
-                int i59 = charAt & 8191;
-                int i60 = 13;
+                int i60 = charAt & 8191;
+                int i61 = 13;
                 while (true) {
-                    i20 = i58 + 1;
-                    charAt5 = zzd.charAt(i58);
+                    i20 = i59 + 1;
+                    charAt5 = zzd.charAt(i59);
                     if (charAt5 < 55296) {
                         break;
                     }
-                    i59 |= (charAt5 & 8191) << i60;
-                    i60 += 13;
-                    i58 = i20;
+                    i60 |= (charAt5 & 8191) << i61;
+                    i61 += 13;
+                    i59 = i20;
                 }
-                charAt = i59 | (charAt5 << i60);
-                i58 = i20;
+                charAt = i60 | (charAt5 << i61);
+                i59 = i20;
             }
-            int i61 = i58 + 1;
-            int charAt21 = zzd.charAt(i58);
+            int i62 = i59 + 1;
+            int charAt21 = zzd.charAt(i59);
             if (charAt21 >= 55296) {
-                int i62 = charAt21 & 8191;
-                int i63 = 13;
+                int i63 = charAt21 & 8191;
+                int i64 = 13;
                 while (true) {
-                    i19 = i61 + 1;
-                    charAt4 = zzd.charAt(i61);
+                    i19 = i62 + 1;
+                    charAt4 = zzd.charAt(i62);
                     if (charAt4 < 55296) {
                         break;
                     }
-                    i62 |= (charAt4 & 8191) << i63;
-                    i63 += 13;
-                    i61 = i19;
+                    i63 |= (charAt4 & 8191) << i64;
+                    i64 += 13;
+                    i62 = i19;
                 }
-                charAt21 = i62 | (charAt4 << i63);
-                i61 = i19;
+                charAt21 = i63 | (charAt4 << i64);
+                i62 = i19;
             }
-            int i64 = i61 + 1;
-            int charAt22 = zzd.charAt(i61);
+            int i65 = i62 + 1;
+            int charAt22 = zzd.charAt(i62);
             if (charAt22 >= 55296) {
-                int i65 = charAt22 & 8191;
-                int i66 = 13;
+                int i66 = charAt22 & 8191;
+                int i67 = 13;
                 while (true) {
-                    i18 = i64 + 1;
-                    charAt3 = zzd.charAt(i64);
+                    i18 = i65 + 1;
+                    charAt3 = zzd.charAt(i65);
                     if (charAt3 < 55296) {
                         break;
                     }
-                    i65 |= (charAt3 & 8191) << i66;
-                    i66 += 13;
-                    i64 = i18;
+                    i66 |= (charAt3 & 8191) << i67;
+                    i67 += 13;
+                    i65 = i18;
                 }
-                charAt22 = i65 | (charAt3 << i66);
-                i64 = i18;
+                charAt22 = i66 | (charAt3 << i67);
+                i65 = i18;
             }
-            int i67 = i64 + 1;
-            int charAt23 = zzd.charAt(i64);
+            int i68 = i65 + 1;
+            int charAt23 = zzd.charAt(i65);
             if (charAt23 >= 55296) {
-                int i68 = charAt23 & 8191;
-                int i69 = 13;
+                int i69 = charAt23 & 8191;
+                int i70 = 13;
                 while (true) {
-                    i17 = i67 + 1;
-                    charAt2 = zzd.charAt(i67);
+                    i17 = i68 + 1;
+                    charAt2 = zzd.charAt(i68);
                     if (charAt2 < 55296) {
                         break;
                     }
-                    i68 |= (charAt2 & 8191) << i69;
-                    i69 += 13;
-                    i67 = i17;
+                    i69 |= (charAt2 & 8191) << i70;
+                    i70 += 13;
+                    i68 = i17;
                 }
-                charAt23 = i68 | (charAt2 << i69);
-                i67 = i17;
+                charAt23 = i69 | (charAt2 << i70);
+                i68 = i17;
             }
-            int i70 = charAt17 + charAt17 + charAt18;
+            int i71 = charAt17 + charAt17 + charAt18;
             int[] iArr2 = new int[charAt23 + charAt21 + charAt22];
-            int i71 = charAt21;
+            int i72 = charAt21;
             i11 = charAt19;
-            i12 = i71;
+            i12 = i72;
             i13 = charAt20;
             i14 = charAt23;
-            i15 = i70;
+            i15 = i71;
             iArr = iArr2;
             i16 = charAt17;
-            i43 = i67;
+            i44 = i68;
         }
         Unsafe unsafe = zzb;
         Object[] zze = zzueVar.zze();
         Class<?> cls2 = zzueVar.zza().getClass();
-        int i72 = i14 + i12;
-        int i73 = charAt + charAt;
+        int i73 = i14 + i12;
+        int i74 = charAt + charAt;
         int[] iArr3 = new int[charAt * 3];
-        Object[] objArr = new Object[i73];
-        int i74 = i14;
-        int i75 = i72;
-        int i76 = 0;
+        Object[] objArr = new Object[i74];
+        int i75 = i14;
+        int i76 = i73;
         int i77 = 0;
-        while (i43 < length) {
-            int i78 = i43 + 1;
-            int charAt24 = zzd.charAt(i43);
-            if (charAt24 >= c10) {
-                int i79 = charAt24 & 8191;
-                int i80 = i78;
-                int i81 = 13;
+        int i78 = 0;
+        while (i44 < length) {
+            int i79 = i44 + 1;
+            int charAt24 = zzd.charAt(i44);
+            if (charAt24 >= c11) {
+                int i80 = charAt24 & 8191;
+                int i81 = i79;
+                int i82 = 13;
                 while (true) {
-                    i40 = i80 + 1;
-                    charAt13 = zzd.charAt(i80);
-                    if (charAt13 < c10) {
+                    i41 = i81 + 1;
+                    charAt13 = zzd.charAt(i81);
+                    if (charAt13 < c11) {
                         break;
                     }
-                    i79 |= (charAt13 & 8191) << i81;
-                    i81 += 13;
-                    i80 = i40;
+                    i80 |= (charAt13 & 8191) << i82;
+                    i82 += 13;
+                    i81 = i41;
                 }
-                charAt24 = i79 | (charAt13 << i81);
-                i25 = i40;
+                charAt24 = i80 | (charAt13 << i82);
+                i25 = i41;
             } else {
-                i25 = i78;
+                i25 = i79;
             }
-            int i82 = i25 + 1;
+            int i83 = i25 + 1;
             int charAt25 = zzd.charAt(i25);
-            if (charAt25 >= c10) {
-                int i83 = charAt25 & 8191;
-                int i84 = i82;
-                int i85 = 13;
+            if (charAt25 >= c11) {
+                int i84 = charAt25 & 8191;
+                int i85 = i83;
+                int i86 = 13;
                 while (true) {
-                    i39 = i84 + 1;
-                    charAt12 = zzd.charAt(i84);
-                    if (charAt12 < c10) {
+                    i40 = i85 + 1;
+                    charAt12 = zzd.charAt(i85);
+                    if (charAt12 < c11) {
                         break;
                     }
-                    i83 |= (charAt12 & 8191) << i85;
-                    i85 += 13;
-                    i84 = i39;
+                    i84 |= (charAt12 & 8191) << i86;
+                    i86 += 13;
+                    i85 = i40;
                 }
-                charAt25 = i83 | (charAt12 << i85);
-                i26 = i39;
+                charAt25 = i84 | (charAt12 << i86);
+                i26 = i40;
             } else {
-                i26 = i82;
+                i26 = i83;
             }
             if ((charAt25 & 1024) != 0) {
-                iArr[i76] = i77;
-                i76++;
+                iArr[i77] = i78;
+                i77++;
             }
-            int i86 = charAt25 & 255;
+            int i87 = charAt25 & 255;
             zzue zzueVar2 = zzueVar;
-            int i87 = charAt25 & 2048;
-            if (i86 >= 51) {
-                int i88 = i26 + 1;
+            int i88 = charAt25 & 2048;
+            if (i87 >= 51) {
+                int i89 = i26 + 1;
                 int charAt26 = zzd.charAt(i26);
-                char c11 = CharacterCompat.MIN_HIGH_SURROGATE;
+                char c12 = CharacterCompat.MIN_HIGH_SURROGATE;
                 if (charAt26 >= 55296) {
-                    int i89 = charAt26 & 8191;
-                    int i90 = i88;
-                    int i91 = 13;
+                    int i90 = charAt26 & 8191;
+                    int i91 = i89;
+                    int i92 = 13;
                     while (true) {
-                        i38 = i90 + 1;
-                        charAt11 = zzd.charAt(i90);
-                        if (charAt11 < c11) {
+                        i39 = i91 + 1;
+                        charAt11 = zzd.charAt(i91);
+                        if (charAt11 < c12) {
                             break;
                         }
-                        i89 |= (charAt11 & 8191) << i91;
-                        i91 += 13;
-                        i90 = i38;
-                        c11 = CharacterCompat.MIN_HIGH_SURROGATE;
+                        i90 |= (charAt11 & 8191) << i92;
+                        i92 += 13;
+                        i91 = i39;
+                        c12 = CharacterCompat.MIN_HIGH_SURROGATE;
                     }
-                    charAt26 = i89 | (charAt11 << i91);
-                    i35 = i38;
+                    charAt26 = i90 | (charAt11 << i92);
+                    i36 = i39;
                 } else {
-                    i35 = i88;
+                    i36 = i89;
                 }
-                int i92 = i35;
-                int i93 = i86 - 51;
+                int i93 = i36;
+                int i94 = i87 - 51;
                 i27 = length;
-                if (i93 == 9 || i93 == 17) {
-                    i36 = i15 + 1;
-                    int i94 = i77 / 3;
-                    objArr[i94 + i94 + 1] = zze[i15];
+                if (i94 == 9 || i94 == 17) {
+                    i37 = i15 + 1;
+                    int i95 = i78 / 3;
+                    objArr[i95 + i95 + 1] = zze[i15];
                 } else {
-                    if (i93 == 12) {
-                        if (zzueVar2.zzc() == 1 || i87 != 0) {
-                            i36 = i15 + 1;
-                            int i95 = i77 / 3;
-                            objArr[i95 + i95 + 1] = zze[i15];
+                    if (i94 == 12) {
+                        if (zzueVar2.zzc() == 1 || i88 != 0) {
+                            i37 = i15 + 1;
+                            int i96 = i78 / 3;
+                            objArr[i96 + i96 + 1] = zze[i15];
                         } else {
-                            i37 = 0;
-                            int i96 = charAt26 + charAt26;
-                            obj = zze[i96];
-                            i87 = i37;
+                            i38 = 0;
+                            int i97 = charAt26 + charAt26;
+                            obj = zze[i97];
+                            int i98 = i38;
                             if (obj instanceof Field) {
                                 zzC2 = (Field) obj;
                             } else {
                                 zzC2 = zzC(cls2, (String) obj);
-                                zze[i96] = zzC2;
+                                zze[i97] = zzC2;
                             }
-                            int i97 = i16;
+                            int i99 = i16;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zzC2);
-                            int i98 = i96 + 1;
-                            obj2 = zze[i98];
-                            i28 = i97;
+                            int i100 = i97 + 1;
+                            obj2 = zze[i100];
+                            i28 = i99;
                             if (obj2 instanceof Field) {
                                 zzC3 = (Field) obj2;
                             } else {
                                 zzC3 = zzC(cls2, (String) obj2);
-                                zze[i98] = zzC3;
+                                zze[i100] = zzC3;
                             }
-                            int objectFieldOffset2 = (int) unsafe.objectFieldOffset(zzC3);
+                            i30 = (int) unsafe.objectFieldOffset(zzC3);
                             str = zzd;
-                            i26 = i92;
+                            i32 = i98;
+                            i26 = i93;
                             i31 = 0;
-                            i30 = objectFieldOffset2;
+                            c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                         }
                     }
-                    i37 = i87;
-                    int i962 = charAt26 + charAt26;
-                    obj = zze[i962];
-                    i87 = i37;
+                    i38 = i88;
+                    int i972 = charAt26 + charAt26;
+                    obj = zze[i972];
+                    int i982 = i38;
                     if (obj instanceof Field) {
                     }
-                    int i972 = i16;
+                    int i992 = i16;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(zzC2);
-                    int i982 = i962 + 1;
-                    obj2 = zze[i982];
-                    i28 = i972;
+                    int i1002 = i972 + 1;
+                    obj2 = zze[i1002];
+                    i28 = i992;
                     if (obj2 instanceof Field) {
                     }
-                    int objectFieldOffset22 = (int) unsafe.objectFieldOffset(zzC3);
+                    i30 = (int) unsafe.objectFieldOffset(zzC3);
                     str = zzd;
-                    i26 = i92;
+                    i32 = i982;
+                    i26 = i93;
                     i31 = 0;
-                    i30 = objectFieldOffset22;
+                    c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                 }
-                i15 = i36;
-                i37 = i87;
-                int i9622 = charAt26 + charAt26;
-                obj = zze[i9622];
-                i87 = i37;
+                i15 = i37;
+                i38 = i88;
+                int i9722 = charAt26 + charAt26;
+                obj = zze[i9722];
+                int i9822 = i38;
                 if (obj instanceof Field) {
                 }
-                int i9722 = i16;
+                int i9922 = i16;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(zzC2);
-                int i9822 = i9622 + 1;
-                obj2 = zze[i9822];
-                i28 = i9722;
+                int i10022 = i9722 + 1;
+                obj2 = zze[i10022];
+                i28 = i9922;
                 if (obj2 instanceof Field) {
                 }
-                int objectFieldOffset222 = (int) unsafe.objectFieldOffset(zzC3);
+                i30 = (int) unsafe.objectFieldOffset(zzC3);
                 str = zzd;
-                i26 = i92;
+                i32 = i9822;
+                i26 = i93;
                 i31 = 0;
-                i30 = objectFieldOffset222;
+                c10 = CharacterCompat.MIN_HIGH_SURROGATE;
             } else {
                 i27 = length;
                 i28 = i16;
-                int i99 = i15 + 1;
+                int i101 = i15 + 1;
                 Field zzC4 = zzC(cls2, (String) zze[i15]);
-                if (i86 == 9 || i86 == 17) {
-                    i29 = i99;
-                    int i100 = i77 / 3;
-                    objArr[i100 + i100 + 1] = zzC4.getType();
+                if (i87 == 9 || i87 == 17) {
+                    i29 = i101;
+                    int i102 = i78 / 3;
+                    objArr[i102 + i102 + 1] = zzC4.getType();
                 } else {
-                    if (i86 == 27) {
-                        i33 = i99;
-                        i34 = 1;
+                    if (i87 == 27) {
+                        i34 = i101;
+                        i35 = 1;
                         i15 += 2;
-                    } else if (i86 == 49) {
+                    } else if (i87 == 49) {
                         i15 += 2;
-                        i33 = i99;
-                        i34 = 1;
-                    } else if (i86 == 12 || i86 == 30 || i86 == 44) {
-                        if (zzueVar2.zzc() == 1 || i87 != 0) {
+                        i34 = i101;
+                        i35 = 1;
+                    } else if (i87 == 12 || i87 == 30 || i87 == 44) {
+                        if (zzueVar2.zzc() == 1 || i88 != 0) {
                             i15 += 2;
-                            int i101 = i77 / 3;
-                            objArr[i101 + i101 + 1] = zze[i99];
+                            int i103 = i78 / 3;
+                            objArr[i103 + i103 + 1] = zze[i101];
                             str = zzd;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                            i30 = 1048575;
-                            if ((charAt25 & 4096) != 0 || i86 > 17) {
+                            if ((charAt25 & 4096) != 0 || i87 > 17) {
+                                c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                                i30 = 1048575;
                                 i31 = 0;
                             } else {
-                                int i102 = i26 + 1;
+                                int i104 = i26 + 1;
                                 int charAt27 = str.charAt(i26);
                                 if (charAt27 >= 55296) {
-                                    int i103 = charAt27 & 8191;
-                                    int i104 = 13;
+                                    int i105 = charAt27 & 8191;
+                                    int i106 = 13;
                                     while (true) {
-                                        i32 = i102 + 1;
-                                        charAt10 = str.charAt(i102);
+                                        i33 = i104 + 1;
+                                        charAt10 = str.charAt(i104);
                                         if (charAt10 < 55296) {
                                             break;
                                         }
-                                        i103 |= (charAt10 & 8191) << i104;
-                                        i104 += 13;
-                                        i102 = i32;
+                                        i105 |= (charAt10 & 8191) << i106;
+                                        i106 += 13;
+                                        i104 = i33;
                                     }
-                                    charAt27 = i103 | (charAt10 << i104);
+                                    charAt27 = i105 | (charAt10 << i106);
                                 } else {
-                                    i32 = i102;
+                                    i33 = i104;
                                 }
-                                int i105 = (charAt27 / 32) + i28 + i28;
-                                Object obj3 = zze[i105];
+                                int i107 = (charAt27 / 32) + i28 + i28;
+                                Object obj3 = zze[i107];
                                 if (obj3 instanceof Field) {
                                     zzC = (Field) obj3;
                                 } else {
                                     zzC = zzC(cls2, (String) obj3);
-                                    zze[i105] = zzC;
+                                    zze[i107] = zzC;
                                 }
-                                int i106 = charAt27;
-                                i30 = (int) unsafe.objectFieldOffset(zzC);
-                                int i107 = i106 % 32;
-                                i26 = i32;
-                                i31 = i107;
+                                int i108 = charAt27;
+                                int objectFieldOffset2 = (int) unsafe.objectFieldOffset(zzC);
+                                i31 = i108 % 32;
+                                i26 = i33;
+                                c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                                i30 = objectFieldOffset2;
                             }
-                            if (i86 >= 18 && i86 <= 49) {
-                                iArr[i75] = objectFieldOffset;
-                                i75++;
+                            if (i87 >= 18 && i87 <= 49) {
+                                iArr[i76] = objectFieldOffset;
+                                i76++;
                             }
+                            i32 = i88;
                         } else {
                             str = zzd;
-                            i15 = i99;
-                            i87 = 0;
+                            i15 = i101;
+                            i88 = 0;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                            i30 = 1048575;
                             if ((charAt25 & 4096) != 0) {
                             }
+                            c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                            i30 = 1048575;
                             i31 = 0;
-                            if (i86 >= 18) {
-                                iArr[i75] = objectFieldOffset;
-                                i75++;
+                            if (i87 >= 18) {
+                                iArr[i76] = objectFieldOffset;
+                                i76++;
                             }
+                            i32 = i88;
                         }
-                    } else if (i86 == 50) {
-                        int i108 = i15 + 2;
-                        int i109 = i74 + 1;
-                        iArr[i74] = i77;
-                        int i110 = i77 / 3;
-                        int i111 = i110 + i110;
-                        objArr[i111] = zze[i99];
-                        if (i87 != 0) {
-                            objArr[i111 + 1] = zze[i108];
+                    } else if (i87 == 50) {
+                        int i109 = i15 + 2;
+                        int i110 = i75 + 1;
+                        iArr[i75] = i78;
+                        int i111 = i78 / 3;
+                        int i112 = i111 + i111;
+                        objArr[i112] = zze[i101];
+                        if (i88 != 0) {
+                            objArr[i112 + 1] = zze[i109];
                             i15 += 3;
                             str = zzd;
-                            i74 = i109;
+                            i75 = i110;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                            i30 = 1048575;
                             if ((charAt25 & 4096) != 0) {
                             }
+                            c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                            i30 = 1048575;
                             i31 = 0;
-                            if (i86 >= 18) {
+                            if (i87 >= 18) {
                             }
+                            i32 = i88;
                         } else {
-                            i15 = i108;
-                            i74 = i109;
-                            i87 = 0;
+                            i15 = i109;
+                            i75 = i110;
+                            i88 = 0;
                             str = zzd;
                             objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                            i30 = 1048575;
                             if ((charAt25 & 4096) != 0) {
                             }
+                            c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                            i30 = 1048575;
                             i31 = 0;
-                            if (i86 >= 18) {
+                            if (i87 >= 18) {
                             }
+                            i32 = i88;
                         }
                     } else {
-                        i29 = i99;
+                        i29 = i101;
                     }
-                    int i112 = i77 / 3;
-                    objArr[i112 + i112 + i34] = zze[i33];
+                    int i113 = i78 / 3;
+                    objArr[i113 + i113 + i35] = zze[i34];
                     str = zzd;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                    i30 = 1048575;
                     if ((charAt25 & 4096) != 0) {
                     }
+                    c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                    i30 = 1048575;
                     i31 = 0;
-                    if (i86 >= 18) {
+                    if (i87 >= 18) {
                     }
+                    i32 = i88;
                 }
                 str = zzd;
                 i15 = i29;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(zzC4);
-                i30 = 1048575;
                 if ((charAt25 & 4096) != 0) {
                 }
+                c10 = CharacterCompat.MIN_HIGH_SURROGATE;
+                i30 = 1048575;
                 i31 = 0;
-                if (i86 >= 18) {
+                if (i87 >= 18) {
                 }
+                i32 = i88;
             }
-            int i113 = i87;
-            int i114 = i77 + 1;
-            iArr3[i77] = charAt24;
-            int i115 = i77 + 2;
-            iArr3[i114] = ((charAt25 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt25 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i113 != 0 ? TLObject.FLAG_31 : 0) | (i86 << 20) | objectFieldOffset;
-            i77 += 3;
+            int i114 = i78 + 1;
+            iArr3[i78] = charAt24;
+            int i115 = i78 + 2;
+            iArr3[i114] = ((charAt25 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt25 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i32 != 0 ? TLObject.FLAG_31 : 0) | (i87 << 20) | objectFieldOffset;
+            i78 += 3;
             iArr3[i115] = (i31 << 20) | i30;
-            i43 = i26;
+            i44 = i26;
             zzd = str;
+            c11 = c10;
             zzueVar = zzueVar2;
             length = i27;
             i16 = i28;
-            c10 = CharacterCompat.MIN_HIGH_SURROGATE;
         }
-        return new zztv(iArr3, objArr, i11, i13, zzueVar.zza(), false, iArr, i14, i72, zztyVar, zztfVar, zzuvVar, zzrzVar, zztnVar);
+        return new zztv(iArr3, objArr, i11, i13, zzueVar.zza(), false, iArr, i14, i73, zztyVar, zztfVar, zzuvVar, zzrzVar, zztnVar);
     }
 
     private static double zzn(Object obj, long j3) {
@@ -1018,13 +1035,13 @@ final class zztv<T> implements zzug<T> {
         Unsafe unsafe = zzb;
         int i12 = 1048575;
         int i13 = 0;
-        int i14 = 1048575;
+        int i14 = 0;
         int i15 = 0;
-        int i16 = 0;
+        int i16 = 1048575;
         while (true) {
             int[] iArr = zztvVar.zzc;
             if (i13 >= iArr.length) {
-                int zza2 = ((zzsn) obj).zzc.zza() + i16;
+                int zza2 = ((zzsn) obj).zzc.zza() + i15;
                 if (!zztvVar.zzh) {
                     return zza2;
                 }
@@ -1046,9 +1063,9 @@ final class zztv<T> implements zzug<T> {
             int i20 = iArr[i13 + 2];
             int i21 = i20 & i12;
             if (zzt <= 17) {
-                if (i21 != i14) {
-                    i15 = i21 == i12 ? 0 : unsafe.getInt(obj2, i21);
-                    i14 = i21;
+                if (i21 != i16) {
+                    i14 = i21 == i12 ? 0 : unsafe.getInt(obj2, i21);
+                    i16 = i21;
                 }
                 i10 = 1 << (i20 >>> 20);
             } else {
@@ -1061,90 +1078,90 @@ final class zztv<T> implements zzug<T> {
             long j3 = i22;
             switch (zzt) {
                 case 0:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 1:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 2:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         long j10 = unsafe.getLong(obj2, j3);
                         zzA = zzqv.zzA(i19 << 3);
                         zzB = zzqv.zzB(j10);
-                        i16 += zzB + zzA;
+                        i15 += zzB + zzA;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 3:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         long j11 = unsafe.getLong(obj2, j3);
                         zzA = zzqv.zzA(i19 << 3);
                         zzB = zzqv.zzB(j11);
-                        i16 += zzB + zzA;
+                        i15 += zzB + zzA;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 4:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         long j12 = unsafe.getInt(obj2, j3);
                         zzA = zzqv.zzA(i19 << 3);
                         zzB = zzqv.zzB(j12);
-                        i16 += zzB + zzA;
+                        i15 += zzB + zzA;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 5:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 6:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 7:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 1, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 1, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 8:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         int i23 = i19 << 3;
                         Object object = unsafe.getObject(obj2, j3);
                         if (object instanceof zzqm) {
                             zzA2 = zzqv.zzA(i23);
                             zzd = ((zzqm) object).zzd();
                             zzA3 = zzqv.zzA(zzd);
-                            i16 += zzA3 + zzd + zzA2;
+                            i15 += zzA3 + zzd + zzA2;
                         } else {
                             zzA = zzqv.zzA(i23);
                             zzB = zzqv.zzz((String) object);
-                            i16 += zzB + zzA;
+                            i15 += zzB + zzA;
                         }
                     }
                     zztvVar = this;
@@ -1152,9 +1169,9 @@ final class zztv<T> implements zzug<T> {
                     obj2 = obj;
                     i12 = 1048575;
                 case 9:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         zzh = zzui.zzh(i19, unsafe.getObject(obj2, j3), zztvVar.zzx(i13));
-                        i16 += zzh;
+                        i15 += zzh;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1164,76 +1181,76 @@ final class zztv<T> implements zzug<T> {
                         i12 = 1048575;
                     }
                 case 10:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         zzqm zzqmVar = (zzqm) unsafe.getObject(obj2, j3);
                         zzA2 = zzqv.zzA(i19 << 3);
                         zzd = zzqmVar.zzd();
                         zzA3 = zzqv.zzA(zzd);
-                        i16 += zzA3 + zzd + zzA2;
+                        i15 += zzA3 + zzd + zzA2;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 11:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(unsafe.getInt(obj2, j3), zzqv.zzA(i19 << 3), i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(unsafe.getInt(obj2, j3), zzqv.zzA(i19 << 3), i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 12:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         long j13 = unsafe.getInt(obj2, j3);
                         zzA = zzqv.zzA(i19 << 3);
                         zzB = zzqv.zzB(j13);
-                        i16 += zzB + zzA;
+                        i15 += zzB + zzA;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 13:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 14:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 15:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         int i24 = unsafe.getInt(obj2, j3);
-                        i16 = e2.w((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i16);
+                        i15 = e2.v((i24 >> 31) ^ (i24 + i24), zzqv.zzA(i19 << 3), i15);
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 16:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         long j14 = unsafe.getLong(obj2, j3);
                         zzA = zzqv.zzA(i19 << 3);
                         zzB = zzqv.zzB((j14 >> 63) ^ (j14 + j14));
-                        i16 += zzB + zzA;
+                        i15 += zzB + zzA;
                     }
                     zztvVar = this;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 17:
-                    if (zztvVar.zzO(obj2, i13, i14, i15, i10)) {
+                    if (zztvVar.zzO(obj2, i13, i16, i14, i10)) {
                         zzw = zzqv.zzw(i19, (zzts) unsafe.getObject(obj2, j3), zztvVar.zzx(i13));
-                        i16 += zzw;
+                        i15 += zzw;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1244,13 +1261,13 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 18:
                     zzh = zzui.zzd(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 19:
                     zzh = zzui.zzb(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1259,13 +1276,13 @@ final class zztv<T> implements zzug<T> {
                     int i25 = zzui.zza;
                     if (list.size() != 0) {
                         zzA4 = (zzqv.zzA(i19 << 3) * list.size()) + zzui.zzg(list);
-                        i16 += zzA4;
+                        i15 += zzA4;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA4 = 0;
-                    i16 += zzA4;
+                    i15 += zzA4;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1277,13 +1294,13 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zzl(list2);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1295,25 +1312,25 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zzf(list3);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 23:
                     zzh = zzui.zzd(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 24:
                     zzh = zzui.zzb(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1323,13 +1340,13 @@ final class zztv<T> implements zzug<T> {
                     int size2 = list4.size();
                     if (size2 != 0) {
                         zzA4 = (zzqv.zzA(i19 << 3) + 1) * size2;
-                        i16 += zzA4;
+                        i15 += zzA4;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA4 = 0;
-                    i16 += zzA4;
+                    i15 += zzA4;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1345,7 +1362,7 @@ final class zztv<T> implements zzug<T> {
                                 Object zzc2 = zzteVar.zzc();
                                 if (zzc2 instanceof zzqm) {
                                     int zzd2 = ((zzqm) zzc2).zzd();
-                                    zzA6 = e2.w(zzd2, zzd2, zzA6);
+                                    zzA6 = e2.v(zzd2, zzd2, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) zzc2) + zzA6;
                                 }
@@ -1355,19 +1372,19 @@ final class zztv<T> implements zzug<T> {
                                 Object obj3 = list5.get(i31);
                                 if (obj3 instanceof zzqm) {
                                     int zzd3 = ((zzqm) obj3).zzd();
-                                    zzA6 = e2.w(zzd3, zzd3, zzA6);
+                                    zzA6 = e2.v(zzd3, zzd3, zzA6);
                                 } else {
                                     zzA6 = zzqv.zzz((String) obj3) + zzA6;
                                 }
                             }
                         }
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1384,13 +1401,13 @@ final class zztv<T> implements zzug<T> {
                             Object obj4 = list6.get(i33);
                             if (obj4 instanceof zztd) {
                                 int zza3 = ((zztd) obj4).zza();
-                                zzA7 = e2.w(zza3, zza3, zzA7);
+                                zzA7 = e2.v(zza3, zza3, zzA7);
                             } else {
                                 zzA7 = zzqv.zzy((zzts) obj4, zzx) + zzA7;
                             }
                         }
                     }
-                    i16 += zzA7;
+                    i15 += zzA7;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1402,15 +1419,15 @@ final class zztv<T> implements zzug<T> {
                         zzA6 = zzqv.zzA(i19 << 3) * size5;
                         for (int i35 = 0; i35 < list7.size(); i35++) {
                             int zzd4 = ((zzqm) list7.get(i35)).zzd();
-                            zzA6 = e2.w(zzd4, zzd4, zzA6);
+                            zzA6 = e2.v(zzd4, zzd4, zzA6);
                         }
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1422,13 +1439,13 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zzk(list8);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1440,25 +1457,25 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zza(list9);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                     zzh = zzui.zzb(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 32:
                     zzh = zzui.zzd(i19, (List) unsafe.getObject(obj2, j3), false);
-                    i16 += zzh;
+                    i15 += zzh;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1470,13 +1487,13 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zzi(list10);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1488,13 +1505,13 @@ final class zztv<T> implements zzug<T> {
                         zzl = zzui.zzj(list11);
                         zzA5 = zzqv.zzA(i19 << 3);
                         zzA6 = (zzA5 * size) + zzl;
-                        i16 += zzA6;
+                        i15 += zzA6;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
                     }
                     zzA6 = 0;
-                    i16 += zzA6;
+                    i15 += zzA6;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1503,7 +1520,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1517,7 +1534,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1531,7 +1548,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1545,7 +1562,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1559,7 +1576,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1573,7 +1590,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1587,7 +1604,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1603,7 +1620,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1617,7 +1634,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1631,7 +1648,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1645,7 +1662,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1659,7 +1676,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1673,7 +1690,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1687,7 +1704,7 @@ final class zztv<T> implements zzug<T> {
                     if (zze > 0) {
                         zzA8 = zzqv.zzA(i19 << 3);
                         zzA9 = zzqv.zzA(zze);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1709,7 +1726,7 @@ final class zztv<T> implements zzug<T> {
                             i11 += zzqv.zzw(i19, (zzts) list13.get(i42), zzx2);
                         }
                     }
-                    i16 += i11;
+                    i15 += i11;
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
@@ -1731,14 +1748,14 @@ final class zztv<T> implements zzug<T> {
                     i12 = 1048575;
                 case 51:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 52:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1748,7 +1765,7 @@ final class zztv<T> implements zzug<T> {
                         long zzv = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i19 << 3);
                         zzB2 = zzqv.zzB(zzv);
-                        i16 += zzB2 + zzA10;
+                        i15 += zzB2 + zzA10;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1762,7 +1779,7 @@ final class zztv<T> implements zzug<T> {
                         long zzv2 = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i19 << 3);
                         zzB2 = zzqv.zzB(zzv2);
-                        i16 += zzB2 + zzA10;
+                        i15 += zzB2 + zzA10;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1776,7 +1793,7 @@ final class zztv<T> implements zzug<T> {
                         long zzp = zzp(obj2, j3);
                         zzA10 = zzqv.zzA(i19 << 3);
                         zzB2 = zzqv.zzB(zzp);
-                        i16 += zzB2 + zzA10;
+                        i15 += zzB2 + zzA10;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1787,21 +1804,21 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 56:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 57:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case 58:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 1, i16);
+                        i15 = e2.v(i19 << 3, 1, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1814,14 +1831,14 @@ final class zztv<T> implements zzug<T> {
                             zze = zzqv.zzA(i43);
                             zzA8 = ((zzqm) object2).zzd();
                             zzA9 = zzqv.zzA(zzA8);
-                            i16 += zzA9 + zzA8 + zze;
+                            i15 += zzA9 + zzA8 + zze;
                             i13 += 3;
                             obj2 = obj;
                             i12 = 1048575;
                         } else {
                             zzA10 = zzqv.zzA(i43);
                             zzB2 = zzqv.zzz((String) object2);
-                            i16 += zzB2 + zzA10;
+                            i15 += zzB2 + zzA10;
                             i13 += 3;
                             obj2 = obj;
                             i12 = 1048575;
@@ -1834,7 +1851,7 @@ final class zztv<T> implements zzug<T> {
                 case 60:
                     if (zztvVar.zzR(obj2, i19, i13)) {
                         zzh = zzui.zzh(i19, unsafe.getObject(obj2, j3), zztvVar.zzx(i13));
-                        i16 += zzh;
+                        i15 += zzh;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1849,7 +1866,7 @@ final class zztv<T> implements zzug<T> {
                         zze = zzqv.zzA(i19 << 3);
                         zzA8 = zzqmVar2.zzd();
                         zzA9 = zzqv.zzA(zzA8);
-                        i16 += zzA9 + zzA8 + zze;
+                        i15 += zzA9 + zzA8 + zze;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1860,7 +1877,7 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 62:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(zzp(obj2, j3), zzqv.zzA(i19 << 3), i16);
+                        i15 = e2.v(zzp(obj2, j3), zzqv.zzA(i19 << 3), i15);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1870,7 +1887,7 @@ final class zztv<T> implements zzug<T> {
                         long zzp2 = zzp(obj2, j3);
                         zzA10 = zzqv.zzA(i19 << 3);
                         zzB2 = zzqv.zzB(zzp2);
-                        i16 += zzB2 + zzA10;
+                        i15 += zzB2 + zzA10;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1881,14 +1898,14 @@ final class zztv<T> implements zzug<T> {
                     }
                 case 64:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 4, i16);
+                        i15 = e2.v(i19 << 3, 4, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
                     i12 = 1048575;
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (zztvVar.zzR(obj2, i19, i13)) {
-                        i16 = e2.w(i19 << 3, 8, i16);
+                        i15 = e2.v(i19 << 3, 8, i15);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1896,7 +1913,7 @@ final class zztv<T> implements zzug<T> {
                 case 66:
                     if (zztvVar.zzR(obj2, i19, i13)) {
                         int zzp3 = zzp(obj2, j3);
-                        i16 = e2.w((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i16);
+                        i15 = e2.v((zzp3 >> 31) ^ (zzp3 + zzp3), zzqv.zzA(i19 << 3), i15);
                     }
                     i13 += 3;
                     obj2 = obj;
@@ -1906,7 +1923,7 @@ final class zztv<T> implements zzug<T> {
                         long zzv3 = zzv(obj2, j3);
                         zzA10 = zzqv.zzA(i19 << 3);
                         zzB2 = zzqv.zzB((zzv3 >> 63) ^ (zzv3 + zzv3));
-                        i16 += zzB2 + zzA10;
+                        i15 += zzB2 + zzA10;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1918,7 +1935,7 @@ final class zztv<T> implements zzug<T> {
                 case 68:
                     if (zztvVar.zzR(obj2, i19, i13)) {
                         zzw = zzqv.zzw(i19, (zzts) unsafe.getObject(obj2, j3), zztvVar.zzx(i13));
-                        i16 += zzw;
+                        i15 += zzw;
                         i13 += 3;
                         obj2 = obj;
                         i12 = 1048575;
@@ -1941,125 +1958,130 @@ final class zztv<T> implements zzug<T> {
         long doubleToLongBits;
         int i11;
         int floatToIntBits;
-        int i12;
         int zzc;
-        int i13;
+        int i12;
+        int i13 = 0;
         int i14 = 0;
-        int i15 = 0;
         while (true) {
             int[] iArr = this.zzc;
-            if (i14 >= iArr.length) {
-                int hashCode = ((zzsn) obj).zzc.hashCode() + (i15 * 53);
+            if (i13 >= iArr.length) {
+                int hashCode = ((zzsn) obj).zzc.hashCode() + (i14 * 53);
                 return this.zzh ? (hashCode * 53) + ((zzsk) obj).zzb.zza.hashCode() : hashCode;
             }
-            int zzu = zzu(i14);
-            int i16 = 1048575 & zzu;
+            int zzu = zzu(i13);
+            int i15 = 1048575 & zzu;
             int zzt = zzt(zzu);
-            int i17 = iArr[i14];
-            long j3 = i16;
-            int i18 = 37;
+            int i16 = iArr[i13];
+            long j3 = i15;
+            int i17 = 37;
             switch (zzt) {
                 case 0:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = Double.doubleToLongBits(zzvc.zza(obj, j3));
                     byte[] bArr = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 1:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = Float.floatToIntBits(zzvc.zzb(obj, j3));
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case 2:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = zzvc.zzd(obj, j3);
                     byte[] bArr2 = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 3:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = zzvc.zzd(obj, j3);
                     byte[] bArr3 = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 4:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 5:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = zzvc.zzd(obj, j3);
                     byte[] bArr4 = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 6:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 7:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = zzsv.zza(zzvc.zzw(obj, j3));
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case 8:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = ((String) zzvc.zzf(obj, j3)).hashCode();
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case 9:
-                    i13 = i15 * 53;
+                    i12 = i14 * 53;
                     Object zzf = zzvc.zzf(obj, j3);
                     if (zzf != null) {
-                        i18 = zzf.hashCode();
+                        i17 = zzf.hashCode();
                     }
-                    i15 = i13 + i18;
+                    i14 = i12 + i17;
                     break;
                 case 10:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case 11:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 12:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 13:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 14:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = zzvc.zzd(obj, j3);
                     byte[] bArr5 = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 15:
-                    i12 = i15 * 53;
+                    i10 = i14 * 53;
                     zzc = zzvc.zzc(obj, j3);
-                    i15 = i12 + zzc;
+                    i14 = i10 + zzc;
                     break;
                 case 16:
-                    i10 = i15 * 53;
+                    i10 = i14 * 53;
                     doubleToLongBits = zzvc.zzd(obj, j3);
                     byte[] bArr6 = zzsv.zzb;
-                    i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                    zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                    i14 = i10 + zzc;
                     break;
                 case 17:
-                    i13 = i15 * 53;
+                    i12 = i14 * 53;
                     Object zzf2 = zzvc.zzf(obj, j3);
                     if (zzf2 != null) {
-                        i18 = zzf2.hashCode();
+                        i17 = zzf2.hashCode();
                     }
-                    i15 = i13 + i18;
+                    i14 = i12 + i17;
                     break;
                 case 18:
                 case 19:
@@ -2093,185 +2115,191 @@ final class zztv<T> implements zzug<T> {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                 case 48:
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                    i11 = i15 * 53;
+                    i11 = i14 * 53;
                     floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                    i15 = floatToIntBits + i11;
+                    i14 = floatToIntBits + i11;
                     break;
                 case 51:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = Double.doubleToLongBits(zzn(obj, j3));
                         byte[] bArr7 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 52:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = Float.floatToIntBits(zzo(obj, j3));
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
                 case 53:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = zzv(obj, j3);
                         byte[] bArr8 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 54:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = zzv(obj, j3);
                         byte[] bArr9 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 55:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 56:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = zzv(obj, j3);
                         byte[] bArr10 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 57:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 58:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = zzsv.zza(zzS(obj, j3));
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
                 case 59:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = ((String) zzvc.zzf(obj, j3)).hashCode();
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
                 case 60:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
                 case 61:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
                 case 62:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 63:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 64:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = zzv(obj, j3);
                         byte[] bArr11 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 66:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i12 = i15 * 53;
+                        i10 = i14 * 53;
                         zzc = zzp(obj, j3);
-                        i15 = i12 + zzc;
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 67:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i10 = i15 * 53;
+                        i10 = i14 * 53;
                         doubleToLongBits = zzv(obj, j3);
                         byte[] bArr12 = zzsv.zzb;
-                        i15 = i10 + ((int) (doubleToLongBits ^ (doubleToLongBits >>> 32)));
+                        zzc = (int) (doubleToLongBits ^ (doubleToLongBits >>> 32));
+                        i14 = i10 + zzc;
                         break;
                     }
                 case 68:
-                    if (!zzR(obj, i17, i14)) {
+                    if (!zzR(obj, i16, i13)) {
                         break;
                     } else {
-                        i11 = i15 * 53;
+                        i11 = i14 * 53;
                         floatToIntBits = zzvc.zzf(obj, j3).hashCode();
-                        i15 = floatToIntBits + i11;
+                        i14 = floatToIntBits + i11;
                         break;
                     }
             }
-            i14 += 3;
+            i13 += 3;
         }
     }
 
@@ -2284,7 +2312,7 @@ final class zztv<T> implements zzug<T> {
         */
     public final int zzc(java.lang.Object r32, byte[] r33, int r34, int r35, int r36, com.google.android.recaptcha.internal.zzqb r37) {
         /*
-            Method dump skipped, instructions count: 3828
+            Method dump skipped, instructions count: 3830
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.recaptcha.internal.zztv.zzc(java.lang.Object, byte[], int, int, int, com.google.android.recaptcha.internal.zzqb):int");
@@ -2620,14 +2648,14 @@ final class zztv<T> implements zzug<T> {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:289:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0736  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x072f  */
     /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0722 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0747 A[LOOP:3: B:52:0x0743->B:54:0x0747, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0756  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x071b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0740 A[LOOP:3: B:52:0x073c->B:54:0x0740, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x074f  */
     /* JADX WARN: Removed duplicated region for block: B:59:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x0714 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x070d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // com.google.android.recaptcha.internal.zzug
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3030,27 +3058,12 @@ final class zztv<T> implements zzug<T> {
                                 } catch (zzsw unused3) {
                                     obj6 = obj3;
                                     if (obj6 == null) {
-                                        try {
-                                            obj6 = zzuvVar2.zza(obj2);
-                                        } catch (Throwable th4) {
-                                            th2 = th4;
-                                            i10 = zztvVar.zzk;
-                                            while (i10 < zztvVar.zzl) {
-                                            }
-                                            if (obj6 == null) {
-                                            }
-                                        }
                                     }
                                     if (!zzuvVar2.zzk(obj6, zzufVar, 0)) {
-                                        for (int i11 = zztvVar.zzk; i11 < zztvVar.zzl; i11++) {
-                                            zztvVar.zzy(obj2, zztvVar.zzj[i11], obj6, zzuvVar2, obj2);
-                                        }
-                                        if (obj6 == null) {
-                                        }
                                     }
                                     obj = obj2;
-                                } catch (Throwable th5) {
-                                    th = th5;
+                                } catch (Throwable th4) {
+                                    th = th4;
                                     th2 = th;
                                     obj6 = obj3;
                                     i10 = zztvVar.zzk;
@@ -3078,8 +3091,8 @@ final class zztv<T> implements zzug<T> {
                                     if (!zzuvVar2.zzk(obj6, zzufVar, 0)) {
                                     }
                                     obj = obj2;
-                                } catch (Throwable th6) {
-                                    th = th6;
+                                } catch (Throwable th5) {
+                                    th = th5;
                                     obj2 = obj5;
                                     obj3 = obj4;
                                     zzuvVar2 = zzuvVar;
@@ -3301,18 +3314,8 @@ final class zztv<T> implements zzug<T> {
                                 if (obj4 == null) {
                                     try {
                                         obj6 = zzuvVar.zza(obj5);
-                                    } catch (zzsw unused5) {
-                                        obj2 = obj5;
-                                        obj3 = obj4;
-                                        zzuvVar2 = zzuvVar;
-                                        obj6 = obj3;
-                                        if (obj6 == null) {
-                                        }
-                                        if (!zzuvVar2.zzk(obj6, zzufVar, 0)) {
-                                        }
-                                        obj = obj2;
-                                    } catch (Throwable th7) {
-                                        th = th7;
+                                    } catch (Throwable th6) {
+                                        th = th6;
                                         th2 = th;
                                         obj2 = obj5;
                                         obj3 = obj4;
@@ -3329,10 +3332,10 @@ final class zztv<T> implements zzug<T> {
                                 }
                                 try {
                                     if (!zzuvVar.zzk(obj6, zzufVar, 0)) {
-                                        for (int i12 = zztvVar.zzk; i12 < zztvVar.zzl; i12++) {
+                                        for (int i11 = zztvVar.zzk; i11 < zztvVar.zzl; i11++) {
                                             zzuv zzuvVar3 = zzuvVar;
                                             Object obj7 = obj5;
-                                            zztvVar.zzy(obj7, zztvVar.zzj[i12], obj6, zzuvVar3, obj5);
+                                            zztvVar.zzy(obj7, zztvVar.zzj[i11], obj6, zzuvVar3, obj5);
                                             obj5 = obj7;
                                             zzuvVar = zzuvVar3;
                                         }
@@ -3340,12 +3343,33 @@ final class zztv<T> implements zzug<T> {
                                     }
                                     obj = obj5;
                                     break;
-                                } catch (zzsw unused6) {
+                                } catch (zzsw unused5) {
                                     obj2 = obj5;
                                     zzuvVar2 = zzuvVar;
                                     if (obj6 == null) {
+                                        try {
+                                            obj6 = zzuvVar2.zza(obj2);
+                                        } catch (Throwable th7) {
+                                            th2 = th7;
+                                            i10 = zztvVar.zzk;
+                                            while (i10 < zztvVar.zzl) {
+                                                zztvVar.zzy(obj2, zztvVar.zzj[i10], obj6, zzuvVar2, obj2);
+                                                i10++;
+                                                zztvVar = this;
+                                            }
+                                            if (obj6 == null) {
+                                                throw th2;
+                                            }
+                                            zzuvVar2.zzj(obj2, obj6);
+                                            throw th2;
+                                        }
                                     }
                                     if (!zzuvVar2.zzk(obj6, zzufVar, 0)) {
+                                        for (int i12 = zztvVar.zzk; i12 < zztvVar.zzl; i12++) {
+                                            zztvVar.zzy(obj2, zztvVar.zzj[i12], obj6, zzuvVar2, obj2);
+                                        }
+                                        if (obj6 == null) {
+                                        }
                                     }
                                     obj = obj2;
                                 } catch (Throwable th8) {
@@ -3392,15 +3416,9 @@ final class zztv<T> implements zzug<T> {
                                     obj6 = obj3;
                                     i10 = zztvVar.zzk;
                                     while (i10 < zztvVar.zzl) {
-                                        zztvVar.zzy(obj2, zztvVar.zzj[i10], obj6, zzuvVar2, obj2);
-                                        i10++;
-                                        zztvVar = this;
                                     }
                                     if (obj6 == null) {
-                                        throw th2;
                                     }
-                                    zzuvVar2.zzj(obj2, obj6);
-                                    throw th2;
                                 }
                             }
                             zzsl zzslVar = zza4.zza;
@@ -3674,8 +3692,8 @@ final class zztv<T> implements zzug<T> {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x04fb  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x0503  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0032  */
     @Override // com.google.android.recaptcha.internal.zzug
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -3685,6 +3703,7 @@ final class zztv<T> implements zzug<T> {
         Iterator it;
         int[] iArr;
         int i10;
+        boolean z10;
         Map.Entry entry2;
         int i11;
         int i12;
@@ -3700,8 +3719,8 @@ final class zztv<T> implements zzug<T> {
                 iArr = zztvVar.zzc;
                 Unsafe unsafe = zzb;
                 int i15 = 1048575;
-                i10 = 0;
                 int i16 = 1048575;
+                i10 = 0;
                 int i17 = 0;
                 while (i10 < iArr.length) {
                     int zzu = zztvVar.zzu(i10);
@@ -3709,6 +3728,7 @@ final class zztv<T> implements zzug<T> {
                     int i18 = iArr[i10];
                     if (zzt <= 17) {
                         int i19 = iArr[i10 + 2];
+                        z10 = true;
                         int i20 = i19 & i15;
                         if (i20 != i16) {
                             i17 = i20 == i15 ? 0 : unsafe.getInt(obj, i20);
@@ -3720,6 +3740,7 @@ final class zztv<T> implements zzug<T> {
                         i12 = i17;
                         i13 = i21;
                     } else {
+                        z10 = true;
                         entry2 = entry;
                         i11 = i16;
                         i12 = i17;
@@ -3728,13 +3749,14 @@ final class zztv<T> implements zzug<T> {
                     while (true) {
                         if (entry2 != null) {
                             zzrz zzrzVar = zztvVar.zzn;
-                            i14 = 1048575;
+                            i14 = i15;
                             if (((zzsl) entry2.getKey()).zza <= i18) {
                                 zzrzVar.zzb(zzviVar, entry2);
                                 entry2 = it.hasNext() ? (Map.Entry) it.next() : null;
+                                i15 = i14;
                             }
                         } else {
-                            i14 = 1048575;
+                            i14 = i15;
                         }
                     }
                     long j3 = zzu & i14;
@@ -3745,7 +3767,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 1:
@@ -3755,7 +3777,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 2:
@@ -3765,7 +3787,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 3:
@@ -3775,7 +3797,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 4:
@@ -3785,7 +3807,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 5:
@@ -3795,7 +3817,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 6:
@@ -3805,7 +3827,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 7:
@@ -3815,7 +3837,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 8:
@@ -3825,7 +3847,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 9:
@@ -3834,7 +3856,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 10:
@@ -3844,7 +3866,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 11:
@@ -3854,7 +3876,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 12:
@@ -3864,7 +3886,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 13:
@@ -3874,7 +3896,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 14:
@@ -3884,7 +3906,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 15:
@@ -3894,7 +3916,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 16:
@@ -3904,7 +3926,7 @@ final class zztv<T> implements zzug<T> {
                             zztvVar = this;
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 17:
@@ -3913,63 +3935,63 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 18:
                             zzui.zzs(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 19:
                             zzui.zzw(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 20:
                             zzui.zzy(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 21:
                             zzui.zzE(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 22:
                             zzui.zzx(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 23:
                             zzui.zzv(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 24:
                             zzui.zzu(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 25:
                             zzui.zzr(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 26:
@@ -3981,7 +4003,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                             break;
@@ -3997,7 +4019,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                             break;
@@ -4010,7 +4032,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                             break;
@@ -4018,140 +4040,140 @@ final class zztv<T> implements zzug<T> {
                             zzui.zzD(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case MessageObject.TYPE_GIFT_STARS /* 30 */:
                             zzui.zzt(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                             zzui.zzz(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 32:
                             zzui.zzA(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 33:
                             zzui.zzB(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 34:
                             zzui.zzC(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, false);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 35:
-                            zzui.zzs(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzs(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 36:
-                            zzui.zzw(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzw(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 37:
-                            zzui.zzy(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzy(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 38:
-                            zzui.zzE(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzE(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_DESTINATION /* 39 */:
-                            zzui.zzx(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzx(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                            zzui.zzv(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzv(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                            zzui.zzu(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzu(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                            zzui.zzr(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzr(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                            zzui.zzD(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzD(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                            zzui.zzt(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzt(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                            zzui.zzz(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzz(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                            zzui.zzA(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzA(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                            zzui.zzB(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzB(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 48:
-                            zzui.zzC(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, true);
+                            zzui.zzC(iArr[i10], (List) unsafe.getObject(obj, j3), zzviVar, z10);
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -4166,7 +4188,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                             break;
@@ -4176,7 +4198,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 51:
@@ -4185,7 +4207,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 52:
@@ -4194,7 +4216,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 53:
@@ -4203,7 +4225,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 54:
@@ -4212,7 +4234,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 55:
@@ -4221,7 +4243,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 56:
@@ -4230,7 +4252,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 57:
@@ -4239,7 +4261,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 58:
@@ -4248,7 +4270,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 59:
@@ -4257,7 +4279,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 60:
@@ -4266,7 +4288,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 61:
@@ -4275,7 +4297,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 62:
@@ -4284,7 +4306,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 63:
@@ -4293,7 +4315,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 64:
@@ -4302,7 +4324,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case VoIPService.CALL_MIN_LAYER /* 65 */:
@@ -4311,7 +4333,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 66:
@@ -4320,7 +4342,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 67:
@@ -4329,7 +4351,7 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         case 68:
@@ -4338,13 +4360,13 @@ final class zztv<T> implements zzug<T> {
                             }
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                         default:
                             i10 += 3;
                             i17 = i12;
-                            i15 = 1048575;
+                            i15 = i14;
                             i16 = i11;
                             entry = entry2;
                     }
@@ -4361,8 +4383,8 @@ final class zztv<T> implements zzug<T> {
         iArr = zztvVar.zzc;
         Unsafe unsafe2 = zzb;
         int i152 = 1048575;
-        i10 = 0;
         int i162 = 1048575;
+        i10 = 0;
         int i172 = 0;
         while (i10 < iArr.length) {
         }
@@ -4548,28 +4570,28 @@ final class zztv<T> implements zzug<T> {
         int i10;
         int i11;
         int i12;
-        int i13 = 1048575;
+        int i13 = 0;
         int i14 = 0;
-        int i15 = 0;
-        while (i15 < this.zzk) {
+        int i15 = 1048575;
+        while (i14 < this.zzk) {
             int[] iArr = this.zzj;
             int[] iArr2 = this.zzc;
-            int i16 = iArr[i15];
+            int i16 = iArr[i14];
             int i17 = iArr2[i16];
             int zzu = zzu(i16);
             int i18 = iArr2[i16 + 2];
             int i19 = i18 & 1048575;
             int i20 = 1 << (i18 >>> 20);
-            if (i19 != i13) {
+            if (i19 != i15) {
                 if (i19 != 1048575) {
-                    i14 = zzb.getInt(obj, i19);
+                    i13 = zzb.getInt(obj, i19);
                 }
                 i11 = i16;
-                i12 = i14;
+                i12 = i13;
                 i10 = i19;
             } else {
-                int i21 = i14;
-                i10 = i13;
+                int i21 = i13;
+                i10 = i15;
                 i11 = i16;
                 i12 = i21;
             }
@@ -4603,9 +4625,9 @@ final class zztv<T> implements zzug<T> {
             } else if (zzO(obj, i11, i10, i12, i20) && !zzP(obj, zzu, zzx(i11))) {
                 return false;
             }
-            i15++;
-            i13 = i10;
-            i14 = i12;
+            i14++;
+            i15 = i10;
+            i13 = i12;
         }
         return !this.zzh || ((zzsk) obj).zzb.zzk();
     }

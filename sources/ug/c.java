@@ -1,11 +1,11 @@
 package ug;
 
 import org.telegram.messenger.bi;
-import org.telegram.ui.uy;
-import rg.x;
+import org.telegram.ui.ty;
+import qg.x1;
 import tg.b0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class c implements Runnable {
                 e eVar = this.b;
                 sb2.append(eVar.h);
                 String sb3 = sb2.toString();
-                uy uyVar = new uy(bi.d(3, "onlySelect", "dialogsType", true));
-                uyVar.C2 = new x(9, eVar, sb3);
-                eVar.e.presentFragment(uyVar);
+                ty tyVar = new ty(bi.d(3, "onlySelect", "dialogsType", true));
+                tyVar.C2 = new x1(12, eVar, sb3);
+                eVar.e.presentFragment(tyVar);
                 ((b0) eVar).r.dismiss();
                 break;
         }

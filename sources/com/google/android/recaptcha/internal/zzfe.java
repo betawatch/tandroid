@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import hd.r;
-import id.c;
+import hd.i;
+import id.r;
 import java.util.LinkedHashMap;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzfe extends j implements p {
     final /* synthetic */ zzyg zza;
@@ -23,24 +23,24 @@ final class zzfe extends j implements p {
         this.zzb = zzfpVar;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         return new zzfe(this.zza, this.zzb, cVar);
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzfe) create((zzgr) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        t7.b(obj);
+        a8.b(obj);
         try {
             zzyg zzygVar = this.zza;
             List<zzyi> zzk = zzygVar.zzk();
-            int a2 = r.a(hd.i.d(zzk));
+            int a2 = r.a(id.i.d(zzk));
             if (a2 < 16) {
                 a2 = 16;
             }

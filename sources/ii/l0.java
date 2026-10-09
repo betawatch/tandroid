@@ -11,20 +11,20 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
-    public final org.telegram.ui.ActionBar.d6 b;
+    public final org.telegram.ui.ActionBar.e6 b;
     public final k0 c;
     public boolean d;
 
-    public l0(Context context, org.telegram.ui.ActionBar.d6 d6Var, k0 k0Var) {
-        this.b = d6Var;
+    public l0(Context context, org.telegram.ui.ActionBar.e6 e6Var, k0 k0Var) {
+        this.b = e6Var;
         this.c = k0Var;
-        i1 i1Var = new i1(context, d6Var);
+        i1 i1Var = new i1(context, e6Var);
         this.a = i1Var;
         i1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         i1Var.setAllowNewlines(false);
@@ -32,7 +32,7 @@ public final class l0 {
         i1Var.setGravity(8388659);
         i1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         i1Var.setHint(LocaleController.getString(R.string.AddCaption));
-        i1Var.setListener(new n4.y(this, k0Var, false, 19));
+        i1Var.setListener(new n4.x(this, k0Var, false, 21));
         i1Var.setDelegate(new ah.b(17, this, k0Var));
         a();
     }
@@ -57,19 +57,19 @@ public final class l0 {
     public final void a() {
         i1 i1Var = this.a;
         i1Var.t();
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, this.b);
-        i1Var.setTextColor(org.telegram.ui.ActionBar.i6.l1(0.5f, v02));
-        i1Var.setHintTextColor(org.telegram.ui.ActionBar.i6.l1(0.35f, v02));
+        int w02 = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, this.b);
+        i1Var.setTextColor(org.telegram.ui.ActionBar.i6.m1(0.5f, w02));
+        i1Var.setHintTextColor(org.telegram.ui.ActionBar.i6.m1(0.35f, w02));
     }
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a T = this.c.T();
-        if (T == null || (pageBlock = T.b) == null) {
+        a F = this.c.F();
+        if (F == null || (pageBlock = F.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = T.b.caption.text;
+        TL_iv.RichText richText = F.b.caption.text;
         String l4 = h6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
@@ -81,14 +81,14 @@ public final class l0 {
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        q9 J = k0Var.J();
-        if (J != null) {
+        o9 y3 = k0Var.y();
+        if (y3 != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            J.a0(canvas, k0Var.R(), 0);
+            y3.Z(canvas, k0Var.C(), 0);
             canvas.restore();
         }
     }
@@ -137,11 +137,11 @@ public final class l0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a T = this.c.T();
-        if (T == null || (pageBlock = T.b) == null) {
+        a F = this.c.F();
+        if (F == null || (pageBlock = F.b) == null) {
             return;
         }
         d(pageBlock);
-        T.b.caption.text = h6.f(this.a.getText());
+        F.b.caption.text = h6.f(this.a.getText());
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final /* synthetic */ class h0 implements RequestDelegate {
                 ((DownloadController) this.b).lambda$loadAutoDownloadConfig$2(tLObject, tL_error);
                 break;
             case 2:
-                ((FileLoadOperation) this.b).lambda$requestFileOffsets$21(tLObject, tL_error);
+                ((FileLoadOperation) this.b).lambda$requestFileOffsets$22(tLObject, tL_error);
                 break;
             case 3:
-                MessagesController.lambda$unblockPeer$111((Runnable) this.b, tLObject, tL_error);
+                MessagesController.lambda$unblockPeer$110((Runnable) this.b, tLObject, tL_error);
                 break;
             case 4:
-                MessagesController.lambda$checkIsInChat$473((MessagesController.IsInChatCheckedCallback) this.b, tLObject, tL_error);
+                MessagesController.lambda$checkIsInChat$476((MessagesController.IsInChatCheckedCallback) this.b, tLObject, tL_error);
                 break;
             case 5:
                 ((MessagesController.SavedMusicIds) this.b).lambda$load$1(tLObject, tL_error);

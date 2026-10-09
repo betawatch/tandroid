@@ -1,35 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class t60 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d70 b;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ t60(d70 d70Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c70 b;
+
+    public /* synthetic */ t60(c70 c70Var, int i10) {
         this.a = i10;
-        this.b = d70Var;
+        this.b = c70Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.finishFragment();
+                c70 c70Var = this.b;
+                c70Var.f.r.clearFocus();
+                c70Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(c70Var.f.r);
                 break;
             case 1:
-                d70 d70Var = this.b;
-                d70Var.i0();
-                d70Var.e0();
+                this.b.o0();
                 break;
             case 2:
-                d70 d70Var2 = this.b;
-                d70Var2.getClass();
-                d70Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                c70 c70Var2 = this.b;
+                c70Var2.n0(c70Var2.l0());
+                break;
+            case 3:
+                c70 c70Var3 = this.b;
+                c70Var3.n0(c70Var3.l0());
                 break;
             default:
-                d70 d70Var3 = this.b;
-                d70Var3.n.postOnAnimation(new t60(d70Var3, 1));
+                c70 c70Var4 = this.b;
+                c70Var4.X = null;
+                c70Var4.Z.b();
+                c70Var4.h.b();
+                c70Var4.k0();
+                c70Var4.r0();
+                c70Var4.s0();
                 break;
         }
     }

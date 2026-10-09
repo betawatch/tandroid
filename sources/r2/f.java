@@ -7,7 +7,7 @@ import android.os.HandlerThread;
 import i2.j0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -19,7 +19,7 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public n2.c o;
+    public l2.f o;
     public final Object a = new Object();
     public final a0.h d = new a0.h();
     public final a0.h e = new a0.h();
@@ -43,16 +43,7 @@ public final class f extends MediaCodec.Callback {
         arrayDeque.clear();
     }
 
-    public final void b(MediaCodec mediaCodec) {
-        e2.d.g(this.c == null);
-        HandlerThread handlerThread = this.b;
-        handlerThread.start();
-        Handler handler = new Handler(handlerThread.getLooper());
-        mediaCodec.setCallback(this, handler);
-        this.c = handler;
-    }
-
-    public final void c(IllegalStateException illegalStateException) {
+    public final void b(IllegalStateException illegalStateException) {
         synchronized (this.a) {
             this.n = illegalStateException;
         }
@@ -77,8 +68,8 @@ public final class f extends MediaCodec.Callback {
         j0 j0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            n2.c cVar = this.o;
-            if (cVar != null && (j0Var = ((r) cVar.b).W) != null) {
+            l2.f fVar = this.o;
+            if (fVar != null && (j0Var = ((s) fVar.b).W) != null) {
                 j0Var.a();
             }
         }
@@ -97,8 +88,8 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                n2.c cVar = this.o;
-                if (cVar != null && (j0Var = ((r) cVar.b).W) != null) {
+                l2.f fVar = this.o;
+                if (fVar != null && (j0Var = ((s) fVar.b).W) != null) {
                     j0Var.a();
                 }
             } catch (Throwable th2) {

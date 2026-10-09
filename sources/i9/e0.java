@@ -1,11 +1,11 @@
 package i9;
 
-import ai.z9;
+import ai.aa;
 import java.util.concurrent.Callable;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e0 extends o implements RunnableFuture, g {
     public volatile d0 n;
@@ -19,8 +19,8 @@ public final class e0 extends o implements RunnableFuture, g {
         d0 d0Var;
         Object obj = this.a;
         if ((obj instanceof a) && ((a) obj).a && (d0Var = this.n) != null) {
-            z9 z9Var = d0.d;
-            z9 z9Var2 = d0.c;
+            aa aaVar = d0.d;
+            aa aaVar2 = d0.c;
             Runnable runnable = (Runnable) d0Var.get();
             if (runnable instanceof Thread) {
                 v vVar = new v(d0Var);
@@ -29,7 +29,7 @@ public final class e0 extends o implements RunnableFuture, g {
                     try {
                         ((Thread) runnable).interrupt();
                     } finally {
-                        if (((Runnable) d0Var.getAndSet(z9Var2)) == z9Var) {
+                        if (((Runnable) d0Var.getAndSet(aaVar2)) == aaVar) {
                             LockSupport.unpark((Thread) runnable);
                         }
                     }

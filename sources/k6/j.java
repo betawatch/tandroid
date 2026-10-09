@@ -3,17 +3,15 @@ package k6;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class j extends c0 {
+public final class j extends a0 {
     public final Context a;
     public final /* synthetic */ d b;
 
@@ -26,7 +24,6 @@ public final class j extends c0 {
 
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
-        PendingIntent activity;
         int i10 = message.what;
         if (i10 != 1) {
             Log.w("GoogleApiAvailability", "Don't know how to handle this message: " + i10);
@@ -39,12 +36,7 @@ public final class j extends c0 {
         AtomicBoolean atomicBoolean = g.a;
         if (d == 1 || d == 2 || d == 3 || d == 9) {
             Intent b10 = dVar.b(context, "n", d);
-            if (b10 == null) {
-                activity = null;
-            } else {
-                activity = PendingIntent.getActivity(context, 0, b10, Build.VERSION.SDK_INT >= 23 ? 201326592 : TLObject.FLAG_27);
-            }
-            dVar.h(context, d, activity);
+            dVar.h(context, d, b10 == null ? null : PendingIntent.getActivity(context, 0, b10, 201326592));
         }
     }
 }

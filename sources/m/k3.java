@@ -1,39 +1,25 @@
 package m;
 
-import android.content.Context;
-import android.view.View;
-import android.view.Window;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class k3 implements View.OnClickListener {
-    public final l.a a;
-    public final /* synthetic */ l3 b;
+public final class k3 extends i1.c {
+    public static final Parcelable.Creator<k3> CREATOR = new i1.b(2);
+    public int c;
+    public boolean d;
 
-    public k3(l3 l3Var) {
-        this.b = l3Var;
-        Context context = l3Var.a.getContext();
-        CharSequence charSequence = l3Var.h;
-        l.a aVar = new l.a();
-        aVar.e = 4096;
-        aVar.g = 4096;
-        aVar.l = null;
-        aVar.m = null;
-        aVar.n = false;
-        aVar.o = false;
-        aVar.p = 16;
-        aVar.i = context;
-        aVar.a = charSequence;
-        this.a = aVar;
+    public k3(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = parcel.readInt();
+        this.d = parcel.readInt() != 0;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        l3 l3Var = this.b;
-        Window.Callback callback = l3Var.k;
-        if (callback == null || !l3Var.l) {
-            return;
-        }
-        callback.onMenuItemSelected(0, this.a);
+    @Override // i1.c, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        super.writeToParcel(parcel, i10);
+        parcel.writeInt(this.c);
+        parcel.writeInt(this.d ? 1 : 0);
     }
 }

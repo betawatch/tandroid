@@ -1,49 +1,31 @@
 package gg;
 
-import ai.u9;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Cells.o2;
-import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.yn;
+import ai.w8;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l1 implements o2 {
-    public final /* synthetic */ o1 a;
+public final class l1 extends o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public l1(o1 o1Var) {
-        this.a = o1Var;
+    static {
+        o61.setup(new l1());
     }
 
-    @Override // org.telegram.ui.Cells.o2
-    public final boolean b() {
-        return false;
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
+        ((m1) view).a((w8) p61Var.G);
     }
 
-    @Override // org.telegram.ui.Cells.o2
-    public final void e(s2 s2Var) {
-        o1 o1Var = this.a;
-        yn ynVar = o1Var.f;
-        if (MessagesController.getInstance(o1Var.r).getStoriesController().I(s2Var.getDialogId())) {
-            ynVar.getOrCreateStoryViewer().getClass();
-            ynVar.getOrCreateStoryViewer().D(o1Var.c, s2Var.getDialogId(), u9.a((zl0) s2Var.getParent()));
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.o2
-    public final void a(s2 s2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.o2
-    public final void c() {
-    }
-
-    @Override // org.telegram.ui.Cells.o2
-    public final void d(s2 s2Var) {
-    }
-
-    @Override // org.telegram.ui.Cells.o2
-    public final void f(s2 s2Var) {
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, e6 e6Var) {
+        return new m1(context, e6Var);
     }
 }

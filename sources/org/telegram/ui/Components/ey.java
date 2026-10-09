@@ -1,186 +1,125 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.ColorFilter;
 import android.view.View;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.EmojiData;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ey implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fy b;
+public final class ey extends sw {
+    public final /* synthetic */ a00 g0;
 
-    public /* synthetic */ ey(fy fyVar, int i10) {
-        this.a = i10;
-        this.b = fyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ey(a00 a00Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, tw twVar, boolean z11) {
+        super(context, e6Var, true, false, true, z10, 0, twVar, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.v6, e6Var), z11);
+        this.g0 = a00Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        TLRPC.StickerSet stickerSet;
-        TLRPC.StickerSet stickerSet2;
+    @Override // org.telegram.ui.Components.sw
+    public final boolean d() {
+        return this.g0.U0;
+    }
+
+    @Override // org.telegram.ui.Components.sw
+    public final void e() {
+        a00 a00Var = this.g0;
+        ArrayList arrayList = a00Var.n1;
+        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || MessagesController.getEmojiSettings(a00Var.c1).getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
+            return;
+        }
+        UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
+    }
+
+    @Override // org.telegram.ui.Components.sw
+    public final boolean g(ny nyVar) {
+        return nyVar.f || this.g0.p1.contains(Long.valueOf(nyVar.b.id));
+    }
+
+    @Override // org.telegram.ui.Components.sw
+    public final ColorFilter getEmojiColorFilter() {
+        return this.g0.e2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0095  */
+    @Override // org.telegram.ui.Components.sw
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean h(int i10) {
         Integer num;
-        View view2;
-        int R;
-        int i10;
-        TLRPC.StickerSet stickerSet3;
-        int i11 = this.a;
-        fy fyVar = this.b;
-        switch (i11) {
-            case 0:
-                ay ayVar = fyVar.s;
-                if (ayVar != null && (stickerSet = ayVar.b) != null) {
-                    nz nzVar = fyVar.E;
-                    if (!nzVar.v2) {
-                        nzVar.v2 = true;
-                        ArrayList arrayList = new ArrayList(1);
-                        TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
-                        tL_inputStickerSetID.id = stickerSet.id;
-                        tL_inputStickerSetID.access_hash = stickerSet.access_hash;
-                        arrayList.add(tL_inputStickerSetID);
-                        new gx(nzVar, nzVar.Y1, nzVar.getContext(), nzVar.Z1, arrayList, stickerSet).show();
+        int i11;
+        lz lzVar;
+        a00 a00Var = this.g0;
+        ArrayList arrayList = a00Var.q1;
+        jy jyVar = a00Var.R;
+        if (a00Var.f0) {
+            return false;
+        }
+        zy zyVar = a00Var.S;
+        if (zyVar != null) {
+            zyVar.F(null, true);
+        }
+        zw zwVar = a00Var.V;
+        if (zwVar != null && (lzVar = zwVar.r) != null) {
+            lzVar.G1(null);
+        }
+        if (i10 == 0) {
+            num = Integer.valueOf(a00Var.d0 ? 1 : 0);
+        } else {
+            i10--;
+            num = null;
+        }
+        if (num == null && i10 < EmojiData.dataColored.length && jyVar.s.indexOfKey(i10) >= 0) {
+            num = Integer.valueOf(jyVar.s.get(i10));
+        }
+        if (num == null) {
+            ArrayList<ny> emojipacks = a00Var.getEmojipacks();
+            int length = i10 - EmojiData.dataColored.length;
+            if (emojipacks != null && length >= 0 && length < emojipacks.size()) {
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        i12 = -1;
                         break;
                     }
-                }
-                break;
-            case 1:
-                rg.q0 q0Var = fyVar.h;
-                TextView textView = fyVar.f;
-                TextView textView2 = fyVar.e;
-                if (textView2 == null || textView2.getVisibility() != 0 || !textView2.isEnabled()) {
-                    if (textView == null || textView.getVisibility() != 0 || !textView.isEnabled()) {
-                        if (q0Var != null && q0Var.getVisibility() == 0 && q0Var.r.isEnabled()) {
-                            q0Var.performClick();
-                            break;
-                        }
-                    } else {
-                        textView.performClick();
+                    if (((ny) arrayList.get(i12)).b.id == emojipacks.get(length).b.id) {
                         break;
                     }
-                } else {
-                    textView2.performClick();
-                    break;
+                    i12++;
                 }
-                break;
-            case 2:
-                nz nzVar2 = fyVar.E;
-                ArrayList arrayList2 = nzVar2.p1;
-                ay ayVar2 = fyVar.s;
-                if (ayVar2 != null && (stickerSet2 = ayVar2.b) != null) {
-                    ayVar2.f = true;
-                    wx wxVar = nzVar2.R;
-                    int i12 = nzVar2.c1;
-                    ArrayList arrayList3 = nzVar2.q1;
-                    zx zxVar = nzVar2.P;
-                    if (!arrayList2.contains(Long.valueOf(stickerSet2.id))) {
-                        arrayList2.add(Long.valueOf(fyVar.s.b.id));
-                    }
-                    fyVar.a(true);
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= zxVar.getChildCount()) {
-                            num = null;
-                            view2 = null;
-                        } else if (!(zxVar.getChildAt(i13) instanceof dy) || (R = RecyclerView.R((view2 = zxVar.getChildAt(i13)))) < 0 || (i10 = wxVar.w.get(R)) < 0 || i10 >= arrayList3.size() || arrayList3.get(i10) == null || fyVar.s == null || ((ay) arrayList3.get(i10)).b.id != fyVar.s.b.id) {
-                            i13++;
-                        } else {
-                            num = Integer.valueOf(R);
-                        }
-                    }
-                    if (num != null) {
-                        wxVar.E(num.intValue(), view2);
-                    }
-                    if (fyVar.n == null) {
-                        TLRPC.TL_inputStickerSetID tL_inputStickerSetID2 = new TLRPC.TL_inputStickerSetID();
-                        TLRPC.StickerSet stickerSet4 = fyVar.s.b;
-                        tL_inputStickerSetID2.id = stickerSet4.id;
-                        tL_inputStickerSetID2.access_hash = stickerSet4.access_hash;
-                        TLRPC.TL_messages_stickerSet stickerSet5 = MediaDataController.getInstance(i12).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID2, true);
-                        if (stickerSet5 != null && stickerSet5.set != null) {
-                            org.telegram.ui.ActionBar.n2 n2Var = nzVar2.Y1;
-                            if (n2Var == null) {
-                                n2Var = new ai.y3(fyVar, 6);
-                            }
-                            wv.U(n2Var, stickerSet5, true, null, new aq(fyVar, 14));
-                            break;
-                        } else {
-                            NotificationCenter.getInstance(i12).addObserver(fyVar, NotificationCenter.groupStickersDidLoad);
-                            MediaDataController mediaDataController = MediaDataController.getInstance(i12);
-                            fyVar.n = tL_inputStickerSetID2;
-                            mediaDataController.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID2, false);
-                            break;
-                        }
-                    }
+                num = Integer.valueOf(jyVar.s.get(i12 + EmojiData.dataColored.length));
+                i11 = AndroidUtilities.dp(-9.0f);
+                if (num != null) {
+                    a00Var.P.B0();
+                    a00Var.U(num.intValue());
+                    a00Var.G(num.intValue(), i11);
+                    a00Var.o(0, null);
                 }
-                break;
-            case 3:
-                nz nzVar3 = fyVar.E;
-                ay ayVar3 = fyVar.s;
-                if (ayVar3 != null && (stickerSet3 = ayVar3.b) != null) {
-                    ayVar3.f = false;
-                    ArrayList arrayList4 = nzVar3.p1;
-                    int i14 = nzVar3.c1;
-                    arrayList4.remove(Long.valueOf(stickerSet3.id));
-                    fyVar.a(true);
-                    rx rxVar = nzVar3.I;
-                    if (rxVar != null) {
-                        rxVar.p(nzVar3.getEmojipacks());
-                    }
-                    nzVar3.S(nzVar3.Q.I0());
-                    if (fyVar.r == null) {
-                        TLRPC.TL_inputStickerSetID tL_inputStickerSetID3 = new TLRPC.TL_inputStickerSetID();
-                        TLRPC.StickerSet stickerSet6 = fyVar.s.b;
-                        tL_inputStickerSetID3.id = stickerSet6.id;
-                        tL_inputStickerSetID3.access_hash = stickerSet6.access_hash;
-                        TLRPC.TL_messages_stickerSet stickerSet7 = MediaDataController.getInstance(i14).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID3, true);
-                        if (stickerSet7 != null && stickerSet7.set != null) {
-                            org.telegram.ui.ActionBar.n2 n2Var2 = nzVar3.Y1;
-                            if (n2Var2 == null) {
-                                n2Var2 = new ai.y3(fyVar, 6);
-                            }
-                            org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
-                            yw ywVar = new yw(1, fyVar, stickerSet7);
-                            Pattern pattern = wv.V;
-                            if (n2Var3.getFragmentView() != null) {
-                                MediaDataController.getInstance(n2Var3.getCurrentAccount()).toggleStickerSet(n2Var3.getFragmentView().getContext(), stickerSet7, 0, n2Var3, true, true, ywVar, false);
-                                break;
-                            }
-                        } else {
-                            NotificationCenter.getInstance(i14).addObserver(fyVar, NotificationCenter.groupStickersDidLoad);
-                            MediaDataController mediaDataController2 = MediaDataController.getInstance(i14);
-                            fyVar.r = tL_inputStickerSetID3;
-                            mediaDataController2.getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetID3, false);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 4:
-                oy oyVar = fyVar.E.t1;
-                if (oyVar != null) {
-                    oyVar.q();
-                    break;
-                }
-                break;
-            case 5:
-                oy oyVar2 = fyVar.E.t1;
-                if (oyVar2 != null) {
-                    oyVar2.q();
-                    break;
-                }
-                break;
-            default:
-                oy oyVar3 = fyVar.E.t1;
-                if (oyVar3 != null) {
-                    oyVar3.q();
-                    break;
-                }
-                break;
+                return true;
+            }
+        }
+        i11 = 0;
+        if (num != null) {
+        }
+        return true;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            a00 a00Var = this.g0;
+            View view = a00Var.O;
+            if (view != null) {
+                view.setTranslationY(f7);
+            }
+            a00Var.J.invalidate();
         }
     }
 }

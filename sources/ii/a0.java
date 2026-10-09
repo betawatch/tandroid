@@ -4,11 +4,11 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import v7.o8;
+import v7.n8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public abstract class a0 extends FrameLayout implements m4 {
+public abstract class a0 extends FrameLayout implements n4 {
     public a a;
     public final b0 b;
     public int c;
@@ -26,7 +26,7 @@ public abstract class a0 extends FrameLayout implements m4 {
     }
 
     public final void c(a aVar) {
-        this.b.a(aVar, new ei.f(this, 14));
+        this.b.a(aVar, new ei.c5(this, 13));
     }
 
     public int d() {
@@ -35,7 +35,7 @@ public abstract class a0 extends FrameLayout implements m4 {
 
     public void f(int i10) {
         int i11;
-        int d = o8.d(this.a);
+        int d = n8.d(this.a);
         int i12 = 0;
         int d10 = (i10 > 0 || d > 0) ? d() : 0;
         a aVar = this.a;

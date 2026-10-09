@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
+import hd.i;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzhw extends j implements p {
     Object zza;
@@ -25,78 +25,73 @@ final class zzhw extends j implements p {
         this.zze = str2;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         zzhw zzhwVar = new zzhw(this.zzc, this.zzd, this.zze, cVar);
         zzhwVar.zzf = obj;
         return zzhwVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x008a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0087, code lost:
     
-        if (r11 != r0) goto L28;
+        if (r11 != r0) goto L27;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00e9 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00e6 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00d5  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00ba  */
+    /* JADX WARN: Type inference failed for: r1v0, types: [int] */
+    /* JADX WARN: Type inference failed for: r1v1 */
+    /* JADX WARN: Type inference failed for: r1v10 */
     /* JADX WARN: Type inference failed for: r1v13 */
-    /* JADX WARN: Type inference failed for: r1v14 */
-    /* JADX WARN: Type inference failed for: r1v16, types: [com.google.android.recaptcha.internal.zzhk] */
     /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r1v27 */
-    /* JADX WARN: Type inference failed for: r1v28 */
-    /* JADX WARN: Type inference failed for: r1v9, types: [java.lang.Object] */
-    @Override // kd.a
+    /* JADX WARN: Type inference failed for: r1v25 */
+    /* JADX WARN: Type inference failed for: r1v26 */
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        ?? r12;
         zzhk zzhkVar;
         zzhk zzhkVar2;
         zzhk zzhkVar3;
         zzhf zzhfVar;
         String str;
         zzhk zzhkVar4;
-        ?? r13;
+        zzhk zzhkVar5;
         a aVar = a.a;
-        int i10 = this.zzb;
-        try {
-        } catch (Exception unused) {
-            r12 = i10;
-        }
-        if (i10 == 0) {
-            t7.b(obj);
-            zzhk zzhkVar5 = (zzhk) this.zzf;
+        ?? r12 = this.zzb;
+        if (r12 == 0) {
+            a8.b(obj);
+            zzhk zzhkVar6 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
-            this.zzf = zzhkVar5;
-            this.zza = zzhkVar5;
+            this.zzf = zzhkVar6;
+            this.zza = zzhkVar6;
             this.zzb = 1;
             obj = new zzhf(25, new zzhx(zzibVar, str2, null), null);
             if (obj != aVar) {
-                zzhkVar4 = zzhkVar5;
-                r13 = zzhkVar5;
+                zzhkVar4 = zzhkVar6;
+                zzhkVar5 = zzhkVar6;
             }
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                ?? r14 = (zzhk) this.zzf;
-                t7.b(obj);
-                i10 = r14;
+        if (r12 != 1) {
+            if (r12 == 2) {
+                zzhk zzhkVar7 = (zzhk) this.zzf;
+                a8.b(obj);
+                r12 = zzhkVar7;
                 return (String) obj;
             }
-            if (i10 == 3) {
-                zzhk zzhkVar6 = (zzhk) this.zza;
+            if (r12 == 3) {
+                zzhk zzhkVar8 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                t7.b(obj);
-                zzhkVar2 = zzhkVar6;
+                a8.b(obj);
+                zzhkVar2 = zzhkVar8;
                 this.zzf = zzhkVar;
                 this.zza = null;
                 this.zzb = 4;
@@ -114,22 +109,22 @@ final class zzhw extends j implements p {
                     }
                 }
             }
-            if (i10 != 4) {
-                if (i10 != 5) {
+            if (r12 != 4) {
+                if (r12 != 5) {
                     String str5 = (String) this.zzf;
-                    t7.b(obj);
+                    a8.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                t7.b(obj);
+                a8.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
                 return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            t7.b(obj);
+            a8.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -147,14 +142,14 @@ final class zzhw extends j implements p {
                 }
             }
         }
-        zzhk zzhkVar7 = (zzhk) this.zza;
-        zzhk zzhkVar8 = (zzhk) this.zzf;
+        zzhk zzhkVar9 = (zzhk) this.zza;
+        zzhk zzhkVar10 = (zzhk) this.zzf;
         try {
-            t7.b(obj);
-            zzhkVar4 = zzhkVar7;
-            r13 = zzhkVar8;
-        } catch (Exception unused2) {
-            r12 = zzhkVar8;
+            a8.b(obj);
+            zzhkVar4 = zzhkVar9;
+            zzhkVar5 = zzhkVar10;
+        } catch (Exception unused) {
+            r12 = zzhkVar10;
             zzib zzibVar3 = this.zzc;
             zzib.zza(zzibVar3).zzb();
             String str6 = this.zze;
@@ -173,10 +168,10 @@ final class zzhw extends j implements p {
                 }
             }
         }
-        this.zzf = r13;
+        this.zzf = zzhkVar5;
         this.zza = null;
         this.zzb = 2;
         obj = ((zzhf) obj).zza(zzhkVar4, this);
-        i10 = r13;
+        r12 = zzhkVar5;
     }
 }

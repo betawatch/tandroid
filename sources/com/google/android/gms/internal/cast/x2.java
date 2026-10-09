@@ -1,33 +1,33 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class x2 extends h5 {
+public final class x2 extends f5 {
     private static final x2 zzb;
     private int zzd;
-    private int zze;
-    private int zzf;
+    private String zze = "";
+    private String zzf = "";
 
     static {
         x2 x2Var = new x2();
         zzb = x2Var;
-        h5.e(x2.class, x2Var);
+        f5.e(x2.class, x2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.h5
-    public final Object h(int i10, h5 h5Var) {
+    @Override // com.google.android.gms.internal.cast.f5
+    public final Object h(int i10, f5 f5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001", new Object[]{"zzd", "zze", b0.N, "zzf"});
+            return new g6(zzb, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဈ\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", "zzf"});
         }
         if (i11 == 3) {
             return new x2();
         }
         if (i11 == 4) {
-            return new x0(zzb);
+            return new v0(zzb);
         }
         if (i11 != 5) {
             return null;

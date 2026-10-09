@@ -1,42 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xp implements z4.e {
-    public int a;
-    public final /* synthetic */ bi0 b;
+public final class xp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ cq b;
 
-    public xp(bi0 bi0Var) {
-        this.b = bi0Var;
+    public xp(cq cqVar, ChatThemeController chatThemeController) {
+        this.b = cqVar;
+        this.a = chatThemeController;
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        if (i10 == this.b.getCurrentItem() && f7 == 0.0f && this.a == 1) {
-            d();
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        List<org.telegram.ui.ActionBar.c4> emojiThemes = this.a.getEmojiThemes(7);
+        cq cqVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.f3) cqVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new ea(26, this, emojiThemes));
+        cqVar.b0 = false;
     }
 
-    @Override // z4.e
-    public final void c(int i10) {
-        if (i10 == 0) {
-            d();
-        }
-        this.a = i10;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
     }
 
-    public final void d() {
-        bi0 bi0Var = this.b;
-        if (bi0Var.w0 != null) {
-            int currentItem = bi0Var.getCurrentItem();
-            int k10 = bi0Var.w0.k(currentItem) + bi0Var.w0.j();
-            if (currentItem != k10) {
-                bi0Var.x(k10, false);
-            }
-        }
-    }
-
-    @Override // z4.e
-    public final void a(int i10) {
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

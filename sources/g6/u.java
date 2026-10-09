@@ -1,22 +1,22 @@
 package g6;
 
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import java.util.concurrent.atomic.AtomicReference;
-import n6.a0;
+import n6.b0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u extends g {
     public final AtomicReference b;
-    public final c0 c;
+    public final a0 c;
 
     public u(v vVar) {
         this.b = new AtomicReference(vVar);
-        this.c = new c0(vVar.r, 0);
+        this.c = new a0(vVar.r, 0);
     }
 
     @Override // g6.h
-    public final void B0(String str, byte[] bArr) {
+    public final void A0(String str, byte[] bArr) {
         if (((v) this.b.get()) == null) {
             return;
         }
@@ -44,8 +44,8 @@ public final class u extends g {
         v.n0.b("ICastDeviceControllerListener.onDisconnected: %d", Integer.valueOf(i10));
         if (i10 != 0) {
             int i11 = vVar.R.get();
-            a0 a0Var = vVar.v;
-            a0Var.sendMessage(a0Var.obtainMessage(6, i11, 2));
+            b0 b0Var = vVar.v;
+            b0Var.sendMessage(b0Var.obtainMessage(6, i11, 2));
         }
     }
 
@@ -56,7 +56,7 @@ public final class u extends g {
             return;
         }
         v.n0.b("Receive (type=text, ns=%s) %s", str, str2);
-        this.c.post(new c5.v(vVar, str, str2, 7));
+        this.c.post(new c5.v(vVar, str, str2, 6));
     }
 
     @Override // g6.h
@@ -101,23 +101,23 @@ public final class u extends g {
     }
 
     @Override // g6.h
-    public final void u0(d dVar) {
+    public final void t0(d dVar) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
         }
         v.n0.b("onDeviceStatusChanged", new Object[0]);
-        this.c.post(new i9.s(14, vVar, dVar));
+        this.c.post(new i9.s(15, vVar, dVar));
     }
 
     @Override // g6.h
-    public final void z0(c cVar) {
+    public final void y0(c cVar) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
         }
         v.n0.b("onApplicationStatusChanged", new Object[0]);
-        this.c.post(new i9.s(15, vVar, cVar));
+        this.c.post(new i9.s(16, vVar, cVar));
     }
 
     @Override // g6.h
@@ -163,6 +163,6 @@ public final class u extends g {
     }
 
     @Override // g6.h
-    public final void w0(int i10) {
+    public final void v0(int i10) {
     }
 }

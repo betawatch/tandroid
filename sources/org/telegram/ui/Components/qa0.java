@@ -1,54 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qa0 extends wh.n {
-    public final /* synthetic */ int E = 1;
-    public final /* synthetic */ Object F;
+public final class qa0 extends fd.h {
+    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qa0(org.telegram.ui.xh0 xh0Var, org.telegram.ui.xh0 xh0Var2, FrameLayout frameLayout, long j3) {
-        super(xh0Var2, frameLayout, j3, true);
-        this.F = xh0Var;
-    }
-
-    @Override // wh.n
-    public final void f(String str, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.E) {
-            case 0:
-                wh.b bVar = (wh.b) this.F;
-                ux0 ux0Var = bVar.W;
-                if (!this.e.isEmpty()) {
-                    if (!z11) {
-                        super.f(str, z10, z11);
-                        break;
-                    } else {
-                        bVar.w.J.setText("");
-                        break;
-                    }
-                } else if (ux0Var.getVisibility() != 4) {
-                    ux0Var.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z11) {
-                    super.f(str, z10, z11);
-                    break;
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.xh0) this.F)).actionBar;
-                    kVar.setSearchFieldText("");
-                    break;
-                }
+    @Override // fd.h
+    public final cf.p b() {
+        String a2 = a(e);
+        if (a2 == null) {
+            return null;
         }
+        ad.e eVar = new ad.e();
+        eVar.g = com.google.android.gms.internal.vision.e2.i(1, 1, a2);
+        return eVar;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qa0(wh.b bVar, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, long j3) {
-        super(n2Var, frameLayout, j3, false);
-        this.F = bVar;
+    @Override // fd.h
+    public final char d() {
+        return '$';
     }
 }

@@ -10,7 +10,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class s implements b0, x, AdapterView.OnItemClickListener {
     public Rect a;
@@ -19,10 +19,10 @@ public abstract class s implements b0, x, AdapterView.OnItemClickListener {
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
         int count = listAdapter.getCount();
-        FrameLayout frameLayout = null;
-        View view = null;
         int i11 = 0;
         int i12 = 0;
+        FrameLayout frameLayout = null;
+        View view = null;
         for (int i13 = 0; i13 < count; i13++) {
             int itemViewType = listAdapter.getItemViewType(i13);
             if (itemViewType != i12) {

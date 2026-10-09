@@ -1,24 +1,43 @@
 package za;
 
-import org.telegram.tgnet.TLObject;
+import android.util.Log;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class x extends kd.c {
-    public /* synthetic */ Object a;
-    public int b;
-    public final /* synthetic */ k1.p c;
+public final class x extends ld.j implements sd.q {
+    public int a;
+    public /* synthetic */ de.c b;
+    public /* synthetic */ Throwable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(k1.p pVar, kd.c cVar) {
-        super(cVar);
-        this.c = pVar;
+    @Override // sd.q
+    public final Object c(Object obj, Object obj2, ld.c cVar) {
+        x xVar = new x(3, cVar);
+        xVar.b = (de.c) obj;
+        xVar.c = (Throwable) obj2;
+        return xVar.invokeSuspend(hd.i.a);
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.b |= TLObject.FLAG_31;
-        return this.c.a(null, this);
+        kd.a aVar = kd.a.a;
+        int i10 = this.a;
+        if (i10 == 0) {
+            a8.b(obj);
+            de.c cVar = this.b;
+            Log.e("FirebaseSessionsRepo", "Error reading stored session data.", this.c);
+            n1.b bVar = new n1.b(true);
+            this.b = null;
+            this.a = 1;
+            if (cVar.b(bVar, this) == aVar) {
+                return aVar;
+            }
+        } else {
+            if (i10 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            a8.b(obj);
+        }
+        return hd.i.a;
     }
 }

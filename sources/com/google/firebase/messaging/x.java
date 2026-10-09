@@ -2,16 +2,17 @@ package com.google.firebase.messaging;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import ci.u5;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class x {
     public static WeakReference d;
     public final SharedPreferences a;
-    public cf.c b;
+    public u5 b;
     public final ScheduledThreadPoolExecutor c;
 
     public x(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
@@ -21,11 +22,11 @@ public final class x {
 
     public final synchronized w a() {
         w wVar;
-        String o9 = this.b.o();
+        String u10 = this.b.u();
         Pattern pattern = w.d;
         wVar = null;
-        if (!TextUtils.isEmpty(o9)) {
-            String[] split = o9.split("!", -1);
+        if (!TextUtils.isEmpty(u10)) {
+            String[] split = u10.split("!", -1);
             if (split.length == 2) {
                 wVar = new w(split[0], split[1]);
             }
@@ -34,10 +35,10 @@ public final class x {
     }
 
     public final synchronized void b() {
-        this.b = cf.c.l(this.a, this.c);
+        this.b = u5.k(this.a, this.c);
     }
 
     public final synchronized void c(w wVar) {
-        this.b.p(wVar.c);
+        this.b.x(wVar.c);
     }
 }

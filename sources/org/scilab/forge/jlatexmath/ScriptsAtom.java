@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ScriptsAtom extends Atom {
     private static final int MAX_WRAP_DEPTH = 64;
@@ -37,8 +37,8 @@ public class ScriptsAtom extends Atom {
         float depth;
         float subDrop;
         float italic;
-        HorizontalBox horizontalBox;
         float f7;
+        HorizontalBox horizontalBox;
         StrutBox strutBox;
         float f10;
         float f11;
@@ -106,8 +106,8 @@ public class ScriptsAtom extends Atom {
                                 horizontalBox2.add(new StrutBox(italic, 0.0f, 0.0f, 0.0f));
                                 italic = 0.0f;
                             }
-                            horizontalBox = horizontalBox2;
                             f7 = 0.0f;
+                            horizontalBox = horizontalBox2;
                             strutBox = strutBox3;
                             f10 = italic;
                             f11 = 0.0f;
@@ -117,8 +117,8 @@ public class ScriptsAtom extends Atom {
                             horizontalBox2.add(new StrutBox(italic, 0.0f, 0.0f, 0.0f));
                             italic = 0.0f;
                         }
-                        horizontalBox = horizontalBox2;
                         f7 = 0.0f;
+                        horizontalBox = horizontalBox2;
                         strutBox = strutBox3;
                         f10 = italic;
                         f11 = 0.0f;
@@ -175,7 +175,8 @@ public class ScriptsAtom extends Atom {
                             VerticalBox verticalBox = new VerticalBox();
                             horizontalBox4.setShift(f10);
                             verticalBox.add(horizontalBox4);
-                            verticalBox.add(new StrutBox(0.0f, ((f13 - createBox3.getDepth()) + max2) - createBox4.getHeight(), 0.0f, 0.0f));
+                            float f15 = f12;
+                            verticalBox.add(new StrutBox(f15, ((f13 - createBox3.getDepth()) + max2) - createBox4.getHeight(), f15, f15));
                             verticalBox.add(horizontalBox5);
                             verticalBox.setHeight(f13 + createBox3.getHeight());
                             verticalBox.setDepth(max2 + createBox4.getDepth());

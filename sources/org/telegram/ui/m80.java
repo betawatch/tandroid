@@ -1,7 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.os.Bundle;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface m80 {
-    void a(int i10);
+public final class m80 extends a6 {
+    public final /* synthetic */ ty f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m80(Bundle bundle, ty tyVar) {
+        super(bundle);
+        this.f = tyVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || z11) {
+            return;
+        }
+        this.f.removeSelfFromStack();
+    }
 }

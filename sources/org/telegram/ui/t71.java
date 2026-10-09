@@ -1,25 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class t71 implements View.OnClickListener {
-    public final /* synthetic */ w71 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ x71 c;
+public final class t71 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final TLRPC.Chat b;
+    public TLRPC.ChannelParticipantsFilter c;
+    public boolean f;
+    public boolean h;
+    public boolean r;
+    public boolean s;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public int n = -1;
 
-    public t71(x71 x71Var, w71 w71Var, TLRPC.TL_authorization tL_authorization) {
-        this.c = x71Var;
-        this.a = w71Var;
-        this.b = tL_authorization;
+    public t71(int i10, long j3, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
+        this.a = i10;
+        this.b = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(j3);
+        this.c = channelParticipantsFilter;
+        if (chatFull == null) {
+            if (!this.s) {
+                this.s = true;
+                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.chatInfoDidLoad);
+            }
+            MessagesController.getInstance(i10).loadFullChat(j3, 0, false);
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        this.a.d.c(!r0.h, true);
-        this.b.encrypted_requests_disabled = !r4.d.h;
-        x71.n(this.c);
+    public final void a() {
+        if (this.s) {
+            return;
+        }
+        this.s = false;
+        int i10 = this.a;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.chatInfoDidLoad);
+        if (this.n >= 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(this.n, true);
+            this.n = -1;
+        }
+        this.f = false;
+    }
+
+    public final void b() {
+        if (this.f || this.h) {
+            return;
+        }
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
+        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
+            return;
+        }
+        this.f = true;
+        TLRPC.Chat chat = this.b;
+        if (ChatObject.isChannel(chat)) {
+            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+            tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
+            tL_channels_getParticipants.filter = this.c;
+            tL_channels_getParticipants.limit = 30;
+            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
+            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new org.telegram.messenger.a(), new b5(this, 24));
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.chatInfoDidLoad) {
+            long j3 = ((TLRPC.ChatFull) objArr[0]).id;
+            TLRPC.Chat chat = this.b;
+            if (j3 == chat.id && !ChatObject.isChannel(chat) && this.f) {
+                this.f = false;
+                b();
+            }
+        }
     }
 }

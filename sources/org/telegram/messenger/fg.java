@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.uy;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class fg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ai.u9 u9Var;
+        ai.v9 v9Var;
         TL_stories.StoryItem storyItem;
         int i10 = this.a;
         Object obj = this.f;
@@ -49,7 +49,7 @@ public final /* synthetic */ class fg implements Runnable {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
                     int i11 = 0;
                     while (true) {
-                        u9Var = null;
+                        v9Var = null;
                         if (i11 >= tL_stories_stories.stories.size()) {
                             storyItem = null;
                         } else if (tL_stories_stories.stories.get(i11).id == this.d) {
@@ -63,25 +63,25 @@ public final /* synthetic */ class fg implements Runnable {
                         storyItem.dialogId = j3;
                         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                         if (R != null) {
-                            if (R instanceof uy) {
+                            if (R instanceof ty) {
                                 try {
-                                    u9Var = ai.u9.a(((uy) R).E0.h);
+                                    v9Var = ai.v9.a(((ty) R).E0.h);
                                 } catch (Exception unused) {
                                 }
                             }
-                            ai.u9 u9Var2 = u9Var;
+                            ai.v9 v9Var2 = v9Var;
                             R.getOrCreateStoryViewer().v();
                             ArrayList arrayList = new ArrayList();
                             arrayList.add(Long.valueOf(j3));
                             if (this.c) {
                                 R.getOrCreateStoryViewer().w1 = true;
                             }
-                            R.getOrCreateStoryViewer().G(launchActivity, storyItem, arrayList, 0, null, null, u9Var2, false);
+                            R.getOrCreateStoryViewer().G(launchActivity, storyItem, arrayList, 0, null, null, v9Var2, false);
                             break;
                         }
                     }
                 }
-                org.telegram.ui.Components.yc.X().Q(R.raw.error, 36, LocaleController.getString(R.string.StoryNotFound)).k(false);
+                org.telegram.ui.Components.ad.X().Q(R.raw.error, 36, LocaleController.getString(R.string.StoryNotFound)).k(false);
                 break;
         }
     }

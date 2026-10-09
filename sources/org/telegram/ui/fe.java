@@ -1,20 +1,72 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fe extends org.telegram.ui.Components.bm0 {
-    public final /* synthetic */ ie c0;
+public final class fe extends org.telegram.ui.Components.f91 {
+    public final Context a;
+    public final int b;
+    public final int c;
+    public final org.telegram.ui.ActionBar.e6 d;
+    public final ArrayList e = new ArrayList();
+    public final /* synthetic */ ge f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fe(ie ieVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, me meVar) {
-        super(context, d6Var, meVar);
-        this.c0 = ieVar;
+    public fe(ge geVar, Context context, int i10, long j3, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.f = geVar;
+        this.a = context;
+        this.b = i10;
+        this.c = i11;
+        this.d = e6Var;
+        i();
     }
 
-    @Override // org.telegram.ui.Components.h91, android.view.View
-    public final boolean canScrollHorizontally(int i10) {
-        return this.c0.w.Q0 && super.canScrollHorizontally(i10);
+    @Override // org.telegram.ui.Components.f91
+    public final View d(int i10) {
+        return new ee(this.f, this.a, i10, this.b, this.c, new ai.p8(this, i10, 18), this.d);
+    }
+
+    @Override // org.telegram.ui.Components.f91
+    public final int e() {
+        return this.e.size();
+    }
+
+    @Override // org.telegram.ui.Components.f91
+    public final CharSequence g(int i10) {
+        int h = h(i10);
+        return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
+    }
+
+    @Override // org.telegram.ui.Components.f91
+    public final int h(int i10) {
+        if (i10 < 0) {
+            return 1;
+        }
+        ArrayList arrayList = this.e;
+        if (i10 >= arrayList.size()) {
+            return 1;
+        }
+        return ((org.telegram.ui.Components.p61) arrayList.get(i10)).z;
+    }
+
+    public final void i() {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        ge geVar = this.f;
+        if (!geVar.h.isEmpty()) {
+            arrayList.add(org.telegram.ui.Components.p61.C(1));
+        }
+        if (geVar.n.isEmpty()) {
+            return;
+        }
+        arrayList.add(org.telegram.ui.Components.p61.C(0));
+    }
+
+    @Override // org.telegram.ui.Components.f91
+    public final void b(View view, int i10, int i11) {
     }
 }

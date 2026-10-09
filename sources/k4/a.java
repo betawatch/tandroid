@@ -10,7 +10,7 @@ import e2.d0;
 import e2.v;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
@@ -74,16 +74,16 @@ public final class a implements b {
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0046 A[ADDED_TO_REGION, EDGE_INSN: B:49:0x0046->B:14:0x0046 BREAK  A[LOOP:0: B:5:0x0024->B:11:0x0040], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0028  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x003d -> B:3:0x0021). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0045 A[ADDED_TO_REGION, EDGE_INSN: B:49:0x0045->B:14:0x0045 BREAK  A[LOOP:0: B:5:0x0023->B:11:0x003f], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0027  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x003c -> B:3:0x0020). Please report as a decompilation issue!!! */
     @Override // k4.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean b(c3.p r25, long r26) {
         /*
-            Method dump skipped, instructions count: 330
+            Method dump skipped, instructions count: 327
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: k4.a.b(c3.p, long):boolean");
@@ -91,7 +91,7 @@ public final class a implements b {
 
     @Override // k4.b
     public final void c(int i10, long j3) {
-        this.a.X1(new f(this.c, this.d, i10, j3));
+        this.a.d2(new f(this.c, this.d, i10, j3));
         this.b.b(this.h);
     }
 
@@ -101,9 +101,9 @@ public final class a implements b {
         e2.q qVar = this.c;
         long j11 = qVar.b;
         String str = d0.a;
-        long Y = j3 + d0.Y(j10, 1000000L, j11, RoundingMode.DOWN);
+        long X = j3 + d0.X(j10, 1000000L, j11, RoundingMode.DOWN);
         int i11 = i10 * 2 * qVar.a;
-        this.b.c(Y, 1, i11, this.k - i11, null);
+        this.b.c(X, 1, i11, this.k - i11, null);
         this.l += i10;
         this.k -= i11;
     }

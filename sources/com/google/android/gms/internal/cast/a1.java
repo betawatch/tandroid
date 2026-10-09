@@ -1,16 +1,165 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Looper;
+import android.text.TextUtils;
+import android.util.Log;
+import com.google.android.gms.cast.CastDevice;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public static final g6.b j = new g6.b("ApplicationAnalytics", null);
+    public final p0 a;
+    public final d b;
+    public final c1 c;
+    public final SharedPreferences f;
+    public b1 g;
+    public d6.c h;
+    public boolean i;
+    public final a0 e = new a0(Looper.getMainLooper(), 0);
+    public final w d = new w(this, 1);
 
-    public /* synthetic */ a1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public a1(SharedPreferences sharedPreferences, p0 p0Var, d dVar, Bundle bundle, String str) {
+        this.f = sharedPreferences;
+        this.a = p0Var;
+        this.b = dVar;
+        this.c = new c1(str, bundle);
     }
 
-    private final void a(int i10) {
+    public static void a(a1 a1Var, int i10) {
+        j.b("log session ended with error = %d", Integer.valueOf(i10));
+        a1Var.c();
+        a1Var.a.a(a1Var.c.a(a1Var.g, i10), 228);
+        a1Var.e.removeCallbacks(a1Var.d);
+        if (a1Var.i) {
+            return;
+        }
+        a1Var.g = null;
+    }
+
+    public static void b(a1 a1Var) {
+        b1 b1Var = a1Var.g;
+        SharedPreferences sharedPreferences = a1Var.f;
+        b1Var.getClass();
+        if (sharedPreferences == null) {
+            return;
+        }
+        b1.k.b("Save the ApplicationAnalyticsSession to SharedPreferences %s", sharedPreferences);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString("application_id", b1Var.b);
+        edit.putString("receiver_metrics_id", b1Var.c);
+        edit.putLong("analytics_session_id", b1Var.d);
+        edit.putInt("event_sequence_number", b1Var.e);
+        edit.putString("receiver_session_id", b1Var.f);
+        edit.putInt("device_capabilities", b1Var.g);
+        edit.putString("device_model_name", b1Var.h);
+        edit.putInt("analytics_session_start_type", b1Var.j);
+        edit.putBoolean("is_output_switcher_enabled", b1Var.i);
+        edit.apply();
+    }
+
+    public final void c() {
+        CastDevice castDevice;
+        b1 b1Var;
+        if (!f()) {
+            g6.b bVar = j;
+            Log.w(bVar.a, bVar.d("The analyticsSession should not be null for logging. Create a dummy one.", new Object[0]));
+            d();
+            return;
+        }
+        d6.c cVar = this.h;
+        if (cVar != null) {
+            n6.l.e("Must be called from the main thread.");
+            castDevice = cVar.k;
+        } else {
+            castDevice = null;
+        }
+        if (castDevice != null) {
+            String str = castDevice.w;
+            if (!TextUtils.equals(this.g.c, str) && (b1Var = this.g) != null) {
+                b1Var.c = str;
+                b1Var.g = castDevice.r;
+                b1Var.h = castDevice.e;
+            }
+        }
+        n6.l.h(this.g);
+    }
+
+    public final void d() {
+        CastDevice castDevice;
+        b1 b1Var;
+        j.b("Create a new ApplicationAnalyticsSession based on CastSession", new Object[0]);
+        b1 b1Var2 = new b1(this.b);
+        b1.l++;
+        this.g = b1Var2;
+        d6.c cVar = this.h;
+        b1Var2.i = cVar != null && cVar.g.i;
+        g6.b bVar = d6.a.l;
+        n6.l.e("Must be called from the main thread.");
+        d6.a aVar = d6.a.n;
+        n6.l.h(aVar);
+        n6.l.e("Must be called from the main thread.");
+        b1Var2.b = aVar.e.a;
+        d6.c cVar2 = this.h;
+        if (cVar2 == null) {
+            castDevice = null;
+        } else {
+            n6.l.e("Must be called from the main thread.");
+            castDevice = cVar2.k;
+        }
+        if (castDevice != null && (b1Var = this.g) != null) {
+            b1Var.c = castDevice.w;
+            b1Var.g = castDevice.r;
+            b1Var.h = castDevice.e;
+        }
+        b1 b1Var3 = this.g;
+        n6.l.h(b1Var3);
+        d6.c cVar3 = this.h;
+        b1Var3.j = cVar3 != null ? cVar3.e() : 0;
+        n6.l.h(this.g);
+    }
+
+    public final void e() {
+        a0 a0Var = this.e;
+        n6.l.h(a0Var);
+        w wVar = this.d;
+        n6.l.h(wVar);
+        a0Var.postDelayed(wVar, 300000L);
+    }
+
+    public final boolean f() {
+        String str;
+        g6.b bVar = j;
+        if (this.g == null) {
+            bVar.b("The analytics session is null when matching with application ID.", new Object[0]);
+            return false;
+        }
+        g6.b bVar2 = d6.a.l;
+        n6.l.e("Must be called from the main thread.");
+        d6.a aVar = d6.a.n;
+        n6.l.h(aVar);
+        n6.l.e("Must be called from the main thread.");
+        String str2 = aVar.e.a;
+        if (str2 == null || (str = this.g.b) == null || !TextUtils.equals(str, str2)) {
+            bVar.b("The analytics session doesn't match the application ID %s", str2);
+            return false;
+        }
+        n6.l.h(this.g);
+        return true;
+    }
+
+    public final boolean g(String str) {
+        String str2;
+        if (!f()) {
+            return false;
+        }
+        n6.l.h(this.g);
+        if (str != null && (str2 = this.g.f) != null && TextUtils.equals(str2, str)) {
+            return true;
+        }
+        j.b("The analytics session doesn't match the receiver session ID %s.", str);
+        return false;
     }
 }

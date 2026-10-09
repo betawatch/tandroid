@@ -1,67 +1,42 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class q10 extends org.telegram.ui.Components.yl0 {
-    public final /* synthetic */ x10 c;
+public final class q10 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ r10 l0;
 
-    public q10(x10 x10Var) {
-        this.c = x10Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q10(r10 r10Var, Context context) {
+        super(context, 1, null);
+        this.l0 = r10Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        x10 x10Var = this.c;
-        if (x10Var.f.isEmpty()) {
-            return 0;
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        r10 r10Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? r10Var.v.f : null, false);
+            return playMessage;
         }
-        return x10Var.f.size() + (!x10Var.N ? 1 : 0);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 >= this.c.f.size() ? 3 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) c1Var.a;
-            x10 x10Var = this.c;
-            MessageObject messageObject = (MessageObject) x10Var.f.get(i10);
-            s2Var.O = x10Var.p0;
-            s2Var.U(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
-            s2Var.s2 = i10 != h() - 1;
-            s2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.pk(this, s2Var, messageObject, s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId(), 1));
+        if (!messageObject.isMusic()) {
+            return false;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        gg.a0 a0Var;
-        if (i10 == 0) {
-            a0Var = new gg.a0(2, viewGroup.getContext(), true);
-        } else if (i10 != 3) {
-            org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
-            v3Var.setText(LocaleController.getString(R.string.SearchMessages));
-            a0Var = v3Var;
-        } else {
-            org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(viewGroup.getContext(), null);
-            w00Var.setIsSingleCell(true);
-            w00Var.setViewType(1);
-            a0Var = w00Var;
-        }
-        return com.google.android.gms.internal.vision.e2.k(a0Var, a0Var, -1, -2);
+        w10 w10Var = r10Var.v;
+        String str = w10Var.Q;
+        long j3 = w10Var.E;
+        long j10 = w10Var.H;
+        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j3, j10, j10, w10Var.y);
+        w10 w10Var2 = r10Var.v;
+        playlistGlobalSearchParams.endReached = w10Var2.N;
+        playlistGlobalSearchParams.nextSearchRate = w10Var2.v;
+        playlistGlobalSearchParams.totalCount = w10Var2.O;
+        playlistGlobalSearchParams.folderId = w10Var2.J ? 1 : 0;
+        return MediaController.getInstance().setPlaylist(r10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
     }
 }

@@ -4,10 +4,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -29,23 +29,23 @@ public final /* synthetic */ class l implements Runnable {
         switch (this.a) {
             case 0:
                 p pVar = (p) this.e;
-                e5.v0(pVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.b ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.c ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new g(pVar, this.d, 0));
+                g5.u0(pVar, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(this.b ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : this.c ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new g(pVar, this.d, 0));
                 break;
             case 1:
-                k0.q((k0) this.e, this.b, this.c, this.d);
+                k0.s((k0) this.e, this.b, this.c, this.d);
                 break;
             case 2:
-                ((MessagesController) this.e).lambda$setLastCreatedDialogId$55(this.b, this.c, this.d);
+                ((MessagesController) this.e).lambda$setLastCreatedDialogId$54(this.b, this.c, this.d);
                 break;
             default:
-                yn.b1((yn) this.e, this.d, this.b, this.c);
+                zn.F0((zn) this.e, this.d, this.b, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ l(yn ynVar, long j3, boolean z10, boolean z11) {
+    public /* synthetic */ l(zn znVar, long j3, boolean z10, boolean z11) {
         this.a = 3;
-        this.e = ynVar;
+        this.e = znVar;
         this.d = j3;
         this.b = z10;
         this.c = z11;

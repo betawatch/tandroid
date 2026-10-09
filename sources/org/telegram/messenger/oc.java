@@ -1,36 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
+import j$.util.concurrent.ConcurrentHashMap;
+import yf.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oc implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ r c;
+    public final /* synthetic */ ConcurrentHashMap d;
+    public final /* synthetic */ ConcurrentHashMap e;
 
-    public /* synthetic */ oc(MessagesController messagesController, long j3, TLObject tLObject) {
+    public /* synthetic */ oc(MessagesController messagesController, r rVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j3;
-        this.d = tLObject;
+        this.c = rVar;
+        this.d = concurrentHashMap;
+        this.e = concurrentHashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteUserPhoto$114(this.d, this.c);
+                this.b.lambda$processUpdateArray$404(this.c, this.d, this.e);
+                break;
+            case 1:
+                this.b.lambda$processUpdateArray$408(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$loadPeerSettings$79(this.c, this.d);
+                this.b.lambda$processUpdateArray$403(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ oc(MessagesController messagesController, TLObject tLObject, long j3) {
-        this.b = messagesController;
-        this.d = tLObject;
-        this.c = j3;
     }
 }

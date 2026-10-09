@@ -1,21 +1,33 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class r00 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ s00 k;
+import android.animation.ValueAnimator;
 
-    public r00(s00 s00Var) {
-        this.k = s00Var;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class r00 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y00 b;
+
+    public /* synthetic */ r00(y00 y00Var, int i10) {
+        this.a = i10;
+        this.b = y00Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y00 y00Var = this.b;
+                y00Var.x = floatValue;
+                y00Var.invalidate();
+                break;
+            default:
+                y00 y00Var2 = this.b;
+                y00Var2.getClass();
+                y00Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y00Var2.invalidate();
+                break;
+        }
     }
 }

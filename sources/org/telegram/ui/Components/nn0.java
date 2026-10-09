@@ -1,146 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nn0 extends yl0 {
-    public final /* synthetic */ on0 c;
+public final class nn0 {
+    public static final nn0 a;
+    public static final nn0 b;
+    public static final /* synthetic */ nn0[] c;
 
-    public nn0(on0 on0Var) {
-        this.c = on0Var;
+    static {
+        nn0 nn0Var = new nn0("LINE", 0);
+        a = nn0Var;
+        nn0 nn0Var2 = new nn0("TAB", 1);
+        b = nn0Var2;
+        c = new nn0[]{nn0Var, nn0Var2};
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 1 || i10 == 2;
+    public static nn0 valueOf(String str) {
+        return (nn0) Enum.valueOf(nn0.class, str);
     }
 
-    public final MessageObject E(int i10) {
-        on0 on0Var = this.c;
-        int i11 = on0Var.v;
-        if (i10 >= i11 && i10 < on0Var.w) {
-            return (MessageObject) on0Var.e.get(i10 - i11);
-        }
-        int i12 = on0Var.y;
-        if (i10 < i12 || i10 >= on0Var.E) {
-            return null;
-        }
-        return (MessageObject) on0Var.f.get(i10 - i12);
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.c.r;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        on0 on0Var = this.c;
-        if (i10 == on0Var.s || i10 == on0Var.x) {
-            return 0;
-        }
-        MessageObject E = E(i10);
-        return (E != null && E.isMusic()) ? 2 : 1;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        boolean z10;
-        on0 on0Var = this.c;
-        org.telegram.ui.p10 p10Var = on0Var.J;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view;
-            if (i10 != on0Var.s) {
-                if (i10 == on0Var.x) {
-                    v3Var.c(LocaleController.getString(R.string.RecentlyDownloaded), LocaleController.getString(R.string.Settings), new l80(this, 11));
-                    return;
-                }
-                return;
-            }
-            String string = LocaleController.getString(R.string.Downloading);
-            if (!v3Var.getText().equals(string)) {
-                v3Var.c(string, LocaleController.getString(on0Var.H ? R.string.PauseAll : R.string.ResumeAll), new mn0(this));
-                return;
-            }
-            String string2 = LocaleController.getString(on0Var.H ? R.string.PauseAll : R.string.ResumeAll);
-            boolean z11 = on0Var.H;
-            org.telegram.ui.Cells.u3 u3Var = v3Var.b;
-            u3Var.c(string2, true, z11);
-            u3Var.setVisibility(0);
-            return;
-        }
-        MessageObject E = E(i10);
-        if (E != null) {
-            boolean z12 = on0Var.I.g() && i10 >= on0Var.v && i10 < on0Var.w;
-            if (i11 == 1) {
-                kn0 kn0Var = (kn0) view;
-                kn0Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
-                org.telegram.ui.Cells.k7 k7Var = kn0Var.a;
-                int id2 = k7Var.getMessage() == null ? 0 : k7Var.getMessage().getId();
-                k7Var.c(E, true);
-                int id3 = k7Var.getMessage().getId();
-                p10Var.a = k7Var.getMessage().getDialogId();
-                p10Var.b = id3;
-                k7Var.b(on0Var.I.c(p10Var), id2 == E.getId());
-                z10 = id2 == E.getId();
-                if (k7Var.O == z12) {
-                    return;
-                }
-                k7Var.O = z12;
-                if (!z10) {
-                    k7Var.P = z12 ? 1.0f : 0.0f;
-                }
-                k7Var.invalidate();
-                return;
-            }
-            if (i11 == 2) {
-                org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
-                int id4 = j7Var.getMessage() == null ? 0 : j7Var.getMessage().getId();
-                j7Var.f(E, true);
-                int id5 = j7Var.getMessage().getId();
-                p10Var.a = j7Var.getMessage().getDialogId();
-                p10Var.b = id5;
-                j7Var.e(on0Var.I.c(p10Var), id4 == E.getId());
-                z10 = id4 == E.getId();
-                if (j7Var.d0 == z12) {
-                    return;
-                }
-                j7Var.d0 = z12;
-                if (!z10) {
-                    j7Var.e0 = z12 ? 1.0f : 0.0f;
-                }
-                j7Var.invalidate();
-            }
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        if (i10 == 0) {
-            frameLayout = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
-        } else if (i10 == 1) {
-            Context context = viewGroup.getContext();
-            kn0 kn0Var = new kn0(context);
-            org.telegram.ui.Cells.k7 k7Var = new org.telegram.ui.Cells.k7(context, 2, null);
-            kn0Var.a = k7Var;
-            k7Var.r.setVisibility(8);
-            kn0Var.addView(k7Var);
-            frameLayout = kn0Var;
-        } else {
-            frameLayout = new ln0(viewGroup.getContext());
-        }
-        frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new il0(frameLayout);
+    public static nn0[] values() {
+        return (nn0[]) c.clone();
     }
 }

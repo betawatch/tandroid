@@ -1,70 +1,184 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qi extends si {
-    public TLRPC.User b;
-    public TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ xi d;
+public abstract class qi extends FrameLayout {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final yi b;
+    public qm0 c;
+    public qm0 d;
+    public int e;
+    public boolean f;
+    public boolean h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi(xi xiVar, Context context) {
+    public qi(Context context, org.telegram.ui.ActionBar.e6 e6Var, yi yiVar) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var;
-        this.d = xiVar;
-        setWillNotDraw(false);
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        d6Var = ((org.telegram.ui.ActionBar.f3) xiVar).resourcesProvider;
-        oh.b bVar = new oh.b(context);
-        bVar.d = d6Var;
-        bVar.Q = true;
-        TextView textView = bVar.a;
-        textView.setTextSize(1, 11.0f);
-        textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        bVar.b.setVisibility(8);
-        bVar.a(false);
-        w9 w9Var = new w9(context);
-        bVar.c = w9Var;
-        bVar.addView(w9Var, w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.cl, d6Var);
-        bVar.s = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.al, d6Var);
-        bVar.v = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.bl, d6Var);
-        bVar.f();
-        this.a = bVar;
-        bVar.getBackupImageView().a.setDelegate(new w1(27));
-        addView(this.a, w7.z5.c(-1.0f, -1));
+        this.a = e6Var;
+        this.b = yiVar;
     }
 
-    public final void a(boolean z10) {
-        boolean z11 = this.c != null && (-this.b.id) == this.d.W0;
-        this.a.e(z11, z10);
-        kj0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
-        if (!z10) {
-            if (lottieAnimation != null) {
-                lottieAnimation.stop();
-                lottieAnimation.T(0.0f, false);
-                return;
-            }
-            return;
-        }
-        if (!z11 || lottieAnimation == null) {
-            return;
-        }
-        lottieAnimation.K(0);
-        lottieAnimation.P(-1);
-        lottieAnimation.T(0.0f, false);
-        lottieAnimation.start();
+    public abstract void C(int i10, int i11);
+
+    public boolean F(int i10) {
+        return false;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a(false);
+    public boolean K(int i10, boolean z10, int i11, boolean z11, long j3) {
+        return false;
+    }
+
+    public boolean L() {
+        return !(this instanceof ei.p4);
+    }
+
+    public boolean M() {
+        return true;
+    }
+
+    public boolean b() {
+        return true;
+    }
+
+    public boolean c() {
+        return true;
+    }
+
+    public boolean e() {
+        return this instanceof gl;
+    }
+
+    public boolean f() {
+        return false;
+    }
+
+    public boolean g() {
+        return this instanceof gl;
+    }
+
+    public int getButtonsHideOffset() {
+        return AndroidUtilities.dp(i() != 0 ? 12.0f : 17.0f);
+    }
+
+    public int getCurrentItemTop() {
+        return 0;
+    }
+
+    public int getCustomActionBarBackground() {
+        return 0;
+    }
+
+    public int getCustomBackground() {
+        return 0;
+    }
+
+    public int getFirstOffset() {
+        return 0;
+    }
+
+    public bh.a getIBlur3Capture() {
+        return null;
+    }
+
+    public int getListTopPadding() {
+        return 0;
+    }
+
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    public ArrayList<org.telegram.ui.ActionBar.k6> getThemeDescriptions() {
+        return null;
+    }
+
+    public boolean h() {
+        return false;
+    }
+
+    public int i() {
+        return 0;
+    }
+
+    public boolean j() {
+        return false;
+    }
+
+    public void m(float f7, float f10) {
+        l(f7);
+    }
+
+    public boolean o(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean q() {
+        return false;
+    }
+
+    public boolean s() {
+        return true;
+    }
+
+    public void B() {
+    }
+
+    public void D() {
+    }
+
+    public void E(int i10) {
+    }
+
+    public void G(qi qiVar) {
+    }
+
+    public void I() {
+    }
+
+    public void J() {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void d() {
+    }
+
+    public void k() {
+    }
+
+    public void l(float f7) {
+    }
+
+    public void p() {
+    }
+
+    public void r(int i10) {
+    }
+
+    public void t() {
+    }
+
+    public void u() {
+    }
+
+    public void v(float f7) {
+    }
+
+    public void w(int i10) {
+    }
+
+    public void x() {
+    }
+
+    public void y() {
+    }
+
+    public void z(int i10, boolean z10) {
     }
 }

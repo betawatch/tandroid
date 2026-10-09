@@ -1,80 +1,78 @@
 package ai;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class pc extends ReplacementSpan {
-    public View a;
+public final class pc extends ImageReceiver.Decorator {
+    public final ArrayList a;
+    public float b;
+    public float c;
     public float d;
-    public boolean e;
-    public long f;
-    public boolean n;
-    public boolean r;
-    public int b = 1;
-    public int c = 2;
-    public final tr h = new tr(0.0f, 0.5f, 0.5f, 1.0f);
+    public float e;
 
-    public final void a(org.telegram.ui.Cells.w0 w0Var) {
-        this.a = w0Var;
-        this.n = false;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float f10;
-        TextPaint textPaint = (TextPaint) paint;
-        float measureText = paint.measureText("…") / 3.0f;
-        float f11 = -(this.r ? textPaint.getFontMetrics().ascent : textPaint.getFontMetrics().top);
-        float f12 = (textPaint.getFontMetrics().bottom - textPaint.getFontMetrics().top) * (this.n ? 0.05f : 0.0365f);
-        float f13 = f11 - f12;
-        if (!this.e) {
-            float f14 = this.d + 0.053333335f;
-            this.d = f14;
-            if (f14 > 1.0f) {
-                this.d = 0.0f;
-                int i15 = this.b - 1;
-                this.b = i15;
-                this.c--;
-                if (i15 < 0) {
-                    this.b = 1;
-                    this.c = 2;
-                    this.e = true;
-                    this.f = System.currentTimeMillis();
+    public pc(TL_stories.StoryItem storyItem) {
+        for (int i10 = 0; i10 < storyItem.media_areas.size(); i10++) {
+            if (storyItem.media_areas.get(i10) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                if (this.a == null) {
+                    this.a = new ArrayList();
                 }
-            }
-        } else if (System.currentTimeMillis() - this.f > 1000) {
-            this.e = false;
-        }
-        for (int i16 = 0; i16 < 3; i16++) {
-            float f15 = measureText / 2.0f;
-            float f16 = (i16 * measureText) + f7 + f15;
-            if (i16 == this.b) {
-                f16 = AndroidUtilities.lerp(f16, sa.e.d(measureText, i16 + 1, f7, f15), this.d);
-                float f17 = this.d;
-                f10 = AndroidUtilities.lerp(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.q.x(f17, 0.5f, 0.5f, 1.0f)));
-            } else {
-                if (i16 == this.c) {
-                    f16 = AndroidUtilities.lerp(f16, sa.e.d(measureText, i16 - 1, f7, f15), this.d);
+                this.a.add(new mc(this, (TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i10)));
+            } else if (storyItem.media_areas.get(i10) instanceof TL_stories.TL_mediaAreaWeather) {
+                if (this.a == null) {
+                    this.a = new ArrayList();
                 }
-                f10 = f13;
+                this.a.add(new oc(this, (TL_stories.TL_mediaAreaWeather) storyItem.media_areas.get(i10)));
             }
-            canvas.drawCircle(f16, f10, f12, paint);
-        }
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) paint.measureText("…");
+    @Override // org.telegram.messenger.ImageReceiver.Decorator
+    public final void onAttachedToWindow(ImageReceiver imageReceiver) {
+        ArrayList arrayList = this.a;
+        if (arrayList == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((lc) arrayList.get(i10)).c(imageReceiver.getParentView());
+            ((lc) arrayList.get(i10)).b(true);
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.Decorator
+    public final void onDetachedFromWidnow() {
+        ArrayList arrayList = this.a;
+        if (arrayList == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((lc) arrayList.get(i10)).b(false);
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.Decorator
+    public final void onDraw(Canvas canvas, ImageReceiver imageReceiver) {
+        ArrayList arrayList = this.a;
+        if (arrayList == null) {
+            return;
+        }
+        float alpha = imageReceiver.getAlpha();
+        float centerX = imageReceiver.getCenterX();
+        float centerY = imageReceiver.getCenterY();
+        float imageWidth = imageReceiver.getImageWidth();
+        this.d = imageWidth;
+        float f7 = (16.0f * imageWidth) / 9.0f;
+        this.e = f7;
+        this.b = centerX - (imageWidth / 2.0f);
+        this.c = centerY - (f7 / 2.0f);
+        canvas.save();
+        canvas.clipRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX2(), imageReceiver.getImageY2());
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((lc) arrayList.get(i10)).a(canvas, alpha);
+        }
+        canvas.restore();
     }
 }

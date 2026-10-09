@@ -1,33 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.R;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nm implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sm b;
+public final class nm implements CameraView.CameraViewDelegate {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    public /* synthetic */ nm(sm smVar, int i10) {
-        this.a = i10;
-        this.b = smVar;
+    public nm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sm smVar = this.b;
-                smVar.getClass();
-                smVar.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                smVar.invalidate();
-                break;
-            default:
-                sm smVar2 = this.b;
-                smVar2.getClass();
-                smVar2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                smVar2.invalidate();
-                break;
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public final void onCameraInit() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        ImageView imageView = chatAttachAlertPhotoLayout.r0;
+        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.S;
+        String currentFlashMode = chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode();
+        String nextFlashMode = chatAttachAlertPhotoLayout.P.getCameraSession().getNextFlashMode();
+        if (currentFlashMode == null || nextFlashMode == null) {
+            return;
         }
+        if (currentFlashMode.equals(nextFlashMode)) {
+            for (int i10 = 0; i10 < 2; i10++) {
+                imageViewArr[i10].setVisibility(4);
+                imageViewArr[i10].setAlpha(0.0f);
+                imageViewArr[i10].setTranslationY(0.0f);
+            }
+        } else {
+            ChatAttachAlertPhotoLayout.o0(imageViewArr[0], chatAttachAlertPhotoLayout.P.getCameraSession().getCurrentFlashMode());
+            int i11 = 0;
+            while (i11 < 2) {
+                imageViewArr[i11].setVisibility(i11 == 0 ? 0 : 4);
+                imageViewArr[i11].setAlpha((i11 == 0 && chatAttachAlertPhotoLayout.b0) ? 1.0f : 0.0f);
+                imageViewArr[i11].setTranslationY(0.0f);
+                i11++;
+            }
+        }
+        imageView.setImageResource(chatAttachAlertPhotoLayout.P.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
+        imageView.setVisibility(chatAttachAlertPhotoLayout.P.hasFrontFaceCamera() ? 0 : 4);
+        if (chatAttachAlertPhotoLayout.b0) {
+            return;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        chatAttachAlertPhotoLayout.O = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.P, (Property<um, Float>) View.ALPHA, 0.0f, 1.0f));
+        chatAttachAlertPhotoLayout.O.setDuration(180L);
+        chatAttachAlertPhotoLayout.O.addListener(new t8(this, 9));
+        chatAttachAlertPhotoLayout.O.start();
     }
 }

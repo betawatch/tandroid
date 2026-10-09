@@ -9,9 +9,9 @@ import android.util.Log;
 import i9.s;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import n4.y;
+import n4.x;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                     k kVar = (k) jVar.d.poll();
                     jVar.e.put(kVar.a, kVar);
-                    ((ScheduledExecutorService) jVar.f.c).schedule(new s(17, jVar, kVar), 30L, TimeUnit.SECONDS);
+                    ((ScheduledExecutorService) jVar.f.c).schedule(new s(18, jVar, kVar), 30L, TimeUnit.SECONDS);
                     if (Log.isLoggable("MessengerIpcClient", 3)) {
                         Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(kVar)));
                     }
@@ -74,12 +74,12 @@ public final /* synthetic */ class h implements Runnable {
                     bundle.putBundle("data", kVar.d);
                     obtain.setData(bundle);
                     try {
-                        y yVar = jVar.c;
-                        Messenger messenger2 = (Messenger) yVar.b;
+                        x xVar = jVar.c;
+                        Messenger messenger2 = (Messenger) xVar.b;
                         if (messenger2 != null) {
                             messenger2.send(obtain);
                         } else {
-                            f fVar = (f) yVar.c;
+                            f fVar = (f) xVar.c;
                             if (fVar == null) {
                                 throw new IllegalStateException("Both messengers are null");
                             }

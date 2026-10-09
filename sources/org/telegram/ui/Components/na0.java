@@ -1,78 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class na0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+public final class na0 {
+    public final bd.a a;
+    public final int b;
+    public final ArrayList c = new ArrayList();
 
-    public /* synthetic */ na0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = notificationCenterDelegate;
+    public na0(bd.a aVar, int i10) {
+        this.a = aVar;
         this.b = i10;
-        this.c = z10;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                AnimatorSet[] animatorSetArr = ((ry0) this.d).I;
-                int i10 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i10];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[i10] = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                pa0 pa0Var = (pa0) this.d;
-                p6[] p6VarArr = pa0Var.x;
-                org.telegram.ui.ActionBar.i5[] i5VarArr = pa0Var.w;
-                float[] fArr = pa0Var.Z;
-                boolean z10 = this.c;
-                float f7 = z10 ? 1.0f : 0.0f;
-                int i10 = this.b;
-                fArr[i10] = f7;
-                i5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
-                i5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
-                i5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
-                p6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
-                if (!z10) {
-                    p6VarArr[i10].setVisibility(8);
-                    break;
-                }
-                break;
-            default:
-                ry0 ry0Var = (ry0) this.d;
-                AnimatorSet[] animatorSetArr = ry0Var.I;
-                int i11 = this.b;
-                AnimatorSet animatorSet = animatorSetArr[i11];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.c) {
-                        ry0Var.J[i11].setVisibility(4);
-                    }
-                    animatorSetArr[i11] = null;
-                    break;
-                }
-                break;
-        }
     }
 }

@@ -9,8 +9,8 @@ import c6.s;
 import c6.t;
 import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.internal.cast.j0;
-import com.google.android.gms.internal.cast.o0;
+import com.google.android.gms.internal.cast.h0;
+import com.google.android.gms.internal.cast.m0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,9 +25,9 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
 import v7.o5;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -319,39 +319,39 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.H;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q6 = g0.q(parcel, 20293);
+        int q6 = d0.q(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        g0.l(parcel, 2, str);
-        g0.s(parcel, 3, 4);
+        d0.l(parcel, 2, str);
+        d0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        g0.l(parcel, 4, this.c);
-        g0.k(parcel, 5, this.d, i10);
-        g0.s(parcel, 6, 8);
+        d0.l(parcel, 4, this.c);
+        d0.k(parcel, 5, this.d, i10);
+        d0.s(parcel, 6, 8);
         parcel.writeLong(this.e);
-        g0.p(parcel, 7, this.f);
-        g0.k(parcel, 8, this.h, i10);
-        g0.l(parcel, 9, this.n);
+        d0.p(parcel, 7, this.f);
+        d0.k(parcel, 8, this.h, i10);
+        d0.l(parcel, 9, this.n);
         List list = this.r;
-        g0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        d0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        g0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        g0.l(parcel, 12, this.v);
-        g0.k(parcel, 13, this.w, i10);
-        g0.s(parcel, 14, 8);
+        d0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        d0.l(parcel, 12, this.v);
+        d0.k(parcel, 13, this.w, i10);
+        d0.s(parcel, 14, 8);
         parcel.writeLong(this.x);
-        g0.l(parcel, 15, this.y);
-        g0.l(parcel, 16, this.E);
-        g0.l(parcel, 17, this.F);
-        g0.l(parcel, 18, this.G);
-        g0.r(parcel, q6);
+        d0.l(parcel, 15, this.y);
+        d0.l(parcel, 16, this.E);
+        d0.l(parcel, 17, this.F);
+        d0.l(parcel, 18, this.G);
+        d0.r(parcel, q6);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:105:0x02a5  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x02bf  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x031e  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02be  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x031d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -361,8 +361,11 @@ public class MediaInfo extends a implements ReflectedParcelable {
         int i10;
         int i11;
         int i12;
-        o0 o0Var;
+        m0 m0Var;
         String optString = jSONObject.optString("streamType", "NONE");
+        int i13 = 2;
+        int i14 = 1;
+        int i15 = 0;
         if ("NONE".equals(optString)) {
             this.b = 0;
         } else if ("BUFFERED".equals(optString)) {
@@ -386,22 +389,22 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 this.e = (long) (optDouble * 1000.0d);
             }
         }
-        int i13 = 4;
+        int i16 = 4;
         if (jSONObject.has("tracks")) {
             ArrayList arrayList = new ArrayList();
             JSONArray jSONArray = jSONObject.getJSONArray("tracks");
+            int i17 = 0;
             d = 0.0d;
-            int i14 = 0;
-            while (i14 < jSONArray.length()) {
-                JSONObject jSONObject3 = jSONArray.getJSONObject(i14);
+            while (i17 < jSONArray.length()) {
+                JSONObject jSONObject3 = jSONArray.getJSONObject(i17);
                 long j3 = jSONObject3.getLong("trackId");
                 String optString2 = jSONObject3.optString(TeXSymbolParser.TYPE_ATTR);
                 if ("TEXT".equals(optString2)) {
-                    i11 = 1;
+                    i11 = i14;
                 } else if ("AUDIO".equals(optString2)) {
-                    i11 = 2;
+                    i11 = i13;
                 } else {
-                    i11 = "VIDEO".equals(optString2) ? 3 : 0;
+                    i11 = "VIDEO".equals(optString2) ? 3 : i15;
                 }
                 String a2 = g6.a.a("trackContentId", jSONObject3);
                 String a10 = g6.a.a("trackContentType", jSONObject3);
@@ -410,43 +413,46 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 if (jSONObject3.has("subtype")) {
                     String string = jSONObject3.getString("subtype");
                     if ("SUBTITLES".equals(string)) {
-                        i12 = 1;
+                        i12 = i14;
                     } else if ("CAPTIONS".equals(string)) {
-                        i12 = 2;
+                        i12 = i13;
                     } else if ("DESCRIPTIONS".equals(string)) {
                         i12 = 3;
                     } else if ("CHAPTERS".equals(string)) {
-                        i12 = 4;
+                        i12 = i16;
                     } else {
                         i12 = "METADATA".equals(string) ? 5 : -1;
                     }
                 } else {
-                    i12 = 0;
+                    i12 = i15;
                 }
                 if (jSONObject3.has("roles")) {
-                    Object[] objArr = new Object[i13];
+                    Object[] objArr = new Object[i16];
                     JSONArray jSONArray2 = jSONObject3.getJSONArray("roles");
-                    int i15 = 0;
-                    int i16 = 0;
-                    while (i15 < jSONArray2.length()) {
-                        String optString3 = jSONArray2.optString(i15);
+                    int i18 = i15;
+                    int i19 = i18;
+                    while (i18 < jSONArray2.length()) {
+                        String optString3 = jSONArray2.optString(i18);
                         optString3.getClass();
-                        int i17 = i16 + 1;
+                        int i20 = i19 + 1;
                         int length = objArr.length;
-                        if (length < i17) {
-                            objArr = Arrays.copyOf(objArr, o5.a(length, i17));
+                        if (length < i20) {
+                            objArr = Arrays.copyOf(objArr, o5.a(length, i20));
                         }
-                        objArr[i16] = optString3;
-                        i15++;
-                        i16 = i17;
+                        objArr[i19] = optString3;
+                        i18++;
+                        i19 = i20;
                     }
-                    o0Var = j0.r(i16, objArr);
+                    m0Var = h0.r(i19, objArr);
                 } else {
-                    o0Var = null;
+                    m0Var = null;
                 }
-                arrayList.add(new MediaTrack(j3, i11, a2, a10, a11, a12, i12, o0Var, jSONObject3.optJSONObject("customData")));
-                i14++;
-                i13 = 4;
+                arrayList.add(new MediaTrack(j3, i11, a2, a10, a11, a12, i12, m0Var, jSONObject3.optJSONObject("customData")));
+                i17++;
+                i16 = 4;
+                i13 = 2;
+                i14 = 1;
+                i15 = 0;
             }
             this.f = new ArrayList(arrayList);
         } else {

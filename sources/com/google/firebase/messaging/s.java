@@ -1,5 +1,7 @@
 package com.google.firebase.messaging;
 
+import ae.h1;
+import ae.k2;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
@@ -12,7 +14,6 @@ import com.google.android.gms.tasks.Tasks;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import ii.n4;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
@@ -32,14 +33,12 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import pg.c1;
-import u2.p1;
+import org.telegram.ui.Wallet.n5;
+import u2.o1;
 import y9.w0;
 import y9.x0;
-import zd.f1;
-import zd.i2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s implements z3.m {
     public static s f;
@@ -80,26 +79,41 @@ public final class s implements z3.m {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01fd  */
+    @Override // z3.m
+    public int O() {
+        switch (this.a) {
+        }
+        return 2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01fc  */
     @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void E(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
+    public void P(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
-        d2.b bVar;
         int i12;
+        d2.b bVar;
         int i13;
+        int i14;
+        int i15;
         d2.b bVar2;
+        int i16;
+        int A;
+        int i17;
         d2.b bVar3;
         a1 a1Var;
         Rect rect;
-        int i14 = 4;
-        int i15 = 0;
-        int i16 = 2;
+        int i18 = 4;
+        int i19 = 0;
+        int i20 = 2;
+        int i21 = 1;
         switch (this.a) {
             case 2:
+                int i22 = 3;
                 c4.a aVar = (c4.a) this.d;
                 e2.v vVar = (e2.v) this.c;
                 e2.v vVar2 = (e2.v) this.b;
@@ -108,7 +122,7 @@ public final class s implements z3.m {
                 if (((Inflater) this.e) == null) {
                     this.e = new Inflater();
                 }
-                if (e2.d0.O(vVar2, vVar, (Inflater) this.e)) {
+                if (e2.d0.N(vVar2, vVar, (Inflater) this.e)) {
                     vVar2.H(vVar.c, vVar.a);
                 }
                 aVar.d = 0;
@@ -122,68 +136,71 @@ public final class s implements z3.m {
                 vVar3.G(0);
                 aVar.c = false;
                 ArrayList arrayList = new ArrayList();
-                while (vVar2.a() >= 3) {
-                    int i17 = vVar2.c;
+                while (vVar2.a() >= i22) {
+                    int i23 = vVar2.c;
                     int x10 = vVar2.x();
                     int D = vVar2.D();
-                    int i18 = vVar2.b + D;
-                    if (i18 > i17) {
-                        vVar2.J(i17);
+                    int i24 = vVar2.b + D;
+                    if (i24 > i23) {
+                        vVar2.J(i23);
                         iArr = iArr2;
+                        i17 = i21;
                         bVar2 = null;
+                        i13 = i19;
                     } else {
+                        char c10 = 128;
                         if (x10 != 128) {
                             switch (x10) {
                                 case 20:
-                                    if (D % 5 == i16) {
-                                        vVar2.K(i16);
-                                        Arrays.fill(iArr2, i15);
-                                        int i19 = D / 5;
-                                        int i20 = 0;
-                                        while (i20 < i19) {
+                                    if (D % 5 == i20) {
+                                        vVar2.K(i20);
+                                        Arrays.fill(iArr2, i19);
+                                        int i25 = D / 5;
+                                        int i26 = i19;
+                                        while (i26 < i25) {
                                             int x11 = vVar2.x();
                                             double x12 = vVar2.x();
                                             double x13 = vVar2.x() - 128;
                                             int[] iArr3 = iArr2;
                                             double x14 = vVar2.x() - 128;
                                             iArr3[x11] = e2.d0.h((int) ((x14 * 1.772d) + x12), 0, 255) | (vVar2.x() << 24) | (e2.d0.h((int) ((1.402d * x13) + x12), 0, 255) << 16) | (e2.d0.h((int) ((x12 - (0.34414d * x14)) - (x13 * 0.71414d)), 0, 255) << 8);
-                                            i20++;
-                                            i19 = i19;
+                                            i26++;
+                                            c10 = c10;
+                                            i25 = i25;
                                             iArr2 = iArr3;
+                                            i21 = 1;
                                         }
                                         iArr = iArr2;
-                                        aVar.c = true;
+                                        boolean z10 = i21;
+                                        aVar.c = z10;
+                                        i16 = z10;
                                         break;
                                     }
                                     iArr = iArr2;
-                                    break;
+                                    i16 = i21;
                                 case 21:
                                     if (D >= 4) {
                                         vVar2.K(3);
-                                        int i21 = D - 4;
-                                        if ((128 & vVar2.x()) != 0) {
-                                            if (i21 >= 7) {
-                                                int A = vVar2.A();
-                                                if (A >= 4) {
-                                                    aVar.h = vVar2.D();
-                                                    aVar.i = vVar2.D();
-                                                    vVar3.G(A - 4);
-                                                    i21 = D - 11;
-                                                }
-                                                iArr = iArr2;
-                                                break;
+                                        int i27 = D - 4;
+                                        if (((128 & vVar2.x()) != 0 ? i21 : i19) != 0) {
+                                            if (i27 >= 7 && (A = vVar2.A()) >= 4) {
+                                                aVar.h = vVar2.D();
+                                                aVar.i = vVar2.D();
+                                                vVar3.G(A - 4);
+                                                i27 = D - 11;
                                             }
                                         }
-                                        int i22 = vVar3.b;
-                                        int i23 = vVar3.c;
-                                        if (i22 < i23 && i21 > 0) {
-                                            int min = Math.min(i21, i23 - i22);
-                                            vVar2.h(i22, min, vVar3.a);
-                                            vVar3.J(i22 + min);
+                                        int i28 = vVar3.b;
+                                        int i29 = vVar3.c;
+                                        if (i28 < i29 && i27 > 0) {
+                                            int min = Math.min(i27, i29 - i28);
+                                            vVar2.h(i28, min, vVar3.a);
+                                            vVar3.J(i28 + min);
                                         }
-                                        iArr = iArr2;
                                     }
                                     iArr = iArr2;
+                                    i16 = i21;
+                                    break;
                                 case 22:
                                     if (D >= 19) {
                                         aVar.d = vVar2.D();
@@ -194,31 +211,35 @@ public final class s implements z3.m {
                                     }
                                 default:
                                     iArr = iArr2;
+                                    i16 = i21;
                                     break;
                             }
+                            i13 = 0;
                             bVar = null;
+                            i12 = i16;
                         } else {
                             iArr = iArr2;
-                            if (aVar.d == 0 || aVar.e == 0 || aVar.h == 0 || aVar.i == 0 || (i12 = vVar3.c) == 0 || vVar3.b != i12 || !aVar.c) {
+                            i12 = i21;
+                            if (aVar.d == 0 || aVar.e == 0 || aVar.h == 0 || aVar.i == 0 || (i14 = vVar3.c) == 0 || vVar3.b != i14 || !aVar.c) {
                                 bVar = null;
                             } else {
                                 vVar3.J(0);
-                                int i24 = aVar.h * aVar.i;
-                                int[] iArr4 = new int[i24];
-                                int i25 = 0;
-                                while (i25 < i24) {
+                                int i30 = aVar.h * aVar.i;
+                                int[] iArr4 = new int[i30];
+                                int i31 = 0;
+                                while (i31 < i30) {
                                     int x15 = vVar3.x();
                                     if (x15 != 0) {
-                                        i13 = i25 + 1;
-                                        iArr4[i25] = iArr[x15];
+                                        i15 = i31 + 1;
+                                        iArr4[i31] = iArr[x15];
                                     } else {
                                         int x16 = vVar3.x();
                                         if (x16 != 0) {
-                                            i13 = ((x16 & 64) == 0 ? x16 & 63 : ((x16 & 63) << 8) | vVar3.x()) + i25;
-                                            Arrays.fill(iArr4, i25, i13, (x16 & 128) == 0 ? iArr[0] : iArr[vVar3.x()]);
+                                            i15 = ((x16 & 64) == 0 ? x16 & 63 : ((x16 & 63) << 8) | vVar3.x()) + i31;
+                                            Arrays.fill(iArr4, i31, i15, (x16 & 128) == 0 ? iArr[0] : iArr[vVar3.x()]);
                                         }
                                     }
-                                    i25 = i13;
+                                    i31 = i15;
                                 }
                                 Bitmap createBitmap = Bitmap.createBitmap(iArr4, aVar.h, aVar.i, Bitmap.Config.ARGB_8888);
                                 float f7 = aVar.f;
@@ -228,6 +249,7 @@ public final class s implements z3.m {
                                 float f13 = aVar.e;
                                 bVar = new d2.b(null, null, null, createBitmap, f12 / f13, 0, 0, f11, 0, TLObject.FLAG_31, -3.4028235E38f, aVar.h / f10, aVar.i / f13, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                             }
+                            i13 = 0;
                             aVar.d = 0;
                             aVar.e = 0;
                             aVar.f = 0;
@@ -237,15 +259,18 @@ public final class s implements z3.m {
                             vVar3.G(0);
                             aVar.c = false;
                         }
-                        vVar2.J(i18);
+                        vVar2.J(i24);
                         bVar2 = bVar;
+                        i17 = i12;
                     }
                     if (bVar2 != null) {
                         arrayList.add(bVar2);
                     }
+                    i19 = i13;
                     iArr2 = iArr;
-                    i15 = 0;
-                    i16 = 2;
+                    i20 = 2;
+                    i22 = 3;
+                    i21 = i17;
                 }
                 hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
                 break;
@@ -258,7 +283,7 @@ public final class s implements z3.m {
                 if (((Inflater) this.e) == null) {
                     this.e = new Inflater();
                 }
-                if (e2.d0.O(vVar4, vVar5, (Inflater) this.e)) {
+                if (e2.d0.N(vVar4, vVar5, (Inflater) this.e)) {
                     vVar4.H(vVar5.c, vVar5.a);
                 }
                 aVar2.c = false;
@@ -285,7 +310,7 @@ public final class s implements z3.m {
                                         iArr6[1] = h4.a.a(x18 >> 4, iArr5);
                                         iArr6[0] = h4.a.a(x18 & 15, iArr5);
                                         aVar2.c = true;
-                                        i14 = 4;
+                                        i18 = 4;
                                     }
                                 case 4:
                                     if (vVar4.a() >= 2 && aVar2.c) {
@@ -295,7 +320,7 @@ public final class s implements z3.m {
                                         iArr6[2] = h4.a.c(iArr6[2], x19 & 15);
                                         iArr6[1] = h4.a.c(iArr6[1], x20 >> 4);
                                         iArr6[0] = h4.a.c(iArr6[0], x20 & 15);
-                                        i14 = 4;
+                                        i18 = 4;
                                     }
                                     break;
                                 case 5:
@@ -304,15 +329,15 @@ public final class s implements z3.m {
                                     } else {
                                         int x21 = vVar4.x();
                                         int x22 = vVar4.x();
-                                        int i26 = (x21 << i14) | (x22 >> 4);
+                                        int i32 = (x21 << i18) | (x22 >> 4);
                                         int x23 = ((x22 & 15) << 8) | vVar4.x();
                                         int x24 = vVar4.x();
                                         int x25 = vVar4.x();
-                                        aVar2.g = new Rect(i26, (x24 << 4) | (x25 >> 4), x23 + 1, (((x25 & 15) << 8) | vVar4.x()) + 1);
-                                        i14 = 4;
+                                        aVar2.g = new Rect(i32, (x24 << 4) | (x25 >> 4), x23 + 1, (((x25 & 15) << 8) | vVar4.x()) + 1);
+                                        i18 = 4;
                                     }
                                 case 6:
-                                    if (vVar4.a() < i14) {
+                                    if (vVar4.a() < i18) {
                                         break;
                                     } else {
                                         aVar2.h = vVar4.D();
@@ -324,13 +349,13 @@ public final class s implements z3.m {
                     if (aVar2.d != null && aVar2.b && aVar2.c && (rect = aVar2.g) != null && aVar2.h != -1 && aVar2.i != -1 && rect.width() >= 2 && aVar2.g.height() >= 2) {
                         Rect rect2 = aVar2.g;
                         int[] iArr7 = new int[rect2.height() * rect2.width()];
-                        a4.h hVar2 = new a4.h();
+                        a4.g gVar = new a4.g();
                         vVar4.J(aVar2.h);
-                        hVar2.p(vVar4);
-                        aVar2.b(hVar2, true, rect2, iArr7);
+                        gVar.p(vVar4);
+                        aVar2.b(gVar, true, rect2, iArr7);
                         vVar4.J(aVar2.i);
-                        hVar2.p(vVar4);
-                        aVar2.b(hVar2, false, rect2, iArr7);
+                        gVar.p(vVar4);
+                        aVar2.b(gVar, false, rect2, iArr7);
                         bVar3 = new d2.b(null, null, null, Bitmap.createBitmap(iArr7, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.f, 0, 0, rect2.left / aVar2.e, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.e, rect2.height() / aVar2.f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                         if (bVar3 == null) {
                             a1Var = i0.z(bVar3);
@@ -372,10 +397,10 @@ public final class s implements z3.m {
             str = str.concat(" parameterKey");
         }
         if (((String) this.d) == null) {
-            str = sa.e.v(str, " parameterValue");
+            str = sc.v.v(str, " parameterValue");
         }
         if (((Long) this.e) == null) {
-            str = sa.e.v(str, " templateVersion");
+            str = sc.v.v(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
@@ -403,70 +428,76 @@ public final class s implements z3.m {
         return ((Boolean) this.c).booleanValue();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x026a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0269, code lost:
     
         r2 = r4;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x016d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0185 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r3v8, types: [be.h, ee.t] */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x026b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0181  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x020d  */
+    /* JADX WARN: Type inference failed for: r2v19, types: [ce.h, fe.d, fe.t] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void f(k1.k kVar) {
-        be.b bVar;
-        com.google.android.gms.internal.clearcut.e eVar;
+        ce.b bVar;
+        da.a aVar;
         int i10;
         int i11;
-        k1.k kVar2;
-        be.h hVar;
-        long j3;
         boolean z10;
-        com.google.android.gms.internal.clearcut.e eVar2;
+        k1.k kVar2;
+        ce.h hVar;
+        da.a aVar2;
+        long j3;
+        boolean z11;
         int i12;
         int i13;
-        int i14;
         Object obj;
         Object a2;
-        int i15;
-        be.h hVar2;
-        k1.k kVar3;
-        ee.d dVar;
         long j10;
-        be.c cVar;
+        ce.h hVar2;
+        k1.k kVar3;
+        AtomicLongFieldUpdater atomicLongFieldUpdater;
+        ce.c cVar;
         k1.k kVar4 = kVar;
-        be.b bVar2 = (be.b) this.d;
+        ce.b bVar2 = (ce.b) this.d;
         bVar2.getClass();
-        AtomicLongFieldUpdater atomicLongFieldUpdater = be.b.b;
-        boolean z11 = false;
+        AtomicLongFieldUpdater atomicLongFieldUpdater2 = ce.b.b;
+        boolean z12 = false;
+        boolean z13 = true;
         long j11 = 1152921504606846975L;
-        boolean z12 = bVar2.i(atomicLongFieldUpdater.get(bVar2), false) ? false : !bVar2.a(r2 & 1152921504606846975L);
-        Object obj2 = be.g.a;
-        if (!z12) {
-            com.google.android.gms.internal.clearcut.e eVar3 = be.d.j;
-            be.h hVar3 = (be.h) be.b.f.get(bVar2);
+        boolean z14 = bVar2.i(atomicLongFieldUpdater2.get(bVar2), false) ? false : !bVar2.a(r2 & 1152921504606846975L);
+        Object obj2 = ce.g.a;
+        if (z14) {
+            obj = obj2;
+        } else {
+            da.a aVar3 = ce.d.j;
+            ce.h hVar3 = (ce.h) ce.b.f.get(bVar2);
             while (true) {
-                long andIncrement = atomicLongFieldUpdater.getAndIncrement(bVar2);
+                long andIncrement = atomicLongFieldUpdater2.getAndIncrement(bVar2);
                 long j12 = andIncrement & j11;
-                boolean i16 = bVar2.i(andIncrement, z11);
-                int i17 = be.d.b;
-                long j13 = i17;
+                boolean i14 = bVar2.i(andIncrement, z12);
+                int i15 = ce.d.b;
+                long j13 = i15;
                 long j14 = j11;
                 long j15 = j12 / j13;
-                int i18 = (int) (j12 % j13);
+                int i16 = (int) (j12 % j13);
                 if (hVar3.c != j15) {
-                    AtomicLongFieldUpdater atomicLongFieldUpdater2 = be.b.c;
-                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = be.b.f;
-                    be.h hVar4 = be.d.a;
-                    be.c cVar2 = be.c.a;
+                    AtomicLongFieldUpdater atomicLongFieldUpdater3 = ce.b.c;
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ce.b.f;
+                    ce.h hVar4 = ce.d.a;
+                    ce.c cVar2 = ce.c.a;
                     while (true) {
-                        a2 = ee.a.a(hVar3, j15, cVar2);
-                        if (!ee.a.d(a2)) {
-                            ee.t b10 = ee.a.b(a2);
+                        a2 = fe.a.a(hVar3, j15, cVar2);
+                        if (!fe.a.d(a2)) {
+                            fe.t b10 = fe.a.b(a2);
                             while (true) {
-                                ee.t tVar = (ee.t) atomicReferenceFieldUpdater.get(bVar2);
-                                i15 = i18;
+                                fe.t tVar = (fe.t) atomicReferenceFieldUpdater.get(bVar2);
+                                z10 = z13;
+                                j10 = j15;
+                                aVar = aVar3;
                                 cVar = cVar2;
                                 if (tVar.c >= b10.c) {
                                     break;
@@ -479,7 +510,9 @@ public final class s implements z3.m {
                                         if (b10.f()) {
                                             b10.e();
                                         }
-                                        i18 = i15;
+                                        aVar3 = aVar;
+                                        z13 = z10;
+                                        j15 = j10;
                                         cVar2 = cVar;
                                     }
                                 }
@@ -488,252 +521,250 @@ public final class s implements z3.m {
                                 }
                             }
                         } else {
-                            i15 = i18;
+                            z10 = z13;
+                            j10 = j15;
+                            aVar = aVar3;
                             break;
                         }
-                        i18 = i15;
+                        aVar3 = aVar;
+                        z13 = z10;
+                        j15 = j10;
                         cVar2 = cVar;
                     }
-                    if (ee.a.d(a2)) {
+                    if (fe.a.d(a2)) {
                         bVar2.c();
-                        if (hVar3.c * be.d.b < atomicLongFieldUpdater2.get(bVar2)) {
+                        if (hVar3.c * ce.d.b < atomicLongFieldUpdater3.get(bVar2)) {
                             hVar3.b();
-                            be.h hVar5 = hVar3;
+                            ce.h hVar5 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar5;
-                            eVar = eVar3;
-                            i10 = i17;
-                            i11 = i15;
+                            i10 = i15;
+                            i11 = i16;
                             kVar3 = null;
                             kVar2 = null;
                             if (kVar3 == null) {
                                 hVar = kVar3;
                             } else {
-                                if (i16) {
-                                    obj = new be.e(bVar.f());
+                                if (i14) {
+                                    obj = new ce.e(bVar.f());
                                     break;
                                 }
-                                be.b bVar3 = bVar;
+                                ce.b bVar3 = bVar;
                                 hVar3 = hVar2;
                                 bVar2 = bVar3;
+                                aVar3 = aVar;
                                 j11 = j14;
-                                eVar3 = eVar;
-                                z11 = false;
+                                z13 = z10;
+                                z12 = false;
                             }
                         } else {
-                            be.h hVar6 = hVar3;
+                            ce.h hVar6 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar6;
-                            eVar = eVar3;
-                            i10 = i17;
-                            i11 = i15;
+                            i10 = i15;
+                            i11 = i16;
                             kVar2 = null;
                             kVar3 = kVar2;
                             if (kVar3 == null) {
                             }
                         }
                     } else {
-                        ?? r32 = (be.h) ee.a.b(a2);
-                        long j16 = r32.c;
-                        if (j16 > j15) {
-                            long j17 = be.d.b * j16;
-                            AtomicLongFieldUpdater atomicLongFieldUpdater3 = be.b.b;
-                            int i19 = i17;
-                            long j18 = j16;
-                            ee.d dVar2 = r32;
+                        ?? r22 = (ce.h) fe.a.b(a2);
+                        long j16 = r22.c;
+                        if (j16 > j10) {
+                            long j17 = ce.d.b * j16;
+                            AtomicLongFieldUpdater atomicLongFieldUpdater4 = ce.b.b;
+                            int i17 = i15;
+                            int i18 = i16;
                             while (true) {
-                                long j19 = atomicLongFieldUpdater3.get(bVar2);
-                                long j20 = j19 & j14;
-                                if (j20 >= j17) {
-                                    be.h hVar7 = hVar3;
+                                long j18 = atomicLongFieldUpdater4.get(bVar2);
+                                long j19 = j18 & j14;
+                                if (j19 >= j17) {
+                                    ce.h hVar7 = hVar3;
                                     bVar = bVar2;
                                     hVar2 = hVar7;
-                                    eVar = eVar3;
-                                    dVar = dVar2;
-                                    i10 = i19;
-                                    j10 = j18;
-                                    i11 = i15;
+                                    atomicLongFieldUpdater = atomicLongFieldUpdater3;
+                                    i11 = i18;
                                     kVar2 = null;
+                                    i10 = i17;
                                     break;
                                 }
-                                be.b bVar4 = bVar2;
-                                eVar = eVar3;
-                                long j21 = (((int) (j19 >> 60)) << 60) + j20;
-                                i10 = i19;
-                                j10 = j18;
+                                ce.b bVar4 = bVar2;
+                                long j20 = j17;
+                                AtomicLongFieldUpdater atomicLongFieldUpdater5 = atomicLongFieldUpdater4;
+                                i11 = i18;
                                 kVar2 = null;
-                                dVar = dVar2;
+                                i10 = i17;
                                 hVar2 = hVar3;
-                                i11 = i15;
+                                atomicLongFieldUpdater = atomicLongFieldUpdater3;
                                 bVar = bVar4;
-                                if (be.b.b.compareAndSet(bVar, j19, j21)) {
+                                if (ce.b.b.compareAndSet(bVar, j18, (((int) (j18 >> 60)) << 60) + j19)) {
                                     break;
                                 }
                                 hVar3 = hVar2;
                                 bVar2 = bVar;
-                                i15 = i11;
-                                i19 = i10;
-                                j18 = j10;
-                                dVar2 = dVar;
-                                eVar3 = eVar;
+                                atomicLongFieldUpdater3 = atomicLongFieldUpdater;
+                                i17 = i10;
+                                atomicLongFieldUpdater4 = atomicLongFieldUpdater5;
+                                i18 = i11;
+                                j17 = j20;
                             }
-                            if (j10 * be.d.b < atomicLongFieldUpdater2.get(bVar)) {
-                                dVar.b();
+                            if (j16 * ce.d.b < atomicLongFieldUpdater.get(bVar)) {
+                                r22.b();
                             }
                             kVar3 = kVar2;
                             if (kVar3 == null) {
                             }
                         } else {
-                            be.h hVar8 = hVar3;
+                            ce.h hVar8 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar8;
-                            eVar = eVar3;
-                            i10 = i17;
-                            i11 = i15;
+                            i10 = i15;
+                            i11 = i16;
                             kVar2 = null;
-                            kVar3 = r32;
+                            kVar3 = r22;
                             if (kVar3 == null) {
                             }
                         }
                     }
                 } else {
-                    be.h hVar9 = hVar3;
+                    ce.h hVar9 = hVar3;
                     bVar = bVar2;
-                    eVar = eVar3;
-                    i10 = i17;
-                    i11 = i18;
+                    aVar = aVar3;
+                    i10 = i15;
+                    i11 = i16;
+                    z10 = z13;
                     kVar2 = null;
                     hVar = hVar9;
                 }
                 hVar.n(i11, kVar4);
-                if (i16) {
+                if (i14) {
                     bVar2 = bVar;
+                    aVar2 = aVar;
                     j3 = j12;
-                    z10 = i16;
-                    eVar2 = eVar;
+                    z11 = i14;
                     i12 = 2;
-                    i14 = bVar2.p(hVar, i11, kVar4, j3, eVar2, z10);
-                    i13 = 1;
+                    i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
                 } else {
                     bVar2 = bVar;
+                    aVar2 = aVar;
                     j3 = j12;
-                    z10 = i16;
+                    z11 = i14;
                     k1.k kVar5 = kVar2;
-                    eVar2 = eVar;
                     i12 = 2;
                     Object l4 = hVar.l(i11);
-                    if (l4 != null) {
-                        if (l4 instanceof i2) {
+                    if (l4 == null) {
+                        if (bVar2.a(j3)) {
+                            if (hVar.k(i11, kVar5, ce.d.d)) {
+                                z13 = z10;
+                                i13 = z13;
+                                Object obj3 = hd.i.a;
+                                if (i13 == 0) {
+                                    hVar.b();
+                                    break;
+                                }
+                                if (i13 == z13) {
+                                    break;
+                                }
+                                if (i13 != i12) {
+                                    if (i13 == 3) {
+                                        throw new IllegalStateException("unexpected");
+                                    }
+                                    if (i13 != 4) {
+                                        if (i13 == 5) {
+                                            hVar.b();
+                                        }
+                                        kVar4 = kVar;
+                                        hVar3 = hVar;
+                                        aVar3 = aVar2;
+                                        j11 = j14;
+                                        z12 = false;
+                                    } else {
+                                        if (j3 < ce.b.c.get(bVar2)) {
+                                            hVar.b();
+                                        }
+                                        obj = new ce.e(bVar2.f());
+                                    }
+                                } else if (z11) {
+                                    hVar.i();
+                                    obj = new ce.e(bVar2.f());
+                                } else {
+                                    k2 k2Var = aVar2 instanceof k2 ? (k2) aVar2 : null;
+                                    if (k2Var != null) {
+                                        k2Var.b(hVar, i11 + i10);
+                                    }
+                                    hVar.i();
+                                    obj = obj2;
+                                }
+                            }
+                        } else if (aVar2 == null) {
+                            i13 = 3;
+                        } else if (hVar.k(i11, kVar5, aVar2)) {
+                            i13 = 2;
+                        }
+                        z13 = z10;
+                        i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
+                        Object obj32 = hd.i.a;
+                        if (i13 == 0) {
+                        }
+                    } else {
+                        if (l4 instanceof k2) {
                             hVar.n(i11, kVar5);
                             if (bVar2.m(l4, kVar4)) {
-                                hVar.o(i11, be.d.i);
-                                i13 = 1;
-                                i14 = 0;
+                                hVar.o(i11, ce.d.i);
+                                z13 = z10;
+                                i13 = 0;
                             } else {
-                                com.google.android.gms.internal.clearcut.e eVar4 = be.d.k;
-                                if (hVar.f.getAndSet((i11 * 2) + 1, eVar4) != eVar4) {
-                                    i13 = 1;
-                                    hVar.m(i11, true);
+                                da.a aVar4 = ce.d.k;
+                                if (hVar.f.getAndSet((i11 * 2) + 1, aVar4) != aVar4) {
+                                    z13 = z10;
+                                    hVar.m(i11, z13);
                                 } else {
-                                    i13 = 1;
+                                    z13 = z10;
                                 }
-                                i14 = 5;
+                                i13 = 5;
+                            }
+                            Object obj322 = hd.i.a;
+                            if (i13 == 0) {
                             }
                         }
-                        i13 = 1;
-                        i14 = bVar2.p(hVar, i11, kVar4, j3, eVar2, z10);
-                    } else if (bVar2.a(j3)) {
-                        if (hVar.k(i11, kVar5, be.d.d)) {
-                            i13 = 1;
-                            i14 = 1;
+                        z13 = z10;
+                        i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
+                        Object obj3222 = hd.i.a;
+                        if (i13 == 0) {
                         }
-                        i13 = 1;
-                        i14 = bVar2.p(hVar, i11, kVar4, j3, eVar2, z10);
-                    } else if (eVar2 == null) {
-                        i13 = 1;
-                        i14 = 3;
-                    } else {
-                        if (hVar.k(i11, kVar5, eVar2)) {
-                            i13 = 1;
-                            i14 = 2;
-                        }
-                        i13 = 1;
-                        i14 = bVar2.p(hVar, i11, kVar4, j3, eVar2, z10);
                     }
                 }
-                Object obj3 = gd.i.a;
-                if (i14 == 0) {
-                    hVar.b();
-                    break;
-                }
-                if (i14 == i13) {
-                    break;
-                }
-                if (i14 != i12) {
-                    if (i14 == 3) {
-                        throw new IllegalStateException("unexpected");
-                    }
-                    if (i14 != 4) {
-                        if (i14 == 5) {
-                            hVar.b();
-                        }
-                        kVar4 = kVar;
-                        hVar3 = hVar;
-                        eVar3 = eVar2;
-                        j11 = j14;
-                        z11 = false;
-                    } else {
-                        if (j3 < be.b.c.get(bVar2)) {
-                            hVar.b();
-                        }
-                        obj = new be.e(bVar2.f());
-                    }
-                } else if (z10) {
-                    hVar.i();
-                    obj = new be.e(bVar2.f());
-                } else {
-                    i2 i2Var = eVar2 instanceof i2 ? (i2) eVar2 : null;
-                    if (i2Var != null) {
-                        i2Var.a(hVar, i11 + i10);
-                    }
-                    hVar.i();
-                    obj = obj2;
+                z13 = z10;
+                Object obj32222 = hd.i.a;
+                if (i13 == 0) {
                 }
             }
-        } else {
-            obj = obj2;
         }
         i12 = 2;
-        if (obj instanceof be.e) {
-            Throwable th2 = ((be.e) obj).a;
+        if (obj instanceof ce.e) {
+            Throwable th2 = ((ce.e) obj).a;
             if (th2 != null) {
                 throw th2;
             }
             throw new b2.v("Channel was closed normally");
         }
-        if (obj instanceof be.f) {
+        if (obj instanceof ce.f) {
             throw new IllegalStateException("Check failed.");
         }
         if (((AtomicInteger) this.e).getAndIncrement() == 0) {
-            zd.e0.q((zd.c0) this.b, new bb.i(this, null, i12));
+            ae.g0.q((ae.d0) this.b, new bb.i(this, null, i12));
         }
     }
 
-    @Override // z3.m
-    public /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return sa.e.a(this, bArr, i11);
-    }
-
-    public m2.b k(List list) {
+    public m2.b j(List list) {
         m2.b bVar;
         HashMap hashMap = (HashMap) this.d;
         ArrayList a2 = a(list);
         if (a2.size() < 2) {
             return (m2.b) e9.q.k(a2, null);
         }
-        Collections.sort(a2, new a4.e(20));
+        Collections.sort(a2, new a4.d(20));
         ArrayList arrayList = new ArrayList();
         int i10 = 0;
         int i11 = ((m2.b) a2.get(0)).c;
@@ -777,20 +808,20 @@ public final class s implements z3.m {
         return bVar;
     }
 
-    public Task l(Callable callable) {
+    public Task k(Callable callable) {
         Task continueWith;
         synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new w9.k(callable));
-            this.c = continueWith.continueWith((Executor) this.b, new rb.a(24));
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new m2.t(callable, 21));
+            this.c = continueWith.continueWith((Executor) this.b, new ob.a(25));
         }
         return continueWith;
     }
 
-    public Task m(Callable callable) {
+    public Task l(Callable callable) {
         Task continueWithTask;
         synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new w9.k(callable));
-            this.c = continueWithTask.continueWith((Executor) this.b, new rb.a(24));
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new m2.t(callable, 21));
+            this.c = continueWithTask.continueWith((Executor) this.b, new ob.a(25));
         }
         return continueWithTask;
     }
@@ -800,20 +831,20 @@ public final class s implements z3.m {
         int i10 = this.a;
     }
 
+    @Override // z3.m
+    public /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        switch (this.a) {
+        }
+        return sc.v.a(this, bArr, i11);
+    }
+
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((n4) this.e).toString();
+                return ((m2.t) this.e).toString();
             default:
                 return super.toString();
         }
-    }
-
-    @Override // z3.m
-    public int y() {
-        switch (this.a) {
-        }
-        return 2;
     }
 
     public /* synthetic */ s(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
@@ -824,18 +855,18 @@ public final class s implements z3.m {
         this.e = obj4;
     }
 
-    public s(zd.c0 c0Var, ie.g gVar, k1.m mVar) {
+    public s(ae.d0 d0Var, je.g gVar, k1.m mVar) {
         this.a = 5;
-        this.b = c0Var;
+        this.b = d0Var;
         this.c = mVar;
-        be.a[] aVarArr = be.a.a;
-        this.d = new be.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        ce.a[] aVarArr = ce.a.a;
+        this.d = new ce.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
         this.e = new AtomicInteger(0);
-        f1 f1Var = (f1) c0Var.c().get(zd.b0.b);
-        if (f1Var == null) {
+        h1 h1Var = (h1) d0Var.c().get(ae.c0.b);
+        if (h1Var == null) {
             return;
         }
-        f1Var.invokeOnCompletion(new ae.d(1, gVar, this));
+        h1Var.invokeOnCompletion(new be.d(1, gVar, this));
     }
 
     public s(ExecutorService executorService) {
@@ -844,7 +875,7 @@ public final class s implements z3.m {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new c1(this, 7));
+        executorService.execute(new n5(this, 10));
     }
 
     public s(List list) {
@@ -884,10 +915,10 @@ public final class s implements z3.m {
         }
     }
 
-    private final /* synthetic */ void i() {
+    private final /* synthetic */ void h() {
     }
 
-    private final /* synthetic */ void j() {
+    private final /* synthetic */ void i() {
     }
 
     public s(Typeface typeface, p1.b bVar) {
@@ -944,9 +975,9 @@ public final class s implements z3.m {
         }
     }
 
-    public s(n4 n4Var, Object obj, Object obj2, Object[] objArr) {
+    public s(m2.t tVar, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = n4Var;
+        this.e = tVar;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;
@@ -976,11 +1007,11 @@ public final class s implements z3.m {
         }
     }
 
-    public s(p1 p1Var, boolean[] zArr) {
+    public s(o1 o1Var, boolean[] zArr) {
         this.a = 11;
-        this.b = p1Var;
+        this.b = o1Var;
         this.c = zArr;
-        int i10 = p1Var.a;
+        int i10 = o1Var.a;
         this.d = new boolean[i10];
         this.e = new boolean[i10];
     }

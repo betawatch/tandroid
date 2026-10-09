@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,7 +38,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -69,6 +69,7 @@ public class Track {
 
     public Track(int i10, MediaFormat mediaFormat, boolean z10) {
         int i11;
+        boolean z11;
         int i12;
         this.syncSamples = null;
         this.volume = 0.0f;
@@ -106,9 +107,11 @@ public class Track {
             dVar.g = 1536;
             if (mediaFormat.containsKey("max-bitrate")) {
                 i11 = 13;
+                z11 = 7;
                 dVar.h = mediaFormat.getInteger("max-bitrate");
             } else {
                 i11 = 13;
+                z11 = 7;
                 dVar.h = 96000L;
             }
             dVar.i = this.timeScale;
@@ -187,7 +190,7 @@ public class Track {
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            e2.q(re.a.c(lc.a.h, bVar2, bVar2, allocate));
+            e2.q(se.a.c(lc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -224,19 +227,19 @@ public class Track {
             byte[] array = mediaFormat.getByteBuffer("csd-0").array();
             int i14 = -1;
             int i15 = -1;
-            int i16 = 0;
-            int i17 = -1;
+            int i16 = -1;
+            int i17 = 0;
             for (int i18 = 0; i18 < array.length; i18++) {
-                if (i16 == 3 && array[i18] == 1) {
-                    if (i17 == -1) {
-                        i17 = i18 - 3;
+                if (i17 == 3 && array[i18] == 1) {
+                    if (i16 == -1) {
+                        i16 = i18 - 3;
                     } else if (i14 == -1) {
                         i14 = i18 - 3;
                     } else if (i15 == -1) {
                         i15 = i18 - 3;
                     }
                 }
-                i16 = array[i18] == 0 ? i16 + 1 : 0;
+                i17 = array[i18] == 0 ? i17 + 1 : 0;
             }
             byte[] bArr = new byte[i14 - 4];
             byte[] bArr2 = new byte[(i15 - i14) - 4];
@@ -306,9 +309,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            e2.q(re.a.c(rc.a.h, aVar5, aVar5, arrayList));
+            e2.q(se.a.c(rc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            e2.q(re.a.c(rc.a.n, aVar5, aVar5, arrayList2));
+            e2.q(se.a.c(rc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -371,17 +374,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        e2.q(re.a.c(rc.a.s, aVar5, aVar5, new Integer(-1)));
+        e2.q(se.a.c(rc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        e2.q(re.a.c(rc.a.v, aVar5, aVar5, new Integer(-1)));
+        e2.q(se.a.c(rc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        e2.q(re.a.c(rc.a.r, aVar5, aVar5, new Integer(-1)));
+        e2.q(se.a.c(rc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        e2.q(re.a.c(rc.a.b, aVar5, aVar5, new Integer(1)));
+        e2.q(se.a.c(rc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        e2.q(re.a.c(rc.a.f, aVar5, aVar5, new Integer(3)));
+        e2.q(se.a.c(rc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        e2.q(re.a.c(rc.a.d, aVar5, aVar5, new Integer(0)));
+        e2.q(se.a.c(rc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);

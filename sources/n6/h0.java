@@ -1,105 +1,133 @@
 package n6;
 
-import android.content.ComponentName;
+import android.app.PendingIntent;
+import android.content.ContentProviderClient;
+import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Build;
-import android.os.IBinder;
-import android.os.StrictMode;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.Executor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class h0 implements ServiceConnection {
-    public final HashMap a = new HashMap();
-    public int b = 2;
-    public boolean c;
-    public IBinder d;
-    public final g0 e;
-    public ComponentName f;
-    public final /* synthetic */ j0 h;
+public final class h0 {
+    public static final Uri d = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").build();
+    public final String a;
+    public final String b;
+    public final boolean c;
 
-    public h0(j0 j0Var, g0 g0Var) {
-        this.h = j0Var;
-        this.e = g0Var;
+    public h0(String str, String str2, boolean z10) {
+        l.f(str);
+        this.a = str;
+        l.f(str2);
+        this.b = str2;
+        this.c = z10;
     }
 
-    public static k6.a a(h0 h0Var, String str, Executor executor) {
-        try {
-            Intent a2 = h0Var.e.a(h0Var.h.b);
-            h0Var.b = 3;
-            StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
-            if (Build.VERSION.SDK_INT >= 31) {
-                StrictMode.setVmPolicy(u6.g.a(new StrictMode.VmPolicy.Builder(vmPolicy)).build());
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00a6 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Intent a(Context context) {
+        Bundle bundle;
+        PendingIntent pendingIntent;
+        ContentProviderClient acquireUnstableContentProviderClient;
+        Intent intent = null;
+        String str = this.a;
+        if (str == null) {
+            return new Intent().setComponent(null);
+        }
+        if (this.c) {
+            Bundle bundle2 = new Bundle();
+            bundle2.putString("serviceActionBundleKey", str);
+            try {
+                acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(d);
+            } catch (RemoteException e7) {
+                e = e7;
+                bundle = null;
+                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                if (bundle == null) {
+                }
+                if (intent == null) {
+                }
+                if (intent == null) {
+                }
+            } catch (IllegalArgumentException e10) {
+                e = e10;
+                bundle = null;
+                Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                if (bundle == null) {
+                }
+                if (intent == null) {
+                }
+                if (intent == null) {
+                }
+            }
+            if (acquireUnstableContentProviderClient == null) {
+                throw new RemoteException("Failed to acquire ContentProviderClient");
             }
             try {
-                j0 j0Var = h0Var.h;
-                boolean c10 = j0Var.d.c(j0Var.b, str, a2, h0Var, 4225, executor);
-                h0Var.c = c10;
-                if (c10) {
-                    h0Var.h.c.sendMessageDelayed(h0Var.h.c.obtainMessage(1, h0Var.e), h0Var.h.f);
-                    k6.a aVar = k6.a.e;
-                    StrictMode.setVmPolicy(vmPolicy);
-                    return aVar;
-                }
-                h0Var.b = 2;
+                bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
                 try {
-                    j0 j0Var2 = h0Var.h;
-                    j0Var2.d.b(j0Var2.b, h0Var);
-                } catch (IllegalArgumentException unused) {
+                } catch (RemoteException e11) {
+                    e = e11;
+                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                    if (bundle == null) {
+                    }
+                    if (intent == null) {
+                    }
+                    if (intent == null) {
+                    }
+                } catch (IllegalArgumentException e12) {
+                    e = e12;
+                    Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
+                    if (bundle == null) {
+                    }
+                    if (intent == null) {
+                    }
+                    if (intent == null) {
+                    }
                 }
-                k6.a aVar2 = new k6.a(16);
-                StrictMode.setVmPolicy(vmPolicy);
-                return aVar2;
-            } catch (Throwable th2) {
-                StrictMode.setVmPolicy(vmPolicy);
-                throw th2;
-            }
-        } catch (z e7) {
-            return e7.a;
-        }
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onBindingDied(ComponentName componentName) {
-        onServiceDisconnected(componentName);
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        synchronized (this.h.a) {
-            try {
-                this.h.c.removeMessages(1, this.e);
-                this.d = iBinder;
-                this.f = componentName;
-                Iterator it = this.a.values().iterator();
-                while (it.hasNext()) {
-                    ((ServiceConnection) it.next()).onServiceConnected(componentName, iBinder);
+                if (bundle == null && (intent = (Intent) bundle.getParcelable("serviceResponseIntentKey")) == null && (pendingIntent = (PendingIntent) bundle.getParcelable("serviceMissingResolutionIntentKey")) != null) {
+                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action " + str + " but has possible resolution");
+                    throw new a0(new k6.a(25, pendingIntent));
                 }
-                this.b = 1;
-            } catch (Throwable th2) {
-                throw th2;
+                if (intent == null) {
+                    Log.w("ConnectionStatusConfig", "Dynamic lookup for intent failed for action: ".concat(str));
+                }
+            } finally {
+                acquireUnstableContentProviderClient.release();
             }
         }
+        return intent == null ? new Intent(str).setPackage(this.b) : intent;
     }
 
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        synchronized (this.h.a) {
-            try {
-                this.h.c.removeMessages(1, this.e);
-                this.d = null;
-                this.f = componentName;
-                Iterator it = this.a.values().iterator();
-                while (it.hasNext()) {
-                    ((ServiceConnection) it.next()).onServiceDisconnected(componentName);
-                }
-                this.b = 2;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof h0)) {
+            return false;
+        }
+        h0 h0Var = (h0) obj;
+        return l.l(this.a, h0Var.a) && l.l(this.b, h0Var.b) && l.l(null, null) && this.c == h0Var.c;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, null, 4225, Boolean.valueOf(this.c)});
+    }
+
+    public final String toString() {
+        String str = this.a;
+        if (str != null) {
+            return str;
+        }
+        l.h(null);
+        throw null;
     }
 }

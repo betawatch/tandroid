@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rf implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -26,8 +26,8 @@ public final /* synthetic */ class rf implements Runnable {
         this.e = j10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00e2  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00f7  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -35,8 +35,10 @@ public final /* synthetic */ class rf implements Runnable {
     public final void run() {
         SQLiteCursor sQLiteCursor;
         int i10;
+        boolean z10;
         SQLiteCursor queryFinalized;
         long j3;
+        boolean z11;
         int i11 = this.a;
         Object obj = this.h;
         switch (i11) {
@@ -49,6 +51,7 @@ public final /* synthetic */ class rf implements Runnable {
                 final ArrayList arrayList = new ArrayList();
                 ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
                 ArrayList<TLRPC.Chat> arrayList3 = new ArrayList<>();
+                boolean z12 = true;
                 int i12 = this.b;
                 final MessagesStorage messagesStorage = this.c;
                 final long j11 = this.d;
@@ -56,6 +59,7 @@ public final /* synthetic */ class rf implements Runnable {
                     try {
                         try {
                             i10 = i12;
+                            z10 = false;
                         } catch (Exception e7) {
                             e = e7;
                             i10 = i12;
@@ -96,6 +100,7 @@ public final /* synthetic */ class rf implements Runnable {
                     }
                 } else {
                     i10 = i12;
+                    z10 = false;
                     try {
                         queryFinalized = messagesStorage.getDatabase().queryFinalized("SELECT data, mid FROM messages_v2 WHERE uid = ? AND mid <= ? ORDER BY mid DESC LIMIT 10", Long.valueOf(-j11), Integer.valueOf(i10));
                     } catch (Exception e11) {
@@ -125,11 +130,13 @@ public final /* synthetic */ class rf implements Runnable {
                     ArrayList<Long> arrayList4 = new ArrayList<>();
                     ArrayList arrayList5 = new ArrayList();
                     while (queryFinalized.next()) {
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                        boolean z13 = z10;
+                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(z13 ? 1 : 0);
                         if (byteBufferValue != null) {
-                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
+                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(z13), z13);
                             TLdeserialize.readAttachPath(byteBufferValue, j10);
                             byteBufferValue.reuse();
+                            z11 = true;
                             TLdeserialize.id = queryFinalized.intValue(1);
                             j3 = j10;
                             TLdeserialize.dialog_id = -j11;
@@ -137,8 +144,11 @@ public final /* synthetic */ class rf implements Runnable {
                             arrayList.add(TLdeserialize);
                         } else {
                             j3 = j10;
+                            z11 = z12;
                         }
+                        z12 = z11;
                         j10 = j3;
+                        z10 = false;
                     }
                     queryFinalized.dispose();
                     if (!arrayList.isEmpty()) {

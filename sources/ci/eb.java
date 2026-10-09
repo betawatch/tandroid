@@ -1,46 +1,42 @@
 package ci;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class eb implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ fb b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gb b;
 
-    public /* synthetic */ eb(fb fbVar, Runnable runnable, boolean z10) {
-        this.b = fbVar;
-        this.c = runnable;
-        this.d = z10;
+    public /* synthetic */ eb(gb gbVar, int i10) {
+        this.a = i10;
+        this.b = gbVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f(this.c, this.d);
+                lc lcVar = this.b.a;
+                f7 f7Var = lcVar.C0;
+                if (f7Var != null) {
+                    f7Var.c(false);
+                }
+                if (lcVar.Q1 && lcVar.R1 && lcVar.B0 != null) {
+                    lcVar.i0(false);
+                    CameraController.getInstance().stopVideoRecording(lcVar.B0.getCameraSessionRecording(), false, false);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.a.J(1, true);
+                break;
+            case 2:
+                this.b.a.J(1, true);
                 break;
             default:
-                this.c.run();
-                kc kcVar = this.b.a;
-                b4 b4Var = kcVar.T0;
-                b4Var.a.q(LocaleController.getString(this.d ? R.string.StoryHintSwipeToZoom : R.string.StoryHintPinchToZoom), false, true);
-                b4Var.invalidate();
-                kcVar.h(true, true);
-                kcVar.d0(true);
-                kcVar.I0.a(false, true);
-                kcVar.J0.b(true, true);
-                kcVar.i0(true, true);
+                this.b.a.J(1, true);
                 break;
         }
-    }
-
-    public /* synthetic */ eb(fb fbVar, boolean z10, Runnable runnable) {
-        this.b = fbVar;
-        this.d = z10;
-        this.c = runnable;
     }
 }

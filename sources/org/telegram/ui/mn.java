@@ -1,100 +1,61 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mn extends View {
-    public final ArrayList a;
-    public final ArrayList b;
-    public final /* synthetic */ yn c;
+public final class mn extends w7.y5 {
+    public MessageObject a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public boolean f;
+    public int g;
+    public final /* synthetic */ zn h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mn(yn ynVar, Context context) {
-        super(context);
-        this.c = ynVar;
-        this.a = new ArrayList();
-        this.b = new ArrayList();
+    public mn(zn znVar) {
+        this.h = znVar;
     }
 
+    @Override // w7.y5
     public final void a() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        yn ynVar = this.c;
-        arrayList.add(ynVar.I1);
-        arrayList.add(ynVar.v0);
-        arrayList.add(ynVar.V);
-        arrayList.add(ynVar.I3);
-        arrayList.add(ynVar.G1);
-        arrayList.add(ynVar.V2);
-        arrayList.add(ynVar.W);
-        arrayList.add(ynVar.h1);
-        arrayList.add(ynVar.Q);
-        arrayList.add(ynVar.P1);
-        arrayList.removeAll(Collections.singleton(null));
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        yn ynVar = this.c;
-        ynVar.oc = true;
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).setVisibility(0);
-        }
-        arrayList.clear();
-        ynVar.oc = false;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        a();
-        yn ynVar = this.c;
-        ynVar.oc = true;
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            View view = (View) obj;
-            if (view.getVisibility() == 0) {
-                view.setVisibility(8);
-                this.b.add(view);
+        MessageObject messageObject = this.a;
+        zn znVar = this.h;
+        if (messageObject != null) {
+            znVar.A0.T();
+            int indexOf = znVar.u6.indexOf(this.a) + znVar.A0.J;
+            if (indexOf >= 0) {
+                znVar.z0.i1(indexOf, (int) ((this.e + this.g) - znVar.s9), this.f);
             }
+        } else {
+            znVar.A0.T();
+            znVar.z0.i1(this.b, this.d, this.c);
         }
-        ynVar.oc = false;
+        this.a = null;
+        znVar.m3 = true;
+        znVar.ad(false);
+        AndroidUtilities.runOnUIThread(new cj(this, 9));
     }
 
-    @Override // android.view.View
-    public void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        a();
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            View view = (View) obj;
-            if (view != null) {
-                view.setTranslationX(f7);
-            }
+    @Override // w7.y5
+    public final void c() {
+        zn znVar = this.h;
+        znVar.I9 = znVar.getNotificationCenter().setAnimationInProgress(znVar.I9, zn.Nc);
+        xk xkVar = znVar.wa;
+        if (xkVar.n) {
+            xkVar.d();
+        }
+    }
+
+    @Override // w7.y5
+    public final void d(View view) {
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+            u1Var.setDelegate(null);
+            u1Var.setResourcesProvider(null);
         }
     }
 }

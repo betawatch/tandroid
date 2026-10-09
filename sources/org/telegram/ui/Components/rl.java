@@ -1,51 +1,34 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rl implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class rl extends gg.t0 {
+    public final /* synthetic */ xl N;
 
-    public /* synthetic */ rl(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rl(xl xlVar, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        super(context, e6Var, z10, false);
+        this.N = xlVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
-        int i10 = this.a;
-        Object obj3 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj3;
-                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
-                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                int i11 = albumEntry.bucketId;
-                if (i11 != 0 || albumEntry2.bucketId == 0) {
-                    if ((i11 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
-                    }
-                }
-                return -1;
-            default:
-                nz nzVar = ((ax) obj3).G0;
-                int indexOf3 = nzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf4 = nzVar.d1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf3 < 0 || indexOf4 < 0) {
-                    return 0;
-                }
-                return indexOf3 - indexOf4;
+    @Override // s4.i0
+    public final void l() {
+        xl xlVar = this.N;
+        rl rlVar = xlVar.R;
+        org.telegram.ui.ActionBar.v0 v0Var = xlVar.E;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(rlVar.J);
         }
+        TextView textView = xlVar.y;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, rlVar.x)));
+        }
+        super.l();
     }
 }

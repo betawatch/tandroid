@@ -1,60 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u80;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v9 implements RequestDelegate {
+public final /* synthetic */ class v9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ v9(MessagesController messagesController, boolean z10, TLRPC.User user, long j3) {
-        this.a = 0;
+    public /* synthetic */ v9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = z10;
-        this.e = user;
-        this.d = j3;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$deleteParticipantFromChat$316(this.c, (TLRPC.User) this.e, this.d, tLObject, tL_error);
+                this.b.lambda$toggleChatNoForwards$277(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$checkChatInviter$375((TLRPC.Chat) this.e, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$fetchCommunityPendingJoinRequests$245(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                u80.s((u80) this.b, this.d, this.c, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                this.b.lambda$fetchCommunityJoinedChats$246(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ai.h3((yh.h) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.c, this.d));
+                this.b.lambda$fetchChatsToAddToCommunity$251(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ v9(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
-        this.e = obj;
-        this.c = z10;
-        this.d = j3;
-    }
-
-    public /* synthetic */ v9(u80 u80Var, long j3, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
-        this.a = 2;
-        this.b = u80Var;
-        this.d = j3;
-        this.c = z10;
-        this.e = tL_messages_importChatInvite;
     }
 }

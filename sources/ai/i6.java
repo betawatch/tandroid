@@ -1,33 +1,77 @@
 package ai;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.graphics.RectF;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.f30;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class i6 extends ViewOutlineProvider {
-    public final /* synthetic */ int a = 1;
-    public float b;
+public final class i6 {
+    public final int a;
+    public final ImageReceiver b;
+    public int c;
+    public boolean d;
+    public float e;
+    public final org.telegram.ui.Components.g6 f;
+    public final org.telegram.ui.Components.g6 g;
+    public final org.telegram.ui.Components.g6 h;
+    public float i;
+    public float j;
+    public float k;
+    public final boolean l;
+    public final RectF m;
+    public final RectF n;
 
-    public i6(int i10) {
-        this.b = i10;
-    }
-
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        switch (this.a) {
-            case 0:
-                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dpf2(this.b));
-                break;
-            default:
-                outline.setRoundRect(view.getPaddingLeft(), view.getPaddingTop(), view.getMeasuredWidth() - view.getPaddingRight(), view.getMeasuredHeight() - view.getPaddingBottom(), this.b);
-                break;
+    public i6(ProfileStoriesView profileStoriesView, TL_stories.StoryItem storyItem) {
+        ArrayList<TLRPC.PhotoSize> arrayList;
+        TLRPC.Document document;
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
+        ImageReceiver imageReceiver = new ImageReceiver();
+        this.b = imageReceiver;
+        this.c = 0;
+        this.d = false;
+        this.e = 1.0f;
+        hs hsVar = hs.h;
+        this.f = new org.telegram.ui.Components.g6(profileStoriesView, 420L, hsVar);
+        this.g = new org.telegram.ui.Components.g6(profileStoriesView, 420L, hsVar);
+        this.h = new org.telegram.ui.Components.g6(profileStoriesView, 420L, hsVar);
+        this.m = new RectF();
+        this.n = new RectF();
+        this.a = storyItem.id;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(200.0f));
+        imageReceiver.setParentView(profileStoriesView);
+        this.l = storyItem.media instanceof TLRPC.TL_messageMediaVideoStream;
+        if (profileStoriesView.x) {
+            imageReceiver.onAttachedToWindow();
         }
-    }
-
-    public i6(float f7) {
-        this.b = f7;
+        f30[] f30VarArr = ja.a;
+        TLRPC.MessageMedia messageMedia = storyItem.media;
+        if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+            TLObject userOrChat = MessagesController.getInstance(imageReceiver.getCurrentAccount()).getUserOrChat(storyItem.dialogId);
+            j9Var.p(userOrChat);
+            imageReceiver.setForUserOrChat(userOrChat, j9Var);
+        } else {
+            if (messageMedia != null && (document = messageMedia.document) != null) {
+                imageReceiver.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(Math.max(25, 25)), false, null, true), storyItem.media.document), "25_25", null, null, ImageLoader.createStripedBitmap(storyItem.media.document.thumbs), 0L, null, storyItem, 0);
+                return;
+            }
+            TLRPC.Photo photo = messageMedia != null ? messageMedia.photo : null;
+            if (photo == null || (arrayList = photo.sizes) == null) {
+                imageReceiver.clearImage();
+            } else {
+                imageReceiver.setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList, AndroidUtilities.dp(Math.max(25, 25)), false, null, true), photo), "25_25", null, null, ImageLoader.createStripedBitmap(photo.sizes), 0L, null, storyItem, 0);
+            }
+        }
     }
 }

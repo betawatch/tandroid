@@ -1,411 +1,210 @@
 package a4;
 
-import androidx.car.app.navigation.model.Maneuver;
-import e2.v;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.Collections;
+import ai.a0;
+import ai.i6;
+import ai.n1;
+import android.util.Pair;
+import android.view.MenuItem;
+import ci.qc;
+import gg.g0;
+import gg.z1;
+import hg.b2;
+import java.io.File;
+import java.util.Comparator;
 import java.util.List;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.w4;
+import org.telegram.ui.Cells.s1;
+import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.r6;
+import org.telegram.ui.t6;
+import s4.d1;
+import zg.n0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class d extends l {
-    public final int i;
-    public final int j;
-    public final int k;
-    public List o;
-    public List p;
-    public int q;
-    public int r;
-    public boolean s;
-    public boolean t;
-    public byte u;
-    public byte v;
-    public boolean x;
-    public long y;
-    public static final int[] z = {11, 1, 3, 12, 14, 5, 7, 9};
-    public static final int[] A = {0, 4, 8, 12, 16, 20, 24, 28};
-    public static final int[] B = {-1, -16711936, -16776961, -16711681, -65536, -256, -65281};
-    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 225, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 233, 93, 237, 243, MediaDataController.MAX_LINKS_COUNT, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 231, 247, 209, 241, 9632};
-    public static final int[] D = {174, 176, 189, 191, 8482, 162, 163, 9834, 224, 32, 232, 226, 234, 238, 244, 251};
-    public static final int[] E = {193, 201, 211, 218, 220, 252, 8216, 161, 42, 39, 8212, 169, 8480, 8226, 8220, 8221, 192, 194, 199, 200, 202, VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
-    public static final int[] F = {195, 227, 205, 204, 236, 210, 242, 213, 245, 123, 125, 92, 94, 95, 124, 126, 196, 228, 214, 246, 223, 165, 164, 9474, 197, TLRPC.LAYER, 216, 248, 9484, 9488, 9492, 9496};
-    public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
-    public final v h = new v();
-    public final ArrayList m = new ArrayList();
-    public c n = new c(0, 4);
-    public int w = 0;
-    public final long l = 16000000;
+public final /* synthetic */ class d implements Comparator {
+    public final /* synthetic */ int a;
 
-    public d(String str, int i10) {
-        this.i = "application/x-mp4-cea-608".equals(str) ? 2 : 3;
-        if (i10 == 1) {
-            this.k = 0;
-            this.j = 0;
-        } else if (i10 == 2) {
-            this.k = 1;
-            this.j = 0;
-        } else if (i10 == 3) {
-            this.k = 0;
-            this.j = 1;
-        } else if (i10 != 4) {
-            e2.a.n("Cea608Decoder", "Invalid channel. Defaulting to CC1.");
-            this.k = 0;
-            this.j = 0;
-        } else {
-            this.k = 1;
-            this.j = 1;
-        }
-        l(0);
-        k();
-        this.x = true;
-        this.y = -9223372036854775807L;
+    public /* synthetic */ d(int i10) {
+        this.a = i10;
     }
 
-    @Override // a4.l
-    public final m f() {
-        List list = this.o;
-        this.p = list;
-        list.getClass();
-        return new m(list, 0);
-    }
-
-    @Override // a4.l, h2.e
-    public final void flush() {
-        super.flush();
-        this.o = null;
-        this.p = null;
-        l(0);
-        this.r = 4;
-        this.n.h = 4;
-        k();
-        this.s = false;
-        this.t = false;
-        this.u = (byte) 0;
-        this.v = (byte) 0;
-        this.w = 0;
-        this.x = true;
-        this.y = -9223372036854775807L;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:160:0x007e A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0085 A[SYNTHETIC] */
-    @Override // a4.l
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0072, code lost:
+    
+        if (r7 < r8) goto L48;
+     */
+    /* JADX WARN: Type inference failed for: r0v26, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [boolean] */
+    @Override // java.util.Comparator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void g(j jVar) {
-        boolean z10;
-        ByteBuffer byteBuffer = jVar.c;
-        byteBuffer.getClass();
-        byte[] array = byteBuffer.array();
-        int limit = byteBuffer.limit();
-        v vVar = this.h;
-        vVar.H(limit, array);
-        boolean z11 = false;
-        while (true) {
-            int a2 = vVar.a();
-            int i10 = this.i;
-            if (a2 < i10) {
-                if (z11) {
-                    int i11 = this.q;
-                    if (i11 == 1 || i11 == 3) {
-                        this.o = j();
-                        this.y = this.e;
-                        return;
-                    }
-                    return;
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        int lambda$initCamera$0;
+        int i12;
+        int i13;
+        switch (this.a) {
+            case 0:
+                return Integer.compare(((e) obj2).b, ((e) obj).b);
+            case 1:
+                i10 = ((a0) obj2).b;
+                i11 = ((a0) obj).b;
+                break;
+            case 2:
+            case 4:
+                i10 = ((n1) obj2).c;
+                i11 = ((n1) obj).c;
+                break;
+            case 3:
+                return (int) (((TL_phone.groupCallDonor) obj2).stars - ((TL_phone.groupCallDonor) obj).stars);
+            case 5:
+                return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
+            case 6:
+                int i14 = ProfileStoriesView.s0;
+                return (int) (((i6) obj2).i - ((i6) obj).i);
+            case 7:
+                return (int) (((Long) obj2).longValue() - ((Long) obj).longValue());
+            case 8:
+                return ((File) obj2).getName().compareTo(((File) obj).getName());
+            case 9:
+                String name = ((File) obj).getName();
+                int i15 = ba.b.f;
+                return name.substring(0, i15).compareTo(((File) obj2).getName().substring(0, i15));
+            case 10:
+                n0 n0Var = (n0) obj2;
+                String str = ((n0) obj).f;
+                int i16 = (str == null || !str.equals("❤")) ? 0 : -1;
+                String str2 = n0Var.f;
+                return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
+            case 11:
+                return (int) (((qc) obj2).e - ((qc) obj).e);
+            case 12:
+                int i17 = ((g0) obj).b;
+                int i18 = ((g0) obj2).b;
+                if (i17 < i18) {
+                    return 1;
                 }
-                return;
-            }
-            int x10 = i10 == 2 ? -4 : vVar.x();
-            int x11 = vVar.x();
-            int x12 = vVar.x();
-            if ((x10 & 2) == 0 && (x10 & 1) == this.j) {
-                byte b10 = (byte) (x11 & 127);
-                byte b11 = (byte) (x12 & 127);
-                if (b10 != 0 || b11 != 0) {
-                    boolean z12 = this.s;
-                    if ((x10 & 4) == 4) {
-                        boolean[] zArr = G;
-                        if (zArr[x11] && zArr[x12]) {
-                            z10 = true;
-                            this.s = z10;
-                            if (z10 || (b10 & 240) != 16) {
-                                this.t = false;
-                            } else if (this.t && this.u == b10 && this.v == b11) {
-                                this.t = false;
-                            } else {
-                                this.t = true;
-                                this.u = b10;
-                                this.v = b11;
+                return i17 > i18 ? -1 : 0;
+            case 13:
+                return Double.compare(((TLRPC.TL_topPeer) obj2).rating, ((TLRPC.TL_topPeer) obj).rating);
+            case 14:
+                int i19 = ((z1) obj).b;
+                int i20 = ((z1) obj2).b;
+                if (i19 < i20) {
+                    return 1;
+                }
+                return i19 > i20 ? -1 : 0;
+            case 15:
+                return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
+            case 16:
+                return ((b2) obj).c - ((b2) obj2).c;
+            case 17:
+                return Integer.compare(((i4.d) obj).a.b, ((i4.d) obj2).a.b);
+            case 18:
+                return Long.compare(((i4.c) obj).b, ((i4.c) obj2).b);
+            case 19:
+                i10 = ((d1) obj2).a.getTop();
+                i11 = ((d1) obj).a.getTop();
+                break;
+            case 20:
+                m2.b bVar = (m2.b) obj;
+                m2.b bVar2 = (m2.b) obj2;
+                int compare = Integer.compare(bVar.c, bVar2.c);
+                return compare != 0 ? compare : bVar.b.compareTo(bVar2.b);
+            case 21:
+                byte[] bArr = (byte[]) obj;
+                byte[] bArr2 = (byte[]) obj2;
+                if (bArr.length != bArr2.length) {
+                    return bArr.length - bArr2.length;
+                }
+                for (int i21 = 0; i21 < bArr.length; i21++) {
+                    byte b10 = bArr[i21];
+                    byte b11 = bArr2[i21];
+                    if (b10 != b11) {
+                        return b10 - b11;
+                    }
+                }
+                return 0;
+            case 22:
+                lambda$initCamera$0 = CameraController.lambda$initCamera$0((Size) obj, (Size) obj2);
+                return lambda$initCamera$0;
+            case 23:
+                return ((MenuItem) obj).getOrder() - ((MenuItem) obj2).getOrder();
+            case 24:
+                List list = w4.r;
+                return (list.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
+            case 25:
+                h6 h6Var = (h6) obj;
+                h6 h6Var2 = (h6) obj2;
+                if (h6Var.b == null && h6Var.d == null) {
+                    return -1;
+                }
+                if (h6Var2.b == null && h6Var2.d == null) {
+                    return 1;
+                }
+                return h6Var.a.compareTo(h6Var2.a);
+            case 26:
+                g6 g6Var = (g6) obj;
+                g6 g6Var2 = (g6) obj2;
+                if (org.telegram.ui.ActionBar.i6.h1(g6Var)) {
+                    return -1;
+                }
+                if (!org.telegram.ui.ActionBar.i6.h1(g6Var2)) {
+                    ?? r02 = g6Var.z;
+                    ?? r42 = g6Var2.z;
+                    if (r02 == r42) {
+                        if (r02 != 0) {
+                            int i22 = g6Var.a;
+                            int i23 = g6Var2.a;
+                            if (i22 <= i23) {
+                                if (i22 < i23) {
+                                    return -1;
+                                }
+                                return 0;
                             }
-                            if (!z10) {
-                                if (1 <= b10 && b10 <= 15) {
-                                    this.x = false;
-                                } else if ((b10 & 246) == 20) {
-                                    if (b11 != 32 && b11 != 47) {
-                                        switch (b11) {
-                                            default:
-                                                switch (b11) {
-                                                    case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                                                    case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                                                        this.x = false;
-                                                        break;
-                                                }
-                                            case 37:
-                                            case 38:
-                                            case Maneuver.TYPE_DESTINATION /* 39 */:
-                                                this.x = true;
-                                                break;
-                                        }
-                                    }
-                                    this.x = true;
-                                }
-                                if (this.x) {
-                                    int i12 = b10 & 224;
-                                    if (i12 == 0) {
-                                        this.w = (b10 >> 3) & 1;
-                                    }
-                                    if (this.w == this.k) {
-                                        if (i12 == 0) {
-                                            int i13 = b10 & 247;
-                                            if (i13 == 17 && (b11 & 240) == 48) {
-                                                this.n.a((char) D[b11 & 15]);
-                                            } else {
-                                                int i14 = b10 & 246;
-                                                if (i14 == 18 && (b11 & 224) == 32) {
-                                                    this.n.b();
-                                                    this.n.a((char) ((b10 & 1) == 0 ? E[b11 & 31] : F[b11 & 31]));
-                                                } else if (i13 == 17 && (b11 & 240) == 32) {
-                                                    this.n.a(' ');
-                                                    boolean z13 = (b11 & 1) == 1;
-                                                    c cVar = this.n;
-                                                    cVar.a.add(new b((b11 >> 1) & 7, z13, cVar.c.length()));
-                                                } else if ((b10 & 240) == 16 && (b11 & 192) == 64) {
-                                                    int i15 = z[b10 & 7];
-                                                    if ((b11 & 32) != 0) {
-                                                        i15++;
-                                                    }
-                                                    c cVar2 = this.n;
-                                                    if (i15 != cVar2.d) {
-                                                        if (this.q != 1 && !cVar2.e()) {
-                                                            c cVar3 = new c(this.q, this.r);
-                                                            this.n = cVar3;
-                                                            this.m.add(cVar3);
-                                                        }
-                                                        this.n.d = i15;
-                                                    }
-                                                    boolean z14 = (b11 & 16) == 16;
-                                                    boolean z15 = (b11 & 1) == 1;
-                                                    int i16 = (b11 >> 1) & 7;
-                                                    c cVar4 = this.n;
-                                                    cVar4.a.add(new b(z14 ? 8 : i16, z15, cVar4.c.length()));
-                                                    if (z14) {
-                                                        this.n.e = A[i16];
-                                                    }
-                                                } else if (i13 == 23 && b11 >= 33 && b11 <= 35) {
-                                                    this.n.f = b11 - 32;
-                                                } else if (i14 == 20 && (b11 & 240) == 32) {
-                                                    if (b11 == 32) {
-                                                        l(2);
-                                                    } else if (b11 != 41) {
-                                                        switch (b11) {
-                                                            case 37:
-                                                                l(1);
-                                                                this.r = 2;
-                                                                this.n.h = 2;
-                                                                break;
-                                                            case 38:
-                                                                l(1);
-                                                                this.r = 3;
-                                                                this.n.h = 3;
-                                                                break;
-                                                            case Maneuver.TYPE_DESTINATION /* 39 */:
-                                                                l(1);
-                                                                this.r = 4;
-                                                                this.n.h = 4;
-                                                                break;
-                                                            default:
-                                                                int i17 = this.q;
-                                                                if (i17 != 0) {
-                                                                    if (b11 == 33) {
-                                                                        this.n.b();
-                                                                        break;
-                                                                    } else {
-                                                                        switch (b11) {
-                                                                            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                                                                                this.o = Collections.EMPTY_LIST;
-                                                                                if (i17 == 1 || i17 == 3) {
-                                                                                    k();
-                                                                                    break;
-                                                                                }
-                                                                            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                                                                                if (i17 == 1 && !this.n.e()) {
-                                                                                    c cVar5 = this.n;
-                                                                                    ArrayList arrayList = cVar5.b;
-                                                                                    arrayList.add(cVar5.d());
-                                                                                    cVar5.c.setLength(0);
-                                                                                    cVar5.a.clear();
-                                                                                    int min = Math.min(cVar5.h, cVar5.d);
-                                                                                    while (arrayList.size() >= min) {
-                                                                                        arrayList.remove(0);
-                                                                                    }
-                                                                                    break;
-                                                                                }
-                                                                                break;
-                                                                            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                                                                                k();
-                                                                                break;
-                                                                            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                                                                                this.o = j();
-                                                                                k();
-                                                                                break;
-                                                                        }
-                                                                    }
-                                                                }
-                                                                break;
-                                                        }
-                                                    } else {
-                                                        l(3);
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            c cVar6 = this.n;
-                                            int[] iArr = C;
-                                            cVar6.a((char) iArr[(b10 & Byte.MAX_VALUE) - 32]);
-                                            if ((b11 & 224) != 0) {
-                                                this.n.a((char) iArr[(b11 & Byte.MAX_VALUE) - 32]);
-                                            }
-                                        }
-                                        z11 = true;
-                                    }
-                                }
-                            } else if (z12) {
-                                k();
-                                z11 = true;
+                        } else {
+                            int i24 = g6Var.a;
+                            int i25 = g6Var2.a;
+                            if (i24 > i25) {
+                                return -1;
                             }
                         }
-                    }
-                    z10 = false;
-                    this.s = z10;
-                    if (z10) {
-                    }
-                    this.t = false;
-                    if (!z10) {
+                    } else if (r02 > r42) {
+                        return -1;
                     }
                 }
-            }
-        }
-    }
-
-    @Override // h2.e
-    public final String getName() {
-        return "Cea608Decoder";
-    }
-
-    @Override // a4.l, h2.e
-    /* renamed from: h */
-    public final z3.j c() {
-        z3.j jVar;
-        z3.j c10 = super.c();
-        if (c10 != null) {
-            return c10;
-        }
-        long j3 = this.l;
-        if (j3 == -9223372036854775807L) {
-            return null;
-        }
-        long j10 = this.y;
-        if (j10 == -9223372036854775807L || this.e - j10 < j3 || (jVar = (z3.j) this.b.pollFirst()) == null) {
-            return null;
-        }
-        this.o = Collections.EMPTY_LIST;
-        this.y = -9223372036854775807L;
-        m f7 = f();
-        long j11 = this.e;
-        jVar.timeUs = j11;
-        jVar.a = f7;
-        jVar.b = j11;
-        return jVar;
-    }
-
-    @Override // a4.l
-    public final boolean i() {
-        return this.o != this.p;
-    }
-
-    public final ArrayList j() {
-        ArrayList arrayList = this.m;
-        int size = arrayList.size();
-        ArrayList arrayList2 = new ArrayList(size);
-        int i10 = 2;
-        for (int i11 = 0; i11 < size; i11++) {
-            d2.b c10 = ((c) arrayList.get(i11)).c(TLObject.FLAG_31);
-            arrayList2.add(c10);
-            if (c10 != null) {
-                i10 = Math.min(i10, c10.i);
-            }
-        }
-        ArrayList arrayList3 = new ArrayList(size);
-        for (int i12 = 0; i12 < size; i12++) {
-            d2.b bVar = (d2.b) arrayList2.get(i12);
-            if (bVar != null) {
-                if (bVar.i != i10) {
-                    bVar = ((c) arrayList.get(i12)).c(i10);
-                    bVar.getClass();
+                return 1;
+            case 27:
+                long j3 = ((r6) obj2).c;
+                long j10 = ((r6) obj).c;
+                if (j3 > j10) {
+                    return 1;
                 }
-                arrayList3.add(bVar);
-            }
+                return j3 < j10 ? -1 : 0;
+            case 28:
+                return Long.compare(((t6) obj2).g, ((t6) obj).g);
+            default:
+                s1 s1Var = (s1) obj;
+                s1 s1Var2 = (s1) obj2;
+                float f7 = s1Var.e;
+                float f10 = s1Var2.e;
+                if (f7 > f10) {
+                    return -1;
+                }
+                if (f7 >= f10 && (i12 = s1Var.d) <= (i13 = s1Var2.d)) {
+                    return i12 < i13 ? -1 : 0;
+                }
+                return 1;
         }
-        return arrayList3;
-    }
-
-    public final void k() {
-        c cVar = this.n;
-        cVar.g = this.q;
-        cVar.a.clear();
-        cVar.b.clear();
-        cVar.c.setLength(0);
-        cVar.d = 15;
-        cVar.e = 0;
-        cVar.f = 0;
-        ArrayList arrayList = this.m;
-        arrayList.clear();
-        arrayList.add(this.n);
-    }
-
-    public final void l(int i10) {
-        int i11 = this.q;
-        if (i11 == i10) {
-            return;
-        }
-        this.q = i10;
-        if (i10 != 3) {
-            k();
-            if (i11 == 3 || i10 == 1 || i10 == 0) {
-                this.o = Collections.EMPTY_LIST;
-                return;
-            }
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            ArrayList arrayList = this.m;
-            if (i12 >= arrayList.size()) {
-                return;
-            }
-            ((c) arrayList.get(i12)).g = i10;
-            i12++;
-        }
-    }
-
-    @Override // a4.l, h2.e
-    public final void release() {
+        return i10 - i11;
     }
 }

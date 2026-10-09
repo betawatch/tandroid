@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import k2.v;
-import w7.t6;
+import m4.w;
+import w7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -46,7 +46,7 @@ public final class a {
         i0Var.g = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            t6.a(rVar2, "Null interface");
+            r6.a(rVar2, "Null interface");
         }
         Collections.addAll((HashSet) i0Var.c, rVarArr);
         return i0Var;
@@ -58,10 +58,10 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(r.a(cls));
         for (Class cls2 : clsArr) {
-            t6.a(cls2, "Null interface");
+            r6.a(cls2, "Null interface");
             hashSet.add(r.a(cls2));
         }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new v(obj, 19), hashSet3);
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new w(obj, 18), hashSet3);
     }
 
     public final String toString() {

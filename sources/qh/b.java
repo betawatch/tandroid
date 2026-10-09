@@ -5,18 +5,18 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class b extends View {
-    public final le.b a;
+    public final me.b a;
     public final Drawable b;
     public final Drawable c;
 
     public b(Context context) {
         super(context);
-        this.a = new le.b(this, tr.h, 320L);
+        this.a = new me.b(this, hs.h, 320L);
         this.b = context.getResources().getDrawable(R.drawable.outline_poll_emoji_24).mutate();
         this.c = context.getResources().getDrawable(R.drawable.input_keyboard).mutate();
     }

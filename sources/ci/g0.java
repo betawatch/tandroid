@@ -3,7 +3,7 @@ package ci;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class g0 extends lg.p {
     public final /* synthetic */ int P;
@@ -22,10 +22,10 @@ public final class g0 extends lg.p {
         int currentHeight2;
         switch (this.P) {
             case 0:
-                currentHeight = ((j0) this.Q).getCurrentHeight();
+                currentHeight = ((i0) this.Q).getCurrentHeight();
                 return currentHeight;
             default:
-                currentHeight2 = ((m0) this.Q).getCurrentHeight();
+                currentHeight2 = ((l0) this.Q).getCurrentHeight();
                 return currentHeight2;
         }
     }
@@ -36,10 +36,10 @@ public final class g0 extends lg.p {
         int currentWidth2;
         switch (this.P) {
             case 0:
-                currentWidth = ((j0) this.Q).getCurrentWidth();
+                currentWidth = ((i0) this.Q).getCurrentWidth();
                 return currentWidth;
             default:
-                currentWidth2 = ((m0) this.Q).getCurrentWidth();
+                currentWidth2 = ((l0) this.Q).getCurrentWidth();
                 return currentWidth2;
         }
     }

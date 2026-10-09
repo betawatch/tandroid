@@ -1,30 +1,54 @@
 package org.telegram.ui.Components.voip;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.nj0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p1 b;
-    public final /* synthetic */ nj0 c;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class l1 extends FrameLayout {
+    public final q1 a;
+    public final RectF b;
 
-    public /* synthetic */ l1(p1 p1Var, nj0 nj0Var, int i10) {
-        this.a = i10;
-        this.b = p1Var;
-        this.c = nj0Var;
+    public l1(Context context, q1 q1Var) {
+        super(context);
+        this.b = new RectF();
+        this.a = q1Var;
+        q1Var.a(this);
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1);
+        textView.setText(LocaleController.getString(R.string.VoipRateCallTitle));
+        textView.setTextSize(1, 15.0f);
+        textView.setGravity(1);
+        textView.setTypeface(AndroidUtilities.bold());
+        TextView textView2 = new TextView(context);
+        textView2.setTextSize(1, 15.0f);
+        textView2.setTextColor(-1);
+        textView2.setGravity(1);
+        textView2.setText(LocaleController.getString(R.string.VoipRateCallDescription));
+        addView(textView, x5.a(-2.0f, 0.0f, 24.0f, 0.0f, 0.0f, -1, 3));
+        addView(textView2, x5.a(-2.0f, 0.0f, 50.0f, 0.0f, 0.0f, -1, 3));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new l1(this.b, this.c, 1));
-                break;
-            default:
-                this.b.removeView(this.c);
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.b;
+        rectF.set(0.0f, 0.0f, width, height);
+        float x10 = ((View) getParent()).getX() + getX();
+        float y3 = ((View) getParent()).getY() + getY();
+        q1 q1Var = this.a;
+        q1Var.d(x10, y3);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), q1Var.b());
+        super.dispatchDraw(canvas);
     }
 }

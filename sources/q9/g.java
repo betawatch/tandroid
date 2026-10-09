@@ -14,11 +14,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.web.x1;
-import w7.s6;
-import w7.t6;
+import org.telegram.ui.web.w1;
+import w7.q6;
+import w7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -92,11 +92,11 @@ public final class g implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                s6.a(arrayList3);
+                q6.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                s6.a(arrayList6);
+                q6.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i15 = 0;
@@ -118,7 +118,7 @@ public final class g implements b {
         }
         Boolean bool = (Boolean) this.f.get();
         if (bool != null) {
-            c(this.a, bool.booleanValue());
+            e(this.a, bool.booleanValue());
         }
     }
 
@@ -129,11 +129,22 @@ public final class g implements b {
 
     @Override // q9.b
     public final p b(r rVar) {
-        pa.b e7 = e(rVar);
-        return e7 == null ? new p(p.c, p.d) : e7 instanceof p ? (p) e7 : new p(null, e7);
+        pa.b d = d(rVar);
+        return d == null ? new p(p.c, p.d) : d instanceof p ? (p) d : new p(null, d);
     }
 
-    public final void c(HashMap hashMap, boolean z10) {
+    @Override // q9.b
+    public final pa.b c(Class cls) {
+        return d(r.a(cls));
+    }
+
+    @Override // q9.b
+    public final synchronized pa.b d(r rVar) {
+        r6.a(rVar, "Null interface requested.");
+        return (pa.b) this.b.get(rVar);
+    }
+
+    public final void e(HashMap hashMap, boolean z10) {
         ArrayDeque arrayDeque;
         for (Map.Entry entry : hashMap.entrySet()) {
             a aVar = (a) entry.getKey();
@@ -159,20 +170,9 @@ public final class g implements b {
         if (arrayDeque != null) {
             Iterator it = arrayDeque.iterator();
             if (it.hasNext()) {
-                throw a4.a.k(it);
+                throw a1.g.k(it);
             }
         }
-    }
-
-    @Override // q9.b
-    public final pa.b d(Class cls) {
-        return e(r.a(cls));
-    }
-
-    @Override // q9.b
-    public final synchronized pa.b e(r rVar) {
-        t6.a(rVar, "Null interface requested.");
-        return (pa.b) this.b.get(rVar);
     }
 
     @Override // q9.b
@@ -189,11 +189,11 @@ public final class g implements b {
 
     @Override // q9.b
     public final Object g(r rVar) {
-        pa.b e7 = e(rVar);
-        if (e7 == null) {
+        pa.b d = d(rVar);
+        if (d == null) {
             return null;
         }
-        return e7.get();
+        return d.get();
     }
 
     public final void h(boolean z10) {
@@ -208,7 +208,7 @@ public final class g implements b {
         synchronized (this) {
             hashMap = new HashMap(this.a);
         }
-        c(hashMap, z10);
+        e(hashMap, z10);
     }
 
     public final void i() {
@@ -253,7 +253,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new x1(6, (p) ((pa.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new w1(6, (p) ((pa.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -284,7 +284,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new x1(7, oVar, (pa.b) it.next()));
+                    arrayList.add(new w1(7, oVar, (pa.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();

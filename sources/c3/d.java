@@ -3,7 +3,7 @@ package c3;
 import b2.s0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d {
     public final ArrayList a;
@@ -42,9 +42,9 @@ public final class d {
         int i13;
         int i14;
         int i15;
+        float f7;
         int i16;
         int i17;
-        float f7;
         try {
             vVar.K(4);
             int x10 = (vVar.x() & 3) + 1;
@@ -75,7 +75,7 @@ public final class d {
                 arrayList.add(bArr4);
             }
             if (x11 > 0) {
-                f2.n j3 = f2.o.j(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
+                f2.o j3 = f2.p.j(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
                 int i22 = j3.e;
                 int i23 = j3.f;
                 int i24 = j3.h + 8;
@@ -90,10 +90,10 @@ public final class d {
                 int i32 = j3.c;
                 byte[] bArr5 = e2.e.a;
                 str = String.format("avc1.%02X%02X%02X", Integer.valueOf(i30), Integer.valueOf(i31), Integer.valueOf(i32));
-                i17 = i29;
+                i15 = i29;
                 f7 = f10;
-                i15 = i27;
-                i16 = i28;
+                i16 = i27;
+                i17 = i28;
                 i13 = i25;
                 i14 = i26;
                 i11 = i23;
@@ -106,12 +106,12 @@ public final class d {
                 i12 = -1;
                 i13 = -1;
                 i14 = -1;
-                i15 = -1;
-                i16 = -1;
-                i17 = 16;
+                i15 = 16;
                 f7 = 1.0f;
+                i16 = -1;
+                i17 = -1;
             }
-            return new d(arrayList, x10, i10, i11, i12, i13, i14, i15, i16, i17, f7, str);
+            return new d(arrayList, x10, i10, i11, i12, i13, i14, i16, i17, i15, f7, str);
         } catch (ArrayIndexOutOfBoundsException e7) {
             throw s0.a(e7, "Error parsing AVC config");
         }

@@ -1,6 +1,28 @@
 package te;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public interface a {
+public final class a implements InvocationHandler {
+    public final FeatureFlagHolderBoundaryInterface a;
+
+    public a(FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface) {
+        this.a = featureFlagHolderBoundaryInterface;
+    }
+
+    @Override // java.lang.reflect.InvocationHandler
+    public final Object invoke(Object obj, Method method, Object[] objArr) {
+        FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
+        try {
+            return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
+        } catch (InvocationTargetException e7) {
+            throw e7.getTargetException();
+        } catch (ReflectiveOperationException e10) {
+            throw new RuntimeException("Reflection failed for method " + method, e10);
+        }
+    }
 }

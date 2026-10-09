@@ -5,14 +5,14 @@ import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.q;
 import androidx.car.app.utils.g;
-import e0.p0;
+import e0.n0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.v;
+import v7.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -21,7 +21,7 @@ public class ConversationItem implements q {
     private final String mId;
     private final boolean mIsGroupConversation;
     private final List<CarMessage> mMessages;
-    private final p0 mSelf;
+    private final n0 mSelf;
     private final CarText mTitle;
 
     public ConversationItem(f fVar) {
@@ -47,11 +47,11 @@ public class ConversationItem implements q {
         this.mActions = g.g(fVar.h);
     }
 
-    public static p0 validateSender(p0 p0Var) {
-        Objects.requireNonNull(p0Var);
-        Objects.requireNonNull(p0Var.a);
-        Objects.requireNonNull(p0Var.d);
-        return p0Var;
+    public static n0 validateSender(n0 n0Var) {
+        Objects.requireNonNull(n0Var);
+        Objects.requireNonNull(n0Var.a);
+        Objects.requireNonNull(n0Var.d);
+        return n0Var;
     }
 
     public boolean equals(Object obj) {
@@ -62,7 +62,7 @@ public class ConversationItem implements q {
             return false;
         }
         ConversationItem conversationItem = (ConversationItem) obj;
-        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && v.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
+        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && r.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
     }
 
     public List<Action> getActions() {
@@ -85,7 +85,7 @@ public class ConversationItem implements q {
         return this.mMessages;
     }
 
-    public p0 getSelf() {
+    public n0 getSelf() {
         return this.mSelf;
     }
 
@@ -94,7 +94,7 @@ public class ConversationItem implements q {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(v.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
+        return Objects.hash(Integer.valueOf(r.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
     }
 
     public boolean isGroupConversation() {
@@ -104,18 +104,18 @@ public class ConversationItem implements q {
     private ConversationItem() {
         this.mId = "";
         this.mTitle = new CarText.Builder("").build();
-        p0 p0Var = new p0();
-        p0Var.a = "";
-        p0Var.b = null;
-        p0Var.c = null;
-        p0Var.d = null;
-        p0Var.e = false;
-        p0Var.f = false;
-        this.mSelf = p0Var;
+        n0 n0Var = new n0();
+        n0Var.a = "";
+        n0Var.b = null;
+        n0Var.c = null;
+        n0Var.d = null;
+        n0Var.e = false;
+        n0Var.f = false;
+        this.mSelf = n0Var;
         this.mIcon = null;
         this.mIsGroupConversation = false;
         this.mMessages = new ArrayList();
-        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new ob.a(2));
+        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new rb.a(1));
         this.mActions = Collections.EMPTY_LIST;
     }
 }

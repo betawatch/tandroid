@@ -1,6 +1,6 @@
 package i3;
 
-import a4.h;
+import a4.g;
 import b2.r;
 import b2.r0;
 import c3.h0;
@@ -23,7 +23,7 @@ import java.util.Map;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a = new v(4);
@@ -52,7 +52,32 @@ public final class b implements o {
         this.g = 1;
     }
 
-    public final v a(p pVar) {
+    @Override // c3.o
+    public final boolean a(p pVar) {
+        v vVar = this.a;
+        l lVar = (l) pVar;
+        lVar.h(vVar.a, 0, 3, false);
+        vVar.J(0);
+        if (vVar.A() == 4607062) {
+            lVar.h(vVar.a, 0, 2, false);
+            vVar.J(0);
+            if ((vVar.D() & MediaDataController.MAX_LINKS_COUNT) == 0) {
+                lVar.h(vVar.a, 0, 4, false);
+                vVar.J(0);
+                int j3 = vVar.j();
+                lVar.f = 0;
+                lVar.v(j3, false);
+                lVar.h(vVar.a, 0, 4, false);
+                vVar.J(0);
+                if (vVar.j() == 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public final v b(p pVar) {
         int i10 = this.l;
         v vVar = this.d;
         byte[] bArr = vVar.a;
@@ -64,31 +89,6 @@ public final class b implements o {
         vVar.I(this.l);
         pVar.readFully(vVar.a, 0, this.l);
         return vVar;
-    }
-
-    @Override // c3.o
-    public final boolean b(p pVar) {
-        v vVar = this.a;
-        l lVar = (l) pVar;
-        lVar.f(vVar.a, 0, 3, false);
-        vVar.J(0);
-        if (vVar.A() == 4607062) {
-            lVar.f(vVar.a, 0, 2, false);
-            vVar.J(0);
-            if ((vVar.D() & MediaDataController.MAX_LINKS_COUNT) == 0) {
-                lVar.f(vVar.a, 0, 4, false);
-                vVar.J(0);
-                int j3 = vVar.j();
-                lVar.f = 0;
-                lVar.s(j3, false);
-                lVar.f(vVar.a, 0, 4, false);
-                vVar.J(0);
-                if (vVar.j() == 0) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     @Override // c3.o
@@ -113,11 +113,10 @@ public final class b implements o {
         return a1.e;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:70:0x039d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x03a7  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x03ab  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x03b6 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0009 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x03aa  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x03ae  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x03b9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0009 A[SYNTHETIC] */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -145,16 +144,16 @@ public final class b implements o {
                 boolean z13 = (x10 & 4) != 0;
                 boolean z14 = (x10 & 1) != 0;
                 if (z13 && this.o == null) {
-                    this.o = new a(this.f.Z1(8, 1));
+                    this.o = new a(this.f.f2(8, 1));
                 }
                 if (z14 && this.p == null) {
-                    this.p = new e(this.f.Z1(9, 2));
+                    this.p = new e(this.f.f2(9, 2));
                 }
-                this.f.e1();
+                this.f.k1();
                 this.j = vVar.j() - 5;
                 this.g = 2;
             } else if (i12 == 2) {
-                pVar.o(this.j);
+                pVar.r(this.j);
                 this.j = 0;
                 this.g = 3;
             } else if (i12 == 3) {
@@ -185,25 +184,16 @@ public final class b implements o {
                         if (i10 == 9 || this.p == null) {
                             j11 = -9223372036854775807L;
                             if (i10 == 18 || this.n) {
-                                pVar.o(this.l);
+                                pVar.r(this.l);
                                 z10 = false;
                                 z11 = false;
-                                if (!this.h && z10) {
-                                    this.h = true;
-                                    this.i = cVar.b != j11 ? -this.m : 0L;
-                                }
-                                this.j = 4;
-                                this.g = 2;
-                                if (z11) {
-                                    return i11;
-                                }
                             } else {
-                                v a2 = a(pVar);
+                                v b10 = b(pVar);
                                 cVar.getClass();
                                 cVar.getClass();
-                                if (a2.x() == 2 && "onMetaData".equals(c.b1(a2)) && a2.a() != 0 && a2.x() == 8) {
-                                    HashMap a12 = c.a1(a2);
-                                    Object obj = a12.get("duration");
+                                if (b10.x() == 2 && "onMetaData".equals(c.d1(b10)) && b10.a() != 0 && b10.x() == 8) {
+                                    HashMap c12 = c.c1(b10);
+                                    Object obj = c12.get("duration");
                                     double d = 1000000.0d;
                                     if (obj instanceof Double) {
                                         double doubleValue = ((Double) obj).doubleValue();
@@ -211,7 +201,7 @@ public final class b implements o {
                                             cVar.b = (long) (doubleValue * 1000000.0d);
                                         }
                                     }
-                                    Object obj2 = a12.get("keyframes");
+                                    Object obj2 = c12.get("keyframes");
                                     if (obj2 instanceof Map) {
                                         Map map = (Map) obj2;
                                         Object obj3 = map.get("filepositions");
@@ -242,19 +232,19 @@ public final class b implements o {
                                 }
                                 long j12 = cVar.b;
                                 if (j12 != -9223372036854775807L) {
-                                    this.f.X1(new y(j12, cVar.d, cVar.c));
+                                    this.f.d2(new y(j12, cVar.d, cVar.c));
                                     this.n = true;
                                 }
                             }
                         } else {
                             if (!this.n) {
-                                this.f.X1(new t(-9223372036854775807L));
+                                this.f.d2(new t(-9223372036854775807L));
                                 this.n = true;
                             }
                             e eVar = this.p;
-                            v a10 = a(pVar);
+                            v b11 = b(pVar);
                             eVar.getClass();
-                            int x11 = a10.x();
+                            int x11 = b11.x();
                             int i14 = (x11 >> 4) & 15;
                             int i15 = x11 & 15;
                             if (i15 != 7) {
@@ -265,32 +255,32 @@ public final class b implements o {
                                 v vVar3 = eVar.b;
                                 h0 h0Var = (h0) eVar.a;
                                 v vVar4 = eVar.c;
-                                int x12 = a10.x();
-                                byte[] bArr = a10.a;
-                                int i16 = a10.b;
+                                int x12 = b11.x();
+                                byte[] bArr = b11.a;
+                                int i16 = b11.b;
                                 j11 = -9223372036854775807L;
                                 int i17 = i16 + 1;
-                                a10.b = i17;
+                                b11.b = i17;
                                 int i18 = ((bArr[i16] & 255) << 24) >> 8;
-                                a10.b = i16 + 2;
+                                b11.b = i16 + 2;
                                 int i19 = ((bArr[i17] & 255) << 8) | i18;
-                                a10.b = i16 + 3;
+                                b11.b = i16 + 3;
                                 long j13 = (((bArr[r5] & 255) | i19) * 1000) + j10;
                                 boolean z16 = false;
                                 if (x12 == 0 && !eVar.e) {
-                                    byte[] bArr2 = new byte[a10.a()];
+                                    byte[] bArr2 = new byte[b11.a()];
                                     v vVar5 = new v(bArr2);
-                                    a10.h(0, a10.a(), bArr2);
-                                    c3.d a11 = c3.d.a(vVar5);
-                                    eVar.d = a11.b;
+                                    b11.h(0, b11.a(), bArr2);
+                                    c3.d a2 = c3.d.a(vVar5);
+                                    eVar.d = a2.b;
                                     r rVar = new r();
                                     rVar.p = r0.n("video/x-flv");
                                     rVar.q = r0.n(MediaController.VIDEO_MIME_TYPE);
-                                    rVar.j = a11.l;
-                                    rVar.x = a11.c;
-                                    rVar.y = a11.d;
-                                    rVar.D = a11.k;
-                                    rVar.t = a11.a;
+                                    rVar.j = a2.l;
+                                    rVar.x = a2.c;
+                                    rVar.y = a2.d;
+                                    rVar.D = a2.k;
+                                    rVar.t = a2.a;
                                     hg.c.s(rVar, h0Var);
                                     eVar.e = true;
                                 } else if (x12 == 1 && eVar.e) {
@@ -302,13 +292,13 @@ public final class b implements o {
                                         bArr3[2] = 0;
                                         int i21 = 4 - eVar.d;
                                         int i22 = 0;
-                                        while (a10.a() > 0) {
-                                            a10.h(i21, eVar.d, vVar4.a);
+                                        while (b11.a() > 0) {
+                                            b11.h(i21, eVar.d, vVar4.a);
                                             vVar4.J(0);
                                             int B = vVar4.B();
                                             vVar3.J(0);
                                             h0Var.d(4, vVar3);
-                                            h0Var.d(B, a10);
+                                            h0Var.d(B, b11);
                                             i22 = i22 + 4 + B;
                                         }
                                         ((h0) eVar.a).c(j13, i20, i22, 0, null);
@@ -318,25 +308,27 @@ public final class b implements o {
                                 }
                                 if (z16) {
                                     z10 = true;
+                                    z11 = true;
                                 }
                             } else {
                                 j11 = -9223372036854775807L;
                             }
                         }
                         z10 = false;
+                        z11 = true;
                     } else {
                         if (!this.n) {
-                            this.f.X1(new t(-9223372036854775807L));
+                            this.f.d2(new t(-9223372036854775807L));
                             this.n = true;
                         }
                         a aVar = this.o;
-                        v a13 = a(pVar);
+                        v b12 = b(pVar);
                         h0 h0Var2 = (h0) aVar.a;
                         if (aVar.b) {
                             i11 = 0;
-                            a13.K(1);
+                            b12.K(1);
                         } else {
-                            int x13 = a13.x();
+                            int x13 = b12.x();
                             int i23 = (x13 >> 4) & 15;
                             aVar.d = i23;
                             i11 = 0;
@@ -365,17 +357,17 @@ public final class b implements o {
                         }
                         h0 h0Var3 = (h0) aVar.a;
                         if (aVar.d == 2) {
-                            int a14 = a13.a();
-                            h0Var3.d(a14, a13);
-                            ((h0) aVar.a).c(j10, 1, a14, 0, null);
+                            int a10 = b12.a();
+                            h0Var3.d(a10, b12);
+                            ((h0) aVar.a).c(j10, 1, a10, 0, null);
                         } else {
-                            int x14 = a13.x();
+                            int x14 = b12.x();
                             z12 = false;
                             if (x14 == 0 && !aVar.c) {
-                                int a15 = a13.a();
-                                byte[] bArr4 = new byte[a15];
-                                a13.h(0, a15, bArr4);
-                                c3.a n10 = c3.b.n(new h(bArr4, a15), false);
+                                int a11 = b12.a();
+                                byte[] bArr4 = new byte[a11];
+                                b12.h(0, a11, bArr4);
+                                c3.a n10 = c3.b.n(new g(bArr4, a11), false);
                                 r rVar4 = new r();
                                 rVar4.p = r0.n("video/x-flv");
                                 rVar4.q = r0.n(MediaController.AUDIO_MIME_TYPE);
@@ -386,25 +378,27 @@ public final class b implements o {
                                 hg.c.s(rVar4, h0Var3);
                                 aVar.c = true;
                             } else if (aVar.d != 10 || x14 == 1) {
-                                int a16 = a13.a();
-                                h0Var3.d(a16, a13);
-                                ((h0) aVar.a).c(j10, 1, a16, 0, null);
+                                int a12 = b12.a();
+                                h0Var3.d(a12, b12);
+                                ((h0) aVar.a).c(j10, 1, a12, 0, null);
                             }
+                            z11 = true;
                             j11 = -9223372036854775807L;
                             z10 = z12;
                         }
                         z12 = true;
+                        z11 = true;
                         j11 = -9223372036854775807L;
                         z10 = z12;
                     }
-                    z11 = true;
-                    if (!this.h) {
+                    if (!this.h && z10) {
                         this.h = true;
                         this.i = cVar.b != j11 ? -this.m : 0L;
                     }
                     this.j = 4;
                     this.g = 2;
-                    if (z11) {
+                    if (!z11) {
+                        return i11;
                     }
                 } else {
                     j3 = this.m;
@@ -419,14 +413,16 @@ public final class b implements o {
                 j11 = -9223372036854775807L;
                 if (i10 == 18) {
                 }
-                pVar.o(this.l);
+                pVar.r(this.l);
                 z10 = false;
                 z11 = false;
                 if (!this.h) {
+                    this.h = true;
+                    this.i = cVar.b != j11 ? -this.m : 0L;
                 }
                 this.j = 4;
                 this.g = 2;
-                if (z11) {
+                if (!z11) {
                 }
             }
         }

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -56,10 +56,10 @@ public final class d extends AbstractMap implements Serializable {
         objArr2[i12] = null;
         iArr[i10] = iArr[i12];
         iArr[i12] = 0;
-        int a2 = w7.j9.a(obj2) & i11;
-        int b10 = w7.i9.b(a2, obj);
+        int a2 = w7.f9.a(obj2) & i11;
+        int b10 = w7.e9.b(a2, obj);
         if (b10 == size) {
-            w7.i9.d(a2, i13, obj);
+            w7.e9.d(a2, i13, obj);
             return;
         }
         while (true) {
@@ -128,7 +128,7 @@ public final class d extends AbstractMap implements Serializable {
         for (int i10 = 0; i10 < this.f; i10++) {
             Object[] objArr = this.d;
             objArr.getClass();
-            if (w7.o9.a(obj, objArr[i10])) {
+            if (w7.i9.a(obj, objArr[i10])) {
                 return true;
             }
         }
@@ -143,11 +143,11 @@ public final class d extends AbstractMap implements Serializable {
         if (c()) {
             return -1;
         }
-        int a2 = w7.j9.a(obj);
+        int a2 = w7.f9.a(obj);
         int d = d();
         Object obj2 = this.a;
         obj2.getClass();
-        int b10 = w7.i9.b(a2 & d, obj2);
+        int b10 = w7.e9.b(a2 & d, obj2);
         if (b10 != 0) {
             int i10 = ~d;
             int i11 = a2 & i10;
@@ -159,7 +159,7 @@ public final class d extends AbstractMap implements Serializable {
                 if ((i13 & i10) == i11) {
                     Object[] objArr = this.c;
                     objArr.getClass();
-                    if (w7.o9.a(obj, objArr[i12])) {
+                    if (w7.i9.a(obj, objArr[i12])) {
                         return i12;
                     }
                 }
@@ -182,23 +182,23 @@ public final class d extends AbstractMap implements Serializable {
 
     public final int f(int i10, int i11, int i12, int i13) {
         int i14 = i11 - 1;
-        Object c10 = w7.i9.c(i11);
+        Object c10 = w7.e9.c(i11);
         if (i13 != 0) {
-            w7.i9.d(i12 & i14, i13 + 1, c10);
+            w7.e9.d(i12 & i14, i13 + 1, c10);
         }
         Object obj = this.a;
         obj.getClass();
         int[] iArr = this.b;
         iArr.getClass();
         for (int i15 = 0; i15 <= i10; i15++) {
-            int b10 = w7.i9.b(i15, obj);
+            int b10 = w7.e9.b(i15, obj);
             while (b10 != 0) {
                 int i16 = b10 - 1;
                 int i17 = iArr[i16];
                 int i18 = ((~i10) & i17) | i15;
                 int i19 = i18 & i14;
-                int b11 = w7.i9.b(i19, c10);
-                w7.i9.d(i19, b10, c10);
+                int b11 = w7.e9.b(i19, c10);
+                w7.e9.d(i19, b10, c10);
                 iArr[i16] = ((~i14) & i18) | (b11 & i14);
                 b10 = i17 & i10;
             }
@@ -217,7 +217,7 @@ public final class d extends AbstractMap implements Serializable {
             iArr.getClass();
             Object[] objArr = this.c;
             objArr.getClass();
-            int a2 = w7.i9.a(obj, null, d, obj2, iArr, objArr, null);
+            int a2 = w7.e9.a(obj, null, d, obj2, iArr, objArr, null);
             if (a2 != -1) {
                 Object[] objArr2 = this.d;
                 objArr2.getClass();
@@ -264,23 +264,24 @@ public final class d extends AbstractMap implements Serializable {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final Object put(Object obj, Object obj2) {
-        int min;
+        int i10;
+        int i11 = 32;
         if (c()) {
             if (!c()) {
                 throw new IllegalStateException("Arrays already allocated");
             }
-            int i10 = this.e;
-            int max = Math.max(i10 + 1, 2);
+            int i12 = this.e;
+            int max = Math.max(i12 + 1, 2);
             int highestOneBit = Integer.highestOneBit(max);
             if (max > highestOneBit && (highestOneBit = highestOneBit + highestOneBit) <= 0) {
                 highestOneBit = TLObject.FLAG_30;
             }
             int max2 = Math.max(4, highestOneBit);
-            this.a = w7.i9.c(max2);
+            this.a = w7.e9.c(max2);
             this.e = ((32 - Integer.numberOfLeadingZeros(max2 - 1)) & 31) | (this.e & (-32));
-            this.b = new int[i10];
-            this.c = new Object[i10];
-            this.d = new Object[i10];
+            this.b = new int[i12];
+            this.c = new Object[i12];
+            this.d = new Object[i12];
         }
         Map a2 = a();
         if (a2 != null) {
@@ -292,45 +293,57 @@ public final class d extends AbstractMap implements Serializable {
         objArr.getClass();
         Object[] objArr2 = this.d;
         objArr2.getClass();
-        int i11 = this.f;
-        int i12 = i11 + 1;
-        int a10 = w7.j9.a(obj);
+        int i13 = this.f;
+        int i14 = i13 + 1;
+        int a10 = w7.f9.a(obj);
         int d = d();
-        int i13 = a10 & d;
+        int i15 = a10 & d;
         Object obj3 = this.a;
         obj3.getClass();
-        int b10 = w7.i9.b(i13, obj3);
-        if (b10 != 0) {
-            int i14 = ~d;
-            int i15 = a10 & i14;
-            int i16 = 0;
+        int b10 = w7.e9.b(i15, obj3);
+        if (b10 == 0) {
+            if (i14 > d) {
+                d = f(d, (d + 1) * (d < 32 ? 4 : 2), a10, i13);
+            } else {
+                Object obj4 = this.a;
+                obj4.getClass();
+                w7.e9.d(i15, i14, obj4);
+            }
+            i10 = 1;
+        } else {
+            int i16 = ~d;
+            int i17 = a10 & i16;
+            int i18 = 0;
             while (true) {
-                int i17 = b10 - 1;
-                int i18 = iArr[i17];
-                int i19 = i18 & i14;
-                if (i19 == i15 && w7.o9.a(obj, objArr[i17])) {
-                    Object obj4 = objArr2[i17];
-                    objArr2[i17] = obj2;
-                    return obj4;
+                int i19 = b10 - 1;
+                int i20 = iArr[i19];
+                i10 = 1;
+                int i21 = i20 & i16;
+                int i22 = i11;
+                if (i21 == i17 && w7.i9.a(obj, objArr[i19])) {
+                    Object obj5 = objArr2[i19];
+                    objArr2[i19] = obj2;
+                    return obj5;
                 }
-                int i20 = i18 & d;
-                int i21 = i16 + 1;
-                if (i20 != 0) {
-                    i16 = i21;
-                    b10 = i20;
+                int i23 = i20 & d;
+                int i24 = i18 + 1;
+                if (i23 != 0) {
+                    i18 = i24;
+                    b10 = i23;
+                    i11 = i22;
                 } else {
-                    if (i21 >= 9) {
+                    if (i24 >= 9) {
                         LinkedHashMap linkedHashMap = new LinkedHashMap(d() + 1, 1.0f);
-                        int i22 = isEmpty() ? -1 : 0;
-                        while (i22 >= 0) {
+                        int i25 = isEmpty() ? -1 : 0;
+                        while (i25 >= 0) {
                             Object[] objArr3 = this.c;
                             objArr3.getClass();
-                            Object obj5 = objArr3[i22];
+                            Object obj6 = objArr3[i25];
                             Object[] objArr4 = this.d;
                             objArr4.getClass();
-                            linkedHashMap.put(obj5, objArr4[i22]);
-                            int i23 = i22 + 1;
-                            i22 = i23 < this.f ? i23 : -1;
+                            linkedHashMap.put(obj6, objArr4[i25]);
+                            int i26 = i25 + 1;
+                            i25 = i26 < this.f ? i26 : -1;
                         }
                         this.a = linkedHashMap;
                         this.b = null;
@@ -339,45 +352,43 @@ public final class d extends AbstractMap implements Serializable {
                         this.e += 32;
                         return linkedHashMap.put(obj, obj2);
                     }
-                    if (i12 > d) {
-                        d = f(d, (d + 1) * (d < 32 ? 4 : 2), a10, i11);
+                    if (i14 > d) {
+                        d = f(d, (d + 1) * (d < i22 ? 4 : 2), a10, i13);
                     } else {
-                        iArr[i17] = (i12 & d) | i19;
+                        iArr[i19] = (i14 & d) | i21;
                     }
                 }
             }
-        } else if (i12 > d) {
-            d = f(d, (d + 1) * (d < 32 ? 4 : 2), a10, i11);
-        } else {
-            Object obj6 = this.a;
-            obj6.getClass();
-            w7.i9.d(i13, i12, obj6);
         }
         int[] iArr2 = this.b;
         iArr2.getClass();
         int length = iArr2.length;
-        if (i12 > length && (min = Math.min(1073741823, (Math.max(1, length >>> 1) + length) | 1)) != length) {
-            int[] iArr3 = this.b;
-            iArr3.getClass();
-            this.b = Arrays.copyOf(iArr3, min);
-            Object[] objArr5 = this.c;
-            objArr5.getClass();
-            this.c = Arrays.copyOf(objArr5, min);
-            Object[] objArr6 = this.d;
-            objArr6.getClass();
-            this.d = Arrays.copyOf(objArr6, min);
+        if (i14 > length) {
+            int i27 = i10;
+            int min = Math.min(1073741823, (Math.max(i27, length >>> 1) + length) | i27);
+            if (min != length) {
+                int[] iArr3 = this.b;
+                iArr3.getClass();
+                this.b = Arrays.copyOf(iArr3, min);
+                Object[] objArr5 = this.c;
+                objArr5.getClass();
+                this.c = Arrays.copyOf(objArr5, min);
+                Object[] objArr6 = this.d;
+                objArr6.getClass();
+                this.d = Arrays.copyOf(objArr6, min);
+            }
         }
-        int i24 = (~d) & a10;
+        int i28 = (~d) & a10;
         int[] iArr4 = this.b;
         iArr4.getClass();
-        iArr4[i11] = i24;
+        iArr4[i13] = i28;
         Object[] objArr7 = this.c;
         objArr7.getClass();
-        objArr7[i11] = obj;
+        objArr7[i13] = obj;
         Object[] objArr8 = this.d;
         objArr8.getClass();
-        objArr8[i11] = obj2;
-        this.f = i12;
+        objArr8[i13] = obj2;
+        this.f = i14;
         this.e += 32;
         return null;
     }

@@ -1,99 +1,54 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.SharedPreferences;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
+import android.net.ConnectivityManager;
+import android.net.LinkProperties;
+import android.net.Network;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class x extends ConnectivityManager.NetworkCallback {
+    public final /* synthetic */ y a;
 
-    public /* synthetic */ x(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public x(y yVar) {
+        this.a = yVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                List list = ((z) this.b).e;
-                if (list != null) {
-                    list.isEmpty();
-                }
-                throw null;
-            case 1:
-                c1 c1Var = (c1) this.b;
-                d1 d1Var = c1Var.g;
-                if (d1Var != null) {
-                    c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 223);
-                }
-                c1Var.e();
-                return;
-            default:
-                f2 f2Var = (f2) this.b;
-                HashSet hashSet = f2Var.f;
-                SharedPreferences sharedPreferences = f2Var.b;
-                HashSet hashSet2 = f2Var.g;
-                if (hashSet.isEmpty()) {
-                    return;
-                }
-                long j3 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
-                long currentTimeMillis = System.currentTimeMillis();
-                long j10 = f2Var.h;
-                if (j10 == 0 || currentTimeMillis - j10 >= j3) {
-                    f2.i.b("Upload the feature usage report.", new Object[0]);
-                    m1 l4 = n1.l();
-                    String str = f2.j;
-                    l4.c();
-                    n1.n((n1) l4.b, str);
-                    String str2 = f2Var.c;
-                    l4.c();
-                    n1.m((n1) l4.b, str2);
-                    n1 n1Var = (n1) l4.a();
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.addAll(hashSet);
-                    i1 l10 = j1.l();
-                    l10.c();
-                    j1.n((j1) l10.b, arrayList);
-                    l10.c();
-                    j1.m((j1) l10.b, n1Var);
-                    j1 j1Var = (j1) l10.a();
-                    t1 m10 = u1.m();
-                    m10.c();
-                    u1.s((u1) m10.b, j1Var);
-                    f2Var.a.a((u1) m10.a(), 243);
-                    SharedPreferences.Editor edit = sharedPreferences.edit();
-                    if (!hashSet2.equals(hashSet)) {
-                        hashSet2.clear();
-                        hashSet2.addAll(hashSet);
-                        Iterator it = hashSet2.iterator();
-                        while (it.hasNext()) {
-                            String num = Integer.toString(((f1) it.next()).a);
-                            String i10 = sa.e.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(i10)) {
-                                i10 = sa.e.i("feature_usage_timestamp_detected_feature_", num);
-                            }
-                            String i11 = sa.e.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(i10, i11)) {
-                                long j11 = sharedPreferences.getLong(i10, 0L);
-                                edit.remove(i10);
-                                if (j11 != 0) {
-                                    edit.putLong(i11, j11);
-                                }
-                            }
-                        }
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
+        this.a.a(network, linkProperties);
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onLost(Network network) {
+        y yVar = this.a;
+        synchronized (yVar.h) {
+            try {
+                if (yVar.d != null && yVar.e != null) {
+                    y.j.b("the network is lost", new Object[0]);
+                    if (yVar.e.remove(network)) {
+                        yVar.d.remove(network);
                     }
-                    f2Var.h = currentTimeMillis;
-                    edit.putLong("feature_usage_last_report_time", currentTimeMillis).apply();
-                    return;
+                    yVar.b();
                 }
-                return;
+            } finally {
+            }
         }
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onUnavailable() {
+        y yVar = this.a;
+        synchronized (yVar.h) {
+            if (yVar.d != null && yVar.e != null) {
+                y.j.b("all networks are unavailable.", new Object[0]);
+                yVar.d.clear();
+                yVar.e.clear();
+                yVar.b();
+            }
+        }
+    }
+
+    @Override // android.net.ConnectivityManager.NetworkCallback
+    public final void onAvailable(Network network) {
     }
 }

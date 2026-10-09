@@ -1,42 +1,51 @@
 package ai;
 
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.tl.TL_stories;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y9 b;
-    public final /* synthetic */ TL_stories.PeerStories c;
+    public final /* synthetic */ z9 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ w9(y9 y9Var, TL_stories.PeerStories peerStories, int i10) {
-        this.a = i10;
-        this.b = y9Var;
-        this.c = peerStories;
+    public /* synthetic */ w9(z9 z9Var, long j3, int i10, int i11) {
+        this.a = i11;
+        this.b = z9Var;
+        this.c = j3;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                y9 y9Var = this.b;
-                y9Var.getClass();
-                TL_stories.PeerStories peerStories = this.c;
-                y9Var.g(DialogObject.getPeerDialogId(peerStories.peer), peerStories);
-                break;
+                long j3 = this.c;
+                int i10 = this.d;
+                MessagesStorage messagesStorage = this.b.b;
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                try {
+                    Locale locale = Locale.US;
+                    database.executeFast("REPLACE INTO stories_counter VALUES(" + j3 + ", 0, " + i10 + ")").stepThis().dispose();
+                    break;
+                } catch (Throwable th2) {
+                    messagesStorage.checkSQLException(th2);
+                    return;
+                }
             default:
-                y9 y9Var2 = this.b;
-                y9Var2.getClass();
-                int i10 = 0;
-                while (true) {
-                    TL_stories.PeerStories peerStories2 = this.c;
-                    if (i10 >= peerStories2.stories.size()) {
-                        break;
-                    } else {
-                        y9Var2.l(DialogObject.getPeerDialogId(peerStories2.peer), peerStories2.stories.get(i10));
-                        i10++;
-                    }
+                long j10 = this.c;
+                int i11 = this.d;
+                MessagesStorage messagesStorage2 = this.b.b;
+                SQLiteDatabase database2 = messagesStorage2.getDatabase();
+                try {
+                    Locale locale2 = Locale.US;
+                    database2.executeFast("DELETE FROM stories WHERE dialog_id = " + j10 + " AND story_id = " + i11).stepThis().dispose();
+                    break;
+                } catch (Throwable th3) {
+                    messagesStorage2.checkSQLException(th3);
                 }
         }
     }

@@ -9,18 +9,18 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowManager;
-import ci.ab;
+import ci.bb;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
     public final t3 a;
     public final h3 b;
-    public final ab c;
+    public final bb c;
     public final Paint d;
     public boolean e;
 
@@ -30,13 +30,13 @@ public final class i3 extends Dialog {
         this.d = paint;
         this.a = t3Var;
         u3 windowView = t3Var.getWindowView();
-        ab abVar = new ab(this, getContext(), 8);
-        this.c = abVar;
-        paint.setColor(i6.w0(null, i6.a7, false));
+        bb bbVar = new bb(this, getContext(), 8);
+        this.c = bbVar;
+        paint.setColor(i6.x0(null, i6.a7, false));
         h3 h3Var = new h3(windowView);
         this.b = h3Var;
         setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(abVar, w7.z5.e(-1, -2, 80));
+        h3Var.addView(bbVar, w7.x5.e(-1, -2, 80));
         h3Var.setClipToPadding(false);
     }
 
@@ -56,7 +56,7 @@ public final class i3 extends Dialog {
                 h3 h3Var = i3Var.b;
                 View view = (View) h3Var.a;
                 AndroidUtilities.removeFromParent(view);
-                h3Var.addView(view, w7.z5.e(-1, -1, 119));
+                h3Var.addView(view, w7.x5.e(-1, -1, 119));
             }
         }
     }
@@ -100,9 +100,7 @@ public final class i3 extends Dialog {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
-        if (i10 >= 23) {
-            window.setStatusBarColor(0);
-        }
+        window.setStatusBarColor(0);
         h3 h3Var = this.b;
         h3Var.setFitsSystemWindows(true);
         h3Var.setSystemUiVisibility(1792);

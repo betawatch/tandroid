@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class y implements b0 {
     public final c5.b0 a;
@@ -40,14 +40,14 @@ public final class y implements b0 {
             return new a0(c0Var, c0Var);
         }
         int b10 = e2.d0.b(b0Var, j3);
-        long f7 = b0Var.f(b10);
+        long i10 = b0Var.i(b10);
         c5.b0 b0Var2 = this.a;
-        c0 c0Var2 = new c0(f7, b0Var2.f(b10));
-        if (f7 == j3 || b10 == b0Var.b - 1) {
+        c0 c0Var2 = new c0(i10, b0Var2.i(b10));
+        if (i10 == j3 || b10 == b0Var.b - 1) {
             return new a0(c0Var2, c0Var2);
         }
-        int i10 = b10 + 1;
-        return new a0(c0Var2, new c0(b0Var.f(i10), b0Var2.f(i10)));
+        int i11 = b10 + 1;
+        return new a0(c0Var2, new c0(b0Var.i(i11), b0Var2.i(i11)));
     }
 
     @Override // c3.b0

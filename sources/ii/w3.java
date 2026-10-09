@@ -5,24 +5,24 @@ import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class w3 {
     public final i1 a;
     public final int b;
     public final int c;
-    public final l4 d;
+    public final m4 d;
     public final TL_iv.RichText e;
     public final /* synthetic */ x3 f;
 
-    public w3(x3 x3Var, i1 i1Var, int i10, int i11, l4 l4Var) {
+    public w3(x3 x3Var, i1 i1Var, int i10, int i11, m4 m4Var) {
         TL_iv.textButton textbutton;
         this.f = x3Var;
         this.a = i1Var;
         this.b = i10;
         this.c = i11;
-        this.d = l4Var;
-        if (l4Var == null || (textbutton = l4Var.a) == null) {
+        this.d = m4Var;
+        if (m4Var == null || (textbutton = m4Var.a) == null) {
             this.e = h6.f(new SpannableStringBuilder(i1Var.getText().subSequence(i10, i11)));
         } else {
             this.e = textbutton.text;
@@ -34,29 +34,29 @@ public final class w3 {
         Editable text;
         int i10;
         TL_iv.textButton textbutton;
-        if (l4.c(inlineButtonType) && (text = (i1Var = this.a).getText()) != null && (i10 = this.b) >= 0) {
+        if (m4.c(inlineButtonType) && (text = (i1Var = this.a).getText()) != null && (i10 = this.b) >= 0) {
             int length = text.length();
             int i11 = this.c;
             if (i11 > length || i10 >= i11) {
                 return;
             }
             x3 x3Var = this.f;
-            i2 i2Var = x3Var.Q3;
+            i2 i2Var = x3Var.H3;
             if (i2Var != null) {
                 i2Var.d();
             }
-            k3 k3Var = x3Var.u3;
+            k3 k3Var = x3Var.l3;
             if (k3Var != null) {
                 k3Var.f(false);
             }
             i1Var.setLocked(false);
-            for (l4 l4Var : (l4[]) text.getSpans(i10, i11, l4.class)) {
-                text.removeSpan(l4Var);
+            for (m4 m4Var : (m4[]) text.getSpans(i10, i11, m4.class)) {
+                text.removeSpan(m4Var);
             }
             h6.n(text, i10, i11);
             h6.m(text, i10, i11);
-            l4 l4Var2 = this.d;
-            if (l4Var2 == null || (textbutton = l4Var2.a) == null) {
+            m4 m4Var2 = this.d;
+            if (m4Var2 == null || (textbutton = m4Var2.a) == null) {
                 textbutton = new TL_iv.textButton();
             }
             textbutton.text = this.e;
@@ -64,24 +64,24 @@ public final class w3 {
             if (textbutton.style == null) {
                 textbutton.style = new TL_keyboard.RichButtonStyle();
             }
-            l4 l4Var3 = new l4(textbutton);
-            l4Var3.a(x3Var.m3, i1Var, x3Var.n3);
-            text.setSpan(l4Var3, i10, i11, 33);
-            l4Var3.d(text);
+            m4 m4Var3 = new m4(textbutton);
+            m4Var3.a(x3Var.d3, i1Var, x3Var.e3);
+            text.setSpan(m4Var3, i10, i11, 33);
+            m4Var3.d(text);
             i1Var.setSelection(Math.min(i11, i1Var.length()));
-            x3Var.P3 = true;
+            x3Var.G3 = true;
             try {
                 i1Var.notifySpansChanged();
                 i1Var.requestLayout();
                 i1Var.invalidateEffects();
-                x3Var.P3 = false;
-                i2 i2Var2 = x3Var.Q3;
+                x3Var.G3 = false;
+                i2 i2Var2 = x3Var.H3;
                 if (i2Var2 != null) {
                     i2Var2.h();
                 }
-                x3Var.o3.onContentChanged();
+                x3Var.f3.onContentChanged();
             } catch (Throwable th2) {
-                x3Var.P3 = false;
+                x3Var.G3 = false;
                 throw th2;
             }
         }

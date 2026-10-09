@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Paint a;
@@ -60,7 +60,7 @@ public final class s extends View {
         int HSVToColor = Color.HSVToColor(fArr);
         x xVar = this.n;
         xVar.f = HSVToColor;
-        xVar.m(HSVToColor, 0);
+        xVar.o(HSVToColor, 0);
         invalidate();
     }
 
@@ -78,9 +78,9 @@ public final class s extends View {
         int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
         int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
         float f7 = width;
-        float a2 = w7.q.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
+        float a2 = w7.o.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
         float f10 = height;
-        float a10 = w7.q.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
+        float a10 = w7.o.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
         Rect rect = AndroidUtilities.rectTmp2;
         Drawable drawable = this.f;
         drawable.getPadding(rect);

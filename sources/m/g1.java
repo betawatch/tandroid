@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g1 {
     public static final RectF l = new RectF();
@@ -32,7 +32,7 @@ public final class g1 {
     public TextPaint h;
     public final TextView i;
     public final Context j;
-    public final f1 k;
+    public final d1 k;
 
     static {
         new ConcurrentHashMap();
@@ -41,13 +41,10 @@ public final class g1 {
     public g1(TextView textView) {
         this.i = textView;
         this.j = textView.getContext();
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 29) {
+        if (Build.VERSION.SDK_INT >= 29) {
             this.k = new e1();
-        } else if (i10 >= 23) {
-            this.k = new d1();
         } else {
-            this.k = new f1();
+            this.k = new d1();
         }
     }
 
@@ -134,16 +131,15 @@ public final class g1 {
             throw new IllegalStateException("No available text sizes to choose from.");
         }
         int i10 = length - 1;
-        int i11 = 1;
-        int i12 = 0;
-        while (i11 <= i10) {
-            int i13 = (i11 + i10) / 2;
+        int i11 = 0;
+        int i12 = 1;
+        while (i12 <= i10) {
+            int i13 = (i12 + i10) / 2;
             int i14 = this.f[i13];
             TextView textView = this.i;
             CharSequence text = textView.getText();
             TransformationMethod transformationMethod = textView.getTransformationMethod();
             CharSequence charSequence = (transformationMethod == null || (transformation = transformationMethod.getTransformation(text, textView)) == null) ? text : transformation;
-            int i15 = Build.VERSION.SDK_INT;
             int b10 = a1.b(textView);
             TextPaint textPaint = this.h;
             if (textPaint == null) {
@@ -153,19 +149,17 @@ public final class g1 {
             }
             this.h.set(textView.getPaint());
             this.h.setTextSize(i14);
-            Layout.Alignment alignment = (Layout.Alignment) e(textView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL);
-            int round = Math.round(rectF.right);
-            StaticLayout a2 = i15 >= 23 ? c1.a(charSequence, alignment, round, b10, this.i, this.h, this.k) : a1.a(charSequence, alignment, round, textView, this.h);
+            StaticLayout a2 = c1.a(charSequence, (Layout.Alignment) e(textView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), b10, this.i, this.h, this.k);
             if ((b10 == -1 || (a2.getLineCount() <= b10 && a2.getLineEnd(a2.getLineCount() - 1) == charSequence.length())) && a2.getHeight() <= rectF.bottom) {
-                int i16 = i13 + 1;
-                i12 = i11;
-                i11 = i16;
+                int i15 = i13 + 1;
+                i11 = i12;
+                i12 = i15;
             } else {
-                i12 = i13 - 1;
-                i10 = i12;
+                i11 = i13 - 1;
+                i10 = i11;
             }
         }
-        return this.f[i12];
+        return this.f[i11];
     }
 
     public final boolean f() {

@@ -1,47 +1,60 @@
 package com.google.android.gms.internal.cast;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class s4 extends o4 implements ScheduledExecutorService {
-    public final ScheduledExecutorService b;
+public final class s4 extends f4 implements RunnableFuture {
+    public volatile r4 n;
 
-    public s4(ScheduledExecutorService scheduledExecutorService) {
-        super(scheduledExecutorService);
-        this.b = scheduledExecutorService;
+    public s4(Callable callable) {
+        this.n = new r4(this, callable);
     }
 
-    @Override // com.google.android.gms.internal.cast.o4, java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        k4.d(this);
+    @Override // com.google.android.gms.internal.cast.f4
+    public final String c() {
+        r4 r4Var = this.n;
+        return r4Var != null ? a1.g.q("task=[", r4Var.toString(), "]") : super.c();
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final ScheduledFuture schedule(Runnable runnable, long j3, TimeUnit timeUnit) {
-        u4 u4Var = new u4(Executors.callable(runnable, null));
-        return new p4(u4Var, this.b.schedule(u4Var, j3, timeUnit));
+    @Override // com.google.android.gms.internal.cast.f4
+    public final void e() {
+        r4 r4Var;
+        Object obj = this.a;
+        if ((obj instanceof x3) && ((x3) obj).a && (r4Var = this.n) != null) {
+            k4 k4Var = r4.d;
+            k4 k4Var2 = r4.c;
+            Runnable runnable = (Runnable) r4Var.get();
+            if (runnable instanceof Thread) {
+                j4 j4Var = new j4(r4Var);
+                j4Var.setExclusiveOwnerThread(Thread.currentThread());
+                if (r4Var.compareAndSet(runnable, j4Var)) {
+                    try {
+                        Thread thread = (Thread) runnable;
+                        thread.interrupt();
+                        if (((Runnable) r4Var.getAndSet(k4Var2)) == k4Var) {
+                            LockSupport.unpark(thread);
+                        }
+                    } catch (Throwable th2) {
+                        if (((Runnable) r4Var.getAndSet(k4Var2)) == k4Var) {
+                            LockSupport.unpark((Thread) runnable);
+                        }
+                        throw th2;
+                    }
+                }
+            }
+        }
+        this.n = null;
     }
 
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleAtFixedRate(Runnable runnable, long j3, long j10, TimeUnit timeUnit) {
-        r4 r4Var = new r4(runnable);
-        return new p4(r4Var, this.b.scheduleAtFixedRate(r4Var, j3, j10, timeUnit));
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture scheduleWithFixedDelay(Runnable runnable, long j3, long j10, TimeUnit timeUnit) {
-        r4 r4Var = new r4(runnable);
-        return new p4(r4Var, this.b.scheduleWithFixedDelay(r4Var, j3, j10, timeUnit));
-    }
-
-    @Override // java.util.concurrent.ScheduledExecutorService
-    public final /* bridge */ /* synthetic */ ScheduledFuture schedule(Callable callable, long j3, TimeUnit timeUnit) {
-        u4 u4Var = new u4(callable);
-        return new p4(u4Var, this.b.schedule(u4Var, j3, timeUnit));
+    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
+    public final void run() {
+        r4 r4Var = this.n;
+        if (r4Var != null) {
+            r4Var.run();
+        }
+        this.n = null;
     }
 }

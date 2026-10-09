@@ -1,27 +1,24 @@
 package x7;
 
 import android.content.Context;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class ga implements ea {
-    public final q9.n a;
-    public final ba b;
+public final class ga {
+    public final p6.b a;
+    public final AtomicLong b;
 
-    public ga(Context context, ba baVar) {
-        this.b = baVar;
-        j5.a aVar = j5.a.e;
-        l5.t.b(context);
-        l5.r c10 = l5.t.a().c(aVar);
-        if (j5.a.d.contains(new i5.c("json"))) {
-            new q9.n(new v7.a9(c10, 4));
+    public ga(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                this.b = new AtomicLong(-1L);
+                this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
+                break;
+            default:
+                this.b = new AtomicLong(-1L);
+                this.a = new p6.b(context, p6.b.k, new n6.p("mlkit:vision"), com.google.android.gms.common.api.i.c);
+                break;
         }
-        this.a = new q9.n(new v7.a9(c10, 5));
-    }
-
-    @Override // x7.ea
-    public final void a(a5.a aVar) {
-        this.b.getClass();
-        ((l5.s) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.B(), i5.d.a, null) : new i5.a(null, aVar.B(), i5.d.b, null), new j2.e(20));
     }
 }

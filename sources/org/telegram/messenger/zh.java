@@ -7,7 +7,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zh implements Runnable {
     public final /* synthetic */ int a;
@@ -31,10 +31,10 @@ public final /* synthetic */ class zh implements Runnable {
                 ((SavedMessagesController) this.c).lambda$loadDialogs$2((TLObject) this.b, (ArrayList) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 1:
-                ((SendMessagesHelper) this.c).lambda$performSendDelayedMessage$57((TLObject) this.b, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
+                ((SendMessagesHelper) this.c).lambda$performSendDelayedMessage$60((TLObject) this.b, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
                 break;
             case 2:
-                ((SendMessagesHelper) this.c).lambda$sendMessage$19((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (gj) this.e);
+                ((SendMessagesHelper) this.c).lambda$sendMessage$22((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (sj) this.e);
                 break;
             case 3:
                 ((SendMessagesHelper) this.c).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.b, (File) this.d, (MessageObject) this.e);

@@ -1,13 +1,46 @@
 package bf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a extends p {
-    @Override // bf.p
-    public final void e(p pVar) {
-        if (!(pVar instanceof a)) {
-            throw new IllegalArgumentException("Parent of block must also be block (can not be inline)");
+public abstract class a {
+    public static final Pattern a = Pattern.compile("[\\\\&]");
+    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+    public static final Pattern c;
+    public static final rb.a d;
+
+    static {
+        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
+        c = Pattern.compile("[ \t\r\n]+");
+        d = new rb.a(3);
+    }
+
+    public static String a(String str) {
+        if (!a.matcher(str).find()) {
+            return str;
         }
-        this.b = pVar;
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            return str;
+        }
+        StringBuilder sb2 = new StringBuilder(str.length() + 16);
+        int i10 = 0;
+        do {
+            sb2.append((CharSequence) str, i10, matcher.start());
+            String group = matcher.group();
+            d.getClass();
+            if (group.charAt(0) == '\\') {
+                sb2.append((CharSequence) group, 1, group.length());
+            } else {
+                sb2.append(b.a(group));
+            }
+            i10 = matcher.end();
+        } while (matcher.find());
+        if (i10 != str.length()) {
+            sb2.append((CharSequence) str, i10, str.length());
+        }
+        return sb2.toString();
     }
 }

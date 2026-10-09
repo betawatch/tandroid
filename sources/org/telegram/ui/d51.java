@@ -1,67 +1,85 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.view.View;
+import android.graphics.RectF;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a71 b;
+public final class d51 extends FrameLayout {
+    public final Paint a;
+    public final Paint b;
+    public final RectF c;
+    public final org.telegram.ui.Components.c31 d;
+    public boolean e;
+    public long f;
+    public long h;
+    public final org.telegram.ui.Components.ck0 n;
+    public final TextPaint r;
+    public StaticLayout s;
+    public float v;
+    public float w;
+    public final /* synthetic */ SecretMediaViewer x;
 
-    public /* synthetic */ d51(a71 a71Var, int i10) {
-        this.a = i10;
-        this.b = a71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d51(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.x = secretMediaViewer;
+        this.c = new RectF();
+        this.d = new org.telegram.ui.Components.c31();
+        this.r = new TextPaint(1);
+        setWillNotDraw(false);
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        paint.setColor(-1644826);
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.a = paint2;
+        paint2.setStyle(style);
+        paint2.setStrokeCap(cap);
+        paint2.setColor(-1644826);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        new Paint(1).setColor(2130706432);
+        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        this.n = ck0Var;
+        ck0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        ck0Var.R(this);
+        ck0Var.start();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a71 a71Var = this.b;
-                a71Var.getClass();
-                a71Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                this.b.m();
-                break;
-            case 2:
-                a71 a71Var2 = this.b;
-                View view = a71Var2.t0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                }
-                int v = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, a71Var2.Z0), i0.a.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = a71Var2.m0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                }
-                org.telegram.ui.Components.nn nnVar = a71Var2.n0;
-                if (nnVar != null) {
-                    nnVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                    break;
-                }
-                break;
-            default:
-                a71 a71Var3 = this.b;
-                u51 u51Var = a71Var3.a0;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a71Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
-                View view3 = a71Var3.m0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
-                }
-                org.telegram.ui.Components.nn nnVar2 = a71Var3.n0;
-                if (nnVar2 != null) {
-                    nnVar2.setAlpha(floatValue * floatValue);
-                }
-                u51Var.setAlpha(floatValue);
-                u51Var.invalidate();
-                a71Var3.invalidate();
-                break;
-        }
+    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
+        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
+        */
+    @Override // android.view.View
+    public final void onDraw(android.graphics.Canvas r15) {
+        /*
+            Method dump skipped, instructions count: 217
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.d51.onDraw(android.graphics.Canvas):void");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        float dpf2 = AndroidUtilities.dpf2(10.5f);
+        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
+        setPivotX(measuredWidth);
+        setPivotY(measuredHeight);
     }
 }

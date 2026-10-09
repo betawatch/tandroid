@@ -1,27 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l30 implements z4.e {
-    public final /* synthetic */ p30 a;
+public final class l30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q30 b;
 
-    public l30(p30 p30Var) {
-        this.a = p30Var;
+    public /* synthetic */ l30(q30 q30Var, int i10) {
+        this.a = i10;
+        this.b = q30Var;
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        p30 p30Var = this.a;
-        p30Var.h = i10;
-        p30Var.f = f7;
-        p30.m(p30Var);
-    }
-
-    @Override // z4.e
-    public final void a(int i10) {
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                q30 q30Var = this.b;
+                q30Var.b.setVisibility(8);
+                q30Var.y = false;
+                q30Var.E = 0.0f;
+                break;
+            default:
+                this.b.e.setVisibility(8);
+                break;
+        }
     }
 }

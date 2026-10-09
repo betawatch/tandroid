@@ -6,11 +6,12 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import androidx.car.app.ICarApp;
+import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class CarAppBinder extends ICarApp.Stub {
-    private n mCurrentSession;
+    private m mCurrentSession;
     private final SessionInfo mCurrentSessionInfo;
     private HandshakeInfo mHandshakeInfo;
     private y.a mHostValidator;
@@ -20,7 +21,7 @@ final class CarAppBinder extends ICarApp.Stub {
         this.mCurrentSessionInfo = sessionInfo;
     }
 
-    private androidx.lifecycle.o getCurrentLifecycle() {
+    private o getCurrentLifecycle() {
         return null;
     }
 
@@ -70,7 +71,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onConfigurationChangedInternal(n nVar, Configuration configuration) {
+    private void onConfigurationChangedInternal(m mVar, Configuration configuration) {
         Handler handler = androidx.car.app.utils.h.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
@@ -81,7 +82,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    private void onNewIntentInternal(n nVar, Intent intent) {
+    private void onNewIntentInternal(m mVar, Intent intent) {
         Handler handler = androidx.car.app.utils.h.a;
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("Not running on main thread when it is required to");
@@ -99,7 +100,7 @@ final class CarAppBinder extends ICarApp.Stub {
         throw null;
     }
 
-    public n getCurrentSession() {
+    public m getCurrentSession() {
         return null;
     }
 

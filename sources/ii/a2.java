@@ -6,23 +6,23 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class a2 extends ImageView implements org.telegram.ui.ActionBar.y5 {
+public final class a2 extends ImageView implements org.telegram.ui.ActionBar.z5 {
     public final int a;
     public int b;
     public boolean c;
     public boolean d;
     public int e;
     public int f;
-    public final org.telegram.ui.ActionBar.d6 h;
+    public final org.telegram.ui.ActionBar.e6 h;
     public boolean n;
     public boolean r;
     public boolean s;
 
-    public a2(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public a2(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.e = 20;
         this.f = org.telegram.ui.ActionBar.i6.d6;
@@ -30,12 +30,12 @@ public final class a2 extends ImageView implements org.telegram.ui.ActionBar.y5 
         this.s = true;
         this.b = i10;
         this.a = i10;
-        this.h = d6Var;
+        this.h = e6Var;
         if (i10 != 0) {
             setImageResource(i10);
         }
         setScaleType(ImageView.ScaleType.CENTER);
-        w7.b6.a(this);
+        w7.z5.a(this);
         e();
     }
 
@@ -66,17 +66,17 @@ public final class a2 extends ImageView implements org.telegram.ui.ActionBar.y5 
         setImageDrawable(c2Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         boolean z10 = this.r;
-        org.telegram.ui.ActionBar.d6 d6Var = this.h;
+        org.telegram.ui.ActionBar.e6 e6Var = this.h;
         if (!z10) {
-            setBackground(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.v0(this.f, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
-            setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var), PorterDuff.Mode.SRC_IN));
+            setBackground(org.telegram.ui.ActionBar.i6.a0(org.telegram.ui.ActionBar.i6.w0(this.f, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, e6Var), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var), PorterDuff.Mode.SRC_IN));
         } else {
-            int w02 = org.telegram.ui.ActionBar.i6.w0(null, this.s ? org.telegram.ui.ActionBar.i6.Oh : org.telegram.ui.ActionBar.i6.G6, false);
-            setBackground(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(this.f, d6Var), org.telegram.ui.ActionBar.i6.l1(0.1f, w02)), org.telegram.ui.ActionBar.i6.l1(0.1f, w02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
-            setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+            int x02 = org.telegram.ui.ActionBar.i6.x0(null, this.s ? org.telegram.ui.ActionBar.i6.Oh : org.telegram.ui.ActionBar.i6.G6, false);
+            setBackground(org.telegram.ui.ActionBar.i6.a0(org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(this.f, e6Var), org.telegram.ui.ActionBar.i6.m1(0.1f, x02)), org.telegram.ui.ActionBar.i6.m1(0.1f, x02), AndroidUtilities.dp(this.e), AndroidUtilities.dp(this.e)));
+            setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
         }
     }
 
@@ -107,7 +107,7 @@ public final class a2 extends ImageView implements org.telegram.ui.ActionBar.y5 
         setClickable(z10);
         ViewPropertyAnimator animate = animate();
         this.n = z10;
-        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(tr.h).start();
+        animate.alpha(z10 ? 1.0f : 0.5f).setDuration(320L).setInterpolator(hs.h).start();
     }
 
     public void setPremiumLocked(boolean z10) {

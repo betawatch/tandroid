@@ -1,24 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o41 extends u41 {
-    public final /* synthetic */ Runnable T;
+public final class o41 extends s4.t0 {
+    public final /* synthetic */ b51 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o41(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
-        super(context, str, str2, charSequence, null, 0, false, null);
-        this.T = runnable;
+    public o41(b51 b51Var) {
+        this.a = b51Var;
     }
 
-    @Override // org.telegram.ui.Components.u41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.T;
-        if (runnable != null) {
-            runnable.run();
+    @Override // s4.t0
+    public final void a(RecyclerView recyclerView, int i10) {
+        b51 b51Var = this.a;
+        n41 n41Var = b51Var.H;
+        if (i10 == 0) {
+            b51Var.G = false;
+        }
+        if ((i10 == 0 || i10 == 2) && b51Var.C(false) > 0.0f && b51Var.C(false) < AndroidUtilities.dp(96.0f) && n41Var.canScrollVertically(1) && b51.w(b51Var)) {
+            b51Var.G = true;
+            n41Var.v0(0, (int) b51Var.C(false), null);
+        }
+    }
+
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        b51 b51Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) b51Var).containerView;
+        viewGroup.invalidate();
+        boolean canScrollVertically = b51Var.H.canScrollVertically(1);
+        View view = b51Var.L;
+        Boolean bool = b51Var.Q;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            b51Var.Q = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.bi.t(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), hs.h, 320L);
         }
     }
 }

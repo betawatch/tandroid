@@ -1,32 +1,41 @@
 package ei;
 
+import ci.y8;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.lw0;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h2 implements lw0 {
+public final /* synthetic */ class h2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ k3 b;
 
-    public /* synthetic */ h2(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ h2(k3 k3Var, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = k3Var;
     }
 
-    @Override // org.telegram.ui.Components.lw0
-    public final void F(int i10, boolean z10) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                b3 b3Var = ((l3) this.b).v;
-                if (i10 > AndroidUtilities.dp(20.0f)) {
-                    b3Var.e(b3Var.getTopActionBarOffsetY() + (-b3Var.getOffsetY()));
-                    break;
+                Boolean bool = (Boolean) obj;
+                b3 b3Var = this.b.x;
+                if (b3Var != null) {
+                    if (!bool.booleanValue()) {
+                        b3Var.P = System.currentTimeMillis();
+                        b3Var.y("secondary_button_pressed", null);
+                        break;
+                    } else {
+                        b3Var.P = System.currentTimeMillis();
+                        b3Var.y("main_button_pressed", null);
+                        break;
+                    }
                 }
                 break;
             default:
-                ((ii.e2) this.b).getClass();
+                AndroidUtilities.runOnUIThread(new y8(16, this.b, (TLRPC.UserFull) obj));
                 break;
         }
     }

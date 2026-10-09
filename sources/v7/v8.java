@@ -1,26 +1,23 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class v8 {
-    public final String a;
-
-    public v8(String str) {
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+public abstract class v8 {
+    public static jd.f a(jd.f fVar, jd.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
+            return fVar;
         }
-        return (obj instanceof v8) && this.a.equals(((v8) obj).a);
+        return null;
     }
 
-    public final int hashCode() {
-        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
+    public static jd.h b(jd.f fVar, jd.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? jd.i.a : fVar;
     }
 
-    public final String toString() {
-        return a4.a.q("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
+    public static jd.h c(jd.f fVar, jd.h context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        return context == jd.i.a ? fVar : (jd.h) context.fold(fVar, new b1.e(5));
     }
 }

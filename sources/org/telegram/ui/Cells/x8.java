@@ -13,14 +13,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.dq;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class x8 extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final qp c;
+    public final dq c;
     public boolean d;
     public boolean e;
     public int f;
@@ -36,17 +36,17 @@ public final class x8 extends FrameLayout {
         this.f = 50;
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+        bi.u(textView, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f));
+        addView(textView, w7.x5.a(-1.0f, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.z6, false));
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(1);
@@ -55,14 +55,14 @@ public final class x8 extends FrameLayout {
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
-        qp qpVar = new qp(context, 21, null);
-        this.c = qpVar;
-        qpVar.setDrawUnchecked(true);
-        qpVar.setDrawBackgroundAsArc(10);
-        qpVar.setDuration(100L);
-        qpVar.b(org.telegram.ui.ActionBar.i6.h7, org.telegram.ui.ActionBar.i6.j7, org.telegram.ui.ActionBar.i6.k7);
-        addView(qpVar, w7.z5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        addView(textView2, w7.x5.a(-2.0f, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        dq dqVar = new dq(context, 21, null);
+        this.c = dqVar;
+        dqVar.setDrawUnchecked(true);
+        dqVar.setDrawBackgroundAsArc(10);
+        dqVar.setDuration(100L);
+        dqVar.b(org.telegram.ui.ActionBar.i6.h7, org.telegram.ui.ActionBar.i6.j7, org.telegram.ui.ActionBar.i6.k7);
+        addView(dqVar, w7.x5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 20, (LocaleController.isRTL ? 5 : 3) | 16));
         setClipChildren(false);
     }
 

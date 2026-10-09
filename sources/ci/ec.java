@@ -1,41 +1,63 @@
 package ci;
 
-import android.graphics.Canvas;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.l01;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class ec extends fc {
-    public final /* synthetic */ ai.a0 g;
-    public final /* synthetic */ float h;
+public final class ec extends gc {
+    public final /* synthetic */ int g;
+    public final /* synthetic */ Object h;
 
-    public ec(ai.a0 a0Var, float f7) {
-        this.g = a0Var;
-        this.h = f7;
+    public /* synthetic */ ec(Object obj, int i10) {
+        this.g = i10;
+        this.h = obj;
     }
 
-    @Override // ci.fc
-    public final void a(Canvas canvas, float f7) {
-        float pow = (float) Math.pow(f7, 16.0d);
-        ai.a0 a0Var = this.g;
-        float f10 = this.h;
-        a0Var.c(canvas, f10, f10, pow);
-    }
-
-    @Override // ci.fc
+    @Override // ci.gc
     public final void e() {
-        ai.a0 a0Var = this.g;
-        a0Var.post(new ai.y(a0Var, 1));
+        switch (this.g) {
+            case 0:
+                l01 l01Var = (l01) this.h;
+                l01Var.Q = false;
+                l01Var.invalidate();
+                break;
+            case 1:
+                ai.f6 t10 = ((ai.kc) this.h).t();
+                if (t10 != null) {
+                    t10.m0(true);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Components.y9 y9Var = (org.telegram.ui.Components.y9) this.h;
+                y9Var.post(new androidx.fragment.app.a0(y9Var, 27));
+                break;
+        }
     }
 
-    @Override // ci.fc
+    @Override // ci.gc
     public final void f(boolean z10) {
-        ai.a0 a0Var = this.g;
-        a0Var.w = true;
-        a0Var.invalidate();
-        if (z10) {
-            a0Var.getLocationInWindow(new int[2]);
-            LaunchActivity.b0((a0Var.getWidth() / 2.0f) + r6[0], (a0Var.getHeight() / 2.0f) + r6[1], 1.0f);
+        switch (this.g) {
+            case 0:
+                l01 l01Var = (l01) this.h;
+                l01Var.Q = true;
+                l01Var.invalidate();
+                break;
+            case 1:
+                ai.f6 t10 = ((ai.kc) this.h).t();
+                if (t10 != null) {
+                    t10.m0(false);
+                }
+                ai.b5 b5Var = this.f;
+                if (b5Var != null) {
+                    b5Var.setTranslationX(0.0f);
+                    this.f.setTranslationY(0.0f);
+                    break;
+                }
+                break;
+            default:
+                ((org.telegram.ui.Components.y9) this.h).setVisibility(0);
+                break;
         }
     }
 }

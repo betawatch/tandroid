@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.g2;
+import org.telegram.ui.Components.voip.f2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -25,15 +25,15 @@ public final class VoIPPendingCall {
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j3, boolean z10, long j10, AccountInstance accountInstance) {
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.p
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.q
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 VoIPPendingCall.this.lambda$new$0(i10, i11, objArr);
             }
         };
         this.observer = notificationCenterDelegate;
-        s0 s0Var = new s0(this, 2);
-        this.releaseRunnable = s0Var;
+        t0 t0Var = new t0(this, 2);
+        this.releaseRunnable = t0Var;
         this.activity = activity;
         this.userId = j3;
         this.video = z10;
@@ -46,7 +46,7 @@ public final class VoIPPendingCall {
         notificationCenter.addObserver(notificationCenterDelegate, NotificationCenter.didUpdateConnectionState);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(s0Var, j10);
+        handler.postDelayed(t0Var, j10);
     }
 
     private boolean isAirplaneMode() {
@@ -77,9 +77,9 @@ public final class VoIPPendingCall {
         TLRPC.User user = messagesController.getUser(Long.valueOf(this.userId));
         if (user != null) {
             TLRPC.UserFull userFull = messagesController.getUserFull(user.id);
-            g2.m(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
+            f2.m(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
         } else if (isAirplaneMode()) {
-            g2.m(null, this.video, false, this.activity, null, this.accountInstance);
+            f2.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;

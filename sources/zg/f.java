@@ -1,6 +1,7 @@
 package zg;
 
 import ai.e2;
+import ai.j6;
 import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -12,11 +13,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import w7.z5;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -25,24 +26,24 @@ public final class f extends FrameLayout {
     public boolean c;
     public Utilities.Callback d;
 
-    public f(Activity activity, d6 d6Var) {
+    public f(Activity activity, e6 e6Var) {
         super(activity);
         e eVar = new e(this, activity);
         this.a = eVar;
         eVar.setHapticFeedbackEnabled(true);
         eVar.setImageResource(R.drawable.smiles_tab_clear);
         int i10 = i6.Re;
-        eVar.setColorFilter(new PorterDuffColorFilter(d6Var != null ? d6Var.H0(i10) : i6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        eVar.setColorFilter(new PorterDuffColorFilter(e6Var != null ? e6Var.x0(i10) : i6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
         eVar.setScaleType(ImageView.ScaleType.CENTER);
         eVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new e2(28));
-        addView(eVar, z5.e(36, 36, 17));
-        int w02 = i6.w0(null, i6.i6, false);
+        addView(eVar, x5.e(36, 36, 17));
+        int x02 = i6.x0(null, i6.i6, false);
         int dp = AndroidUtilities.dp(36.0f);
         int i11 = i6.d6;
-        eVar.setBackground(i6.h0(dp, d6Var != null ? d6Var.H0(i11) : i6.w0(null, i11, false), w02));
-        eVar.setOutlineProvider(new ai.i6(18));
+        eVar.setBackground(i6.i0(dp, e6Var != null ? e6Var.x0(i11) : i6.x0(null, i11, false), x02));
+        eVar.setOutlineProvider(new j6(18));
         eVar.setElevation(AndroidUtilities.dp(1.0f));
         eVar.setClipToOutline(true);
         setClickable(true);

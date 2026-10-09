@@ -1,6 +1,6 @@
 package hg;
 
-import ai.y5;
+import ai.z5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.i2;
+import ci.h2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DocumentObject;
@@ -25,30 +25,29 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.hq;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.wp;
-import org.telegram.ui.Components.zl0;
-import w7.z5;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.gs;
+import org.telegram.ui.Components.jq;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.uq;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
     public int F;
     public boolean G;
-    public e71 a;
-    public sr b;
+    public k71 a;
+    public gs b;
     public org.telegram.ui.ActionBar.v0 c;
     public boolean d;
     public FrameLayout e;
     public b1 f;
     public FrameLayout h;
     public d1 n;
-    public hq r;
-    public y5 s;
+    public uq r;
+    public z5 s;
     public boolean v;
     public TLRPC.TL_businessLocation w;
     public TLRPC.GeoPoint x;
@@ -59,29 +58,29 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         this.F = -4;
     }
 
-    public final void S(boolean z10) {
+    public final void U(boolean z10) {
         if (this.c == null) {
             return;
         }
-        boolean T = T();
-        this.c.setEnabled(T);
+        boolean V = V();
+        this.c.setEnabled(V);
         if (z10) {
-            this.c.animate().alpha(T ? 1.0f : 0.0f).scaleX(T ? 1.0f : 0.0f).scaleY(T ? 1.0f : 0.0f).setDuration(180L).start();
+            this.c.animate().alpha(V ? 1.0f : 0.0f).scaleX(V ? 1.0f : 0.0f).scaleY(V ? 1.0f : 0.0f).setDuration(180L).start();
         } else {
-            this.c.setAlpha(T ? 1.0f : 0.0f);
-            this.c.setScaleX(T ? 1.0f : 0.0f);
-            this.c.setScaleY(T ? 1.0f : 0.0f);
+            this.c.setAlpha(V ? 1.0f : 0.0f);
+            this.c.setScaleX(V ? 1.0f : 0.0f);
+            this.c.setScaleY(V ? 1.0f : 0.0f);
         }
-        e71 e71Var = this.a;
-        if (e71Var == null || e71Var.f3 == null) {
+        k71 k71Var = this.a;
+        if (k71Var == null || k71Var.W2 == null) {
             return;
         }
         if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
-            this.a.f3.N(true);
+            this.a.W2.N(true);
         }
     }
 
-    public final boolean T() {
+    public final boolean V() {
         TLRPC.GeoPoint geoPoint;
         if (((this.x == null && TextUtils.isEmpty(this.y)) ? false : true) != (this.w != null)) {
             return true;
@@ -103,13 +102,13 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         return geoPoint2 != null && (tL_businessLocation2 == null || (geoPoint = tL_businessLocation2.geo_point) == null || !((geoPoint instanceof TLRPC.TL_geoPointEmpty) || (geoPoint2.lat == geoPoint.lat && geoPoint2._long == geoPoint._long)));
     }
 
-    public final void U() {
+    public final void W() {
         if (this.b.c > 0.0f) {
             return;
         }
         boolean z10 = this.x == null && TextUtils.isEmpty(this.y);
         if (!z10) {
-            if (!T()) {
+            if (!V()) {
                 finishFragment();
                 return;
             }
@@ -160,8 +159,8 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    public final void W() {
-        w61 w61Var;
+    public final void X() {
+        c71 c71Var;
         if (this.v) {
             return;
         }
@@ -187,22 +186,22 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
             b1Var2.setSelection(b1Var2.getText().length());
             this.d = false;
         }
-        X();
-        e71 e71Var = this.a;
-        if (e71Var != null && (w61Var = e71Var.f3) != null) {
-            w61Var.N(true);
+        Y();
+        k71 k71Var = this.a;
+        if (k71Var != null && (c71Var = k71Var.W2) != null) {
+            c71Var.N(true);
         }
         this.v = true;
     }
 
-    public final void X() {
-        y5 y5Var;
+    public final void Y() {
+        z5 z5Var;
         d1 d1Var = this.n;
-        if (d1Var == null || (y5Var = this.s) == null) {
+        if (d1Var == null || (z5Var = this.s) == null) {
             return;
         }
         if (this.x == null) {
-            y5Var.setImageBitmap(null);
+            z5Var.setImageBitmap(null);
             return;
         }
         d1Var.setAlpha(0.0f);
@@ -211,34 +210,34 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         float f7 = AndroidUtilities.density;
         int i10 = (int) (measuredWidth / f7);
         int min = Math.min(2, (int) Math.ceil(f7));
-        y5 y5Var2 = this.s;
+        z5 z5Var2 = this.s;
         TLRPC.GeoPoint geoPoint = this.x;
-        y5Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a4.a.n(i10, "_240"), this.r, null);
+        z5Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a1.g.n(i10, "_240"), this.r, null);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        int i10 = 1;
-        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        int i10 = 1;
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.BusinessLocation));
-        this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 13));
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 13));
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i11 = i6.v8;
         int i12 = 0;
-        mutate.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-        this.b = new sr(mutate, new wp(i6.w0(null, i11, false)));
-        this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
-        S(false);
+        mutate.setColorFilter(new PorterDuffColorFilter(i6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+        this.b = new gs(mutate, new jq(i6.x0(null, i11, false)));
+        this.c = this.actionBar.o().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
+        U(false);
         FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(i6.x0(null, i6.a7, false));
         b1 b1Var = new b1(this, getParentActivity());
         this.f = b1Var;
         b1Var.setTextSize(1, 17.0f);
-        this.f.setHintTextColor(i6.w0(null, i6.H6, false));
+        this.f.setHintTextColor(i6.x0(null, i6.H6, false));
         b1 b1Var2 = this.f;
         int i13 = i6.G6;
-        b1Var2.setTextColor(i6.w0(null, i13, false));
+        b1Var2.setTextColor(i6.x0(null, i13, false));
         this.f.setBackgroundDrawable(null);
         this.f.setMaxLines(5);
         this.f.setSingleLine(false);
@@ -247,14 +246,14 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
         this.f.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         this.f.setInputType(180225);
         this.f.setHint(LocaleController.getString(R.string.BusinessLocationAddress));
-        this.f.setCursorColor(i6.w0(null, i13, false));
+        this.f.setCursorColor(i6.x0(null, i13, false));
         this.f.setCursorSize(AndroidUtilities.dp(19.0f));
         this.f.setCursorWidth(1.5f);
-        this.f.addTextChangedListener(new i2(this, i14));
+        this.f.addTextChangedListener(new h2(this, i14));
         this.f.setFilters(new InputFilter[]{new c1()});
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, z5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
+        frameLayout2.addView(this.f, x5.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
         FrameLayout frameLayout3 = this.e;
         int i15 = i6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i15));
@@ -266,29 +265,29 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
             b1Var4.setSelection(b1Var4.getText().length());
             this.d = false;
         }
-        this.s = new y5(this, context, i10);
+        this.s = new z5(this, context, i10);
         SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, i6.Pb, 0.2f);
         svgThumb.setColorKey(i13, getResourceProvider());
         svgThumb.setAspectCenter(true);
         svgThumb.setParent(this.s.getImageReceiver());
-        hq hqVar = new hq(svgThumb);
-        this.r = hqVar;
-        hqVar.setCallback(this.s);
+        uq uqVar = new uq(svgThumb);
+        this.r = uqVar;
+        uqVar.setCallback(this.s);
         this.s.setBackgroundColor(getThemedColor(i15));
         this.n = new d1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.h = frameLayout4;
-        frameLayout4.addView(this.s, z5.c(-1.0f, -1));
-        this.h.addView(this.n, z5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
+        frameLayout4.addView(this.s, x5.d(-1.0f, -1));
+        this.h.addView(this.n, x5.a(-2.0f, 0.0f, -31.0f, 0.0f, 0.0f, -2, 17));
+        Y();
+        k71 k71Var = new k71(this, new bi.v(this, 26), new z0(this, i12), null);
+        this.a = k71Var;
+        k71Var.p1();
+        k71 k71Var2 = this.a;
+        k71Var2.W2.r = false;
+        frameLayout.addView(k71Var2, x5.d(-1.0f, -1));
+        this.actionBar.B(this.a, true);
         X();
-        e71 e71Var = new e71(this, new bi.v(this, 26), new z0(this, i12), null);
-        this.a = e71Var;
-        e71Var.r1();
-        this.a.setSectionsDrawBackground(true);
-        e71 e71Var2 = this.a;
-        e71Var2.f3.r = false;
-        frameLayout.addView(e71Var2, z5.c(-1.0f, -1));
-        W();
         this.fragmentView = frameLayout;
         return frameLayout;
     }
@@ -296,13 +295,8 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         if (i10 == NotificationCenter.userInfoDidLoad) {
-            W();
+            X();
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final zl0 getListViewForSimpleGlass() {
-        return this.a;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -312,13 +306,13 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return !T();
+        return !V();
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onBackPressed(boolean z10) {
         boolean z11 = this.x == null && TextUtils.isEmpty(this.y);
-        if (!T() || z11) {
+        if (!V() || z11) {
             return super.onBackPressed(z10);
         }
         if (z10) {
@@ -342,5 +336,11 @@ public final class e1 extends n2 implements NotificationCenter.NotificationCente
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
         super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.a.setPadding(0, 0, 0, i13);
+        this.a.setClipToPadding(false);
     }
 }

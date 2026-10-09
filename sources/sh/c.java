@@ -3,21 +3,21 @@ package sh;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.z;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class c extends Drawable {
     public final z a;
     public int b;
     public int c = 255;
 
-    public c(d6 d6Var) {
-        int v02 = i6.v0(i6.i6, d6Var);
-        this.b = v02;
-        this.a = i6.Y(v02, 0, 0);
+    public c(e6 e6Var) {
+        int w02 = i6.w0(i6.i6, e6Var);
+        this.b = w02;
+        this.a = i6.Z(w02, 0, 0);
     }
 
     public abstract void a(int i10);

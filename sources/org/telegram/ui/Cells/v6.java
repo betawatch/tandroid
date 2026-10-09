@@ -23,11 +23,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.st;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class v6 extends FrameLayout {
     public int a;
@@ -35,17 +35,17 @@ public final class v6 extends FrameLayout {
     public TextView c;
     public TextView d;
     public TextView e;
-    public org.telegram.ui.Components.w9 f;
-    public org.telegram.ui.Components.w9 h;
-    public org.telegram.ui.Components.h9 n;
+    public org.telegram.ui.Components.y9 f;
+    public org.telegram.ui.Components.y9 h;
+    public org.telegram.ui.Components.j9 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.Components.e6 v;
-    public w00 w;
+    public org.telegram.ui.Components.g6 v;
+    public j10 w;
     public LinearLayout x;
     public int y;
 
-    public static sq a(int i10, String str) {
+    public static fr a(int i10, String str) {
         TLRPC.TL_authorization tL_authorization = new TLRPC.TL_authorization();
         tL_authorization.device_model = str;
         tL_authorization.platform = str;
@@ -53,7 +53,7 @@ public final class v6 extends FrameLayout {
         return b(i10, tL_authorization);
     }
 
-    public static sq b(int i10, TLRPC.TL_authorization tL_authorization) {
+    public static fr b(int i10, TLRPC.TL_authorization tL_authorization) {
         int i11;
         int i12;
         int i13;
@@ -140,23 +140,23 @@ public final class v6 extends FrameLayout {
             i13 = -1;
         }
         Drawable mutate = ApplicationLoader.applicationContext.getDrawable(i11).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.J7, false), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.J7, false), PorterDuff.Mode.SRC_IN));
         float f7 = i10;
         int dp = AndroidUtilities.dp(f7);
-        int w02 = i12 == -1 ? -16777216 : org.telegram.ui.ActionBar.i6.w0(null, i12, false);
-        int w03 = i13 != -1 ? org.telegram.ui.ActionBar.i6.w0(null, i13, false) : -16777216;
+        int x02 = i12 == -1 ? -16777216 : org.telegram.ui.ActionBar.i6.x0(null, i12, false);
+        int x03 = i13 != -1 ? org.telegram.ui.ActionBar.i6.x0(null, i13, false) : -16777216;
         m0 m0Var = new m0(1);
         m0Var.c = dp;
         Paint paint = new Paint(1);
         m0Var.b = paint;
-        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{w02, w03}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        sq sqVar = new sq(m0Var, mutate);
+        paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{x02, x03}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        fr frVar = new fr(m0Var, mutate);
         if (lowerCase != null && lowerCase.contains("fragment")) {
             int intrinsicWidth = (int) ((mutate.getIntrinsicWidth() / 44.0f) * f7);
-            sqVar.e = intrinsicWidth;
-            sqVar.f = (int) ((mutate.getIntrinsicHeight() / 44.0f) * f7);
+            frVar.e = intrinsicWidth;
+            frVar.f = (int) ((mutate.getIntrinsicHeight() / 44.0f) * f7);
         }
-        return sqVar;
+        return frVar;
     }
 
     private void setContentAlpha(float f7) {
@@ -176,13 +176,13 @@ public final class v6 extends FrameLayout {
         if (textView4 != null) {
             textView4.setAlpha(f7);
         }
-        org.telegram.ui.Components.w9 w9Var = this.h;
-        if (w9Var != null) {
-            w9Var.setAlpha(f7);
+        org.telegram.ui.Components.y9 y9Var = this.h;
+        if (y9Var != null) {
+            y9Var.setAlpha(f7);
         }
-        org.telegram.ui.Components.w9 w9Var2 = this.f;
-        if (w9Var2 != null) {
-            w9Var2.setAlpha(1.0f - f7);
+        org.telegram.ui.Components.y9 y9Var2 = this.f;
+        if (y9Var2 != null) {
+            y9Var2.setAlpha(1.0f - f7);
         }
         LinearLayout linearLayout = this.x;
         if (linearLayout != null) {
@@ -198,16 +198,16 @@ public final class v6 extends FrameLayout {
         TextView textView3 = this.d;
         TextView textView4 = this.b;
         int i10 = this.y;
-        org.telegram.ui.Components.h9 h9Var = this.n;
+        org.telegram.ui.Components.j9 j9Var = this.n;
         this.r = z10;
-        org.telegram.ui.Components.w9 w9Var = this.h;
-        w9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
+        org.telegram.ui.Components.y9 y9Var = this.h;
+        y9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
         if (tLObject instanceof TL_account.TL_connectedBot) {
             TL_account.TL_connectedBot tL_connectedBot = (TL_account.TL_connectedBot) tLObject;
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(tL_connectedBot.bot_id));
-            h9Var.r(user);
-            w9Var.setRoundRadius(AndroidUtilities.dp(21.0f));
-            w9Var.e(user, h9Var);
+            j9Var.r(user);
+            y9Var.setRoundRadius(AndroidUtilities.dp(21.0f));
+            y9Var.e(user, j9Var);
             textView4.setText(UserObject.getUserName(user));
             textView3.setText(LocaleController.getString(R.string.SessionBot));
             if (TLObject.hasFlag(tL_connectedBot.flags, 2)) {
@@ -215,7 +215,7 @@ public final class v6 extends FrameLayout {
             }
         } else if (tLObject instanceof TLRPC.TL_authorization) {
             TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-            w9Var.setImageDrawable(b(42, tL_authorization));
+            y9Var.setImageDrawable(b(42, tL_authorization));
             StringBuilder sb2 = new StringBuilder();
             if (tL_authorization.device_model.length() != 0) {
                 sb2.append(tL_authorization.device_model);
@@ -244,9 +244,9 @@ public final class v6 extends FrameLayout {
                 spannableStringBuilder.append((CharSequence) tL_authorization.country);
             }
             if (spannableStringBuilder.length() != 0) {
-                et etVar = new et();
-                etVar.b = AndroidUtilities.dp(1.5f);
-                spannableStringBuilder.append((CharSequence) " . ").setSpan(etVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
+                st stVar = new st();
+                stVar.b = AndroidUtilities.dp(1.5f);
+                spannableStringBuilder.append((CharSequence) " . ").setSpan(stVar, spannableStringBuilder.length() - 2, spannableStringBuilder.length() - 1, 0);
             }
             spannableStringBuilder.append((CharSequence) stringForMessageListDate);
             textView2.setText(spannableStringBuilder);
@@ -260,16 +260,16 @@ public final class v6 extends FrameLayout {
             TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(tL_webAuthorization.bot_id));
             textView4.setText(tL_webAuthorization.domain);
             if (user2 != null) {
-                h9Var.m(i10, user2);
+                j9Var.m(i10, user2);
                 str = UserObject.getFirstName(user2);
-                w9Var.e(user2, h9Var);
+                y9Var.e(user2, j9Var);
             } else {
                 str = "";
             }
             int i11 = org.telegram.ui.ActionBar.i6.A6;
             setTag(Integer.valueOf(i11));
             textView.setText(LocaleController.stringForMessageListDate(tL_webAuthorization.date_active));
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
             StringBuilder sb4 = new StringBuilder();
             if (tL_webAuthorization.ip.length() != 0) {
                 sb4.append(tL_webAuthorization.ip);
@@ -321,13 +321,13 @@ public final class v6 extends FrameLayout {
             this.w.h();
             if (getParent() != null) {
                 View view = (View) getParent();
-                w00 w00Var = this.w;
+                j10 j10Var = this.w;
                 int measuredWidth = view.getMeasuredWidth();
                 int measuredHeight = view.getMeasuredHeight();
                 float f7 = -getX();
-                w00Var.O = measuredWidth;
-                w00Var.P = measuredHeight;
-                w00Var.Q = f7;
+                j10Var.O = measuredWidth;
+                j10Var.P = measuredHeight;
+                j10Var.Q = f7;
             }
             float dp = AndroidUtilities.dp(12.0f) + this.b.getTop() + linearLayout.getTop();
             float x10 = linearLayout.getX();

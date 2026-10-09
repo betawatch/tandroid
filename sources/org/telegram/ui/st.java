@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class st implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final /* synthetic */ class st implements NotificationCenter.Notification
     public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) this.b;
+                org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) this.b;
                 if (i10 == NotificationCenter.emojiLoaded) {
-                    eaVar.getTextView().invalidate();
+                    caVar.getTextView().invalidate();
                     break;
                 }
                 break;
             default:
-                ((xj0) this.b).invalidate();
+                ((ak0) this.b).invalidate();
                 break;
         }
     }

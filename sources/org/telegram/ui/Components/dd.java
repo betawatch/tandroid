@@ -1,9 +1,73 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.SpannableString;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class dd {
-    public int a;
-    public boolean b;
-    public long c;
+public final class dd extends ReplacementSpan {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final Paint b = new Paint(1);
+    public final l11 c;
+    public final Runnable d;
+    public bd e;
+    public Integer f;
+
+    public dd(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.a = e6Var;
+        this.d = runnable;
+        this.c = new l11(charSequence, 12.0f, null);
+    }
+
+    public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.e6 e6Var, Integer num) {
+        SpannableString spannableString = new SpannableString("btn");
+        dd ddVar = new dd(charSequence, runnable, e6Var);
+        spannableString.setSpan(ddVar, 0, spannableString.length(), 33);
+        ddVar.f = num;
+        return spannableString;
+    }
+
+    public final int a() {
+        return (int) (this.c.c + AndroidUtilities.dp(14.0f));
+    }
+
+    public final void c(cd cdVar, boolean z10) {
+        if (this.e == null) {
+            this.e = new bd(cdVar);
+        }
+        this.e.c(z10);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        float dpf2 = AndroidUtilities.dpf2(17.0f);
+        float f10 = (i12 + i14) / 2.0f;
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f11 = dpf2 / 2.0f;
+        rectF.set(f7, f10 - f11, a() + f7, f10 + f11);
+        bd bdVar = this.e;
+        float a2 = bdVar == null ? 1.0f : bdVar.a(0.025f);
+        canvas.save();
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        Integer num = this.f;
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Oh, this.a);
+        int m12 = org.telegram.ui.ActionBar.i6.m1(0.15f, intValue);
+        Paint paint2 = this.b;
+        paint2.setColor(m12);
+        canvas.drawRoundRect(rectF, f11, f11, paint2);
+        this.c.c(f7 + AndroidUtilities.dp(7.0f), f10, 1.0f, intValue, canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return a();
+    }
 }

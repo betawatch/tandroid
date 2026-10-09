@@ -1,20 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class kg1 extends zg1 {
-    public final /* synthetic */ TwoStepVerificationActivity k0;
+public final class kg1 extends og.a {
+    public final TLRPC.TL_forumTopic c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
-        super(i10, 4, password);
-        this.k0 = twoStepVerificationActivity;
+    public kg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, false);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.zg1
-    public final void B0() {
-        this.k0.N = true;
+    public final boolean equals(Object obj) {
+        TLRPC.TL_forumTopic tL_forumTopic;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || kg1.class != obj.getClass()) {
+            return false;
+        }
+        kg1 kg1Var = (kg1) obj;
+        if (this.a != kg1Var.a) {
+            return false;
+        }
+        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
+        return tL_forumTopic2 == null || (tL_forumTopic = kg1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

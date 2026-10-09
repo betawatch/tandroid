@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class u1 extends View implements org.telegram.ui.Cells.p9 {
+public final class u1 extends View implements org.telegram.ui.Cells.n9 {
     public final t70 a;
     public final g4 b;
     public final ImageReceiver c;
-    public final org.telegram.ui.Components.h9 d;
+    public final org.telegram.ui.Components.j9 d;
     public b3 e;
     public b3 f;
     public b3 h;
@@ -42,10 +42,10 @@ public final class u1 extends View implements org.telegram.ui.Cells.p9 {
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(20.0f));
         imageReceiver.setImageCoords(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-        this.d = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        this.d = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.f;
         if (b3Var != null) {
@@ -207,7 +207,7 @@ public final class u1 extends View implements org.telegram.ui.Cells.p9 {
                     r13 = AndroidUtilities.dp(4.0f) + height;
                 }
                 TL_iv.pageBlockEmbedPost pageblockembedpost3 = this.y;
-                b3 p5 = i4.p(this.a, this, null, pageblockembedpost3.caption.credit, dp, 0, pageblockembedpost3, g4Var.G ? org.telegram.ui.Components.gx0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+                b3 p5 = i4.p(this.a, this, null, pageblockembedpost3.caption.credit, dp, 0, pageblockembedpost3, g4Var.G ? org.telegram.ui.Components.mx0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
                 this.n = p5;
                 if (p5 != null) {
                     r13 += this.n.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -223,9 +223,9 @@ public final class u1 extends View implements org.telegram.ui.Cells.p9 {
                     this.r = z12;
                     if (z12) {
                         String str = this.y.author;
-                        org.telegram.ui.Components.h9 h9Var = this.d;
-                        h9Var.n(0L, str, null);
-                        this.c.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(e7.sizes, AndroidUtilities.dp(40.0f), true), e7), "40_40", h9Var, 0L, (String) null, g4Var.E, 1);
+                        org.telegram.ui.Components.j9 j9Var = this.d;
+                        j9Var.n(0L, str, null);
+                        this.c.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(e7.sizes, AndroidUtilities.dp(40.0f), true), e7), "40_40", j9Var, 0L, (String) null, g4Var.E, 1);
                     }
                 }
                 String str2 = this.y.author;
@@ -258,7 +258,7 @@ public final class u1 extends View implements org.telegram.ui.Cells.p9 {
                     }
                     int i13 = dp3;
                     TL_iv.pageBlockEmbedPost pageblockembedpost6 = this.y;
-                    b3 p11 = i4.p(this.a, this, null, pageblockembedpost6.caption.credit, dp4, 0, pageblockembedpost6, g4Var.G ? org.telegram.ui.Components.gx0.a() : alignment, 0, this.b);
+                    b3 p11 = i4.p(this.a, this, null, pageblockembedpost6.caption.credit, dp4, 0, pageblockembedpost6, g4Var.G ? org.telegram.ui.Components.mx0.a() : alignment, 0, this.b);
                     this.n = p11;
                     dp3 = p11 != null ? this.n.d.getHeight() + AndroidUtilities.dp(4.0f) + i13 : i13;
                 } else {

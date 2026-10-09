@@ -5,18 +5,18 @@ import java.util.List;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLRPC;
-import s4.c1;
-import s4.h0;
+import s4.d1;
+import s4.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class d extends h0 implements GroupCallMessagesController.CallMessageListener {
+public abstract class d extends i0 implements GroupCallMessagesController.CallMessageListener {
     public List c;
     public boolean d;
     public int e;
     public TLRPC.InputGroupCall f;
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
         List list = this.c;
         if (list != null) {
@@ -45,9 +45,9 @@ public abstract class d extends h0 implements GroupCallMessagesController.CallMe
         u(size);
     }
 
-    @Override // s4.h0
-    public final void v(c1 c1Var, int i10) {
-        b bVar = (b) c1Var;
+    @Override // s4.i0
+    public final void v(d1 d1Var, int i10) {
+        b bVar = (b) d1Var;
         List list = this.c;
         if (list == null || list.size() <= i10) {
             return;

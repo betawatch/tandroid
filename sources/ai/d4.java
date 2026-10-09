@@ -1,87 +1,36 @@
 package ai;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.telegram.messenger.AccountInstance;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.pb0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d4 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class d4 extends pb0 {
+    public final /* synthetic */ f6 V;
 
-    public /* synthetic */ d4(int i10, int i11, Object obj, Object obj2, boolean z10) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.b = z10;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d4(f6 f6Var, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, j3, 0L, n2Var, e6Var);
+        this.V = f6Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        AccountInstance accountInstance;
-        switch (this.a) {
-            case 0:
-                f4 f4Var = (f4) this.d;
-                TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) this.e;
-                Long l4 = (Long) obj;
-                e6 e6Var = f4Var.a;
-                TLRPC.User user = e6Var.d3.getAdapter().w0;
-                long j3 = user != null ? user.id : 0L;
-                HashMap hashMap = new HashMap();
-                hashMap.put("id", botInlineResult.id);
-                hashMap.put("query_id", "" + botInlineResult.query_id);
-                hashMap.put("bot", "" + j3);
-                TLRPC.User user2 = e6Var.d3.getAdapter().w0;
-                hashMap.put("bot_name", user2 != null ? user2.username : "");
-                org.telegram.ui.ActionBar.n2 n2Var = e6Var.J0.f;
-                long j10 = j3;
-                accountInstance = e6Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingBotContextResult(n2Var, accountInstance, botInlineResult, hashMap, e6Var.B1, null, null, e6Var.O1.a, null, this.b, this.c, 0, null, 0L, l4.longValue());
-                e6Var.b2.setFieldText("");
-                e6Var.k0(l4.longValue() <= 0);
-                MediaDataController.getInstance(e6Var.C2).increaseInlineRating(j10);
-                break;
-            case 1:
-                v8 v8Var = (v8) this.d;
-                List list = (List) this.e;
-                y8 y8Var = v8Var.q;
-                TLObject userOrChat = MessagesController.getInstance(v8Var.c).getUserOrChat(v8Var.D);
-                v8Var.G = false;
-                if (userOrChat == null) {
-                    v8Var.J = 0;
-                    v8Var.H = "";
-                    AndroidUtilities.cancelRunOnUIThread(y8Var);
-                    AndroidUtilities.runOnUIThread(y8Var);
-                    break;
-                } else {
-                    v8Var.q(this.c, list, this.b);
-                    break;
-                }
-            default:
-                ((rk) this.d).Q.l(((Long) obj).longValue(), (ArrayList) this.e, this.b, this.c);
-                break;
+    @Override // org.telegram.ui.Components.pb0
+    public final void f(Canvas canvas, Rect rect, float f7) {
+        f6 f6Var = this.V;
+        com.google.firebase.messaging.n nVar = f6Var.P1;
+        nVar.z(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(rect);
+        rectF.offset(0.0f, 0.0f);
+        canvas.drawRoundRect(rectF, f7, f7, (Paint) nVar.a);
+        canvas.drawRoundRect(rectF, f7, f7, f6Var.n2);
+        if (rectF.top < getMeasuredHeight() - 1) {
+            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, f6Var.B0.F("paintDivider"));
         }
-    }
-
-    public /* synthetic */ d4(v8 v8Var, boolean z10, int i10, List list) {
-        this.a = 1;
-        this.d = v8Var;
-        this.b = z10;
-        this.c = i10;
-        this.e = list;
     }
 }

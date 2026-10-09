@@ -5,7 +5,6 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.View;
@@ -18,7 +17,7 @@ import m.c3;
 import m.l1;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -47,26 +46,26 @@ public final class c {
         int i10 = this.a;
         if (i10 != 0) {
             if (i10 != -1 && priorityQueue.size() >= this.a) {
-                f2.r rVar = (f2.r) priorityQueue.peek();
+                f2.s sVar = (f2.s) priorityQueue.peek();
                 String str = d0.a;
             }
             ArrayDeque arrayDeque2 = (ArrayDeque) this.c;
             v vVar2 = arrayDeque2.isEmpty() ? new v() : (v) arrayDeque2.pop();
             vVar2.G(vVar.a());
             System.arraycopy(vVar.a, vVar.b, vVar2.a, 0, vVar2.a());
-            f2.r rVar2 = (f2.r) this.f;
-            if (rVar2 != null && j3 == rVar2.b) {
-                rVar2.a.add(vVar2);
+            f2.s sVar2 = (f2.s) this.f;
+            if (sVar2 != null && j3 == sVar2.b) {
+                sVar2.a.add(vVar2);
                 return;
             }
-            f2.r rVar3 = arrayDeque.isEmpty() ? new f2.r() : (f2.r) arrayDeque.pop();
-            ArrayList arrayList = rVar3.a;
+            f2.s sVar3 = arrayDeque.isEmpty() ? new f2.s() : (f2.s) arrayDeque.pop();
+            ArrayList arrayList = sVar3.a;
             d.b(j3 != -9223372036854775807L);
             d.g(arrayList.isEmpty());
-            rVar3.b = j3;
+            sVar3.b = j3;
             arrayList.add(vVar2);
-            priorityQueue.add(rVar3);
-            this.f = rVar3;
+            priorityQueue.add(sVar3);
+            this.f = sVar3;
             int i11 = this.a;
             if (i11 != -1) {
                 c(i11);
@@ -74,15 +73,14 @@ public final class c {
             }
             return;
         }
-        ((f2.s) this.b).b(j3, vVar);
+        ((f2.t) this.b).b(j3, vVar);
     }
 
     public void b() {
         View view = (View) this.b;
         Drawable background = view.getBackground();
         if (background != null) {
-            int i10 = Build.VERSION.SDK_INT;
-            if (i10 <= 21 ? i10 == 21 : ((c3) this.d) != null) {
+            if (((c3) this.d) != null) {
                 if (((c3) this.f) == null) {
                     this.f = new c3();
                 }
@@ -123,24 +121,24 @@ public final class c {
         ArrayList arrayList;
         PriorityQueue priorityQueue = (PriorityQueue) this.e;
         while (priorityQueue.size() > i10) {
-            f2.r rVar = (f2.r) priorityQueue.poll();
+            f2.s sVar = (f2.s) priorityQueue.poll();
             String str = d0.a;
             int i11 = 0;
             while (true) {
-                arrayList = rVar.a;
+                arrayList = sVar.a;
                 if (i11 >= arrayList.size()) {
                     break;
                 }
-                ((f2.s) this.b).b(rVar.b, (v) arrayList.get(i11));
+                ((f2.t) this.b).b(sVar.b, (v) arrayList.get(i11));
                 ((ArrayDeque) this.c).push((v) arrayList.get(i11));
                 i11++;
             }
             arrayList.clear();
-            f2.r rVar2 = (f2.r) this.f;
-            if (rVar2 != null && rVar2.b == rVar.b) {
+            f2.s sVar2 = (f2.s) this.f;
+            if (sVar2 != null && sVar2.b == sVar.b) {
                 this.f = null;
             }
-            ((ArrayDeque) this.d).push(rVar);
+            ((ArrayDeque) this.d).push(sVar);
         }
     }
 
@@ -160,20 +158,15 @@ public final class c {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0085 A[Catch: all -> 0x004b, TryCatch #0 {all -> 0x004b, blocks: (B:3:0x0026, B:5:0x002d, B:6:0x003d, B:9:0x0044, B:11:0x0047, B:16:0x0052, B:18:0x0053, B:20:0x005c, B:22:0x0067, B:24:0x0071, B:30:0x007f, B:32:0x0085, B:33:0x008c, B:35:0x008f, B:37:0x0096, B:39:0x00a6, B:41:0x00b0, B:45:0x00bb, B:47:0x00c1, B:48:0x00c8, B:8:0x003e), top: B:2:0x0026, inners: #1 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public void f(AttributeSet attributeSet, int i10) {
-        boolean z10;
         ColorStateList i11;
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        la.h Q = la.h.Q(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) Q.c;
+        la.h R = la.h.R(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) R.c;
         View view2 = (View) this.b;
-        i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
+        i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) R.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -188,46 +181,14 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                ColorStateList y3 = Q.y(1);
-                int i13 = Build.VERSION.SDK_INT;
-                r0.a0.g(view, y3);
-                if (i13 == 21) {
-                    Drawable background = view.getBackground();
-                    if (r0.a0.c(view) == null && r0.a0.d(view) == null) {
-                        z10 = false;
-                        if (background != null && z10) {
-                            if (background.isStateful()) {
-                                background.setState(view.getDrawableState());
-                            }
-                            view.setBackground(background);
-                        }
-                    }
-                    z10 = true;
-                    if (background != null) {
-                        if (background.isStateful()) {
-                        }
-                        view.setBackground(background);
-                    }
-                }
+                r0.a0.f(view, R.E(1));
             }
             if (typedArray.hasValue(2)) {
-                PorterDuff.Mode b10 = l1.b(typedArray.getInt(2, -1), null);
-                int i14 = Build.VERSION.SDK_INT;
-                r0.a0.h(view, b10);
-                if (i14 == 21) {
-                    Drawable background2 = view.getBackground();
-                    boolean z11 = (r0.a0.c(view) == null && r0.a0.d(view) == null) ? false : true;
-                    if (background2 != null && z11) {
-                        if (background2.isStateful()) {
-                            background2.setState(view.getDrawableState());
-                        }
-                        view.setBackground(background2);
-                    }
-                }
+                r0.a0.g(view, l1.b(typedArray.getInt(2, -1), null));
             }
-            Q.R();
+            R.S();
         } catch (Throwable th2) {
-            Q.R();
+            R.S();
             throw th2;
         }
     }
@@ -311,14 +272,14 @@ public final class c {
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        f0Var.B1();
-        f0Var.p1(1, 10, num);
-        f0Var.p1(2, 10, num);
+        f0Var.D1();
+        f0Var.r1(1, 10, num);
+        f0Var.r1(2, 10, num);
         f0Var.m.e(21, new i2.w(intValue, 1));
     }
 
-    public c(f2.s sVar) {
-        this.b = sVar;
+    public c(f2.t tVar) {
+        this.b = tVar;
         this.c = new ArrayDeque();
         this.d = new ArrayDeque();
         this.e = new PriorityQueue();

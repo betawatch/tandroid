@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v1 extends View implements org.telegram.ui.Cells.p9, e3 {
+public final class v1 extends View implements org.telegram.ui.Cells.n9, e3 {
     public final t70 a;
     public final g4 b;
     public b3 c;
@@ -27,7 +27,7 @@ public final class v1 extends View implements org.telegram.ui.Cells.p9, e3 {
         this.b = g4Var;
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -147,7 +147,7 @@ public final class v1 extends View implements org.telegram.ui.Cells.p9, e3 {
             int dp2 = (size - AndroidUtilities.dp(36)) - this.d;
             TL_iv.pageBlockFooter pageblockfooter2 = this.f;
             g4 g4Var = this.b;
-            b3 p5 = i4.p(t70Var2, this, null, richText, dp2, 0, pageblockfooter2, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), 0, this.b);
+            b3 p5 = i4.p(t70Var2, this, null, richText, dp2, 0, pageblockfooter2, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.mx0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
                 int height = p5.d.getHeight();

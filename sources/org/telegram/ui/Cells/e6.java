@@ -4,17 +4,17 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.j01;
+import org.telegram.ui.p01;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e6 implements o2 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ j01 c;
+    public final /* synthetic */ p01 c;
 
-    public e6(j01 j01Var, org.telegram.ui.ActionBar.n2 n2Var, Context context) {
-        this.c = j01Var;
+    public e6(p01 p01Var, org.telegram.ui.ActionBar.n2 n2Var, Context context) {
+        this.c = p01Var;
         this.a = n2Var;
         this.b = context;
     }
@@ -27,7 +27,7 @@ public final class e6 implements o2 {
     @Override // org.telegram.ui.Cells.o2
     public final void c() {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        ai.l9 storiesController = n2Var.getMessagesController().getStoriesController();
+        ai.m9 storiesController = n2Var.getMessagesController().getStoriesController();
         ArrayList arrayList = storiesController.h;
         if (arrayList.isEmpty()) {
             return;
@@ -40,15 +40,15 @@ public final class e6 implements o2 {
                 arrayList2.add(Long.valueOf(peerDialogId));
             }
         }
-        n2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new ai.u9(this.c), false);
+        n2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new ai.v9(this.c), false);
     }
 
     @Override // org.telegram.ui.Cells.o2
-    public final void e(s2 s2Var) {
+    public final void f(s2 s2Var) {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
         if (n2Var.getMessagesController().getStoriesController().I(s2Var.getDialogId())) {
             n2Var.getOrCreateStoryViewer().getClass();
-            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), s2Var.getDialogId(), new ai.u9(this.c));
+            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), s2Var.getDialogId(), new ai.v9(this.c));
         }
     }
 
@@ -61,6 +61,6 @@ public final class e6 implements o2 {
     }
 
     @Override // org.telegram.ui.Cells.o2
-    public final void f(s2 s2Var) {
+    public final void g(s2 s2Var) {
     }
 }

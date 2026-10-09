@@ -2,9 +2,8 @@ package v7;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class u6 {
     public static String a(String str, Object... objArr) {
@@ -14,14 +13,14 @@ public abstract class u6 {
         for (int i11 = 0; i11 < objArr.length; i11++) {
             Object obj = objArr[i11];
             if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+                sb2 = "null";
             } else {
                 try {
                     sb2 = obj.toString();
                 } catch (Exception e7) {
                     String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
                     Logger.getLogger("com.google.common.base.Strings").log(Level.WARNING, "Exception during lenientFormat for " + str2, (Throwable) e7);
-                    StringBuilder w10 = a4.a.w("<", str2, " threw ");
+                    StringBuilder w10 = a1.g.w("<", str2, " threw ");
                     w10.append(e7.getClass().getName());
                     w10.append(">");
                     sb2 = w10.toString();

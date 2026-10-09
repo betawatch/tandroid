@@ -8,10 +8,10 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.md;
+import org.telegram.messenger.ae;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public abstract class g0 {
     public static int[] a() {
@@ -38,7 +38,7 @@ public abstract class g0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int[] c(TLRPC.TL_jsonArray tL_jsonArray) {
-        char c10;
+        boolean z10;
         int[] iArr = new int[tL_jsonArray.value.size() * 7];
         for (int i10 = 0; i10 < tL_jsonArray.value.size(); i10++) {
             TLRPC.JSONValue jSONValue = tL_jsonArray.value.get(i10);
@@ -60,46 +60,46 @@ public abstract class g0 {
                         switch (str.hashCode()) {
                             case -1544802595:
                                 if (str.equals("text_length_max")) {
-                                    c10 = 0;
+                                    z10 = false;
                                     break;
                                 }
-                                c10 = 65535;
+                                z10 = -1;
                                 break;
                             case -1186480213:
                                 if (str.equals("pin_period")) {
-                                    c10 = 1;
+                                    z10 = true;
                                     break;
                                 }
-                                c10 = 65535;
+                                z10 = -1;
                                 break;
                             case 109757537:
                                 if (str.equals("stars")) {
-                                    c10 = 2;
+                                    z10 = 2;
                                     break;
                                 }
-                                c10 = 65535;
+                                z10 = -1;
                                 break;
                             case 1686749675:
                                 if (str.equals("emoji_max")) {
-                                    c10 = 3;
+                                    z10 = 3;
                                     break;
                                 }
-                                c10 = 65535;
+                                z10 = -1;
                                 break;
                             default:
-                                c10 = 65535;
+                                z10 = -1;
                                 break;
                         }
-                        switch (c10) {
-                            case 0:
+                        switch (z10) {
+                            case false:
                                 break;
-                            case 1:
+                            case true:
                                 i12 = 1;
                                 break;
-                            case 2:
+                            case true:
                                 i12 = 0;
                                 break;
-                            case 3:
+                            case true:
                                 i12 = 3;
                                 break;
                             default:
@@ -164,7 +164,7 @@ public abstract class g0 {
             return a();
         }
         try {
-            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.c4(1)).toArray();
+            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.d4(1)).toArray();
         } catch (Exception e7) {
             FileLog.e(e7);
             return a();
@@ -183,6 +183,6 @@ public abstract class g0 {
     }
 
     public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new md(0)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new ae(0)).collect(Collectors.joining(","));
     }
 }

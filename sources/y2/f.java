@@ -2,8 +2,7 @@ package y2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import ci.qc;
-import e2.t;
+import ci.rc;
 import e2.u;
 import e2.x;
 import e9.a1;
@@ -14,8 +13,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
+import m2.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -27,7 +27,7 @@ public final class f implements c, c0 {
     public static f v;
     public final Context a;
     public final k0 b;
-    public final k2.e c;
+    public final t c;
     public final x d;
     public final boolean e;
     public final q f;
@@ -46,7 +46,7 @@ public final class f implements c, c0 {
         x xVar = x.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = k0.a(hashMap);
-        this.c = new k2.e(25);
+        this.c = new t(23);
         this.f = new q();
         this.d = xVar;
         this.e = true;
@@ -64,18 +64,18 @@ public final class f implements c, c0 {
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) a2.d;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
-            t tVar = (t) it.next();
+            e2.t tVar = (e2.t) it.next();
             if (tVar.a.get() == null) {
                 copyOnWriteArrayList.remove(tVar);
             }
         }
-        t tVar2 = new t(a2, eVar, g10);
+        e2.t tVar2 = new e2.t(a2, eVar, g10);
         synchronized (a2.e) {
             ((CopyOnWriteArrayList) a2.d).add(tVar2);
             z10 = a2.a;
         }
         if (z10) {
-            tVar2.b.execute(new qc(tVar2, 5));
+            tVar2.b.execute(new rc(tVar2, 5));
         }
     }
 
@@ -731,7 +731,7 @@ public final class f implements c, c0 {
                 i11 = i10;
                 j11 = j3;
                 j12 = j10;
-                bVar.a.post(new k2.j(bVar, i11, j11, j12, 1));
+                bVar.a.post(new k2.i(bVar, i11, j11, j12, 1));
             }
             i10 = i11;
             j3 = j11;
@@ -764,7 +764,7 @@ public final class f implements c, c0 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0060, code lost:
     
         if (r10.k >= 524288) goto L28;
      */

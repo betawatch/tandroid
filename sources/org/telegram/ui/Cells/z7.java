@@ -12,15 +12,15 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z7 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final org.telegram.ui.Components.p6 b;
-    public final org.telegram.ui.Components.p6 c;
-    public final org.telegram.ui.Components.p6 d;
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.Components.r6 b;
+    public final org.telegram.ui.Components.r6 c;
+    public final org.telegram.ui.Components.r6 d;
     public final j0 e;
     public int f;
     public int h;
@@ -31,48 +31,48 @@ public final class z7 extends FrameLayout {
     public float w;
     public ValueAnimator x;
 
-    public z7(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public z7(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.h = TLObject.FLAG_31;
         this.w = -1.0f;
-        this.a = d6Var;
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
-        this.b = p6Var;
-        tr trVar = tr.h;
-        p6Var.b(0.3f, 220L, trVar);
-        p6Var.setTextSize(AndroidUtilities.dp(13.0f));
+        this.a = e6Var;
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(context, true, true, true);
+        this.b = r6Var;
+        hs hsVar = hs.h;
+        r6Var.b(0.3f, 220L, hsVar);
+        r6Var.setTextSize(AndroidUtilities.dp(13.0f));
         int i10 = org.telegram.ui.ActionBar.i6.y6;
-        p6Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        p6Var.setGravity(3);
-        p6Var.setEmojiCacheType(19);
-        p6Var.setEmojiColor(-1);
-        p6Var.setImportantForAccessibility(2);
-        addView(p6Var, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        org.telegram.ui.Components.p6 p6Var2 = new org.telegram.ui.Components.p6(context, false, true, true);
-        this.c = p6Var2;
-        p6Var2.b(0.3f, 220L, trVar);
-        p6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        p6Var2.setGravity(17);
-        p6Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.I6, d6Var));
-        p6Var2.setEmojiColor(-1);
-        p6Var2.setEmojiCacheType(19);
-        p6Var2.setImportantForAccessibility(2);
-        addView(p6Var2, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        org.telegram.ui.Components.p6 p6Var3 = new org.telegram.ui.Components.p6(context, true, true, true);
-        this.d = p6Var3;
-        p6Var3.b(0.3f, 220L, trVar);
-        p6Var3.setTextSize(AndroidUtilities.dp(13.0f));
-        p6Var3.setGravity(5);
-        p6Var3.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        p6Var3.setEmojiColor(-1);
-        p6Var3.setEmojiCacheType(19);
-        p6Var3.setImportantForAccessibility(2);
-        addView(p6Var3, w7.z5.d(-1, 25.0f, 48, 22.0f, 13.0f, 22.0f, 0.0f));
-        j0 j0Var = new j0(2, context, d6Var, false);
+        r6Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
+        r6Var.setGravity(3);
+        r6Var.setEmojiCacheType(19);
+        r6Var.setEmojiColor(-1);
+        r6Var.setImportantForAccessibility(2);
+        addView(r6Var, w7.x5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        org.telegram.ui.Components.r6 r6Var2 = new org.telegram.ui.Components.r6(context, false, true, true);
+        this.c = r6Var2;
+        r6Var2.b(0.3f, 220L, hsVar);
+        r6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        r6Var2.setGravity(17);
+        r6Var2.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.I6, e6Var));
+        r6Var2.setEmojiColor(-1);
+        r6Var2.setEmojiCacheType(19);
+        r6Var2.setImportantForAccessibility(2);
+        addView(r6Var2, w7.x5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        org.telegram.ui.Components.r6 r6Var3 = new org.telegram.ui.Components.r6(context, true, true, true);
+        this.d = r6Var3;
+        r6Var3.b(0.3f, 220L, hsVar);
+        r6Var3.setTextSize(AndroidUtilities.dp(13.0f));
+        r6Var3.setGravity(5);
+        r6Var3.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
+        r6Var3.setEmojiColor(-1);
+        r6Var3.setEmojiCacheType(19);
+        r6Var3.setImportantForAccessibility(2);
+        addView(r6Var3, w7.x5.a(25.0f, 22.0f, 13.0f, 22.0f, 0.0f, -1, 48));
+        j0 j0Var = new j0(2, context, e6Var, false);
         this.e = j0Var;
         j0Var.setReportChanges(true);
         j0Var.setDelegate(new x7(this));
-        addView(j0Var, w7.z5.d(-1, 38.0f, 55, 6.0f, 30.0f, 6.0f, 0.0f));
+        addView(j0Var, w7.x5.a(38.0f, 6.0f, 30.0f, 6.0f, 0.0f, -1, 55));
     }
 
     public static int[] a(int i10, int[] iArr) {
@@ -158,17 +158,17 @@ public final class z7 extends FrameLayout {
         if (y7Var == null || y7Var.e == null) {
             return;
         }
-        org.telegram.ui.Components.p6 p6Var = this.b;
-        p6Var.a();
-        org.telegram.ui.Components.p6 p6Var2 = this.d;
-        p6Var2.a();
-        org.telegram.ui.Components.p6 p6Var3 = this.c;
-        p6Var3.a();
-        p6Var3.c((CharSequence) this.r.e.run(0, Integer.valueOf(i10)), z10, true);
-        p6Var.c((CharSequence) this.r.e.run(-1, Integer.valueOf(this.r.b())), z10, true);
-        p6Var2.c((CharSequence) this.r.e.run(1, Integer.valueOf(this.r.a())), z10, true);
-        p6Var2.c.s(org.telegram.ui.ActionBar.i6.v0(i10 >= this.r.a() ? org.telegram.ui.ActionBar.i6.I6 : org.telegram.ui.ActionBar.i6.y6, this.a), z10);
-        p6Var2.invalidate();
+        org.telegram.ui.Components.r6 r6Var = this.b;
+        r6Var.a();
+        org.telegram.ui.Components.r6 r6Var2 = this.d;
+        r6Var2.a();
+        org.telegram.ui.Components.r6 r6Var3 = this.c;
+        r6Var3.a();
+        r6Var3.c((CharSequence) this.r.e.run(0, Integer.valueOf(i10)), z10, true);
+        r6Var.c((CharSequence) this.r.e.run(-1, Integer.valueOf(this.r.b())), z10, true);
+        r6Var2.c((CharSequence) this.r.e.run(1, Integer.valueOf(this.r.a())), z10, true);
+        r6Var2.c.v(org.telegram.ui.ActionBar.i6.w0(i10 >= this.r.a() ? org.telegram.ui.ActionBar.i6.I6 : org.telegram.ui.ActionBar.i6.y6, this.a), z10);
+        r6Var2.invalidate();
         float f7 = i10 >= this.r.a() ? 1.0f : 0.0f;
         if (Math.abs(this.w - f7) < 0.01f) {
             return;
@@ -194,7 +194,7 @@ public final class z7 extends FrameLayout {
         if (org.telegram.ui.ActionBar.i6.I.q()) {
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - this.v) * (-0.3f));
         }
-        p6Var2.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        r6Var2.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

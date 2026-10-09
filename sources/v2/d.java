@@ -6,8 +6,9 @@ import c3.h0;
 import c3.o;
 import c3.q;
 import c3.s;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements q {
     public static final s s = new s();
@@ -16,7 +17,7 @@ public final class d implements q {
     public final b2.s c;
     public final SparseArray d = new SparseArray();
     public boolean e;
-    public o0.a f;
+    public b5 f;
     public long h;
     public b0 n;
     public b2.s[] r;
@@ -27,38 +28,8 @@ public final class d implements q {
         this.c = sVar;
     }
 
-    @Override // c3.q
-    public final void X1(b0 b0Var) {
-        this.n = b0Var;
-    }
-
-    @Override // c3.q
-    public final h0 Z1(int i10, int i11) {
-        SparseArray sparseArray = this.d;
-        c cVar = (c) sparseArray.get(i10);
-        if (cVar == null) {
-            e2.d.g(this.r == null);
-            cVar = new c(i10, i11, i11 == this.b ? this.c : null);
-            o0.a aVar = this.f;
-            long j3 = this.h;
-            if (aVar == null) {
-                cVar.e = cVar.c;
-            } else {
-                cVar.f = j3;
-                h0 K = aVar.K(i11);
-                cVar.e = K;
-                b2.s sVar = cVar.d;
-                if (sVar != null) {
-                    K.b(sVar);
-                }
-            }
-            sparseArray.put(i10, cVar);
-        }
-        return cVar;
-    }
-
-    public final void a(o0.a aVar, long j3, long j10) {
-        this.f = aVar;
+    public final void a(b5 b5Var, long j3, long j10) {
+        this.f = b5Var;
         this.h = j10;
         boolean z10 = this.e;
         o oVar = this.a;
@@ -81,15 +52,15 @@ public final class d implements q {
                 return;
             }
             c cVar = (c) sparseArray.valueAt(i10);
-            if (aVar == null) {
+            if (b5Var == null) {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j10;
-                h0 K = aVar.K(cVar.a);
-                cVar.e = K;
+                h0 w10 = b5Var.w(cVar.a);
+                cVar.e = w10;
                 b2.s sVar = cVar.d;
                 if (sVar != null) {
-                    K.b(sVar);
+                    w10.b(sVar);
                 }
             }
             i10++;
@@ -97,7 +68,37 @@ public final class d implements q {
     }
 
     @Override // c3.q
-    public final void e1() {
+    public final void d2(b0 b0Var) {
+        this.n = b0Var;
+    }
+
+    @Override // c3.q
+    public final h0 f2(int i10, int i11) {
+        SparseArray sparseArray = this.d;
+        c cVar = (c) sparseArray.get(i10);
+        if (cVar == null) {
+            e2.d.g(this.r == null);
+            cVar = new c(i10, i11, i11 == this.b ? this.c : null);
+            b5 b5Var = this.f;
+            long j3 = this.h;
+            if (b5Var == null) {
+                cVar.e = cVar.c;
+            } else {
+                cVar.f = j3;
+                h0 w10 = b5Var.w(i11);
+                cVar.e = w10;
+                b2.s sVar = cVar.d;
+                if (sVar != null) {
+                    w10.b(sVar);
+                }
+            }
+            sparseArray.put(i10, cVar);
+        }
+        return cVar;
+    }
+
+    @Override // c3.q
+    public final void k1() {
         SparseArray sparseArray = this.d;
         b2.s[] sVarArr = new b2.s[sparseArray.size()];
         for (int i10 = 0; i10 < sparseArray.size(); i10++) {

@@ -1,50 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class uv extends LinkMovementMethod {
-    public final /* synthetic */ int a;
+public final class uv extends g.o {
+    public final /* synthetic */ iw c;
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                try {
-                    boolean onTouchEvent = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-                    }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return false;
-                }
-                break;
-            case 1:
-                try {
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return false;
-                }
-            default:
-                try {
-                    boolean onTouchEvent2 = super.onTouchEvent(textView, spannable, motionEvent);
-                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
-                    }
-                    Selection.removeSelection(spannable);
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    return false;
-                }
-                break;
+    public uv(iw iwVar) {
+        this.c = iwVar;
+    }
+
+    @Override // g.o
+    public final int i(int i10) {
+        TLRPC.StickerSet stickerSet;
+        iw iwVar = this.c;
+        s4.s sVar = iwVar.y;
+        sv svVar = iwVar.e;
+        ci.v vVar = iwVar.h;
+        if (vVar.getAdapter() == null || vVar.getAdapter().j(i10) != 1) {
+            return sVar.J;
         }
-        return false;
+        int i11 = 0;
+        int i12 = 0;
+        while (true) {
+            ArrayList[] arrayListArr = svVar.c;
+            if (i11 >= arrayListArr.length) {
+                break;
+            }
+            int size = arrayListArr[i11].size();
+            if (svVar.c.length > 1) {
+                size = Math.min(sVar.J * 2, size);
+            }
+            i12 += size + 2;
+            if (i10 < i12) {
+                break;
+            }
+            i11++;
+        }
+        ArrayList arrayList = svVar.b;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (arrayList == null || i11 >= arrayList.size()) ? null : (TLRPC.TL_messages_stickerSet) svVar.b.get(i11);
+        return (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.emojis) ? 5 : 8;
     }
 }

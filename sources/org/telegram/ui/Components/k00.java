@@ -1,52 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.graphics.SurfaceTexture;
+import org.telegram.messenger.DispatchQueue;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class k00 extends AnimatorListenerAdapter {
+public final /* synthetic */ class k00 implements SurfaceTexture.OnFrameAvailableListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ DispatchQueue b;
 
-    public /* synthetic */ k00(View view, int i10, float f7, int i11) {
-        this.a = i11;
-        this.d = view;
-        this.b = i10;
-        this.c = f7;
+    public /* synthetic */ k00(DispatchQueue dispatchQueue, int i10) {
+        this.a = i10;
+        this.b = dispatchQueue;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
         switch (this.a) {
             case 0:
-                l00 l00Var = (l00) this.d;
-                int i10 = this.b;
-                l00Var.b(i10 == 5 ? 0.0f : -this.c, i10 + 1);
-                l00Var.y = 0.0f;
-                l00Var.invalidate();
-                break;
-            case 1:
-                ((org.telegram.ui.web.v1) this.d).c(this.b, this.c, false);
+                ((l00) this.b).e(false, true, true);
                 break;
             default:
-                yh.o8 o8Var = (yh.o8) this.d;
-                o8Var.c0 = this.c;
-                if (o8Var.getValue() != this.b) {
-                    o8Var.e(o8Var.getValue());
-                }
-                o8Var.invalidate();
+                ((e60) this.b).requestRender(true, false);
                 break;
         }
-    }
-
-    public k00(yh.o8 o8Var, float f7, int i10) {
-        this.a = 2;
-        this.d = o8Var;
-        this.c = f7;
-        this.b = i10;
     }
 }

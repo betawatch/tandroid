@@ -1,22 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class rj0 {
-    public final TLObject a;
-    public final long b;
-    public int c;
-
-    public rj0(int i10, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i10;
-        if (tLObject instanceof TLRPC.User) {
-            this.b = ((TLRPC.User) tLObject).id;
-        } else if (tLObject instanceof TLRPC.Chat) {
-            this.b = -((TLRPC.Chat) tLObject).id;
-        }
-    }
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
 }

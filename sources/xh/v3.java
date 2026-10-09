@@ -6,12 +6,12 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.si1;
-import yh.m5;
+import org.telegram.ui.ej1;
+import yh.f5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class v3 implements m5 {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class v3 implements f5 {
     public final int a;
     public final long b;
     public final Utilities.Callback c;
@@ -41,22 +41,22 @@ public final class v3 implements m5 {
         this.c = callback;
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final void a() {
         g(false);
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final int b(int i10) {
         return -1;
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final int c() {
         return this.e;
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final int e() {
         return this.d.size();
     }
@@ -156,11 +156,11 @@ public final class v3 implements m5 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new si1(5, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new ej1(5, this, getresalestargifts));
         }
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final Object get(int i10) {
         return this.d.get(i10);
     }
@@ -183,12 +183,12 @@ public final class v3 implements m5 {
         }
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // yh.m5
+    @Override // yh.f5
     public final void d() {
     }
 }

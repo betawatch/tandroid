@@ -13,7 +13,7 @@ import l.m;
 import l.z;
 import la.h;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
@@ -51,14 +51,14 @@ public final class ExpandedMenuView extends ListView implements j, z, AdapterVie
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        h Q = h.Q(context, attributeSet, b, i10);
-        TypedArray typedArray = (TypedArray) Q.c;
+        h R = h.R(context, attributeSet, b, i10);
+        TypedArray typedArray = (TypedArray) R.c;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(Q.A(0));
+            setBackgroundDrawable(R.G(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(Q.A(1));
+            setDivider(R.G(1));
         }
-        Q.R();
+        R.S();
     }
 }

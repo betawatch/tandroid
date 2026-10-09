@@ -15,9 +15,9 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.xq;
+import org.telegram.ui.Components.kr;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class b extends EditTextBoldCursor {
     public final Canvas b;
@@ -28,7 +28,7 @@ public class b extends EditTextBoldCursor {
     public int h;
     public float n;
     public int r;
-    public final xq s;
+    public final kr s;
     public RectF[] v;
     public RectF w;
     public boolean x;
@@ -40,7 +40,7 @@ public class b extends EditTextBoldCursor {
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         this.d = new Paint(1);
-        this.s = new xq();
+        this.s = new kr();
         this.h = 0;
         setInputType(getInputType() | 655360);
         this.f = true;
@@ -56,7 +56,7 @@ public class b extends EditTextBoldCursor {
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         boolean z10;
         int i10 = 0;
@@ -161,8 +161,8 @@ public class b extends EditTextBoldCursor {
                 rectF9.right = measuredWidth2 - rectF10.right;
                 rectF10.bottom = getMeasuredHeight() - this.w.bottom;
             }
-            xq xqVar = this.s;
-            xqVar.rewind();
+            kr krVar = this.s;
+            krVar.rewind();
             float textSize = getTextSize() / 3.0f;
             float f10 = 1.5f * textSize;
             int i15 = 1;
@@ -216,13 +216,13 @@ public class b extends EditTextBoldCursor {
                     break;
                 }
                 if (rectFArr6[i10].width() != 0.0f) {
-                    xqVar.addRect(this.v[i10], Path.Direction.CW);
+                    krVar.addRect(this.v[i10], Path.Direction.CW);
                 }
                 i10++;
             }
-            xqVar.a();
+            krVar.a();
             setFrameRoundRadius(textSize);
-            canvas.drawPath(xqVar, paint);
+            canvas.drawPath(krVar, paint);
             canvas.restore();
         } else {
             this.w = null;
@@ -230,7 +230,7 @@ public class b extends EditTextBoldCursor {
         super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.gu, android.view.View
+    @Override // org.telegram.ui.Components.tu, android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
         if (i10 <= 0 || i11 <= 0) {
@@ -246,7 +246,7 @@ public class b extends EditTextBoldCursor {
         this.e = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         this.f = true;

@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j {
     public static final j h = new j(1, 2, 3, null, -1, -1);
@@ -139,9 +139,9 @@ public final class j {
         sb2.append(this.d != null);
         sb2.append(", ");
         int i10 = this.e;
-        sb2.append(i10 != -1 ? a4.a.n(i10, "bit Luma") : "NA");
+        sb2.append(i10 != -1 ? a1.g.n(i10, "bit Luma") : "NA");
         sb2.append(", ");
         int i11 = this.f;
-        return a4.a.t(sb2, i11 != -1 ? a4.a.n(i11, "bit Chroma") : "NA", ")");
+        return a1.g.t(sb2, i11 != -1 ? a1.g.n(i11, "bit Chroma") : "NA", ")");
     }
 }

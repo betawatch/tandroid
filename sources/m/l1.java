@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class l1 {
     public static final int[] a = {R.attr.state_checked};
@@ -19,28 +19,16 @@ public abstract class l1 {
     public static void a(Drawable drawable) {
         String name = drawable.getClass().getName();
         int i10 = Build.VERSION.SDK_INT;
-        int[] iArr = a;
-        int[] iArr2 = b;
-        if (i10 == 21 && "android.graphics.drawable.VectorDrawable".equals(name)) {
-            int[] state = drawable.getState();
-            if (state == null || state.length == 0) {
-                drawable.setState(iArr);
-            } else {
-                drawable.setState(iArr2);
-            }
-            drawable.setState(state);
-            return;
-        }
         if (i10 < 29 || i10 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
             return;
         }
-        int[] state2 = drawable.getState();
-        if (state2 == null || state2.length == 0) {
-            drawable.setState(iArr);
+        int[] state = drawable.getState();
+        if (state == null || state.length == 0) {
+            drawable.setState(a);
         } else {
-            drawable.setState(iArr2);
+            drawable.setState(b);
         }
-        drawable.setState(state2);
+        drawable.setState(state);
     }
 
     public static PorterDuff.Mode b(int i10, PorterDuff.Mode mode) {

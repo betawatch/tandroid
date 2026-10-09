@@ -1,160 +1,159 @@
 package ci;
 
-import android.content.Context;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.graphics.Rect;
 import android.view.View;
-import java.util.Calendar;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.jz0;
-import org.telegram.ui.Components.wv;
-import org.telegram.ui.Components.ym;
-import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.az;
-import org.telegram.ui.d20;
-import org.telegram.ui.dz;
-import org.telegram.ui.kn0;
-import org.telegram.ui.pw;
-import org.telegram.ui.rt;
-import org.telegram.ui.z10;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.bi;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.hw;
+import org.telegram.ui.Components.iw;
+import org.telegram.ui.Components.my;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.hi0;
+import org.telegram.ui.sj0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q1 implements View.OnTouchListener {
+public final class q1 extends s4.o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ q1(int i10, Object obj, Object obj2) {
+    public /* synthetic */ q1(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
-        this.c = obj2;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        boolean s10;
-        boolean s11;
-        int i10;
-        String string;
-        int i11;
-        int i12;
-        int i13;
-        int i14;
+    @Override // s4.o0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.a1 a1Var) {
         switch (this.a) {
             case 0:
-                z1 z1Var = (z1) this.b;
-                ai.g gVar = (ai.g) this.c;
-                rt q6 = rt.q();
-                ai.w0 w0Var = z1Var.b;
-                s1 s1Var = z1Var.f;
-                d6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
+                x1 x1Var = ((y1) this.b).e;
+                recyclerView.getClass();
+                rect.right = x1Var.E1(RecyclerView.R(view)) ? 0 : AndroidUtilities.dp(4.0f);
+                rect.bottom = AndroidUtilities.dp(4.0f);
                 break;
             case 1:
-                org.telegram.ui.ActionBar.n1 n1Var = (org.telegram.ui.ActionBar.n1) this.b;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.c;
-                if (motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundDrawable();
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(backgroundDrawable.getBounds());
-                    rectF.offset(actionBarPopupWindow$ActionBarPopupWindowLayout.getX(), actionBarPopupWindow$ActionBarPopupWindowLayout.getY());
-                    if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        n1Var.dismiss();
+                org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) this.b;
+                int b10 = recyclerView.T(view).b();
+                if (b10 == 0) {
+                    rect.left = AndroidUtilities.dp(18.0f);
+                }
+                if (b10 != tVar.getAdapter().h() - 1) {
+                    int h = tVar.getAdapter().h();
+                    if (h != 4) {
+                        rect.right = AndroidUtilities.dp(24.0f);
+                        break;
+                    } else {
+                        rect.right = bi.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
+                } else {
+                    rect.right = AndroidUtilities.dp(18.0f);
+                    break;
                 }
-                break;
             case 2:
-                org.telegram.ui.Components.i8 i8Var = (org.telegram.ui.Components.i8) this.b;
-                org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) this.c;
-                if (motionEvent.getAction() == 0) {
-                    org.telegram.ui.Components.j8 j8Var = i8Var.n;
-                    j8Var.H.r(j8Var.n.T(xVar));
+                v vVar = ((iw) this.b).h;
+                if (!(view instanceof hw)) {
+                    vVar.getClass();
+                    if (RecyclerView.R(view) == 1) {
+                        rect.top = AndroidUtilities.dp(14.0f);
+                        break;
+                    }
+                } else {
+                    rect.left = -vVar.getPaddingLeft();
+                    rect.right = -vVar.getPaddingRight();
                     break;
                 }
                 break;
             case 3:
-                s10 = rt.q().s(motionEvent, r0.h, (ym) this.c, r0.N, ((wv) this.b).resourcesProvider);
+                a00 a00Var = (a00) this.b;
+                my myVar = a00Var.P;
+                if (!(view instanceof org.telegram.ui.Cells.o8)) {
+                    if (!(view instanceof qm0) && !(view instanceof ry)) {
+                        if (view instanceof org.telegram.ui.Components.y9) {
+                            rect.bottom = AndroidUtilities.dp(12.0f);
+                            break;
+                        }
+                    } else {
+                        rect.left = -myVar.getPaddingLeft();
+                        rect.right = -myVar.getPaddingRight();
+                        if (view instanceof ry) {
+                            rect.top = AndroidUtilities.dp(8.0f);
+                            break;
+                        }
+                    }
+                } else {
+                    rect.left = AndroidUtilities.dp(5.0f);
+                    rect.right = AndroidUtilities.dp(5.0f);
+                    recyclerView.getClass();
+                    if (RecyclerView.R(view) + 1 > a00Var.R.E && !UserConfig.getInstance(a00Var.c1).isPremium() && !a00Var.U0) {
+                        rect.top = AndroidUtilities.dp(10.0f);
+                        break;
+                    }
+                }
                 break;
             case 4:
-                s11 = rt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.j) this.c, r0.getPreviewDelegate(), ((jz0) this.b).b);
+                recyclerView.getClass();
+                if (RecyclerView.R(view) == ((ArrayList) this.b).size() - 1) {
+                    rect.bottom = AndroidUtilities.dp(4.0f);
+                    break;
+                }
                 break;
             case 5:
-                az azVar = (az) this.b;
-                org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) this.c;
-                azVar.getClass();
-                if (motionEvent.getAction() == 0) {
-                    dz dzVar = azVar.d;
-                    dzVar.c.r(dzVar.b.T(g4Var));
+                recyclerView.getClass();
+                if (RecyclerView.R(view) == ((hi0) this.b).c.size() - 1) {
+                    rect.bottom = AndroidUtilities.dp(4.0f);
                     break;
                 }
                 break;
             case 6:
-                d20 d20Var = (d20) this.b;
-                z10 z10Var = (z10) this.c;
-                if (motionEvent.getAction() == 0) {
-                    FiltersSetupActivity filtersSetupActivity = d20Var.e;
-                    filtersSetupActivity.c.r(filtersSetupActivity.a.T(z10Var));
+                super.a(rect, view, recyclerView, a1Var);
+                recyclerView.getClass();
+                int R = RecyclerView.R(view);
+                sj0 sj0Var = (sj0) this.b;
+                if (R == sj0Var.c0.size()) {
+                    rect.bottom = sj0Var.l0;
                     break;
                 }
                 break;
-            default:
-                kn0 kn0Var = (kn0) this.b;
-                Context context = (Context) this.c;
-                int i15 = 0;
-                if (kn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        Calendar calendar = Calendar.getInstance();
-                        calendar.get(1);
-                        calendar.get(2);
-                        calendar.get(5);
-                        try {
-                            EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                            int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-                            if (intValue == 8) {
-                                string = LocaleController.getString(R.string.PassportSelectExpiredDate);
-                                i15 = 20;
-                                i11 = 0;
-                                i10 = 0;
-                            } else {
-                                i10 = -120;
-                                string = LocaleController.getString(R.string.PassportSelectBithdayDate);
-                                i11 = -18;
-                            }
-                            String[] split = editTextBoldCursor.getText().toString().split("\\.");
-                            if (split.length == 3) {
-                                i12 = Utilities.parseInt((CharSequence) split[0]).intValue();
-                                i14 = Utilities.parseInt((CharSequence) split[1]).intValue();
-                                i13 = Utilities.parseInt((CharSequence) split[2]).intValue();
-                            } else {
-                                i12 = -1;
-                                i13 = -1;
-                                i14 = -1;
-                            }
-                            AlertDialog$Builder x10 = org.telegram.ui.Components.e5.x(context, i10, i15, i11, i12, i14, i13, string, intValue == 8, new gg.d2(kn0Var, intValue, editTextBoldCursor, 15));
-                            if (intValue == 8) {
-                                x10.h(LocaleController.getString(R.string.PassportSelectNotExpire), new pw(24, kn0Var, editTextBoldCursor));
-                            }
-                            kn0Var.showDialog(x10.a);
-                            break;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
-                            break;
-                        }
+            case 7:
+                recyclerView.getClass();
+                int R2 = RecyclerView.R(view);
+                up0 up0Var = (up0) this.b;
+                int i10 = up0Var.b0;
+                if (R2 >= i10) {
+                    int i11 = up0Var.f0;
+                    if (R2 < i10 + i11) {
+                        int i12 = R2 - i10;
+                        int i13 = i12 / 3;
+                        boolean z10 = i13 == 0;
+                        boolean z11 = i13 == (i11 - 1) / 3;
+                        int i14 = i12 % 3;
+                        boolean z12 = i14 == 0;
+                        boolean z13 = i14 == 2;
+                        rect.top = z10 ? AndroidUtilities.dp(8.0f) : 0;
+                        rect.bottom = z11 ? AndroidUtilities.dp(8.0f) : 0;
+                        rect.left = z12 ? AndroidUtilities.dp(10.0f) : 0;
+                        rect.right = z13 ? AndroidUtilities.dp(10.0f) : 0;
+                        break;
                     }
                 }
                 break;
+            default:
+                super.a(rect, view, recyclerView, a1Var);
+                recyclerView.getClass();
+                int R3 = RecyclerView.R(view);
+                tg.z0 z0Var = (tg.z0) this.b;
+                if (R3 == z0Var.d0.size()) {
+                    rect.bottom = z0Var.p0;
+                    break;
+                }
+                break;
         }
-        return false;
-        return true;
     }
 }

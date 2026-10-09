@@ -16,11 +16,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v {
     public final Runnable a;
-    public final hd.e b = new hd.e();
+    public final id.e b = new id.e();
     public b0 c;
     public final OnBackInvokedCallback d;
     public OnBackInvokedDispatcher e;
@@ -53,14 +53,14 @@ public final class v {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v14 */
     /* JADX WARN: Type inference failed for: r3v15 */
-    /* JADX WARN: Type inference failed for: r3v16, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r3v16 */
+    /* JADX WARN: Type inference failed for: r3v17, types: [java.lang.Object] */
     public final void b() {
         b0 b0Var;
         b0 b0Var2 = this.c;
         if (b0Var2 == null) {
-            hd.e eVar = this.b;
+            id.e eVar = this.b;
             eVar.getClass();
             ListIterator listIterator = eVar.listIterator(eVar.c);
             while (true) {
@@ -149,24 +149,29 @@ public final class v {
             Iterator it3 = arrayList3.iterator();
             while (it3.hasNext()) {
                 ((v0) it3.next()).getClass();
-                hd.m.e(arrayList4, null);
+                id.m.e(arrayList4, null);
             }
-            List m10 = hd.g.m(hd.g.p(arrayList4));
+            List m10 = id.g.m(id.g.p(arrayList4));
             int size3 = m10.size();
-            for (int i14 = 0; i14 < size3; i14++) {
+            int i14 = 0;
+            while (i14 < size3) {
                 ((u0) m10.get(i14)).a(lVar.a);
+                i14++;
+                i10 = i10;
             }
+            int i15 = i10;
             int size4 = operations.size();
-            for (int i15 = 0; i15 < size4; i15++) {
-                lVar.a((v0) operations.get(i15));
+            for (int i16 = 0; i16 < size4; i16++) {
+                lVar.a((v0) operations.get(i16));
             }
-            List m11 = hd.g.m(arrayList3);
+            List m11 = id.g.m(arrayList3);
             if (m11.size() > 0) {
                 ((v0) m11.get(0)).getClass();
                 throw null;
             }
-            i10 = 3;
+            i10 = i15;
         }
+        int i17 = i10;
         ArrayList arrayList5 = k0Var.h.a;
         int size5 = arrayList5.size();
         while (i11 < size5) {
@@ -179,16 +184,16 @@ public final class v {
         }
         k0Var.h = null;
         k0Var.h0();
-        if (k0.K(3)) {
+        if (k0.K(i17)) {
             Log.d("FragmentManager", "Op is being set to null");
             Log.d("FragmentManager", "OnBackPressedCallback enabled=" + b0Var3.a + " for  FragmentManager " + k0Var);
         }
     }
 
     public final void c(boolean z10) {
+        OnBackInvokedCallback onBackInvokedCallback;
         OnBackInvokedDispatcher onBackInvokedDispatcher = this.e;
-        OnBackInvokedCallback onBackInvokedCallback = this.d;
-        if (onBackInvokedDispatcher == null || onBackInvokedCallback == null) {
+        if (onBackInvokedDispatcher == null || (onBackInvokedCallback = this.d) == null) {
             return;
         }
         q qVar = q.a;
@@ -207,7 +212,7 @@ public final class v {
     public final void d() {
         boolean z10 = this.g;
         boolean z11 = false;
-        hd.e eVar = this.b;
+        id.e eVar = this.b;
         if (eVar == null || !eVar.isEmpty()) {
             Iterator it = eVar.iterator();
             while (true) {

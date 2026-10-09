@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jg implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -32,8 +32,8 @@ public final /* synthetic */ class jg implements Runnable {
                 ((MessagesStorage) obj).lambda$loadPendingTasks$15(this.b, this.d, (TLRPC.InputPeer) tLObject, this.c);
                 break;
             default:
-                yh.u5 u5Var = (yh.u5) obj;
-                int i11 = u5Var.a;
+                yh.m5 m5Var = (yh.m5) obj;
+                int i11 = m5Var.a;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
                     long j3 = this.b;
                     long j10 = this.c;
@@ -43,13 +43,13 @@ public final /* synthetic */ class jg implements Runnable {
                             peerSettings.flags &= -16385;
                             peerSettings.charge_paid_message_stars = 0L;
                         }
-                        MessagesController.getNotificationsSettings(i11).edit().putLong(a4.a.p(j10, "dialog_bar_paying_"), 0L).apply();
+                        MessagesController.getNotificationsSettings(i11).edit().putLong(a1.g.p(j10, "dialog_bar_paying_"), 0L).apply();
                         MessagesController.getInstance(i11).loadPeerSettings(MessagesController.getInstance(i11).getUser(Long.valueOf(j10)), MessagesController.getInstance(i11).getChat(Long.valueOf(-j10)), true);
                         ContactsController.getInstance(i11).loadPrivacySettings(true);
                         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j10));
                         break;
                     } else {
-                        u5Var.b0(-j3, j10, this.d);
+                        m5Var.b0(-j3, j10, this.d);
                         break;
                     }
                 }
@@ -57,8 +57,8 @@ public final /* synthetic */ class jg implements Runnable {
         }
     }
 
-    public /* synthetic */ jg(yh.u5 u5Var, TLObject tLObject, long j3, long j10, boolean z10) {
-        this.e = u5Var;
+    public /* synthetic */ jg(yh.m5 m5Var, TLObject tLObject, long j3, long j10, boolean z10) {
+        this.e = m5Var;
         this.f = tLObject;
         this.b = j3;
         this.c = j10;

@@ -1,83 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import java.util.ArrayList;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q61 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class q61 extends t61 {
+    public static boolean h = true;
+    public final int e;
+    public final t11 f;
 
-    public /* synthetic */ q61(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public q61(String str, int i10, t11 t11Var) {
+        super(str, (t11) null);
+        this.e = i10;
+        this.f = t11Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                UndoView undoView = (UndoView) obj;
-                int i11 = UndoView.e0;
-                undoView.getClass();
-                try {
-                    undoView.f.performHapticFeedback(3, 2);
-                    break;
-                } catch (Exception unused) {
-                    return;
-                }
-            case 1:
-                ((h71) obj).invalidateSelf();
-                break;
-            case 2:
-                yz yzVar = ((u71) obj).b;
-                if (yzVar != null) {
-                    yzVar.e(false, true, false);
-                    break;
-                }
-                break;
-            case 3:
-                e81 e81Var = (e81) obj;
-                i2.f0 f0Var = e81Var.d;
-                if (f0Var != null) {
-                    TextureView textureView = e81Var.n;
-                    f0Var.B1();
-                    if (textureView != null && textureView == f0Var.V) {
-                        f0Var.B1();
-                        f0Var.o1();
-                        f0Var.t1(null);
-                        f0Var.m1(0, 0);
-                    }
-                    e81Var.d.v1(e81Var.n);
-                    ArrayList arrayList = e81Var.N;
-                    if (arrayList != null) {
-                        e81Var.F(arrayList, e81Var.O);
-                    } else if (e81Var.U) {
-                        e81Var.G(e81Var.Q, e81Var.S, e81Var.R, e81Var.T);
-                    } else {
-                        e81Var.D(e81Var.Q, e81Var.S);
-                    }
-                    e81Var.C();
-                    break;
-                }
-                break;
-            case 4:
-                e81 e81Var2 = ((d81) obj).f;
-                e81Var2.a0.removeCallbacksAndMessages(null);
-                e81Var2.K.onVisualizerUpdate(false, true, null);
-                break;
-            case 5:
-                ((g81) obj).g = false;
-                break;
-            case 6:
-                ((aa1) ((ki.d) ((org.telegram.ui.Cells.fa) obj).b).b).v.b();
-                break;
-            default:
-                ((w91) obj).d(false, true);
-                break;
+    @Override // org.telegram.ui.Components.t61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, h ? org.telegram.ui.ActionBar.i6.hc : org.telegram.ui.ActionBar.i6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, h ? org.telegram.ui.ActionBar.i6.gc : org.telegram.ui.ActionBar.i6.ec, false));
+        }
+        t11 t11Var = this.f;
+        if (t11Var != null) {
+            t11Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
     }
 }

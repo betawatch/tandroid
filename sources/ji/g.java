@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -52,19 +52,19 @@ public final class g implements Runnable {
                 break;
             default:
                 try {
-                    ((yc.i) this.d).a.bind(new InetSocketAddress(61578));
+                    ((zc.i) this.d).a.bind(new InetSocketAddress(61578));
                     this.b = true;
                     do {
                         try {
-                            Socket accept = ((yc.i) this.d).a.accept();
+                            Socket accept = ((zc.i) this.d).a.accept();
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
-                            yc.i iVar2 = (yc.i) this.d;
-                            iVar2.c.x(new yc.a(iVar2, inputStream, accept));
+                            zc.i iVar2 = (zc.i) this.d;
+                            iVar2.c.C(new zc.a(iVar2, inputStream, accept));
                         } catch (IOException e7) {
-                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e7);
+                            zc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e7);
                         }
-                    } while (!((yc.i) this.d).a.isClosed());
+                    } while (!((zc.i) this.d).a.isClosed());
                 } catch (IOException e10) {
                     this.c = e10;
                     return;
@@ -72,7 +72,7 @@ public final class g implements Runnable {
         }
     }
 
-    public g(yc.i iVar) {
+    public g(zc.i iVar) {
         this.a = 2;
         this.d = iVar;
         this.b = false;

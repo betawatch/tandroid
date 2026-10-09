@@ -1,40 +1,121 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b9 {
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x005d, code lost:
-    
-        if (r8 > 4611686018427387903L) goto L14;
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
      */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final long a(int i10, yd.c unit) {
-        kotlin.jvm.internal.i.e(unit, "unit");
-        if (unit.compareTo(yd.c.d) <= 0) {
-            long a2 = c9.a(i10, unit, yd.c.b) << 1;
-            int i11 = yd.a.d;
-            int i12 = yd.b.a;
-            return a2;
+    public static final w0.d a(CharSequence charSequence, String str) {
+        switch (str.hashCode()) {
+            case -2055374133:
+                if (str.equals("android.credentials.CreateCredentialException.TYPE_USER_CANCELED")) {
+                    return new w0.b(charSequence);
+                }
+                break;
+            case -1166690414:
+                if (str.equals("androidx.credentials.TYPE_CREATE_CREDENTIAL_UNSUPPORTED_EXCEPTION")) {
+                    return new w0.c(charSequence, 3);
+                }
+                break;
+            case -580283253:
+                if (str.equals("androidx.credentials.TYPE_CREATE_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION")) {
+                    return new w0.c(charSequence, 1);
+                }
+                break;
+            case 1316905704:
+                if (str.equals("android.credentials.CreateCredentialException.TYPE_UNKNOWN")) {
+                    return new w0.c(charSequence, 2);
+                }
+                break;
+            case 2092588512:
+                if (str.equals("android.credentials.CreateCredentialException.TYPE_INTERRUPTED")) {
+                    return new w0.e(charSequence);
+                }
+                break;
+            case 2131915191:
+                if (str.equals("android.credentials.CreateCredentialException.TYPE_NO_CREATE_OPTIONS")) {
+                    return new w0.f(charSequence);
+                }
+                break;
         }
-        long j3 = i10;
-        yd.c cVar = yd.c.b;
-        long a10 = c9.a(4611686018426999999L, cVar, unit);
-        if ((-a10) <= j3 && j3 <= a10) {
-            long a11 = c9.a(j3, unit, cVar) << 1;
-            int i13 = yd.a.d;
-            int i14 = yd.b.a;
-            return a11;
+        if (!yd.j.h(str, "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
+            return new w0.c(charSequence, str);
         }
-        yd.c targetUnit = yd.c.c;
-        kotlin.jvm.internal.i.e(targetUnit, "targetUnit");
-        long convert = targetUnit.a.convert(j3, unit.a);
-        long j10 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
-        convert = j10;
-        long j11 = (convert << 1) + 1;
-        int i15 = yd.a.d;
-        int i16 = yd.b.a;
-        return j11;
+        int i10 = y0.a.c;
+        String obj = charSequence != null ? charSequence.toString() : null;
+        try {
+            if (!yd.j.b(str, "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
+                throw new z0.a();
+            }
+            int i11 = y0.a.c;
+            return r8.a(str, obj);
+        } catch (z0.a unused) {
+            return new w0.c(obj, str);
+        }
+    }
+
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
+     */
+    public static final w0.i b(CharSequence charSequence, String str) {
+        switch (str.hashCode()) {
+            case -781118336:
+                if (str.equals("android.credentials.GetCredentialException.TYPE_UNKNOWN")) {
+                    return new w0.h(charSequence, 2);
+                }
+                break;
+            case -408155724:
+                if (str.equals("androidx.credentials.TYPE_GET_CREDENTIAL_UNSUPPORTED_EXCEPTION")) {
+                    return new w0.h(charSequence, 3);
+                }
+                break;
+            case -45448328:
+                if (str.equals("android.credentials.GetCredentialException.TYPE_INTERRUPTED")) {
+                    return new w0.j(charSequence);
+                }
+                break;
+            case 580557411:
+                if (str.equals("android.credentials.GetCredentialException.TYPE_USER_CANCELED")) {
+                    return new w0.g(charSequence);
+                }
+                break;
+            case 627896683:
+                if (str.equals("android.credentials.GetCredentialException.TYPE_NO_CREDENTIAL")) {
+                    return new w0.k(charSequence);
+                }
+                break;
+            case 1594095913:
+                if (str.equals("androidx.credentials.TYPE_GET_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION")) {
+                    return new w0.h(charSequence, 1);
+                }
+                break;
+        }
+        if (!yd.j.h(str, "androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
+            return new w0.h(charSequence, str);
+        }
+        int i10 = y0.b.c;
+        String obj = charSequence != null ? charSequence.toString() : null;
+        try {
+            if (!yd.j.h(str, "androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
+                throw new z0.a();
+            }
+            int i11 = y0.b.c;
+            return t8.a(str, obj);
+        } catch (z0.a unused) {
+            return new w0.h(obj, str);
+        }
     }
 }

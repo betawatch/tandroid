@@ -1,49 +1,39 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vy {
-    public final ArrayList a = new ArrayList();
-    public final /* synthetic */ nz b;
+public final class vy implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a3 b;
+    public final /* synthetic */ wy c;
 
-    public vy(nz nzVar) {
-        this.b = nzVar;
+    public vy(wy wyVar, boolean[] zArr, org.telegram.ui.ActionBar.a3 a3Var) {
+        this.c = wyVar;
+        this.a = zArr;
+        this.b = a3Var;
     }
 
-    public final void a(String str, boolean z10) {
-        nz nzVar = this.b;
-        int i10 = nzVar.c1;
-        String q6 = a4.a.q("gif_search_", str, "_");
-        if (z10 && nzVar.l0.containsKey(q6)) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        zy zyVar = this.c.a;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
             return;
         }
-        ci.t1 t1Var = new ci.t1(this, str, z10, q6);
-        ArrayList arrayList = this.a;
-        if (z10) {
-            arrayList.add(q6);
-            MessagesStorage.getInstance(i10).getBotCache(q6, t1Var);
-            return;
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(zyVar.F.getContext(), 3, null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        a00 a00Var = zyVar.F;
+        String str = zyVar.w;
+        if (str == null) {
+            str = a00Var.W0[0];
         }
-        MessagesController messagesController = MessagesController.getInstance(i10);
-        TLObject userOrChat = messagesController.getUserOrChat(messagesController.gifSearchBot);
-        if (userOrChat instanceof TLRPC.User) {
-            arrayList.add(q6);
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            if (str == null) {
-                str = "";
-            }
-            tL_messages_getInlineBotResults.query = str;
-            tL_messages_getInlineBotResults.bot = messagesController.getInputUser((TLRPC.User) userOrChat);
-            tL_messages_getInlineBotResults.offset = "";
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getInlineBotResults, t1Var, 2);
-        }
+        tL_messages_getEmojiURL.lang_code = str;
+        AndroidUtilities.runOnUIThread(new zk(this, b2VarArr, ConnectionsManager.getInstance(a00Var.c1).sendRequest(tL_messages_getEmojiURL, new ai.t5(this, b2VarArr, this.b, 8)), 3), 1000L);
     }
 }

@@ -1,45 +1,31 @@
 package tf;
 
-import android.view.View;
-import java.util.ArrayList;
-import li.h;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.os.Build;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c implements View.OnAttachStateChangeListener {
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        b a2;
-        d dVar = (d) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (dVar == null || (a2 = e.a(view, dVar)) == null) {
-            return;
+public abstract class c {
+    public static final int[] a = new int[2];
+
+    public static int a(Context context) {
+        if (AndroidUtilities.checkInlinePermissions(context)) {
+            return 2;
         }
-        ArrayList arrayList = dVar.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((pe.b) a2.a.b).add((h) obj);
+        if (Build.VERSION.SDK_INT >= 26) {
+            return AndroidUtilities.checkPipPermissions(context) ? 1 : -2;
         }
+        return -1;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        b bVar;
-        d dVar = (d) view.getTag(R.id.tag_view_on_post_draw_state);
-        if (dVar == null || (bVar = dVar.b) == null) {
-            return;
-        }
-        ArrayList arrayList = dVar.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((pe.b) bVar.a.b).remove((h) obj);
-        }
-        dVar.b = null;
+    public static WindowManager.LayoutParams b(Context context, boolean z10) {
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.gravity = 51;
+        layoutParams.format = -3;
+        layoutParams.type = (z10 || !AndroidUtilities.checkInlinePermissions(context)) ? 2 : Build.VERSION.SDK_INT >= 26 ? 2038 : 2003;
+        layoutParams.flags = 520;
+        return layoutParams;
     }
 }

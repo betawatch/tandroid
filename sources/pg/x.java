@@ -12,29 +12,29 @@ import android.widget.LinearLayout;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.py0;
-import org.telegram.ui.s6;
-import w7.z5;
+import org.telegram.ui.p6;
+import org.telegram.ui.vy0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class x extends f3 {
     public static final /* synthetic */ int s = 0;
     public final ai.d1 b;
     public final ImageView c;
-    public final s6 d;
+    public final p6 d;
     public final Path e;
     public int f;
     public q0.a h;
     public u n;
     public boolean r;
 
-    public x(Context context, d6 d6Var) {
-        super(1, context, d6Var, true);
+    public x(Context context, e6 e6Var) {
+        super(1, context, e6Var, true);
         this.e = new Path();
         fixNavigationBar(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -48,18 +48,18 @@ public final class x extends f3 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(i6.f0(1090519039, 1, -1));
-        imageView.setOnClickListener(new py0(13, this, context));
+        imageView.setBackground(i6.g0(1090519039, 1, -1));
+        imageView.setOnClickListener(new vy0(19, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(i6.f0(1090519039, 1, -1));
+        imageView2.setBackground(i6.g0(1090519039, 1, -1));
         imageView2.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 5));
-        s6 s6Var = new s6(this, context);
-        this.d = s6Var;
-        s6Var.d = Color.alpha(-65536) / 255.0f;
-        s6Var.a();
-        s6Var.invalidate();
+        p6 p6Var = new p6(this, context);
+        this.d = p6Var;
+        p6Var.d = Color.alpha(-65536) / 255.0f;
+        p6Var.a();
+        p6Var.invalidate();
         ai.d1 d1Var = new ai.d1(context, 4);
         d1Var.setOrientation(1);
         t tVar = new t(this, context);
@@ -69,17 +69,17 @@ public final class x extends f3 {
         d1Var.d = new w(this, context);
         p pVar = new p(context, this.resourcesProvider);
         pVar.setAdapter(new q(d1Var));
-        d1Var.addView(pVar, z5.l(1.0f, -1, 0));
-        d1Var.addView(s6Var, z5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        d1Var.addView(pVar, x5.l(1.0f, -1, 0));
+        d1Var.addView(p6Var, x5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, z5.n(28, 28));
-        linearLayout2.addView(pVar.n(8, false), z5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, z5.n(28, 28));
-        d1Var.addView(linearLayout2, z5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        linearLayout2.addView(imageView, x5.n(28, 28));
+        linearLayout2.addView(pVar.n(8, false), x5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, x5.n(28, 28));
+        d1Var.addView(linearLayout2, x5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
         this.b = d1Var;
-        linearLayout.addView(d1Var, z5.n(-1, 0));
+        linearLayout.addView(d1Var, x5.n(-1, 0));
         o oVar = new o(this, context, linearLayout);
         oVar.addView(linearLayout);
         setCustomView(oVar);
@@ -94,7 +94,7 @@ public final class x extends f3 {
         }
     }
 
-    public final void m(int i10, int i11) {
+    public final void o(int i10, int i11) {
         View findFocus;
         if (!this.r) {
             if (i11 != 2) {
@@ -126,11 +126,11 @@ public final class x extends f3 {
             sVar.invalidate();
         }
         if (i11 != 1) {
-            s6 s6Var = this.d;
-            s6Var.getClass();
-            s6Var.d = Color.alpha(i10) / 255.0f;
-            s6Var.a();
-            s6Var.invalidate();
+            p6 p6Var = this.d;
+            p6Var.getClass();
+            p6Var.d = Color.alpha(i10) / 255.0f;
+            p6Var.a();
+            p6Var.invalidate();
         }
         w wVar = (w) d1Var.d;
         wVar.e = true;

@@ -7,51 +7,51 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.br0;
-import org.telegram.ui.Components.gs0;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.rs0;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class z1 extends br0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 X0;
-    public final /* synthetic */ gs0 Y0;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class z1 extends mr0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
+    public final /* synthetic */ rs0 c1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z1(gs0 gs0Var, Context context, String str, String str2, d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.Y0 = gs0Var;
-        this.X0 = n2Var;
+    public z1(rs0 rs0Var, Context context, String str, String str2, e6 e6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.c1 = rs0Var;
+        this.b1 = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.br0
-    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        yc a02;
-        if (z10 && (a02 = yc.a0(this.X0)) != null) {
+    @Override // org.telegram.ui.Components.mr0
+    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        ad a02;
+        if (z10 && (a02 = ad.a0(this.b1)) != null) {
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    rc G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
+                    tc G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    rc G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    tc G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    rc G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    tc G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                rc Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                tc Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
                 Q.r = false;
                 Q.j();
             }
             try {
-                this.Y0.performHapticFeedback(3);
+                this.c1.performHapticFeedback(3);
             } catch (Exception unused) {
             }
         }

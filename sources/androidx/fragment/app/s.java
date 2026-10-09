@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-import ai.q4;
+import ai.r4;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentCallbacks;
@@ -22,9 +22,8 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
-import n7.z0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, t4.e {
     public static final Object j0 = new Object();
@@ -75,7 +74,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public boolean X = true;
 
     public s() {
-        new q4(this, 6);
+        new r4(this, 6);
         this.c0 = androidx.lifecycle.n.e;
         this.e0 = new androidx.lifecycle.z();
         new AtomicInteger();
@@ -239,7 +238,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return (m.p) this.g0.d;
     }
 
-    public v7.b0 h() {
+    public v7.x h() {
         return new o(this);
     }
 
@@ -367,11 +366,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.V);
         }
         if (n() != null) {
-            new z0(this, f()).r(str, printWriter);
+            new n6.t(this, f()).F(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.L + ":");
-        this.L.w(sa.e.v(str, "  "), fileDescriptor, printWriter, strArr);
+        this.L.w(sc.v.v(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

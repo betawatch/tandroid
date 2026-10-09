@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
@@ -133,7 +133,7 @@ public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback,
                     }
                     tL_upload_getFile.location = tL_inputGroupCallStream;
                     if (i10 == 0) {
-                        str = a4.a.p(j3, "");
+                        str = a1.g.p(j3, "");
                     } else {
                         str = i10 + "_" + j3 + "_" + i11;
                     }
@@ -145,7 +145,7 @@ public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback,
                             if (d2Var2.w || d2Var2.E == null) {
                                 return;
                             }
-                            AndroidUtilities.runOnUIThread(new a1.e(9, d2Var2, str2));
+                            AndroidUtilities.runOnUIThread(new a1.f(9, d2Var2, str2));
                             long j12 = currentTimeMillis;
                             long j13 = j3;
                             long j14 = j10;
@@ -218,7 +218,7 @@ public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback,
                 StringBuilder sb3 = new StringBuilder("[LivePlayer] cancelling getFile time_ms=");
                 sb3.append(j3);
                 sb3.append(j10 == 500 ? ", scale = 1" : "");
-                sb3.append(i10 != 0 ? a4.a.m(i10, i11, ", video_channel = ", ", video_quality = ") : "");
+                sb3.append(i10 != 0 ? a1.g.m(i10, i11, ", video_channel = ", ", video_quality = ") : "");
                 FileLog.d(sb3.toString());
                 AndroidUtilities.runOnUIThread(new a2(i10, i11, 0, j3, this.b));
                 break;

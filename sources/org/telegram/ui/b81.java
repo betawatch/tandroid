@@ -1,27 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
-    public final /* synthetic */ boolean c;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ b81(SessionsActivity sessionsActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
-        this.c = z10;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class b81 implements View.OnClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ h81 b;
+
+    public b81(h81 h81Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = h81Var;
+        this.a = tL_authorization;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k0(this.c);
-                break;
-            default:
-                this.b.k0(this.c);
-                break;
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        h81.o(this.b, this.a.ip);
     }
 }

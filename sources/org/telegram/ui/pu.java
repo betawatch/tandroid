@@ -1,20 +1,54 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class pu extends MetricAffectingSpan {
-    public double a;
+public final class pu extends og.a {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final CharSequence f;
+    public final CharSequence g;
+    public final int h;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
+    public pu(int i10, String str) {
+        super(i10, false);
+        this.f = str;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.baselineShift += (int) (textPaint.ascent() * this.a);
+    public static pu b(CharSequence charSequence, String str) {
+        return new pu(-1, 0, 0, 0, charSequence, str);
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof pu)) {
+            return false;
+        }
+        pu puVar = (pu) obj;
+        CharSequence charSequence = puVar.f;
+        int i10 = puVar.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        CharSequence charSequence2 = this.f;
+        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
+            return TextUtils.equals(charSequence2, charSequence);
+        }
+        if (i11 == 2) {
+            return puVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && puVar.d == this.d && puVar.e == this.e && puVar.c == this.c;
+        }
+        return true;
+    }
+
+    public pu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
+        super(2, false);
+        this.h = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = charSequence;
+        this.g = charSequence2;
     }
 }

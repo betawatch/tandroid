@@ -2,12 +2,12 @@ package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s {
     public static final s a = new s();
 
-    public final OnBackInvokedCallback a(rd.l onBackStarted, rd.l onBackProgressed, rd.a onBackInvoked, rd.a onBackCancelled) {
+    public final OnBackInvokedCallback a(sd.l onBackStarted, sd.l onBackProgressed, sd.a onBackInvoked, sd.a onBackCancelled) {
         kotlin.jvm.internal.i.e(onBackStarted, "onBackStarted");
         kotlin.jvm.internal.i.e(onBackProgressed, "onBackProgressed");
         kotlin.jvm.internal.i.e(onBackInvoked, "onBackInvoked");

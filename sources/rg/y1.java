@@ -2,147 +2,43 @@ package rg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.view.View;
+import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.l4;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class y1 extends View {
-    public x1 a;
-    public int b;
-    public ii.q1 c;
-    public boolean d;
-    public Paint e;
-    public LinearGradient f;
-    public Matrix h;
+public final class y1 extends l4 {
+    public final Path h;
+    public final /* synthetic */ a2 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1(Context context) {
+    public y1(a2 a2Var, Context context) {
         super(context);
-        int i10 = SharedConfig.getDevicePerformanceClass() == 2 ? 200 : SharedConfig.getDevicePerformanceClass() == 1 ? 100 : 50;
-        this.d = true;
-        this.a = new x1(i10);
-        a();
+        this.n = a2Var;
+        this.h = new Path();
     }
 
-    public void a() {
-        x1 x1Var = this.a;
-        x1Var.N = 100;
-        x1Var.M = true;
-        x1Var.G = true;
-        x1Var.K = true;
-        x1Var.H = true;
-        x1Var.r = 4;
-        x1Var.w = 0.98f;
-        x1Var.v = 0.98f;
-        x1Var.u = 0.98f;
-        x1Var.c();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.h);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    public final void b() {
-        Paint paint = new Paint(1);
-        this.e = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(12.0f), new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.f = linearGradient;
-        this.e.setShader(linearGradient);
-        this.h = new Matrix();
-    }
-
-    public int getStarsRectWidth() {
-        return AndroidUtilities.dp(140.0f);
-    }
-
-    @Override // android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ii.q1 q1Var = new ii.q1(this, 12);
-        this.c = q1Var;
-        LiteMode.addOnPowerSaverAppliedListener(q1Var);
-        boolean isEnabled = LiteMode.isEnabled(131072);
-        if (this.d != isEnabled) {
-            this.d = isEnabled;
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        ii.q1 q1Var = this.c;
-        if (q1Var != null) {
-            LiteMode.removeOnPowerSaverAppliedListener(q1Var);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        super.onDraw(canvas);
-        if (this.d) {
-            if (this.e != null) {
-                canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-            }
-            this.a.d(canvas2);
-            if (this.e != null) {
-                canvas2.save();
-                this.h.reset();
-                this.h.postTranslate(0.0f, (getHeight() + 1) - AndroidUtilities.dp(12.0f));
-                this.f.setLocalMatrix(this.h);
-                canvas2.drawRect(0.0f, getHeight() - AndroidUtilities.dp(12.0f), getWidth(), getHeight(), this.e);
-                this.h.reset();
-                this.h.postRotate(180.0f);
-                this.h.postTranslate(0.0f, AndroidUtilities.dp(12.0f));
-                this.f.setLocalMatrix(this.h);
-                canvas2.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f), this.e);
-                canvas2.restore();
-                canvas2.restore();
-            }
-            if (this.a.g) {
-                return;
-            }
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        int measuredHeight = getMeasuredHeight() + (getMeasuredWidth() << 16);
-        this.a.a.set(0.0f, 0.0f, getStarsRectWidth(), AndroidUtilities.dp(140.0f));
-        this.a.a.offset((getMeasuredWidth() - this.a.a.width()) / 2.0f, (getMeasuredHeight() - this.a.a.height()) / 2.0f);
-        this.a.b.set(-AndroidUtilities.dp(15.0f), -AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f) + getMeasuredWidth(), AndroidUtilities.dp(15.0f) + getMeasuredHeight());
-        if (this.b != measuredHeight) {
-            this.b = measuredHeight;
-            this.a.f();
+        Path path = this.h;
+        path.reset();
+        a2 a2Var = this.n;
+        if (a2Var.d) {
+            AndroidUtilities.rectTmp.set(0.0f, -a2Var.M, getMeasuredWidth(), getMeasuredHeight());
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), (int) (getMeasuredHeight() + a2Var.M));
         }
-    }
-
-    public void setPaused(boolean z10) {
-        x1 x1Var = this.a;
-        if (z10 == x1Var.g) {
-            return;
-        }
-        x1Var.g = z10;
-        if (z10) {
-            x1Var.Q = System.currentTimeMillis();
-            return;
-        }
-        for (int i10 = 0; i10 < this.a.n.size(); i10++) {
-            w1 w1Var = (w1) this.a.n.get(i10);
-            w1Var.a = (System.currentTimeMillis() - this.a.Q) + w1Var.a;
-        }
-        invalidate();
+        float dp = a2Var.M - AndroidUtilities.dp(3.0f);
+        path.addRoundRect(AndroidUtilities.rectTmp, dp, dp, Path.Direction.CW);
     }
 }

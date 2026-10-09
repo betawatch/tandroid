@@ -1,138 +1,299 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.Region;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hr extends yl0 {
-    public final /* synthetic */ jr c;
+public abstract class hr extends Drawable {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public hr(jr jrVar) {
-        this.c = jrVar;
+    public /* synthetic */ hr() {
+        this.a = 1;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 3;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        jr jrVar = this.c;
-        return jrVar.Z ? jrVar.Y.size() + 3 : jrVar.a0 ? 2 : 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                return 3;
-            }
-        }
-        return i11;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        int i11;
-        TLObject chat;
-        String str;
-        int i12;
-        int i13 = c1Var.f;
-        View view = c1Var.a;
-        if (i13 != 3) {
-            if (i13 != 2) {
-                if (i13 == 1) {
-                    ((org.telegram.ui.Cells.e9) view).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), org.telegram.ui.ActionBar.i6.L6, 0, new aq(this, 3)), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    return;
+    @Override // android.graphics.drawable.Drawable
+    public void applyTheme(Resources.Theme theme) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.applyTheme(theme);
+                    break;
                 }
-                return;
-            } else {
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setTextSize(15.0f);
-                m4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-                m4Var.setText(LocaleController.getString(R.string.VoipChatDisplayedAs).replace(":", ""));
-                return;
-            }
+                break;
+            default:
+                super.applyTheme(theme);
+                break;
         }
-        jr jrVar = this.c;
-        TLRPC.Peer peer = (TLRPC.Peer) jrVar.Y.get(i10 - 3);
-        long peerId = MessageObject.getPeerId(peer);
-        if (peerId > 0) {
-            i12 = ((org.telegram.ui.ActionBar.f3) jrVar).currentAccount;
-            chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
-            str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
-        } else {
-            i11 = ((org.telegram.ui.ActionBar.f3) jrVar).currentAccount;
-            chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
-            str = null;
-        }
-        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
-        g4Var.e(chat, null, str, i10 != h() - 1);
-        g4Var.c(peer == jrVar.d0, false);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup, android.widget.LinearLayout] */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        FrameLayout frameLayout;
-        Context context = viewGroup.getContext();
-        jr jrVar = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context);
-            int i11 = org.telegram.ui.ActionBar.i6.a7;
-            d6Var = ((org.telegram.ui.ActionBar.f3) jrVar).resourcesProvider;
-            e9Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
-            e9Var.setTopPadding(17);
-            e9Var.setBottomPadding(17);
-            frameLayout = e9Var;
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.m4(context, 22);
-        } else if (i10 != 3) {
-            boolean z10 = jrVar.b0;
-            ?? irVar = new ir(context);
-            irVar.setOrientation(1);
-            nj0 nj0Var = new nj0(context);
-            nj0Var.setAutoRepeat(true);
-            nj0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            nj0Var.d();
-            irVar.addView(nj0Var, w7.z5.t(112, 112, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
-            irVar.addView(textView, w7.z5.t(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false));
-            textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            irVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
-            frameLayout = irVar;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.g4(context, 1, 0, false);
+    @Override // android.graphics.drawable.Drawable
+    public void clearColorFilter() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.clearColorFilter();
+                    break;
+                } else {
+                    drawable.clearColorFilter();
+                    break;
+                }
+            default:
+                super.clearColorFilter();
+                break;
         }
-        frameLayout.setLayoutParams(new s4.p0(-1, -2));
-        return new il0(frameLayout);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public Drawable getCurrent() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getCurrent();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getMinimumHeight() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getMinimumHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getMinimumWidth() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getMinimumWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean getPadding(Rect rect) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getPadding(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int[] getState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public Region getTransparentRegion() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getTransparentRegion();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void jumpToCurrentState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.jumpToCurrentState();
+                    break;
+                }
+                break;
+            default:
+                super.jumpToCurrentState();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean onLevelChange(int i10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.onLevelChange(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i10) {
+        ((Paint) this.b).setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setChangingConfigurations(int i10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setChangingConfigurations(i10);
+                    break;
+                } else {
+                    drawable.setChangingConfigurations(i10);
+                    break;
+                }
+            default:
+                super.setChangingConfigurations(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(int i10, PorterDuff.Mode mode) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setColorFilter(i10, mode);
+                    break;
+                } else {
+                    drawable.setColorFilter(i10, mode);
+                    break;
+                }
+            default:
+                super.setColorFilter(i10, mode);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setFilterBitmap(boolean z10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setFilterBitmap(z10);
+                    break;
+                }
+                break;
+            default:
+                super.setFilterBitmap(z10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setHotspot(float f7, float f10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspot(f7, f10);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspot(f7, f10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setHotspotBounds(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspotBounds(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspotBounds(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean setState(int[] iArr) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.setState(iArr);
+    }
+
+    public hr(View view) {
+        this.a = 0;
+        this.b = new Paint(1);
+        if (view != null) {
+            view.addOnAttachStateChangeListener(new ai.v2(this, 7));
+            if (view.isAttachedToWindow()) {
+                view.post(new nq(this, 1));
+            }
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        ((Paint) this.b).setColorFilter(colorFilter);
+    }
+
+    public void a() {
+    }
+
+    public void b() {
     }
 }

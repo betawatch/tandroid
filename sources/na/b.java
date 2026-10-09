@@ -9,7 +9,7 @@ import java.util.zip.GZIPOutputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Callable {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class b implements Callable {
             default:
                 c cVar = this.b;
                 synchronized (cVar) {
-                    ((g) cVar.a.get()).k(System.currentTimeMillis(), ((xa.b) cVar.c.get()).a());
+                    ((g) cVar.a.get()).k(System.currentTimeMillis(), ((xa.c) cVar.c.get()).a());
                 }
                 return null;
         }

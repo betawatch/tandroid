@@ -1,114 +1,102 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.cc0;
-import org.telegram.ui.Components.ic0;
-import org.telegram.ui.Components.tb0;
-import org.telegram.ui.nl;
-import org.telegram.ui.on;
-import org.telegram.ui.yn;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class s3 extends w7.j0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class s3 extends o1 {
+    public final /* synthetic */ kc h0;
+    public final /* synthetic */ f6 i0;
 
-    public /* synthetic */ s3(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s3(f6 f6Var, Context context, kc kcVar, zb zbVar, View view, FrameLayout frameLayout, kc kcVar2) {
+        super(context, kcVar, zbVar, view, frameLayout);
+        this.i0 = f6Var;
+        this.h0 = kcVar2;
     }
 
-    @Override // w7.j0
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                e6 e6Var = (e6) this.b;
-                x5 x5Var = e6Var.Q1;
-                boolean y3 = e6Var.K0.W.y();
-                jc jcVar = ((ac) x5Var).d;
-                jcVar.j1 = y3;
-                jcVar.P();
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.i4) this.b).I;
-                if (f3Var != null) {
-                    f3Var.setDisableScroll(z10);
-                    break;
-                }
-                break;
-            case 2:
-                yn ynVar = (yn) this.b;
-                ynVar.l9 = !z10;
-                if (z10) {
-                    if (ynVar.b9 != null) {
-                        yn.V1(ynVar, 0.0f);
-                        ynVar.b9 = null;
-                    }
-                    ynVar.c9 = false;
-                    ynVar.d9 = false;
-                    nl nlVar = ynVar.f9;
-                    if (nlVar != null) {
-                        AndroidUtilities.cancelRunOnUIThread(nlVar.H);
-                        nlVar.a();
-                    }
-                }
-                ynVar.uc();
-                break;
-            default:
-                cc0 cc0Var = (cc0) this.b;
-                tb0 tb0Var = cc0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = cc0Var.s;
-                ic0 ic0Var = cc0Var.c0;
-                if (ic0Var.s) {
-                    if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                        break;
-                    } else if (z10) {
-                        if (tb0Var.v - tb0Var.u <= MessagesController.getInstance(ic0Var.w).quoteLengthMax) {
-                            org.telegram.ui.Cells.y9 y9Var = tb0Var.W;
-                            MessageObject c10 = cc0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
-                            MessagePreviewParams messagePreviewParams = ic0Var.d;
-                            if (messagePreviewParams.quote == null) {
-                                int i10 = tb0Var.u;
-                                messagePreviewParams.quoteStart = i10;
-                                int i11 = tb0Var.v;
-                                messagePreviewParams.quoteEnd = i11;
-                                messagePreviewParams.quote = on.b(i10, i11, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(cc0Var.I);
-                                break;
-                            }
-                        } else {
-                            cc0Var.f();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // ai.o1
+    public final TLRPC.Peer getDefaultSendAs() {
+        d2 d2Var = this.h0.A0;
+        if (d2Var != null) {
+            return d2Var.i();
+        }
+        return null;
+    }
+
+    @Override // ai.o1
+    public final void h(long j3) {
+        x2 x2Var = this.i0.Y1;
+        if (x2Var == null) {
+            return;
+        }
+        ArrayList arrayList = x2Var.h;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (((w2) arrayList.get(i10)).a == j3) {
+                ((w2) arrayList.get(i10)).h = true;
+            }
         }
     }
 
-    @Override // w7.j0
-    public void b() {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        switch (this.a) {
-            case 2:
-                yn ynVar = (yn) this.b;
-                kVar = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
-                if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
-                    if (kVar2.s()) {
-                        ynVar.z7(false);
-                    }
-                }
-                ynVar.Q7();
-                ynVar.w3.j(58, 0L, null);
-                break;
+    @Override // ai.o1
+    public final void i(int i10, int i11, long j3) {
+        x2 x2Var = this.i0.Y1;
+        if (x2Var == null) {
+            return;
         }
+        int i12 = x2Var.a;
+        ArrayList arrayList = x2Var.h;
+        arrayList.add(new w2(x2Var, x2Var, i12, j3, i11, arrayList.size() < 5));
+        x2Var.invalidate();
+    }
+
+    @Override // ai.o1
+    public final void j() {
+        f6 f6Var = this.i0;
+        f6Var.Z1.setCount((int) getStarsCount());
+        f6Var.Z1.setFilled(this.W != null);
+    }
+
+    @Override // ai.o1
+    public final void q(boolean z10, boolean z11) {
+        if (!z11 || this.f0 != z10) {
+            this.f0 = z10;
+            ValueAnimator valueAnimator = this.e0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.e0 = null;
+            }
+            w0 w0Var = this.c;
+            w0Var.invalidate();
+            if (z11) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(w0Var.getAlpha(), z10 ? 0.0f : 1.0f);
+                this.e0 = ofFloat;
+                ofFloat.addUpdateListener(new a(this, 3));
+                this.e0.addListener(new n(1, this, z10));
+                this.e0.setDuration(420L);
+                this.e0.setInterpolator(hs.h);
+                this.e0.start();
+            } else {
+                this.a.setAlpha(z10 ? 0.0f : 0.5f);
+                w0Var.setAlpha(z10 ? 0.0f : 1.0f);
+            }
+            invalidate();
+        }
+        c cVar = this.i0.X1;
+        if (cVar != null) {
+            cVar.a(z10, z11);
+        }
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        this.i0.M0.setVisibility(i10);
     }
 }

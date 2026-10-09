@@ -1,43 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ic0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ jc0 c;
+public final class ic0 extends org.telegram.ui.Components.z60 {
+    public final /* synthetic */ kc0 d;
 
-    public /* synthetic */ ic0(jc0 jc0Var, float f7, int i10) {
-        this.a = i10;
-        this.c = jc0Var;
-        this.b = f7;
+    public ic0(kc0 kc0Var) {
+        this.d = kc0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                jc0 jc0Var = this.c;
-                TextView textView = jc0Var.f;
-                int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y6, false);
-                int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n6, false);
-                float f7 = this.b;
-                jc0Var.s = f7;
-                textView.setTextColor(i0.a.d(f7, w02, w03));
-                break;
-            default:
-                jc0 jc0Var2 = this.c;
-                TextView textView2 = jc0Var2.d;
-                int w04 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y6, false);
-                int w05 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n6, false);
-                float f10 = this.b;
-                jc0Var2.w = f10;
-                textView2.setTextColor(i0.a.d(f10, w04, w05));
-                break;
+    @Override // org.telegram.ui.Components.hp0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // org.telegram.ui.Components.z60
+    public final int h() {
+        return 5;
+    }
+
+    @Override // org.telegram.ui.Components.z60
+    public final int i() {
+        return 100;
+    }
+
+    @Override // org.telegram.ui.Components.z60
+    public final int j() {
+        return LiteMode.getPowerSaverLevel();
+    }
+
+    @Override // org.telegram.ui.Components.z60
+    public final void k(int i10) {
+        kc0 kc0Var = this.d;
+        float f7 = i10 / 100.0f;
+        kc0Var.h.w.X(f7, true);
+        kc0Var.h.setProgress(f7);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
+        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
+        sb2.append(", ");
+        int powerSaverLevel = LiteMode.getPowerSaverLevel();
+        if (powerSaverLevel <= 0) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
+        } else if (powerSaverLevel >= 100) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
+        } else {
+            sb2.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
         }
+        accessibilityEvent.setContentDescription(sb2);
+        this.d.setContentDescription(sb2);
     }
 }

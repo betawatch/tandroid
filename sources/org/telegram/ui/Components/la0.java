@@ -1,48 +1,66 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.text.TextPaint;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class la0 implements cu0 {
-    public final /* synthetic */ pa0 a;
+public final class la0 extends View {
+    public final TextPaint a;
+    public final Paint b;
+    public final String c;
+    public final Rect d;
+    public View e;
 
-    public la0(pa0 pa0Var) {
-        this.a = pa0Var;
+    public la0(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new Paint(1);
+        this.d = new Rect();
+        this.c = LocaleController.getString(R.string.LoginOrSingInWithGoogle);
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        a();
     }
 
-    @Override // org.telegram.ui.Components.cu0
-    public final void P() {
-        this.a.Z();
+    public final void a() {
+        this.a.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.y6, false));
+        this.b.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Ii, false));
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.cu0
-    public final boolean R() {
-        return false;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        View view = this.e;
+        Rect rect = this.d;
+        float width = view != null ? ((((getWidth() - rect.width()) - AndroidUtilities.dp(8.0f)) - this.e.getPaddingLeft()) - this.e.getPaddingRight()) / 2.0f : AndroidUtilities.dp(64.0f);
+        Paint paint = this.b;
+        canvas.drawLine((((getWidth() - rect.width()) / 2.0f) - AndroidUtilities.dp(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - rect.width()) / 2.0f) - AndroidUtilities.dp(8.0f), getHeight() / 2.0f, paint);
+        canvas.drawLine(((rect.width() + getWidth()) / 2.0f) + AndroidUtilities.dp(8.0f), getHeight() / 2.0f, ((rect.width() + getWidth()) / 2.0f) + AndroidUtilities.dp(8.0f) + width, getHeight() / 2.0f, paint);
+        canvas.drawText(this.c, (getWidth() - rect.width()) / 2.0f, (rect.height() + getHeight()) / 2.0f, this.a);
     }
 
-    @Override // org.telegram.ui.Components.cu0
-    public final zl0 f() {
-        return null;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view = this.e;
+        if (view != null) {
+            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
+        String str = this.c;
+        this.a.getTextBounds(str, 0, str.length(), this.d);
     }
 
-    @Override // org.telegram.ui.Components.cu0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.cu0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.cu0
-    public final boolean p() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.cu0
-    public final void C() {
+    public void setMeasureAfter(View view) {
+        this.e = view;
     }
 }

@@ -1,6 +1,6 @@
 package i2;
 
-import ai.s4;
+import ai.t4;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
@@ -17,8 +17,10 @@ import android.view.SurfaceView;
 import android.view.TextureView;
 import b2.s1;
 import b2.x1;
-import ci.qc;
-import gg.d2;
+import ci.rc;
+import ei.c5;
+import gg.c2;
+import gg.w1;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +30,7 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f0 extends b2.g implements r {
     public final com.google.firebase.messaging.m A;
@@ -43,7 +45,7 @@ public final class f0 extends b2.g implements r {
     public boolean J;
     public final p1 K;
     public q1 L;
-    public u2.h1 M;
+    public u2.g1 M;
     public b2.x0 N;
     public b2.n0 O;
     public b2.n0 P;
@@ -106,6 +108,8 @@ public final class f0 extends b2.g implements r {
         super(0);
         f0 f0Var;
         f0 f0Var2;
+        e2.z a2;
+        t4 t4Var;
         Handler.Callback callback;
         int i10 = 0;
         this.n0 = new ArrayList();
@@ -157,7 +161,7 @@ public final class f0 extends b2.g implements r {
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             this.n = copyOnWriteArraySet;
             this.p = new ArrayList();
-            this.M = new u2.f1();
+            this.M = new u2.e1();
             f[] fVarArr2 = this.g;
             x2.v vVar = new x2.v(new n1[fVarArr2.length], new x2.r[fVarArr2.length], s1.b, null);
             this.b = vVar;
@@ -179,9 +183,9 @@ public final class f0 extends b2.g implements r {
             this.c = new b2.x0(qVar);
             SparseBooleanArray sparseBooleanArray2 = new SparseBooleanArray();
             for (int i15 = 0; i15 < qVar.a.size(); i15++) {
-                int a2 = qVar.a(i15);
+                int a10 = qVar.a(i15);
                 e2.d.g(!false);
-                sparseBooleanArray2.append(a2, true);
+                sparseBooleanArray2.append(a10, true);
             }
             e2.d.g(!false);
             sparseBooleanArray2.append(4, true);
@@ -213,9 +217,9 @@ public final class f0 extends b2.g implements r {
             j2.f fVar = this.s;
             b11.getClass();
             fVar.getClass();
-            k2.e eVar = b11.c;
-            eVar.getClass();
-            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) eVar.b;
+            m2.t tVar = b11.c;
+            tVar.getClass();
+            CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) tVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 y2.b bVar = (y2.b) it.next();
@@ -230,21 +234,21 @@ public final class f0 extends b2.g implements r {
                 try {
                     Context context2 = this.e;
                     boolean z10 = pVar.u;
-                    e2.z a10 = xVar.a(p0Var.s, null);
+                    a2 = xVar.a(p0Var.s, null);
                     callback = null;
-                    s4 s4Var = new s4(context2, z10, this, kVar, 4);
+                    t4Var = new t4(context2, z10, this, kVar, 4);
                     f0Var2 = this;
-                    try {
-                        a10.c(s4Var);
-                    } catch (Throwable th2) {
-                        th = th2;
-                        f0Var = f0Var2;
-                        f0Var.d.e();
-                        throw th;
-                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    f0Var2 = this;
+                    f0Var = f0Var2;
+                    f0Var.d.e();
+                    throw th;
+                }
+                try {
+                    a2.c(t4Var);
                 } catch (Throwable th3) {
                     th = th3;
-                    f0Var2 = this;
                     f0Var = f0Var2;
                     f0Var.d.e();
                     throw th;
@@ -257,7 +261,7 @@ public final class f0 extends b2.g implements r {
             try {
                 e2.c cVar = new e2.c(0, looper2, looper, xVar, new x(f0Var2, 2));
                 f0Var.E = cVar;
-                cVar.i(new qc(f0Var, 28));
+                cVar.i(new rc(f0Var, 28));
                 Context context3 = pVar.a;
                 Looper looper3 = pVar.h;
                 c0 c0Var2 = f0Var.y;
@@ -266,23 +270,23 @@ public final class f0 extends b2.g implements r {
                 mVar.d = xVar.a(looper2, callback);
                 mVar.c = new b(mVar, xVar.a(looper3, callback), c0Var2);
                 f0Var.A = mVar;
-                mVar.t();
+                mVar.w();
                 f0Var.B = new c3.j0(context, looper2, xVar, 2);
                 f0Var.C = new c3.j0(context, looper2, xVar, 3);
                 f0Var.g0 = b2.l.c;
                 f0Var.h0 = x1.d;
                 f0Var.X = e2.w.c;
                 zVar.a(38, f0Var.K).b();
-                b2.e eVar2 = f0Var.Y;
+                b2.e eVar = f0Var.Y;
                 e2.y b12 = e2.z.b();
-                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar2);
+                b12.a = zVar.a.obtainMessage(31, 0, 0, eVar);
                 b12.b();
-                f0Var.p1(1, 3, f0Var.Y);
-                f0Var.p1(2, 4, Integer.valueOf(f0Var.W));
-                f0Var.p1(2, 5, 0);
-                f0Var.p1(1, 9, Boolean.valueOf(f0Var.a0));
-                f0Var.p1(6, 8, f0Var.z);
-                f0Var.p1(-1, 16, Integer.valueOf(f0Var.e0));
+                f0Var.r1(1, 3, f0Var.Y);
+                f0Var.r1(2, 4, Integer.valueOf(f0Var.W));
+                f0Var.r1(2, 5, 0);
+                f0Var.r1(1, 9, Boolean.valueOf(f0Var.a0));
+                f0Var.r1(6, 8, f0Var.z);
+                f0Var.r1(-1, 16, Integer.valueOf(f0Var.e0));
                 f0Var.d.e();
             } catch (Throwable th4) {
                 th = th4;
@@ -295,7 +299,7 @@ public final class f0 extends b2.g implements r {
         }
     }
 
-    public static long i1(h1 h1Var) {
+    public static long k1(h1 h1Var) {
         b2.j1 j1Var = new b2.j1();
         b2.h1 h1Var2 = new b2.h1();
         h1Var.a.g(h1Var.b.a, h1Var2);
@@ -303,25 +307,732 @@ public final class f0 extends b2.g implements r {
         return j3 == -9223372036854775807L ? h1Var.a.m(h1Var2.c, j1Var, 0L).l : h1Var2.e + j3;
     }
 
-    public static h1 j1(h1 h1Var, int i10) {
+    public static h1 l1(h1 h1Var, int i10) {
         h1 h = h1Var.h(i10);
         return (i10 == 1 || i10 == 4) ? h.b(false) : h;
     }
 
     @Override // b2.b1
     public final boolean A0() {
-        B1();
+        D1();
         return this.G;
     }
 
-    public final void A1() {
+    public final void A1(int i10, boolean z10) {
+        h1 h1Var = this.j0;
+        int i11 = h1Var.n;
+        int i12 = (i11 != 1 || z10) ? 0 : 1;
+        if (h1Var.l == z10 && i11 == i12 && h1Var.m == i10) {
+            return;
+        }
+        this.H++;
+        if (h1Var.p) {
+            h1Var = h1Var.a();
+        }
+        h1 e7 = h1Var.e(i10, i12, z10);
+        e2.z zVar = this.l.n;
+        zVar.getClass();
+        e2.y b10 = e2.z.b();
+        b10.a = zVar.a.obtainMessage(1, z10 ? 1 : 0, i10 | (i12 << 4));
+        b10.b();
+        B1(e7, 0, false, 5, -9223372036854775807L, -1, false);
+    }
+
+    @Override // b2.b1
+    public final int B() {
+        D1();
+        if (this.j0.a.p()) {
+            return 0;
+        }
+        h1 h1Var = this.j0;
+        return h1Var.a.b(h1Var.b.a);
+    }
+
+    @Override // b2.b1
+    public final b2.q1 B0() {
+        D1();
+        return ((x2.p) this.i).e();
+    }
+
+    public final void B1(final h1 h1Var, int i10, boolean z10, int i11, long j3, int i12, boolean z11) {
+        Pair pair;
+        int i13;
+        b2.k0 k0Var;
+        boolean z12;
+        boolean z13;
+        boolean z14;
+        int i14;
+        Object obj;
+        b2.k0 k0Var2;
+        Object obj2;
+        int i15;
+        long j10;
+        long j11;
+        long j12;
+        long k12;
+        Object obj3;
+        b2.k0 k0Var3;
+        Object obj4;
+        int i16;
+        h1 h1Var2 = this.j0;
+        this.j0 = h1Var;
+        boolean equals = h1Var2.a.equals(h1Var.a);
+        b2.j1 j1Var = (b2.j1) this.a;
+        b2.h1 h1Var3 = this.o;
+        b2.k1 k1Var = h1Var2.a;
+        u2.f0 f0Var = h1Var2.b;
+        b2.k1 k1Var2 = h1Var.a;
+        u2.f0 f0Var2 = h1Var.b;
+        if (k1Var2.p() && k1Var.p()) {
+            pair = new Pair(Boolean.FALSE, -1);
+        } else if (k1Var2.p() != k1Var.p()) {
+            pair = new Pair(Boolean.TRUE, 3);
+        } else if (k1Var.m(k1Var.g(f0Var.a, h1Var3).c, j1Var, 0L).a.equals(k1Var2.m(k1Var2.g(f0Var2.a, h1Var3).c, j1Var, 0L).a)) {
+            pair = (z10 && i11 == 0 && f0Var.d < f0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i11 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
+        } else {
+            if (z10 && i11 == 0) {
+                i13 = 1;
+            } else if (z10 && i11 == 1) {
+                i13 = 2;
+            } else {
+                if (equals) {
+                    throw new IllegalStateException();
+                }
+                i13 = 3;
+            }
+            pair = new Pair(Boolean.TRUE, Integer.valueOf(i13));
+        }
+        boolean booleanValue = ((Boolean) pair.first).booleanValue();
+        int intValue = ((Integer) pair.second).intValue();
+        if (booleanValue) {
+            k0Var = !h1Var.a.p() ? h1Var.a.m(h1Var.a.g(h1Var.b.a, this.o).c, (b2.j1) this.a, 0L).c : null;
+            this.i0 = b2.n0.K;
+        } else {
+            k0Var = null;
+        }
+        if (booleanValue || !h1Var2.j.equals(h1Var.j)) {
+            b2.m0 a2 = this.i0.a();
+            List list = h1Var.j;
+            for (int i17 = 0; i17 < list.size(); i17++) {
+                b2.p0 p0Var = (b2.p0) list.get(i17);
+                int i18 = 0;
+                while (true) {
+                    b2.o0[] o0VarArr = p0Var.a;
+                    if (i18 < o0VarArr.length) {
+                        o0VarArr[i18].b(a2);
+                        i18++;
+                    }
+                }
+            }
+            this.i0 = new b2.n0(a2);
+        }
+        b2.n0 d12 = d1();
+        boolean equals2 = d12.equals(this.O);
+        this.O = d12;
+        boolean z15 = h1Var2.l != h1Var.l;
+        boolean z16 = h1Var2.e != h1Var.e;
+        if (z16 || z15) {
+            C1();
+        }
+        boolean z17 = h1Var2.g != h1Var.g;
+        if (!equals) {
+            this.m.c(0, new s(h1Var, i10, 0));
+        }
+        if (z10) {
+            b2.h1 h1Var4 = new b2.h1();
+            if (h1Var2.a.p()) {
+                z12 = booleanValue;
+                z13 = equals2;
+                z14 = z16;
+                i14 = i12;
+                obj = null;
+                k0Var2 = null;
+                obj2 = null;
+                i15 = -1;
+            } else {
+                Object obj5 = h1Var2.b.a;
+                h1Var2.a.g(obj5, h1Var4);
+                int i19 = h1Var4.c;
+                int b10 = h1Var2.a.b(obj5);
+                z12 = booleanValue;
+                z13 = equals2;
+                z14 = z16;
+                obj = h1Var2.a.m(i19, (b2.j1) this.a, 0L).a;
+                k0Var2 = ((b2.j1) this.a).c;
+                obj2 = obj5;
+                i14 = i19;
+                i15 = b10;
+            }
+            if (i11 == 0) {
+                if (h1Var2.b.b()) {
+                    u2.f0 f0Var3 = h1Var2.b;
+                    j12 = h1Var4.a(f0Var3.b, f0Var3.c);
+                    k12 = k1(h1Var2);
+                } else if (h1Var2.b.e != -1) {
+                    j12 = k1(this.j0);
+                    k12 = j12;
+                } else {
+                    j10 = h1Var4.e;
+                    j11 = h1Var4.d;
+                    j12 = j10 + j11;
+                    k12 = j12;
+                }
+            } else if (h1Var2.b.b()) {
+                j12 = h1Var2.s;
+                k12 = k1(h1Var2);
+            } else {
+                j10 = h1Var4.e;
+                j11 = h1Var2.s;
+                j12 = j10 + j11;
+                k12 = j12;
+            }
+            long d02 = e2.d0.d0(j12);
+            long d03 = e2.d0.d0(k12);
+            u2.f0 f0Var4 = h1Var2.b;
+            b2.a1 a1Var = new b2.a1(obj, i14, k0Var2, obj2, i15, d02, d03, f0Var4.b, f0Var4.c);
+            b2.j1 j1Var2 = (b2.j1) this.a;
+            int l02 = l0();
+            if (this.j0.a.p()) {
+                obj3 = null;
+                k0Var3 = null;
+                obj4 = null;
+                i16 = -1;
+            } else {
+                h1 h1Var5 = this.j0;
+                Object obj6 = h1Var5.b.a;
+                h1Var5.a.g(obj6, this.o);
+                int b11 = this.j0.a.b(obj6);
+                Object obj7 = this.j0.a.m(l02, j1Var2, 0L).a;
+                k0Var3 = j1Var2.c;
+                i16 = b11;
+                obj4 = obj6;
+                obj3 = obj7;
+            }
+            long d04 = e2.d0.d0(j3);
+            long d05 = this.j0.b.b() ? e2.d0.d0(k1(this.j0)) : d04;
+            u2.f0 f0Var5 = this.j0.b;
+            this.m.c(11, new c2(i11, a1Var, new b2.a1(obj3, l02, k0Var3, obj4, i16, d04, d05, f0Var5.b, f0Var5.c), 2));
+        } else {
+            z12 = booleanValue;
+            z13 = equals2;
+            z14 = z16;
+        }
+        if (z12) {
+            this.m.c(1, new s(k0Var, intValue, 1));
+        }
+        if (h1Var2.f != h1Var.f) {
+            final int i20 = 7;
+            this.m.c(10, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj8) {
+                    b2.z0 z0Var = (b2.z0) obj8;
+                    switch (i20) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+            if (h1Var.f != null) {
+                final int i21 = 8;
+                this.m.c(10, new e2.m() { // from class: i2.u
+                    @Override // e2.m
+                    public final void invoke(Object obj8) {
+                        b2.z0 z0Var = (b2.z0) obj8;
+                        switch (i21) {
+                            case 0:
+                                h1 h1Var6 = h1Var;
+                                z0Var.onLoadingChanged(h1Var6.g);
+                                z0Var.onIsLoadingChanged(h1Var6.g);
+                                break;
+                            case 1:
+                                h1 h1Var7 = h1Var;
+                                z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                                break;
+                            case 2:
+                                z0Var.onPlaybackStateChanged(h1Var.e);
+                                break;
+                            case 3:
+                                h1 h1Var8 = h1Var;
+                                z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                                break;
+                            case 4:
+                                z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                                break;
+                            case 5:
+                                z0Var.onIsPlayingChanged(h1Var.m());
+                                break;
+                            case 6:
+                                z0Var.onPlaybackParametersChanged(h1Var.o);
+                                break;
+                            case 7:
+                                z0Var.onPlayerErrorChanged(h1Var.f);
+                                break;
+                            case 8:
+                                z0Var.onPlayerError(h1Var.f);
+                                break;
+                            default:
+                                z0Var.onTracksChanged(h1Var.i.d);
+                                break;
+                        }
+                    }
+                });
+            }
+        }
+        x2.v vVar = h1Var2.i;
+        x2.v vVar2 = h1Var.i;
+        if (vVar != vVar2) {
+            x2.u uVar = this.i;
+            Object obj8 = vVar2.e;
+            uVar.getClass();
+            uVar.c = (x2.t) obj8;
+            final int i22 = 9;
+            this.m.c(2, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i22) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (!z13) {
+            this.m.c(14, new t(this.O));
+        }
+        if (z17) {
+            final int i23 = 0;
+            this.m.c(3, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i23) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (z14 || z15) {
+            final int i24 = 1;
+            this.m.c(-1, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i24) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (z14) {
+            final int i25 = 2;
+            this.m.c(4, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i25) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (z15 || h1Var2.m != h1Var.m) {
+            final int i26 = 3;
+            this.m.c(5, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i26) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (h1Var2.n != h1Var.n) {
+            final int i27 = 4;
+            this.m.c(6, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i27) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (h1Var2.m() != h1Var.m()) {
+            final int i28 = 5;
+            this.m.c(7, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i28) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        if (!h1Var2.o.equals(h1Var.o)) {
+            final int i29 = 6;
+            this.m.c(12, new e2.m() { // from class: i2.u
+                @Override // e2.m
+                public final void invoke(Object obj82) {
+                    b2.z0 z0Var = (b2.z0) obj82;
+                    switch (i29) {
+                        case 0:
+                            h1 h1Var6 = h1Var;
+                            z0Var.onLoadingChanged(h1Var6.g);
+                            z0Var.onIsLoadingChanged(h1Var6.g);
+                            break;
+                        case 1:
+                            h1 h1Var7 = h1Var;
+                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
+                            break;
+                        case 2:
+                            z0Var.onPlaybackStateChanged(h1Var.e);
+                            break;
+                        case 3:
+                            h1 h1Var8 = h1Var;
+                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
+                            break;
+                        case 4:
+                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
+                            break;
+                        case 5:
+                            z0Var.onIsPlayingChanged(h1Var.m());
+                            break;
+                        case 6:
+                            z0Var.onPlaybackParametersChanged(h1Var.o);
+                            break;
+                        case 7:
+                            z0Var.onPlayerErrorChanged(h1Var.f);
+                            break;
+                        case 8:
+                            z0Var.onPlayerError(h1Var.f);
+                            break;
+                        default:
+                            z0Var.onTracksChanged(h1Var.i.d);
+                            break;
+                    }
+                }
+            });
+        }
+        z1();
+        this.m.b();
+        if (h1Var2.p != h1Var.p) {
+            Iterator it = this.n.iterator();
+            while (it.hasNext()) {
+                ((c0) it.next()).a.C1();
+            }
+        }
+    }
+
+    @Override // b2.b1
+    public final void C(b2.n0 n0Var) {
+        D1();
+        if (n0Var.equals(this.P)) {
+            return;
+        }
+        this.P = n0Var;
+        this.m.e(15, new x(this, 4));
+    }
+
+    @Override // b2.b1
+    public final long C0() {
+        D1();
+        if (this.j0.a.p()) {
+            return this.l0;
+        }
+        h1 h1Var = this.j0;
+        long j3 = 0;
+        if (h1Var.k.d != h1Var.b.d) {
+            return e2.d0.d0(h1Var.a.m(l0(), (b2.j1) this.a, 0L).m);
+        }
+        long j10 = h1Var.q;
+        if (this.j0.k.b()) {
+            h1 h1Var2 = this.j0;
+            h1Var2.a.g(h1Var2.k.a, this.o).d(this.j0.k.b);
+        } else {
+            j3 = j10;
+        }
+        h1 h1Var3 = this.j0;
+        b2.k1 k1Var = h1Var3.a;
+        Object obj = h1Var3.k.a;
+        b2.h1 h1Var4 = this.o;
+        k1Var.g(obj, h1Var4);
+        return e2.d0.d0(j3 + h1Var4.e);
+    }
+
+    public final void C1() {
         int d = d();
         c3.j0 j0Var = this.C;
         c3.j0 j0Var2 = this.B;
         boolean z10 = false;
         if (d != 1) {
             if (d == 2 || d == 3) {
-                B1();
+                D1();
                 boolean z11 = this.j0.p;
                 if (u() && !z11) {
                     z10 = true;
@@ -339,78 +1050,8 @@ public final class f0 extends b2.g implements r {
     }
 
     @Override // b2.b1
-    public final int B() {
-        B1();
-        if (this.j0.a.p()) {
-            return 0;
-        }
-        h1 h1Var = this.j0;
-        return h1Var.a.b(h1Var.b.a);
-    }
-
-    @Override // b2.b1
-    public final b2.q1 B0() {
-        B1();
-        return ((x2.p) this.i).e();
-    }
-
-    public final void B1() {
-        this.d.b();
-        Thread currentThread = Thread.currentThread();
-        Looper looper = this.t;
-        if (currentThread != looper.getThread()) {
-            String name = Thread.currentThread().getName();
-            String name2 = looper.getThread().getName();
-            String str = e2.d0.a;
-            Locale locale = Locale.US;
-            String k10 = org.telegram.ui.Cells.c1.k("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
-            if (this.c0) {
-                throw new IllegalStateException(k10);
-            }
-            e2.a.o("ExoPlayerImpl", k10, this.d0 ? null : new IllegalStateException());
-            this.d0 = true;
-        }
-    }
-
-    @Override // b2.b1
-    public final void C(b2.n0 n0Var) {
-        B1();
-        if (n0Var.equals(this.P)) {
-            return;
-        }
-        this.P = n0Var;
-        this.m.e(15, new x(this, 4));
-    }
-
-    @Override // b2.b1
-    public final long C0() {
-        B1();
-        if (this.j0.a.p()) {
-            return this.l0;
-        }
-        h1 h1Var = this.j0;
-        long j3 = 0;
-        if (h1Var.k.d != h1Var.b.d) {
-            return e2.d0.e0(h1Var.a.m(l0(), (b2.j1) this.a, 0L).m);
-        }
-        long j10 = h1Var.q;
-        if (this.j0.k.b()) {
-            h1 h1Var2 = this.j0;
-            h1Var2.a.g(h1Var2.k.a, this.o).d(this.j0.k.b);
-        } else {
-            j3 = j10;
-        }
-        h1 h1Var3 = this.j0;
-        b2.k1 k1Var = h1Var3.a;
-        Object obj = h1Var3.k.a;
-        b2.h1 h1Var4 = this.o;
-        k1Var.g(obj, h1Var4);
-        return e2.d0.e0(j3 + h1Var4.e);
-    }
-
-    @Override // b2.b1
     public final void D(b2.z0 z0Var) {
-        B1();
+        D1();
         z0Var.getClass();
         e2.p pVar = this.m;
         pVar.f();
@@ -432,61 +1073,79 @@ public final class f0 extends b2.g implements r {
 
     @Override // b2.b1
     public final void D0(int i10) {
-        B1();
+        D1();
+    }
+
+    public final void D1() {
+        this.d.b();
+        Thread currentThread = Thread.currentThread();
+        Looper looper = this.t;
+        if (currentThread != looper.getThread()) {
+            String name = Thread.currentThread().getName();
+            String name2 = looper.getThread().getName();
+            String str = e2.d0.a;
+            Locale locale = Locale.US;
+            String i10 = org.telegram.ui.Cells.c1.i("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            if (this.c0) {
+                throw new IllegalStateException(i10);
+            }
+            e2.a.o("ExoPlayerImpl", i10, this.d0 ? null : new IllegalStateException());
+            this.d0 = true;
+        }
     }
 
     @Override // b2.b1
     public final x1 E() {
-        B1();
+        D1();
         return this.h0;
     }
 
     @Override // b2.b1
     public final float G() {
-        B1();
+        D1();
         return this.Z;
     }
 
     @Override // b2.b1
     public final b2.n0 H0() {
-        B1();
+        D1();
         return this.O;
     }
 
     @Override // b2.b1
     public final b2.e I() {
-        B1();
+        D1();
         return this.Y;
     }
 
     @Override // b2.b1
     public final void I0(List list) {
-        B1();
-        ArrayList c12 = c1(list);
-        B1();
-        r1(-9223372036854775807L, c12, true, -1);
+        D1();
+        ArrayList e12 = e1(list);
+        D1();
+        t1(-9223372036854775807L, e12, true, -1);
     }
 
     @Override // b2.b1
     public final void J(int i10, boolean z10) {
-        B1();
+        D1();
     }
 
     @Override // b2.b1
     public final long J0() {
-        B1();
-        return e2.d0.e0(f1(this.j0));
+        D1();
+        return e2.d0.d0(h1(this.j0));
     }
 
     @Override // b2.b1
     public final b2.l K() {
-        B1();
+        D1();
         return this.g0;
     }
 
     @Override // b2.b1
     public final void K0(b2.e eVar, boolean z10) {
-        B1();
+        D1();
         if (this.f0) {
             return;
         }
@@ -494,8 +1153,8 @@ public final class f0 extends b2.g implements r {
         e2.p pVar = this.m;
         if (!equals) {
             this.Y = eVar;
-            p1(1, 3, eVar);
-            pVar.c(20, new ei.f(eVar, 8));
+            r1(1, 3, eVar);
+            pVar.c(20, new c5(eVar, 7));
         }
         b2.e eVar2 = this.Y;
         e2.z zVar = this.l.n;
@@ -508,28 +1167,28 @@ public final class f0 extends b2.g implements r {
 
     @Override // b2.b1
     public final void L() {
-        B1();
+        D1();
     }
 
     @Override // b2.b1
     public final long L0() {
-        B1();
+        D1();
         return this.v;
     }
 
     @Override // b2.b1
     public final void M(int i10, int i11) {
-        B1();
+        D1();
     }
 
     @Override // b2.b1
     public final void N(int i10) {
-        B1();
+        D1();
     }
 
     @Override // b2.b1
     public final int O() {
-        B1();
+        D1();
         if (o()) {
             return this.j0.b.c;
         }
@@ -538,7 +1197,7 @@ public final class f0 extends b2.g implements r {
 
     @Override // b2.b1
     public final void P(int i10, int i11, List list) {
-        B1();
+        D1();
         e2.d.b(i10 >= 0 && i11 >= i10);
         ArrayList arrayList = this.p;
         int size = arrayList.size();
@@ -561,44 +1220,44 @@ public final class f0 extends b2.g implements r {
                 e0 e0Var = (e0) arrayList.get(i13);
                 e0Var.c = new l1(e0Var.c, (b2.k0) list.get(i13 - i10));
             }
-            z1(this.j0.j(new m1(arrayList, this.M)), 0, false, 4, -9223372036854775807L, -1, false);
+            B1(this.j0.j(new m1(arrayList, this.M)), 0, false, 4, -9223372036854775807L, -1, false);
             return;
         }
-        ArrayList c12 = c1(list);
+        ArrayList e12 = e1(list);
         if (!arrayList.isEmpty()) {
-            h1 n12 = n1(a1(this.j0, min, c12), i10, min);
-            z1(n12, 0, !n12.b.a.equals(this.j0.b.a), 4, f1(n12), -1, false);
+            h1 p12 = p1(c1(this.j0, min, e12), i10, min);
+            B1(p12, 0, !p12.b.a.equals(this.j0.b.a), 4, h1(p12), -1, false);
         } else {
             boolean z10 = this.k0 == -1;
-            B1();
-            r1(-9223372036854775807L, c12, z10, -1);
+            D1();
+            t1(-9223372036854775807L, e12, z10, -1);
         }
     }
 
     @Override // b2.b1
     public final void S(int i10, int i11) {
-        B1();
+        D1();
         e2.d.b(i10 >= 0 && i11 >= i10);
         int size = this.p.size();
         int min = Math.min(i11, size);
         if (i10 >= size || i10 == min) {
             return;
         }
-        h1 n12 = n1(this.j0, i10, min);
-        z1(n12, 0, !n12.b.a.equals(this.j0.b.a), 4, f1(n12), -1, false);
+        h1 p12 = p1(this.j0, i10, min);
+        B1(p12, 0, !p12.b.a.equals(this.j0.b.a), 4, h1(p12), -1, false);
     }
 
     @Override // b2.b1
     public final void T(long j3, int i10, List list) {
-        B1();
-        ArrayList c12 = c1(list);
-        B1();
-        r1(j3, c12, false, i10);
+        D1();
+        ArrayList e12 = e1(list);
+        D1();
+        t1(j3, e12, false, i10);
     }
 
     @Override // b2.b1
     public final void U(float f7) {
-        B1();
+        D1();
         float g10 = e2.d0.g(f7, 0.0f, 1.0f);
         if (this.Z == g10) {
             return;
@@ -612,8 +1271,8 @@ public final class f0 extends b2.g implements r {
     public final void U0() {
         boolean z10;
         e2.a.i("ExoPlayerImpl", "Release " + Integer.toHexString(System.identityHashCode(this)) + " [AndroidXMedia3/1.8.1] [" + e2.d0.a + "] [" + b2.l0.b() + "]");
-        B1();
-        this.A.t();
+        D1();
+        this.A.w();
         this.B.a(false);
         this.C.a(false);
         p0 p0Var = this.l;
@@ -626,7 +1285,7 @@ public final class f0 extends b2.g implements r {
             z10 = gVar.c(p0Var.K);
         }
         if (!z10) {
-            this.m.e(10, new ga.a(11));
+            this.m.e(10, new hg.o1(9));
         }
         this.m.d();
         this.j.a.removeCallbacksAndMessages(null);
@@ -645,9 +1304,9 @@ public final class f0 extends b2.g implements r {
         if (h1Var.p) {
             this.j0 = h1Var.a();
         }
-        h1 j12 = j1(this.j0, 1);
-        this.j0 = j12;
-        h1 c10 = j12.c(j12.b);
+        h1 l1 = l1(this.j0, 1);
+        this.j0 = l1;
+        h1 c10 = l1.c(l1.b);
         this.j0 = c10;
         c10.q = c10.s;
         this.j0.r = 0L;
@@ -655,7 +1314,7 @@ public final class f0 extends b2.g implements r {
         e2.z zVar = fVar2.n;
         e2.d.h(zVar);
         zVar.c(new h0(fVar2, 7));
-        o1();
+        q1();
         Surface surface = this.S;
         if (surface != null) {
             surface.release();
@@ -667,7 +1326,7 @@ public final class f0 extends b2.g implements r {
 
     @Override // b2.g
     public final void V0(int i10, long j3, boolean z10) {
-        B1();
+        D1();
         if (i10 == -1) {
             return;
         }
@@ -678,7 +1337,7 @@ public final class f0 extends b2.g implements r {
             if (!fVar.r) {
                 j2.a l4 = fVar.l();
                 fVar.r = true;
-                fVar.q(l4, -1, new ei.f(l4, 24));
+                fVar.q(l4, -1, new c5(l4, 23));
             }
             this.H++;
             if (o()) {
@@ -686,7 +1345,7 @@ public final class f0 extends b2.g implements r {
                 m0 m0Var = new m0(this.j0);
                 m0Var.f(1);
                 f0 f0Var = this.k.b;
-                f0Var.j.c(new gg.x1(9, f0Var, m0Var));
+                f0Var.j.c(new w1(9, f0Var, m0Var));
                 return;
             }
             h1 h1Var = this.j0;
@@ -695,31 +1354,72 @@ public final class f0 extends b2.g implements r {
                 h1Var = this.j0.h(2);
             }
             int l02 = l0();
-            h1 k12 = k1(h1Var, k1Var, l1(k1Var, i10, j3));
-            this.l.n.a(3, new o0(k1Var, i10, e2.d0.Q(j3))).b();
-            z1(k12, 0, true, 1, f1(k12), l02, z10);
+            h1 m12 = m1(h1Var, k1Var, n1(k1Var, i10, j3));
+            this.l.n.a(3, new o0(k1Var, i10, e2.d0.P(j3))).b();
+            B1(m12, 0, true, 1, h1(m12), l02, z10);
         }
     }
 
     @Override // b2.b1
     public final b2.u0 W() {
-        B1();
+        D1();
         return this.j0.f;
     }
 
     @Override // b2.b1
     public final void X(boolean z10) {
-        B1();
-        y1(1, z10);
+        D1();
+        A1(1, z10);
     }
 
     @Override // b2.b1
     public final long Z() {
-        B1();
+        D1();
         return this.w;
     }
 
-    public final ArrayList Z0(int i10, List list) {
+    @Override // b2.b1
+    public final long a0() {
+        D1();
+        return g1(this.j0);
+    }
+
+    @Override // b2.b1
+    public final void b() {
+        D1();
+        h1 h1Var = this.j0;
+        if (h1Var.e != 1) {
+            return;
+        }
+        h1 f7 = h1Var.f(null);
+        h1 l1 = l1(f7, f7.a.p() ? 4 : 2);
+        this.H++;
+        e2.z zVar = this.l.n;
+        zVar.getClass();
+        e2.y b10 = e2.z.b();
+        b10.a = zVar.a.obtainMessage(29);
+        b10.b();
+        B1(l1, 1, false, 5, -9223372036854775807L, -1, false);
+    }
+
+    @Override // b2.b1
+    public final void b0(int i10, List list) {
+        D1();
+        ArrayList e12 = e1(list);
+        D1();
+        e2.d.b(i10 >= 0);
+        ArrayList arrayList = this.p;
+        int min = Math.min(i10, arrayList.size());
+        if (!arrayList.isEmpty()) {
+            B1(c1(this.j0, min, e12), 0, false, 5, -9223372036854775807L, -1, false);
+            return;
+        }
+        boolean z10 = this.k0 == -1;
+        D1();
+        t1(-9223372036854775807L, e12, z10, -1);
+    }
+
+    public final ArrayList b1(int i10, List list) {
         ArrayList arrayList = new ArrayList();
         for (int i11 = 0; i11 < list.size(); i11++) {
             f1 f1Var = new f1((u2.a) list.get(i11), this.q);
@@ -732,63 +1432,44 @@ public final class f0 extends b2.g implements r {
     }
 
     @Override // b2.b1
-    public final long a0() {
-        B1();
-        return e1(this.j0);
+    public final boolean c() {
+        D1();
+        return this.j0.g;
     }
 
-    public final h1 a1(h1 h1Var, int i10, ArrayList arrayList) {
+    @Override // b2.b1
+    public final long c0() {
+        D1();
+        if (!o()) {
+            return C0();
+        }
+        h1 h1Var = this.j0;
+        return h1Var.k.equals(h1Var.b) ? e2.d0.d0(this.j0.q) : getDuration();
+    }
+
+    public final h1 c1(h1 h1Var, int i10, ArrayList arrayList) {
         b2.k1 k1Var = h1Var.a;
         this.H++;
-        ArrayList Z0 = Z0(i10, arrayList);
+        ArrayList b12 = b1(i10, arrayList);
         m1 m1Var = new m1(this.p, this.M);
-        h1 k12 = k1(h1Var, m1Var, h1(k1Var, m1Var, g1(h1Var), e1(h1Var)));
-        u2.h1 h1Var2 = this.M;
+        h1 m12 = m1(h1Var, m1Var, j1(k1Var, m1Var, i1(h1Var), g1(h1Var)));
+        u2.g1 g1Var = this.M;
         e2.z zVar = this.l.n;
-        k0 k0Var = new k0(Z0, h1Var2, -1, -9223372036854775807L);
+        k0 k0Var = new k0(b12, g1Var, -1, -9223372036854775807L);
         zVar.getClass();
         e2.y b10 = e2.z.b();
         b10.a = zVar.a.obtainMessage(18, i10, 0, k0Var);
         b10.b();
-        return k12;
+        return m12;
     }
 
     @Override // b2.b1
-    public final void b() {
-        B1();
-        h1 h1Var = this.j0;
-        if (h1Var.e != 1) {
-            return;
-        }
-        h1 f7 = h1Var.f(null);
-        h1 j12 = j1(f7, f7.a.p() ? 4 : 2);
-        this.H++;
-        e2.z zVar = this.l.n;
-        zVar.getClass();
-        e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(29);
-        b10.b();
-        z1(j12, 1, false, 5, -9223372036854775807L, -1, false);
+    public final int d() {
+        D1();
+        return this.j0.e;
     }
 
-    @Override // b2.b1
-    public final void b0(int i10, List list) {
-        B1();
-        ArrayList c12 = c1(list);
-        B1();
-        e2.d.b(i10 >= 0);
-        ArrayList arrayList = this.p;
-        int min = Math.min(i10, arrayList.size());
-        if (!arrayList.isEmpty()) {
-            z1(a1(this.j0, min, c12), 0, false, 5, -9223372036854775807L, -1, false);
-            return;
-        }
-        boolean z10 = this.k0 == -1;
-        B1();
-        r1(-9223372036854775807L, c12, z10, -1);
-    }
-
-    public final b2.n0 b1() {
+    public final b2.n0 d1() {
         b2.k1 w02 = w0();
         if (w02.p()) {
             return this.i0;
@@ -942,23 +1623,7 @@ public final class f0 extends b2.g implements r {
         return new b2.n0(a2);
     }
 
-    @Override // b2.b1
-    public final boolean c() {
-        B1();
-        return this.j0.g;
-    }
-
-    @Override // b2.b1
-    public final long c0() {
-        B1();
-        if (!o()) {
-            return C0();
-        }
-        h1 h1Var = this.j0;
-        return h1Var.k.equals(h1Var.b) ? e2.d0.e0(this.j0.q) : getDuration();
-    }
-
-    public final ArrayList c1(List list) {
+    public final ArrayList e1(List list) {
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < list.size(); i10++) {
             arrayList.add(this.r.a((b2.k0) list.get(i10)));
@@ -967,55 +1632,84 @@ public final class f0 extends b2.g implements r {
     }
 
     @Override // b2.b1
-    public final int d() {
-        B1();
-        return this.j0.e;
-    }
-
-    public final k1 d1(j1 j1Var) {
-        int g12 = g1(this.j0);
-        b2.k1 k1Var = this.j0.a;
-        int i10 = g12 == -1 ? 0 : g12;
-        p0 p0Var = this.l;
-        return new k1(p0Var, j1Var, k1Var, i10, p0Var.s);
-    }
-
-    public final long e1(h1 h1Var) {
-        u2.f0 f0Var = h1Var.b;
-        long j3 = h1Var.c;
-        b2.k1 k1Var = h1Var.a;
-        if (!f0Var.b()) {
-            return e2.d0.e0(f1(h1Var));
-        }
-        Object obj = h1Var.b.a;
-        b2.h1 h1Var2 = this.o;
-        k1Var.g(obj, h1Var2);
-        if (j3 == -9223372036854775807L) {
-            return e2.d0.e0(k1Var.m(g1(h1Var), (b2.j1) this.a, 0L).l);
-        }
-        return e2.d0.e0(j3) + e2.d0.e0(h1Var2.e);
-    }
-
-    @Override // b2.b1
     public final void f(b2.v0 v0Var) {
-        B1();
+        D1();
         if (this.j0.o.equals(v0Var)) {
             return;
         }
         h1 g10 = this.j0.g(v0Var);
         this.H++;
         this.l.n.a(4, v0Var).b();
-        z1(g10, 0, false, 5, -9223372036854775807L, -1, false);
+        B1(g10, 0, false, 5, -9223372036854775807L, -1, false);
     }
 
     @Override // b2.b1
     public final void f0(int i10) {
-        B1();
+        D1();
     }
 
-    public final long f1(h1 h1Var) {
+    public final k1 f1(j1 j1Var) {
+        int i12 = i1(this.j0);
+        b2.k1 k1Var = this.j0.a;
+        if (i12 == -1) {
+            i12 = 0;
+        }
+        p0 p0Var = this.l;
+        return new k1(p0Var, j1Var, k1Var, i12, p0Var.s);
+    }
+
+    @Override // b2.b1
+    public final s1 g0() {
+        D1();
+        return this.j0.i.d;
+    }
+
+    public final long g1(h1 h1Var) {
+        u2.f0 f0Var = h1Var.b;
+        long j3 = h1Var.c;
+        b2.k1 k1Var = h1Var.a;
+        if (!f0Var.b()) {
+            return e2.d0.d0(h1(h1Var));
+        }
+        Object obj = h1Var.b.a;
+        b2.h1 h1Var2 = this.o;
+        k1Var.g(obj, h1Var2);
+        if (j3 == -9223372036854775807L) {
+            return e2.d0.d0(k1Var.m(i1(h1Var), (b2.j1) this.a, 0L).l);
+        }
+        return e2.d0.d0(j3) + e2.d0.d0(h1Var2.e);
+    }
+
+    @Override // b2.b1
+    public final long getDuration() {
+        D1();
+        if (!o()) {
+            return A();
+        }
+        h1 h1Var = this.j0;
+        u2.f0 f0Var = h1Var.b;
+        b2.k1 k1Var = h1Var.a;
+        Object obj = f0Var.a;
+        b2.h1 h1Var2 = this.o;
+        k1Var.g(obj, h1Var2);
+        return e2.d0.d0(h1Var2.a(f0Var.b, f0Var.c));
+    }
+
+    @Override // b2.b1
+    public final b2.v0 h() {
+        D1();
+        return this.j0.o;
+    }
+
+    @Override // b2.b1
+    public final b2.n0 h0() {
+        D1();
+        return this.P;
+    }
+
+    public final long h1(h1 h1Var) {
         if (h1Var.a.p()) {
-            return e2.d0.Q(this.l0);
+            return e2.d0.P(this.l0);
         }
         long l4 = h1Var.p ? h1Var.l() : h1Var.s;
         if (h1Var.b.b()) {
@@ -1028,65 +1722,13 @@ public final class f0 extends b2.g implements r {
         return l4 + h1Var2.e;
     }
 
-    @Override // b2.b1
-    public final s1 g0() {
-        B1();
-        return this.j0.i.d;
-    }
-
-    public final int g1(h1 h1Var) {
+    public final int i1(h1 h1Var) {
         return h1Var.a.p() ? this.k0 : h1Var.a.g(h1Var.b.a, this.o).c;
     }
 
     @Override // b2.b1
-    public final long getDuration() {
-        B1();
-        if (!o()) {
-            return A();
-        }
-        h1 h1Var = this.j0;
-        u2.f0 f0Var = h1Var.b;
-        b2.k1 k1Var = h1Var.a;
-        Object obj = f0Var.a;
-        b2.h1 h1Var2 = this.o;
-        k1Var.g(obj, h1Var2);
-        return e2.d0.e0(h1Var2.a(f0Var.b, f0Var.c));
-    }
-
-    @Override // b2.b1
-    public final b2.v0 h() {
-        B1();
-        return this.j0.o;
-    }
-
-    @Override // b2.b1
-    public final b2.n0 h0() {
-        B1();
-        return this.P;
-    }
-
-    public final Pair h1(b2.k1 k1Var, m1 m1Var, int i10, long j3) {
-        if (k1Var.p() || m1Var.p()) {
-            boolean z10 = !k1Var.p() && m1Var.p();
-            return l1(m1Var, z10 ? -1 : i10, z10 ? -9223372036854775807L : j3);
-        }
-        Pair i11 = k1Var.i((b2.j1) this.a, this.o, i10, e2.d0.Q(j3));
-        Object obj = i11.first;
-        if (m1Var.b(obj) != -1) {
-            return i11;
-        }
-        int U = p0.U((b2.j1) this.a, this.o, this.F, this.G, obj, k1Var, m1Var);
-        if (U == -1) {
-            return l1(m1Var, -1, -9223372036854775807L);
-        }
-        b2.j1 j1Var = (b2.j1) this.a;
-        m1Var.m(U, j1Var, 0L);
-        return l1(m1Var, U, e2.d0.e0(j1Var.l));
-    }
-
-    @Override // b2.b1
     public final void j(int i10) {
-        B1();
+        D1();
         if (this.F != i10) {
             this.F = i10;
             e2.z zVar = this.l.n;
@@ -1097,36 +1739,77 @@ public final class f0 extends b2.g implements r {
             w wVar = new w(i10, 0);
             e2.p pVar = this.m;
             pVar.c(8, wVar);
-            x1();
+            z1();
             pVar.b();
         }
     }
 
     @Override // b2.b1
     public final d2.d j0() {
-        B1();
+        D1();
         return this.b0;
+    }
+
+    public final Pair j1(b2.k1 k1Var, m1 m1Var, int i10, long j3) {
+        if (k1Var.p() || m1Var.p()) {
+            boolean z10 = !k1Var.p() && m1Var.p();
+            return n1(m1Var, z10 ? -1 : i10, z10 ? -9223372036854775807L : j3);
+        }
+        Pair i11 = k1Var.i((b2.j1) this.a, this.o, i10, e2.d0.P(j3));
+        Object obj = i11.first;
+        if (m1Var.b(obj) != -1) {
+            return i11;
+        }
+        int U = p0.U((b2.j1) this.a, this.o, this.F, this.G, obj, k1Var, m1Var);
+        if (U == -1) {
+            return n1(m1Var, -1, -9223372036854775807L);
+        }
+        b2.j1 j1Var = (b2.j1) this.a;
+        m1Var.m(U, j1Var, 0L);
+        return n1(m1Var, U, e2.d0.d0(j1Var.l));
     }
 
     @Override // b2.b1
     public final int k0() {
-        B1();
+        D1();
         if (o()) {
             return this.j0.b.b;
         }
         return -1;
     }
 
-    public final h1 k1(h1 h1Var, b2.k1 k1Var, Pair pair) {
+    @Override // b2.b1
+    public final int l() {
+        D1();
+        return this.F;
+    }
+
+    @Override // b2.b1
+    public final int l0() {
+        D1();
+        int i12 = i1(this.j0);
+        if (i12 == -1) {
+            return 0;
+        }
+        return i12;
+    }
+
+    @Override // b2.b1
+    public final int m() {
+        D1();
+        return 0;
+    }
+
+    public final h1 m1(h1 h1Var, b2.k1 k1Var, Pair pair) {
         List list;
         e2.d.b(k1Var.p() || pair != null);
         b2.k1 k1Var2 = h1Var.a;
-        long e12 = e1(h1Var);
+        long g12 = g1(h1Var);
         h1 j3 = h1Var.j(k1Var);
         if (k1Var.p()) {
             u2.f0 f0Var = h1.u;
-            long Q = e2.d0.Q(this.l0);
-            h1 c10 = j3.d(f0Var, Q, Q, Q, 0L, u2.p1.d, this.b, e9.a1.e).c(f0Var);
+            long P = e2.d0.P(this.l0);
+            h1 c10 = j3.d(f0Var, P, P, P, 0L, u2.o1.d, this.b, e9.a1.e).c(f0Var);
             c10.q = c10.s;
             return c10;
         }
@@ -1135,14 +1818,14 @@ public final class f0 extends b2.g implements r {
         boolean equals = obj.equals(pair.first);
         u2.f0 f0Var2 = !equals ? new u2.f0(pair.first) : j3.b;
         long longValue = ((Long) pair.second).longValue();
-        long Q2 = e2.d0.Q(e12);
+        long P2 = e2.d0.P(g12);
         if (!k1Var2.p()) {
-            Q2 -= k1Var2.g(obj, this.o).e;
+            P2 -= k1Var2.g(obj, this.o).e;
         }
-        if (!equals || longValue < Q2) {
+        if (!equals || longValue < P2) {
             u2.f0 f0Var3 = f0Var2;
             e2.d.g(!f0Var3.b());
-            u2.p1 p1Var = !equals ? u2.p1.d : j3.h;
+            u2.o1 o1Var = !equals ? u2.o1.d : j3.h;
             x2.v vVar = !equals ? this.b : j3.i;
             if (equals) {
                 list = j3.j;
@@ -1150,14 +1833,14 @@ public final class f0 extends b2.g implements r {
                 e9.g0 g0Var = e9.i0.b;
                 list = e9.a1.e;
             }
-            h1 c11 = j3.d(f0Var3, longValue, longValue, longValue, 0L, p1Var, vVar, list).c(f0Var3);
+            h1 c11 = j3.d(f0Var3, longValue, longValue, longValue, 0L, o1Var, vVar, list).c(f0Var3);
             c11.q = longValue;
             return c11;
         }
-        if (longValue != Q2) {
+        if (longValue != P2) {
             u2.f0 f0Var4 = f0Var2;
             e2.d.g(!f0Var4.b());
-            long max = Math.max(0L, j3.r - (longValue - Q2));
+            long max = Math.max(0L, j3.r - (longValue - P2));
             long j10 = j3.q;
             if (j3.k.equals(j3.b)) {
                 j10 = longValue + max;
@@ -1179,22 +1862,21 @@ public final class f0 extends b2.g implements r {
     }
 
     @Override // b2.b1
-    public final int l() {
-        B1();
-        return this.F;
+    public final void n(Surface surface) {
+        D1();
+        q1();
+        v1(surface);
+        int i10 = surface == null ? 0 : -1;
+        o1(i10, i10);
     }
 
     @Override // b2.b1
-    public final int l0() {
-        B1();
-        int g12 = g1(this.j0);
-        if (g12 == -1) {
-            return 0;
-        }
-        return g12;
+    public final void n0(b2.z0 z0Var) {
+        z0Var.getClass();
+        this.m.a(z0Var);
     }
 
-    public final Pair l1(b2.k1 k1Var, int i10, long j3) {
+    public final Pair n1(b2.k1 k1Var, int i10, long j3) {
         if (k1Var.p()) {
             this.k0 = i10;
             if (j3 == -9223372036854775807L) {
@@ -1205,18 +1887,23 @@ public final class f0 extends b2.g implements r {
         }
         if (i10 == -1 || i10 >= k1Var.o()) {
             i10 = k1Var.a(this.G);
-            j3 = e2.d0.e0(k1Var.m(i10, (b2.j1) this.a, 0L).l);
+            j3 = e2.d0.d0(k1Var.m(i10, (b2.j1) this.a, 0L).l);
         }
-        return k1Var.i((b2.j1) this.a, this.o, i10, e2.d0.Q(j3));
+        return k1Var.i((b2.j1) this.a, this.o, i10, e2.d0.P(j3));
     }
 
     @Override // b2.b1
-    public final int m() {
-        B1();
-        return 0;
+    public final boolean o() {
+        D1();
+        return this.j0.b.b();
     }
 
-    public final void m1(int i10, int i11) {
+    @Override // b2.b1
+    public final void o0(boolean z10) {
+        D1();
+    }
+
+    public final void o1(int i10, int i11) {
         e2.w wVar = this.X;
         if (i10 == wVar.a && i11 == wVar.b) {
             return;
@@ -1228,62 +1915,51 @@ public final class f0 extends b2.g implements r {
             return;
         }
         this.m.e(24, new dh.c(i10, i11, 1));
-        p1(2, 14, new e2.w(i10, i11));
+        r1(2, 14, new e2.w(i10, i11));
     }
 
-    @Override // b2.b1
-    public final void n(Surface surface) {
-        B1();
-        o1();
-        t1(surface);
-        int i10 = surface == null ? 0 : -1;
-        m1(i10, i10);
-    }
-
-    @Override // b2.b1
-    public final void n0(b2.z0 z0Var) {
-        z0Var.getClass();
-        this.m.a(z0Var);
-    }
-
-    public final h1 n1(h1 h1Var, int i10, int i11) {
-        int g12 = g1(h1Var);
-        long e12 = e1(h1Var);
+    public final h1 p1(h1 h1Var, int i10, int i11) {
+        int i12 = i1(h1Var);
+        long g12 = g1(h1Var);
         b2.k1 k1Var = h1Var.a;
         ArrayList arrayList = this.p;
         int size = arrayList.size();
         this.H++;
-        for (int i12 = i11 - 1; i12 >= i10; i12--) {
-            arrayList.remove(i12);
+        for (int i13 = i11 - 1; i13 >= i10; i13--) {
+            arrayList.remove(i13);
         }
         this.M = this.M.a(i10, i11);
         m1 m1Var = new m1(arrayList, this.M);
-        h1 k12 = k1(h1Var, m1Var, h1(k1Var, m1Var, g12, e12));
-        int i13 = k12.e;
-        if (i13 != 1 && i13 != 4 && i10 < i11 && i11 == size && g12 >= k12.a.o()) {
-            k12 = j1(k12, 4);
+        h1 m12 = m1(h1Var, m1Var, j1(k1Var, m1Var, i12, g12));
+        int i14 = m12.e;
+        if (i14 != 1 && i14 != 4 && i10 < i11 && i11 == size && i12 >= m12.a.o()) {
+            m12 = l1(m12, 4);
         }
-        u2.h1 h1Var2 = this.M;
+        u2.g1 g1Var = this.M;
         e2.z zVar = this.l.n;
         zVar.getClass();
         e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(20, i10, i11, h1Var2);
+        b10.a = zVar.a.obtainMessage(20, i10, i11, g1Var);
         b10.b();
-        return k12;
+        return m12;
     }
 
     @Override // b2.b1
-    public final boolean o() {
-        B1();
-        return this.j0.b.b();
+    public final void q(b2.q1 q1Var) {
+        D1();
+        x2.u uVar = this.i;
+        uVar.getClass();
+        b2.q1 B0 = B0();
+        if (!q1Var.equals(((x2.p) uVar).e())) {
+            uVar.b(q1Var);
+        }
+        if (B0.equals(q1Var)) {
+            return;
+        }
+        this.m.e(19, new c5(q1Var, 8));
     }
 
-    @Override // b2.b1
-    public final void o0(boolean z10) {
-        B1();
-    }
-
-    public final void o1() {
+    public final void q1() {
         TextureView textureView = this.V;
         c0 c0Var = this.y;
         if (textureView != null) {
@@ -1301,60 +1977,15 @@ public final class f0 extends b2.g implements r {
         }
     }
 
-    public final void p1(int i10, int i11, Object obj) {
-        for (f fVar : this.g) {
-            if (i10 == -1 || fVar.b == i10) {
-                k1 d12 = d1(fVar);
-                e2.d.g(!d12.f);
-                d12.c = i11;
-                e2.d.g(!d12.f);
-                d12.d = obj;
-                d12.b();
-            }
-        }
-        for (f fVar2 : this.h) {
-            if (fVar2 != null && (i10 == -1 || fVar2.b == i10)) {
-                k1 d13 = d1(fVar2);
-                e2.d.g(!d13.f);
-                d13.c = i11;
-                e2.d.g(!d13.f);
-                d13.d = obj;
-                d13.b();
-            }
-        }
-    }
-
-    @Override // b2.b1
-    public final void q(b2.q1 q1Var) {
-        B1();
-        x2.u uVar = this.i;
-        uVar.getClass();
-        b2.q1 B0 = B0();
-        if (!q1Var.equals(((x2.p) uVar).e())) {
-            uVar.b(q1Var);
-        }
-        if (B0.equals(q1Var)) {
-            return;
-        }
-        this.m.e(19, new ei.f(q1Var, 9));
-    }
-
-    public final void q1(u2.a aVar, boolean z10) {
-        B1();
-        List singletonList = Collections.singletonList(aVar);
-        B1();
-        r1(-9223372036854775807L, singletonList, z10, -1);
-    }
-
     @Override // b2.b1
     public final long r() {
-        B1();
-        return e2.d0.e0(this.j0.r);
+        D1();
+        return e2.d0.d0(this.j0.r);
     }
 
     @Override // b2.b1
     public final void r0(int i10, int i11, int i12) {
-        B1();
+        D1();
         e2.d.b(i10 >= 0 && i10 <= i11 && i12 >= 0);
         ArrayList arrayList = this.p;
         int size = arrayList.size();
@@ -1365,39 +1996,82 @@ public final class f0 extends b2.g implements r {
         }
         b2.k1 w02 = w0();
         this.H++;
-        e2.d0.P(i10, min, min2, arrayList);
+        e2.d0.O(i10, min, min2, arrayList);
         this.M = this.M.f();
         m1 m1Var = new m1(arrayList, this.M);
         h1 h1Var = this.j0;
-        h1 k12 = k1(h1Var, m1Var, h1(w02, m1Var, g1(h1Var), e1(this.j0)));
-        u2.h1 h1Var2 = this.M;
+        h1 m12 = m1(h1Var, m1Var, j1(w02, m1Var, i1(h1Var), g1(this.j0)));
+        u2.g1 g1Var = this.M;
         p0 p0Var = this.l;
         p0Var.getClass();
-        p0Var.n.a(19, new l0(i10, min, min2, h1Var2)).b();
-        z1(k12, 0, false, 5, -9223372036854775807L, -1, false);
+        p0Var.n.a(19, new l0(i10, min, min2, g1Var)).b();
+        B1(m12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 
-    public final void r1(long j3, List list, boolean z10, int i10) {
+    public final void r1(int i10, int i11, Object obj) {
+        for (f fVar : this.g) {
+            if (i10 == -1 || fVar.b == i10) {
+                k1 f12 = f1(fVar);
+                e2.d.g(!f12.f);
+                f12.c = i11;
+                e2.d.g(!f12.f);
+                f12.d = obj;
+                f12.b();
+            }
+        }
+        for (f fVar2 : this.h) {
+            if (fVar2 != null && (i10 == -1 || fVar2.b == i10)) {
+                k1 f13 = f1(fVar2);
+                e2.d.g(!f13.f);
+                f13.c = i11;
+                e2.d.g(!f13.f);
+                f13.d = obj;
+                f13.b();
+            }
+        }
+    }
+
+    public final void s1(u2.a aVar, boolean z10) {
+        D1();
+        List singletonList = Collections.singletonList(aVar);
+        D1();
+        t1(-9223372036854775807L, singletonList, z10, -1);
+    }
+
+    @Override // b2.g, b2.b1
+    public final void stop() {
+        D1();
+        y1(null);
+        this.b0 = new d2.d(this.j0.s, e9.a1.e);
+    }
+
+    @Override // b2.b1
+    public final b2.x0 t() {
+        D1();
+        return this.N;
+    }
+
+    public final void t1(long j3, List list, boolean z10, int i10) {
         long j10;
         int i11;
         int i12;
         int i13 = i10;
-        int g12 = g1(this.j0);
+        int i14 = i1(this.j0);
         long J0 = J0();
         this.H++;
         ArrayList arrayList = this.p;
         if (!arrayList.isEmpty()) {
             int size = arrayList.size();
-            for (int i14 = size - 1; i14 >= 0; i14--) {
-                arrayList.remove(i14);
+            for (int i15 = size - 1; i15 >= 0; i15--) {
+                arrayList.remove(i15);
             }
             this.M = this.M.a(0, size);
         }
-        ArrayList Z0 = Z0(0, list);
+        ArrayList b12 = b1(0, list);
         m1 m1Var = new m1(arrayList, this.M);
         boolean p5 = m1Var.p();
-        int i15 = m1Var.h;
-        if (!p5 && i13 >= i15) {
+        int i16 = m1Var.h;
+        if (!p5 && i13 >= i16) {
             throw new b2.v();
         }
         if (z10) {
@@ -1405,33 +2079,45 @@ public final class f0 extends b2.g implements r {
             j10 = -9223372036854775807L;
         } else {
             if (i13 == -1) {
-                i11 = g12;
+                i11 = i14;
                 j10 = J0;
-                h1 k12 = k1(this.j0, m1Var, l1(m1Var, i11, j10));
-                i12 = k12.e;
+                h1 m12 = m1(this.j0, m1Var, n1(m1Var, i11, j10));
+                i12 = m12.e;
                 if (i11 != -1 && i12 != 1) {
-                    i12 = (!m1Var.p() || i11 >= i15) ? 4 : 2;
+                    i12 = (!m1Var.p() || i11 >= i16) ? 4 : 2;
                 }
-                h1 j12 = j1(k12, i12);
-                this.l.n.a(17, new k0(Z0, this.M, i11, e2.d0.Q(j10))).b();
-                z1(j12, 0, this.j0.b.a.equals(j12.b.a) && !this.j0.a.p(), 4, f1(j12), -1, false);
+                h1 l1 = l1(m12, i12);
+                this.l.n.a(17, new k0(b12, this.M, i11, e2.d0.P(j10))).b();
+                B1(l1, 0, this.j0.b.a.equals(l1.b.a) && !this.j0.a.p(), 4, h1(l1), -1, false);
             }
             j10 = j3;
         }
         i11 = i13;
-        h1 k122 = k1(this.j0, m1Var, l1(m1Var, i11, j10));
-        i12 = k122.e;
+        h1 m122 = m1(this.j0, m1Var, n1(m1Var, i11, j10));
+        i12 = m122.e;
         if (i11 != -1) {
             if (m1Var.p()) {
             }
         }
-        h1 j122 = j1(k122, i12);
-        this.l.n.a(17, new k0(Z0, this.M, i11, e2.d0.Q(j10))).b();
-        z1(j122, 0, this.j0.b.a.equals(j122.b.a) && !this.j0.a.p(), 4, f1(j122), -1, false);
+        h1 l12 = l1(m122, i12);
+        this.l.n.a(17, new k0(b12, this.M, i11, e2.d0.P(j10))).b();
+        B1(l12, 0, this.j0.b.a.equals(l12.b.a) && !this.j0.a.p(), 4, h1(l12), -1, false);
     }
 
-    public final void s1(q1 q1Var) {
-        B1();
+    @Override // b2.b1
+    public final boolean u() {
+        D1();
+        return this.j0.l;
+    }
+
+    @Override // b2.b1
+    public final int u0() {
+        D1();
+        return this.j0.n;
+    }
+
+    public final void u1(q1 q1Var) {
+        D1();
         if (q1Var == null) {
             q1Var = q1.e;
         }
@@ -1442,20 +2128,7 @@ public final class f0 extends b2.g implements r {
         this.l.n.a(5, q1Var).b();
     }
 
-    @Override // b2.b1
-    public final void stop() {
-        B1();
-        w1(null);
-        this.b0 = new d2.d(this.j0.s, e9.a1.e);
-    }
-
-    @Override // b2.b1
-    public final b2.x0 t() {
-        B1();
-        return this.N;
-    }
-
-    public final void t1(Surface surface) {
+    public final void v1(Surface surface) {
         Object obj = this.R;
         boolean z10 = true;
         boolean z11 = (obj == null || obj == surface) ? false : true;
@@ -1483,102 +2156,44 @@ public final class f0 extends b2.g implements r {
         if (z10) {
             return;
         }
-        w1(new n(2, new androidx.car.app.j("Detaching surface timed out."), 1003));
+        y1(new n(2, new ae.x("Detaching surface timed out."), 1003));
     }
 
     @Override // b2.b1
-    public final boolean u() {
-        B1();
-        return this.j0.l;
+    public final b2.k1 w0() {
+        D1();
+        return this.j0.a;
     }
 
-    @Override // b2.b1
-    public final int u0() {
-        B1();
-        return this.j0.n;
-    }
-
-    public final void u1(SurfaceView surfaceView) {
-        B1();
+    public final void w1(SurfaceView surfaceView) {
+        D1();
         SurfaceHolder holder = surfaceView == null ? null : surfaceView.getHolder();
-        B1();
+        D1();
         if (holder == null) {
-            B1();
-            o1();
-            t1(null);
-            m1(0, 0);
+            D1();
+            q1();
+            v1(null);
+            o1(0, 0);
             return;
         }
-        o1();
+        q1();
         this.U = true;
         this.T = holder;
         holder.addCallback(this.y);
         Surface surface = holder.getSurface();
         if (surface == null || !surface.isValid()) {
-            t1(null);
-            m1(0, 0);
+            v1(null);
+            o1(0, 0);
         } else {
-            t1(surface);
+            v1(surface);
             Rect surfaceFrame = holder.getSurfaceFrame();
-            m1(surfaceFrame.width(), surfaceFrame.height());
+            o1(surfaceFrame.width(), surfaceFrame.height());
         }
-    }
-
-    public final void v1(TextureView textureView) {
-        B1();
-        if (textureView == null) {
-            B1();
-            o1();
-            t1(null);
-            m1(0, 0);
-            return;
-        }
-        o1();
-        this.V = textureView;
-        if (textureView.getSurfaceTextureListener() != null) {
-            e2.a.n("ExoPlayerImpl", "Replacing existing SurfaceTextureListener.");
-        }
-        textureView.setSurfaceTextureListener(this.y);
-        SurfaceTexture surfaceTexture = textureView.isAvailable() ? textureView.getSurfaceTexture() : null;
-        if (surfaceTexture == null) {
-            t1(null);
-            m1(0, 0);
-        } else {
-            Surface surface = new Surface(surfaceTexture);
-            t1(surface);
-            this.S = surface;
-            m1(textureView.getWidth(), textureView.getHeight());
-        }
-    }
-
-    @Override // b2.b1
-    public final b2.k1 w0() {
-        B1();
-        return this.j0.a;
-    }
-
-    public final void w1(n nVar) {
-        h1 h1Var = this.j0;
-        h1 c10 = h1Var.c(h1Var.b);
-        c10.q = c10.s;
-        c10.r = 0L;
-        h1 j12 = j1(c10, 1);
-        if (nVar != null) {
-            j12 = j12.f(nVar);
-        }
-        h1 h1Var2 = j12;
-        this.H++;
-        e2.z zVar = this.l.n;
-        zVar.getClass();
-        e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(6);
-        b10.b();
-        z1(h1Var2, 0, false, 5, -9223372036854775807L, -1, false);
     }
 
     @Override // b2.b1
     public final void x(boolean z10) {
-        B1();
+        D1();
         if (this.G != z10) {
             this.G = z10;
             e2.z zVar = this.l.n;
@@ -1589,18 +2204,80 @@ public final class f0 extends b2.g implements r {
             y yVar = new y(0, z10);
             e2.p pVar = this.m;
             pVar.c(9, yVar);
-            x1();
+            z1();
             pVar.b();
         }
     }
 
     @Override // b2.b1
     public final boolean x0() {
-        B1();
+        D1();
         return false;
     }
 
-    public final void x1() {
+    public final void x1(TextureView textureView) {
+        D1();
+        if (textureView == null) {
+            D1();
+            q1();
+            v1(null);
+            o1(0, 0);
+            return;
+        }
+        q1();
+        this.V = textureView;
+        if (textureView.getSurfaceTextureListener() != null) {
+            e2.a.n("ExoPlayerImpl", "Replacing existing SurfaceTextureListener.");
+        }
+        textureView.setSurfaceTextureListener(this.y);
+        SurfaceTexture surfaceTexture = textureView.isAvailable() ? textureView.getSurfaceTexture() : null;
+        if (surfaceTexture == null) {
+            v1(null);
+            o1(0, 0);
+        } else {
+            Surface surface = new Surface(surfaceTexture);
+            v1(surface);
+            this.S = surface;
+            o1(textureView.getWidth(), textureView.getHeight());
+        }
+    }
+
+    @Override // b2.b1
+    public final Looper y0() {
+        return this.t;
+    }
+
+    public final void y1(n nVar) {
+        h1 h1Var = this.j0;
+        h1 c10 = h1Var.c(h1Var.b);
+        c10.q = c10.s;
+        c10.r = 0L;
+        h1 l1 = l1(c10, 1);
+        if (nVar != null) {
+            l1 = l1.f(nVar);
+        }
+        h1 h1Var2 = l1;
+        this.H++;
+        e2.z zVar = this.l.n;
+        zVar.getClass();
+        e2.y b10 = e2.z.b();
+        b10.a = zVar.a.obtainMessage(6);
+        b10.b();
+        B1(h1Var2, 0, false, 5, -9223372036854775807L, -1, false);
+    }
+
+    @Override // b2.b1
+    public final long z() {
+        D1();
+        return this.x;
+    }
+
+    @Override // b2.b1
+    public final void z0() {
+        D1();
+    }
+
+    public final void z1() {
         b2.x0 x0Var = this.N;
         String str = e2.d0.a;
         f0 f0Var = this.f;
@@ -1635,676 +2312,5 @@ public final class f0 extends b2.g implements r {
             return;
         }
         this.m.c(13, new x(this, 3));
-    }
-
-    @Override // b2.b1
-    public final Looper y0() {
-        return this.t;
-    }
-
-    public final void y1(int i10, boolean z10) {
-        h1 h1Var = this.j0;
-        int i11 = h1Var.n;
-        int i12 = (i11 != 1 || z10) ? 0 : 1;
-        if (h1Var.l == z10 && i11 == i12 && h1Var.m == i10) {
-            return;
-        }
-        this.H++;
-        if (h1Var.p) {
-            h1Var = h1Var.a();
-        }
-        h1 e7 = h1Var.e(i10, i12, z10);
-        e2.z zVar = this.l.n;
-        zVar.getClass();
-        e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(1, z10 ? 1 : 0, i10 | (i12 << 4));
-        b10.b();
-        z1(e7, 0, false, 5, -9223372036854775807L, -1, false);
-    }
-
-    @Override // b2.b1
-    public final long z() {
-        B1();
-        return this.x;
-    }
-
-    @Override // b2.b1
-    public final void z0() {
-        B1();
-    }
-
-    public final void z1(final h1 h1Var, int i10, boolean z10, int i11, long j3, int i12, boolean z11) {
-        Pair pair;
-        int i13;
-        b2.k0 k0Var;
-        boolean z12;
-        boolean z13;
-        boolean z14;
-        int i14;
-        Object obj;
-        b2.k0 k0Var2;
-        Object obj2;
-        int i15;
-        long j10;
-        long j11;
-        long j12;
-        long i16;
-        Object obj3;
-        b2.k0 k0Var3;
-        Object obj4;
-        int i17;
-        h1 h1Var2 = this.j0;
-        this.j0 = h1Var;
-        boolean equals = h1Var2.a.equals(h1Var.a);
-        b2.j1 j1Var = (b2.j1) this.a;
-        b2.h1 h1Var3 = this.o;
-        b2.k1 k1Var = h1Var2.a;
-        u2.f0 f0Var = h1Var2.b;
-        b2.k1 k1Var2 = h1Var.a;
-        u2.f0 f0Var2 = h1Var.b;
-        if (k1Var2.p() && k1Var.p()) {
-            pair = new Pair(Boolean.FALSE, -1);
-        } else if (k1Var2.p() != k1Var.p()) {
-            pair = new Pair(Boolean.TRUE, 3);
-        } else if (k1Var.m(k1Var.g(f0Var.a, h1Var3).c, j1Var, 0L).a.equals(k1Var2.m(k1Var2.g(f0Var2.a, h1Var3).c, j1Var, 0L).a)) {
-            pair = (z10 && i11 == 0 && f0Var.d < f0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i11 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
-        } else {
-            if (z10 && i11 == 0) {
-                i13 = 1;
-            } else if (z10 && i11 == 1) {
-                i13 = 2;
-            } else {
-                if (equals) {
-                    throw new IllegalStateException();
-                }
-                i13 = 3;
-            }
-            pair = new Pair(Boolean.TRUE, Integer.valueOf(i13));
-        }
-        boolean booleanValue = ((Boolean) pair.first).booleanValue();
-        int intValue = ((Integer) pair.second).intValue();
-        if (booleanValue) {
-            k0Var = !h1Var.a.p() ? h1Var.a.m(h1Var.a.g(h1Var.b.a, this.o).c, (b2.j1) this.a, 0L).c : null;
-            this.i0 = b2.n0.K;
-        } else {
-            k0Var = null;
-        }
-        if (booleanValue || !h1Var2.j.equals(h1Var.j)) {
-            b2.m0 a2 = this.i0.a();
-            List list = h1Var.j;
-            for (int i18 = 0; i18 < list.size(); i18++) {
-                b2.p0 p0Var = (b2.p0) list.get(i18);
-                int i19 = 0;
-                while (true) {
-                    b2.o0[] o0VarArr = p0Var.a;
-                    if (i19 < o0VarArr.length) {
-                        o0VarArr[i19].b(a2);
-                        i19++;
-                    }
-                }
-            }
-            this.i0 = new b2.n0(a2);
-        }
-        b2.n0 b12 = b1();
-        boolean equals2 = b12.equals(this.O);
-        this.O = b12;
-        boolean z15 = h1Var2.l != h1Var.l;
-        boolean z16 = h1Var2.e != h1Var.e;
-        if (z16 || z15) {
-            A1();
-        }
-        boolean z17 = h1Var2.g != h1Var.g;
-        if (!equals) {
-            this.m.c(0, new s(h1Var, i10, 0));
-        }
-        if (z10) {
-            b2.h1 h1Var4 = new b2.h1();
-            if (h1Var2.a.p()) {
-                z12 = booleanValue;
-                z13 = equals2;
-                z14 = z16;
-                i14 = i12;
-                obj = null;
-                k0Var2 = null;
-                obj2 = null;
-                i15 = -1;
-            } else {
-                Object obj5 = h1Var2.b.a;
-                h1Var2.a.g(obj5, h1Var4);
-                int i20 = h1Var4.c;
-                int b10 = h1Var2.a.b(obj5);
-                z12 = booleanValue;
-                z13 = equals2;
-                z14 = z16;
-                obj = h1Var2.a.m(i20, (b2.j1) this.a, 0L).a;
-                k0Var2 = ((b2.j1) this.a).c;
-                obj2 = obj5;
-                i14 = i20;
-                i15 = b10;
-            }
-            if (i11 == 0) {
-                if (h1Var2.b.b()) {
-                    u2.f0 f0Var3 = h1Var2.b;
-                    j12 = h1Var4.a(f0Var3.b, f0Var3.c);
-                    i16 = i1(h1Var2);
-                } else if (h1Var2.b.e != -1) {
-                    j12 = i1(this.j0);
-                    i16 = j12;
-                } else {
-                    j10 = h1Var4.e;
-                    j11 = h1Var4.d;
-                    j12 = j10 + j11;
-                    i16 = j12;
-                }
-            } else if (h1Var2.b.b()) {
-                j12 = h1Var2.s;
-                i16 = i1(h1Var2);
-            } else {
-                j10 = h1Var4.e;
-                j11 = h1Var2.s;
-                j12 = j10 + j11;
-                i16 = j12;
-            }
-            long e02 = e2.d0.e0(j12);
-            long e03 = e2.d0.e0(i16);
-            u2.f0 f0Var4 = h1Var2.b;
-            b2.a1 a1Var = new b2.a1(obj, i14, k0Var2, obj2, i15, e02, e03, f0Var4.b, f0Var4.c);
-            b2.j1 j1Var2 = (b2.j1) this.a;
-            int l02 = l0();
-            if (this.j0.a.p()) {
-                obj3 = null;
-                k0Var3 = null;
-                obj4 = null;
-                i17 = -1;
-            } else {
-                h1 h1Var5 = this.j0;
-                Object obj6 = h1Var5.b.a;
-                h1Var5.a.g(obj6, this.o);
-                int b11 = this.j0.a.b(obj6);
-                Object obj7 = this.j0.a.m(l02, j1Var2, 0L).a;
-                k0Var3 = j1Var2.c;
-                i17 = b11;
-                obj4 = obj6;
-                obj3 = obj7;
-            }
-            long e04 = e2.d0.e0(j3);
-            long e05 = this.j0.b.b() ? e2.d0.e0(i1(this.j0)) : e04;
-            u2.f0 f0Var5 = this.j0.b;
-            this.m.c(11, new d2(i11, a1Var, new b2.a1(obj3, l02, k0Var3, obj4, i17, e04, e05, f0Var5.b, f0Var5.c), 2));
-        } else {
-            z12 = booleanValue;
-            z13 = equals2;
-            z14 = z16;
-        }
-        if (z12) {
-            this.m.c(1, new s(k0Var, intValue, 1));
-        }
-        if (h1Var2.f != h1Var.f) {
-            final int i21 = 7;
-            this.m.c(10, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj8) {
-                    b2.z0 z0Var = (b2.z0) obj8;
-                    switch (i21) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-            if (h1Var.f != null) {
-                final int i22 = 8;
-                this.m.c(10, new e2.m() { // from class: i2.u
-                    @Override // e2.m
-                    public final void invoke(Object obj8) {
-                        b2.z0 z0Var = (b2.z0) obj8;
-                        switch (i22) {
-                            case 0:
-                                h1 h1Var6 = h1Var;
-                                z0Var.onLoadingChanged(h1Var6.g);
-                                z0Var.onIsLoadingChanged(h1Var6.g);
-                                break;
-                            case 1:
-                                h1 h1Var7 = h1Var;
-                                z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                                break;
-                            case 2:
-                                z0Var.onPlaybackStateChanged(h1Var.e);
-                                break;
-                            case 3:
-                                h1 h1Var8 = h1Var;
-                                z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                                break;
-                            case 4:
-                                z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                                break;
-                            case 5:
-                                z0Var.onIsPlayingChanged(h1Var.m());
-                                break;
-                            case 6:
-                                z0Var.onPlaybackParametersChanged(h1Var.o);
-                                break;
-                            case 7:
-                                z0Var.onPlayerErrorChanged(h1Var.f);
-                                break;
-                            case 8:
-                                z0Var.onPlayerError(h1Var.f);
-                                break;
-                            default:
-                                z0Var.onTracksChanged(h1Var.i.d);
-                                break;
-                        }
-                    }
-                });
-            }
-        }
-        x2.v vVar = h1Var2.i;
-        x2.v vVar2 = h1Var.i;
-        if (vVar != vVar2) {
-            x2.u uVar = this.i;
-            Object obj8 = vVar2.e;
-            uVar.getClass();
-            uVar.c = (x2.t) obj8;
-            final int i23 = 9;
-            this.m.c(2, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i23) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (!z13) {
-            this.m.c(14, new t(this.O));
-        }
-        if (z17) {
-            final int i24 = 0;
-            this.m.c(3, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i24) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (z14 || z15) {
-            final int i25 = 1;
-            this.m.c(-1, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i25) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (z14) {
-            final int i26 = 2;
-            this.m.c(4, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i26) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (z15 || h1Var2.m != h1Var.m) {
-            final int i27 = 3;
-            this.m.c(5, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i27) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (h1Var2.n != h1Var.n) {
-            final int i28 = 4;
-            this.m.c(6, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i28) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (h1Var2.m() != h1Var.m()) {
-            final int i29 = 5;
-            this.m.c(7, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i29) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        if (!h1Var2.o.equals(h1Var.o)) {
-            final int i30 = 6;
-            this.m.c(12, new e2.m() { // from class: i2.u
-                @Override // e2.m
-                public final void invoke(Object obj82) {
-                    b2.z0 z0Var = (b2.z0) obj82;
-                    switch (i30) {
-                        case 0:
-                            h1 h1Var6 = h1Var;
-                            z0Var.onLoadingChanged(h1Var6.g);
-                            z0Var.onIsLoadingChanged(h1Var6.g);
-                            break;
-                        case 1:
-                            h1 h1Var7 = h1Var;
-                            z0Var.onPlayerStateChanged(h1Var7.l, h1Var7.e);
-                            break;
-                        case 2:
-                            z0Var.onPlaybackStateChanged(h1Var.e);
-                            break;
-                        case 3:
-                            h1 h1Var8 = h1Var;
-                            z0Var.onPlayWhenReadyChanged(h1Var8.l, h1Var8.m);
-                            break;
-                        case 4:
-                            z0Var.onPlaybackSuppressionReasonChanged(h1Var.n);
-                            break;
-                        case 5:
-                            z0Var.onIsPlayingChanged(h1Var.m());
-                            break;
-                        case 6:
-                            z0Var.onPlaybackParametersChanged(h1Var.o);
-                            break;
-                        case 7:
-                            z0Var.onPlayerErrorChanged(h1Var.f);
-                            break;
-                        case 8:
-                            z0Var.onPlayerError(h1Var.f);
-                            break;
-                        default:
-                            z0Var.onTracksChanged(h1Var.i.d);
-                            break;
-                    }
-                }
-            });
-        }
-        x1();
-        this.m.b();
-        if (h1Var2.p != h1Var.p) {
-            Iterator it = this.n.iterator();
-            while (it.hasNext()) {
-                ((c0) it.next()).a.A1();
-            }
-        }
     }
 }

@@ -1,38 +1,123 @@
 package ai;
 
+import j$.util.function.Consumer$-CC;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d9 b;
+public final class y8 {
+    public final int a;
+    public final long b;
+    public final boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public boolean i;
+    public final /* synthetic */ m9 j;
 
-    public /* synthetic */ y8(d9 d9Var, int i10) {
+    public y8(int i10, long j3, m9 m9Var) {
+        this.j = m9Var;
         this.a = i10;
-        this.b = d9Var;
+        this.b = j3;
+        this.c = j3 == UserConfig.getInstance(i10).getClientUserId();
+        d();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final boolean a() {
+        return (this.c || this.j.i(this.b)) && this.f && this.h.size() < MessagesController.getInstance(this.a).config.storiesAlbumsLimit.get();
+    }
+
+    public final f9 b(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i11 >= arrayList.size()) {
+                return null;
+            }
+            f9 f9Var = (f9) arrayList.get(i11);
+            if (i10 == f9Var.a) {
+                return f9Var;
+            }
+            i11++;
+        }
+    }
+
+    public final int c(int i10) {
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i11 >= arrayList.size()) {
+                return -1;
+            }
+            if (i10 == ((f9) arrayList.get(i11)).a) {
+                return i11;
+            }
+            i11++;
+        }
+    }
+
+    public final void d() {
+        if (this.e || this.f) {
+            return;
+        }
+        this.e = true;
+        boolean z10 = this.d;
+        long j3 = this.b;
         int i10 = this.a;
-        d9 d9Var = this.b;
-        switch (i10) {
-            case 0:
-                NotificationCenter.getInstance(d9Var.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, d9Var);
-                break;
-            case 1:
-                d9Var.u = false;
-                d9Var.w = true;
-                NotificationCenter.getInstance(d9Var.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, d9Var, Boolean.FALSE);
-                break;
-            case 2:
-                d9Var.z = false;
-                break;
-            default:
-                d9Var.k.clear();
-                d9Var.d(true);
-                break;
+        if (!z10) {
+            MessagesStorage.getInstance(i10).loadStoryAlbumsCache(j3, new Consumer() { // from class: ai.x8
+                @Override // java.util.function.Consumer
+                /* renamed from: accept */
+                public final void x(Object obj) {
+                    AndroidUtilities.runOnUIThread(new a1.f(16, y8.this, (List) obj));
+                }
+
+                public /* synthetic */ Consumer andThen(Consumer consumer) {
+                    return Consumer$-CC.$default$andThen(this, consumer);
+                }
+            });
+            return;
+        }
+        TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
+        tL_getAlbums.peer = MessagesController.getInstance(i10).getInputPeer(j3);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_getAlbums, new o8(this, 2));
+    }
+
+    public final void e() {
+        TL_stories.TL_reorderAlbums tL_reorderAlbums = new TL_stories.TL_reorderAlbums();
+        int i10 = this.a;
+        tL_reorderAlbums.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
+        tL_reorderAlbums.order = new ArrayList<>();
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            tL_reorderAlbums.order.add(Integer.valueOf(((f9) obj).a));
+        }
+        ConnectionsManager.getInstance(i10).sendRequest(tL_reorderAlbums, null);
+    }
+
+    public final void f(boolean z10) {
+        int i10 = this.a;
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+        ArrayList arrayList = this.h;
+        long j3 = this.b;
+        messagesStorage.saveStoryAlbumsCache(j3, arrayList);
+        if (z10) {
+            NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storyAlbumsCollectionsUpdate, Long.valueOf(j3), this);
         }
     }
 }

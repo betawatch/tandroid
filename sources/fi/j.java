@@ -4,10 +4,10 @@ import android.view.View;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.h61;
-import r0.l1;
+import org.telegram.ui.Components.p61;
+import r0.k1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.n, MessagesStorage.BooleanCallback {
     public final /* synthetic */ p a;
@@ -17,10 +17,10 @@ public final /* synthetic */ class j implements Utilities.Callback5, Utilities.C
     }
 
     @Override // r0.n
-    public l1 Q0(View view, l1 l1Var) {
-        i0.b f7 = l1Var.a.f(519);
+    public k1 M0(View view, k1 k1Var) {
+        i0.b f7 = k1Var.a.f(519);
         this.a.d.setPadding(0, f7.b, 0, f7.d);
-        return l1.b;
+        return k1.b;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -28,7 +28,7 @@ public final /* synthetic */ class j implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        return Boolean.valueOf(p.S(this.a, (h61) obj, (View) obj2));
+        return Boolean.valueOf(p.U(this.a, (p61) obj, (View) obj2));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -36,7 +36,7 @@ public final /* synthetic */ class j implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        p.T(this.a, (h61) obj);
+        p.V(this.a, (p61) obj);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback

@@ -3,469 +3,787 @@ package ai;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Point;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableStringBuilder;
-import android.text.style.CharacterStyle;
-import android.text.style.URLSpan;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.OverScroller;
-import androidx.core.widget.NestedScrollView;
-import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.mx0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements a80 {
-    public final org.telegram.ui.Cells.aa W;
-    public final o1.k a0;
-    public final wa b0;
-    public boolean c0;
-    public float d0;
-    public float e0;
-    public float f0;
-    public float g0;
-    public float h0;
-    public float i0;
-    public float j0;
-    public final OverScroller k0;
-    public boolean l0;
-    public int m0;
-    public int n0;
-    public int o0;
-    public int p0;
-    public int q0;
-    public final FrameLayout r0;
-    public boolean s0;
-    public boolean t0;
-    public int u0;
-    public boolean v0;
-    public boolean w0;
+public final class xa extends View implements org.telegram.ui.Cells.x9 {
+    public int E;
+    public int F;
+    public float G;
+    public boolean H;
+    public ValueAnimator I;
+    public final /* synthetic */ ya J;
+    public final PorterDuffColorFilter a;
+    public boolean b;
+    public final TextPaint c;
+    public final TextPaint d;
+    public final Paint e;
+    public final Paint f;
+    public float h;
+    public float n;
+    public final wa[] r;
+    public int s;
+    public StaticLayout v;
+    public float w;
+    public boolean x;
+    public final boolean y;
 
-    public xa(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa(ya yaVar, Context context) {
         super(context);
-        Paint paint = new Paint(1);
-        this.q0 = -1;
-        new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.k(-16777216, 51)});
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.r0 = frameLayout;
-        setClipChildren(false);
-        setOverScrollMode(2);
-        NotificationCenter.listenEmojiLoading(this);
-        wa waVar = new wa(this, getContext());
-        this.b0 = waVar;
-        org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(waVar, d6Var);
-        this.W = aaVar;
-        aaVar.i0 = false;
-        frameLayout.addView(waVar, -1, -2);
-        addView(frameLayout, new ViewGroup.LayoutParams(-1, -2));
+        this.J = yaVar;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        TextPaint textPaint2 = new TextPaint(1);
+        this.d = textPaint2;
+        Paint paint = new Paint();
+        this.e = paint;
+        Paint paint2 = new Paint(1);
+        this.f = paint2;
+        this.r = new wa[]{new wa(this), null};
+        this.s = 0;
+        new Path();
+        this.y = true;
+        this.H = false;
+        textPaint.setColor(-1);
+        textPaint.linkColor = -1;
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint2.setColor(-1);
+        textPaint2.setTypeface(AndroidUtilities.bold());
+        textPaint2.setTextSize(AndroidUtilities.dp(16.0f));
         paint.setColor(-16777216);
-        setFadingEdgeLength(AndroidUtilities.dp(12.0f));
-        setVerticalFadingEdgeEnabled(true);
-        setWillNotDraw(false);
-        o1.k kVar = new o1.k(waVar, o1.h.n, 0.0f);
-        this.a0 = kVar;
-        kVar.u.b(100.0f);
-        kVar.j = 1.0f;
-        kVar.b(new qa(0, this));
-        kVar.u.a(1.0f);
-        try {
-            NestedScrollView.class.getDeclaredMethod("c", null).setAccessible(true);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint.setXfermode(new PorterDuffXfermode(mode));
+        paint2.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(16.0f), 0.0f, new int[]{0, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        paint2.setXfermode(new PorterDuffXfermode(mode));
+        this.a = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+    }
+
+    public static StaticLayout a(xa xaVar, TextPaint textPaint, CharSequence charSequence, int i10) {
+        Layout.Alignment alignment;
+        if (Build.VERSION.SDK_INT < 24) {
+            return new StaticLayout(charSequence, textPaint, i10, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        try {
-            Field declaredField = NestedScrollView.class.getDeclaredField("d");
-            declaredField.setAccessible(true);
-            this.k0 = (OverScroller) declaredField.get(this);
-        } catch (Exception e10) {
-            this.k0 = null;
-            FileLog.e(e10);
+        StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setBreakStrategy(0).setHyphenationFrequency(0);
+        if (LocaleController.isRTL) {
+            alignment = mx0.a();
+        } else {
+            Layout.Alignment[] alignmentArr = mx0.a;
+            alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
+        }
+        return hyphenationFrequency.setAlignment(alignment).build();
+    }
+
+    public final void b(CharSequence charSequence, ta taVar, ta taVar2, boolean z10, boolean z11) {
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        wa[] waVarArr = this.r;
+        if (MediaDataController.stringsEqual(waVarArr[0].n, charSequence)) {
+            wa waVar = waVarArr[0];
+            if (waVar.o == taVar && waVar.p == taVar2) {
+                waVar.q = z10;
+                invalidate();
+                return;
+            }
+        }
+        this.x = false;
+        ValueAnimator valueAnimator = this.I;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.H = false;
+        if (!z11) {
+            waVarArr[0].g(charSequence, taVar, taVar2);
+            waVarArr[0].q = z10;
+            invalidate();
+            this.G = 0.0f;
+            return;
+        }
+        if (waVarArr[1] == null) {
+            waVarArr[1] = new wa(this);
+        }
+        wa waVar2 = waVarArr[1];
+        wa waVar3 = waVarArr[0];
+        waVar2.g(waVar3.n, waVar3.o, waVar3.p);
+        wa waVar4 = waVarArr[1];
+        wa waVar5 = waVarArr[0];
+        waVar4.q = waVar5.q;
+        waVar4.r.d(waVar5.r.c, true);
+        waVarArr[0].g(charSequence, taVar, taVar2);
+        wa waVar6 = waVarArr[0];
+        waVar6.q = z10;
+        waVar6.r.d(0.0f, true);
+        this.G = 1.0f;
+        ValueAnimator valueAnimator2 = this.I;
+        if (valueAnimator2 != null) {
+            valueAnimator2.cancel();
+        }
+        this.H = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, 0.0f);
+        this.I = ofFloat;
+        ofFloat.addUpdateListener(new a(this, 13));
+        this.I.addListener(new b(this, 10));
+        this.I.setDuration(180L);
+        this.I.setInterpolator(hs.g);
+        this.I.start();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x01ce A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01f2  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01f9  */
+    /* JADX WARN: Type inference failed for: r13v0 */
+    /* JADX WARN: Type inference failed for: r13v1 */
+    /* JADX WARN: Type inference failed for: r13v14 */
+    /* JADX WARN: Type inference failed for: r13v15, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r13v16 */
+    /* JADX WARN: Type inference failed for: r13v22 */
+    /* JADX WARN: Type inference failed for: r13v23 */
+    /* JADX WARN: Type inference failed for: r13v24 */
+    /* JADX WARN: Type inference failed for: r13v25 */
+    /* JADX WARN: Type inference failed for: r13v28 */
+    /* JADX WARN: Type inference failed for: r8v14, types: [ai.ta] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        wa[] waVarArr;
+        wa waVar;
+        ?? r13;
+        boolean z11;
+        int i10;
+        boolean z12;
+        boolean z13;
+        Layout staticTextLayout;
+        wa waVar2;
+        wa waVar3;
+        boolean contains;
+        ?? r132;
+        ta taVar;
+        boolean z14;
+        ya yaVar = this.J;
+        org.telegram.ui.Cells.y9 y9Var = yaVar.W;
+        if (motionEvent.getAction() == 0) {
+            yaVar.g0 = motionEvent.getX();
+            yaVar.h0 = motionEvent.getY();
+        }
+        yaVar.i0 = motionEvent.getX();
+        yaVar.j0 = motionEvent.getY();
+        if (this.v != null) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f7 = this.n;
+            rectF.set(f7, this.h, r4.getWidth() + f7, this.h + this.v.getHeight());
+            if (rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                z10 = false;
+                waVarArr = this.r;
+                waVar = waVarArr[0];
+                if (waVar != null || (taVar = waVar.o) == null) {
+                    r13 = 0;
+                    z11 = false;
+                    i10 = 0;
+                } else {
+                    i10 = AndroidUtilities.dp(8.0f) + taVar.b();
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    int i11 = this.E;
+                    int i12 = this.F;
+                    ta taVar2 = waVarArr[0].o;
+                    rectF2.set(i11, i12, i11 + taVar2.x, taVar2.b() + i12);
+                    z11 = rectF2.contains(motionEvent.getX(), motionEvent.getY());
+                    if (z11) {
+                        z10 = false;
+                    }
+                    if (motionEvent.getAction() == 0 && z11) {
+                        waVarArr[0].o.e(motionEvent.getX(), motionEvent.getY(), true);
+                        r13 = 0;
+                    } else if (motionEvent.getAction() == 2) {
+                        ta taVar3 = waVarArr[0].o;
+                        if (taVar3.i.i && !z11) {
+                            r13 = 0;
+                            taVar3.e(motionEvent.getX(), motionEvent.getY(), false);
+                        }
+                        r13 = 0;
+                    } else {
+                        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                            if (motionEvent.getAction() == 1 && z11) {
+                                z14 = false;
+                                z14 = false;
+                                ta taVar4 = waVarArr[0].o;
+                                if (taVar4.i.i) {
+                                    yaVar.I(taVar4);
+                                }
+                            } else {
+                                z14 = false;
+                            }
+                            waVarArr[z14 ? 1 : 0].o.e(motionEvent.getX(), motionEvent.getY(), z14);
+                            r13 = z14;
+                        }
+                        r13 = 0;
+                    }
+                }
+                if (!z11 && (waVar3 = waVarArr[r13]) != null && waVar3.p != null) {
+                    RectF rectF3 = AndroidUtilities.rectTmp;
+                    float f10 = this.E;
+                    float lerp = (AndroidUtilities.lerp(waVar3.m, waVar3.l, this.w) + this.F) - waVarArr[0].p.b();
+                    int i13 = this.E;
+                    wa waVar4 = waVarArr[0];
+                    rectF3.set(f10, lerp, i13 + waVar4.p.x, AndroidUtilities.lerp(waVar4.m, waVar4.l, this.w) + this.F);
+                    contains = rectF3.contains(motionEvent.getX(), motionEvent.getY());
+                    if (contains) {
+                        z10 = false;
+                    }
+                    if (motionEvent.getAction() != 0 && contains) {
+                        waVarArr[0].p.e(motionEvent.getX(), motionEvent.getY(), true);
+                    } else if (motionEvent.getAction() != 2) {
+                        ta taVar5 = waVarArr[0].p;
+                        if (taVar5.i.i && !contains) {
+                            taVar5.e(motionEvent.getX(), motionEvent.getY(), false);
+                        }
+                    } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        if (motionEvent.getAction() == 1 && contains) {
+                            r132 = 0;
+                            r132 = 0;
+                            ta taVar6 = waVarArr[0].p;
+                            if (taVar6.i.i) {
+                                yaVar.I(taVar6);
+                            }
+                        } else {
+                            r132 = 0;
+                        }
+                        waVarArr[r132].p.e(motionEvent.getX(), motionEvent.getY(), r132);
+                    }
+                    if (contains) {
+                        return true;
+                    }
+                }
+                if (z10 && (yaVar.v0 || (waVar2 = waVarArr[0]) == null || waVar2.g == null)) {
+                    float f11 = this.E;
+                    float f12 = this.F + i10;
+                    Rect rect = y9Var.B;
+                    org.telegram.ui.Cells.x9 x9Var = y9Var.p0;
+                    staticTextLayout = x9Var.getStaticTextLayout();
+                    if (staticTextLayout != null) {
+                        rect.setEmpty();
+                        y9Var.X = null;
+                    } else {
+                        y9Var.X = x9Var;
+                        int i14 = (int) f11;
+                        y9Var.c = i14;
+                        int i15 = (int) f12;
+                        y9Var.d = i15;
+                        org.telegram.ui.Cells.r9 r9Var = y9Var.a0;
+                        r9Var.b = staticTextLayout;
+                        r9Var.d = f11;
+                        r9Var.c = f12;
+                        r9Var.a = 0;
+                        rect.set(i14, i15, (int) (f11 + staticTextLayout.getWidth()), (int) (f12 + staticTextLayout.getHeight()));
+                    }
+                    y9Var.M(motionEvent);
+                }
+                if (y9Var.x() && z10 && this.y) {
+                    z13 = false;
+                    if (((GestureDetector) waVarArr[0].k.a.b).onTouchEvent(motionEvent)) {
+                        getParent().requestDisallowInterceptTouchEvent(true);
+                        y9Var.f(false);
+                        return true;
+                    }
+                    z12 = true;
+                } else {
+                    z12 = true;
+                    z13 = false;
+                }
+                return (super.dispatchTouchEvent(motionEvent) || z11) ? z12 : z13;
+            }
+        }
+        z10 = true;
+        waVarArr = this.r;
+        waVar = waVarArr[0];
+        if (waVar != null) {
+        }
+        r13 = 0;
+        z11 = false;
+        i10 = 0;
+        if (!z11) {
+            RectF rectF32 = AndroidUtilities.rectTmp;
+            float f102 = this.E;
+            float lerp2 = (AndroidUtilities.lerp(waVar3.m, waVar3.l, this.w) + this.F) - waVarArr[0].p.b();
+            int i132 = this.E;
+            wa waVar42 = waVarArr[0];
+            rectF32.set(f102, lerp2, i132 + waVar42.p.x, AndroidUtilities.lerp(waVar42.m, waVar42.l, this.w) + this.F);
+            contains = rectF32.contains(motionEvent.getX(), motionEvent.getY());
+            if (contains) {
+            }
+            if (motionEvent.getAction() != 0) {
+            }
+            if (motionEvent.getAction() != 2) {
+            }
+            if (contains) {
+            }
+        }
+        if (z10) {
+            float f112 = this.E;
+            float f122 = this.F + i10;
+            Rect rect2 = y9Var.B;
+            org.telegram.ui.Cells.x9 x9Var2 = y9Var.p0;
+            staticTextLayout = x9Var2.getStaticTextLayout();
+            if (staticTextLayout != null) {
+            }
+            y9Var.M(motionEvent);
+        }
+        if (y9Var.x()) {
+        }
+        z12 = true;
+        z13 = false;
+        if (super.dispatchTouchEvent(motionEvent)) {
+            return z12;
         }
     }
 
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean A(int i10, int i11) {
-        if (i11 == 0) {
-            this.a0.c();
-            this.c0 = true;
-            this.d0 = this.b0.getTranslationY();
+    public float getAnimatedHeight() {
+        int i10 = this.F * 2;
+        wa[] waVarArr = this.r;
+        int i11 = waVarArr[0].l;
+        return AndroidUtilities.lerp(i11, waVarArr[1] != null ? r1.l : 0, this.G) + i10;
+    }
+
+    public Paint getPaint() {
+        return this.c;
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public Layout getStaticTextLayout() {
+        return this.r[0].e;
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public CharSequence getText() {
+        return this.r[0].n;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i10 = 0;
+        wa waVar = this.r[0];
+        xa xaVar = waVar.v;
+        org.telegram.ui.Components.b6.release(xaVar, waVar.d);
+        org.telegram.ui.Components.b6.release(xaVar, waVar.f);
+        if (waVar.h == null) {
+            return;
+        }
+        while (true) {
+            ua[] uaVarArr = waVar.h;
+            if (i10 >= uaVarArr.length) {
+                return;
+            }
+            ua uaVar = uaVarArr[i10];
+            if (uaVar != null) {
+                org.telegram.ui.Components.b6.release(xaVar, uaVar.a);
+            }
+            i10++;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.v != null) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.save();
+        }
+        wa[] waVarArr = this.r;
+        waVarArr[0].b(canvas2, 1.0f - this.G);
+        wa waVar = waVarArr[1];
+        if (waVar != null) {
+            waVar.b(canvas2, this.G);
+        }
+        if (this.v != null) {
+            float scrollY = this.h + this.J.getScrollY();
+            int clamp = (int) ((1.0f - Utilities.clamp(this.w / 0.5f, 1.0f, 0.0f)) * 255.0f);
+            Paint paint = this.f;
+            paint.setAlpha(clamp);
+            Paint paint2 = this.e;
+            paint2.setAlpha(clamp);
+            this.d.setAlpha(clamp);
+            canvas2.save();
+            canvas2.translate(this.n - AndroidUtilities.dp(32.0f), scrollY);
+            canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(32.0f), this.v.getHeight() + this.F, paint);
+            canvas2.restore();
+            canvas2.drawRect(this.n - AndroidUtilities.dp(16.0f), scrollY, getMeasuredWidth(), this.v.getHeight() + scrollY + this.F, paint2);
+            canvas2.save();
+            canvas2.translate(this.n, scrollY);
+            this.v.draw(canvas2);
+            canvas2.restore();
+        }
+        canvas2.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = (i11 + i10) << 16;
+        this.E = AndroidUtilities.dp(16.0f);
+        this.F = AndroidUtilities.dp(8.0f);
+        int i13 = this.s;
+        wa[] waVarArr = this.r;
+        if (i13 != i12) {
+            this.s = i12;
+            int max = Math.max(0, View.MeasureSpec.getSize(i10) - (this.E * 2));
+            waVarArr[0].e(max);
+            wa waVar = waVarArr[1];
+            if (waVar != null) {
+                waVar.e(max);
+            }
+        }
+        int i14 = this.F * 2;
+        int i15 = waVarArr[0].l;
+        wa waVar2 = waVarArr[1];
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(i15, waVar2 != null ? waVar2.l : 0, this.G) + i14, TLObject.FLAG_30));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0048, code lost:
+    
+        if (r9.contains(r20.getX(), r20.getY()) != false) goto L17;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0053, code lost:
+    
+        if (r1.a != null) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0057, code lost:
+    
+        if (r1.b == null) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0065, code lost:
+    
+        if (r20.getAction() != 3) goto L28;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0067, code lost:
+    
+        r3 = r4.r;
+        r3[0].c.d(true);
+        r3[0].a = null;
+        r4.invalidate();
+        r1.b = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0079, code lost:
+    
+        r4 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x01be, code lost:
+    
+        if (r4 != false) goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x01c4, code lost:
+    
+        if (super.onTouchEvent(r20) == false) goto L85;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x01c6, code lost:
+    
+        return true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x007c, code lost:
+    
+        r4 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x005d, code lost:
+    
+        if (r20.getAction() != 1) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x007f, code lost:
+    
+        r5 = r1.o;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0083, code lost:
+    
+        if (r5 != null) goto L32;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0085, code lost:
+    
+        r10 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0090, code lost:
+    
+        r5 = r1.p;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0092, code lost:
+    
+        if (r5 != null) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0094, code lost:
+    
+        r9 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x009f, code lost:
+    
+        r5 = (int) (r20.getX() - r4.E);
+        r9 = (int) ((r20.getY() - r4.F) - (r10 + r9));
+        r10 = r1.e.getLineForVertical(r9);
+        r5 = r5;
+        r11 = r1.e.getOffsetForHorizontal(r10, r5);
+        r12 = r1.e.getLineLeft(r10);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c9, code lost:
+    
+        if (r12 > r5) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00d4, code lost:
+    
+        if ((r1.e.getLineWidth(r10) + r12) < r5) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00d6, code lost:
+    
+        if (r9 < 0) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00de, code lost:
+    
+        if (r9 > r1.e.getHeight()) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00e0, code lost:
+    
+        r5 = new android.text.SpannableString(r1.n);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, android.text.style.ClickableSpan.class);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00ef, code lost:
+    
+        if (r9 == null) goto L48;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00f2, code lost:
+    
+        if (r9.length != 0) goto L49;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00fc, code lost:
+    
+        if (r9 == null) goto L56;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00ff, code lost:
+    
+        if (r9.length == 0) goto L56;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0101, code lost:
+    
+        r10 = r9[0];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x0107, code lost:
+    
+        if (r20.getAction() != 0) goto L55;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0109, code lost:
+    
+        r3.d(true);
+        r1.b = null;
+        r13 = new org.telegram.ui.Components.fa0(r9[0], null, r20.getX(), r20.getY(), 0);
+        r1.a = r13;
+        r13.d(org.telegram.ui.ActionBar.i6.m1(0.2f, -1));
+        r3.a(r1.a, null);
+        r9 = r5.getSpanStart(r1.a.i);
+        r12 = r5.getSpanEnd(r1.a.i);
+        r13 = r1.a.b();
+        r13.d(r1.e, r9, r4.getPaddingTop());
+        r1.e.getSelectionPath(r9, r12, r13);
+        r9 = r1.a;
+        r6.W.f(false);
+        r4.postDelayed(new ai.ca(1, r1, r9), android.view.ViewConfiguration.getLongPressTimeout());
+        r4 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0174, code lost:
+    
+        if (r1.a != null) goto L67;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0176, code lost:
+    
+        if (r4 != false) goto L67;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0178, code lost:
+    
+        r5 = (org.telegram.ui.Components.b6[]) r5.getSpans(r11, r11, org.telegram.ui.Components.b6.class);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0180, code lost:
+    
+        if (r5 == null) goto L67;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0183, code lost:
+    
+        if (r5.length == 0) goto L67;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0185, code lost:
+    
+        r9 = r5[0];
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x018b, code lost:
+    
+        if (r20.getAction() != 0) goto L69;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x018d, code lost:
+    
+        r1.a = null;
+        r1.b = r5[0];
+        r4 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x019e, code lost:
+    
+        if (r20.getAction() != 1) goto L81;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x01a0, code lost:
+    
+        r3.d(true);
+        r3 = r1.a;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x01a5, code lost:
+    
+        if (r3 == null) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x01a7, code lost:
+    
+        r3 = r3.i;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x01a9, code lost:
+    
+        if (r3 != r10) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x01ab, code lost:
+    
+        r6.G(r3, r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x01b8, code lost:
+    
+        r1.a = null;
+        r1.b = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01af, code lost:
+    
+        r3 = r1.b;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01b1, code lost:
+    
+        if (r3 == null) goto L80;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x01b3, code lost:
+    
+        if (r3 != r9) goto L80;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x01b5, code lost:
+    
+        r6.F(r3);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0195, code lost:
+    
+        r9 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x016e, code lost:
+    
+        r4 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0170, code lost:
+    
+        r4 = false;
+        r10 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
+    
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.s61.class);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0197, code lost:
+    
+        r4 = false;
+        r9 = null;
+        r10 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0096, code lost:
+    
+        r9 = org.telegram.messenger.AndroidUtilities.dp(8.0f) + r5.b();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0087, code lost:
+    
+        r10 = org.telegram.messenger.AndroidUtilities.dp(8.0f) + r5.b();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x004f, code lost:
+    
+        if (r20.getAction() != 0) goto L17;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        wa[] waVarArr;
+        if (!this.J.s0 && (waVarArr = this.r) != null) {
+            wa waVar = waVarArr[0];
+            if (waVar.e != null) {
+                ba0 ba0Var = waVar.c;
+                xa xaVar = waVar.v;
+                StaticLayout staticLayout = xaVar.v;
+                ya yaVar = xaVar.J;
+                if (staticLayout != null) {
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    float f7 = xaVar.n;
+                    rectF.set(f7, xaVar.h, staticLayout.getWidth() + f7, xaVar.h + xaVar.v.getHeight());
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        boolean z11 = z10 != isPressed();
+        super.setPressed(z10);
+        if (z11) {
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.J.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        wa waVar;
+        ta taVar;
+        ta taVar2;
+        ta taVar3;
+        ta taVar4;
+        wa[] waVarArr = this.r;
+        wa waVar2 = waVarArr[0];
+        if ((waVar2 == null || (waVar2.s != drawable && (((taVar3 = waVar2.o) == null || taVar3.j != drawable) && ((taVar4 = waVar2.p) == null || taVar4.j != drawable)))) && ((waVar = waVarArr[1]) == null || (waVar.s != drawable && (((taVar = waVar.o) == null || taVar.j != drawable) && ((taVar2 = waVar.p) == null || taVar2.j != drawable))))) {
+            return super.verifyDrawable(drawable);
         }
         return true;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void C(int i10) {
-        OverScroller overScroller;
-        if (this.c0 && i10 == 0) {
-            this.c0 = false;
-            if (this.d0 == 0.0f || (overScroller = this.k0) == null || !overScroller.isFinished()) {
-                return;
-            }
-            K(this.f0);
-        }
-    }
-
-    public final void D() {
-        if (this.v0) {
-            this.v0 = false;
-            float scrollY = getScrollY();
-            float f7 = this.b0.w;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new pa(this, scrollY, f7, 0));
-            ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(tr.f);
-            ofFloat.start();
-        }
-    }
-
-    public final void E(boolean z10) {
-        if (!this.v0 || z10) {
-            this.v0 = true;
-            float scrollY = getScrollY();
-            float f7 = this.b0.w;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addUpdateListener(new pa(this, scrollY, f7, 1));
-            ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(tr.f);
-            ofFloat.start();
-        }
-    }
-
-    public final void J() {
-        scrollTo(0, 0);
-        this.v0 = false;
-        wa waVar = this.b0;
-        waVar.w = 0.0f;
-        waVar.invalidate();
-    }
-
-    public final void K(float f7) {
-        o1.k kVar = this.a0;
-        if (!kVar.f) {
-            kVar.a = f7;
-            kVar.f();
-        }
-        if (getScrollY() < AndroidUtilities.dp(2.0f)) {
-            D();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void L(int i10, int i11) {
-        int i12;
-        if (i10 != 0 && i11 != 0) {
-            wa waVar = this.b0;
-            va vaVar = waVar.r[0];
-            CharSequence charSequence = vaVar.n;
-            sa saVar = vaVar.o;
-            SpannableStringBuilder spannableStringBuilder = saVar != null ? saVar.k : null;
-            String str = saVar != null ? saVar.l : null;
-            int hashCode = charSequence.hashCode();
-            int hashCode2 = spannableStringBuilder != null ? spannableStringBuilder.hashCode() : 0;
-            int hashCode3 = str != null ? str.hashCode() : 0;
-            Point point = AndroidUtilities.displaySize;
-            boolean z10 = point.x > point.y;
-            if (this.m0 != hashCode || this.n0 != hashCode2 || this.o0 != hashCode3 || this.l0 != z10 || this.p0 != i11 || waVar.H) {
-                this.m0 = hashCode;
-                this.n0 = hashCode2;
-                this.o0 = hashCode3;
-                this.l0 = z10;
-                this.p0 = i11;
-                waVar.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-                va[] vaVarArr = waVar.r;
-                int a2 = vaVarArr[0].a(i11);
-                va vaVar2 = vaVarArr[1];
-                i12 = AndroidUtilities.lerp(a2, vaVar2 != null ? vaVar2.a(i11) : 0, waVar.G);
-                if (i12 < 0) {
-                    ((ViewGroup.MarginLayoutParams) this.r0.getLayoutParams()).topMargin = i12;
-                    this.q0 = -1;
-                    return;
-                }
-                return;
-            }
-        }
-        i12 = -1;
-        if (i12 < 0) {
-        }
-    }
-
-    @Override // org.telegram.ui.Components.a80
-    public final void a(RectF rectF) {
-        va vaVar;
-        wa waVar = this.b0;
-        va[] vaVarArr = waVar.r;
-        if (vaVarArr == null || (vaVar = vaVarArr[0]) == null || vaVar.p == null) {
-            return;
-        }
-        float f7 = waVar.E;
-        float lerp = (AndroidUtilities.lerp(vaVar.m, vaVar.l, waVar.w) + waVar.F) - waVar.r[0].p.b();
-        float width = getWidth() - waVar.E;
-        int i10 = waVar.F;
-        va vaVar2 = waVar.r[0];
-        rectF.set(f7, lerp, width, AndroidUtilities.lerp(vaVar2.m, vaVar2.l, waVar.w) + i10);
-        float x10 = waVar.getX() - getScrollX();
-        FrameLayout frameLayout = this.r0;
-        rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
-    }
-
-    @Override // org.telegram.ui.Components.a80
-    public final void b(Canvas canvas, float f7) {
-        va vaVar;
-        wa waVar = this.b0;
-        va[] vaVarArr = waVar.r;
-        va[] vaVarArr2 = waVar.r;
-        if (vaVarArr == null || (vaVar = vaVarArr[0]) == null || vaVar.p == null) {
-            draw(canvas);
-            return;
-        }
-        canvas.save();
-        float x10 = waVar.getX() - getScrollX();
-        FrameLayout frameLayout = this.r0;
-        float x11 = frameLayout.getX() + x10 + waVar.E;
-        float y3 = frameLayout.getY() + (waVar.getY() - getScrollY()) + waVar.F;
-        va vaVar2 = vaVarArr2[0];
-        canvas.translate(x11, (y3 + AndroidUtilities.lerp(vaVar2.m, vaVar2.l, waVar.w)) - vaVarArr2[0].p.b());
-        sa saVar = vaVarArr2[0].p;
-        int width = getWidth();
-        int i10 = waVar.E;
-        saVar.a(canvas, (width - i10) - i10);
-        canvas.restore();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void computeScroll() {
-        OverScroller overScroller;
-        super.computeScroll();
-        if (this.c0 || this.d0 == 0.0f || (overScroller = this.k0) == null || !overScroller.isFinished()) {
-            return;
-        }
-        K(0.0f);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.t0) {
-            return;
-        }
-        int width = getWidth();
-        int height = getHeight();
-        int scrollY = getScrollY();
-        int save = canvas.save();
-        int i10 = height + scrollY;
-        canvas.clipRect(0, scrollY, width, this.u0 + i10);
-        canvas.clipRect(0, scrollY, width, i10);
-        super.draw(canvas);
-        canvas.restoreToCount(save);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean f(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
-        iArr[1] = 0;
-        if (this.c0) {
-            float f7 = this.d0;
-            if ((f7 > 0.0f && i11 > 0) || (f7 < 0.0f && i11 < 0)) {
-                float f10 = i11;
-                float f11 = f7 - f10;
-                if (f7 > 0.0f) {
-                    if (f11 < 0.0f) {
-                        this.d0 = 0.0f;
-                        iArr[1] = (int) (f10 + f11 + 0);
-                    } else {
-                        this.d0 = f11;
-                        iArr[1] = i11;
-                    }
-                } else if (f11 > 0.0f) {
-                    this.d0 = 0.0f;
-                    iArr[1] = (int) (f10 + f11 + 0);
-                } else {
-                    this.d0 = f11;
-                    iArr[1] = i11;
-                }
-                this.b0.setTranslationY(this.d0);
-                this.W.x();
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void g(int i10, int i11, int i12, int i13, int[] iArr, int i14, int[] iArr2) {
-        float f7;
-        if (i13 != 0) {
-            int round = Math.round((1.0f - Math.abs((-this.d0) / this.r0.getTop())) * i13);
-            if (round != 0) {
-                boolean z10 = this.c0;
-                wa waVar = this.b0;
-                if (z10) {
-                    float f10 = this.d0 - round;
-                    this.d0 = f10;
-                    waVar.setTranslationY(f10);
-                } else if (!this.a0.f) {
-                    OverScroller overScroller = this.k0;
-                    float currVelocity = overScroller != null ? overScroller.getCurrVelocity() : Float.NaN;
-                    if (Float.isNaN(currVelocity)) {
-                        f7 = 0.0f;
-                    } else {
-                        Point point = AndroidUtilities.displaySize;
-                        float min = Math.min(point.x > point.y ? 3000.0f : 5000.0f, currVelocity);
-                        round = (int) ((round * min) / currVelocity);
-                        f7 = min * (-this.e0);
-                    }
-                    if (round != 0) {
-                        float f11 = this.d0 - round;
-                        this.d0 = f11;
-                        waVar.setTranslationY(f11);
-                    }
-                    K(f7);
-                }
-            }
-        }
-        this.W.x();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getBottomFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    public float getMaxTop() {
-        FrameLayout frameLayout = this.r0;
-        return frameLayout.getTop() - (frameLayout.getBottom() - getMeasuredHeight());
-    }
-
-    public int getPendingMarginTopDiff() {
-        int i10 = this.q0;
-        if (i10 >= 0) {
-            return i10 - ((ViewGroup.MarginLayoutParams) this.r0.getLayoutParams()).topMargin;
-        }
-        return 0;
-    }
-
-    public float getProgressToBlackout() {
-        return Utilities.clamp((getScrollY() - this.b0.getTranslationY()) / Math.min(this.p0, AndroidUtilities.dp(40.0f)), 1.0f, 0.0f);
-    }
-
-    public float getTextTop() {
-        return (this.b0.getTranslationY() + this.r0.getTop()) - getScrollY();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getTopFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void i(int i10) {
-        super.i(i10);
-        this.e0 = Math.signum(i10);
-        this.f0 = 0.0f;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        if (getParent() != null) {
-            ((View) getParent()).invalidate();
-        }
-        this.W.x();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002c, code lost:
-    
-        if (r6.getY() < (r0.getTranslationY() + (r5.r0.getTop() - getScrollY()))) goto L23;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        wa waVar = this.b0;
-        if (waVar.w == 1.0f && !this.s0) {
-            if (motionEvent.getAction() == 0) {
-            }
-            if (motionEvent.getAction() == 0) {
-                this.w0 = true;
-                invalidate();
-            } else if (this.w0 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
-                this.w0 = false;
-                invalidate();
-            }
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        if (this.w0) {
-            this.w0 = false;
-            invalidate();
-        }
-        return false;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        L(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        super.onMeasure(i10, i11);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002c, code lost:
-    
-        if (r6.getY() < (r0.getTranslationY() + (r5.r0.getTop() - getScrollY()))) goto L23;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        wa waVar = this.b0;
-        if (waVar.w == 1.0f && !this.s0) {
-            if (motionEvent.getAction() == 0) {
-            }
-            if (motionEvent.getAction() == 0) {
-                this.w0 = true;
-                invalidate();
-            } else if (this.w0 && (motionEvent.getAction() == 1 || motionEvent.getAction() == 3)) {
-                this.w0 = false;
-                invalidate();
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        if (this.w0) {
-            this.w0 = false;
-            invalidate();
-        }
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void scrollBy(int i10, int i11) {
-        super.scrollBy(i10, i11);
-        invalidate();
-    }
-
-    public void F(org.telegram.ui.Components.z5 z5Var) {
-    }
-
-    public void I(sa saVar) {
-    }
-
-    public void G(CharacterStyle characterStyle, View view) {
-    }
-
-    public void H(URLSpan uRLSpan, View view, a3.d dVar) {
     }
 }

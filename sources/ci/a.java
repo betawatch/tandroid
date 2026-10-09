@@ -17,9 +17,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.fr;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -34,7 +34,7 @@ public final class a extends View {
     public float s;
     public float v;
 
-    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public a(Context context, MediaController.PhotoEntry photoEntry, String str, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         String str2;
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -44,13 +44,13 @@ public final class a extends View {
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.i6.K0(false));
+        setBackground(org.telegram.ui.ActionBar.i6.L0(false));
         setMinimumWidth(AndroidUtilities.dp(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
         int i11 = org.telegram.ui.ActionBar.i6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         String str3 = "";
@@ -60,20 +60,20 @@ public final class a extends View {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        sq sqVar = new sq(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        sqVar.w = false;
+        fr frVar = new fr(org.telegram.ui.ActionBar.i6.c0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        frVar.w = false;
         int dp = AndroidUtilities.dp(18.0f);
         int dp2 = AndroidUtilities.dp(18.0f);
-        sqVar.e = dp;
-        sqVar.f = dp2;
+        frVar.e = dp;
+        frVar.f = dp2;
         if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, frVar, (Object) null, 0);
         } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(sqVar);
+            imageReceiver.setImageBitmap(frVar);
         } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, frVar, (Object) null, 0);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, frVar, (Object) null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);

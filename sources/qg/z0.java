@@ -15,12 +15,12 @@ import ci.a7;
 import ci.b6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.oa;
+import org.telegram.ui.Components.qa;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z0 extends org.telegram.ui.Cells.u1 {
-    public final oa Ge;
+    public final qa Ge;
     public final float[] He;
     public final Path Ie;
     public final Paint Je;
@@ -32,7 +32,7 @@ public final class z0 extends org.telegram.ui.Cells.u1 {
     public z0(a1 a1Var, Context context, int i10, com.google.firebase.messaging.n nVar) {
         super(context, i10, false, null, nVar);
         this.Me = a1Var;
-        this.Ge = new oa(a1Var.d, this, 10, false);
+        this.Ge = new qa(a1Var.d, this, 10, false);
         this.He = new float[8];
         this.Ie = new Path();
         Paint paint = new Paint();

@@ -1,48 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gt0 extends org.telegram.ui.Components.x00 {
-    public final /* synthetic */ os0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class gt0 extends org.telegram.ui.Components.mr0 {
+    public final /* synthetic */ FrameLayout b1;
+    public final /* synthetic */ boolean c1;
+    public final /* synthetic */ PhotoViewer d1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gt0(PhotoViewer photoViewer, os0 os0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = os0Var;
+    public gt0(PhotoViewer photoViewer, Context context, zn znVar, ArrayList arrayList, String str, Integer num, FrameLayout frameLayout, boolean z10) {
+        super(context, znVar, arrayList, null, null, false, str, null, false, true, false, num, null);
+        this.d1 = photoViewer;
+        this.b1 = frameLayout;
+        this.c1 = z10;
     }
 
-    @Override // org.telegram.ui.Components.wo0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.m3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.n3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
+    @Override // org.telegram.ui.Components.mr0
+    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.x21(this, this.b1, iVar, i10, 9), 250L);
+        }
     }
 
-    @Override // org.telegram.ui.Components.x00
-    public final float k() {
-        return this.f.q3.c();
-    }
-
-    @Override // org.telegram.ui.Components.x00
-    public final void l(float f7) {
-        this.e.b(f7);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.q3.h(f7, false);
-        photoViewer.r3.invalidate();
+    @Override // org.telegram.ui.Components.mr0, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        if (this.c1) {
+            AndroidUtilities.runOnUIThread(new tk0(this, 17), 50L);
+        }
+        PhotoViewer photoViewer = this.d1;
+        photoViewer.d0.softInputMode = 272;
+        try {
+            ((WindowManager) photoViewer.y.getSystemService("window")).updateViewLayout(photoViewer.g0, photoViewer.d0);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
     }
 }

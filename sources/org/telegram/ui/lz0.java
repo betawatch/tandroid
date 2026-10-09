@@ -1,46 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Stories.ProfileStoriesView;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lz0 extends ProfileStoriesView {
-    public final /* synthetic */ Context t0;
-    public final /* synthetic */ ProfileActivity u0;
+public final class lz0 extends s4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lz0(ProfileActivity profileActivity, Context context, int i10, long j3, boolean z10, k0 k0Var, iz0 iz0Var, org.telegram.ui.ActionBar.d6 d6Var, Context context2) {
-        super(context, i10, j3, z10, k0Var, iz0Var, d6Var);
-        this.u0 = profileActivity;
-        this.t0 = context2;
+    public /* synthetic */ lz0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.Stories.ProfileStoriesView
-    public final void e(a6.i iVar) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        ProfileActivity profileActivity = this.u0;
-        long a2 = profileActivity.a();
-        ai.l9 storiesController = profileActivity.getMessagesController().getStoriesController();
-        boolean I = storiesController.I(a2);
-        Context context = this.t0;
-        if (I || storiesController.K(a2) || storiesController.N(a2)) {
-            profileActivity.getOrCreateStoryViewer().D(context, a2, iVar);
-            return;
+    @Override // s4.t0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.F0 && i10 != 2) {
+                    profileActivity.F0 = false;
+                }
+                org.telegram.ui.ActionBar.v0 v0Var = profileActivity.U0;
+                if (v0Var != null) {
+                    boolean z10 = i10 != 0;
+                    profileActivity.z1 = z10;
+                    v0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
+                }
+                k01 k01Var = profileActivity.O;
+                boolean z11 = profileActivity.a.I1;
+                k01Var.getClass();
+                break;
         }
-        TLRPC.UserFull userFull = profileActivity.v2;
-        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, iVar);
-            return;
-        }
-        TLRPC.ChatFull chatFull = profileActivity.u2;
-        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
-            profileActivity.K3();
-        } else {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, iVar);
+    }
+
+    @Override // s4.t0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                org.telegram.ui.Components.z40 z40Var = profileActivity.X;
+                if (z40Var != null) {
+                    z40Var.b(true);
+                }
+                profileActivity.A3();
+                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {
+                    profileActivity.R3(false);
+                }
+                k01 k01Var = profileActivity.O;
+                k01Var.setPinnedToTop(k01Var.getY() <= 0.0f);
+                profileActivity.U4();
+                break;
         }
     }
 }

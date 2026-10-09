@@ -6,19 +6,19 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class k2 extends View {
     public final t70 a;
-    public final org.telegram.ui.Components.sq b;
+    public final org.telegram.ui.Components.fr b;
 
     public k2(Context context, t70 t70Var) {
         super(context);
         this.a = t70Var;
-        org.telegram.ui.Components.sq sqVar = new org.telegram.ui.Components.sq(new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Qk, false)), org.telegram.ui.ActionBar.i6.U0(context, R.drawable.greydivider_bottom, -16777216));
-        this.b = sqVar;
-        sqVar.w = true;
-        setBackgroundDrawable(sqVar);
+        org.telegram.ui.Components.fr frVar = new org.telegram.ui.Components.fr(new ColorDrawable(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Qk, false)), org.telegram.ui.ActionBar.i6.V0(context, R.drawable.greydivider_bottom, -16777216));
+        this.b = frVar;
+        frVar.w = true;
+        setBackgroundDrawable(frVar);
         setImportantForAccessibility(2);
     }
 
@@ -27,6 +27,6 @@ public final class k2 extends View {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
         int i12 = org.telegram.ui.ActionBar.i6.Qk;
         ((i4) this.a).getClass();
-        org.telegram.ui.ActionBar.i6.v1(this.b, org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
+        org.telegram.ui.ActionBar.i6.w1(this.b, org.telegram.ui.ActionBar.i6.x0(null, i12, false), false);
     }
 }

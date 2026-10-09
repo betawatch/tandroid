@@ -10,7 +10,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class RadialProgressView extends View {
     public float E;
@@ -55,8 +55,8 @@ public class RadialProgressView extends View {
         b(j3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x004a  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00db  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -211,12 +211,12 @@ public class RadialProgressView extends View {
         this.h = z10;
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.f = new RectF();
         this.J = true;
         this.x = AndroidUtilities.dp(40.0f);
-        this.r = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h6, d6Var);
+        this.r = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.h6, e6Var);
         this.s = new DecelerateInterpolator();
         this.v = new AccelerateInterpolator();
         Paint paint = new Paint(1);

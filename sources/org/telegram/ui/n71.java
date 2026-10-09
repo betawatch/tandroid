@@ -1,153 +1,79 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n71 extends org.telegram.ui.Components.cb implements NotificationCenter.NotificationCenterDelegate {
-    public final org.telegram.ui.Components.qz X;
-    public final ci.d Y;
-    public final ai.d9 Z;
-    public final HashMap a0;
-    public final int b0;
-    public int c0;
-    public org.telegram.ui.Components.w61 d0;
+public final class n71 implements TextWatcher {
+    public final nz0 a = new nz0(this, 17);
+    public final /* synthetic */ u71 b;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public n71(org.telegram.ui.ActionBar.n2 n2Var, long j3, int i10, org.telegram.ui.Components.uc ucVar) {
-        super(r2, n2Var, new org.telegram.ui.Components.bb(r3));
-        Activity parentActivity = n2Var.getParentActivity();
-        org.telegram.ui.Components.bb bbVar = new org.telegram.ui.Components.bb();
-        bbVar.a = false;
-        bbVar.c = false;
-        bbVar.f = 2;
-        bbVar.g = n2Var.getResourceProvider();
-        this.a0 = new HashMap();
-        this.b0 = i10;
-        ai.d9 A = MessagesController.getInstance(n2Var.getCurrentAccount()).getStoriesController().A(j3, 1, -1, true);
-        this.Z = A;
-        A.p(30, false);
-        this.K = AndroidUtilities.dp(12.0f);
-        fixNavigationBar();
-        I();
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, this.resourcesProvider));
-        int i11 = this.backgroundPaddingLeft;
-        frameLayout.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(frameLayout, w7.z5.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
-        View view = new View(getContext());
-        view.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d7, this.resourcesProvider));
-        frameLayout.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
-        ci.d dVar = new ci.d(getContext(), this.resourcesProvider, true);
-        this.Y = dVar;
-        dVar.g(LocaleController.getString(R.string.StoriesAlbumMenuAddStories), false, true);
-        dVar.setEnabled(false);
-        dVar.setOnClickListener(new py0(3, this, ucVar));
-        frameLayout.addView(dVar, w7.z5.d(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
-        getContext();
-        org.telegram.ui.Components.qz qzVar = new org.telegram.ui.Components.qz(i10, false);
-        this.X = qzVar;
-        qzVar.O = new l71(this);
-        org.telegram.ui.Components.zl0 zl0Var = this.d;
-        int i12 = this.backgroundPaddingLeft;
-        zl0Var.setPadding(i12, 0, i12, 0);
-        this.d.setSelectorType(9);
-        this.d.setSelectorDrawableColor(0);
-        this.d.setLayoutManager(qzVar);
-        this.d.setOnItemClickListener(new t21(this, 5));
-        this.d.setOnItemLongClickListener(new jl0(this, 18));
-        this.d.setOnScrollListener(new m71(this));
-        this.d0.N(true);
+    public n71(u71 u71Var) {
+        this.b = u71Var;
     }
 
-    public final void N() {
-        org.telegram.ui.Components.qz qzVar = this.X;
-        int L0 = qzVar.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(qzVar.N0() - L0) + 1;
-        ai.d9 d9Var = this.Z;
-        if (d9Var != null) {
-            int i10 = L0 + abs;
-            int i11 = d9Var.i();
-            int i12 = this.b0;
-            if (i10 > i11 - i12) {
-                d9Var.p(Math.min(100, Math.max(1, i12 / 2) * i12 * i12), false);
-            }
+    public final void a() {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
+        u71 u71Var = this.b;
+        String obj = u71Var.c0.getText().toString();
+        tL_channelParticipantsSearch.q = obj;
+        t71 t71Var = u71Var.g0;
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = t71Var.c;
+        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
+            z10 = !TextUtils.equals(channelParticipantsFilter.q, obj);
+            z11 = false;
+        } else {
+            z10 = true;
+            z11 = true;
         }
-    }
-
-    public final boolean O(int i10, View view) {
-        org.telegram.ui.Components.h61 G;
-        org.telegram.ui.Components.w61 w61Var = this.d0;
-        if (w61Var == null || i10 == 0 || (G = w61Var.G(i10 - 1)) == null) {
-            return false;
-        }
-        Object obj = G.G;
-        if (obj instanceof MessageObject) {
-            MessageObject messageObject = (MessageObject) obj;
-            int id2 = messageObject.getId();
-            Integer valueOf = Integer.valueOf(id2);
-            HashMap hashMap = this.a0;
-            if (hashMap.containsKey(valueOf)) {
-                hashMap.remove(Integer.valueOf(id2));
-                G.e = false;
-                ((org.telegram.ui.Cells.t7) view).i(false, true);
+        t71Var.c = tL_channelParticipantsSearch;
+        if (z10) {
+            if (z11) {
+                t71Var.r = false;
+                if (t71Var.n >= 0) {
+                    ConnectionsManager.getInstance(t71Var.a).cancelRequest(t71Var.n, true);
+                    t71Var.n = -1;
+                }
+                t71Var.f = false;
+                t71Var.d.clear();
+                t71Var.h = false;
             } else {
-                hashMap.put(Integer.valueOf(id2), messageObject.storyItem);
-                G.e = true;
-                ((org.telegram.ui.Cells.t7) view).i(true, true);
+                t71Var.r = true;
+                t71Var.h = false;
             }
-            boolean z10 = !hashMap.isEmpty();
-            ci.d dVar = this.Y;
-            dVar.setEnabled(z10);
-            dVar.b(hashMap.size(), true);
+            t71Var.b();
         }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.storiesListUpdated && ((ai.d9) objArr[0]) == this.Z) {
-            this.d0.N(false);
-            N();
+        org.telegram.ui.Components.c71 c71Var = u71Var.i0;
+        if (c71Var != null) {
+            c71Var.N(true);
         }
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c0 = this.Z.o();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesListUpdated);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length = editable.length();
+        nz0 nz0Var = this.a;
+        if (length <= 0) {
+            AndroidUtilities.cancelRunOnUIThread(nz0Var);
+            a();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(nz0Var);
+            AndroidUtilities.runOnUIThread(nz0Var, 300L);
+        }
     }
 
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.Z.z(this.c0);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesListUpdated);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final org.telegram.ui.Components.yl0 v(org.telegram.ui.Components.zl0 zl0Var) {
-        org.telegram.ui.Components.w61 w61Var = new org.telegram.ui.Components.w61(zl0Var, getContext(), this.currentAccount, 0, false, new c5(this, 25), this.resourcesProvider);
-        this.d0 = w61Var;
-        w61Var.r = false;
-        return w61Var;
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.StoriesAlbumMenuAddStories);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -1,20 +1,85 @@
 package ci;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class z3 extends w3 {
-    public final /* synthetic */ String k0;
+public final class z3 extends org.telegram.ui.ActionBar.f3 {
+    public final y3 b;
+    public ValueAnimator c;
+    public o1.k d;
+    public Boolean e;
+    public Utilities.Callback f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z3(int i10, Context context, ai.d dVar, float f7, String str) {
-        super(i10, context, dVar, null, true, f7, false, false);
-        this.k0 = str;
+    public z3(Context context, org.telegram.ui.ActionBar.e6 e6Var, String str, float f7) {
+        super(1, context, e6Var, false);
+        fixNavigationBar(-14737633);
+        y3 y3Var = new y3(UserConfig.selectedAccount, context, new ai.d(), f7, str);
+        this.b = y3Var;
+        y3Var.G.setVisibility(8);
+        y3Var.setMultipleOnClick(false);
+        y3Var.setOnBackClickListener(new w3(this, 0));
+        y3Var.setOnSelectListener(new bi.v(this, 4));
+        sw0 sw0Var = new sw0(context, null);
+        this.containerView = sw0Var;
+        int i10 = this.backgroundPaddingLeft;
+        sw0Var.setPadding(i10, 0, i10, 0);
+        this.containerView.addView(y3Var);
     }
 
-    @Override // ci.w3
-    public final String getTitle() {
-        return this.k0;
+    @Override // org.telegram.ui.ActionBar.f3
+    public final boolean canDismissWithSwipe() {
+        return !this.b.w;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        p(false, new w3(this, 1));
+        super.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.b.g()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        dismiss();
+        return true;
+    }
+
+    public final void p(boolean z10, w3 w3Var) {
+        y3 y3Var = this.b;
+        float translationY = y3Var.getTranslationY();
+        float height = z10 ? 0.0f : (this.containerView.getHeight() - y3Var.g()) + (AndroidUtilities.navigationBarHeight * 2.5f);
+        this.e = Boolean.valueOf(z10);
+        if (z10) {
+            o1.k kVar = new o1.k(y3Var, o1.h.n, height);
+            this.d = kVar;
+            kVar.u.a(0.75f);
+            this.d.u.b(350.0f);
+            this.d.a(new x3(this, height, w3Var));
+            this.d.h();
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
+        this.c = ofFloat;
+        ofFloat.addUpdateListener(new ai.a(this, 18));
+        this.c.addListener(new ai.z(3, this, w3Var));
+        this.c.setDuration(450L);
+        this.c.setInterpolator(hs.h);
+        this.c.start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        super.show();
+        p(true, null);
     }
 }

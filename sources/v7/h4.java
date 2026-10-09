@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h4 implements ia.d {
     public static final h4 a = new h4();
 
     static {
-        sa.e.t(sa.e.l(h.class, sa.e.p(5, sa.e.l(h.class, sa.e.p(4, sa.e.l(h.class, sa.e.p(3, sa.e.l(h.class, sa.e.p(2, sa.e.l(h.class, new e(1)))))))))));
+        sc.v.t(sc.v.l(h.class, new e(1)));
     }
 
     @Override // ia.a

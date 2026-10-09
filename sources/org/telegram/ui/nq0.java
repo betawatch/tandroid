@@ -1,58 +1,90 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nq0 extends org.telegram.ui.ActionBar.f5 {
-    public final nl0 f = new nl0(this, 12);
-    public final /* synthetic */ wq0 h;
+public final class nq0 extends org.telegram.ui.ActionBar.n2 {
+    public Bitmap a;
+    public BitmapDrawable b;
+    public mq0 c;
+    public lq0 d;
+    public boolean e;
+    public boolean f;
 
-    public nq0(wq0 wq0Var) {
-        this.h = wq0Var;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackgroundColor(-13421773);
+        this.actionBar.C(-12763843, false);
+        this.actionBar.setTitleColor(-1);
+        this.actionBar.D(-1, false);
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.CropImage));
+        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 14));
+        this.actionBar.o().h(1, R.drawable.ic_ab_done, LocaleController.getString(R.string.Done), AndroidUtilities.dp(56.0f));
+        lq0 lq0Var = new lq0(this, context);
+        this.d = lq0Var;
+        this.fragmentView = lq0Var;
+        lq0Var.G = getArguments().getBoolean("freeform", false);
+        this.fragmentView.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
-    public final boolean b() {
-        this.h.finishFragment();
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void p(ci.h2 h2Var) {
-        this.h.b0(h2Var);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        int max;
+        if (this.a == null) {
+            String string = getArguments().getString("photoPath");
+            Uri uri = (Uri) getArguments().getParcelable("photoUri");
+            if (string == null && uri == null) {
+                return false;
+            }
+            if (string != null && !sc.v.u(string)) {
+                return false;
+            }
+            if (AndroidUtilities.isTablet()) {
+                max = AndroidUtilities.dp(520.0f);
+            } else {
+                Point point = AndroidUtilities.displaySize;
+                max = Math.max(point.x, point.y);
+            }
+            float f7 = max;
+            Bitmap loadBitmap = ImageLoader.loadBitmap(string, uri, f7, f7, true);
+            this.a = loadBitmap;
+            if (loadBitmap == null) {
+                return false;
+            }
+        }
+        this.b = new BitmapDrawable(this.a);
+        super.onFragmentCreate();
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void q(EditText editText) {
-        int i10;
-        if (editText.getText().length() != 0) {
-            nl0 nl0Var = this.f;
-            AndroidUtilities.cancelRunOnUIThread(nl0Var);
-            AndroidUtilities.runOnUIThread(nl0Var, 1200L);
-            return;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        Bitmap bitmap = this.a;
+        if (bitmap != null && !this.e) {
+            bitmap.recycle();
+            this.a = null;
         }
-        wq0 wq0Var = this.h;
-        wq0Var.f.clear();
-        wq0Var.h.clear();
-        wq0Var.v = null;
-        wq0Var.s = true;
-        wq0Var.r = false;
-        if (wq0Var.x != 0) {
-            i10 = ((org.telegram.ui.ActionBar.n2) wq0Var).currentAccount;
-            ConnectionsManager.getInstance(i10).cancelRequest(wq0Var.x, true);
-            wq0Var.x = 0;
-        }
-        wq0Var.N.d.setText(LocaleController.getString(R.string.NoRecentSearches));
-        wq0Var.N.e(false, true);
-        wq0Var.j0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void n() {
+        this.b = null;
     }
 }

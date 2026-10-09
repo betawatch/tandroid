@@ -3,9 +3,9 @@ package ia;
 import java.lang.annotation.Annotation;
 import java.util.Collections;
 import java.util.Map;
-import n4.y;
+import n4.x;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -16,8 +16,8 @@ public final class c {
         this.b = map;
     }
 
-    public static y a(String str) {
-        return new y(str);
+    public static x a(String str) {
+        return new x(str, 20);
     }
 
     public static c c(String str) {

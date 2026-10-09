@@ -5,7 +5,7 @@ import b2.r0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -18,24 +18,24 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final of.b k;
+    public final pf.b k;
     public final p0 l;
 
     public u(byte[] bArr, int i10) {
-        a4.h hVar = new a4.h(bArr, bArr.length);
-        hVar.q(i10 * 8);
-        this.a = hVar.i(16);
-        this.b = hVar.i(16);
-        this.c = hVar.i(24);
-        this.d = hVar.i(24);
-        int i11 = hVar.i(20);
+        a4.g gVar = new a4.g(bArr, bArr.length);
+        gVar.q(i10 * 8);
+        this.a = gVar.i(16);
+        this.b = gVar.i(16);
+        this.c = gVar.i(24);
+        this.d = gVar.i(24);
+        int i11 = gVar.i(20);
         this.e = i11;
         this.f = d(i11);
-        this.g = hVar.i(3) + 1;
-        int i12 = hVar.i(5) + 1;
+        this.g = gVar.i(3) + 1;
+        int i12 = gVar.i(5) + 1;
         this.h = i12;
         this.i = a(i12);
-        this.j = hVar.k(36);
+        this.j = gVar.k(36);
         this.k = null;
         this.l = null;
     }
@@ -112,13 +112,13 @@ public final class u {
         rVar.I = this.g;
         rVar.J = this.e;
         String str = e2.d0.a;
-        rVar.K = e2.d0.B(this.h, ByteOrder.LITTLE_ENDIAN);
+        rVar.K = e2.d0.A(this.h, ByteOrder.LITTLE_ENDIAN);
         rVar.t = Collections.singletonList(bArr);
         rVar.k = p0Var;
         return new b2.s(rVar);
     }
 
-    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, of.b bVar, p0 p0Var) {
+    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, pf.b bVar, p0 p0Var) {
         this.a = i10;
         this.b = i11;
         this.c = i12;

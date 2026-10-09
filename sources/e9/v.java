@@ -11,7 +11,7 @@ import java.util.Set;
 import org.telegram.tgnet.TLObject;
 import v7.s6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v extends AbstractMap implements Serializable {
     public static final Object s = new Object();
@@ -265,22 +265,23 @@ public final class v extends AbstractMap implements Serializable {
         return sVar2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00f2  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x0105 -> B:47:0x00eb). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00f1  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x0104 -> B:47:0x00ea). Please report as a decompilation issue!!! */
     @Override // java.util.AbstractMap, java.util.Map
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object put(Object obj, Object obj2) {
         int i10;
-        int min;
-        int i11 = 1;
+        int i11;
+        int i12 = 32;
+        int i13 = 1;
         if (f()) {
             if (!f()) {
                 throw new IllegalStateException("Arrays already allocated");
             }
-            int i12 = this.e;
-            int max = Math.max(i12 + 1, 2);
+            int i14 = this.e;
+            int max = Math.max(i14 + 1, 2);
             int highestOneBit = Integer.highestOneBit(max);
             if (max > ((int) (1.0d * highestOneBit)) && (highestOneBit = highestOneBit << 1) <= 0) {
                 highestOneBit = TLObject.FLAG_30;
@@ -288,53 +289,65 @@ public final class v extends AbstractMap implements Serializable {
             int max2 = Math.max(4, highestOneBit);
             this.a = q.f(max2);
             this.e = q.o(this.e, 32 - Integer.numberOfLeadingZeros(max2 - 1), 31);
-            this.b = new int[i12];
-            this.c = new Object[i12];
-            this.d = new Object[i12];
+            this.b = new int[i14];
+            this.c = new Object[i14];
+            this.d = new Object[i14];
         }
         Map b10 = b();
         if (b10 != null) {
             return b10.put(obj, obj2);
         }
         int[] h = h();
-        Object[] i13 = i();
+        Object[] i15 = i();
         Object[] j3 = j();
-        int i14 = this.f;
-        int i15 = i14 + 1;
+        int i16 = this.f;
+        int i17 = i16 + 1;
         int t10 = q.t(obj);
         int c10 = c();
-        int i16 = t10 & c10;
+        int i18 = t10 & c10;
         Object obj3 = this.a;
         Objects.requireNonNull(obj3);
-        int u10 = q.u(i16, obj3);
-        if (u10 != 0) {
-            int i17 = ~c10;
-            int i18 = t10 & i17;
-            int i19 = 0;
+        int u10 = q.u(i18, obj3);
+        if (u10 == 0) {
+            if (i17 > c10) {
+                c10 = k(c10, (c10 + 1) * (c10 < 32 ? 4 : 2), t10, i16);
+            } else {
+                Object obj4 = this.a;
+                Objects.requireNonNull(obj4);
+                q.v(i18, i17, obj4);
+            }
+            i10 = 1;
+        } else {
+            int i19 = ~c10;
+            int i20 = t10 & i19;
+            int i21 = 0;
             while (true) {
-                int i20 = u10 - i11;
-                int i21 = h[i20];
-                if ((i21 & i17) == i18 && s6.a(obj, i13[i20])) {
-                    Object obj4 = j3[i20];
-                    j3[i20] = obj2;
-                    return obj4;
+                int i22 = u10 - i13;
+                i10 = i13;
+                int i23 = h[i22];
+                int i24 = i12;
+                if ((i23 & i19) == i20 && s6.a(obj, i15[i22])) {
+                    Object obj5 = j3[i22];
+                    j3[i22] = obj2;
+                    return obj5;
                 }
-                int i22 = i21 & c10;
-                int i23 = i19 + 1;
-                if (i22 != 0) {
-                    i19 = i23;
-                    u10 = i22;
-                    i11 = 1;
+                int i25 = i23 & c10;
+                int i26 = i21 + 1;
+                if (i25 != 0) {
+                    i21 = i26;
+                    u10 = i25;
+                    i13 = i10;
+                    i12 = i24;
                 } else {
-                    if (i23 >= 9) {
+                    if (i26 >= 9) {
                         LinkedHashMap linkedHashMap = new LinkedHashMap(c() + 1, 1.0f);
                         if (!isEmpty()) {
-                            i10 = 0;
-                            while (i10 >= 0) {
-                                linkedHashMap.put(i()[i10], j()[i10]);
-                                int i24 = i10 + 1;
-                                if (i24 < this.f) {
-                                    i10 = i24;
+                            i11 = 0;
+                            while (i11 >= 0) {
+                                linkedHashMap.put(i()[i11], j()[i11]);
+                                int i27 = i11 + 1;
+                                if (i27 < this.f) {
+                                    i11 = i27;
                                 }
                             }
                             this.a = linkedHashMap;
@@ -344,8 +357,8 @@ public final class v extends AbstractMap implements Serializable {
                             this.e += 32;
                             return linkedHashMap.put(obj, obj2);
                         }
-                        i10 = -1;
-                        while (i10 >= 0) {
+                        i11 = -1;
+                        while (i11 >= 0) {
                         }
                         this.a = linkedHashMap;
                         this.b = null;
@@ -354,30 +367,28 @@ public final class v extends AbstractMap implements Serializable {
                         this.e += 32;
                         return linkedHashMap.put(obj, obj2);
                     }
-                    if (i15 > c10) {
-                        c10 = k(c10, (c10 + 1) * (c10 < 32 ? 4 : 2), t10, i14);
+                    if (i17 > c10) {
+                        c10 = k(c10, (c10 + 1) * (c10 < i24 ? 4 : 2), t10, i16);
                     } else {
-                        h[i20] = q.o(i21, i15, c10);
+                        h[i22] = q.o(i23, i17, c10);
                     }
                 }
             }
-        } else if (i15 > c10) {
-            c10 = k(c10, (c10 + 1) * (c10 < 32 ? 4 : 2), t10, i14);
-        } else {
-            Object obj5 = this.a;
-            Objects.requireNonNull(obj5);
-            q.v(i16, i15, obj5);
         }
         int length = h().length;
-        if (i15 > length && (min = Math.min(1073741823, (Math.max(1, length >>> 1) + length) | 1)) != length) {
-            this.b = Arrays.copyOf(h(), min);
-            this.c = Arrays.copyOf(i(), min);
-            this.d = Arrays.copyOf(j(), min);
+        if (i17 > length) {
+            int i28 = i10;
+            int min = Math.min(1073741823, (Math.max(i28, length >>> 1) + length) | i28);
+            if (min != length) {
+                this.b = Arrays.copyOf(h(), min);
+                this.c = Arrays.copyOf(i(), min);
+                this.d = Arrays.copyOf(j(), min);
+            }
         }
-        h()[i14] = q.o(t10, 0, c10);
-        i()[i14] = obj;
-        j()[i14] = obj2;
-        this.f = i15;
+        h()[i16] = q.o(t10, 0, c10);
+        i()[i16] = obj;
+        j()[i16] = obj2;
+        this.f = i17;
         this.e += 32;
         return null;
     }

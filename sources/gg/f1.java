@@ -1,54 +1,64 @@
 package gg;
 
-import ai.ya;
-import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.a00;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f1 implements Runnable {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ a0.i e;
-    public final /* synthetic */ MessagesController f;
-    public final /* synthetic */ k1 h;
+public final class f1 {
+    public final int a;
+    public final long b;
+    public final long c;
+    public boolean e;
+    public final /* synthetic */ int g;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
+    public boolean d = false;
+    public long f = -1;
 
-    public f1(k1 k1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.i iVar, MessagesController messagesController) {
-        this.h = k1Var;
-        this.a = chat;
-        this.b = str;
-        this.c = j3;
-        this.d = arrayList;
-        this.e = iVar;
-        this.f = messagesController;
+    public f1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, long j3, long j10, int i11) {
+        this.g = i11;
+        this.h = notificationCenterDelegate;
+        this.a = i10;
+        this.b = j3;
+        this.c = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        k1 k1Var = this.h;
-        if (k1Var.E != this) {
+    public final void a() {
+        boolean N;
+        switch (this.g) {
+            case 0:
+                N = ((j1) this.h).N();
+                break;
+            default:
+                a00 a00Var = (a00) this.h;
+                if (a00Var.t1 == null || a00Var.getVisibility() != 0 || !a00Var.K0) {
+                    N = false;
+                    break;
+                } else {
+                    N = true;
+                    break;
+                }
+        }
+        this.d = N;
+        if (N) {
             return;
         }
-        TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = MessagesController.getInputChannel(this.a);
-        tL_channels_getParticipants.limit = 20;
-        tL_channels_getParticipants.offset = 0;
-        TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
-        int i10 = tL_channelParticipantsMentions.flags;
-        tL_channelParticipantsMentions.flags = i10 | 1;
-        tL_channelParticipantsMentions.q = this.b;
-        long j3 = this.c;
-        if (j3 != 0) {
-            tL_channelParticipantsMentions.flags = i10 | 3;
-            tL_channelParticipantsMentions.top_msg_id = (int) j3;
+        if (this.e) {
+            MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 2, 0);
         }
-        tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
-        int i11 = k1Var.i0 + 1;
-        k1Var.i0 = i11;
-        k1Var.j0 = ConnectionsManager.getInstance(k1Var.f).sendRequest(tL_channels_getParticipants, new ya(this, i11, this.d, this.e, this.f, 1));
+        this.f = -1L;
+    }
+
+    public final void b() {
+        if (this.d) {
+            if (this.f == -1) {
+                this.f = System.currentTimeMillis();
+            } else if (System.currentTimeMillis() - this.f > 2000) {
+                this.e = true;
+                this.f = System.currentTimeMillis();
+                MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 10, 0);
+            }
+        }
     }
 }

@@ -1,94 +1,92 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.security.AccessController;
+import java.security.PrivilegedActionException;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d4 extends v7.p5 {
-    @Override // v7.p5
-    public final b4 a(h4 h4Var) {
-        b4 b4Var;
-        b4 b4Var2 = b4.d;
-        synchronized (h4Var) {
+    public static final Unsafe a;
+    public static final long b;
+    public static final long c;
+    public static final long d;
+    public static final long e;
+    public static final long f;
+
+    static {
+        Unsafe unsafe;
+        try {
             try {
-                b4Var = h4Var.b;
-                if (b4Var != b4Var2) {
-                    h4Var.b = b4Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
+                unsafe = Unsafe.getUnsafe();
+            } catch (PrivilegedActionException e7) {
+                throw new RuntimeException("Could not initialize intrinsics", e7.getCause());
             }
+        } catch (SecurityException unused) {
+            unsafe = (Unsafe) AccessController.doPrivileged(new c4());
         }
-        return b4Var;
-    }
-
-    @Override // v7.p5
-    public final g4 b(h4 h4Var) {
-        g4 g4Var;
-        g4 g4Var2 = g4.c;
-        synchronized (h4Var) {
-            try {
-                g4Var = h4Var.c;
-                if (g4Var != g4Var2) {
-                    h4Var.c = g4Var2;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return g4Var;
-    }
-
-    @Override // v7.p5
-    public final void c(g4 g4Var, g4 g4Var2) {
-        g4Var.b = g4Var2;
-    }
-
-    @Override // v7.p5
-    public final void d(g4 g4Var, Thread thread) {
-        g4Var.a = thread;
-    }
-
-    @Override // v7.p5
-    public final boolean e(h4 h4Var, b4 b4Var, b4 b4Var2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.b != b4Var) {
-                    return false;
-                }
-                h4Var.b = b4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        try {
+            c = unsafe.objectFieldOffset(f4.class.getDeclaredField("c"));
+            b = unsafe.objectFieldOffset(f4.class.getDeclaredField("b"));
+            d = unsafe.objectFieldOffset(f4.class.getDeclaredField("a"));
+            e = unsafe.objectFieldOffset(e4.class.getDeclaredField("a"));
+            f = unsafe.objectFieldOffset(e4.class.getDeclaredField("b"));
+            a = unsafe;
+        } catch (NoSuchFieldException e10) {
+            throw new RuntimeException(e10);
+        } catch (RuntimeException e11) {
+            throw e11;
         }
     }
 
     @Override // v7.p5
-    public final boolean f(h4 h4Var, Object obj, Object obj2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.a != obj) {
-                    return false;
-                }
-                h4Var.a = obj2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
+    public final z3 a(f4 f4Var) {
+        z3 z3Var;
+        z3 z3Var2 = z3.d;
+        do {
+            z3Var = f4Var.b;
+            if (z3Var2 == z3Var) {
+                break;
             }
-        }
+        } while (!e(f4Var, z3Var, z3Var2));
+        return z3Var;
     }
 
     @Override // v7.p5
-    public final boolean g(h4 h4Var, g4 g4Var, g4 g4Var2) {
-        synchronized (h4Var) {
-            try {
-                if (h4Var.c != g4Var) {
-                    return false;
-                }
-                h4Var.c = g4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
+    public final e4 b(f4 f4Var) {
+        e4 e4Var;
+        e4 e4Var2 = e4.c;
+        do {
+            e4Var = f4Var.c;
+            if (e4Var2 == e4Var) {
+                break;
             }
-        }
+        } while (!g(f4Var, e4Var, e4Var2));
+        return e4Var;
+    }
+
+    @Override // v7.p5
+    public final void c(e4 e4Var, e4 e4Var2) {
+        a.putObject(e4Var, f, e4Var2);
+    }
+
+    @Override // v7.p5
+    public final void d(e4 e4Var, Thread thread) {
+        a.putObject(e4Var, e, thread);
+    }
+
+    @Override // v7.p5
+    public final boolean e(f4 f4Var, z3 z3Var, z3 z3Var2) {
+        return h4.a(a, f4Var, b, z3Var, z3Var2);
+    }
+
+    @Override // v7.p5
+    public final boolean f(f4 f4Var, Object obj, Object obj2) {
+        return h4.a(a, f4Var, d, obj, obj2);
+    }
+
+    @Override // v7.p5
+    public final boolean g(f4 f4Var, e4 e4Var, e4 e4Var2) {
+        return h4.a(a, f4Var, c, e4Var, e4Var2);
     }
 }

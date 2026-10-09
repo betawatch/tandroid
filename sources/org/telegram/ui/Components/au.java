@@ -1,37 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class au implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
-
-    public /* synthetic */ au(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
-    }
-
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                fi.o oVar = (fi.o) this.b;
-                oVar.requestFocus();
-                AndroidUtilities.showKeyboard(oVar);
-                break;
-            case 1:
-                fi.o oVar2 = (fi.o) this.b;
-                oVar2.requestFocus();
-                AndroidUtilities.showKeyboard(oVar2);
-                break;
-            default:
-                f4 f4Var = (f4) this.b;
-                f4Var.requestFocus();
-                AndroidUtilities.showKeyboard(f4Var);
-                break;
-        }
-    }
+public abstract class au {
+    public static final hs a = new hs(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final hs b = new hs(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final hs c = new hs(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final hs d = new hs(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final hs e = new hs(0.455d, 0.03d, 0.515d, 0.955d);
 }

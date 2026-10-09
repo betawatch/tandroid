@@ -5,19 +5,19 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.tr;
-import s4.c1;
-import w7.z5;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.p61;
+import s4.d1;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public abstract class h0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final jh.f b;
     public final FrameLayout c;
-    public e71 d;
+    public k71 d;
     public boolean e;
     public final /* synthetic */ k0 f;
 
@@ -29,7 +29,7 @@ public abstract class h0 extends FrameLayout {
         this.c = frameLayout;
         frameLayout.setPadding(0, 0, 0, 0);
         frameLayout.setClipToPadding(true);
-        addView(frameLayout, z5.e(-1, -1, 119));
+        addView(frameLayout, x5.e(-1, -1, 119));
         jh.f fVar = new jh.f(getContext());
         this.b = fVar;
         fVar.setupColorKey(i6.a7);
@@ -37,14 +37,14 @@ public abstract class h0 extends FrameLayout {
         fVar.setFadeHeightBottom(AndroidUtilities.dp(24.0f));
         fVar.setFadeZoneTop(AndroidUtilities.dp(64.0f) + AndroidUtilities.statusBarHeight);
         fVar.a.b(-AndroidUtilities.dp(20.0f), false);
-        frameLayout.addView(fVar, z5.g());
+        frameLayout.addView(fVar, x5.g());
     }
 
     public final void a() {
-        this.d.j(new ai.r(this, 7));
+        this.d.j(new ai.r(this, 6));
         g0 g0Var = new g0(this);
         g0Var.n(350L);
-        g0Var.o(tr.h);
+        g0Var.o(hs.h);
         g0Var.C = false;
         g0Var.m = false;
         this.d.setItemAnimator(g0Var);
@@ -54,9 +54,9 @@ public abstract class h0 extends FrameLayout {
         float f7 = AndroidUtilities.displaySize.y;
         for (int i10 = 0; i10 < this.d.getChildCount(); i10++) {
             View childAt = this.d.getChildAt(i10);
-            c1 T = this.d.T(childAt);
+            d1 T = this.d.T(childAt);
             if (T != null) {
-                h61 G = this.d.f3.G(T.b());
+                p61 G = this.d.W2.G(T.b());
                 if (G != null && G.d != 99) {
                     f7 = Math.min(childAt.getY() + this.c.getPaddingTop(), f7);
                 }

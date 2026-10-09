@@ -1,38 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class us0 extends org.telegram.ui.yn {
-    public boolean Kc;
-    public final /* synthetic */ int Lc;
-    public final /* synthetic */ qv0 Mc;
+public final class us0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public us0(qv0 qv0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.Mc = qv0Var;
-        this.Lc = i10;
-        this.Kc = true;
+    public us0(rs0 rs0Var) {
+        this.a = 1;
+        this.b = org.telegram.ui.ActionBar.i6.d0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
-        qv0 qv0Var = this.Mc;
-        bv0 bv0Var = qv0Var.S;
-        if (this.Kc) {
-            if (this.h0 != null) {
-                ka("");
-                this.h0.H(bv0Var.w, false);
-            }
-            org.telegram.ui.vk vkVar = this.m1;
-            if (vkVar != null) {
-                vkVar.e(bv0Var.x, false);
-            }
-            qv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), bv0Var.x, bv0Var.w, bv0Var.n, bv0Var.h, this.Lc, bv0Var.v, bv0Var.s);
-            this.Kc = false;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
+                break;
+            default:
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
+                break;
         }
-        super.onTransitionAnimationStart(z10, z11);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i10);
+                break;
+            default:
+                this.b.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i10 = this.a;
+    }
+
+    public us0(vs0 vs0Var) {
+        this.a = 0;
+        int dp = AndroidUtilities.dp(16.0f);
+        int dp2 = AndroidUtilities.dp(16.0f);
+        int i10 = org.telegram.ui.ActionBar.i6.d6;
+        org.telegram.ui.ActionBar.e6 e6Var = vs0Var.c;
+        this.b = org.telegram.ui.ActionBar.i6.d0(dp, dp2, org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(i10, e6Var), org.telegram.ui.ActionBar.i6.m1(0.04f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var))));
+        this.c = new Rect();
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e00 implements org.telegram.ui.Components.ol0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class e00 implements org.telegram.ui.Components.gm0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ f10 b;
 
@@ -14,20 +14,20 @@ public final /* synthetic */ class e00 implements org.telegram.ui.Components.ol0
         this.b = f10Var;
     }
 
-    @Override // org.telegram.ui.Components.ol0
+    @Override // org.telegram.ui.Components.gm0
     public boolean d(int i10, View view) {
         f10 f10Var = this.b;
         w00 w00Var = (w00) f10Var.P.get(i10);
-        if (w00Var == null || !(view instanceof org.telegram.ui.Cells.za)) {
+        if (w00Var == null || !(view instanceof org.telegram.ui.Cells.xa)) {
             return false;
         }
-        org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
-        f10Var.v0(w00Var, zaVar.getName(), zaVar.getCurrentObject(), w00Var.g);
+        org.telegram.ui.Cells.xa xaVar = (org.telegram.ui.Cells.xa) view;
+        f10Var.v0(w00Var, xaVar.getName(), xaVar.getCurrentObject(), w00Var.g);
         return true;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 f10 f10Var = this.b;
@@ -40,7 +40,7 @@ public final /* synthetic */ class e00 implements org.telegram.ui.Components.ol0
                 }
                 TLRPC.TL_messages_updateDialogFilter tL_messages_updateDialogFilter = new TLRPC.TL_messages_updateDialogFilter();
                 tL_messages_updateDialogFilter.id = f10Var.r.id;
-                f10Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new no(20, f10Var, b2Var2));
+                f10Var.getConnectionsManager().sendRequest(tL_messages_updateDialogFilter, new oo(20, f10Var, b2Var2));
                 break;
             case 2:
                 this.b.q0();

@@ -15,12 +15,12 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import v7.h8;
-import v7.i8;
+import v7.d8;
+import v7.g8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public class f extends h8 {
+public class f extends d8 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
@@ -68,18 +68,18 @@ public class f extends h8 {
         d = method;
     }
 
-    @Override // v7.h8
+    @Override // v7.d8
     public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = i8.d(context);
+                File d10 = g8.d(context);
                 if (d10 == null) {
                     return null;
                 }
                 try {
-                    if (!i8.b(d10, resources, fVar.f)) {
+                    if (!g8.b(d10, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
@@ -105,13 +105,13 @@ public class f extends h8 {
         }
     }
 
-    @Override // v7.h8
-    public Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    @Override // v7.d8
+    public Typeface b(Context context, o0.h[] hVarArr, int i10) {
         File file;
         String readlink;
-        if (iVarArr.length >= 1) {
+        if (hVarArr.length >= 1) {
             try {
-                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(iVarArr, i10).a, "r", null);
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(hVarArr, i10).a, "r", null);
                 if (openFileDescriptor != null) {
                     try {
                         try {

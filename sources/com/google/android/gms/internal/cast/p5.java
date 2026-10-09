@@ -1,171 +1,77 @@
 package com.google.android.gms.internal.cast;
 
 import j$.util.DesugarCollections;
-import java.nio.charset.Charset;
-import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p5 extends w4 implements RandomAccess, q5 {
-    public final List b;
+public final class p5 extends r5 {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    static {
-        new p5();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(int i10) {
-        super(true);
-        ArrayList arrayList = new ArrayList(i10);
-        this.b = arrayList;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ void add(int i10, Object obj) {
-        i();
-        this.b.add(i10, (String) obj);
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i10, Collection collection) {
-        i();
-        if (collection instanceof q5) {
-            collection = ((q5) collection).zzh();
-        }
-        boolean addAll = this.b.addAll(i10, collection);
-        ((AbstractList) this).modCount++;
-        return addAll;
-    }
-
-    @Override // com.google.android.gms.internal.cast.q5
-    public final Object c(int i10) {
-        return this.b.get(i10);
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final void clear() {
-        i();
-        this.b.clear();
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public final String get(int i10) {
-        String str;
-        List list = this.b;
-        Object obj = list.get(i10);
-        if (obj instanceof String) {
-            return (String) obj;
-        }
-        if (!(obj instanceof z4)) {
-            byte[] bArr = (byte[]) obj;
-            String str2 = new String(bArr, n5.a);
-            g1 g1Var = w6.a;
-            int length = bArr.length;
-            g1Var.getClass();
-            if (g1.a(length, bArr)) {
-                list.set(i10, str2);
-            }
-            return str2;
-        }
-        z4 z4Var = (z4) obj;
-        Charset charset = n5.a;
-        if (z4Var.o() == 0) {
-            str = "";
+    @Override // com.google.android.gms.internal.cast.r5
+    public final void a(Object obj, long j3) {
+        Object unmodifiableList;
+        List list = (List) s6.h(obj, j3);
+        if (list instanceof o5) {
+            unmodifiableList = ((o5) list).zzd();
         } else {
-            str = new String(z4Var.b, 0, z4Var.o(), charset);
+            if (c.isAssignableFrom(list.getClass())) {
+                return;
+            }
+            if ((list instanceof d6) && (list instanceof k5)) {
+                u4 u4Var = (u4) ((k5) list);
+                boolean z10 = u4Var.a;
+                if (z10 && z10) {
+                    u4Var.a = false;
+                    return;
+                }
+                return;
+            }
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        int o9 = z4Var.o();
-        byte[] bArr2 = z4Var.b;
-        w6.a.getClass();
-        if (g1.a(o9, bArr2)) {
-            list.set(i10, str);
-        }
-        return str;
+        s6.l(obj, j3, unmodifiableList);
     }
 
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        i();
-        Object remove = this.b.remove(i10);
-        ((AbstractList) this).modCount++;
-        if (remove instanceof String) {
-            return (String) remove;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.internal.cast.r5
+    public final void b(Object obj, long j3, Object obj2) {
+        n5 n5Var;
+        List list = (List) s6.h(obj2, j3);
+        int size = list.size();
+        List list2 = (List) s6.h(obj, j3);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof o5 ? new n5(size) : ((list2 instanceof d6) && (list2 instanceof k5)) ? ((k5) list2).zzg(size) : new ArrayList(size);
+            s6.l(obj, j3, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList = new ArrayList(list2.size() + size);
+                arrayList.addAll(list2);
+                s6.l(obj, j3, arrayList);
+                n5Var = arrayList;
+            } else if (list2 instanceof n6) {
+                n5 n5Var2 = new n5(list2.size() + size);
+                n5Var2.addAll(n5Var2.b.size(), (n6) list2);
+                s6.l(obj, j3, n5Var2);
+                n5Var = n5Var2;
+            } else if ((list2 instanceof d6) && (list2 instanceof k5)) {
+                k5 k5Var = (k5) list2;
+                if (!((u4) k5Var).a) {
+                    list2 = k5Var.zzg(list2.size() + size);
+                    s6.l(obj, j3, list2);
+                }
+            }
+            list2 = n5Var;
         }
-        if (!(remove instanceof z4)) {
-            return new String((byte[]) remove, n5.a);
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
         }
-        z4 z4Var = (z4) remove;
-        Charset charset = n5.a;
-        if (z4Var.o() == 0) {
-            return "";
+        if (size2 > 0) {
+            list = list2;
         }
-        return new String(z4Var.b, 0, z4Var.o(), charset);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        i();
-        Object obj2 = this.b.set(i10, (String) obj);
-        if (obj2 instanceof String) {
-            return (String) obj2;
-        }
-        if (!(obj2 instanceof z4)) {
-            return new String((byte[]) obj2, n5.a);
-        }
-        z4 z4Var = (z4) obj2;
-        Charset charset = n5.a;
-        if (z4Var.o() == 0) {
-            return "";
-        }
-        return new String(z4Var.b, 0, z4Var.o(), charset);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.b.size();
-    }
-
-    @Override // com.google.android.gms.internal.cast.q5
-    public final q5 zzd() {
-        return this.a ? new p6(this) : this;
-    }
-
-    @Override // com.google.android.gms.internal.cast.m5
-    public final m5 zzg(int i10) {
-        List list = this.b;
-        if (i10 < list.size()) {
-            throw new IllegalArgumentException();
-        }
-        ArrayList arrayList = new ArrayList(i10);
-        arrayList.addAll(list);
-        return new p5(arrayList);
-    }
-
-    @Override // com.google.android.gms.internal.cast.q5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.b);
-    }
-
-    public p5(ArrayList arrayList) {
-        super(true);
-        this.b = arrayList;
-    }
-
-    public p5() {
-        super(false);
-        this.b = Collections.EMPTY_LIST;
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        return addAll(this.b.size(), collection);
+        s6.l(obj, j3, list);
     }
 }

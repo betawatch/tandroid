@@ -1,39 +1,13 @@
 package w3;
 
-import b2.s;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o {
-    public final int a;
-    public final int b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final long f;
-    public final s g;
-    public final int h;
-    public final long[] i;
-    public final long[] j;
-    public final int k;
-    public final p[] l;
-
-    public o(int i10, int i11, long j3, long j10, long j11, long j12, s sVar, int i12, p[] pVarArr, int i13, long[] jArr, long[] jArr2) {
-        this.a = i10;
-        this.b = i11;
-        this.c = j3;
-        this.d = j10;
-        this.e = j11;
-        this.f = j12;
-        this.g = sVar;
-        this.h = i12;
-        this.l = pVarArr;
-        this.k = i13;
-        this.i = jArr;
-        this.j = jArr2;
-    }
-
-    public final o a(s sVar) {
-        return new o(this.a, this.b, this.c, this.d, this.e, this.f, sVar, this.h, this.l, this.k, this.i, this.j);
-    }
+    public static final a5.a d = new a5.a(new a4.l(new d9.b(':'), 13));
+    public static final a5.a e = new a5.a(new a4.l(new d9.b('*'), 13));
+    public final ArrayList a = new ArrayList();
+    public int b = 0;
+    public int c;
 }

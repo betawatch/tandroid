@@ -1,89 +1,34 @@
 package ed;
 
-import bf.s;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class k implements ef.a {
-    public final char a;
-    public int b = 0;
-    public final LinkedList c = new LinkedList();
+public abstract class k {
+    public final /* synthetic */ int a;
+    public final int b;
 
-    public k(char c10) {
-        this.a = c10;
+    public /* synthetic */ k(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // ef.a
-    public final char a() {
-        return this.a;
+    public static String a(int i10) {
+        return "" + ((char) ((i10 >> 24) & 255)) + ((char) ((i10 >> 16) & 255)) + ((char) ((i10 >> 8) & 255)) + ((char) (i10 & 255));
     }
 
-    @Override // ef.a
-    public final int b(ye.b bVar, ye.b bVar2) {
-        ef.a aVar;
-        int i10 = bVar.g;
-        LinkedList linkedList = this.c;
-        Iterator it = linkedList.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                aVar = (ef.a) linkedList.getFirst();
-                break;
-            }
-            aVar = (ef.a) it.next();
-            if (aVar.c() <= i10) {
-                break;
-            }
+    public static void c(StringBuilder sb2) {
+        if (sb2 != null) {
+            sb2.delete(0, sb2.length());
         }
-        return aVar.b(bVar, bVar2);
     }
 
-    @Override // ef.a
-    public final int c() {
-        return this.b;
-    }
+    public abstract k b();
 
-    @Override // ef.a
-    public final void d(s sVar, s sVar2, int i10) {
-        ef.a aVar;
-        LinkedList linkedList = this.c;
-        Iterator it = linkedList.iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                aVar = (ef.a) linkedList.getFirst();
-                break;
-            } else {
-                aVar = (ef.a) it.next();
-                if (aVar.c() <= i10) {
-                    break;
-                }
-            }
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return a(this.b);
+            default:
+                return super.toString();
         }
-        aVar.d(sVar, sVar2, i10);
-    }
-
-    @Override // ef.a
-    public final char e() {
-        return this.a;
-    }
-
-    public final void f(ef.a aVar) {
-        int c10 = aVar.c();
-        LinkedList linkedList = this.c;
-        ListIterator listIterator = linkedList.listIterator();
-        while (listIterator.hasNext()) {
-            int c11 = ((ef.a) listIterator.next()).c();
-            if (c10 > c11) {
-                listIterator.previous();
-                listIterator.add(aVar);
-                return;
-            } else if (c10 == c11) {
-                throw new IllegalArgumentException("Cannot add two delimiter processors for char '" + this.a + "' and minimum length " + c10);
-            }
-        }
-        linkedList.add(aVar);
-        this.b = c10;
     }
 }

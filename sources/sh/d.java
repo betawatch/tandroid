@@ -3,47 +3,47 @@ package sh;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.gk0;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.q6;
 import yf.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d extends c {
-    public final o6 d;
-    public final oj0 e;
-    public final le.b f;
+    public final q6 d;
+    public final gk0 e;
+    public final me.b f;
     public float h;
 
-    public d(u1 u1Var, d6 d6Var) {
-        super(d6Var);
-        oj0 oj0Var = new oj0(u1Var);
-        this.e = oj0Var;
-        oj0Var.d(null, true, false);
-        oj0Var.v = 650.0f;
-        oj0Var.e(0.69f, false);
-        oj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new le.b(u1Var, tr.h, 260L);
-        o6 o6Var = new o6(true, false, false, false);
-        this.d = o6Var;
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.t(AndroidUtilities.dp(13.0f));
-        o6Var.b = 17;
-        int v02 = i6.v0(i6.i6, d6Var);
-        if (this.b != v02) {
-            i6.B1(this.a, v02, false);
-            this.b = v02;
+    public d(u1 u1Var, e6 e6Var) {
+        super(e6Var);
+        gk0 gk0Var = new gk0(u1Var);
+        this.e = gk0Var;
+        gk0Var.d(null, true, false);
+        gk0Var.v = 650.0f;
+        gk0Var.e(0.69f, false);
+        gk0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new me.b(u1Var, hs.h, 260L);
+        q6 q6Var = new q6(true, false, false);
+        this.d = q6Var;
+        q6Var.x(AndroidUtilities.bold());
+        q6Var.w(AndroidUtilities.dp(13.0f));
+        q6Var.b = 17;
+        int w02 = i6.w0(i6.i6, e6Var);
+        if (this.b != w02) {
+            i6.C1(this.a, w02, false);
+            this.b = w02;
         }
     }
 
     @Override // sh.c
     public final void a(int i10) {
         this.a.setAlpha(i10);
-        this.d.w = i10;
+        this.d.B = i10;
     }
 
     public final float b() {
@@ -51,7 +51,7 @@ public final class d extends c {
     }
 
     public final void c(int i10) {
-        this.d.r(i10);
+        this.d.u(i10);
         this.e.o = i10;
     }
 

@@ -4,21 +4,21 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.vt0;
+import org.telegram.ui.bu0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class g0 extends d {
     public final Paint h;
     public long n;
     public float r;
     public float s;
-    public final /* synthetic */ vt0 v;
+    public final /* synthetic */ bu0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(vt0 vt0Var, Context context, f0 f0Var) {
+    public g0(bu0 bu0Var, Context context, f0 f0Var) {
         super(context, f0Var);
-        this.v = vt0Var;
+        this.v = bu0Var;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -29,9 +29,9 @@ public final class g0 extends d {
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00b3  */
     /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00ac  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0076  */
     @Override // android.view.View
     /*
@@ -46,14 +46,14 @@ public final class g0 extends d {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        vt0 vt0Var = this.v;
-        j jVar = vt0Var.S0;
+        bu0 bu0Var = this.v;
+        j jVar = bu0Var.S0;
         if (jVar == null || jVar.r || !jVar.n) {
             i10 = 0;
             i11 = 0;
         } else {
             i10 = jVar.getStickyX();
-            i11 = vt0Var.S0.getStickyY();
+            i11 = bu0Var.S0.getStickyY();
         }
         if (i10 != 0) {
             float f11 = this.r;

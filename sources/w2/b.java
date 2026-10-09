@@ -8,7 +8,7 @@ import z3.i;
 import z3.j;
 import z3.m;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends l implements z3.e {
     public final String o;
@@ -54,11 +54,11 @@ public final class b extends l implements z3.e {
             if (z10) {
                 mVar.reset();
             }
-            z3.d h = mVar.h(0, limit, array);
+            z3.d s10 = mVar.s(0, limit, array);
             long j3 = iVar.e;
             long j10 = iVar.r;
             jVar2.timeUs = j3;
-            jVar2.a = h;
+            jVar2.a = s10;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }

@@ -1,104 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Color;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mq implements TextWatcher {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ View c;
+public abstract class mq extends z4.g {
+    public lq w0;
 
-    public mq(pq pqVar, int i10) {
-        this.c = pqVar;
-        this.b = i10;
+    public mq(Context context) {
+        super(context);
+        b(new kq((ti0) this));
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        int i11 = this.a;
-        int i12 = this.b;
-        View view = this.c;
-        switch (i11) {
-            case 0:
-                pq pqVar = (pq) view;
-                EditTextBoldCursor[] editTextBoldCursorArr = pqVar.E;
-                if (!pqVar.r) {
-                    pqVar.r = true;
-                    int i13 = 0;
-                    while (i13 < editable.length()) {
-                        char charAt = editable.charAt(i13);
-                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
-                            editable.replace(i13, i13 + 1, "");
-                            i13--;
-                        }
-                        i13++;
-                    }
-                    if (editable.length() != 0) {
-                        try {
-                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
-                        } catch (Exception unused) {
-                            i10 = -1;
-                        }
-                        pqVar.setColorInner(i10);
-                        int color = pqVar.getColor();
-                        if (editable.length() == 6) {
-                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
-                            editTextBoldCursorArr[i12].setSelection(editable.length());
-                        }
-                        pqVar.v[pqVar.S].a(color);
-                        pqVar.a.C0(color, pqVar.S, true);
-                        pqVar.r = false;
-                        break;
-                    } else {
-                        pqVar.r = false;
-                        break;
-                    }
-                }
-                break;
-            default:
-                NumberTextView numberTextView = (NumberTextView) view;
-                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
-                if (codePointCount >= 30) {
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
-                    break;
-                } else {
-                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
-                    break;
-                }
+    @Override // z4.g
+    @Deprecated
+    public void setAdapter(z4.a aVar) {
+        if (!(aVar instanceof lq)) {
+            throw new IllegalArgumentException();
         }
+        setAdapter((lq) aVar);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    public mq(int i10, NumberTextView numberTextView) {
-        this.b = i10;
-        this.c = numberTextView;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    public void setAdapter(lq lqVar) {
+        this.w0 = lqVar;
+        super.setAdapter((z4.a) lqVar);
+        if (lqVar != null) {
+            x(lqVar.j(), false);
+        }
     }
 }

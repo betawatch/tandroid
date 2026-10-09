@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final /* synthetic */ class c implements Runnable {
                 break;
             case 3:
                 e0 e0Var3 = this.b;
-                e0Var3.l0(0, 0, false);
+                e0Var3.m0(0, 0, false);
                 e0Var3.dismiss();
                 break;
             default:
-                e0.O(this.b);
+                e0.R(this.b);
                 break;
         }
     }

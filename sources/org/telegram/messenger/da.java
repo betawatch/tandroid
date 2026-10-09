@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a;
@@ -17,16 +17,16 @@ public final /* synthetic */ class da implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateTimerProc$157(this.c);
+                this.b.lambda$updateTimerProc$156(this.c);
                 break;
             case 1:
-                this.b.lambda$onFolderEmpty$197(this.c);
+                this.b.lambda$onFolderEmpty$196(this.c);
                 break;
             case 2:
-                this.b.lambda$ensureMessagesLoaded$462(this.c);
+                this.b.lambda$ensureMessagesLoaded$465(this.c);
                 break;
             default:
-                this.b.lambda$didAddedNewTask$81(this.c);
+                this.b.lambda$didAddedNewTask$80(this.c);
                 break;
         }
     }

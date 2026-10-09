@@ -11,7 +11,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.api.Scope;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends o6.a {
     public static final Parcelable.Creator<f> CREATOR = new m8.h(21);
@@ -51,14 +51,14 @@ public final class f extends o6.a {
             if (iBinder != null) {
                 int i14 = a.b;
                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
-                h l0Var = queryLocalInterface instanceof h ? (h) queryLocalInterface : new l0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
+                h m0Var = queryLocalInterface instanceof h ? (h) queryLocalInterface : new m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 7);
                 long clearCallingIdentity = Binder.clearCallingIdentity();
                 try {
                     try {
-                        l0 l0Var2 = (l0) l0Var;
-                        Parcel M0 = l0Var2.M0(l0Var2.O0(), 2);
-                        Account account3 = (Account) m7.a.a(M0, Account.CREATOR);
-                        M0.recycle();
+                        m0 m0Var2 = (m0) m0Var;
+                        Parcel L0 = m0Var2.L0(m0Var2.N0(), 2);
+                        Account account3 = (Account) m7.a.a(L0, Account.CREATOR);
+                        L0.recycle();
                         Binder.restoreCallingIdentity(clearCallingIdentity);
                         account2 = account3;
                     } catch (RemoteException unused) {

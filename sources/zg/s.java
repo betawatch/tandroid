@@ -1,45 +1,52 @@
 package zg;
 
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lc0;
-import yh.u3;
+import org.telegram.ui.Components.kl0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z b;
+public final class s extends kl0 {
+    public float l1;
+    public long m1;
 
-    public /* synthetic */ s(z zVar, int i10) {
-        this.a = i10;
-        this.b = zVar;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        long min = Math.min(16L, System.currentTimeMillis() - this.m1);
+        this.m1 = System.currentTimeMillis();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+        canvas.saveLayerAlpha(rectF, (int) (this.l1 * 255.0f), 31);
+        super.draw(canvas);
+        canvas.restore();
+        if (!isEnabled()) {
+            float f7 = this.l1;
+            if (f7 != 0.0f) {
+                this.l1 = Math.max(0.0f, f7 - (min / 150.0f));
+                invalidate();
+                if (this.l1 == 0.0f) {
+                    setVisibility(8);
+                    return;
+                }
+                return;
+            }
+        }
+        if (isEnabled()) {
+            float f10 = this.l1;
+            if (f10 != 1.0f) {
+                this.l1 = Math.min(1.0f, (min / 150.0f) + f10);
+                invalidate();
+            }
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.a.invalidate();
-                break;
-            default:
-                z zVar = this.b;
-                u3 u3Var = zVar.c;
-                if (u3Var.getParent() != null) {
-                    if (zVar.d) {
-                        AndroidUtilities.removeFromParent(u3Var);
-                    } else {
-                        try {
-                            zVar.b.removeView(u3Var);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    lc0 lc0Var = zVar.p;
-                    if (lc0Var != null) {
-                        lc0Var.run();
-                        break;
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 != 8 || this.l1 == 0.0f) {
+            return;
         }
+        this.l1 = 0.0f;
     }
 }

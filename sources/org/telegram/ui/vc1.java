@@ -1,22 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vc1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ pd1 a;
+public final class vc1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final RectF b;
+    public final /* synthetic */ xd1 c;
 
-    public vc1(pd1 pd1Var) {
-        this.a = pd1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vc1(xd1 xd1Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = xd1Var;
+                super(context);
+                this.b = new RectF();
+                break;
+            default:
+                this.c = xd1Var;
+                this.b = new RectF();
+                break;
+        }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        pd1 pd1Var = this.a;
-        if (pd1Var.W0 == null) {
-            pd1Var.J0[0].setVisibility(4);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                float measuredWidth = getMeasuredWidth();
+                float measuredHeight = getMeasuredHeight();
+                RectF rectF = this.b;
+                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+                xd1 xd1Var = this.c;
+                vc1 vc1Var = xd1Var.D0;
+                md1 md1Var = xd1Var.x0;
+                xc1 xc1Var = xd1Var.a;
+                org.telegram.ui.ActionBar.i6.s(vc1Var, md1Var, xc1Var);
+                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, xc1Var.F("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.i6.b1()) {
+                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, xc1Var.F("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
+            default:
+                float measuredWidth2 = getMeasuredWidth();
+                float measuredHeight2 = getMeasuredHeight();
+                RectF rectF2 = this.b;
+                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
+                xd1 xd1Var2 = this.c;
+                vc1 vc1Var2 = xd1Var2.E0;
+                md1 md1Var2 = xd1Var2.x0;
+                xc1 xc1Var2 = xd1Var2.a;
+                org.telegram.ui.ActionBar.i6.s(vc1Var2, md1Var2, xc1Var2);
+                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, xc1Var2.F("paintChatActionBackground"));
+                if (org.telegram.ui.ActionBar.i6.b1()) {
+                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, xc1Var2.F("paintChatActionBackgroundDarken"));
+                    break;
+                }
+                break;
         }
     }
 }

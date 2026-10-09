@@ -1,20 +1,111 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class zx0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ by0 b;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.getClass();
-                throw null;
-            default:
-                this.b.getClass();
-                throw null;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class zx0 extends FrameLayout {
+    public org.telegram.ui.Components.w9 a;
+    public org.telegram.ui.Cells.u1 b;
+    public Drawable c;
+    public Drawable d;
+    public org.telegram.ui.Components.z40 e;
+    public MessageObject f;
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.e.e(this.b, null, 0, 0, false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.ui.Components.w9 w9Var = this.a;
+        if (w9Var != null) {
+            w9Var.dispose();
+            this.a = null;
         }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.d;
+        Drawable t02 = org.telegram.ui.ActionBar.i6.t0();
+        if (t02 != null && this.c != t02) {
+            org.telegram.ui.Components.w9 w9Var = this.a;
+            if (w9Var != null) {
+                w9Var.dispose();
+                this.a = null;
+            }
+            this.c = t02;
+        }
+        Drawable drawable2 = this.c;
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.cd0)) {
+            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            Drawable drawable3 = this.c;
+            if (drawable3 instanceof org.telegram.ui.Components.x9) {
+                this.a = ((org.telegram.ui.Components.x9) drawable3).c(canvas, this);
+            } else {
+                drawable3.draw(canvas);
+            }
+        } else if (drawable2 instanceof BitmapDrawable) {
+            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
+                canvas.save();
+                float f7 = 2.0f / AndroidUtilities.density;
+                canvas.scale(f7, f7);
+                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
+            } else {
+                int measuredHeight = getMeasuredHeight();
+                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
+                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
+                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
+                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                int i10 = (measuredHeight - ceil2) / 2;
+                canvas.save();
+                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
+                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+            }
+            this.c.draw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
+        }
+        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchSetPressed(boolean z10) {
     }
 }

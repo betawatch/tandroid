@@ -1,68 +1,104 @@
 package org.telegram.ui;
 
+import android.view.View;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements Runnable {
+public final /* synthetic */ class pd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ me b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pd(me meVar, int i10) {
+    public /* synthetic */ pd(Object obj, int i10) {
         this.a = i10;
-        this.b = meVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
         switch (this.a) {
             case 0:
-                nf.f.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationBalanceInfoLink));
+                zd zdVar = ((ke) this.b).U0;
+                float f7 = z10 ? 1.0f : 0.0f;
+                zdVar.b(f7, f7, true);
                 break;
             case 1:
-                nf.f.s(this.b.getContext(), LocaleController.getString(R.string.MonetizationStarsInfoLink));
+                ty tyVar = (ty) this.b;
+                if (z10) {
+                    tyVar.Y.b(true);
+                    break;
+                }
                 break;
             case 2:
-                me meVar = this.b;
-                org.telegram.ui.Components.e71 e71Var = meVar.X0;
-                if (e71Var != null) {
-                    boolean z10 = meVar.e0;
-                    e71Var.f3.N((meVar.R0 != -1) == meVar.a1.a());
-                    if (z10 && meVar.R0 != -1) {
-                        meVar.a();
-                        break;
-                    }
+                wg0 wg0Var = ((fe0) this.b).W;
+                if (z10) {
+                    wg0Var.c.setEditText((EditText) view);
+                    wg0Var.c.setDispatchBackWhenEmpty(true);
+                    break;
                 }
                 break;
             case 3:
-                me meVar2 = this.b;
-                meVar2.k1 = meVar2.j1;
+                org.telegram.ui.Components.zd0 zd0Var = (org.telegram.ui.Components.zd0) this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                zd0Var.b(f10, f10, true);
                 break;
             case 4:
-                this.b.J0.setLoading(false);
+                org.telegram.ui.Components.zd0 zd0Var2 = ((oe0) this.b).x;
+                float f11 = z10 ? 1.0f : 0.0f;
+                zd0Var2.b(f11, f11, true);
                 break;
             case 5:
-                this.b.Y0.setVisibility(8);
+                org.telegram.ui.Components.zd0 zd0Var3 = ((we0) this.b).b;
+                float f12 = z10 ? 1.0f : 0.0f;
+                zd0Var3.b(f12, f12, true);
                 break;
             case 6:
-                this.b.Y0.setVisibility(8);
-                break;
-            default:
-                me meVar3 = this.b;
-                int i10 = meVar3.o0;
-                AndroidUtilities.cancelRunOnUIThread(meVar3.s1);
-                if (meVar3.j1 != meVar3.k1) {
-                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i10).getInputChannel(-meVar3.p0);
-                    tL_channels_restrictSponsoredMessages.restricted = meVar3.j1;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new wd(meVar3, 0));
+                wg0 wg0Var2 = ((ze0) this.b).y;
+                if (z10) {
+                    wg0Var2.c.setEditText((EditText) view);
+                    wg0Var2.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
+                break;
+            case 7:
+                org.telegram.ui.Components.zd0 zd0Var4 = ((kf0) this.b).a;
+                float f13 = z10 ? 1.0f : 0.0f;
+                zd0Var4.b(f13, f13, true);
+                break;
+            case 8:
+                wg0 wg0Var3 = ((zf0) this.b).s0;
+                if (z10) {
+                    wg0Var3.c.setEditText((EditText) view);
+                    wg0Var3.c.setDispatchBackWhenEmpty(true);
+                    break;
+                }
+                break;
+            case 9:
+                org.telegram.ui.Components.zd0 zd0Var5 = ((vg0) this.b).e;
+                float f14 = z10 ? 1.0f : 0.0f;
+                zd0Var5.b(f14, f14, true);
+                break;
+            case 10:
+                org.telegram.ui.Components.zd0 zd0Var6 = ((PasscodeActivity) this.b).f;
+                float f15 = z10 ? 1.0f : 0.0f;
+                zd0Var6.b(f15, f15, true);
+                break;
+            case 11:
+                ce1 ce1Var = (ce1) this.b;
+                if (!z10) {
+                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
+                    break;
+                } else {
+                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.zd0 zd0Var7 = ((TwoStepVerificationActivity) this.b).v;
+                float f16 = z10 ? 1.0f : 0.0f;
+                zd0Var7.b(f16, f16, true);
                 break;
         }
     }

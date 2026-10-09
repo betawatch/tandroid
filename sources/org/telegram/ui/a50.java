@@ -1,27 +1,37 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a50 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ h60 a;
+public final class a50 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g60 b;
 
-    public a50(h60 h60Var) {
-        this.a = h60Var;
+    public /* synthetic */ a50(g60 g60Var, int i10) {
+        this.a = i10;
+        this.b = g60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        h60 h60Var = this.a;
-        h60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        h60Var.a2.j(null);
-        AndroidUtilities.updateVisibleRows(h60Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                g60 g60Var = this.b;
+                g60Var.V.setVisibility(4);
+                g60Var.W.setVisibility(4);
+                g60Var.U.setVisibility(4);
+                break;
+            case 1:
+                this.b.h0 = null;
+                break;
+            default:
+                g60 g60Var2 = this.b;
+                g60Var2.h1 = null;
+                g60Var2.g1.setColor(g60Var2.T1 == 3 ? -1163700 : -12761513);
+                g60Var2.f1.invalidate();
+                break;
+        }
     }
 }

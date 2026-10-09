@@ -1,47 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class df0 extends r6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ gf0 c;
+public final class df0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public df0(gf0 gf0Var, int i10) {
-        super("thumbAnimationProgress", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = gf0Var;
-                super("thumbImageVisibleProgress", 0);
-                break;
-            default:
-                this.c = gf0Var;
-                break;
-        }
+    public df0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+        this.a = i10;
+        this.b = callback;
+        this.c = notificationCenterDelegateArr;
     }
 
-    @Override // org.telegram.ui.Components.r6
-    public final void c(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                this.c.r = f7;
-                ((gf0) obj).invalidate();
-                break;
-            default:
-                this.c.n = f7;
-                ((gf0) obj).invalidate();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.r);
-            default:
-                return Float.valueOf(this.c.n);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.activityPermissionsGranted;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(iArr);
+                }
+                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
+            }
         }
     }
 }

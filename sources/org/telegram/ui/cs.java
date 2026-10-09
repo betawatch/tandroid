@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class cs extends LinearLayout {
     public final Paint a;
@@ -29,11 +29,17 @@ public abstract class cs extends LinearLayout {
 
     public abstract void a();
 
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void b(int i10, int i11) {
         int i12;
         int i13;
+        int i14;
         es[] esVarArr = this.f;
-        int i14 = 0;
+        int i15 = 0;
         if (esVarArr == null || esVarArr.length != i10) {
             if (esVarArr != null) {
                 for (es esVar : esVarArr) {
@@ -41,49 +47,57 @@ public abstract class cs extends LinearLayout {
                 }
             }
             this.f = new es[i10];
-            int i15 = 0;
-            while (i15 < i10) {
-                this.f[i15] = new as(this, getContext(), i15, i10);
-                this.f[i15].setImeOptions(268435461);
-                this.f[i15].setTextSize(1, 20.0f);
-                this.f[i15].setMaxLines(1);
-                this.f[i15].setTypeface(AndroidUtilities.bold());
-                this.f[i15].setPadding(0, 0, 0, 0);
-                this.f[i15].setGravity(17);
+            int i16 = 0;
+            while (i16 < i10) {
+                this.f[i16] = new as(this, getContext(), i16, i10);
+                this.f[i16].setImeOptions(268435461);
+                this.f[i16].setTextSize(1, 20.0f);
+                this.f[i16].setMaxLines(1);
+                this.f[i16].setTypeface(AndroidUtilities.bold());
+                this.f[i16].setPadding(0, 0, 0, 0);
+                this.f[i16].setGravity(17);
                 if (i11 == 3) {
-                    this.f[i15].setEnabled(false);
-                    this.f[i15].setInputType(0);
-                    this.f[i15].setVisibility(8);
+                    this.f[i16].setEnabled(false);
+                    this.f[i16].setInputType(0);
+                    this.f[i16].setVisibility(8);
                 } else {
-                    this.f[i15].setInputType(3);
+                    this.f[i16].setInputType(3);
                 }
-                int i16 = 10;
+                int i17 = 42;
+                int i18 = 10;
                 if (i11 == 10) {
-                    i12 = 42;
-                    i13 = 47;
-                } else if (i11 == 11) {
-                    i16 = 5;
-                    i12 = 28;
-                    i13 = 34;
+                    i12 = 47;
                 } else {
-                    i16 = 7;
                     i12 = 34;
-                    i13 = 42;
+                    if (i11 == 11) {
+                        i17 = 28;
+                        i18 = 5;
+                    } else {
+                        i18 = 7;
+                        i13 = 42;
+                        i14 = 34;
+                        addView(this.f[i16], w7.x5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                        this.f[i16].addTextChangedListener(new bs(this, i16, i10));
+                        this.f[i16].setOnEditorActionListener(new ja(this, 3));
+                        i16++;
+                    }
                 }
-                addView(this.f[i15], w7.z5.t(i12, i13, 1, 0, 0, i15 != i10 + (-1) ? i16 : 0, 0));
-                this.f[i15].addTextChangedListener(new bs(this, i15, i10));
-                this.f[i15].setOnEditorActionListener(new ka(this, 3));
-                i15++;
+                i14 = i17;
+                i13 = i12;
+                addView(this.f[i16], w7.x5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                this.f[i16].addTextChangedListener(new bs(this, i16, i10));
+                this.f[i16].setOnEditorActionListener(new ja(this, 3));
+                i16++;
             }
             return;
         }
         while (true) {
             es[] esVarArr2 = this.f;
-            if (i14 >= esVarArr2.length) {
+            if (i15 >= esVarArr2.length) {
                 return;
             }
-            esVarArr2[i14].setText("");
-            i14++;
+            esVarArr2[i15].setText("");
+            i15++;
         }
     }
 
@@ -125,7 +139,7 @@ public abstract class cs extends LinearLayout {
                     }
                 }
                 float successProgress = esVar.getSuccessProgress();
-                int d = i0.a.d(successProgress, i0.a.d(esVar.getErrorProgress(), i0.a.d(esVar.getFocusedProgress(), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k6, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.l6, false)), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false)), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i7, false));
+                int d = i0.a.d(successProgress, i0.a.d(esVar.getErrorProgress(), i0.a.d(esVar.getFocusedProgress(), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.k6, false), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.l6, false)), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false)), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.i7, false));
                 Paint paint = this.a;
                 paint.setColor(d);
                 RectF rectF = AndroidUtilities.rectTmp;
@@ -191,7 +205,7 @@ public abstract class cs extends LinearLayout {
             if (i10 >= esVarArr.length) {
                 return sb2.toString();
             }
-            sb2.append(gf.b.d(esVarArr[i10].getText().toString(), false));
+            sb2.append(hf.b.d(esVarArr[i10].getText().toString(), false));
             i10++;
         }
     }

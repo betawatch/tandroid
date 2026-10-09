@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import a4.a;
+import a1.g;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzrs extends zzpz implements RandomAccess, zzsu, zzub {
     private static final double[] zza;
@@ -29,7 +29,7 @@ final class zzrs extends zzpz implements RandomAccess, zzsu, zzub {
     }
 
     private final String zzi(int i10) {
-        return a.m(i10, this.zzc, "Index:", ", Size:");
+        return g.m(i10, this.zzc, "Index:", ", Size:");
     }
 
     private final void zzj(int i10) {

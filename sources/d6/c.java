@@ -6,13 +6,14 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.support.v4.media.MediaMetadataCompat;
 import c6.e0;
+import ci.u5;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.cast.q4;
+import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final g6.b m = new g6.b("CastSession", null);
@@ -25,7 +26,7 @@ public final class c extends f {
     public e0 i;
     public e6.h j;
     public CastDevice k;
-    public q4 l;
+    public o4 l;
 
     public c(Context context, String str, String str2, b bVar, com.google.android.gms.internal.cast.r rVar, f6.i iVar) {
         super(context, str, str2);
@@ -40,7 +41,7 @@ public final class c extends f {
         q qVar = null;
         if (f7 != null) {
             try {
-                qVar = com.google.android.gms.internal.cast.e.b(context).W0(bVar, f7, jVar);
+                qVar = com.google.android.gms.internal.cast.e.b(context).V0(bVar, f7, jVar);
             } catch (RemoteException | d e7) {
                 com.google.android.gms.internal.cast.e.a.a(e7, "Unable to call %s on %s.", "newCastSessionImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             }
@@ -60,26 +61,26 @@ public final class c extends f {
                     hVar.i.remove(c0Var);
                 }
             }
-            iVar.c.L0(null);
-            cf.c cVar2 = iVar.h;
-            if (cVar2 != null) {
-                cVar2.u();
-                cVar2.e = null;
+            iVar.c.K0(null);
+            u5 u5Var = iVar.h;
+            if (u5Var != null) {
+                u5Var.D();
+                u5Var.e = null;
             }
-            cf.c cVar3 = iVar.i;
-            if (cVar3 != null) {
-                cVar3.u();
-                cVar3.e = null;
+            u5 u5Var2 = iVar.i;
+            if (u5Var2 != null) {
+                u5Var2.D();
+                u5Var2.e = null;
             }
-            android.support.v4.media.session.b0 b0Var = iVar.p;
-            if (b0Var != null) {
-                b0Var.d(null, null);
+            android.support.v4.media.session.a0 a0Var = iVar.p;
+            if (a0Var != null) {
+                a0Var.d(null, null);
                 iVar.p.e(new MediaMetadataCompat(new Bundle()));
                 iVar.j(0, null);
             }
-            android.support.v4.media.session.b0 b0Var2 = iVar.p;
-            if (b0Var2 != null) {
-                b0Var2.c(false);
+            android.support.v4.media.session.a0 a0Var2 = iVar.p;
+            if (a0Var2 != null) {
+                a0Var2.c(false);
                 iVar.p.b();
                 iVar.p = null;
             }
@@ -97,7 +98,7 @@ public final class c extends f {
             e7.a = 8403;
             e0Var.e(1, e7.a());
             e0Var.h();
-            com.google.android.gms.common.api.internal.n nVar = xa.c.D(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+            com.google.android.gms.common.api.internal.n nVar = a6.i.N(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
             n6.l.i(nVar, "Key must not be null");
             e0Var.c(nVar, 8415);
             cVar.i = null;
@@ -122,16 +123,16 @@ public final class c extends f {
                 Exception exception = task.getException();
                 if (!(exception instanceof com.google.android.gms.common.api.f)) {
                     o oVar = (o) qVar;
-                    Parcel O0 = oVar.O0();
-                    O0.writeInt(2476);
-                    oVar.S0(O0, 5);
+                    Parcel N0 = oVar.N0();
+                    N0.writeInt(2476);
+                    oVar.R0(N0, 5);
                     return;
                 }
                 int statusCode = ((com.google.android.gms.common.api.f) exception).getStatusCode();
                 o oVar2 = (o) qVar;
-                Parcel O02 = oVar2.O0();
-                O02.writeInt(statusCode);
-                oVar2.S0(O02, 5);
+                Parcel N02 = oVar2.N0();
+                N02.writeInt(statusCode);
+                oVar2.R0(N02, 5);
                 return;
             }
             g6.t tVar = (g6.t) task.getResult();
@@ -140,9 +141,9 @@ public final class c extends f {
                 bVar.b("%s() -> failure result", str);
                 int i11 = status.a;
                 o oVar3 = (o) qVar;
-                Parcel O03 = oVar3.O0();
-                O03.writeInt(i11);
-                oVar3.S0(O03, 5);
+                Parcel N03 = oVar3.N0();
+                N03.writeInt(i11);
+                oVar3.R0(N03, 5);
                 return;
             }
             bVar.b("%s() -> success result", str);
@@ -162,12 +163,12 @@ public final class c extends f {
             n6.l.h(str3);
             boolean z10 = tVar.e;
             o oVar4 = (o) qVar;
-            Parcel O04 = oVar4.O0();
-            com.google.android.gms.internal.cast.v.c(O04, dVar);
-            O04.writeString(str2);
-            O04.writeString(str3);
-            O04.writeInt(z10 ? 1 : 0);
-            oVar4.S0(O04, 4);
+            Parcel N04 = oVar4.N0();
+            com.google.android.gms.internal.cast.v.c(N04, dVar);
+            N04.writeString(str2);
+            N04.writeString(str3);
+            N04.writeInt(z10 ? 1 : 0);
+            oVar4.R0(N04, 4);
         } catch (RemoteException e7) {
             bVar.a(e7, "Unable to call %s on %s.", "methods", q.class.getSimpleName());
         }
@@ -192,7 +193,7 @@ public final class c extends f {
                 e7.a = 8403;
                 e0Var.e(1, e7.a());
                 e0Var.h();
-                com.google.android.gms.common.api.internal.n nVar = xa.c.D(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+                com.google.android.gms.common.api.internal.n nVar = a6.i.N(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
                 n6.l.i(nVar, "Key must not be null");
                 e0Var.c(nVar, 8415);
                 this.i = null;
@@ -216,13 +217,13 @@ public final class c extends f {
             e0 e0Var2 = new e0(context, eVar);
             e0Var2.E.add(new i(this));
             this.i = e0Var2;
-            com.google.android.gms.common.api.internal.p D = xa.c.D(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
+            com.google.android.gms.common.api.internal.p N = a6.i.N(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
             com.google.android.gms.common.api.internal.r rVar = new com.google.android.gms.common.api.internal.r();
             rVar.b = true;
-            a6.m mVar = new a6.m(e0Var2, 10);
+            pb.c cVar = new pb.c(e0Var2, 11);
             c6.z zVar = c6.z.c;
-            rVar.e = D;
-            rVar.c = mVar;
+            rVar.e = N;
+            rVar.c = cVar;
             rVar.d = zVar;
             rVar.f = new k6.c[]{c6.y.a};
             rVar.a = 8428;
@@ -233,10 +234,10 @@ public final class c extends f {
         if (xVar != null) {
             try {
                 v vVar = (v) xVar;
-                Parcel Q0 = vVar.Q0(vVar.O0(), 9);
+                Parcel P0 = vVar.P0(vVar.N0(), 9);
                 int i11 = com.google.android.gms.internal.cast.v.a;
-                z10 = Q0.readInt() != 0;
-                Q0.recycle();
+                z10 = P0.readInt() != 0;
+                P0.recycle();
             } catch (RemoteException e10) {
                 bVar.a(e10, "Unable to call %s on %s.", "isResuming", x.class.getSimpleName());
             }
@@ -246,9 +247,9 @@ public final class c extends f {
                 }
                 try {
                     v vVar2 = (v) xVar;
-                    Parcel O0 = vVar2.O0();
-                    O0.writeInt(2151);
-                    vVar2.S0(O0, 12);
+                    Parcel N0 = vVar2.N0();
+                    N0.writeInt(2151);
+                    vVar2.R0(N0, 12);
                     return;
                 } catch (RemoteException e11) {
                     bVar.a(e11, "Unable to call %s on %s.", "notifyFailedToStartSession", x.class.getSimpleName());
@@ -260,9 +261,9 @@ public final class c extends f {
             }
             try {
                 v vVar3 = (v) xVar;
-                Parcel O02 = vVar3.O0();
-                O02.writeInt(2153);
-                vVar3.S0(O02, 15);
+                Parcel N02 = vVar3.N0();
+                N02.writeInt(2153);
+                vVar3.R0(N02, 15);
                 return;
             } catch (RemoteException e12) {
                 bVar.a(e12, "Unable to call %s on %s.", "notifyFailedToResumeSession", x.class.getSimpleName());

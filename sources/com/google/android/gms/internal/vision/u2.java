@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u2 extends h3 {
     public final /* synthetic */ int r = 0;
@@ -47,17 +47,17 @@ public final class u2 extends h3 {
                     x6.b bVar = new x6.b(context);
                     x1 x1Var = (x1) aVar;
                     n6.l.h(x1Var);
-                    Parcel G0 = f3Var.G0();
+                    Parcel F0 = f3Var.F0();
                     int i11 = a.a;
-                    G0.writeStrongBinder(bVar);
-                    a.a(G0, x1Var);
-                    Parcel P0 = f3Var.P0(G0, 1);
-                    IBinder readStrongBinder = P0.readStrongBinder();
+                    F0.writeStrongBinder(bVar);
+                    a.a(F0, x1Var);
+                    Parcel O0 = f3Var.O0(F0, 1);
+                    IBinder readStrongBinder = O0.readStrongBinder();
                     if (readStrongBinder != null) {
                         IInterface queryLocalInterface2 = readStrongBinder.queryLocalInterface("com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector");
                         obj = queryLocalInterface2 instanceof e3 ? (e3) queryLocalInterface2 : new e3(readStrongBinder, "com.google.android.gms.vision.barcode.internal.client.INativeBarcodeDetector", 3);
                     }
-                    P0.recycle();
+                    O0.recycle();
                     break;
                 }
                 break;
@@ -73,17 +73,17 @@ public final class u2 extends h3 {
                             u8.b bVar3 = (u8.b) aVar;
                             n6.l.h(bVar3);
                             u8.e eVar3 = (u8.e) eVar2;
-                            Parcel G02 = eVar3.G0();
+                            Parcel F02 = eVar3.F0();
                             int i13 = a.a;
-                            G02.writeStrongBinder(bVar2);
-                            a.a(G02, bVar3);
-                            Parcel P02 = eVar3.P0(G02, 1);
-                            IBinder readStrongBinder2 = P02.readStrongBinder();
+                            F02.writeStrongBinder(bVar2);
+                            a.a(F02, bVar3);
+                            Parcel O02 = eVar3.O0(F02, 1);
+                            IBinder readStrongBinder2 = O02.readStrongBinder();
                             if (readStrongBinder2 != null) {
                                 IInterface queryLocalInterface4 = readStrongBinder2.queryLocalInterface("com.google.android.gms.vision.face.internal.client.INativeFaceDetector");
                                 obj = queryLocalInterface4 instanceof u8.d ? (u8.d) queryLocalInterface4 : new u8.d(readStrongBinder2, "com.google.android.gms.vision.face.internal.client.INativeFaceDetector", 3);
                             }
-                            P02.recycle();
+                            O02.recycle();
                             break;
                         }
                     }
@@ -115,21 +115,21 @@ public final class u2 extends h3 {
                 if (k()) {
                     e3 e3Var = (e3) m();
                     n6.l.h(e3Var);
-                    e3Var.R0(e3Var.G0());
+                    e3Var.Q0(e3Var.F0());
                     break;
                 }
                 break;
             default:
                 u8.d dVar = (u8.d) m();
                 n6.l.h(dVar);
-                dVar.R0(dVar.G0());
+                dVar.Q0(dVar.F0());
                 break;
         }
     }
 
     public t8.a[] n(ByteBuffer byteBuffer, g3 g3Var) {
         t8.d[] dVarArr;
-        rb.a[] aVarArr;
+        na.d[] dVarArr2;
         if (!k()) {
             return new t8.a[0];
         }
@@ -137,14 +137,14 @@ public final class u2 extends h3 {
             x6.b bVar = new x6.b(byteBuffer);
             u8.d dVar = (u8.d) m();
             n6.l.h(dVar);
-            Parcel G0 = dVar.G0();
+            Parcel F0 = dVar.F0();
             int i10 = a.a;
-            G0.writeStrongBinder(bVar);
-            a.a(G0, g3Var);
-            Parcel P0 = dVar.P0(G0, 1);
-            FaceParcel[] faceParcelArr = (FaceParcel[]) P0.createTypedArray(FaceParcel.CREATOR);
-            P0.recycle();
-            t8.a[] aVarArr2 = new t8.a[faceParcelArr.length];
+            F0.writeStrongBinder(bVar);
+            a.a(F0, g3Var);
+            Parcel O0 = dVar.O0(F0, 1);
+            FaceParcel[] faceParcelArr = (FaceParcel[]) O0.createTypedArray(FaceParcel.CREATOR);
+            O0.recycle();
+            t8.a[] aVarArr = new t8.a[faceParcelArr.length];
             for (int i11 = 0; i11 < faceParcelArr.length; i11++) {
                 FaceParcel faceParcel = faceParcelArr[i11];
                 int i12 = faceParcel.b;
@@ -153,27 +153,27 @@ public final class u2 extends h3 {
                 if (landmarkParcelArr == null) {
                     dVarArr = new t8.d[0];
                 } else {
-                    t8.d[] dVarArr2 = new t8.d[landmarkParcelArr.length];
+                    t8.d[] dVarArr3 = new t8.d[landmarkParcelArr.length];
                     for (int i13 = 0; i13 < landmarkParcelArr.length; i13++) {
                         LandmarkParcel landmarkParcel = landmarkParcelArr[i13];
-                        dVarArr2[i13] = new t8.d(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
+                        dVarArr3[i13] = new t8.d(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
                     }
-                    dVarArr = dVarArr2;
+                    dVarArr = dVarArr3;
                 }
-                u8.a[] aVarArr3 = faceParcel.y;
-                if (aVarArr3 == null) {
-                    aVarArr = new rb.a[0];
+                u8.a[] aVarArr2 = faceParcel.y;
+                if (aVarArr2 == null) {
+                    dVarArr2 = new na.d[0];
                 } else {
-                    rb.a[] aVarArr4 = new rb.a[aVarArr3.length];
-                    for (int i14 = 0; i14 < aVarArr3.length; i14++) {
-                        PointF[] pointFArr = aVarArr3[i14].a;
-                        aVarArr4[i14] = new rb.a(22);
+                    na.d[] dVarArr4 = new na.d[aVarArr2.length];
+                    for (int i14 = 0; i14 < aVarArr2.length; i14++) {
+                        PointF[] pointFArr = aVarArr2[i14].a;
+                        dVarArr4[i14] = new na.d(23);
                     }
-                    aVarArr = aVarArr4;
+                    dVarArr2 = dVarArr4;
                 }
-                aVarArr2[i11] = new t8.a(i12, dVarArr, aVarArr);
+                aVarArr[i11] = new t8.a(i12, dVarArr, dVarArr2);
             }
-            return aVarArr2;
+            return aVarArr;
         } catch (RemoteException e7) {
             Log.e("FaceNativeHandle", "Could not call native face detector", e7);
             return new t8.a[0];

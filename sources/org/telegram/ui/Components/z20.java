@@ -1,42 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z20 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d30 b;
+public interface z20 {
+    void W0();
 
-    public /* synthetic */ z20(d30 d30Var, int i10) {
-        this.a = i10;
-        this.b = d30Var;
-    }
+    boolean onDown(MotionEvent motionEvent);
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d30 d30Var = this.b;
-                d30Var.r.x = (int) floatValue;
-                d30Var.h();
-                b30 b30Var = d30Var.a;
-                if (b30Var.getParent() != null) {
-                    d30Var.n.updateViewLayout(b30Var, d30Var.r);
-                    break;
-                }
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d30 d30Var2 = this.b;
-                d30Var2.r.y = (int) floatValue2;
-                b30 b30Var2 = d30Var2.a;
-                if (b30Var2.getParent() != null) {
-                    d30Var2.n.updateViewLayout(b30Var2, d30Var2.r);
-                    break;
-                }
-                break;
-        }
-    }
+    boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+
+    void onLongPress(MotionEvent motionEvent);
+
+    boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10);
+
+    boolean onSingleTapUp(MotionEvent motionEvent);
 }

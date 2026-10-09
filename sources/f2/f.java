@@ -2,19 +2,17 @@ package f2;
 
 import b2.m0;
 import b2.o0;
-import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f implements o0 {
-    public final long a;
-    public final long b;
-    public final long c;
+    public final float a;
+    public final float b;
 
-    public f(long j3, long j10, long j11) {
-        this.a = j3;
-        this.b = j10;
-        this.c = j11;
+    public f(float f7, float f10) {
+        e2.d.a("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
+        this.a = f7;
+        this.b = f10;
     }
 
     @Override // b2.o0
@@ -31,19 +29,21 @@ public final class f implements o0 {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof f)) {
-            return false;
+        if (obj != null && f.class == obj.getClass()) {
+            f fVar = (f) obj;
+            if (this.a == fVar.a && this.b == fVar.b) {
+                return true;
+            }
         }
-        f fVar = (f) obj;
-        return this.a == fVar.a && this.b == fVar.b && this.c == fVar.c;
+        return false;
     }
 
     public final int hashCode() {
-        return z7.b(this.c) + ((z7.b(this.b) + ((z7.b(this.a) + 527) * 31)) * 31);
+        return Float.valueOf(this.b).hashCode() + ((Float.valueOf(this.a).hashCode() + 527) * 31);
     }
 
     public final String toString() {
-        return "Mp4Timestamp: creation time=" + this.a + ", modification time=" + this.b + ", timescale=" + this.c;
+        return "xyz: latitude=" + this.a + ", longitude=" + this.b;
     }
 
     @Override // b2.o0

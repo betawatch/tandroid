@@ -1,6 +1,7 @@
 package la;
 
-import ai.d4;
+import a0.k;
+import ai.e4;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ClipDescription;
@@ -21,7 +22,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.PersistableBundle;
-import android.support.v4.media.session.b0;
 import android.support.v4.media.session.v;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -42,13 +42,12 @@ import e2.a0;
 import e6.n;
 import e9.a1;
 import e9.f0;
-import e9.g0;
 import e9.k0;
 import e9.m0;
 import e9.o1;
 import g2.o;
-import gg.x1;
-import h0.k;
+import gg.w1;
+import h0.j;
 import i9.w;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -76,35 +75,39 @@ import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.zip.Adler32;
 import java.util.zip.InflaterInputStream;
+import k2.g0;
+import m.f3;
 import m.q;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.rk;
-import org.telegram.ui.Components.rk0;
-import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.sz0;
-import org.telegram.ui.Components.xi;
-import org.telegram.ui.vq0;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.sk;
+import org.telegram.ui.Components.w71;
+import org.telegram.ui.Components.xz0;
+import org.telegram.ui.Components.yi;
+import org.telegram.ui.ar0;
+import org.telegram.ui.zn;
 import org.xmlpull.v1.XmlPullParserException;
 import r0.i0;
-import s4.c1;
-import s4.h0;
-import s4.y;
-import u2.v0;
+import s4.d1;
+import s4.z;
+import u2.u0;
+import v7.s7;
 import v7.v7;
-import v7.y7;
-import w7.h6;
+import w7.i6;
+import zg.l0;
 import zg.n0;
+import zg.o0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public class h implements rk0, vq0, n5.b, t0.h {
+public class h implements jl0, ar0, n5.b, t0.h {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -114,11 +117,11 @@ public class h implements rk0, vq0, n5.b, t0.h {
         this.a = i10;
     }
 
-    public static h Q(Context context, AttributeSet attributeSet, int[] iArr, int i10) {
+    public static h R(Context context, AttributeSet attributeSet, int[] iArr, int i10) {
         return new h(context, context.obtainStyledAttributes(attributeSet, iArr, i10, 0));
     }
 
-    public static void U(File file, File file2) {
+    public static void V(File file, File file2) {
         if (file2.isDirectory() && !file2.delete()) {
             Log.e("AtomicFile", "Failed to delete file which is a directory " + file2);
         }
@@ -128,10 +131,14 @@ public class h implements rk0, vq0, n5.b, t0.h {
         Log.e("AtomicFile", "Failed to rename " + file + " to " + file2);
     }
 
-    public static Object[] q(Object[] objArr, int[] iArr) {
+    public static h n(View view) {
+        return new h(view);
+    }
+
+    public static Object[] w(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        sz0 sz0Var = g01.R;
+        xz0 xz0Var = l01.R;
         int i10 = -1;
         for (int i11 : iArr) {
             i10 = Math.max(i10, i11);
@@ -143,7 +150,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return objArr2;
     }
 
-    public static n2.f r(c0 c0Var) {
+    public static n2.e x(c0 c0Var) {
         o oVar = new o();
         oVar.c = null;
         Uri uri = c0Var.b;
@@ -174,37 +181,118 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
         HashMap hashMap = new HashMap();
         UUID uuid = b2.i.a;
-        qb.b bVar = new qb.b(26);
+        rb.a aVar = new rb.a(26);
         UUID uuid2 = c0Var.a;
         uuid2.getClass();
         boolean z11 = c0Var.d;
         boolean z12 = c0Var.e;
-        int[] f7 = y7.f(c0Var.g);
+        int[] f7 = v7.f(c0Var.g);
         int length = f7.length;
         for (int i10 = 0; i10 < length; i10++) {
             int i11 = f7[i10];
             e2.d.b(i11 == 2 || i11 == 1);
         }
-        n2.f fVar = new n2.f(uuid2, mVar, hashMap, z11, (int[]) f7.clone(), z12, bVar);
+        n2.e eVar = new n2.e(uuid2, mVar, hashMap, z11, (int[]) f7.clone(), z12, aVar);
         byte[] bArr = c0Var.h;
         byte[] copyOf = bArr != null ? Arrays.copyOf(bArr, bArr.length) : null;
-        e2.d.g(fVar.w.isEmpty());
-        fVar.K = copyOf;
-        return fVar;
+        e2.d.g(eVar.w.isEmpty());
+        eVar.K = copyOf;
+        return eVar;
     }
 
-    public Drawable A(int i10) {
+    public mf.e A(mf.f fVar) {
+        InputStream inputStream;
+        int i10 = fVar.c;
+        InputStream inputStream2 = (nf.a) this.b;
+        if (fVar.d) {
+            g0 g0Var = (g0) this.d;
+            g0Var.getClass();
+            byte[] bArr = new byte[i10];
+            int i11 = 0;
+            while (i11 < i10) {
+                int read = ((com.google.firebase.messaging.d) g0Var.b).read(bArr, i11, i10 - i11);
+                if (read <= 0) {
+                    throw new EOFException();
+                }
+                i11 += read;
+            }
+            int i12 = 0;
+            boolean z10 = false;
+            for (int i13 = 0; i13 < i10; i13++) {
+                byte b10 = bArr[i13];
+                if (!z10 || b10 != 0) {
+                    bArr[i12] = b10;
+                    i12++;
+                }
+                z10 = b10 == -1;
+            }
+            inputStream2 = new ByteArrayInputStream(bArr, 0, i12);
+            i10 = i12;
+        }
+        if (fVar.f) {
+            throw new mf.c("Frame encryption is not supported");
+        }
+        if (fVar.e) {
+            i10 = fVar.g;
+            inputStream = new InflaterInputStream(inputStream2);
+        } else {
+            inputStream = inputStream2;
+        }
+        return new mf.e(inputStream, fVar.b, i10, (mf.i) this.c, fVar);
+    }
+
+    public n2.m B(b2.k0 k0Var) {
+        n2.e eVar;
+        k0Var.b.getClass();
+        c0 c0Var = k0Var.b.c;
+        if (c0Var == null) {
+            return n2.m.z;
+        }
+        synchronized (this.b) {
+            try {
+                if (!c0Var.equals((c0) this.c)) {
+                    this.c = c0Var;
+                    this.d = x(c0Var);
+                }
+                eVar = (n2.e) this.d;
+                eVar.getClass();
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return eVar;
+    }
+
+    public View C(int i10) {
+        return ((RecyclerView) ((g0) this.b).b).getChildAt(K(i10));
+    }
+
+    public int D() {
+        return ((RecyclerView) ((g0) this.b).b).getChildCount() - ((ArrayList) this.d).size();
+    }
+
+    public ColorStateList E(int i10) {
+        int resourceId;
+        ColorStateList a2;
+        TypedArray typedArray = (TypedArray) this.c;
+        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0 || (a2 = s7.a((Context) this.b, resourceId)) == null) ? typedArray.getColorStateList(i10) : a2;
+    }
+
+    public long F() {
+        l lVar = (l) this.d;
+        if (lVar != null) {
+            return lVar.d;
+        }
+        return -1L;
+    }
+
+    public Drawable G(int i10) {
         int resourceId;
         TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0) ? typedArray.getDrawable(i10) : v7.b((Context) this.b, resourceId);
+        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0) ? typedArray.getDrawable(i10) : s7.b((Context) this.b, resourceId);
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean B() {
-        return true;
-    }
-
-    public Drawable C(int i10) {
+    public Drawable H(int i10) {
         int resourceId;
         Drawable f7;
         if (!((TypedArray) this.c).hasValue(i10) || (resourceId = ((TypedArray) this.c).getResourceId(i10, 0)) == 0) {
@@ -218,7 +306,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return f7;
     }
 
-    public Typeface D(int i10, int i11, a0 a0Var) {
+    public Typeface I(int i10, int i11, a0 a0Var) {
         a0 a0Var2;
         XmlPullParserException xmlPullParserException;
         IOException iOException;
@@ -229,7 +317,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
             }
             Context context = (Context) this.b;
             TypedValue typedValue = (TypedValue) this.d;
-            ThreadLocal threadLocal = k.a;
+            ThreadLocal threadLocal = j.a;
             if (!context.isRestricted()) {
                 Resources resources = context.getResources();
                 int i12 = 1;
@@ -244,10 +332,10 @@ public class h implements rk0, vq0, n5.b, t0.h {
                     return null;
                 }
                 int i13 = typedValue.assetCookie;
-                a0.k kVar = i0.e.b;
+                k kVar = i0.e.b;
                 Typeface typeface = (Typeface) kVar.a(i0.e.b(resources, resourceId, charSequence2, i13, i11));
                 if (typeface != null) {
-                    new Handler(Looper.getMainLooper()).post(new x1(i12, a0Var, typeface));
+                    new Handler(Looper.getMainLooper()).post(new w1(i12, a0Var, typeface));
                     return typeface;
                 }
                 try {
@@ -266,7 +354,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
                             kVar.b(i0.e.b(resources, resourceId, charSequence2, i14, i11), e11);
                         }
                         if (e11 != null) {
-                            new Handler(Looper.getMainLooper()).post(new x1(i12, a0Var, e11));
+                            new Handler(Looper.getMainLooper()).post(new w1(i12, a0Var, e11));
                         } else {
                             a0Var.b();
                         }
@@ -311,12 +399,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean E() {
-        return false;
-    }
-
-    public ByteBuffer F() {
+    public ByteBuffer J() {
         Bitmap bitmap = (Bitmap) this.d;
         if (bitmap == null) {
             return (ByteBuffer) this.c;
@@ -335,40 +418,35 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return ByteBuffer.wrap(bArr);
     }
 
-    public int G(int i10) {
+    public int K(int i10) {
         n nVar = (n) this.c;
         if (i10 < 0) {
             return -1;
         }
-        int childCount = ((hh.h) this.b).a.getChildCount();
+        int childCount = ((RecyclerView) ((g0) this.b).b).getChildCount();
         int i11 = i10;
         while (i11 < childCount) {
-            int v = i10 - (i11 - nVar.v(i11));
-            if (v == 0) {
-                while (nVar.y(i11)) {
+            int A = i10 - (i11 - nVar.A(i11));
+            if (A == 0) {
+                while (nVar.D(i11)) {
                     i11++;
                 }
                 return i11;
             }
-            i11 += v;
+            i11 += A;
         }
         return -1;
     }
 
-    public View J(int i10) {
-        return ((hh.h) this.b).a.getChildAt(i10);
+    public View L(int i10) {
+        return ((RecyclerView) ((g0) this.b).b).getChildAt(i10);
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean K() {
-        return false;
+    public int M() {
+        return ((RecyclerView) ((g0) this.b).b).getChildCount();
     }
 
-    public int L() {
-        return ((hh.h) this.b).a.getChildCount();
-    }
-
-    public boolean M() {
+    public boolean N() {
         String trim;
         ArrayDeque arrayDeque = (ArrayDeque) this.c;
         if (((String) this.d) == null) {
@@ -391,13 +469,13 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return true;
     }
 
-    public void N(View view) {
+    public void O(View view) {
         ((ArrayList) this.d).add(view);
-        hh.h hVar = (hh.h) this.b;
-        c1 U = RecyclerView.U(view);
+        g0 g0Var = (g0) this.b;
+        d1 U = RecyclerView.U(view);
         if (U != null) {
             View view2 = U.a;
-            RecyclerView recyclerView = hVar.a;
+            RecyclerView recyclerView = (RecyclerView) g0Var.b;
             int i10 = U.s;
             if (i10 != -1) {
                 U.r = i10;
@@ -405,9 +483,9 @@ public class h implements rk0, vq0, n5.b, t0.h {
                 WeakHashMap weakHashMap = i0.a;
                 U.r = view2.getImportantForAccessibility();
             }
-            if (recyclerView.c0()) {
+            if (recyclerView.b0()) {
                 U.s = 4;
-                recyclerView.J0.add(U);
+                recyclerView.K0.add(U);
             } else {
                 WeakHashMap weakHashMap2 = i0.a;
                 view2.setImportantForAccessibility(4);
@@ -415,22 +493,22 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0057, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0056, code lost:
     
-        if (r1.d != r11) goto L24;
+        if (r1.d != r11) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x005a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0059, code lost:
     
         r0 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0081, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0080, code lost:
     
-        if (r1.d != r11) goto L24;
+        if (r1.d != r11) goto L23;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void O(g2.h hVar, Uri uri, Map map, long j3, long j10, v0 v0Var) {
+    public void P(g2.h hVar, Uri uri, Map map, long j3, long j10, u0 u0Var) {
         l lVar = new l(hVar, j3, j10);
         this.d = lVar;
         if (((c3.o) this.c) != null) {
@@ -438,7 +516,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
         c3.o[] d = ((r) this.b).d(uri, map);
         int length = d.length;
-        g0 g0Var = e9.i0.b;
+        e9.g0 g0Var = e9.i0.b;
         e9.q.e(length, "expectedSize");
         f0 f0Var = new f0(length);
         boolean z10 = true;
@@ -464,7 +542,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
                     lVar.f = 0;
                     throw th2;
                 }
-                if (oVar.b(lVar)) {
+                if (oVar.a(lVar)) {
                     this.c = oVar;
                     lVar.f = 0;
                     break;
@@ -479,10 +557,10 @@ public class h implements rk0, vq0, n5.b, t0.h {
             }
             if (((c3.o) this.c) == null) {
                 StringBuilder sb2 = new StringBuilder("None of the available extractors (");
-                xa.c cVar = new xa.c(", ");
-                Iterator it = e9.q.w(e9.i0.w(d), new s0.b(29)).iterator();
+                d9.f fVar = new d9.f(", ", 0);
+                Iterator it = e9.q.w(e9.i0.w(d), new s0.b(14)).iterator();
                 StringBuilder sb3 = new StringBuilder();
-                cVar.k(sb3, it);
+                fVar.a(sb3, it);
                 sb2.append(sb3.toString());
                 sb2.append(") could read the stream.");
                 String sb4 = sb2.toString();
@@ -493,11 +571,11 @@ public class h implements rk0, vq0, n5.b, t0.h {
                 throw dVar;
             }
         }
-        ((c3.o) this.c).g(v0Var);
+        ((c3.o) this.c).g(u0Var);
     }
 
-    public String P() {
-        if (!M()) {
+    public String Q() {
+        if (!N()) {
             throw new NoSuchElementException();
         }
         String str = (String) this.d;
@@ -505,14 +583,14 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return str;
     }
 
-    public void R() {
+    public void S() {
         ((TypedArray) this.c).recycle();
     }
 
-    public void S() {
+    public void T() {
         int i10;
-        RecyclerView recyclerView = ((hh.h) this.b).a;
-        ((n) this.c).B();
+        RecyclerView recyclerView = (RecyclerView) ((g0) this.b).b;
+        ((n) this.c).G();
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
         while (true) {
@@ -520,12 +598,12 @@ public class h implements rk0, vq0, n5.b, t0.h {
             if (size < 0) {
                 break;
             }
-            c1 U = RecyclerView.U((View) arrayList.get(size));
+            d1 U = RecyclerView.U((View) arrayList.get(size));
             if (U != null) {
                 int i11 = U.r;
-                if (recyclerView.c0()) {
+                if (recyclerView.b0()) {
                     U.s = i11;
-                    recyclerView.J0.add(U);
+                    recyclerView.K0.add(U);
                 } else {
                     View view = U.a;
                     WeakHashMap weakHashMap = i0.a;
@@ -544,18 +622,18 @@ public class h implements rk0, vq0, n5.b, t0.h {
         recyclerView.removeAllViews();
     }
 
-    public void T(of.g gVar) {
-        if (((of.d) this.b) == null) {
+    public void U(pf.g gVar) {
+        if (((pf.d) this.b) == null) {
             return;
         }
         for (int i10 = 0; i10 < gVar.a.size(); i10++) {
-            of.d dVar = (of.d) this.b;
+            pf.d dVar = (pf.d) this.b;
             dVar.h.remove(gVar.a(i10).d);
             dVar.h();
         }
     }
 
-    public void V(l5.i iVar, int i10, boolean z10) {
+    public void W(l5.i iVar, int i10, boolean z10) {
         char c10;
         r5.a aVar = (r5.a) this.d;
         Context context = (Context) this.b;
@@ -584,7 +662,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
                 int i11 = next.getExtras().getInt("attemptNumber");
                 if (next.getId() == value) {
                     if (i11 >= i10) {
-                        h6.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
+                        i6.a(iVar, "JobInfoScheduler", "Upload for context %s is already scheduled. Returning...");
                         return;
                     }
                 }
@@ -629,7 +707,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
             objArr[2] = valueOf3;
             objArr[3] = valueOf;
             objArr[4] = valueOf4;
-            String c11 = h6.c("JobInfoScheduler");
+            String c11 = i6.c("JobInfoScheduler");
             if (Log.isLoggable(c11, 3)) {
                 Log.d(c11, String.format("Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", objArr));
             }
@@ -640,16 +718,16 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
     }
 
-    public void W(of.a aVar) {
-        of.g gVar;
-        of.g gVar2 = (of.g) this.c;
-        if (gVar2 != null && ((of.a) this.d) == null && aVar != null) {
-            l(gVar2);
+    public void X(pf.a aVar) {
+        pf.g gVar;
+        pf.g gVar2 = (pf.g) this.c;
+        if (gVar2 != null && ((pf.a) this.d) == null && aVar != null) {
+            k(gVar2);
         }
-        if (((of.a) this.d) != null && (gVar = (of.g) this.c) != null && aVar == null) {
-            T(gVar);
+        if (((pf.a) this.d) != null && (gVar = (pf.g) this.c) != null && aVar == null) {
+            U(gVar);
         }
-        of.a aVar2 = (of.a) this.d;
+        pf.a aVar2 = (pf.a) this.d;
         if (aVar2 != null) {
             e6.h hVar = aVar2.a;
             n6.l.e("Must be called from the main thread.");
@@ -657,7 +735,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
         if (aVar != null) {
             aVar.a.p(aVar);
-            of.g gVar3 = (of.g) this.c;
+            pf.g gVar3 = (pf.g) this.c;
             if (gVar3 != null) {
                 aVar.d = gVar3;
                 aVar.g = 0;
@@ -668,11 +746,11 @@ public class h implements rk0, vq0, n5.b, t0.h {
         this.d = aVar;
     }
 
-    public FileOutputStream X() {
+    public FileOutputStream Y() {
         File file = (File) this.c;
         File file2 = (File) this.d;
         if (file2.exists()) {
-            U(file2, (File) this.b);
+            V(file2, (File) this.b);
         }
         try {
             return new FileOutputStream(file);
@@ -688,16 +766,16 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
     }
 
-    public void Y(View view) {
+    public void Z(View view) {
         if (((ArrayList) this.d).remove(view)) {
-            hh.h hVar = (hh.h) this.b;
-            c1 U = RecyclerView.U(view);
+            g0 g0Var = (g0) this.b;
+            d1 U = RecyclerView.U(view);
             if (U != null) {
-                RecyclerView recyclerView = hVar.a;
+                RecyclerView recyclerView = (RecyclerView) g0Var.b;
                 int i10 = U.r;
-                if (recyclerView.c0()) {
+                if (recyclerView.b0()) {
                     U.s = i10;
-                    recyclerView.J0.add(U);
+                    recyclerView.K0.add(U);
                 } else {
                     View view2 = U.a;
                     WeakHashMap weakHashMap = i0.a;
@@ -708,7 +786,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
     }
 
-    public void Z(Object obj, String str) {
+    public void a0(Object obj, String str) {
         h hVar = new h(8, false);
         ((h) this.d).d = hVar;
         this.d = hVar;
@@ -721,7 +799,7 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return (Uri) this.b;
     }
 
-    @Override // org.telegram.ui.vq0
+    @Override // org.telegram.ui.ar0
     public /* synthetic */ boolean e() {
         return true;
     }
@@ -731,14 +809,14 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return (Uri) this.d;
     }
 
-    @Override // org.telegram.ui.vq0
+    @Override // org.telegram.ui.ar0
     public void g() {
-        ((rk) this.d).Q.w();
+        ((sk) this.d).Q.x();
     }
 
-    @Override // fd.a
+    @Override // gd.a
     public Object get() {
-        return new h((Context) ((fd.a) this.b).get(), (s5.d) ((fd.a) this.c).get(), (r5.a) ((qb.b) this.d).get(), 25);
+        return new h((Context) ((gd.a) this.b).get(), (s5.d) ((gd.a) this.c).get(), (r5.a) ((qb.b) this.d).get(), 26);
     }
 
     @Override // t0.h
@@ -746,19 +824,19 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return (ClipDescription) this.c;
     }
 
-    @Override // org.telegram.ui.vq0
+    @Override // org.telegram.ui.ar0
     public void h(int i10, boolean z10, boolean z11) {
         if (z10) {
             return;
         }
-        rk rkVar = (rk) this.d;
+        sk skVar = (sk) this.d;
         HashMap hashMap = (HashMap) this.b;
         ArrayList arrayList = (ArrayList) this.c;
-        xi xiVar = rkVar.b;
-        if (hashMap.isEmpty() || rkVar.Q == null || rkVar.K) {
+        yi yiVar = skVar.b;
+        if (hashMap.isEmpty() || skVar.Q == null || skVar.K) {
             return;
         }
-        rkVar.K = true;
+        skVar.K = true;
         ArrayList arrayList2 = new ArrayList();
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             Object obj = hashMap.get(arrayList.get(i11));
@@ -783,96 +861,101 @@ public class h implements rk0, vq0, n5.b, t0.h {
                 sendingMediaInfo.ttl = photoEntry.ttl;
             }
         }
-        e5.a0(xiVar.J1, xiVar.j1() + arrayList2.size(), xiVar.n1(), new d4(i10, 2, rkVar, arrayList2, z11));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.rk0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
-        float f7;
-        n0 n0Var;
-        zg.k0 m10;
-        float f10;
-        int i10;
-        float f11;
-        yn ynVar = (yn) this.d;
-        org.telegram.ui.Cells.a0 q82 = ynVar.q8(((MessageObject) this.b).getId(), true);
-        float f12 = 0.0f;
-        if (q82 instanceof u1) {
-            n0 n0Var2 = ((u1) q82).N;
-            zg.k0 m11 = n0Var2.m(m0Var);
-            if (m11 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                ynVar.Za(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, m0Var, false, (m0Var == null && m0Var.a) ? true : z10, z11, false);
-            } else {
-                f12 = n0Var2.c + m11.x + (m11.A / 2.0f);
-                f10 = n0Var2.d + m11.y;
-                i10 = m11.B;
-            }
-        } else if (!(q82 instanceof w0) || (m10 = (n0Var = ((w0) q82).C0).m(m0Var)) == null) {
-            f7 = 0.0f;
-            ynVar.Za(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, m0Var, false, (m0Var == null && m0Var.a) ? true : z10, z11, false);
-        } else {
-            f12 = n0Var.c + m10.x + (m10.A / 2.0f);
-            f10 = n0Var.d + m10.y;
-            i10 = m10.B;
-        }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        ynVar.Za(q82, (MessageObject) this.b, (sk0) this.c, view, f12, f7, m0Var, false, (m0Var == null && m0Var.a) ? true : z10, z11, false);
+        g5.Z(yiVar.M1, yiVar.l1() + arrayList2.size(), yiVar.p1(), new e4(i10, 2, skVar, arrayList2, z11));
     }
 
     @Override // t0.h
-    public Object j() {
+    public Object i() {
         return null;
     }
 
-    public void l(of.g gVar) {
-        if (((of.d) this.b) == null) {
-            this.b = new of.d();
+    public void k(pf.g gVar) {
+        if (((pf.d) this.b) == null) {
+            this.b = new pf.d();
         }
         for (int i10 = 0; i10 < gVar.a.size(); i10++) {
-            of.d dVar = (of.d) this.b;
-            of.f a2 = gVar.a(i10);
+            pf.d dVar = (pf.d) this.b;
+            pf.f a2 = gVar.a(i10);
             dVar.h.put(a2.d, a2);
             dVar.h();
         }
     }
 
-    public void m(View view, int i10, boolean z10) {
-        RecyclerView recyclerView = ((hh.h) this.b).a;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : G(i10);
-        ((n) this.c).z(childCount, z10);
+    public void l(View view, int i10, boolean z10) {
+        RecyclerView recyclerView = (RecyclerView) ((g0) this.b).b;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : K(i10);
+        ((n) this.c).E(childCount, z10);
         if (z10) {
-            N(view);
+            O(view);
         }
         recyclerView.addView(view, childCount);
-        c1 U = RecyclerView.U(view);
-        recyclerView.g0(view);
-        h0 h0Var = recyclerView.w;
-        if (h0Var != null && U != null) {
-            h0Var.y(U);
+        d1 U = RecyclerView.U(view);
+        recyclerView.f0(view);
+        s4.i0 i0Var = recyclerView.w;
+        if (i0Var != null && U != null) {
+            i0Var.y(U);
         }
         ArrayList arrayList = recyclerView.P;
         if (arrayList != null) {
             for (int size = arrayList.size() - 1; size >= 0; size--) {
-                ((y) recyclerView.P.get(size)).getClass();
+                ((z) recyclerView.P.get(size)).getClass();
             }
         }
     }
 
-    public void n(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
-        RecyclerView recyclerView = ((hh.h) this.b).a;
-        int childCount = i10 < 0 ? recyclerView.getChildCount() : G(i10);
-        ((n) this.c).z(childCount, z10);
-        if (z10) {
-            N(view);
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
+    @Override // org.telegram.ui.Components.jl0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void m(View view, n0 n0Var, boolean z10, boolean z11) {
+        float f7;
+        o0 o0Var;
+        l0 m10;
+        float f10;
+        int i10;
+        float f11;
+        zn znVar = (zn) this.d;
+        org.telegram.ui.Cells.a0 t82 = znVar.t8(((MessageObject) this.b).getId(), true);
+        float f12 = 0.0f;
+        if (t82 instanceof u1) {
+            o0 o0Var2 = ((u1) t82).N;
+            l0 m11 = o0Var2.m(n0Var);
+            if (m11 == null) {
+                f11 = 0.0f;
+                f7 = f11;
+                znVar.eb(t82, (MessageObject) this.b, (kl0) this.c, view, f12, f7, n0Var, false, (n0Var == null && n0Var.a) ? true : z10, z11, false);
+            } else {
+                f12 = o0Var2.c + m11.x + (m11.A / 2.0f);
+                f10 = o0Var2.d + m11.y;
+                i10 = m11.B;
+            }
+        } else if (!(t82 instanceof w0) || (m10 = (o0Var = ((w0) t82).E0).m(n0Var)) == null) {
+            f7 = 0.0f;
+            znVar.eb(t82, (MessageObject) this.b, (kl0) this.c, view, f12, f7, n0Var, false, (n0Var == null && n0Var.a) ? true : z10, z11, false);
+        } else {
+            f12 = o0Var.c + m10.x + (m10.A / 2.0f);
+            f10 = o0Var.d + m10.y;
+            i10 = m10.B;
         }
-        c1 U = RecyclerView.U(view);
+        f11 = f10 + (i10 / 2.0f);
+        f7 = f11;
+        znVar.eb(t82, (MessageObject) this.b, (kl0) this.c, view, f12, f7, n0Var, false, (n0Var == null && n0Var.a) ? true : z10, z11, false);
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean o() {
+        return true;
+    }
+
+    public void p(View view, int i10, ViewGroup.LayoutParams layoutParams, boolean z10) {
+        RecyclerView recyclerView = (RecyclerView) ((g0) this.b).b;
+        int childCount = i10 < 0 ? recyclerView.getChildCount() : K(i10);
+        ((n) this.c).E(childCount, z10);
+        if (z10) {
+            O(view);
+        }
+        d1 U = RecyclerView.U(view);
         if (U != null) {
             if (!U.l() && !U.r()) {
                 throw new IllegalArgumentException("Called attach on a child which is not detached: " + U + recyclerView.C());
@@ -882,7 +965,12 @@ public class h implements rk0, vq0, n5.b, t0.h {
         recyclerView.attachViewToParent(view, childCount, layoutParams);
     }
 
-    public String o(int i10, String str, long j3, long j10) {
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    public String t(int i10, String str, long j3, long j10) {
         ArrayList arrayList = (ArrayList) this.b;
         ArrayList arrayList2 = (ArrayList) this.d;
         ArrayList arrayList3 = (ArrayList) this.c;
@@ -903,53 +991,11 @@ public class h implements rk0, vq0, n5.b, t0.h {
         return sb2.toString();
     }
 
-    public void p() {
-        b0 b0Var = (b0) this.b;
-        if (b0Var != null) {
-            int i10 = ((p4.e) this.d).n.d;
-            v vVar = b0Var.a;
-            vVar.getClass();
-            AudioAttributes.Builder builder = new AudioAttributes.Builder();
-            builder.setLegacyStreamType(i10);
-            vVar.a.setPlaybackToLocal(builder.build());
-            this.c = null;
-        }
-    }
-
-    public void s(int i10) {
-        c1 U;
-        int G = G(i10);
-        ((n) this.c).A(G);
-        RecyclerView recyclerView = ((hh.h) this.b).a;
-        View childAt = recyclerView.getChildAt(G);
-        if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
-            if (U.l() && !U.r()) {
-                throw new IllegalArgumentException("called detach on an already detached child " + U + recyclerView.C());
-            }
-            U.a(256);
-        }
-        recyclerView.detachViewFromParent(G);
-    }
-
-    public void t(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
-        HashMap hashMap = (HashMap) this.b;
-        f fVar = new f(byteArrayOutputStream, hashMap, (HashMap) this.c, (ia.d) this.d);
-        if (obj == null) {
-            return;
-        }
-        ia.d dVar = (ia.d) hashMap.get(obj.getClass());
-        if (dVar != null) {
-            dVar.a(obj, fVar);
-        } else {
-            throw new ia.b("No encoder for " + obj.getClass());
-        }
-    }
-
     public String toString() {
         switch (this.a) {
-            case 1:
+            case 5:
                 StringBuilder sb2 = new StringBuilder("id3v2tag[pos=");
-                mf.a aVar = (mf.a) this.b;
+                nf.a aVar = (nf.a) this.b;
                 sb2.append(aVar.b);
                 sb2.append(", ");
                 sb2.append(aVar.e());
@@ -979,97 +1025,58 @@ public class h implements rk0, vq0, n5.b, t0.h {
                 }
                 sb3.append('}');
                 return sb3.toString();
-            case 26:
+            case 27:
                 return ((n) this.c).toString() + ", hidden list:" + ((ArrayList) this.d).size();
             default:
                 return super.toString();
         }
     }
 
-    public lf.e u(lf.f fVar) {
-        InputStream inputStream;
-        int i10 = fVar.c;
-        InputStream inputStream2 = (mf.a) this.b;
-        if (fVar.d) {
-            l2.g gVar = (l2.g) this.d;
-            gVar.getClass();
-            byte[] bArr = new byte[i10];
-            int i11 = 0;
-            while (i11 < i10) {
-                int read = ((com.google.firebase.messaging.d) gVar.b).read(bArr, i11, i10 - i11);
-                if (read <= 0) {
-                    throw new EOFException();
-                }
-                i11 += read;
-            }
-            int i12 = 0;
-            boolean z10 = false;
-            for (int i13 = 0; i13 < i10; i13++) {
-                byte b10 = bArr[i13];
-                if (!z10 || b10 != 0) {
-                    bArr[i12] = b10;
-                    i12++;
-                }
-                z10 = b10 == -1;
-            }
-            inputStream2 = new ByteArrayInputStream(bArr, 0, i12);
-            i10 = i12;
+    public void u() {
+        android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) this.b;
+        if (a0Var != null) {
+            int i10 = ((p4.e) this.d).n.d;
+            v vVar = a0Var.a;
+            vVar.getClass();
+            AudioAttributes.Builder builder = new AudioAttributes.Builder();
+            builder.setLegacyStreamType(i10);
+            vVar.a.setPlaybackToLocal(builder.build());
+            this.c = null;
         }
-        if (fVar.f) {
-            throw new lf.c("Frame encryption is not supported");
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ boolean v() {
+        return false;
+    }
+
+    public void y(int i10) {
+        d1 U;
+        int K = K(i10);
+        ((n) this.c).F(K);
+        RecyclerView recyclerView = (RecyclerView) ((g0) this.b).b;
+        View childAt = recyclerView.getChildAt(K);
+        if (childAt != null && (U = RecyclerView.U(childAt)) != null) {
+            if (U.l() && !U.r()) {
+                throw new IllegalArgumentException("called detach on an already detached child " + U + recyclerView.C());
+            }
+            U.a(256);
         }
-        if (fVar.e) {
-            i10 = fVar.g;
-            inputStream = new InflaterInputStream(inputStream2);
+        recyclerView.detachViewFromParent(K);
+    }
+
+    public void z(Object obj, ByteArrayOutputStream byteArrayOutputStream) {
+        HashMap hashMap = (HashMap) this.b;
+        f fVar = new f(byteArrayOutputStream, hashMap, (HashMap) this.c, (ia.d) this.d);
+        if (obj == null) {
+            return;
+        }
+        ia.d dVar = (ia.d) hashMap.get(obj.getClass());
+        if (dVar != null) {
+            dVar.a(obj, fVar);
         } else {
-            inputStream = inputStream2;
+            throw new ia.b("No encoder for " + obj.getClass());
         }
-        return new lf.e(inputStream, fVar.b, i10, (lf.i) this.c, fVar);
-    }
-
-    public n2.n v(b2.k0 k0Var) {
-        n2.f fVar;
-        k0Var.b.getClass();
-        c0 c0Var = k0Var.b.c;
-        if (c0Var == null) {
-            return n2.n.z;
-        }
-        synchronized (this.b) {
-            try {
-                if (!c0Var.equals((c0) this.c)) {
-                    this.c = c0Var;
-                    this.d = r(c0Var);
-                }
-                fVar = (n2.f) this.d;
-                fVar.getClass();
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return fVar;
-    }
-
-    public View w(int i10) {
-        return ((hh.h) this.b).a.getChildAt(G(i10));
-    }
-
-    public int x() {
-        return ((hh.h) this.b).a.getChildCount() - ((ArrayList) this.d).size();
-    }
-
-    public ColorStateList y(int i10) {
-        int resourceId;
-        ColorStateList a2;
-        TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i10) || (resourceId = typedArray.getResourceId(i10, 0)) == 0 || (a2 = v7.a((Context) this.b, resourceId)) == null) ? typedArray.getColorStateList(i10) : a2;
-    }
-
-    public long z() {
-        l lVar = (l) this.d;
-        if (lVar != null) {
-            return lVar.d;
-        }
-        return -1L;
     }
 
     public /* synthetic */ h(Object obj, Object obj2, Object obj3, int i10) {
@@ -1094,25 +1101,26 @@ public class h implements rk0, vq0, n5.b, t0.h {
         this.b = str;
     }
 
-    public h(InputStream inputStream, long j3, int i10, lf.i iVar) {
-        this.a = 1;
-        mf.a aVar = new mf.a(inputStream, j3, i10);
+    public h(InputStream inputStream, long j3, int i10, mf.i iVar) {
+        this.a = 5;
+        nf.a aVar = new nf.a(inputStream, j3, i10);
         this.b = aVar;
-        this.d = new l2.g(aVar, 1);
+        this.d = new g0(aVar, 5);
         this.c = iVar;
     }
 
-    public h(String str, Boolean bool, uc.a aVar, String str2) {
-        this.a = 29;
-        this.b = str;
-        this.c = str2;
-        this.d = aVar;
+    public h(View view) {
+        this.a = 16;
+        this.d = view;
+        w71 w71Var = new w71(this, view);
+        this.b = w71Var;
+        view.addOnLayoutChangeListener(w71Var);
     }
 
     public h(int i10) {
         this.a = i10;
         switch (i10) {
-            case 22:
+            case 24:
                 this.b = new a3.l();
                 this.c = null;
                 this.d = null;
@@ -1123,18 +1131,14 @@ public class h implements rk0, vq0, n5.b, t0.h {
         }
     }
 
-    public h(hh.h hVar) {
-        this.a = 26;
-        this.b = hVar;
+    public h(g0 g0Var) {
+        this.a = 27;
+        this.b = g0Var;
         this.c = new n(6);
         this.d = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ void I() {
-    }
-
-    @Override // org.telegram.ui.vq0
+    @Override // org.telegram.ui.ar0
     public void a() {
     }
 
@@ -1143,75 +1147,79 @@ public class h implements rk0, vq0, n5.b, t0.h {
     }
 
     @Override // t0.h
-    public void k() {
+    public void j() {
+    }
+
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ void s() {
     }
 
     public h(File file) {
-        this.a = 20;
+        this.a = 22;
         this.b = file;
         this.c = new File(file.getPath() + ".new");
         this.d = new File(file.getPath() + ".bak");
     }
 
-    @Override // org.telegram.ui.vq0
+    @Override // org.telegram.ui.ar0
     public void b(Editable editable) {
     }
 
     public h(r rVar) {
-        this.a = 28;
+        this.a = 29;
         this.b = rVar;
     }
 
     public h(Runnable runnable) {
-        this.a = 24;
+        this.a = 25;
         this.d = new CopyOnWriteArrayList();
         this.b = new HashMap();
         this.c = runnable;
     }
 
     public h(Context context, TypedArray typedArray) {
-        this.a = 2;
+        this.a = 1;
         this.b = context;
         this.c = typedArray;
     }
 
     public h(byte[] bArr, w wVar) {
-        this.a = 4;
+        this.a = 3;
         this.b = bArr;
         this.c = null;
         this.d = wVar;
     }
 
     public h(Uri uri, w wVar) {
-        this.a = 4;
+        this.a = 3;
         this.b = null;
         this.c = uri;
         this.d = wVar;
     }
 
-    public h(k2.e eVar) {
+    public h(f3 f3Var) {
         this.a = 10;
         this.a = 10;
-        this.b = eVar;
+        this.b = f3Var;
         this.c = Choreographer.getInstance();
         this.d = new o1.a(this, 0);
     }
 
     public h(String str, String str2) {
-        this.a = 23;
+        this.a = 11;
         this.b = str;
         this.c = str2;
-        this.d = str2.isEmpty() ? str : a4.a.D(str, "/", str2);
+        this.d = str2.isEmpty() ? str : a1.g.D(str, "/", str2);
     }
 
-    public h(p4.e eVar, b0 b0Var) {
-        this.a = 19;
+    public h(p4.e eVar, android.support.v4.media.session.a0 a0Var) {
+        this.a = 20;
         this.d = eVar;
-        this.b = b0Var;
+        this.b = a0Var;
     }
 
     public h(ArrayDeque arrayDeque, BufferedReader bufferedReader) {
-        this.a = 18;
+        this.a = 19;
         this.c = arrayDeque;
         this.b = bufferedReader;
     }
@@ -1231,11 +1239,11 @@ public class h implements rk0, vq0, n5.b, t0.h {
             iArr[i10] = num.intValue();
         }
         this.b = iArr;
-        this.c = q(objArr, iArr);
-        this.d = q(objArr2, iArr);
+        this.c = w(objArr, iArr);
+        this.d = w(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.jl0
+    public /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

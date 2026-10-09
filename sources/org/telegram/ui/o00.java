@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class o00 extends y00 {
     public final /* synthetic */ p00 E;
@@ -21,13 +21,13 @@ public final class o00 extends y00 {
     public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
         p00 p00Var = this.E;
         p00Var.d.Y.remove(tL_exportedChatlistInvite);
-        p00Var.d.R();
-        p00Var.d.S(true);
+        p00Var.d.U();
+        p00Var.d.V(true);
     }
 
     @Override // org.telegram.ui.y00
     public final void c() {
-        org.telegram.ui.Components.b80 F = org.telegram.ui.Components.b80.F(this.E.d.container, null, this);
+        org.telegram.ui.Components.p80 F = org.telegram.ui.Components.p80.F(this.E.d.container, null, this);
         final int i10 = 0;
         F.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyLink), new Runnable(this) { // from class: org.telegram.ui.n00
             public final /* synthetic */ o00 b;
@@ -43,7 +43,7 @@ public final class o00 extends y00 {
                         o00 o00Var = this.b;
                         String str = o00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.yc(o00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.ad(o00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;
@@ -71,7 +71,7 @@ public final class o00 extends y00 {
                         o00 o00Var = this.b;
                         String str = o00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.yc(o00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.ad(o00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;
@@ -99,7 +99,7 @@ public final class o00 extends y00 {
                         o00 o00Var = this.b;
                         String str = o00Var.x;
                         if (str != null && AndroidUtilities.addToClipboard(str)) {
-                            new org.telegram.ui.Components.yc(o00Var.E.d.Z, null).k(false).j();
+                            new org.telegram.ui.Components.ad(o00Var.E.d.Z, null).k(false).j();
                             break;
                         }
                         break;

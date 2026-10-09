@@ -1,24 +1,91 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
+import android.content.Context;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import android.view.View;
+import java.util.List;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hi extends org.telegram.ui.Components.wv {
-    public final /* synthetic */ yn W;
+public final class hi extends z4.a {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ SparseArray d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ List f;
+    public final /* synthetic */ MessageObject g;
+    public final /* synthetic */ org.telegram.ui.Components.kk0 h;
+    public final /* synthetic */ MessageObject i;
+    public final /* synthetic */ SparseIntArray j;
+    public final /* synthetic */ int k;
+    public final /* synthetic */ z4.g l;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
+    public final /* synthetic */ int[] n;
+    public final /* synthetic */ int o;
+    public final /* synthetic */ zn p;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hi(yn ynVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
-        super(n2Var, activity, d6Var, arrayList);
-        this.W = ynVar;
+    public hi(zn znVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.kk0 kk0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
+        this.p = znVar;
+        this.c = i10;
+        this.d = sparseArray;
+        this.e = z10;
+        this.f = list;
+        this.g = messageObject;
+        this.h = kk0Var;
+        this.i = messageObject2;
+        this.j = sparseIntArray;
+        this.k = i11;
+        this.l = gVar;
+        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.n = iArr;
+        this.o = i12;
     }
 
-    @Override // org.telegram.ui.Components.wv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        yn ynVar = this.W;
-        ynVar.getClass();
-        ynVar.g8(false, true, 0.0f);
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+    }
+
+    @Override // z4.a
+    public final int b() {
+        return this.c;
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        int i11;
+        SparseArray sparseArray = this.d;
+        View view = (View) sparseArray.get(i10);
+        if (view != null) {
+            gVar.addView(view);
+            return view;
+        }
+        int i12 = this.e ? i10 - 1 : i10;
+        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
+        Context context = gVar.getContext();
+        zn znVar = this.p;
+        xn xnVar = znVar.ea;
+        i11 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
+        org.telegram.ui.Components.uk0 uk0Var = new org.telegram.ui.Components.uk0(context, xnVar, i11, this.g, reactionCount, true);
+        org.telegram.ui.Components.kk0 kk0Var = this.h;
+        uk0Var.h(kk0Var.getSeenUsers());
+        uk0Var.G = new z0(this, 16);
+        uk0Var.E = new o(11, this, this.i);
+        uk0Var.y = new ei.t4(this.j, i10, this.k, this.l, this.m, this.n);
+        if (i12 < 0) {
+            uk0Var.setPredictiveCount(this.o);
+            kk0Var.setSeenCallback(new h3(uk0Var, 1));
+        }
+        gVar.addView(uk0Var);
+        sparseArray.put(i10, uk0Var);
+        return uk0Var;
+    }
+
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

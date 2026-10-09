@@ -1,38 +1,37 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w31 b;
+public final class d31 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public or0 d;
 
-    public /* synthetic */ d31(w31 w31Var, int i10) {
-        this.a = i10;
-        this.b = w31Var;
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
+        int i10 = 0;
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
+        }
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w31 w31Var = this.b;
-                m31 m31Var = w31Var.G;
-                m31Var.x1(true);
-                k31 k31Var = w31Var.s;
-                k31Var.x1(true);
-                w31Var.J.a(true, true);
-                AndroidUtilities.updateVisibleRows(k31Var);
-                AndroidUtilities.updateVisibleRows(m31Var);
-                break;
-            default:
-                w31 w31Var2 = this.b;
-                if (w31Var2.k()) {
-                    w31Var2.l();
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a();
     }
 }

@@ -7,11 +7,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yn b;
+    public final /* synthetic */ zn b;
     public final /* synthetic */ int c;
     public final /* synthetic */ TLObject d;
     public final /* synthetic */ TLRPC.TL_error e;
@@ -22,9 +22,9 @@ public final /* synthetic */ class sh implements Runnable {
     public final /* synthetic */ int s;
     public final /* synthetic */ MessageObject v;
 
-    public /* synthetic */ sh(yn ynVar, int i10, TLObject tLObject, TLRPC.TL_error tL_error, int i11, MessageObject messageObject, TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, TLRPC.Chat chat, int i12, MessageObject messageObject2, int i13) {
+    public /* synthetic */ sh(zn znVar, int i10, TLObject tLObject, TLRPC.TL_error tL_error, int i11, MessageObject messageObject, TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, TLRPC.Chat chat, int i12, MessageObject messageObject2, int i13) {
         this.a = i13;
-        this.b = ynVar;
+        this.b = znVar;
         this.c = i10;
         this.d = tLObject;
         this.e = tL_error;
@@ -40,26 +40,26 @@ public final /* synthetic */ class sh implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                yn ynVar = this.b;
-                ynVar.h8(new sh(ynVar, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v, 1));
+                zn znVar = this.b;
+                znVar.k8(new sh(znVar, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v, 1));
                 break;
             default:
-                yn ynVar2 = this.b;
-                if (this.c == ynVar2.cc) {
-                    ynVar2.ec = -1;
+                zn znVar2 = this.b;
+                if (this.c == znVar2.fc) {
+                    znVar2.hc = -1;
                     TLObject tLObject = this.d;
                     if (tLObject == null) {
                         if ("CHANNEL_PRIVATE".equals(this.e.text)) {
-                            MessagesController.showCantOpenAlert(ynVar2, LocaleController.getString(R.string.ChannelCantOpenBannedByAdmin));
-                            ynVar2.fc = 0;
-                            ynVar2.gc = false;
-                            ynVar2.v0.g1();
+                            MessagesController.showCantOpenAlert(znVar2, LocaleController.getString(R.string.ChannelCantOpenBannedByAdmin));
+                            znVar2.ic = 0;
+                            znVar2.jc = false;
+                            znVar2.x0.f1();
                             break;
                         }
                     } else {
-                        ynVar2.jc = (TLRPC.messages_Messages) tLObject;
+                        znVar2.mc = (TLRPC.messages_Messages) tLObject;
                     }
-                    ynVar2.xa(ynVar2.ic, ynVar2.jc, this.f, this.h, this.n, this.r, this.s, this.v);
+                    znVar2.Ca(znVar2.lc, znVar2.mc, this.f, this.h, this.n, this.r, this.s, this.v);
                     break;
                 }
                 break;

@@ -1,40 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+public final class y31 {
+    public static final y31 a;
+    public static final y31 b;
+    public static final y31 c;
+    public static final /* synthetic */ y31[] d;
 
-    public /* synthetic */ y31(String str, MessageObject messageObject, long j3, int i10) {
-        this.a = i10;
-        this.b = messageObject;
-        this.c = j3;
-        this.d = str;
+    static {
+        y31 y31Var = new y31("TOP", 0);
+        a = y31Var;
+        y31 y31Var2 = new y31("LEFT", 1);
+        b = y31Var2;
+        y31 y31Var3 = new y31("BOTTOM", 2);
+        c = y31Var3;
+        d = new y31[]{y31Var, y31Var2, y31Var3};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        String str = this.d;
-        long j3 = this.c;
-        MessageObject messageObject = this.b;
-        switch (i10) {
-            case 0:
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
-                int i11 = NotificationCenter.voiceTranscriptionUpdate;
-                Long valueOf = Long.valueOf(j3);
-                Boolean bool = Boolean.TRUE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
-                break;
-            default:
-                d41.g(messageObject, j3, str);
-                break;
-        }
+    public static y31 valueOf(String str) {
+        return (y31) Enum.valueOf(y31.class, str);
+    }
+
+    public static y31[] values() {
+        return (y31[]) d.clone();
     }
 }

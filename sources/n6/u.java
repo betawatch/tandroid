@@ -1,35 +1,42 @@
 package n6;
 
-import android.accounts.Account;
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.TimeUnit;
+import v7.f5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class u extends o6.a {
-    public static final Parcelable.Creator<u> CREATOR = new m8.h(15);
-    public final int a;
-    public final Account b;
-    public final int c;
-    public final GoogleSignInAccount d;
+public final class u implements com.google.android.gms.common.api.o {
+    public final /* synthetic */ f5 a;
+    public final /* synthetic */ TaskCompletionSource b;
+    public final /* synthetic */ k c;
 
-    public u(int i10, Account account, int i11, GoogleSignInAccount googleSignInAccount) {
-        this.a = i10;
-        this.b = account;
-        this.c = i11;
-        this.d = googleSignInAccount;
+    public u(f5 f5Var, TaskCompletionSource taskCompletionSource, k kVar) {
+        this.a = f5Var;
+        this.b = taskCompletionSource;
+        this.c = kVar;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        w7.g0.k(parcel, 2, this.b, i10);
-        w7.g0.s(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        w7.g0.k(parcel, 4, this.d, i10);
-        w7.g0.r(parcel, q6);
+    @Override // com.google.android.gms.common.api.o
+    public final void a(Status status) {
+        if (!status.b()) {
+            this.b.setException(l.m(status));
+            return;
+        }
+        f5 f5Var = this.a;
+        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+        BasePendingResult basePendingResult = (BasePendingResult) f5Var;
+        l.j("Result has already been consumed.", !basePendingResult.j);
+        try {
+            if (!basePendingResult.d.await(0L, timeUnit)) {
+                basePendingResult.e(Status.n);
+            }
+        } catch (InterruptedException unused) {
+            basePendingResult.e(Status.f);
+        }
+        l.j("Result is not ready.", basePendingResult.g());
+        this.b.setResult(this.c.b(basePendingResult.j()));
     }
 }

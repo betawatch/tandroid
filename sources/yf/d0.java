@@ -1,27 +1,61 @@
 package yf;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class d0 extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-
-    public d0(int i10, float f7) {
-        this.a = i10;
-        this.b = f7;
+public abstract class d0 {
+    public static void a(TLRPC.Photo photo, TLRPC.User user, boolean z10) {
+        ArrayList<TLRPC.PhotoSize> arrayList = photo.sizes;
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(arrayList, 100);
+        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(arrayList, MediaDataController.MAX_STYLE_RUNS_COUNT);
+        user.flags |= 32;
+        TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
+        user.photo = tL_userProfilePhoto;
+        tL_userProfilePhoto.personal = z10;
+        tL_userProfilePhoto.photo_id = photo.id;
+        ArrayList<TLRPC.VideoSize> arrayList2 = photo.video_sizes;
+        tL_userProfilePhoto.has_video = arrayList2 != null && arrayList2.size() > 0;
+        if (closestPhotoSizeWithSize != null) {
+            user.photo.photo_small = closestPhotoSizeWithSize.location;
+        }
+        if (closestPhotoSizeWithSize2 != null) {
+            user.photo.photo_big = closestPhotoSizeWithSize2.location;
+        }
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        int width = view.getWidth();
-        int i10 = this.a;
-        int height = view.getHeight() - i10;
-        float f7 = this.b;
-        int i11 = this.a;
-        outline.setRoundRect(i11, i11, width - i10, height, f7);
+    public static void b(int i10, TLRPC.Photo photo, TLRPC.Photo photo2) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 100);
+        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
+        TLRPC.PhotoSize closestPhotoSizeWithSize3 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 100);
+        TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, MediaDataController.MAX_STYLE_RUNS_COUNT);
+        if (closestPhotoSizeWithSize3 != null && closestPhotoSizeWithSize != null) {
+            FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize, true).renameTo(FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize3, true));
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(closestPhotoSizeWithSize.location.volume_id);
+            sb2.append("_");
+            String o9 = a1.g.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
+            StringBuilder sb3 = new StringBuilder();
+            sb3.append(closestPhotoSizeWithSize3.location.volume_id);
+            sb3.append("_");
+            ImageLoader.getInstance().replaceImageInCache(o9, a1.g.o(closestPhotoSizeWithSize3.location.local_id, "@50_50", sb3), ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), false);
+        }
+        if (closestPhotoSizeWithSize4 == null || closestPhotoSizeWithSize2 == null) {
+            return;
+        }
+        FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize2, true).renameTo(FileLoader.getInstance(i10).getPathToAttach(closestPhotoSizeWithSize4, true));
+        StringBuilder sb4 = new StringBuilder();
+        sb4.append(closestPhotoSizeWithSize2.location.volume_id);
+        sb4.append("_");
+        String o10 = a1.g.o(closestPhotoSizeWithSize2.location.local_id, "@150_150", sb4);
+        StringBuilder sb5 = new StringBuilder();
+        sb5.append(closestPhotoSizeWithSize4.location.volume_id);
+        sb5.append("_");
+        ImageLoader.getInstance().replaceImageInCache(o10, a1.g.o(closestPhotoSizeWithSize4.location.local_id, "@150_150", sb5), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), false);
     }
 }

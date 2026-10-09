@@ -1,81 +1,278 @@
 package ai;
 
-import android.app.Activity;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.text.TextUtils;
+import android.util.Log;
+import android.util.Property;
 import android.view.View;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.r50;
+import android.view.ViewConfiguration;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.TextView;
+import androidx.appcompat.widget.ActionMenuView;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.io.IOException;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class r4 implements r50 {
-    public final /* synthetic */ e6 a;
+public final class r4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    public r4(e6 e6Var) {
-        this.a = e6Var;
+    public r4(com.google.android.gms.common.api.internal.m1 m1Var, c5.b0 b0Var) {
+        this.a = 17;
+        this.b = b0Var;
     }
 
-    @Override // org.telegram.ui.Components.r50
-    public final long a() {
-        return this.a.B1;
-    }
-
-    @Override // org.telegram.ui.Components.r50
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.r50
-    public final int getClassGuid() {
-        return this.a.z2;
-    }
-
-    @Override // org.telegram.ui.Components.r50
-    public final View getFragmentView() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Components.r50
-    public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.a.getContext());
-    }
-
-    @Override // org.telegram.ui.Components.r50
-    public final void q(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11, long j3) {
-        AccountInstance accountInstance;
-        AccountInstance accountInstance2;
-        AccountInstance accountInstance3;
-        AccountInstance accountInstance4;
-        e6 e6Var = this.a;
-        TL_stories.StoryItem storyItem = e6Var.O1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
-        }
-        storyItem.dialogId = e6Var.B1;
-        if (photoEntry.isVideo) {
-            if (videoEditedInfo != null) {
-                accountInstance4 = e6Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance4, photoEntry.path, videoEditedInfo, null, null, e6Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j3);
-            } else {
-                accountInstance3 = e6Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance3, photoEntry.path, null, null, null, e6Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i10, i11, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j3);
+    private final void a() {
+        g6.o oVar = (g6.o) this.b;
+        synchronized (g6.o.i) {
+            try {
+                if (oVar.d()) {
+                    oVar.f(15);
+                }
+            } catch (Throwable th2) {
+                throw th2;
             }
-        } else if (photoEntry.imagePath != null) {
-            accountInstance2 = e6Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, photoEntry.imagePath, photoEntry.thumbPath, null, e6Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j3);
-        } else if (photoEntry.path != null) {
-            accountInstance = e6Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance, photoEntry.path, photoEntry.thumbPath, null, e6Var.B1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i10, i11, false, photoEntry.caption, null, 0L, j3);
         }
-        e6Var.k0(j3 <= 0);
     }
 
-    @Override // org.telegram.ui.Components.r50
-    public final /* synthetic */ boolean v() {
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Object obj;
+        i2.f0 f0Var;
+        m.h hVar;
+        int i10 = 0;
+        switch (this.a) {
+            case 0:
+                f6 f6Var = (f6) this.b;
+                if (f6Var.K1 && f6Var.b1) {
+                    kc kcVar = ((bc) f6Var.Q1).d;
+                    kcVar.l1 = false;
+                    kcVar.P();
+                    return;
+                }
+                return;
+            case 1:
+                ((ac) this.b).L0 = false;
+                return;
+            case 2:
+                pa paVar = (pa) this.b;
+                paVar.b = false;
+                paVar.invalidate();
+                return;
+            case 3:
+                try {
+                    super/*android.app.Activity*/.onBackPressed();
+                    return;
+                } catch (IllegalStateException e7) {
+                    if (!TextUtils.equals(e7.getMessage(), "Can not perform this action after onSaveInstanceState")) {
+                        throw e7;
+                    }
+                    return;
+                } catch (NullPointerException e10) {
+                    if (!TextUtils.equals(e10.getMessage(), "Attempt to invoke virtual method 'android.os.Handler android.app.FragmentHostCallback.getHandler()' on a null object reference")) {
+                        throw e10;
+                    }
+                    return;
+                }
+            case 4:
+                androidx.biometric.e0 e0Var = (androidx.biometric.e0) this.b;
+                Context n10 = e0Var.n();
+                if (n10 == null) {
+                    Log.w("FingerprintFragment", "Not resetting the dialog. Context is null.");
+                    return;
+                } else {
+                    e0Var.C0.f(1);
+                    e0Var.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
+                    return;
+                }
+            case 5:
+                androidx.fragment.app.p pVar = (androidx.fragment.app.p) this.b;
+                pVar.n0.onDismiss(pVar.v0);
+                return;
+            case 6:
+                androidx.fragment.app.s sVar = (androidx.fragment.app.s) this.b;
+                if (sVar.Y != null) {
+                    sVar.j().getClass();
+                    return;
+                }
+                return;
+            case 7:
+                ((androidx.fragment.app.k0) this.b).A(true);
+                return;
+            case 8:
+                synchronized (((androidx.lifecycle.z) this.b).a) {
+                    obj = ((androidx.lifecycle.z) this.b).f;
+                    ((androidx.lifecycle.z) this.b).f = androidx.lifecycle.z.k;
+                }
+                ((androidx.lifecycle.z) this.b).j(obj);
+                return;
+            case 9:
+                androidx.mediarouter.app.u uVar = (androidx.mediarouter.app.u) this.b;
+                uVar.i(true);
+                uVar.U.requestLayout();
+                uVar.U.getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.j(uVar, i10));
+                return;
+            case 10:
+                androidx.mediarouter.app.u uVar2 = ((androidx.mediarouter.app.s) this.b).b;
+                if (uVar2.c0 != null) {
+                    uVar2.c0 = null;
+                    if (uVar2.s0) {
+                        uVar2.q(uVar2.t0);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 11:
+                c5.y yVar = (c5.y) this.b;
+                c5.c cVar = yVar.d;
+                cVar.k(0);
+                c5.h hVar2 = c5.g0.i;
+                cVar.j(24, hVar2);
+                yVar.c(hVar2);
+                return;
+            case 12:
+                qg.j jVar = ((ci.nb) this.b).J0;
+                if (jVar instanceof qg.w2) {
+                    ((qg.w2) jVar).getEditText();
+                    return;
+                }
+                return;
+            case 13:
+                com.google.android.gms.common.api.internal.g0 g0Var = (com.google.android.gms.common.api.internal.g0) this.b;
+                k6.e eVar = g0Var.d;
+                Context context = g0Var.c;
+                eVar.getClass();
+                if (k6.g.a.getAndSet(true)) {
+                    return;
+                }
+                try {
+                    NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
+                    if (notificationManager != null) {
+                        notificationManager.cancel(10436);
+                        return;
+                    }
+                    return;
+                } catch (SecurityException e11) {
+                    Log.d("GooglePlayServicesUtil", "Suppressing Security Exception %s in cancelAvailabilityErrorNotifications.", e11);
+                    return;
+                }
+            case 14:
+                ((com.google.android.gms.common.api.internal.p0) this.b).f();
+                return;
+            case 15:
+                com.google.android.gms.common.api.c cVar2 = ((com.google.android.gms.common.api.internal.p0) ((xa.d) this.b).b).b;
+                cVar2.e(cVar2.getClass().getName().concat(" disconnecting because it was signed out."));
+                return;
+            case 16:
+                ((com.google.android.gms.common.api.internal.d1) this.b).j.b(new k6.a(4));
+                return;
+            case 17:
+                return;
+            case 18:
+                com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
+                xVar.o.lock();
+                try {
+                    com.google.android.gms.common.api.internal.x.l(xVar);
+                    return;
+                } finally {
+                    xVar.o.unlock();
+                }
+            case 19:
+                ((f6.i) this.b).g(false);
+                return;
+            case 20:
+                a();
+                return;
+            case 21:
+                i.e eVar2 = (i.e) this.b;
+                eVar2.a(true);
+                eVar2.invalidateSelf();
+                return;
+            case 22:
+                if (((TaskCompletionSource) this.b).trySetException(new IOException("TIMEOUT"))) {
+                    Log.w("Rpc", "No response");
+                    return;
+                }
+                return;
+            case 23:
+                kg.e eVar3 = (kg.e) this.b;
+                eVar3.f.animate().setDuration(120L).alpha(0.0f);
+                eVar3.h.animate().setListener(null).start();
+                if (eVar3.h.getVisibility() != 0) {
+                    eVar3.h.setVisibility(0);
+                    eVar3.h.setAlpha(0.0f);
+                }
+                eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
+                return;
+            case 24:
+                ki.t0 t0Var = (ki.t0) this.b;
+                if (t0Var.W == 5 && (f0Var = t0Var.S) != null && t0Var.x) {
+                    long J0 = f0Var.J0();
+                    long j3 = t0Var.G;
+                    if (J0 < j3 || J0 >= t0Var.H) {
+                        t0Var.S.W0(5, j3);
+                    }
+                    t0Var.d.getClass();
+                    t0Var.i.postDelayed(this, 33L);
+                    return;
+                }
+                return;
+            case 25:
+                m.r1 r1Var = (m.r1) this.b;
+                r1Var.w = null;
+                r1Var.drawableStateChanged();
+                return;
+            case 26:
+                ActionMenuView actionMenuView = ((Toolbar) this.b).a;
+                if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
+                    return;
+                }
+                hVar.l();
+                return;
+            case 27:
+                Object obj2 = ((xa.d) this.b).b;
+                return;
+            case 28:
+                org.telegram.ui.Cells.a0 a0Var = (org.telegram.ui.Cells.a0) this.b;
+                if (a0Var.b == null) {
+                    a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
+                }
+                androidx.emoji2.text.j jVar2 = a0Var.b;
+                int i11 = a0Var.c + 1;
+                a0Var.c = i11;
+                jVar2.b = i11;
+                a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                return;
+            default:
+                org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) this.b;
+                TextView textView = v5Var.b;
+                textView.setTag(null);
+                AnimatorSet animatorSet = new AnimatorSet();
+                v5Var.d = animatorSet;
+                Property property = View.ALPHA;
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
+                v5Var.d.setDuration(250L);
+                v5Var.d.setInterpolator(new DecelerateInterpolator());
+                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
+                v5Var.d.start();
+                return;
+        }
+    }
+
+    public /* synthetic */ r4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    public r4(xa.d dVar, int i10) {
+        this.a = 27;
+        this.b = dVar;
     }
 }

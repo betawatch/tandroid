@@ -8,90 +8,90 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hy implements org.telegram.ui.Components.x40 {
-    public final /* synthetic */ uy a;
+public final class hy implements org.telegram.ui.Components.l50 {
+    public final /* synthetic */ ty a;
 
-    public hy(uy uyVar) {
-        this.a = uyVar;
+    public hy(ty tyVar) {
+        this.a = tyVar;
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final void B(float f7) {
-        org.telegram.ui.Components.rc rcVar = this.a.d4;
-        if (rcVar != null) {
-            ((org.telegram.ui.Components.ic) rcVar.e).setProgress(f7 * 0.9f);
+    @Override // org.telegram.ui.Components.l50
+    public final void D(float f7) {
+        org.telegram.ui.Components.tc tcVar = this.a.d4;
+        if (tcVar != null) {
+            ((org.telegram.ui.Components.kc) tcVar.e).setProgress(f7 * 0.9f);
         }
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final void I(boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        org.telegram.ui.ActionBar.d6 d6Var2;
-        uy uyVar = this.a;
-        org.telegram.ui.Components.rc rcVar = uyVar.d4;
-        if (rcVar != null) {
-            rcVar.b();
-            uyVar.d4 = null;
+    @Override // org.telegram.ui.Components.l50
+    public final void L(boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        ty tyVar = this.a;
+        org.telegram.ui.Components.tc tcVar = tyVar.d4;
+        if (tcVar != null) {
+            tcVar.b();
+            tyVar.d4 = null;
         }
-        Activity parentActivity = uyVar.getParentActivity();
-        d6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-        org.telegram.ui.Components.ic icVar = new org.telegram.ui.Components.ic(parentActivity, d6Var);
-        org.telegram.ui.Components.hc hcVar = new org.telegram.ui.Components.hc(icVar, parentActivity);
-        icVar.b = hcVar;
-        hcVar.setWillNotDraw(false);
-        icVar.addView(hcVar, w7.z5.i(32.0f, 32.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(parentActivity);
-        icVar.c = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-        hcVar.addView(w9Var, w7.z5.e(28, 28, 17));
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(parentActivity, false, false, false);
-        icVar.d = p6Var;
-        p6Var.setTypeface(Typeface.SANS_SERIF);
-        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        p6Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        icVar.addView(p6Var, w7.z5.i(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
-        icVar.setTextColor(icVar.getThemedColor(org.telegram.ui.ActionBar.i6.Hi));
-        icVar.setBackground(icVar.getThemedColor(org.telegram.ui.ActionBar.i6.Fi));
+        Activity parentActivity = tyVar.getParentActivity();
+        e6Var = ((org.telegram.ui.ActionBar.n2) tyVar).resourceProvider;
+        org.telegram.ui.Components.kc kcVar = new org.telegram.ui.Components.kc(parentActivity, e6Var);
+        org.telegram.ui.Components.jc jcVar = new org.telegram.ui.Components.jc(kcVar, parentActivity);
+        kcVar.b = jcVar;
+        jcVar.setWillNotDraw(false);
+        kcVar.addView(jcVar, w7.x5.i(32.0f, 32.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(parentActivity);
+        kcVar.c = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
+        jcVar.addView(y9Var, w7.x5.e(28, 28, 17));
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(parentActivity, false, false, false);
+        kcVar.d = r6Var;
+        r6Var.setTypeface(Typeface.SANS_SERIF);
+        r6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        r6Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        kcVar.addView(r6Var, w7.x5.i(-2.0f, 18.0f, 8388627, 56.0f, 0.0f, 8.0f, 0.0f));
+        kcVar.setTextColor(kcVar.getThemedColor(org.telegram.ui.ActionBar.i6.Hi));
+        kcVar.setBackground(kcVar.getThemedColor(org.telegram.ui.ActionBar.i6.Fi));
         if (z10) {
-            w9Var.setImageBitmap(uyVar.a4.r);
+            y9Var.setImageBitmap(tyVar.a4.r);
         } else {
-            w9Var.setImageBitmap(PhotoViewer.t1().C4.getBitmap());
+            y9Var.setImageBitmap(PhotoViewer.t1().C4.getBitmap());
         }
-        Activity parentActivity2 = uyVar.getParentActivity();
-        d6Var2 = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-        org.telegram.ui.Components.pc pcVar = new org.telegram.ui.Components.pc(parentActivity2, d6Var2, true);
-        pcVar.e(LocaleController.getString(R.string.ViewAction));
-        pcVar.a = new bj(this, 23);
-        icVar.setButton(pcVar);
-        icVar.getButton().setVisibility(8);
-        p6Var.c(LocaleController.getString(z11 ? R.string.YourProfileVideoUploading : R.string.YourProfilePhotoUploading), true, true);
-        org.telegram.ui.Components.rc b10 = org.telegram.ui.Components.yc.a0(uyVar).b(icVar, -1);
-        uyVar.d4 = b10;
+        Activity parentActivity2 = tyVar.getParentActivity();
+        e6Var2 = ((org.telegram.ui.ActionBar.n2) tyVar).resourceProvider;
+        org.telegram.ui.Components.rc rcVar = new org.telegram.ui.Components.rc(parentActivity2, e6Var2, true);
+        rcVar.e(LocaleController.getString(R.string.ViewAction));
+        rcVar.a = new cj(this, 26);
+        kcVar.setButton(rcVar);
+        kcVar.getButton().setVisibility(8);
+        r6Var.c(LocaleController.getString(z11 ? R.string.YourProfileVideoUploading : R.string.YourProfilePhotoUploading), true, true);
+        org.telegram.ui.Components.tc b10 = org.telegram.ui.Components.ad.a0(tyVar).b(kcVar, -1);
+        tyVar.d4 = b10;
         b10.r = false;
         b10.i(false);
-        org.telegram.ui.Components.rc rcVar2 = uyVar.d4;
-        rcVar2.s = true;
-        rcVar2.j();
+        org.telegram.ui.Components.tc tcVar2 = tyVar.d4;
+        tcVar2.s = true;
+        tcVar2.j();
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final void O(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final boolean z10, final TLRPC.VideoSize videoSize) {
+    @Override // org.telegram.ui.Components.l50
+    public final void Q(final TLRPC.InputFile inputFile, final TLRPC.InputFile inputFile2, final double d, final String str, final TLRPC.PhotoSize photoSize, final TLRPC.PhotoSize photoSize2, final boolean z10, final TLRPC.VideoSize videoSize) {
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.gy
             @Override // java.lang.Runnable
             public final void run() {
                 org.telegram.ui.ActionBar.k kVar;
                 hy hyVar = hy.this;
-                uy uyVar = hyVar.a;
+                ty tyVar = hyVar.a;
                 TLRPC.InputFile inputFile3 = inputFile;
                 TLRPC.InputFile inputFile4 = inputFile2;
                 TLRPC.VideoSize videoSize2 = videoSize;
                 if (inputFile3 == null && inputFile4 == null && videoSize2 == null) {
-                    uyVar.b4 = photoSize2.location;
-                    uyVar.c4 = photoSize.location;
+                    tyVar.b4 = photoSize2.location;
+                    tyVar.c4 = photoSize.location;
                 } else {
-                    if (uyVar.b4 == null) {
+                    if (tyVar.b4 == null) {
                         return;
                     }
                     TLRPC.TL_photos_uploadProfilePhoto tL_photos_uploadProfilePhoto = new TLRPC.TL_photos_uploadProfilePhoto();
@@ -109,55 +109,55 @@ public final class hy implements org.telegram.ui.Components.x40 {
                         tL_photos_uploadProfilePhoto.video_emoji_markup = videoSize2;
                         tL_photos_uploadProfilePhoto.flags |= 16;
                     }
-                    uyVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ci.v1(hyVar, str, z10, 4));
+                    tyVar.getConnectionsManager().sendRequest(tL_photos_uploadProfilePhoto, new ci.u1(hyVar, str, z10, 4));
                 }
-                kVar = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
-                kVar.n().requestLayout();
+                kVar = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+                kVar.o().requestLayout();
             }
         });
     }
 
-    @Override // org.telegram.ui.Components.x40
+    @Override // org.telegram.ui.Components.l50
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final yu0 getCloseIntoObject() {
-        uy uyVar = this.a;
-        org.telegram.ui.Components.rc rcVar = uyVar.d4;
-        if (rcVar == null) {
+    @Override // org.telegram.ui.Components.l50
+    public final ev0 getCloseIntoObject() {
+        ty tyVar = this.a;
+        org.telegram.ui.Components.tc tcVar = tyVar.d4;
+        if (tcVar == null) {
             return null;
         }
-        org.telegram.ui.Components.ic icVar = (org.telegram.ui.Components.ic) rcVar.e;
-        yu0 yu0Var = new yu0();
+        org.telegram.ui.Components.kc kcVar = (org.telegram.ui.Components.kc) tcVar.e;
+        ev0 ev0Var = new ev0();
         int[] iArr = new int[2];
-        org.telegram.ui.Components.w9 w9Var = icVar.c;
-        org.telegram.ui.Components.w9 w9Var2 = icVar.c;
-        w9Var.getLocationInWindow(iArr);
-        yu0Var.b = iArr[0];
-        yu0Var.c = iArr[1];
-        yu0Var.d = uyVar.fragmentView;
-        ImageReceiver imageReceiver = w9Var2.getImageReceiver();
-        yu0Var.a = imageReceiver;
-        yu0Var.e = imageReceiver.getBitmapSafe();
-        yu0Var.i = 0;
-        yu0Var.h = yu0Var.a.getRoundRadius();
-        yu0Var.k = w9Var2.getScaleX();
-        return yu0Var;
+        org.telegram.ui.Components.y9 y9Var = kcVar.c;
+        org.telegram.ui.Components.y9 y9Var2 = kcVar.c;
+        y9Var.getLocationInWindow(iArr);
+        ev0Var.b = iArr[0];
+        ev0Var.c = iArr[1];
+        ev0Var.d = tyVar.fragmentView;
+        ImageReceiver imageReceiver = y9Var2.getImageReceiver();
+        ev0Var.a = imageReceiver;
+        ev0Var.e = imageReceiver.getBitmapSafe();
+        ev0Var.i = 0;
+        ev0Var.h = ev0Var.a.getRoundRadius();
+        ev0Var.k = y9Var2.getScaleX();
+        return ev0Var;
     }
 
-    @Override // org.telegram.ui.Components.x40
+    @Override // org.telegram.ui.Components.l50
     public final /* synthetic */ String getInitialSearchString() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final boolean t() {
+    @Override // org.telegram.ui.Components.l50
+    public final boolean u() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ void N() {
+    @Override // org.telegram.ui.Components.l50
+    public final /* synthetic */ void P() {
     }
 }

@@ -12,7 +12,7 @@ import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 import v7.e6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class m2 {
     public static final char[] a;
@@ -102,6 +102,7 @@ public abstract class m2 {
 
     public static void c(v1 v1Var, StringBuilder sb2, int i10) {
         int i11;
+        int i12;
         boolean equals;
         Method method;
         Method method2;
@@ -110,13 +111,13 @@ public abstract class m2 {
         TreeMap treeMap = new TreeMap();
         Method[] declaredMethods = v1Var.getClass().getDeclaredMethods();
         int length = declaredMethods.length;
-        int i12 = 0;
+        int i13 = 0;
         while (true) {
             i11 = 3;
-            if (i12 >= length) {
+            if (i13 >= length) {
                 break;
             }
-            Method method3 = declaredMethods[i12];
+            Method method3 = declaredMethods[i13];
             if (!Modifier.isStatic(method3.getModifiers()) && method3.getName().length() >= 3) {
                 if (method3.getName().startsWith("set")) {
                     hashSet.add(method3.getName());
@@ -128,14 +129,17 @@ public abstract class m2 {
                     }
                 }
             }
-            i12++;
+            i13++;
         }
         for (Map.Entry entry : treeMap.entrySet()) {
             String substring = ((String) entry.getKey()).substring(i11);
-            if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null) {
+            if (!substring.endsWith("List") || substring.endsWith("OrBuilderList") || substring.equals("List") || (method2 = (Method) entry.getValue()) == null) {
+                i12 = i11;
+            } else {
+                i12 = i11;
                 if (method2.getReturnType().equals(List.class)) {
                     a(sb2, i10, substring.substring(0, substring.length() - 4), v1.i(method2, v1Var, new Object[0]));
-                    i11 = 3;
+                    i11 = i12;
                 }
             }
             if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
@@ -144,53 +148,53 @@ public abstract class m2 {
                 Method method4 = (Method) entry.getValue();
                 Method method5 = (Method) hashMap.get("has".concat(substring));
                 if (method4 != null) {
-                    Object i13 = v1.i(method4, v1Var, new Object[0]);
+                    Object i14 = v1.i(method4, v1Var, new Object[0]);
                     if (method5 != null) {
                         if (!((Boolean) v1.i(method5, v1Var, new Object[0])).booleanValue()) {
                         }
-                        a(sb2, i10, substring, i13);
-                    } else if (i13 instanceof Boolean) {
-                        if (!((Boolean) i13).booleanValue()) {
+                        a(sb2, i10, substring, i14);
+                    } else if (i14 instanceof Boolean) {
+                        if (!((Boolean) i14).booleanValue()) {
                         }
-                        a(sb2, i10, substring, i13);
-                    } else if (i13 instanceof Integer) {
-                        if (((Integer) i13).intValue() == 0) {
+                        a(sb2, i10, substring, i14);
+                    } else if (i14 instanceof Integer) {
+                        if (((Integer) i14).intValue() == 0) {
                         }
-                        a(sb2, i10, substring, i13);
-                    } else if (i13 instanceof Float) {
-                        if (Float.floatToRawIntBits(((Float) i13).floatValue()) == 0) {
+                        a(sb2, i10, substring, i14);
+                    } else if (i14 instanceof Float) {
+                        if (Float.floatToRawIntBits(((Float) i14).floatValue()) == 0) {
                         }
-                        a(sb2, i10, substring, i13);
-                    } else if (i13 instanceof Double) {
-                        if (Double.doubleToRawLongBits(((Double) i13).doubleValue()) == 0) {
+                        a(sb2, i10, substring, i14);
+                    } else if (i14 instanceof Double) {
+                        if (Double.doubleToRawLongBits(((Double) i14).doubleValue()) == 0) {
                         }
-                        a(sb2, i10, substring, i13);
+                        a(sb2, i10, substring, i14);
                     } else {
-                        if (i13 instanceof String) {
-                            equals = i13.equals("");
-                        } else if (i13 instanceof l1) {
-                            equals = i13.equals(l1.c);
-                        } else if (i13 instanceof e1) {
-                            if (i13 == ((v1) ((v1) ((e1) i13)).d(6))) {
+                        if (i14 instanceof String) {
+                            equals = i14.equals("");
+                        } else if (i14 instanceof l1) {
+                            equals = i14.equals(l1.c);
+                        } else if (i14 instanceof e1) {
+                            if (i14 == ((v1) ((v1) ((e1) i14)).d(6))) {
                             }
-                            a(sb2, i10, substring, i13);
+                            a(sb2, i10, substring, i14);
                         } else {
-                            if ((i13 instanceof Enum) && ((Enum) i13).ordinal() == 0) {
+                            if ((i14 instanceof Enum) && ((Enum) i14).ordinal() == 0) {
                             }
-                            a(sb2, i10, substring, i13);
+                            a(sb2, i10, substring, i14);
                         }
                         if (equals) {
                         }
-                        a(sb2, i10, substring, i13);
+                        a(sb2, i10, substring, i14);
                     }
                 }
             }
-            i11 = 3;
+            i11 = i12;
         }
         x2 x2Var = v1Var.zzc;
         if (x2Var != null) {
-            for (int i14 = 0; i14 < x2Var.a; i14++) {
-                a(sb2, i10, String.valueOf(x2Var.b[i14] >>> 3), x2Var.c[i14]);
+            for (int i15 = 0; i15 < x2Var.a; i15++) {
+                a(sb2, i10, String.valueOf(x2Var.b[i15] >>> 3), x2Var.c[i15]);
             }
         }
     }

@@ -6,16 +6,16 @@ import android.util.Log;
 import e6.q;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final g6.b a = new g6.b("MediaSessionUtils", null);
 
     public static ArrayList a(q qVar) {
         try {
-            Parcel Q0 = qVar.Q0(qVar.O0(), 3);
-            ArrayList createTypedArrayList = Q0.createTypedArrayList(e6.d.CREATOR);
-            Q0.recycle();
+            Parcel P0 = qVar.P0(qVar.N0(), 3);
+            ArrayList createTypedArrayList = P0.createTypedArrayList(e6.d.CREATOR);
+            P0.recycle();
             return createTypedArrayList;
         } catch (RemoteException e7) {
             Object[] objArr = {"getNotificationActions", q.class.getSimpleName()};
@@ -27,9 +27,9 @@ public abstract class j {
 
     public static int[] b(q qVar) {
         try {
-            Parcel Q0 = qVar.Q0(qVar.O0(), 4);
-            int[] createIntArray = Q0.createIntArray();
-            Q0.recycle();
+            Parcel P0 = qVar.P0(qVar.N0(), 4);
+            int[] createIntArray = P0.createIntArray();
+            P0.recycle();
             return createIntArray;
         } catch (RemoteException e7) {
             Object[] objArr = {"getCompactViewActionIndices", q.class.getSimpleName()};

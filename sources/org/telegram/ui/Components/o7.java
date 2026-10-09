@@ -1,47 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o7 implements yo0 {
-    public final /* synthetic */ j8 a;
+public final /* synthetic */ class o7 implements em0 {
+    public final /* synthetic */ int a;
 
-    public o7(j8 j8Var) {
-        this.a = j8Var;
+    public /* synthetic */ o7(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.yo0
-    public final void Y(float f7, boolean z10) {
-        if (z10) {
-            MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f7);
+    @Override // org.telegram.ui.Components.em0
+    public final void d(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                if (view instanceof org.telegram.ui.Cells.x) {
+                    ((org.telegram.ui.Cells.x) view).a();
+                    break;
+                }
+                break;
+            case 1:
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.t5) {
+                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
+                    t5Var.w.b(t5Var);
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                int i11 = xh.d.a0;
+                break;
+            default:
+                int i12 = xh.o.A0;
+                break;
         }
-        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
-        if (playingMessageObject == null || !playingMessageObject.isMusic()) {
-            return;
-        }
-        this.a.G0(playingMessageObject, false);
     }
 
-    @Override // org.telegram.ui.Components.yo0
-    public final CharSequence getContentDescription() {
-        StringBuilder sb2 = new StringBuilder();
-        j8 j8Var = this.a;
-        sb2.append(LocaleController.formatPluralString("Minutes", j8Var.D0 / 60, new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", j8Var.D0 % 60, new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2.toString(), LocaleController.formatPluralString("Minutes", j8Var.E0 / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", j8Var.E0 % 60, new Object[0]));
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final /* synthetic */ int p0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final void B() {
+    private final void a(int i10, View view) {
     }
 }

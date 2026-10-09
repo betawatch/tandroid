@@ -1,28 +1,25 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nf1 extends og.a {
-    public final TLRPC.TL_forumTopic c;
+public final class nf1 extends org.telegram.ui.Components.d80 {
+    public final /* synthetic */ long A0;
+    public final /* synthetic */ pf1 B0;
 
-    public nf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nf1(pf1 pf1Var, Context context, int i10, a0.i iVar, long j3, org.telegram.ui.ActionBar.n2 n2Var, long j10) {
+        super(context, i10, iVar, j3, n2Var, null);
+        this.B0 = pf1Var;
+        this.A0 = j10;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && nf1.class == obj.getClass()) {
-            nf1 nf1Var = (nf1) obj;
-            int i10 = this.a;
-            if (i10 == nf1Var.a && i10 == 0 && this.c.id == nf1Var.c.id) {
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.Components.d80
+    public final boolean Y() {
+        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
+        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
     }
 }

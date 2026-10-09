@@ -5,21 +5,21 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
-import n4.y;
+import n4.x;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
-    public y e;
+    public x e;
     public WeakReference f;
     public boolean h;
     public l.k n;
 
     @Override // l.i
-    public final boolean M(l.k kVar, MenuItem menuItem) {
-        return ((qi.f) this.e.b).G(this, menuItem);
+    public final boolean A(l.k kVar, MenuItem menuItem) {
+        return ((oi.f) this.e.b).G(this, menuItem);
     }
 
     @Override // k.a
@@ -28,7 +28,7 @@ public final class d extends a implements l.i {
             return;
         }
         this.h = true;
-        this.e.V(this);
+        this.e.X(this);
     }
 
     @Override // k.a
@@ -62,7 +62,7 @@ public final class d extends a implements l.i {
 
     @Override // k.a
     public final void g() {
-        this.e.W(this, this.n);
+        this.e.Y(this, this.n);
     }
 
     @Override // k.a
@@ -96,18 +96,18 @@ public final class d extends a implements l.i {
         this.d.setTitle(charSequence);
     }
 
-    @Override // k.a
-    public final void n(boolean z10) {
-        this.b = z10;
-        this.d.setTitleOptional(z10);
-    }
-
     @Override // l.i
-    public final void w(l.k kVar) {
+    public final void n(l.k kVar) {
         g();
         m.h hVar = this.d.d;
         if (hVar != null) {
             hVar.l();
         }
+    }
+
+    @Override // k.a
+    public final void o(boolean z10) {
+        this.b = z10;
+        this.d.setTitleOptional(z10);
     }
 }

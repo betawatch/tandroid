@@ -1,45 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.view.View;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class d71 extends s4.j {
-    public final /* synthetic */ e71 F;
+public final /* synthetic */ class d71 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ f71 a;
 
-    public d71(e71 e71Var) {
-        this.F = e71Var;
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(this.a.X((p61) obj, (View) obj2));
     }
 
-    @Override // s4.j
-    public final void M() {
-        e71 e71Var = this.F;
-        if (e71Var.b1()) {
-            e71Var.invalidate();
-        }
-        e71Var.D1();
-    }
-
-    @Override // s4.j
-    public final void O() {
-        e71 e71Var = this.F;
-        if (e71Var.b1()) {
-            e71Var.invalidate();
-        }
-        e71Var.D1();
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        e71 e71Var = this.F;
-        e71Var.invalidate();
-        e71Var.D1();
-    }
-
-    @Override // s4.j
-    public final void Q() {
-        e71 e71Var = this.F;
-        if (e71Var.b1()) {
-            e71Var.invalidate();
-        }
-        e71Var.D1();
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.W((p61) obj, (View) obj2);
     }
 }

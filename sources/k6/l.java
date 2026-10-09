@@ -5,11 +5,11 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-import n6.x;
+import n6.y;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class l extends b8.b implements x {
+public abstract class l extends b8.b implements y {
     public final int b;
 
     public l(byte[] bArr) {
@@ -18,7 +18,7 @@ public abstract class l extends b8.b implements x {
         this.b = Arrays.hashCode(bArr);
     }
 
-    public static byte[] L0(String str) {
+    public static byte[] K0(String str) {
         try {
             return str.getBytes("ISO-8859-1");
         } catch (UnsupportedEncodingException e7) {
@@ -27,9 +27,9 @@ public abstract class l extends b8.b implements x {
     }
 
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         if (i10 == 1) {
-            x6.b bVar = new x6.b(M0());
+            x6.b bVar = new x6.b(L0());
             parcel2.writeNoException();
             m7.a.c(parcel2, bVar);
             return true;
@@ -42,14 +42,14 @@ public abstract class l extends b8.b implements x {
         return true;
     }
 
-    public abstract byte[] M0();
+    public abstract byte[] L0();
 
     public final boolean equals(Object obj) {
-        if (obj != null && (obj instanceof x)) {
+        if (obj != null && (obj instanceof y)) {
             try {
-                x xVar = (x) obj;
-                if (((l) xVar).b == this.b) {
-                    return Arrays.equals(M0(), (byte[]) x6.b.M0(new x6.b(((l) xVar).M0())));
+                y yVar = (y) obj;
+                if (((l) yVar).b == this.b) {
+                    return Arrays.equals(L0(), (byte[]) x6.b.L0(new x6.b(((l) yVar).L0())));
                 }
             } catch (RemoteException e7) {
                 Log.e("GoogleCertificates", "Failed to get Google certificates from remote", e7);

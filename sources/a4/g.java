@@ -1,209 +1,396 @@
 package a4;
 
-import android.graphics.Color;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
-import java.util.ArrayList;
+import e2.d0;
+import e2.v;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g {
-    public static final boolean[] A;
-    public static final int[] B;
-    public static final int[] C;
-    public static final int[] D;
-    public static final int[] E;
-    public static final int v = c(2, 2, 2, 0);
-    public static final int w;
-    public static final int[] x;
-    public static final int[] y;
-    public static final int[] z;
-    public final ArrayList a = new ArrayList();
-    public final SpannableStringBuilder b = new SpannableStringBuilder();
-    public boolean c;
-    public boolean d;
+    public final /* synthetic */ int a;
+    public byte[] b;
+    public int c;
+    public int d;
     public int e;
-    public boolean f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public int t;
-    public int u;
-
-    static {
-        int c10 = c(0, 0, 0, 0);
-        w = c10;
-        int c11 = c(0, 0, 0, 3);
-        x = new int[]{0, 0, 0, 0, 0, 2, 0};
-        y = new int[]{0, 0, 0, 0, 0, 0, 2};
-        z = new int[]{3, 3, 3, 3, 3, 3, 1};
-        A = new boolean[]{false, false, false, true, true, true, false};
-        B = new int[]{c10, c11, c10, c10, c11, c10, c10};
-        C = new int[]{0, 1, 2, 3, 4, 3, 4};
-        D = new int[]{0, 0, 0, 0, 0, 3, 3};
-        E = new int[]{c10, c10, c10, c10, c10, c11, c11};
-    }
 
     public g() {
-        d();
+        this.a = 2;
+        this.b = d0.b;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0027  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int c(int i10, int i11, int i12, int i13) {
-        int i14;
-        e2.d.c(i10, 4);
-        e2.d.c(i11, 4);
-        e2.d.c(i12, 4);
-        e2.d.c(i13, 4);
-        if (i13 != 0 && i13 != 1) {
-            if (i13 == 2) {
-                i14 = 127;
-            } else if (i13 == 3) {
-                i14 = 0;
-            }
-            return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+    public void a() {
+        int i10;
+        int i11;
+        switch (this.a) {
+            case 2:
+                int i12 = this.c;
+                e2.d.g(i12 >= 0 && (i12 < (i10 = this.e) || (i12 == i10 && this.d == 0)));
+                break;
+            default:
+                int i13 = this.d;
+                e2.d.g(i13 >= 0 && (i13 < (i11 = this.c) || (i13 == i11 && this.e == 0)));
+                break;
         }
-        i14 = 255;
-        return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
     }
 
-    public final void a(char c10) {
-        SpannableStringBuilder spannableStringBuilder = this.b;
-        if (c10 != '\n') {
-            spannableStringBuilder.append(c10);
+    public int b() {
+        return ((this.e - this.c) * 8) - this.d;
+    }
+
+    public void c() {
+        if (this.d == 0) {
             return;
         }
-        SpannableString b10 = b();
-        ArrayList arrayList = this.a;
-        arrayList.add(b10);
-        spannableStringBuilder.clear();
-        if (this.o != -1) {
-            this.o = 0;
-        }
-        if (this.p != -1) {
-            this.p = 0;
-        }
-        if (this.q != -1) {
-            this.q = 0;
-        }
-        if (this.s != -1) {
-            this.s = 0;
+        this.d = 0;
+        this.c++;
+        a();
+    }
+
+    public boolean d(int i10) {
+        int i11 = this.d;
+        int i12 = i10 / 8;
+        int i13 = i11 + i12;
+        int i14 = (this.e + i10) - (i12 * 8);
+        if (i14 > 7) {
+            i13++;
+            i14 -= 8;
         }
         while (true) {
-            if (arrayList.size() < this.j && arrayList.size() < 15) {
-                this.u = arrayList.size();
-                return;
+            i11++;
+            if (i11 > i13 || i13 >= this.c) {
+                break;
             }
-            arrayList.remove(0);
+            if (r(i11)) {
+                i13++;
+                i11 += 2;
+            }
+        }
+        int i15 = this.c;
+        if (i13 >= i15) {
+            return i13 == i15 && i14 == 0;
+        }
+        return true;
+    }
+
+    public boolean e() {
+        int i10 = this.d;
+        int i11 = this.e;
+        int i12 = 0;
+        while (this.d < this.c && !h()) {
+            i12++;
+        }
+        boolean z10 = this.d == this.c;
+        this.d = i10;
+        this.e = i11;
+        return !z10 && d((i12 * 2) + 1);
+    }
+
+    public int f() {
+        e2.d.g(this.d == 0);
+        return this.c;
+    }
+
+    public int g() {
+        return (this.c * 8) + this.d;
+    }
+
+    public boolean h() {
+        switch (this.a) {
+            case 1:
+                boolean z10 = (((this.b[this.d] & 255) >> this.e) & 1) == 1;
+                t(1);
+                return z10;
+            case 2:
+                boolean z11 = (this.b[this.c] & (128 >> this.d)) != 0;
+                s();
+                return z11;
+            default:
+                boolean z12 = (this.b[this.d] & (128 >> this.e)) != 0;
+                s();
+                return z12;
         }
     }
 
-    public final SpannableString b() {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.b);
-        int length = spannableStringBuilder.length();
-        if (length > 0) {
-            if (this.o != -1) {
-                spannableStringBuilder.setSpan(new StyleSpan(2), this.o, length, 33);
-            }
-            if (this.p != -1) {
-                spannableStringBuilder.setSpan(new UnderlineSpan(), this.p, length, 33);
-            }
-            if (this.q != -1) {
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(this.r), this.q, length, 33);
-            }
-            if (this.s != -1) {
-                spannableStringBuilder.setSpan(new BackgroundColorSpan(this.t), this.s, length, 33);
-            }
+    public int i(int i10) {
+        switch (this.a) {
+            case 1:
+                int i11 = this.d;
+                int min = Math.min(i10, 8 - this.e);
+                byte[] bArr = this.b;
+                int i12 = i11 + 1;
+                int i13 = ((bArr[i11] & 255) >> this.e) & (255 >> (8 - min));
+                while (min < i10) {
+                    i13 |= (bArr[i12] & 255) << min;
+                    min += 8;
+                    i12++;
+                }
+                int i14 = i13 & ((-1) >>> (32 - i10));
+                t(i10);
+                return i14;
+            case 2:
+                if (i10 == 0) {
+                    return 0;
+                }
+                this.d += i10;
+                int i15 = 0;
+                while (true) {
+                    int i16 = this.d;
+                    if (i16 <= 8) {
+                        byte[] bArr2 = this.b;
+                        int i17 = this.c;
+                        int i18 = ((-1) >>> (32 - i10)) & (i15 | ((bArr2[i17] & 255) >> (8 - i16)));
+                        if (i16 == 8) {
+                            this.d = 0;
+                            this.c = i17 + 1;
+                        }
+                        a();
+                        return i18;
+                    }
+                    int i19 = i16 - 8;
+                    this.d = i19;
+                    byte[] bArr3 = this.b;
+                    int i20 = this.c;
+                    this.c = i20 + 1;
+                    i15 |= (bArr3[i20] & 255) << i19;
+                }
+            default:
+                this.e += i10;
+                int i21 = 0;
+                while (true) {
+                    int i22 = this.e;
+                    if (i22 <= 8) {
+                        byte[] bArr4 = this.b;
+                        int i23 = this.d;
+                        int i24 = ((-1) >>> (32 - i10)) & (i21 | ((bArr4[i23] & 255) >> (8 - i22)));
+                        if (i22 == 8) {
+                            this.e = 0;
+                            this.d = i23 + (r(i23 + 1) ? 2 : 1);
+                        }
+                        a();
+                        return i24;
+                    }
+                    int i25 = i22 - 8;
+                    this.e = i25;
+                    byte[] bArr5 = this.b;
+                    int i26 = this.d;
+                    i21 |= (bArr5[i26] & 255) << i25;
+                    if (!r(i26 + 1)) {
+                        r3 = 1;
+                    }
+                    this.d = i26 + r3;
+                }
         }
-        return new SpannableString(spannableStringBuilder);
     }
 
-    public final void d() {
-        this.a.clear();
-        this.b.clear();
-        this.o = -1;
-        this.p = -1;
-        this.q = -1;
-        this.s = -1;
-        this.u = 0;
-        this.c = false;
-        this.d = false;
-        this.e = 4;
-        this.f = false;
-        this.g = 0;
-        this.h = 0;
-        this.i = 0;
-        this.j = 15;
-        this.k = 0;
-        this.l = 0;
-        this.m = 0;
-        int i10 = w;
-        this.n = i10;
-        this.r = v;
-        this.t = i10;
+    public void j(int i10, byte[] bArr) {
+        int i11 = i10 >> 3;
+        for (int i12 = 0; i12 < i11; i12++) {
+            byte[] bArr2 = this.b;
+            int i13 = this.c;
+            int i14 = i13 + 1;
+            this.c = i14;
+            byte b10 = bArr2[i13];
+            int i15 = this.d;
+            byte b11 = (byte) (b10 << i15);
+            bArr[i12] = b11;
+            bArr[i12] = (byte) (((255 & bArr2[i14]) >> (8 - i15)) | b11);
+        }
+        int i16 = i10 & 7;
+        if (i16 == 0) {
+            return;
+        }
+        byte b12 = (byte) (bArr[i11] & (255 >> i16));
+        bArr[i11] = b12;
+        int i17 = this.d;
+        if (i17 + i16 > 8) {
+            byte[] bArr3 = this.b;
+            int i18 = this.c;
+            this.c = i18 + 1;
+            bArr[i11] = (byte) (b12 | ((bArr3[i18] & 255) << i17));
+            this.d = i17 - 8;
+        }
+        int i19 = this.d + i16;
+        this.d = i19;
+        byte[] bArr4 = this.b;
+        int i20 = this.c;
+        bArr[i11] = (byte) (((byte) (((255 & bArr4[i20]) >> (8 - i19)) << (8 - i16))) | bArr[i11]);
+        if (i19 == 8) {
+            this.d = 0;
+            this.c = i20 + 1;
+        }
+        a();
     }
 
-    public final void e(boolean z10, boolean z11) {
-        int i10 = this.o;
-        SpannableStringBuilder spannableStringBuilder = this.b;
-        if (i10 != -1) {
-            if (!z10) {
-                spannableStringBuilder.setSpan(new StyleSpan(2), this.o, spannableStringBuilder.length(), 33);
-                this.o = -1;
-            }
-        } else if (z10) {
-            this.o = spannableStringBuilder.length();
+    public long k(int i10) {
+        if (i10 <= 32) {
+            int i11 = i(i10);
+            String str = d0.a;
+            return 4294967295L & i11;
         }
-        if (this.p == -1) {
-            if (z11) {
-                this.p = spannableStringBuilder.length();
-            }
-        } else {
-            if (z11) {
-                return;
-            }
-            spannableStringBuilder.setSpan(new UnderlineSpan(), this.p, spannableStringBuilder.length(), 33);
-            this.p = -1;
+        int i12 = i(i10 - 32);
+        int i13 = i(32);
+        String str2 = d0.a;
+        return (4294967295L & i13) | ((i12 & 4294967295L) << 32);
+    }
+
+    public void l(int i10, byte[] bArr) {
+        e2.d.g(this.d == 0);
+        System.arraycopy(this.b, this.c, bArr, 0, i10);
+        this.c += i10;
+        a();
+    }
+
+    public int m() {
+        int i10 = 0;
+        while (!h()) {
+            i10++;
+        }
+        return ((1 << i10) - 1) + (i10 > 0 ? i(i10) : 0);
+    }
+
+    public int n() {
+        int m10 = m();
+        return ((m10 + 1) / 2) * (m10 % 2 == 0 ? -1 : 1);
+    }
+
+    public void o(int i10, byte[] bArr) {
+        this.b = bArr;
+        this.c = 0;
+        this.d = 0;
+        this.e = i10;
+    }
+
+    public void p(v vVar) {
+        o(vVar.c, vVar.a);
+        q(vVar.b * 8);
+    }
+
+    public void q(int i10) {
+        int i11 = i10 / 8;
+        this.c = i11;
+        this.d = i10 - (i11 * 8);
+        a();
+    }
+
+    public boolean r(int i10) {
+        if (2 > i10 || i10 >= this.c) {
+            return false;
+        }
+        byte[] bArr = this.b;
+        return bArr[i10] == 3 && bArr[i10 + (-2)] == 0 && bArr[i10 - 1] == 0;
+    }
+
+    public void s() {
+        switch (this.a) {
+            case 2:
+                int i10 = this.d + 1;
+                this.d = i10;
+                if (i10 == 8) {
+                    this.d = 0;
+                    this.c++;
+                }
+                a();
+                break;
+            default:
+                int i11 = this.e + 1;
+                this.e = i11;
+                if (i11 == 8) {
+                    this.e = 0;
+                    int i12 = this.d;
+                    this.d = i12 + (r(i12 + 1) ? 2 : 1);
+                }
+                a();
+                break;
         }
     }
 
-    public final void f(int i10, int i11) {
-        int i12 = this.q;
-        SpannableStringBuilder spannableStringBuilder = this.b;
-        if (i12 != -1 && this.r != i10) {
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(this.r), this.q, spannableStringBuilder.length(), 33);
+    public void t(int i10) {
+        int i11;
+        switch (this.a) {
+            case 1:
+                int i12 = i10 / 8;
+                int i13 = this.d + i12;
+                this.d = i13;
+                int i14 = (i10 - (i12 * 8)) + this.e;
+                this.e = i14;
+                boolean z10 = true;
+                if (i14 > 7) {
+                    this.d = i13 + 1;
+                    this.e = i14 - 8;
+                }
+                int i15 = this.d;
+                if (i15 < 0 || (i15 >= (i11 = this.c) && (i15 != i11 || this.e != 0))) {
+                    z10 = false;
+                }
+                e2.d.g(z10);
+                break;
+            case 2:
+                int i16 = i10 / 8;
+                int i17 = this.c + i16;
+                this.c = i17;
+                int i18 = (i10 - (i16 * 8)) + this.d;
+                this.d = i18;
+                if (i18 > 7) {
+                    this.c = i17 + 1;
+                    this.d = i18 - 8;
+                }
+                a();
+                break;
+            default:
+                int i19 = this.d;
+                int i20 = i10 / 8;
+                int i21 = i19 + i20;
+                this.d = i21;
+                int i22 = (i10 - (i20 * 8)) + this.e;
+                this.e = i22;
+                if (i22 > 7) {
+                    this.d = i21 + 1;
+                    this.e = i22 - 8;
+                }
+                while (true) {
+                    i19++;
+                    if (i19 > this.d) {
+                        a();
+                        break;
+                    } else if (r(i19)) {
+                        this.d++;
+                        i19 += 2;
+                    }
+                }
         }
-        if (i10 != v) {
-            this.q = spannableStringBuilder.length();
-            this.r = i10;
-        }
-        if (this.s != -1 && this.t != i11) {
-            spannableStringBuilder.setSpan(new BackgroundColorSpan(this.t), this.s, spannableStringBuilder.length(), 33);
-        }
-        if (i11 != w) {
-            this.s = spannableStringBuilder.length();
-            this.t = i11;
-        }
+    }
+
+    public void u(int i10) {
+        e2.d.g(this.d == 0);
+        this.c += i10;
+        a();
+    }
+
+    public g(byte[] bArr) {
+        this.a = 1;
+        this.b = bArr;
+        this.c = bArr.length;
+    }
+
+    public g(byte[] bArr, int i10, int i11) {
+        this.a = 3;
+        this.b = bArr;
+        this.d = i10;
+        this.c = i11;
+        this.e = 0;
+        a();
+    }
+
+    public g(byte[] bArr, int i10) {
+        this.a = 2;
+        this.b = bArr;
+        this.e = i10;
+    }
+
+    public g(int i10, int i11) {
+        this.a = 0;
+        this.c = i10;
+        this.d = i11;
+        this.b = new byte[(i11 * 2) - 1];
+        this.e = 0;
     }
 }

@@ -17,11 +17,10 @@ import android.util.TypedValue;
 import androidx.fragment.app.l0;
 import androidx.fragment.app.v;
 import com.google.android.gms.common.api.GoogleApiActivity;
-import e0.t;
 import n6.q;
 import n6.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
@@ -118,31 +117,31 @@ public final class d extends e {
         Object systemService = context.getSystemService("notification");
         n6.l.h(systemService);
         NotificationManager notificationManager = (NotificationManager) systemService;
-        t tVar = new t(context, null);
-        tVar.t = true;
-        tVar.h(16, true);
-        tVar.e = t.d(f7);
-        e0.o oVar = new e0.o(false);
-        oVar.f = t.d(e7);
-        tVar.n(oVar);
+        e0.r rVar = new e0.r(context, null);
+        rVar.t = true;
+        rVar.h(16, true);
+        rVar.e = e0.r.d(f7);
+        e0.m mVar = new e0.m(false);
+        mVar.f = e0.r.d(e7);
+        rVar.n(mVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.b == null) {
             u6.b.b = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
         }
         if (u6.b.b.booleanValue()) {
-            tVar.E.icon = context.getApplicationInfo().icon;
-            tVar.j = 2;
+            rVar.E.icon = context.getApplicationInfo().icon;
+            rVar.j = 2;
             if (u6.b.f(context)) {
-                tVar.a(org.telegram.messenger.beta.R.drawable.common_full_open_on_phone, resources.getString(org.telegram.messenger.beta.R.string.common_open_on_phone), pendingIntent);
+                rVar.a(org.telegram.messenger.beta.R.drawable.common_full_open_on_phone, resources.getString(org.telegram.messenger.beta.R.string.common_open_on_phone), pendingIntent);
             } else {
-                tVar.g = pendingIntent;
+                rVar.g = pendingIntent;
             }
         } else {
-            tVar.E.icon = R.drawable.stat_sys_warning;
-            tVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
-            tVar.E.when = System.currentTimeMillis();
-            tVar.g = pendingIntent;
-            tVar.f(e7);
+            rVar.E.icon = R.drawable.stat_sys_warning;
+            rVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
+            rVar.E.when = System.currentTimeMillis();
+            rVar.g = pendingIntent;
+            rVar.f(e7);
         }
         if (u6.b.d()) {
             n6.l.k(u6.b.d());
@@ -156,9 +155,9 @@ public final class d extends e {
                 notificationChannel.setName(string);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
-            tVar.y = "com.google.android.gms.availability";
+            rVar.y = "com.google.android.gms.availability";
         }
-        Notification b10 = tVar.b();
+        Notification b10 = rVar.b();
         if (i10 == 1 || i10 == 2 || i10 == 3) {
             g.a.set(false);
             i11 = 10436;

@@ -1,15 +1,42 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yb1 extends org.telegram.ui.Cells.ia {
-    @Override // org.telegram.ui.Cells.ia, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null && getParent().getParent() != null) {
-            getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+public final class yb1 implements LocationListener {
+    public final /* synthetic */ ThemeActivity a;
+
+    public yb1(ThemeActivity themeActivity) {
+        this.a = themeActivity;
+    }
+
+    @Override // android.location.LocationListener
+    public final void onLocationChanged(Location location) {
+        ThemeActivity themeActivity = this.a;
+        if (location == null) {
+            return;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        themeActivity.K0 = false;
+        LocationManager locationManager = (LocationManager) ApplicationLoader.applicationContext.getSystemService("location");
+        locationManager.removeUpdates(themeActivity.Q0);
+        locationManager.removeUpdates(themeActivity.R0);
+        themeActivity.B0(location, false);
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderDisabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onProviderEnabled(String str) {
+    }
+
+    @Override // android.location.LocationListener
+    public final void onStatusChanged(String str, int i10, Bundle bundle) {
     }
 }

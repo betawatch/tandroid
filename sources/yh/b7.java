@@ -1,99 +1,88 @@
 package yh;
 
-import android.text.Editable;
+import android.content.Context;
+import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ld0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class b7 implements TextWatcher {
-    public boolean a;
-    public int b = 2;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ ld0 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ ci.d h;
-    public final /* synthetic */ TextView n;
+public final class b7 extends o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public b7(EditTextBoldCursor editTextBoldCursor, ld0 ld0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
-        this.c = editTextBoldCursor;
-        this.d = ld0Var;
-        this.e = j3;
-        this.f = z10;
-        this.h = dVar;
-        this.n = textView;
+    static {
+        o61.setup(new b7());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        long j3;
-        ld0 ld0Var = this.d;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
+    public static p61 a(int i10, int i11, TL_stars.TL_starsTopupOption tL_starsTopupOption) {
+        p61 J = p61.J(b7.class);
+        J.d = i10;
+        J.z = i11;
+        long j3 = tL_starsTopupOption.stars;
+        J.B = j3;
+        J.l = LocaleController.formatPluralStringSpaced("StarsCount", (int) j3);
+        J.m = tL_starsTopupOption.loadingStorePrice ? null : BillingController.getInstance().formatCurrency(tL_starsTopupOption.amount, tL_starsTopupOption.currency);
+        J.G = tL_starsTopupOption;
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
+        c7 c7Var = (c7) view;
+        int i10 = p61Var.z;
+        CharSequence charSequence = p61Var.l;
+        CharSequence charSequence2 = p61Var.m;
+        org.telegram.ui.Components.r6 r6Var = c7Var.e;
+        TextView textView = c7Var.d;
+        boolean equals = TextUtils.equals(textView.getText(), charSequence);
+        c7Var.n = i10;
+        if (!equals) {
+            c7Var.r.d(i10, true);
         }
-        try {
-            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        } catch (Exception unused) {
-            j3 = 0;
-        }
-        try {
-            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
-                this.a = true;
-                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
-                editTextBoldCursor.setText(Long.toString(j3));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                int i10 = -this.b;
-                this.b = i10;
-                AndroidUtilities.shakeViewSpring(ld0Var, i10);
+        textView.setText(charSequence);
+        if (charSequence2 == null) {
+            if (c7Var.f == null) {
+                SpannableString spannableString = new SpannableString("x");
+                c7Var.f = spannableString;
+                spannableString.setSpan(new ja0(AndroidUtilities.dp(55.0f), r6Var), 0, c7Var.f.length(), 33);
             }
-        } catch (Exception unused2) {
-            this.a = true;
-            long j10 = this.e;
-            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
-            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-            this.a = false;
-            if (!this.f) {
-            }
-            ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-            TextView textView = this.n;
-            if (j3 != 0) {
-            }
+            charSequence2 = c7Var.f;
         }
-        this.a = false;
-        if (!this.f) {
-            this.h.setEnabled(j3 > 0);
-        }
-        ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.n;
-        if (j3 != 0) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
+        r6Var.setText(charSequence2);
+        float f7 = LocaleController.isRTL ? -1.0f : 1.0f;
+        if (equals) {
+            textView.animate().translationX(f7 * (i10 - 1) * AndroidUtilities.dp(2.66f)).setDuration(320L).setInterpolator(hs.h).start();
         } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
+            textView.setTranslationX(f7 * (i10 - 1) * AndroidUtilities.dp(2.66f));
         }
+        c7Var.h = z10;
+        c7Var.invalidate();
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.o61
+    public final boolean contentsEquals(p61 p61Var, p61 p61Var2) {
+        return p61Var.z == p61Var2.z && p61Var.d == p61Var2.d && TextUtils.equals(p61Var.m, p61Var2.m);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new c7(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean equals(p61 p61Var, p61 p61Var2) {
+        return p61Var.d == p61Var2.d;
     }
 }

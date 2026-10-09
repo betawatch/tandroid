@@ -1,77 +1,78 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wx extends UndoView {
-    public final /* synthetic */ uy f0;
+public final class wx extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ ty c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wx(uy uyVar, Activity activity) {
-        super(activity);
-        this.f0 = uyVar;
+    public /* synthetic */ wx(ty tyVar, float f7, int i10) {
+        this.a = i10;
+        this.c = tyVar;
+        this.b = f7;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
-        int i10 = 0;
-        while (true) {
-            ty[] tyVarArr = this.f0.e0;
-            if (i10 >= tyVarArr.length) {
-                return true;
-            }
-            if (tyVarArr[i10].x.k()) {
-                return false;
-            }
-            i10++;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void h(int i10, long j3) {
-        if (i10 == 1 || i10 == 27) {
-            uy uyVar = this.f0;
-            uyVar.y3 = 1;
-            uyVar.J4(true, true);
-            if (uyVar.R1 != null) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                ty tyVar = this.c;
+                tyVar.u3 = null;
+                int i10 = 0;
+                tyVar.O = false;
+                tyVar.Q = true;
+                tyVar.R = true;
+                tyVar.fragmentView.invalidate();
+                tyVar.x3 = -(AndroidUtilities.dp((tyVar.K ? 81 : 0) + 48) - this.b);
+                tyVar.e0[0].setTranslationY(0.0f);
+                while (true) {
+                    sy[] syVarArr = tyVar.e0;
+                    if (i10 >= syVarArr.length) {
+                        tyVar.fragmentView.requestLayout();
+                        jy jyVar = tyVar.X;
+                        if (jyVar != null && tyVar.b.f) {
+                            jyVar.r.requestFocus();
+                            AndroidUtilities.showKeyboard(tyVar.X.r);
+                            break;
+                        }
+                    } else {
+                        sy syVar = syVarArr[i10];
+                        if (syVar != null) {
+                            syVar.a.requestLayout();
+                        }
+                        i10++;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                ty tyVar2 = this.c;
+                tyVar2.u3 = null;
+                tyVar2.P = 0;
+                tyVar2.O = true;
+                tyVar2.x3 = AndroidUtilities.dp((tyVar2.K ? 81 : 0) + 48) - this.b;
+                tyVar2.e0[0].setTranslationY(0.0f);
                 int i11 = 0;
                 while (true) {
-                    if (i11 >= uyVar.R1.size()) {
-                        i11 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) uyVar.R1.get(i11)).id == j3) {
+                    sy[] syVarArr2 = tyVar2.e0;
+                    if (i11 >= syVarArr2.length) {
+                        tyVar2.E0.l(1.0f, false);
+                        tyVar2.fragmentView.requestLayout();
                         break;
                     } else {
+                        sy syVar2 = syVarArr2[i11];
+                        if (syVar2 != null) {
+                            syVar2.a.requestLayout();
+                        }
                         i11++;
                     }
                 }
-                if (i11 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) uyVar.R1.remove(i11);
-                    uyVar.e0[0].d.l();
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.zm(this, i11, dialog, 25));
-                } else {
-                    uyVar.J4(false, true);
-                }
-            }
-            uyVar.x3();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        uy uyVar = this.f0;
-        UndoView[] undoViewArr = uyVar.y0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                uyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
-                uyVar.g5();
-            }
         }
     }
 }

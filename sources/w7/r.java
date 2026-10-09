@@ -1,14 +1,15 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class r {
-    public static m1.c a(String name) {
-        ge.d dVar = zd.m0.b;
-        zd.a2 a2Var = new zd.a2();
-        dVar.getClass();
-        ee.e b10 = zd.e0.b(v7.n8.c(dVar, a2Var));
-        kotlin.jvm.internal.i.e(name, "name");
-        return new m1.c(name, m1.a.b, b10);
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
+        }
+        return null;
     }
 }

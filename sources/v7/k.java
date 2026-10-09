@@ -3,7 +3,7 @@ package v7;
 import java.util.Arrays;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class k implements ja.a {
     public final /* synthetic */ int a;
@@ -22,11 +22,11 @@ public class k implements ja.a {
                 ((HashMap) this.b).put(cls, dVar);
                 ((HashMap) this.c).remove(cls);
                 break;
-            case 5:
+            case 6:
                 ((HashMap) this.b).put(cls, dVar);
                 ((HashMap) this.c).remove(cls);
                 break;
-            case 7:
+            case 8:
                 ((HashMap) this.b).put(cls, dVar);
                 ((HashMap) this.c).remove(cls);
                 break;
@@ -64,7 +64,7 @@ public class k implements ja.a {
                 }
                 sb2.append('}');
                 return sb2.toString();
-            case 12:
+            case 13:
                 StringBuilder sb3 = new StringBuilder(32);
                 sb3.append((String) this.b);
                 sb3.append('{');
@@ -95,17 +95,17 @@ public class k implements ja.a {
     public k(int i10) {
         this.a = i10;
         switch (i10) {
-            case 5:
+            case 6:
                 this.b = new HashMap();
                 this.c = new HashMap();
                 this.d = w7.e.c;
                 break;
-            case 7:
+            case 8:
                 this.b = new HashMap();
                 this.c = new HashMap();
                 this.d = x7.d0.c;
                 break;
-            case 13:
+            case 14:
                 this.b = new HashMap();
                 this.c = new HashMap();
                 this.d = z7.x.c;
@@ -121,8 +121,8 @@ public class k implements ja.a {
     public /* synthetic */ k(String str, int i10) {
         this.a = i10;
         switch (i10) {
-            case 12:
-                k kVar = new k(11, false);
+            case 13:
+                k kVar = new k(12, false);
                 this.c = kVar;
                 this.d = kVar;
                 this.b = str;
@@ -134,5 +134,12 @@ public class k implements ja.a {
                 this.b = str;
                 break;
         }
+    }
+
+    public k(String str, Boolean bool, vc.a aVar, String str2) {
+        this.a = 5;
+        this.b = str;
+        this.c = str2;
+        this.d = aVar;
     }
 }

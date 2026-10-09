@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -23,14 +22,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public s80 a;
+    public t80 a;
     private int autoTranslationPosition;
-    public org.telegram.ui.Components.zl0 b;
-    public s80 c;
-    public org.telegram.ui.Components.pz d;
+    public org.telegram.ui.Components.qm0 b;
+    public t80 c;
+    public org.telegram.ui.Components.c00 d;
     private int doNotTranslatePosition;
     public ArrayList e;
     public ArrayList f;
@@ -46,6 +45,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         this.doNotTranslatePosition = -1;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:12:0x001b A[Catch: Exception -> 0x01d7, TryCatch #0 {Exception -> 0x01d7, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:10:0x0017, B:12:0x001b, B:13:0x007c, B:15:0x0082, B:20:0x008e, B:24:0x0095, B:26:0x009d, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0093, B:47:0x003e, B:49:0x0042, B:51:0x004a, B:53:0x0054, B:55:0x005f, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:78:0x013e, B:81:0x0149, B:83:0x0155, B:84:0x015a, B:86:0x017c, B:87:0x0185, B:89:0x0198, B:91:0x019e, B:93:0x01a9, B:95:0x01b1, B:96:0x01b4, B:99:0x0108, B:102:0x0112, B:104:0x011a, B:105:0x0123, B:107:0x012b, B:108:0x0133), top: B:1:0x0000 }] */
     /* JADX WARN: Removed duplicated region for block: B:20:0x008e A[Catch: Exception -> 0x01d7, TryCatch #0 {Exception -> 0x01d7, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:10:0x0017, B:12:0x001b, B:13:0x007c, B:15:0x0082, B:20:0x008e, B:24:0x0095, B:26:0x009d, B:28:0x00ae, B:30:0x00b2, B:32:0x00b5, B:37:0x00ba, B:39:0x00bf, B:42:0x00c6, B:44:0x0093, B:47:0x003e, B:49:0x0042, B:51:0x004a, B:53:0x0054, B:55:0x005f, B:57:0x00cd, B:59:0x00d1, B:61:0x00da, B:63:0x00e0, B:65:0x00e4, B:69:0x00ea, B:73:0x00f9, B:75:0x00fe, B:78:0x013e, B:81:0x0149, B:83:0x0155, B:84:0x015a, B:86:0x017c, B:87:0x0185, B:89:0x0198, B:91:0x019e, B:93:0x01a9, B:95:0x01b1, B:96:0x01b4, B:99:0x0108, B:102:0x0112, B:104:0x011a, B:105:0x0123, B:107:0x012b, B:108:0x0133), top: B:1:0x0000 }] */
     /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
@@ -53,23 +53,23 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void S(LanguageSelectActivity languageSelectActivity, View view, int i10) {
+    public static void U(LanguageSelectActivity languageSelectActivity, View view, int i10) {
         LocaleController.LocaleInfo localeInfo;
         boolean z10;
         boolean z11;
         try {
             org.telegram.ui.Cells.w8 w8Var = null;
             if (!(view instanceof org.telegram.ui.Cells.w8)) {
-                if (view instanceof org.telegram.ui.Cells.ea) {
-                    languageSelectActivity.presentFragment(new w31());
+                if (view instanceof org.telegram.ui.Cells.ca) {
+                    languageSelectActivity.presentFragment(new f41());
                     return;
                 }
                 if (languageSelectActivity.getParentActivity() != null && languageSelectActivity.parentLayout != null && (view instanceof org.telegram.ui.Cells.g9)) {
-                    boolean z12 = languageSelectActivity.b.getAdapter() == languageSelectActivity.c;
-                    if (!z12) {
+                    Object[] objArr = languageSelectActivity.b.getAdapter() == languageSelectActivity.c;
+                    if (objArr == false) {
                         i10 -= languageSelectActivity.r;
                     }
-                    if (z12) {
+                    if (objArr == true) {
                         localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.e.get(i10);
                     } else if (languageSelectActivity.h.isEmpty() || i10 < 0 || i10 >= languageSelectActivity.h.size()) {
                         if (!languageSelectActivity.h.isEmpty()) {
@@ -82,27 +82,27 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
                     LocaleController.LocaleInfo localeInfo2 = localeInfo;
                     if (localeInfo2 != null) {
                         LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-                        boolean z13 = currentLocaleInfo == localeInfo2;
+                        boolean z12 = currentLocaleInfo == localeInfo2;
                         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(languageSelectActivity.getParentActivity(), 3, null);
-                        if (!z13) {
+                        if (!z12) {
                             b2Var.q(500L);
                         }
                         languageSelectActivity.getMessagesController().getTranslateController().reset();
-                        int applyLanguage = LocaleController.getInstance().applyLanguage(localeInfo2, true, false, false, true, languageSelectActivity.currentAccount, new ci.y0(languageSelectActivity, b2Var, z13, 28));
+                        int applyLanguage = LocaleController.getInstance().applyLanguage(localeInfo2, true, false, false, true, languageSelectActivity.currentAccount, new ci.x0(languageSelectActivity, b2Var, z12, 28));
                         if (applyLanguage != 0) {
-                            b2Var.setOnCancelListener(new da(languageSelectActivity, applyLanguage, 6));
+                            b2Var.setOnCancelListener(new ca(languageSelectActivity, applyLanguage, 6));
                         }
                         String str = localeInfo2.pluralLangCode;
                         String str2 = currentLocaleInfo.pluralLangCode;
-                        HashSet X = w31.X();
-                        HashSet hashSet = new HashSet(X);
-                        if (X.contains(str2) && !X.contains(str)) {
-                            Collection.-EL.removeIf(hashSet, new q80(str2, 0));
+                        HashSet Y = f41.Y();
+                        HashSet hashSet = new HashSet(Y);
+                        if (Y.contains(str2) && !Y.contains(str)) {
+                            Collection.-EL.removeIf(hashSet, new r80(str2, 0));
                         }
-                        if (str != null && !BuildConfig.BETA_URL.equals(str)) {
+                        if (str != null && !"null".equals(str)) {
                             hashSet.add(str);
                         }
-                        w31.Z(hashSet, Boolean.FALSE);
+                        f41.a0(hashSet, Boolean.FALSE);
                         MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().checkRestrictedLanguagesUpdate();
                         MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().cleanup();
                         TranslateController.invalidateSuggestedLanguageCodes();
@@ -115,20 +115,20 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
             if (!languageSelectActivity.h0() && !languageSelectActivity.g0()) {
                 z10 = false;
                 if (i10 != languageSelectActivity.manualTranslationPosition) {
-                    boolean z14 = !languageSelectActivity.h0();
-                    languageSelectActivity.getMessagesController().getTranslateController().setContextTranslateEnabled(z14);
-                    ((org.telegram.ui.Cells.w8) view).setChecked(z14);
+                    boolean z13 = !languageSelectActivity.h0();
+                    languageSelectActivity.getMessagesController().getTranslateController().setContextTranslateEnabled(z13);
+                    ((org.telegram.ui.Cells.w8) view).setChecked(z13);
                     NotificationCenter.getInstance(languageSelectActivity.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateSearchSettings, new Object[0]);
                 } else if (i10 == languageSelectActivity.autoTranslationPosition) {
                     boolean g02 = languageSelectActivity.g0();
-                    boolean z15 = !g02;
+                    boolean z14 = !g02;
                     if (!g02 && !languageSelectActivity.getUserConfig().isPremium()) {
                         languageSelectActivity.showDialog(new rg.y0((org.telegram.ui.ActionBar.n2) languageSelectActivity, 13, false));
                         return;
                     } else {
-                        languageSelectActivity.getMessagesController().getTranslateController().setChatTranslateEnabled(z15);
+                        languageSelectActivity.getMessagesController().getTranslateController().setChatTranslateEnabled(z14);
                         NotificationCenter.getInstance(languageSelectActivity.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateSearchSettings, new Object[0]);
-                        ((org.telegram.ui.Cells.w8) view).setChecked(z15);
+                        ((org.telegram.ui.Cells.w8) view).setChecked(z14);
                     }
                 }
                 if (!languageSelectActivity.h0() && !languageSelectActivity.g0()) {
@@ -178,7 +178,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         }
     }
 
-    public static boolean T(LanguageSelectActivity languageSelectActivity, View view, int i10) {
+    public static boolean V(LanguageSelectActivity languageSelectActivity, View view, int i10) {
         LocaleController.LocaleInfo localeInfo;
         try {
             if (languageSelectActivity.getParentActivity() != null && languageSelectActivity.parentLayout != null && (view instanceof org.telegram.ui.Cells.g9)) {
@@ -201,12 +201,12 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
                     org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                     b2Var.R = LocaleController.getString(R.string.DeleteLocalizationTitle);
                     b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", R.string.DeleteLocalizationText, localeInfo.name));
-                    alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new pw(8, languageSelectActivity, localeInfo));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new rw(7, languageSelectActivity, localeInfo));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                     languageSelectActivity.showDialog(b2Var);
                     TextView textView = (TextView) b2Var.d(-1);
                     if (textView != null) {
-                        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
+                        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false));
                     }
                     return true;
                 }
@@ -218,30 +218,30 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         }
     }
 
-    public static void U(LanguageSelectActivity languageSelectActivity) {
+    public static void W(LanguageSelectActivity languageSelectActivity) {
         languageSelectActivity.actionBar.h(true);
         languageSelectActivity.j0();
     }
 
-    public static /* synthetic */ void W(LanguageSelectActivity languageSelectActivity, LocaleController.LocaleInfo localeInfo) {
+    public static /* synthetic */ void X(LanguageSelectActivity languageSelectActivity, LocaleController.LocaleInfo localeInfo) {
         if (LocaleController.getInstance().deleteLanguage(localeInfo, languageSelectActivity.currentAccount)) {
             languageSelectActivity.f0();
             ArrayList arrayList = languageSelectActivity.e;
             if (arrayList != null) {
                 arrayList.remove(localeInfo);
             }
-            s80 s80Var = languageSelectActivity.a;
-            if (s80Var != null) {
-                s80Var.l();
+            t80 t80Var = languageSelectActivity.a;
+            if (t80Var != null) {
+                t80Var.l();
             }
-            s80 s80Var2 = languageSelectActivity.c;
-            if (s80Var2 != null) {
-                s80Var2.l();
+            t80 t80Var2 = languageSelectActivity.c;
+            if (t80Var2 != null) {
+                t80Var2.l();
             }
         }
     }
 
-    public static /* synthetic */ void X(LanguageSelectActivity languageSelectActivity) {
+    public static /* synthetic */ void Y(LanguageSelectActivity languageSelectActivity) {
         if (languageSelectActivity.isPaused) {
             return;
         }
@@ -250,46 +250,47 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.Language));
-        org.telegram.ui.ActionBar.c5 c5Var = this.parentLayout;
-        if (c5Var != null && ((ActionBarLayout) c5Var).N0) {
+        org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
+        if (d5Var != null && ((ActionBarLayout) d5Var).N0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         this.actionBar.setActionBarMenuOnItemClick(new u70(this, 2));
-        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+        org.telegram.ui.ActionBar.v0 a2 = this.actionBar.o().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new hg.d2(this, 12);
+        a2.H = new hg.e2(this, 11);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.a = new s80(this, context, false);
-        this.c = new s80(this, context, true);
+        this.a = new t80(this, context, false);
+        this.c = new t80(this, context, true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(context, null);
-        this.d = pzVar;
-        pzVar.setText(LocaleController.getString(R.string.NoResult));
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        org.telegram.ui.Components.c00 c00Var = new org.telegram.ui.Components.c00(context, null);
+        this.d = c00Var;
+        c00Var.setText(LocaleController.getString(R.string.NoResult));
         this.d.c();
         this.d.setShowAtCenter(true);
-        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        this.b = zl0Var;
-        zl0Var.r1();
+        frameLayout2.addView(this.d, w7.x5.d(-1.0f, -1));
+        org.telegram.ui.Components.qm0 qm0Var = new org.telegram.ui.Components.qm0(context, null);
+        this.b = qm0Var;
+        qm0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.b);
         this.b.setEmptyView(this.d);
-        this.b.setLayoutManager(new s4.c0(1, false));
-        this.b.setSectionsDrawBackground(true);
+        this.b.setLayoutManager(new s4.d0(1, false));
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
-        r80 r80Var = new r80(this);
-        r80Var.n(400L);
-        r80Var.C = false;
-        r80Var.o(org.telegram.ui.Components.tr.h);
-        this.b.setItemAnimator(r80Var);
-        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
-        frameLayout.addView(this.d, w7.z5.c(-1.0f, -1));
+        s80 s80Var = new s80(this);
+        s80Var.n(400L);
+        s80Var.C = false;
+        s80Var.o(org.telegram.ui.Components.hs.h);
+        this.b.setItemAnimator(s80Var);
+        frameLayout2.addView(this.b, w7.x5.d(-1.0f, -1));
         this.b.setOnItemClickListener(new i(this, 15));
-        this.b.setOnItemLongClickListener(new bu(this, 14));
-        this.b.setOnScrollListener(new i3(this, 18));
+        this.b.setOnItemLongClickListener(new gu(this, 13));
+        this.b.setOnScrollListener(new i3(this, 17));
         return this.fragmentView;
     }
 
@@ -299,7 +300,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
             return;
         }
         f0();
-        AndroidUtilities.runOnUIThread(new p80(this, 2));
+        AndroidUtilities.runOnUIThread(new q80(this, 2));
     }
 
     public final void f0() {
@@ -325,14 +326,10 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 16, new Class[]{org.telegram.ui.Cells.q4.class}, null, null, null, org.telegram.ui.ActionBar.i6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
@@ -355,7 +352,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
 
     public final void i0(String str) {
         if (str != null) {
-            Utilities.searchQueue.postRunnable(new cu(28, this, str));
+            Utilities.searchQueue.postRunnable(new m70(6, this, str));
             return;
         }
         this.e = null;
@@ -374,19 +371,19 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         if (this.actionBar != null) {
             String string = LocaleController.getString(R.string.Language);
             if (!TextUtils.equals(this.actionBar.getTitle(), string)) {
-                this.actionBar.G(string, true, 350L, org.telegram.ui.Components.tr.h);
+                this.actionBar.J(string, true, 350L, org.telegram.ui.Components.hs.h);
             }
         }
-        s80 s80Var = this.a;
-        if (s80Var != null) {
-            s80Var.q(0, s80Var.h());
+        t80 t80Var = this.a;
+        if (t80Var != null) {
+            t80Var.q(0, t80Var.h());
         }
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        LocaleController.getInstance().checkForcePatchLangpack(this.currentAccount, new p80(this, 0));
+        LocaleController.getInstance().checkForcePatchLangpack(this.currentAccount, new q80(this, 0));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -404,11 +401,17 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.b.setPadding(0, 0, 0, i13);
+        this.b.setClipToPadding(false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        s80 s80Var = this.a;
-        if (s80Var != null) {
-            s80Var.l();
+        t80 t80Var = this.a;
+        if (t80Var != null) {
+            t80Var.l();
         }
     }
 }

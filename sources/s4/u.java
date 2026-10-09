@@ -1,20 +1,20 @@
 package s4;
 
-import ai.k6;
+import ai.l6;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u implements Animator.AnimatorListener {
-    public final /* synthetic */ c1 E;
-    public final /* synthetic */ y F;
+    public final /* synthetic */ d1 E;
+    public final /* synthetic */ z F;
     public final float a;
     public final float b;
     public final float c;
     public final float d;
-    public final c1 e;
+    public final d1 e;
     public final int f;
     public final ValueAnimator h;
     public boolean n;
@@ -25,20 +25,20 @@ public final class u implements Animator.AnimatorListener {
     public float x;
     public final /* synthetic */ int y;
 
-    public u(y yVar, c1 c1Var, int i10, float f7, float f10, float f11, float f12, int i11, c1 c1Var2) {
-        this.F = yVar;
+    public u(z zVar, d1 d1Var, int i10, float f7, float f10, float f11, float f12, int i11, d1 d1Var2) {
+        this.F = zVar;
         this.y = i11;
-        this.E = c1Var2;
+        this.E = d1Var2;
         this.f = i10;
-        this.e = c1Var;
+        this.e = d1Var;
         this.a = f7;
         this.b = f10;
         this.c = f11;
         this.d = f12;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new k6(this, 13));
-        ofFloat.setTarget(c1Var.a);
+        ofFloat.addUpdateListener(new l6(this, 13));
+        ofFloat.setTarget(d1Var.a);
         ofFloat.addListener(this);
         this.x = 0.0f;
     }
@@ -62,21 +62,21 @@ public final class u implements Animator.AnimatorListener {
             return;
         }
         int i10 = this.y;
-        c1 c1Var = this.E;
-        y yVar = this.F;
+        d1 d1Var = this.E;
+        z zVar = this.F;
         if (i10 <= 0) {
-            yVar.x.a(yVar.H, c1Var);
+            zVar.x.a(zVar.H, d1Var);
         } else {
-            yVar.a.add(c1Var.a);
+            zVar.a.add(d1Var.a);
             this.n = true;
             if (i10 > 0) {
-                yVar.H.post(new i9.s(yVar, this, i10));
+                zVar.H.post(new v(zVar, this, i10));
             }
         }
-        View view = yVar.M;
-        View view2 = c1Var.a;
+        View view = zVar.M;
+        View view2 = d1Var.a;
         if (view == view2) {
-            yVar.o(view2);
+            zVar.o(view2);
         }
     }
 

@@ -1,115 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ji extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ ki x;
+public final class ji extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ji(ki kiVar, ki kiVar2) {
-        super(kiVar2);
-        this.x = kiVar;
+    public /* synthetic */ ji(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final boolean b() {
-        nz nzVar;
-        xi xiVar = this.x.B0;
-        if (!xiVar.isDismissed() && xiVar.s1) {
-            pi piVar = xiVar.y0;
-            if (piVar != xiVar.m0 && piVar != xiVar.n0 && !xiVar.m1().m()) {
-                return true;
-            }
-            pi piVar2 = xiVar.y0;
-            xn xnVar = xiVar.m0;
-            if (piVar2 == xnVar && ((nzVar = xnVar.E) == null || nzVar.getVisibility() != 0)) {
-                return true;
-            }
-            pi piVar3 = xiVar.y0;
-            xn xnVar2 = xiVar.n0;
-            if (piVar3 == xnVar2) {
-                nz nzVar2 = xnVar2.E;
-                return nzVar2 == null || nzVar2.getVisibility() != 0;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                yi yiVar = (yi) this.d;
+                yiVar.B0.setAlpha(0.0f);
+                yiVar.B0.setTranslationY(AndroidUtilities.dp(78.0f) + this.b);
+                mi miVar = yiVar.e0;
+                qi qiVar = yiVar.B0;
+                Float valueOf = Float.valueOf(1.0f);
+                miVar.getClass();
+                miVar.a(qiVar, valueOf);
+                yiVar.a1.setAlpha(0.0f);
+                o1.k kVar = new o1.k(yiVar.C0, o1.h.n, 0.0f);
+                kVar.u.a(0.75f);
+                kVar.u.b(500.0f);
+                kVar.b(new m7(this, 3));
+                kVar.a(new ei.l4(3, this, (jh) this.c));
+                yiVar.w1 = kVar;
+                kVar.h();
+                break;
+            case 1:
+                a5.a aVar = (a5.a) this.d;
+                ((qm0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                aVar.c = null;
+                break;
+            default:
+                yh.s3 s3Var = (yh.s3) this.d;
+                s3Var.U1();
+                yh.e2 e2Var = s3Var.g0;
+                int i10 = this.b;
+                e2Var.setVisibility(i10 == 0 ? 0 : 8);
+                s3Var.s0.setVisibility(i10 == 1 ? 0 : 8);
+                s3Var.z0.setVisibility(i10 == 2 ? 0 : 8);
+                s3Var.B0.setVisibility(i10 == 3 ? 0 : 8);
+                s3Var.u2();
+                s3Var.a1 = null;
+                Runnable runnable = (Runnable) this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void e(float f7, float f10, boolean z10) {
-        ki kiVar = this.x;
-        xi xiVar = kiVar.B0;
-        xiVar.l2 = f7;
-        float f11 = xiVar.d2;
-        if (f11 > 0.0f) {
-            xiVar.l2 = com.google.android.gms.internal.vision.e2.z(1.0f, f10, f11 - xiVar.e2, f7);
-        }
-        xiVar.X0.setTranslationY(xiVar.l2);
-        xiVar.a1.setTranslationY(xiVar.l2);
-        org.telegram.ui.ActionBar.v0 v0Var = xiVar.e1;
-        if (v0Var != null) {
-            v0Var.setTranslationY(xiVar.l2);
-        }
-        org.telegram.ui.ActionBar.v0 v0Var2 = xiVar.c1;
-        if (v0Var2 != null) {
-            v0Var2.setTranslationY(xiVar.a1.getTranslationY());
-        }
-        ci.e4 e4Var = xiVar.d1;
-        if (e4Var != null) {
-            e4Var.setTranslationY(xiVar.a1.getTranslationY());
-        }
-        xiVar.f1.setTranslationY(xiVar.l2);
-        xiVar.Z1(0);
-        xiVar.setCurrentPanTranslationY(xiVar.l2);
-        kiVar.invalidate();
-        xiVar.D0.invalidate();
-        xiVar.T1();
-        pi piVar = xiVar.y0;
-        if (piVar != null) {
-            piVar.k(xiVar.l2);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void f() {
-        boolean z10;
-        xi xiVar = this.x.B0;
-        xiVar.W1(xiVar.y0, 0);
-        xiVar.c2 = xiVar.b2[0];
-        xiVar.y0.v();
-        if (!(xiVar.y0 instanceof ei.r4) || xiVar.D1) {
-            return;
-        }
-        z10 = ((org.telegram.ui.ActionBar.f3) xiVar).keyboardVisible;
-        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
-        for (int i10 = 0; i10 < xiVar.x0.size(); i10++) {
-            ((ei.r4) xiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(int i10, boolean z10) {
-        int i11;
-        ki kiVar = this.x;
-        xi xiVar = kiVar.B0;
-        int i12 = xiVar.c2;
-        if (i12 <= 0 || i12 == (i11 = xiVar.b2[0]) || !z10) {
-            xiVar.d2 = -1.0f;
-        } else {
-            xiVar.d2 = i12;
-            xiVar.e2 = i11;
-        }
-        kiVar.invalidate();
-        wh whVar = xiVar.x1;
-        if ((xiVar.y0 instanceof ei.r4) && !xiVar.D1) {
-            if (z10) {
-                whVar.setVisibility(8);
-            } else {
-                whVar.setVisibility(0);
-            }
-        }
-        xiVar.y0.w(i10, z10);
     }
 }

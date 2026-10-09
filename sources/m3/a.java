@@ -1,10 +1,11 @@
 package m3;
 
+import a1.g;
 import b2.m0;
 import b2.o0;
 import b2.s;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final int a;
@@ -29,7 +30,7 @@ public final class a implements o0 {
         StringBuilder sb2 = new StringBuilder("Ait(controlCode=");
         sb2.append(this.a);
         sb2.append(",url=");
-        return a4.a.t(sb2, this.b, ")");
+        return g.t(sb2, this.b, ")");
     }
 
     @Override // b2.o0

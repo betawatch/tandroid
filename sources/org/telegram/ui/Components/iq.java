@@ -1,265 +1,91 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Path;
+import java.util.Random;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class iq extends Drawable {
-    public final Paint a;
-    public long b;
-    public final RectF c;
-    public float d;
-    public boolean e;
-    public int f;
-    public int g;
+public final class iq {
+    public float g;
+    public float k;
+    public final Path a = new Path();
+    public final float[] b = new float[4];
+    public final float[] c = new float[4];
+    public final Matrix d = new Matrix();
+    public final float h = 1.0f;
+    public final Random i = new Random();
+    public final int f = 6;
+    public final float e = (float) (Math.tan(3.141592653589793d / 12) * 1.3333333333333333d);
+    public final float[] j = new float[6];
 
     public iq() {
-        this(2.0f);
+        for (int i10 = 0; i10 < this.f; i10++) {
+            this.j[i10] = (this.i.nextInt() % 100) / 100.0f;
+        }
     }
 
-    public abstract int a();
-
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0142  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0154  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0166  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x01af  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x014f  */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float f7;
-        float f10;
-        float f11;
-        float x10;
-        float f12;
-        Paint paint;
-        float f13;
-        long currentTimeMillis = System.currentTimeMillis();
-        int a2 = a();
-        Paint paint2 = this.a;
-        if (a2 != 0) {
-            this.g = Color.alpha(a2);
-            paint2.setColor(i0.a.k(a2, 255));
-        }
-        long j3 = this.b;
-        if (j3 != 0) {
-            long j10 = currentTimeMillis - j3;
-            boolean z10 = this.e;
-            if (z10 || this.d != 0.0f) {
-                float f14 = ((j10 * 360) / 500.0f) + this.d;
-                this.d = f14;
-                if (z10 || f14 < 720.0f) {
-                    this.d = f14 - (((int) (f14 / 720.0f)) * 720);
-                } else {
-                    this.d = 0.0f;
-                }
-                invalidateSelf();
-            }
-        }
-        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
-            canvas2 = canvas;
-            canvas2.save();
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
-        }
-        canvas2.translate(AndroidUtilities.dp(24.0f) / 2, AndroidUtilities.dp(24.0f) / 2);
-        canvas2.rotate(-45.0f);
-        float f15 = this.d;
-        if (f15 < 0.0f || f15 >= 90.0f) {
-            if (f15 >= 90.0f && f15 < 180.0f) {
-                f11 = org.telegram.messenger.q.x(f15, 90.0f, 90.0f, 1.0f);
-                f7 = 0.0f;
-                f10 = 1.0f;
-                f12 = 0.0f;
-                if (f7 == 0.0f) {
-                }
-                if (f11 != 0.0f) {
-                }
-                if (f10 != 0.0f) {
-                }
-                if (f12 != 1.0f) {
-                }
+    public final void a(float f7, float f10, Canvas canvas, Paint paint) {
+        iq iqVar = this;
+        float f11 = iqVar.g;
+        float f12 = (f11 - 0.0f) - 0.0f;
+        float f13 = f11 + 0.0f + 0.0f;
+        float max = Math.max(f12, f13);
+        float f14 = iqVar.e;
+        float f15 = max * f14 * iqVar.h;
+        Path path = iqVar.a;
+        path.reset();
+        int i10 = 0;
+        while (true) {
+            int i11 = iqVar.f;
+            if (i10 >= i11) {
+                canvas.save();
+                canvas.rotate(0.0f, f7, f10);
+                canvas.drawPath(path, paint);
                 canvas.restore();
-                int centerX = getBounds().centerX();
-                int centerY = getBounds().centerY();
-                int i10 = this.f;
-                float f16 = centerX - i10;
-                float f17 = centerY - i10;
-                float f18 = centerX + i10;
-                float f19 = centerY + i10;
-                RectF rectF = this.c;
-                rectF.set(f16, f17, f18, f19);
-                f13 = this.d;
-                float f20 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-                if (f13 >= 360.0f) {
-                }
-                canvas.drawArc(rectF, f20, f13, false, paint);
-                this.b = currentTimeMillis;
+                return;
             }
-            if (f15 < 180.0f || f15 >= 270.0f) {
-                if (f15 >= 270.0f && f15 < 360.0f) {
-                    x10 = (f15 - 270.0f) / 90.0f;
-                } else if (f15 < 360.0f || f15 >= 450.0f) {
-                    if (f15 >= 450.0f && f15 < 540.0f) {
-                        f7 = (f15 - 450.0f) / 90.0f;
-                        f11 = 0.0f;
-                    } else if (f15 >= 540.0f && f15 < 630.0f) {
-                        f11 = (f15 - 540.0f) / 90.0f;
-                        f7 = 1.0f;
-                    } else if (f15 < 630.0f || f15 >= 720.0f) {
-                        f7 = 1.0f;
-                    } else {
-                        f10 = (f15 - 630.0f) / 90.0f;
-                        f7 = 1.0f;
-                        f11 = 1.0f;
-                    }
-                    f10 = 0.0f;
-                } else {
-                    x10 = org.telegram.messenger.q.x(f15, 360.0f, 90.0f, 1.0f);
-                }
-                f12 = x10;
-                f7 = 0.0f;
-                f11 = 0.0f;
-                f10 = 0.0f;
-                if (f7 == 0.0f) {
-                    paint = paint2;
-                    canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f7, paint);
-                } else {
-                    paint = paint2;
-                }
-                if (f11 != 0.0f) {
-                    canvas.drawLine((-this.f) * f11, 0.0f, 0.0f, 0.0f, paint);
-                }
-                if (f10 != 0.0f) {
-                    canvas.drawLine(0.0f, (-this.f) * f10, 0.0f, 0.0f, paint);
-                }
-                if (f12 != 1.0f) {
-                    float f21 = this.f;
-                    canvas.drawLine(f21 * f12, 0.0f, f21, 0.0f, paint);
-                }
-                canvas.restore();
-                int centerX2 = getBounds().centerX();
-                int centerY2 = getBounds().centerY();
-                int i102 = this.f;
-                float f162 = centerX2 - i102;
-                float f172 = centerY2 - i102;
-                float f182 = centerX2 + i102;
-                float f192 = centerY2 + i102;
-                RectF rectF2 = this.c;
-                rectF2.set(f162, f172, f182, f192);
-                f13 = this.d;
-                float f202 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-                if (f13 >= 360.0f) {
-                    f13 = 720.0f - f13;
-                }
-                canvas.drawArc(rectF2, f202, f13, false, paint);
-                this.b = currentTimeMillis;
+            Matrix matrix = iqVar.d;
+            matrix.reset();
+            float f16 = 360.0f / i11;
+            matrix.setRotate(i10 * f16, f7, f10);
+            float f17 = i10 % 2 == 0 ? f12 : f13;
+            float f18 = iqVar.k;
+            float[] fArr = iqVar.j;
+            float f19 = (fArr[i10] * f18) + f17;
+            float[] fArr2 = iqVar.b;
+            fArr2[0] = f7;
+            float f20 = f10 - f19;
+            fArr2[1] = f20;
+            float f21 = f13;
+            fArr2[2] = com.google.android.gms.internal.vision.e2.w(f18, fArr[i10], f14, f7 + f15);
+            fArr2[3] = f20;
+            matrix.mapPoints(fArr2);
+            int i12 = i10 + 1;
+            int i13 = i12 >= i11 ? 0 : i12;
+            float f22 = i13 % 2 == 0 ? f12 : f21;
+            float f23 = iqVar.k;
+            float f24 = (fArr[i13] * f23) + f22;
+            float[] fArr3 = iqVar.c;
+            fArr3[0] = f7;
+            float f25 = f10 - f24;
+            fArr3[1] = f25;
+            float f26 = f12;
+            fArr3[2] = com.google.android.gms.internal.vision.e2.w(f23, fArr[i13], f14, f7 - f15);
+            fArr3[3] = f25;
+            matrix.reset();
+            matrix.setRotate(f16 * i13, f7, f10);
+            matrix.mapPoints(fArr3);
+            if (i10 == 0) {
+                path.moveTo(fArr2[0], fArr2[1]);
             }
-            f10 = org.telegram.messenger.q.x(f15, 180.0f, 90.0f, 1.0f);
-            f7 = 0.0f;
-            f11 = 0.0f;
-            f12 = 0.0f;
-            if (f7 == 0.0f) {
-            }
-            if (f11 != 0.0f) {
-            }
-            if (f10 != 0.0f) {
-            }
-            if (f12 != 1.0f) {
-            }
-            canvas.restore();
-            int centerX22 = getBounds().centerX();
-            int centerY22 = getBounds().centerY();
-            int i1022 = this.f;
-            float f1622 = centerX22 - i1022;
-            float f1722 = centerY22 - i1022;
-            float f1822 = centerX22 + i1022;
-            float f1922 = centerY22 + i1022;
-            RectF rectF22 = this.c;
-            rectF22.set(f1622, f1722, f1822, f1922);
-            f13 = this.d;
-            float f2022 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-            if (f13 >= 360.0f) {
-            }
-            canvas.drawArc(rectF22, f2022, f13, false, paint);
-            this.b = currentTimeMillis;
+            path.cubicTo(fArr2[2], fArr2[3], fArr3[2], fArr3[3], fArr3[0], fArr3[1]);
+            i10 = i12;
+            f13 = f21;
+            f12 = f26;
+            iqVar = this;
         }
-        f7 = 1.0f - (f15 / 90.0f);
-        f11 = 1.0f;
-        f10 = 1.0f;
-        f12 = 0.0f;
-        if (f7 == 0.0f) {
-        }
-        if (f11 != 0.0f) {
-        }
-        if (f10 != 0.0f) {
-        }
-        if (f12 != 1.0f) {
-        }
-        canvas.restore();
-        int centerX222 = getBounds().centerX();
-        int centerY222 = getBounds().centerY();
-        int i10222 = this.f;
-        float f16222 = centerX222 - i10222;
-        float f17222 = centerY222 - i10222;
-        float f18222 = centerX222 + i10222;
-        float f19222 = centerY222 + i10222;
-        RectF rectF222 = this.c;
-        rectF222.set(f16222, f17222, f18222, f19222);
-        f13 = this.d;
-        float f20222 = (f13 >= 360.0f ? f13 - 360.0f : 0.0f) - 45.0f;
-        if (f13 >= 360.0f) {
-        }
-        canvas.drawArc(rectF222, f20222, f13, false, paint);
-        this.b = currentTimeMillis;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public iq(float f7) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        new DecelerateInterpolator();
-        this.c = new RectF();
-        this.g = 255;
-        paint.setColor(-1);
-        paint.setStrokeWidth(AndroidUtilities.dp(f7));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStyle(Paint.Style.STROKE);
-        this.f = AndroidUtilities.dp(8.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

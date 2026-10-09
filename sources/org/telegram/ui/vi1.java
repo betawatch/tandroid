@@ -1,34 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class vi1 extends View {
-    public int a;
-    public final /* synthetic */ WallpapersListActivity b;
+    public final Paint a;
+    public final org.telegram.ui.Components.l9 b;
+    public org.telegram.ui.Components.l11 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vi1(WallpapersListActivity wallpapersListActivity, Context context) {
-        super(context);
-        this.b = wallpapersListActivity;
+    public vi1(Activity activity) {
+        super(activity);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(-14538189);
+        org.telegram.ui.Components.l9 l9Var = new org.telegram.ui.Components.l9(this, false);
+        this.b = l9Var;
+        l9Var.p = AndroidUtilities.dp(100.0f);
+        l9Var.o = AndroidUtilities.dp(30.0f);
+        l9Var.x = false;
+        l9Var.s = AndroidUtilities.dp(24.0f);
+        l9Var.j(AndroidUtilities.dp(18.0f));
+        l9Var.t = 0.58f;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        WallpapersListActivity wallpapersListActivity = this.b;
-        wallpapersListActivity.s.setColor(this.a);
-        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.s);
-        if (this.a == org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)) {
-            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.v);
+        if (this.c == null) {
+            return;
         }
+        float dp = AndroidUtilities.dp(4.0f);
+        org.telegram.ui.Components.l9 l9Var = this.b;
+        float e7 = l9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
+        float dp2 = AndroidUtilities.dp(30.0f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - e7) / 2.0f, 0.0f, (getWidth() + e7) / 2.0f, getHeight());
+        float f7 = dp2 / 2.0f;
+        canvas.drawRoundRect(rectF, f7, f7, this.a);
+        canvas.save();
+        canvas.translate(rectF.left + AndroidUtilities.dp(4.0f), 0.0f);
+        l9Var.i(canvas);
+        canvas.translate(l9Var.A + AndroidUtilities.dp(7.0f), 0.0f);
+        this.c.c(0.0f, f7, 1.0f, -1, canvas);
+        canvas.restore();
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(30.0f));
     }
 }

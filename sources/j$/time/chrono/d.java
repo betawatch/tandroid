@@ -147,7 +147,7 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     @Override // j$.time.chrono.b
     public int hashCode() {
         long z10 = z();
-        return a().hashCode() ^ ((int) (z10 ^ (z10 >>> 32)));
+        return ((int) (z10 ^ (z10 >>> 32))) ^ a().hashCode();
     }
 
     @Override // j$.time.temporal.Temporal

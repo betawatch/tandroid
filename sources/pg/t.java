@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.bi;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class t extends View {
     public final Paint a;
@@ -87,7 +87,7 @@ public final class t extends View {
         if (num != null) {
             int intValue = num.intValue();
             int i10 = x.s;
-            this.r.m(intValue, 3);
+            this.r.o(intValue, 3);
             b(x10, y3);
         }
     }
@@ -101,6 +101,7 @@ public final class t extends View {
         canvas.save();
         Path path = this.r.e;
         path.rewind();
+        float f7 = 10.0f;
         path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
         canvas.clipPath(path);
         float width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / 12.0f;
@@ -134,6 +135,7 @@ public final class t extends View {
             long keyAt = longSparseArray.keyAt(i12);
             float floatValue = ((Float) longSparseArray.valueAt(i12)).floatValue();
             float min = this.e == keyAt ? Math.min(1.0f, floatValue + 0.045714285f) : Math.max(0.0f, floatValue - 0.10666667f);
+            float f10 = f7;
             int i13 = (int) (keyAt >> 16);
             int i14 = (int) (keyAt - (i13 << 16));
             Integer num2 = (Integer) hashMap.get(Long.valueOf(keyAt));
@@ -141,25 +143,25 @@ public final class t extends View {
             if (num2 != null) {
                 paint2.setColor(AndroidUtilities.computePerceivedBrightness(num2.intValue()) > 0.721f ? -15658735 : -1);
             }
-            paint2.setStrokeWidth(tr.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
+            paint2.setStrokeWidth(hs.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
             Path path2 = this.f;
             path2.rewind();
             RectF rectF3 = AndroidUtilities.rectTmp;
-            float f7 = width;
-            float f10 = height;
+            float f11 = width;
+            float f12 = height;
             HashMap hashMap2 = hashMap;
-            rectF3.set((i13 * f7) + getPaddingLeft(), (i14 * f10) + getPaddingTop(), ((i13 + 1) * f7) + getPaddingLeft(), ((i14 + 1) * f10) + getPaddingTop());
-            float dp = (i13 == 0 && i14 == 0) ? AndroidUtilities.dp(10.0f) : 0.0f;
+            rectF3.set((i13 * f11) + getPaddingLeft(), (i14 * f12) + getPaddingTop(), ((i13 + 1) * f11) + getPaddingLeft(), ((i14 + 1) * f12) + getPaddingTop());
+            float dp = (i13 == 0 && i14 == 0) ? AndroidUtilities.dp(f10) : 0.0f;
             float[] fArr = this.h;
             fArr[1] = dp;
             fArr[0] = dp;
-            float dp2 = (i13 == 11 && i14 == 0) ? AndroidUtilities.dp(10.0f) : 0.0f;
+            float dp2 = (i13 == 11 && i14 == 0) ? AndroidUtilities.dp(f10) : 0.0f;
             fArr[3] = dp2;
             fArr[2] = dp2;
-            float dp3 = (i13 == 11 && i14 == 9) ? AndroidUtilities.dp(10.0f) : 0.0f;
+            float dp3 = (i13 == 11 && i14 == 9) ? AndroidUtilities.dp(f10) : 0.0f;
             fArr[5] = dp3;
             fArr[4] = dp3;
-            float dp4 = (i13 == 0 && i14 == 9) ? AndroidUtilities.dp(10.0f) : 0.0f;
+            float dp4 = (i13 == 0 && i14 == 9) ? AndroidUtilities.dp(f10) : 0.0f;
             fArr[7] = dp4;
             fArr[6] = dp4;
             path2.addRoundRect(rectF3, fArr, Path.Direction.CW);
@@ -175,8 +177,9 @@ public final class t extends View {
                 invalidate();
             }
             i12++;
-            width = f7;
-            height = f10;
+            f7 = f10;
+            width = f11;
+            height = f12;
             hashMap = hashMap2;
         }
     }

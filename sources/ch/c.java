@@ -5,10 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import java.util.Arrays;
-import w7.e9;
-import w7.q;
+import w7.o;
+import yf.e0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c {
     public int d;
@@ -29,7 +29,7 @@ public final class c {
 
     public final void a() {
         float[] fArr = this.b;
-        this.l = e9.a(fArr);
+        this.l = e0.c(fArr);
         Rect rect = this.a;
         Rect rect2 = this.m;
         rect2.set(rect);
@@ -45,7 +45,7 @@ public final class c {
         path.addRoundRect(f7, f10, f11, f12, this.b, direction);
         path.close();
         float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
-        float[] fArr2 = d.F;
+        float[] fArr2 = d.E;
         Arrays.fill(fArr2, 0.0f);
         fArr2[0] = fArr[0];
         fArr2[1] = fArr[1];
@@ -110,7 +110,7 @@ public final class c {
         Rect rect = this.m;
         float f7 = rect.top;
         float[] fArr = this.b;
-        float a2 = q.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
+        float a2 = o.a((fArr[0] * 2.0f) + f7, f7, rect.bottom);
         canvas.save();
         Rect rect2 = this.a;
         canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);

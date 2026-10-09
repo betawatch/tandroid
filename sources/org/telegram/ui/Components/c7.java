@@ -1,28 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c7 implements Runnable {
+public final /* synthetic */ class c7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ l8 b;
 
-    public /* synthetic */ c7(j8 j8Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ c7(l8 l8Var, int i10) {
         this.a = i10;
-        this.b = j8Var;
-        this.c = messageObject;
+        this.b = l8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                j8.m(this.b, this.c);
+                boolean z10 = !((Boolean) obj2).booleanValue();
+                l8 l8Var = this.b;
+                l8Var.Y = z10;
+                MediaController mediaController = MediaController.getInstance();
+                org.telegram.ui.ActionBar.b1 b1Var = l8Var.X;
+                float floatValue = ((Float) obj).floatValue();
+                b1Var.getClass();
+                mediaController.setPlaybackSpeed(true, (floatValue * 2.8f) + 0.2f);
                 break;
             default:
-                j8.p(this.b, this.c);
+                this.b.i0.setBackground(new BitmapDrawable((Bitmap) obj));
                 break;
         }
     }

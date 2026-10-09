@@ -1,55 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qx0 implements Utilities.Callback {
+public final /* synthetic */ class qx0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sx0 b;
+    public final /* synthetic */ PrivacyControlActivity b;
 
-    public /* synthetic */ qx0(sx0 sx0Var, int i10) {
+    public /* synthetic */ qx0(PrivacyControlActivity privacyControlActivity, int i10) {
         this.a = i10;
-        this.b = sx0Var;
+        this.b = privacyControlActivity;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        int i11;
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                PrivacyControlActivity privacyControlActivity = this.b.d;
-                privacyControlActivity.L = ((Integer) obj).intValue();
-                AndroidUtilities.updateVisibleRow(privacyControlActivity.d, privacyControlActivity.j0);
-                privacyControlActivity.E0();
+                this.b.z0();
+                break;
+            case 1:
+                this.b.finishFragment();
                 break;
             default:
-                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
-                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
-                updatebirthday.flags |= 1;
-                updatebirthday.birthday = tL_birthday;
-                sx0 sx0Var = this.b;
-                PrivacyControlActivity privacyControlActivity2 = sx0Var.d;
-                TLRPC.UserFull userFull = privacyControlActivity2.getMessagesController().getUserFull(privacyControlActivity2.getUserConfig().getClientUserId());
-                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
-                if (userFull != null) {
-                    userFull.flags2 |= 32;
-                    userFull.birthday = tL_birthday;
-                    privacyControlActivity2.getMessagesStorage().updateUserInfo(userFull, false);
-                }
-                privacyControlActivity2.getMessagesController().invalidateContentSettings();
-                privacyControlActivity2.getConnectionsManager().sendRequest(updatebirthday, new is0(sx0Var, userFull, tL_birthday2, 1), 1024);
-                i10 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
-                MessagesController.getInstance(i10).removeSuggestion(0L, "BIRTHDAY_SETUP");
-                i11 = ((org.telegram.ui.ActionBar.n2) privacyControlActivity2).currentAccount;
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumPromoUpdated, new Object[0]);
-                privacyControlActivity2.F0(true);
+                this.b.finishFragment();
                 break;
         }
     }

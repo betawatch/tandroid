@@ -3,13 +3,13 @@ package dh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class b implements a {
-    public final d6 a;
+    public final e6 a;
     public final int b;
     public final float c;
     public int d;
@@ -17,37 +17,17 @@ public class b implements a {
     public int f;
     public int h;
 
-    public b(int i10, d6 d6Var) {
-        this(d6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+    public b(int i10, e6 e6Var) {
+        this(e6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
     }
 
-    @Override // dh.a
-    public int B() {
-        return this.e;
+    public boolean a() {
+        return AndroidUtilities.computePerceivedBrightness(i6.w0(this.b, this.a)) < 0.721f;
     }
 
-    @Override // dh.a
-    public int H() {
-        return this.d;
-    }
-
-    @Override // dh.a
-    public int a() {
-        return this.f;
-    }
-
-    public boolean b() {
-        return AndroidUtilities.computePerceivedBrightness(i6.v0(this.b, this.a)) < 0.721f;
-    }
-
-    @Override // dh.a
-    public int c() {
-        return this.h;
-    }
-
-    public final void d() {
-        this.d = i6.l1(this.c, i6.v0(this.b, this.a));
-        if (b()) {
+    public final void b() {
+        this.d = i6.m1(this.c, i6.w0(this.b, this.a));
+        if (a()) {
             this.f = 687865855;
             this.h = 352321535;
             this.e = 0;
@@ -58,10 +38,30 @@ public class b implements a {
         }
     }
 
-    public b(d6 d6Var, int i10, float f7) {
-        this.a = d6Var;
+    @Override // dh.a
+    public int d() {
+        return this.f;
+    }
+
+    @Override // dh.a
+    public int m() {
+        return this.h;
+    }
+
+    @Override // dh.a
+    public int q() {
+        return this.e;
+    }
+
+    @Override // dh.a
+    public int x() {
+        return this.d;
+    }
+
+    public b(e6 e6Var, int i10, float f7) {
+        this.a = e6Var;
         this.b = i10;
         this.c = f7;
-        d();
+        b();
     }
 }

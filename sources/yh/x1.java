@@ -1,29 +1,32 @@
 package yh;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x1 implements Runnable {
+public final /* synthetic */ class x1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
-    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
 
-    public /* synthetic */ x1(y3 y3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+    public /* synthetic */ x1(s3 s3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i10) {
         this.a = i10;
-        this.b = y3Var;
-        this.c = tL_payments_paymentResult;
+        this.b = s3Var;
+        this.c = tL_starGiftUnique;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                s3.j0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
+                break;
+            case 1:
+                s3.h0(this.b, this.c, (Utilities.Callback) obj, (Boolean) obj2);
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).processUpdates(this.c.updates, false);
+                s3.P0(this.b, this.c, (zf.a) obj, (Runnable) obj2);
                 break;
         }
     }

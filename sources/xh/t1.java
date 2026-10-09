@@ -2,11 +2,11 @@ package xh;
 
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.n91;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ s2 b;
@@ -26,9 +26,9 @@ public final /* synthetic */ class t1 implements Utilities.Callback {
             default:
                 s2 s2Var2 = this.b;
                 s2Var2.f(true);
-                g91 g91Var = s2Var2.n;
+                n91 n91Var = s2Var2.n;
                 int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                g91Var.d(i10, s2Var2.e.f(i10) + 1);
+                n91Var.d(i10, s2Var2.e.f(i10) + 1);
                 org.telegram.ui.ActionBar.n2 n2Var = s2Var2.a;
                 if (n2Var instanceof ProfileActivity) {
                     ((ProfileActivity) n2Var).G4(true);

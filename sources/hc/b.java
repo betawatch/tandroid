@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
@@ -65,9 +65,7 @@ public abstract class b {
             if (i10 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
                 boolean z12 = charset != null;
                 boolean z13 = i10 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
-                boolean z14 = z12;
                 int i13 = 0;
-                boolean z15 = true;
                 int i14 = 0;
                 int i15 = 0;
                 int i16 = 0;
@@ -78,6 +76,8 @@ public abstract class b {
                 int i21 = 0;
                 int i22 = 0;
                 int i23 = 0;
+                boolean z14 = z12;
+                boolean z15 = true;
                 while (i15 < i10 && (z11 || z14 || z15)) {
                     Charset charset2 = charset;
                     byte b11 = bArr[i15];

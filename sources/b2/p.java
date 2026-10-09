@@ -11,9 +11,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
+public final class p implements s4.f0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
     public boolean b;
     public Object c;
@@ -37,16 +37,26 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         return new p(arrayList, bundle.getBoolean("supportsDynamicGroupRoute", false));
     }
 
-    @Override // s4.e0
+    @Override // s4.f0
     public void D(int i10, int i11) {
         this.b = true;
-        ((s4.h0) this.c).p(i10, i11);
+        ((s4.i0) this.c).p(i10, i11);
     }
 
-    @Override // s4.e0
-    public void O0(int i10, int i11) {
+    @Override // s4.f0
+    public void K0(int i10, int i11) {
         this.b = true;
-        ((s4.h0) this.c).t(i10, i11);
+        ((s4.i0) this.c).t(i10, i11);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void X(Object obj) {
+        this.b = true;
+        pb.c cVar = (pb.c) this.c;
+        cVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) cVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     @Override // x9.i
@@ -108,6 +118,12 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         return this.b;
     }
 
+    @Override // s4.f0
+    public void f0(int i10, int i11) {
+        this.b = true;
+        ((s4.i0) this.c).s(i10, i11);
+    }
+
     public boolean h(int i10, CharSequence charSequence) {
         if (charSequence == null || i10 < 0 || charSequence.length() - i10 < 0) {
             throw new IllegalArgumentException();
@@ -154,25 +170,18 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(20));
+            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(16));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
     }
 
-    @Override // s4.e0
-    public void m0(int i10, int i11) {
-        this.b = true;
-        ((s4.h0) this.c).s(i10, i11);
-    }
-
-    @Override // s4.e0
-    public void n1(int i10, int i11) {
-        ((s4.h0) this.c).r(i10, i11, null);
+    @Override // s4.f0
+    public void j1(int i10, int i11) {
+        ((s4.i0) this.c).r(i10, i11, null);
     }
 
     public String toString() {
-        int i10;
         switch (this.a) {
             case 5:
                 StringBuilder sb2 = new StringBuilder("MediaRouteProviderDescriptor{ routes=");
@@ -181,32 +190,25 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
                 sb2.append(", isValid=");
                 int size = list.size();
                 boolean z10 = false;
+                int i10 = 0;
                 while (true) {
                     if (i10 >= size) {
                         z10 = true;
                     } else {
                         p4.m mVar = (p4.m) list.get(i10);
-                        i10 = (mVar != null && mVar.e()) ? i10 + 1 : 0;
+                        if (mVar != null && mVar.e()) {
+                            i10++;
+                        }
                     }
                 }
                 sb2.append(z10);
                 sb2.append(" }");
                 return sb2.toString();
             case 8:
-                return ((a6.m) this.c).toString();
+                return ((pb.c) this.c).toString();
             default:
                 return super.toString();
         }
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void w0(Object obj) {
-        this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
     }
 
     public /* synthetic */ p(Object obj, int i10) {
@@ -236,10 +238,10 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
         this.b = z10;
     }
 
-    public p(a6.d dVar, a6.m mVar) {
+    public p(a6.d dVar, pb.c cVar) {
         this.a = 8;
         this.b = false;
-        this.c = mVar;
+        this.c = cVar;
     }
 
     public p(StringBuilder sb2) {

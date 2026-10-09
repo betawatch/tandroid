@@ -1,166 +1,96 @@
 package ai;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.RectF;
 import android.text.TextPaint;
+import android.util.TypedValue;
 import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class p9 extends FrameLayout {
-    public final ArrayList a;
-    public ValueAnimator b;
-    public int c;
-    public int d;
-    public final a3.d e;
+public final class p9 extends View {
+    public final String a;
+    public final String b;
+    public final ck0 c;
+    public final Paint d;
+    public final TextPaint e;
+    public final TextPaint f;
+    public final RectF h;
+    public float n;
+    public final Rect r;
 
-    public p9(Context context, xb xbVar) {
+    public p9(Context context, int i10, String str, String str2) {
         super(context);
-        this.c = -1;
-        int i10 = 0;
-        this.d = 0;
-        this.e = new a3.d(this, 14);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        addView(imageView, -1, -1);
-        View view = new View(context);
-        view.setBackgroundColor(1677721600);
-        addView(view, -1, -1);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(48.0f), 0, AndroidUtilities.dp(48.0f));
-        linearLayout.setGravity(1);
-        TextView textView = new TextView(context);
-        textView.setTextColor(-1);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setText(LocaleController.getString(R.string.StoriesIntroHeader));
-        textView.setTextSize(1, 20.0f);
-        linearLayout.addView(textView, w7.z5.n(-2, -2));
-        TextView textView2 = new TextView(context);
-        textView2.setTextColor(-1761607681);
-        textView2.setText(LocaleController.getString(R.string.StoriesIntroSubHeader));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(1);
-        linearLayout.addView(textView2, w7.z5.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
-        ArrayList arrayList = new ArrayList(4);
-        this.a = arrayList;
-        arrayList.add(new o9(context, R.raw.stories_intro_go_forward, LocaleController.getString(R.string.StoriesIntroGoForwardHeader), LocaleController.getString(R.string.StoriesIntroGoForwardSubHeader)));
-        arrayList.add(new o9(context, R.raw.stories_intro_pause, LocaleController.getString(R.string.StoriesIntroPauseAndSeekHeader), LocaleController.getString(R.string.StoriesIntroPauseAndSeekSubHeader)));
-        arrayList.add(new o9(context, R.raw.stories_intro_go_back, LocaleController.getString(R.string.StoriesIntroGoBackHeader), LocaleController.getString(R.string.StoriesIntroGoBackSubHeader)));
-        arrayList.add(new o9(context, R.raw.stories_intro_go_to_next, LocaleController.getString(R.string.StoriesIntroGoToNextAuthorHeader), LocaleController.getString(R.string.StoriesIntroGoToNextAuthorSubHeader)));
-        int measuredWidth = xbVar.getMeasuredWidth() - AndroidUtilities.dp(100.0f);
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            o9 o9Var = (o9) obj;
-            TextPaint textPaint = o9Var.e;
-            String str = o9Var.a;
-            int length = str.length();
-            Rect rect = o9Var.r;
-            textPaint.getTextBounds(str, 0, length, rect);
-            int width = rect.width();
-            TextPaint textPaint2 = o9Var.f;
-            String str2 = o9Var.b;
-            textPaint2.getTextBounds(str2, 0, str2.length(), rect);
-            int max = Math.max(width, rect.width()) + AndroidUtilities.dp(8.0f) + AndroidUtilities.dp(88.0f);
-            if (max > measuredWidth) {
-                measuredWidth = max;
-            }
-        }
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(AndroidUtilities.dp(8.0f) + measuredWidth > xbVar.getMeasuredWidth() ? xbVar.getMeasuredWidth() - AndroidUtilities.dp(8.0f) : measuredWidth, AndroidUtilities.dp(64.0f));
-        layoutParams.setMargins(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        ArrayList arrayList2 = this.a;
-        int size2 = arrayList2.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList2.get(i10);
-            i10++;
-            linearLayout.addView((o9) obj2, layoutParams);
-        }
-        TextView textView3 = new TextView(context);
-        textView3.setTextColor(-1);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setText(LocaleController.getString(R.string.StoriesIntroDismiss));
-        textView3.setTextSize(1, 14.0f);
-        linearLayout.addView(textView3, w7.z5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
-        addView(linearLayout, w7.z5.e(-1, -2, 17));
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(xbVar, 12.0f, 10));
-        bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
-        imageView.setImageDrawable(bitmapDrawable);
-        getViewTreeObserver().addOnGlobalLayoutListener(new n9(this, textView3, xbVar, textView2));
+        this.r = new Rect();
+        this.a = str;
+        this.b = str2;
+        ck0 ck0Var = new ck0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), true, null);
+        this.c = ck0Var;
+        ck0Var.K(1);
+        ck0Var.R(this);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        paint.setColor(383310040);
+        TextPaint textPaint = new TextPaint(1);
+        this.e = textPaint;
+        textPaint.setColor(-1);
+        textPaint.setTextSize(TypedValue.applyDimension(1, 16.0f, getResources().getDisplayMetrics()));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        TextPaint textPaint2 = new TextPaint(1);
+        this.f = textPaint2;
+        textPaint2.setColor(-1761607681);
+        textPaint2.setTextSize(TypedValue.applyDimension(1, 14.0f, getResources().getDisplayMetrics()));
+        this.h = new RectF();
     }
 
-    public final void a(boolean z10) {
-        ValueAnimator valueAnimator = this.b;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int dp = AndroidUtilities.dp(40.0f);
+        int measuredHeight = getMeasuredHeight() / 2;
+        int dp2 = (int) ((AndroidUtilities.dp(8.0f) * this.n) + AndroidUtilities.dp(36.0f));
+        int i10 = dp2 / 2;
+        int i11 = dp - i10;
+        int i12 = measuredHeight - i10;
+        ck0 ck0Var = this.c;
+        ck0Var.setBounds(i11, i12, i11 + dp2, dp2 + i12);
+        ck0Var.draw(canvas);
+        if (this.n > 0.0f) {
+            float dpf2 = (1.0f - this.n) * AndroidUtilities.dpf2(4.0f);
+            float f7 = dpf2 * 2.0f;
+            float measuredWidth = getMeasuredWidth() - f7;
+            float measuredHeight2 = getMeasuredHeight() - f7;
+            RectF rectF = this.h;
+            rectF.set(dpf2, dpf2, measuredWidth, measuredHeight2);
+            int i13 = (int) (this.n * 30.0f);
+            Paint paint = this.d;
+            paint.setAlpha(i13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(12.0f), AndroidUtilities.dpf2(12.0f), paint);
+            canvas.save();
+            float f10 = this.n;
+            canvas.scale((f10 * 0.05f) + 1.0f, (f10 * 0.05f) + 1.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.b = ofFloat;
-        if (z10) {
-            ofFloat.setStartDelay(50L);
+        canvas.drawText(this.a, AndroidUtilities.dpf2(80.0f), (getMeasuredHeight() / 2.0f) - AndroidUtilities.dpf2(4.0f), this.e);
+        canvas.drawText(this.b, AndroidUtilities.dpf2(80.0f), AndroidUtilities.dpf2(18.0f) + (getMeasuredHeight() / 2.0f), this.f);
+        if (this.n > 0.0f) {
+            canvas.restore();
         }
-        this.b.setDuration(350L);
-        this.b.setInterpolator(new AccelerateDecelerateInterpolator());
-        this.b.getCurrentPlayTime();
-        this.b.addListener(new b(this, 9));
-        this.b.addUpdateListener(new a(this, 12));
-        this.b.start();
-        AndroidUtilities.runOnUIThread(this.e, (((o9) this.a.get(this.d)).c.r() * 2) + 100);
     }
 
-    public final void b() {
-        AndroidUtilities.cancelRunOnUIThread(this.e);
-        ValueAnimator valueAnimator = this.b;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.b = null;
-        }
-        int i10 = this.c;
-        ArrayList arrayList = this.a;
-        if (i10 != -1) {
-            o9 o9Var = (o9) arrayList.get(i10);
-            kj0 kj0Var = o9Var.c;
-            kj0Var.M(0);
-            kj0Var.stop();
-            o9Var.n = 0.0f;
-            o9Var.invalidate();
-        }
-        o9 o9Var2 = (o9) arrayList.get(this.d);
-        kj0 kj0Var2 = o9Var2.c;
-        kj0Var2.M(0);
-        kj0Var2.stop();
-        o9Var2.n = 0.0f;
-        o9Var2.invalidate();
-        c();
-    }
-
-    public final void c() {
-        int i10 = this.d + 1;
-        this.d = i10;
-        ArrayList arrayList = this.a;
-        if (i10 >= arrayList.size()) {
-            this.d = 0;
-        }
-        int i11 = this.c + 1;
-        this.c = i11;
-        if (i11 >= arrayList.size()) {
-            this.c = 0;
-        }
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int dp = AndroidUtilities.dp(40.0f);
+        int measuredHeight = getMeasuredHeight() / 2;
+        int dp2 = AndroidUtilities.dp(36.0f);
+        int i12 = dp2 / 2;
+        int i13 = dp - i12;
+        int i14 = measuredHeight - i12;
+        this.c.setBounds(i13, i14, i13 + dp2, dp2 + i14);
     }
 }

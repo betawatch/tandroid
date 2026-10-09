@@ -1,45 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i50 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f60 b;
+public final class i50 implements org.telegram.ui.jq0 {
+    public final /* synthetic */ m50 a;
 
-    public /* synthetic */ i50(f60 f60Var, int i10) {
-        this.a = i10;
-        this.b = f60Var;
+    public i50(m50 m50Var) {
+        this.a = m50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                f60 f60Var = this.b;
-                if (animator.equals(f60Var.L)) {
-                    f60Var.L = null;
-                    break;
-                }
-                break;
-            case 1:
-                f60 f60Var2 = this.b;
-                if (f60Var2.g1 != null) {
-                    f60Var2.g1 = null;
-                    break;
-                }
-                break;
-            default:
-                f60 f60Var3 = this.b;
-                if (animator.equals(f60Var3.e0)) {
-                    f60Var3.c(true);
-                    f60Var3.b1 = false;
-                    f60Var3.setVisibility(4);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.jq0
+    public final void a(ArrayList arrayList) {
+        m50.a(this.a, false, arrayList);
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("image/*");
+            this.a.a.startActivityForResult(intent, 14);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

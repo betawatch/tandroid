@@ -1,31 +1,14 @@
 package w7;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.view.View;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class p {
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            m.m3.a(view, charSequence);
-            return;
-        }
-        m.o3 o3Var = m.o3.v;
-        if (o3Var != null && o3Var.a == view) {
-            m.o3.b(null);
-        }
-        if (!TextUtils.isEmpty(charSequence)) {
-            new m.o3(view, charSequence);
-            return;
-        }
-        m.o3 o3Var2 = m.o3.w;
-        if (o3Var2 != null && o3Var2.a == view) {
-            o3Var2.a();
-        }
-        view.setOnLongClickListener(null);
-        view.setLongClickable(false);
-        view.setOnHoverListener(null);
+    public static m1.c a(String name) {
+        he.d dVar = ae.o0.b;
+        ae.c2 c2Var = new ae.c2();
+        dVar.getClass();
+        fe.e b10 = ae.g0.b(v7.v8.c(dVar, c2Var));
+        kotlin.jvm.internal.i.e(name, "name");
+        return new m1.c(name, m1.a.b, b10);
     }
 }

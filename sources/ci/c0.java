@@ -4,7 +4,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class c0 extends VideoPlayerHolderBase {
     public final /* synthetic */ int a;
@@ -34,11 +34,11 @@ public final class c0 extends VideoPlayerHolderBase {
                 d0Var.p.invalidate();
                 break;
             default:
-                rg.b2 b2Var = (rg.b2) this.b;
-                TextureView textureView = b2Var.J;
-                if (textureView != null && !b2Var.F) {
+                rg.a2 a2Var = (rg.a2) this.b;
+                TextureView textureView = a2Var.J;
+                if (textureView != null && !a2Var.F) {
                     textureView.setAlpha(0.0f);
-                    textureView.animate().alpha(1.0f).setListener(new pg.d0(this, 5)).setDuration(200L);
+                    textureView.animate().alpha(1.0f).setListener(new org.telegram.ui.Wallet.x4(this, 11)).setDuration(200L);
                     break;
                 }
                 break;
@@ -49,8 +49,8 @@ public final class c0 extends VideoPlayerHolderBase {
     public void onStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                rg.b2 b2Var = (rg.b2) this.b;
-                c0 c0Var = b2Var.H;
+                rg.a2 a2Var = (rg.a2) this.b;
+                c0 c0Var = a2Var.H;
                 if (c0Var != null) {
                     if (i10 != 4) {
                         if (i10 == 1) {
@@ -59,7 +59,7 @@ public final class c0 extends VideoPlayerHolderBase {
                         }
                     } else {
                         c0Var.seekTo(0L);
-                        b2Var.H.play();
+                        a2Var.H.play();
                         break;
                     }
                 }

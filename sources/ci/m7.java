@@ -3,7 +3,7 @@ package ci;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m7 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -40,16 +40,28 @@ public final /* synthetic */ class m7 implements ValueAnimator.AnimatorUpdateLis
                 pVar.s = f11;
                 pVar.invalidate();
                 break;
-            default:
+            case 1:
                 ig.j jVar = (ig.j) this.f;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f12 = this.c;
                 float f13 = this.b;
-                jVar.k = com.google.android.gms.internal.vision.e2.z(f12, f13, floatValue2, f13);
+                jVar.k = com.google.android.gms.internal.vision.e2.y(f12, f13, floatValue2, f13);
                 float f14 = this.e;
                 float f15 = this.d;
-                jVar.l = com.google.android.gms.internal.vision.e2.z(f14, f15, floatValue2, f15);
+                jVar.l = com.google.android.gms.internal.vision.e2.y(f14, f15, floatValue2, f15);
                 jVar.a.a(f12, f14, false);
+                break;
+            default:
+                sg.e eVar = (sg.e) this.f;
+                eVar.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                sg.g gVar = ((sg.f) eVar.b).a;
+                float f16 = this.c;
+                float f17 = this.b;
+                gVar.d = com.google.android.gms.internal.vision.e2.y(f16, f17, floatValue3, f17);
+                float f18 = this.e;
+                float f19 = this.d;
+                gVar.i = com.google.android.gms.internal.vision.e2.y(f18, f19, floatValue3, f19);
                 break;
         }
     }

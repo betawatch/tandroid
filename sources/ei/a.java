@@ -1,36 +1,36 @@
 package ei;
 
-import ci.x8;
+import ci.y8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ a(m mVar, int i10) {
+    public /* synthetic */ a(l lVar, int i10) {
         this.a = i10;
-        this.b = mVar;
+        this.b = lVar;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new x8(15, this.b, (TLRPC.UserFull) obj));
+                AndroidUtilities.runOnUIThread(new y8(15, this.b, (TLRPC.UserFull) obj));
                 break;
             case 1:
-                m mVar = this.b;
-                mVar.Y.commission_permille = ((Integer) obj).intValue();
-                mVar.N0();
+                l lVar = this.b;
+                lVar.Y.commission_permille = ((Integer) obj).intValue();
+                lVar.J0();
                 break;
             default:
-                m mVar2 = this.b;
-                mVar2.Y.duration_months = ((Integer) mVar2.a0.get(((Integer) obj).intValue())).intValue();
-                mVar2.N0();
+                l lVar2 = this.b;
+                lVar2.Y.duration_months = ((Integer) lVar2.a0.get(((Integer) obj).intValue())).intValue();
+                lVar2.J0();
                 break;
         }
     }

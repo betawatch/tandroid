@@ -23,10 +23,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.sj;
-import w7.q;
+import org.telegram.ui.wj;
+import w7.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -76,19 +76,17 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         arrayList.clear();
     }
 
-    public final void b(int i10, long j3, ViewGroup viewGroup, sj sjVar) {
+    public final void b(int i10, long j3, ViewGroup viewGroup, wj wjVar) {
         this.d = j3;
         this.e = i10;
         this.f = viewGroup;
-        this.h = sjVar;
+        this.h = wjVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:104:0x022d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x0264  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x02af  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x02c9 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0214  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x02c2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x017b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -98,8 +96,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         ArrayList arrayList;
         boolean z10;
         long j3;
-        boolean z11;
         String str2;
+        LongSparseArray longSparseArray2;
+        boolean z11;
+        LongSparseArray longSparseArray3;
         boolean z12;
         RectF rectF;
         MessageObject messageObject;
@@ -114,10 +114,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         long j12 = 0;
         long j13 = j11 == 0 ? 0L : uptimeMillis - j11;
         this.s = uptimeMillis;
-        LongSparseArray longSparseArray2 = this.x;
-        int size = longSparseArray2.size();
+        LongSparseArray longSparseArray4 = this.x;
+        int size = longSparseArray4.size();
         for (int i11 = 0; i11 < size; i11++) {
-            ((RectF) longSparseArray2.valueAt(i11)).set(0.0f, 0.0f, 0.0f, 0.0f);
+            ((RectF) longSparseArray4.valueAt(i11)).set(0.0f, 0.0f, 0.0f, 0.0f);
         }
         int childCount = this.h.getChildCount();
         int i12 = 0;
@@ -131,7 +131,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             long j14 = j12;
             ViewGroup viewGroup = this.f;
             RectF rectF3 = H;
-            if (k.c(childAt, viewGroup, rectF3)) {
+            if (j.c(childAt, viewGroup, rectF3)) {
                 if (childAt instanceof u1) {
                     messageObject = ((u1) childAt).getMessageObject();
                 } else if (childAt instanceof w0) {
@@ -161,10 +161,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                             RectF rectF4 = dVar.c;
                             rectF4.set(rectF2);
                             if (j10 != j14) {
-                                RectF rectF5 = (RectF) longSparseArray2.get(j10);
+                                RectF rectF5 = (RectF) longSparseArray4.get(j10);
                                 if (rectF5 == null) {
                                     rectF5 = new RectF();
-                                    longSparseArray2.put(j10, rectF5);
+                                    longSparseArray4.put(j10, rectF5);
                                 }
                                 rectF5.union(rectF4);
                             }
@@ -180,16 +180,16 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             j12 = j14;
         }
         long j16 = j12;
-        for (int size2 = longSparseArray2.size() - 1; size2 >= 0; size2--) {
-            if (((RectF) longSparseArray2.valueAt(size2)).isEmpty()) {
-                longSparseArray2.removeAt(size2);
+        for (int size2 = longSparseArray4.size() - 1; size2 >= 0; size2--) {
+            if (((RectF) longSparseArray4.valueAt(size2)).isEmpty()) {
+                longSparseArray4.removeAt(size2);
             }
         }
         int size3 = longSparseArray.size();
         for (int i13 = 0; i13 < size3; i13++) {
             d dVar2 = (d) longSparseArray.valueAt(i13);
             long j17 = dVar2.b;
-            if (j17 != j16 && (rectF = (RectF) longSparseArray2.get(j17)) != null) {
+            if (j17 != j16 && (rectF = (RectF) longSparseArray4.get(j17)) != null) {
                 dVar2.c.set(rectF);
             }
         }
@@ -201,12 +201,12 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             }
             d dVar3 = (d) longSparseArray.valueAt(size4);
             int i14 = dVar3.a;
-            LongSparseArray longSparseArray3 = longSparseArray2;
+            LongSparseArray longSparseArray5 = longSparseArray4;
             long j18 = dVar3.b;
             RectF rectF6 = dVar3.c;
             long j19 = j13;
             long j20 = i14;
-            RectF rectF7 = j18 != j16 ? (RectF) longSparseArray3.get(j18) : null;
+            RectF rectF7 = j18 != j16 ? (RectF) longSparseArray5.get(j18) : null;
             long j21 = dVar3.e;
             RectF rectF8 = this.c;
             if (j21 == uptimeMillis || rectF7 != null) {
@@ -214,11 +214,12 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                     z10 = true;
                     if (z10) {
                         j3 = uptimeMillis;
-                        z11 = z10;
                         str2 = str;
+                        longSparseArray2 = longSparseArray;
+                        z11 = true;
                     } else {
-                        z11 = z10;
                         String str3 = str;
+                        longSparseArray2 = longSparseArray;
                         if (dVar3.f != j16) {
                             dVar3.g += j19;
                             if (uptimeMillis - this.n < 15000) {
@@ -230,12 +231,13 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         j3 = uptimeMillis;
                         float f7 = rectF8.top - rectF6.top;
                         float f10 = height - (rectF6.bottom - rectF8.bottom);
-                        dVar3.l = Math.min(dVar3.l, q.a(f7, 0.0f, height));
-                        dVar3.m = Math.max(dVar3.m, q.a(f10, 0.0f, height));
+                        dVar3.l = Math.min(dVar3.l, o.a(f7, 0.0f, height));
+                        dVar3.m = Math.max(dVar3.m, o.a(f10, 0.0f, height));
                         dVar3.k = Math.max(dVar3.k, rectF8.height());
                         dVar3.j = Math.max(dVar3.j, height);
                         if (dVar3.i || dVar3.g <= 300) {
                             str2 = str3;
+                            z11 = true;
                         } else {
                             if (BuildVars.LOGS_ENABLED) {
                                 str2 = str3;
@@ -243,71 +245,62 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                             } else {
                                 str2 = str3;
                             }
+                            z11 = true;
                             dVar3.i = true;
                         }
                     }
-                    if (!z11 && dVar3.g > j16) {
-                        String str4 = str2;
-                        if (j3 - 300 <= dVar3.f) {
-                            if (dVar3.i) {
-                                arrayList.add(dVar3.a());
-                            }
-                            longSparseArray.removeAt(size4);
+                    if (!z10 || dVar3.g <= j16 || j3 - 300 <= dVar3.f) {
+                        longSparseArray3 = longSparseArray2;
+                        z12 = dVar3.i;
+                        if (!z12 && dVar3.g > 300000) {
+                            arrayList.add(dVar3.a());
+                            longSparseArray3.removeAt(size4);
                             if (BuildVars.LOGS_ENABLED) {
-                                str2 = str4;
-                                Log.d(str2, j20 + " " + j18 + " out of viewport: " + dVar3.g);
-                            } else {
-                                str2 = str4;
+                                Log.d(str2, j20 + " " + j18 + " out of time");
                             }
-                            size4--;
-                            str = str2;
-                            j13 = j19;
-                            longSparseArray2 = longSparseArray3;
-                            uptimeMillis = j3;
-                        } else {
-                            str2 = str4;
+                        } else if (!z12 && dVar3.e != j3 && (j18 == j16 || rectF7 == null)) {
+                            longSparseArray3.removeAt(size4);
+                            if (!BuildVars.LOGS_ENABLED) {
+                                Log.d(str2, j20 + " " + j18 + " out of screen");
+                            }
                         }
-                    }
-                    z12 = dVar3.i;
-                    if (!z12 && dVar3.g > 300000) {
-                        arrayList.add(dVar3.a());
-                        longSparseArray.removeAt(size4);
+                    } else {
+                        if (dVar3.i) {
+                            arrayList.add(dVar3.a());
+                        }
+                        longSparseArray3 = longSparseArray2;
+                        longSparseArray3.removeAt(size4);
                         if (BuildVars.LOGS_ENABLED) {
-                            Log.d(str2, j20 + " " + j18 + " out of time");
-                        }
-                    } else if (!z12 && dVar3.e != j3 && (j18 == j16 || rectF7 == null)) {
-                        longSparseArray.removeAt(size4);
-                        if (!BuildVars.LOGS_ENABLED) {
-                            Log.d(str2, j20 + " " + j18 + " out of screen");
+                            Log.d(str2, j20 + " " + j18 + " out of viewport: " + dVar3.g);
                         }
                     }
                     size4--;
                     str = str2;
+                    longSparseArray = longSparseArray3;
                     j13 = j19;
-                    longSparseArray2 = longSparseArray3;
+                    longSparseArray4 = longSparseArray5;
                     uptimeMillis = j3;
                 }
             }
             z10 = false;
             if (z10) {
             }
-            if (!z11) {
-                String str42 = str2;
-                if (j3 - 300 <= dVar3.f) {
-                }
+            if (z10) {
             }
+            longSparseArray3 = longSparseArray2;
             z12 = dVar3.i;
             if (!z12) {
             }
             if (!z12) {
-                longSparseArray.removeAt(size4);
+                longSparseArray3.removeAt(size4);
                 if (!BuildVars.LOGS_ENABLED) {
                 }
             }
             size4--;
             str = str2;
+            longSparseArray = longSparseArray3;
             j13 = j19;
-            longSparseArray2 = longSparseArray3;
+            longSparseArray4 = longSparseArray5;
             uptimeMillis = j3;
         }
         if (!arrayList.isEmpty() && this.r == null) {
@@ -362,7 +355,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.G.setTextSize(AndroidUtilities.dp(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = i6.Ml;
+            Paint paint = i6.Ol;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.w;
@@ -370,10 +363,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i10 = 0; i10 < size; i10++) {
                 d dVar = (d) longSparseArray.valueAt(i10);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, i6.Nl);
+                canvas.drawRect(rectF2, i6.Pl);
                 canvas.save();
-                canvas.translate(rectF2.left, q.a(q.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), i6.Ll);
+                canvas.translate(rectF2.left, o.a(o.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), i6.Nl);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.G);

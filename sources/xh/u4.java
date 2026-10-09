@@ -6,19 +6,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final class u4 extends org.telegram.ui.Cells.g3 {
     public final /* synthetic */ z4 E;
     public final /* synthetic */ ch.f x;
     public final /* synthetic */ int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(z4 z4Var, Context context, mw0 mw0Var, String str, int i10, d6 d6Var, ch.f fVar, int i11) {
-        super(context, mw0Var, str, true, i10, d6Var);
+    public u4(z4 z4Var, Context context, sw0 sw0Var, String str, int i10, e6 e6Var, ch.f fVar, int i11) {
+        super(context, sw0Var, str, true, i10, e6Var);
         this.E = z4Var;
         this.x = fVar;
         this.y = i11;
@@ -51,9 +51,9 @@ public final class u4 extends org.telegram.ui.Cells.g3 {
         tL_textWithEntities.entities = MediaDataController.getInstance(this.y).getEntities(charSequenceArr, true);
         tL_textWithEntities.text = charSequenceArr[0].toString();
         messageObject.setType();
-        z4Var.k0.S(messageObject, true);
+        z4Var.k0.Y(messageObject, true);
         z4Var.t0.N(true);
-        z4Var.Y(true);
+        z4Var.a0(true);
     }
 
     @Override // android.view.ViewGroup, android.view.View

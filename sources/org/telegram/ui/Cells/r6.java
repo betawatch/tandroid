@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class r6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -77,37 +77,37 @@ public final class r6 extends LinearLayout {
                     if (tL_chatAdminRights != null) {
                         ArrayList arrayList2 = new ArrayList();
                         if (tL_chatAdminRights.change_info) {
-                            c1.s(z10 ? LocaleController.getString(R.string.EditAdminChangeChannelInfo) : LocaleController.getString(R.string.EditAdminChangeGroupInfo), 1, arrayList2);
+                            c1.q(z10 ? LocaleController.getString(R.string.EditAdminChangeChannelInfo) : LocaleController.getString(R.string.EditAdminChangeGroupInfo), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.post_messages && z10) {
-                            c1.s(LocaleController.getString(R.string.EditAdminPostMessages), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminPostMessages), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.edit_messages && z10) {
-                            c1.s(LocaleController.getString(R.string.EditAdminEditMessages), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminEditMessages), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.delete_messages) {
-                            c1.s(LocaleController.getString(z10 ? R.string.EditAdminDeleteMessages : R.string.EditAdminGroupDeleteMessages), 1, arrayList2);
+                            c1.q(LocaleController.getString(z10 ? R.string.EditAdminDeleteMessages : R.string.EditAdminGroupDeleteMessages), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.ban_users && !z10) {
-                            c1.s(LocaleController.getString(R.string.EditAdminBanUsers), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminBanUsers), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.invite_users) {
-                            c1.s(LocaleController.getString(R.string.EditAdminAddUsers), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminAddUsers), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.pin_messages && !z10) {
-                            c1.s(LocaleController.getString(R.string.EditAdminPinMessages), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminPinMessages), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.add_admins) {
-                            c1.s(LocaleController.getString(R.string.EditAdminAddAdmins), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminAddAdmins), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.anonymous && !z10) {
-                            c1.s(LocaleController.getString(R.string.EditAdminSendAnonymously), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.EditAdminSendAnonymously), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.manage_call) {
-                            c1.s(LocaleController.getString(R.string.StartVoipChatPermission), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.StartVoipChatPermission), 1, arrayList2);
                         }
                         if (tL_chatAdminRights.manage_topics && !z10) {
-                            c1.s(LocaleController.getString(R.string.ManageTopicsPermission), 1, arrayList2);
+                            c1.q(LocaleController.getString(R.string.ManageTopicsPermission), 1, arrayList2);
                         }
                         if (arrayList2.size() == 1) {
                             arrayList.add(s6.a(TextUtils.concat(replaceTags2, " ", ((s6) arrayList2.get(0)).b)));
@@ -132,12 +132,12 @@ public final class r6 extends LinearLayout {
             m4 m4Var = new m4(getContext(), 20);
             m4Var.setText(LocaleController.getString(R.string.PeerRequirements));
             int i13 = org.telegram.ui.ActionBar.i6.d6;
-            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
-            addView(m4Var, w7.z5.n(-1, -2));
-            Drawable colorDrawable = new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
+            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, i13, false));
+            addView(m4Var, w7.x5.n(-1, -2));
+            Drawable colorDrawable = new ColorDrawable(org.telegram.ui.ActionBar.i6.x0(null, i13, false));
             View t3Var = new t3(getContext(), 9, 1);
             t3Var.setBackground(colorDrawable);
-            addView(t3Var, w7.z5.n(-1, -2));
+            addView(t3Var, w7.x5.n(-1, -2));
             int size = arrayList.size();
             int i14 = 0;
             while (i14 < size) {
@@ -146,29 +146,29 @@ public final class r6 extends LinearLayout {
                 s6 s6Var = (s6) obj;
                 Context context = getContext();
                 q6 q6Var = new q6(context);
-                q6Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+                q6Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 q6Var.setOrientation(0);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setImageResource(s6Var.a <= 0 ? R.drawable.list_check : R.drawable.list_circle);
-                imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.L6, false), PorterDuff.Mode.MULTIPLY));
-                q6Var.addView(imageView, w7.z5.p(20, 20, 0.0f, 51, (s6Var.a * 16) + 17, -1, 0, 0));
+                imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.L6, false), PorterDuff.Mode.MULTIPLY));
+                q6Var.addView(imageView, w7.x5.p(20, 20, 0.0f, 51, (s6Var.a * 16) + 17, -1, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 14.0f);
-                textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.z6, false));
                 textView.setSingleLine(false);
                 textView.setText(s6Var.b);
-                q6Var.addView(textView, w7.z5.t(-1, -2, 1, 6, 4, 24, 4));
-                addView(q6Var, w7.z5.n(-1, -2));
+                q6Var.addView(textView, w7.x5.t(-1, -2, 1, 6, 4, 24, 4));
+                addView(q6Var, w7.x5.n(-1, -2));
             }
-            Drawable colorDrawable2 = new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+            Drawable colorDrawable2 = new ColorDrawable(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
             View t3Var2 = new t3(getContext(), 12, 1);
             t3Var2.setBackground(colorDrawable2);
-            addView(t3Var2, w7.z5.n(-1, -2));
-            Drawable V0 = org.telegram.ui.ActionBar.i6.V0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7);
+            addView(t3Var2, w7.x5.n(-1, -2));
+            Drawable W0 = org.telegram.ui.ActionBar.i6.W0(getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7);
             View t3Var3 = new t3(getContext(), 12, 1);
-            t3Var3.setBackground(V0);
-            addView(t3Var3, w7.z5.n(-1, -2));
+            t3Var3.setBackground(W0);
+            addView(t3Var3, w7.x5.n(-1, -2));
         }
     }
 }

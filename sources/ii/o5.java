@@ -8,26 +8,26 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class o5 extends g61 {
+public final class o5 extends o61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new o5());
+        o61.setup(new o5());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
         q5 q5Var = (q5) view;
-        a aVar = (a) h61Var.G;
-        d3 d3Var = (d3) h61Var.H;
+        a aVar = (a) p61Var.G;
+        d3 d3Var = (d3) p61Var.H;
         s5 s5Var = q5Var.v;
         boolean z11 = true;
         boolean z12 = q5Var.a != aVar;
@@ -42,7 +42,7 @@ public final class o5 extends g61 {
             s5Var.setModel(j6Var);
             LinkedHashSet linkedHashSet = q5Var.H;
             Objects.requireNonNull(linkedHashSet);
-            s5Var.setSelectionProvider(new ei.f(linkedHashSet, 22));
+            s5Var.setSelectionProvider(new ei.c5(linkedHashSet, 21));
             q5Var.y();
             i1 i1Var = q5Var.r;
             a aVar2 = q5Var.a;
@@ -75,14 +75,14 @@ public final class o5 extends g61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        q5 q5Var = new q5(context, d6Var);
-        q5Var.setBackground(new b2(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, d6Var)));
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        q5 q5Var = new q5(context, e6Var);
+        q5Var.setBackground(new b2(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.d6, e6Var)));
         return q5Var;
     }
 
-    @Override // org.telegram.ui.Components.g61
+    @Override // org.telegram.ui.Components.o61
     public final boolean isClickable() {
         return false;
     }

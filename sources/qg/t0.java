@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.uk0;
-import w7.z5;
+import org.telegram.ui.Components.ml0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class t0 extends j {
     public final s0 q0;
@@ -27,7 +27,7 @@ public final class t0 extends j {
         s0Var.setMaxWidth(i11);
         r(i10, messageMedia, mediaArea);
         s0Var.e(0, this.s0);
-        addView(s0Var, z5.e(-2, -2, 51));
+        addView(s0Var, x5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -36,17 +36,17 @@ public final class t0 extends j {
     public static String q(double d) {
         double abs = Math.abs(d);
         double floor = Math.floor(abs);
-        String o9 = a4.a.o((int) floor, "°", new StringBuilder(""));
+        String o9 = a1.g.o((int) floor, "°", new StringBuilder(""));
         double floor2 = Math.floor((abs - floor) * 60.0d);
-        StringBuilder v = a4.a.v(o9);
+        StringBuilder v = a1.g.v(o9);
         v.append(floor2 <= 0.0d ? "0" : "");
         v.append(floor2 < 10.0d ? "0" : "");
-        String o10 = a4.a.o((int) floor2, "'", v);
+        String o10 = a1.g.o((int) floor2, "'", v);
         double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
-        StringBuilder v9 = a4.a.v(o10);
+        StringBuilder v9 = a1.g.v(o10);
         v9.append(floor3 <= 0.0d ? "0" : "");
         v9.append(floor3 < 10.0d ? "0" : "");
-        return a4.a.o((int) floor3, "\"", v9);
+        return a1.g.o((int) floor3, "\"", v9);
     }
 
     @Override // qg.j
@@ -64,16 +64,16 @@ public final class t0 extends j {
     }
 
     @Override // qg.j
-    public uk0 getSelectionBounds() {
+    public ml0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new uk0();
+            return new ml0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = bi.x(dp, 2.0f, getPositionX(), scaleX);
-        return new uk0(x10, bi.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+        float y3 = bi.y(dp, 2.0f, getPositionX(), scaleX);
+        return new ml0(y3, bi.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
     }
 
     @Override // qg.j

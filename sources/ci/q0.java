@@ -1,59 +1,86 @@
 package ci;
 
-import android.net.Uri;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import java.io.File;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.VideoEncodingService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+public final class q0 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final File b;
+    public MessageObject c;
+    public final o0 d;
+    public final p0 e;
+    public final n0 f;
 
-    public /* synthetic */ q0(u0 u0Var, int i10) {
+    public q0(int i10, l8 l8Var, File file, o0 o0Var, p0 p0Var, n0 n0Var) {
         this.a = i10;
-        this.b = u0Var;
+        this.b = file;
+        this.d = o0Var;
+        this.e = p0Var;
+        this.f = n0Var;
+        if (this.c != null) {
+            return;
+        }
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingStarted);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileNewChunkAvailable);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.filePreparingFailed);
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.id = 1;
+        tL_message.attachPath = file.getAbsolutePath();
+        this.c = new MessageObject(i10, (TLRPC.Message) tL_message, (MessageObject) null, false, false);
+        l8Var.s(new ai.y1(this, 7));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                Float f7 = (Float) obj;
-                t0 t0Var = this.b.n;
-                if (t0Var != null) {
-                    t0Var.setProgress(f7.floatValue());
-                    break;
+    public final void a(boolean z10) {
+        if (this.c == null) {
+            return;
+        }
+        int i10 = this.a;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingStarted);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileNewChunkAvailable);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.filePreparingFailed);
+        if (z10) {
+            MediaController.getInstance().cancelVideoConvert(this.c);
+        }
+        this.c = null;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.filePreparingStarted) {
+            return;
+        }
+        if (i10 != NotificationCenter.fileNewChunkAvailable) {
+            if (i10 == NotificationCenter.filePreparingFailed && ((MessageObject) objArr[0]) == this.c) {
+                a(false);
+                try {
+                    File file = this.b;
+                    if (file != null) {
+                        file.delete();
+                    }
+                } catch (Exception unused) {
                 }
-                break;
-            case 1:
-                Uri uri = (Uri) obj;
-                u0 u0Var = this.b;
-                if (u0Var.c && u0Var.r != null) {
-                    u0Var.n.b(R.raw.ic_save_to_gallery, 3500, LocaleController.getString("VideoSavedHint"));
-                    u0Var.c = false;
-                    u0Var.d();
-                    u0Var.v = uri;
-                    break;
-                }
-                break;
-            default:
-                Uri uri2 = (Uri) obj;
-                u0 u0Var2 = this.b;
-                u0Var2.c = false;
-                u0Var2.d();
-                t0 t0Var2 = u0Var2.n;
-                if (t0Var2 != null) {
-                    t0Var2.a();
-                    u0Var2.n = null;
-                }
-                t0 t0Var3 = new t0(u0Var2.getContext());
-                u0Var2.n = t0Var3;
-                t0Var3.b(R.raw.ic_save_to_gallery, 2500, LocaleController.getString("PhotoSavedHint"));
-                u0Var2.b.addView(u0Var2.n);
-                u0Var2.v = uri2;
-                break;
+                this.f.run();
+                return;
+            }
+            return;
+        }
+        if (((MessageObject) objArr[0]) == this.c) {
+            ((Long) objArr[2]).getClass();
+            long longValue = ((Long) objArr[3]).longValue();
+            Float f7 = (Float) objArr[4];
+            f7.getClass();
+            this.e.run(f7);
+            if (longValue > 0) {
+                this.d.run();
+                VideoEncodingService.stop();
+                a(false);
+            }
         }
     }
 }

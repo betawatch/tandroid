@@ -9,17 +9,16 @@ import e9.x0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import u2.l0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final p c = new p(new l0(26), x0.b);
+    public static final p c = new p(new xa.b(9), x0.b);
     public final i0 a;
     public final long[] b;
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0112 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0111 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -109,12 +108,7 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int G() {
-        return this.a.size();
-    }
-
-    @Override // z3.d
-    public final int c(long j3) {
+    public final int e(long j3) {
         int a2 = d0.a(this.b, j3, false);
         if (a2 < this.a.size()) {
             return a2;
@@ -123,18 +117,23 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final long m(int i10) {
+    public final long l(int i10) {
         e2.d.b(i10 < this.a.size());
         return this.b[i10];
     }
 
     @Override // z3.d
-    public final List z(long j3) {
+    public final List p(long j3) {
         int e7 = d0.e(this.b, j3, false);
         if (e7 != -1) {
             return (i0) this.a.get(e7);
         }
         g0 g0Var = i0.b;
         return a1.e;
+    }
+
+    @Override // z3.d
+    public final int w() {
+        return this.a.size();
     }
 }

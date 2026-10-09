@@ -10,12 +10,12 @@ import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Executor;
-import n6.h0;
+import n6.i0;
 import n6.l;
 import org.telegram.tgnet.TLObject;
 import w6.b;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Object b = new Object();
@@ -39,7 +39,7 @@ public final class a {
     }
 
     public final void b(Context context, ServiceConnection serviceConnection) {
-        if (!(serviceConnection instanceof h0)) {
+        if (!(serviceConnection instanceof i0)) {
             ConcurrentHashMap concurrentHashMap = this.a;
             if (concurrentHashMap.containsKey(serviceConnection)) {
                 try {
@@ -72,7 +72,7 @@ public final class a {
             } catch (PackageManager.NameNotFoundException unused) {
             }
         }
-        if (serviceConnection instanceof h0) {
+        if (serviceConnection instanceof i0) {
             if (executor == null) {
                 executor = null;
             }

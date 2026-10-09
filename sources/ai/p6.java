@@ -1,42 +1,22 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class p6 extends s4.s0 {
-    public final /* synthetic */ k7 a;
+public final class p6 extends g7 {
+    public final /* synthetic */ l7 X2;
 
-    public p6(k7 k7Var) {
-        this.a = k7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p6(l7 l7Var, Context context, d dVar) {
+        super(l7Var, context, dVar, 0);
+        this.X2 = l7Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        k7 k7Var = this.a;
-        if (i10 == 0) {
-            k7Var.V = true;
-            k7Var.invalidate();
-        }
-        if (i10 == 1) {
-            k7Var.V = false;
-            a5.a aVar = k7Var.d;
-            ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                ((ValueAnimator) aVar.c).cancel();
-                aVar.c = null;
-            }
-            AndroidUtilities.hideKeyboard(k7Var);
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        k7 k7Var = this.a;
-        k7Var.c();
-        k7Var.invalidate();
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.X2.n = View.MeasureSpec.getSize(i11);
+        super.onMeasure(i10, i11);
     }
 }

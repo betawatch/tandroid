@@ -1,40 +1,33 @@
 package yh;
 
+import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k6 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m7 b;
+public final class k6 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ k6(m7 m7Var, int i10) {
-        this.a = i10;
-        this.b = m7Var;
+    public k6(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
+        this.a = f3VarArr;
+        this.b = context;
+        this.c = z10;
     }
 
-    @Override // android.view.View.OnClickListener
+    @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        org.telegram.ui.ActionBar.n2 R;
-        org.telegram.ui.ActionBar.n2 R2;
-        switch (this.a) {
-            case 0:
-                if (this.b.f > 0 && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    R.showAsSheet(new z7(), l2Var);
-                    break;
-                }
-                break;
-            default:
-                if (this.b.f > 0 && (R2 = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
-                    l2Var2.a = true;
-                    R2.showAsSheet(new z7(), l2Var2);
-                    break;
-                }
-                break;
-        }
+        this.a[0].dismiss();
+        of.f.s(this.b, LocaleController.getString(this.c ? R.string.StarsTransactionTONFromFragmentLink : R.string.StarsTransactionUnknownLink));
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

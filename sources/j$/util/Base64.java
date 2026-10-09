@@ -115,8 +115,10 @@ public class Base64 {
             int i10;
             int i11;
             int i12;
+            char c10;
             byte[] bytes = str.getBytes(j$.sun.nio.cs.c.a);
             int length = bytes.length;
+            char c11 = 2;
             if (length == 0) {
                 i11 = 0;
             } else {
@@ -136,23 +138,28 @@ public class Base64 {
             byte[] bArr = new byte[i11];
             int length2 = bytes.length;
             int i13 = 18;
-            int i14 = 0;
-            int i15 = 18;
+            int i14 = 18;
+            int i15 = 0;
             int i16 = 0;
             int i17 = 0;
             while (true) {
-                if (i14 >= length2) {
+                if (i15 >= length2) {
                     break;
                 }
                 int[] iArr = a;
-                if (i15 == i13 && i14 + 4 < length2) {
-                    int i18 = ((length2 - i14) & (-4)) + i14;
-                    while (i14 < i18) {
-                        int i19 = iArr[bytes[i14] & 255];
-                        int i20 = iArr[bytes[i14 + 1] & 255];
-                        int i21 = iArr[bytes[i14 + 2] & 255];
-                        int i22 = i14 + 4;
-                        int i23 = iArr[bytes[i14 + 3] & 255];
+                if (i14 == i13 && i15 + 4 < length2) {
+                    int i18 = ((length2 - i15) & (-4)) + i15;
+                    while (true) {
+                        if (i15 >= i18) {
+                            c10 = c11;
+                            break;
+                        }
+                        int i19 = iArr[bytes[i15] & 255];
+                        c10 = c11;
+                        int i20 = iArr[bytes[i15 + 1] & 255];
+                        int i21 = iArr[bytes[i15 + 2] & 255];
+                        int i22 = i15 + 4;
+                        int i23 = iArr[bytes[i15 + 3] & 255];
                         if ((i19 | i20 | i21 | i23) < 0) {
                             break;
                         }
@@ -162,58 +169,62 @@ public class Base64 {
                         bArr[i16 + 1] = (byte) (i24 >> 8);
                         i16 += 3;
                         bArr[i25] = (byte) i24;
-                        i14 = i22;
+                        i15 = i22;
+                        c11 = c10;
                     }
-                    if (i14 >= length2) {
+                    if (i15 >= length2) {
                         break;
                     }
+                } else {
+                    c10 = c11;
                 }
-                int i26 = i14 + 1;
-                int i27 = iArr[bytes[i14] & 255];
+                int i26 = i15 + 1;
+                int i27 = iArr[bytes[i15] & 255];
                 if (i27 >= 0) {
                     i13 = 18;
-                    int i28 = (i27 << i15) | i17;
-                    i15 -= 6;
-                    if (i15 < 0) {
+                    int i28 = (i27 << i14) | i17;
+                    i14 -= 6;
+                    if (i14 < 0) {
                         bArr[i16] = (byte) (i28 >> 16);
                         int i29 = i16 + 2;
                         bArr[i16 + 1] = (byte) (i28 >> 8);
                         i16 += 3;
                         bArr[i29] = (byte) i28;
-                        i15 = 18;
+                        i14 = 18;
                         i17 = 0;
                     } else {
                         i17 = i28;
                     }
-                    i14 = i26;
+                    i15 = i26;
+                    c11 = c10;
                 } else {
                     if (i27 != -2) {
-                        throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i14], 16));
+                        throw new IllegalArgumentException("Illegal base64 character " + Integer.toString(bytes[i15], 16));
                     }
-                    if (i15 == 6) {
+                    if (i14 == 6) {
                         if (i26 != length2) {
-                            i14 += 2;
+                            i15 += 2;
                         }
                         throw new IllegalArgumentException("Input byte array has wrong 4-byte ending unit");
                     }
-                    i14 = i26;
+                    i15 = i26;
                 }
             }
-            if (i15 == 6) {
+            if (i14 == 6) {
                 bArr[i16] = (byte) (i17 >> 16);
                 i16++;
-            } else if (i15 == 0) {
+            } else if (i14 == 0) {
                 int i30 = i16 + 1;
                 bArr[i16] = (byte) (i17 >> 16);
                 i16 += 2;
                 bArr[i30] = (byte) (i17 >> 8);
-            } else if (i15 == 12) {
+            } else if (i14 == 12) {
                 throw new IllegalArgumentException("Last unit does not have enough valid bits");
             }
-            if (i14 >= length2) {
+            if (i15 >= length2) {
                 return i16 != i11 ? Arrays.copyOf(bArr, i16) : bArr;
             }
-            throw new IllegalArgumentException("Input byte array has incorrect ending byte at " + i14);
+            throw new IllegalArgumentException("Input byte array has incorrect ending byte at " + i15);
         }
     }
 }

@@ -1,75 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p10 implements View.OnLongClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class p10 extends FrameLayout {
+    public final r6 a;
+    public final r6 b;
 
-    public /* synthetic */ p10(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public p10(Context context) {
+        super(context);
+        r6 r6Var = new r6(context, true, true, false);
+        this.a = r6Var;
+        r6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        r6Var.setTypeface(AndroidUtilities.bold());
+        int i10 = org.telegram.ui.ActionBar.i6.L6;
+        r6Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
+        r6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(r6Var, w7.x5.a(20.0f, 21.0f, 15.0f, 21.0f, 2.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
+        r6 r6Var2 = new r6(context, true, true, true);
+        this.b = r6Var2;
+        r6Var2.b(0.45f, 250L, hs.h);
+        r6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        r6Var2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
+        r6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(r6Var2, w7.x5.a(20.0f, 21.0f, 15.0f, 21.0f, 2.0f, -2, (LocaleController.isRTL ? 3 : 5) | 80));
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                final FragmentContextView fragmentContextView = (FragmentContextView) obj;
-                float[] fArr = FragmentContextView.P0;
-                final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.V);
-                fragmentContextView.H.d(playbackSpeed, false);
-                org.telegram.ui.ActionBar.b1 b1Var = fragmentContextView.H;
-                int i11 = org.telegram.ui.ActionBar.i6.G8;
-                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i11, fragmentContextView.p0));
-                org.telegram.ui.ActionBar.b1 b1Var2 = fragmentContextView.H;
-                b1Var2.N = fragmentContextView.h instanceof org.telegram.ui.yn;
-                b1Var2.F.setShader(null);
-                b1Var2.h = null;
-                Bitmap bitmap = b1Var2.f;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    b1Var2.f = null;
-                }
-                fragmentContextView.F.B(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-                fragmentContextView.F.N();
-                fragmentContextView.r(false);
-                fragmentContextView.F.setDimMenu(0.3f);
-                fragmentContextView.F.M(fragmentContextView.H, null);
-                fragmentContextView.F.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.o10
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj2) {
-                        float[] fArr2 = FragmentContextView.P0;
-                        if (((Boolean) obj2).booleanValue()) {
-                            return;
-                        }
-                        MediaController mediaController = MediaController.getInstance();
-                        FragmentContextView fragmentContextView2 = FragmentContextView.this;
-                        fragmentContextView2.l(playbackSpeed, mediaController.getPlaybackSpeed(fragmentContextView2.V), false);
-                    }
-                });
-                MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
-                return true;
-            case 1:
-                ee0 ee0Var = (ee0) obj;
-                ee0Var.r.setText("");
-                ci.i9.a(ee0Var.s, true);
-                Drawable drawable = ee0Var.a;
-                if (drawable instanceof pc0) {
-                    ((pc0) drawable).y();
-                }
-                return true;
-            default:
-                return br0.q((br0) obj);
+    public final void a(String str, Runnable runnable) {
+        boolean z10 = !LocaleController.isRTL;
+        r6 r6Var = this.b;
+        r6Var.c(str, z10, true);
+        r6Var.setOnClickListener(new w6(1, runnable));
+    }
+
+    public final void b(String str, boolean z10) {
+        r6 r6Var = this.a;
+        if (z10) {
+            r6Var.a();
         }
+        r6Var.c(str, z10 && !LocaleController.isRTL, true);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(this.a.getText());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

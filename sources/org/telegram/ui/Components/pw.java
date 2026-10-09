@@ -1,32 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class pw extends FrameLayout {
-    public final /* synthetic */ nz a;
+public final class pw extends ow {
+    public final /* synthetic */ qw K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pw(nz nzVar, Context context) {
-        super(context);
-        this.a = nzVar;
+    public pw(qw qwVar, Context context, int i10) {
+        super(qwVar.s, context, i10);
+        this.K = qwVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        nz nzVar = this.a;
-        sw swVar = nzVar.o0;
-        if (view != nzVar.h0) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        canvas.clipRect(0.0f, swVar.getY() + swVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.K.d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

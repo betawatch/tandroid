@@ -1,6 +1,6 @@
 package yf;
 
-import ai.g7;
+import ai.h7;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -28,11 +28,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.pf;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.n21;
-import pg.c1;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Wallet.n5;
+import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -55,7 +55,7 @@ public final class e {
     public final File m;
     public int n;
     public final AtomicBoolean o;
-    public final c1 p;
+    public final n5 p;
     public volatile boolean q;
     public volatile boolean r;
     public RandomAccessFile s;
@@ -71,7 +71,7 @@ public final class e {
         this.e = arrayList;
         this.h = new Object();
         this.o = new AtomicBoolean(false);
-        this.p = new c1(this, 10);
+        this.p = new n5(this, 13);
         this.a = (BitmapDrawable) cVar;
         this.b = i10;
         this.c = i11;
@@ -93,7 +93,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a4.a.t(sb2, i12 != 0 ? hg.c.h(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a1.g.t(sb2, i12 != 0 ? hg.c.h(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {
@@ -155,7 +155,7 @@ public final class e {
         A = i10;
         if (i10 <= 0) {
             A = 0;
-            kj0.T0.postRunnable(new n21(18));
+            ck0.T0.postRunnable(new t21(20));
         }
     }
 
@@ -289,7 +289,7 @@ public final class e {
         }
         RandomAccessFile randomAccessFile22 = new RandomAccessFile(this.m, "rw");
         if (B == null) {
-            B = new a5.a(25, (byte) 0);
+            B = new a5.a(26, (byte) 0);
         }
         B.a(this.c, this.b);
         a5.a aVar2 = B;
@@ -328,7 +328,7 @@ public final class e {
                     }
                 }
                 int length = (int) randomAccessFile22.length();
-                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new g7(13)));
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new h7(14)));
                 zVarArr2[0].b();
                 int size = arrayList2.size();
                 zVarArr2[0].c(size);
@@ -419,8 +419,8 @@ public final class e {
         return bArr2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0123 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x011b  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x011b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0113  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -447,12 +447,7 @@ public final class e {
                                 return -1;
                             }
                         } catch (FileNotFoundException unused) {
-                            if (this.j && randomAccessFile != null) {
-                                try {
-                                    randomAccessFile.close();
-                                } catch (IOException e7) {
-                                    e7.printStackTrace();
-                                }
+                            if (this.j) {
                             }
                             return -1;
                         } catch (Throwable th2) {
@@ -461,10 +456,8 @@ public final class e {
                             i11 = this.n + 1;
                             this.n = i11;
                             if (i11 > 10) {
-                                this.j = true;
                             }
                             if (this.j) {
-                                randomAccessFile.close();
                             }
                             return -1;
                         }
@@ -473,8 +466,8 @@ public final class e {
                         if (this.e.size() != 0) {
                             d dVar = (d) this.e.get(Utilities.clamp(i10, this.e.size() - 1, 0));
                             randomAccessFile.seek(dVar.c);
-                            byte[] e10 = e(dVar);
-                            randomAccessFile.readFully(e10, 0, dVar.b);
+                            byte[] e7 = e(dVar);
+                            randomAccessFile.readFully(e7, 0, dVar.b);
                             if (this.r) {
                                 this.s = null;
                                 randomAccessFile.close();
@@ -497,7 +490,7 @@ public final class e {
                             } else {
                                 this.t.inBitmap = bitmap;
                             }
-                            BitmapFactory.decodeByteArray(e10, 0, dVar.b, this.t);
+                            BitmapFactory.decodeByteArray(e7, 0, dVar.b, this.t);
                             if (z10) {
                                 Utilities.extractAlpha(this.u, bitmap);
                             }
@@ -507,7 +500,12 @@ public final class e {
                     } catch (FileNotFoundException unused2) {
                         randomAccessFile2 = randomAccessFile;
                         randomAccessFile = randomAccessFile2;
-                        if (this.j) {
+                        if (this.j && randomAccessFile != null) {
+                            try {
+                                randomAccessFile.close();
+                            } catch (IOException e10) {
+                                e10.printStackTrace();
+                            }
                         }
                         return -1;
                     } catch (Throwable th3) {
@@ -518,8 +516,10 @@ public final class e {
                         i11 = this.n + 1;
                         this.n = i11;
                         if (i11 > 10) {
+                            this.j = true;
                         }
                         if (this.j) {
+                            randomAccessFile.close();
                         }
                         return -1;
                     }

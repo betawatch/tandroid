@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class j3 implements b5 {
     public final /* synthetic */ u a;
@@ -51,9 +51,9 @@ public final class j3 implements b5 {
             ((TL_iv.pageBlockPhoto) O3).photo_id = photo.id;
         }
         x3 x3Var = this.c;
-        x3Var.g4.remove(uVar);
+        x3Var.X3.remove(uVar);
         x3Var.o4(aVar);
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     @Override // ii.b5
@@ -67,9 +67,9 @@ public final class j3 implements b5 {
             ((TL_iv.pageBlockVideo) O3).video_id = document.id;
         }
         x3 x3Var = this.c;
-        x3Var.g4.remove(uVar);
+        x3Var.X3.remove(uVar);
         x3Var.o4(aVar);
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     @Override // ii.b5
@@ -82,7 +82,7 @@ public final class j3 implements b5 {
             A1.requestLayout();
             A1.invalidate();
         }
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     @Override // ii.b5
@@ -90,9 +90,9 @@ public final class j3 implements b5 {
         u uVar = this.a;
         uVar.a = 3;
         x3 x3Var = this.c;
-        x3Var.g4.remove(uVar);
+        x3Var.X3.remove(uVar);
         x3Var.r4(this.b, uVar);
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     @Override // ii.b5

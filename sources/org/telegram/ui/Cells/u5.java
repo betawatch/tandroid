@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class u5 extends FrameLayout {
     public final TextView a;
@@ -30,7 +30,7 @@ public final class u5 extends FrameLayout {
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(textView, w7.x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, 80, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
         linearLayout.setOrientation(0);
@@ -38,10 +38,10 @@ public final class u5 extends FrameLayout {
             RadioButton radioButton = new RadioButton(context);
             radioButton.setSize(AndroidUtilities.dp(20.0f));
             radioButton.setTag(Integer.valueOf(i10));
-            this.b.addView(radioButton, w7.z5.l(1.0f / this.e.length, 0, -1));
+            this.b.addView(radioButton, w7.x5.l(1.0f / this.e.length, 0, -1));
             radioButton.setOnClickListener(new a(this, 8));
         }
-        addView(this.b, w7.z5.d(-1, 40.0f, 51, 96.0f, 0.0f, 24.0f, 0.0f));
+        addView(this.b, w7.x5.a(40.0f, 96.0f, 0.0f, 24.0f, 0.0f, -1, 51));
     }
 
     public final void a(int i10, String str) {

@@ -2,7 +2,7 @@ package c2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j {
     public final int a;
@@ -151,9 +151,10 @@ public final class j {
                         i25 += min;
                         f7 = f12;
                         d = d10;
+                        i12 = i24;
                     } else {
                         short[] sArr = this.j;
-                        int i27 = i19 > 4000 ? i19 / 4000 : 1;
+                        int i27 = i19 > 4000 ? i19 / 4000 : i20;
                         int i28 = this.g;
                         int i29 = this.f;
                         if (i21 == i20 && i27 == i20) {
@@ -197,61 +198,64 @@ public final class j {
                         if (d > 1.0d) {
                             short[] sArr3 = this.j;
                             if (d >= 2.0d) {
-                                i13 = i25;
+                                i12 = i24;
                                 double d12 = (i11 / (d - 1.0d)) + this.w;
-                                int round = (int) Math.round(d12);
-                                this.w = d12 - round;
-                                i14 = round;
+                                i14 = (int) Math.round(d12);
+                                this.w = d12 - i14;
                             } else {
-                                i13 = i25;
+                                i12 = i24;
                                 double d13 = (((2.0d - d) * i11) / (d - 1.0d)) + this.w;
-                                int round2 = (int) Math.round(d13);
-                                this.r = round2;
-                                this.w = d13 - round2;
+                                int round = (int) Math.round(d13);
+                                this.r = round;
+                                this.w = d13 - round;
                                 i14 = i11;
                             }
                             short[] c10 = c(this.l, this.m, i14);
                             this.l = c10;
-                            int i36 = i13;
-                            e(i14, this.b, c10, this.m, sArr3, i36, sArr3, i36 + i11);
-                            this.m += i14;
-                            i25 = i11 + i14 + i36;
-                        } else {
+                            int i36 = i25 + i11;
                             int i37 = i25;
+                            int i38 = i14;
+                            e(i38, this.b, c10, this.m, sArr3, i37, sArr3, i36);
+                            this.m += i38;
+                            i25 = i11 + i38 + i37;
+                        } else {
+                            i12 = i24;
+                            int i39 = i25;
                             short[] sArr4 = this.j;
                             if (d < 0.5d) {
                                 double d14 = ((i11 * d) / (1.0d - d)) + this.w;
-                                int round3 = (int) Math.round(d14);
-                                this.w = d14 - round3;
-                                i12 = round3;
+                                int round2 = (int) Math.round(d14);
+                                this.w = d14 - round2;
+                                i13 = round2;
                             } else {
-                                double d15 = ((((2.0d * d) - 1.0d) * i11) / (1.0d - d)) + this.w;
-                                int round4 = (int) Math.round(d15);
-                                this.r = round4;
-                                this.w = d15 - round4;
-                                i12 = i11;
+                                double d15 = ((((d * 2.0d) - 1.0d) * i11) / (1.0d - d)) + this.w;
+                                int round3 = (int) Math.round(d15);
+                                this.r = round3;
+                                this.w = d15 - round3;
+                                i13 = i11;
                             }
-                            int i38 = i11 + i12;
-                            short[] c11 = c(this.l, this.m, i38);
+                            int i40 = i11 + i13;
+                            short[] c11 = c(this.l, this.m, i40);
                             this.l = c11;
-                            System.arraycopy(sArr4, i37 * i21, c11, this.m * i21, i11 * i21);
-                            e(i12, this.b, this.l, this.m + i11, sArr4, i37 + i11, sArr4, i37);
-                            this.m += i38;
-                            i25 = i37 + i12;
+                            System.arraycopy(sArr4, i39 * i21, c11, this.m * i21, i11 * i21);
+                            e(i13, this.b, this.l, this.m + i11, sArr4, i39 + i11, sArr4, i39);
+                            this.m += i40;
+                            i25 = i39 + i13;
                         }
                     }
-                    if (i25 + i24 > i23) {
+                    if (i25 + i12 > i23) {
                         break;
                     }
+                    i22 = 0;
+                    i24 = i12;
+                    i20 = 1;
                     f12 = f7;
                     d10 = d;
-                    i20 = 1;
-                    i22 = 0;
                 }
-                int i39 = this.k - i25;
+                int i41 = this.k - i25;
                 short[] sArr5 = this.j;
-                System.arraycopy(sArr5, i25 * i21, sArr5, 0, i39 * i21);
-                this.k = i39;
+                System.arraycopy(sArr5, i25 * i21, sArr5, 0, i41 * i21);
+                this.k = i41;
                 if (f7 != 1.0f || this.m == i18) {
                 }
                 long j11 = (long) (i19 / f7);
@@ -260,17 +264,17 @@ public final class j {
                     j11 /= 2;
                     j12 /= 2;
                 }
-                int i40 = this.m - i18;
-                short[] c12 = c(this.n, this.o, i40);
+                int i42 = this.m - i18;
+                short[] c12 = c(this.n, this.o, i42);
                 this.n = c12;
-                System.arraycopy(this.l, i18 * i21, c12, this.o * i21, i40 * i21);
+                System.arraycopy(this.l, i18 * i21, c12, this.o * i21, i42 * i21);
                 this.m = i18;
-                this.o += i40;
-                int i41 = 0;
+                this.o += i42;
+                int i43 = 0;
                 while (true) {
                     i15 = this.o;
                     i16 = i15 - 1;
-                    if (i41 >= i16) {
+                    if (i43 >= i16) {
                         break;
                     }
                     while (true) {
@@ -282,34 +286,39 @@ public final class j {
                             break;
                         }
                         this.l = c(this.l, this.m, 1);
-                        int i42 = 0;
-                        while (i42 < i21) {
+                        int i44 = 0;
+                        while (i44 < i21) {
                             short[] sArr6 = this.l;
-                            int i43 = (this.m * i21) + i42;
+                            int i45 = (this.m * i21) + i44;
                             short[] sArr7 = this.n;
-                            int i44 = (i41 * i21) + i42;
-                            short s10 = sArr7[i44];
-                            short s11 = sArr7[i44 + i21];
-                            int i45 = i41;
-                            long j14 = (r12 + 1) * j11;
-                            long j15 = j14 - (this.q * j12);
-                            long j16 = j14 - (this.p * j11);
-                            sArr6[i43] = (short) ((((j16 - j15) * s11) + (s10 * j15)) / j16);
-                            i42++;
-                            i41 = i45;
+                            int i46 = (i43 * i21) + i44;
+                            short s10 = sArr7[i46];
+                            short s11 = sArr7[i46 + i21];
+                            long j14 = j11;
+                            int i47 = i43;
+                            long j15 = (r12 + 1) * j14;
+                            long j16 = j15 - (this.q * j12);
+                            long j17 = j15 - (this.p * j14);
+                            sArr6[i45] = (short) ((((j17 - j16) * s11) + (s10 * j16)) / j17);
+                            i44++;
+                            i43 = i47;
+                            j11 = j14;
                         }
                         this.q++;
                         this.m++;
-                        i41 = i41;
+                        i43 = i43;
+                        j11 = j11;
                     }
-                    int i46 = i41;
+                    long j18 = j11;
+                    int i48 = i43;
                     this.p = i17;
                     if (j3 == j12) {
                         this.p = 0;
-                        e2.d.g(j10 == j11);
+                        e2.d.g(j10 == j18);
                         this.q = 0;
                     }
-                    i41 = i46 + 1;
+                    i43 = i48 + 1;
+                    j11 = j18;
                 }
                 if (i16 == 0) {
                     return;

@@ -8,13 +8,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.em0;
+import org.telegram.ui.Components.p80;
 import org.telegram.ui.jb0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u0 implements ml0 {
+public final /* synthetic */ class u0 implements em0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class u0 implements ml0 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.em0
     public final void d(int i10, View view) {
         int i11 = this.a;
         int i12 = 5;
@@ -37,40 +37,40 @@ public final /* synthetic */ class u0 implements ml0 {
         Object obj3 = this.b;
         switch (i11) {
             case 0:
-                r3 r3Var = (r3) obj3;
+                s3 s3Var = (s3) obj3;
                 h1 h1Var = (h1) view;
                 m1 m1Var = h1Var.K;
-                b80 F = b80.F((ViewGroup) obj2, new d(), view);
+                p80 F = p80.F((ViewGroup) obj2, new d(), view);
                 F.p(15, -1, LocaleController.formatString(R.string.LiveStoryMessageSent, LocaleController.formatDateTime(m1Var.d, true)));
                 F.k();
-                F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new a1.e(i12, (jc) obj, m1Var), false);
-                F.l(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new a1.e(6, r3Var, h1Var), !m1Var.e);
-                if (r3Var.M != UserConfig.getInstance(r3Var.N).getClientUserId() && !r3Var.f()) {
+                F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new a1.f(i12, (kc) obj, m1Var), false);
+                F.l(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new a1.f(6, s3Var, h1Var), !m1Var.e);
+                if (s3Var.M != UserConfig.getInstance(s3Var.N).getClientUserId() && !s3Var.f()) {
                     z10 = false;
                 }
-                F.l(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a1.e(7, r3Var, m1Var), z10);
+                F.l(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a1.f(7, s3Var, m1Var), z10);
                 F.Z();
                 break;
             case 1:
-                ci.c8.O((ci.c8) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.d6) obj, view, i10);
+                ci.d8.R((ci.d8) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.e6) obj, view, i10);
                 break;
             case 2:
-                ci.t8.N((ci.t8) obj3, (Context) obj2, (ci.b7) obj, view, i10);
+                ci.u8.Q((ci.u8) obj3, (Context) obj2, (ci.b7) obj, view, i10);
                 break;
             default:
                 org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) obj3;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
                 Context context = (Context) obj;
                 org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) view;
-                jb0 jb0Var = (jb0) tVar.e3.get(i10);
+                jb0 jb0Var = (jb0) tVar.V2.get(i10);
                 if (jb0Var.e && !UserConfig.hasPremiumOnAccounts()) {
                     n2Var.showDialog(new rg.y0(n2Var, 10, true));
                     break;
-                } else if (!w7.g6.a(jb0Var)) {
+                } else if (!w7.e6.a(jb0Var)) {
                     org.telegram.ui.Cells.p pVar = new org.telegram.ui.Cells.p(context);
                     pVar.a = i10;
-                    tVar.f3.w0(pVar);
-                    w7.g6.b(jb0Var);
+                    tVar.W2.w0(pVar);
+                    w7.e6.b(jb0Var);
                     int i13 = org.telegram.ui.Cells.s.f;
                     sVar.b(true, true);
                     for (int i14 = 0; i14 < tVar.getChildCount(); i14++) {

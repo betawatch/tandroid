@@ -1,49 +1,42 @@
 package xh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.mr0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class w extends FrameLayout {
-    public final RectF a;
-    public final RectF b;
-    public final /* synthetic */ c0 c;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class w extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ TL_stars.StarGift a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ e6 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(c0 c0Var, Context context) {
-        super(context);
-        this.c = c0Var;
-        this.a = new RectF();
-        this.b = new RectF();
+    public w(Context context, TL_stars.StarGift starGift, e6 e6Var) {
+        this.a = starGift;
+        this.b = context;
+        this.c = e6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        c0 c0Var = this.c;
-        x xVar = c0Var.a0;
-        FrameLayout frameLayout = xVar.b;
-        RectF rectF = this.a;
-        if (hh.k.c(frameLayout, this, rectF)) {
-            TextView textView = c0Var.b0;
-            RectF rectF2 = this.b;
-            if (hh.k.c(textView, this, rectF2)) {
-                float dp = rectF2.right - AndroidUtilities.dp(32.0f);
-                float centerY = rectF2.centerY() - AndroidUtilities.dp(16.0f);
-                if (rectF.isEmpty()) {
-                    return;
-                }
-                canvas.save();
-                canvas.translate(dp, centerY);
-                canvas.scale(AndroidUtilities.dp(32.0f) / rectF.width(), AndroidUtilities.dp(32.0f) / rectF.height());
-                xVar.b.draw(canvas);
-                canvas.restore();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        Context context = this.b;
+        TL_stars.StarGift starGift = this.a;
+        if (i10 != 3 && i10 != 2) {
+            if (i10 == 4) {
+                x.V(context, starGift, this.c);
+                return;
             }
+            return;
+        }
+        String str = MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/auction/" + starGift.auction_slug;
+        if (i10 == 3) {
+            AndroidUtilities.addToClipboard(str);
+        } else {
+            mr0.O0(context, null, str, false, str).show();
         }
     }
 }

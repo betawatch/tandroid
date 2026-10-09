@@ -9,7 +9,7 @@ import e2.d0;
 import e2.v;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n implements h0 {
     public final h0 a;
@@ -41,7 +41,7 @@ public final class n implements h0 {
         k kVar = this.b;
         if (!equals) {
             this.h = sVar;
-            this.g = kVar.V(sVar) ? kVar.v(sVar) : null;
+            this.g = kVar.D1(sVar) ? kVar.s0(sVar) : null;
         }
         m mVar = this.g;
         h0 h0Var = this.a;
@@ -53,7 +53,7 @@ public final class n implements h0 {
         a2.q = r0.n("application/x-media3-cues");
         a2.j = str;
         a2.v = Long.MAX_VALUE;
-        a2.O = kVar.D(sVar);
+        a2.O = kVar.U0(sVar);
         hg.c.s(a2, h0Var);
     }
 
@@ -107,7 +107,7 @@ public final class n implements h0 {
             }
         }
         try {
-            mVar.E(bArr, i13, i15, lVar, dVar);
+            mVar.P(bArr, i13, i15, lVar, dVar);
             i15 = i15;
         } catch (RuntimeException e11) {
             e = e11;
@@ -126,7 +126,7 @@ public final class n implements h0 {
 
     @Override // c3.h0
     public final /* synthetic */ void d(int i10, v vVar) {
-        a4.a.a(this, vVar, i10);
+        a1.g.a(this, vVar, i10);
     }
 
     @Override // c3.h0

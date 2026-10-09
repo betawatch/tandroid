@@ -1,100 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.xi1;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gp implements vi {
-    public final /* synthetic */ pp a;
+public final class gp extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final org.telegram.ui.ActionBar.e6 a;
+    public final ImageView b;
+    public final org.telegram.ui.ActionBar.j5 c;
+    public final org.telegram.ui.ActionBar.j5 d;
+    public final org.telegram.ui.ActionBar.j5 e;
+    public final org.telegram.ui.nl f;
+    public boolean h;
+    public boolean n;
 
-    public gp(pp ppVar) {
-        this.a = ppVar;
+    public gp(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.a = e6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, w7.x5.e(52, 46, 51));
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.c = j5Var;
+        j5Var.setTextSize(14);
+        j5Var.setTypeface(AndroidUtilities.bold());
+        addView(j5Var, w7.x5.a(18.0f, 52.0f, 6.0f, 0.0f, 0.0f, -1, 51));
+        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
+        this.d = j5Var2;
+        j5Var2.setTextSize(14);
+        NotificationCenter.listenEmojiLoading(j5Var2);
+        addView(j5Var2, w7.x5.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
+        org.telegram.ui.ActionBar.j5 j5Var3 = new org.telegram.ui.ActionBar.j5(context);
+        this.e = j5Var3;
+        j5Var3.setTextSize(14);
+        j5Var3.l(LocaleController.getString(R.string.TapForForwardingOptions), false);
+        j5Var3.setAlpha(0.0f);
+        addView(j5Var3, w7.x5.a(18.0f, 52.0f, 24.0f, 0.0f, 0.0f, -1, 51));
+        org.telegram.ui.nl nlVar = new org.telegram.ui.nl(this, context, new vh.g());
+        this.f = nlVar;
+        nlVar.setRoundRadius(AndroidUtilities.dp(6.0f));
+        addView(nlVar, w7.x5.a(34.0f, 52.0f, 6.0f, 0.0f, 0.0f, 34, 51));
+        e();
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        pp ppVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = ppVar.Y.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            if (str != null) {
-                File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                dp dpVar = new dp(new xi1(file, file, ""), loadBitmap, false, 2);
-                dpVar.V1 = ppVar.f0;
-                dpVar.F1 = false;
-                dpVar.E1 = false;
-                dpVar.n1 = 0.2f;
-                dpVar.c1(ppVar.v.a());
-                dpVar.I1 = new fp(this, 0);
-                pp.q(ppVar, dpVar);
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.n) {
+            return super.dispatchTouchEvent(motionEvent);
         }
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final boolean S1() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final void U0(Object obj) {
-        dp dpVar = new dp(obj, null, true, 3);
-        pp ppVar = this.a;
-        dpVar.V1 = ppVar.f0;
-        dpVar.c1(ppVar.v.a());
-        dpVar.I1 = new fp(this, 1);
-        pp.q(ppVar, dpVar);
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ boolean a0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void x0(ih ihVar) {
-        ihVar.run();
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void e() {
+        int i10 = org.telegram.ui.ActionBar.i6.te;
+        org.telegram.ui.ActionBar.e6 e6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(i10, e6Var), PorterDuff.Mode.MULTIPLY));
+        this.c.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.ve, e6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.Xk;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(i11, e6Var);
+        org.telegram.ui.ActionBar.j5 j5Var = this.d;
+        j5Var.setTextColor(w02);
+        j5Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.gc, e6Var));
+        this.e.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void K0() {
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 }

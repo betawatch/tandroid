@@ -1,29 +1,35 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import java.io.File;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yu0 {
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public View d;
-    public ImageReceiver.BitmapHolder e;
-    public long f;
-    public long g;
-    public int[] h;
-    public int i;
-    public int j;
-    public boolean l;
-    public ClippingImageView m;
-    public int n;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public boolean s;
-    public float k = 1.0f;
-    public boolean o = true;
+public interface yu0 {
+    boolean a(int i10);
+
+    File b(int i10);
+
+    String c(int i10);
+
+    TLObject d(int i10);
+
+    boolean e(int i10);
+
+    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
+
+    Object g();
+
+    TL_iv.PageBlock get(int i10);
+
+    List getAll();
+
+    void h(TL_iv.PageBlock pageBlock);
+
+    CharSequence i(int i10);
+
+    int j();
 }

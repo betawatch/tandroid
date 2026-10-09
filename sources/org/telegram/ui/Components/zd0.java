@@ -1,166 +1,196 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.graphics.Point;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.DecelerateInterpolator;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Region;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zd0 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ ee0 d;
+public class zd0 extends FrameLayout {
+    public static final lw0 I;
+    public static final lw0 J;
+    public static final lw0 K;
+    public boolean E;
+    public boolean F;
+    public final org.telegram.ui.ActionBar.e6 G;
+    public float H;
+    public final RectF a;
+    public String b;
+    public final Paint c;
+    public final TextPaint d;
+    public final o1.k e;
+    public float f;
+    public final o1.k h;
+    public float n;
+    public final o1.k r;
+    public float s;
+    public final float v;
+    public final float w;
+    public EditText x;
+    public boolean y;
 
-    public zd0(ee0 ee0Var, int i10, int i11, Runnable runnable) {
-        this.d = ee0Var;
-        this.a = i10;
-        this.b = i11;
-        this.c = runnable;
+    static {
+        lw0 lw0Var = new lw0(new f2(24), new f2(25));
+        lw0Var.c = 100.0f;
+        I = lw0Var;
+        lw0 lw0Var2 = new lw0(new f2(26), new f2(27));
+        lw0Var2.c = 100.0f;
+        J = lw0Var2;
+        lw0 lw0Var3 = new lw0(new f2(28), new f2(29));
+        lw0Var3.c = 100.0f;
+        K = lw0Var3;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        float f7;
-        int dp;
-        int[] iArr;
-        ai.w5 w5Var;
-        int i10;
-        int i11;
-        AnimatorSet animatorSet;
-        ee0 ee0Var = this.d;
-        int[] iArr2 = ee0Var.W;
-        ee0Var.setAlpha(1.0f);
-        ee0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        nj0 nj0Var = ee0Var.I;
-        nj0Var.getAnimatedDrawable().N(0, false, false);
-        nj0Var.getAnimatedDrawable().P(37);
-        nj0Var.d();
-        ee0Var.m(true);
-        AndroidUtilities.runOnUIThread(new lc0(this, 5), 350L);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x;
-        int i13 = point.y + AndroidUtilities.statusBarHeight;
-        int i14 = this.a;
-        int i15 = i12 - i14;
-        int i16 = i15 * i15;
-        int i17 = this.b;
-        int i18 = i13 - i17;
-        int i19 = i18 * i18;
-        double sqrt = Math.sqrt(i19 + i16);
-        double sqrt2 = Math.sqrt(i19 + r16);
-        int i20 = i17 * i17;
-        int i21 = i20 + (i14 * i14);
-        char c10 = 1;
-        final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i21)), Math.sqrt(i20 + i16));
-        ArrayList arrayList2 = ee0Var.O;
-        arrayList2.clear();
-        ai.w5 w5Var2 = ee0Var.e;
-        int childCount = w5Var2.getChildCount();
-        int i22 = 0;
-        while (i22 < childCount) {
-            View childAt = w5Var2.getChildAt(i22);
-            childAt.setScaleX(0.7f);
-            childAt.setScaleY(0.7f);
-            childAt.setAlpha(0.0f);
-            be0 be0Var = new be0();
-            childAt.getLocationInWindow(iArr2);
-            int measuredWidth = i14 - ((childAt.getMeasuredWidth() / 2) + iArr2[0]);
-            int measuredHeight = i17 - ((childAt.getMeasuredHeight() / 2) + iArr2[c10]);
-            int i23 = (measuredHeight * measuredHeight) + (measuredWidth * measuredWidth);
-            int i24 = i17;
-            be0Var.b = ((float) Math.sqrt(i23)) - AndroidUtilities.dp(40.0f);
-            if (i22 != -1) {
-                animatorSet = new AnimatorSet();
-                iArr = iArr2;
-                w5Var = w5Var2;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, 1.0f));
-                i10 = childCount;
-                i11 = i12;
-                animatorSet.setDuration(140L);
-                animatorSet.setInterpolator(new DecelerateInterpolator());
-            } else {
-                iArr = iArr2;
-                w5Var = w5Var2;
-                i10 = childCount;
-                i11 = i12;
-                animatorSet = null;
-            }
-            AnimatorSet animatorSet3 = new AnimatorSet();
-            be0Var.a = animatorSet3;
-            int i25 = i11;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_X, i22 == -1 ? 0.9f : 0.6f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.SCALE_Y, i22 != -1 ? 0.6f : 0.9f, i22 == -1 ? 1.0f : 1.04f), ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f));
-            be0Var.a.addListener(new hd0(animatorSet, 2));
-            be0Var.a.setDuration(i22 == -1 ? 232L : 200L);
-            be0Var.a.setInterpolator(new DecelerateInterpolator());
-            arrayList2.add(be0Var);
-            i22++;
-            childCount = i10;
-            i17 = i24;
-            iArr2 = iArr;
-            w5Var2 = w5Var;
-            i12 = i25;
-            c10 = 1;
+    public zd0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.a = new RectF();
+        this.b = "";
+        Paint paint = new Paint(1);
+        this.c = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        this.e = new o1.k(this, I);
+        this.h = new o1.k(this, J);
+        this.r = new o1.k(this, K);
+        float max = Math.max(2, AndroidUtilities.dp(0.5f));
+        this.v = max;
+        this.w = AndroidUtilities.dp(1.6667f);
+        this.G = e6Var;
+        setWillNotDraw(false);
+        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeWidth(max);
+        f();
+        setPadding(0, AndroidUtilities.dp(6.0f), 0, 0);
+    }
+
+    public static void d(o1.k kVar, float f7) {
+        float f10 = f7 * 100.0f;
+        o1.l lVar = kVar.u;
+        if (lVar == null || f10 != ((float) lVar.i)) {
+            kVar.c();
+            o1.l lVar2 = new o1.l(f10);
+            lVar2.b(500.0f);
+            lVar2.a(1.0f);
+            lVar2.i = f10;
+            kVar.u = lVar2;
+            kVar.h();
         }
-        int i26 = i12;
-        int i27 = i17;
-        arrayList.add(ObjectAnimator.ofFloat(ee0Var.v, (Property<ci.m6, Float>) View.ALPHA, 0.0f, 1.0f));
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        arrayList.add(ofFloat);
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.xd0
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ee0 ee0Var2 = zd0.this.d;
-                double animatedFraction = max * valueAnimator.getAnimatedFraction();
-                int i28 = 0;
-                while (true) {
-                    ArrayList arrayList3 = ee0Var2.O;
-                    if (i28 >= arrayList3.size()) {
-                        return;
-                    }
-                    be0 be0Var2 = (be0) arrayList3.get(i28);
-                    if (be0Var2.b <= animatedFraction) {
-                        be0Var2.a.start();
-                        arrayList3.remove(i28);
-                        i28--;
-                    }
-                    i28++;
-                }
-            }
-        });
-        tr trVar = tr.h;
-        animatorSet2.setInterpolator(trVar);
-        animatorSet2.setDuration(500L);
-        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(ee0Var.P, 1.0f);
-        ofFloat2.addUpdateListener(new v70(this, 2));
-        ofFloat2.addListener(new yd0(this, 0));
-        ofFloat2.setDuration(420L);
-        ofFloat2.setInterpolator(trVar);
-        arrayList.add(ofFloat2);
-        animatorSet2.playTogether(arrayList);
-        animatorSet2.addListener(new yd0(this, 1));
-        animatorSet2.start();
-        AnimatorSet animatorSet4 = new AnimatorSet();
-        animatorSet4.setDuration(332L);
-        if (AndroidUtilities.isTablet() || ee0Var.getContext().getResources().getConfiguration().orientation != 2) {
-            f7 = i26 / 2.0f;
-            dp = AndroidUtilities.dp(29.0f);
-        } else {
-            f7 = (SharedConfig.passcodeType == 0 ? i26 / 2.0f : i26) / 2.0f;
-            dp = AndroidUtilities.dp(30.0f);
+    }
+
+    private void setColor(int i10) {
+        this.c.setColor(i10);
+        invalidate();
+    }
+
+    public final void a(float f7) {
+        d(this.r, f7);
+    }
+
+    public final void b(float f7, float f10, boolean z10) {
+        if (z10) {
+            d(this.e, f7);
+            d(this.h, f10);
+            return;
         }
-        animatorSet4.playTogether(ObjectAnimator.ofFloat(nj0Var, (Property<nj0, Float>) View.TRANSLATION_X, i14 - AndroidUtilities.dp(29.0f), f7 - dp), ObjectAnimator.ofFloat(nj0Var, (Property<nj0, Float>) View.TRANSLATION_Y, i27 - AndroidUtilities.dp(29.0f), ee0Var.H), ObjectAnimator.ofFloat(nj0Var, (Property<nj0, Float>) View.SCALE_X, 0.5f, 1.0f), ObjectAnimator.ofFloat(nj0Var, (Property<nj0, Float>) View.SCALE_Y, 0.5f, 1.0f));
-        animatorSet4.setInterpolator(tr.g);
-        animatorSet4.start();
+        this.f = f7;
+        this.n = f10;
+        if (!this.y) {
+            float f11 = this.w;
+            float f12 = this.v;
+            this.c.setStrokeWidth(((f11 - f12) * f7) + f12);
+        }
+        f();
+    }
+
+    public final void c(boolean z10, boolean z11) {
+        b(z10 ? 1.0f : 0.0f, z11 ? 1.0f : 0.0f, true);
+    }
+
+    public final void e(EditTextBoldCursor editTextBoldCursor) {
+        this.x = editTextBoldCursor;
+        invalidate();
+    }
+
+    public final void f() {
+        int i10 = org.telegram.ui.ActionBar.i6.H6;
+        org.telegram.ui.ActionBar.e6 e6Var = this.G;
+        int d = i0.a.d((!this.y || this.F) ? this.n : 0.0f, org.telegram.ui.ActionBar.i6.w0(i10, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.I6, e6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.q7;
+        this.d.setColor(i0.a.d(this.s, d, org.telegram.ui.ActionBar.i6.w0(i11, e6Var)));
+        setColor(i0.a.d(this.s, i0.a.d((!this.y || this.F) ? this.f : 0.0f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.k6, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.l6, e6Var)), org.telegram.ui.ActionBar.i6.w0(i11, e6Var)));
+    }
+
+    public EditText getAttachedEditText() {
+        return this.x;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        TextPaint textPaint = this.d;
+        float paddingTop = getPaddingTop() + ((textPaint.getTextSize() / 2.0f) - AndroidUtilities.dp(1.75f));
+        float textSize = (textPaint.getTextSize() / 2.0f) + (getHeight() / 2.0f);
+        EditText editText = this.x;
+        boolean z10 = (editText != null && editText.length() == 0 && TextUtils.isEmpty(this.x.getHint())) || this.y || this.E;
+        if (z10) {
+            paddingTop = com.google.android.gms.internal.vision.e2.y(1.0f, this.n, textSize - paddingTop, paddingTop);
+        }
+        float f7 = paddingTop;
+        float f10 = z10 ? (1.0f - this.n) * this.H : 0.0f;
+        Paint paint = this.c;
+        float strokeWidth = paint.getStrokeWidth();
+        float y3 = z10 ? com.google.android.gms.internal.vision.e2.y(1.0f, this.n, 0.25f, 0.75f) : 0.75f;
+        float measureText = textPaint.measureText(this.b) * y3;
+        canvas.save();
+        RectF rectF = this.a;
+        rectF.set(AndroidUtilities.dp(10.0f) + getPaddingLeft(), getPaddingTop(), (getWidth() - AndroidUtilities.dp(18.0f)) - getPaddingRight(), (strokeWidth * 2.0f) + getPaddingTop());
+        canvas.clipRect(rectF, Region.Op.DIFFERENCE);
+        rectF.set(getPaddingLeft() + strokeWidth, getPaddingTop() + strokeWidth, (getWidth() - strokeWidth) - getPaddingRight(), (getHeight() - strokeWidth) - getPaddingBottom());
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.restore();
+        float dp = AndroidUtilities.dp(10.0f) + getPaddingLeft();
+        float paddingTop2 = getPaddingTop() + strokeWidth;
+        float f11 = (measureText / 2.0f) + dp;
+        canvas.drawLine(((((dp + measureText) + AndroidUtilities.dp(10.0f)) - f11) * (z10 ? this.n : 1.0f)) + f11, paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.dp(6.0f), paddingTop2, paint);
+        float dp2 = f11 + AndroidUtilities.dp(4.0f);
+        canvas.drawLine(dp, paddingTop2, ((dp - dp2) * (z10 ? this.n : 1.0f)) + dp2, paddingTop2, paint);
+        canvas.save();
+        canvas.scale(y3, y3, AndroidUtilities.dp(18.0f) + getPaddingLeft(), f7);
+        canvas.drawText(this.b, AndroidUtilities.dp(14.0f) + getPaddingLeft() + f10, f7, textPaint);
+        canvas.restore();
+    }
+
+    public void setForceForceUseCenter(boolean z10) {
+        this.y = z10;
+        this.F = z10;
+        invalidate();
+    }
+
+    public void setForceUseCenter(boolean z10) {
+        this.y = z10;
+        invalidate();
+    }
+
+    public void setForceUseCenter2(boolean z10) {
+        this.E = z10;
+    }
+
+    public void setLeftPadding(float f7) {
+        this.H = f7;
+        invalidate();
+    }
+
+    public void setText(String str) {
+        this.b = str;
+        invalidate();
     }
 }

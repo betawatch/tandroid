@@ -1,31 +1,41 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qf0 implements Runnable {
+public final /* synthetic */ class qf0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xf0 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ zf0 b;
+    public final /* synthetic */ Bundle c;
 
-    public /* synthetic */ qf0(xf0 xf0Var, int i10, int i11) {
-        this.a = i11;
-        this.b = xf0Var;
-        this.c = i10;
+    public /* synthetic */ qf0(zf0 zf0Var, Bundle bundle, int i10) {
+        this.a = i10;
+        this.b = zf0Var;
+        this.c = bundle;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new qf0(this.b, this.c, 1));
-                break;
-            case 1:
-                this.b.A(this.c);
+                zf0 zf0Var = this.b;
+                if (tLObject == null) {
+                    if (tL_error != null && tL_error.text != null) {
+                        AndroidUtilities.runOnUIThread(new m70(29, zf0Var, tL_error));
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new of0(zf0Var, this.c, tLObject, 1));
+                    break;
+                }
                 break;
             default:
-                this.b.f.f[this.c].l(1.0f);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.oo0(this.b, tL_error, this.c, tLObject, 21));
                 break;
         }
     }

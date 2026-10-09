@@ -1,13 +1,21 @@
 package w3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import c3.h0;
+import c3.i0;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l {
-    public final long a;
-    public final int b;
+    public final q a;
+    public final t b;
+    public final h0 c;
+    public final i0 d;
+    public int e;
 
-    public l(long j3, int i10) {
-        this.a = j3;
-        this.b = i10;
+    public l(q qVar, t tVar, h0 h0Var) {
+        this.a = qVar;
+        this.b = tVar;
+        this.c = h0Var;
+        this.d = "audio/true-hd".equals(qVar.g.r) ? new i0() : null;
     }
 }

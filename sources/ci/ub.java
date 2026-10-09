@@ -1,15 +1,64 @@
 package ci;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.aq0;
+import org.telegram.ui.xd1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class ub extends j0 {
-    public final /* synthetic */ kc E;
+public final class ub implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public boolean b = false;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ub(kc kcVar, Context context, yb ybVar) {
-        super(context, ybVar);
-        this.E = kcVar;
+    public /* synthetic */ ub(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.c = notificationCenterDelegate;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                lc lcVar = (lc) this.c;
+                lcVar.D2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tb tbVar = lcVar.C2;
+                if (tbVar != null) {
+                    tbVar.invalidate();
+                }
+                if (!this.b && lcVar.D2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.bd bdVar = (org.telegram.ui.bd) this.c;
+                bdVar.n0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bdVar.m0.invalidate();
+                if (!this.b && bdVar.n0 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            case 2:
+                aq0 aq0Var = (aq0) this.c;
+                aq0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                aq0Var.X.invalidate();
+                if (!this.b && aq0Var.Y > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+            default:
+                xd1 xd1Var = (xd1) this.c;
+                xd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                xd1Var.h2.invalidate();
+                if (!this.b && xd1Var.i2 > 0.5f) {
+                    this.b = true;
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(15);
@@ -66,30 +66,30 @@ public final class i extends l {
         la.h hVar = new la.h(getClass().getSimpleName());
         n7.k0 k0Var = n7.m0.d;
         byte[] u10 = this.a.u();
-        hVar.Z(k0Var.c(u10.length, u10), "keyHandle");
+        hVar.a0(k0Var.c(u10.length, u10), "keyHandle");
         byte[] u11 = this.b.u();
-        hVar.Z(k0Var.c(u11.length, u11), "clientDataJSON");
+        hVar.a0(k0Var.c(u11.length, u11), "clientDataJSON");
         byte[] u12 = this.c.u();
-        hVar.Z(k0Var.c(u12.length, u12), "authenticatorData");
+        hVar.a0(k0Var.c(u12.length, u12), "authenticatorData");
         byte[] u13 = this.d.u();
-        hVar.Z(k0Var.c(u13.length, u13), "signature");
+        hVar.a0(k0Var.c(u13.length, u13), "signature");
         n7.s0 s0Var = this.e;
         byte[] u14 = s0Var == null ? null : s0Var.u();
         if (u14 != null) {
-            hVar.Z(k0Var.c(u14.length, u14), "userHandle");
+            hVar.a0(k0Var.c(u14.length, u14), "userHandle");
         }
         return hVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.g0.q(parcel, 20293);
-        w7.g0.c(parcel, 2, this.a.u());
-        w7.g0.c(parcel, 3, this.b.u());
-        w7.g0.c(parcel, 4, this.c.u());
-        w7.g0.c(parcel, 5, this.d.u());
+        int q6 = w7.d0.q(parcel, 20293);
+        w7.d0.c(parcel, 2, this.a.u());
+        w7.d0.c(parcel, 3, this.b.u());
+        w7.d0.c(parcel, 4, this.c.u());
+        w7.d0.c(parcel, 5, this.d.u());
         n7.s0 s0Var = this.e;
-        w7.g0.c(parcel, 6, s0Var == null ? null : s0Var.u());
-        w7.g0.r(parcel, q6);
+        w7.d0.c(parcel, 6, s0Var == null ? null : s0Var.u());
+        w7.d0.r(parcel, q6);
     }
 }

@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import v7.s7;
+import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zziy {
     public static final Class zza(Object obj) {
@@ -24,7 +24,7 @@ public final class zziy {
             String str = (String) obj;
             Class<?> cls2 = Class.forName(str);
             int i10 = zzby.zza;
-            if (((zziq) s7.a(zzix.zza).a()).zzb(str)) {
+            if (((zziq) z7.a(zzix.zza).a()).zzb(str)) {
                 return cls2;
             }
             throw new zzdm(6, 47, null);

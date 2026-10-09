@@ -1,27 +1,12 @@
 package w7;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.jb0;
+import android.graphics.Path;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g6 {
-    public static boolean a(jb0 jb0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(jb0Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && jb0Var == jb0.h);
-    }
-
-    public static void b(jb0 jb0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        PackageManager packageManager = context.getPackageManager();
-        jb0[] values = jb0.values();
-        int length = values.length;
-        for (int i10 = 0; i10 < length; i10++) {
-            jb0 jb0Var2 = values[i10];
-            packageManager.setComponentEnabledSetting(jb0Var2.a(context), jb0Var2 == jb0Var ? 1 : 2, 1);
-        }
+    public static void a(Path path, float f7, float f10) {
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, f7, f10, (f7 * 0.15f) / 2.0f, (0.15f * f10) / 1.212122f, Path.Direction.CW);
     }
 }

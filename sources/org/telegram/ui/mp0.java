@@ -1,65 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class mp0 extends a71 {
-    public final /* synthetic */ pp0 d2;
-    public final /* synthetic */ r61[] e2;
-    public final /* synthetic */ qp0 f2;
+public final /* synthetic */ class mp0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mp0(qp0 qp0Var, org.telegram.ui.ActionBar.n2 n2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, pp0 pp0Var, r61[] r61VarArr) {
-        super(n2Var, context, true, num, i10, true, d6Var, i11, i12);
-        this.f2 = qp0Var;
-        this.d2 = pp0Var;
-        this.e2 = r61VarArr;
+    public /* synthetic */ mp0(np0 np0Var, int i10) {
+        this.a = i10;
+        this.b = np0Var;
     }
 
-    @Override // org.telegram.ui.a71
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.a71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        qp0 qp0Var = this.f2;
-        if (tL_starGiftUnique != null) {
-            if (qp0Var.m0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
+        yp0 yp0Var;
+        up0 up0Var;
+        switch (this.a) {
+            case 0:
+                Integer num = (Integer) obj;
+                np0 np0Var = this.b;
+                up0 up0Var2 = np0Var.e;
+                TL_stars.StarGift starGift = num.intValue() == 0 ? null : (TL_stars.StarGift) up0Var2.M.get(num);
+                up0Var2.K = starGift;
+                aq0 aq0Var = up0Var2.p0;
+                if (starGift == null) {
+                    xh.v3 v3Var = up0Var2.J;
+                    if (v3Var != null) {
+                        v3Var.f();
+                        up0Var2.J = null;
+                    }
+                } else {
+                    xh.v3 v3Var2 = up0Var2.J;
+                    if (v3Var2 == null || v3Var2.b != starGift.id) {
+                        i10 = ((org.telegram.ui.ActionBar.n2) aq0Var).currentAccount;
+                        xh.v3 v3Var3 = new xh.v3(up0Var2.K.id, i10, new mp0(np0Var, 2));
+                        up0Var2.J = v3Var3;
+                        v3Var3.g(false);
+                    }
                 }
-                qp0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                qp0Var.r = null;
-            } else {
-                qp0Var.s = null;
-                qp0Var.r = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-            }
-            qp0Var.I = null;
-            qp0Var.h = -1;
-        } else {
-            qp0Var.n = l4 == null ? 0L : l4.longValue();
-            qp0Var.r = null;
-            qp0Var.s = null;
-            qp0Var.I = null;
-        }
-        pp0 pp0Var = this.d2;
-        if (pp0Var != null) {
-            pp0Var.b(true);
-        }
-        qp0Var.j(true);
-        qp0Var.i();
-        qp0Var.f(true);
-        r61 r61Var = this.e2[0];
-        if (r61Var != null) {
-            qp0Var.o0 = null;
-            r61Var.dismiss();
+                up0.a(up0Var2);
+                (aq0Var.I.getCurrentPosition() == 1 ? aq0Var.n : aq0Var.h).e();
+                break;
+            case 1:
+                up0 up0Var3 = this.b.e;
+                up0Var3.h = ((Integer) obj).intValue();
+                up0Var3.r = null;
+                up0Var3.s = null;
+                up0Var3.I = null;
+                up0Var3.j(true);
+                up0Var3.i();
+                up0Var3.f(true);
+                tp0 tp0Var = up0Var3.y;
+                if (tp0Var != null) {
+                    tp0Var.invalidate();
+                }
+                aq0 aq0Var2 = up0Var3.p0;
+                up0 up0Var4 = aq0Var2.n;
+                if (up0Var4 != null && (yp0Var = up0Var4.a) != null && (up0Var = aq0Var2.h) != null) {
+                    yp0Var.a(up0Var.h);
+                    break;
+                }
+                break;
+            default:
+                this.b.e.e();
+                break;
         }
     }
 }

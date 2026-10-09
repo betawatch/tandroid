@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k0 {
     public static final k0 g;
@@ -92,13 +92,13 @@ public final class k0 {
             long j10 = zVar.a;
             long j11 = zVar.d;
             long j12 = zVar.b;
-            long Q = e2.d0.Q(bundle4.getLong(str2, j10));
+            long P = e2.d0.P(bundle4.getLong(str2, j10));
             boolean z10 = true;
-            e2.d.b(Q >= 0);
-            yVar.a = Q;
-            long Q2 = e2.d0.Q(bundle4.getLong(z.k, zVar.c));
-            e2.d.b(Q2 == Long.MIN_VALUE || Q2 >= 0);
-            yVar.b = Q2;
+            e2.d.b(P >= 0);
+            yVar.a = P;
+            long P2 = e2.d0.P(bundle4.getLong(z.k, zVar.c));
+            e2.d.b(P2 == Long.MIN_VALUE || P2 >= 0);
+            yVar.b = P2;
             yVar.c = bundle4.getBoolean(z.l, zVar.e);
             yVar.d = bundle4.getBoolean(z.m, zVar.f);
             yVar.e = bundle4.getBoolean(z.n, zVar.g);

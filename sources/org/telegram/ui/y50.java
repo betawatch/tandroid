@@ -1,29 +1,13 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class y50 extends org.telegram.ui.Cells.e4 {
-    public final /* synthetic */ b60 f0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y50(b60 b60Var, Context context) {
-        super(context);
-        this.f0 = b60Var;
-    }
-
-    @Override // org.telegram.ui.Cells.e4
-    public final void d(org.telegram.ui.Cells.e4 e4Var) {
-        h60 h60Var = this.f0.M;
-        h60 h60Var2 = h60.D3;
-        h60Var.F1(e4Var);
-    }
-
-    @Override // org.telegram.ui.Cells.e4, android.widget.FrameLayout, android.view.View
+public final class y50 extends org.telegram.ui.Cells.w3 {
+    @Override // org.telegram.ui.Cells.w3, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (AndroidUtilities.isTablet()) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);

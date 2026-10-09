@@ -1,19 +1,56 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m61 extends l61 {
-    public m61(String str) {
-        super(str != null ? str.replace((char) 8238, ' ') : str, (n11) null);
+public final class m61 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
+
+    public m61(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // org.telegram.ui.Components.l61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setUnderlineText(false);
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.i6.x0(null, i10, false);
+        }
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
+    }
+
+    public m61() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public m61(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

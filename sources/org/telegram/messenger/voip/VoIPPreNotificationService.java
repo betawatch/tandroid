@@ -25,7 +25,7 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import ei.r2;
+import ei.q2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -42,13 +42,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.ef0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.ki1;
+import org.telegram.ui.wi1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -58,7 +58,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -86,15 +86,15 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            ki1 ki1Var = ki1.n1;
-            if (ki1Var != null) {
-                ki1Var.onStateChanged(getCallState());
+            wi1 wi1Var = wi1.n1;
+            if (wi1Var != null) {
+                wi1Var.onStateChanged(getCallState());
             }
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
         public final /* synthetic */ long getCallDuration() {
-            return w0.a(this);
+            return x0.a(this);
         }
 
         @Override // org.telegram.messenger.voip.VoIPServiceState
@@ -194,7 +194,7 @@ public class VoIPPreNotificationService {
             VoIPService.getSharedInstance().acceptIncomingCall();
         } else {
             pendingVoIP.putExtra("openFragment", true);
-            if (!pe0.f("android.permission.RECORD_AUDIO") || (isVideo() && !pe0.f("android.permission.CAMERA"))) {
+            if (!ef0.d("android.permission.RECORD_AUDIO") || (isVideo() && !ef0.d("android.permission.CAMERA"))) {
                 try {
                     PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                     return;
@@ -242,7 +242,7 @@ public class VoIPPreNotificationService {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
         }
         FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new r2(intExtra, 2), 2);
+        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new q2(intExtra, 2), 2);
         dismiss(context, false);
     }
 
@@ -313,7 +313,7 @@ public class VoIPPreNotificationService {
             return;
         }
         if (tLObject instanceof TLRPC.TL_updates) {
-            MessagesController.getInstance(i10).processUpdates((TLRPC.TL_updates) tLObject, false);
+            MessagesController.getInstance(i10).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
         }
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("(VoIPPreNotification) phone.discardCall " + tLObject);
@@ -325,9 +325,9 @@ public class VoIPPreNotificationService {
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && launchActivity.h1 && VoIPService.getSharedInstance() == null) {
             launchActivity.h1 = false;
-            ki1 ki1Var = ki1.n1;
-            if (ki1Var != null) {
-                ki1Var.n();
+            wi1 wi1Var = wi1.n1;
+            if (wi1Var != null) {
+                wi1Var.m();
             }
             launchActivity.moveTaskToBack(true);
         }
@@ -535,7 +535,7 @@ public class VoIPPreNotificationService {
             final long longExtra = intent.getLongExtra("user_id", 0L);
             final boolean z10 = phoneCall.video;
             currentState = new State(intExtra, longExtra, phoneCall);
-            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.q
+            acknowledge(context, intExtra, phoneCall, new Runnable() { // from class: org.telegram.messenger.voip.r
                 @Override // java.lang.Runnable
                 public final void run() {
                     VoIPPreNotificationService.lambda$show$1(intent, phoneCall, context, intExtra, longExtra, z10);
@@ -579,7 +579,7 @@ public class VoIPPreNotificationService {
                 }
                 MediaPlayer mediaPlayer2 = new MediaPlayer();
                 ringtonePlayer = mediaPlayer2;
-                mediaPlayer2.setOnPreparedListener(new r());
+                mediaPlayer2.setOnPreparedListener(new s());
                 ringtonePlayer.setLooping(true);
                 if (isWiredHeadsetOn) {
                     ringtonePlayer.setAudioStreamType(0);

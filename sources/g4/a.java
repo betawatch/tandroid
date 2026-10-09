@@ -18,11 +18,10 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import sa.e;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final v a = new v();
@@ -90,26 +89,34 @@ public final class a implements m {
     }
 
     @Override // z3.m
-    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final int O() {
+        return 2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // z3.m
+    public final void P(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
+        int i13;
         v vVar = this.a;
         vVar.H(i10 + i11, bArr);
         vVar.J(i10);
-        int i13 = 1;
-        int i14 = 2;
+        int i14 = 1;
+        int i15 = 0;
+        int i16 = 2;
         d.b(vVar.a() >= 2);
         int D = vVar.D();
         if (D == 0) {
             v = "";
         } else {
-            int i15 = vVar.b;
+            int i17 = vVar.b;
             Charset F = vVar.F();
-            int i16 = D - (vVar.b - i15);
+            int i18 = D - (vVar.b - i17);
             if (F == null) {
                 F = StandardCharsets.UTF_8;
             }
-            v = vVar.v(i16, F);
+            v = vVar.v(i18, F);
         }
         if (v.isEmpty()) {
             g0 g0Var = i0.b;
@@ -126,21 +133,21 @@ public final class a implements m {
         }
         float f7 = this.f;
         while (vVar.a() >= 8) {
-            int i17 = vVar.b;
+            int i19 = vVar.b;
             int j3 = vVar.j();
             int j10 = vVar.j();
             if (j10 == 1937013100) {
-                d.b(vVar.a() >= i14);
+                d.b(vVar.a() >= i16 ? i14 : i15);
                 int D2 = vVar.D();
-                int i18 = 0;
-                while (i18 < D2) {
-                    d.b(vVar.a() >= 12);
+                int i20 = i15;
+                while (i20 < D2) {
+                    d.b(vVar.a() >= 12 ? i14 : i15);
                     int D3 = vVar.D();
                     int D4 = vVar.D();
-                    vVar.K(i14);
-                    int i19 = i18;
+                    vVar.K(i16);
+                    int i21 = i20;
                     int x10 = vVar.x();
-                    vVar.K(i13);
+                    vVar.K(i14);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
                         StringBuilder j12 = c.j(D4, "Truncating styl end (", ") to cueText.length() (");
@@ -151,39 +158,37 @@ public final class a implements m {
                     }
                     if (D3 >= D4) {
                         e2.a.n("Tx3gParser", "Ignoring styl with start (" + D3 + ") >= end (" + D4 + ").");
-                        i12 = i19;
+                        i13 = i21;
                     } else {
-                        i12 = i19;
-                        int i20 = D4;
-                        b(spannableStringBuilder, x10, this.c, D3, i20, 0);
-                        a(spannableStringBuilder, j11, this.d, D3, i20, 0);
+                        i13 = i21;
+                        int i22 = D4;
+                        b(spannableStringBuilder, x10, this.c, D3, i22, 0);
+                        a(spannableStringBuilder, j11, this.d, D3, i22, 0);
                     }
-                    i18 = i12 + 1;
-                    i13 = 1;
-                    i14 = 2;
+                    i20 = i13 + 1;
+                    i14 = 1;
+                    i15 = 0;
+                    i16 = 2;
                 }
+                i12 = i16;
             } else if (j10 == 1952608120 && this.b) {
+                i12 = 2;
                 d.b(vVar.a() >= 2);
                 f7 = d0.g(vVar.D() / this.h, 0.0f, 0.95f);
-                vVar.J(i17 + j3);
-                i13 = 1;
-                i14 = 2;
+            } else {
+                i12 = 2;
             }
-            vVar.J(i17 + j3);
-            i13 = 1;
-            i14 = 2;
+            vVar.J(i19 + j3);
+            i16 = i12;
+            i14 = 1;
+            i15 = 0;
         }
         hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
     @Override // z3.m
-    public final /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
-        return e.a(this, bArr, i11);
-    }
-
-    @Override // z3.m
-    public final int y() {
-        return 2;
+    public final /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
+        return sc.v.a(this, bArr, i11);
     }
 
     @Override // z3.m

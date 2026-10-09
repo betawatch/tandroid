@@ -1,48 +1,31 @@
 package xh;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
-import yh.o8;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class h extends o8 {
-    public final /* synthetic */ m m0;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class h implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(m mVar, Context context, d6 d6Var) {
-        super(context, d6Var);
-        this.m0 = mVar;
+    public /* synthetic */ h(o oVar, int i10) {
+        this.a = i10;
+        this.b = oVar;
     }
 
-    @Override // yh.o8
-    public final boolean d(float f7) {
-        if (getProgress() <= 0.99d && f7 <= getMeasuredWidth() * 0.9f) {
-            return false;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                o.R(this.b);
+                break;
+            default:
+                o oVar = this.b;
+                oVar.c0.setValueAnimated((int) oVar.l0.getMinimumBid());
+                break;
         }
-        m.S(this.m0);
-        return true;
-    }
-
-    @Override // yh.o8, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
-            return false;
-        }
-        super.dispatchTouchEvent(motionEvent);
-        return true;
-    }
-
-    @Override // yh.o8
-    public final void e(int i10) {
-        m.R(this.m0, i10);
-    }
-
-    @Override // yh.o8
-    public final void setValue(int i10) {
-        super.setValue(i10);
-        m.R(this.m0, i10);
     }
 }

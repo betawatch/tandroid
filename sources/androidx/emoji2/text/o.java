@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o {
     public int a;
@@ -44,6 +44,7 @@ public final class o {
         SparseArray sparseArray = ((r) this.e).a;
         r rVar = sparseArray == null ? null : (r) sparseArray.get(i10);
         int i11 = 1;
+        int i12 = 2;
         if (this.a == 2) {
             if (rVar != null) {
                 this.e = rVar;
@@ -53,6 +54,7 @@ public final class o {
             } else if (i10 != 65039) {
                 r rVar2 = (r) this.e;
                 if (rVar2.b != null) {
+                    i12 = 3;
                     if (this.c != 1) {
                         this.f = rVar2;
                         d();
@@ -62,19 +64,18 @@ public final class o {
                     } else {
                         d();
                     }
-                    i11 = 3;
                 } else {
                     d();
                 }
             }
-            i11 = 2;
+            i11 = i12;
         } else if (rVar == null) {
             d();
         } else {
             this.a = 2;
             this.e = rVar;
             this.c = 1;
-            i11 = 2;
+            i11 = i12;
         }
         this.b = i10;
         return i11;
@@ -99,6 +100,7 @@ public final class o {
         } else if (i10 > 0 && (max = Math.max(bitmap.getWidth(), bitmap.getHeight())) > i10) {
             d = i10 / max;
         }
+        int i12 = 0;
         Bitmap createScaledBitmap = d <= 0.0d ? bitmap : Bitmap.createScaledBitmap(bitmap, (int) Math.ceil(bitmap.getWidth() * d), (int) Math.ceil(bitmap.getHeight() * d), false);
         int width = createScaledBitmap.getWidth();
         int height2 = createScaledBitmap.getHeight();
@@ -113,69 +115,76 @@ public final class o {
         q4.b bVar3 = new q4.b(arrayList3, arrayList2);
         SparseBooleanArray sparseBooleanArray = (SparseBooleanArray) bVar3.d;
         int size = arrayList3.size();
-        int i12 = 0;
-        while (i12 < size) {
-            q4.e eVar = (q4.e) arrayList3.get(i12);
+        int i13 = 0;
+        while (i13 < size) {
+            q4.e eVar = (q4.e) arrayList3.get(i13);
             float[] fArr = eVar.c;
             float[] fArr2 = eVar.a;
+            int length = fArr.length;
             float f7 = 0.0f;
-            for (float f10 : fArr) {
-                if (f10 > 0.0f) {
-                    f7 += f10;
+            float f10 = 0.0f;
+            for (int i14 = i12; i14 < length; i14++) {
+                float f11 = fArr[i14];
+                if (f11 > 0.0f) {
+                    f10 += f11;
                 }
             }
-            if (f7 != 0.0f) {
-                int length = fArr.length;
-                for (int i13 = 0; i13 < length; i13++) {
-                    float f11 = fArr[i13];
-                    if (f11 > 0.0f) {
-                        fArr[i13] = f11 / f7;
+            if (f10 != 0.0f) {
+                int length2 = fArr.length;
+                for (int i15 = i12; i15 < length2; i15++) {
+                    float f12 = fArr[i15];
+                    if (f12 > 0.0f) {
+                        fArr[i15] = f12 / f10;
                     }
                 }
             }
             a0.f fVar = (a0.f) bVar3.c;
             List list = (List) bVar3.a;
             int size2 = list.size();
-            int i14 = 0;
+            int i16 = i12;
+            float f13 = 0.0f;
             q4.d dVar = null;
-            float f12 = 0.0f;
-            while (i14 < size2) {
-                q4.d dVar2 = (q4.d) list.get(i14);
+            while (i16 < size2) {
+                q4.d dVar2 = (q4.d) list.get(i16);
                 float[] b10 = dVar2.b();
-                float f13 = b10[1];
+                float f14 = b10[1];
+                float f15 = f7;
                 float[] fArr3 = eVar.b;
-                if (f13 >= fArr2[0] && f13 <= fArr2[2]) {
-                    float f14 = b10[2];
-                    if (f14 >= fArr3[0] && f14 <= fArr3[2] && !sparseBooleanArray.get(dVar2.d)) {
+                if (f14 >= fArr2[i16] && f14 <= fArr2[2]) {
+                    float f16 = b10[2];
+                    if (f16 >= fArr3[i16] && f16 <= fArr3[2] && !sparseBooleanArray.get(dVar2.d)) {
                         float[] b11 = dVar2.b();
                         q4.d dVar3 = (q4.d) bVar3.e;
-                        int i15 = dVar3 != null ? dVar3.e : 1;
+                        int i17 = dVar3 != null ? dVar3.e : 1;
                         bVar = bVar3;
                         float[] fArr4 = eVar.c;
-                        float f15 = fArr4[0];
-                        float abs = f15 > 0.0f ? (1.0f - Math.abs(b11[1] - fArr2[1])) * f15 : 0.0f;
-                        float f16 = fArr4[1];
-                        float abs2 = f16 > 0.0f ? (1.0f - Math.abs(b11[2] - fArr3[1])) * f16 : 0.0f;
-                        float f17 = fArr4[2];
-                        float f18 = abs + abs2 + (f17 > 0.0f ? (dVar2.e / i15) * f17 : 0.0f);
-                        if (dVar == null || f18 > f12) {
+                        float f17 = fArr4[i16];
+                        float abs = f17 > f15 ? (1.0f - Math.abs(b11[1] - fArr2[1])) * f17 : f15;
+                        float f18 = fArr4[1];
+                        float abs2 = f18 > f15 ? (1.0f - Math.abs(b11[2] - fArr3[1])) * f18 : f15;
+                        float f19 = fArr4[2];
+                        float f20 = abs + abs2 + (f19 > f15 ? (dVar2.e / i17) * f19 : f15);
+                        if (dVar == null || f20 > f13) {
                             dVar = dVar2;
-                            f12 = f18;
+                            f13 = f20;
                         }
-                        i14++;
+                        i16++;
                         bVar3 = bVar;
+                        f7 = f15;
                     }
                 }
                 bVar = bVar3;
-                i14++;
+                i16++;
                 bVar3 = bVar;
+                f7 = f15;
             }
             q4.b bVar4 = bVar3;
             if (dVar != null) {
                 sparseBooleanArray.append(dVar.d, true);
             }
             fVar.put(eVar, dVar);
-            i12++;
+            i13++;
+            i12 = i16;
             bVar3 = bVar4;
         }
         q4.b bVar5 = bVar3;

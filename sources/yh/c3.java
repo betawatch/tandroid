@@ -1,42 +1,34 @@
 package yh;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.p40;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class c3 extends FrameLayout {
-    public final int[] a;
-    public final /* synthetic */ d3 b;
+public final class c3 extends a3 {
+    public final Paint c;
+    public final Matrix d;
+    public final RadialGradient e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c3(d3 d3Var, Context context) {
-        super(context);
-        this.b = d3Var;
-        this.a = new int[2];
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        FrameLayout frameLayout;
-        super.onLayout(z10, i10, i11, i12, i13);
-        d3 d3Var = this.b;
-        p40 p40Var = d3Var.i;
-        if (p40Var == null || p40Var.d.getChildCount() < 2 || d3Var.r == null || (frameLayout = d3Var.m) == null) {
-            return;
-        }
-        int[] iArr = this.a;
-        frameLayout.getLocationInWindow(iArr);
-        float translationX = iArr[0] - d3Var.m.getTranslationX();
-        float translationY = iArr[1] - d3Var.m.getTranslationY();
-        View childAt = p40Var.d.getChildAt(1);
-        childAt.getLocationInWindow(iArr);
-        float translationX2 = iArr[0] - childAt.getTranslationX();
-        float translationY2 = iArr[1] - childAt.getTranslationY();
-        d3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - p40Var.getMeasuredHeight());
-        d3Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
+    public c3(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.a = stargiftattributebackdrop.name;
+        this.b = stargiftattributebackdrop.getRarityPermille();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Matrix();
+        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.e = radialGradient;
+        paint.setShader(radialGradient);
+        this.g = stargiftattributebackdrop.text_color | (-16777216);
+        int i10 = stargiftattributebackdrop.pattern_color;
+        this.h = i10 | (-16777216);
+        this.f = i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), i10 | (-16777216));
     }
 }

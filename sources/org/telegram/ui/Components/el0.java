@@ -1,53 +1,149 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
+import android.animation.ValueAnimator;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class el0 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final /* synthetic */ View b;
-    public final /* synthetic */ Path c;
-    public final /* synthetic */ RectF d;
-    public final /* synthetic */ zl0 e;
+public final class el0 extends s4.t0 {
+    public boolean a;
+    public boolean b;
+    public ValueAnimator c;
+    public ValueAnimator d;
+    public final /* synthetic */ kl0 e;
 
-    public el0(zl0 zl0Var, View view, Path path, RectF rectF) {
-        this.e = zl0Var;
-        this.b = view;
-        this.c = path;
-        this.d = rectF;
+    public el0(kl0 kl0Var) {
+        this.e = kl0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        View view = this.b;
-        canvas.translate(-view.getX(), -view.getY());
-        canvas.clipPath(this.c);
-        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, this.e.p2);
-        Paint paint = this.a;
-        paint.setColor(i0.a.k(v02, paint.getAlpha()));
-        canvas.drawRect(this.d, paint);
-        canvas.restore();
+    public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
+        ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
+        duration.addUpdateListener(new j80(aVar, 9));
+        duration.addListener(new org.telegram.ui.r0(1, runnable));
+        duration.start();
+        return duration;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        kl0 kl0Var = this.e;
+        gg.i0 i0Var = kl0Var.W;
+        boolean z10 = i0Var.L0() != 0;
+        if (z10 != this.a) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            final int i12 = 0;
+            final int i13 = 0;
+            this.c = c(kl0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.cl0
+                public final /* synthetic */ el0 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.a.setAlpha(i10);
-    }
+                {
+                    this.b = this;
+                }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i12) {
+                        case 0:
+                            kl0 kl0Var2 = this.b.e;
+                            Paint paint = kl0Var2.h;
+                            float floatValue = f7.floatValue();
+                            kl0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            kl0Var2.invalidate();
+                            break;
+                        default:
+                            kl0 kl0Var3 = this.b.e;
+                            Paint paint2 = kl0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            kl0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            kl0Var3.invalidate();
+                            break;
+                    }
+                }
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.dl0
+                public final /* synthetic */ el0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i13) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
+                }
+            });
+            this.a = z10;
+        }
+        boolean z11 = i0Var.N0() != kl0Var.a0.h() - 1;
+        if (z11 != this.b) {
+            ValueAnimator valueAnimator2 = this.d;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            final int i14 = 1;
+            final int i15 = 1;
+            this.d = c(kl0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.cl0
+                public final /* synthetic */ el0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i14) {
+                        case 0:
+                            kl0 kl0Var2 = this.b.e;
+                            Paint paint = kl0Var2.h;
+                            float floatValue = f7.floatValue();
+                            kl0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            kl0Var2.invalidate();
+                            break;
+                        default:
+                            kl0 kl0Var3 = this.b.e;
+                            Paint paint2 = kl0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            kl0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            kl0Var3.invalidate();
+                            break;
+                    }
+                }
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.dl0
+                public final /* synthetic */ el0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i15) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
+                }
+            });
+            this.b = z11;
+        }
     }
 }

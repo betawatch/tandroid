@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class s1 {
     public static void a(int i10, int i11) {
@@ -57,7 +57,7 @@ public abstract class s1 {
         try {
             try {
                 try {
-                    a4.a.z(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                    a1.g.z(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
                 } catch (IllegalAccessException e7) {
                     throw new IllegalStateException(e7);

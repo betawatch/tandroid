@@ -1,116 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewConfiguration;
-import org.telegram.messenger.EmojiData;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fd0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public int b;
-    public int c;
-    public final /* synthetic */ Object d;
+public final class fd0 {
+    public final Paint a;
+    public final gd0 b;
+    public final gd0 c;
+    public final gd0 d;
+    public final ed0 e;
+    public final ed0 f;
+    public final float[] g;
+    public int h;
+    public float i;
 
-    public fd0(org.telegram.ui.gz gzVar, int i10, int i11) {
-        this.d = gzVar;
-        this.b = i10;
-        this.c = i11;
+    public fd0() {
+        Paint paint = new Paint();
+        this.a = paint;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        this.b = new gd0(tileMode);
+        this.c = new gd0(tileMode);
+        this.d = new gd0(Shader.TileMode.REPEAT);
+        this.e = new ed0(R.raw.wallpaper_pos_intensity);
+        this.f = new ed0(R.raw.wallpaper_neg_intensity);
+        this.g = new float[4];
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
     }
 
-    public void a() {
-        this.c = 0;
-        this.b = 0;
-        gd0 gd0Var = (gd0) this.d;
-        gd0Var.removeCallbacks(this);
-        if (gd0Var.n0) {
-            gd0Var.n0 = false;
-            gd0Var.invalidate(0, gd0Var.m0, gd0Var.getRight(), gd0Var.getBottom());
+    public final Paint a(Bitmap bitmap, Bitmap bitmap2, Bitmap bitmap3, int i10, int i11) {
+        gd0 gd0Var = this.b;
+        boolean b10 = gd0Var.b(bitmap);
+        gd0 gd0Var2 = this.d;
+        boolean b11 = b10 | gd0Var2.b(bitmap2);
+        Paint paint = this.a;
+        if (i11 >= 0) {
+            gd0 gd0Var3 = this.c;
+            if ((b11 | gd0Var3.b(bitmap3)) || this.h != 1) {
+                this.h = 1;
+                ed0 ed0Var = this.e;
+                ed0Var.a.setInputBuffer("shaderPattern", gd0Var2.d);
+                ed0Var.a.setInputBuffer("shaderGradient", gd0Var.d);
+                ed0Var.a.setInputBuffer("shaderGradientSoftLight", gd0Var3.d);
+                ed0Var.a.setFloatUniform("transformGradient", ed0Var.b);
+                ed0Var.a.setFloatUniform("transformPattern", ed0Var.c);
+                paint.setShader(ed0Var.a);
+                return paint;
+            }
+        } else {
+            float a2 = w7.o.a((i10 * (-i11)) / 25500.0f, 0.0f, 1.0f);
+            if (b11 || this.i != a2 || this.h != 2) {
+                this.h = 2;
+                this.i = a2;
+                ed0 ed0Var2 = this.f;
+                ed0Var2.a.setInputBuffer("shaderPattern", gd0Var2.d);
+                ed0Var2.a.setInputBuffer("shaderGradient", gd0Var.d);
+                ed0Var2.a.setFloatUniform("intensity", a2);
+                ed0Var2.a.setFloatUniform("transformGradient", ed0Var2.b);
+                ed0Var2.a.setFloatUniform("transformPattern", ed0Var2.c);
+                paint.setShader(ed0Var2.a);
+                return paint;
+            }
         }
-        gd0Var.o0 = false;
-    }
-
-    /* JADX WARN: Type inference failed for: r1v15, types: [boolean, byte] */
-    /* JADX WARN: Type inference failed for: r1v8, types: [boolean, byte] */
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.yn ynVar;
-        switch (this.a) {
-            case 0:
-                gd0 gd0Var = (gd0) this.d;
-                int i10 = this.c;
-                if (i10 == 1) {
-                    int i11 = this.b;
-                    if (i11 == 1) {
-                        gd0Var.n0 = true;
-                        gd0Var.invalidate(0, gd0Var.m0, gd0Var.getRight(), gd0Var.getBottom());
-                        break;
-                    } else if (i11 == 2) {
-                        gd0Var.o0 = true;
-                        gd0Var.invalidate(0, 0, gd0Var.getRight(), gd0Var.l0);
-                        break;
-                    }
-                } else if (i10 == 2) {
-                    int i12 = this.b;
-                    if (i12 == 1) {
-                        if (!gd0Var.n0) {
-                            gd0Var.postDelayed(this, ViewConfiguration.getPressedStateDuration());
-                        }
-                        gd0Var.n0 = (byte) (!gd0Var.n0 ? 1 : 0);
-                        gd0Var.invalidate(0, gd0Var.m0, gd0Var.getRight(), gd0Var.getBottom());
-                        break;
-                    } else if (i12 == 2) {
-                        if (!gd0Var.o0) {
-                            gd0Var.postDelayed(this, ViewConfiguration.getPressedStateDuration());
-                        }
-                        gd0Var.o0 = (byte) (!gd0Var.o0 ? 1 : 0);
-                        gd0Var.invalidate(0, 0, gd0Var.getRight(), gd0Var.l0);
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.gz gzVar = (org.telegram.ui.gz) this.d;
-                int i13 = this.b;
-                int i14 = this.c;
-                zl0 zl0Var = gzVar.H;
-                if (gzVar.n) {
-                    int i15 = 0;
-                    while (true) {
-                        if (i15 < zl0Var.getChildCount()) {
-                            View childAt = zl0Var.getChildAt(i15);
-                            if (childAt instanceof org.telegram.ui.Cells.u1) {
-                                u1Var = (org.telegram.ui.Cells.u1) childAt;
-                                String stickerEmoji = u1Var.getMessageObject().getStickerEmoji();
-                                if (stickerEmoji == null) {
-                                    stickerEmoji = u1Var.getMessageObject().messageOwner.message;
-                                }
-                                if (u1Var.getPhotoImage().hasNotThumb() && stickerEmoji != null && u1Var.getMessageObject().getId() == i13) {
-                                }
-                            }
-                            i15++;
-                        } else {
-                            u1Var = null;
-                        }
-                    }
-                    if (u1Var != null && (ynVar = gzVar.a) != null) {
-                        ynVar.Ma(u1Var);
-                        if (!EmojiData.hasEmojiSupportVibration(u1Var.getMessageObject().getStickerEmoji()) && !u1Var.getMessageObject().isPremiumSticker() && !u1Var.getMessageObject().isAnimatedAnimatedEmoji()) {
-                            try {
-                                u1Var.performHapticFeedback(3);
-                            } catch (Exception unused) {
-                            }
-                        }
-                        gzVar.o(u1Var, i14, false, true);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    public fd0(gd0 gd0Var) {
-        this.d = gd0Var;
+        return paint;
     }
 }

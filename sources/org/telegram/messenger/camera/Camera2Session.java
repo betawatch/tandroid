@@ -11,7 +11,6 @@ import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
-import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.util.Range;
@@ -31,7 +30,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.Camera2Session;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -64,7 +63,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -99,7 +98,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -142,7 +141,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
@@ -228,7 +227,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {
@@ -306,12 +305,14 @@ public class Camera2Session {
         Camera2Session camera2Session;
         android.util.Size size;
         String str;
+        float f7;
+        boolean z11;
         Context context = ApplicationLoader.applicationContext;
         CameraManager cameraManager = (CameraManager) context.getSystemService("camera");
         try {
             size = null;
             str = null;
-            float f7 = 0.0f;
+            float f10 = 0.0f;
             for (String str2 : cameraManager.getCameraIdList()) {
                 try {
                     CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(str2);
@@ -321,20 +322,27 @@ public class Camera2Session {
                             try {
                                 StreamConfigurationMap streamConfigurationMap = (StreamConfigurationMap) cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
                                 float width = ((android.util.Size) cameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE)) == null ? 0.0f : r14.getWidth() / r14.getHeight();
-                                float f10 = i10 / i11;
-                                if ((f10 >= 1.0f) != (width >= 1.0f)) {
-                                    width = 1.0f / width;
+                                float f11 = i10 / i11;
+                                if (f11 >= 1.0f) {
+                                    f7 = 1.0f;
+                                    z11 = true;
+                                } else {
+                                    f7 = 1.0f;
+                                    z11 = false;
                                 }
-                                if (f7 > 0.0f) {
-                                    if (Math.abs(f10 - f7) > Math.abs(f10 - width)) {
+                                if (z11 != (width >= f7)) {
+                                    width = f7 / width;
+                                }
+                                if (f10 > 0.0f) {
+                                    if (Math.abs(f11 - f10) > Math.abs(f11 - width)) {
                                     }
                                 }
-                                if (streamConfigurationMap != null && Build.VERSION.SDK_INT >= 23) {
+                                if (streamConfigurationMap != null) {
                                     android.util.Size chooseOptimalSize = chooseOptimalSize(streamConfigurationMap.getOutputSizes(SurfaceTexture.class), i10, i11, false);
                                     if (chooseOptimalSize != null) {
                                         size = chooseOptimalSize;
                                         str = str2;
-                                        f7 = width;
+                                        f10 = width;
                                     }
                                 }
                             } catch (Exception e7) {

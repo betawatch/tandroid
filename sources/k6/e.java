@@ -7,10 +7,10 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
-import n6.k0;
+import n6.l0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class e {
     public static final int a;
@@ -37,14 +37,14 @@ public class e {
             if (i10 != 3) {
                 return null;
             }
-            int i11 = k0.a;
+            int i11 = l0.a;
             Uri fromParts = Uri.fromParts("package", "com.google.android.gms", null);
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(fromParts);
             return intent;
         }
         if (context != null && u6.b.f(context)) {
-            int i12 = k0.a;
+            int i12 = l0.a;
             Intent intent2 = new Intent("com.google.android.clockwork.home.UPDATE_ANDROID_WEAR_ACTION");
             intent2.setPackage("com.google.android.wearable.app");
             return intent2;
@@ -62,12 +62,12 @@ public class e {
         sb2.append("-");
         if (context != null) {
             try {
-                sb2.append(w6.b.a(context).b(0, context.getPackageName()).versionCode);
+                sb2.append(w6.b.a(context).d(0, context.getPackageName()).versionCode);
             } catch (PackageManager.NameNotFoundException unused) {
             }
         }
         String sb3 = sb2.toString();
-        int i13 = k0.a;
+        int i13 = l0.a;
         Intent intent3 = new Intent("android.intent.action.VIEW");
         Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
         if (!TextUtils.isEmpty(sb3)) {

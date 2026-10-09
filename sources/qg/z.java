@@ -3,32 +3,32 @@ package qg;
 import android.content.Context;
 import android.graphics.PointF;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.gw0;
-import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.k81;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.vt0;
+import org.telegram.ui.bu0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z extends o2 {
+public final class z extends p2 {
     public final /* synthetic */ m0 y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(m0 m0Var, Context context, PointF pointF, float f7, float f10, gw0 gw0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, gw0Var, document, obj);
+    public z(m0 m0Var, Context context, PointF pointF, float f7, float f10, mw0 mw0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f7, f10, mw0Var, document, obj);
         this.y0 = m0Var;
     }
 
-    @Override // qg.o2
-    public final void q(kj0 kj0Var) {
-        PhotoViewer photoViewer = ((vt0) this.y0).o2;
-        e81 e81Var = photoViewer.F2;
-        if (e81Var == null) {
+    @Override // qg.p2
+    public final void q(ck0 ck0Var) {
+        PhotoViewer photoViewer = ((bu0) this.y0).o2;
+        k81 k81Var = photoViewer.F2;
+        if (k81Var == null) {
             return;
         }
-        long n10 = e81Var.n();
+        long n10 = k81Var.n();
         long j3 = photoViewer.m8;
-        kj0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
+        ck0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

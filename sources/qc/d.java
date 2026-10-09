@@ -2,7 +2,7 @@ package qc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d {
     public static final d j = new d(1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
@@ -78,7 +78,7 @@ public final class d {
         long doubleToLongBits8 = Double.doubleToLongBits(this.h);
         int i16 = (i15 * 31) + ((int) (doubleToLongBits8 ^ (doubleToLongBits8 >>> 32)));
         long doubleToLongBits9 = Double.doubleToLongBits(this.i);
-        return (i16 * 31) + ((int) (doubleToLongBits9 ^ (doubleToLongBits9 >>> 32)));
+        return (i16 * 31) + ((int) ((doubleToLongBits9 >>> 32) ^ doubleToLongBits9));
     }
 
     public final String toString() {

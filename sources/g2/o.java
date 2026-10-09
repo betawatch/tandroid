@@ -1,12 +1,12 @@
 package g2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o implements g {
     public c0 b;
     public String c;
     public boolean f;
-    public final n4.y a = new n4.y(15);
+    public final n4.x a = new n4.x(17);
     public final int d = 8000;
     public final int e = 8000;
 

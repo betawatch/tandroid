@@ -9,12 +9,10 @@ import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.util.SparseArray;
 import android.util.StateSet;
-import v7.r8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -27,7 +25,7 @@ public final class b extends Drawable.ConstantState {
     public int[][] H;
     public i I;
     public n J;
-    public final f a;
+    public final e a;
     public Resources b;
     public int c;
     public int d;
@@ -63,7 +61,7 @@ public final class b extends Drawable.ConstantState {
         this.a = eVar;
         this.b = resources != null ? resources : bVar != null ? bVar.b : null;
         int i10 = bVar != null ? bVar.c : 0;
-        int i11 = f.x;
+        int i11 = e.J;
         i10 = resources != null ? resources.getDisplayMetrics().densityDpi : i10;
         i10 = i10 == 0 ? 160 : i10;
         this.c = i10;
@@ -212,9 +210,7 @@ public final class b extends Drawable.ConstantState {
                 Drawable.ConstantState constantState = (Drawable.ConstantState) this.f.valueAt(i10);
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
-                if (Build.VERSION.SDK_INT >= 23) {
-                    r8.b(this.x, newDrawable);
-                }
+                newDrawable.setLayoutDirection(this.x);
                 Drawable mutate = newDrawable.mutate();
                 mutate.setCallback(this.a);
                 drawableArr[keyAt] = mutate;
@@ -252,9 +248,7 @@ public final class b extends Drawable.ConstantState {
             return null;
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
-        if (Build.VERSION.SDK_INT >= 23) {
-            r8.b(this.x, newDrawable);
-        }
+        newDrawable.setLayoutDirection(this.x);
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);
         this.g[i10] = mutate;

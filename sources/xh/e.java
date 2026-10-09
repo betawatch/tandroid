@@ -1,113 +1,119 @@
 package xh;
 
 import android.content.Context;
-import android.util.LongSparseArray;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
-import w7.z5;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.r6;
+import w7.x5;
+import yh.p7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class e extends cb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final h61 X;
-    public final LongSparseArray Y;
-    public ArrayList Z;
-    public boolean a0;
-    public w61 b0;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class e extends FrameLayout {
+    public final ci.d a;
+    public final r6 b;
+    public final r6 c;
+    public final GiftAuctionController.Auction d;
+    public final Paint e;
+    public final yf.n f;
+    public final er h;
+    public final er[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(Context context) {
-        super(context, null, false, false, 2, null);
-        int i10 = 0;
-        this.Y = new LongSparseArray();
-        this.Z = new ArrayList();
-        setBackgroundColor(i6.w0(null, i6.a7, false));
-        GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        fixNavigationBar();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setClickable(true);
-        this.X = h61.j(-1, linearLayout);
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
-        this.d.setOverScrollMode(2);
-        this.b0.N(false);
-        ArrayList<GiftAuctionController.Auction> activeAuctions = GiftAuctionController.getInstance(this.currentAccount).getActiveAuctions();
-        int size = activeAuctions.size();
-        while (i10 < size) {
-            GiftAuctionController.Auction auction = activeAuctions.get(i10);
-            i10++;
-            GiftAuctionController.Auction auction2 = auction;
-            d dVar = new d(context, auction2);
-            dVar.a.setOnClickListener(new xg.e(this, context, auction2, 1));
-            linearLayout.addView(dVar, z5.n(-1, -2));
-            this.Y.put(auction2.giftId, dVar);
+    public e(Context context, GiftAuctionController.Auction auction) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new yf.n(new r5.d(this, 14));
+        this.h = new er(R.drawable.filled_gift_sell_24, 0);
+        this.n = new er[1];
+        this.d = auction;
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
+        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
+        paint.setColor(i6.x0(null, i6.d6, false));
+        ci.d dVar = new ci.d(context, null, true);
+        this.a = dVar;
+        q6 q6Var = dVar.d;
+        q6Var.D = false;
+        q6Var.E = true;
+        q6Var.F = true;
+        q6Var.G = true;
+        q6Var.H = false;
+        fk0 fk0Var = new fk0(context);
+        r6 r6Var = new r6(context, false, false, false);
+        this.b = r6Var;
+        r6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        r6Var.setTypeface(AndroidUtilities.bold());
+        r6Var.setTextColor(i6.x0(null, i6.G6, false));
+        r6 r6Var2 = new r6(context, false, false, false);
+        this.c = r6Var2;
+        r6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        TLRPC.Document document = auction.gift.sticker;
+        if (document != null) {
+            fk0Var.g(44, 44, document);
         }
-        onActiveAuctionsUpdate(activeAuctions);
+        addView(r6Var, x5.a(18.0f, 64.0f, 15.0f, 15.0f, 0.0f, -1, 51));
+        addView(r6Var2, x5.a(17.0f, 64.0f, 34.0f, 15.0f, 0.0f, -1, 51));
+        addView(fk0Var, x5.a(44.0f, 14.0f, 11.0f, 0.0f, 0.0f, 44, 51));
+        addView(dVar, x5.a(44.0f, 15.0f, 0.0f, 15.0f, 15.0f, -1, 80));
+        b(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
-        super.dismiss();
+    public final void a(long j3, boolean z10) {
+        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j3, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
+        this.a.g(spannableStringBuilder, z10, true);
     }
 
-    @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
-    public final void onActiveAuctionsUpdate(List list) {
-        this.Z = new ArrayList(list);
-        this.e.setTitle(y());
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            GiftAuctionController.Auction auction = (GiftAuctionController.Auction) it.next();
-            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = auction.auctionStateActive;
-            int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
-            d dVar = (d) this.Y.get(auction.giftId);
-            if (dVar != null) {
-                dVar.b(this.a0);
-                long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime());
-                dVar.a(max, this.a0);
-                dVar.f.a(max);
-            }
+    public final void b(boolean z10) {
+        GiftAuctionController.Auction auction = this.d;
+        if (auction.auctionStateActive != null) {
+            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
+        }
+        String h = org.telegram.messenger.q.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        boolean isOutbid = auction.getBidStatus().isOutbid();
+        er[] erVarArr = this.n;
+        r6 r6Var = this.c;
+        if (isOutbid) {
+            r6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, erVarArr), z10, true);
+            r6Var.setTextColor(i6.x0(null, i6.q7, false));
+        } else {
+            r6Var.c(p7.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, erVarArr), z10, true);
+            r6Var.setTextColor(i6.x0(null, i6.G6, false));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onOpenAnimationEnd() {
-        super.onOpenAnimationEnd();
-        this.a0 = true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
-        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
-        this.b0 = w61Var;
-        w61Var.r = false;
-        return w61Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.b();
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        ArrayList arrayList = this.Z;
-        if (arrayList == null) {
-            return null;
-        }
-        return LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveAuctionsTitle, Integer.valueOf(arrayList.size()));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

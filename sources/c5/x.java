@@ -20,18 +20,18 @@ import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.j3;
 import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.z3;
-import e0.p0;
+import e0.n0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import v7.y8;
+import v7.z8;
 import w7.la;
 import x7.fa;
 import z7.wf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -82,21 +82,21 @@ public final /* synthetic */ class x implements Callable {
                             } else {
                                 c cVar4 = yVar.d;
                                 String packageName = cVar4.g.getPackageName();
-                                int i11 = 25;
-                                int i12 = 3;
+                                int i11 = 3;
+                                int i12 = 25;
                                 while (true) {
-                                    if (i11 >= 3) {
+                                    if (i12 >= 3) {
                                         if (bundle == null) {
                                             try {
                                                 com.google.android.gms.internal.play_billing.a aVar = (com.google.android.gms.internal.play_billing.a) cVar;
-                                                Parcel U0 = aVar.U0();
-                                                U0.writeInt(i11);
-                                                U0.writeString(packageName);
-                                                U0.writeString("subs");
-                                                Parcel V0 = aVar.V0(U0, 1);
-                                                int readInt = V0.readInt();
-                                                V0.recycle();
-                                                i12 = readInt;
+                                                Parcel T0 = aVar.T0();
+                                                T0.writeInt(i12);
+                                                T0.writeString(packageName);
+                                                T0.writeString("subs");
+                                                Parcel U0 = aVar.U0(T0, 1);
+                                                int readInt = U0.readInt();
+                                                U0.recycle();
+                                                i11 = readInt;
                                             } catch (Exception e7) {
                                                 com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e7);
                                                 boolean z12 = e7 instanceof DeadObjectException;
@@ -107,39 +107,39 @@ public final /* synthetic */ class x implements Callable {
                                                 yVar.c(z12 ? g0.h : g0.f);
                                             }
                                         } else {
-                                            i12 = ((com.google.android.gms.internal.play_billing.a) cVar).W0(i11, packageName, "subs", bundle);
+                                            i11 = ((com.google.android.gms.internal.play_billing.a) cVar).V0(i12, packageName, "subs", bundle);
                                         }
-                                        if (i12 == 0) {
-                                            com.google.android.gms.internal.play_billing.u.g("BillingClient", "highestLevelSupportedForSubs: " + i11);
+                                        if (i11 == 0) {
+                                            com.google.android.gms.internal.play_billing.u.g("BillingClient", "highestLevelSupportedForSubs: " + i12);
                                         } else {
-                                            i11--;
+                                            i12--;
                                         }
                                     } else {
-                                        i11 = 0;
+                                        i12 = 0;
                                     }
                                 }
-                                cVar4.k = i11 >= 3;
-                                if (i11 < 3) {
+                                cVar4.k = i12 >= 3;
+                                if (i12 < 3) {
                                     com.google.android.gms.internal.play_billing.u.g("BillingClient", "In-app billing API does not support subscription on this device.");
                                     i10 = 9;
                                 } else {
                                     i10 = 1;
                                 }
-                                int i14 = i12;
+                                int i14 = i11;
                                 int i15 = 25;
                                 while (true) {
                                     if (i15 >= 3) {
                                         if (bundle == null) {
                                             com.google.android.gms.internal.play_billing.a aVar2 = (com.google.android.gms.internal.play_billing.a) cVar;
-                                            Parcel U02 = aVar2.U0();
-                                            U02.writeInt(i15);
-                                            U02.writeString(packageName);
-                                            U02.writeString("inapp");
-                                            Parcel V02 = aVar2.V0(U02, 1);
-                                            i14 = V02.readInt();
-                                            V02.recycle();
+                                            Parcel T02 = aVar2.T0();
+                                            T02.writeInt(i15);
+                                            T02.writeString(packageName);
+                                            T02.writeString("inapp");
+                                            Parcel U02 = aVar2.U0(T02, 1);
+                                            i14 = U02.readInt();
+                                            U02.recycle();
                                         } else {
-                                            i14 = ((com.google.android.gms.internal.play_billing.a) cVar).W0(i15, packageName, "inapp", bundle);
+                                            i14 = ((com.google.android.gms.internal.play_billing.a) cVar).V0(i15, packageName, "inapp", bundle);
                                         }
                                         if (i14 == 0) {
                                             cVar4.l = i15;
@@ -205,7 +205,7 @@ public final /* synthetic */ class x implements Callable {
                                                 p5.c();
                                                 a4.o((a4) p5.b, longValue2);
                                             }
-                                            yVar.d.h.Z((a4) p5.a());
+                                            yVar.d.h.b0((a4) p5.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -232,7 +232,7 @@ public final /* synthetic */ class x implements Callable {
                     if (!bVar.hasNext()) {
                         return arrayList;
                     }
-                    g0.c cVar6 = ((u4.h) bVar.next()).c;
+                    g0.c cVar6 = ((u4.g) bVar.next()).c;
                     g0.c cVar7 = new g0.c();
                     cVar7.a = cVar6.a;
                     cVar7.b = cVar6.b;
@@ -246,9 +246,9 @@ public final /* synthetic */ class x implements Callable {
                     cVar7.k = cVar6.k;
                     cVar7.l = cVar6.l;
                     cVar7.m = cVar6.m;
-                    p0[] p0VarArr = cVar6.i;
-                    if (p0VarArr != null) {
-                        cVar7.i = (p0[]) Arrays.copyOf(p0VarArr, p0VarArr.length);
+                    n0[] n0VarArr = cVar6.i;
+                    if (n0VarArr != null) {
+                        cVar7.i = (n0[]) Arrays.copyOf(n0VarArr, n0VarArr.length);
                     }
                     if (cVar6.j != null) {
                         cVar7.j = new HashSet(cVar6.j);
@@ -267,11 +267,11 @@ public final /* synthetic */ class x implements Callable {
                 }
                 break;
             case 4:
-                return BitmapFactory.decodeFile(((u4.h) this.b).b);
+                return BitmapFactory.decodeFile(((u4.g) this.b).b);
             case 5:
-                y8 y8Var = (y8) this.b;
-                y8Var.getClass();
-                return n6.i.c.a(y8Var.g);
+                z8 z8Var = (z8) this.b;
+                z8Var.getClass();
+                return n6.i.c.a(z8Var.g);
             case 6:
                 la laVar = (la) this.b;
                 laVar.getClass();

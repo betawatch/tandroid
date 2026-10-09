@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-import a4.a;
+import a1.g;
 import com.google.android.gms.internal.vision.e2;
 import hg.c;
 import java.lang.Character;
@@ -9,7 +9,7 @@ import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -660,7 +660,7 @@ public class TeXParser {
                 if (this.isPartial) {
                     return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash ".concat(command)).root), (Color) null, Color.RED);
                 }
-                throw new ParseException(a.q("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
+                throw new ParseException(g.q("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
             }
         } catch (FormulaNotFoundException unused2) {
             return SymbolAtom.get(command);
@@ -990,8 +990,8 @@ public class TeXParser {
             return null;
         }
         char c10 = 0;
-        int i12 = 1;
         char c11 = 0;
+        int i12 = 1;
         while (true) {
             i10 = this.pos;
             if (i10 >= this.len || i12 == 0) {
@@ -1149,8 +1149,8 @@ public class TeXParser {
                                 if (!this.ignoreWhiteSpace) {
                                     if (this.parseString.charAt(i15) == '$') {
                                         this.pos++;
-                                        i10 = 0;
                                         z10 = true;
+                                        i10 = 0;
                                     } else {
                                         i10 = 2;
                                         z10 = false;
@@ -1288,16 +1288,16 @@ public class TeXParser {
         this.len = 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00b7, code lost:
     
         if (isValidCharacterInCommand(r8) != false) goto L45;
      */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x009b  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00bc  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0083  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

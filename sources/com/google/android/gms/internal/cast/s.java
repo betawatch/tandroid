@@ -5,8 +5,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -16,15 +17,15 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void c(d6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void d(d6.f fVar, String str) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void d(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void g(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
@@ -38,21 +39,21 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
                 bVar.b("notify transferred with type = %d, sessionState = %s", Integer.valueOf(i11), uVar.h);
                 Iterator it = new HashSet(uVar.b).iterator();
                 while (it.hasNext()) {
-                    a1 a1Var = (a1) it.next();
+                    y0 y0Var = (y0) it.next();
                     int i12 = uVar.e;
-                    switch (a1Var.a) {
+                    switch (y0Var.a) {
                         case 0:
-                            c1.j.b("onTransferred with type = %d", Integer.valueOf(i12));
-                            c1 c1Var = (c1) a1Var.b;
-                            c1Var.c();
-                            t1 b10 = c1Var.c.b(c1Var.g);
-                            o1 m10 = p1.m(b10.d());
+                            a1.j.b("onTransferred with type = %d", Integer.valueOf(i12));
+                            a1 a1Var = (a1) y0Var.b;
+                            a1Var.c();
+                            r1 b10 = a1Var.c.b(a1Var.g);
+                            m1 m10 = n1.m(b10.d());
                             m10.c();
-                            p1.v((p1) m10.b, i12);
-                            b10.e((p1) m10.a());
-                            c1Var.a.a((u1) b10.a(), 231);
-                            c1Var.i = false;
-                            c1Var.g = null;
+                            n1.v((n1) m10.b, i12);
+                            b10.e((n1) m10.a());
+                            a1Var.a.a((s1) b10.a(), TLRPC.LAYER);
+                            a1Var.i = false;
+                            a1Var.g = null;
                             break;
                     }
                 }
@@ -69,15 +70,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void k(d6.f fVar) {
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void l(d6.f fVar, int i10) {
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void o(d6.f fVar) {
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
@@ -100,7 +93,15 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void p(d6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void u(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void v(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void x(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -132,6 +133,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void y(d6.f fVar, int i10) {
     }
 }

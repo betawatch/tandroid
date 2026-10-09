@@ -10,7 +10,7 @@ import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class u2 extends FrameLayout {
     public int a;
@@ -36,25 +36,25 @@ public final class u2 extends FrameLayout {
     }
 
     public final void b() {
-        FrameLayout.LayoutParams d;
-        FrameLayout.LayoutParams d10;
+        FrameLayout.LayoutParams a2;
+        FrameLayout.LayoutParams a10;
         TextView textView = this.b;
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
             boolean z10 = LocaleController.isRTL;
-            d = w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f);
+            a2 = w7.x5.a(-1.0f, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48);
         } else {
             boolean z11 = LocaleController.isRTL;
-            d = w7.z5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f);
+            a2 = w7.x5.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48);
         }
-        textView.setLayoutParams(d);
+        textView.setLayoutParams(a2);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            d10 = w7.z5.d(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            a10 = w7.x5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 48);
         } else {
-            d10 = w7.z5.d(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            a10 = w7.x5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48);
         }
-        radioButton.setLayoutParams(d10);
+        radioButton.setLayoutParams(a10);
     }
 
     @Override // android.view.View
@@ -73,7 +73,7 @@ public final class u2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            dp = bi.y(12.0f, textView.getMeasuredWidth(), dp);
+            dp = bi.z(12.0f, textView.getMeasuredWidth(), dp);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

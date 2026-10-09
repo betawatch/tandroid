@@ -1,55 +1,63 @@
 package e0;
 
-import android.app.Activity;
+import android.app.PendingIntent;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import w7.x6;
+import androidx.core.graphics.drawable.IconCompat;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class h extends Activity implements androidx.lifecycle.t, r0.j {
-    public final androidx.lifecycle.v a = new androidx.lifecycle.v(this);
+public final class h {
+    public final IconCompat a;
+    public final CharSequence b;
+    public final PendingIntent c;
+    public boolean d;
+    public final Bundle e;
+    public ArrayList f;
+    public int g;
+    public boolean h;
 
-    @Override // android.app.Activity, android.view.Window.Callback
-    public boolean dispatchKeyEvent(KeyEvent event) {
-        kotlin.jvm.internal.i.e(event, "event");
-        View decorView = getWindow().getDecorView();
-        kotlin.jvm.internal.i.d(decorView, "window.decorView");
-        if (x6.a(decorView, event)) {
-            return true;
+    public h(int i10, String str, PendingIntent pendingIntent) {
+        IconCompat e7 = i10 == 0 ? null : IconCompat.e(null, "", i10);
+        Bundle bundle = new Bundle();
+        this.d = true;
+        this.h = true;
+        this.a = e7;
+        this.b = r.d(str);
+        this.c = pendingIntent;
+        this.e = bundle;
+        this.f = null;
+        this.d = true;
+        this.g = 0;
+        this.h = true;
+    }
+
+    public final void a(p0 p0Var) {
+        if (this.f == null) {
+            this.f = new ArrayList();
         }
-        return x6.b(this, decorView, this, event);
+        this.f.add(p0Var);
     }
 
-    @Override // android.app.Activity, android.view.Window.Callback
-    public final boolean dispatchKeyShortcutEvent(KeyEvent event) {
-        kotlin.jvm.internal.i.e(event, "event");
-        View decorView = getWindow().getDecorView();
-        kotlin.jvm.internal.i.d(decorView, "window.decorView");
-        if (x6.a(decorView, event)) {
-            return true;
+    public final i b() {
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = this.f;
+        if (arrayList3 != null) {
+            int size = arrayList3.size();
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList3.get(i10);
+                i10++;
+                p0 p0Var = (p0) obj;
+                p0Var.getClass();
+                arrayList2.add(p0Var);
+            }
         }
-        return super.dispatchKeyShortcutEvent(event);
+        return new i(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (p0[]) arrayList2.toArray(new p0[arrayList2.size()]), arrayList.isEmpty() ? null : (p0[]) arrayList.toArray(new p0[arrayList.size()]), this.d, this.g, this.h);
     }
 
-    @Override // r0.j
-    public final boolean i(KeyEvent event) {
-        kotlin.jvm.internal.i.e(event, "event");
-        return super.dispatchKeyEvent(event);
-    }
-
-    @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        int i10 = androidx.lifecycle.h0.b;
-        androidx.lifecycle.f0.b(this);
-    }
-
-    @Override // android.app.Activity
-    public void onSaveInstanceState(Bundle outState) {
-        kotlin.jvm.internal.i.e(outState, "outState");
-        this.a.g();
-        super.onSaveInstanceState(outState);
+    public final void c() {
+        this.d = true;
     }
 }

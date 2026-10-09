@@ -1,29 +1,29 @@
 package u2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c implements c1 {
-    public final c1 a;
+public final class c implements b1 {
+    public final b1 a;
     public boolean b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, c1 c1Var) {
+    public c(d dVar, b1 b1Var) {
         this.c = dVar;
-        this.a = c1Var;
+        this.a = b1Var;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final boolean e() {
         return !this.c.a() && this.a.e();
     }
 
-    @Override // u2.c1
-    public final int f(n4.y yVar, h2.h hVar, int i10) {
+    @Override // u2.b1
+    public final int f(n4.x xVar, h2.h hVar, int i10) {
         d dVar = this.c;
         if (dVar.a()) {
             return -3;
@@ -32,11 +32,11 @@ public final class c implements c1 {
             hVar.setFlags(4);
             return -4;
         }
-        long p5 = dVar.p();
-        int f7 = this.a.f(yVar, hVar, i10);
+        long q6 = dVar.q();
+        int f7 = this.a.f(xVar, hVar, i10);
         if (f7 != -5) {
             long j3 = dVar.f;
-            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && p5 == Long.MIN_VALUE && !hVar.d))) {
+            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && q6 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -44,7 +44,7 @@ public final class c implements c1 {
             this.b = true;
             return -4;
         }
-        b2.s sVar = (b2.s) yVar.c;
+        b2.s sVar = (b2.s) xVar.c;
         sVar.getClass();
         int i11 = sVar.N;
         int i12 = sVar.M;
@@ -60,11 +60,11 @@ public final class c implements c1 {
         b2.r a2 = sVar.a();
         a2.L = i12;
         a2.M = i11;
-        yVar.c = new b2.s(a2);
+        xVar.c = new b2.s(a2);
         return -5;
     }
 
-    @Override // u2.c1
+    @Override // u2.b1
     public final int j(long j3) {
         if (this.c.a()) {
             return -3;

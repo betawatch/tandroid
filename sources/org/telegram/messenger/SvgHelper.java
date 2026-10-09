@@ -36,13 +36,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class SvgHelper {
     private static final Pattern SPLIT_BOUNDARY;
     private static final double[] pow10 = new double[128];
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Circle {
         float rad;
         float x1;
@@ -55,7 +55,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Line {
         float x1;
         float x2;
@@ -70,7 +70,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
@@ -89,7 +89,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Oval {
         RectF rect;
 
@@ -98,7 +98,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class ParserHelper {
         private char current;
         private int n;
@@ -455,7 +455,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -530,7 +530,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class RoundRect {
         RectF rect;
         float rx;
@@ -541,13 +541,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public enum ScaleMode {
         Default,
         ByWidth
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -572,7 +572,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -582,7 +582,7 @@ public class SvgHelper {
         private Paint backgroundPaint;
         private float colorAlpha;
         private int currentColorKey;
-        private org.telegram.ui.ActionBar.d6 currentResourcesProvider;
+        private org.telegram.ui.ActionBar.e6 currentResourcesProvider;
         protected int height;
         private Integer overrideColor;
         private Paint overridePaint;
@@ -638,7 +638,7 @@ public class SvgHelper {
                         j10 = j11 <= 64 ? j11 : 64L;
                         if (j10 > 0) {
                             lastUpdateTime = j3;
-                            totalTranslation = a4.a.B(j10, f13, 1800.0f, totalTranslation);
+                            totalTranslation = a1.g.B(j10, f13, 1800.0f, totalTranslation);
                             while (true) {
                                 float f14 = totalTranslation;
                                 float f15 = gradientWidth;
@@ -654,7 +654,7 @@ public class SvgHelper {
                         j10 = j12 <= 64 ? j12 : 64L;
                         long j13 = j10 >= 0 ? j10 : 0L;
                         lastUpdateTime = j3;
-                        totalTranslation = a4.a.B(j13, gradientWidth, 1800.0f, totalTranslation);
+                        totalTranslation = a1.g.B(j13, gradientWidth, 1800.0f, totalTranslation);
                         while (true) {
                             float f16 = totalTranslation;
                             float f17 = gradientWidth;
@@ -703,7 +703,7 @@ public class SvgHelper {
             canvas.save();
             canvas.translate(f7, f10);
             if (!this.aspectFill || this.aspectCenter) {
-                canvas.translate(com.google.android.gms.internal.vision.e2.v(this.width, scale, f11, 2.0f), com.google.android.gms.internal.vision.e2.v(this.height, scale, f12, 2.0f));
+                canvas.translate(com.google.android.gms.internal.vision.e2.u(this.width, scale, f11, 2.0f), com.google.android.gms.internal.vision.e2.u(this.height, scale, f12, 2.0f));
             }
             canvas.scale(scale, scale);
             int size = this.commands.size();
@@ -831,9 +831,9 @@ public class SvgHelper {
             return svgDrawable;
         }
 
-        public void setColorKey(int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        public void setColorKey(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
             this.currentColorKey = i10;
-            this.currentResourcesProvider = d6Var;
+            this.currentResourcesProvider = e6Var;
         }
 
         public void setPaint(Paint paint, int i10) {
@@ -856,19 +856,19 @@ public class SvgHelper {
         /* JADX WARN: Type inference failed for: r28v7 */
         /* JADX WARN: Type inference failed for: r28v8 */
         /* JADX WARN: Type inference failed for: r28v9 */
-        public void setupGradient(int i10, org.telegram.ui.ActionBar.d6 d6Var, float f7, boolean z10) {
+        public void setupGradient(int i10, org.telegram.ui.ActionBar.e6 e6Var, float f7, boolean z10) {
             BitmapShader bitmapShader;
             Integer num = this.overrideColor;
-            int v02 = num == null ? org.telegram.ui.ActionBar.i6.v0(i10, d6Var) : num.intValue();
-            this.currentResourcesProvider = d6Var;
+            int w02 = num == null ? org.telegram.ui.ActionBar.i6.w0(i10, e6Var) : num.intValue();
+            this.currentResourcesProvider = e6Var;
             int[] iArr = this.currentColor;
-            if (iArr[z10 ? 1 : 0] != v02) {
+            if (iArr[z10 ? 1 : 0] != w02) {
                 this.colorAlpha = f7;
                 this.currentColorKey = i10;
-                iArr[z10 ? 1 : 0] = v02;
+                iArr[z10 ? 1 : 0] = w02;
                 gradientWidth = AndroidUtilities.displaySize.x * 2;
                 if (!lite) {
-                    int k10 = i0.a.k(v02, 70);
+                    int k10 = i0.a.k(w02, 70);
                     if (z10) {
                         if (this.backgroundPaint == null) {
                             this.backgroundPaint = new Paint(1);
@@ -884,14 +884,13 @@ public class SvgHelper {
                     return;
                 }
                 float dp = AndroidUtilities.dp(180.0f) / gradientWidth;
-                int argb = Color.argb((int) ((Color.alpha(v02) / 2) * this.colorAlpha), Color.red(v02), Color.green(v02), Color.blue(v02));
+                int argb = Color.argb((int) ((Color.alpha(w02) / 2) * this.colorAlpha), Color.red(w02), Color.green(w02), Color.blue(w02));
                 float f10 = (1.0f - dp) / 2.0f;
                 LinearGradient[] linearGradientArr = this.placeholderGradient;
                 float f11 = dp / 2.0f;
                 Shader.TileMode tileMode = Shader.TileMode.REPEAT;
                 linearGradientArr[z10 ? 1 : 0] = new LinearGradient(0.0f, 0.0f, gradientWidth, 0.0f, new int[]{0, 0, argb, 0, 0}, new float[]{0.0f, f10 - f11, f10, f11 + f10, 1.0f}, tileMode);
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 28) {
+                if (Build.VERSION.SDK_INT >= 28) {
                     bitmapShader = new LinearGradient(0.0f, 0.0f, gradientWidth, 0.0f, new int[]{argb, argb}, (float[]) null, tileMode);
                 } else {
                     Bitmap[] bitmapArr = this.backgroundBitmap;
@@ -908,19 +907,11 @@ public class SvgHelper {
                     if (this.backgroundPaint == null) {
                         this.backgroundPaint = new Paint(1);
                     }
-                    if (i11 <= 22) {
-                        this.backgroundPaint.setShader(bitmapShader);
-                        return;
-                    } else {
-                        this.backgroundPaint.setShader(new ComposeShader(this.placeholderGradient[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
-                        return;
-                    }
-                }
-                for (Paint paint2 : this.paints.values()) {
-                    if (Build.VERSION.SDK_INT <= 22) {
-                        paint2.setShader(bitmapShader);
-                    } else {
-                        paint2.setShader(new ComposeShader(this.placeholderGradient[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+                    this.backgroundPaint.setShader(new ComposeShader(this.placeholderGradient[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+                } else {
+                    Iterator<Paint> it = this.paints.values().iterator();
+                    while (it.hasNext()) {
+                        it.next().setShader(new ComposeShader(this.placeholderGradient[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
                     }
                 }
             }
@@ -936,7 +927,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface SvgResult {
         Bitmap getBitmap();
 
@@ -1755,7 +1746,7 @@ public class SvgHelper {
         return arrayList;
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SVGHandler extends DefaultHandler implements SvgResult {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -1945,12 +1936,14 @@ public class SvgHelper {
             return this.insideGiftRectPositions;
         }
 
+        /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v9, types: [dg.c] */
         @Override // org.xml.sax.helpers.DefaultHandler, org.xml.sax.ContentHandler
         public void startElement(String str, String str2, String str3, Attributes attributes) {
             String stringAttr;
             int i10;
+            char c10;
             Float valueOf = Float.valueOf(0.0f);
             1 r14 = null;
             if (!ImageLoader.AUTOPLAY_FILTER.equals(str3) || this.insideGiftRect) {
@@ -1985,8 +1978,91 @@ public class SvgHelper {
             }
             if (!this.boundsMode || str2.equals("style")) {
                 str2.getClass();
-                switch (str2) {
-                    case "ellipse":
+                char c11 = 65535;
+                switch (str2.hashCode()) {
+                    case -1656480802:
+                        if (str2.equals("ellipse")) {
+                            c11 = 0;
+                            break;
+                        }
+                        break;
+                    case -1360216880:
+                        if (str2.equals("circle")) {
+                            c11 = 1;
+                            break;
+                        }
+                        break;
+                    case -397519558:
+                        if (str2.equals("polygon")) {
+                            c11 = 2;
+                            break;
+                        }
+                        break;
+                    case 103:
+                        if (str2.equals(ImageLoader.AUTOPLAY_FILTER)) {
+                            c11 = 3;
+                            break;
+                        }
+                        break;
+                    case 114276:
+                        if (str2.equals("svg")) {
+                            c10 = 4;
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 3079438:
+                        if (str2.equals("defs")) {
+                            c10 = 5;
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 3321844:
+                        if (str2.equals("line")) {
+                            c10 = 6;
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 3433509:
+                        if (str2.equals("path")) {
+                            c10 = 7;
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 3496420:
+                        if (str2.equals("rect")) {
+                            c10 = '\b';
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 109780401:
+                        if (str2.equals("style")) {
+                            c10 = '\t';
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 561938880:
+                        if (str2.equals("polyline")) {
+                            c10 = '\n';
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                    case 917656469:
+                        if (str2.equals("clipPath")) {
+                            c10 = 11;
+                            c11 = c10;
+                            break;
+                        }
+                        break;
+                }
+                switch (c11) {
+                    case 0:
                         Float floatAttr = SvgHelper.getFloatAttr("cx", attributes);
                         Float floatAttr2 = SvgHelper.getFloatAttr("cy", attributes);
                         Float floatAttr3 = SvgHelper.getFloatAttr("rx", attributes);
@@ -2015,7 +2091,7 @@ public class SvgHelper {
                             break;
                         }
                         break;
-                    case "circle":
+                    case 1:
                         Float floatAttr5 = SvgHelper.getFloatAttr("cx", attributes);
                         Float floatAttr6 = SvgHelper.getFloatAttr("cy", attributes);
                         Float floatAttr7 = SvgHelper.getFloatAttr("r", attributes);
@@ -2042,8 +2118,8 @@ public class SvgHelper {
                             break;
                         }
                         break;
-                    case "polygon":
-                    case "polyline":
+                    case 2:
+                    case '\n':
                         NumberParse numberParseAttr = SvgHelper.getNumberParseAttr("points", attributes);
                         if (numberParseAttr != null) {
                             Path path = new Path();
@@ -2079,13 +2155,13 @@ public class SvgHelper {
                             }
                         }
                         break;
-                    case "g":
+                    case 3:
                         if ("bounds".equalsIgnoreCase(SvgHelper.getStringAttr("id", attributes))) {
                             this.boundsMode = true;
                             break;
                         }
                         break;
-                    case "svg":
+                    case 4:
                         Float floatAttr8 = SvgHelper.getFloatAttr("width", attributes);
                         Float floatAttr9 = SvgHelper.getFloatAttr("height", attributes);
                         if ((floatAttr8 == null || floatAttr9 == null) && (stringAttr = SvgHelper.getStringAttr("viewBox", attributes)) != null) {
@@ -2135,11 +2211,11 @@ public class SvgHelper {
                             break;
                         }
                         break;
-                    case "defs":
-                    case "clipPath":
+                    case 5:
+                    case 11:
                         this.boundsMode = true;
                         break;
-                    case "line":
+                    case 6:
                         Float floatAttr10 = SvgHelper.getFloatAttr("x1", attributes);
                         Float floatAttr11 = SvgHelper.getFloatAttr("x2", attributes);
                         Float floatAttr12 = SvgHelper.getFloatAttr("y1", attributes);
@@ -2156,7 +2232,7 @@ public class SvgHelper {
                             break;
                         }
                         break;
-                    case "path":
+                    case 7:
                         Path doPath = SvgHelper.doPath(SvgHelper.getStringAttr("d", attributes));
                         pushTransform(attributes);
                         Properties properties4 = new Properties(attributes, this.globalStyles);
@@ -2178,7 +2254,7 @@ public class SvgHelper {
                         }
                         popTransform();
                         break;
-                    case "rect":
+                    case '\b':
                         Float floatAttr14 = SvgHelper.getFloatAttr("x", attributes);
                         if (floatAttr14 == null) {
                             floatAttr14 = valueOf;
@@ -2224,7 +2300,7 @@ public class SvgHelper {
                         }
                         popTransform();
                         break;
-                    case "style":
+                    case '\t':
                         this.styles = new StringBuilder();
                         break;
                 }

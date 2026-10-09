@@ -5,17 +5,17 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class we implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ yn b;
+    public final /* synthetic */ zn b;
     public final /* synthetic */ MessagesController c;
     public final /* synthetic */ CharSequence d;
     public final /* synthetic */ boolean e;
 
-    public /* synthetic */ we(yn ynVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
-        this.b = ynVar;
+    public /* synthetic */ we(zn znVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
+        this.b = znVar;
         this.d = charSequence;
         this.c = messagesController;
         this.e = z10;
@@ -25,28 +25,28 @@ public final /* synthetic */ class we implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                yn.m0(this.b, this.d, this.c, this.e);
+                zn.o0(this.b, this.d, this.c, this.e);
                 break;
             default:
-                yn ynVar = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ynVar.getParentActivity(), 0, ynVar.ca);
+                zn znVar = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(znVar.getParentActivity(), 0, znVar.ea);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                 String string = LocaleController.getString(R.string.OK);
                 MessagesController messagesController = this.c;
-                alertDialog$Builder.k(string, new ca.b(ynVar, messagesController, this.d, this.e, 3));
+                alertDialog$Builder.k(string, new ca.b(znVar, messagesController, this.d, this.e, 3));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.T = string2;
-                ynVar.showDialog(b2Var);
+                znVar.showDialog(b2Var);
                 messagesController.secretWebpagePreview = 0;
                 MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
                 break;
         }
     }
 
-    public /* synthetic */ we(yn ynVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
-        this.b = ynVar;
+    public /* synthetic */ we(zn znVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
+        this.b = znVar;
         this.c = messagesController;
         this.d = charSequence;
         this.e = z10;

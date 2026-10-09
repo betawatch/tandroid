@@ -1,60 +1,11 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ti1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ WallpapersListActivity a;
-
-    public ti1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        WallpapersListActivity wallpapersListActivity = this.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.g0;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            if (!kVar.s()) {
-                wallpapersListActivity.finishFragment();
-                return;
-            }
-            longSparseArray.clear();
-            kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            kVar2.r();
-            wallpapersListActivity.D0();
-            return;
-        }
-        if (i10 != 4) {
-            if (i10 == 3) {
-                uy uyVar = new uy(org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true));
-                uyVar.C2 = new ri1(this);
-                wallpapersListActivity.presentFragment(uyVar);
-                return;
-            }
-            return;
-        }
-        if (wallpapersListActivity.getParentActivity() == null) {
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
-        alertDialog$Builder.a.T = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ri1(this));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        wallpapersListActivity.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-        }
+public final class ti1 extends org.telegram.ui.Components.voip.v2 {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchSetPressed(boolean z10) {
+        super.dispatchSetPressed(z10);
+        setPressedBtn(z10);
     }
 }

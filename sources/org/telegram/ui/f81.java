@@ -1,32 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f81 extends UndoView {
-    public final /* synthetic */ SessionsActivity f0;
+public final class f81 implements View.OnClickListener {
+    public final /* synthetic */ r81 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ SessionsActivity c;
+    public final /* synthetic */ h81 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f81(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.f0 = sessionsActivity;
+    public f81(h81 h81Var, r81 r81Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
+        this.d = h81Var;
+        this.a = r81Var;
+        this.b = tL_authorization;
+        this.c = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i10, boolean z10) {
-        int i11;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
-            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new zb0(19, this, tL_authorization));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.c.getParentActivity());
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.TerminateSessionText);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.AreYouSureSessionTitle);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Terminate), new a7(this, this.a, this.b, 21));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        SessionsActivity sessionsActivity = this.c;
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        sessionsActivity.showDialog(b2Var);
+        TextView textView = (TextView) b2Var.d(-1);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false));
         }
-        super.e(i10, z10);
     }
 }

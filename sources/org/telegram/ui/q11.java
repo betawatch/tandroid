@@ -1,35 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t11 b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class q11 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ v11 a;
+    public final /* synthetic */ String b;
 
-    public /* synthetic */ q11(t11 t11Var, int i10, int i11) {
-        this.a = i11;
-        this.b = t11Var;
-        this.c = i10;
+    public /* synthetic */ q11(v11 v11Var, String str) {
+        this.a = v11Var;
+        this.b = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                t11 t11Var = this.b;
-                org.telegram.ui.Components.g91 g91Var = t11Var.n;
-                s11 s11Var = t11Var.s;
-                int i10 = this.c;
-                g91Var.d(i10, s11Var.i(i10));
-                break;
-            default:
-                t11 t11Var2 = this.b;
-                org.telegram.ui.Components.g91 g91Var2 = t11Var2.n;
-                s11 s11Var2 = t11Var2.s;
-                int i11 = this.c;
-                g91Var2.d(i11, s11Var2.i(i11));
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        v11.W(this.a, this.b);
     }
 }

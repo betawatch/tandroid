@@ -1,10 +1,11 @@
 package i6;
 
+import a1.g;
 import android.os.Parcel;
 import android.os.Parcelable;
 import g8.j;
 import java.util.Arrays;
-import w7.g0;
+import w7.d0;
 
 /* loaded from: classes.dex */
 public final class b extends o6.a {
@@ -42,18 +43,18 @@ public final class b extends o6.a {
         sb2.append(",collectForDebugStartTimeMillis: ");
         sb2.append(this.b);
         sb2.append(",collectForDebugExpiryTimeMillis: ");
-        return a4.a.s(sb2, this.c, "]");
+        return g.s(sb2, this.c, "]");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.s(parcel, 1, 4);
+        int q6 = d0.q(parcel, 20293);
+        d0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        g0.s(parcel, 2, 8);
+        d0.s(parcel, 2, 8);
         parcel.writeLong(this.c);
-        g0.s(parcel, 3, 8);
+        d0.s(parcel, 3, 8);
         parcel.writeLong(this.b);
-        g0.r(parcel, q6);
+        d0.r(parcel, q6);
     }
 }

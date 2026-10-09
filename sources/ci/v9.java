@@ -1,77 +1,29 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.LinearLayout;
-import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class v9 extends LinearLayout {
-    public float a;
-    public float b;
-    public ValueAnimator c;
-    public ValueAnimator d;
-    public final Paint e;
-    public final org.telegram.ui.Components.e6 f;
-    public final /* synthetic */ x9 h;
+public final /* synthetic */ class v9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v9(x9 x9Var, Context context) {
-        super(context);
-        this.h = x9Var;
-        this.e = new Paint(1);
-        this.f = new org.telegram.ui.Components.e6(this);
+    public /* synthetic */ v9(w9 w9Var, int i10) {
+        this.a = i10;
+        this.b = w9Var;
     }
 
-    public static /* synthetic */ void a(v9 v9Var, ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        v9Var.b = floatValue;
-        super.setTranslationY(floatValue + v9Var.a);
-    }
-
-    public final void b(boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.c;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                w9.a(this.b, valueAnimator);
+                break;
+            default:
+                w9 w9Var = this.b;
+                w9Var.getClass();
+                w9Var.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        if (!z11) {
-            setVisibility(z10 ? 8 : 0);
-            float measuredHeight = z10 ? getMeasuredHeight() : 0.0f;
-            this.b = measuredHeight;
-            super.setTranslationY(measuredHeight + this.a);
-            return;
-        }
-        setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b, z10 ? getMeasuredHeight() : 0.0f);
-        this.c = ofFloat;
-        ofFloat.addUpdateListener(new u9(this, r1));
-        this.c.addListener(new ai.n(12, this, z10));
-        this.c.setDuration(320L);
-        this.c.setInterpolator(tr.h);
-        this.c.start();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        super.dispatchDraw(canvas);
-        int i10 = org.telegram.ui.ActionBar.i6.a7;
-        x9 x9Var = this.h;
-        d6Var = ((org.telegram.ui.ActionBar.f3) x9Var.W).resourcesProvider;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(i10, d6Var);
-        Paint paint = this.e;
-        paint.setColor(v02);
-        paint.setAlpha((int) (this.f.d(x9Var.f.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));
-        canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        float f10 = this.b;
-        this.a = f7;
-        super.setTranslationY(f10 + f7);
     }
 }

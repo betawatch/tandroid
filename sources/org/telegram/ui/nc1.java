@@ -1,68 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nc1 extends FrameLayout {
+public final /* synthetic */ class nc1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ pd1 c;
+    public final /* synthetic */ xd1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nc1(pd1 pd1Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ nc1(xd1 xd1Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = pd1Var;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = pd1Var;
-                this.b = new RectF();
-                break;
-        }
+        this.b = xd1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                pd1 pd1Var = this.c;
-                nc1 nc1Var = pd1Var.D0;
-                ed1 ed1Var = pd1Var.x0;
-                pc1 pc1Var = pd1Var.a;
-                org.telegram.ui.ActionBar.i6.s(nc1Var, ed1Var, pc1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pc1Var.H("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.i6.a1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pc1Var.H("paintChatActionBackgroundDarken"));
-                    break;
-                }
+                xd1 xd1Var = this.b;
+                xd1Var.getClass();
+                xd1Var.n1 = ((Float) obj).floatValue();
+                xd1Var.x0.invalidate();
+                xd1Var.V0();
+                break;
+            case 1:
+                xd1 xd1Var2 = this.b;
+                xd1Var2.V1 = (TL_stories.TL_premium_boostsStatus) obj;
+                xd1Var2.U1 = true;
+                xd1Var2.h1(true);
+                xd1Var2.T1 = false;
                 break;
             default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                pd1 pd1Var2 = this.c;
-                nc1 nc1Var2 = pd1Var2.E0;
-                ed1 ed1Var2 = pd1Var2.x0;
-                pc1 pc1Var2 = pd1Var2.a;
-                org.telegram.ui.ActionBar.i6.s(nc1Var2, ed1Var2, pc1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pc1Var2.H("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.i6.a1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, pc1Var2.H("paintChatActionBackgroundDarken"));
-                    break;
-                }
+                xd1.U(this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
         }
     }

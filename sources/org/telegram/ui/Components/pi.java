@@ -1,175 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class pi extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final xi b;
-    public zl0 c;
-    public zl0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class pi implements rw0 {
+    public final /* synthetic */ yi a;
 
-    public pi(Context context, org.telegram.ui.ActionBar.d6 d6Var, xi xiVar) {
-        super(context);
-        this.a = d6Var;
-        this.b = xiVar;
+    public pi(yi yiVar) {
+        this.a = yiVar;
     }
 
-    public boolean B(int i10) {
-        return false;
-    }
-
-    public boolean G(int i10, boolean z10, int i11, boolean z11, long j3) {
-        return false;
-    }
-
-    public boolean H() {
-        return !(this instanceof ei.r4);
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return false;
-    }
-
-    public boolean f() {
-        return false;
-    }
-
-    public boolean g() {
-        return false;
-    }
-
-    public int getButtonsHideOffset() {
-        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.k6> getThemeDescriptions() {
-        return null;
-    }
-
-    public int h() {
-        return 0;
-    }
-
-    public boolean i() {
-        return false;
-    }
-
-    public boolean l(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean p() {
-        return true;
-    }
-
-    public void setBlur3Capture(zl0 zl0Var) {
-        li.p pVar;
-        pVar = ((org.telegram.ui.ActionBar.f3) this.b).glassEngine;
-        pVar.b(zl0Var);
-        this.c = zl0Var;
-    }
-
-    public abstract void y(int i10, int i11);
-
-    public void A(int i10) {
-    }
-
-    public void C(pi piVar) {
-    }
-
-    public void D() {
-    }
-
-    public void E() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void d() {
-    }
-
-    public void j() {
-    }
-
-    public void k(float f7) {
-    }
-
-    public void m() {
-    }
-
-    public void o(int i10) {
-    }
-
-    public void q() {
-    }
-
-    public void r() {
-    }
-
-    public void s(float f7) {
-    }
-
-    public void t(int i10) {
-    }
-
-    public void u() {
-    }
-
-    public void v() {
-    }
-
-    public void x() {
-    }
-
-    public void z() {
-    }
-
-    public void w(int i10, boolean z10) {
+    @Override // org.telegram.ui.Components.rw0
+    public final void H(int i10, boolean z10) {
+        yi yiVar = this.a;
+        qi qiVar = yiVar.B0;
+        if (qiVar == yiVar.q0) {
+            qiVar.invalidate();
+        }
     }
 }

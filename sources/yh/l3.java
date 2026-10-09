@@ -1,45 +1,41 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class l3 extends Drawable {
-    public final float a;
-    public final Paint b;
+public final /* synthetic */ class l3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p3 b;
 
-    public l3(float f7, int i10) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = f7;
-        paint.setColor(i10);
+    public /* synthetic */ l3(p3 p3Var, int i10) {
+        this.a = i10;
+        this.b = p3Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        Paint paint = this.b;
-        float f7 = this.a;
-        canvas.drawRoundRect(rectF, f7, f7, paint);
-        AndroidUtilities.drawStroke(canvas, rectF, f7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        View.OnClickListener onClickListener;
+        switch (this.a) {
+            case 0:
+                CharSequence text = this.b.v.getText();
+                if (text instanceof Spanned) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
+                    if (clickableSpanArr.length > 0) {
+                        clickableSpanArr[0].onClick(view);
+                        break;
+                    }
+                }
+                break;
+            default:
+                p3 p3Var = this.b;
+                if (p3Var.N.getVisibility() == 0 && (onClickListener = p3Var.T) != null) {
+                    onClickListener.onClick(view);
+                    break;
+                }
+                break;
+        }
     }
 }

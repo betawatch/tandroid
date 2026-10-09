@@ -1,72 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class g11 extends ReplacementSpan {
-    public static final /* synthetic */ int f = 0;
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public final boolean d;
-    public final int e;
+public final class g11 implements ki.q0, NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final boolean b;
+    public final HashMap c = new HashMap();
+    public boolean d;
 
-    public g11(View view, Bitmap bitmap, int i10, int i11, int i12, int i13) {
-        this.b = i10;
-        this.c = i11;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.a = imageReceiver;
-        imageReceiver.setInvalidateAll(true);
-        imageReceiver.setImageBitmap(bitmap);
-        imageReceiver.setColorFilter(new PorterDuffColorFilter(i12, PorterDuff.Mode.SRC_IN));
-        this.e = i13;
-        this.d = true;
+    public g11(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploaded);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.b;
-        int i16 = this.c;
-        ImageReceiver imageReceiver = this.a;
-        canvas.save();
-        if (this.d) {
-            imageReceiver.setImageCoords((int) f7, i13 - (i16 - this.e), i15, i16);
-        } else {
-            imageReceiver.setImageCoords((int) f7, hg.c.y(org.telegram.messenger.q.B(4.0f, i14, i12), i16, 2, i12), i15, i16);
+    public final synchronized void a(long j3, File file, long j10, long j11) {
+        e11 e11Var = (e11) this.c.get(Long.valueOf(j3));
+        if (!this.d && e11Var != null && !e11Var.e) {
+            e(e11Var);
+            e11Var.b = Math.max(e11Var.b, j10 + j11);
+            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, e11Var.b, 0L);
         }
-        imageReceiver.draw(canvas);
-        canvas.restore();
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        int i12 = this.c;
-        if (fontMetricsInt != null) {
+    public final synchronized void b(long j3, long j10, File file) {
+        e11 e11Var = (e11) this.c.get(Long.valueOf(j3));
+        if (!this.d && e11Var != null && !e11Var.e) {
+            e(e11Var);
+            e11Var.b = Math.max(e11Var.b, j10);
+            e11Var.c = j10;
+            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, e11Var.b, j10);
+        }
+    }
+
+    public final synchronized void c(long j3) {
+        e11 e11Var = (e11) this.c.remove(Long.valueOf(j3));
+        if (e11Var == null) {
+            return;
+        }
+        e11Var.e = true;
+        if (e11Var.d) {
+            FileLoader.getInstance(this.a).cancelFileUpload(e11Var.a.getAbsolutePath(), this.b);
+        }
+    }
+
+    public final synchronized void d(boolean z10) {
+        try {
             if (this.d) {
-                int i13 = this.e;
-                int i14 = -(i12 - i13);
-                fontMetricsInt.ascent = i14;
-                fontMetricsInt.top = i14;
-                fontMetricsInt.descent = i13;
-                fontMetricsInt.bottom = i13;
-            } else {
-                int dp = ((-i12) / 2) - AndroidUtilities.dp(4.0f);
-                fontMetricsInt.ascent = dp;
-                fontMetricsInt.top = dp;
-                int dp2 = (i12 - (i12 / 2)) - AndroidUtilities.dp(4.0f);
-                fontMetricsInt.descent = dp2;
-                fontMetricsInt.bottom = dp2;
+                return;
+            }
+            this.d = true;
+            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileUploaded);
+            if (z10) {
+                Iterator it = this.c.values().iterator();
+                while (it.hasNext()) {
+                    e11 e11Var = (e11) it.next();
+                    if (e11Var.d && !e11Var.e) {
+                        FileLoader.getInstance(this.a).cancelFileUpload(e11Var.a.getAbsolutePath(), this.b);
+                    }
+                    it.remove();
+                }
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0039, code lost:
+    
+        r0.f = (org.telegram.tgnet.TLRPC.InputFile) r6[1];
+        r0.g = (org.telegram.tgnet.TLRPC.InputEncryptedFile) r6[2];
+        r0.h = (byte[]) r6[3];
+        r0.i = (byte[]) r6[4];
+        r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
+     */
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (!this.d && i10 == NotificationCenter.fileUploaded && objArr.length >= 6) {
+            String str = (String) objArr[0];
+            Iterator it = this.c.values().iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                e11 e11Var = (e11) it.next();
+                if (!e11Var.e && e11Var.a.getAbsolutePath().equals(str)) {
+                    break;
+                }
             }
         }
-        return this.b;
+    }
+
+    public final void e(e11 e11Var) {
+        if (e11Var.d) {
+            return;
+        }
+        e11Var.d = true;
+        FileLoader.getInstance(this.a).uploadFile(e11Var.a.getAbsolutePath(), this.b, false, 1L, 33554432, false);
     }
 }

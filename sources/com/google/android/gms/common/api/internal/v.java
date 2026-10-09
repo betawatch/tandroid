@@ -4,16 +4,16 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.o81;
-import org.telegram.ui.Components.p81;
+import org.telegram.ui.Components.k81;
+import org.telegram.ui.Components.v81;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.du0;
-import org.telegram.ui.nl0;
+import org.telegram.ui.ju0;
+import org.telegram.ui.tk0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class v implements o81 {
+public final class v implements v81 {
     public int a;
     public boolean b;
     public Object c;
@@ -28,27 +28,27 @@ public final class v implements o81 {
         return new e1(this, (k6.c[]) this.d, this.b, this.a);
     }
 
-    public m4.f1 b(Object obj) {
-        m4.f1 f1Var;
+    public m4.g1 b(Object obj) {
+        m4.g1 g1Var;
         synchronized (this.c) {
             try {
                 int e7 = e();
-                f1Var = new m4.f1(e7, obj);
+                g1Var = new m4.g1(e7, obj);
                 if (this.b) {
-                    f1Var.o();
+                    g1Var.o();
                 } else {
-                    ((a0.f) this.d).put(Integer.valueOf(e7), f1Var);
+                    ((a0.f) this.d).put(Integer.valueOf(e7), g1Var);
                 }
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return f1Var;
+        return g1Var;
     }
 
     public void c(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = p81.f0;
+        Object obj = w81.f0;
         if (i10 == 2) {
             Drawable[] drawableArr = PhotoViewer.U8;
             photoViewer.u0();
@@ -57,14 +57,14 @@ public final class v implements o81 {
                 photoViewer.s0();
                 photoViewer.V7 = -1L;
             }
-            du0 du0Var = photoViewer.f0;
-            if (du0Var == null || !du0Var.x) {
-                e81 e81Var = photoViewer.F2;
-                if (e81Var == null || !e81Var.y()) {
+            ju0 ju0Var = photoViewer.f0;
+            if (ju0Var == null || !ju0Var.x) {
+                k81 k81Var = photoViewer.F2;
+                if (k81Var == null || !k81Var.y()) {
                     z10 = false;
                 }
             } else {
-                z10 = du0Var.G;
+                z10 = ju0Var.G;
             }
             this.b = z10;
             if (z10) {
@@ -77,21 +77,21 @@ public final class v implements o81 {
 
     public void d(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        nl0 nl0Var = (nl0) this.c;
-        if (nl0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(nl0Var);
-            ((nl0) this.c).run();
+        tk0 tk0Var = (tk0) this.c;
+        if (tk0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(tk0Var);
+            ((tk0) this.c).run();
         }
         Drawable[] drawableArr = PhotoViewer.U8;
         photoViewer.u0();
         int i11 = photoViewer.c2;
         if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = p81.f0;
+            Object obj = w81.f0;
             if (i10 == 2) {
                 photoViewer.s0();
                 photoViewer.V7 = photoViewer.v8;
                 if (photoViewer.W7 == this.a) {
-                    PhotoViewer.T(photoViewer);
+                    PhotoViewer.V(photoViewer);
                     return;
                 }
                 return;
@@ -114,11 +114,11 @@ public final class v implements o81 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        e81 e81Var = photoViewer.F2;
-        if (e81Var == null) {
+        k81 k81Var = photoViewer.F2;
+        if (k81Var == null) {
             return;
         }
-        if (e81Var.y()) {
+        if (k81Var.y()) {
             photoViewer.H2 = false;
             photoViewer.F2.B();
             photoViewer.e0.invalidate();
@@ -142,7 +142,7 @@ public final class v implements o81 {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((m4.f1) obj).o();
+            ((m4.g1) obj).o();
         }
     }
 
@@ -150,10 +150,10 @@ public final class v implements o81 {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
         this.a = (int) (photoViewer.i8 * f7);
         if (SharedConfig.getDevicePerformanceClass() != 2) {
-            if (((nl0) this.c) == null) {
-                nl0 nl0Var = new nl0(this, 15);
-                this.c = nl0Var;
-                AndroidUtilities.runOnUIThread(nl0Var, 100L);
+            if (((tk0) this.c) == null) {
+                tk0 tk0Var = new tk0(this, 15);
+                this.c = tk0Var;
+                AndroidUtilities.runOnUIThread(tk0Var, 100L);
                 return;
             }
             return;
@@ -169,15 +169,15 @@ public final class v implements o81 {
         this.c = null;
     }
 
-    public void i(int i10, m4.k1 k1Var) {
+    public void i(int i10, m4.l1 l1Var) {
         synchronized (this.c) {
             try {
-                m4.f1 f1Var = (m4.f1) ((a0.f) this.d).remove(Integer.valueOf(i10));
-                if (f1Var != null) {
-                    if (f1Var.r.getClass() == m4.k1.class) {
-                        f1Var.m(k1Var);
+                m4.g1 g1Var = (m4.g1) ((a0.f) this.d).remove(Integer.valueOf(i10));
+                if (g1Var != null) {
+                    if (g1Var.r.getClass() == m4.l1.class) {
+                        g1Var.m(l1Var);
                     } else {
-                        e2.a.n("SequencedFutureManager", "Type mismatch, expected " + f1Var.r.getClass() + ", but was " + m4.k1.class);
+                        e2.a.n("SequencedFutureManager", "Type mismatch, expected " + g1Var.r.getClass() + ", but was " + m4.l1.class);
                     }
                 }
             } catch (Throwable th2) {

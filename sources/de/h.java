@@ -1,14 +1,26 @@
 package de;
 
-import rd.q;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h extends kotlin.jvm.internal.h implements q {
-    public static final h a = new h(3, ce.c.class, "emit", "emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", 0);
+public final class h extends ld.c {
+    public i a;
+    public Object b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ i d;
+    public int e;
 
-    @Override // rd.q
-    public final Object c(Object obj, Object obj2, kd.c cVar) {
-        return ((ce.c) obj).a(obj2, cVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(i iVar, ld.c cVar) {
+        super(cVar);
+        this.d = iVar;
+    }
+
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.b(null, this);
     }
 }

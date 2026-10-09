@@ -1,51 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bu implements ActionMode.Callback {
-    public final /* synthetic */ ActionMode.Callback a;
-    public final /* synthetic */ eu b;
+public final /* synthetic */ class bu implements cu {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public bu(eu euVar, ActionMode.Callback callback) {
-        this.b = euVar;
-        this.a = callback;
+    public /* synthetic */ bu(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        if (this.b.performMenuAction(menuItem.getItemId())) {
-            actionMode.finish();
-            return true;
+    @Override // org.telegram.ui.Components.cu
+    public final void a(int i10, boolean z10) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = ((eu) this.b).b;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    ((cu) obj).a(i10, z10);
+                }
+                break;
+            default:
+                ((Runnable) this.b).run();
+                break;
         }
-        try {
-            return this.a.onActionItemClicked(actionMode, menuItem);
-        } catch (Exception unused) {
-            return true;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        eu euVar = this.b;
-        euVar.copyPasteShowed = true;
-        euVar.onContextMenuOpen();
-        return this.a.onCreateActionMode(actionMode, menu);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        eu euVar = this.b;
-        euVar.copyPasteShowed = false;
-        euVar.onContextMenuClose();
-        this.a.onDestroyActionMode(actionMode);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return this.a.onPrepareActionMode(actionMode, menu);
     }
 }

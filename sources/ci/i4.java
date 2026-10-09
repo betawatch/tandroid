@@ -1,95 +1,52 @@
 package ci;
 
-import android.graphics.Rect;
-import android.view.View;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.bi;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public class i4 {
-    public final View a;
-    public View b;
-    public final Utilities.Callback c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final Rect h = new Rect();
-    public final f4 i;
-    public final g4 j;
-    public int k;
-    public int l;
+public final class i4 extends FrameLayout {
+    public static final /* synthetic */ int d = 0;
+    public final org.telegram.ui.Components.y9 a;
+    public final d b;
+    public boolean c;
 
-    public i4(View view, boolean z10, Utilities.Callback callback) {
-        f4 f4Var = new f4(this, 0);
-        this.i = f4Var;
-        g4 g4Var = new g4(this, 0);
-        this.j = g4Var;
-        this.a = view;
-        this.c = callback;
-        this.b = view;
-        if (view.isAttachedToWindow()) {
-            view.getViewTreeObserver().addOnGlobalLayoutListener(g4Var);
-            view.addOnLayoutChangeListener(f4Var);
-        }
-        view.addOnAttachStateChangeListener(new h4(this, z10, view));
+    public i4(Context context) {
+        super(context);
+        LinearLayout e7 = bi.e(context, 1);
+        addView(e7, w7.x5.e(-2, -2, 17));
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
+        this.a = y9Var;
+        e7.addView(y9Var, w7.x5.q(130, 130, 1));
+        TextView textView = new TextView(context);
+        textView.setTextColor(-1);
+        textView.setText(LocaleController.getString(R.string.LiveStoryDisconnected));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        e7.addView(textView, w7.x5.t(-2, -2, 1, 0, 8, 0, 0));
+        d dVar = new d(context, null, true);
+        this.b = dVar;
+        dVar.g(LocaleController.getString(R.string.LiveStoryDisconnectedContinue), false, true);
+        e7.addView(dVar, w7.x5.t((int) ((dVar.d.e() + AndroidUtilities.dp(24.0f)) / AndroidUtilities.density), 38, 1, 0, 18, 0, 0));
+        dVar.setOnClickListener(new ai.e2(1));
+        setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{-16777216, -11184811}));
     }
 
-    public final void a() {
-        if (this.e) {
-            if (this.l < AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight) {
-                return;
-            } else {
-                this.e = false;
-            }
-        }
-        Utilities.Callback callback = this.c;
-        if (callback != null) {
-            callback.run(Integer.valueOf(this.l));
-        }
-    }
-
-    public void b(boolean z10) {
-        this.d = z10;
-        d();
-    }
-
-    public final boolean c() {
-        return this.l > AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight || this.e;
-    }
-
-    public final void d() {
-        if (this.d) {
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 != 0 || this.c) {
             return;
         }
-        boolean z10 = this.f;
-        View view = this.a;
-        if (z10) {
-            View view2 = this.b;
-            if (view2 != null) {
-                view = view2;
-            }
-            r0.l1 f7 = r0.i0.f(view);
-            this.l = f7 != null ? f7.a.f(8).d : 0;
-        } else {
-            Rect rect = this.h;
-            view.getWindowVisibleDisplayFrame(rect);
-            View view3 = this.b;
-            if (view3 != null) {
-                view = view3;
-            }
-            this.l = view.getHeight() - rect.bottom;
-        }
-        if (this.g) {
-            this.l = Math.max(0, this.l - AndroidUtilities.navigationBarHeight);
-        }
-        int i10 = this.k;
-        int i11 = this.l;
-        boolean z11 = i10 != i11;
-        this.k = i11;
-        if (z11) {
-            a();
-        }
+        this.a.setImageDrawable(new ck0(R.raw.utyan_empty2, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        this.c = true;
     }
 }

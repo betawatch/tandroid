@@ -3,7 +3,7 @@ package i2;
 import android.os.SystemClock;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h1 {
     public static final u2.f0 u = new u2.f0(new Object());
@@ -14,7 +14,7 @@ public final class h1 {
     public final int e;
     public final n f;
     public final boolean g;
-    public final u2.p1 h;
+    public final u2.o1 h;
     public final x2.v i;
     public final List j;
     public final u2.f0 k;
@@ -28,7 +28,7 @@ public final class h1 {
     public volatile long s;
     public volatile long t;
 
-    public h1(b2.k1 k1Var, u2.f0 f0Var, long j3, long j10, int i10, n nVar, boolean z10, u2.p1 p1Var, x2.v vVar, List list, u2.f0 f0Var2, boolean z11, int i11, int i12, b2.v0 v0Var, long j11, long j12, long j13, long j14, boolean z12) {
+    public h1(b2.k1 k1Var, u2.f0 f0Var, long j3, long j10, int i10, n nVar, boolean z10, u2.o1 o1Var, x2.v vVar, List list, u2.f0 f0Var2, boolean z11, int i11, int i12, b2.v0 v0Var, long j11, long j12, long j13, long j14, boolean z12) {
         this.a = k1Var;
         this.b = f0Var;
         this.c = j3;
@@ -36,7 +36,7 @@ public final class h1 {
         this.e = i10;
         this.f = nVar;
         this.g = z10;
-        this.h = p1Var;
+        this.h = o1Var;
         this.i = vVar;
         this.j = list;
         this.k = f0Var2;
@@ -53,11 +53,11 @@ public final class h1 {
 
     public static h1 k(x2.v vVar) {
         b2.g1 g1Var = b2.k1.a;
-        u2.p1 p1Var = u2.p1.d;
+        u2.o1 o1Var = u2.o1.d;
         e9.a1 a1Var = e9.a1.e;
         b2.v0 v0Var = b2.v0.d;
         u2.f0 f0Var = u;
-        return new h1(g1Var, f0Var, -9223372036854775807L, 0L, 1, null, false, p1Var, vVar, a1Var, f0Var, false, 1, 0, v0Var, 0L, 0L, 0L, 0L, false);
+        return new h1(g1Var, f0Var, -9223372036854775807L, 0L, 1, null, false, o1Var, vVar, a1Var, f0Var, false, 1, 0, v0Var, 0L, 0L, 0L, 0L, false);
     }
 
     public final h1 a() {
@@ -72,8 +72,8 @@ public final class h1 {
         return new h1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, f0Var, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
     }
 
-    public final h1 d(u2.f0 f0Var, long j3, long j10, long j11, long j12, u2.p1 p1Var, x2.v vVar, List list) {
-        return new h1(this.a, f0Var, j10, j11, this.e, this.f, this.g, p1Var, vVar, list, this.k, this.l, this.m, this.n, this.o, this.q, j12, j3, SystemClock.elapsedRealtime(), this.p);
+    public final h1 d(u2.f0 f0Var, long j3, long j10, long j11, long j12, u2.o1 o1Var, x2.v vVar, List list) {
+        return new h1(this.a, f0Var, j10, j11, this.e, this.f, this.g, o1Var, vVar, list, this.k, this.l, this.m, this.n, this.o, this.q, j12, j3, SystemClock.elapsedRealtime(), this.p);
     }
 
     public final h1 e(int i10, int i11, boolean z10) {
@@ -110,7 +110,7 @@ public final class h1 {
             j3 = this.t;
             j10 = this.s;
         } while (j3 != this.t);
-        return e2.d0.Q(e2.d0.e0(j10) + ((long) ((SystemClock.elapsedRealtime() - j3) * this.o.a)));
+        return e2.d0.P(e2.d0.d0(j10) + ((long) ((SystemClock.elapsedRealtime() - j3) * this.o.a)));
     }
 
     public final boolean m() {

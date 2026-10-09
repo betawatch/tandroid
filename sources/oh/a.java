@@ -2,7 +2,7 @@ package oh;
 
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public enum a {
     f(R.raw.tab_contacts),
@@ -27,8 +27,9 @@ public enum a {
     EF0("WALLET", R.raw.tab_wallet_reverse),
     L,
     M("ARTICLE", R.raw.tab_article_reverse),
-    N(R.raw.boosts, 25, 49),
-    O(R.raw.monetize, 19, 45);
+    N("GRAM", R.raw.gram_reverse),
+    O(R.raw.boosts, 25, 49),
+    P(R.raw.monetize, 19, 45);
 
     public final int a;
     public final int b;

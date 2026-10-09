@@ -3,19 +3,20 @@ package bc;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.Interpolator;
+import ci.u5;
 import com.google.firebase.messaging.s;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import k.i;
-import m.p3;
+import m.q3;
 import n6.l;
-import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.ActionBar.b5;
 import r0.l0;
 import r0.m0;
 import v7.k;
-import w7.m9;
+import w7.g9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -28,7 +29,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -92,6 +93,7 @@ public final /* synthetic */ class d implements vf {
         this.b = true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // z7.vf
     public a5.a zza() {
         int i10;
@@ -101,13 +103,14 @@ public final /* synthetic */ class d implements vf {
         boolean z10 = this.b;
         vb.a aVar = (vb.a) this.e;
         ig igVar = (ig) this.f;
-        cf.c cVar = new cf.c();
-        boolean z11 = false;
-        k kVar = new k(16, false);
+        u5 u5Var = new u5();
+        byte b10 = 0;
+        Object[] objArr = 0;
+        k kVar = new k(17, false);
         kVar.b = Long.valueOf(j3 & Long.MAX_VALUE);
         kVar.c = gbVar;
         kVar.d = Boolean.valueOf(z10);
-        cVar.a = new va(kVar);
+        u5Var.a = new va(kVar);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
@@ -126,31 +129,31 @@ public final /* synthetic */ class d implements vf {
             }
             i10 = 0;
         }
-        z0 z0Var = new z0(28);
-        z0Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
-        z0Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        cVar.b = new ra(z0Var);
-        cVar.c = fVar.e.a();
+        b5 b5Var = new b5(25, b10);
+        b5Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? qa.b : qa.d : qa.c : qa.e : qa.f : qa.h;
+        b5Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        u5Var.b = new ra(b5Var);
+        u5Var.c = fVar.e.a();
         if (igVar != null) {
             List list = igVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            m9.a(length, array);
-            cVar.e = z7.i.r(length, array);
+            g9.a(length, array);
+            u5Var.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {
-                Object[] objArr = new Object[4];
+                Object[] objArr2 = new Object[4];
                 int i13 = 0;
                 for (hg hgVar : list2) {
-                    s sVar = new s(14, z11);
+                    s sVar = new s(14, (boolean) (objArr == true ? 1 : 0));
                     sVar.b = Integer.valueOf(hgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     sVar.c = Integer.valueOf(hgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     sVar.d = Integer.valueOf(hgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     sVar.e = Integer.valueOf(hgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
                     te teVar = new te(sVar);
                     int i14 = i13 + 1;
-                    int length2 = objArr.length;
+                    int length2 = objArr2.length;
                     if (length2 < i14) {
                         int i15 = length2 + (length2 >> 1) + 1;
                         if (i15 < i14) {
@@ -158,20 +161,20 @@ public final /* synthetic */ class d implements vf {
                             i15 = highestOneBit + highestOneBit;
                         }
                         if (i15 < 0) {
-                            i15 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                            i15 = Integer.MAX_VALUE;
                         }
-                        objArr = Arrays.copyOf(objArr, i15);
+                        objArr2 = Arrays.copyOf(objArr2, i15);
                     }
-                    objArr[i13] = teVar;
+                    objArr2[i13] = teVar;
                     i13 = i14;
                 }
-                cVar.d = z7.i.r(i13, objArr);
+                u5Var.d = z7.i.r(i13, objArr2);
             }
         }
-        p3 p3Var = new p3();
-        p3Var.c = fb.b;
-        p3Var.f = new ee(cVar);
-        return new a5.a(p3Var, 0);
+        q3 q3Var = new q3();
+        q3Var.c = fb.b;
+        q3Var.f = new ee(u5Var);
+        return new a5.a(q3Var, 0);
     }
 
     public d() {

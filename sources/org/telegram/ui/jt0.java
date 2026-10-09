@@ -1,86 +1,69 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.Crop.CropAreaView;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jt0 extends org.telegram.ui.Components.e81 {
-    public final /* synthetic */ PhotoViewer m0;
+public final class jt0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public jt0(PhotoViewer photoViewer) {
-        this.m0 = photoViewer;
+    public jt0(PhotoViewer photoViewer, float f7, Runnable runnable) {
+        this.c = photoViewer;
+        this.a = f7;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.Components.e81
-    public final void B() {
-        super.B();
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.u4 == 0) {
-            PhotoViewer.X(photoViewer, false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        PhotoViewer photoViewer = this.c;
+        photoViewer.p6 = null;
+        photoViewer.f6 = 0.0f;
+        photoViewer.b6 = 0.0f;
+        photoViewer.g6 = 0.0f;
+        float r22 = photoViewer.r2(false);
+        photoViewer.e6 = r22;
+        photoViewer.a6 = r22;
+        photoViewer.e0.invalidate();
+        CropAreaView cropAreaView = photoViewer.C1.b.a;
+        float r23 = photoViewer.r2(false);
+        cropAreaView.n0 = 0.0f;
+        cropAreaView.o0 = r23;
+        cropAreaView.p0 = 0.0f;
+        cropAreaView.q0 = 0.0f;
+        cropAreaView.invalidate();
+        photoViewer.C1.c.setRotated(false);
+        float f7 = this.a;
+        if (Math.abs(f7) > 0.0f) {
+            org.telegram.ui.Components.vf0 vf0Var = photoViewer.C1;
+            lg.f fVar = vf0Var.c;
+            if (fVar != null) {
+                fVar.b(0.0f);
+                fVar.setRotated(false);
+            }
+            if (vf0Var.b.m(f7)) {
+                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.i6.zf), PorterDuff.Mode.MULTIPLY));
+            } else {
+                photoViewer.b1.setColorFilter((ColorFilter) null);
+            }
         }
-        if (photoViewer.O8) {
-            return;
+        MediaController.CropState cropState = photoViewer.X4.c;
+        if (cropState != null) {
+            cropState.cropPy = 0.0f;
+            cropState.cropPx = 0.0f;
+            cropState.cropPh = 1.0f;
+            cropState.cropPw = 1.0f;
         }
-        b5.d.D(n());
-        b5.d.x(false);
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final void C() {
-        super.C();
-        PhotoViewer photoViewer = this.m0;
-        PhotoViewer.X(photoViewer, true);
-        if (photoViewer.O8) {
-            return;
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
         }
-        b5.d.D(n());
-        b5.d.x(true);
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final void K(long j3) {
-        L(j3, false);
-        PhotoViewer photoViewer = this.m0;
-        if (photoViewer.r1) {
-            PhotoViewer.Y(photoViewer, j3);
-        }
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(j3);
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final void Q(float f7) {
-        super.Q(f7);
-        if (this.m0.O8) {
-            return;
-        }
-        b5.d.z(f7);
-    }
-
-    @Override // org.telegram.ui.Components.e81, b2.z0
-    public final void onRenderedFirstFrame() {
-        b2.v0 h;
-        super.onRenderedFirstFrame();
-        PhotoViewer photoViewer = this.m0;
-        boolean z10 = true;
-        photoViewer.R = true;
-        if (photoViewer.D2) {
-            photoViewer.e0.invalidate();
-        }
-        photoViewer.z3();
-        if (!b5.d.u() && !photoViewer.r) {
-            z10 = false;
-        }
-        O(z10);
-        if (photoViewer.O8) {
-            return;
-        }
-        b5.d.D(n());
-        i2.f0 f0Var = this.d;
-        float f7 = 1.0f;
-        if (f0Var != null && (h = f0Var.h()) != null) {
-            f7 = h.a;
-        }
-        b5.d.z(f7);
     }
 }

@@ -1,13 +1,13 @@
 package n5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a implements fd.a {
+public final class a implements gd.a {
     public static final Object c = new Object();
     public volatile b a;
     public volatile Object b;
 
-    public static fd.a a(b bVar) {
+    public static gd.a a(b bVar) {
         if (bVar instanceof a) {
             return bVar;
         }
@@ -17,7 +17,7 @@ public final class a implements fd.a {
         return aVar;
     }
 
-    @Override // fd.a
+    @Override // gd.a
     public final Object get() {
         Object obj;
         Object obj2 = this.b;

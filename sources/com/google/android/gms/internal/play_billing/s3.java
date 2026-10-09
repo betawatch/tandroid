@@ -2,9 +2,9 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import v7.a6;
-import v7.l6;
+import v7.h6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s3 extends a6 {
     public final AtomicReferenceFieldUpdater a;
@@ -33,16 +33,16 @@ public final class s3 extends a6 {
 
     @Override // v7.a6
     public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
-        return l6.a(this.d, g4Var, v2Var, v2Var2);
+        return h6.a(this.d, g4Var, v2Var, v2Var2);
     }
 
     @Override // v7.a6
     public final boolean d(g4 g4Var, Object obj, Object obj2) {
-        return l6.a(this.e, g4Var, obj, obj2);
+        return h6.a(this.e, g4Var, obj, obj2);
     }
 
     @Override // v7.a6
     public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
-        return l6.a(this.c, g4Var, f4Var, f4Var2);
+        return h6.a(this.c, g4Var, f4Var, f4Var2);
     }
 }

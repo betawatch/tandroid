@@ -26,13 +26,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.l11;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.jk;
-import org.telegram.ui.yn;
+import org.telegram.ui.ok;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -50,11 +50,11 @@ public final class n3 extends FrameLayout {
     public final ActionBarLayout d;
     public final l3 e;
     public int f;
-    public final org.telegram.ui.Components.h5 h;
+    public final org.telegram.ui.Components.j5 h;
     public int n;
-    public final org.telegram.ui.Components.h5 r;
+    public final org.telegram.ui.Components.j5 r;
     public boolean s;
-    public final org.telegram.ui.Components.e6 v;
+    public final org.telegram.ui.Components.g6 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -64,19 +64,19 @@ public final class n3 extends FrameLayout {
         this.a = new Paint(1);
         this.b = true;
         this.c = false;
-        tr trVar = tr.h;
-        this.h = new org.telegram.ui.Components.h5(this, 200L, trVar, 0);
-        this.r = new org.telegram.ui.Components.h5(this, 200L, trVar, 0);
-        this.v = new org.telegram.ui.Components.e6(this, 0L, 200L, trVar);
+        hs hsVar = hs.h;
+        this.h = new org.telegram.ui.Components.j5(this, 200L, hsVar, 0);
+        this.r = new org.telegram.ui.Components.j5(this, 200L, hsVar, 0);
+        this.v = new org.telegram.ui.Components.g6(this, 0L, 200L, hsVar);
         this.w = UserConfig.selectedAccount;
         this.E = new RectF();
         this.I = new HashSet();
         this.J = new HashSet();
         this.d = actionBarLayout;
-        setNavigationBarColor(i6.w0(null, i6.a7, false));
+        setNavigationBarColor(i6.x0(null, i6.a7, false));
         l3 l3Var = new l3(this, this);
         this.e = l3Var;
-        r0.i0.k(this, l3Var);
+        r0.i0.j(this, l3Var);
         n();
         o(false);
     }
@@ -168,10 +168,10 @@ public final class n3 extends FrameLayout {
                 if (b10 > 0.0f && c10 <= 1.99f) {
                     RectF rectF = this.E;
                     d(rectF, c10);
-                    k3Var.v = 0.0f;
+                    k3Var.w = 0.0f;
                     boolean z10 = e7 > 0.5f;
-                    k3Var.l = a2;
-                    k3Var.n = z10;
+                    k3Var.m = a2;
+                    k3Var.o = z10;
                     canvas2 = canvas;
                     k3Var.a(canvas2, rectF, AndroidUtilities.dp(18.0f), b10, 1.0f);
                 } else {
@@ -193,25 +193,25 @@ public final class n3 extends FrameLayout {
     }
 
     public final void e(m3 m3Var) {
-        yn ynVar;
-        jk jkVar;
+        zn znVar;
+        ok okVar;
         n2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
-        boolean z10 = R instanceof yn;
-        if (z10 && (jkVar = (ynVar = (yn) R).W) != null) {
-            jkVar.N();
-            ynVar.W.n0(true, false, true);
+        boolean z10 = R instanceof zn;
+        if (z10 && (okVar = (znVar = (zn) R).Y) != null) {
+            okVar.N();
+            znVar.Y.l0(true, false, true);
         }
         if (m3Var.J == null) {
-            new ai.g3(24, this, m3Var).run(R);
+            new ai.h3(24, this, m3Var).run(R);
             if (m3Var.C) {
-                if (z10 && ((yn) R).a() == m3Var.a.c) {
+                if (z10 && ((zn) R).a() == m3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, R, yn.Q9(m3Var.a.c), 4), 220L);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, R, zn.W9(m3Var.a.c), 5), 220L);
                 return;
             }
             return;
@@ -252,7 +252,7 @@ public final class n3 extends FrameLayout {
         }
         tabs.clear();
         for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
-            tabDrawables.get(i11).c = -1;
+            tabDrawables.get(i11).d = -1;
         }
         n();
         o(true);
@@ -261,6 +261,7 @@ public final class n3 extends FrameLayout {
     }
 
     public final void g(m3 m3Var, Utilities.Callback callback) {
+        String str;
         if (m3Var == null) {
             callback.run(Boolean.TRUE);
             return;
@@ -271,18 +272,23 @@ public final class n3 extends FrameLayout {
             return;
         }
         TLRPC.User user = MessagesController.getInstance(m3Var.a.a).getUser(Long.valueOf(m3Var.a.c));
-        String formatName = user != null ? ContactsController.formatName(user.first_name, user.last_name) : null;
+        if (user != null) {
+            str = ContactsController.formatName(user.first_name, user.last_name);
+        } else {
+            ei.e5 e5Var = m3Var.a;
+            str = e5Var.g == 6 ? e5Var.e : null;
+        }
         boolean[] zArr = {false};
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
         b2 b2Var = alertDialog$Builder.a;
-        b2Var.R = formatName;
+        b2Var.R = str;
         b2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
-        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new ai.g6(this, zArr, m3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.q5(zArr, callback, r8, 16));
+        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new ai.h6(this, zArr, m3Var, callback, r8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.r5(zArr, callback, r8, 16));
         b2[] b2VarArr = {b2Var};
         b2Var.setOnDismissListener(new j3(zArr, callback));
         b2VarArr[0].show();
-        ((TextView) b2VarArr[0].d(-1)).setTextColor(i6.w0(null, i6.q7, false));
+        ((TextView) b2VarArr[0].d(-1)).setTextColor(i6.x0(null, i6.q7, false));
     }
 
     public Paint getBackgroundPaint() {
@@ -350,13 +356,13 @@ public final class n3 extends FrameLayout {
         for (int i11 = 0; i11 < arrayList3.size(); i11++) {
             k3 k3Var = (k3) arrayList3.get(i11);
             int indexOf = arrayList.indexOf(k3Var.a);
-            k3Var.c = indexOf;
+            k3Var.d = indexOf;
             if (indexOf >= 0) {
-                k3Var.b = indexOf;
+                k3Var.c = indexOf;
             }
         }
         n();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this, arrayList3, m3Var, 5), 320L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, arrayList3, m3Var, 6), 320L);
         o(true);
         invalidate();
         l3 l3Var = this.e;
@@ -373,7 +379,7 @@ public final class n3 extends FrameLayout {
                 z10 = false;
             }
             this.f = i10;
-            int v = i6.v(i10, i6.l1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            int v = i6.v(i10, i6.m1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
             this.n = v;
             this.s = AndroidUtilities.computePerceivedBrightness(v) < 0.721f;
             if (!z10) {
@@ -392,7 +398,7 @@ public final class n3 extends FrameLayout {
             m3 m3Var = tabs.isEmpty() ? null : tabs.get(0);
             k3 c10 = c(m3Var);
             if (c10 != null) {
-                org.telegram.ui.Cells.z zVar = c10.k;
+                org.telegram.ui.Cells.z zVar = c10.l;
                 float c11 = c10.c();
                 RectF rectF = this.E;
                 d(rectF, c11);
@@ -413,7 +419,7 @@ public final class n3 extends FrameLayout {
                 }
                 for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
                     if (tabDrawables.get(i11) != c10) {
-                        tabDrawables.get(i11).k.setState(new int[0]);
+                        tabDrawables.get(i11).l.setState(new int[0]);
                     }
                 }
             } else {
@@ -427,7 +433,7 @@ public final class n3 extends FrameLayout {
         return this.y || this.x;
     }
 
-    public final m3 k(ei.f5 f5Var) {
+    public final m3 k(ei.e5 e5Var) {
         Integer valueOf = Integer.valueOf(this.w);
         HashMap hashMap = K;
         ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
@@ -439,7 +445,7 @@ public final class n3 extends FrameLayout {
         }
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             m3 m3Var = (m3) arrayList.get(i10);
-            if (f5Var.equals(m3Var.a)) {
+            if (e5Var.equals(m3Var.a)) {
                 e(m3Var);
                 return m3Var;
             }
@@ -483,15 +489,15 @@ public final class n3 extends FrameLayout {
         CharSequence charSequence = null;
         for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
             k3 k3Var = tabDrawables.get(i10);
-            if (tabs.size() <= 1 || k3Var.b != 0) {
+            if (tabs.size() <= 1 || k3Var.c != 0) {
                 replaceEmoji = Emoji.replaceEmoji(k3Var.a.b(), getTextPaint().getFontMetricsInt(), false);
-                k3Var.u = null;
+                k3Var.v = null;
             } else {
                 replaceEmoji = Emoji.replaceEmoji(LocaleController.formatPluralString("BotMoreTabs", tabs.size() - 1, k3Var.a.b()), getTextPaint().getFontMetricsInt(), false);
                 if (replaceEmoji == null) {
-                    k3Var.u = null;
+                    k3Var.v = null;
                 } else {
-                    k3Var.u = new f11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    k3Var.v = new l11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;
@@ -562,10 +568,10 @@ public final class n3 extends FrameLayout {
     public void setupTab(k3 k3Var) {
         int a2 = this.r.a(this.n, false);
         float e7 = this.v.e(this.s);
-        k3Var.v = 0.0f;
+        k3Var.w = 0.0f;
         boolean z10 = e7 > 0.5f;
-        k3Var.l = a2;
-        k3Var.n = z10;
+        k3Var.m = a2;
+        k3Var.o = z10;
     }
 
     @Override // android.view.View

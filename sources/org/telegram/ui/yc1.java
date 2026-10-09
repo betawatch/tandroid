@@ -1,22 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yc1 extends pd1 {
-    public final /* synthetic */ yn k2;
-    public final /* synthetic */ boolean l2;
+public final class yc1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ xd1 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc1(Object obj, yn ynVar, boolean z10) {
-        super(obj, null, true);
-        this.k2 = ynVar;
-        this.l2 = z10;
+    public yc1(xd1 xd1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = xd1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        wn wnVar = this.k2.ca;
-        wnVar.i(wnVar.f, wnVar.h, false, Boolean.valueOf(this.l2), false);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        xd1 xd1Var = this.c;
+        if (i10 == 0) {
+            xd1Var.r.setBounds(xd1Var.V.getLeft() - rect.left, 0, xd1Var.V.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            xd1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+        }
+        xd1Var.r.draw(canvas);
     }
 }

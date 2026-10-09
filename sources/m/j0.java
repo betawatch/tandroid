@@ -1,30 +1,16 @@
 package m;
 
-import android.content.res.Resources;
 import android.database.DataSetObserver;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.SpinnerAdapter;
-import android.widget.ThemedSpinnerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j0 implements ListAdapter, SpinnerAdapter {
-    public final SpinnerAdapter a;
-    public final ListAdapter b;
-
-    public j0(SpinnerAdapter spinnerAdapter, Resources.Theme theme) {
-        this.a = spinnerAdapter;
-        if (spinnerAdapter instanceof ListAdapter) {
-            this.b = (ListAdapter) spinnerAdapter;
-        }
-        if (theme == null || Build.VERSION.SDK_INT < 23 || !(spinnerAdapter instanceof ThemedSpinnerAdapter)) {
-            return;
-        }
-        h0.a((ThemedSpinnerAdapter) spinnerAdapter, theme);
-    }
+    public SpinnerAdapter a;
+    public ListAdapter b;
 
     @Override // android.widget.ListAdapter
     public final boolean areAllItemsEnabled() {

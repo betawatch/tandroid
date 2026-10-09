@@ -1,31 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractMap;
+import android.content.Context;
+import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class p0 extends j0 {
-    public final /* synthetic */ q0 c;
+public final class p0 {
+    public static final g6.b i = new g6.b("ClientCastAnalytics", null);
+    public static final boolean j = true;
+    public final d6.g a;
+    public final u b;
+    public final d c;
+    public Long e;
+    public l5.r g;
+    public int h = 1;
+    public final String d = UUID.randomUUID().toString();
+    public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
 
-    public p0(q0 q0Var) {
-        this.c = q0Var;
+    public p0(Context context, g6.r rVar, d6.g gVar, u uVar, d dVar) {
+        this.a = gVar;
+        this.b = uVar;
+        this.c = dVar;
     }
 
-    @Override // java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        q0 q0Var = this.c;
-        v7.k5.a(i10, q0Var.f);
-        Object[] objArr = q0Var.e;
-        int i11 = i10 + i10;
-        Object obj = objArr[i11];
-        obj.getClass();
-        Object obj2 = objArr[i11 + 1];
-        obj2.getClass();
-        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c.f;
+    public final void a(s1 s1Var, int i10) {
+        this.f.execute(new androidx.activity.g(this, s1Var, i10, 3));
     }
 }

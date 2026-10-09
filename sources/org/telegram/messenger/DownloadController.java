@@ -22,10 +22,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.i81;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class DownloadController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final int AUTODOWNLOAD_TYPE_AUDIO = 2;
@@ -71,7 +71,7 @@ public class DownloadController extends BaseController implements NotificationCe
     private ArrayList<DownloadObject> videoDownloadQueue;
     public Preset wifiPreset;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface FileDownloadProgressListener {
         int getObserverTag();
 
@@ -234,10 +234,10 @@ public class DownloadController extends BaseController implements NotificationCe
         char c10;
         int autodownloadNetworkType;
         Preset currentMobilePreset;
-        TLRPC.Message message2;
         int i11;
+        TLRPC.Message message2;
         long j3;
-        c81 c81Var;
+        i81 i81Var;
         long messageSize;
         if (messageObject == null || (message = messageObject.messageOwner) == null) {
             return 0;
@@ -294,20 +294,20 @@ public class DownloadController extends BaseController implements NotificationCe
                 }
                 int i12 = currentMobilePreset.mask[c10];
                 if (i10 == 2) {
-                    message2 = message;
                     i11 = 0;
+                    message2 = message;
                     j3 = Math.max(524288L, currentMobilePreset.sizes[typeToIndex(i10)]);
                 } else {
-                    message2 = message;
                     i11 = 0;
+                    message2 = message;
                     j3 = currentMobilePreset.sizes[typeToIndex(i10)];
                 }
-                c81Var = messageObject.highestQuality;
-                if (c81Var != null) {
-                    messageSize = c81Var.g.size;
+                i81Var = messageObject.highestQuality;
+                if (i81Var != null) {
+                    messageSize = i81Var.g.size;
                 } else {
-                    c81 c81Var2 = messageObject.thumbQuality;
-                    messageSize = c81Var2 != null ? c81Var2.g.size : MessageObject.getMessageSize(message2);
+                    i81 i81Var2 = messageObject.thumbQuality;
+                    messageSize = i81Var2 != null ? i81Var2.g.size : MessageObject.getMessageSize(message2);
                 }
                 if (!isVideoMessage && currentMobilePreset.preloadVideo && messageSize > j3 && j3 > 2097152) {
                     if ((i12 & i10) != 0) {
@@ -327,8 +327,8 @@ public class DownloadController extends BaseController implements NotificationCe
             int i122 = currentMobilePreset.mask[c10];
             if (i10 == 2) {
             }
-            c81Var = messageObject.highestQuality;
-            if (c81Var != null) {
+            i81Var = messageObject.highestQuality;
+            if (i81Var != null) {
             }
             if (!isVideoMessage) {
             }
@@ -343,8 +343,8 @@ public class DownloadController extends BaseController implements NotificationCe
         int i1222 = currentMobilePreset.mask[c10];
         if (i10 == 2) {
         }
-        c81Var = messageObject.highestQuality;
-        if (c81Var != null) {
+        i81Var = messageObject.highestQuality;
+        if (i81Var != null) {
         }
         if (!isVideoMessage) {
         }
@@ -1234,7 +1234,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (messageObject == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new q4(this, messageObject, i10, 2));
+        AndroidUtilities.runOnUIThread(new r4(this, messageObject, i10, 2));
         getMessagesStorage().getStorageQueue().postRunnable(new a2(this, messageObject, 1));
     }
 
@@ -1367,7 +1367,7 @@ public class DownloadController extends BaseController implements NotificationCe
         tL_autoDownloadSettings2.photo_size_max = z11 ? (int) currentRoamingPreset.sizes[0] : 0;
         tL_autoDownloadSettings2.video_size_max = z12 ? currentRoamingPreset.sizes[1] : 0L;
         tL_autoDownloadSettings2.file_size_max = z13 ? currentRoamingPreset.sizes[2] : 0L;
-        getConnectionsManager().sendRequest(saveautodownloadsettings, new d5(3));
+        getConnectionsManager().sendRequest(saveautodownloadsettings, new e5(3));
     }
 
     public void startDownloadFile(TLRPC.Document document, MessageObject messageObject) {
@@ -1419,7 +1419,7 @@ public class DownloadController extends BaseController implements NotificationCe
         this.observersByTag.put(fileDownloadProgressListener.getObserverTag(), str);
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Preset {
         public boolean enabled;
         public boolean lessCallData;
@@ -1829,24 +1829,24 @@ public class DownloadController extends BaseController implements NotificationCe
     public static /* synthetic */ void lambda$savePresetToServer$3(TLObject tLObject, TLRPC.TL_error tL_error) {
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x004a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x004b, code lost:
     
         if (getContactsController().contactsDict.containsKey(java.lang.Long.valueOf(r5.user_id)) != false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x006f, code lost:
     
         if (getContactsController().contactsDict.containsKey(java.lang.Long.valueOf(r14.from_id.user_id)) != false) goto L26;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x00ae, code lost:
     
         if (getContactsController().contactsDict.containsKey(java.lang.Long.valueOf(r14.from_id.user_id)) != false) goto L26;
      */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00e2  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00f3  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1867,6 +1867,7 @@ public class DownloadController extends BaseController implements NotificationCe
             if (MessageObject.isVoiceDocument(messageMedia.document)) {
                 i10 = 2;
             } else if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
+                z10 = false;
                 i10 = 1;
             } else {
                 if (messageMedia.document == null) {

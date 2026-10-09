@@ -1,16 +1,26 @@
 package de;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class d implements id.c {
-    public static final d a = new d();
+import org.telegram.tgnet.TLObject;
 
-    @Override // id.c
-    public final id.h getContext() {
-        return id.i.a;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class d extends ld.c {
+    public /* synthetic */ Object a;
+    public int b;
+    public final /* synthetic */ pf.b c;
+    public pf.b d;
+    public c e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d(pf.b bVar, ld.c cVar) {
+        super(cVar);
+        this.c = bVar;
     }
 
-    @Override // id.c
-    public final void resumeWith(Object obj) {
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.b |= TLObject.FLAG_31;
+        return this.c.z(null, this);
     }
 }

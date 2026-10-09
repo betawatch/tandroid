@@ -1,45 +1,104 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zq extends View {
-    public final yq a;
+public final class zq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public zq(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        setVisibility(8);
-        yq yqVar = new yq(this, true, d6Var);
-        this.a = yqVar;
-        yqVar.G = true;
+    public zq(cr crVar, int i10) {
+        this.c = crVar;
+        this.b = i10;
     }
 
-    public float getEnterProgress() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         int i10;
-        yq yqVar = this.a;
-        float f7 = yqVar.l;
-        return (f7 == 1.0f || !((i10 = yqVar.c) == 0 || i10 == 1)) ? yqVar.h == 0 ? 0.0f : 1.0f : i10 == 0 ? f7 : 1.0f - f7;
+        int i11 = this.a;
+        int i12 = this.b;
+        View view = this.c;
+        switch (i11) {
+            case 0:
+                cr crVar = (cr) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = crVar.E;
+                if (!crVar.r) {
+                    crVar.r = true;
+                    int i13 = 0;
+                    while (i13 < editable.length()) {
+                        char charAt = editable.charAt(i13);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i13, i13 + 1, "");
+                            i13--;
+                        }
+                        i13++;
+                    }
+                    if (editable.length() != 0) {
+                        try {
+                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i10 = -1;
+                        }
+                        crVar.setColorInner(i10);
+                        int color = crVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i12].setSelection(editable.length());
+                        }
+                        crVar.v[crVar.S].a(color);
+                        crVar.a.s0(color, crVar.S, true);
+                        crVar.r = false;
+                        break;
+                    } else {
+                        crVar.r = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
+                    break;
+                }
+        }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.a.a(canvas);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.a.d(getMeasuredHeight(), getMeasuredWidth());
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    public void setGravity(int i10) {
-        this.a.z = i10;
+    public zq(int i10, NumberTextView numberTextView) {
+        this.b = i10;
+        this.c = numberTextView;
     }
 
-    public void setReverse(boolean z10) {
-        this.a.D = z10;
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

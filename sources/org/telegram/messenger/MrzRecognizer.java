@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -76,8 +76,8 @@ public class MrzRecognizer {
 
     private static String cyrillicToLatin(String str) {
         String[] strArr = {"A", "B", "V", "G", "D", "E", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
-        String str2 = str;
         int i10 = 0;
+        String str2 = str;
         while (i10 < 33) {
             int i11 = i10 + 1;
             str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i10, i11), strArr[i10]);
@@ -413,17 +413,17 @@ public class MrzRecognizer {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        la.h hVar = new la.h(22);
+        la.h hVar = new la.h(24);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         hVar.d = bitmap;
         a3.l lVar = (a3.l) hVar.b;
         lVar.a = width;
         lVar.b = height;
-        SparseArray Z0 = nVar.Z0(hVar);
+        SparseArray b12 = nVar.b1(hVar);
         int i10 = 0;
-        for (int i11 = 0; i11 < Z0.size(); i11++) {
-            r8.m mVar = (r8.m) Z0.valueAt(i11);
+        for (int i11 = 0; i11 < b12.size(); i11++) {
+            r8.m mVar = (r8.m) b12.valueAt(i11);
             int i12 = mVar.d;
             int i13 = 6;
             int i14 = 4;
@@ -453,9 +453,9 @@ public class MrzRecognizer {
                     }
                 }
                 if ("USA".equals(result.issuingCountry)) {
+                    i14 = 0;
                     i10 = 4;
                     i13 = 2;
-                    i14 = 0;
                 }
                 try {
                     String str3 = mVar.y.x;
@@ -503,26 +503,27 @@ public class MrzRecognizer {
         return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:188:0x027d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x03d8  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0404  */
+    /* JADX WARN: Removed duplicated region for block: B:189:0x027d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x01f6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private static Result recognizeMRZ(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
-        char c10;
         int i10;
-        Bitmap createScaledBitmap2;
         int i11;
         int i12;
         int i13;
         int i14;
-        String trim;
-        String replace;
-        String replace2;
+        int i15;
+        int i16;
+        Bitmap createScaledBitmap2;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        char c10;
         Matrix matrix;
         Bitmap bitmap2 = bitmap;
         if (bitmap2.getWidth() > 512 || bitmap2.getHeight() > 512) {
@@ -537,6 +538,7 @@ public class MrzRecognizer {
         if (findCornerPoints != null) {
             Point point = new Point(findCornerPoints[0], findCornerPoints[1]);
             Point point2 = new Point(findCornerPoints[2], findCornerPoints[3]);
+            i15 = 7;
             Point point3 = new Point(findCornerPoints[4], findCornerPoints[5]);
             Point point4 = new Point(findCornerPoints[6], findCornerPoints[7]);
             if (point2.x >= point.x) {
@@ -545,10 +547,14 @@ public class MrzRecognizer {
                 point2 = point;
                 point = point2;
             }
+            i12 = 3;
             double hypot = Math.hypot(point.x - point2.x, point.y - point2.y);
+            i11 = 6;
+            i10 = 1;
             double hypot2 = Math.hypot(point3.x - point4.x, point3.y - point4.y);
             double hypot3 = Math.hypot(point4.x - point2.x, point4.y - point2.y);
-            c10 = 0;
+            i13 = 5;
+            i14 = 0;
             double hypot4 = Math.hypot(point3.x - point.x, point3.y - point.y);
             double d = hypot / hypot3;
             double d10 = hypot / hypot4;
@@ -557,37 +563,47 @@ public class MrzRecognizer {
             if (d >= 1.35d && d <= 1.75d && d11 >= 1.35d && d11 <= 1.75d && d10 >= 1.35d && d10 <= 1.75d && d12 >= 1.35d && d12 <= 1.75d) {
                 Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d10) + d11) + d12) / 4.0d)), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
+                float[] fArr = {point2.x * f7, point2.y * f7, point.x * f7, point.y * f7, point3.x * f7, point3.y * f7, point4.x * f7, point4.y * f7};
                 Matrix matrix2 = new Matrix();
-                matrix2.setPolyToPoly(new float[]{point2.x * f7, point2.y * f7, point.x * f7, point.y * f7, point3.x * f7, point3.y * f7, point4.x * f7, point4.y * f7}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
+                matrix2.setPolyToPoly(fArr, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
                 canvas.drawBitmap(bitmap2, matrix2, new Paint(2));
                 bitmap2 = createBitmap;
             }
         } else {
-            c10 = 0;
+            i10 = 1;
+            i11 = 6;
+            i12 = 3;
+            i13 = 5;
+            i14 = 0;
+            i15 = 7;
             if (bitmap2.getWidth() > 1500 || bitmap2.getHeight() > 1500) {
                 float max2 = 1500.0f / Math.max(bitmap2.getWidth(), bitmap2.getHeight());
-                i10 = 1;
+                i16 = 1;
                 createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, Math.round(bitmap2.getWidth() * max2), Math.round(bitmap2.getHeight() * max2), true);
                 Result result = null;
                 Bitmap bitmap3 = null;
                 Rect[][] rectArr = null;
-                i11 = 0;
-                i12 = 0;
-                int i15 = 0;
+                i17 = i14;
+                i18 = i17;
+                int i21 = i18;
                 while (true) {
-                    if (i11 < 3) {
-                        i13 = 2;
+                    if (i17 < i12) {
+                        i19 = 2;
                         break;
                     }
-                    if (i11 == i10) {
-                        Matrix matrix3 = new Matrix();
-                        matrix3.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
-                        matrix = matrix3;
-                    } else if (i11 != 2) {
-                        matrix = null;
+                    if (i17 != i16) {
+                        if (i17 != 2) {
+                            matrix = null;
+                        } else {
+                            Matrix matrix3 = new Matrix();
+                            matrix3.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
+                            matrix = matrix3;
+                        }
+                        c10 = 0;
                     } else {
                         Matrix matrix4 = new Matrix();
-                        matrix4.setRotate(-1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
+                        c10 = 0;
+                        matrix4.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
                         matrix = matrix4;
                     }
                     Bitmap createBitmap2 = matrix != null ? Bitmap.createBitmap(createScaledBitmap2, 0, 0, createScaledBitmap2.getWidth(), createScaledBitmap2.getHeight(), matrix, true) : createScaledBitmap2;
@@ -596,45 +612,49 @@ public class MrzRecognizer {
                     if (rectArr == null) {
                         return null;
                     }
-                    for (Rect[] rectArr2 : rectArr) {
-                        i12 = Math.max(rectArr2.length, i12);
+                    int length = rectArr.length;
+                    for (int i22 = i14; i22 < length; i22++) {
+                        Rect[] rectArr2 = rectArr[i22];
+                        i18 = Math.max(rectArr2.length, i18);
                         if (rectArr2.length > 0) {
-                            i15++;
+                            i21++;
                         }
                     }
-                    i13 = 2;
-                    if (i15 >= 2 && i12 >= 30) {
+                    i19 = 2;
+                    if (i21 >= 2 && i18 >= 30) {
                         break;
                     }
-                    i11++;
-                    i10 = 1;
+                    i17++;
+                    i16 = 1;
+                    i12 = 3;
                 }
-                if (i12 >= 30 || i15 < i13) {
+                if (i18 >= 30 || i21 < i19) {
                     return null;
                 }
-                Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[c10].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+                Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[i14].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
                 Canvas canvas2 = new Canvas(createBitmap3);
                 Paint paint = new Paint(2);
-                Rect rect = new Rect(0, 0, 10, 15);
-                int length = rectArr.length;
-                int i16 = 0;
-                int i17 = 0;
-                while (i16 < length) {
-                    Rect[] rectArr3 = rectArr[i16];
+                int i23 = i14;
+                Rect rect = new Rect(i23, i23, 10, 15);
+                int length2 = rectArr.length;
+                int i24 = 0;
+                int i25 = 0;
+                while (i24 < length2) {
+                    Rect[] rectArr3 = rectArr[i24];
                     Result result2 = result;
-                    int i18 = 0;
-                    int i19 = 0;
-                    for (int length2 = rectArr3.length; i18 < length2; length2 = length2) {
-                        Rect rect2 = rectArr3[i18];
-                        int i20 = i19 * 10;
-                        int i21 = i17 * 15;
-                        rect.set(i20, i21, i20 + 10, i21 + 15);
+                    int i26 = 0;
+                    int i27 = 0;
+                    for (int length3 = rectArr3.length; i26 < length3; length3 = length3) {
+                        Rect rect2 = rectArr3[i26];
+                        int i28 = i27 * 10;
+                        int i29 = i25 * 15;
+                        rect.set(i28, i29, i28 + 10, i29 + 15);
                         canvas2.drawBitmap(bitmap3, rect2, rect, paint);
-                        i19++;
-                        i18++;
+                        i27++;
+                        i26++;
                     }
-                    i17++;
-                    i16++;
+                    i25++;
+                    i24++;
                     result = result2;
                 }
                 Result result3 = result;
@@ -653,67 +673,52 @@ public class MrzRecognizer {
                 if (charAt == 'P') {
                     result4.type = 1;
                     if (split[0].length() == 44) {
-                        result4.issuingCountry = split[0].substring(2, 5);
-                        int indexOf = split[0].indexOf("<<", 6);
+                        int i30 = i13;
+                        result4.issuingCountry = split[0].substring(2, i30);
+                        int indexOf = split[0].indexOf("<<", i11);
                         if (indexOf != -1) {
-                            result4.lastName = split[0].substring(5, indexOf).replace('<', ' ').replace('0', 'O').trim();
-                            String trim2 = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
-                            result4.firstName = trim2;
-                            if (trim2.contains("   ")) {
+                            result4.lastName = split[0].substring(i30, indexOf).replace('<', ' ').replace('0', 'O').trim();
+                            String trim = split[0].substring(indexOf + 2).replace('<', ' ').replace('0', 'O').trim();
+                            result4.firstName = trim;
+                            if (trim.contains("   ")) {
                                 String str = result4.firstName;
-                                i14 = 0;
+                                i20 = 0;
                                 result4.firstName = str.substring(0, str.indexOf("   "));
-                                trim = split[1].substring(i14, 9).replace('<', ' ').replace('O', '0').trim();
-                                if (checksum(trim) == getNumber(split[1].charAt(9))) {
-                                    result4.number = trim;
-                                }
-                                result4.nationality = split[1].substring(10, 13);
-                                replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
-                                if (checksum(replace) == getNumber(split[1].charAt(19))) {
-                                    parseBirthDate(replace, result4);
-                                }
-                                result4.gender = parseGender(split[1].charAt(20));
-                                replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
-                                if (checksum(replace2) != getNumber(split[1].charAt(27)) || split[1].charAt(27) == '<') {
-                                    parseExpiryDate(replace2, result4);
-                                }
-                                if ("RUS".equals(result4.issuingCountry) || split[0].charAt(1) != 'N') {
-                                    result4.firstName = result4.firstName.replace('8', 'B');
-                                    result4.lastName = result4.lastName.replace('8', 'B');
-                                } else {
-                                    result4.type = 3;
-                                    String[] split2 = result4.firstName.split(" ");
-                                    result4.firstName = cyrillicToLatin(russianPassportTranslit(split2[0]));
-                                    if (split2.length > 1) {
-                                        result4.middleName = cyrillicToLatin(russianPassportTranslit(split2[1]));
-                                    }
-                                    result4.lastName = cyrillicToLatin(russianPassportTranslit(result4.lastName));
-                                    if (result4.number != null) {
-                                        result4.number = result4.number.substring(0, 3) + split[1].charAt(28) + result4.number.substring(3);
-                                    }
-                                }
-                                result4.lastName = capitalize(result4.lastName);
-                                result4.firstName = capitalize(result4.firstName);
-                                result4.middleName = capitalize(result4.middleName);
+                            } else {
+                                i20 = 0;
                             }
+                        } else {
+                            i20 = 0;
                         }
-                        i14 = 0;
-                        trim = split[1].substring(i14, 9).replace('<', ' ').replace('O', '0').trim();
-                        if (checksum(trim) == getNumber(split[1].charAt(9))) {
+                        String trim2 = split[1].substring(i20, 9).replace('<', ' ').replace('O', '0').trim();
+                        if (checksum(trim2) == getNumber(split[1].charAt(9))) {
+                            result4.number = trim2;
                         }
                         result4.nationality = split[1].substring(10, 13);
-                        replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
+                        String replace = split[1].substring(13, 19).replace('O', '0').replace('I', '1');
                         if (checksum(replace) == getNumber(split[1].charAt(19))) {
+                            parseBirthDate(replace, result4);
                         }
                         result4.gender = parseGender(split[1].charAt(20));
-                        replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
-                        if (checksum(replace2) != getNumber(split[1].charAt(27))) {
+                        String replace2 = split[1].substring(21, 27).replace('O', '0').replace('I', '1');
+                        if (checksum(replace2) == getNumber(split[1].charAt(27)) || split[1].charAt(27) == '<') {
+                            parseExpiryDate(replace2, result4);
                         }
-                        parseExpiryDate(replace2, result4);
-                        if ("RUS".equals(result4.issuingCountry)) {
+                        if ("RUS".equals(result4.issuingCountry) && split[0].charAt(1) == 'N') {
+                            result4.type = 3;
+                            String[] split2 = result4.firstName.split(" ");
+                            result4.firstName = cyrillicToLatin(russianPassportTranslit(split2[0]));
+                            if (split2.length > 1) {
+                                result4.middleName = cyrillicToLatin(russianPassportTranslit(split2[1]));
+                            }
+                            result4.lastName = cyrillicToLatin(russianPassportTranslit(result4.lastName));
+                            if (result4.number != null) {
+                                result4.number = result4.number.substring(0, 3) + split[1].charAt(28) + result4.number.substring(3);
+                            }
+                        } else {
+                            result4.firstName = result4.firstName.replace('8', 'B');
+                            result4.lastName = result4.lastName.replace('8', 'B');
                         }
-                        result4.firstName = result4.firstName.replace('8', 'B');
-                        result4.lastName = result4.lastName.replace('8', 'B');
                         result4.lastName = capitalize(result4.lastName);
                         result4.firstName = capitalize(result4.firstName);
                         result4.middleName = capitalize(result4.middleName);
@@ -733,7 +738,7 @@ public class MrzRecognizer {
                         if (checksum(replace3) == getNumber(split[1].charAt(6))) {
                             parseBirthDate(replace3, result4);
                         }
-                        result4.gender = parseGender(split[1].charAt(7));
+                        result4.gender = parseGender(split[1].charAt(i15));
                         String replace4 = split[1].substring(8, 14).replace('O', '0').replace('I', '1');
                         if (checksum(replace4) == getNumber(split[1].charAt(14)) || split[1].charAt(14) == '<') {
                             parseExpiryDate(replace4, result4);
@@ -795,20 +800,21 @@ public class MrzRecognizer {
             }
         }
         createScaledBitmap2 = bitmap2;
-        i10 = 1;
+        i16 = i10;
         Result result5 = null;
         Bitmap bitmap32 = null;
         Rect[][] rectArr4 = null;
-        i11 = 0;
-        i12 = 0;
-        int i152 = 0;
+        i17 = i14;
+        i18 = i17;
+        int i212 = i18;
         while (true) {
-            if (i11 < 3) {
+            if (i17 < i12) {
             }
-            i11++;
-            i10 = 1;
+            i17++;
+            i16 = 1;
+            i12 = 3;
         }
-        if (i12 >= 30) {
+        if (i18 >= 30) {
         }
         return null;
     }

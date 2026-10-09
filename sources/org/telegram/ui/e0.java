@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -70,8 +70,8 @@ public final /* synthetic */ class e0 implements View.OnTouchListener {
                                     actionBarLayout.a0((org.telegram.ui.ActionBar.n2) actionBarLayout.getFragmentStack().get(0), false);
                                 }
                                 externalActionActivity.d.l(true, false);
-                                break;
                             }
+                            break;
                         }
                     }
                 }
@@ -93,304 +93,304 @@ public final /* synthetic */ class e0 implements View.OnTouchListener {
                                     actionBarLayout2.a0(actionBarLayout2.getFragmentStack().get(0), false);
                                 }
                                 launchActivity.r0.l(true, false);
-                                break;
                             }
+                            break;
                         }
                     }
                 }
                 break;
             case 4:
-                gq0 gq0Var = (gq0) this.b;
+                lq0 lq0Var = (lq0) this.b;
                 float x12 = motionEvent.getX();
                 float y11 = motionEvent.getY();
                 int dp = AndroidUtilities.dp(14.0f);
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() != 1) {
-                        if (motionEvent.getAction() == 2 && (i10 = gq0Var.n) != 0) {
-                            float f7 = x12 - gq0Var.r;
-                            float f10 = y11 - gq0Var.s;
+                        if (motionEvent.getAction() == 2 && (i10 = lq0Var.n) != 0) {
+                            float f7 = x12 - lq0Var.r;
+                            float f10 = y11 - lq0Var.s;
                             if (i10 == 5) {
-                                float f11 = gq0Var.f + f7;
-                                gq0Var.f = f11;
-                                float f12 = gq0Var.h + f10;
-                                gq0Var.h = f12;
-                                int i15 = gq0Var.x;
+                                float f11 = lq0Var.f + f7;
+                                lq0Var.f = f11;
+                                float f12 = lq0Var.h + f10;
+                                lq0Var.h = f12;
+                                int i15 = lq0Var.x;
                                 float f13 = i15;
                                 if (f11 < f13) {
-                                    gq0Var.f = f13;
+                                    lq0Var.f = f13;
                                 } else {
-                                    float f14 = gq0Var.d;
+                                    float f14 = lq0Var.d;
                                     float f15 = f11 + f14;
-                                    float f16 = i15 + gq0Var.v;
+                                    float f16 = i15 + lq0Var.v;
                                     if (f15 > f16) {
-                                        gq0Var.f = f16 - f14;
+                                        lq0Var.f = f16 - f14;
                                     }
                                 }
-                                int i16 = gq0Var.y;
+                                int i16 = lq0Var.y;
                                 float f17 = i16;
                                 if (f12 < f17) {
-                                    gq0Var.h = f17;
+                                    lq0Var.h = f17;
                                 } else {
-                                    float f18 = gq0Var.e;
+                                    float f18 = lq0Var.e;
                                     float f19 = f12 + f18;
-                                    float f20 = i16 + gq0Var.w;
+                                    float f20 = i16 + lq0Var.w;
                                     if (f19 > f20) {
-                                        gq0Var.h = f20 - f18;
+                                        lq0Var.h = f20 - f18;
                                     }
                                 }
                             } else if (i10 == 1) {
-                                float f21 = gq0Var.d;
+                                float f21 = lq0Var.d;
                                 if (f21 - f7 < 160.0f) {
                                     f7 = f21 - 160.0f;
                                 }
-                                float f22 = gq0Var.f;
+                                float f22 = lq0Var.f;
                                 float f23 = f22 + f7;
-                                float f24 = gq0Var.x;
+                                float f24 = lq0Var.x;
                                 if (f23 < f24) {
                                     f7 = f24 - f22;
                                 }
-                                if (gq0Var.G) {
-                                    float f25 = gq0Var.e;
+                                if (lq0Var.G) {
+                                    float f25 = lq0Var.e;
                                     if (f25 - f10 < 160.0f) {
                                         f10 = f25 - 160.0f;
                                     }
-                                    float f26 = gq0Var.h;
+                                    float f26 = lq0Var.h;
                                     float f27 = f26 + f10;
-                                    float f28 = gq0Var.y;
+                                    float f28 = lq0Var.y;
                                     if (f27 < f28) {
                                         f10 = f28 - f26;
                                     }
-                                    gq0Var.f = f22 + f7;
-                                    gq0Var.h = f26 + f10;
-                                    gq0Var.d = f21 - f7;
-                                    gq0Var.e = f25 - f10;
+                                    lq0Var.f = f22 + f7;
+                                    lq0Var.h = f26 + f10;
+                                    lq0Var.d = f21 - f7;
+                                    lq0Var.e = f25 - f10;
                                 } else {
-                                    float f29 = gq0Var.h;
+                                    float f29 = lq0Var.h;
                                     float f30 = f29 + f7;
-                                    float f31 = gq0Var.y;
+                                    float f31 = lq0Var.y;
                                     if (f30 < f31) {
                                         f7 = f31 - f29;
                                     }
-                                    gq0Var.f = f22 + f7;
-                                    gq0Var.h = f29 + f7;
-                                    gq0Var.d = f21 - f7;
-                                    gq0Var.e -= f7;
+                                    lq0Var.f = f22 + f7;
+                                    lq0Var.h = f29 + f7;
+                                    lq0Var.d = f21 - f7;
+                                    lq0Var.e -= f7;
                                 }
                             } else if (i10 == 2) {
-                                float f32 = gq0Var.d;
+                                float f32 = lq0Var.d;
                                 if (f32 + f7 < 160.0f) {
                                     f7 = -(f32 - 160.0f);
                                 }
-                                float f33 = gq0Var.f;
+                                float f33 = lq0Var.f;
                                 float f34 = f33 + f32 + f7;
-                                float f35 = gq0Var.x + gq0Var.v;
+                                float f35 = lq0Var.x + lq0Var.v;
                                 if (f34 > f35) {
                                     f7 = (f35 - f33) - f32;
                                 }
-                                if (gq0Var.G) {
-                                    float f36 = gq0Var.e;
+                                if (lq0Var.G) {
+                                    float f36 = lq0Var.e;
                                     if (f36 - f10 < 160.0f) {
                                         f10 = f36 - 160.0f;
                                     }
-                                    float f37 = gq0Var.h;
+                                    float f37 = lq0Var.h;
                                     float f38 = f37 + f10;
-                                    float f39 = gq0Var.y;
+                                    float f39 = lq0Var.y;
                                     if (f38 < f39) {
                                         f10 = f39 - f37;
                                     }
-                                    gq0Var.h = f37 + f10;
-                                    gq0Var.d = f32 + f7;
-                                    gq0Var.e = f36 - f10;
+                                    lq0Var.h = f37 + f10;
+                                    lq0Var.d = f32 + f7;
+                                    lq0Var.e = f36 - f10;
                                 } else {
-                                    float f40 = gq0Var.h;
+                                    float f40 = lq0Var.h;
                                     float f41 = f40 - f7;
-                                    float f42 = gq0Var.y;
+                                    float f42 = lq0Var.y;
                                     if (f41 < f42) {
                                         f7 = f40 - f42;
                                     }
-                                    gq0Var.h = f40 - f7;
-                                    gq0Var.d = f32 + f7;
-                                    gq0Var.e += f7;
+                                    lq0Var.h = f40 - f7;
+                                    lq0Var.d = f32 + f7;
+                                    lq0Var.e += f7;
                                 }
                             } else if (i10 == 3) {
-                                float f43 = gq0Var.d;
+                                float f43 = lq0Var.d;
                                 if (f43 - f7 < 160.0f) {
                                     f7 = f43 - 160.0f;
                                 }
-                                float f44 = gq0Var.f;
+                                float f44 = lq0Var.f;
                                 float f45 = f44 + f7;
-                                float f46 = gq0Var.x;
+                                float f46 = lq0Var.x;
                                 if (f45 < f46) {
                                     f7 = f46 - f44;
                                 }
-                                if (gq0Var.G) {
-                                    float f47 = gq0Var.h;
-                                    float f48 = gq0Var.e;
+                                if (lq0Var.G) {
+                                    float f47 = lq0Var.h;
+                                    float f48 = lq0Var.e;
                                     float f49 = f47 + f48 + f10;
-                                    float f50 = gq0Var.y + gq0Var.w;
+                                    float f50 = lq0Var.y + lq0Var.w;
                                     if (f49 > f50) {
                                         f10 = (f50 - f47) - f48;
                                     }
-                                    gq0Var.f = f44 + f7;
-                                    gq0Var.d = f43 - f7;
+                                    lq0Var.f = f44 + f7;
+                                    lq0Var.d = f43 - f7;
                                     float f51 = f48 + f10;
-                                    gq0Var.e = f51;
+                                    lq0Var.e = f51;
                                     if (f51 < 160.0f) {
-                                        gq0Var.e = 160.0f;
+                                        lq0Var.e = 160.0f;
                                     }
                                 } else {
-                                    float f52 = gq0Var.h + f43;
+                                    float f52 = lq0Var.h + f43;
                                     float f53 = f52 - f7;
-                                    int i17 = gq0Var.y;
-                                    int i18 = gq0Var.w;
+                                    int i17 = lq0Var.y;
+                                    int i18 = lq0Var.w;
                                     if (f53 > i17 + i18) {
                                         f7 = (f52 - i17) - i18;
                                     }
-                                    gq0Var.f = f44 + f7;
-                                    gq0Var.d = f43 - f7;
-                                    gq0Var.e -= f7;
+                                    lq0Var.f = f44 + f7;
+                                    lq0Var.d = f43 - f7;
+                                    lq0Var.e -= f7;
                                 }
                             } else if (i10 == 4) {
-                                float f54 = gq0Var.f;
-                                float f55 = gq0Var.d;
+                                float f54 = lq0Var.f;
+                                float f55 = lq0Var.d;
                                 float f56 = f54 + f55 + f7;
-                                float f57 = gq0Var.x + gq0Var.v;
+                                float f57 = lq0Var.x + lq0Var.v;
                                 if (f56 > f57) {
                                     f7 = (f57 - f54) - f55;
                                 }
-                                if (gq0Var.G) {
-                                    float f58 = gq0Var.h;
-                                    float f59 = gq0Var.e;
+                                if (lq0Var.G) {
+                                    float f58 = lq0Var.h;
+                                    float f59 = lq0Var.e;
                                     float f60 = f58 + f59 + f10;
-                                    float f61 = gq0Var.y + gq0Var.w;
+                                    float f61 = lq0Var.y + lq0Var.w;
                                     if (f60 > f61) {
                                         f10 = (f61 - f58) - f59;
                                     }
-                                    gq0Var.d = f55 + f7;
-                                    gq0Var.e = f59 + f10;
+                                    lq0Var.d = f55 + f7;
+                                    lq0Var.e = f59 + f10;
                                 } else {
-                                    float f62 = gq0Var.h;
+                                    float f62 = lq0Var.h;
                                     float f63 = f62 + f55 + f7;
-                                    float f64 = gq0Var.y + gq0Var.w;
+                                    float f64 = lq0Var.y + lq0Var.w;
                                     if (f63 > f64) {
                                         f7 = (f64 - f62) - f55;
                                     }
-                                    gq0Var.d = f55 + f7;
-                                    gq0Var.e += f7;
+                                    lq0Var.d = f55 + f7;
+                                    lq0Var.e += f7;
                                 }
-                                if (gq0Var.d < 160.0f) {
-                                    gq0Var.d = 160.0f;
+                                if (lq0Var.d < 160.0f) {
+                                    lq0Var.d = 160.0f;
                                 }
-                                if (gq0Var.e < 160.0f) {
-                                    gq0Var.e = 160.0f;
+                                if (lq0Var.e < 160.0f) {
+                                    lq0Var.e = 160.0f;
                                 }
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
-                            gq0Var.invalidate();
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
+                            lq0Var.invalidate();
                             break;
                         }
                     } else {
-                        gq0Var.n = 0;
+                        lq0Var.n = 0;
                         break;
                     }
                 } else {
-                    float f65 = gq0Var.f;
+                    float f65 = lq0Var.f;
                     float f66 = dp;
                     float f67 = f65 - f66;
                     if (f67 < x12 && f65 + f66 > x12) {
-                        float f68 = gq0Var.h;
+                        float f68 = lq0Var.h;
                         if (f68 - f66 < y11 && f68 + f66 > y11) {
-                            gq0Var.n = 1;
-                            if (gq0Var.n != 0) {
-                                gq0Var.requestDisallowInterceptTouchEvent(true);
+                            lq0Var.n = 1;
+                            if (lq0Var.n != 0) {
+                                lq0Var.requestDisallowInterceptTouchEvent(true);
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
                             break;
                         }
                     }
-                    float f69 = gq0Var.d;
+                    float f69 = lq0Var.d;
                     float f70 = f67 + f69;
                     if (f70 < x12 && f65 + f66 + f69 > x12) {
-                        float f71 = gq0Var.h;
+                        float f71 = lq0Var.h;
                         if (f71 - f66 < y11 && f71 + f66 > y11) {
-                            gq0Var.n = 2;
-                            if (gq0Var.n != 0) {
+                            lq0Var.n = 2;
+                            if (lq0Var.n != 0) {
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
                         }
                     }
                     if (f67 < x12 && f65 + f66 > x12) {
-                        float f72 = gq0Var.h;
-                        float f73 = gq0Var.e;
+                        float f72 = lq0Var.h;
+                        float f73 = lq0Var.e;
                         if ((f72 - f66) + f73 < y11 && f72 + f66 + f73 > y11) {
-                            gq0Var.n = 3;
-                            if (gq0Var.n != 0) {
+                            lq0Var.n = 3;
+                            if (lq0Var.n != 0) {
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
                         }
                     }
                     if (f70 < x12 && f65 + f66 + f69 > x12) {
-                        float f74 = gq0Var.h;
-                        float f75 = gq0Var.e;
+                        float f74 = lq0Var.h;
+                        float f75 = lq0Var.e;
                         if ((f74 - f66) + f75 < y11 && f74 + f66 + f75 > y11) {
-                            gq0Var.n = 4;
-                            if (gq0Var.n != 0) {
+                            lq0Var.n = 4;
+                            if (lq0Var.n != 0) {
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
                         }
                     }
                     if (f65 < x12 && f65 + f69 > x12) {
-                        float f76 = gq0Var.h;
-                        if (f76 < y11 && f76 + gq0Var.e > y11) {
-                            gq0Var.n = 5;
-                            if (gq0Var.n != 0) {
+                        float f76 = lq0Var.h;
+                        if (f76 < y11 && f76 + lq0Var.e > y11) {
+                            lq0Var.n = 5;
+                            if (lq0Var.n != 0) {
                             }
-                            gq0Var.r = x12;
-                            gq0Var.s = y11;
+                            lq0Var.r = x12;
+                            lq0Var.s = y11;
                         }
                     }
-                    gq0Var.n = 0;
-                    if (gq0Var.n != 0) {
+                    lq0Var.n = 0;
+                    if (lq0Var.n != 0) {
                     }
-                    gq0Var.r = x12;
-                    gq0Var.s = y11;
+                    lq0Var.r = x12;
+                    lq0Var.s = y11;
                 }
                 break;
             case 5:
-                gw0 gw0Var = (gw0) this.b;
-                if (gw0Var.T != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) gw0Var.T).getBackgroundDrawable();
+                mw0 mw0Var = (mw0) this.b;
+                if (mw0Var.T != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) mw0Var.T).getBackgroundDrawable();
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(backgroundDrawable.getBounds());
-                    rectF.offset(gw0Var.T.getX(), gw0Var.T.getY());
+                    rectF.offset(mw0Var.T.getX(), mw0Var.T.getY());
                     if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        gw0Var.c(true);
+                        mw0Var.c(true);
                         break;
                     }
                 }
                 break;
             case 6:
-                a71 a71Var = (a71) this.b;
-                a71Var.getClass();
-                if (motionEvent.getAction() == 0 && (runnable = a71Var.T1) != null) {
+                k71 k71Var = (k71) this.b;
+                k71Var.getClass();
+                if (motionEvent.getAction() == 0 && (runnable = k71Var.T1) != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                ee1 ee1Var = (ee1) this.b;
-                if (ee1Var.S != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ee1Var.S).getBackgroundDrawable();
+                me1 me1Var = (me1) this.b;
+                if (me1Var.S != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) me1Var.S).getBackgroundDrawable();
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     rectF2.set(backgroundDrawable2.getBounds());
-                    rectF2.offset(ee1Var.S.getX(), ee1Var.S.getY());
+                    rectF2.offset(me1Var.S.getX(), me1Var.S.getY());
                     if (!rectF2.contains(motionEvent.getX(), motionEvent.getY())) {
-                        ee1Var.c(true);
+                        me1Var.c(true);
                         break;
                     }
                 }

@@ -2,9 +2,9 @@ package n7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class v0 extends d1 {
+public final class v0 extends c1 {
     public final boolean a;
 
     public v0(boolean z10) {
@@ -13,13 +13,13 @@ public final class v0 extends d1 {
 
     @Override // java.lang.Comparable
     public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        d1 d1Var = (d1) obj;
-        int zza = d1Var.zza();
-        int c10 = d1.c((byte) -32);
+        c1 c1Var = (c1) obj;
+        int zza = c1Var.zza();
+        int c10 = c1.c((byte) -32);
         if (c10 != zza) {
-            return c10 - d1Var.zza();
+            return c10 - c1Var.zza();
         }
-        return (true != this.a ? 20 : 21) - (true != ((v0) d1Var).a ? 20 : 21);
+        return (true != this.a ? 20 : 21) - (true != ((v0) c1Var).a ? 20 : 21);
     }
 
     public final boolean equals(Object obj) {
@@ -30,15 +30,15 @@ public final class v0 extends d1 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(d1.c((byte) -32)), Boolean.valueOf(this.a)});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(c1.c((byte) -32)), Boolean.valueOf(this.a)});
     }
 
     public final String toString() {
         return Boolean.toString(this.a);
     }
 
-    @Override // n7.d1
+    @Override // n7.c1
     public final int zza() {
-        return d1.c((byte) -32);
+        return c1.c((byte) -32);
     }
 }

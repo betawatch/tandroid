@@ -21,16 +21,16 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wt extends org.telegram.ui.Components.ul0 {
+public final class wt extends org.telegram.ui.Components.mm0 {
     public final Context r;
     public final HashMap s = new HashMap();
     public final ArrayList v = new ArrayList();
     public final /* synthetic */ zt w;
 
     public wt(zt ztVar, Context context, ArrayList arrayList, boolean z10) {
-        Comparator eb1Var;
+        Comparator mb1Var;
         this.w = ztVar;
         this.r = context;
         if (arrayList != null) {
@@ -80,18 +80,18 @@ public final class wt extends org.telegram.ui.Components.ul0 {
         if (Build.VERSION.SDK_INT >= 24) {
             Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
             Objects.requireNonNull(collator);
-            eb1Var = new ai.e8(collator, 5);
+            mb1Var = new ai.f8(collator, 5);
         } else {
-            eb1Var = new eb1(7);
+            mb1Var = new mb1(9);
         }
-        Collections.sort(this.v, eb1Var);
+        Collections.sort(this.v, mb1Var);
         Iterator it = this.s.values().iterator();
         while (it.hasNext()) {
-            Collections.sort((ArrayList) it.next(), new vt(eb1Var, 0));
+            Collections.sort((ArrayList) it.next(), new vt(mb1Var, 0));
         }
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.yl0
     public final String F(int i10) {
         int S = S(i10);
         ArrayList arrayList = this.v;
@@ -101,56 +101,56 @@ public final class wt extends org.telegram.ui.Components.ul0 {
         return (String) arrayList.get(S);
     }
 
-    @Override // org.telegram.ui.Components.gl0
-    public final void G(org.telegram.ui.Components.zl0 zl0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.yl0
+    public final void G(org.telegram.ui.Components.qm0 qm0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.mm0
     public final int M(int i10) {
         ArrayList arrayList = this.v;
         int size = ((ArrayList) this.s.get(arrayList.get(i10))).size();
         return i10 != arrayList.size() + (-1) ? size + 1 : size;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.mm0
     public final int P(int i10, int i11) {
         return i11 < ((ArrayList) this.s.get(this.v.get(i10))).size() ? 0 : 1;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.mm0
     public final int R() {
         return this.v.size();
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.mm0
     public final View T(int i10, View view) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean V(int i10, int i11, s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean V(int i10, int i11, s4.d1 d1Var) {
         return i11 < ((ArrayList) this.s.get(this.v.get(i10))).size();
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final void W(int i10, int i11, s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.mm0
+    public final void W(int i10, int i11, s4.d1 d1Var) {
         String str;
-        if (c1Var.f == 0) {
+        if (d1Var.f == 0) {
             ut utVar = (ut) ((ArrayList) this.s.get(this.v.get(i10))).get(i11);
-            org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) c1Var.a;
-            CharSequence replaceEmoji = Emoji.replaceEmoji(zt.T(utVar), eaVar.getTextView().getPaint().getFontMetricsInt(), false);
+            org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) d1Var.a;
+            CharSequence replaceEmoji = Emoji.replaceEmoji(zt.V(utVar), caVar.getTextView().getPaint().getFontMetricsInt(), false);
             if (this.w.h) {
                 str = "+" + utVar.c;
             } else {
                 str = null;
             }
-            eaVar.c(replaceEmoji, str, false, false);
+            caVar.c(replaceEmoji, str, false, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.mm0
     /* renamed from: Y, reason: merged with bridge method [inline-methods] */
     public final ut O(int i10, int i11) {
         if (i10 >= 0) {
@@ -165,16 +165,16 @@ public final class wt extends org.telegram.ui.Components.ul0 {
         return null;
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View S;
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        View U;
         Context context = this.r;
         if (i10 != 0) {
-            S = new org.telegram.ui.Cells.d3(context, null);
-            S.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f));
+            U = new org.telegram.ui.Cells.d3(context, null);
+            U.setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f));
         } else {
-            S = zt.S(context);
+            U = zt.U(context);
         }
-        return new org.telegram.ui.Components.il0(S);
+        return new org.telegram.ui.Components.am0(U);
     }
 }

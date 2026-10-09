@@ -7,26 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public class ThreadUtils {
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class 1CaughtException {
         Exception e;
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class 1Result {
         public V value;
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface BlockingOperation {
         void run();
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -137,15 +137,19 @@ public class ThreadUtils {
         boolean z10 = false;
         long j10 = j3;
         boolean z11 = false;
-        do {
+        while (true) {
             try {
                 z10 = countDownLatch.await(j10, TimeUnit.MILLISECONDS);
                 break;
             } catch (InterruptedException unused) {
                 j10 = j3 - (SystemClock.elapsedRealtime() - elapsedRealtime);
+                if (j10 <= 0) {
+                    z11 = true;
+                    break;
+                }
                 z11 = true;
             }
-        } while (j10 > 0);
+        }
         if (z11) {
             Thread.currentThread().interrupt();
         }

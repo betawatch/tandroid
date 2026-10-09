@@ -5,26 +5,26 @@ import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ih;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.xi;
+import org.telegram.ui.Components.jh;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.yi;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class y implements vi {
-    public final /* synthetic */ xi a;
+public final class y implements wi {
+    public final /* synthetic */ yi a;
     public final /* synthetic */ m0 b;
 
-    public y(m0 m0Var, xi xiVar) {
+    public y(m0 m0Var, yi yiVar) {
         this.b = m0Var;
-        this.a = xiVar;
+        this.a = yiVar;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        xi xiVar = this.a;
+    @Override // org.telegram.ui.Components.wi
+    public final void I1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        yi yiVar = this.a;
         try {
-            HashMap<Object, Object> selectedPhotos = xiVar.j0.getSelectedPhotos();
+            HashMap<Object, Object> selectedPhotos = yiVar.j0.getSelectedPhotos();
             if (selectedPhotos.isEmpty()) {
                 return;
             }
@@ -35,45 +35,45 @@ public final class y implements vi {
             }
             m0 m0Var = this.b;
             m0Var.f0(m0Var.h0(str, true));
-            xiVar.dismiss();
+            yiVar.dismiss();
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final boolean S1() {
+    @Override // org.telegram.ui.Components.wi
+    public final boolean Y1() {
         System.currentTimeMillis();
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ boolean a0() {
+    @Override // org.telegram.ui.Components.wi
+    public final void f0(jh jhVar) {
+        jhVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ boolean i0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void x0(ih ihVar) {
-        ihVar.run();
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void B0() {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void K0() {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void P0() {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void U0(Object obj) {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void a1(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void j1(TLRPC.User user) {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void p1(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void c2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

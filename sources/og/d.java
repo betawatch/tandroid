@@ -4,17 +4,17 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Cells.f8;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class d extends zl0 {
-    public boolean e3;
+public abstract class d extends qm0 {
+    public boolean V2;
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.zl0
-    public final void K0(Canvas canvas, RectF rectF, long j3) {
-        super.K0(canvas, rectF, j3);
+    @Override // org.telegram.ui.Components.qm0
+    public final void J0(Canvas canvas, RectF rectF, long j3) {
+        super.J0(canvas, rectF, j3);
         int childCount = getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = getChildAt(i10);
@@ -34,9 +34,9 @@ public abstract class d extends zl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qm0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        this.e3 = false;
+        this.V2 = false;
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             if (getChildAt(i10) instanceof c) {
                 c cVar = (c) getChildAt(i10);
@@ -54,10 +54,10 @@ public abstract class d extends zl0 {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (this.e3) {
+        if (this.V2) {
             return;
         }
         super.invalidate();
-        this.e3 = true;
+        this.V2 = true;
     }
 }

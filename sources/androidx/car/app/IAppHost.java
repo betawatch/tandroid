@@ -7,9 +7,9 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.car.app.ISurfaceCallback;
-import v7.s;
+import v7.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public interface IAppHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppHost".replace('$', '.');
@@ -28,7 +28,7 @@ public interface IAppHost extends IInterface {
 
     void showToast(CharSequence charSequence, int i10);
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Default implements IAppHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -65,7 +65,7 @@ public interface IAppHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static abstract class Stub extends Binder implements IAppHost {
         static final int TRANSACTION_dismissAlert = 7;
         static final int TRANSACTION_invalidate = 2;
@@ -75,7 +75,7 @@ public interface IAppHost extends IInterface {
         static final int TRANSACTION_showAlert = 6;
         static final int TRANSACTION_showToast = 3;
 
-        /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
         public static class Proxy implements IAppHost {
             private IBinder mRemote;
 
@@ -127,10 +127,10 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    s.b(obtain, bVar, 0);
+                    o.b(obtain, bVar, 0);
                     this.mRemote.transact(8, obtain, obtain2, 0);
                     obtain2.readException();
-                    return (w.b) s.a(obtain2, w.b.CREATOR);
+                    return (w.b) o.a(obtain2, w.b.CREATOR);
                 } finally {
                     obtain2.recycle();
                     obtain.recycle();
@@ -143,7 +143,7 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    s.b(obtain, location, 0);
+                    o.b(obtain, location, 0);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -173,7 +173,7 @@ public interface IAppHost extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IAppHost.DESCRIPTOR);
-                    s.b(obtain, bVar, 0);
+                    o.b(obtain, bVar, 0);
                     this.mRemote.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -235,7 +235,7 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 3:
-                    showToast((CharSequence) s.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
+                    showToast((CharSequence) o.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 4:
@@ -243,11 +243,11 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 5:
-                    sendLocation((Location) s.a(parcel, Location.CREATOR));
+                    sendLocation((Location) o.a(parcel, Location.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 6:
-                    showAlert((w.b) s.a(parcel, w.b.CREATOR));
+                    showAlert((w.b) o.a(parcel, w.b.CREATOR));
                     parcel2.writeNoException();
                     return true;
                 case 7:
@@ -255,9 +255,9 @@ public interface IAppHost extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 8:
-                    w.b openMicrophone = openMicrophone((w.b) s.a(parcel, w.b.CREATOR));
+                    w.b openMicrophone = openMicrophone((w.b) o.a(parcel, w.b.CREATOR));
                     parcel2.writeNoException();
-                    s.b(parcel2, openMicrophone, 1);
+                    o.b(parcel2, openMicrophone, 1);
                     return true;
                 default:
                     return super.onTransact(i10, parcel, parcel2, i11);

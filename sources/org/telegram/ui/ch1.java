@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ch1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ UserInfoActivity b;
+    public final /* synthetic */ ih1 b;
+    public final /* synthetic */ byte[] c;
 
-    public /* synthetic */ ch1(UserInfoActivity userInfoActivity, int i10) {
+    public /* synthetic */ ch1(ih1 ih1Var, byte[] bArr, int i10) {
         this.a = i10;
-        this.b = userInfoActivity;
+        this.b = ih1Var;
+        this.c = bArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.presentFragment(new PrivacyControlActivity(9, true));
-                break;
-            case 1:
-                org.telegram.ui.Components.y61 y61Var = this.b.y;
-                if (y61Var != null) {
-                    y61Var.f3.N(true);
-                    break;
-                }
-                break;
-            case 2:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.getClass();
-                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
+                ih1.Y(this.b, this.c);
                 break;
             default:
-                UserInfoActivity userInfoActivity2 = this.b;
-                userInfoActivity2.getClass();
-                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
+                ih1 ih1Var = this.b;
+                ih1Var.w0();
+                ih1Var.V = this.c;
+                ih1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                ih1 ih1Var2 = new ih1(9, ih1Var.U);
+                ih1Var2.H = ih1Var.H;
+                ih1Var2.G = ih1Var.G;
+                ih1Var.presentFragment(ih1Var2, true);
                 break;
         }
     }

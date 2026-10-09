@@ -1,25 +1,57 @@
 package org.telegram.ui;
 
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.EditText;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class kk0 extends org.telegram.ui.Cells.r8 {
-    public ImageView Q;
+public final class kk0 extends org.telegram.ui.ActionBar.g5 {
+    public final /* synthetic */ NotificationsCustomSettingsActivity f;
 
-    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i12 - i10) - AndroidUtilities.dp(41.0f);
-        int z11 = org.telegram.messenger.bi.z(24.0f, i13 - i11, 2);
-        this.Q.layout(dp, z11, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + z11);
+    public kk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.f = notificationsCustomSettingsActivity;
     }
 
-    @Override // org.telegram.ui.Cells.r8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.Q.measure(i10, i11);
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.d.F(null);
+        notificationsCustomSettingsActivity.f = false;
+        notificationsCustomSettingsActivity.getClass();
+        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
+        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
+        notificationsCustomSettingsActivity.b.l();
+        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
+        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
+        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.f = true;
+        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        if (notificationsCustomSettingsActivity.d == null) {
+            return;
+        }
+        String obj = editText.getText().toString();
+        if (obj.length() != 0) {
+            notificationsCustomSettingsActivity.getClass();
+            if (notificationsCustomSettingsActivity.a != null) {
+                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
+                notificationsCustomSettingsActivity.c.b();
+                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
+                notificationsCustomSettingsActivity.d.l();
+                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
+                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
+            }
+        }
+        notificationsCustomSettingsActivity.d.F(obj);
     }
 }

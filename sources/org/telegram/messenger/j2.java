@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.eu;
-import org.telegram.ui.Components.pc0;
-import org.telegram.ui.sn;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.tn;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.a2, ResultCallback {
     public final /* synthetic */ boolean a;
@@ -21,52 +21,52 @@ public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.a2, R
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ j2(FactCheckController factCheckController, eu euVar, int i10, MessageObject messageObject, boolean z10) {
+    public /* synthetic */ j2(FactCheckController factCheckController, ru ruVar, int i10, MessageObject messageObject, boolean z10) {
         this.c = factCheckController;
-        this.d = euVar;
+        this.d = ruVar;
         this.b = i10;
         this.e = messageObject;
         this.a = z10;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((eu) this.d, this.b, (MessageObject) this.e, this.a, b2Var, i10);
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((ru) this.d, this.b, (MessageObject) this.e, this.a, b2Var, i10);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        wn wnVar = (wn) this.c;
+        xn xnVar = (xn) this.c;
         org.telegram.ui.ActionBar.c4 c4Var = (org.telegram.ui.ActionBar.c4) this.d;
-        pc0 pc0Var = (pc0) this.e;
+        cd0 cd0Var = (cd0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((dg.a) pair.second).b;
-        org.telegram.ui.ActionBar.c4 c4Var2 = wnVar.f;
-        if (c4Var2 == null || longValue != c4Var2.i(wnVar.G ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.c4 c4Var2 = xnVar.f;
+        if (c4Var2 == null || longValue != c4Var2.i(xnVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        ValueAnimator valueAnimator = wnVar.r;
+        ValueAnimator valueAnimator = xnVar.r;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
         int i10 = c4Var.k(this.a ? 1 : 0).settings.intensity;
         List list = ((dg.a) pair.second).c;
-        pc0Var.R = list;
-        long j3 = wnVar.V.Oa;
+        cd0Var.R = list;
+        long j3 = xnVar.V.Ra;
         if (list != null) {
-            pc0Var.S = new Random(j3).nextInt(pc0Var.R.size());
+            cd0Var.S = new Random(j3).nextInt(cd0Var.R.size());
         }
-        pc0Var.t(bitmap, i10);
-        pc0Var.u(this.b);
+        cd0Var.t(bitmap, i10);
+        cd0Var.u(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        wnVar.r = ofFloat;
-        ofFloat.addUpdateListener(new sn(pc0Var, 2));
-        wnVar.r.setDuration(250L);
-        wnVar.r.start();
+        xnVar.r = ofFloat;
+        ofFloat.addUpdateListener(new tn(cd0Var, 2));
+        xnVar.r.setDuration(250L);
+        xnVar.r.start();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -74,11 +74,11 @@ public final /* synthetic */ class j2 implements org.telegram.ui.ActionBar.a2, R
         org.telegram.tgnet.l.a(this, th2);
     }
 
-    public /* synthetic */ j2(wn wnVar, org.telegram.ui.ActionBar.c4 c4Var, boolean z10, pc0 pc0Var, int i10) {
-        this.c = wnVar;
+    public /* synthetic */ j2(xn xnVar, org.telegram.ui.ActionBar.c4 c4Var, boolean z10, cd0 cd0Var, int i10) {
+        this.c = xnVar;
         this.d = c4Var;
         this.a = z10;
-        this.e = pc0Var;
+        this.e = cd0Var;
         this.b = i10;
     }
 

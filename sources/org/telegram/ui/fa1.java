@@ -1,40 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fa1 {
-    public boolean a;
-    public String b;
-    public long c;
-    public jg.b d;
-    public jg.b e;
-    public String f;
-    public String g;
-    public boolean h;
-    public final int i;
-    public final String j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-
-    public fa1(String str, int i10) {
-        this.j = str;
-        this.i = i10;
-    }
-
-    public final void a(int i10, int i11, int i12, Utilities.Callback0Return callback0Return) {
-        if (this.k) {
-            return;
+public final class fa1 extends kg.c {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (getTranslationY() != 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
         }
-        this.k = true;
-        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        tL_loadAsyncGraph.token = this.f;
-        ConnectionsManager.getInstance(i10).bindRequestToGuid(ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new zb0(24, this, callback0Return), null, null, 0, i12, 1, true), i11);
+        super.onDraw(canvas);
     }
 }

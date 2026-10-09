@@ -1,23 +1,31 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c40 extends org.telegram.ui.Components.bi0 {
-    public final /* synthetic */ h60 s1;
+public final class c40 implements z4.e {
+    public final /* synthetic */ g60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c40(h60 h60Var, LaunchActivity launchActivity, e50 e50Var, o50 o50Var, b40 b40Var) {
-        super(launchActivity, e50Var, o50Var, b40Var);
-        this.s1 = h60Var;
+    public c40(g60 g60Var) {
+        this.a = g60Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
-        viewGroup.invalidate();
+    @Override // z4.e
+    public final void a(int i10) {
+        g60 g60Var = this.a;
+        g60Var.b.D0.k(i10);
+        z30 z30Var = g60Var.D2;
+        z30Var.J = z30Var.L;
+        z30Var.K = z30Var.M;
+        z30Var.N = 0.0f;
+        z30Var.O = 1;
+        z30Var.invalidate();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
     }
 }

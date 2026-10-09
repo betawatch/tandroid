@@ -1,6 +1,6 @@
 package c5;
 
-import ai.q4;
+import ai.r4;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
@@ -17,7 +17,7 @@ import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.z3;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class y implements ServiceConnection {
     public final d a;
@@ -88,7 +88,7 @@ public final class y implements ServiceConnection {
                     p5.c();
                     a4.o((a4) p5.b, longValue);
                 }
-                cVar.h.Z((a4) p5.a());
+                cVar.h.b0((a4) p5.a());
                 return;
             }
             c4 r10 = d4.r();
@@ -134,7 +134,7 @@ public final class y implements ServiceConnection {
         try {
             c cVar = this.d;
             if (c.q(cVar)) {
-                of.b bVar = cVar.h;
+                pf.b bVar = cVar.h;
                 f3 u10 = g3.u();
                 u10.c();
                 g3.t((g3) u10.b, 6);
@@ -146,9 +146,9 @@ public final class y implements ServiceConnection {
                 r10.d(false);
                 r10.e();
                 u10.e(r10);
-                bVar.T((g3) u10.a());
+                bVar.W((g3) u10.a());
             } else {
-                cVar.h.X(l3.n());
+                cVar.h.a0(l3.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -185,7 +185,7 @@ public final class y implements ServiceConnection {
                     aVar = queryLocalInterface instanceof com.google.android.gms.internal.play_billing.c ? (com.google.android.gms.internal.play_billing.c) queryLocalInterface : new com.google.android.gms.internal.play_billing.a(iBinder, "com.android.vending.billing.IInAppBillingService", 2);
                 }
                 cVar.i = aVar;
-                if (c.f(new x(this, 0), 30000L, new q4(this, 11), cVar.r(), cVar.e()) == null) {
+                if (c.f(new x(this, 0), 30000L, new r4(this, 11), cVar.r(), cVar.e()) == null) {
                     h u10 = cVar.u();
                     cVar.j(25, u10);
                     c(u10);
@@ -202,7 +202,7 @@ public final class y implements ServiceConnection {
         try {
             c cVar = this.d;
             if (c.q(cVar)) {
-                of.b bVar = cVar.h;
+                pf.b bVar = cVar.h;
                 f3 u10 = g3.u();
                 u10.c();
                 g3.t((g3) u10.b, 6);
@@ -214,9 +214,9 @@ public final class y implements ServiceConnection {
                 r10.d(false);
                 r10.e();
                 u10.e(r10);
-                bVar.T((g3) u10.a());
+                bVar.W((g3) u10.a());
             } else {
-                cVar.h.a0(b4.n());
+                cVar.h.c0(b4.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);

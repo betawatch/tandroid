@@ -20,24 +20,30 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import n6.l;
 import org.telegram.tgnet.TLObject;
-import t7.u;
+import t7.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e {
+    public static final na.d b;
+    public static final ob.a c;
     public static Boolean d = null;
     public static String e = null;
     public static boolean f = false;
     public static int g = -1;
     public static Boolean h;
+    public static final ThreadLocal i = new ThreadLocal();
+    public static final n1 j = new n1(3);
+    public static final t k = new t();
     public static j l;
     public static k m;
     public final Context a;
-    public static final ThreadLocal i = new ThreadLocal();
-    public static final n1 j = new n1(3);
-    public static final rb.a k = new rb.a(26);
-    public static final u b = new u();
-    public static final na.d c = new na.d(27);
+
+    static {
+        int i10 = 27;
+        b = new na.d(i10);
+        c = new ob.a(i10);
+    }
 
     public e(Context context) {
         this.a = context;
@@ -66,11 +72,11 @@ public final class e {
         long j3;
         e eVar;
         Boolean bool;
-        x6.a W0;
+        x6.a V0;
         e eVar2;
         k kVar;
         boolean z10;
-        x6.a W02;
+        x6.a V02;
         Context applicationContext = context.getApplicationContext();
         if (applicationContext == null) {
             throw new b("null application Context");
@@ -84,18 +90,18 @@ public final class e {
         long longValue = l4.longValue();
         try {
             n1Var.set(Long.valueOf(SystemClock.uptimeMillis()));
-            a3.l d10 = dVar.d(context, str, k);
+            a3.l q6 = dVar.q(context, str, k);
             j3 = longValue;
             try {
-                Log.i("DynamiteModule", "Considering local module " + str + ":" + d10.a + " and remote module " + str + ":" + d10.b);
-                int i10 = d10.c;
+                Log.i("DynamiteModule", "Considering local module " + str + ":" + q6.a + " and remote module " + str + ":" + q6.b);
+                int i10 = q6.c;
                 if (i10 != 0) {
                     if (i10 == -1) {
-                        if (d10.a != 0) {
+                        if (q6.a != 0) {
                             i10 = -1;
                         }
                     }
-                    if (i10 != 1 || d10.b != 0) {
+                    if (i10 != 1 || q6.b != 0) {
                         if (i10 == -1) {
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                             eVar = new e(applicationContext);
@@ -104,7 +110,7 @@ public final class e {
                                 throw new b("VersionPolicy returned invalid code:" + i10);
                             }
                             try {
-                                int i11 = d10.b;
+                                int i11 = q6.b;
                                 try {
                                     synchronized (e.class) {
                                         if (!g(context)) {
@@ -135,12 +141,12 @@ public final class e {
                                         }
                                         if (z10) {
                                             Log.v("DynamiteModule", "Dynamite loader version >= 2, using loadModule2NoCrashUtils");
-                                            W02 = kVar.X0(new x6.b(applicationContext2), str, i11, new x6.b(cursor));
+                                            V02 = kVar.W0(new x6.b(applicationContext2), str, i11, new x6.b(cursor));
                                         } else {
                                             Log.w("DynamiteModule", "Dynamite loader version < 2, falling back to loadModule2");
-                                            W02 = kVar.W0(new x6.b(applicationContext2), str, i11, new x6.b(cursor));
+                                            V02 = kVar.V0(new x6.b(applicationContext2), str, i11, new x6.b(cursor));
                                         }
-                                        Context context2 = (Context) x6.b.M0(W02);
+                                        Context context2 = (Context) x6.b.L0(V02);
                                         if (context2 == null) {
                                             throw new b("Failed to get module context");
                                         }
@@ -151,27 +157,27 @@ public final class e {
                                         if (h10 == null) {
                                             throw new b("Failed to create IDynamiteLoader.");
                                         }
-                                        Parcel M0 = h10.M0(h10.O0(), 6);
-                                        int readInt = M0.readInt();
-                                        M0.recycle();
+                                        Parcel L0 = h10.L0(h10.N0(), 6);
+                                        int readInt = L0.readInt();
+                                        L0.recycle();
                                         if (readInt >= 3) {
                                             i iVar4 = (i) threadLocal.get();
                                             if (iVar4 == null) {
                                                 throw new b("No cached result cursor holder");
                                             }
-                                            W0 = h10.X0(new x6.b(context), str, i11, new x6.b(iVar4.a));
+                                            V0 = h10.W0(new x6.b(context), str, i11, new x6.b(iVar4.a));
                                         } else if (readInt == 2) {
                                             Log.w("DynamiteModule", "IDynamite loader version = 2");
-                                            W0 = h10.Y0(new x6.b(context), str, i11);
+                                            V0 = h10.X0(new x6.b(context), str, i11);
                                         } else {
                                             Log.w("DynamiteModule", "Dynamite loader version < 2, falling back to createModuleContext");
-                                            W0 = h10.W0(new x6.b(context), str, i11);
+                                            V0 = h10.V0(new x6.b(context), str, i11);
                                         }
-                                        Object M02 = x6.b.M0(W0);
-                                        if (M02 == null) {
+                                        Object L02 = x6.b.L0(V0);
+                                        if (L02 == null) {
                                             throw new b("Failed to load remote module.");
                                         }
-                                        eVar2 = new e((Context) M02);
+                                        eVar2 = new e((Context) L02);
                                     }
                                     eVar = eVar2;
                                 } catch (RemoteException e7) {
@@ -183,8 +189,8 @@ public final class e {
                                 }
                             } catch (b e11) {
                                 Log.w("DynamiteModule", "Failed to load remote module: " + e11.getMessage());
-                                int i12 = d10.a;
-                                if (i12 == 0 || dVar.d(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
+                                int i12 = q6.a;
+                                if (i12 == 0 || dVar.q(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
                                     throw new b("Remote load failed. No local fallback found.", e11);
                                 }
                                 Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
@@ -204,7 +210,7 @@ public final class e {
                         return eVar;
                     }
                 }
-                throw new b("No acceptable module " + str + " found. Local version is " + d10.a + " and remote version is " + d10.b + ".");
+                throw new b("No acceptable module " + str + " found. Local version is " + q6.a + " and remote version is " + q6.b + ".");
             } catch (Throwable th3) {
                 th = th3;
                 if (j3 == 0) {
@@ -316,16 +322,16 @@ public final class e {
                         return 0;
                     }
                     try {
-                        Parcel M0 = h10.M0(h10.O0(), 6);
-                        int readInt2 = M0.readInt();
-                        M0.recycle();
+                        Parcel L0 = h10.L0(h10.N0(), 6);
+                        int readInt2 = L0.readInt();
+                        L0.recycle();
                         if (readInt2 >= 3) {
                             ThreadLocal threadLocal = i;
                             i iVar = (i) threadLocal.get();
                             if (iVar != null && (cursor = iVar.a) != null) {
                                 return cursor.getInt(0);
                             }
-                            Cursor cursor3 = (Cursor) x6.b.M0(h10.Z0(new x6.b(context), str, z10, ((Long) j.get()).longValue()));
+                            Cursor cursor3 = (Cursor) x6.b.L0(h10.Y0(new x6.b(context), str, z10, ((Long) j.get()).longValue()));
                             if (cursor3 != null) {
                                 try {
                                     if (cursor3.moveToFirst()) {
@@ -372,23 +378,23 @@ public final class e {
                         if (readInt2 == 2) {
                             Log.w("DynamiteModule", "IDynamite loader version = 2, no high precision latency measurement.");
                             x6.b bVar = new x6.b(context);
-                            Parcel O0 = h10.O0();
-                            m7.a.c(O0, bVar);
-                            O0.writeString(str);
-                            O0.writeInt(z10 ? 1 : 0);
-                            Parcel M02 = h10.M0(O0, 5);
-                            readInt = M02.readInt();
-                            M02.recycle();
+                            Parcel N0 = h10.N0();
+                            m7.a.c(N0, bVar);
+                            N0.writeString(str);
+                            N0.writeInt(z10 ? 1 : 0);
+                            Parcel L02 = h10.L0(N0, 5);
+                            readInt = L02.readInt();
+                            L02.recycle();
                         } else {
                             Log.w("DynamiteModule", "IDynamite loader version < 2, falling back to getModuleVersion2");
                             x6.b bVar2 = new x6.b(context);
-                            Parcel O02 = h10.O0();
-                            m7.a.c(O02, bVar2);
-                            O02.writeString(str);
-                            O02.writeInt(z10 ? 1 : 0);
-                            Parcel M03 = h10.M0(O02, 3);
-                            readInt = M03.readInt();
-                            M03.recycle();
+                            Parcel N02 = h10.N0();
+                            m7.a.c(N02, bVar2);
+                            N02.writeString(str);
+                            N02.writeInt(z10 ? 1 : 0);
+                            Parcel L03 = h10.L0(N02, 3);
+                            readInt = L03.readInt();
+                            L03.recycle();
                         }
                         return readInt;
                     } catch (RemoteException e13) {

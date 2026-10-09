@@ -1,118 +1,153 @@
 package gg;
 
-import android.util.Pair;
+import ei.l3;
 import java.util.ArrayList;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.fy;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements RequestDelegate {
+public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ h0 b;
+    public final /* synthetic */ String c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ r(Object obj, Object obj2, int i10, int i11, TLObject tLObject, int i12) {
-        this.a = i12;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ r(h0 h0Var, int i10, String str, String str2) {
+        this.a = 0;
+        this.b = h0Var;
         this.d = i10;
-        this.e = i11;
-        this.f = tLObject;
+        this.c = str;
+        this.e = str2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0064  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        long j3;
+        boolean z10;
+        boolean z11;
+        String str;
+        int i10;
         switch (this.a) {
             case 0:
-                i0 i0Var = (i0) this.b;
-                String str = (String) this.c;
-                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) this.f;
-                ArrayList arrayList = new ArrayList();
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    a0.i iVar = new a0.i();
-                    a0.i iVar2 = new a0.i();
-                    int i10 = 0;
-                    for (int i11 = 0; i11 < messages_messages.chats.size(); i11++) {
-                        TLRPC.Chat chat = messages_messages.chats.get(i11);
-                        iVar.k(chat, chat.id);
+                h0 h0Var = this.b;
+                int i11 = h0Var.V;
+                int i12 = h0Var.h0;
+                h0Var.h = null;
+                int i13 = h0Var.d0;
+                int i14 = this.d;
+                if (i14 == i13) {
+                    if (i11 == 2 || i12 == 6 || i12 == 5 || h0Var.U.a() != 0) {
+                        h0Var.D0 -= 2;
+                    } else {
+                        y yVar = h0Var.j0;
+                        boolean z12 = false;
+                        boolean z13 = i12 != 4;
+                        if (i12 == 4 || i12 == 11) {
+                            j3 = 0;
+                            z10 = false;
+                        } else {
+                            j3 = 0;
+                            z10 = true;
+                        }
+                        if (i12 == 2 || i12 == 1) {
+                            z11 = false;
+                            z12 = true;
+                        } else {
+                            z11 = false;
+                        }
+                        boolean z14 = i12 == 0 ? true : z11;
+                        fy fyVar = h0Var.U;
+                        if (fyVar != null) {
+                            j3 = fyVar.a();
+                        }
+                        yVar.h(this.c, true, z13, true, z10, z12, 0L, z14, 0, i14, j3, null);
+                        i14 = i14;
                     }
-                    for (int i12 = 0; i12 < messages_messages.users.size(); i12++) {
-                        TLRPC.User user = messages_messages.users.get(i12);
-                        iVar2.k(user, user.id);
-                    }
-                    while (i10 < messages_messages.messages.size()) {
-                        a0.i iVar3 = iVar;
-                        MessageObject messageObject = new MessageObject(i0Var.s0, messages_messages.messages.get(i10), iVar2, iVar3, false, true);
-                        arrayList.add(messageObject);
-                        messageObject.setQuery(str);
-                        i10++;
-                        iVar = iVar3;
+                    if (i11 != 0 && i12 != 15) {
+                        String str2 = this.e;
+                        h0Var.X(str2);
+                        h0Var.W(i14, str2);
+                        h0Var.V(i14, str2);
+                        break;
+                    } else {
+                        h0Var.D0--;
+                        break;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new s(i0Var, this.d, this.e, tL_error, str, tLObject, tL_messages_search, arrayList, 0));
                 break;
             case 1:
-                i0 i0Var2 = (i0) this.b;
-                String str2 = (String) this.c;
-                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.f;
-                int i13 = i0Var2.s0;
-                ArrayList arrayList2 = new ArrayList();
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                    a0.i iVar4 = new a0.i();
-                    a0.i iVar5 = new a0.i();
-                    for (int i14 = 0; i14 < messages_messages2.chats.size(); i14++) {
-                        TLRPC.Chat chat2 = messages_messages2.chats.get(i14);
-                        iVar4.k(chat2, chat2.id);
-                    }
-                    for (int i15 = 0; i15 < messages_messages2.users.size(); i15++) {
-                        TLRPC.User user2 = messages_messages2.users.get(i15);
-                        iVar5.k(user2, user2.id);
-                    }
-                    int i16 = 0;
-                    while (i16 < messages_messages2.messages.size()) {
-                        a0.i iVar6 = iVar4;
-                        MessageObject messageObject2 = new MessageObject(i0Var2.s0, messages_messages2.messages.get(i16), iVar5, iVar6, false, true);
-                        arrayList2.add(messageObject2);
-                        messageObject2.setQuery(str2);
-                        i16++;
-                        iVar4 = iVar6;
-                    }
+                h0 h0Var2 = this.b;
+                h0Var2.getClass();
+                ArrayList<Object> arrayList = new ArrayList<>();
+                ArrayList<CharSequence> arrayList2 = new ArrayList<>();
+                ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
+                new ArrayList();
+                MessagesStorage messagesStorage = MessagesStorage.getInstance(h0Var2.s0);
+                int i15 = h0Var2.h0;
+                ArrayList<Long> arrayList4 = h0Var2.q0;
+                String str3 = this.c;
+                messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
+                AndroidUtilities.runOnUIThread(new l3(h0Var2, this.d, arrayList, arrayList2, arrayList3, 2));
+                r0.z1(str3, h0Var2.y0);
+                h0Var2.z0 = false;
+                if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
+                    h0Var2.z0 = true;
                 }
-                HashSet hashSet = new HashSet();
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
-                    for (int i17 = 0; i17 < messages_messages3.messages.size(); i17++) {
-                        TLRPC.Message message = messages_messages3.messages.get(i17);
-                        long dialogId = MessageObject.getDialogId(message);
-                        if ((message.out ? MessagesController.getInstance(i13).dialogs_read_outbox_max : MessagesController.getInstance(i13).dialogs_read_inbox_max).get(Long.valueOf(dialogId)) == null) {
-                            hashSet.add(new Pair(Boolean.valueOf(message.out), Long.valueOf(dialogId)));
-                        }
-                    }
-                }
-                s sVar = new s(i0Var2, this.d, this.e, tL_error, str2, tLObject, tL_messages_searchGlobal, arrayList2, 1);
-                if (hashSet.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(sVar);
-                    break;
-                } else {
-                    MessagesStorage.getInstance(i13).getStorageQueue().postRunnable(new a3.k0(i0Var2, hashSet, sVar, 29));
-                    break;
-                }
-            default:
-                ((FileLoadOperation) this.b).lambda$startDownloadRequest$29((FileLoadOperation.RequestInfo) this.c, this.d, this.e, this.f, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new v(h0Var2, 0));
                 break;
+            default:
+                h0 h0Var3 = this.b;
+                h0Var3.f = null;
+                int i16 = h0Var3.V;
+                String str4 = this.c;
+                int i17 = this.d;
+                if (i16 != 2) {
+                    String lowerCase = str4.trim().toLowerCase();
+                    if (lowerCase.length() != 0) {
+                        str = str4;
+                        i10 = i17;
+                        MessagesStorage.getInstance(h0Var3.s0).getStorageQueue().postRunnable(new r(h0Var3, lowerCase, i10, str, 1));
+                        if (h0Var3.h0 == 15) {
+                            r rVar = new r(h0Var3, i10, str, this.e);
+                            h0Var3.h = rVar;
+                            AndroidUtilities.runOnUIThread(rVar);
+                            break;
+                        } else {
+                            h0Var3.D0 -= 2;
+                            break;
+                        }
+                    } else {
+                        h0Var3.d0 = 0;
+                        ArrayList arrayList5 = new ArrayList();
+                        ArrayList arrayList6 = new ArrayList();
+                        ArrayList arrayList7 = new ArrayList();
+                        new ArrayList();
+                        AndroidUtilities.runOnUIThread(new l3(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 2));
+                    }
+                }
+                str = str4;
+                i10 = i17;
+                if (h0Var3.h0 == 15) {
+                }
         }
+    }
+
+    public /* synthetic */ r(h0 h0Var, String str, int i10, String str2, int i11) {
+        this.a = i11;
+        this.b = h0Var;
+        this.c = str;
+        this.d = i10;
+        this.e = str2;
     }
 }

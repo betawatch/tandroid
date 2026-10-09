@@ -1,41 +1,119 @@
 package jd;
 
-import kd.h;
-import kotlin.jvm.internal.i;
-import kotlin.jvm.internal.s;
-import rd.p;
-import v7.t7;
+import java.io.Serializable;
+import sd.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b extends h {
-    public int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ id.c c;
+public final class b implements h, Serializable {
+    public final h a;
+    public final f b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(id.c cVar, id.c cVar2, p pVar) {
-        super(cVar);
-        this.b = pVar;
-        this.c = cVar2;
+    public b(f element, h left) {
+        kotlin.jvm.internal.i.e(left, "left");
+        kotlin.jvm.internal.i.e(element, "element");
+        this.a = left;
+        this.b = element;
     }
 
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        int i10 = this.a;
-        if (i10 != 0) {
-            if (i10 != 1) {
-                throw new IllegalStateException("This coroutine had already completed");
-            }
-            this.a = 2;
-            t7.b(obj);
-            return obj;
+    public final boolean equals(Object obj) {
+        boolean z10;
+        if (this == obj) {
+            return true;
         }
-        this.a = 1;
-        t7.b(obj);
-        p pVar = this.b;
-        i.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
-        s.a(2, pVar);
-        return pVar.invoke(this.c, this);
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            int i10 = 2;
+            b bVar2 = bVar;
+            int i11 = 2;
+            while (true) {
+                h hVar = bVar2.a;
+                bVar2 = hVar instanceof b ? (b) hVar : null;
+                if (bVar2 == null) {
+                    break;
+                }
+                i11++;
+            }
+            b bVar3 = this;
+            while (true) {
+                h hVar2 = bVar3.a;
+                bVar3 = hVar2 instanceof b ? (b) hVar2 : null;
+                if (bVar3 == null) {
+                    break;
+                }
+                i10++;
+            }
+            if (i11 == i10) {
+                b bVar4 = this;
+                while (true) {
+                    f fVar = bVar4.b;
+                    if (!kotlin.jvm.internal.i.a(bVar.get(fVar.getKey()), fVar)) {
+                        z10 = false;
+                        break;
+                    }
+                    h hVar3 = bVar4.a;
+                    if (!(hVar3 instanceof b)) {
+                        kotlin.jvm.internal.i.c(hVar3, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
+                        f fVar2 = (f) hVar3;
+                        z10 = kotlin.jvm.internal.i.a(bVar.get(fVar2.getKey()), fVar2);
+                        break;
+                    }
+                    bVar4 = (b) hVar3;
+                }
+                if (z10) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // jd.h
+    public final Object fold(Object obj, p pVar) {
+        return pVar.invoke(this.a.fold(obj, pVar), this.b);
+    }
+
+    @Override // jd.h
+    public final f get(g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        b bVar = this;
+        while (true) {
+            f fVar = bVar.b.get(key);
+            if (fVar != null) {
+                return fVar;
+            }
+            h hVar = bVar.a;
+            if (!(hVar instanceof b)) {
+                return hVar.get(key);
+            }
+            bVar = (b) hVar;
+        }
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + this.a.hashCode();
+    }
+
+    @Override // jd.h
+    public final h minusKey(g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        f fVar = this.b;
+        f fVar2 = fVar.get(key);
+        h hVar = this.a;
+        if (fVar2 != null) {
+            return hVar;
+        }
+        h minusKey = hVar.minusKey(key);
+        return minusKey == hVar ? this : minusKey == i.a ? fVar : new b(fVar, minusKey);
+    }
+
+    @Override // jd.h
+    public final h plus(h context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        return context == i.a ? this : (h) context.fold(this, new b1.e(5));
+    }
+
+    public final String toString() {
+        return "[" + ((String) fold("", new b1.e(4))) + ']';
     }
 }

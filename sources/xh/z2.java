@@ -2,16 +2,16 @@ package xh;
 
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final /* synthetic */ class z2 implements yh.k2, Utilities.Callback5, Utilities.Callback5Return {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class z2 implements yh.g2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ i4 a;
 
-    @Override // yh.k2
+    @Override // yh.g2
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
-        i4.S(this.a, tL_starGiftUnique, j3, z10);
+        i4.U(this.a, tL_starGiftUnique, j3, z10);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -28,6 +28,6 @@ public final /* synthetic */ class z2 implements yh.k2, Utilities.Callback5, Uti
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        i4.X(this.a, (h61) obj);
+        i4.Y(this.a, (p61) obj);
     }
 }

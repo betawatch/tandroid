@@ -5,51 +5,51 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.bi;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.vb;
-import org.telegram.ui.Components.zb;
+import org.telegram.ui.Components.bc;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.xb;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h b;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ b(h hVar, int i10) {
+    public /* synthetic */ b(g gVar, int i10) {
         this.a = i10;
-        this.b = hVar;
+        this.b = gVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        h hVar = this.b;
+        g gVar = this.b;
         switch (i10) {
             case 0:
-                b bVar = hVar.s0;
-                int currentTime = hVar.getConnectionsManager().getCurrentTime();
-                hVar.a0.setEnabled(hVar.Y > 0 || hVar.P > currentTime);
-                if (currentTime >= hVar.P) {
-                    hVar.a0.f(null, true);
-                    hVar.a0.g(z7.b1(false, hVar.X ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) hVar.Y), hVar.c0), true, true);
+                b bVar = gVar.n0;
+                int currentTime = gVar.getConnectionsManager().getCurrentTime();
+                gVar.R.setEnabled(gVar.P > 0 || gVar.G > currentTime);
+                if (currentTime >= gVar.G) {
+                    gVar.R.f(null, true);
+                    gVar.R.g(p7.W0(false, gVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) gVar.P), gVar.T), true, true);
                     break;
                 } else {
-                    hVar.a0.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
-                    if (hVar.r0 == null) {
-                        hVar.r0 = new SpannableStringBuilder("l");
-                        rq rqVar = new rq(R.drawable.mini_switch_lock, 0);
-                        rqVar.setTopOffset(1);
-                        hVar.r0.setSpan(rqVar, 0, 1, 33);
+                    gVar.R.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
+                    if (gVar.m0 == null) {
+                        gVar.m0 = new SpannableStringBuilder("l");
+                        er erVar = new er(R.drawable.mini_switch_lock, 0);
+                        erVar.setTopOffset(1);
+                        gVar.m0.setSpan(erVar, 0, 1, 33);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) hVar.r0).append((CharSequence) h.r0(hVar.P - currentTime));
-                    hVar.a0.f(spannableStringBuilder, true);
-                    rc rcVar = hVar.j0;
-                    if (rcVar != null) {
-                        vb vbVar = rcVar.e;
-                        if ((vbVar instanceof zb) && vbVar.isAttachedToWindow()) {
-                            bi.p(R.string.BotStarsWithdrawalToast, new Object[]{h.r0(hVar.P - currentTime)}, ((zb) hVar.j0.e).b);
+                    spannableStringBuilder.append((CharSequence) gVar.m0).append((CharSequence) g.j0(gVar.G - currentTime));
+                    gVar.R.f(spannableStringBuilder, true);
+                    tc tcVar = gVar.a0;
+                    if (tcVar != null) {
+                        xb xbVar = tcVar.e;
+                        if ((xbVar instanceof bc) && xbVar.isAttachedToWindow()) {
+                            bi.r(R.string.BotStarsWithdrawalToast, new Object[]{g.j0(gVar.G - currentTime)}, ((bc) gVar.a0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(bVar);
@@ -58,19 +58,19 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 1:
-                h.U(hVar);
+                g.U(gVar);
                 break;
             case 2:
-                nf.f.s(hVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
+                g.V(gVar);
                 break;
             case 3:
-                h.S(hVar);
+                of.f.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
                 break;
             case 4:
-                nf.f.s(hVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
+                of.f.s(gVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
                 break;
             default:
-                hVar.b0.setLoading(false);
+                gVar.S.setLoading(false);
                 break;
         }
     }

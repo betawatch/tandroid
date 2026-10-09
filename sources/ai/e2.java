@@ -10,17 +10,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.rg0;
-import org.telegram.ui.Components.xr;
-import org.telegram.ui.Components.zu;
+import org.telegram.ui.Components.cd;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.Components.gh0;
+import org.telegram.ui.Components.ls;
+import org.telegram.ui.Components.lv;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,16 +33,16 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                m2.j();
+                n2.j();
                 break;
             case 1:
-                int i10 = ci.j4.d;
+                int i10 = ci.i4.d;
                 break;
             case 2:
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 3:
-                int i11 = ei.o.n;
+                int i11 = ei.n.n;
                 break;
             case 4:
                 break;
@@ -71,31 +71,31 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 }
                 break;
             case 9:
-                int i14 = pq.e0;
+                int i14 = cr.e0;
                 break;
             case 10:
-                int i15 = xr.s;
+                int i15 = ls.s;
                 break;
             case 11:
-                float[] fArr = FragmentContextView.P0;
+                float[] fArr = FragmentContextView.Q0;
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 12:
-                rg0 rg0Var = rg0.p0;
-                zu zuVar = rg0Var.U;
-                if (zuVar != null) {
-                    zuVar.F();
+                gh0 gh0Var = gh0.p0;
+                lv lvVar = gh0Var.U;
+                if (lvVar != null) {
+                    lvVar.H();
                 } else {
-                    PhotoViewer photoViewer = rg0Var.V;
+                    PhotoViewer photoViewer = gh0Var.V;
                     if (photoViewer != null) {
                         photoViewer.P0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                rg0.j(false);
+                gh0.j(false);
                 break;
             case 13:
-                org.telegram.ui.Components.voip.k1.j();
+                org.telegram.ui.Components.voip.j1.j();
                 break;
             case 14:
                 ((org.telegram.ui.Cells.a2) view).c(!r6.b(), true);
@@ -103,14 +103,14 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
             case 15:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 if (sharedInstance == null) {
-                    org.telegram.ui.Components.voip.n2.i();
+                    org.telegram.ui.Components.voip.m2.i();
                     break;
                 } else {
                     sharedInstance.hangUp();
                     break;
                 }
             case 16:
-                tg.m1.e0(0, null);
+                tg.m1.f0(0, null);
                 break;
             case 17:
                 ArrayList arrayList = ExternalActionActivity.x;
@@ -142,16 +142,16 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                     return;
                 }
             case 24:
-                int i16 = xh.m.A0;
+                int i16 = xh.o.A0;
                 break;
             case 25:
-                ad[] adVarArr = xh.v.p0;
+                cd[] cdVarArr = xh.x.p0;
                 break;
             case 26:
-                int i17 = xh.c0.f0;
+                int i17 = xh.e0.f0;
                 break;
             case 27:
-                int i18 = yh.t0.z0;
+                int i18 = yh.r0.D0;
                 break;
             default:
                 int i19 = zg.f.e;

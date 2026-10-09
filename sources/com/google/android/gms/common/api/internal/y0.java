@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class y0 implements OnCompleteListener {
     public final h a;
@@ -27,8 +27,8 @@ public final class y0 implements OnCompleteListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static n6.e a(p0 p0Var, n6.g gVar, int i10) {
-        n6.f0 f0Var = gVar.Q;
-        n6.e eVar = f0Var == null ? null : f0Var.d;
+        n6.g0 g0Var = gVar.Q;
+        n6.e eVar = g0Var == null ? null : g0Var.d;
         if (eVar != null && eVar.b) {
             int[] iArr = eVar.d;
             int i11 = 0;
@@ -67,7 +67,6 @@ public final class y0 implements OnCompleteListener {
         int i14;
         long j3;
         long j10;
-        int i15;
         long j11 = this.d;
         h hVar = this.a;
         if (hVar.b()) {
@@ -78,70 +77,68 @@ public final class y0 implements OnCompleteListener {
                     com.google.android.gms.common.api.c cVar = p0Var.b;
                     if (cVar instanceof n6.g) {
                         n6.g gVar = (n6.g) cVar;
+                        int i15 = 0;
                         boolean z10 = j11 > 0;
                         int i16 = gVar.L;
                         if (nVar != null) {
                             z10 &= nVar.c;
-                            int i17 = nVar.d;
-                            int i18 = nVar.e;
-                            int i19 = nVar.a;
+                            i10 = nVar.d;
+                            int i17 = nVar.e;
+                            int i18 = nVar.a;
                             if (gVar.Q == null || gVar.g()) {
-                                i11 = i19;
-                                i12 = i18;
+                                i11 = i18;
+                                i12 = i17;
                             } else {
                                 n6.e a2 = a(p0Var, gVar, this.b);
                                 if (a2 == null) {
                                     return;
                                 }
                                 boolean z11 = a2.c && j11 > 0;
-                                i11 = i19;
+                                i11 = i18;
                                 i12 = a2.e;
                                 z10 = z11;
                             }
-                            i10 = i17;
                         } else {
                             i10 = 5000;
                             i11 = 0;
                             i12 = 100;
                         }
+                        int i19 = i10;
+                        int i20 = -1;
                         if (task.isSuccessful()) {
-                            i13 = 0;
                             i14 = 0;
+                        } else if (task.isCanceled()) {
+                            i15 = -1;
+                            i14 = 100;
                         } else {
-                            if (task.isCanceled()) {
-                                i13 = 100;
-                            } else {
-                                Exception exception = task.getException();
-                                if (exception instanceof com.google.android.gms.common.api.f) {
-                                    Status status = ((com.google.android.gms.common.api.f) exception).getStatus();
-                                    int i20 = status.a;
-                                    k6.a aVar = status.d;
-                                    if (aVar == null) {
-                                        i13 = i20;
-                                    } else {
-                                        i14 = aVar.b;
-                                        i13 = i20;
-                                    }
-                                } else {
-                                    i13 = 101;
+                            Exception exception = task.getException();
+                            if (exception instanceof com.google.android.gms.common.api.f) {
+                                Status status = ((com.google.android.gms.common.api.f) exception).getStatus();
+                                i13 = status.a;
+                                k6.a aVar = status.d;
+                                if (aVar != null) {
+                                    i14 = i13;
+                                    i15 = aVar.b;
                                 }
+                            } else {
+                                i13 = 101;
                             }
-                            i14 = -1;
+                            i14 = i13;
+                            i15 = -1;
                         }
                         if (z10) {
                             long j12 = this.e;
                             long currentTimeMillis = System.currentTimeMillis();
-                            j3 = j11;
-                            i15 = (int) (SystemClock.elapsedRealtime() - j12);
+                            i20 = (int) (SystemClock.elapsedRealtime() - j12);
                             j10 = currentTimeMillis;
+                            j3 = j11;
                         } else {
                             j3 = 0;
                             j10 = 0;
-                            i15 = -1;
                         }
-                        z0 z0Var = new z0(new n6.j(this.b, i13, i14, j3, j10, null, null, i16, i15), i11, i10, i12);
-                        com.google.android.gms.internal.cast.c0 c0Var = hVar.x;
-                        c0Var.sendMessage(c0Var.obtainMessage(18, z0Var));
+                        z0 z0Var = new z0(new n6.j(this.b, i14, i15, j3, j10, null, null, i16, i20), i11, i19, i12);
+                        com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
+                        a0Var.sendMessage(a0Var.obtainMessage(18, z0Var));
                     }
                 }
             }

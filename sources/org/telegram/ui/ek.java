@@ -1,40 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ek extends FragmentContextView {
-    public final /* synthetic */ int Q0;
-    public final /* synthetic */ yn R0;
+public final class ek extends org.telegram.ui.Components.f31 {
+    public final /* synthetic */ zn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ek(yn ynVar, Context context, yn ynVar2, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, ynVar2, null, true, d6Var);
-        this.Q0 = i10;
-        switch (i10) {
-            case 1:
-                this.R0 = ynVar;
-                super(context, ynVar2, null, false, d6Var);
-                break;
-            default:
-                this.R0 = ynVar;
-                break;
-        }
+    public ek(zn znVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, i10, e6Var);
+        this.e = znVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.Q0) {
-            case 0:
-                yn ynVar = this.R0;
-                ynVar.K0.i(ynVar.Y1, i10 == 0, true);
-                break;
-            default:
-                yn ynVar2 = this.R0;
-                ynVar2.K0.i(ynVar2.W1, i10 == 0, true);
-                break;
+    @Override // org.telegram.ui.Components.f31, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        if (getAlpha() == 0.0f) {
+            return false;
         }
+        zn znVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
+        if (kVar.t() || znVar.F9()) {
+            return false;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

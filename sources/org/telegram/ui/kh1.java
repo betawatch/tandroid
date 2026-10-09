@@ -1,58 +1,81 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class kh1 implements TextWatcher {
-    public final /* synthetic */ UsersSelectActivity a;
+public final class kh1 extends ViewGroup {
+    public final Paint a;
+    public View b;
+    public boolean c;
 
-    public kh1(UsersSelectActivity usersSelectActivity) {
-        this.a = usersSelectActivity;
+    public kh1(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        setClipToPadding(false);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        UsersSelectActivity usersSelectActivity = this.a;
-        if (usersSelectActivity.c.length() == 0) {
-            usersSelectActivity.M = false;
-            usersSelectActivity.L = false;
-            nh1 nh1Var = usersSelectActivity.h;
-            if (nh1Var.n) {
-                nh1Var.n = false;
-                nh1Var.l();
-            }
-            usersSelectActivity.h.L(null);
-            usersSelectActivity.d.setFastScrollVisible(true);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(false);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoContacts));
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(0.1f, 0.75f, getPaddingBottom());
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Oh, false);
+        int h = i0.a.h(org.telegram.ui.ActionBar.i6.m1(navigationBarThirdButtonsFactor, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false)), x02);
+        Paint paint = this.a;
+        paint.setColor(x02);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - r0, paint);
+        paint.setColor(h);
+        canvas.drawRect(0.0f, getMeasuredHeight() - r0, getMeasuredWidth(), getMeasuredHeight(), paint);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
         }
-        nh1 nh1Var2 = usersSelectActivity.h;
-        boolean z10 = nh1Var2.n;
-        if (!z10) {
-            usersSelectActivity.M = true;
-            usersSelectActivity.L = true;
-            if (!z10) {
-                nh1Var2.n = true;
-                nh1Var2.l();
-            }
-            usersSelectActivity.d.setFastScrollVisible(false);
-            usersSelectActivity.d.setVerticalScrollBarEnabled(true);
-            usersSelectActivity.f.d.setText(LocaleController.getString(R.string.NoResult));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view = this.b;
+        boolean z10 = view != null && view.getVisibility() == 0;
+        int size = View.MeasureSpec.getSize(i10);
+        int paddingBottom = z10 ? getPaddingBottom() + AndroidUtilities.dp(44.0f) : 0;
+        setMeasuredDimension(size, paddingBottom);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(paddingBottom, TLObject.FLAG_30);
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
         }
-        usersSelectActivity.f.e(true, true);
-        usersSelectActivity.h.L(usersSelectActivity.c.getText().toString());
+        if (this.c != z10) {
+            this.c = z10;
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(this);
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        this.b = view;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        super.setPadding(i10, i11, i12, i13);
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            getChildAt(i14).setPadding(i10, i11, i12, i13);
+        }
     }
 }

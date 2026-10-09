@@ -1,26 +1,92 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nz0 implements cd0, ed0 {
-    public final /* synthetic */ pz0 a;
+public final class nz0 extends View {
+    public String a;
+    public Drawable b;
+    public boolean c;
+    public int d;
+    public final g6 e;
+    public final /* synthetic */ oz0 f;
 
-    @Override // org.telegram.ui.Components.cd0
-    public String e(int i10) {
-        return this.a.h[i10];
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nz0(oz0 oz0Var, Context context) {
+        super(context);
+        this.f = oz0Var;
+        this.d = 0;
+        this.e = new g6(this, 350L, new OvershootInterpolator(5.0f));
     }
 
-    @Override // org.telegram.ui.Components.ed0
-    public void q(gd0 gd0Var, int i10) {
-        pz0 pz0Var = this.a;
-        pz0Var.b();
-        SharedConfig.updateChatListSwipeSetting(i10);
-        pz0Var.invalidate();
-        try {
-            gd0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = ((1.0f - this.e.d(isPressed() ? 1.0f : 0.0f, false)) * 0.2f) + 0.8f;
+        if (this.b != null) {
+            int width = getWidth() / 2;
+            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
+            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+            canvas.scale(d, d, width, paddingTop);
+            Drawable drawable = this.b;
+            if (drawable instanceof s5) {
+                ((s5) drawable).q(System.currentTimeMillis());
+            }
+            this.b.draw(canvas);
         }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof s5) {
+            ((s5) drawable).a(this);
+        }
+        this.c = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof s5) {
+            ((s5) drawable).o(this);
+        }
+        this.c = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d == 0 ? 0.0f : 6.66f) + 3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    }
+
+    public void setDirection(int i10) {
+        this.d = i10;
+        invalidate();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        Drawable drawable2 = this.b;
+        if (drawable2 instanceof s5) {
+            ((s5) drawable2).o(this);
+        }
+        this.b = drawable;
+        if ((drawable instanceof s5) && this.c) {
+            ((s5) drawable).a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        invalidate();
     }
 }

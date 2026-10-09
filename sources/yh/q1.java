@@ -1,50 +1,45 @@
 package yh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ y3 b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ zn c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ TLRPC.TL_error f;
-    public final /* synthetic */ long h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ q1(y3 y3Var, TLObject tLObject, long j3, long j10, Utilities.Callback callback, TLRPC.TL_error tL_error, long j11) {
-        this.b = y3Var;
-        this.c = tLObject;
+    public /* synthetic */ q1(s3 s3Var, zn znVar, long j3, int i10) {
+        this.a = i10;
+        this.b = s3Var;
+        this.c = znVar;
         this.d = j3;
-        this.e = j10;
-        this.n = callback;
-        this.f = tL_error;
-        this.h = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j3 = this.d;
+        zn znVar = this.c;
+        s3 s3Var = this.b;
+        switch (i10) {
             case 0:
-                y3.H0(this.b, (org.telegram.ui.ActionBar.b2) this.n, this.c, this.d, this.e, this.h, this.f);
+                tc M = ad.a0(znVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, s3Var.D1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M.t = true;
+                M.j();
                 break;
             default:
-                y3.f0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
+                tc M2 = ad.a0(znVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, s3Var.D1(), DialogObject.getShortName(j3))), R.raw.forward);
+                M2.t = true;
+                M2.j();
                 break;
         }
-    }
-
-    public /* synthetic */ q1(y3 y3Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
-        this.b = y3Var;
-        this.n = b2Var;
-        this.c = tLObject;
-        this.d = j3;
-        this.e = j10;
-        this.h = j11;
-        this.f = tL_error;
     }
 }

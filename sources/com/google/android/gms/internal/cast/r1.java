@@ -1,36 +1,14 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class r1 extends h5 {
-    private static final r1 zzb;
-    private int zzd;
-    private int zze;
-
-    static {
-        r1 r1Var = new r1();
-        zzb = r1Var;
-        h5.e(r1.class, r1Var);
+public final class r1 extends e5 {
+    public final n1 d() {
+        return ((s1) this.b).l();
     }
 
-    @Override // com.google.android.gms.internal.cast.h5
-    public final Object h(int i10, h5 h5Var) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
-            return (byte) 1;
-        }
-        if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", b0.F});
-        }
-        if (i11 == 3) {
-            return new r1();
-        }
-        if (i11 == 4) {
-            return new x0(zzb);
-        }
-        if (i11 != 5) {
-            return null;
-        }
-        return zzb;
+    public final void e(n1 n1Var) {
+        c();
+        s1.p((s1) this.b, n1Var);
     }
 }

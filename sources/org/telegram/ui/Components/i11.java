@@ -1,32 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i11 extends MetricAffectingSpan {
-    public TextPaint a;
+public final /* synthetic */ class i11 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k11 b;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
+    public /* synthetic */ i11(k11 k11Var, int i10) {
+        this.a = i10;
+        this.b = k11Var;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.a();
+                break;
+            case 1:
+                k11 k11Var = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k11Var.getContext());
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.TosDeclineDeleteAccount);
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new i11(k11Var, 2));
+                hg.c.p(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            default:
+                k11 k11Var2 = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(k11Var2.getContext(), 3, null);
+                b2Var2.g0 = false;
+                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
+                deleteaccount.reason = "Decline ToS update";
+                ConnectionsManager.getInstance(k11Var2.d).sendRequest(deleteaccount, new org.telegram.ui.oo(16, k11Var2, b2Var2));
+                b2Var2.show();
+                break;
+        }
     }
 }

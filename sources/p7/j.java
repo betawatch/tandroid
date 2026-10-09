@@ -11,10 +11,9 @@ import com.google.android.gms.identity.intents.model.UserAddress;
 import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.util.ArrayList;
-import s4.b0;
-import w7.f0;
+import w7.c0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -27,7 +26,7 @@ public final class j implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = f0.z(parcel);
+                int z10 = c0.z(parcel);
                 Status status = null;
                 ArrayList arrayList = null;
                 String[] strArr = null;
@@ -35,23 +34,23 @@ public final class j implements Parcelable.Creator {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        status = (Status) f0.g(parcel, readInt, Status.CREATOR);
+                        status = (Status) c0.g(parcel, readInt, Status.CREATOR);
                     } else if (c10 == 2) {
-                        arrayList = f0.l(parcel, readInt, n.CREATOR);
+                        arrayList = c0.l(parcel, readInt, n.CREATOR);
                     } else if (c10 != 3) {
-                        f0.y(parcel, readInt);
+                        c0.y(parcel, readInt);
                     } else {
-                        strArr = f0.i(parcel, readInt);
+                        strArr = c0.i(parcel, readInt);
                     }
                 }
-                f0.m(parcel, z10);
+                c0.m(parcel, z10);
                 i iVar = new i();
                 iVar.a = status;
                 iVar.b = arrayList;
                 iVar.c = strArr;
                 return iVar;
             case 1:
-                int z11 = f0.z(parcel);
+                int z11 = c0.z(parcel);
                 String str = null;
                 String str2 = null;
                 String str3 = null;
@@ -59,61 +58,61 @@ public final class j implements Parcelable.Creator {
                 String str4 = null;
                 m mVar = null;
                 boolean z12 = false;
-                int i10 = 1;
                 boolean z13 = false;
+                int i10 = 1;
                 while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
                     char c11 = (char) readInt2;
                     if (c11 == 11) {
-                        str4 = f0.h(parcel, readInt2);
+                        str4 = c0.h(parcel, readInt2);
                     } else if (c11 != '\f') {
                         switch (c11) {
                             case 1:
-                                str = f0.h(parcel, readInt2);
+                                str = c0.h(parcel, readInt2);
                                 break;
                             case 2:
-                                str2 = f0.h(parcel, readInt2);
+                                str2 = c0.h(parcel, readInt2);
                                 break;
                             case 3:
-                                z12 = f0.n(parcel, readInt2);
+                                z12 = c0.n(parcel, readInt2);
                                 break;
                             case 4:
-                                i10 = f0.u(parcel, readInt2);
+                                i10 = c0.u(parcel, readInt2);
                                 break;
                             case 5:
-                                z13 = f0.n(parcel, readInt2);
+                                z13 = c0.n(parcel, readInt2);
                                 break;
                             case 6:
-                                str3 = f0.h(parcel, readInt2);
+                                str3 = c0.h(parcel, readInt2);
                                 break;
                             case 7:
-                                hVarArr = (h[]) f0.k(parcel, readInt2, h.CREATOR);
+                                hVarArr = (h[]) c0.k(parcel, readInt2, h.CREATOR);
                                 break;
                             default:
-                                f0.y(parcel, readInt2);
+                                c0.y(parcel, readInt2);
                                 break;
                         }
                     } else {
-                        mVar = (m) f0.g(parcel, readInt2, m.CREATOR);
+                        mVar = (m) c0.g(parcel, readInt2, m.CREATOR);
                     }
                 }
-                f0.m(parcel, z11);
+                c0.m(parcel, z11);
                 return new l(str, str2, z12, i10, z13, str3, hVarArr, str4, mVar);
             case 2:
-                int z14 = f0.z(parcel);
+                int z14 = c0.z(parcel);
                 boolean z15 = false;
                 while (parcel.dataPosition() < z14) {
                     int readInt3 = parcel.readInt();
                     if (((char) readInt3) != 1) {
-                        f0.y(parcel, readInt3);
+                        c0.y(parcel, readInt3);
                     } else {
-                        z15 = f0.n(parcel, readInt3);
+                        z15 = c0.n(parcel, readInt3);
                     }
                 }
-                f0.m(parcel, z14);
+                c0.m(parcel, z14);
                 return new m(z15);
             case 3:
-                int z16 = f0.z(parcel);
+                int z16 = c0.z(parcel);
                 f fVar = null;
                 String str5 = null;
                 e eVar = null;
@@ -121,47 +120,47 @@ public final class j implements Parcelable.Creator {
                 long j3 = 0;
                 int i11 = 0;
                 boolean z17 = false;
-                int i12 = -1;
-                int i13 = 0;
+                int i12 = 0;
+                int i13 = -1;
                 while (parcel.dataPosition() < z16) {
                     int readInt4 = parcel.readInt();
                     switch ((char) readInt4) {
                         case 1:
-                            fVar = (f) f0.g(parcel, readInt4, f.CREATOR);
+                            fVar = (f) c0.g(parcel, readInt4, f.CREATOR);
                             break;
                         case 2:
-                            j3 = f0.w(parcel, readInt4);
+                            j3 = c0.w(parcel, readInt4);
                             break;
                         case 3:
-                            i11 = f0.u(parcel, readInt4);
+                            i11 = c0.u(parcel, readInt4);
                             break;
                         case 4:
-                            str5 = f0.h(parcel, readInt4);
+                            str5 = c0.h(parcel, readInt4);
                             break;
                         case 5:
-                            eVar = (e) f0.g(parcel, readInt4, e.CREATOR);
+                            eVar = (e) c0.g(parcel, readInt4, e.CREATOR);
                             break;
                         case 6:
-                            z17 = f0.n(parcel, readInt4);
+                            z17 = c0.n(parcel, readInt4);
                             break;
                         case 7:
-                            i12 = f0.u(parcel, readInt4);
+                            i13 = c0.u(parcel, readInt4);
                             break;
                         case '\b':
-                            i13 = f0.u(parcel, readInt4);
+                            i12 = c0.u(parcel, readInt4);
                             break;
                         case '\t':
-                            str6 = f0.h(parcel, readInt4);
+                            str6 = c0.h(parcel, readInt4);
                             break;
                         default:
-                            f0.y(parcel, readInt4);
+                            c0.y(parcel, readInt4);
                             break;
                     }
                 }
-                f0.m(parcel, z16);
-                return new n(fVar, j3, i11, str5, eVar, z17, i12, i13, str6);
+                c0.m(parcel, z16);
+                return new n(fVar, j3, i11, str5, eVar, z17, i13, i12, str6);
             case 4:
-                int z18 = f0.z(parcel);
+                int z18 = c0.z(parcel);
                 String str7 = null;
                 String str8 = null;
                 String str9 = null;
@@ -173,139 +172,140 @@ public final class j implements Parcelable.Creator {
                     int readInt5 = parcel.readInt();
                     switch ((char) readInt5) {
                         case 1:
-                            str7 = f0.h(parcel, readInt5);
+                            str7 = c0.h(parcel, readInt5);
                             break;
                         case 2:
-                            str8 = f0.h(parcel, readInt5);
+                            str8 = c0.h(parcel, readInt5);
                             break;
                         case 3:
-                            str9 = f0.h(parcel, readInt5);
+                            str9 = c0.h(parcel, readInt5);
                             break;
                         case 4:
-                            str10 = f0.h(parcel, readInt5);
+                            str10 = c0.h(parcel, readInt5);
                             break;
                         case 5:
-                            aVar = (p9.a) f0.g(parcel, readInt5, p9.a.CREATOR);
+                            aVar = (p9.a) c0.g(parcel, readInt5, p9.a.CREATOR);
                             break;
                         case 6:
-                            str11 = f0.h(parcel, readInt5);
+                            str11 = c0.h(parcel, readInt5);
                             break;
                         case 7:
-                            bundle = f0.a(parcel, readInt5);
+                            bundle = c0.a(parcel, readInt5);
                             break;
                         default:
-                            f0.y(parcel, readInt5);
+                            c0.y(parcel, readInt5);
                             break;
                     }
                 }
-                f0.m(parcel, z18);
+                c0.m(parcel, z18);
                 return new p9.b(str7, str8, str9, str10, aVar, str11, bundle);
             case 5:
-                int z19 = f0.z(parcel);
-                String str12 = null;
-                String str13 = null;
-                byte[] bArr = null;
+                int z19 = c0.z(parcel);
                 int i14 = 0;
                 boolean z20 = false;
                 boolean z21 = false;
+                String str12 = null;
+                String str13 = null;
+                byte[] bArr = null;
                 while (parcel.dataPosition() < z19) {
                     int readInt6 = parcel.readInt();
                     switch ((char) readInt6) {
                         case 1:
-                            i14 = f0.u(parcel, readInt6);
+                            i14 = c0.u(parcel, readInt6);
                             break;
                         case 2:
-                            z20 = f0.n(parcel, readInt6);
+                            z20 = c0.n(parcel, readInt6);
                             break;
                         case 3:
-                            str12 = f0.h(parcel, readInt6);
+                            str12 = c0.h(parcel, readInt6);
                             break;
                         case 4:
-                            str13 = f0.h(parcel, readInt6);
+                            str13 = c0.h(parcel, readInt6);
                             break;
                         case 5:
-                            bArr = f0.b(parcel, readInt6);
+                            bArr = c0.b(parcel, readInt6);
                             break;
                         case 6:
-                            z21 = f0.n(parcel, readInt6);
+                            z21 = c0.n(parcel, readInt6);
                             break;
                         default:
-                            f0.y(parcel, readInt6);
+                            c0.y(parcel, readInt6);
                             break;
                     }
                 }
-                f0.m(parcel, z19);
+                c0.m(parcel, z19);
                 return new p9.a(i14, z20, str12, str13, bArr, z21);
             case 6:
-                int z22 = f0.z(parcel);
+                int z22 = c0.z(parcel);
                 boolean z23 = false;
                 int i15 = 0;
                 while (parcel.dataPosition() < z22) {
                     int readInt7 = parcel.readInt();
                     char c12 = (char) readInt7;
                     if (c12 == 1) {
-                        z23 = f0.n(parcel, readInt7);
+                        z23 = c0.n(parcel, readInt7);
                     } else if (c12 != 2) {
-                        f0.y(parcel, readInt7);
+                        c0.y(parcel, readInt7);
                     } else {
-                        i15 = f0.u(parcel, readInt7);
+                        i15 = c0.u(parcel, readInt7);
                     }
                 }
-                f0.m(parcel, z22);
+                c0.m(parcel, z22);
                 return new r6.a(i15, z23);
             case 7:
-                int z24 = f0.z(parcel);
+                int z24 = c0.z(parcel);
                 PendingIntent pendingIntent = null;
                 while (parcel.dataPosition() < z24) {
                     int readInt8 = parcel.readInt();
                     if (((char) readInt8) != 1) {
-                        f0.y(parcel, readInt8);
+                        c0.y(parcel, readInt8);
                     } else {
-                        pendingIntent = (PendingIntent) f0.g(parcel, readInt8, PendingIntent.CREATOR);
+                        pendingIntent = (PendingIntent) c0.g(parcel, readInt8, PendingIntent.CREATOR);
                     }
                 }
-                f0.m(parcel, z24);
+                c0.m(parcel, z24);
                 return new r6.b(pendingIntent);
             case 8:
-                int z25 = f0.z(parcel);
+                int z25 = c0.z(parcel);
                 int i16 = 0;
                 boolean z26 = false;
                 while (parcel.dataPosition() < z25) {
                     int readInt9 = parcel.readInt();
                     char c13 = (char) readInt9;
                     if (c13 == 1) {
-                        i16 = f0.u(parcel, readInt9);
+                        i16 = c0.u(parcel, readInt9);
                     } else if (c13 != 2) {
-                        f0.y(parcel, readInt9);
+                        c0.y(parcel, readInt9);
                     } else {
-                        z26 = f0.n(parcel, readInt9);
+                        z26 = c0.n(parcel, readInt9);
                     }
                 }
-                f0.m(parcel, z25);
+                c0.m(parcel, z25);
                 return new r6.c(i16, z26);
             case 9:
-                int z27 = f0.z(parcel);
+                int z27 = c0.z(parcel);
                 int i17 = 0;
                 String[] strArr2 = null;
                 while (parcel.dataPosition() < z27) {
                     int readInt10 = parcel.readInt();
                     char c14 = (char) readInt10;
                     if (c14 == 2) {
-                        i17 = f0.u(parcel, readInt10);
+                        i17 = c0.u(parcel, readInt10);
                     } else if (c14 != 3) {
-                        f0.y(parcel, readInt10);
+                        c0.y(parcel, readInt10);
                     } else {
-                        strArr2 = f0.i(parcel, readInt10);
+                        strArr2 = c0.i(parcel, readInt10);
                     }
                 }
-                f0.m(parcel, z27);
+                c0.m(parcel, z27);
                 r8.a aVar2 = new r8.a();
                 aVar2.a = i17;
                 aVar2.b = strArr2;
                 return aVar2;
             case 10:
-                int z28 = f0.z(parcel);
+                int z28 = c0.z(parcel);
                 int i18 = 0;
+                boolean z29 = false;
                 String str14 = null;
                 String str15 = null;
                 Point[] pointArr = null;
@@ -320,66 +320,65 @@ public final class j implements Parcelable.Creator {
                 r8.c cVar = null;
                 r8.e eVar2 = null;
                 int i19 = 0;
-                boolean z29 = false;
                 while (parcel.dataPosition() < z28) {
                     int readInt11 = parcel.readInt();
                     r8.g gVar2 = gVar;
                     switch ((char) readInt11) {
                         case 2:
-                            i18 = f0.u(parcel, readInt11);
+                            i18 = c0.u(parcel, readInt11);
                             break;
                         case 3:
-                            str14 = f0.h(parcel, readInt11);
+                            str14 = c0.h(parcel, readInt11);
                             break;
                         case 4:
-                            str15 = f0.h(parcel, readInt11);
+                            str15 = c0.h(parcel, readInt11);
                             break;
                         case 5:
-                            i19 = f0.u(parcel, readInt11);
+                            i19 = c0.u(parcel, readInt11);
                             break;
                         case 6:
-                            pointArr = (Point[]) f0.k(parcel, readInt11, Point.CREATOR);
+                            pointArr = (Point[]) c0.k(parcel, readInt11, Point.CREATOR);
                             break;
                         case 7:
-                            fVar2 = (r8.f) f0.g(parcel, readInt11, r8.f.CREATOR);
+                            fVar2 = (r8.f) c0.g(parcel, readInt11, r8.f.CREATOR);
                             break;
                         case '\b':
-                            iVar2 = (r8.i) f0.g(parcel, readInt11, r8.i.CREATOR);
+                            iVar2 = (r8.i) c0.g(parcel, readInt11, r8.i.CREATOR);
                             break;
                         case '\t':
-                            jVar = (r8.j) f0.g(parcel, readInt11, r8.j.CREATOR);
+                            jVar = (r8.j) c0.g(parcel, readInt11, r8.j.CREATOR);
                             break;
                         case '\n':
-                            lVar = (r8.l) f0.g(parcel, readInt11, r8.l.CREATOR);
+                            lVar = (r8.l) c0.g(parcel, readInt11, r8.l.CREATOR);
                             break;
                         case 11:
-                            kVar = (r8.k) f0.g(parcel, readInt11, r8.k.CREATOR);
+                            kVar = (r8.k) c0.g(parcel, readInt11, r8.k.CREATOR);
                             break;
                         case '\f':
-                            gVar = (r8.g) f0.g(parcel, readInt11, r8.g.CREATOR);
+                            gVar = (r8.g) c0.g(parcel, readInt11, r8.g.CREATOR);
                             continue;
                         case '\r':
-                            cVar = (r8.c) f0.g(parcel, readInt11, r8.c.CREATOR);
+                            cVar = (r8.c) c0.g(parcel, readInt11, r8.c.CREATOR);
                             break;
                         case 14:
-                            dVar = (r8.d) f0.g(parcel, readInt11, r8.d.CREATOR);
+                            dVar = (r8.d) c0.g(parcel, readInt11, r8.d.CREATOR);
                             break;
                         case 15:
-                            eVar2 = (r8.e) f0.g(parcel, readInt11, r8.e.CREATOR);
+                            eVar2 = (r8.e) c0.g(parcel, readInt11, r8.e.CREATOR);
                             break;
                         case 16:
-                            bArr2 = f0.b(parcel, readInt11);
+                            bArr2 = c0.b(parcel, readInt11);
                             break;
                         case 17:
-                            z29 = f0.n(parcel, readInt11);
+                            z29 = c0.n(parcel, readInt11);
                             break;
                         default:
-                            f0.y(parcel, readInt11);
+                            c0.y(parcel, readInt11);
                             break;
                     }
                     gVar = gVar2;
                 }
-                f0.m(parcel, z28);
+                c0.m(parcel, z28);
                 r8.m mVar2 = new r8.m();
                 mVar2.a = i18;
                 mVar2.b = str14;
@@ -399,60 +398,60 @@ public final class j implements Parcelable.Creator {
                 mVar2.y = eVar2;
                 return mVar2;
             case 11:
-                int z30 = f0.z(parcel);
+                int z30 = c0.z(parcel);
                 int i20 = 0;
-                String str16 = null;
                 int i21 = 0;
                 int i22 = 0;
                 int i23 = 0;
                 int i24 = 0;
-                int i25 = 0;
                 boolean z31 = false;
+                String str16 = null;
+                int i25 = 0;
                 while (parcel.dataPosition() < z30) {
                     int readInt12 = parcel.readInt();
                     switch ((char) readInt12) {
                         case 2:
-                            i20 = f0.u(parcel, readInt12);
+                            i20 = c0.u(parcel, readInt12);
                             break;
                         case 3:
-                            i21 = f0.u(parcel, readInt12);
+                            i25 = c0.u(parcel, readInt12);
                             break;
                         case 4:
-                            i22 = f0.u(parcel, readInt12);
+                            i21 = c0.u(parcel, readInt12);
                             break;
                         case 5:
-                            i23 = f0.u(parcel, readInt12);
+                            i22 = c0.u(parcel, readInt12);
                             break;
                         case 6:
-                            i24 = f0.u(parcel, readInt12);
+                            i23 = c0.u(parcel, readInt12);
                             break;
                         case 7:
-                            i25 = f0.u(parcel, readInt12);
+                            i24 = c0.u(parcel, readInt12);
                             break;
                         case '\b':
-                            z31 = f0.n(parcel, readInt12);
+                            z31 = c0.n(parcel, readInt12);
                             break;
                         case '\t':
-                            str16 = f0.h(parcel, readInt12);
+                            str16 = c0.h(parcel, readInt12);
                             break;
                         default:
-                            f0.y(parcel, readInt12);
+                            c0.y(parcel, readInt12);
                             break;
                     }
                 }
-                f0.m(parcel, z30);
+                c0.m(parcel, z30);
                 r8.b bVar = new r8.b();
                 bVar.a = i20;
-                bVar.b = i21;
-                bVar.c = i22;
-                bVar.d = i23;
-                bVar.e = i24;
-                bVar.f = i25;
+                bVar.b = i25;
+                bVar.c = i21;
+                bVar.d = i22;
+                bVar.e = i23;
+                bVar.f = i24;
                 bVar.h = z31;
                 bVar.n = str16;
                 return bVar;
             case 12:
-                int z32 = f0.z(parcel);
+                int z32 = c0.z(parcel);
                 r8.h hVar = null;
                 String str17 = null;
                 String str18 = null;
@@ -464,32 +463,32 @@ public final class j implements Parcelable.Creator {
                     int readInt13 = parcel.readInt();
                     switch ((char) readInt13) {
                         case 2:
-                            hVar = (r8.h) f0.g(parcel, readInt13, r8.h.CREATOR);
+                            hVar = (r8.h) c0.g(parcel, readInt13, r8.h.CREATOR);
                             break;
                         case 3:
-                            str17 = f0.h(parcel, readInt13);
+                            str17 = c0.h(parcel, readInt13);
                             break;
                         case 4:
-                            str18 = f0.h(parcel, readInt13);
+                            str18 = c0.h(parcel, readInt13);
                             break;
                         case 5:
-                            iVarArr = (r8.i[]) f0.k(parcel, readInt13, r8.i.CREATOR);
+                            iVarArr = (r8.i[]) c0.k(parcel, readInt13, r8.i.CREATOR);
                             break;
                         case 6:
-                            fVarArr = (r8.f[]) f0.k(parcel, readInt13, r8.f.CREATOR);
+                            fVarArr = (r8.f[]) c0.k(parcel, readInt13, r8.f.CREATOR);
                             break;
                         case 7:
-                            strArr3 = f0.i(parcel, readInt13);
+                            strArr3 = c0.i(parcel, readInt13);
                             break;
                         case '\b':
-                            aVarArr = (r8.a[]) f0.k(parcel, readInt13, r8.a.CREATOR);
+                            aVarArr = (r8.a[]) c0.k(parcel, readInt13, r8.a.CREATOR);
                             break;
                         default:
-                            f0.y(parcel, readInt13);
+                            c0.y(parcel, readInt13);
                             break;
                     }
                 }
-                f0.m(parcel, z32);
+                c0.m(parcel, z32);
                 r8.d dVar2 = new r8.d();
                 dVar2.a = hVar;
                 dVar2.b = str17;
@@ -500,7 +499,7 @@ public final class j implements Parcelable.Creator {
                 dVar2.h = aVarArr;
                 return dVar2;
             case 13:
-                int z33 = f0.z(parcel);
+                int z33 = c0.z(parcel);
                 String str19 = null;
                 String str20 = null;
                 String str21 = null;
@@ -512,32 +511,32 @@ public final class j implements Parcelable.Creator {
                     int readInt14 = parcel.readInt();
                     switch ((char) readInt14) {
                         case 2:
-                            str19 = f0.h(parcel, readInt14);
+                            str19 = c0.h(parcel, readInt14);
                             break;
                         case 3:
-                            str20 = f0.h(parcel, readInt14);
+                            str20 = c0.h(parcel, readInt14);
                             break;
                         case 4:
-                            str21 = f0.h(parcel, readInt14);
+                            str21 = c0.h(parcel, readInt14);
                             break;
                         case 5:
-                            str22 = f0.h(parcel, readInt14);
+                            str22 = c0.h(parcel, readInt14);
                             break;
                         case 6:
-                            str23 = f0.h(parcel, readInt14);
+                            str23 = c0.h(parcel, readInt14);
                             break;
                         case 7:
-                            bVar2 = (r8.b) f0.g(parcel, readInt14, r8.b.CREATOR);
+                            bVar2 = (r8.b) c0.g(parcel, readInt14, r8.b.CREATOR);
                             break;
                         case '\b':
-                            bVar3 = (r8.b) f0.g(parcel, readInt14, r8.b.CREATOR);
+                            bVar3 = (r8.b) c0.g(parcel, readInt14, r8.b.CREATOR);
                             break;
                         default:
-                            f0.y(parcel, readInt14);
+                            c0.y(parcel, readInt14);
                             break;
                     }
                 }
-                f0.m(parcel, z33);
+                c0.m(parcel, z33);
                 r8.c cVar2 = new r8.c();
                 cVar2.a = str19;
                 cVar2.b = str20;
@@ -548,7 +547,7 @@ public final class j implements Parcelable.Creator {
                 cVar2.h = bVar3;
                 return cVar2;
             case 14:
-                int z34 = f0.z(parcel);
+                int z34 = c0.z(parcel);
                 int i26 = 0;
                 String str24 = null;
                 String str25 = null;
@@ -557,18 +556,18 @@ public final class j implements Parcelable.Creator {
                     int readInt15 = parcel.readInt();
                     char c15 = (char) readInt15;
                     if (c15 == 2) {
-                        i26 = f0.u(parcel, readInt15);
+                        i26 = c0.u(parcel, readInt15);
                     } else if (c15 == 3) {
-                        str24 = f0.h(parcel, readInt15);
+                        str24 = c0.h(parcel, readInt15);
                     } else if (c15 == 4) {
-                        str25 = f0.h(parcel, readInt15);
+                        str25 = c0.h(parcel, readInt15);
                     } else if (c15 != 5) {
-                        f0.y(parcel, readInt15);
+                        c0.y(parcel, readInt15);
                     } else {
-                        str26 = f0.h(parcel, readInt15);
+                        str26 = c0.h(parcel, readInt15);
                     }
                 }
-                f0.m(parcel, z34);
+                c0.m(parcel, z34);
                 r8.f fVar3 = new r8.f();
                 fVar3.a = i26;
                 fVar3.b = str24;
@@ -576,7 +575,7 @@ public final class j implements Parcelable.Creator {
                 fVar3.d = str26;
                 return fVar3;
             case 15:
-                int z35 = f0.z(parcel);
+                int z35 = c0.z(parcel);
                 String str27 = null;
                 String str28 = null;
                 String str29 = null;
@@ -596,54 +595,54 @@ public final class j implements Parcelable.Creator {
                     String str41 = str39;
                     switch ((char) readInt16) {
                         case 2:
-                            str27 = f0.h(parcel, readInt16);
+                            str27 = c0.h(parcel, readInt16);
                             break;
                         case 3:
-                            str28 = f0.h(parcel, readInt16);
+                            str28 = c0.h(parcel, readInt16);
                             break;
                         case 4:
-                            str29 = f0.h(parcel, readInt16);
+                            str29 = c0.h(parcel, readInt16);
                             break;
                         case 5:
-                            str30 = f0.h(parcel, readInt16);
+                            str30 = c0.h(parcel, readInt16);
                             break;
                         case 6:
-                            str31 = f0.h(parcel, readInt16);
+                            str31 = c0.h(parcel, readInt16);
                             break;
                         case 7:
-                            str32 = f0.h(parcel, readInt16);
+                            str32 = c0.h(parcel, readInt16);
                             break;
                         case '\b':
-                            str33 = f0.h(parcel, readInt16);
+                            str33 = c0.h(parcel, readInt16);
                             break;
                         case '\t':
-                            str34 = f0.h(parcel, readInt16);
+                            str34 = c0.h(parcel, readInt16);
                             break;
                         case '\n':
-                            str35 = f0.h(parcel, readInt16);
+                            str35 = c0.h(parcel, readInt16);
                             break;
                         case 11:
-                            str36 = f0.h(parcel, readInt16);
+                            str36 = c0.h(parcel, readInt16);
                             break;
                         case '\f':
-                            str37 = f0.h(parcel, readInt16);
+                            str37 = c0.h(parcel, readInt16);
                             break;
                         case '\r':
-                            str38 = f0.h(parcel, readInt16);
+                            str38 = c0.h(parcel, readInt16);
                             break;
                         case 14:
-                            str39 = f0.h(parcel, readInt16);
+                            str39 = c0.h(parcel, readInt16);
                             continue;
                         case 15:
-                            str40 = f0.h(parcel, readInt16);
+                            str40 = c0.h(parcel, readInt16);
                             break;
                         default:
-                            f0.y(parcel, readInt16);
+                            c0.y(parcel, readInt16);
                             break;
                     }
                     str39 = str41;
                 }
-                f0.m(parcel, z35);
+                c0.m(parcel, z35);
                 r8.e eVar3 = new r8.e();
                 eVar3.a = str27;
                 eVar3.b = str28;
@@ -661,7 +660,7 @@ public final class j implements Parcelable.Creator {
                 eVar3.y = str40;
                 return eVar3;
             case 16:
-                int z36 = f0.z(parcel);
+                int z36 = c0.z(parcel);
                 String str42 = null;
                 String str43 = null;
                 String str44 = null;
@@ -673,32 +672,32 @@ public final class j implements Parcelable.Creator {
                     int readInt17 = parcel.readInt();
                     switch ((char) readInt17) {
                         case 2:
-                            str42 = f0.h(parcel, readInt17);
+                            str42 = c0.h(parcel, readInt17);
                             break;
                         case 3:
-                            str43 = f0.h(parcel, readInt17);
+                            str43 = c0.h(parcel, readInt17);
                             break;
                         case 4:
-                            str44 = f0.h(parcel, readInt17);
+                            str44 = c0.h(parcel, readInt17);
                             break;
                         case 5:
-                            str45 = f0.h(parcel, readInt17);
+                            str45 = c0.h(parcel, readInt17);
                             break;
                         case 6:
-                            str46 = f0.h(parcel, readInt17);
+                            str46 = c0.h(parcel, readInt17);
                             break;
                         case 7:
-                            str47 = f0.h(parcel, readInt17);
+                            str47 = c0.h(parcel, readInt17);
                             break;
                         case '\b':
-                            str48 = f0.h(parcel, readInt17);
+                            str48 = c0.h(parcel, readInt17);
                             break;
                         default:
-                            f0.y(parcel, readInt17);
+                            c0.y(parcel, readInt17);
                             break;
                     }
                 }
-                f0.m(parcel, z36);
+                c0.m(parcel, z36);
                 r8.h hVar2 = new r8.h();
                 hVar2.a = str42;
                 hVar2.b = str43;
@@ -709,276 +708,276 @@ public final class j implements Parcelable.Creator {
                 hVar2.h = str48;
                 return hVar2;
             case 17:
-                int z37 = f0.z(parcel);
+                int z37 = c0.z(parcel);
                 double d = 0.0d;
                 double d10 = 0.0d;
                 while (parcel.dataPosition() < z37) {
                     int readInt18 = parcel.readInt();
                     char c16 = (char) readInt18;
                     if (c16 == 2) {
-                        d = f0.q(parcel, readInt18);
+                        d = c0.q(parcel, readInt18);
                     } else if (c16 != 3) {
-                        f0.y(parcel, readInt18);
+                        c0.y(parcel, readInt18);
                     } else {
-                        d10 = f0.q(parcel, readInt18);
+                        d10 = c0.q(parcel, readInt18);
                     }
                 }
-                f0.m(parcel, z37);
+                c0.m(parcel, z37);
                 r8.g gVar3 = new r8.g();
                 gVar3.a = d;
                 gVar3.b = d10;
                 return gVar3;
             case 18:
-                int z38 = f0.z(parcel);
+                int z38 = c0.z(parcel);
                 String str49 = null;
                 String str50 = null;
                 while (parcel.dataPosition() < z38) {
                     int readInt19 = parcel.readInt();
                     char c17 = (char) readInt19;
                     if (c17 == 2) {
-                        str49 = f0.h(parcel, readInt19);
+                        str49 = c0.h(parcel, readInt19);
                     } else if (c17 != 3) {
-                        f0.y(parcel, readInt19);
+                        c0.y(parcel, readInt19);
                     } else {
-                        str50 = f0.h(parcel, readInt19);
+                        str50 = c0.h(parcel, readInt19);
                     }
                 }
-                f0.m(parcel, z38);
+                c0.m(parcel, z38);
                 r8.j jVar2 = new r8.j();
                 jVar2.a = str49;
                 jVar2.b = str50;
                 return jVar2;
             case 19:
-                int z39 = f0.z(parcel);
+                int z39 = c0.z(parcel);
                 int i27 = 0;
                 String str51 = null;
                 while (parcel.dataPosition() < z39) {
                     int readInt20 = parcel.readInt();
                     char c18 = (char) readInt20;
                     if (c18 == 2) {
-                        i27 = f0.u(parcel, readInt20);
+                        i27 = c0.u(parcel, readInt20);
                     } else if (c18 != 3) {
-                        f0.y(parcel, readInt20);
+                        c0.y(parcel, readInt20);
                     } else {
-                        str51 = f0.h(parcel, readInt20);
+                        str51 = c0.h(parcel, readInt20);
                     }
                 }
-                f0.m(parcel, z39);
+                c0.m(parcel, z39);
                 r8.i iVar3 = new r8.i();
                 iVar3.a = i27;
                 iVar3.b = str51;
                 return iVar3;
             case 20:
-                int z40 = f0.z(parcel);
+                int z40 = c0.z(parcel);
                 String str52 = null;
-                String str53 = null;
                 int i28 = 0;
+                String str53 = null;
                 while (parcel.dataPosition() < z40) {
                     int readInt21 = parcel.readInt();
                     char c19 = (char) readInt21;
                     if (c19 == 2) {
-                        str52 = f0.h(parcel, readInt21);
+                        str52 = c0.h(parcel, readInt21);
                     } else if (c19 == 3) {
-                        str53 = f0.h(parcel, readInt21);
+                        str53 = c0.h(parcel, readInt21);
                     } else if (c19 != 4) {
-                        f0.y(parcel, readInt21);
+                        c0.y(parcel, readInt21);
                     } else {
-                        i28 = f0.u(parcel, readInt21);
+                        i28 = c0.u(parcel, readInt21);
                     }
                 }
-                f0.m(parcel, z40);
+                c0.m(parcel, z40);
                 r8.l lVar2 = new r8.l();
                 lVar2.a = str52;
                 lVar2.b = str53;
                 lVar2.c = i28;
                 return lVar2;
             case 21:
-                int z41 = f0.z(parcel);
+                int z41 = c0.z(parcel);
                 String str54 = null;
                 String str55 = null;
                 while (parcel.dataPosition() < z41) {
                     int readInt22 = parcel.readInt();
                     char c20 = (char) readInt22;
                     if (c20 == 2) {
-                        str54 = f0.h(parcel, readInt22);
+                        str54 = c0.h(parcel, readInt22);
                     } else if (c20 != 3) {
-                        f0.y(parcel, readInt22);
+                        c0.y(parcel, readInt22);
                     } else {
-                        str55 = f0.h(parcel, readInt22);
+                        str55 = c0.h(parcel, readInt22);
                     }
                 }
-                f0.m(parcel, z41);
+                c0.m(parcel, z41);
                 r8.k kVar2 = new r8.k();
                 kVar2.a = str54;
                 kVar2.b = str55;
                 return kVar2;
             case 22:
-                b0 b0Var = new b0();
-                b0Var.a = parcel.readInt();
-                b0Var.b = parcel.readInt();
-                b0Var.c = parcel.readInt() == 1;
-                return b0Var;
+                s4.c0 c0Var = new s4.c0();
+                c0Var.a = parcel.readInt();
+                c0Var.b = parcel.readInt();
+                c0Var.c = parcel.readInt() == 1;
+                return c0Var;
             case 23:
                 u0.h hVar3 = new u0.h(parcel);
                 hVar3.a = parcel.readInt();
                 return hVar3;
             case 24:
-                int z42 = f0.z(parcel);
+                int z42 = c0.z(parcel);
                 PointF[] pointFArr = null;
                 int i29 = 0;
                 while (parcel.dataPosition() < z42) {
                     int readInt23 = parcel.readInt();
                     char c21 = (char) readInt23;
                     if (c21 == 2) {
-                        pointFArr = (PointF[]) f0.k(parcel, readInt23, PointF.CREATOR);
+                        pointFArr = (PointF[]) c0.k(parcel, readInt23, PointF.CREATOR);
                     } else if (c21 != 3) {
-                        f0.y(parcel, readInt23);
+                        c0.y(parcel, readInt23);
                     } else {
-                        i29 = f0.u(parcel, readInt23);
+                        i29 = c0.u(parcel, readInt23);
                     }
                 }
-                f0.m(parcel, z42);
+                c0.m(parcel, z42);
                 return new u8.a(pointFArr, i29);
             case 25:
-                int z43 = f0.z(parcel);
-                LandmarkParcel[] landmarkParcelArr = null;
-                u8.a[] aVarArr2 = null;
+                int z43 = c0.z(parcel);
                 int i30 = 0;
                 int i31 = 0;
                 float f7 = 0.0f;
                 float f10 = 0.0f;
                 float f11 = 0.0f;
                 float f12 = 0.0f;
-                float f13 = Float.MAX_VALUE;
-                float f14 = Float.MAX_VALUE;
-                float f15 = Float.MAX_VALUE;
-                float f16 = 0.0f;
-                float f17 = 0.0f;
-                float f18 = 0.0f;
+                float f13 = 0.0f;
+                float f14 = 0.0f;
+                float f15 = 0.0f;
+                float f16 = Float.MAX_VALUE;
+                float f17 = Float.MAX_VALUE;
+                float f18 = Float.MAX_VALUE;
+                LandmarkParcel[] landmarkParcelArr = null;
+                u8.a[] aVarArr2 = null;
                 float f19 = -1.0f;
                 while (parcel.dataPosition() < z43) {
                     int readInt24 = parcel.readInt();
                     switch ((char) readInt24) {
                         case 1:
-                            i30 = f0.u(parcel, readInt24);
+                            i30 = c0.u(parcel, readInt24);
                             break;
                         case 2:
-                            i31 = f0.u(parcel, readInt24);
+                            i31 = c0.u(parcel, readInt24);
                             break;
                         case 3:
-                            f7 = f0.r(parcel, readInt24);
+                            f7 = c0.r(parcel, readInt24);
                             break;
                         case 4:
-                            f10 = f0.r(parcel, readInt24);
+                            f10 = c0.r(parcel, readInt24);
                             break;
                         case 5:
-                            f11 = f0.r(parcel, readInt24);
+                            f11 = c0.r(parcel, readInt24);
                             break;
                         case 6:
-                            f12 = f0.r(parcel, readInt24);
+                            f12 = c0.r(parcel, readInt24);
                             break;
                         case 7:
-                            f13 = f0.r(parcel, readInt24);
+                            f16 = c0.r(parcel, readInt24);
                             break;
                         case '\b':
-                            f14 = f0.r(parcel, readInt24);
+                            f17 = c0.r(parcel, readInt24);
                             break;
                         case '\t':
-                            landmarkParcelArr = (LandmarkParcel[]) f0.k(parcel, readInt24, LandmarkParcel.CREATOR);
+                            landmarkParcelArr = (LandmarkParcel[]) c0.k(parcel, readInt24, LandmarkParcel.CREATOR);
                             break;
                         case '\n':
-                            f16 = f0.r(parcel, readInt24);
+                            f13 = c0.r(parcel, readInt24);
                             break;
                         case 11:
-                            f17 = f0.r(parcel, readInt24);
+                            f14 = c0.r(parcel, readInt24);
                             break;
                         case '\f':
-                            f18 = f0.r(parcel, readInt24);
+                            f15 = c0.r(parcel, readInt24);
                             break;
                         case '\r':
-                            aVarArr2 = (u8.a[]) f0.k(parcel, readInt24, u8.a.CREATOR);
+                            aVarArr2 = (u8.a[]) c0.k(parcel, readInt24, u8.a.CREATOR);
                             break;
                         case 14:
-                            f15 = f0.r(parcel, readInt24);
+                            f18 = c0.r(parcel, readInt24);
                             break;
                         case 15:
-                            f19 = f0.r(parcel, readInt24);
+                            f19 = c0.r(parcel, readInt24);
                             break;
                         default:
-                            f0.y(parcel, readInt24);
+                            c0.y(parcel, readInt24);
                             break;
                     }
                 }
-                f0.m(parcel, z43);
-                return new FaceParcel(i30, i31, f7, f10, f11, f12, f13, f14, f15, landmarkParcelArr, f16, f17, f18, aVarArr2, f19);
+                c0.m(parcel, z43);
+                return new FaceParcel(i30, i31, f7, f10, f11, f12, f16, f17, f18, landmarkParcelArr, f13, f14, f15, aVarArr2, f19);
             case 26:
-                int z44 = f0.z(parcel);
+                int z44 = c0.z(parcel);
                 int i32 = 0;
                 int i33 = 0;
-                int i34 = 0;
                 boolean z45 = false;
                 boolean z46 = false;
                 float f20 = -1.0f;
+                int i34 = 0;
                 while (parcel.dataPosition() < z44) {
                     int readInt25 = parcel.readInt();
                     switch ((char) readInt25) {
                         case 2:
-                            i32 = f0.u(parcel, readInt25);
+                            i32 = c0.u(parcel, readInt25);
                             break;
                         case 3:
-                            i33 = f0.u(parcel, readInt25);
+                            i34 = c0.u(parcel, readInt25);
                             break;
                         case 4:
-                            i34 = f0.u(parcel, readInt25);
+                            i33 = c0.u(parcel, readInt25);
                             break;
                         case 5:
-                            z45 = f0.n(parcel, readInt25);
+                            z45 = c0.n(parcel, readInt25);
                             break;
                         case 6:
-                            z46 = f0.n(parcel, readInt25);
+                            z46 = c0.n(parcel, readInt25);
                             break;
                         case 7:
-                            f20 = f0.r(parcel, readInt25);
+                            f20 = c0.r(parcel, readInt25);
                             break;
                         default:
-                            f0.y(parcel, readInt25);
+                            c0.y(parcel, readInt25);
                             break;
                     }
                 }
-                f0.m(parcel, z44);
+                c0.m(parcel, z44);
                 u8.b bVar4 = new u8.b();
                 bVar4.a = i32;
-                bVar4.b = i33;
-                bVar4.c = i34;
+                bVar4.b = i34;
+                bVar4.c = i33;
                 bVar4.d = z45;
                 bVar4.e = z46;
                 bVar4.f = f20;
                 return bVar4;
             case 27:
-                int z47 = f0.z(parcel);
+                int z47 = c0.z(parcel);
                 int i35 = 0;
-                int i36 = 0;
                 float f21 = 0.0f;
                 float f22 = 0.0f;
+                int i36 = 0;
                 while (parcel.dataPosition() < z47) {
                     int readInt26 = parcel.readInt();
                     char c22 = (char) readInt26;
                     if (c22 == 1) {
-                        i35 = f0.u(parcel, readInt26);
+                        i35 = c0.u(parcel, readInt26);
                     } else if (c22 == 2) {
-                        f21 = f0.r(parcel, readInt26);
+                        f21 = c0.r(parcel, readInt26);
                     } else if (c22 == 3) {
-                        f22 = f0.r(parcel, readInt26);
+                        f22 = c0.r(parcel, readInt26);
                     } else if (c22 != 4) {
-                        f0.y(parcel, readInt26);
+                        c0.y(parcel, readInt26);
                     } else {
-                        i36 = f0.u(parcel, readInt26);
+                        i36 = c0.u(parcel, readInt26);
                     }
                 }
-                f0.m(parcel, z47);
+                c0.m(parcel, z47);
                 return new LandmarkParcel(i35, f21, f22, i36);
             case 28:
-                int z48 = f0.z(parcel);
+                int z48 = c0.z(parcel);
                 String str56 = null;
                 v8.b bVar5 = null;
                 UserAddress userAddress = null;
@@ -991,35 +990,35 @@ public final class j implements Parcelable.Creator {
                     int readInt27 = parcel.readInt();
                     switch ((char) readInt27) {
                         case 1:
-                            str56 = f0.h(parcel, readInt27);
+                            str56 = c0.h(parcel, readInt27);
                             break;
                         case 2:
-                            bVar5 = (v8.b) f0.g(parcel, readInt27, v8.b.CREATOR);
+                            bVar5 = (v8.b) c0.g(parcel, readInt27, v8.b.CREATOR);
                             break;
                         case 3:
-                            userAddress = (UserAddress) f0.g(parcel, readInt27, UserAddress.CREATOR);
+                            userAddress = (UserAddress) c0.g(parcel, readInt27, UserAddress.CREATOR);
                             break;
                         case 4:
-                            kVar3 = (v8.k) f0.g(parcel, readInt27, v8.k.CREATOR);
+                            kVar3 = (v8.k) c0.g(parcel, readInt27, v8.k.CREATOR);
                             break;
                         case 5:
-                            str57 = f0.h(parcel, readInt27);
+                            str57 = c0.h(parcel, readInt27);
                             break;
                         case 6:
-                            bundle2 = f0.a(parcel, readInt27);
+                            bundle2 = c0.a(parcel, readInt27);
                             break;
                         case 7:
-                            str58 = f0.h(parcel, readInt27);
+                            str58 = c0.h(parcel, readInt27);
                             break;
                         case '\b':
-                            bundle3 = f0.a(parcel, readInt27);
+                            bundle3 = c0.a(parcel, readInt27);
                             break;
                         default:
-                            f0.y(parcel, readInt27);
+                            c0.y(parcel, readInt27);
                             break;
                     }
                 }
-                f0.m(parcel, z48);
+                c0.m(parcel, z48);
                 v8.i iVar4 = new v8.i();
                 iVar4.a = str56;
                 iVar4.b = bVar5;
@@ -1031,7 +1030,7 @@ public final class j implements Parcelable.Creator {
                 iVar4.n = bundle3;
                 return iVar4;
             default:
-                int z49 = f0.z(parcel);
+                int z49 = c0.z(parcel);
                 boolean z50 = false;
                 v8.c cVar3 = null;
                 v8.m mVar3 = null;
@@ -1040,61 +1039,61 @@ public final class j implements Parcelable.Creator {
                 v8.n nVar = null;
                 String str59 = null;
                 Bundle bundle4 = null;
-                boolean z51 = false;
+                boolean z51 = true;
                 boolean z52 = false;
-                boolean z53 = true;
+                boolean z53 = false;
                 while (parcel.dataPosition() < z49) {
                     int readInt28 = parcel.readInt();
                     switch ((char) readInt28) {
                         case 1:
-                            z50 = f0.n(parcel, readInt28);
+                            z50 = c0.n(parcel, readInt28);
                             break;
                         case 2:
-                            z51 = f0.n(parcel, readInt28);
+                            z52 = c0.n(parcel, readInt28);
                             break;
                         case 3:
-                            cVar3 = (v8.c) f0.g(parcel, readInt28, v8.c.CREATOR);
+                            cVar3 = (v8.c) c0.g(parcel, readInt28, v8.c.CREATOR);
                             break;
                         case 4:
-                            z52 = f0.n(parcel, readInt28);
+                            z53 = c0.n(parcel, readInt28);
                             break;
                         case 5:
-                            mVar3 = (v8.m) f0.g(parcel, readInt28, v8.m.CREATOR);
+                            mVar3 = (v8.m) c0.g(parcel, readInt28, v8.m.CREATOR);
                             break;
                         case 6:
-                            arrayList2 = f0.e(parcel, readInt28);
+                            arrayList2 = c0.e(parcel, readInt28);
                             break;
                         case 7:
-                            lVar3 = (v8.l) f0.g(parcel, readInt28, v8.l.CREATOR);
+                            lVar3 = (v8.l) c0.g(parcel, readInt28, v8.l.CREATOR);
                             break;
                         case '\b':
-                            nVar = (v8.n) f0.g(parcel, readInt28, v8.n.CREATOR);
+                            nVar = (v8.n) c0.g(parcel, readInt28, v8.n.CREATOR);
                             break;
                         case '\t':
-                            z53 = f0.n(parcel, readInt28);
+                            z51 = c0.n(parcel, readInt28);
                             break;
                         case '\n':
-                            str59 = f0.h(parcel, readInt28);
+                            str59 = c0.h(parcel, readInt28);
                             break;
                         case 11:
-                            bundle4 = f0.a(parcel, readInt28);
+                            bundle4 = c0.a(parcel, readInt28);
                             break;
                         default:
-                            f0.y(parcel, readInt28);
+                            c0.y(parcel, readInt28);
                             break;
                     }
                 }
-                f0.m(parcel, z49);
+                c0.m(parcel, z49);
                 v8.j jVar3 = new v8.j();
                 jVar3.a = z50;
-                jVar3.b = z51;
+                jVar3.b = z52;
                 jVar3.c = cVar3;
-                jVar3.d = z52;
+                jVar3.d = z53;
                 jVar3.e = mVar3;
                 jVar3.f = arrayList2;
                 jVar3.h = lVar3;
                 jVar3.n = nVar;
-                jVar3.r = z53;
+                jVar3.r = z51;
                 jVar3.s = str59;
                 jVar3.v = bundle4;
                 return jVar3;
@@ -1149,7 +1148,7 @@ public final class j implements Parcelable.Creator {
             case 21:
                 return new r8.k[i10];
             case 22:
-                return new b0[i10];
+                return new s4.c0[i10];
             case 23:
                 return new u0.h[i10];
             case 24:

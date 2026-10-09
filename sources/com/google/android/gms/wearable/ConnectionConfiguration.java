@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import n6.l;
 import o6.a;
-import w7.g0;
+import w7.d0;
 import x5.h;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ConnectionConfiguration extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<ConnectionConfiguration> CREATOR = new h(2);
@@ -61,31 +61,31 @@ public class ConnectionConfiguration extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.l(parcel, 3, this.b);
+        int q6 = d0.q(parcel, 20293);
+        d0.l(parcel, 2, this.a);
+        d0.l(parcel, 3, this.b);
         int i11 = this.c;
-        g0.s(parcel, 4, 4);
+        d0.s(parcel, 4, 4);
         parcel.writeInt(i11);
         int i12 = this.d;
-        g0.s(parcel, 5, 4);
+        d0.s(parcel, 5, 4);
         parcel.writeInt(i12);
         boolean z10 = this.e;
-        g0.s(parcel, 6, 4);
+        d0.s(parcel, 6, 4);
         parcel.writeInt(z10 ? 1 : 0);
         boolean z11 = this.f;
-        g0.s(parcel, 7, 4);
+        d0.s(parcel, 7, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        g0.l(parcel, 8, this.h);
+        d0.l(parcel, 8, this.h);
         boolean z12 = this.n;
-        g0.s(parcel, 9, 4);
+        d0.s(parcel, 9, 4);
         parcel.writeInt(z12 ? 1 : 0);
-        g0.l(parcel, 10, this.r);
-        g0.l(parcel, 11, this.s);
+        d0.l(parcel, 10, this.r);
+        d0.l(parcel, 11, this.s);
         int i13 = this.v;
-        g0.s(parcel, 12, 4);
+        d0.s(parcel, 12, 4);
         parcel.writeInt(i13);
-        g0.n(parcel, 13, this.w);
-        g0.r(parcel, q6);
+        d0.n(parcel, 13, this.w);
+        d0.r(parcel, q6);
     }
 }

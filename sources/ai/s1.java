@@ -29,12 +29,12 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
-import org.telegram.ui.am;
-import org.telegram.ui.hh;
-import org.telegram.ui.jm;
-import org.telegram.ui.yn;
+import org.telegram.ui.dm;
+import org.telegram.ui.kh;
+import org.telegram.ui.mm;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = obj2;
     }
 
-    /* JADX WARN: Type inference failed for: r1v41, types: [java.lang.Object, n2.l] */
+    /* JADX WARN: Type inference failed for: r1v41, types: [java.lang.Object, n2.k] */
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
@@ -77,18 +77,18 @@ public final /* synthetic */ class s1 implements Runnable {
                 m0Var.run(null);
                 break;
             case 2:
-                ac acVar = (ac) this.c;
+                bc bcVar = (bc) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 int i12 = this.b;
-                jc jcVar = acVar.d;
-                zb zbVar = jcVar.n0;
-                int i13 = jcVar.h;
-                zbVar.A0 = arrayList2;
-                zbVar.y0 = i13;
-                zbVar.setAdapter(null);
-                zbVar.setAdapter(zbVar.z0);
-                zbVar.setCurrentItem(i12);
-                zbVar.C0 = true;
+                kc kcVar = bcVar.d;
+                ac acVar = kcVar.n0;
+                int i13 = kcVar.h;
+                acVar.A0 = arrayList2;
+                acVar.y0 = i13;
+                acVar.setAdapter(null);
+                acVar.setAdapter(acVar.z0);
+                acVar.setCurrentItem(i12);
+                acVar.C0 = true;
                 break;
             case 3:
                 ((FfmpegAudioWaveformLoader) this.c).lambda$new$0((String) this.d, this.b);
@@ -111,10 +111,10 @@ public final /* synthetic */ class s1 implements Runnable {
                 r1Var.e = true;
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new o8(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 5));
+                AndroidUtilities.runOnUIThread(new p8(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 5));
                 break;
             case 7:
-                ((ci.nc) this.c).b((short[]) this.d, this.b);
+                ((ci.oc) this.c).b((short[]) this.d, this.b);
                 break;
             case 8:
                 CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
@@ -147,33 +147,33 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 10:
-                ei.r4 r4Var = (ei.r4) this.c;
+                ei.p4 p4Var = (ei.p4) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 int i18 = this.b;
                 if (tLObject2 instanceof TLRPC.TL_webViewResultUrl) {
                     TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) tLObject2;
-                    r4Var.x = tL_webViewResultUrl.query_id;
-                    r4Var.n.u(i18, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
-                    AndroidUtilities.runOnUIThread(r4Var.U);
+                    p4Var.x = tL_webViewResultUrl.query_id;
+                    p4Var.n.t(i18, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
+                    AndroidUtilities.runOnUIThread(p4Var.U);
                     break;
                 }
                 break;
             case 11:
-                gg.i0 i0Var = (gg.i0) this.c;
+                gg.h0 h0Var = (gg.h0) this.c;
                 int i19 = this.b;
                 String str = (String) this.d;
-                int i20 = i0Var.s0;
-                i0Var.r = null;
-                if (i19 == i0Var.d0) {
-                    if (i0Var.n >= 0) {
-                        ConnectionsManager.getInstance(i20).cancelRequest(i0Var.n, true);
+                int i20 = h0Var.s0;
+                h0Var.r = null;
+                if (i19 == h0Var.d0) {
+                    if (h0Var.n >= 0) {
+                        ConnectionsManager.getInstance(i20).cancelRequest(h0Var.n, true);
                     }
                     TLRPC.TL_channels_searchPosts tL_channels_searchPosts = new TLRPC.TL_channels_searchPosts();
                     tL_channels_searchPosts.flags = 1 | tL_channels_searchPosts.flags;
                     tL_channels_searchPosts.hashtag = str;
                     tL_channels_searchPosts.limit = 3;
                     tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                    i0Var.n = ConnectionsManager.getInstance(i20).sendRequest(tL_channels_searchPosts, new gg.u(i0Var, i19, str, 0));
+                    h0Var.n = ConnectionsManager.getInstance(i20).sendRequest(tL_channels_searchPosts, new gg.u(h0Var, i19, str, 0));
                     break;
                 }
                 break;
@@ -211,11 +211,11 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 16:
-                n2.k kVar = (n2.k) this.c;
-                this.d.a(kVar.a, kVar.b, this.b);
+                n2.j jVar = (n2.j) this.c;
+                this.d.a(jVar.a, jVar.b, this.b);
                 break;
             case 17:
-                ((View) this.d).postOnAnimation(new o8((nh.a) this.c, this.b, 13));
+                ((View) this.d).postOnAnimation(new p8((nh.a) this.c, this.b, 12));
                 break;
             case 18:
                 ((CameraView) this.c).lambda$createCamera$13(this.b, (SurfaceTexture) this.d);
@@ -234,7 +234,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
                     str2 = "https://".concat(str2);
                 }
-                nf.f.s(context, str2);
+                of.f.s(context, str2);
                 f3VarArr[0].dismiss();
                 break;
             case 22:
@@ -244,12 +244,12 @@ public final /* synthetic */ class s1 implements Runnable {
                 HashMap hashMap = new HashMap(i4Var.u0[0].c.w);
                 ArrayList arrayList3 = new ArrayList(i4Var.u0[0].c.x);
                 i4Var.V0 = null;
-                Utilities.searchQueue.postRunnable(new ei.m3(i4Var, arrayList3, hashMap, str3, i24, 14));
+                Utilities.searchQueue.postRunnable(new ei.l3(i4Var, arrayList3, hashMap, str3, i24, 14));
                 break;
             case 23:
                 org.telegram.ui.i4 i4Var2 = (org.telegram.ui.i4) this.c;
                 int i25 = this.b;
-                nf.e eVar = (nf.e) this.d;
+                of.e eVar = (of.e) this.d;
                 if (i4Var2.H0 == i25 && i4Var2.F0 != 0) {
                     ConnectionsManager.getInstance(i4Var2.X).cancelRequest(i4Var2.F0, false);
                     i4Var2.F0 = 0;
@@ -280,31 +280,31 @@ public final /* synthetic */ class s1 implements Runnable {
                 org.telegram.ui.ActionBar.f3[] f3VarArr2 = (org.telegram.ui.ActionBar.f3[]) this.c;
                 TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = new TLRPC.TL_inputGroupCallSlug();
                 tL_inputGroupCallSlug.slug = Uri.parse(str4).getPathSegments().get(r0.getPathSegments().size() - 1);
-                org.telegram.ui.Components.voip.g2.g(LaunchActivity.G1, i28, tL_inputGroupCallSlug, false, null, null);
+                org.telegram.ui.Components.voip.f2.g(LaunchActivity.G1, i28, tL_inputGroupCallSlug, false, null, null);
                 f3VarArr2[0].dismiss();
                 break;
             case 27:
-                ((yn) this.c).Ja((ArrayList) this.d, this.b, false, false);
+                ((zn) this.c).Oa((ArrayList) this.d, this.b, false, false);
                 break;
             case 28:
-                yn ynVar = (yn) this.c;
+                zn znVar = (zn) this.c;
                 int i29 = this.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                ynVar.v0.w0(0, i29, null);
+                znVar.x0.v0(0, i29, null);
                 if (!AndroidUtilities.showKeyboard(editTextBoldCursor)) {
                     editTextBoldCursor.clearFocus();
                     editTextBoldCursor.requestFocus();
                 }
-                AndroidUtilities.runOnUIThread(new hh(0, editTextBoldCursor), 100L);
+                AndroidUtilities.runOnUIThread(new kh(0, editTextBoldCursor), 100L);
                 break;
             default:
-                am amVar = (am) this.c;
+                dm dmVar = (dm) this.c;
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.d;
                 int i30 = this.b;
-                amVar.getClass();
+                dmVar.getClass();
                 MessageObject messageObject = w0Var.getMessageObject();
-                jm jmVar = amVar.a;
-                jmVar.Q.D(i30, messageObject.getId(), messageObject.getDialogId() == jmVar.Q.J6 ? 1 : 0, 0, true, true);
+                mm mmVar = dmVar.a;
+                mmVar.Q.F(i30, messageObject.getId(), messageObject.getDialogId() == mmVar.Q.L6 ? 1 : 0, 0, true, true);
                 break;
         }
     }

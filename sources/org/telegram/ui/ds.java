@@ -7,7 +7,7 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class ds implements ActionMode.Callback {
     public final /* synthetic */ es a;
@@ -26,7 +26,7 @@ public final class ds implements ActionMode.Callback {
         }
         es esVar = this.a;
         cs csVar = esVar.getParent() instanceof cs ? (cs) esVar.getParent() : null;
-        if (csVar != null && (clipboardManager = (ClipboardManager) f0.e.f(esVar.getContext(), ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
+        if (csVar != null && (clipboardManager = (ClipboardManager) esVar.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
             String charSequence = primaryClip.getItemAt(0).getText().toString();
             try {
                 i10 = Integer.parseInt(charSequence);

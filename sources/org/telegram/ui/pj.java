@@ -1,83 +1,93 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class pj implements org.telegram.ui.Components.ro {
-    public final /* synthetic */ yn a;
+public final class pj implements View.OnTouchListener {
+    public View a;
+    public org.telegram.ui.ActionBar.n1 b;
+    public final Rect c = new Rect();
+    public boolean d;
+    public boolean e;
+    public final org.telegram.ui.Components.a30 f;
+    public final int[] h;
+    public View n;
+    public float r;
+    public float s;
+    public final /* synthetic */ View v;
+    public final /* synthetic */ zn w;
 
-    public pj(yn ynVar) {
-        this.a = ynVar;
+    public pj(zn znVar, ImageView imageView) {
+        this.w = znVar;
+        this.v = imageView;
+        org.telegram.ui.Components.a30 a30Var = new org.telegram.ui.Components.a30((Context) null, new g(this, 24));
+        this.f = a30Var;
+        this.h = new int[2];
+        a30Var.v = true;
     }
 
-    @Override // org.telegram.ui.Components.ro
-    public final void dismiss() {
-        this.a.f0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final void k() {
-        yn ynVar = this.a;
-        ynVar.ac(true);
-        org.telegram.ui.Components.yc.A(ynVar, ynVar.getMessagesController().isDialogMuted(ynVar.R5, ynVar.d()), ynVar.ca).j();
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final void l() {
-        yn ynVar = this.a;
-        if (ynVar.R5 == 0 || ynVar.P3 == 3) {
-            return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        View view2;
+        this.a = view;
+        if (motionEvent.getAction() == 0) {
+            this.r = motionEvent.getX();
+            this.s = motionEvent.getY();
+            this.e = false;
         }
-        if (ynVar.f != null) {
-            ynVar.getMessagesController().putUser(ynVar.f, true);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", ynVar.R5);
-        if (ynVar.d() != 0) {
-            bundle.putLong("topic_id", ynVar.d());
-        }
-        ynVar.presentFragment(new p11(bundle, ynVar.ca));
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final void r() {
-        int i10;
-        yn ynVar = this.a;
-        i10 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
-        boolean z10 = notificationsSettings.getBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(ynVar.R5, ynVar.d()), true);
-        boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(ynVar.R5, ynVar.d()), z11).apply();
-        if (org.telegram.ui.Components.yc.a(ynVar)) {
-            org.telegram.ui.Components.yc.S(z10 ? 1 : 0, ynVar, ynVar.getResourceProvider()).j();
-        }
-        ynVar.Oc(false);
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final void t(int i10) {
-        yn ynVar = this.a;
-        if (i10 != 0) {
-            ynVar.getNotificationsController().muteUntil(ynVar.R5, ynVar.d(), i10);
-            if (org.telegram.ui.Components.yc.a(ynVar)) {
-                org.telegram.ui.Components.yc.z(ynVar, 5, i10, ynVar.getResourceProvider()).j();
-                return;
+        this.f.a(motionEvent);
+        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
+            View view3 = this.a;
+            int[] iArr = this.h;
+            view3.getLocationOnScreen(iArr);
+            float x10 = motionEvent.getX() + iArr[0];
+            float y3 = motionEvent.getY() + iArr[1];
+            this.b.getContentView().getLocationOnScreen(iArr);
+            float f7 = x10 - iArr[0];
+            float f10 = y3 - iArr[1];
+            this.n = null;
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
+            for (int i10 = 0; i10 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i10++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+                Rect rect = this.c;
+                childAt.getHitRect(rect);
+                childAt.getTag();
+                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
+                    if (rect.contains((int) f7, (int) f10)) {
+                        childAt.setPressed(true);
+                        childAt.setSelected(true);
+                        childAt.drawableHotspotChanged(f7, f10 - childAt.getTop());
+                        this.n = childAt;
+                    } else {
+                        childAt.setPressed(false);
+                        childAt.setSelected(false);
+                    }
+                }
             }
-            return;
         }
-        if (ynVar.getMessagesController().isDialogMuted(ynVar.R5, ynVar.d())) {
-            ynVar.ac(true);
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.s) > AndroidUtilities.touchSlop * 2.0f) {
+            this.e = true;
+            this.a.setPressed(false);
+            this.a.setSelected(false);
         }
-        if (org.telegram.ui.Components.yc.a(ynVar)) {
-            org.telegram.ui.Components.yc.z(ynVar, 4, i10, ynVar.getResourceProvider()).j();
+        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
+            View view4 = this.n;
+            if (view4 != null) {
+                view4.callOnClick();
+                this.d = true;
+                return true;
+            }
+            if (this.b == null && (view2 = this.a) != null) {
+                view2.callOnClick();
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final /* synthetic */ void j() {
+        return true;
     }
 }

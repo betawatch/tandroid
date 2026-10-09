@@ -8,7 +8,7 @@ import b2.k1;
 import e2.d0;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e extends k1 {
     public final long e;
@@ -52,9 +52,9 @@ public final class e extends k1 {
         String str = z10 ? cVar.b(i10).a : null;
         Integer valueOf = z10 ? Integer.valueOf(this.h + i10) : null;
         long d = cVar.d(i10);
-        long Q = d0.Q(cVar.b(i10).b - cVar.b(0).b) - this.i;
+        long P = d0.P(cVar.b(i10).b - cVar.b(0).b) - this.i;
         h1Var.getClass();
-        h1Var.h(str, valueOf, 0, d, Q, b2.b.c, false);
+        h1Var.h(str, valueOf, 0, d, P, b2.b.c, false);
         return h1Var;
     }
 
@@ -71,21 +71,25 @@ public final class e extends k1 {
 
     @Override // b2.k1
     public final j1 m(int i10, j1 j1Var, long j3) {
+        boolean z10;
         long j10;
+        boolean z11;
         long j11;
         i c10;
         e2.d.c(i10, 1);
         m2.c cVar = this.l;
-        boolean z10 = cVar.d;
+        boolean z12 = cVar.d;
         long j12 = this.k;
-        if (z10 && cVar.e != -9223372036854775807L && cVar.b == -9223372036854775807L) {
+        if (z12 && cVar.e != -9223372036854775807L && cVar.b == -9223372036854775807L) {
             long j13 = 0;
             if (j3 > 0) {
                 j12 += j3;
                 if (j12 > this.j) {
+                    z10 = true;
+                    z11 = false;
                     j12 = -9223372036854775807L;
                     j10 = -9223372036854775807L;
-                    j1Var.b(j1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j10 || cVar.b != j10) ? false : true, this.n, j12, this.j, 0, h() - 1, this.i);
+                    j1Var.b(j1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j10 || cVar.b != j10) ? z11 : z10, this.n, j12, this.j, 0, h() - 1, this.i);
                     return j1Var;
                 }
             }
@@ -99,6 +103,7 @@ public final class e extends k1 {
             }
             m2.h b10 = cVar.b(i11);
             List list = b10.c;
+            z10 = true;
             int size = list.size();
             j10 = -9223372036854775807L;
             int i12 = 0;
@@ -115,13 +120,15 @@ public final class e extends k1 {
                 i12++;
                 j13 = j11;
             }
-            if (i12 != -1 && (c10 = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).c()) != null && c10.p0(d) != j11) {
-                j12 = (c10.a(c10.H(j14, d)) + j12) - j14;
+            if (i12 != -1 && (c10 = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).c()) != null && c10.w(d) != j11) {
+                j12 = (c10.b(c10.n(j14, d)) + j12) - j14;
             }
         } else {
+            z10 = true;
             j10 = -9223372036854775807L;
         }
-        j1Var.b(j1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j10 || cVar.b != j10) ? false : true, this.n, j12, this.j, 0, h() - 1, this.i);
+        z11 = false;
+        j1Var.b(j1.q, this.m, cVar, this.e, this.f, this.g, true, (cVar.d || cVar.e == j10 || cVar.b != j10) ? z11 : z10, this.n, j12, this.j, 0, h() - 1, this.i);
         return j1Var;
     }
 

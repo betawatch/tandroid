@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import v7.e6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -30,9 +30,9 @@ public class l1 implements Iterable, Serializable {
             throw new IndexOutOfBoundsException(hg.c.i(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a1.g.m(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a4.a.m(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a1.g.m(i11, i12, "End index: ", " >= "));
     }
 
     public static l1 q(int i10, int i11, byte[] bArr) {
@@ -62,7 +62,7 @@ public class l1 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + o9 + o());
                 }
                 if (o9 > l1Var.o()) {
-                    throw new IllegalArgumentException(a4.a.m(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(a1.g.m(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = l1Var.b;
                 int i12 = 0;
@@ -129,6 +129,6 @@ public class l1 implements Iterable, Serializable {
         sb2.append(" size=");
         sb2.append(o9);
         sb2.append(" contents=\"");
-        return a4.a.t(sb2, concat, "\">");
+        return a1.g.t(sb2, concat, "\">");
     }
 }

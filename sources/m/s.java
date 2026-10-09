@@ -24,7 +24,7 @@ import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 import w7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -143,10 +143,10 @@ public final class s extends EditText implements r0.o, u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.o.a(editorInfo, onCreateInputConnection, this);
+        w7.m.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e7 = r0.i0.e(this)) != null) {
             t0.b.b(editorInfo, e7);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r2.s(this, 5));
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -200,7 +200,7 @@ public final class s extends EditText implements r0.o, u0.k {
                 dVar = eVar;
             }
             dVar.c(i10 == 16908322 ? 0 : 1);
-            r0.i0.i(this, dVar.build());
+            r0.i0.h(this, dVar.build());
         }
         return true;
     }

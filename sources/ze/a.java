@@ -1,79 +1,34 @@
 package ze;
 
-import bf.g;
-import bf.p;
-import bf.s;
-import ye.b;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a implements ef.a {
-    public final char a;
+public final class a extends ef.a {
+    public final cf.b a = new cf.b();
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public a(int i10) {
-        this('*');
-        switch (i10) {
-            case 1:
-                this('_');
-                break;
-            default:
-                break;
-        }
+    public static boolean i(d dVar, int i10) {
+        CharSequence charSequence = dVar.a;
+        return dVar.g < 4 && i10 < charSequence.length() && charSequence.charAt(i10) == '>';
     }
 
     @Override // ef.a
-    public final char a() {
+    public final cf.a e() {
         return this.a;
     }
 
     @Override // ef.a
-    public final int b(b bVar, b bVar2) {
-        if (bVar.d || bVar2.c) {
-            int i10 = bVar2.h;
-            if (i10 % 3 != 0 && (bVar.h + i10) % 3 == 0) {
-                return 0;
-            }
+    public final q3.h h(d dVar) {
+        char charAt;
+        int i10 = dVar.e;
+        if (!i(dVar, i10)) {
+            return null;
         }
-        return (bVar.g < 2 || bVar2.g < 2) ? 1 : 2;
-    }
-
-    @Override // ef.a
-    public final int c() {
-        return 1;
-    }
-
-    @Override // ef.a
-    public final void d(s sVar, s sVar2, int i10) {
-        String.valueOf(this.a);
-        g gVar = i10 == 1 ? new g(0) : new g(3);
-        p pVar = (p) sVar.f;
-        while (pVar != null && pVar != sVar2) {
-            p pVar2 = (p) pVar.f;
-            gVar.b(pVar);
-            pVar = pVar2;
+        int i11 = dVar.c + dVar.g;
+        int i12 = i11 + 1;
+        CharSequence charSequence = dVar.a;
+        int i13 = i10 + 1;
+        if (i13 < charSequence.length() && ((charAt = charSequence.charAt(i13)) == '\t' || charAt == ' ')) {
+            i12 = i11 + 2;
         }
-        gVar.g();
-        p pVar3 = (p) sVar.f;
-        gVar.f = pVar3;
-        if (pVar3 != null) {
-            pVar3.e = gVar;
-        }
-        gVar.e = sVar;
-        sVar.f = gVar;
-        p pVar4 = (p) sVar.b;
-        gVar.b = pVar4;
-        if (((p) gVar.f) == null) {
-            pVar4.d = gVar;
-        }
-    }
-
-    @Override // ef.a
-    public final char e() {
-        return this.a;
-    }
-
-    public a(char c10) {
-        this.a = c10;
+        return new q3.h(-1, i12, false);
     }
 }

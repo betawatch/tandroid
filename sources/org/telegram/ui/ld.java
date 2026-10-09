@@ -1,69 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ContextThemeWrapper;
-import org.telegram.ui.Components.RadialProgressView;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ld extends RadialProgressView {
-    public final /* synthetic */ int K;
-    public final /* synthetic */ Object L;
+public final class ld implements TextWatcher {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ld(org.telegram.ui.Components.x40 x40Var, Context context, int i10) {
-        super(context, null);
-        this.K = i10;
-        this.L = x40Var;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.K) {
-            case 3:
-                super.invalidate();
-                qu0 qu0Var = ((PhotoViewer) this.L).e0;
-                if (qu0Var != null) {
-                    qu0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
-    public final void setAlpha(float f7) {
-        switch (this.K) {
-            case 0:
-                super.setAlpha(f7);
-                ((nd) this.L).f.invalidate();
-                break;
-            case 1:
-                super.setAlpha(f7);
-                ((k70) this.L).e.invalidate();
-                break;
-            case 2:
-                super.setAlpha(f7);
-                ((ff0) this.L).h.invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                qu0 qu0Var = ((PhotoViewer) this.L).e0;
-                if (qu0Var != null) {
-                    qu0Var.invalidate();
-                    break;
-                }
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ld(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(contextThemeWrapper, d6Var);
-        this.K = 3;
-        this.L = photoViewer;
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

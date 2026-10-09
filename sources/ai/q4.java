@@ -1,278 +1,202 @@
 package ai;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.NotificationManager;
 import android.content.Context;
-import android.text.TextUtils;
-import android.util.Log;
-import android.util.Property;
+import android.graphics.Canvas;
+import android.text.Layout;
 import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
 import android.widget.TextView;
-import androidx.appcompat.widget.ActionMenuView;
-import androidx.appcompat.widget.Toolbar;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.io.IOException;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.bi;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class q4 implements Runnable {
+public final class q4 extends TextView {
     public final /* synthetic */ int a;
-    public final Object b;
 
-    public q4(com.google.android.gms.common.api.internal.m1 m1Var, c5.b0 b0Var) {
-        this.a = 17;
-        this.b = b0Var;
-    }
-
-    private final void a() {
-        g6.o oVar = (g6.o) this.b;
-        synchronized (g6.o.i) {
-            try {
-                if (oVar.d()) {
-                    oVar.f(15);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        Object obj;
-        i2.f0 f0Var;
-        m.h hVar;
-        int i10 = 0;
-        switch (this.a) {
-            case 0:
-                e6 e6Var = (e6) this.b;
-                if (e6Var.K1 && e6Var.b1) {
-                    jc jcVar = ((ac) e6Var.Q1).d;
-                    jcVar.l1 = false;
-                    jcVar.P();
-                    return;
-                }
-                return;
-            case 1:
-                ((zb) this.b).L0 = false;
-                return;
-            case 2:
-                oa oaVar = (oa) this.b;
-                oaVar.b = false;
-                oaVar.invalidate();
-                return;
-            case 3:
-                try {
-                    super/*android.app.Activity*/.onBackPressed();
-                    return;
-                } catch (IllegalStateException e7) {
-                    if (!TextUtils.equals(e7.getMessage(), "Can not perform this action after onSaveInstanceState")) {
-                        throw e7;
-                    }
-                    return;
-                } catch (NullPointerException e10) {
-                    if (!TextUtils.equals(e10.getMessage(), "Attempt to invoke virtual method 'android.os.Handler android.app.FragmentHostCallback.getHandler()' on a null object reference")) {
-                        throw e10;
-                    }
-                    return;
-                }
-            case 4:
-                androidx.biometric.e0 e0Var = (androidx.biometric.e0) this.b;
-                Context n10 = e0Var.n();
-                if (n10 == null) {
-                    Log.w("FingerprintFragment", "Not resetting the dialog. Context is null.");
-                    return;
-                } else {
-                    e0Var.C0.f(1);
-                    e0Var.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
-                    return;
-                }
-            case 5:
-                androidx.fragment.app.p pVar = (androidx.fragment.app.p) this.b;
-                pVar.n0.onDismiss(pVar.v0);
-                return;
-            case 6:
-                androidx.fragment.app.s sVar = (androidx.fragment.app.s) this.b;
-                if (sVar.Y != null) {
-                    sVar.j().getClass();
-                    return;
-                }
-                return;
-            case 7:
-                ((androidx.fragment.app.k0) this.b).A(true);
-                return;
-            case 8:
-                synchronized (((androidx.lifecycle.z) this.b).a) {
-                    obj = ((androidx.lifecycle.z) this.b).f;
-                    ((androidx.lifecycle.z) this.b).f = androidx.lifecycle.z.k;
-                }
-                ((androidx.lifecycle.z) this.b).j(obj);
-                return;
-            case 9:
-                androidx.mediarouter.app.u uVar = (androidx.mediarouter.app.u) this.b;
-                uVar.i(true);
-                uVar.U.requestLayout();
-                uVar.U.getViewTreeObserver().addOnGlobalLayoutListener(new androidx.mediarouter.app.j(uVar, i10));
-                return;
-            case 10:
-                androidx.mediarouter.app.u uVar2 = ((androidx.mediarouter.app.s) this.b).b;
-                if (uVar2.c0 != null) {
-                    uVar2.c0 = null;
-                    if (uVar2.s0) {
-                        uVar2.q(uVar2.t0);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 11:
-                c5.y yVar = (c5.y) this.b;
-                c5.c cVar = yVar.d;
-                cVar.k(0);
-                c5.h hVar2 = c5.g0.i;
-                cVar.j(24, hVar2);
-                yVar.c(hVar2);
-                return;
-            case 12:
-                qg.j jVar = ((ci.mb) this.b).J0;
-                if (jVar instanceof qg.v2) {
-                    ((qg.v2) jVar).getEditText();
-                    return;
-                }
-                return;
-            case 13:
-                com.google.android.gms.common.api.internal.g0 g0Var = (com.google.android.gms.common.api.internal.g0) this.b;
-                k6.e eVar = g0Var.d;
-                Context context = g0Var.c;
-                eVar.getClass();
-                if (k6.g.a.getAndSet(true)) {
-                    return;
-                }
-                try {
-                    NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
-                    if (notificationManager != null) {
-                        notificationManager.cancel(10436);
-                        return;
-                    }
-                    return;
-                } catch (SecurityException e11) {
-                    Log.d("GooglePlayServicesUtil", "Suppressing Security Exception %s in cancelAvailabilityErrorNotifications.", e11);
-                    return;
-                }
-            case 14:
-                ((com.google.android.gms.common.api.internal.p0) this.b).f();
-                return;
-            case 15:
-                com.google.android.gms.common.api.c cVar2 = ((com.google.android.gms.common.api.internal.p0) ((a6.m) this.b).b).b;
-                cVar2.d(cVar2.getClass().getName().concat(" disconnecting because it was signed out."));
-                return;
-            case 16:
-                ((com.google.android.gms.common.api.internal.d1) this.b).j.b(new k6.a(4));
-                return;
-            case 17:
-                return;
-            case 18:
-                com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
-                xVar.o.lock();
-                try {
-                    com.google.android.gms.common.api.internal.x.l(xVar);
-                    return;
-                } finally {
-                    xVar.o.unlock();
-                }
-            case 19:
-                ((f6.i) this.b).g(false);
-                return;
-            case 20:
-                a();
-                return;
-            case 21:
-                i.e eVar2 = (i.e) this.b;
-                eVar2.a(true);
-                eVar2.invalidateSelf();
-                return;
-            case 22:
-                if (((TaskCompletionSource) this.b).trySetException(new IOException("TIMEOUT"))) {
-                    Log.w("Rpc", "No response");
-                    return;
-                }
-                return;
-            case 23:
-                kg.e eVar3 = (kg.e) this.b;
-                eVar3.f.animate().setDuration(120L).alpha(0.0f);
-                eVar3.h.animate().setListener(null).start();
-                if (eVar3.h.getVisibility() != 0) {
-                    eVar3.h.setVisibility(0);
-                    eVar3.h.setAlpha(0.0f);
-                }
-                eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
-                return;
-            case 24:
-                ki.s0 s0Var = (ki.s0) this.b;
-                if (s0Var.W == 5 && (f0Var = s0Var.S) != null && s0Var.x) {
-                    long J0 = f0Var.J0();
-                    long j3 = s0Var.G;
-                    if (J0 < j3 || J0 >= s0Var.H) {
-                        s0Var.S.W0(5, j3);
-                    }
-                    s0Var.d.getClass();
-                    s0Var.i.postDelayed(this, 33L);
-                    return;
-                }
-                return;
-            case 25:
-                m.r1 r1Var = (m.r1) this.b;
-                r1Var.w = null;
-                r1Var.drawableStateChanged();
-                return;
-            case 26:
-                ActionMenuView actionMenuView = ((Toolbar) this.b).a;
-                if (actionMenuView == null || (hVar = actionMenuView.J) == null) {
-                    return;
-                }
-                hVar.l();
-                return;
-            case 27:
-                Object obj2 = ((a4.m) this.b).b;
-                return;
-            case 28:
-                org.telegram.ui.Cells.a0 a0Var = (org.telegram.ui.Cells.a0) this.b;
-                if (a0Var.b == null) {
-                    a0Var.b = new androidx.emoji2.text.j(a0Var, 3);
-                }
-                androidx.emoji2.text.j jVar2 = a0Var.b;
-                int i11 = a0Var.c + 1;
-                a0Var.c = i11;
-                jVar2.b = i11;
-                a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
-                return;
-            default:
-                org.telegram.ui.Cells.v5 v5Var = (org.telegram.ui.Cells.v5) this.b;
-                TextView textView = v5Var.b;
-                textView.setTag(null);
-                AnimatorSet animatorSet = new AnimatorSet();
-                v5Var.d = animatorSet;
-                Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
-                v5Var.d.setDuration(250L);
-                v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.u4(this, 9));
-                v5Var.d.start();
-                return;
-        }
-    }
-
-    public /* synthetic */ q4(Object obj, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ q4(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = obj;
     }
 
-    public q4(a4.m mVar, int i10) {
-        this.a = 27;
-        this.b = mVar;
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.dispatchDraw(canvas);
+                canvas.drawCircle(AndroidUtilities.dp(3.5f), AndroidUtilities.dp(11.5f), AndroidUtilities.dp(2.5f), getPaint());
+                break;
+            case 2:
+            default:
+                super.dispatchDraw(canvas);
+                break;
+            case 3:
+                if (getPaddingLeft() > 0) {
+                    canvas.drawCircle((getPaddingLeft() - AndroidUtilities.dp(2.5f)) / 2.0f, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.5f), getPaint());
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public CharSequence getAccessibilityClassName() {
+        switch (this.a) {
+            case 14:
+                return Button.class.getName();
+            case 15:
+                return Button.class.getName();
+            case 16:
+                return Button.class.getName();
+            case 17:
+                return Button.class.getName();
+            case 18:
+                return Button.class.getName();
+            case 19:
+                return Button.class.getName();
+            case 20:
+                return Button.class.getName();
+            case 21:
+                return Button.class.getName();
+            default:
+                return super.getAccessibilityClassName();
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 4:
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.i4.r1);
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 9:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(220.0f)), View.MeasureSpec.getMode(i10)), i11);
+                break;
+            case 10:
+                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout = getLayout();
+                    int i12 = 0;
+                    for (int i13 = 0; i13 < layout.getLineCount(); i13++) {
+                        i12 = Math.max(i12, (int) Math.ceil(layout.getLineWidth(i13)));
+                    }
+                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i12, TLObject.FLAG_30);
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 11:
+                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout2 = getLayout();
+                    int i14 = 0;
+                    for (int i15 = 0; i15 < layout2.getLineCount(); i15++) {
+                        i14 = Math.max(i14, (int) Math.ceil(layout2.getLineWidth(i15)));
+                    }
+                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i14, TLObject.FLAG_30);
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 12:
+                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && getLayout() != null) {
+                    Layout layout3 = getLayout();
+                    int i16 = 0;
+                    for (int i17 = 0; i17 < layout3.getLineCount(); i17++) {
+                        i16 = Math.max(i16, (int) Math.ceil(layout3.getLineWidth(i17)));
+                    }
+                    i10 = View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + i16, TLObject.FLAG_30);
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 13:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), (int) (AndroidUtilities.displaySize.x * 0.45f)), TLObject.FLAG_31), i11);
+                break;
+            case 14:
+            case 15:
+            case 16:
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 21:
+            case 24:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 22:
+                super.onMeasure(i10, i11);
+                try {
+                    Layout layout4 = getLayout();
+                    if (layout4.getLineCount() <= 1) {
+                        break;
+                    } else {
+                        int i18 = 0;
+                        for (int lineCount = layout4.getLineCount() - 1; lineCount >= 0; lineCount--) {
+                            i18 = Math.max(i18, Math.round(layout4.getPaint().measureText(getText(), layout4.getLineStart(lineCount), layout4.getLineEnd(lineCount))));
+                        }
+                        super.onMeasure(Math.min(i18 + getPaddingLeft() + getPaddingRight(), getMeasuredWidth()) | TLObject.FLAG_30, 1073741824 | getMeasuredHeight());
+                        break;
+                    }
+                } catch (Exception unused) {
+                    return;
+                }
+            case 23:
+                super.onMeasure(i10, i11);
+                break;
+            case 25:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
+                break;
+            case 26:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(8.0f)) / 2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(42.0f), TLObject.FLAG_30));
+                break;
+            case 27:
+                if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+                    i10 = bi.c(52.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 28:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 29:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        switch (this.a) {
+            case 2:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 3:
+            case 4:
+            default:
+                super.setText(charSequence, bufferType);
+                break;
+            case 5:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 6:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 7:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 8:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+        }
     }
 }

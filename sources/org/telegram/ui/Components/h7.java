@@ -1,177 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h7 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ KeyEvent.Callback e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class h7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l8 b;
+    public final /* synthetic */ p80 c;
+    public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ h7(j8 j8Var, boolean z10, MessageObject messageObject, boolean z11, Runnable runnable, long j3, TLRPC.Document document) {
-        this.e = j8Var;
-        this.b = z10;
-        this.f = messageObject;
-        this.c = z11;
-        this.g = runnable;
-        this.d = j3;
-        this.h = document;
+    public /* synthetic */ h7(l8 l8Var, MessageObject messageObject, p80 p80Var, int i10) {
+        this.a = i10;
+        this.b = l8Var;
+        this.d = messageObject;
+        this.c = p80Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                j8.y((j8) this.e, this.b, (MessageObject) this.f, this.c, (Runnable) this.g, this.d, (TLRPC.Document) this.h, tL_error);
+                l8 l8Var = this.b;
+                l8Var.getClass();
+                this.c.u();
+                l8Var.r0(this.d);
+                break;
+            case 1:
+                l8 l8Var2 = this.b;
+                l8Var2.getClass();
+                this.c.u();
+                l8Var2.A0(this.d);
+                break;
+            case 2:
+                l8 l8Var3 = this.b;
+                MessageObject messageObject = this.d;
+                l8Var3.w0(messageObject, false, new h7(l8Var3, messageObject, this.c, 5), false);
+                break;
+            case 3:
+                l8 l8Var4 = this.b;
+                l8Var4.getClass();
+                this.c.u();
+                l8Var4.r0(this.d);
+                break;
+            case 4:
+                l8 l8Var5 = this.b;
+                l8Var5.getClass();
+                this.c.u();
+                l8Var5.A0(this.d);
+                break;
+            case 5:
+                l8.x(this.b, this.d, this.c);
+                break;
+            case 6:
+                l8 l8Var6 = this.b;
+                l8Var6.w0(this.d, true, new i7(l8Var6, this.c, 4), false);
+                break;
+            case 7:
+                l8.M(this.b, this.d, this.c);
                 break;
             default:
-                final lh0 lh0Var = (lh0) this.e;
-                final MessagesController messagesController = (MessagesController) this.f;
-                final TLRPC.TL_channels_searchPosts tL_channels_searchPosts = (TLRPC.TL_channels_searchPosts) this.g;
-                final ConnectionsManager connectionsManager = (ConnectionsManager) this.h;
-                final boolean z10 = this.b;
-                final boolean z11 = this.c;
-                final long j3 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.kh0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        boolean z12;
-                        lh0 lh0Var2 = lh0.this;
-                        int i10 = lh0Var2.b;
-                        e71 e71Var = lh0Var2.c;
-                        lh0Var2.K = -1;
-                        lh0Var2.v = false;
-                        lh0Var2.H.setLoading(false);
-                        TLObject tLObject2 = tLObject;
-                        boolean z13 = tLObject2 instanceof TLRPC.messages_Messages;
-                        long j10 = j3;
-                        if (!z13) {
-                            TLRPC.TL_error tL_error2 = tL_error;
-                            if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
-                                if (tL_error2 != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
-                                    lh0Var2.d();
-                                    e71Var.f3.N(true);
-                                    return;
-                                } else {
-                                    if (tL_error2 == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
-                                        return;
-                                    }
-                                    lh0Var2.d();
-                                    e71Var.f3.N(true);
-                                    yh.u5.y(i10, false).q(true, true, new ai.j(lh0Var2, j10, 22));
-                                    return;
-                                }
-                            }
-                            Matcher matcher = Pattern.compile("FLOOD_WAIT_(\\d+)_OR_STARS_(\\d+)").matcher(tL_error2.text);
-                            if (matcher == null || !matcher.matches()) {
-                                return;
-                            }
-                            int parseInt = Integer.parseInt(matcher.group(1));
-                            int parseInt2 = Integer.parseInt(matcher.group(2));
-                            TLRPC.SearchPostsFlood searchPostsFlood = lh0Var2.d;
-                            if (searchPostsFlood != null) {
-                                searchPostsFlood.flags = 2 | searchPostsFlood.flags;
-                                searchPostsFlood.wait_till = connectionsManager.getCurrentTime() + parseInt;
-                                lh0Var2.d.stars_amount = parseInt2;
-                            }
-                            lh0Var2.d();
-                            e71Var.f3.N(true);
-                            return;
-                        }
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
-                        ArrayList<TLRPC.User> arrayList = messages_messages.users;
-                        MessagesController messagesController2 = messagesController;
-                        messagesController2.putUsers(arrayList, false);
-                        messagesController2.putChats(messages_messages.chats, false);
-                        TLRPC.SearchPostsFlood searchPostsFlood2 = messages_messages.search_flood;
-                        if (searchPostsFlood2 != null) {
-                            lh0Var2.d = searchPostsFlood2;
-                        }
-                        boolean z14 = z10;
-                        ArrayList arrayList2 = z14 ? lh0Var2.e : lh0Var2.n;
-                        boolean isEmpty = arrayList2.isEmpty();
-                        ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;
-                        int size = arrayList3.size();
-                        int i11 = 0;
-                        while (i11 < size) {
-                            TLRPC.Message message = arrayList3.get(i11);
-                            i11++;
-                            MessageObject messageObject = new MessageObject(i10, message, false, false);
-                            if (!z14) {
-                                messageObject.setQuery(tL_channels_searchPosts.query);
-                            }
-                            arrayList2.add(messageObject);
-                        }
-                        if (z14) {
-                            z12 = true;
-                            if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
-                                lh0Var2.f = messages_messages.next_rate;
-                                lh0Var2.h = (messages_messages.flags & 1) == 0;
-                            } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
-                                lh0Var2.f = 0;
-                                lh0Var2.h = true;
-                            } else if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
-                                lh0Var2.f = 0;
-                                lh0Var2.h = true;
-                            }
-                        } else if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
-                            lh0Var2.r = messages_messages.next_rate;
-                            lh0Var2.s = (messages_messages.flags & 1) == 0;
-                            z12 = true;
-                        } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
-                            lh0Var2.r = 0;
-                            z12 = true;
-                            lh0Var2.s = true;
-                        } else {
-                            z12 = true;
-                            if (messages_messages instanceof TLRPC.TL_messages_channelMessages) {
-                                lh0Var2.r = 0;
-                                lh0Var2.s = true;
-                            }
-                        }
-                        lh0Var2.d();
-                        if (isEmpty) {
-                            e71Var.v0(0);
-                        }
-                        e71Var.f3.N(z12);
-                        if (!arrayList2.isEmpty() && (!z14 ? !lh0Var2.s : !lh0Var2.h)) {
-                            AndroidUtilities.runOnUIThread(new ci.y0(lh0Var2, z14, arrayList2, 23));
-                        }
-                        if (!z11 || j10 <= 0 || z14) {
-                            return;
-                        }
-                        yc.a0(lh0Var2.a).Q(R.raw.stars_topup, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("SearchPaidStars", (int) j10))).j();
-                    }
-                });
+                this.b.v0(this.d);
+                this.c.u();
                 break;
         }
     }
 
-    public /* synthetic */ h7(lh0 lh0Var, MessagesController messagesController, boolean z10, TLRPC.TL_channels_searchPosts tL_channels_searchPosts, boolean z11, long j3, ConnectionsManager connectionsManager) {
-        this.e = lh0Var;
-        this.f = messagesController;
-        this.b = z10;
-        this.g = tL_channels_searchPosts;
-        this.c = z11;
-        this.d = j3;
-        this.h = connectionsManager;
+    public /* synthetic */ h7(l8 l8Var, p80 p80Var, MessageObject messageObject, int i10) {
+        this.a = i10;
+        this.b = l8Var;
+        this.c = p80Var;
+        this.d = messageObject;
     }
 }

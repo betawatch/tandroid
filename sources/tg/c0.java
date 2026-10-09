@@ -1,10 +1,10 @@
 package tg;
 
-import ai.e4;
-import ai.s5;
+import ai.f4;
+import ai.t5;
 import android.content.Intent;
 import android.net.Uri;
-import ci.z8;
+import ci.a9;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -14,16 +14,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.sw0;
+import org.telegram.ui.Components.tc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c0 extends cb {
+public final class c0 extends eb {
     public final TLRPC.TL_payments_checkedGiftCode X;
     public final boolean Y;
     public b0 Z;
@@ -37,7 +37,7 @@ public final class c0 extends cb {
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
         fixNavigationBar();
-        L();
+        O();
         b0 b0Var = this.Z;
         d3 d3Var = this.container;
         b0Var.getClass();
@@ -48,7 +48,7 @@ public final class c0 extends cb {
         b0Var.n = d3Var;
     }
 
-    public static boolean Q(Intent intent, nf.e eVar) {
+    public static boolean T(Intent intent, of.e eVar) {
         String scheme;
         String path;
         Uri data = intent.getData();
@@ -64,7 +64,7 @@ public final class c0 extends cb {
             if ((!uri.startsWith("tg:giftcode") && !uri.startsWith("tg://giftcode")) || lastPathSegment == null) {
                 return false;
             }
-            R(LaunchActivity.R(), lastPathSegment, eVar);
+            U(LaunchActivity.R(), lastPathSegment, eVar);
             return true;
         }
         String lowerCase = data.getHost().toLowerCase();
@@ -75,11 +75,11 @@ public final class c0 extends cb {
         if (!path.startsWith("/giftcode") || lastPathSegment2 == null) {
             return false;
         }
-        R(LaunchActivity.R(), lastPathSegment2, eVar);
+        U(LaunchActivity.R(), lastPathSegment2, eVar);
         return true;
     }
 
-    public static void R(n2 n2Var, String str, nf.e eVar) {
+    public static void U(n2 n2Var, String str, of.e eVar) {
         if (n2Var == null) {
             return;
         }
@@ -88,29 +88,29 @@ public final class c0 extends cb {
             eVar.d();
             eVar.b = new d(atomicBoolean, 1);
         }
-        e4 e4Var = new e4(atomicBoolean, n2Var, str, eVar, 16);
+        f4 f4Var = new f4(atomicBoolean, n2Var, str, eVar, 16);
         f fVar = new f(atomicBoolean, eVar, 1);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
         TLRPC.TL_payments_checkGiftCode tL_payments_checkGiftCode = new TLRPC.TL_payments_checkGiftCode();
         tL_payments_checkGiftCode.slug = str;
-        connectionsManager.sendRequest(tL_payments_checkGiftCode, new s5(messagesController, e4Var, fVar, 19));
+        connectionsManager.sendRequest(tL_payments_checkGiftCode, new t5(messagesController, f4Var, fVar, 19));
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void E(mw0 mw0Var) {
-        rc.a(this.container, new z8(14));
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return this.Y ? LocaleController.getString(R.string.BoostingGiftLink) : LocaleController.getString(R.string.BoostingUsedGiftLink);
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
+    @Override // org.telegram.ui.Components.eb
+    public final void H(sw0 sw0Var) {
+        tc.a(this.container, new a9(14));
+    }
+
+    @Override // org.telegram.ui.Components.eb
+    public final pm0 x(qm0 qm0Var) {
         b0 b0Var = new b0(this, this.resourcesProvider);
         this.Z = b0Var;
         return b0Var;
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return this.Y ? LocaleController.getString(R.string.BoostingGiftLink) : LocaleController.getString(R.string.BoostingUsedGiftLink);
     }
 }

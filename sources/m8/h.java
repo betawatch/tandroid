@@ -7,7 +7,6 @@ import android.media.MediaDescription;
 import android.media.session.MediaSession;
 import android.net.Uri;
 import android.os.BadParcelableException;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
@@ -21,22 +20,21 @@ import com.google.android.gms.common.data.DataHolder;
 import com.google.android.gms.common.internal.BinderWrapper;
 import java.util.ArrayList;
 import n4.e0;
-import n4.h0;
-import n4.i0;
+import n4.f0;
+import n4.g0;
 import n4.l;
 import n4.m;
+import n4.u;
 import n4.v;
 import n4.w;
 import n4.x;
-import n4.y;
 import n6.j;
 import n6.n;
 import n6.o;
-import n6.u;
-import w7.f0;
-import w7.g0;
+import w7.c0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -46,110 +44,107 @@ public final class h implements Parcelable.Creator {
     }
 
     public static void a(n6.f fVar, Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
+        int q6 = d0.q(parcel, 20293);
         int i11 = fVar.a;
-        g0.s(parcel, 1, 4);
+        d0.s(parcel, 1, 4);
         parcel.writeInt(i11);
         int i12 = fVar.b;
-        g0.s(parcel, 2, 4);
+        d0.s(parcel, 2, 4);
         parcel.writeInt(i12);
         int i13 = fVar.c;
-        g0.s(parcel, 3, 4);
+        d0.s(parcel, 3, 4);
         parcel.writeInt(i13);
-        g0.l(parcel, 4, fVar.d);
-        g0.f(parcel, 5, fVar.e);
-        g0.o(parcel, 6, fVar.f, i10);
-        g0.b(parcel, 7, fVar.h);
-        g0.k(parcel, 8, fVar.n, i10);
-        g0.o(parcel, 10, fVar.r, i10);
-        g0.o(parcel, 11, fVar.s, i10);
+        d0.l(parcel, 4, fVar.d);
+        d0.f(parcel, 5, fVar.e);
+        d0.o(parcel, 6, fVar.f, i10);
+        d0.b(parcel, 7, fVar.h);
+        d0.k(parcel, 8, fVar.n, i10);
+        d0.o(parcel, 10, fVar.r, i10);
+        d0.o(parcel, 11, fVar.s, i10);
         boolean z10 = fVar.v;
-        g0.s(parcel, 12, 4);
+        d0.s(parcel, 12, 4);
         parcel.writeInt(z10 ? 1 : 0);
         int i14 = fVar.w;
-        g0.s(parcel, 13, 4);
+        d0.s(parcel, 13, 4);
         parcel.writeInt(i14);
         boolean z11 = fVar.x;
-        g0.s(parcel, 14, 4);
+        d0.s(parcel, 14, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        g0.l(parcel, 15, fVar.y);
-        g0.r(parcel, q6);
+        d0.l(parcel, 15, fVar.y);
+        d0.r(parcel, q6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:545:0x0564  */
     /* JADX WARN: Removed duplicated region for block: B:547:0x056c  */
-    /* JADX WARN: Removed duplicated region for block: B:556:0x0591  */
-    /* JADX WARN: Removed duplicated region for block: B:559:0x0594  */
-    /* JADX WARN: Removed duplicated region for block: B:563:0x058e  */
+    /* JADX WARN: Removed duplicated region for block: B:557:0x0594  */
+    /* JADX WARN: Removed duplicated region for block: B:560:0x058e  */
     @Override // android.os.Parcelable.Creator
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object createFromParcel(Parcel parcel) {
         Uri uri;
-        Uri j3;
-        Bundle bundle;
         switch (this.a) {
             case 0:
-                int z10 = f0.z(parcel);
+                int z10 = c0.z(parcel);
                 String str = null;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     if (((char) readInt) != 2) {
-                        f0.y(parcel, readInt);
+                        c0.y(parcel, readInt);
                     } else {
-                        str = f0.h(parcel, readInt);
+                        str = c0.h(parcel, readInt);
                     }
                 }
-                f0.m(parcel, z10);
+                c0.m(parcel, z10);
                 return new g(str);
             case 1:
-                int z11 = f0.z(parcel);
+                int z11 = c0.z(parcel);
                 int i10 = 0;
                 boolean z12 = false;
                 while (parcel.dataPosition() < z11) {
                     int readInt2 = parcel.readInt();
                     char c10 = (char) readInt2;
                     if (c10 == 2) {
-                        i10 = f0.u(parcel, readInt2);
+                        i10 = c0.u(parcel, readInt2);
                     } else if (c10 != 3) {
-                        f0.y(parcel, readInt2);
+                        c0.y(parcel, readInt2);
                     } else {
-                        z12 = f0.n(parcel, readInt2);
+                        z12 = c0.n(parcel, readInt2);
                     }
                 }
-                f0.m(parcel, z11);
+                c0.m(parcel, z11);
                 return new i(i10, z12);
             case 2:
-                int z13 = f0.z(parcel);
+                int z13 = c0.z(parcel);
                 String str2 = null;
                 byte[] bArr = null;
-                long j10 = 0;
+                long j3 = 0;
                 DataHolder dataHolder = null;
                 ParcelFileDescriptor parcelFileDescriptor = null;
                 while (parcel.dataPosition() < z13) {
                     int readInt3 = parcel.readInt();
                     char c11 = (char) readInt3;
                     if (c11 == 2) {
-                        str2 = f0.h(parcel, readInt3);
+                        str2 = c0.h(parcel, readInt3);
                     } else if (c11 == 3) {
-                        dataHolder = (DataHolder) f0.g(parcel, readInt3, DataHolder.CREATOR);
+                        dataHolder = (DataHolder) c0.g(parcel, readInt3, DataHolder.CREATOR);
                     } else if (c11 == 4) {
-                        parcelFileDescriptor = (ParcelFileDescriptor) f0.g(parcel, readInt3, ParcelFileDescriptor.CREATOR);
+                        parcelFileDescriptor = (ParcelFileDescriptor) c0.g(parcel, readInt3, ParcelFileDescriptor.CREATOR);
                     } else if (c11 == 5) {
-                        j10 = f0.w(parcel, readInt3);
+                        j3 = c0.w(parcel, readInt3);
                     } else if (c11 != 6) {
-                        f0.y(parcel, readInt3);
+                        c0.y(parcel, readInt3);
                     } else {
-                        bArr = f0.b(parcel, readInt3);
+                        bArr = c0.b(parcel, readInt3);
                     }
                 }
-                f0.m(parcel, z13);
+                c0.m(parcel, z13);
                 b bVar = new b();
                 bVar.a = str2;
                 bVar.b = dataHolder;
                 bVar.c = parcelFileDescriptor;
-                bVar.d = j10;
+                bVar.d = j3;
                 bVar.e = bArr;
                 return bVar;
             case 3:
@@ -161,8 +156,9 @@ public final class h implements Parcelable.Creator {
                 Bitmap iconBitmap = mediaDescription.getIconBitmap();
                 Uri iconUri = mediaDescription.getIconUri();
                 Bundle extras = mediaDescription.getExtras();
+                Bundle bundle = null;
                 if (extras != null) {
-                    y.Q(extras);
+                    x.Q(extras);
                     try {
                         extras.isEmpty();
                     } catch (BadParcelableException unused) {
@@ -174,196 +170,197 @@ public final class h implements Parcelable.Creator {
                     if (extras == null) {
                         uri = (Uri) extras.getParcelable("android.support.v4.media.description.MEDIA_URI");
                         if (uri != null) {
-                            if (extras.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") && extras.size() == 2) {
-                                extras = null;
-                            } else {
+                            if (!extras.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") || extras.size() != 2) {
                                 extras.remove("android.support.v4.media.description.MEDIA_URI");
                                 extras.remove("android.support.v4.media.description.NULL_BUNDLE_FLAG");
                             }
+                            if (uri == null) {
+                                uri = mediaDescription.getMediaUri();
+                            }
+                            l lVar = new l(mediaId, title, subtitle, description, iconBitmap, iconUri, bundle, uri);
+                            lVar.r = mediaDescription;
+                            return lVar;
                         }
                     } else {
                         uri = null;
                     }
+                    bundle = extras;
                     if (uri == null) {
-                        bundle = extras;
-                        j3 = uri;
-                    } else {
-                        j3 = Build.VERSION.SDK_INT >= 23 ? e0.b.j(mediaDescription) : null;
-                        bundle = extras;
                     }
-                    l lVar = new l(mediaId, title, subtitle, description, iconBitmap, iconUri, bundle, j3);
-                    lVar.r = mediaDescription;
-                    return lVar;
+                    l lVar2 = new l(mediaId, title, subtitle, description, iconBitmap, iconUri, bundle, uri);
+                    lVar2.r = mediaDescription;
+                    return lVar2;
                 }
                 extras = null;
                 if (extras != null) {
                 }
                 if (extras == null) {
                 }
+                bundle = extras;
                 if (uri == null) {
                 }
-                l lVar2 = new l(mediaId, title, subtitle, description, iconBitmap, iconUri, bundle, j3);
-                lVar2.r = mediaDescription;
-                return lVar2;
+                l lVar22 = new l(mediaId, title, subtitle, description, iconBitmap, iconUri, bundle, uri);
+                lVar22.r = mediaDescription;
+                return lVar22;
             case 4:
                 return new m(parcel);
             case 5:
-                return new v(parcel);
+                return new u(parcel);
             case 6:
-                w wVar = new w();
-                wVar.a = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel);
-                return wVar;
+                v vVar = new v();
+                vVar.a = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(parcel);
+                return vVar;
             case 7:
                 MediaSession.Token token = (MediaSession.Token) parcel.readParcelable(null);
                 token.getClass();
-                return new x(token, null);
+                return new w(token, null);
             case 8:
-                e0 e0Var = new e0();
-                e0Var.a = parcel.readInt();
-                e0Var.c = parcel.readInt();
-                e0Var.d = parcel.readInt();
-                e0Var.e = parcel.readInt();
-                e0Var.b = parcel.readInt();
-                return e0Var;
+                n4.d0 d0Var = new n4.d0();
+                d0Var.a = parcel.readInt();
+                d0Var.c = parcel.readInt();
+                d0Var.d = parcel.readInt();
+                d0Var.e = parcel.readInt();
+                d0Var.b = parcel.readInt();
+                return d0Var;
             case 9:
-                return new h0(parcel);
+                return new f0(parcel);
             case 10:
-                return new n4.g0(parcel);
+                return new e0(parcel);
             case 11:
-                return new i0(parcel.readInt(), parcel.readFloat());
+                return new g0(parcel.readInt(), parcel.readFloat());
             case 12:
-                int z14 = f0.z(parcel);
+                int z14 = c0.z(parcel);
                 String str3 = null;
                 int i11 = 0;
                 while (parcel.dataPosition() < z14) {
                     int readInt4 = parcel.readInt();
                     char c12 = (char) readInt4;
                     if (c12 == 1) {
-                        i11 = f0.u(parcel, readInt4);
+                        i11 = c0.u(parcel, readInt4);
                     } else if (c12 != 2) {
-                        f0.y(parcel, readInt4);
+                        c0.y(parcel, readInt4);
                     } else {
-                        str3 = f0.h(parcel, readInt4);
+                        str3 = c0.h(parcel, readInt4);
                     }
                 }
-                f0.m(parcel, z14);
+                c0.m(parcel, z14);
                 return new n6.d(i11, str3);
             case 13:
-                int z15 = f0.z(parcel);
+                int z15 = c0.z(parcel);
                 ArrayList arrayList = null;
                 int i12 = 0;
                 while (parcel.dataPosition() < z15) {
                     int readInt5 = parcel.readInt();
                     char c13 = (char) readInt5;
                     if (c13 == 1) {
-                        i12 = f0.u(parcel, readInt5);
+                        i12 = c0.u(parcel, readInt5);
                     } else if (c13 != 2) {
-                        f0.y(parcel, readInt5);
+                        c0.y(parcel, readInt5);
                     } else {
-                        arrayList = f0.l(parcel, readInt5, j.CREATOR);
+                        arrayList = c0.l(parcel, readInt5, j.CREATOR);
                     }
                 }
-                f0.m(parcel, z15);
+                c0.m(parcel, z15);
                 return new o(i12, arrayList);
             case 14:
-                int z16 = f0.z(parcel);
-                String str4 = null;
-                String str5 = null;
-                long j11 = 0;
-                long j12 = 0;
-                int i13 = 0;
+                int z16 = c0.z(parcel);
+                int i13 = -1;
                 int i14 = 0;
                 int i15 = 0;
                 int i16 = 0;
-                int i17 = -1;
+                int i17 = 0;
+                String str4 = null;
+                String str5 = null;
+                long j10 = 0;
+                long j11 = 0;
                 while (parcel.dataPosition() < z16) {
                     int readInt6 = parcel.readInt();
                     switch ((char) readInt6) {
                         case 1:
-                            i13 = f0.u(parcel, readInt6);
+                            i14 = c0.u(parcel, readInt6);
                             break;
                         case 2:
-                            i14 = f0.u(parcel, readInt6);
+                            i15 = c0.u(parcel, readInt6);
                             break;
                         case 3:
-                            i15 = f0.u(parcel, readInt6);
+                            i16 = c0.u(parcel, readInt6);
                             break;
                         case 4:
-                            j11 = f0.w(parcel, readInt6);
+                            j10 = c0.w(parcel, readInt6);
                             break;
                         case 5:
-                            j12 = f0.w(parcel, readInt6);
+                            j11 = c0.w(parcel, readInt6);
                             break;
                         case 6:
-                            str4 = f0.h(parcel, readInt6);
+                            str4 = c0.h(parcel, readInt6);
                             break;
                         case 7:
-                            str5 = f0.h(parcel, readInt6);
+                            str5 = c0.h(parcel, readInt6);
                             break;
                         case '\b':
-                            i16 = f0.u(parcel, readInt6);
+                            i17 = c0.u(parcel, readInt6);
                             break;
                         case '\t':
-                            i17 = f0.u(parcel, readInt6);
+                            i13 = c0.u(parcel, readInt6);
                             break;
                         default:
-                            f0.y(parcel, readInt6);
+                            c0.y(parcel, readInt6);
                             break;
                     }
                 }
-                f0.m(parcel, z16);
-                return new j(i13, i14, i15, j11, j12, str4, str5, i16, i17);
+                c0.m(parcel, z16);
+                return new j(i14, i15, i16, j10, j11, str4, str5, i17, i13);
             case 15:
-                int z17 = f0.z(parcel);
+                int z17 = c0.z(parcel);
                 Account account = null;
-                GoogleSignInAccount googleSignInAccount = null;
                 int i18 = 0;
                 int i19 = 0;
+                GoogleSignInAccount googleSignInAccount = null;
                 while (parcel.dataPosition() < z17) {
                     int readInt7 = parcel.readInt();
                     char c14 = (char) readInt7;
                     if (c14 == 1) {
-                        i18 = f0.u(parcel, readInt7);
+                        i18 = c0.u(parcel, readInt7);
                     } else if (c14 == 2) {
-                        account = (Account) f0.g(parcel, readInt7, Account.CREATOR);
+                        account = (Account) c0.g(parcel, readInt7, Account.CREATOR);
                     } else if (c14 == 3) {
-                        i19 = f0.u(parcel, readInt7);
+                        i19 = c0.u(parcel, readInt7);
                     } else if (c14 != 4) {
-                        f0.y(parcel, readInt7);
+                        c0.y(parcel, readInt7);
                     } else {
-                        googleSignInAccount = (GoogleSignInAccount) f0.g(parcel, readInt7, GoogleSignInAccount.CREATOR);
+                        googleSignInAccount = (GoogleSignInAccount) c0.g(parcel, readInt7, GoogleSignInAccount.CREATOR);
                     }
                 }
-                f0.m(parcel, z17);
-                return new u(i18, account, i19, googleSignInAccount);
+                c0.m(parcel, z17);
+                return new n6.v(i18, account, i19, googleSignInAccount);
             case 16:
-                int z18 = f0.z(parcel);
-                IBinder iBinder = null;
-                k6.a aVar = null;
+                int z18 = c0.z(parcel);
                 int i20 = 0;
                 boolean z19 = false;
                 boolean z20 = false;
+                IBinder iBinder = null;
+                k6.a aVar = null;
                 while (parcel.dataPosition() < z18) {
                     int readInt8 = parcel.readInt();
                     char c15 = (char) readInt8;
                     if (c15 == 1) {
-                        i20 = f0.u(parcel, readInt8);
+                        i20 = c0.u(parcel, readInt8);
                     } else if (c15 == 2) {
-                        iBinder = f0.t(parcel, readInt8);
+                        iBinder = c0.t(parcel, readInt8);
                     } else if (c15 == 3) {
-                        aVar = (k6.a) f0.g(parcel, readInt8, k6.a.CREATOR);
+                        aVar = (k6.a) c0.g(parcel, readInt8, k6.a.CREATOR);
                     } else if (c15 == 4) {
-                        z19 = f0.n(parcel, readInt8);
+                        z19 = c0.n(parcel, readInt8);
                     } else if (c15 != 5) {
-                        f0.y(parcel, readInt8);
+                        c0.y(parcel, readInt8);
                     } else {
-                        z20 = f0.n(parcel, readInt8);
+                        z20 = c0.n(parcel, readInt8);
                     }
                 }
-                f0.m(parcel, z18);
-                return new n6.v(i20, iBinder, aVar, z19, z20);
+                c0.m(parcel, z18);
+                return new n6.w(i20, iBinder, aVar, z19, z20);
             case 17:
-                int z21 = f0.z(parcel);
+                int z21 = c0.z(parcel);
                 int i21 = 0;
                 int i22 = 0;
                 int i23 = 0;
@@ -373,53 +370,53 @@ public final class h implements Parcelable.Creator {
                     int readInt9 = parcel.readInt();
                     char c16 = (char) readInt9;
                     if (c16 == 1) {
-                        i21 = f0.u(parcel, readInt9);
+                        i21 = c0.u(parcel, readInt9);
                     } else if (c16 == 2) {
-                        z22 = f0.n(parcel, readInt9);
+                        z22 = c0.n(parcel, readInt9);
                     } else if (c16 == 3) {
-                        z23 = f0.n(parcel, readInt9);
+                        z23 = c0.n(parcel, readInt9);
                     } else if (c16 == 4) {
-                        i22 = f0.u(parcel, readInt9);
+                        i22 = c0.u(parcel, readInt9);
                     } else if (c16 != 5) {
-                        f0.y(parcel, readInt9);
+                        c0.y(parcel, readInt9);
                     } else {
-                        i23 = f0.u(parcel, readInt9);
+                        i23 = c0.u(parcel, readInt9);
                     }
                 }
-                f0.m(parcel, z21);
+                c0.m(parcel, z21);
                 return new n(i21, i22, i23, z22, z23);
             case 18:
                 return new BinderWrapper(parcel);
             case 19:
-                int z24 = f0.z(parcel);
+                int z24 = c0.z(parcel);
                 Bundle bundle2 = null;
-                k6.c[] cVarArr = null;
                 n6.e eVar = null;
                 int i24 = 0;
+                k6.c[] cVarArr = null;
                 while (parcel.dataPosition() < z24) {
                     int readInt10 = parcel.readInt();
                     char c17 = (char) readInt10;
                     if (c17 == 1) {
-                        bundle2 = f0.a(parcel, readInt10);
+                        bundle2 = c0.a(parcel, readInt10);
                     } else if (c17 == 2) {
-                        cVarArr = (k6.c[]) f0.k(parcel, readInt10, k6.c.CREATOR);
+                        cVarArr = (k6.c[]) c0.k(parcel, readInt10, k6.c.CREATOR);
                     } else if (c17 == 3) {
-                        i24 = f0.u(parcel, readInt10);
+                        i24 = c0.u(parcel, readInt10);
                     } else if (c17 != 4) {
-                        f0.y(parcel, readInt10);
+                        c0.y(parcel, readInt10);
                     } else {
-                        eVar = (n6.e) f0.g(parcel, readInt10, n6.e.CREATOR);
+                        eVar = (n6.e) c0.g(parcel, readInt10, n6.e.CREATOR);
                     }
                 }
-                f0.m(parcel, z24);
-                n6.f0 f0Var = new n6.f0();
-                f0Var.a = bundle2;
-                f0Var.b = cVarArr;
-                f0Var.c = i24;
-                f0Var.d = eVar;
-                return f0Var;
+                c0.m(parcel, z24);
+                n6.g0 g0Var = new n6.g0();
+                g0Var.a = bundle2;
+                g0Var.b = cVarArr;
+                g0Var.c = i24;
+                g0Var.d = eVar;
+                return g0Var;
             case 20:
-                int z25 = f0.z(parcel);
+                int z25 = c0.z(parcel);
                 n nVar = null;
                 int[] iArr = null;
                 int[] iArr2 = null;
@@ -430,101 +427,101 @@ public final class h implements Parcelable.Creator {
                     int readInt11 = parcel.readInt();
                     switch ((char) readInt11) {
                         case 1:
-                            nVar = (n) f0.g(parcel, readInt11, n.CREATOR);
+                            nVar = (n) c0.g(parcel, readInt11, n.CREATOR);
                             break;
                         case 2:
-                            z26 = f0.n(parcel, readInt11);
+                            z26 = c0.n(parcel, readInt11);
                             break;
                         case 3:
-                            z27 = f0.n(parcel, readInt11);
+                            z27 = c0.n(parcel, readInt11);
                             break;
                         case 4:
-                            iArr = f0.d(parcel, readInt11);
+                            iArr = c0.d(parcel, readInt11);
                             break;
                         case 5:
-                            i25 = f0.u(parcel, readInt11);
+                            i25 = c0.u(parcel, readInt11);
                             break;
                         case 6:
-                            iArr2 = f0.d(parcel, readInt11);
+                            iArr2 = c0.d(parcel, readInt11);
                             break;
                         default:
-                            f0.y(parcel, readInt11);
+                            c0.y(parcel, readInt11);
                             break;
                     }
                 }
-                f0.m(parcel, z25);
+                c0.m(parcel, z25);
                 return new n6.e(nVar, z26, z27, iArr, i25, iArr2);
             case 21:
-                int z28 = f0.z(parcel);
+                int z28 = c0.z(parcel);
                 Bundle bundle3 = new Bundle();
                 Scope[] scopeArr = n6.f.E;
                 String str6 = null;
                 IBinder iBinder2 = null;
                 Account account2 = null;
                 String str7 = null;
-                k6.c[] cVarArr2 = n6.f.F;
-                k6.c[] cVarArr3 = cVarArr2;
                 int i26 = 0;
                 int i27 = 0;
                 int i28 = 0;
                 boolean z29 = false;
                 int i29 = 0;
                 boolean z30 = false;
+                k6.c[] cVarArr2 = n6.f.F;
+                k6.c[] cVarArr3 = cVarArr2;
                 while (parcel.dataPosition() < z28) {
                     int readInt12 = parcel.readInt();
                     switch ((char) readInt12) {
                         case 1:
-                            i26 = f0.u(parcel, readInt12);
+                            i26 = c0.u(parcel, readInt12);
                             break;
                         case 2:
-                            i27 = f0.u(parcel, readInt12);
+                            i27 = c0.u(parcel, readInt12);
                             break;
                         case 3:
-                            i28 = f0.u(parcel, readInt12);
+                            i28 = c0.u(parcel, readInt12);
                             break;
                         case 4:
-                            str6 = f0.h(parcel, readInt12);
+                            str6 = c0.h(parcel, readInt12);
                             break;
                         case 5:
-                            iBinder2 = f0.t(parcel, readInt12);
+                            iBinder2 = c0.t(parcel, readInt12);
                             break;
                         case 6:
-                            scopeArr = (Scope[]) f0.k(parcel, readInt12, Scope.CREATOR);
+                            scopeArr = (Scope[]) c0.k(parcel, readInt12, Scope.CREATOR);
                             break;
                         case 7:
-                            bundle3 = f0.a(parcel, readInt12);
+                            bundle3 = c0.a(parcel, readInt12);
                             break;
                         case '\b':
-                            account2 = (Account) f0.g(parcel, readInt12, Account.CREATOR);
+                            account2 = (Account) c0.g(parcel, readInt12, Account.CREATOR);
                             break;
                         case '\t':
                         default:
-                            f0.y(parcel, readInt12);
+                            c0.y(parcel, readInt12);
                             break;
                         case '\n':
-                            cVarArr2 = (k6.c[]) f0.k(parcel, readInt12, k6.c.CREATOR);
+                            cVarArr2 = (k6.c[]) c0.k(parcel, readInt12, k6.c.CREATOR);
                             break;
                         case 11:
-                            cVarArr3 = (k6.c[]) f0.k(parcel, readInt12, k6.c.CREATOR);
+                            cVarArr3 = (k6.c[]) c0.k(parcel, readInt12, k6.c.CREATOR);
                             break;
                         case '\f':
-                            z29 = f0.n(parcel, readInt12);
+                            z29 = c0.n(parcel, readInt12);
                             break;
                         case '\r':
-                            i29 = f0.u(parcel, readInt12);
+                            i29 = c0.u(parcel, readInt12);
                             break;
                         case 14:
-                            z30 = f0.n(parcel, readInt12);
+                            z30 = c0.n(parcel, readInt12);
                             break;
                         case 15:
-                            str7 = f0.h(parcel, readInt12);
+                            str7 = c0.h(parcel, readInt12);
                             break;
                     }
                 }
-                f0.m(parcel, z28);
+                c0.m(parcel, z28);
                 return new n6.f(i26, i27, i28, str6, iBinder2, scopeArr, bundle3, account2, cVarArr2, cVarArr3, z29, i29, z30, str7);
             case 22:
-                int z31 = f0.z(parcel);
+                int z31 = c0.z(parcel);
                 Intent intent = null;
                 int i30 = 0;
                 int i31 = 0;
@@ -532,96 +529,96 @@ public final class h implements Parcelable.Creator {
                     int readInt13 = parcel.readInt();
                     char c18 = (char) readInt13;
                     if (c18 == 1) {
-                        i30 = f0.u(parcel, readInt13);
+                        i30 = c0.u(parcel, readInt13);
                     } else if (c18 == 2) {
-                        i31 = f0.u(parcel, readInt13);
+                        i31 = c0.u(parcel, readInt13);
                     } else if (c18 != 3) {
-                        f0.y(parcel, readInt13);
+                        c0.y(parcel, readInt13);
                     } else {
-                        intent = (Intent) f0.g(parcel, readInt13, Intent.CREATOR);
+                        intent = (Intent) c0.g(parcel, readInt13, Intent.CREATOR);
                     }
                 }
-                f0.m(parcel, z31);
+                c0.m(parcel, z31);
                 return new o8.b(i30, i31, intent);
             case 23:
-                int z32 = f0.z(parcel);
+                int z32 = c0.z(parcel);
                 ArrayList arrayList2 = null;
                 String str8 = null;
                 while (parcel.dataPosition() < z32) {
                     int readInt14 = parcel.readInt();
                     char c19 = (char) readInt14;
                     if (c19 == 1) {
-                        arrayList2 = f0.j(parcel, readInt14);
+                        arrayList2 = c0.j(parcel, readInt14);
                     } else if (c19 != 2) {
-                        f0.y(parcel, readInt14);
+                        c0.y(parcel, readInt14);
                     } else {
-                        str8 = f0.h(parcel, readInt14);
+                        str8 = c0.h(parcel, readInt14);
                     }
                 }
-                f0.m(parcel, z32);
+                c0.m(parcel, z32);
                 return new o8.f(str8, arrayList2);
             case 24:
-                int z33 = f0.z(parcel);
-                u uVar = null;
+                int z33 = c0.z(parcel);
+                n6.v vVar2 = null;
                 int i32 = 0;
                 while (parcel.dataPosition() < z33) {
                     int readInt15 = parcel.readInt();
                     char c20 = (char) readInt15;
                     if (c20 == 1) {
-                        i32 = f0.u(parcel, readInt15);
+                        i32 = c0.u(parcel, readInt15);
                     } else if (c20 != 2) {
-                        f0.y(parcel, readInt15);
+                        c0.y(parcel, readInt15);
                     } else {
-                        uVar = (u) f0.g(parcel, readInt15, u.CREATOR);
+                        vVar2 = (n6.v) c0.g(parcel, readInt15, n6.v.CREATOR);
                     }
                 }
-                f0.m(parcel, z33);
-                return new o8.g(i32, uVar);
+                c0.m(parcel, z33);
+                return new o8.g(i32, vVar2);
             case 25:
-                int z34 = f0.z(parcel);
+                int z34 = c0.z(parcel);
                 k6.a aVar2 = null;
-                n6.v vVar = null;
                 int i33 = 0;
+                n6.w wVar = null;
                 while (parcel.dataPosition() < z34) {
                     int readInt16 = parcel.readInt();
                     char c21 = (char) readInt16;
                     if (c21 == 1) {
-                        i33 = f0.u(parcel, readInt16);
+                        i33 = c0.u(parcel, readInt16);
                     } else if (c21 == 2) {
-                        aVar2 = (k6.a) f0.g(parcel, readInt16, k6.a.CREATOR);
+                        aVar2 = (k6.a) c0.g(parcel, readInt16, k6.a.CREATOR);
                     } else if (c21 != 3) {
-                        f0.y(parcel, readInt16);
+                        c0.y(parcel, readInt16);
                     } else {
-                        vVar = (n6.v) f0.g(parcel, readInt16, n6.v.CREATOR);
+                        wVar = (n6.w) c0.g(parcel, readInt16, n6.w.CREATOR);
                     }
                 }
-                f0.m(parcel, z34);
-                return new o8.h(i33, aVar2, vVar);
+                c0.m(parcel, z34);
+                return new o8.h(i33, aVar2, wVar);
             case 26:
-                int z35 = f0.z(parcel);
+                int z35 = c0.z(parcel);
                 p7.g[] gVarArr = null;
-                String str9 = null;
                 Account account3 = null;
                 boolean z36 = false;
+                String str9 = null;
                 while (parcel.dataPosition() < z35) {
                     int readInt17 = parcel.readInt();
                     char c22 = (char) readInt17;
                     if (c22 == 1) {
-                        gVarArr = (p7.g[]) f0.k(parcel, readInt17, p7.g.CREATOR);
+                        gVarArr = (p7.g[]) c0.k(parcel, readInt17, p7.g.CREATOR);
                     } else if (c22 == 2) {
-                        str9 = f0.h(parcel, readInt17);
+                        str9 = c0.h(parcel, readInt17);
                     } else if (c22 == 3) {
-                        z36 = f0.n(parcel, readInt17);
+                        z36 = c0.n(parcel, readInt17);
                     } else if (c22 != 4) {
-                        f0.y(parcel, readInt17);
+                        c0.y(parcel, readInt17);
                     } else {
-                        account3 = (Account) f0.g(parcel, readInt17, Account.CREATOR);
+                        account3 = (Account) c0.g(parcel, readInt17, Account.CREATOR);
                     }
                 }
-                f0.m(parcel, z35);
+                c0.m(parcel, z35);
                 return new p7.e(gVarArr, str9, z36, account3);
             case 27:
-                int z37 = f0.z(parcel);
+                int z37 = c0.z(parcel);
                 String str10 = null;
                 String str11 = null;
                 String str12 = null;
@@ -629,56 +626,56 @@ public final class h implements Parcelable.Creator {
                     int readInt18 = parcel.readInt();
                     char c23 = (char) readInt18;
                     if (c23 == 1) {
-                        str10 = f0.h(parcel, readInt18);
+                        str10 = c0.h(parcel, readInt18);
                     } else if (c23 == 2) {
-                        str11 = f0.h(parcel, readInt18);
+                        str11 = c0.h(parcel, readInt18);
                     } else if (c23 != 3) {
-                        f0.y(parcel, readInt18);
+                        c0.y(parcel, readInt18);
                     } else {
-                        str12 = f0.h(parcel, readInt18);
+                        str12 = c0.h(parcel, readInt18);
                     }
                 }
-                f0.m(parcel, z37);
+                c0.m(parcel, z37);
                 return new p7.f(str10, str11, str12);
             case 28:
-                int z38 = f0.z(parcel);
+                int z38 = c0.z(parcel);
                 String str13 = null;
-                p7.l lVar3 = null;
                 byte[] bArr2 = null;
                 int i34 = -1;
+                p7.l lVar3 = null;
                 while (parcel.dataPosition() < z38) {
                     int readInt19 = parcel.readInt();
                     char c24 = (char) readInt19;
                     if (c24 == 1) {
-                        str13 = f0.h(parcel, readInt19);
+                        str13 = c0.h(parcel, readInt19);
                     } else if (c24 == 3) {
-                        lVar3 = (p7.l) f0.g(parcel, readInt19, p7.l.CREATOR);
+                        lVar3 = (p7.l) c0.g(parcel, readInt19, p7.l.CREATOR);
                     } else if (c24 == 4) {
-                        i34 = f0.u(parcel, readInt19);
+                        i34 = c0.u(parcel, readInt19);
                     } else if (c24 != 5) {
-                        f0.y(parcel, readInt19);
+                        c0.y(parcel, readInt19);
                     } else {
-                        bArr2 = f0.b(parcel, readInt19);
+                        bArr2 = c0.b(parcel, readInt19);
                     }
                 }
-                f0.m(parcel, z38);
+                c0.m(parcel, z38);
                 return new p7.g(str13, lVar3, i34, bArr2);
             default:
-                int z39 = f0.z(parcel);
+                int z39 = c0.z(parcel);
                 int i35 = 0;
                 Bundle bundle4 = null;
                 while (parcel.dataPosition() < z39) {
                     int readInt20 = parcel.readInt();
                     char c25 = (char) readInt20;
                     if (c25 == 1) {
-                        i35 = f0.u(parcel, readInt20);
+                        i35 = c0.u(parcel, readInt20);
                     } else if (c25 != 2) {
-                        f0.y(parcel, readInt20);
+                        c0.y(parcel, readInt20);
                     } else {
-                        bundle4 = f0.a(parcel, readInt20);
+                        bundle4 = c0.a(parcel, readInt20);
                     }
                 }
-                f0.m(parcel, z39);
+                c0.m(parcel, z39);
                 return new p7.h(i35, bundle4);
         }
     }
@@ -697,19 +694,19 @@ public final class h implements Parcelable.Creator {
             case 4:
                 return new m[i10];
             case 5:
-                return new v[i10];
+                return new u[i10];
             case 6:
-                return new w[i10];
+                return new v[i10];
             case 7:
-                return new x[i10];
+                return new w[i10];
             case 8:
-                return new e0[i10];
+                return new n4.d0[i10];
             case 9:
-                return new h0[i10];
+                return new f0[i10];
             case 10:
-                return new n4.g0[i10];
+                return new e0[i10];
             case 11:
-                return new i0[i10];
+                return new g0[i10];
             case 12:
                 return new n6.d[i10];
             case 13:
@@ -717,15 +714,15 @@ public final class h implements Parcelable.Creator {
             case 14:
                 return new j[i10];
             case 15:
-                return new u[i10];
-            case 16:
                 return new n6.v[i10];
+            case 16:
+                return new n6.w[i10];
             case 17:
                 return new n[i10];
             case 18:
                 return new BinderWrapper[i10];
             case 19:
-                return new n6.f0[i10];
+                return new n6.g0[i10];
             case 20:
                 return new n6.e[i10];
             case 21:

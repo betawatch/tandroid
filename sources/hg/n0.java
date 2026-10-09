@@ -3,7 +3,7 @@ package hg;
 import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,8 +20,8 @@ public final /* synthetic */ class n0 implements Runnable {
             case 0:
                 u0 u0Var = this.b;
                 u0Var.J.manage_stories = !r2.manage_stories;
-                u0Var.c.f3.N(true);
-                u0Var.X(true);
+                u0Var.c.W2.N(true);
+                u0Var.Y(true);
                 break;
             case 1:
                 u0 u0Var2 = this.b;
@@ -31,8 +31,8 @@ public final /* synthetic */ class n0 implements Runnable {
                 tL_businessBotRights.change_gift_settings = true;
                 tL_businessBotRights.sell_gifts = true;
                 tL_businessBotRights.view_gifts = true;
-                u0Var2.c.f3.N(true);
-                u0Var2.X(true);
+                u0Var2.c.W2.N(true);
+                u0Var2.Y(true);
                 break;
             case 2:
                 u0 u0Var3 = this.b;
@@ -41,13 +41,13 @@ public final /* synthetic */ class n0 implements Runnable {
                 tL_businessBotRights2.edit_profile_photo = true;
                 tL_businessBotRights2.edit_bio = true;
                 tL_businessBotRights2.edit_name = true;
-                u0Var3.c.f3.N(true);
-                u0Var3.X(true);
+                u0Var3.c.W2.N(true);
+                u0Var3.Y(true);
                 break;
             case 3:
                 u0 u0Var4 = this.b;
-                u0Var4.c.f3.N(true);
-                u0Var4.X(true);
+                u0Var4.c.W2.N(true);
+                u0Var4.Y(true);
                 break;
             default:
                 u0 u0Var5 = this.b;
@@ -56,16 +56,16 @@ public final /* synthetic */ class n0 implements Runnable {
                 if (str == null || !TextUtils.equals(str, obj)) {
                     u0Var5.x = false;
                     if (!TextUtils.isEmpty(obj)) {
-                        gg.c2 c2Var = u0Var5.d;
+                        gg.b2 b2Var = u0Var5.d;
                         u0Var5.y = obj;
                         int i10 = u0Var5.E;
                         u0Var5.E = i10 + 1;
-                        c2Var.h(obj, true, false, true, false, false, 0L, false, 0, i10, 0L, null);
+                        b2Var.h(obj, true, false, true, false, false, 0L, false, 0, i10, 0L, null);
                         break;
                     } else {
                         u0Var5.y = null;
                         u0Var5.d.b();
-                        u0Var5.c.f3.N(true);
+                        u0Var5.c.W2.N(true);
                         break;
                     }
                 }

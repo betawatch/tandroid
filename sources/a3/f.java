@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f implements o0 {
     public final a0 a;
@@ -22,7 +22,7 @@ public final class f implements o0 {
     public f(a0 a0Var, e2.x xVar) {
         this.a = a0Var;
         a0Var.l = xVar;
-        this.b = new f0(new n4.y(this), a0Var);
+        this.b = new f0(new n4.x(this), a0Var);
         this.c = new ArrayDeque();
         this.e = new b2.s(new b2.r());
         this.f = -9223372036854775807L;
@@ -156,23 +156,23 @@ public final class f implements o0 {
         f0Var.h = -9223372036854775807L;
         f0Var.i = -9223372036854775807L;
         e2.a0 a0Var3 = f0Var.e;
-        if (a0Var3.i() > 0) {
-            e2.d.b(a0Var3.i() > 0);
-            while (a0Var3.i() > 1) {
-                a0Var3.f();
+        if (a0Var3.m() > 0) {
+            e2.d.b(a0Var3.m() > 0);
+            while (a0Var3.m() > 1) {
+                a0Var3.h();
             }
-            Object f7 = a0Var3.f();
-            f7.getClass();
-            f0Var.k = ((Long) f7).longValue();
+            Object h = a0Var3.h();
+            h.getClass();
+            f0Var.k = ((Long) h).longValue();
         }
-        if (a0Var2.i() > 0) {
-            e2.d.b(a0Var2.i() > 0);
-            while (a0Var2.i() > 1) {
-                a0Var2.f();
+        if (a0Var2.m() > 0) {
+            e2.d.b(a0Var2.m() > 0);
+            while (a0Var2.m() > 1) {
+                a0Var2.h();
             }
-            Object f10 = a0Var2.f();
-            f10.getClass();
-            a0Var2.a((x1) f10, 0L);
+            Object h10 = a0Var2.h();
+            h10.getClass();
+            a0Var2.a((x1) h10, 0L);
         }
         this.c.clear();
     }

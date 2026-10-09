@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i4 extends g4 {
     public final /* synthetic */ j4 n;
@@ -12,6 +12,6 @@ public final class i4 extends g4 {
     @Override // com.google.android.gms.internal.play_billing.g4
     public final String c() {
         h4 h4Var = (h4) this.n.a.get();
-        return h4Var == null ? "Completer object has been garbage collected, future will fail soon" : a4.a.q("tag=[", String.valueOf(h4Var.a), "]");
+        return h4Var == null ? "Completer object has been garbage collected, future will fail soon" : a1.g.q("tag=[", String.valueOf(h4Var.a), "]");
     }
 }

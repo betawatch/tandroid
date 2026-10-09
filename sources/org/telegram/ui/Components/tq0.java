@@ -1,169 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class tq0 extends yl0 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public final a0.i e = new a0.i();
-    public final /* synthetic */ br0 f;
+public final class tq0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ TLRPC.Dialog a;
+    public final /* synthetic */ AtomicReference b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ mr0 d;
 
-    public tq0(br0 br0Var, Context context) {
-        this.f = br0Var;
-        this.c = context;
-        E();
+    public tq0(mr0 mr0Var, TLRPC.Dialog dialog, AtomicReference atomicReference, View view) {
+        this.d = mr0Var;
+        this.a = dialog;
+        this.b = atomicReference;
+        this.c = view;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f != 1;
-    }
-
-    public final void E() {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        int i14;
-        ArrayList arrayList = this.d;
-        arrayList.clear();
-        a0.i iVar = this.e;
-        iVar.b();
-        br0 br0Var = this.f;
-        i10 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-        long j3 = UserConfig.getInstance(i10).clientUserId;
-        if (br0Var.Z) {
-            sq0 sq0Var = new sq0();
-            sq0Var.id = Long.MAX_VALUE;
-            arrayList.add(sq0Var);
-            iVar.k(sq0Var, sq0Var.id);
-        }
-        i11 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-        if (!MessagesController.getInstance(i11).dialogsForward.isEmpty()) {
-            i14 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-            TLRPC.Dialog dialog = MessagesController.getInstance(i14).dialogsForward.get(0);
-            arrayList.add(dialog);
-            iVar.k(dialog, dialog.id);
-        }
-        ArrayList arrayList2 = new ArrayList();
-        i12 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-        ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(i12).getAllDialogs();
-        for (int i15 = 0; i15 < allDialogs.size(); i15++) {
-            TLRPC.Dialog dialog2 = allDialogs.get(i15);
-            if (dialog2 instanceof TLRPC.TL_dialog) {
-                long j10 = dialog2.id;
-                if (j10 != j3 && !DialogObject.isEncryptedDialog(j10)) {
-                    if (DialogObject.isUserDialog(dialog2.id)) {
-                        if (dialog2.folder_id == 1) {
-                            arrayList2.add(dialog2);
-                        } else {
-                            arrayList.add(dialog2);
-                        }
-                        iVar.k(dialog2, dialog2.id);
-                    } else {
-                        i13 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-                        TLRPC.Chat chat = MessagesController.getInstance(i13).getChat(Long.valueOf(-dialog2.id));
-                        if (chat != null && !ChatObject.isNotInChat(chat) && ((!chat.gigagroup || ChatObject.hasAdminRights(chat)) && (!ChatObject.isChannel(chat) || chat.creator || (((tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.post_messages) || chat.megagroup)))) {
-                            if (dialog2.folder_id == 1) {
-                                arrayList2.add(dialog2);
-                            } else {
-                                arrayList.add(dialog2);
-                            }
-                            iVar.k(dialog2, dialog2.id);
-                        }
-                    }
-                }
-            }
-        }
-        arrayList.addAll(arrayList2);
-        org.telegram.ui.yn ynVar = br0Var.f0;
-        if (ynVar != null) {
-            int i16 = ynVar.a;
-            if (i16 == 1) {
-                ArrayList arrayList3 = new ArrayList(arrayList.subList(0, Math.min(4, arrayList.size())));
-                arrayList.clear();
-                arrayList.addAll(arrayList3);
-            } else if (i16 == 2) {
-                while (!arrayList.isEmpty() && arrayList.size() < 80) {
-                    arrayList.add((TLRPC.Dialog) hg.c.g(1, arrayList));
-                }
-            }
-        }
-        l();
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        int size = this.d.size();
-        return size != 0 ? size + 1 : size;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:15:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
-    @Override // s4.h0
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0033, code lost:
+    
+        if (org.telegram.messenger.MessagesController.getInstance(r3).getTopicsController().getTopics(-r11.id) == null) goto L8;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(s4.c1 c1Var, int i10) {
-        TLRPC.Dialog dialog;
-        int i11;
-        if (c1Var.f != 0) {
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        boolean z10;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        mr0 mr0Var = this.d;
+        qm0 qm0Var = mr0Var.E;
+        jr0 jr0Var = mr0Var.L;
+        org.telegram.ui.ActionBar.k kVar = mr0Var.z0;
+        long longValue = ((Long) objArr[0]).longValue();
+        TLRPC.Dialog dialog = this.a;
+        if (longValue != (-dialog.id)) {
             return;
         }
-        org.telegram.ui.Cells.g7 g7Var = (org.telegram.ui.Cells.g7) c1Var.a;
-        int i12 = i10 - 1;
-        if (i12 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i12 < arrayList.size()) {
-                dialog = (TLRPC.Dialog) arrayList.get(i12);
-                if (dialog != null) {
-                    return;
-                }
-                br0 br0Var = this.f;
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) br0Var.V.get(dialog);
-                i11 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
-                g7Var.d(tL_forumTopic, MessagesController.getInstance(i11).isMonoForum(dialog.id), false);
-                long j3 = dialog.id;
-                g7Var.c(j3, br0Var.U.h(j3) >= 0, null);
+        ArrayList arrayList = jr0Var.f;
+        AtomicReference atomicReference = this.b;
+        if (arrayList == null) {
+            i22 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+        }
+        if (atomicReference.get() != null) {
+            z10 = false;
+            i12 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+            jr0Var.f = MessagesController.getInstance(i12).getTopicsController().getTopics(-dialog.id);
+            i13 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+            jr0Var.d = UserObject.isBotForum(i13, dialog.id);
+            i14 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+            jr0Var.e = UserObject.isBotForumWithEditableTopics(i14, dialog.id);
+            if (z10) {
+                jr0Var.l();
+            }
+            if (jr0Var.f != null) {
+                i21 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                NotificationCenter.getInstance(i21).removeObserver(this, NotificationCenter.topicsDidLoaded);
+            }
+            if (z10) {
                 return;
             }
+            qm0Var.setVisibility(0);
+            qm0Var.setAlpha(0.0f);
+            kVar.setVisibility(0);
+            kVar.setAlpha(0.0f);
+            i15 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+            if (UserObject.isBotForum(i15, dialog.id)) {
+                i20 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                kVar.setTitle(DialogObject.getShortName(MessagesController.getInstance(i20).getUser(Long.valueOf(dialog.id))));
+                kVar.setSubtitle(LocaleController.getString(R.string.SelectChat));
+            } else {
+                i16 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                if (ChatObject.isMonoForum(i16, dialog.id)) {
+                    i18 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                    i19 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                    kVar.setTitle(ng.d.i(MessagesController.getInstance(i19).getChat(Long.valueOf(-dialog.id)), i18, false));
+                    kVar.setSubtitle(LocaleController.getString(R.string.SelectChat));
+                } else {
+                    i17 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+                    kVar.setTitle(MessagesController.getInstance(i17).getChat(Long.valueOf(-dialog.id)).title);
+                    kVar.setSubtitle(LocaleController.getString(R.string.SelectTopic));
+                }
+            }
+            mr0Var.M0 = mr0Var.L0;
+            o1.k kVar2 = mr0Var.B0;
+            if (kVar2 != null) {
+                kVar2.c();
+            }
+            int[] iArr = new int[2];
+            o1.k kVar3 = new o1.k(new o1.j(0.0f));
+            o1.l lVar = new o1.l(1000.0f);
+            org.telegram.ui.zn znVar = mr0Var.f0;
+            lVar.b((znVar == null || !znVar.b) ? 800.0f : 10.0f);
+            lVar.a(1.0f);
+            kVar3.u = lVar;
+            mr0Var.B0 = kVar3;
+            kVar3.b(new eq0(this, this.c, iArr, 1));
+            mr0Var.B0.a(new kb(this, 6));
+            mr0Var.B0.h();
+            if (atomicReference.get() != null) {
+                AndroidUtilities.cancelRunOnUIThread((Runnable) atomicReference.get());
+                atomicReference.set(null);
+                return;
+            }
+            return;
         }
-        dialog = null;
-        if (dialog != null) {
+        z10 = true;
+        i12 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+        jr0Var.f = MessagesController.getInstance(i12).getTopicsController().getTopics(-dialog.id);
+        i13 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+        jr0Var.d = UserObject.isBotForum(i13, dialog.id);
+        i14 = ((org.telegram.ui.ActionBar.f3) mr0Var).currentAccount;
+        jr0Var.e = UserObject.isBotForumWithEditableTopics(i14, dialog.id);
+        if (z10) {
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View rq0Var;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        br0 br0Var = this.f;
-        Context context = this.c;
-        if (i10 != 0) {
-            rq0Var = new View(context);
-            rq0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp((!br0Var.h0 || br0Var.o0[1] == null) ? 56.0f : 109.0f)));
-        } else {
-            d6Var = ((org.telegram.ui.ActionBar.f3) br0Var).resourcesProvider;
-            rq0Var = new rq0(this, context, d6Var);
-            rq0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(100.0f)));
+        if (jr0Var.f != null) {
         }
-        return new il0(rq0Var);
+        if (z10) {
+        }
     }
 }

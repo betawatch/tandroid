@@ -2,21 +2,21 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final /* synthetic */ int a = 0;
 
     static {
-        e2.d0.J(0);
-        e2.d0.J(1);
-        e2.d0.J(2);
-        e2.d0.J(3);
-        e2.d0.J(4);
-        e2.d0.J(5);
-        e2.d0.J(6);
-        e2.d0.J(7);
-        e2.d0.J(8);
+        e2.d0.I(0);
+        e2.d0.I(1);
+        e2.d0.I(2);
+        e2.d0.I(3);
+        e2.d0.I(4);
+        e2.d0.I(5);
+        e2.d0.I(6);
+        e2.d0.I(7);
+        e2.d0.I(8);
     }
 
     public static e9.a1 a(List list) {

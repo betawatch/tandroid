@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class ro0 extends LinearLayout {
-    public ro0(Context context) {
-        super(context);
-        setWillNotDraw(false);
+public final class ro0 extends ht {
+    public final /* synthetic */ org.telegram.ui.dy i0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ro0(org.telegram.ui.dy dyVar, qm0 qm0Var, Context context, int i10, int i11) {
+        super(qm0Var, context, i10, i11, false, null);
+        this.i0 = dyVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (getParent() instanceof so0) {
-            ((so0) getParent()).invalidate();
-        }
+    @Override // org.telegram.ui.Components.c71
+    public final void N(boolean z10) {
+        ArrayList arrayList;
+        super.N(z10);
+        qo0 qo0Var = this.i0.l0;
+        qo0Var.e(this.Z || this.a0 || (arrayList = this.T) == null || !arrayList.isEmpty(), z10);
+        qo0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        qo0Var.e.setVisibility(8);
     }
 }

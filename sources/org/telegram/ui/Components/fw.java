@@ -1,107 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fw extends Drawable {
-    public final /* synthetic */ int a;
-    public RectF b;
-    public Paint c;
+public abstract class fw implements NotificationCenter.NotificationCenterDelegate {
+    public final ArrayList a;
+    public ArrayList b;
+    public ArrayList[] c;
+    public final int d;
+    public boolean e = false;
+    public final /* synthetic */ iw f;
 
-    public /* synthetic */ fw(int i10, byte b10) {
-        this.a = i10;
+    public fw(int i10, ArrayList arrayList, iw iwVar) {
+        this.f = iwVar;
+        this.d = i10;
+        this.a = arrayList == null ? new ArrayList() : arrayList;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(8.0f), AndroidUtilities.dpf2(8.0f), this.c);
-                break;
-            case 1:
-                RectF rectF2 = this.b;
-                rectF2.set(getBounds());
-                float height = rectF2.height() * 0.2f;
-                canvas.drawRoundRect(rectF2, height, height, this.c);
-                break;
-            case 2:
-                RectF rectF3 = this.b;
-                rectF3.set(getBounds());
-                rectF3.inset(AndroidUtilities.dp(1.0f), (rectF3.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
-            default:
-                RectF rectF4 = this.b;
-                rectF4.set(getBounds());
-                rectF4.inset(0.0f, (rectF4.height() - AndroidUtilities.dp(28.0f)) / 2.0f);
-                canvas.drawRoundRect(rectF4, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.c);
-                break;
+    public final void a(int i10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        ArrayList<Long> arrayList;
+        if (i10 >= 0) {
+            ArrayList[] arrayListArr = this.c;
+            if (i10 >= arrayListArr.length) {
+                return;
+            }
+            if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents == null) {
+                arrayListArr[i10] = new ArrayList(12);
+                for (int i11 = 0; i11 < 12; i11++) {
+                    this.c[i10].add(null);
+                }
+                return;
+            }
+            arrayListArr[i10] = new ArrayList();
+            for (int i12 = 0; i12 < tL_messages_stickerSet.documents.size(); i12++) {
+                TLRPC.Document document = tL_messages_stickerSet.documents.get(i12);
+                if (document == null) {
+                    this.c[i10].add(null);
+                } else {
+                    fy fyVar = new fy();
+                    long j3 = document.id;
+                    for (int i13 = 0; i13 < tL_messages_stickerSet.packs.size() && ((arrayList = tL_messages_stickerSet.packs.get(i13).documents) == null || !arrayList.contains(Long.valueOf(j3))); i13++) {
+                    }
+                    fyVar.a = tL_messages_stickerSet;
+                    fyVar.b = document.id;
+                    this.c[i10].add(fyVar);
+                    if (this.f.H) {
+                        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
+                        if (this.c[i10].size() >= ((stickerSet == null || stickerSet.emojis) ? 16 : 10)) {
+                            return;
+                        }
+                    } else {
+                        continue;
+                    }
+                }
+            }
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        TLRPC.StickerSet stickerSet;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        if (i10 == NotificationCenter.groupStickersDidLoad) {
+            for (int i12 = 0; i12 < this.b.size(); i12++) {
+                if (this.b.get(i12) == null) {
+                    TLRPC.TL_messages_stickerSet stickerSet2 = MediaDataController.getInstance(this.d).getStickerSet((TLRPC.InputStickerSet) this.a.get(i12), true);
+                    if (this.b.size() == 1 && stickerSet2 != null && (stickerSet = stickerSet2.set) != null && !stickerSet.emojis) {
+                        iw iwVar = this.f;
+                        iwVar.dismiss();
+                        Context context = iwVar.getContext();
+                        org.telegram.ui.ActionBar.n2 n2Var = iwVar.c;
+                        TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) this.a.get(i12);
+                        org.telegram.ui.ActionBar.n2 n2Var2 = iwVar.c;
+                        org.telegram.ui.ok okVar = n2Var2 instanceof org.telegram.ui.zn ? ((org.telegram.ui.zn) n2Var2).Y : null;
+                        e6Var = ((org.telegram.ui.ActionBar.f3) iwVar).resourcesProvider;
+                        new xy0(context, n2Var, inputStickerSet, null, okVar, e6Var).show();
+                        return;
+                    }
+                    this.b.set(i12, stickerSet2);
+                    if (stickerSet2 != null) {
+                        a(i12, stickerSet2);
+                    }
+                }
+            }
+            iw iwVar2 = ((sv) this).h;
+            iwVar2.b0();
+            ci.v vVar = iwVar2.h;
+            if (vVar == null || vVar.getAdapter() == null) {
+                return;
+            }
+            vVar.getAdapter().l();
         }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i10);
-                break;
-            case 1:
-                this.c.setAlpha(i10);
-                break;
-            case 2:
-                this.c.setAlpha(i10);
-                break;
-            default:
-                this.c.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 1:
-                this.c.setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    public fw() {
-        this.a = 1;
-        this.b = new RectF();
-        this.c = new Paint(1);
-    }
-
-    public fw(int i10) {
-        this.a = 0;
-        Paint paint = new Paint();
-        this.c = paint;
-        this.b = new RectF();
-        paint.setAlpha(45);
-        paint.setColor(i10);
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
     }
 }

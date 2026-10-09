@@ -1,94 +1,32 @@
 package org.telegram.ui.web;
 
-import android.webkit.ValueCallback;
-import android.webkit.WebView;
-import java.io.File;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.in0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements ValueCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ WebView c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ c2(j2 j2Var, WebView webView, File file, b2 b2Var, int i10) {
-        this.a = i10;
-        this.b = j2Var;
-        this.c = webView;
-        this.d = file;
-        this.e = b2Var;
+public final class c2 extends FrameLayout {
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // android.webkit.ValueCallback
-    public final void onReceiveValue(Object obj) {
-        int i10 = 1;
-        switch (this.a) {
-            case 0:
-                j2 j2Var = (j2) this.b;
-                WebView webView = this.c;
-                File file = (File) this.d;
-                webView.saveWebArchive(file.getAbsolutePath(), false, new c2(j2Var, webView, file, (b2) this.e, 1));
-                return;
-            case 1:
-                j2 j2Var2 = (j2) this.b;
-                WebView webView2 = this.c;
-                File file2 = (File) this.d;
-                b2 b2Var = (b2) this.e;
-                webView2.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new i0(i10));
-                try {
-                    qi.f fVar = new qi.f(file2);
-                    j2Var2.b = fVar;
-                    if (!((ArrayList) fVar.b).isEmpty()) {
-                        b2Var.run(((l1) ((ArrayList) j2Var2.b.b).get(0)).a());
-                        return;
-                    }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-                b2Var.run(null);
-                return;
-            default:
-                qi.j jVar = (qi.j) this.b;
-                in0 in0Var = (in0) this.d;
-                WebView webView3 = this.c;
-                b5.h hVar = (b5.h) this.e;
-                String str = (String) obj;
-                AndroidUtilities.cancelRunOnUIThread(in0Var);
-                synchronized (jVar.a) {
-                    if (!jVar.u && jVar.o == webView3 && jVar.p == hVar && !jVar.r) {
-                        if (!"true".equals(str)) {
-                            FileLog.e("WEB proxy: Base64 bridge installation failed; transport stopped");
-                            jVar.o();
-                            return;
-                        } else {
-                            if (!jVar.h(webView3)) {
-                                jVar.f();
-                                return;
-                            }
-                            jVar.s = false;
-                            jVar.r = true;
-                            FileLog.d("WEB proxy: Base64 bridge ready");
-                            jVar.l(16, 0, new byte[]{1});
-                            return;
-                        }
-                    }
-                    return;
-                }
-        }
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        return false;
     }
 
-    public /* synthetic */ c2(qi.j jVar, in0 in0Var, WebView webView, b5.h hVar) {
-        this.a = 2;
-        this.b = jVar;
-        this.d = in0Var;
-        this.c = webView;
-        this.e = hVar;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(500.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

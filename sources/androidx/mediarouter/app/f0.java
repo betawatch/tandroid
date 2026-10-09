@@ -16,7 +16,7 @@ import java.net.URLConnection;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f0 extends AsyncTask {
     public final Bitmap a;
@@ -59,7 +59,7 @@ public final class f0 extends AsyncTask {
         if (r5 != null) goto L11;
      */
     /* JADX WARN: Not initialized variable reg: 5, insn: 0x002f: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:48), block:B:60:0x002f */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00f7  */
     @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -111,28 +111,28 @@ public final class f0 extends AsyncTask {
                                 }
                                 bufferedInputStream.close();
                                 return null;
-                            } catch (IOException e7) {
-                                e = e7;
-                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
-                                if (bufferedInputStream != null) {
-                                    try {
-                                        bufferedInputStream.close();
-                                    } catch (IOException unused3) {
-                                    }
-                                }
-                                bitmap = null;
-                                if (bitmap == null) {
-                                }
-                                if (bitmap != null) {
-                                    androidx.emoji2.text.o oVar = new androidx.emoji2.text.o(bitmap);
-                                    oVar.a = 1;
-                                    List list = (List) oVar.b().a;
-                                    this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((q4.d) DesugarCollections.unmodifiableList(list).get(0)).d;
-                                }
-                                return bitmap;
+                            } catch (IOException unused3) {
+                                return null;
                             }
-                        } catch (IOException unused4) {
-                            return null;
+                        } catch (IOException e7) {
+                            e = e7;
+                            Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
+                            if (bufferedInputStream != null) {
+                                try {
+                                    bufferedInputStream.close();
+                                } catch (IOException unused4) {
+                                }
+                            }
+                            bitmap = null;
+                            if (bitmap == null) {
+                            }
+                            if (bitmap != null) {
+                                androidx.emoji2.text.o oVar = new androidx.emoji2.text.o(bitmap);
+                                oVar.a = 1;
+                                List list = (List) oVar.b().a;
+                                this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((q4.d) DesugarCollections.unmodifiableList(list).get(0)).d;
+                            }
+                            return bitmap;
                         }
                     } catch (IOException e10) {
                         e = e10;

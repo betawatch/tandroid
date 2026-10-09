@@ -1,12 +1,12 @@
 package qg;
 
-import ci.m5;
+import ci.l5;
 import java.util.List;
-import org.telegram.ui.Components.w11;
-import org.telegram.ui.am0;
-import w7.z5;
+import org.telegram.ui.Components.c21;
+import org.telegram.ui.bi0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 m0 m0Var = this.b;
-                w11 w11Var = m0Var.a1;
-                if (w11Var != null) {
+                c21 c21Var = m0Var.a1;
+                if (c21Var != null) {
                     m0Var.a1 = null;
-                    m0Var.removeView(w11Var);
+                    m0Var.removeView(c21Var);
                     break;
                 }
                 break;
@@ -58,15 +58,15 @@ public final /* synthetic */ class n implements Runnable {
                         pg.l lVar = (pg.l) list.get(i10);
                         int m10 = z10 ? lVar.m() : lVar.e();
                         String n10 = lVar.n();
-                        am0 am0Var = new am0(m0Var3, lVar, m10, 12);
+                        bi0 bi0Var = new bi0(m0Var3, lVar, m10, 18);
                         l0 l0Var = new l0(m0Var3, m0Var3.getContext());
                         l0Var.setIcon(m10);
                         l0Var.setText(n10);
                         l0Var.setSelected(false);
                         int i11 = 6;
-                        l0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(am0Var, i11));
-                        l0Var.setOnLongClickListener(new m5(m0Var3, i11));
-                        m0Var3.S1.a(l0Var, z5.n(-1, 48));
+                        l0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(bi0Var, i11));
+                        l0Var.setOnLongClickListener(new l5(m0Var3, i11));
+                        m0Var3.S1.a(l0Var, x5.n(-1, 48));
                         i10++;
                     }
                 }

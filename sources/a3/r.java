@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r implements o0 {
     public e9.i0 a;
@@ -22,7 +22,7 @@ public final class r implements o0 {
 
     public r(w wVar, Context context) {
         this.f = wVar;
-        e2.d0.L(context);
+        e2.d0.K(context);
         e9.g0 g0Var = e9.i0.b;
         this.a = a1.e;
         this.d = -9223372036854775807L;
@@ -163,11 +163,11 @@ public final class r implements o0 {
         if (wVar.l == 1) {
             wVar.k++;
             fVar.m(z10);
-            while (wVar.h.i() > 1) {
-                wVar.h.f();
+            while (wVar.h.m() > 1) {
+                wVar.h.h();
             }
-            if (wVar.h.i() == 1) {
-                ((v) wVar.h.f()).getClass();
+            if (wVar.h.m() == 1) {
+                ((v) wVar.h.h()).getClass();
                 throw null;
             }
             wVar.m = -9223372036854775807L;
@@ -263,15 +263,15 @@ public final class r implements o0 {
     @Override // a3.o0
     public final void w() {
         w wVar = this.f;
-        if (wVar.h.i() == 0) {
+        if (wVar.h.m() == 0) {
             wVar.e.w();
             return;
         }
-        e2.a0 a0Var = new e2.a0();
-        if (wVar.h.i() <= 0) {
+        e2.a0 a0Var = new e2.a0(0, (byte) 0);
+        if (wVar.h.m() <= 0) {
             wVar.h = a0Var;
         } else {
-            ((v) wVar.h.f()).getClass();
+            ((v) wVar.h.h()).getClass();
             throw null;
         }
     }

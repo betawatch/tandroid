@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.bi;
-import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.ActionBar.y5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class n1 extends TextView {
     public boolean a;
@@ -35,11 +35,11 @@ public final class n1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int z10 = bi.z(16.0f, getHeight(), 2);
+            int A = bi.A(16.0f, getHeight(), 2);
             if (LocaleController.isRTL) {
-                this.b.setBounds(AndroidUtilities.dp(7.0f), z10, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + z10);
+                this.b.setBounds(AndroidUtilities.dp(7.0f), A, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + A);
             } else {
-                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), z10, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + z10);
+                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), A, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + A);
             }
             this.b.draw(canvas);
         }
@@ -49,10 +49,10 @@ public final class n1 extends TextView {
         this.a = z10;
         if (z10) {
             setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
-            setBackground(x5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, x5.b(1090519039)));
+            setBackground(y5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, y5.b(1090519039)));
         } else {
             setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
-            setBackground(x5.d(new float[]{0.0f}, 0, x5.b(-14145495)));
+            setBackground(y5.d(new float[]{0.0f}, 0, y5.b(-14145495)));
         }
         if (this.a && this.b == null) {
             Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);

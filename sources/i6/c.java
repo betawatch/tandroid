@@ -2,17 +2,17 @@ package i6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.internal.clearcut.d2;
-import com.google.android.gms.internal.clearcut.x1;
+import com.google.android.gms.internal.clearcut.c2;
+import com.google.android.gms.internal.clearcut.w1;
 import g8.j;
 import java.util.Arrays;
 import n6.l;
-import w7.g0;
+import w7.d0;
 
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new j(9);
-    public final d2 a;
+    public final c2 a;
     public byte[] b;
     public final int[] c;
     public final String[] d;
@@ -20,11 +20,11 @@ public final class c extends o6.a {
     public final byte[][] f;
     public final k8.a[] h;
     public final boolean n;
-    public final x1 r;
+    public final w1 r;
 
-    public c(d2 d2Var, x1 x1Var) {
-        this.a = d2Var;
-        this.r = x1Var;
+    public c(c2 c2Var, w1 w1Var) {
+        this.a = c2Var;
+        this.r = w1Var;
         this.c = null;
         this.d = null;
         this.e = null;
@@ -76,21 +76,21 @@ public final class c extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.k(parcel, 2, this.a, i10);
-        g0.c(parcel, 3, this.b);
-        g0.g(parcel, 4, this.c);
-        g0.m(parcel, 5, this.d);
-        g0.g(parcel, 6, this.e);
-        g0.d(parcel, 7, this.f);
-        g0.s(parcel, 8, 4);
+        int q6 = d0.q(parcel, 20293);
+        d0.k(parcel, 2, this.a, i10);
+        d0.c(parcel, 3, this.b);
+        d0.g(parcel, 4, this.c);
+        d0.m(parcel, 5, this.d);
+        d0.g(parcel, 6, this.e);
+        d0.d(parcel, 7, this.f);
+        d0.s(parcel, 8, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        g0.o(parcel, 9, this.h, i10);
-        g0.r(parcel, q6);
+        d0.o(parcel, 9, this.h, i10);
+        d0.r(parcel, q6);
     }
 
-    public c(d2 d2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z10, k8.a[] aVarArr) {
-        this.a = d2Var;
+    public c(c2 c2Var, byte[] bArr, int[] iArr, String[] strArr, int[] iArr2, byte[][] bArr2, boolean z10, k8.a[] aVarArr) {
+        this.a = c2Var;
         this.b = bArr;
         this.c = iArr;
         this.d = strArr;

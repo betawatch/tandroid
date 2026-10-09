@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class zzit implements InvocationHandler {
     private final Object zza;
@@ -32,7 +32,7 @@ public abstract class zzit implements InvocationHandler {
             return Boolean.valueOf(z10);
         }
         boolean zza = zza(obj, method, objArr);
-        gd.i iVar = gd.i.a;
+        hd.i iVar = hd.i.a;
         if (!zza) {
             return iVar;
         }

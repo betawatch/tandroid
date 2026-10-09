@@ -2,7 +2,7 @@ package a0;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i implements Cloneable {
     public /* synthetic */ boolean a;
@@ -261,7 +261,7 @@ public final class i implements Cloneable {
             kotlin.jvm.internal.i.e(jArr2, "<this>");
             System.arraycopy(jArr2, i10, jArr2, i20, i19);
             Object[] objArr3 = this.c;
-            hd.f.c(i20, i10, this.d, objArr3, objArr3);
+            id.f.c(i20, i10, this.d, objArr3, objArr3);
         }
         this.b[i10] = j3;
         this.c[i10] = obj;

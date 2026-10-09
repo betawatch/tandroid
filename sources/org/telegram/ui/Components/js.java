@@ -1,50 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import android.content.Context;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class js {
-    public int a;
-    public int b;
-    public f11 c;
-    public int d;
-    public int e;
+public final class js extends ImageView {
+    public final /* synthetic */ int a = 1;
+    public Object b;
+    public final /* synthetic */ ViewGroup c;
 
-    public static js b(org.telegram.ui.Cells.s2 s2Var, MessagesController.DialogFilter dialogFilter) {
-        js jsVar = new js();
-        jsVar.a = dialogFilter.id;
-        jsVar.b = dialogFilter.color;
-        String str = dialogFilter.name;
-        if (str == null) {
-            str = "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
-        f11 f11Var = new f11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
-        f11Var.s(s2Var);
-        jsVar.c = f11Var;
-        jsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, f11Var.a.getFontMetricsInt(), false), dialogFilter.entities, jsVar.c.a.getFontMetricsInt()));
-        jsVar.c.p(26);
-        int dp = AndroidUtilities.dp(9.32f);
-        f11 f11Var2 = jsVar.c;
-        jsVar.e = dp + ((int) f11Var2.c);
-        f11Var2.j();
-        int[] iArr = org.telegram.ui.ActionBar.i6.r8;
-        jsVar.d = org.telegram.ui.ActionBar.i6.w0(null, iArr[dialogFilter.color % iArr.length], false);
-        return jsVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public js(ls lsVar, Context context, m.f3 f3Var) {
+        super(context);
+        this.c = lsVar;
+        this.b = f3Var;
     }
 
-    public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.i6.A0.setColor(org.telegram.ui.ActionBar.i6.l1(org.telegram.ui.ActionBar.i6.I.q() ? 0.2f : 0.1f, this.d));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, this.e, AndroidUtilities.dp(14.66f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.A0);
-        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                ls lsVar = (ls) this.c;
+                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (lsVar.n || lsVar.f)) {
+                    lsVar.n = false;
+                    lsVar.f = false;
+                    removeCallbacks(lsVar.r);
+                    removeCallbacks(lsVar.h);
+                }
+                super.onTouchEvent(motionEvent);
+                return ((GestureDetector) ((m.f3) this.b).b).onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public js(kl0 kl0Var, Context context) {
+        super(context);
+        this.c = kl0Var;
     }
 }

@@ -1,71 +1,17 @@
 package xh;
 
-import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.cb;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final /* synthetic */ class n implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class n {
+    public final long a;
+    public final boolean b;
+    public final TLRPC.TL_textWithEntities c;
 
-    public /* synthetic */ n(Context context, d6 d6Var, long j3, TL_stars.StarGift starGift, ArrayList arrayList) {
-        this.a = 2;
-        this.c = context;
-        this.d = d6Var;
-        this.b = j3;
-        this.f = starGift;
-        this.e = arrayList;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                v.O((v) this.f, this.b, this.c, (d6) this.d, (Runnable) this.e);
-                break;
-            case 1:
-                c0 c0Var = (c0) this.f;
-                d6 d6Var = (d6) this.d;
-                Runnable runnable = (Runnable) this.e;
-                c0Var.getClass();
-                m mVar = new m(this.c, d6Var, new l(this.b, true, null), c0Var.d0);
-                mVar.show();
-                mVar.n0 = runnable;
-                c0Var.dismiss();
-                break;
-            case 2:
-                new c0(this.c, (d6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
-                break;
-            default:
-                z4.Q((z4) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
-                break;
-        }
-    }
-
-    public /* synthetic */ n(cb cbVar, long j3, Context context, d6 d6Var, Runnable runnable, int i10) {
-        this.a = i10;
-        this.f = cbVar;
-        this.b = j3;
-        this.c = context;
-        this.d = d6Var;
-        this.e = runnable;
-    }
-
-    public /* synthetic */ n(z4 z4Var, long j3, Context context, Runnable runnable, TL_stars.StarGift starGift) {
-        this.a = 3;
-        this.f = z4Var;
-        this.b = j3;
-        this.c = context;
-        this.e = runnable;
-        this.d = starGift;
+    public n(long j3, boolean z10, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.a = j3;
+        this.b = z10;
+        this.c = tL_textWithEntities;
     }
 }

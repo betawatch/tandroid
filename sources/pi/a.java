@@ -1,95 +1,37 @@
 package pi;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import o2.t;
-import org.telegram.tgnet.SerializedData;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class a {
-    public static SparseIntArray b;
-    public static final a c = new a();
-    public final SparseArray a;
+    public final String a;
+    public volatile boolean b;
+    public volatile boolean c;
+    public volatile boolean d;
 
-    public a() {
-        this.a = new SparseArray();
+    public a(String str) {
+        this.a = str;
     }
 
-    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            int readInt32 = serializedData.readInt32(true);
-            int i10 = 0;
-            if (sparseArray == null) {
-                sparseArray = new SparseArray(readInt32);
-                while (i10 < readInt32) {
-                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
-            } else {
-                while (i10 < readInt32) {
-                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
-                    i10++;
-                }
+    public final void a() {
+        if (this.b) {
+            return;
+        }
+        synchronized (this) {
+            if (!this.b) {
+                SharedPreferences sharedPreferences = d.a;
+                this.c = sharedPreferences.contains(this.a);
+                this.d = sharedPreferences.getBoolean(this.a, true);
+                this.b = true;
             }
-            bufferedInputStream.close();
-            return sparseArray;
-        } catch (Throwable th2) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
         }
     }
 
-    public final String b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public final String c(Context context, String str, int i10) {
-        String b10 = str != null ? b(str) : null;
-        if (b10 != null || i10 == 0) {
-            return b10;
-        }
-        if (context != null && i10 != 0) {
-            if (b == null) {
-                try {
-                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
-                    try {
-                        SerializedData serializedData = new SerializedData(bufferedInputStream);
-                        int readInt32 = serializedData.readInt32(true);
-                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
-                        for (int i11 = 0; i11 < readInt32; i11++) {
-                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
-                        }
-                        bufferedInputStream.close();
-                        b = sparseIntArray;
-                    } finally {
-                    }
-                } catch (IOException e7) {
-                    throw new RuntimeException(e7);
-                }
-            }
-            int i12 = b.get(i10);
-            if (i12 != 0) {
-                return (String) this.a.get(i12);
-            }
-        }
-        return null;
-    }
-
-    public a(t tVar) {
-        SparseArray sparseArray = tVar.a;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+    public final synchronized void b(boolean z10) {
+        this.d = z10;
+        this.c = true;
+        this.b = true;
+        d.a.edit().putBoolean(this.a, z10).apply();
     }
 }

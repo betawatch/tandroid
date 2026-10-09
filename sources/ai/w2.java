@@ -1,191 +1,74 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.tr;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.l11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class w2 extends View {
-    public final int a;
-    public final RectF b;
-    public final org.telegram.ui.Components.o6 c;
-    public final s2 d;
-    public final ArrayList e;
-    public final int[] f;
-    public final ArrayList h;
-    public float n;
-    public ValueAnimator r;
-    public boolean s;
+public final class w2 {
+    public final long a;
+    public final float b;
+    public final float c;
+    public final ck0 d;
+    public final Paint e;
+    public final ImageReceiver f;
+    public final l11 g;
+    public boolean h;
+    public final org.telegram.ui.Components.g6 i;
+    public final org.telegram.ui.Components.g6 j;
 
-    public w2(Context context, int i10) {
-        super(context);
-        this.b = new RectF();
-        tr trVar = tr.f;
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
-        this.c = o6Var;
-        this.e = new ArrayList();
-        this.f = new int[]{R.raw.star_reaction_effect1, R.raw.star_reaction_effect2, R.raw.star_reaction_effect3, R.raw.star_reaction_effect4, R.raw.star_reaction_effect5};
-        this.h = new ArrayList();
-        this.s = true;
-        this.a = i10;
-        o6Var.setCallback(this);
-        o6Var.o(false, true, false);
-        o6Var.t(AndroidUtilities.dp(40.0f));
-        o6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        o6Var.p(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.5f), 0);
-        o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.r(-1);
-        o6Var.b = 17;
-        this.d = new s2(this, 0);
-    }
-
-    public final void a(float f7, s2 s2Var) {
-        ValueAnimator valueAnimator = this.r;
-        if (valueAnimator != null) {
-            this.r = null;
-            valueAnimator.cancel();
+    public w2(x2 x2Var, View view, int i10, long j3, int i11, boolean z10) {
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.a = j3;
+        this.b = Utilities.clamp01(Utilities.fastRandom.nextFloat());
+        this.c = Utilities.clamp01(Utilities.fastRandom.nextFloat());
+        if (z10) {
+            int[] iArr = x2Var.f;
+            ck0 ck0Var = new ck0(iArr[Utilities.fastRandom.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+            this.d = ck0Var;
+            ck0Var.R(view);
+            ck0Var.J(true);
+            ck0Var.K(0);
+            ck0Var.start();
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, f7);
-        this.r = ofFloat;
-        ofFloat.addUpdateListener(new a(this, 7));
-        this.r.addListener(new t2(this, f7, s2Var, 0));
-        this.r.setInterpolator(tr.h);
-        this.r.setDuration(320L);
-        this.r.start();
-    }
-
-    public final void b() {
-        this.s = true;
-        AndroidUtilities.cancelRunOnUIThread(this.d);
-        this.c.q("", true, true);
-        invalidate();
-        a(0.0f, new s2(this, 1));
-    }
-
-    public final void c(x2 x2Var) {
-        this.b.set(x2Var.getX() - getX(), x2Var.getY() - getY(), (x2Var.getX() - getX()) + x2Var.getWidth(), (x2Var.getY() - getY()) + x2Var.getHeight());
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        RectF rectF;
-        int i10;
-        w2 w2Var = this;
-        Canvas canvas2 = canvas;
-        float f7 = 1.0f;
-        float lerp = AndroidUtilities.lerp(1.0f, 1.8f, w2Var.n);
-        int dp = (int) (AndroidUtilities.dp(90.0f) * lerp);
-        boolean z10 = false;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = w2Var.e;
-            int size = arrayList.size();
-            rectF = w2Var.b;
-            if (i11 >= size) {
-                break;
-            }
-            kj0 kj0Var = (kj0) arrayList.get(i11);
-            if (kj0Var.a0 >= kj0Var.e[0]) {
-                arrayList.remove(i11);
-                i11--;
-            } else {
-                float f10 = dp / 2.0f;
-                kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f10), (int) (rectF.centerY() - f10), (int) sa.e.d(AndroidUtilities.dp(15.0f), lerp, rectF.left, f10), (int) (rectF.centerY() + f10));
-                kj0Var.setAlpha((int) (w2Var.n * 255.0f));
-                kj0Var.draw(canvas2);
-            }
-            i11++;
+        TLObject userOrChat = MessagesController.getInstance(i10).getUserOrChat(j3);
+        org.telegram.ui.Components.j9 j9Var = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
+        j9Var.p(userOrChat);
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.f = imageReceiver;
+        imageReceiver.setImageCoords(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(7.0f));
+        imageReceiver.setForUserOrChat(userOrChat, j9Var);
+        view.addOnAttachStateChangeListener(new v2(this, 0));
+        if (view.isAttachedToWindow()) {
+            imageReceiver.onAttachedToWindow();
         }
-        float centerX = rectF.centerX();
-        float dp2 = rectF.top - AndroidUtilities.dp(1.0f);
-        canvas2.save();
-        canvas2.translate(centerX, dp2);
-        int i12 = 0;
-        while (true) {
-            ArrayList arrayList2 = w2Var.h;
-            if (i12 >= arrayList2.size()) {
-                canvas2.restore();
-                return;
-            }
-            v2 v2Var = (v2) arrayList2.get(i12);
-            float f11 = v2Var.c;
-            float f12 = v2Var.b;
-            ImageReceiver imageReceiver = v2Var.f;
-            float d = v2Var.i.d(f7, z10);
-            float e7 = v2Var.j.e(v2Var.h);
-            float dp3 = AndroidUtilities.dp(23.0f) + v2Var.g.c;
-            float dp4 = AndroidUtilities.dp(18.0f);
-            float lerp2 = AndroidUtilities.lerp(0.0f, AndroidUtilities.lerp(f7, 0.0f, e7), Utilities.clamp01(Math.min(AndroidUtilities.ilerp(d, f7, 0.85f), AndroidUtilities.ilerp(d, 0.0f, 0.12f))));
-            Paint paint = v2Var.e;
-            int i13 = (int) (lerp2 * 255.0f);
-            paint.setAlpha(i13);
-            kj0 kj0Var2 = v2Var.d;
-            if (kj0Var2 != null) {
-                kj0Var2.setAlpha(i13);
-            }
-            imageReceiver.setAlpha(lerp2);
-            canvas2.save();
-            double d10 = d;
-            float sin = (float) Math.sin(Math.pow(d10, 0.44999998807907104d) * 3.141592653589793d * 3.0d);
-            float f13 = (f12 * 2.0f) - 1.0f;
-            canvas2.translate(AndroidUtilities.dp(4.0f) * f13, 0.0f);
-            float f14 = 1.5f * ((f11 * 2.0f) - 1.0f);
-            canvas2.rotate(f14);
-            int i14 = i12;
-            canvas2.translate(0.0f, ((float) Math.pow(d10, 0.800000011920929d)) * (-AndroidUtilities.dp(200.0f)));
-            canvas2.translate(AndroidUtilities.dp(5.0f) * sin * ((float) Math.pow(d10, 0.5d)), 0.0f);
-            canvas2.rotate(((float) (Math.sin((Math.pow(d10, 0.44999998807907104d) - 0.15000000596046448d) * 3.141592653589793d * 3.0d) * Utilities.clamp01((float) Math.pow(d10, 0.20000000298023224d)))) * (-6.0f));
-            float lerp3 = AndroidUtilities.lerp(0.4f, 1.0f, lerp2);
-            canvas2.scale(lerp3, lerp3);
-            canvas2.translate((-dp3) / 2.0f, (-dp4) / 2.0f);
-            float f15 = dp4 / 2.0f;
-            canvas2.drawRoundRect(0.0f, 0.0f, dp3, dp4, f15, f15, paint);
-            imageReceiver.draw(canvas2);
-            Canvas canvas3 = canvas2;
-            v2Var.g.c(AndroidUtilities.dp(18.0f), f15, lerp2, -1, canvas3);
-            canvas2 = canvas3;
-            canvas2.restore();
-            if (kj0Var2 != null) {
-                canvas2.save();
-                canvas2.translate(AndroidUtilities.dp(4.0f) * f13, 0.0f);
-                canvas2.rotate(f14);
-                canvas2.translate(0.0f, (-AndroidUtilities.dp(200.0f)) * ((float) Math.pow(d10, 0.800000011920929d)));
-                canvas2.translate(sin * AndroidUtilities.dp(5.0f) * ((float) Math.pow(d10, 0.5d)), 0.0f);
-                int dp5 = AndroidUtilities.dp(90.0f);
-                int i15 = (-dp5) / 2;
-                int i16 = dp5 / 2;
-                kj0Var2.setBounds(i15, AndroidUtilities.dp(8.0f) + i15, i16, AndroidUtilities.dp(8.0f) + i16);
-                kj0Var2.draw(canvas2);
-                canvas2.restore();
-            }
-            if (d >= 1.0f || e7 >= 1.0f) {
-                ((v2) arrayList2.get(i14)).f.onDetachedFromWindow();
-                arrayList2.remove(i14);
-                i10 = i14 - 1;
-            } else {
-                i10 = i14;
-            }
-            i12 = i10 + 1;
-            w2Var = this;
-            f7 = 1.0f;
-            z10 = false;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.c || super.verifyDrawable(drawable);
+        paint.setColor(-1135603);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("⭐️");
+        er erVar = new er(R.drawable.star, 0);
+        erVar.spaceScaleX = 0.875f;
+        spannableStringBuilder.setSpan(erVar, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) " ");
+        spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
+        this.g = new l11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(view, 2000L, new LinearInterpolator());
+        this.i = g6Var;
+        g6Var.d(0.0f, true);
+        g6Var.d(1.0f, false);
+        this.j = new org.telegram.ui.Components.g6(view, 350L, 240L, hs.h);
     }
 }

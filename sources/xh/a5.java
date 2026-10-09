@@ -13,153 +13,146 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.z5;
-import yh.u5;
-import yh.z7;
+import org.telegram.ui.Components.b6;
+import org.telegram.ui.Components.q5;
+import yh.m5;
+import yh.p7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final class a5 extends View {
-    public final yh.a4 a;
-    public final d6 b;
+    public final yh.u3 a;
+    public final e6 b;
     public float c;
     public float d;
     public Drawable e;
 
-    public a5(Context context, int i10, d6 d6Var) {
+    public a5(Context context, int i10, e6 e6Var) {
         super(context);
-        this.b = d6Var;
-        yh.a4 a4Var = new yh.a4(i10, this, d6Var);
-        this.a = a4Var;
-        a4Var.y.setCallback(this);
+        this.b = e6Var;
+        yh.u3 u3Var = new yh.u3(i10, this, e6Var);
+        this.a = u3Var;
+        u3Var.y.setCallback(this);
         NotificationCenter.listenEmojiLoading(this);
     }
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
-        yh.a4 a4Var = this.a;
-        o5 o5Var = a4Var.e;
-        l1 l1Var = a4Var.j;
-        ImageReceiver imageReceiver = a4Var.d;
-        a4Var.K = false;
-        a4Var.N = null;
-        a4Var.O = null;
-        a4Var.p = false;
-        a4Var.k = (TL_stars.starGiftAttributeBackdrop) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        a4Var.l = (TL_stars.starGiftAttributePattern) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-        TL_stars.starGiftAttributeModel stargiftattributemodel = a4Var.m;
-        a4Var.m = (TL_stars.starGiftAttributeModel) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-        Paint paint = a4Var.f;
-        a4Var.h = null;
+        yh.u3 u3Var = this.a;
+        q5 q5Var = u3Var.e;
+        m1 m1Var = u3Var.j;
+        ImageReceiver imageReceiver = u3Var.d;
+        u3Var.K = false;
+        u3Var.N = null;
+        u3Var.O = null;
+        u3Var.p = false;
+        u3Var.k = (TL_stars.starGiftAttributeBackdrop) m5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        u3Var.l = (TL_stars.starGiftAttributePattern) m5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = u3Var.m;
+        u3Var.m = (TL_stars.starGiftAttributeModel) m5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        Paint paint = u3Var.f;
+        u3Var.h = null;
         paint.setShader(null);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = a4Var.l;
+        TL_stars.starGiftAttributePattern stargiftattributepattern = u3Var.l;
         if (stargiftattributepattern != null) {
-            o5Var.i(stargiftattributepattern.document, false);
+            q5Var.i(stargiftattributepattern.document, false);
         } else {
-            o5Var.g(null, false);
+            q5Var.g(null, false);
         }
-        TL_stars.starGiftAttributeModel stargiftattributemodel2 = a4Var.m;
+        TL_stars.starGiftAttributeModel stargiftattributemodel2 = u3Var.m;
         if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            z7.f1(imageReceiver, a4Var.m.document, 110);
+            p7.a1(imageReceiver, u3Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
-        a4Var.J = z11;
+        u3Var.J = z11;
         if (z11) {
-            int v02 = i6.v0(i6.q7, a4Var.c);
-            Paint paint2 = l1Var.a;
+            int w02 = i6.w0(i6.q7, u3Var.c);
+            Paint paint2 = (Paint) m1Var.b;
             paint2.setShader(null);
-            paint2.setColor(v02);
-            l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
+            paint2.setColor(w02);
+            m1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
         } else {
-            l1Var.d(a4Var.k, true, false);
-            l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+            m1Var.e(u3Var.k, true, false);
+            m1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
         }
-        if (a4Var.P) {
+        if (u3Var.P) {
             imageReceiver.onAttachedToWindow();
-            o5Var.a();
-            a4Var.y.d.onAttachedToWindow();
+            q5Var.a();
+            u3Var.y.d.onAttachedToWindow();
         }
-        a4Var.L = bi.C(64.0f, (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)));
+        u3Var.L = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
         if (!AndroidUtilities.isTablet()) {
-            a4Var.L = (int) (a4Var.L * 1.2f);
+            u3Var.L = (int) (u3Var.L * 1.2f);
         }
-        a4Var.L -= AndroidUtilities.dp(8.0f);
-        a4Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
-        le.e eVar = a4Var.Q;
+        u3Var.L -= AndroidUtilities.dp(8.0f);
+        u3Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
+        me.e eVar = u3Var.Q;
         if (z10) {
             int round = Math.round(eVar.g ? eVar.f : eVar.e);
-            int i10 = a4Var.L;
+            int i10 = u3Var.L;
             if (round != i10) {
                 eVar.a(i10);
             }
         } else {
-            eVar.c(a4Var.L);
+            eVar.c(u3Var.L);
         }
         requestLayout();
         invalidate();
     }
 
-    public yh.a4 getLayout() {
+    public yh.u3 getLayout() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        yh.a4 a4Var = this.a;
-        a4Var.P = true;
-        if (a4Var.N != null) {
-            a4Var.d.onAttachedToWindow();
-            a4Var.e.a();
-            a4Var.y.d.onAttachedToWindow();
-        }
+        this.a.a();
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        yh.a4 a4Var = this.a;
-        a4Var.P = false;
-        a4Var.d.onDetachedFromWindow();
-        a4Var.e.b();
-        k0 k0Var = a4Var.y;
-        k0Var.d.onDetachedFromWindow();
-        z5.release((View) null, k0Var.q);
-        k0Var.q = null;
+        yh.u3 u3Var = this.a;
+        u3Var.P = false;
+        u3Var.d.onDetachedFromWindow();
+        u3Var.e.b();
+        m0 m0Var = u3Var.y;
+        m0Var.d.onDetachedFromWindow();
+        b6.release((View) null, m0Var.q);
+        m0Var.q = null;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
-        d6 d6Var = this.b;
-        if (d6Var != null) {
-            d6Var.m(0.0f, getY(), getMeasuredWidth(), height);
+        e6 e6Var = this.b;
+        if (e6Var != null) {
+            e6Var.m(0.0f, getY(), getMeasuredWidth(), height);
         } else {
             i6.q(0.0f, getY(), getMeasuredWidth(), height);
         }
-        yh.a4 a4Var = this.a;
-        this.c = (getWidth() - ((int) a4Var.Q.e)) / 2.0f;
-        float dp = a4Var.Q.e + AndroidUtilities.dp(8.0f);
+        yh.u3 u3Var = this.a;
+        this.c = (getWidth() - ((int) u3Var.Q.e)) / 2.0f;
+        float dp = u3Var.Q.e + AndroidUtilities.dp(8.0f);
         float width = (getWidth() - dp) / 2.0f;
         float dp2 = this.d - AndroidUtilities.dp(4.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(width, dp2, dp + width, a4Var.M + dp2 + AndroidUtilities.dp(8.0f));
+        rectF.set(width, dp2, dp + width, u3Var.M + dp2 + AndroidUtilities.dp(8.0f));
         Rect rect = AndroidUtilities.rectTmp2;
         rectF.round(rect);
         this.e.setBounds(rect);
         this.e.draw(canvas);
         canvas.save();
         canvas.translate(this.c, this.d);
-        a4Var.a(canvas);
-        a4Var.b(canvas);
+        u3Var.b(canvas);
+        u3Var.c(canvas);
         canvas.restore();
     }
 

@@ -5,19 +5,19 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
+import com.google.android.gms.internal.cast.f0;
 import com.google.android.gms.internal.cast.h0;
-import com.google.android.gms.internal.cast.j0;
-import com.google.android.gms.internal.cast.o0;
+import com.google.android.gms.internal.cast.m0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends o6.a {
     public static final Parcelable.Creator<f> CREATOR;
-    public static final o0 Y;
+    public static final m0 Y;
     public static final int[] Z;
     public final int E;
     public final int F;
@@ -55,14 +55,14 @@ public final class f extends o6.a {
     public final int y;
 
     static {
-        h0 h0Var = j0.b;
+        f0 f0Var = h0.b;
         Object[] objArr = {MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK, MediaIntentReceiver.ACTION_STOP_CASTING};
         for (int i10 = 0; i10 < 2; i10++) {
             if (objArr[i10] == null) {
                 throw new NullPointerException(hg.c.h(i10, "at index "));
             }
         }
-        Y = j0.r(2, objArr);
+        Y = h0.r(2, objArr);
         Z = new int[]{0, 1};
         CREATOR = new i(0);
     }
@@ -113,73 +113,73 @@ public final class f extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.n(parcel, 2, this.a);
+        int q6 = d0.q(parcel, 20293);
+        d0.n(parcel, 2, this.a);
         int[] iArr = this.b;
-        g0.g(parcel, 3, Arrays.copyOf(iArr, iArr.length));
-        g0.s(parcel, 4, 8);
+        d0.g(parcel, 3, Arrays.copyOf(iArr, iArr.length));
+        d0.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        g0.l(parcel, 5, this.d);
-        g0.s(parcel, 6, 4);
+        d0.l(parcel, 5, this.d);
+        d0.s(parcel, 6, 4);
         parcel.writeInt(this.e);
-        g0.s(parcel, 7, 4);
+        d0.s(parcel, 7, 4);
         parcel.writeInt(this.f);
-        g0.s(parcel, 8, 4);
+        d0.s(parcel, 8, 4);
         parcel.writeInt(this.h);
-        g0.s(parcel, 9, 4);
+        d0.s(parcel, 9, 4);
         parcel.writeInt(this.n);
-        g0.s(parcel, 10, 4);
+        d0.s(parcel, 10, 4);
         parcel.writeInt(this.r);
-        g0.s(parcel, 11, 4);
+        d0.s(parcel, 11, 4);
         parcel.writeInt(this.s);
-        g0.s(parcel, 12, 4);
+        d0.s(parcel, 12, 4);
         parcel.writeInt(this.v);
-        g0.s(parcel, 13, 4);
+        d0.s(parcel, 13, 4);
         parcel.writeInt(this.w);
-        g0.s(parcel, 14, 4);
+        d0.s(parcel, 14, 4);
         parcel.writeInt(this.x);
-        g0.s(parcel, 15, 4);
+        d0.s(parcel, 15, 4);
         parcel.writeInt(this.y);
-        g0.s(parcel, 16, 4);
+        d0.s(parcel, 16, 4);
         parcel.writeInt(this.E);
-        g0.s(parcel, 17, 4);
+        d0.s(parcel, 17, 4);
         parcel.writeInt(this.F);
-        g0.s(parcel, 18, 4);
+        d0.s(parcel, 18, 4);
         parcel.writeInt(this.G);
-        g0.s(parcel, 19, 4);
+        d0.s(parcel, 19, 4);
         parcel.writeInt(this.H);
-        g0.s(parcel, 20, 4);
+        d0.s(parcel, 20, 4);
         parcel.writeInt(this.I);
-        g0.s(parcel, 21, 4);
+        d0.s(parcel, 21, 4);
         parcel.writeInt(this.J);
-        g0.s(parcel, 22, 4);
+        d0.s(parcel, 22, 4);
         parcel.writeInt(this.K);
-        g0.s(parcel, 23, 4);
+        d0.s(parcel, 23, 4);
         parcel.writeInt(this.L);
-        g0.s(parcel, 24, 4);
+        d0.s(parcel, 24, 4);
         parcel.writeInt(this.M);
-        g0.s(parcel, 25, 4);
+        d0.s(parcel, 25, 4);
         parcel.writeInt(this.N);
-        g0.s(parcel, 26, 4);
+        d0.s(parcel, 26, 4);
         parcel.writeInt(this.O);
-        g0.s(parcel, 27, 4);
+        d0.s(parcel, 27, 4);
         parcel.writeInt(this.P);
-        g0.s(parcel, 28, 4);
+        d0.s(parcel, 28, 4);
         parcel.writeInt(this.Q);
-        g0.s(parcel, 29, 4);
+        d0.s(parcel, 29, 4);
         parcel.writeInt(this.R);
-        g0.s(parcel, 30, 4);
+        d0.s(parcel, 30, 4);
         parcel.writeInt(this.S);
-        g0.s(parcel, 31, 4);
+        d0.s(parcel, 31, 4);
         parcel.writeInt(this.T);
-        g0.s(parcel, 32, 4);
+        d0.s(parcel, 32, 4);
         parcel.writeInt(this.U);
         q qVar = this.V;
-        g0.f(parcel, 33, qVar == null ? null : qVar.b);
-        g0.s(parcel, 34, 4);
+        d0.f(parcel, 33, qVar == null ? null : qVar.b);
+        d0.s(parcel, 34, 4);
         parcel.writeInt(this.W ? 1 : 0);
-        g0.s(parcel, 35, 4);
+        d0.s(parcel, 35, 4);
         parcel.writeInt(this.X ? 1 : 0);
-        g0.r(parcel, q6);
+        d0.r(parcel, q6);
     }
 }

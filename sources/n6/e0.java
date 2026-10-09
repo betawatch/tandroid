@@ -1,28 +1,60 @@
 package n6;
 
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.RemoteException;
+import android.util.Log;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class e0 extends w {
-    public final /* synthetic */ g g;
+public final class e0 extends x {
+    public final IBinder g;
+    public final /* synthetic */ g h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(g gVar, int i10, Bundle bundle) {
+    public e0(g gVar, int i10, IBinder iBinder, Bundle bundle) {
         super(gVar, i10, bundle);
-        this.g = gVar;
+        this.h = gVar;
+        this.g = iBinder;
     }
 
-    @Override // n6.w
+    @Override // n6.x
     public final void a(k6.a aVar) {
-        g gVar = this.g;
-        gVar.E.a(aVar);
+        g gVar = this.h;
+        m mVar = gVar.K;
+        if (mVar != null) {
+            ((com.google.android.gms.common.api.l) mVar.a).onConnectionFailed(aVar);
+        }
         gVar.z(aVar);
     }
 
-    @Override // n6.w
+    @Override // n6.x
     public final boolean b() {
-        this.g.E.a(k6.a.e);
-        return true;
+        IBinder iBinder = this.g;
+        try {
+            l.h(iBinder);
+            String interfaceDescriptor = iBinder.getInterfaceDescriptor();
+            g gVar = this.h;
+            if (!gVar.v().equals(interfaceDescriptor)) {
+                Log.w("GmsClient", "service descriptor mismatch: " + gVar.v() + " vs. " + interfaceDescriptor);
+                return false;
+            }
+            IInterface q6 = gVar.q(iBinder);
+            if (q6 == null || !(g.E(gVar, 2, 4, q6) || g.E(gVar, 3, 4, q6))) {
+                return false;
+            }
+            gVar.O = null;
+            Bundle s10 = gVar.s();
+            m mVar = gVar.J;
+            if (mVar == null) {
+                return true;
+            }
+            ((com.google.android.gms.common.api.k) mVar.a).onConnected(s10);
+            return true;
+        } catch (RemoteException unused) {
+            Log.w("GmsClient", "service probably died");
+            return false;
+        }
     }
 }

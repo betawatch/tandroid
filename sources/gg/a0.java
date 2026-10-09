@@ -1,23 +1,118 @@
 package gg;
 
-import android.content.Context;
-import org.telegram.ui.Cells.s2;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.dt0;
+import org.telegram.ui.vb;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a0 extends s2 {
-    public final /* synthetic */ int W4;
+public final class a0 extends s4.d0 {
+    public final /* synthetic */ int I;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ a0(int i10, Context context, boolean z10) {
-        super(context, z10);
-        this.W4 = i10;
+    public /* synthetic */ a0(int i10) {
+        this.I = i10;
     }
 
-    @Override // org.telegram.ui.Cells.s2
-    public final boolean O() {
-        switch (this.W4) {
+    @Override // s4.d0
+    public int W0(s4.a1 a1Var) {
+        switch (this.I) {
+            case 5:
+                return 5000;
+            case 9:
+                return AndroidUtilities.dp(4000.0f);
+            default:
+                return super.W0(a1Var);
         }
-        return false;
+    }
+
+    @Override // s4.d0, s4.p0
+    public boolean e() {
+        switch (this.I) {
+            case 1:
+                return false;
+            default:
+                return super.e();
+        }
+    }
+
+    @Override // s4.d0, s4.p0
+    public void v0(RecyclerView recyclerView, s4.a1 a1Var, int i10) {
+        switch (this.I) {
+            case 4:
+                ji.o oVar = new ji.o(recyclerView.getContext(), 0);
+                oVar.a = i10;
+                w0(oVar);
+                break;
+            case 15:
+                dt0 dt0Var = new dt0(recyclerView.getContext());
+                dt0Var.a = i10;
+                w0(dt0Var);
+                break;
+            default:
+                super.v0(recyclerView, a1Var, i10);
+                break;
+        }
+    }
+
+    @Override // s4.d0, s4.p0
+    public boolean y0() {
+        switch (this.I) {
+            case 0:
+                return false;
+            case 1:
+            case 5:
+            case 6:
+            case 9:
+            case 15:
+            default:
+                return super.y0();
+            case 2:
+                return false;
+            case 3:
+                return false;
+            case 4:
+                return true;
+            case 7:
+                return false;
+            case 8:
+                return false;
+            case 10:
+                return true;
+            case 11:
+                return false;
+            case 12:
+                return false;
+            case 13:
+                return false;
+            case 14:
+                return false;
+            case 16:
+                return false;
+            case 17:
+                return false;
+            case 18:
+                return true;
+            case 19:
+                return false;
+            case 20:
+                return false;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a0(int i10, boolean z10, int i11) {
+        super(i10, z10);
+        this.I = i11;
+    }
+
+    public a0(vb vbVar) {
+        this.I = 4;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a0() {
+        super(0, true);
+        this.I = 15;
     }
 }

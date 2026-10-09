@@ -1,56 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface b00 {
-    ByteBuffer a();
+public final class b00 extends ReplacementSpan {
+    public final /* synthetic */ int a;
 
-    boolean b();
+    public /* synthetic */ b00(int i10) {
+        this.a = i10;
+    }
 
-    boolean c();
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
 
-    float getBlurAngle();
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return (int) paint.measureText(charSequence, i10, i11);
+            case 1:
+                return AndroidUtilities.dp(16.0f);
+            case 2:
+                return AndroidUtilities.dp(12.0f);
+            case 3:
+                return AndroidUtilities.dp(12.0f);
+            default:
+                return AndroidUtilities.dp(16.0f);
+        }
+    }
 
-    float getBlurExcludeBlurSize();
+    public /* synthetic */ b00(boolean z10) {
+        this.a = 0;
+    }
 
-    PointF getBlurExcludePoint();
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
 
-    float getBlurExcludeSize();
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
 
-    int getBlurType();
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
 
-    float getContrastValue();
+    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
 
-    float getEnhanceValue();
-
-    float getExposureValue();
-
-    float getFadeValue();
-
-    float getGrainValue();
-
-    float getHighlightsValue();
-
-    float getSaturationValue();
-
-    float getShadowsValue();
-
-    float getSharpenValue();
-
-    float getSoftenSkinValue();
-
-    int getTintHighlightsColor();
-
-    float getTintHighlightsIntensityValue();
-
-    int getTintShadowsColor();
-
-    float getTintShadowsIntensityValue();
-
-    float getVignetteValue();
-
-    float getWarmthValue();
+    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
 }

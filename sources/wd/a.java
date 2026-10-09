@@ -1,23 +1,9 @@
 package wd;
 
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public final AtomicReference a;
-
-    public a(e eVar) {
-        this.a = new AtomicReference(eVar);
-    }
-
-    @Override // wd.b
-    public final Iterator iterator() {
-        b bVar = (b) this.a.getAndSet(null);
-        if (bVar != null) {
-            return bVar.iterator();
-        }
-        throw new IllegalStateException("This sequence can be consumed only once.");
-    }
+public interface a {
+    List getAnnotations();
 }

@@ -1,69 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.content.DialogInterface;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class et0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ PhotoViewer c;
+public final class et0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    public et0(PhotoViewer photoViewer, float f7, Runnable runnable) {
-        this.c = photoViewer;
-        this.a = f7;
-        this.b = runnable;
+    public et0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        PhotoViewer photoViewer = this.c;
-        photoViewer.p6 = null;
-        photoViewer.f6 = 0.0f;
-        photoViewer.b6 = 0.0f;
-        photoViewer.g6 = 0.0f;
-        float r22 = photoViewer.r2(false);
-        photoViewer.e6 = r22;
-        photoViewer.a6 = r22;
-        photoViewer.e0.invalidate();
-        CropAreaView cropAreaView = photoViewer.C1.b.a;
-        float r23 = photoViewer.r2(false);
-        cropAreaView.n0 = 0.0f;
-        cropAreaView.o0 = r23;
-        cropAreaView.p0 = 0.0f;
-        cropAreaView.q0 = 0.0f;
-        cropAreaView.invalidate();
-        photoViewer.C1.c.setRotated(false);
-        float f7 = this.a;
-        if (Math.abs(f7) > 0.0f) {
-            org.telegram.ui.Components.gf0 gf0Var = photoViewer.C1;
-            lg.f fVar = gf0Var.c;
-            if (fVar != null) {
-                fVar.b(0.0f);
-                fVar.setRotated(false);
-            }
-            if (gf0Var.b.m(f7)) {
-                photoViewer.b1.setColorFilter(new PorterDuffColorFilter(photoViewer.z1(org.telegram.ui.ActionBar.i6.zf), PorterDuff.Mode.MULTIPLY));
-            } else {
-                photoViewer.b1.setColorFilter((ColorFilter) null);
-            }
-        }
-        MediaController.CropState cropState = photoViewer.X4.c;
-        if (cropState != null) {
-            cropState.cropPy = 0.0f;
-            cropState.cropPx = 0.0f;
-            cropState.cropPh = 1.0f;
-            cropState.cropPw = 1.0f;
-        }
-        Runnable runnable = this.b;
-        if (runnable != null) {
-            runnable.run();
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        ImageView imageView = this.a.E3;
+        if (imageView != null) {
+            imageView.animate().alpha(0.0f).withEndAction(new tk0(this, 16)).setDuration(150L).start();
         }
     }
 }

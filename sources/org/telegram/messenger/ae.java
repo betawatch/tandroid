@@ -1,51 +1,25 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ae implements Runnable {
+public final /* synthetic */ class ae implements IntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ ae(int i10, int i11, int i12, long j3, MessagesController messagesController, boolean z10) {
-        this.a = i12;
-        this.b = messagesController;
-        this.c = j3;
-        this.d = i10;
-        this.e = i11;
-        this.f = z10;
+    public /* synthetic */ ae(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i10) {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
+        int[][] lambda$new$16;
+        switch (this.a) {
             case 0:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$242(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
-                break;
+                return String.valueOf(i10);
             default:
-                int i11 = ChatActivityEnterView.n5;
-                ((ChatActivityEnterView) notificationCenterDelegate).T0(this.d, this.f, this.e, false, this.c);
-                break;
+                lambda$new$16 = MessagesController.lambda$new$16(i10);
+                return lambda$new$16;
         }
-    }
-
-    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j3) {
-        this.a = 2;
-        this.b = chatActivityEnterView;
-        this.f = z10;
-        this.d = i10;
-        this.e = i11;
-        this.c = j3;
     }
 }

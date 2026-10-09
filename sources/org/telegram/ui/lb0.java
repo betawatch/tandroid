@@ -3,9 +3,9 @@ package org.telegram.ui;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.pw0 {
+public final /* synthetic */ class lb0 implements org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.vw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ vb0 b;
 
@@ -14,20 +14,20 @@ public final /* synthetic */ class lb0 implements org.telegram.ui.Components.d5,
         this.b = vb0Var;
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void K(int i10, int i11, boolean z10) {
-        this.b.T(i10);
+    @Override // org.telegram.ui.Components.f5
+    public void J(int i10, int i11, boolean z10) {
+        this.b.V(i10);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         vb0 vb0Var = this.b;
         vb0Var.T.a(vb0Var.e);
         vb0Var.finishFragment();
     }
 
-    @Override // org.telegram.ui.Components.pw0
-    public void j(int i10) {
+    @Override // org.telegram.ui.Components.vw0
+    public void g(int i10) {
         switch (this.a) {
             case 2:
                 vb0 vb0Var = this.b;
@@ -53,7 +53,7 @@ public final /* synthetic */ class lb0 implements org.telegram.ui.Components.d5,
         }
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.vw0
     public /* synthetic */ void l() {
         int i10 = this.a;
     }

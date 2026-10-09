@@ -1,18 +1,17 @@
 package f5;
 
-import ii.n4;
 import java.nio.ByteBuffer;
-import w7.u6;
+import w7.s6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class u extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ n4 f;
-    public static final /* synthetic */ n4 h;
+    public static final /* synthetic */ m2.t f;
+    public static final /* synthetic */ m2.t h;
     public long[] e;
 
     static {
-        re.a aVar = new re.a(u.class, "SyncSampleBox.java");
+        se.a aVar = new se.a(u.class, "SyncSampleBox.java");
         aVar.e(aVar.d("getSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "[J"));
         f = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "java.lang.String"));
         h = aVar.e(aVar.d("setSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "[J", "sampleNumber", "void"));
@@ -21,7 +20,7 @@ public final class u extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = u6.a(e5.b.i(byteBuffer));
+        int a2 = s6.a(e5.b.i(byteBuffer));
         this.e = new long[a2];
         for (int i10 = 0; i10 < a2; i10++) {
             this.e[i10] = e5.b.i(byteBuffer);
@@ -43,9 +42,9 @@ public final class u extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(f, this, this);
+        com.google.firebase.messaging.s b10 = se.a.b(f, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
-        return a4.a.o(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
+        return a1.g.o(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
     }
 }

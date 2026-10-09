@@ -1,108 +1,79 @@
 package me;
 
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewConfiguration;
-import ki.h0;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b {
-    public final a a;
-    public h0 b;
-    public int c;
-    public float d;
+public final class b implements d {
+    public final int a;
+    public final d b;
+    public final Interpolator c;
+    public final long d;
     public float e;
-    public float f;
-    public float g;
+    public boolean f;
+    public e h;
 
-    public b(a aVar) {
-        this.a = aVar;
+    public b(View view, Interpolator interpolator, long j3) {
+        this(0, new a(view), interpolator, j3, false);
     }
 
-    public final boolean a(MotionEvent motionEvent, View view) {
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        a aVar = this.a;
-        if (action == 0) {
-            b(view, x10, y3);
-            if (aVar.needClickAt(view, x10, y3)) {
-                this.c |= 1;
-                this.d = x10;
-                this.e = y3;
-                aVar.onClickTouchDown(view, x10, y3);
-                if (aVar.needLongPress(x10, y3) && view != null) {
-                    if (this.b != null) {
-                        throw new AssertionError();
-                    }
-                    this.c |= 2;
-                    h0 h0Var = new h0(8, this, view);
-                    this.b = h0Var;
-                    view.postDelayed(h0Var, aVar.getLongPressDuration());
-                    return true;
-                }
-            }
-        }
-        if (action == 1) {
-            int i10 = this.c;
-            if ((i10 & 1) != 0) {
-                if ((i10 & 4) != 0) {
-                    aVar.onLongPressFinish(view, x10, y3);
-                    this.c &= -5;
-                } else {
-                    aVar.onClickAt(view, x10, y3);
-                    if ((this.c & 256) == 0 && view != null) {
-                        view.playSoundEffect(0);
-                    }
-                }
-                b(view, x10, y3);
-                return true;
-            }
-        } else if (action != 2) {
-            if (action == 3 && (this.c & 1) != 0) {
-                b(view, x10, y3);
-                return true;
-            }
-        } else if ((this.c & 1) != 0) {
-            aVar.onClickTouchMove(view, x10, y3);
-            if ((this.c & 4) != 0) {
-                aVar.onLongPressMove(view, motionEvent, x10, y3, this.f, this.g);
-                return true;
-            }
-            if (aVar.needCancelTouchBySlopMove() && Math.max(Math.abs(this.d - x10), Math.abs(this.e - y3)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
-                b(view, x10, y3);
-                return true;
-            }
-        }
-        return (this.c & 1) != 0;
+    @Override // me.d
+    public final void A(float f7, int i10) {
+        this.b.A(f7, this.a);
     }
 
-    public final void b(View view, float f7, float f10) {
-        int i10 = this.c;
-        if ((i10 & 2) != 0) {
-            this.c = i10 & (-3);
-            h0 h0Var = this.b;
-            if (h0Var == null) {
-                throw new AssertionError();
+    public final void a(boolean z10, boolean z11) {
+        b bVar;
+        if (this.f == z10 && z11) {
+            return;
+        }
+        this.f = z10;
+        float f7 = z10 ? 1.0f : 0.0f;
+        if (z11) {
+            if (this.h == null) {
+                bVar = this;
+                bVar.h = new e(0, bVar, this.c, this.d, this.e);
+            } else {
+                bVar = this;
             }
-            view.removeCallbacks(h0Var);
-            this.b = null;
+            bVar.h.a(f7);
+            return;
         }
-        int i11 = this.c;
-        int i12 = i11 & 8;
-        a aVar = this.a;
-        if (i12 != 0) {
-            this.c = i11 & (-9);
-            aVar.onLongPressCancelled(view, f7, f10);
+        e eVar = this.h;
+        if (eVar != null) {
+            eVar.c(f7);
         }
-        if ((this.c & 4) != 0) {
-            aVar.onLongPressFinish(view, f7, f10);
-            this.c &= -5;
+        float f10 = this.e;
+        if (f10 != f7) {
+            int i10 = this.a;
+            d dVar = this.b;
+            if (f10 != f7) {
+                this.e = f7;
+                dVar.n(i10, f7, -1.0f, null);
+            }
+            dVar.A(f7, i10);
         }
-        if ((this.c & 1) != 0) {
-            aVar.onClickTouchUp(view, f7, f10);
-            this.c &= -2;
+    }
+
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, e eVar) {
+        if (this.e != f7) {
+            this.e = f7;
+            this.b.n(this.a, f7, -1.0f, null);
         }
+    }
+
+    public b(int i10, d dVar, Interpolator interpolator, long j3) {
+        this(i10, dVar, interpolator, j3, false);
+    }
+
+    public b(int i10, d dVar, Interpolator interpolator, long j3, boolean z10) {
+        this.a = i10;
+        this.b = dVar;
+        this.c = interpolator;
+        this.d = j3;
+        this.f = z10;
+        this.e = z10 ? 1.0f : 0.0f;
     }
 }

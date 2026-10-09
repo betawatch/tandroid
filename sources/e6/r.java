@@ -1,11 +1,11 @@
 package e6;
 
 import android.util.Log;
-import ci.o2;
+import ci.n2;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class r {
                 }
                 cVar.l = null;
                 if (!cVar.h.isEmpty()) {
-                    c0 c0Var = cVar.i;
-                    o2 o2Var = cVar.j;
-                    c0Var.removeCallbacks(o2Var);
-                    c0Var.postDelayed(o2Var, 500L);
+                    a0 a0Var = cVar.i;
+                    n2 n2Var = cVar.j;
+                    a0Var.removeCallbacks(n2Var);
+                    a0Var.postDelayed(n2Var, 500L);
                     break;
                 }
                 break;
@@ -46,10 +46,10 @@ public final /* synthetic */ class r {
                 }
                 cVar2.k = null;
                 if (!cVar2.h.isEmpty()) {
-                    c0 c0Var2 = cVar2.i;
-                    o2 o2Var2 = cVar2.j;
-                    c0Var2.removeCallbacks(o2Var2);
-                    c0Var2.postDelayed(o2Var2, 500L);
+                    a0 a0Var2 = cVar2.i;
+                    n2 n2Var2 = cVar2.j;
+                    a0Var2.removeCallbacks(n2Var2);
+                    a0Var2.postDelayed(n2Var2, 500L);
                     break;
                 }
                 break;

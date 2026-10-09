@@ -4,7 +4,6 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
-import c6.a0;
 import c6.e0;
 import c6.f0;
 import com.google.android.gms.cast.MediaError;
@@ -14,7 +13,7 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
@@ -26,12 +25,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
     public final Object a;
-    public final c0 b;
+    public final a0 b;
     public final g6.m c;
     public final aa.a d;
     public final c e;
@@ -49,11 +48,11 @@ public final class h implements c6.f {
         new ConcurrentHashMap();
         this.j = new ConcurrentHashMap();
         this.a = new Object();
-        this.b = new c0(Looper.getMainLooper(), 0);
+        this.b = new a0(Looper.getMainLooper(), 0);
         aa.a aVar = new aa.a(this);
         this.d = aVar;
         this.c = mVar;
-        mVar.h = new a6.i(this, 19);
+        mVar.h = new a6.i(this, 18);
         mVar.c = aVar;
         this.e = new c(this);
     }
@@ -207,270 +206,240 @@ public final class h implements c6.f {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00c3 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0110 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0120 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x012d A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0137 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x013e A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0145 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x014c A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0185 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c3, B:40:0x00c8, B:41:0x010c, B:43:0x0110, B:44:0x011c, B:46:0x0120, B:47:0x0129, B:49:0x012d, B:50:0x0133, B:52:0x0137, B:53:0x013a, B:55:0x013e, B:56:0x0141, B:58:0x0145, B:59:0x0148, B:61:0x014c, B:63:0x0156, B:65:0x0166, B:66:0x016c, B:68:0x0172, B:70:0x017c, B:71:0x0180, B:72:0x0181, B:74:0x0185, B:75:0x019d, B:76:0x01a1, B:78:0x01a7, B:81:0x00cd, B:82:0x00b3, B:84:0x00b9, B:88:0x018f, B:92:0x01ba), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00c4 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0111 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0121 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x012e A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0138 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x013f A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0146 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x014d A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0186 A[Catch: JSONException -> 0x0084, TryCatch #2 {JSONException -> 0x0084, blocks: (B:12:0x004d, B:14:0x005a, B:16:0x0064, B:17:0x0070, B:19:0x0076, B:28:0x008e, B:30:0x009b, B:32:0x00aa, B:37:0x00c4, B:40:0x00c9, B:41:0x010d, B:43:0x0111, B:44:0x011d, B:46:0x0121, B:47:0x012a, B:49:0x012e, B:50:0x0134, B:52:0x0138, B:53:0x013b, B:55:0x013f, B:56:0x0142, B:58:0x0146, B:59:0x0149, B:61:0x014d, B:63:0x0157, B:65:0x0167, B:66:0x016d, B:68:0x0173, B:70:0x017d, B:71:0x0181, B:72:0x0182, B:74:0x0186, B:75:0x019e, B:76:0x01a2, B:78:0x01a8, B:81:0x00ce, B:82:0x00b4, B:84:0x00ba, B:88:0x0190, B:92:0x01bb), top: B:8:0x0040 }] */
     /* JADX WARN: Type inference failed for: r3v0, types: [g6.o] */
     /* JADX WARN: Type inference failed for: r3v1 */
-    /* JADX WARN: Type inference failed for: r3v2 */
-    /* JADX WARN: Type inference failed for: r3v3, types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r3v4 */
-    /* JADX WARN: Type inference failed for: r3v5 */
+    /* JADX WARN: Type inference failed for: r3v3 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void o(String str) {
         char c10;
-        JSONObject jSONObject;
-        String string;
         int i10;
         int i11;
         c6.q qVar;
         int[] m10;
         g6.m mVar = this.c;
-        ?? r32 = mVar.o;
+        String str2 = mVar.o;
         g6.o oVar = mVar.n;
         g6.o oVar2 = mVar.j;
         List list = mVar.d;
         g6.b bVar = mVar.a;
         bVar.b("message received: %s", str);
-        String str2 = bVar.a;
+        String str3 = bVar.a;
         try {
-            jSONObject = new JSONObject(str);
-            string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
-        } catch (JSONException e7) {
-            e = e7;
-            r32 = str2;
-        }
-        try {
-            long optLong = jSONObject.optLong("requestId", -1L);
-            c10 = 1;
+            JSONObject jSONObject = new JSONObject(str);
+            String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
             try {
+                long optLong = jSONObject.optLong("requestId", -1L);
+                c10 = 1;
                 try {
-                    switch (string.hashCode()) {
-                        case -1830647528:
-                            if (string.equals("LOAD_CANCELLED")) {
-                                oVar2.b(optLong, 2101, g6.m.f(jSONObject));
+                    try {
+                        switch (string.hashCode()) {
+                            case -1830647528:
+                                if (string.equals("LOAD_CANCELLED")) {
+                                    oVar2.b(optLong, 2101, g6.m.f(jSONObject));
+                                    return;
+                                }
                                 return;
-                            }
-                            return;
-                        case -1790231854:
-                            if (string.equals("QUEUE_ITEMS")) {
-                                mVar.s.b(optLong, 0, null);
-                                mVar.h("QUEUE_ITEMS", jSONObject);
-                                if (mVar.h != null) {
-                                    JSONArray jSONArray = jSONObject.getJSONArray("items");
-                                    c6.o[] oVarArr = new c6.o[jSONArray.length()];
-                                    for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                        oVarArr[i12] = new a4.m(jSONArray.getJSONObject(i12)).y0();
-                                    }
-                                    Iterator it = ((h) mVar.h.b).i.iterator();
-                                    while (it.hasNext()) {
-                                        ((g) it.next()).k(oVarArr);
+                            case -1790231854:
+                                if (string.equals("QUEUE_ITEMS")) {
+                                    mVar.s.b(optLong, 0, null);
+                                    mVar.h("QUEUE_ITEMS", jSONObject);
+                                    if (mVar.h != null) {
+                                        JSONArray jSONArray = jSONObject.getJSONArray("items");
+                                        c6.o[] oVarArr = new c6.o[jSONArray.length()];
+                                        for (int i12 = 0; i12 < jSONArray.length(); i12++) {
+                                            oVarArr[i12] = new a4.l(jSONArray.getJSONObject(i12)).S();
+                                        }
+                                        Iterator it = ((h) mVar.h.b).i.iterator();
+                                        while (it.hasNext()) {
+                                            ((g) it.next()).k(oVarArr);
+                                        }
+                                        return;
                                     }
                                     return;
                                 }
                                 return;
-                            }
-                            return;
-                        case -1125000185:
-                            if (string.equals("INVALID_REQUEST")) {
-                                Log.w(str2, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
-                                Iterator it2 = list.iterator();
-                                while (it2.hasNext()) {
-                                    ((g6.o) it2.next()).b(optLong, 2001, g6.m.f(jSONObject));
-                                }
-                                return;
-                            }
-                            return;
-                        case -262628938:
-                            if (string.equals("LOAD_FAILED")) {
-                                oVar2.b(optLong, 2100, g6.m.f(jSONObject));
-                                return;
-                            }
-                            return;
-                        case 66247144:
-                            if (string.equals("ERROR")) {
-                                Iterator it3 = list.iterator();
-                                while (it3.hasNext()) {
-                                    ((g6.o) it3.next()).b(optLong, 2100, g6.m.f(jSONObject));
-                                }
-                                if (mVar.h == null) {
+                            case -1125000185:
+                                if (string.equals("INVALID_REQUEST")) {
+                                    Log.w(str3, bVar.d("received unexpected error: Invalid Request.", new Object[0]));
+                                    Iterator it2 = list.iterator();
+                                    while (it2.hasNext()) {
+                                        ((g6.o) it2.next()).b(optLong, 2001, g6.m.f(jSONObject));
+                                    }
                                     return;
                                 }
-                                MediaError b10 = MediaError.b(jSONObject);
-                                Iterator it4 = ((h) mVar.h.b).i.iterator();
-                                while (it4.hasNext()) {
-                                    ((g) it4.next()).b(b10);
+                                return;
+                            case -262628938:
+                                if (string.equals("LOAD_FAILED")) {
+                                    oVar2.b(optLong, 2100, g6.m.f(jSONObject));
+                                    return;
                                 }
                                 return;
-                            }
-                            return;
-                        case 154411710:
-                            if (string.equals("QUEUE_CHANGE")) {
-                                mVar.t.b(optLong, 0, null);
-                                mVar.h("QUEUE_CHANGE", jSONObject);
-                                if (mVar.h != null) {
-                                    String string2 = jSONObject.getString("changeType");
-                                    int[] m11 = g6.m.m(jSONObject.getJSONArray("itemIds"));
-                                    int optInt = jSONObject.optInt("insertBefore", 0);
-                                    if (m11 != null) {
-                                        switch (string2.hashCode()) {
-                                            case -2130463047:
-                                                if (string2.equals("INSERT")) {
-                                                    Iterator it5 = ((h) mVar.h.b).i.iterator();
-                                                    while (it5.hasNext()) {
-                                                        ((g) it5.next()).j(m11, optInt);
-                                                    }
-                                                    return;
-                                                }
-                                                return;
-                                            case -1881281404:
-                                                if (string2.equals("REMOVE")) {
-                                                    Iterator it6 = ((h) mVar.h.b).i.iterator();
-                                                    while (it6.hasNext()) {
-                                                        ((g) it6.next()).l(m11);
-                                                    }
-                                                    return;
-                                                }
-                                                return;
-                                            case -1785516855:
-                                                if (string2.equals("UPDATE")) {
-                                                    int[] m12 = g6.m.m(jSONObject.getJSONArray("itemIds"));
-                                                    n6.l.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
-                                                    JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
-                                                    if (optJSONArray == null) {
-                                                        Iterator it7 = ((h) mVar.h.b).i.iterator();
-                                                        while (it7.hasNext()) {
-                                                            ((g) it7.next()).i(m12);
+                            case 66247144:
+                                if (string.equals("ERROR")) {
+                                    Iterator it3 = list.iterator();
+                                    while (it3.hasNext()) {
+                                        ((g6.o) it3.next()).b(optLong, 2100, g6.m.f(jSONObject));
+                                    }
+                                    if (mVar.h == null) {
+                                        return;
+                                    }
+                                    MediaError b10 = MediaError.b(jSONObject);
+                                    Iterator it4 = ((h) mVar.h.b).i.iterator();
+                                    while (it4.hasNext()) {
+                                        ((g) it4.next()).b(b10);
+                                    }
+                                    return;
+                                }
+                                return;
+                            case 154411710:
+                                if (string.equals("QUEUE_CHANGE")) {
+                                    mVar.t.b(optLong, 0, null);
+                                    mVar.h("QUEUE_CHANGE", jSONObject);
+                                    if (mVar.h != null) {
+                                        String string2 = jSONObject.getString("changeType");
+                                        int[] m11 = g6.m.m(jSONObject.getJSONArray("itemIds"));
+                                        int optInt = jSONObject.optInt("insertBefore", 0);
+                                        if (m11 != null) {
+                                            switch (string2.hashCode()) {
+                                                case -2130463047:
+                                                    if (string2.equals("INSERT")) {
+                                                        Iterator it5 = ((h) mVar.h.b).i.iterator();
+                                                        while (it5.hasNext()) {
+                                                            ((g) it5.next()).j(m11, optInt);
                                                         }
                                                         return;
                                                     }
-                                                    ArrayList c11 = g6.a.c(m12);
-                                                    int optInt2 = jSONObject.optInt("insertBefore", 0);
-                                                    int[] m13 = g6.m.m(optJSONArray);
-                                                    n6.l.h(m13);
-                                                    ArrayList c12 = g6.a.c(m13);
-                                                    Iterator it8 = ((h) mVar.h.b).i.iterator();
-                                                    while (it8.hasNext()) {
-                                                        ((g) it8.next()).m(c11, c12, optInt2);
+                                                    return;
+                                                case -1881281404:
+                                                    if (string2.equals("REMOVE")) {
+                                                        Iterator it6 = ((h) mVar.h.b).i.iterator();
+                                                        while (it6.hasNext()) {
+                                                            ((g) it6.next()).l(m11);
+                                                        }
+                                                        return;
                                                     }
                                                     return;
-                                                }
-                                                return;
-                                            case 1122976047:
-                                                if (string2.equals("ITEMS_CHANGE")) {
-                                                    Iterator it9 = ((h) mVar.h.b).i.iterator();
-                                                    while (it9.hasNext()) {
-                                                        ((g) it9.next()).n(m11);
+                                                case -1785516855:
+                                                    if (string2.equals("UPDATE")) {
+                                                        int[] m12 = g6.m.m(jSONObject.getJSONArray("itemIds"));
+                                                        n6.l.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
+                                                        JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
+                                                        if (optJSONArray == null) {
+                                                            Iterator it7 = ((h) mVar.h.b).i.iterator();
+                                                            while (it7.hasNext()) {
+                                                                ((g) it7.next()).i(m12);
+                                                            }
+                                                            return;
+                                                        }
+                                                        ArrayList c11 = g6.a.c(m12);
+                                                        int optInt2 = jSONObject.optInt("insertBefore", 0);
+                                                        int[] m13 = g6.m.m(optJSONArray);
+                                                        n6.l.h(m13);
+                                                        ArrayList c12 = g6.a.c(m13);
+                                                        Iterator it8 = ((h) mVar.h.b).i.iterator();
+                                                        while (it8.hasNext()) {
+                                                            ((g) it8.next()).m(c11, c12, optInt2);
+                                                        }
+                                                        return;
                                                     }
                                                     return;
-                                                }
-                                                return;
-                                            default:
-                                                return;
+                                                case 1122976047:
+                                                    if (string2.equals("ITEMS_CHANGE")) {
+                                                        Iterator it9 = ((h) mVar.h.b).i.iterator();
+                                                        while (it9.hasNext()) {
+                                                            ((g) it9.next()).n(m11);
+                                                        }
+                                                        return;
+                                                    }
+                                                    return;
+                                                default:
+                                                    return;
+                                            }
                                         }
+                                        return;
                                     }
                                     return;
                                 }
                                 return;
-                            }
-                            return;
-                        case 431600379:
-                            if (string.equals("INVALID_PLAYER_STATE")) {
-                                Log.w(str2, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
-                                Iterator it10 = list.iterator();
-                                while (it10.hasNext()) {
-                                    ((g6.o) it10.next()).b(optLong, 2100, g6.m.f(jSONObject));
+                            case 431600379:
+                                if (string.equals("INVALID_PLAYER_STATE")) {
+                                    Log.w(str3, bVar.d("received unexpected error: Invalid Player State.", new Object[0]));
+                                    Iterator it10 = list.iterator();
+                                    while (it10.hasNext()) {
+                                        ((g6.o) it10.next()).b(optLong, 2100, g6.m.f(jSONObject));
+                                    }
+                                    return;
                                 }
                                 return;
-                            }
-                            return;
-                        case 823510221:
-                            if (string.equals("MEDIA_STATUS")) {
-                                JSONArray jSONArray2 = jSONObject.getJSONArray("status");
-                                if (jSONArray2.length() > 0) {
-                                    JSONObject jSONObject2 = jSONArray2.getJSONObject(0);
-                                    boolean c13 = oVar2.c(optLong);
-                                    if (oVar.d()) {
-                                        if (oVar.c(optLong)) {
-                                        }
-                                        i10 = 1;
-                                        if (!c13 && (qVar = mVar.f) != null) {
-                                            i11 = qVar.b(i10, jSONObject2);
-                                            if ((i11 & 1) != 0) {
-                                                mVar.e = SystemClock.elapsedRealtime();
-                                                mVar.i = -1;
-                                                mVar.l();
+                            case 823510221:
+                                if (string.equals("MEDIA_STATUS")) {
+                                    JSONArray jSONArray2 = jSONObject.getJSONArray("status");
+                                    if (jSONArray2.length() > 0) {
+                                        JSONObject jSONObject2 = jSONArray2.getJSONObject(0);
+                                        boolean c13 = oVar2.c(optLong);
+                                        if (oVar.d()) {
+                                            if (oVar.c(optLong)) {
                                             }
-                                            if ((i11 & 2) != 0) {
-                                                mVar.e = SystemClock.elapsedRealtime();
-                                                mVar.l();
-                                            }
-                                            if ((i11 & 128) != 0) {
-                                                mVar.e = SystemClock.elapsedRealtime();
-                                            }
-                                            if ((i11 & 4) != 0) {
-                                                mVar.i();
-                                            }
-                                            if ((i11 & 8) != 0) {
-                                                mVar.k();
-                                            }
-                                            if ((i11 & 16) != 0) {
-                                                mVar.j();
-                                            }
-                                            if ((i11 & 32) != 0) {
-                                                mVar.e = SystemClock.elapsedRealtime();
-                                                a6.i iVar = mVar.h;
-                                                if (iVar != null) {
-                                                    h hVar = (h) iVar.b;
-                                                    Iterator it11 = hVar.h.iterator();
-                                                    if (it11.hasNext()) {
-                                                        throw a4.a.k(it11);
-                                                    }
-                                                    Iterator it12 = hVar.i.iterator();
-                                                    while (it12.hasNext()) {
-                                                        ((g) it12.next()).a();
+                                            i10 = 1;
+                                            if (!c13 && (qVar = mVar.f) != null) {
+                                                i11 = qVar.b(i10, jSONObject2);
+                                                if ((i11 & 1) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.i = -1;
+                                                    mVar.l();
+                                                }
+                                                if ((i11 & 2) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.l();
+                                                }
+                                                if ((i11 & 128) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                }
+                                                if ((i11 & 4) != 0) {
+                                                    mVar.i();
+                                                }
+                                                if ((i11 & 8) != 0) {
+                                                    mVar.k();
+                                                }
+                                                if ((i11 & 16) != 0) {
+                                                    mVar.j();
+                                                }
+                                                if ((i11 & 32) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    a6.i iVar = mVar.h;
+                                                    if (iVar != null) {
+                                                        h hVar = (h) iVar.b;
+                                                        Iterator it11 = hVar.h.iterator();
+                                                        if (it11.hasNext()) {
+                                                            throw a1.g.k(it11);
+                                                        }
+                                                        Iterator it12 = hVar.i.iterator();
+                                                        while (it12.hasNext()) {
+                                                            ((g) it12.next()).a();
+                                                        }
                                                     }
                                                 }
+                                                if ((i11 & 64) != 0) {
+                                                    mVar.e = SystemClock.elapsedRealtime();
+                                                    mVar.l();
+                                                }
                                             }
-                                            if ((i11 & 64) != 0) {
-                                                mVar.e = SystemClock.elapsedRealtime();
-                                                mVar.l();
-                                            }
-                                        }
-                                        c6.q qVar2 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                        qVar2.b(0, jSONObject2);
-                                        mVar.f = qVar2;
-                                        mVar.e = SystemClock.elapsedRealtime();
-                                        i11 = 127;
-                                        if ((i11 & 1) != 0) {
-                                        }
-                                        if ((i11 & 2) != 0) {
-                                        }
-                                        if ((i11 & 128) != 0) {
-                                        }
-                                        if ((i11 & 4) != 0) {
-                                        }
-                                        if ((i11 & 8) != 0) {
-                                        }
-                                        if ((i11 & 16) != 0) {
-                                        }
-                                        if ((i11 & 32) != 0) {
-                                        }
-                                        if ((i11 & 64) != 0) {
-                                        }
-                                    }
-                                    if (!r32.d() || r32.c(optLong)) {
-                                        i10 = 0;
-                                        if (!c13) {
-                                            i11 = qVar.b(i10, jSONObject2);
+                                            c6.q qVar2 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar2.b(0, jSONObject2);
+                                            mVar.f = qVar2;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
                                             if ((i11 & 1) != 0) {
                                             }
                                             if ((i11 & 2) != 0) {
@@ -488,107 +457,128 @@ public final class h implements c6.f {
                                             if ((i11 & 64) != 0) {
                                             }
                                         }
-                                        c6.q qVar22 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                        qVar22.b(0, jSONObject2);
-                                        mVar.f = qVar22;
-                                        mVar.e = SystemClock.elapsedRealtime();
-                                        i11 = 127;
-                                        if ((i11 & 1) != 0) {
-                                        }
-                                        if ((i11 & 2) != 0) {
-                                        }
-                                        if ((i11 & 128) != 0) {
-                                        }
-                                        if ((i11 & 4) != 0) {
-                                        }
-                                        if ((i11 & 8) != 0) {
-                                        }
-                                        if ((i11 & 16) != 0) {
-                                        }
-                                        if ((i11 & 32) != 0) {
-                                        }
-                                        if ((i11 & 64) != 0) {
+                                        if (!str2.d() || str2.c(optLong)) {
+                                            i10 = 0;
+                                            if (!c13) {
+                                                i11 = qVar.b(i10, jSONObject2);
+                                                if ((i11 & 1) != 0) {
+                                                }
+                                                if ((i11 & 2) != 0) {
+                                                }
+                                                if ((i11 & 128) != 0) {
+                                                }
+                                                if ((i11 & 4) != 0) {
+                                                }
+                                                if ((i11 & 8) != 0) {
+                                                }
+                                                if ((i11 & 16) != 0) {
+                                                }
+                                                if ((i11 & 32) != 0) {
+                                                }
+                                                if ((i11 & 64) != 0) {
+                                                }
+                                            }
+                                            c6.q qVar22 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar22.b(0, jSONObject2);
+                                            mVar.f = qVar22;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
+                                            if ((i11 & 1) != 0) {
+                                            }
+                                            if ((i11 & 2) != 0) {
+                                            }
+                                            if ((i11 & 128) != 0) {
+                                            }
+                                            if ((i11 & 4) != 0) {
+                                            }
+                                            if ((i11 & 8) != 0) {
+                                            }
+                                            if ((i11 & 16) != 0) {
+                                            }
+                                            if ((i11 & 32) != 0) {
+                                            }
+                                            if ((i11 & 64) != 0) {
+                                            }
+                                        } else {
+                                            i10 = 1;
+                                            if (!c13) {
+                                            }
+                                            c6.q qVar222 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
+                                            qVar222.b(0, jSONObject2);
+                                            mVar.f = qVar222;
+                                            mVar.e = SystemClock.elapsedRealtime();
+                                            i11 = 127;
+                                            if ((i11 & 1) != 0) {
+                                            }
+                                            if ((i11 & 2) != 0) {
+                                            }
+                                            if ((i11 & 128) != 0) {
+                                            }
+                                            if ((i11 & 4) != 0) {
+                                            }
+                                            if ((i11 & 8) != 0) {
+                                            }
+                                            if ((i11 & 16) != 0) {
+                                            }
+                                            if ((i11 & 32) != 0) {
+                                            }
+                                            if ((i11 & 64) != 0) {
+                                            }
                                         }
                                     } else {
-                                        i10 = 1;
-                                        if (!c13) {
-                                        }
-                                        c6.q qVar222 = new c6.q(null, 0L, 0, 0.0d, 0, 0, 0L, 0L, 0.0d, false, null, 0, 0, null, 0, null, false, null, null, null, null);
-                                        qVar222.b(0, jSONObject2);
-                                        mVar.f = qVar222;
-                                        mVar.e = SystemClock.elapsedRealtime();
-                                        i11 = 127;
-                                        if ((i11 & 1) != 0) {
-                                        }
-                                        if ((i11 & 2) != 0) {
-                                        }
-                                        if ((i11 & 128) != 0) {
-                                        }
-                                        if ((i11 & 4) != 0) {
-                                        }
-                                        if ((i11 & 8) != 0) {
-                                        }
-                                        if ((i11 & 16) != 0) {
-                                        }
-                                        if ((i11 & 32) != 0) {
-                                        }
-                                        if ((i11 & 64) != 0) {
-                                        }
+                                        mVar.f = null;
+                                        mVar.l();
+                                        mVar.i();
+                                        mVar.k();
+                                        mVar.j();
                                     }
-                                } else {
-                                    mVar.f = null;
-                                    mVar.l();
-                                    mVar.i();
-                                    mVar.k();
-                                    mVar.j();
-                                }
-                                Iterator it13 = list.iterator();
-                                while (it13.hasNext()) {
-                                    ((g6.o) it13.next()).b(optLong, 0, null);
-                                }
-                                return;
-                            }
-                            return;
-                        case 2107149050:
-                            if (string.equals("QUEUE_ITEM_IDS")) {
-                                mVar.r.b(optLong, 0, null);
-                                mVar.h("QUEUE_ITEM_IDS", jSONObject);
-                                if (mVar.h == null || (m10 = g6.m.m(jSONObject.getJSONArray("itemIds"))) == null) {
+                                    Iterator it13 = list.iterator();
+                                    while (it13.hasNext()) {
+                                        ((g6.o) it13.next()).b(optLong, 0, null);
+                                    }
                                     return;
                                 }
-                                Iterator it14 = ((h) mVar.h.b).i.iterator();
-                                while (it14.hasNext()) {
-                                    ((g) it14.next()).i(m10);
+                                return;
+                            case 2107149050:
+                                if (string.equals("QUEUE_ITEM_IDS")) {
+                                    mVar.r.b(optLong, 0, null);
+                                    mVar.h("QUEUE_ITEM_IDS", jSONObject);
+                                    if (mVar.h == null || (m10 = g6.m.m(jSONObject.getJSONArray("itemIds"))) == null) {
+                                        return;
+                                    }
+                                    Iterator it14 = ((h) mVar.h.b).i.iterator();
+                                    while (it14.hasNext()) {
+                                        ((g) it14.next()).i(m10);
+                                    }
+                                    return;
                                 }
                                 return;
-                            }
-                            return;
-                        default:
-                            return;
+                            default:
+                                return;
+                        }
+                    } catch (JSONException e7) {
+                        e = e7;
+                        Object[] objArr = new Object[2];
+                        objArr[0] = e.getMessage();
+                        objArr[c10] = str;
+                        Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
                     }
                 } catch (JSONException e10) {
                     e = e10;
-                    Object[] objArr = new Object[2];
-                    objArr[0] = e.getMessage();
-                    objArr[c10] = str;
-                    Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
+                    str2 = str3;
+                    Object[] objArr2 = new Object[2];
+                    objArr2[0] = e.getMessage();
+                    objArr2[c10] = str;
+                    Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
                 }
             } catch (JSONException e11) {
                 e = e11;
-                r32 = str2;
-                Object[] objArr2 = new Object[2];
-                objArr2[0] = e.getMessage();
-                objArr2[c10] = str;
-                Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
+                c10 = 1;
             }
         } catch (JSONException e12) {
             e = e12;
-            r32 = str2;
             c10 = 1;
-            Object[] objArr22 = new Object[2];
-            objArr22[0] = e.getMessage();
-            objArr22[c10] = str;
-            Log.w((String) r32, bVar.d("Message is malformed (%s); ignoring: %s", objArr22));
+            str2 = str3;
         }
     }
 
@@ -662,7 +652,7 @@ public final class h implements c6.f {
             e0Var.C.put(str, this);
         }
         v e7 = w.e();
-        e7.c = new a0(e0Var, str, this);
+        e7.c = new c6.a0(e0Var, str, this);
         e7.a = 8413;
         e0Var.e(1, e7.a());
         n6.l.e("Must be called from the main thread.");
@@ -692,7 +682,7 @@ public final class h implements c6.f {
                 fVar = (c6.f) e0Var2.C.remove(str);
             }
             v e7 = w.e();
-            e7.c = new a0(e0Var2, fVar, str);
+            e7.c = new c6.a0(e0Var2, fVar, str);
             e7.a = 8414;
             e0Var2.e(1, e7.a());
             this.d.b = null;

@@ -1,122 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class ws extends w61 {
-    public final int N;
-    public final int O;
-    public final ArrayList P;
-    public final ArrayList Q;
-    public final ArrayList R;
-    public final ArrayList S;
-    public boolean T;
-    public boolean U;
-    public final ArrayList V;
-    public boolean W;
-    public boolean X;
-    public boolean Y;
-    public int Z;
-    public int a0;
-    public String b0;
-    public final aq c0;
+public final class ws {
+    public int a;
+    public int b;
+    public l11 c;
+    public int d;
+    public int e;
 
-    public ws(zl0 zl0Var, Context context, int i10, int i11) {
-        super(zl0Var, context, i10, 0, false, null, null);
-        this.P = new ArrayList();
-        this.Q = new ArrayList();
-        this.R = new ArrayList();
-        this.S = new ArrayList();
-        this.V = new ArrayList();
-        lo0 lo0Var = (lo0) this;
-        this.c0 = new aq(lo0Var, 6);
-        this.s = new d(lo0Var, 9);
-        this.N = i10;
-        this.O = i11;
-        N(false);
+    public static ws b(org.telegram.ui.Cells.s2 s2Var, MessagesController.DialogFilter dialogFilter) {
+        ws wsVar = new ws();
+        wsVar.a = dialogFilter.id;
+        wsVar.b = dialogFilter.color;
+        String str = dialogFilter.name;
+        if (str == null) {
+            str = "";
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str.toUpperCase());
+        l11 l11Var = new l11(spannableStringBuilder, 10.0f, AndroidUtilities.bold());
+        l11Var.s(s2Var);
+        wsVar.c = l11Var;
+        wsVar.c.r(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, l11Var.a.getFontMetricsInt(), false), dialogFilter.entities, wsVar.c.a.getFontMetricsInt()));
+        wsVar.c.p(26);
+        int dp = AndroidUtilities.dp(9.32f);
+        l11 l11Var2 = wsVar.c;
+        wsVar.e = dp + ((int) l11Var2.c);
+        l11Var2.j();
+        int[] iArr = org.telegram.ui.ActionBar.i6.r8;
+        wsVar.d = org.telegram.ui.ActionBar.i6.x0(null, iArr[dialogFilter.color % iArr.length], false);
+        return wsVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void V(boolean z10) {
-        this.W = true;
-        int i10 = this.a0 + 1;
-        this.a0 = i10;
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = true;
-        int i11 = this.O;
-        if (i11 != 0) {
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = i11;
-        }
-        tL_messages_searchGlobal.q = this.b0;
-        tL_messages_searchGlobal.limit = 25;
-        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i12 = this.N;
-        if (z10) {
-            ArrayList arrayList = this.P;
-            if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.Z;
-                tL_messages_searchGlobal.offset_id = messageObject.getId();
-                if (messageObject.messageOwner.peer_id == null) {
-                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                } else {
-                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
-                if (z10) {
-                    this.X = true;
-                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 20;
-                    tL_contacts_search.broadcasts = true;
-                    tL_contacts_search.q = this.b0;
-                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.m0(12, this, tL_contacts_search));
-                    return;
-                }
-                return;
-            }
-        }
-        tL_messages_searchGlobal.offset_rate = 0;
-        tL_messages_searchGlobal.offset_id = 0;
-        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
-        if (z10) {
-        }
-    }
-
-    public final void W() {
-        ArrayList arrayList = new ArrayList();
-        int i10 = this.N;
-        ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(i10).getAllDialogs();
-        int size = allDialogs.size();
-        int i11 = 0;
-        while (i11 < size) {
-            TLRPC.Dialog dialog = allDialogs.get(i11);
-            i11++;
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-dialog.id));
-            if (chat != null && ChatObject.isChannelAndNotMegaGroup(chat) && ChatObject.isPublic(chat) && !ChatObject.isNotInChat(chat)) {
-                arrayList.add(chat);
-                if (arrayList.size() >= 100) {
-                    break;
-                }
-            }
-        }
-        ArrayList arrayList2 = this.V;
-        arrayList2.clear();
-        arrayList2.addAll(arrayList);
+    public final void a(Canvas canvas) {
+        org.telegram.ui.ActionBar.i6.A0.setColor(org.telegram.ui.ActionBar.i6.m1(org.telegram.ui.ActionBar.i6.I.q() ? 0.2f : 0.1f, this.d));
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, this.e, AndroidUtilities.dp(14.66f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.A0);
+        this.c.c(AndroidUtilities.dp(4.66f), AndroidUtilities.dp(14.66f) / 2.0f, 1.0f, this.d, canvas);
     }
 }

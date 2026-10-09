@@ -5,9 +5,8 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import qg.f2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e extends ImageView {
     public long a;
@@ -32,7 +31,7 @@ public final class e extends ImageView {
             this.a = System.currentTimeMillis();
             fVar.b = true;
             fVar.c = false;
-            AndroidUtilities.runOnUIThread(new f2(fVar, 350, 5), 350);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.r(fVar, 350, 11), 350);
         } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
             fVar.b = false;
             if (!fVar.c && (callback = fVar.d) != null) {

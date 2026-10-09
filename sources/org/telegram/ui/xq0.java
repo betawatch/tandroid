@@ -1,64 +1,49 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xq0 implements org.telegram.ui.Components.dn0 {
-    public final /* synthetic */ br0 a;
+public final class xq0 extends org.telegram.ui.Components.j10 {
+    public final /* synthetic */ int U;
 
-    public xq0(br0 br0Var) {
-        this.a = br0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xq0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.U = i10;
     }
 
-    @Override // org.telegram.ui.Components.dn0
-    public final void E0(float f7) {
-        br0 br0Var = this.a;
-        if (f7 != 1.0f || br0Var.n[1].getVisibility() == 0) {
-            if (br0Var.v) {
-                br0Var.n[0].setTranslationX((-f7) * r3.getMeasuredWidth());
-                br0Var.n[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * br0Var.n[0].getMeasuredWidth()));
-            } else {
-                br0Var.n[0].setTranslationX(r3.getMeasuredWidth() * f7);
-                br0Var.n[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - br0Var.n[0].getMeasuredWidth());
-            }
-            if (f7 == 1.0f) {
-                zq0[] zq0VarArr = br0Var.n;
-                zq0 zq0Var = zq0VarArr[0];
-                zq0VarArr[0] = zq0VarArr[1];
-                zq0VarArr[1] = zq0Var;
-                zq0Var.setVisibility(8);
-            }
+    @Override // org.telegram.ui.Components.j10
+    public int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return 3;
+            default:
+                return super.getColumnsCount();
         }
     }
 
-    @Override // org.telegram.ui.Components.dn0
-    public final void b(int i10, boolean z10) {
-        br0 br0Var = this.a;
-        if (br0Var.n[0].e == i10) {
-            return;
-        }
-        br0Var.e = i10 == br0Var.h.getFirstTabId();
-        zq0 zq0Var = br0Var.n[1];
-        zq0Var.e = i10;
-        zq0Var.setVisibility(0);
-        br0Var.j0(true);
-        br0Var.v = z10;
-        if (i10 == 0) {
-            br0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchImagesTitle));
-        } else {
-            br0Var.c.setSearchFieldHint(LocaleController.getString(R.string.SearchGifsTitle));
+    @Override // org.telegram.ui.Components.j10
+    public int getViewType() {
+        switch (this.U) {
+            case 0:
+                return 2;
+            default:
+                return super.getViewType();
         }
     }
 
-    @Override // org.telegram.ui.Components.dn0
-    public final /* synthetic */ boolean o1(int i10, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.dn0
-    public final /* synthetic */ void C() {
+    @Override // org.telegram.ui.Components.j10, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.U) {
+            case 1:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

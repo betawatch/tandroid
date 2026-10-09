@@ -24,21 +24,21 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.l11;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class o0 extends View {
     public final Paint E;
     public boolean F;
-    public f11 G;
+    public l11 G;
     public final Paint H;
     public boolean I;
-    public f11 J;
+    public l11 J;
     public boolean K;
-    public f11 L;
+    public l11 L;
     public boolean M;
     public final TextPaint N;
     public StaticLayout O;
@@ -68,17 +68,17 @@ public class o0 extends View {
     public final Path i0;
     public final RectF j0;
     public final RectF k0;
-    public final e6 l0;
-    public final e6 m0;
+    public final g6 l0;
+    public final g6 m0;
     public float n;
-    public final e6 n0;
-    public final e6 o0;
-    public final e6 p0;
-    public final e6 q0;
+    public final g6 n0;
+    public final g6 o0;
+    public final g6 p0;
+    public final g6 q0;
     public final TextPaint r;
-    public final e6 r0;
+    public final g6 r0;
     public StaticLayout s;
-    public final e6 s0;
+    public final g6 s0;
     public float v;
     public float w;
     public final RectF x;
@@ -102,15 +102,15 @@ public class o0 extends View {
         this.i0 = new Path();
         this.j0 = new RectF();
         this.k0 = new RectF();
-        tr trVar = tr.h;
-        this.l0 = new e6(this, 0L, 350L, trVar);
-        this.m0 = new e6(this, 0L, 350L, trVar);
-        this.n0 = new e6(this, 0L, 350L, trVar);
-        this.o0 = new e6(this, 0L, 350L, trVar);
-        this.p0 = new e6(this, 0L, 350L, trVar);
-        this.q0 = new e6(this, 0L, 350L, trVar);
-        this.r0 = new e6(this, 0L, 350L, trVar);
-        this.s0 = new e6(this, 0L, 350L, trVar);
+        hs hsVar = hs.h;
+        this.l0 = new g6(this, 0L, 350L, hsVar);
+        this.m0 = new g6(this, 0L, 350L, hsVar);
+        this.n0 = new g6(this, 0L, 350L, hsVar);
+        this.o0 = new g6(this, 0L, 350L, hsVar);
+        this.p0 = new g6(this, 0L, 350L, hsVar);
+        this.q0 = new g6(this, 0L, 350L, hsVar);
+        this.r0 = new g6(this, 0L, 350L, hsVar);
+        this.s0 = new g6(this, 0L, 350L, hsVar);
         this.e = f7;
         imageReceiver.setInvalidateAll(true);
         this.f = (int) (f7 * 3.0f);
@@ -120,28 +120,37 @@ public class o0 extends View {
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01ea  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void a(Canvas canvas) {
         float f7;
         float f10;
         float f11;
-        Path.Direction direction;
         float f12;
+        Path.Direction direction;
         float f13;
-        f11 f11Var;
-        f11 f11Var2;
+        float f14;
+        float f15;
+        float f16;
+        float e7;
+        float f17;
+        l11 l11Var;
+        l11 l11Var2;
         Canvas canvas2 = canvas;
         d();
         float d = this.r0.d(this.a0, false);
         float d10 = this.s0.d(this.b0, false);
-        float e7 = this.p0.e(this.V == 0);
-        float e10 = this.o0.e(e());
-        float f14 = this.e;
-        float lerp = AndroidUtilities.lerp(0.2f * d10, 16.66f * f14, e10);
+        float e10 = this.p0.e(this.V == 0);
+        float e11 = this.o0.e(e());
+        float f18 = this.e;
+        float lerp = AndroidUtilities.lerp(0.2f * d10, 16.66f * f18, e11);
         int i10 = this.f;
         int i11 = this.h;
         RectF rectF = this.f0;
         rectF.set(i10, i11, i10 + d, i11 + d10);
-        int d11 = i0.a.d(e10, this.e0, i0.a.d(e7, -1, -14670807));
+        int d11 = i0.a.d(e11, this.e0, i0.a.d(e10, -1, -14670807));
         Paint paint = this.E;
         paint.setColor(d11);
         Path path = this.i0;
@@ -149,111 +158,146 @@ public class o0 extends View {
         Path.Direction direction2 = Path.Direction.CW;
         path.addRoundRect(rectF, lerp, lerp, direction2);
         canvas2.drawPath(path, paint);
-        if (e10 > 0.0f) {
+        if (e11 > 0.0f) {
             canvas2.save();
             canvas2.clipPath(path);
             canvas2.translate(i10, i11);
-            float e11 = this.l0.e(this.F);
-            float f15 = (7.33f * f14) + 0.0f;
-            f11 f11Var3 = this.G;
-            if (f11Var3 == null || e11 <= 0.0f) {
-                f10 = e11;
-                f11 = e10;
-                direction = direction2;
+            float e12 = this.l0.e(this.F);
+            float f19 = (7.33f * f18) + 0.0f;
+            l11 l11Var3 = this.G;
+            if (l11Var3 == null || e12 <= 0.0f) {
+                f11 = e12;
                 f7 = 1.0f;
+                f12 = e11;
+                f10 = 2.0f;
+                direction = direction2;
             } else {
+                f10 = 2.0f;
                 direction = direction2;
-                f10 = e11;
+                f11 = e12;
                 f7 = 1.0f;
-                f11Var3.c(f14 * 10.0f, com.google.android.gms.internal.vision.e2.b(1.0f, e11, (15.0f * f14) + this.G.j(), (f11Var3.j() / 2.0f) + f15), e10, -15033089, canvas2);
-                f11 = e10;
-                f15 = (((7.0f * f14) + this.G.j()) * f10) + f15;
+                l11Var3.c(f18 * 10.0f, com.google.android.gms.internal.vision.e2.b(1.0f, e12, (15.0f * f18) + this.G.j(), (l11Var3.j() / 2.0f) + f19), e11, -15033089, canvas2);
+                f12 = e11;
+                f19 = (((7.0f * f18) + this.G.j()) * f11) + f19;
             }
-            float f16 = f15;
+            float f20 = f19;
             float d12 = this.q0.d(this.c0, false);
             Paint paint2 = this.H;
             paint2.setAlpha(25);
-            float f17 = d12 + f16;
+            float f21 = d12 + f20;
             RectF rectF2 = this.g0;
-            rectF2.set(f14 * 10.0f, f16, d - (f14 * 10.0f), f17);
+            rectF2.set(f18 * 10.0f, f20, d - (f18 * 10.0f), f21);
             Path path2 = this.h0;
             path2.rewind();
-            path2.addRoundRect(rectF2, f14 * 5.0f, f14 * 5.0f, direction);
+            path2.addRoundRect(rectF2, f18 * 5.0f, f18 * 5.0f, direction);
             canvas2.drawPath(path2, paint2);
             canvas2.save();
             canvas2.clipPath(path2);
             paint2.setAlpha(255);
-            canvas2.drawRect(f14 * 10.0f, f16, 13.0f * f14, f17, paint2);
+            canvas2.drawRect(f18 * 10.0f, f20, 13.0f * f18, f21, paint2);
             canvas.restore();
-            float f18 = (5.66f * f14) + f16;
-            if (!this.K || (f11Var2 = this.L) == null) {
-                f12 = d;
-                e10 = f11;
-                f13 = 2.66f;
+            float f22 = (5.66f * f18) + f20;
+            if (this.K) {
+                l11 l11Var4 = this.L;
+                if (l11Var4 != null) {
+                    float j3 = (l11Var4.j() / f10) + f22;
+                    int color = paint2.getColor();
+                    f13 = d;
+                    e11 = f12;
+                    f15 = f11;
+                    f16 = 2.66f;
+                    l11Var4.c(f18 * 20.0f, j3, e11, color, canvas);
+                    f14 = sc.v.d(f18, 2.66f, this.L.j(), f22);
+                    if (this.I || (l11Var2 = this.J) == null) {
+                        canvas2 = canvas;
+                    } else {
+                        canvas2 = canvas;
+                        l11Var2.c(f18 * 20.0f, (l11Var2.j() / f10) + f14, e11, i0.a.d(e10, -13421773, -1), canvas2);
+                        f14 = sc.v.d(f18, f16, this.J.j(), f14);
+                    }
+                    if (this.M && this.O != null) {
+                        canvas2.save();
+                        canvas2.translate((f18 * 20.0f) - this.Q, f14);
+                        this.N.setColor(i0.a.d(e10, -13421773, -1));
+                        this.N.setAlpha((int) (255.0f * e11));
+                        this.O.draw(canvas2);
+                        canvas2.restore();
+                        f14 = sc.v.d(f18, f16, this.O.getHeight(), f14);
+                    }
+                    e7 = this.m0.e(this.R);
+                    if (e7 > 0.0f) {
+                        float e13 = this.n0.e(this.S);
+                        this.j0.set(f18 * 20.0f, (f18 * f16) + f14, f13 - (20.0f * f18), (f18 * f16) + f14 + this.d0);
+                        this.k0.set(((f13 - (f18 * 10.0f)) - (f18 * 6.0f)) - (48.0f * f18), (f18 * 6.0f) + f20, (f13 - (f18 * 10.0f)) - (f18 * 6.0f), (48.0f * f18) + (6.0f * f18) + f20);
+                        AndroidUtilities.lerp(this.j0, this.k0, e13, rectF2);
+                        float f23 = rectF2.left;
+                        float f24 = rectF2.top;
+                        float width = rectF2.width();
+                        float height = rectF2.height();
+                        ImageReceiver imageReceiver = this.T;
+                        imageReceiver.setImageCoords(f23, f24, width, height);
+                        imageReceiver.setAlpha(e7 * e11);
+                        imageReceiver.draw(canvas2);
+                        f14 += ((f18 * f16) + this.d0) * (f7 - e13);
+                    }
+                    f17 = (5.0f * f18) + (7.0f * f18) + f14;
+                    l11Var = this.G;
+                    if (l11Var != null && f7 - f15 > 0.0f) {
+                        l11Var.c(f18 * 10.0f, (l11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e11, -15033089, canvas2);
+                        this.G.j();
+                    }
+                    canvas2.restore();
+                } else {
+                    f13 = d;
+                    f14 = f22;
+                }
             } else {
-                float j3 = (f11Var2.j() / 2.0f) + f18;
-                int color = paint2.getColor();
-                f12 = d;
-                e10 = f11;
-                f13 = 2.66f;
-                f11Var2.c(f14 * 20.0f, j3, e10, color, canvas);
-                f18 = sa.e.d(f14, 2.66f, this.L.j(), f18);
+                f13 = d;
+                f14 = f22;
             }
-            if (!this.I || (f11Var = this.J) == null) {
-                canvas2 = canvas;
-            } else {
-                canvas2 = canvas;
-                f11Var.c(f14 * 20.0f, (f11Var.j() / 2.0f) + f18, e10, i0.a.d(e7, -13421773, -1), canvas2);
-                f18 = sa.e.d(f14, f13, this.J.j(), f18);
+            e11 = f12;
+            f15 = f11;
+            f16 = 2.66f;
+            if (this.I) {
             }
-            if (this.M && this.O != null) {
+            canvas2 = canvas;
+            if (this.M) {
                 canvas2.save();
-                canvas2.translate((f14 * 20.0f) - this.Q, f18);
-                this.N.setColor(i0.a.d(e7, -13421773, -1));
-                this.N.setAlpha((int) (255.0f * e10));
+                canvas2.translate((f18 * 20.0f) - this.Q, f14);
+                this.N.setColor(i0.a.d(e10, -13421773, -1));
+                this.N.setAlpha((int) (255.0f * e11));
                 this.O.draw(canvas2);
                 canvas2.restore();
-                f18 = sa.e.d(f14, f13, this.O.getHeight(), f18);
+                f14 = sc.v.d(f18, f16, this.O.getHeight(), f14);
             }
-            float e12 = this.m0.e(this.R);
-            if (e12 > 0.0f) {
-                float e13 = this.n0.e(this.S);
-                this.j0.set(f14 * 20.0f, (f14 * f13) + f18, f12 - (20.0f * f14), (f14 * f13) + f18 + this.d0);
-                this.k0.set(((f12 - (f14 * 10.0f)) - (f14 * 6.0f)) - (48.0f * f14), (f14 * 6.0f) + f16, (f12 - (f14 * 10.0f)) - (f14 * 6.0f), (48.0f * f14) + (6.0f * f14) + f16);
-                AndroidUtilities.lerp(this.j0, this.k0, e13, rectF2);
-                float f19 = rectF2.left;
-                float f20 = rectF2.top;
-                float width = rectF2.width();
-                float height = rectF2.height();
-                ImageReceiver imageReceiver = this.T;
-                imageReceiver.setImageCoords(f19, f20, width, height);
-                imageReceiver.setAlpha(e12 * e10);
-                imageReceiver.draw(canvas2);
-                f18 += ((f14 * 2.66f) + this.d0) * (f7 - e13);
+            e7 = this.m0.e(this.R);
+            if (e7 > 0.0f) {
             }
-            float f21 = (5.0f * f14) + (7.0f * f14) + f18;
-            f11 f11Var4 = this.G;
-            if (f11Var4 != null && f7 - f10 > 0.0f) {
-                f11Var4.c(f14 * 10.0f, (f11Var4.j() / 2.0f) + f21 + (((15.0f * f14) + this.G.j()) * f10), e10, -15033089, canvas2);
+            f17 = (5.0f * f18) + (7.0f * f18) + f14;
+            l11Var = this.G;
+            if (l11Var != null) {
+                l11Var.c(f18 * 10.0f, (l11Var.j() / f10) + f17 + (((15.0f * f18) + this.G.j()) * f15), e11, -15033089, canvas2);
                 this.G.j();
             }
             canvas2.restore();
         } else {
             f7 = 1.0f;
+            f10 = 2.0f;
         }
-        if (e10 < f7) {
-            float f22 = this.x.left;
-            int y3 = ((int) com.google.android.gms.internal.vision.e2.y(f14, 30.0f, d10, 2.0f)) + i11;
+        if (e11 < f7) {
+            float f25 = this.x.left;
+            float f26 = f10;
+            int x10 = ((int) com.google.android.gms.internal.vision.e2.x(f18, 30.0f, d10, f26)) + i11;
             Drawable drawable = this.y;
-            drawable.setBounds(((int) (f22 * f14)) + i10, ((int) com.google.android.gms.internal.vision.e2.v(f14, 30.0f, d10, 2.0f)) + i11, ((int) ((f22 + 30.0f) * f14)) + i10, y3);
-            int i12 = (int) ((f7 - e10) * 255.0f);
+            drawable.setBounds(((int) (f25 * f18)) + i10, ((int) com.google.android.gms.internal.vision.e2.u(f18, 30.0f, d10, f26)) + i11, ((int) ((f25 + 30.0f) * f18)) + i10, x10);
+            int i12 = (int) ((f7 - e11) * 255.0f);
             drawable.setAlpha(i12);
             drawable.draw(canvas2);
             if (this.s != null) {
                 canvas2.save();
-                canvas2.translate(((this.x.left + 30.0f + 3.25f) * f14) + i10, (d10 / 2.0f) + i11);
-                float f23 = this.n;
-                canvas2.scale(f23, f23);
+                canvas2.translate(((this.x.left + 30.0f + 3.25f) * f18) + i10, (d10 / 2.0f) + i11);
+                float f27 = this.n;
+                canvas2.scale(f27, f27);
                 canvas2.translate(-this.w, (-this.s.getHeight()) / 2.0f);
                 this.r.setAlpha(i12);
                 this.s.draw(canvas2);
@@ -323,26 +367,26 @@ public class o0 extends View {
             MessagesController.PeerColor color = (peerColors == null || colorId < 7) ? null : peerColors.getColor(colorId);
             if (color == null) {
                 int[] iArr = i6.r8;
-                color1 = i6.w0(null, iArr[colorId % iArr.length], false);
+                color1 = i6.x0(null, iArr[colorId % iArr.length], false);
             } else {
                 color1 = color.getColor1();
             }
             this.H.setColor(color1);
             this.b0 = (7.33f * f12) + this.b0;
             this.F = this.W.f;
-            f11 f11Var = new f11(str2, 16.0f, null);
-            f11Var.a.setTextSize(16.0f * f12);
+            l11 l11Var = new l11(str2, 16.0f, null);
+            l11Var.a.setTextSize(16.0f * f12);
             float f14 = 20.0f * f12;
-            f11Var.q(f13 - f14);
-            this.G = f11Var;
-            this.a0 = Math.max(this.a0, Math.min(f14 + f11Var.c, f13));
+            l11Var.q(f13 - f14);
+            this.G = l11Var;
+            this.a0 = Math.max(this.a0, Math.min(f14 + l11Var.c, f13));
             float f15 = 7.0f * f12;
             this.b0 = this.G.j() + this.b0 + f15;
             this.R = webPage.photo != null || MessageObject.isVideoDocument(webPage.document);
             n0 n0Var = this.W;
             boolean z10 = n0Var.e;
             this.S = !z10;
-            int i14 = (!this.U || (n0Var.a & 4) == 0) ? ((int) (!z10 ? 48.0f : (f13 / f12) - 40.0f)) * 2 : n0Var.i;
+            int i14 = (!this.U || (n0Var.a & 4) == 0) ? 2 * ((int) (!z10 ? 48.0f : (f13 / f12) - 40.0f)) : n0Var.i;
             ImageReceiver imageReceiver = this.T;
             imageReceiver.setRoundRadius((int) (4.0f * f12));
             TLRPC.Photo photo = webPage.photo;
@@ -357,7 +401,7 @@ public class o0 extends View {
                     i10 = 0;
                     i11 = 0;
                 }
-                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, webPage.photo), a4.a.l(i14, i14, "_"), this.U ? null : ImageLocation.getForPhoto(closestPhotoSizeWithSize, webPage.photo), this.U ? null : a4.a.l(i14, i14, "_"), 0L, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, webPage.photo), a1.g.l(i14, i14, "_"), this.U ? null : ImageLocation.getForPhoto(closestPhotoSizeWithSize, webPage.photo), this.U ? null : a1.g.l(i14, i14, "_"), 0L, null, null, 0);
             } else {
                 f7 = 48.0f;
                 TLRPC.Document document = webPage.document;
@@ -371,7 +415,7 @@ public class o0 extends View {
                         i10 = 0;
                         i11 = 0;
                     }
-                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, webPage.document), a4.a.l(i14, i14, "_"), this.U ? null : ImageLocation.getForDocument(closestPhotoSizeWithSize3, webPage.document), this.U ? null : a4.a.l(i14, i14, "_"), 0L, null, null, 0);
+                    imageReceiver.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize4, webPage.document), a1.g.l(i14, i14, "_"), this.U ? null : ImageLocation.getForDocument(closestPhotoSizeWithSize3, webPage.document), this.U ? null : a1.g.l(i14, i14, "_"), 0L, null, null, 0);
                 } else {
                     i10 = 0;
                     i11 = 0;
@@ -383,62 +427,62 @@ public class o0 extends View {
             if (isEmpty) {
                 i12 = 0;
             } else {
-                f11 f11Var2 = new f11(webPage.site_name, 14.0f, AndroidUtilities.bold());
-                f11Var2.a.setTextSize(f12 * 14.0f);
+                l11 l11Var2 = new l11(webPage.site_name, 14.0f, AndroidUtilities.bold());
+                l11Var2.a.setTextSize(f12 * 14.0f);
                 float f16 = f12 * 40.0f;
-                f11Var2.q((int) Math.ceil((f13 - f16) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
-                this.L = f11Var2;
-                this.a0 = Math.max(this.a0, Math.min(f16 + f11Var2.c + ((this.R && this.S) ? f12 * 60.0f : 0.0f), f13));
+                l11Var2.q((int) Math.ceil((f13 - f16) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
+                this.L = l11Var2;
+                this.a0 = Math.max(this.a0, Math.min(f16 + l11Var2.c + ((this.R && this.S) ? f12 * 60.0f : 0.0f), f13));
                 this.c0 = (f12 * 2.66f) + this.L.j() + this.c0;
                 i12 = this.L.b.getLineCount();
             }
             boolean isEmpty2 = TextUtils.isEmpty(webPage.title);
             this.I = !isEmpty2;
             if (isEmpty2) {
-                f10 = f12;
-                f11 = 2.66f;
+                f10 = 2.66f;
+                f11 = f12;
             } else {
-                f11 f11Var3 = new f11(webPage.title, 14.0f, AndroidUtilities.bold());
-                f11Var3.a.setTextSize(f12 * 14.0f);
+                l11 l11Var3 = new l11(webPage.title, 14.0f, AndroidUtilities.bold());
+                l11Var3.a.setTextSize(f12 * 14.0f);
                 float f17 = f12 * 40.0f;
-                f11 = 2.66f;
-                f10 = f12;
-                f11Var3.q((int) Math.ceil((f13 - f17) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
-                this.J = f11Var3;
-                this.a0 = Math.max(this.a0, Math.min(f17 + f11Var3.c + ((this.R && this.S) ? 60.0f * f10 : 0.0f), f13));
-                this.c0 = (f10 * 2.66f) + this.J.j() + this.c0;
+                f10 = 2.66f;
+                f11 = f12;
+                l11Var3.q((int) Math.ceil((f13 - f17) - ((this.R && this.S) ? f12 * 60.0f : 0.0f)));
+                this.J = l11Var3;
+                this.a0 = Math.max(this.a0, Math.min(f17 + l11Var3.c + ((this.R && this.S) ? 60.0f * f11 : 0.0f), f13));
+                this.c0 = (f11 * 2.66f) + this.J.j() + this.c0;
                 i12 += this.J.b.getLineCount();
             }
             boolean isEmpty3 = TextUtils.isEmpty(webPage.description);
             this.M = !isEmpty3;
             if (!isEmpty3) {
                 TextPaint textPaint = this.N;
-                textPaint.setTextSize(f10 * 14.0f);
-                float f18 = f10 * 40.0f;
+                textPaint.setTextSize(f11 * 14.0f);
+                float f18 = f11 * 40.0f;
                 int i15 = 3 - i12;
-                this.O = org.telegram.ui.Cells.u1.u2(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f13 - f18)), (int) Math.ceil(Math.max(1.0f, f13 - ((40 + ((this.R && this.S) ? 60 : 0)) * f10))), i15, 4);
+                this.O = org.telegram.ui.Cells.u1.u2(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f13 - f18)), (int) Math.ceil(Math.max(1.0f, f13 - ((40 + ((this.R && this.S) ? 60 : 0)) * f11))), i15, 4);
                 this.P = 0.0f;
                 this.Q = Float.MAX_VALUE;
                 int i16 = 0;
                 while (i16 < this.O.getLineCount()) {
-                    this.P = Math.max(this.P, this.O.getLineWidth(i16) + (this.R && this.S && i16 < i15 ? f10 * f7 : 0.0f));
+                    this.P = Math.max(this.P, this.O.getLineWidth(i16) + (this.R && this.S && i16 < i15 ? f11 * f7 : 0.0f));
                     this.Q = Math.min(this.Q, this.O.getLineLeft(i16));
                     i16++;
                 }
                 this.a0 = Math.max(this.a0, Math.min(f18 + this.P, f13));
-                this.c0 = (f10 * f11) + this.c0 + this.O.getHeight();
+                this.c0 = (f11 * f10) + this.c0 + this.O.getHeight();
             }
             if (this.R && !this.S) {
                 if (i11 <= 0 || i10 <= 0) {
-                    this.d0 = f10 * 120.0f;
+                    this.d0 = f11 * 120.0f;
                 } else {
-                    this.d0 = Math.min((Math.max(0.0f, this.a0 - (f10 * 40.0f)) / i11) * i10, f10 * 200.0f);
+                    this.d0 = Math.min((Math.max(0.0f, this.a0 - (f11 * 40.0f)) / i11) * i10, f11 * 200.0f);
                 }
-                this.c0 = (f10 * f11) + this.c0 + this.d0;
+                this.c0 = (f11 * f10) + this.c0 + this.d0;
             }
             float f19 = f15 + this.c0;
             this.c0 = f19;
-            this.b0 = (f10 * 11.0f) + this.b0 + f19;
+            this.b0 = (f11 * 11.0f) + this.b0 + f19;
         } else {
             if (TextUtils.isEmpty(this.W.b)) {
                 String str3 = this.W.c;

@@ -2,9 +2,9 @@ package k1;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class s extends kd.c {
+public final class s extends ld.c {
     public Object a;
     public Object b;
     public Object c;
@@ -15,12 +15,12 @@ public final class s extends kd.c {
     public int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(t tVar, kd.c cVar) {
+    public s(t tVar, ld.c cVar) {
         super(cVar);
         this.h = tVar;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final Object invokeSuspend(Object obj) {
         this.f = obj;
         this.n |= TLObject.FLAG_31;

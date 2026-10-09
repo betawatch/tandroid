@@ -1,68 +1,158 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bq0 extends zl0 {
-    public final /* synthetic */ int e3;
-    public final /* synthetic */ br0 f3;
+public final class bq0 extends View {
+    public static final lw0 v;
+    public ImageReceiver a;
+    public j9 b;
+    public org.telegram.ui.Cells.z c;
+    public Paint d;
+    public Paint e;
+    public o1.k f;
+    public ValueAnimator h;
+    public float n;
+    public boolean r;
+    public boolean s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bq0(br0 br0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, d6Var);
-        this.e3 = i10;
-        this.f3 = br0Var;
+    static {
+        lw0 lw0Var = new lw0(new fe0(9), new fe0(10));
+        lw0Var.c = 100.0f;
+        v = lw0Var;
     }
 
-    @Override // org.telegram.ui.Components.zl0
-    public final boolean F0(float f7) {
-        switch (this.e3) {
-            case 0:
-                br0 br0Var = this.f3;
-                if (f7 >= AndroidUtilities.dp((!br0Var.h0 || br0Var.o0[1] == null) ? 58.0f : 111.0f) + br0Var.G0.b) {
-                }
-                break;
-            default:
-                br0 br0Var2 = this.f3;
-                if (f7 >= AndroidUtilities.dp((!br0Var2.h0 || br0Var2.o0[1] == null) ? 58.0f : 111.0f) + br0Var2.G0.b) {
-                }
-                break;
+    public final void a(boolean z10, boolean z11, float f7) {
+        if (!z10) {
+            this.n = f7;
+            invalidate();
+            return;
         }
-        return true;
+        o1.k kVar = this.f;
+        if (kVar != null) {
+            kVar.c();
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.s = false;
+        this.r = false;
+        if (!z11) {
+            ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
+            this.h = duration;
+            duration.setInterpolator(hs.f);
+            this.h.addUpdateListener(new j80(this, 17));
+            this.h.addListener(new vd0(this, 12));
+            this.h.start();
+            return;
+        }
+        float f10 = this.n * 100.0f;
+        o1.k kVar2 = new o1.k(this, v);
+        kVar2.b = f10;
+        kVar2.c = true;
+        this.f = kVar2;
+        boolean z12 = f7 < this.n;
+        float f11 = f7 * 100.0f;
+        this.s = z12;
+        this.r = !z12;
+        o1.l lVar = new o1.l(f11);
+        lVar.i = f11;
+        lVar.b(450.0f);
+        lVar.a(1.0f);
+        kVar2.u = lVar;
+        this.f.b(new qh(this, z12, f10, f11));
+        this.f.a(new kb(this, 4));
+        this.f.h();
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.e3) {
-            case 0:
-                br0 br0Var = this.f3;
-                zl0 zl0Var = br0Var.E;
-                if (zl0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!br0Var.h0 || br0Var.o0[1] == null) ? 58.0f : 111.0f) + br0Var.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (zl0Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                br0 br0Var2 = this.f3;
-                zl0 zl0Var2 = br0Var2.E;
-                if (zl0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!br0Var2.h0 || br0Var2.o0[1] == null) ? 58.0f : 111.0f) + br0Var2.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (zl0Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        this.c.setState(getDrawableState());
+    }
+
+    public float getProgress() {
+        return this.n;
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        this.c.jumpToCurrentState();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.d;
+        Paint paint2 = this.e;
+        canvas.save();
+        float f7 = 1.0f;
+        if (this.r) {
+            f7 = 1.0f - this.n;
+        } else if (this.s) {
+            f7 = this.n;
         }
+        canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
+        super.onDraw(canvas);
+        this.a.draw(canvas);
+        int i10 = (int) (this.n * 255.0f);
+        paint.setAlpha(i10);
+        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
+        canvas.save();
+        paint2.setAlpha(i10);
+        float strokeWidth = paint2.getStrokeWidth() + AndroidUtilities.dp(10.0f);
+        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
+        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
+        canvas.restore();
+        this.c.setBounds(0, 0, getWidth(), getHeight());
+        this.c.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
+        this.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        j9 j9Var = this.b;
+        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
+        j9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, j9Var);
+    }
+
+    public void setProgress(float f7) {
+        a(true, f7 != 0.0f, f7);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || this.c == drawable;
     }
 }

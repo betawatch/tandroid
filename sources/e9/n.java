@@ -8,11 +8,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import v7.s6;
-import w7.n8;
-import w7.o9;
+import w7.i9;
+import w7.l8;
 import z7.lg;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -107,13 +107,13 @@ public final class n extends AbstractCollection {
                 Map a2 = jVar.a();
                 return a2 != null ? a2.values().iterator() : new x7.g(jVar, 2);
             case 4:
-                return new com.google.android.gms.internal.clearcut.g1(((d) this.b).entrySet().iterator(), 1);
+                return new com.google.android.gms.internal.clearcut.f1(((d) this.b).entrySet().iterator(), 1);
             case 5:
                 z7.d dVar = (z7.d) this.b;
                 Map a10 = dVar.a();
                 return a10 != null ? a10.values().iterator() : new z7.a(dVar, 2);
             default:
-                return new com.google.android.gms.internal.clearcut.g1(((d) this.b).entrySet().iterator(), 2);
+                return new com.google.android.gms.internal.clearcut.f1(((d) this.b).entrySet().iterator(), 2);
         }
     }
 
@@ -143,7 +143,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry2 : dVar2.entrySet()) {
-                        if (n8.a(obj, entry2.getValue())) {
+                        if (l8.a(obj, entry2.getValue())) {
                             dVar2.remove(entry2.getKey());
                             return true;
                         }
@@ -156,7 +156,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry3 : dVar3.entrySet()) {
-                        if (o9.a(obj, entry3.getValue())) {
+                        if (i9.a(obj, entry3.getValue())) {
                             dVar3.remove(entry3.getKey());
                             return true;
                         }

@@ -1,23 +1,23 @@
 package x7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v5 implements ia.d {
     public static final v5 a = new v5();
-    public static final ia.c b = new ia.c("appId", hg.c.m(sa.e.n(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("appVersion", hg.c.m(sa.e.n(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("firebaseProjectId", hg.c.m(sa.e.n(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("mlSdkVersion", hg.c.m(sa.e.n(c0.class, new z(4))));
-    public static final ia.c f = new ia.c("tfliteSchemaVersion", hg.c.m(sa.e.n(c0.class, new z(5))));
-    public static final ia.c g = new ia.c("gcmSenderId", hg.c.m(sa.e.n(c0.class, new z(6))));
-    public static final ia.c h = new ia.c("apiKey", hg.c.m(sa.e.n(c0.class, new z(7))));
-    public static final ia.c i = new ia.c("languages", hg.c.m(sa.e.n(c0.class, new z(8))));
-    public static final ia.c j = new ia.c("mlSdkInstanceId", hg.c.m(sa.e.n(c0.class, new z(9))));
-    public static final ia.c k = new ia.c("isClearcutClient", hg.c.m(sa.e.n(c0.class, new z(10))));
-    public static final ia.c l = new ia.c("isStandaloneMlkit", hg.c.m(sa.e.n(c0.class, new z(11))));
-    public static final ia.c m = new ia.c("isJsonLogging", hg.c.m(sa.e.n(c0.class, new z(12))));
-    public static final ia.c n = new ia.c("buildLevel", hg.c.m(sa.e.n(c0.class, new z(13))));
-    public static final ia.c o = new ia.c("optionalModuleVersion", hg.c.m(sa.e.n(c0.class, new z(14))));
+    public static final ia.c b = new ia.c("appId", hg.c.m(sc.v.n(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("appVersion", hg.c.m(sc.v.n(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("firebaseProjectId", hg.c.m(sc.v.n(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("mlSdkVersion", hg.c.m(sc.v.n(c0.class, new z(4))));
+    public static final ia.c f = new ia.c("tfliteSchemaVersion", hg.c.m(sc.v.n(c0.class, new z(5))));
+    public static final ia.c g = new ia.c("gcmSenderId", hg.c.m(sc.v.n(c0.class, new z(6))));
+    public static final ia.c h = new ia.c("apiKey", hg.c.m(sc.v.n(c0.class, new z(7))));
+    public static final ia.c i = new ia.c("languages", hg.c.m(sc.v.n(c0.class, new z(8))));
+    public static final ia.c j = new ia.c("mlSdkInstanceId", hg.c.m(sc.v.n(c0.class, new z(9))));
+    public static final ia.c k = new ia.c("isClearcutClient", hg.c.m(sc.v.n(c0.class, new z(10))));
+    public static final ia.c l = new ia.c("isStandaloneMlkit", hg.c.m(sc.v.n(c0.class, new z(11))));
+    public static final ia.c m = new ia.c("isJsonLogging", hg.c.m(sc.v.n(c0.class, new z(12))));
+    public static final ia.c n = new ia.c("buildLevel", hg.c.m(sc.v.n(c0.class, new z(13))));
+    public static final ia.c o = new ia.c("optionalModuleVersion", hg.c.m(sc.v.n(c0.class, new z(14))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

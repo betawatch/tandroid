@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Comparator {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$processUpdatesQueue$7;
         int lambda$getContactsHash$26;
         int lambda$sortEmoji$3;
-        int lambda$removePart$1;
+        int lambda$removePart$2;
         int lambda$loadGalleryPhotosAlbums$56;
         int lambda$sortPlaylist$13;
         int lambda$getTextStyleRunsLegacy$181;
@@ -40,13 +40,13 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$getTextStyleRunsSafe$180;
         int lambda$handleFoundWords$3;
         int lambda$addEntitiesToText$2;
+        int lambda$processUpdatesQueue$327;
         int lambda$processUpdatesQueue$328;
-        int lambda$processUpdatesQueue$329;
-        int lambda$processChannelsUpdatesQueue$326;
+        int lambda$processChannelsUpdatesQueue$325;
+        int lambda$processLoadedMessages$189;
         int lambda$processLoadedMessages$190;
         int lambda$processLoadedDialogFilters$21;
         int lambda$processLoadedMessages$191;
-        int lambda$processLoadedMessages$192;
         int lambda$loadDialogFilters$66;
         int lambda$getMessagesInternal$159;
         int lambda$processLoadedFilterPeersInternal$70;
@@ -71,8 +71,8 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$sortEmoji$3 = Emoji.lambda$sortEmoji$3((String) obj, (String) obj2);
                 return lambda$sortEmoji$3;
             case 5:
-                lambda$removePart$1 = FileLoadOperation.lambda$removePart$1((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
-                return lambda$removePart$1;
+                lambda$removePart$2 = FileLoadOperation.lambda$removePart$2((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
+                return lambda$removePart$2;
             case 6:
                 lambda$loadGalleryPhotosAlbums$56 = MediaController.lambda$loadGalleryPhotosAlbums$56((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
                 return lambda$loadGalleryPhotosAlbums$56;
@@ -104,26 +104,26 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$addEntitiesToText$2 = MessageObject.lambda$addEntitiesToText$2((TLRPC.MessageEntity) obj, (TLRPC.MessageEntity) obj2);
                 return lambda$addEntitiesToText$2;
             case 16:
+                lambda$processUpdatesQueue$327 = MessagesController.lambda$processUpdatesQueue$327((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$327;
+            case 17:
                 lambda$processUpdatesQueue$328 = MessagesController.lambda$processUpdatesQueue$328((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
                 return lambda$processUpdatesQueue$328;
-            case 17:
-                lambda$processUpdatesQueue$329 = MessagesController.lambda$processUpdatesQueue$329((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$329;
             case 18:
-                lambda$processChannelsUpdatesQueue$326 = MessagesController.lambda$processChannelsUpdatesQueue$326((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processChannelsUpdatesQueue$326;
+                lambda$processChannelsUpdatesQueue$325 = MessagesController.lambda$processChannelsUpdatesQueue$325((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processChannelsUpdatesQueue$325;
             case 19:
+                lambda$processLoadedMessages$189 = MessagesController.lambda$processLoadedMessages$189((MessageObject) obj, (MessageObject) obj2);
+                return lambda$processLoadedMessages$189;
+            case 20:
                 lambda$processLoadedMessages$190 = MessagesController.lambda$processLoadedMessages$190((MessageObject) obj, (MessageObject) obj2);
                 return lambda$processLoadedMessages$190;
-            case 20:
+            case 21:
                 lambda$processLoadedDialogFilters$21 = MessagesController.lambda$processLoadedDialogFilters$21((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedDialogFilters$21;
-            case 21:
+            case 22:
                 lambda$processLoadedMessages$191 = MessagesController.lambda$processLoadedMessages$191((MessageObject) obj, (MessageObject) obj2);
                 return lambda$processLoadedMessages$191;
-            case 22:
-                lambda$processLoadedMessages$192 = MessagesController.lambda$processLoadedMessages$192((MessageObject) obj, (MessageObject) obj2);
-                return lambda$processLoadedMessages$192;
             case 23:
                 lambda$loadDialogFilters$66 = MessagesStorage.lambda$loadDialogFilters$66((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$loadDialogFilters$66;
@@ -134,7 +134,7 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$processLoadedFilterPeersInternal$70 = MessagesStorage.lambda$processLoadedFilterPeersInternal$70((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedFilterPeersInternal$70;
             case 26:
-                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((gg.d0) obj, (gg.d0) obj2);
+                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((gg.c0) obj, (gg.c0) obj2);
                 return lambda$localSearch$260;
             case 27:
                 lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);

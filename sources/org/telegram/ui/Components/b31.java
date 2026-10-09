@@ -1,39 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b31 implements le.d, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ w31 a;
-
-    public /* synthetic */ b31(w31 w31Var) {
-        this.a = w31Var;
-    }
-
-    @Override // le.d
-    public void a0(int i10, float f7, float f10, le.e eVar) {
-        this.a.g();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(w31.c(this.a, (h61) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        w31.a(this.a, (h61) obj);
-    }
-
-    @Override // le.d
-    public /* synthetic */ void V(float f7, int i10) {
-    }
+public final class b31 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
 }

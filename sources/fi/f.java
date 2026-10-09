@@ -1,6 +1,6 @@
 package fi;
 
-import ai.g3;
+import ai.h3;
 import ai.y1;
 import android.content.Context;
 import android.view.View;
@@ -17,41 +17,41 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.h9;
-import w7.z5;
+import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.p61;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public e71 e;
+    public k71 e;
     public e f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void S(f fVar, h61 h61Var) {
+    public static void U(f fVar, p61 p61Var) {
         f fVar2;
-        if (h61Var.d == 1) {
+        if (p61Var.d == 1) {
             fVar2 = fVar;
-            e5.R(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
+            g5.Q(fVar.getParentActivity(), fVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), fVar.resourceProvider, new c(fVar));
         } else {
             fVar2 = fVar;
         }
-        Object obj = h61Var.G;
+        Object obj = p61Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
-            fVar2.showDialog(new hi.b(fVar2.getParentActivity(), chat, fVar2.a, new g3(13, fVar2, chat)));
+            fVar2.showDialog(new hi.b(fVar2.getParentActivity(), chat, fVar2.a, new h3(13, fVar2, chat)));
         }
     }
 
-    public final void T(String str, boolean z10) {
+    public final void V(String str, boolean z10) {
         if (ChatObject.isChannel(this.b) || this.c != null) {
             getMessagesController().createCommunity(str, this.a, z10, new b(this, 1));
             return;
@@ -61,7 +61,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         getMessagesController().convertToMegaGroup(getParentActivity(), -this.a, this, new ca.b(this, b2Var, str, z10, 1));
     }
 
-    public final void U(long j3, boolean z10) {
+    public final void W(long j3, boolean z10) {
         if (ChatObject.isChannel(this.b) || this.c != null) {
             int i10 = this.currentAccount;
             long j10 = -this.a;
@@ -78,18 +78,18 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        hg.c.u(false, this.actionBar);
+        hg.c.v(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 3));
+        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 3));
         fh.c cVar = new fh.c();
         cVar.a(getThemedColor(i6.d6));
         ah.c cVar2 = new ah.c(cVar);
         this.actionBar.setBackground(null);
-        this.actionBar.J(cVar2, eh.b.p(this.resourceProvider), false);
-        this.actionBar.Q0 = true;
+        this.actionBar.M(cVar2, eh.b.o(this.resourceProvider), false);
+        this.actionBar.P0 = true;
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
+        frameLayout.setBackgroundColor(i6.x0(null, i6.a7, false));
         e eVar = new e(context, this.resourceProvider);
         this.f = eVar;
         eVar.setTitle(LocaleController.getString(R.string.CommunityTitle));
@@ -97,21 +97,21 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         this.f.setTag(-33024);
         TLRPC.User user = this.c;
         if (user != null) {
-            this.f.a.e(user, new h9(0, this.c));
+            this.f.a.e(user, new j9(0, this.c));
         } else {
             TLRPC.Chat chat = this.b;
             if (chat != null) {
-                this.f.a.e(chat, new h9(this.b));
+                this.f.a.e(chat, new j9(this.b));
             }
         }
-        e71 e71Var = new e71(this, new b(this, 0), new c(this), new c(this));
-        this.e = e71Var;
-        e71Var.setClipToPadding(false);
-        e71 e71Var2 = this.e;
-        e71Var2.f3.r = false;
-        e71Var2.r1();
-        this.d.addView(this.e, z5.c(-1.0f, -1));
-        this.d.addView(this.actionBar, z5.e(-1, -2, 48));
+        k71 k71Var = new k71(this, new b(this, 0), new c(this), new c(this));
+        this.e = k71Var;
+        k71Var.setClipToPadding(false);
+        k71 k71Var2 = this.e;
+        k71Var2.W2.r = false;
+        k71Var2.p1();
+        this.d.addView(this.e, x5.d(-1.0f, -1));
+        this.d.addView(this.actionBar, x5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
         this.fragmentView = frameLayout2;
         return frameLayout2;
@@ -124,7 +124,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
             long j3 = chatFull.id;
             View z12 = this.e.z1((int) (j3 ^ (j3 >>> 32)));
             if (!(z12 instanceof org.telegram.ui.Cells.i6)) {
-                this.e.f3.N(false);
+                this.e.W2.N(false);
                 return;
             }
             org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) z12;

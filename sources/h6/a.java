@@ -1,5 +1,6 @@
 package h6;
 
+import a1.g;
 import android.text.TextUtils;
 import android.util.Log;
 import g6.b;
@@ -12,7 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final b a = new b("MetadataUtils", null);
@@ -79,7 +80,7 @@ public abstract class a {
                             Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e10);
                         }
                         if (TextUtils.isEmpty(substring2)) {
-                            substring = a4.a.D(substring, "T", substring2);
+                            substring = g.D(substring, "T", substring2);
                             str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
                         } else {
                             str2 = "yyyyMMdd";

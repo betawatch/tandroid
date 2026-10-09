@@ -1,58 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class qe implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.yn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class qe extends dh {
+    public final /* synthetic */ ChatActivityEnterView x;
 
-    public qe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.yn ynVar, Activity activity) {
-        this.c = chatActivityEnterView;
-        this.a = ynVar;
-        this.b = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qe(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity);
+        this.x = chatActivityEnterView;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i10;
-        org.telegram.ui.yn ynVar = this.a;
-        if (ynVar == null) {
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.x;
+        Paint paint = chatActivityEnterView.Q1;
+        super.onDraw(canvas);
+        if (getTag() == null || chatActivityEnterView.p1 == null || chatActivityEnterView.W0 || MediaDataController.getInstance(chatActivityEnterView.Q).getUnreadStickerSets().isEmpty() || paint == null) {
             return;
         }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.g2 = !chatActivityEnterView.g2;
-        if (chatActivityEnterView.e0 == null) {
-            chatActivityEnterView.e0 = new qr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.i6.Wk);
-        }
-        chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
-        chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
-        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, ynVar == null ? 0L : ynVar.d());
-        ynVar.Q7();
-        UndoView undoView = ynVar.w3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
-        }
-        ImageView imageView = chatActivityEnterView.I1;
-        if (chatActivityEnterView.g2) {
-            str = "AccDescrChanSilentOn";
-            i10 = R.string.AccDescrChanSilentOn;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i10 = R.string.AccDescrChanSilentOff;
-        }
-        imageView.setContentDescription(LocaleController.getString(str, i10));
-        chatActivityEnterView.F1(true);
+        canvas.drawCircle(AndroidUtilities.dp(9.0f) + (getWidth() / 2), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), paint);
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -18,10 +18,10 @@ public final /* synthetic */ class e implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                e0.S(this.b, (TL_aicompose.AiComposeTone) obj);
+                e0.V(this.b, (TL_aicompose.AiComposeTone) obj);
                 break;
             case 1:
-                e0.R(this.b, (TL_aicompose.AiComposeTone) obj);
+                e0.U(this.b, (TL_aicompose.AiComposeTone) obj);
                 break;
             case 2:
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
@@ -30,10 +30,10 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 if (z10) {
                     e0Var.u0.edit((TL_aicompose.TL_aiComposeTone) aiComposeTone);
                 }
-                e0Var.s0();
+                e0Var.t0();
                 break;
             default:
-                e0.Q(this.b, ((Integer) obj).intValue());
+                e0.T(this.b, ((Integer) obj).intValue());
                 break;
         }
     }

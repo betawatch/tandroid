@@ -13,8 +13,8 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
+import ci.c4;
 import ci.d4;
-import ci.e4;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
@@ -25,10 +25,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.g6;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class s0 extends View {
     public float E;
@@ -42,7 +42,7 @@ public class s0 extends View {
     public float M;
     public float N;
     public final RectF O;
-    public final e6 P;
+    public final g6 P;
     public int a;
     public String b;
     public boolean c;
@@ -72,7 +72,7 @@ public class s0 extends View {
         this.E = 1.0f;
         this.O = new RectF();
         new Path();
-        this.P = new e6(this, 350L, tr.h);
+        this.P = new g6(this, 350L, hs.h);
         this.y = f7;
         imageReceiver.setCrossfadeWithOldImage(true);
         imageReceiver.setInvalidateAll(true);
@@ -128,7 +128,7 @@ public class s0 extends View {
         return null;
     }
 
-    public static d4 c(String str) {
+    public static c4 c(String str) {
         Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(str);
         if (emojiBigDrawable instanceof Emoji.SimpleEmojiDrawable) {
             ((Emoji.SimpleEmojiDrawable) emojiBigDrawable).fullSize = false;
@@ -136,7 +136,7 @@ public class s0 extends View {
         if (emojiBigDrawable == null) {
             return null;
         }
-        return new d4(emojiBigDrawable, 7);
+        return new c4(emojiBigDrawable, 6);
     }
 
     public final void a(Canvas canvas) {
@@ -162,9 +162,9 @@ public class s0 extends View {
             if (e7 > 0.0f) {
                 float f15 = ((rectF2.left + 2.25f) * f14) + f7;
                 float f16 = f14 * 21.33f;
-                float A = com.google.android.gms.internal.vision.e2.A(this.N, f16, 2.0f, f10);
+                float z11 = com.google.android.gms.internal.vision.e2.z(this.N, f16, 2.0f, f10);
                 ImageReceiver imageReceiver = this.s;
-                imageReceiver.setImageCoords(f15, A, f16, f16);
+                imageReceiver.setImageCoords(f15, z11, f16, f16);
                 canvas.save();
                 canvas.scale(1.2f, 1.2f, imageReceiver.getCenterX(), imageReceiver.getCenterY());
                 imageReceiver.setAlpha(e7);
@@ -174,9 +174,9 @@ public class s0 extends View {
             if (e7 < 1.0f) {
                 float f17 = ((rectF2.left + 2.25f) * f14) + f7;
                 float f18 = f14 * 21.33f;
-                float A2 = com.google.android.gms.internal.vision.e2.A(this.N, f18, 2.0f, f10);
+                float z12 = com.google.android.gms.internal.vision.e2.z(this.N, f18, 2.0f, f10);
                 ImageReceiver imageReceiver2 = this.r;
-                imageReceiver2.setImageCoords(f17, A2, f18, f18);
+                imageReceiver2.setImageCoords(f17, z12, f18, f18);
                 canvas.save();
                 canvas.scale(1.2f, 1.2f, imageReceiver2.getCenterX(), imageReceiver2.getCenterY());
                 imageReceiver2.setAlpha(1.0f - e7);
@@ -342,7 +342,7 @@ public class s0 extends View {
             if (min < 0.4f) {
                 f7 = 1.0f;
                 String str2 = this.b;
-                this.F = new StaticLayout(str2, textPaint, e4.a(str2, textPaint), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.F = new StaticLayout(str2, textPaint, d4.a(str2, textPaint), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             } else {
                 f7 = 1.0f;
                 this.F = new StaticLayout(this.b, textPaint, (int) Math.ceil(measureText), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements o0 {
     public final int a;
@@ -30,18 +30,17 @@ public final class b implements o0 {
         this.f = i11;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0060  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0088  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0054  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,25 +57,24 @@ public final class b implements o0 {
         boolean z11;
         List list5;
         int i11;
-        int i12;
         List list6 = (List) map.get("icy-br");
         boolean z12 = true;
-        int i13 = -1;
+        int i12 = -1;
         if (list6 != null) {
             String str4 = (String) list6.get(0);
             try {
-                i12 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
-                if (i12 > 0) {
+                i11 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                if (i11 > 0) {
                     z10 = true;
                 } else {
                     try {
                         e2.a.n("IcyHeaders", "Invalid bitrate: " + str4);
                         z10 = false;
-                        i12 = -1;
+                        i11 = -1;
                     } catch (NumberFormatException unused) {
                         e2.s("Invalid bitrate header: ", str4, "IcyHeaders");
-                        i10 = i12;
                         z10 = false;
+                        i10 = i11;
                         list = (List) map.get("icy-genre");
                         if (list == null) {
                         }
@@ -90,16 +88,17 @@ public final class b implements o0 {
                         if (list4 == null) {
                         }
                         list5 = (List) map.get("icy-metaint");
-                        if (list5 == null) {
+                        if (list5 != null) {
                         }
+                        int i13 = i12;
                         if (z10) {
                         }
                     }
                 }
-                i10 = i12;
             } catch (NumberFormatException unused2) {
-                i12 = -1;
+                i11 = -1;
             }
+            i10 = i11;
         } else {
             z10 = false;
             i10 = -1;
@@ -133,20 +132,20 @@ public final class b implements o0 {
             z11 = false;
         }
         list5 = (List) map.get("icy-metaint");
-        if (list5 == null) {
+        if (list5 != null) {
             String str5 = (String) list5.get(0);
             try {
                 int parseInt = Integer.parseInt(str5);
                 if (parseInt > 0) {
-                    i13 = parseInt;
+                    i12 = parseInt;
                 } else {
                     try {
                         e2.a.n("IcyHeaders", "Invalid metadata interval: " + str5);
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
-                        i13 = parseInt;
+                        i12 = parseInt;
                         e2.s("Invalid metadata interval: ", str5, "IcyHeaders");
-                        i11 = i13;
+                        int i132 = i12;
                         if (z10) {
                         }
                     }
@@ -154,12 +153,10 @@ public final class b implements o0 {
                 z10 = z12;
             } catch (NumberFormatException unused4) {
             }
-            i11 = i13;
-        } else {
-            i11 = -1;
         }
+        int i1322 = i12;
         if (z10) {
-            return new b(i10, str, str2, str3, z11, i11);
+            return new b(i10, str, str2, str3, z11, i1322);
         }
         return null;
     }

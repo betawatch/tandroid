@@ -39,16 +39,16 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.n90;
-import org.telegram.ui.Components.o11;
-import org.telegram.ui.Components.qp;
-import org.telegram.ui.Components.r90;
-import org.telegram.ui.Components.z80;
-import org.telegram.ui.x10;
+import org.telegram.ui.Components.t11;
+import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.y90;
+import org.telegram.ui.w10;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class n7 extends FrameLayout {
     public final ArrayList E;
@@ -78,7 +78,7 @@ public final class n7 extends FrameLayout {
     public final TextPaint c0;
     public t6 d;
     public final TextPaint d0;
-    public final n90 e;
+    public final ba0 e;
     public final TextPaint e0;
     public boolean f;
     public final TextPaint f0;
@@ -87,24 +87,24 @@ public final class n7 extends FrameLayout {
     public StaticLayout h0;
     public int i0;
     public StaticLayout j0;
-    public org.telegram.ui.Components.v5 k0;
-    public final org.telegram.ui.ActionBar.d6 l0;
+    public org.telegram.ui.Components.x5 k0;
+    public final org.telegram.ui.ActionBar.e6 l0;
     public final int m0;
-    public r90 n;
+    public fa0 n;
     public final ImageReceiver r;
     public boolean s;
-    public final z80 v;
-    public final qp w;
+    public final n90 v;
+    public final dq w;
     public m7 x;
     public boolean y;
 
-    public n7(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public n7(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.a = false;
         this.b = null;
         this.c = 0;
         this.d = null;
-        this.e = new n90(this);
+        this.e = new ba0(this);
         this.E = new ArrayList();
         this.G = new ArrayList();
         this.H = new SparseArray();
@@ -120,13 +120,13 @@ public final class n7 extends FrameLayout {
         this.V = new AtomicReference();
         this.W = AndroidUtilities.dp(30.0f);
         this.i0 = AndroidUtilities.dp(30.0f);
-        this.l0 = d6Var;
+        this.l0 = e6Var;
         this.m0 = i10;
         setFocusable(true);
         TextPaint textPaint = new TextPaint(1);
         this.c0 = textPaint;
         textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var));
         TextPaint textPaint2 = new TextPaint(1);
         this.d0 = textPaint2;
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));
@@ -135,15 +135,15 @@ public final class n7 extends FrameLayout {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.r = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(8.0f));
-        this.v = new z80(0, d6Var);
-        qp qpVar = new qp(context, 21, d6Var);
-        this.w = qpVar;
-        qpVar.setVisibility(4);
-        qpVar.b(-1, org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.k7);
-        qpVar.setDrawUnchecked(false);
-        qpVar.setDrawBackgroundAsArc(2);
+        this.v = new n90(0, e6Var);
+        dq dqVar = new dq(context, 21, e6Var);
+        this.w = dqVar;
+        dqVar.setVisibility(4);
+        dqVar.b(-1, org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.k7);
+        dqVar.setDrawUnchecked(false);
+        dqVar.setDrawBackgroundAsArc(2);
         boolean z10 = LocaleController.isRTL;
-        addView(qpVar, w7.z5.d(24, 24.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f));
+        addView(dqVar, w7.x5.a(24.0f, z10 ? 0.0f : 44.0f, 44.0f, z10 ? 44.0f : 0.0f, 0.0f, 24, (z10 ? 5 : 3) | 48));
         if (i10 == 1) {
             TextPaint textPaint3 = new TextPaint(1);
             this.e0 = textPaint3;
@@ -234,11 +234,11 @@ public final class n7 extends FrameLayout {
     }
 
     public final void f(boolean z10, boolean z11) {
-        qp qpVar = this.w;
-        if (qpVar.getVisibility() != 0) {
-            qpVar.setVisibility(0);
+        dq dqVar = this.w;
+        if (dqVar.getVisibility() != 0) {
+            dqVar.setVisibility(0);
         }
-        qpVar.a(z10, z11);
+        dqVar.a(z10, z11);
     }
 
     public final void g(int i10, int i11, int i12) {
@@ -327,7 +327,7 @@ public final class n7 extends FrameLayout {
         if (this.s) {
             this.r.onAttachedToWindow();
         }
-        this.k0 = org.telegram.ui.Components.z5.update(0, this, this.k0, this.j0);
+        this.k0 = org.telegram.ui.Components.b6.update(0, this, this.k0, this.j0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -336,16 +336,16 @@ public final class n7 extends FrameLayout {
         if (this.s) {
             this.r.onDetachedFromWindow();
         }
-        org.telegram.ui.Components.z5.release(this, this.k0);
+        org.telegram.ui.Components.b6.release(this, this.k0);
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         n7 n7Var;
         Canvas canvas2 = canvas;
-        org.telegram.ui.ActionBar.d6 d6Var = this.l0;
+        org.telegram.ui.ActionBar.e6 e6Var = this.l0;
         if (this.m0 == 1) {
-            this.e0.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A6, d6Var));
+            this.e0.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.A6, e6Var));
         }
         StaticLayout staticLayout = this.h0;
         int i10 = this.O;
@@ -366,7 +366,7 @@ public final class n7 extends FrameLayout {
             canvas2.restore();
         }
         if (this.a0 != null) {
-            this.f0.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
+            this.f0.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var));
             canvas2.save();
             canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.W);
             this.a0.draw(canvas2);
@@ -375,14 +375,14 @@ public final class n7 extends FrameLayout {
         StaticLayout staticLayout2 = this.R;
         TextPaint textPaint = this.d0;
         if (staticLayout2 != null) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var));
             canvas2.save();
             canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.Q);
             vh.g.g(this, false, textPaint.getColor(), -AndroidUtilities.dp(2.0f), this.S, 0, this.R, this.I, canvas2, false);
             canvas2.restore();
         }
         if (this.U != null) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var));
             canvas2.save();
             canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), this.T);
             vh.g.g(this, false, textPaint.getColor(), -AndroidUtilities.dp(2.0f), this.V, 0, this.U, this.J, canvas2, false);
@@ -393,7 +393,7 @@ public final class n7 extends FrameLayout {
         }
         ArrayList arrayList = n7Var.G;
         if (!arrayList.isEmpty()) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.J6, d6Var));
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.J6, e6Var));
             int i11 = 0;
             for (int i12 = 0; i12 < arrayList.size(); i12++) {
                 StaticLayout staticLayout3 = (StaticLayout) arrayList.get(i12);
@@ -441,7 +441,7 @@ public final class n7 extends FrameLayout {
             canvas2.save();
             canvas2.translate(AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline), n7Var.i0);
             n7Var.j0.draw(canvas2);
-            org.telegram.ui.Components.z5.drawAnimatedEmojis(canvas, n7Var.j0, n7Var.k0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
+            org.telegram.ui.Components.b6.drawAnimatedEmojis(canvas, n7Var.j0, n7Var.k0, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f);
             canvas2 = canvas;
             canvas2.restore();
         }
@@ -491,26 +491,26 @@ public final class n7 extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:215:0x04b4  */
     /* JADX WARN: Removed duplicated region for block: B:222:0x0524  */
     /* JADX WARN: Removed duplicated region for block: B:225:0x0542  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x05e5  */
-    /* JADX WARN: Removed duplicated region for block: B:270:0x0627  */
-    /* JADX WARN: Removed duplicated region for block: B:295:0x0680  */
-    /* JADX WARN: Removed duplicated region for block: B:298:0x06a0  */
-    /* JADX WARN: Removed duplicated region for block: B:308:0x0713  */
-    /* JADX WARN: Removed duplicated region for block: B:311:0x0740  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x075c  */
-    /* JADX WARN: Removed duplicated region for block: B:321:0x077a  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0793  */
-    /* JADX WARN: Removed duplicated region for block: B:330:0x07ac  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x07b8  */
-    /* JADX WARN: Removed duplicated region for block: B:343:0x07d7  */
-    /* JADX WARN: Removed duplicated region for block: B:349:0x0739  */
-    /* JADX WARN: Removed duplicated region for block: B:350:0x0710  */
-    /* JADX WARN: Removed duplicated region for block: B:351:0x0689  */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x04ae  */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x042b  */
-    /* JADX WARN: Removed duplicated region for block: B:361:0x041e  */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x03bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:374:0x03b6  */
+    /* JADX WARN: Removed duplicated region for block: B:251:0x05e5  */
+    /* JADX WARN: Removed duplicated region for block: B:273:0x0627  */
+    /* JADX WARN: Removed duplicated region for block: B:302:0x068b  */
+    /* JADX WARN: Removed duplicated region for block: B:305:0x06ab  */
+    /* JADX WARN: Removed duplicated region for block: B:315:0x071e  */
+    /* JADX WARN: Removed duplicated region for block: B:318:0x0749  */
+    /* JADX WARN: Removed duplicated region for block: B:323:0x0765  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0783  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x079c  */
+    /* JADX WARN: Removed duplicated region for block: B:337:0x07b5  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x07c1  */
+    /* JADX WARN: Removed duplicated region for block: B:350:0x07e0  */
+    /* JADX WARN: Removed duplicated region for block: B:356:0x0743  */
+    /* JADX WARN: Removed duplicated region for block: B:357:0x071b  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x0694  */
+    /* JADX WARN: Removed duplicated region for block: B:366:0x04ae  */
+    /* JADX WARN: Removed duplicated region for block: B:367:0x042b  */
+    /* JADX WARN: Removed duplicated region for block: B:368:0x041e  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x03bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x03b6  */
     /* JADX WARN: Removed duplicated region for block: B:64:0x02d6  */
     /* JADX WARN: Removed duplicated region for block: B:69:0x020e A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r5v15 */
@@ -524,10 +524,10 @@ public final class n7 extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onMeasure(int i10, int i11) {
+        boolean z10;
         String str;
         String str2;
         String str3;
-        boolean z10;
         MessageObject messageObject;
         float f7;
         SpannableStringBuilder spannableStringBuilder;
@@ -552,13 +552,15 @@ public final class n7 extends FrameLayout {
         StaticLayout staticLayout5;
         int i18;
         SparseArray sparseArray;
-        z80 z80Var;
+        n90 n90Var;
         TLRPC.PhotoSize photoSize2;
         ArrayList arrayList;
         TextPaint textPaint2;
         int i19;
         SparseArray sparseArray2;
+        float f12;
         int i20;
+        float f13;
         Stack stack;
         CharSequence ellipsize;
         StaticLayout staticLayout6;
@@ -611,9 +613,9 @@ public final class n7 extends FrameLayout {
                     f7 = 8.0f;
                     spannableStringBuilder = null;
                 } else {
-                    SpannableStringBuilder spannableStringBuilder4 = null;
                     f7 = 8.0f;
                     int i25 = 0;
+                    SpannableStringBuilder spannableStringBuilder4 = null;
                     while (i25 < this.b0.messageOwner.entities.size()) {
                         TLRPC.MessageEntity messageEntity = this.b0.messageOwner.entities.get(i25);
                         if (messageEntity.length > 0 && (i22 = messageEntity.offset) >= 0 && i22 < this.b0.messageOwner.message.length()) {
@@ -667,12 +669,12 @@ public final class n7 extends FrameLayout {
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            n11 n11Var = new n11();
+                                                            t11 t11Var = new t11();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                n11Var.a |= 256;
+                                                                t11Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new o11(n11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new u11(t11Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e10) {
                                                                 e = e10;
                                                                 str2 = str7;
@@ -814,10 +816,10 @@ public final class n7 extends FrameLayout {
                     textPaint = textPaint3;
                     i13 = 0;
                 }
-                z80 z80Var2 = this.v;
+                n90 n90Var2 = this.v;
                 if (str2 != null) {
                     try {
-                        ?? highlightText = AndroidUtilities.highlightText(str2, this.b0.highlightedWords, (org.telegram.ui.ActionBar.d6) null);
+                        ?? highlightText = AndroidUtilities.highlightText(str2, this.b0.highlightedWords, (org.telegram.ui.ActionBar.e6) null);
                         int i37 = size - i13;
                         StaticLayout u22 = u1.u2(highlightText != 0 ? highlightText : str2, this.c0, i37 - AndroidUtilities.dp(4.0f), i37 - AndroidUtilities.dp(4.0f), 0, 3);
                         this.P = u22;
@@ -827,7 +829,7 @@ public final class n7 extends FrameLayout {
                     } catch (Exception e14) {
                         FileLog.e(e14);
                     }
-                    z80Var2.a(str2);
+                    n90Var2.a(str2);
                 }
                 this.T = this.Q;
                 StaticLayout staticLayout9 = this.P;
@@ -840,6 +842,7 @@ public final class n7 extends FrameLayout {
                 }
                 TextPaint textPaint4 = this.d0;
                 Stack stack2 = this.K;
+                float f14 = 5.0f;
                 if (str4 != null) {
                     try {
                         StaticLayout u23 = u1.u2(str4, textPaint4, size, size, 0, max);
@@ -856,6 +859,7 @@ public final class n7 extends FrameLayout {
                         FileLog.e(e15);
                     }
                 }
+                float f15 = 10.0f;
                 if (spannableStringBuilder2 == null) {
                     try {
                         i14 = max;
@@ -881,13 +885,14 @@ public final class n7 extends FrameLayout {
                             }
                             if (!arrayList6.isEmpty()) {
                             }
-                            z80 z80Var3 = z80Var2;
+                            n90 n90Var3 = n90Var2;
                             TLRPC.PhotoSize photoSize3 = photoSize;
                             int i38 = size;
+                            float f16 = f15;
                             int dp = AndroidUtilities.dp(52.0f);
                             if (LocaleController.isRTL) {
                             }
-                            z80Var3.setBounds(r2, AndroidUtilities.dp(11.0f), r2 + dp, AndroidUtilities.dp(63.0f));
+                            n90Var3.setBounds(r2, AndroidUtilities.dp(11.0f), r2 + dp, AndroidUtilities.dp(63.0f));
                             if (z10) {
                             }
                             if (i12 == i15) {
@@ -895,7 +900,7 @@ public final class n7 extends FrameLayout {
                             staticLayout2 = this.P;
                             if (staticLayout2 != null) {
                             }
-                            i17 = 0;
+                            i17 = i16;
                             staticLayout3 = this.a0;
                             if (staticLayout3 != null) {
                             }
@@ -926,7 +931,7 @@ public final class n7 extends FrameLayout {
                     photoSize = null;
                 } else {
                     photoSize = null;
-                    CharSequence highlightText2 = AndroidUtilities.highlightText(Emoji.replaceEmoji(this.b0.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), false), this.b0.highlightedWords, (org.telegram.ui.ActionBar.d6) null);
+                    CharSequence highlightText2 = AndroidUtilities.highlightText(Emoji.replaceEmoji(this.b0.messageOwner.message.replace("\n", " ").replaceAll(" +", " ").trim(), org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), false), this.b0.highlightedWords, (org.telegram.ui.ActionBar.e6) null);
                     if (highlightText2 != null) {
                         String str13 = this.b0.highlightedWords.get(0);
                         TextPaint textPaint5 = this.f0;
@@ -955,9 +960,21 @@ public final class n7 extends FrameLayout {
                     int i42 = 0;
                     while (i42 < arrayList6.size()) {
                         try {
-                            stack = stack2;
-                        } catch (Exception e18) {
-                            e = e18;
+                            try {
+                                f13 = f14;
+                                stack = stack2;
+                            } catch (Exception e18) {
+                                e = e18;
+                            }
+                        } catch (Exception e19) {
+                            e = e19;
+                            n90Var = n90Var2;
+                            photoSize2 = photoSize;
+                            arrayList = arrayList6;
+                            textPaint2 = textPaint4;
+                            i19 = size;
+                            sparseArray2 = sparseArray;
+                            f12 = f15;
                         }
                         try {
                             ellipsize = TextUtils.ellipsize(AndroidUtilities.replaceNewLines(SpannableStringBuilder.valueOf((CharSequence) arrayList6.get(i42))), textPaint4, Math.min((int) Math.ceil(textPaint4.measureText(r0, 0, r0.length())), size), TextUtils.TruncateAt.MIDDLE);
@@ -969,61 +986,68 @@ public final class n7 extends FrameLayout {
                                 try {
                                     this.F = this.T;
                                     staticLayout7 = this.U;
-                                } catch (Exception e19) {
-                                    e = e19;
+                                } catch (Exception e20) {
+                                    e = e20;
                                 }
-                            } catch (Exception e20) {
-                                e = e20;
+                            } catch (Exception e21) {
+                                e = e21;
                                 stack2 = stack;
-                                z80Var = z80Var2;
+                                n90Var = n90Var2;
                                 photoSize2 = photoSize;
                                 i20 = i42;
                                 arrayList = arrayList6;
                                 i19 = i21;
                                 sparseArray2 = sparseArray;
                                 textPaint2 = textPaint6;
+                                f12 = 10.0f;
                             }
-                        } catch (Exception e21) {
-                            e = e21;
+                        } catch (Exception e22) {
+                            e = e22;
                             stack2 = stack;
-                            z80Var = z80Var2;
+                            n90Var = n90Var2;
                             photoSize2 = photoSize;
                             arrayList = arrayList6;
                             textPaint2 = textPaint4;
                             i19 = size;
+                            f12 = 10.0f;
                             sparseArray2 = sparseArray;
                             i20 = i42;
                             FileLog.e(e);
                             i42 = i20 + 1;
-                            size = i19;
                             sparseArray = sparseArray2;
-                            z80Var2 = z80Var;
+                            n90Var2 = n90Var;
+                            f15 = f12;
                             textPaint4 = textPaint2;
                             arrayList6 = arrayList;
                             photoSize = photoSize2;
+                            f14 = 5.0f;
+                            size = i19;
                         }
                         if (staticLayout7 != null) {
                             try {
-                            } catch (Exception e22) {
-                                e = e22;
+                            } catch (Exception e23) {
+                                e = e23;
                                 stack2 = stack;
-                                z80Var = z80Var2;
+                                n90Var = n90Var2;
                                 photoSize2 = photoSize;
                                 i20 = i42;
                                 arrayList = arrayList6;
                                 i19 = i21;
+                                f12 = 10.0f;
                                 sparseArray2 = sparseArray;
                                 FileLog.e(e);
                                 i42 = i20 + 1;
-                                size = i19;
                                 sparseArray = sparseArray2;
-                                z80Var2 = z80Var;
+                                n90Var2 = n90Var;
+                                f15 = f12;
                                 textPaint4 = textPaint2;
                                 arrayList6 = arrayList;
                                 photoSize = photoSize2;
+                                f14 = 5.0f;
+                                size = i19;
                             }
                             if (staticLayout7.getLineCount() != 0) {
-                                this.F = this.U.getLineBottom(r5.getLineCount() - 1) + AndroidUtilities.dp(5.0f) + this.F;
+                                this.F = this.U.getLineBottom(r5.getLineCount() - 1) + AndroidUtilities.dp(f13) + this.F;
                                 if (this.b0.isSpoilersRevealed) {
                                     TLRPC.PhotoSize photoSize4 = photoSize;
                                     try {
@@ -1034,22 +1058,25 @@ public final class n7 extends FrameLayout {
                                             ArrayList arrayList9 = arrayList6;
                                             sparseArray2 = sparseArray;
                                             staticLayout8 = staticLayout6;
-                                            z80Var = z80Var2;
+                                            n90Var = n90Var2;
                                             arrayList = arrayList9;
                                             photoSize2 = photoSize4;
                                             i19 = i21;
+                                            f12 = 10.0f;
                                             try {
                                                 vh.g.a(this, staticLayout8, -1, -1, (Spannable) ellipsize, stack2, arrayList8, null);
-                                            } catch (Exception e23) {
-                                                e = e23;
+                                            } catch (Exception e24) {
+                                                e = e24;
                                                 FileLog.e(e);
                                                 i42 = i20 + 1;
-                                                size = i19;
                                                 sparseArray = sparseArray2;
-                                                z80Var2 = z80Var;
+                                                n90Var2 = n90Var;
+                                                f15 = f12;
                                                 textPaint4 = textPaint2;
                                                 arrayList6 = arrayList;
                                                 photoSize = photoSize2;
+                                                f14 = 5.0f;
+                                                size = i19;
                                             }
                                         } else {
                                             stack2 = stack;
@@ -1057,28 +1084,32 @@ public final class n7 extends FrameLayout {
                                             i20 = i42;
                                             arrayList = arrayList6;
                                             i19 = i21;
+                                            f12 = 10.0f;
                                             sparseArray2 = sparseArray;
                                             staticLayout8 = staticLayout6;
-                                            z80Var = z80Var2;
+                                            n90Var = n90Var2;
                                         }
                                         sparseArray2.put(i20, arrayList8);
-                                    } catch (Exception e24) {
-                                        e = e24;
+                                    } catch (Exception e25) {
+                                        e = e25;
                                         stack2 = stack;
-                                        z80Var = z80Var2;
+                                        n90Var = n90Var2;
                                         photoSize2 = photoSize4;
                                         i20 = i42;
                                         arrayList = arrayList6;
                                         i19 = i21;
+                                        f12 = 10.0f;
                                         sparseArray2 = sparseArray;
                                         FileLog.e(e);
                                         i42 = i20 + 1;
-                                        size = i19;
                                         sparseArray = sparseArray2;
-                                        z80Var2 = z80Var;
+                                        n90Var2 = n90Var;
+                                        f15 = f12;
                                         textPaint4 = textPaint2;
                                         arrayList6 = arrayList;
                                         photoSize = photoSize2;
+                                        f14 = 5.0f;
+                                        size = i19;
                                     }
                                 } else {
                                     stack2 = stack;
@@ -1086,38 +1117,44 @@ public final class n7 extends FrameLayout {
                                     i20 = i42;
                                     arrayList = arrayList6;
                                     i19 = i21;
+                                    f12 = 10.0f;
                                     sparseArray2 = sparseArray;
                                     staticLayout8 = staticLayout6;
-                                    z80Var = z80Var2;
+                                    n90Var = n90Var2;
                                 }
                                 arrayList5.add(staticLayout8);
                                 i42 = i20 + 1;
-                                size = i19;
                                 sparseArray = sparseArray2;
-                                z80Var2 = z80Var;
+                                n90Var2 = n90Var;
+                                f15 = f12;
                                 textPaint4 = textPaint2;
                                 arrayList6 = arrayList;
                                 photoSize = photoSize2;
+                                f14 = 5.0f;
+                                size = i19;
                             }
                         }
                         if (this.b0.isSpoilersRevealed) {
                         }
                         arrayList5.add(staticLayout8);
                         i42 = i20 + 1;
-                        size = i19;
                         sparseArray = sparseArray2;
-                        z80Var2 = z80Var;
+                        n90Var2 = n90Var;
+                        f15 = f12;
                         textPaint4 = textPaint2;
                         arrayList6 = arrayList;
                         photoSize = photoSize2;
+                        f14 = 5.0f;
+                        size = i19;
                     }
                 }
-                z80 z80Var32 = z80Var2;
+                n90 n90Var32 = n90Var2;
                 TLRPC.PhotoSize photoSize32 = photoSize;
                 int i382 = size;
+                float f162 = f15;
                 int dp2 = AndroidUtilities.dp(52.0f);
-                int B = LocaleController.isRTL ? org.telegram.messenger.q.B(10.0f, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(10.0f);
-                z80Var32.setBounds(B, AndroidUtilities.dp(11.0f), B + dp2, AndroidUtilities.dp(63.0f));
+                int B = LocaleController.isRTL ? org.telegram.messenger.q.B(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
+                n90Var32.setBounds(B, AndroidUtilities.dp(11.0f), B + dp2, AndroidUtilities.dp(63.0f));
                 if (z10) {
                     i15 = 1;
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.b0.photoThumbs, dp2, true);
@@ -1132,32 +1169,32 @@ public final class n7 extends FrameLayout {
                         closestPhotoSizeWithSize2.size = -1;
                     }
                     float dp3 = AndroidUtilities.dp(11.0f);
-                    float f12 = dp2;
+                    float f17 = dp2;
                     ImageReceiver imageReceiver = this.r;
-                    imageReceiver.setImageCoords(B, dp3, f12, f12);
+                    imageReceiver.setImageCoords(B, dp3, f17, f17);
                     FileLoader.getAttachFileName(closestPhotoSizeWithSize);
                     Locale locale = Locale.US;
-                    imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize, this.b0.photoThumbsObject), a4.a.l(dp2, dp2, "_"), ImageLocation.getForObject(closestPhotoSizeWithSize2, this.b0.photoThumbsObject), dp2 + "_" + dp2 + "_b", 0L, null, this.b0, 0);
+                    imageReceiver.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize, this.b0.photoThumbsObject), a1.g.l(dp2, dp2, "_"), ImageLocation.getForObject(closestPhotoSizeWithSize2, this.b0.photoThumbsObject), dp2 + "_" + dp2 + "_b", 0L, null, this.b0, 0);
                     this.s = true;
                 } else {
                     i15 = 1;
                 }
                 if (i12 == i15) {
-                    f10 = 10.0f;
-                    StaticLayout u24 = u1.u2(x10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
+                    f10 = f162;
+                    StaticLayout u24 = u1.u2(w10.d(this.b0, i15, 2, textPaint), textPaint, i382, i382, 0, i14);
                     this.j0 = u24;
-                    org.telegram.ui.Components.v5 v5Var = this.k0;
+                    org.telegram.ui.Components.x5 x5Var = this.k0;
                     Layout[] layoutArr = new Layout[i15];
                     i16 = 0;
                     layoutArr[0] = u24;
-                    this.k0 = org.telegram.ui.Components.z5.update(0, this, v5Var, layoutArr);
+                    this.k0 = org.telegram.ui.Components.b6.update(0, this, x5Var, layoutArr);
                 } else {
-                    f10 = 10.0f;
+                    f10 = f162;
                     i16 = 0;
                 }
                 staticLayout2 = this.P;
                 if (staticLayout2 != null || staticLayout2.getLineCount() == 0) {
-                    i17 = 0;
+                    i17 = i16;
                 } else {
                     StaticLayout staticLayout10 = this.P;
                     i17 = staticLayout10.getLineBottom(staticLayout10.getLineCount() - i15) + AndroidUtilities.dp(4.0f);
@@ -1183,7 +1220,7 @@ public final class n7 extends FrameLayout {
                         i17 += AndroidUtilities.dp(f10);
                     }
                 }
-                for (i18 = 0; i18 < arrayList5.size(); i18++) {
+                for (i18 = i16; i18 < arrayList5.size(); i18++) {
                     StaticLayout staticLayout14 = (StaticLayout) arrayList5.get(i18);
                     if (staticLayout14.getLineCount() > 0) {
                         i16 = staticLayout14.getLineBottom(staticLayout14.getLineCount() - i15) + i16;
@@ -1199,10 +1236,10 @@ public final class n7 extends FrameLayout {
                 setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(17.0f, i392, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
             }
         }
+        z10 = false;
         str = null;
         str2 = null;
         str3 = null;
-        z10 = false;
         messageObject = this.b0;
         if (messageObject != null) {
         }
@@ -1221,7 +1258,7 @@ public final class n7 extends FrameLayout {
         TextPaint textPaint32 = this.e0;
         if (i12 != 1) {
         }
-        z80 z80Var22 = this.v;
+        n90 n90Var22 = this.v;
         if (str2 != null) {
         }
         this.T = this.Q;
@@ -1231,8 +1268,10 @@ public final class n7 extends FrameLayout {
         }
         TextPaint textPaint42 = this.d0;
         Stack stack22 = this.K;
+        float f142 = 5.0f;
         if (str4 != null) {
         }
+        float f152 = 10.0f;
         if (spannableStringBuilder2 == null) {
         }
         messageObject3 = this.b0;
@@ -1244,13 +1283,14 @@ public final class n7 extends FrameLayout {
         }
         if (!arrayList6.isEmpty()) {
         }
-        z80 z80Var322 = z80Var22;
+        n90 n90Var322 = n90Var22;
         TLRPC.PhotoSize photoSize322 = photoSize;
         int i3822 = size;
+        float f1622 = f152;
         int dp22 = AndroidUtilities.dp(52.0f);
         if (LocaleController.isRTL) {
         }
-        z80Var322.setBounds(B, AndroidUtilities.dp(11.0f), B + dp22, AndroidUtilities.dp(63.0f));
+        n90Var322.setBounds(B, AndroidUtilities.dp(11.0f), B + dp22, AndroidUtilities.dp(63.0f));
         if (z10) {
         }
         if (i12 == i15) {
@@ -1258,7 +1298,7 @@ public final class n7 extends FrameLayout {
         staticLayout2 = this.P;
         if (staticLayout2 != null) {
         }
-        i17 = 0;
+        i17 = i16;
         staticLayout3 = this.a0;
         if (staticLayout3 != null) {
         }
@@ -1284,9 +1324,9 @@ public final class n7 extends FrameLayout {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(17.0f, i3922, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0243  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0244  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1319,7 +1359,6 @@ public final class n7 extends FrameLayout {
                 while (true) {
                     if (i13 >= arrayList.size()) {
                         z10 = false;
-                        z11 = false;
                         break;
                     }
                     StaticLayout staticLayout = (StaticLayout) arrayList.get(i13);
@@ -1353,9 +1392,9 @@ public final class n7 extends FrameLayout {
                                 if (this.M == null && (this.h != i13 || this.n == null || !this.f)) {
                                     e();
                                     this.h = i13;
-                                    r90 r90Var = new r90(null, this.l0, x10 - dp, (y3 - this.F) - i14, 0);
-                                    this.n = r90Var;
-                                    k90 b10 = r90Var.b();
+                                    fa0 fa0Var = new fa0(null, this.l0, x10 - dp, (y3 - this.F) - i14, 0);
+                                    this.n = fa0Var;
+                                    y90 b10 = fa0Var.b();
                                     this.f = true;
                                     this.e.a(this.n, null);
                                     if (!this.a) {
@@ -1389,15 +1428,15 @@ public final class n7 extends FrameLayout {
                             } else if (this.M != null) {
                                 g(x10, y3, i14);
                             } else {
-                                z10 = false;
                                 z11 = true;
+                                z10 = false;
                             }
                             z10 = true;
-                            z11 = true;
                         }
                     }
                     i13++;
                 }
+                z11 = z10;
                 if (motionEvent.getAction() == 0) {
                     int dp2 = AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : AndroidUtilities.leftBaseline);
                     StaticLayout staticLayout2 = this.R;

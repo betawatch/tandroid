@@ -1,33 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p2 implements ia.d {
     public static final p2 a = new p2();
-    public static final ia.c b = new ia.c("durationMs", hg.c.m(sa.e.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("errorCode", hg.c.m(sa.e.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("isColdCall", hg.c.m(sa.e.l(h.class, new e(3))));
-    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.c.m(sa.e.l(h.class, new e(4))));
-    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.c.m(sa.e.l(h.class, new e(5))));
-    public static final ia.c g = new ia.c("isNnApiEnabled", hg.c.m(sa.e.l(h.class, new e(6))));
-    public static final ia.c h = new ia.c("eventsCount", hg.c.m(sa.e.l(h.class, new e(7))));
-    public static final ia.c i = new ia.c("otherErrors", hg.c.m(sa.e.l(h.class, new e(8))));
-    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.c.m(sa.e.l(h.class, new e(9))));
-    public static final ia.c k = new ia.c("isAccelerated", hg.c.m(sa.e.l(h.class, new e(10))));
+
+    static {
+        sc.v.t(sc.v.l(h.class, sc.v.p(3, sc.v.l(h.class, sc.v.p(2, sc.v.l(h.class, new e(1)))))));
+    }
 
     @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        b6 b6Var = (b6) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, b6Var.a);
-        eVar.a(c, b6Var.b);
-        eVar.a(d, b6Var.c);
-        eVar.a(e, null);
-        eVar.a(f, null);
-        eVar.a(g, null);
-        eVar.a(h, null);
-        eVar.a(i, null);
-        eVar.a(j, null);
-        eVar.a(k, null);
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

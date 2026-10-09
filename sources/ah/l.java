@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class l extends Drawable {
     public dh.a a;
@@ -37,8 +37,8 @@ public final class l extends Drawable {
         if (aVar == null) {
             return;
         }
-        this.b = i6.l1(this.d, aVar.a());
-        this.c = i6.l1(this.d, this.a.c());
+        this.b = i6.m1(this.d, aVar.d());
+        this.c = i6.m1(this.d, this.a.m());
         int i10 = this.b;
         Paint paint = this.h;
         paint.setColor(i10);
@@ -68,12 +68,12 @@ public final class l extends Drawable {
         }
         if (this.b != 0) {
             canvas2 = canvas;
-            ch.d.q(canvas2, rectF, f7, AndroidUtilities.dpf2(1.0f), true, this.h);
+            ch.d.f(canvas2, rectF, f7, AndroidUtilities.dpf2(1.0f), true, this.h);
         } else {
             canvas2 = canvas;
         }
         if (this.c != 0) {
-            ch.d.q(canvas2, rectF, f7, AndroidUtilities.dpf2(0.6666667f), false, this.i);
+            ch.d.f(canvas2, rectF, f7, AndroidUtilities.dpf2(0.6666667f), false, this.i);
         }
     }
 

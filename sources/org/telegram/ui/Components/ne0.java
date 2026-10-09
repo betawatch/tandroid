@@ -1,33 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ne0 implements Utilities.Callback {
+public final class ne0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ Utilities.Callback d;
+    public final /* synthetic */ oe0 b;
 
-    public /* synthetic */ ne0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
+    public /* synthetic */ ne0(oe0 oe0Var, int i10) {
         this.a = i10;
-        this.b = strArr;
-        this.c = activity;
-        this.d = callback;
+        this.b = oe0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        String[] strArr = this.b;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
+        switch (this.a) {
             case 0:
-                pe0.a(strArr, this.c, this.d);
+                te0 te0Var = this.b.d;
+                if (!te0Var.L) {
+                    te0Var.T = 1.0f;
+                    te0Var.g(1.0f);
+                    break;
+                }
                 break;
             default:
-                pe0.b(strArr, this.c, this.d);
+                oe0 oe0Var = this.b;
+                te0 te0Var2 = oe0Var.d;
+                if (!te0Var2.L) {
+                    Runnable runnable = oe0Var.c;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    if (SharedConfig.passcodeType == 1 && te0Var2.x.getVisibility() != 0 && (editTextBoldCursor = te0Var2.r) != null) {
+                        editTextBoldCursor.requestFocus();
+                        AndroidUtilities.showKeyboard(te0Var2.r);
+                        break;
+                    }
+                }
                 break;
         }
     }

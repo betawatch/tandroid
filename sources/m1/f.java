@@ -1,5 +1,6 @@
 package m1;
 
+import ae.x;
 import androidx.datastore.preferences.protobuf.a1;
 import androidx.datastore.preferences.protobuf.b0;
 import androidx.datastore.preferences.protobuf.b1;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends w {
     private static final f DEFAULT_INSTANCE;
@@ -65,7 +66,7 @@ public final class f extends w {
             if (wVar.g()) {
                 return (f) wVar;
             }
-            throw new b0(new androidx.car.app.j().getMessage());
+            throw new b0(new x().getMessage());
         } catch (IOException e7) {
             if (e7.getCause() instanceof b0) {
                 throw ((b0) e7.getCause());

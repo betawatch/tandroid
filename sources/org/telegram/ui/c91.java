@@ -1,22 +1,34 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c91 implements View.OnClickListener {
-    public final /* synthetic */ Context a;
+public final class c91 extends org.telegram.ui.Components.o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public c91(Activity activity) {
-        this.a = activity;
+    static {
+        org.telegram.ui.Components.o61.setup(new c91());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        nf.f.s(this.a, LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, org.telegram.ui.Components.p61 p61Var, boolean z10, org.telegram.ui.Components.c71 c71Var, org.telegram.ui.Components.k71 k71Var) {
+        ((d91) view).set(p61Var.z);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean contentsEquals(org.telegram.ui.Components.p61 p61Var, org.telegram.ui.Components.p61 p61Var2) {
+        return p61Var.z == p61Var2.z;
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, org.telegram.ui.Components.qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new d91(context, e6Var);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean equals(org.telegram.ui.Components.p61 p61Var, org.telegram.ui.Components.p61 p61Var2) {
+        return p61Var.d == p61Var2.d;
     }
 }

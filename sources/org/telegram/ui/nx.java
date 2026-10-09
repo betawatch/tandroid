@@ -1,105 +1,185 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import java.util.ArrayList;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nx extends a71 {
-    public final /* synthetic */ r61[] d2;
-    public final /* synthetic */ uy e2;
+public final class nx extends l41 {
+    public boolean S;
+    public sy T;
+    public final /* synthetic */ my U;
+    public final /* synthetic */ Context V;
+    public final /* synthetic */ ty W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nx(uy uyVar, uy uyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.d6 d6Var, r61[] r61VarArr) {
-        super(uyVar2, activity, true, num, 0, d6Var);
-        this.e2 = uyVar;
-        this.d2 = r61VarArr;
+    public nx(ty tyVar, Context context, my myVar, Context context2) {
+        super(context);
+        this.W = tyVar;
+        this.U = myVar;
+        this.V = context2;
+        this.e = 0.0f;
+        this.n = new AnimationNotificationsLocker();
+        this.M = true;
     }
 
-    @Override // org.telegram.ui.a71
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i10;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i10 = ((org.telegram.ui.ActionBar.n2) this.e2).currentAccount;
-        return yh.u5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.a71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        TLRPC.TL_emojiStatus tL_emojiStatus;
-        TLRPC.EmojiStatus emojiStatus;
-        int i10;
-        int i11;
-        int i12;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        r61[] r61VarArr = this.d2;
-        uy uyVar = this.e2;
-        if (l4 == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            if (tL_starGiftUnique != null) {
-                i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-                TL_stars.SavedStarGift n10 = yh.u5.y(i10, false).n(tL_starGiftUnique.id);
-                if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
-                    MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
-                    Context context = getContext();
-                    i11 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-                    i12 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
-                    long clientUserId = UserConfig.getInstance(i12).getClientUserId();
-                    d6Var = ((org.telegram.ui.ActionBar.n2) uyVar).resourceProvider;
-                    yh.y3 y3Var = new yh.y3(context, i11, clientUserId, d6Var, null);
-                    y3Var.j2(n10, null);
-                    y3Var.m2();
-                    y3Var.show();
-                    r61 r61Var = r61VarArr[0];
-                    if (r61Var != null) {
-                        uyVar.M0 = null;
-                        r61Var.dismiss();
-                        return;
-                    }
-                    return;
-                }
-                TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
-                tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-                tL_emojiStatus = tL_inputEmojiStatusCollectible;
-                if (num != null) {
-                    tL_inputEmojiStatusCollectible.flags |= 1;
-                    tL_inputEmojiStatusCollectible.until = num.intValue();
-                    tL_emojiStatus = tL_inputEmojiStatusCollectible;
-                }
-            } else {
-                TLRPC.TL_emojiStatus tL_emojiStatus2 = new TLRPC.TL_emojiStatus();
-                tL_emojiStatus2.document_id = l4.longValue();
-                tL_emojiStatus = tL_emojiStatus2;
-                if (num != null) {
-                    tL_emojiStatus2.flags |= 1;
-                    tL_emojiStatus2.until = num.intValue();
-                    tL_emojiStatus = tL_emojiStatus2;
-                }
+    @Override // org.telegram.ui.l41
+    public final void d(boolean z10) {
+        sy syVar = this.T;
+        syVar.c.G = true;
+        syVar.d.O(this.T.a, c());
+        sy syVar2 = this.T;
+        syVar2.d.G = false;
+        syVar2.G.G = false;
+        ty tyVar = this.W;
+        tyVar.x4(false, true);
+        this.T.a.setClipChildren(true);
+        this.T.a.invalidate();
+        this.T.d.l();
+        this.T.G.l();
+        this.T.a.z1(null, 0.0f, z10);
+        tyVar.y = false;
+        this.U.requestLayout();
+        if (!c()) {
+            tyVar.Q = true;
+            tyVar.R = true;
+            View view = tyVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
             }
-            emojiStatus = tL_emojiStatus;
         }
-        uyVar.getMessagesController().updateEmojiStatus(emojiStatus, tL_starGiftUnique);
-        if (l4 != null) {
-            org.telegram.ui.Cells.o oVar = uyVar.E3;
-            zg.m0 m0Var = new zg.m0();
-            long longValue = l4.longValue();
-            m0Var.g = longValue;
-            m0Var.h = longValue;
-            oVar.a(m0Var);
+        dy dyVar = tyVar.C0;
+        if (dyVar != null) {
+            dyVar.R();
         }
-        r61 r61Var2 = r61VarArr[0];
-        if (r61Var2 != null) {
-            uyVar.M0 = null;
-            r61Var2.dismiss();
+        tyVar.S4(false, true);
+        tyVar.A3();
+        tyVar.R4();
+    }
+
+    @Override // org.telegram.ui.l41
+    public final void e(boolean z10) {
+        int i10;
+        ty tyVar = this.W;
+        tyVar.y = true;
+        tyVar.E = z10;
+        this.U.requestLayout();
+        sy syVar = tyVar.e0[0];
+        this.T = syVar;
+        if (syVar.F == null) {
+            syVar.F = new lx(this.V, null);
+            this.T.F.setLayoutManager(new mx(this, this.T));
+            sy syVar2 = this.T;
+            int i11 = this.T.s;
+            int i12 = tyVar.V2;
+            boolean z11 = tyVar.l2;
+            ArrayList arrayList = tyVar.I2;
+            i10 = ((org.telegram.ui.ActionBar.n2) tyVar).currentAccount;
+            syVar2.G = new gg.m(tyVar, this.V, i11, i12, z11, arrayList, i10, tyVar.G);
+            sy syVar3 = this.T;
+            gg.m mVar = syVar3.G;
+            mVar.S = true;
+            syVar3.F.setAdapter(mVar);
+            sy syVar4 = this.T;
+            syVar4.addView(syVar4.F);
+        }
+        if (!z10) {
+            tyVar.Q = false;
+            tyVar.z4(-tyVar.Q3());
+        }
+        this.T.a.B0();
+        sy syVar5 = this.T;
+        gg.m mVar2 = syVar5.G;
+        mVar2.h = syVar5.s;
+        mVar2.l();
+        sy syVar6 = this.T;
+        syVar6.d.O(syVar6.a, false);
+        sy syVar7 = this.T;
+        syVar7.d.G = true;
+        syVar7.G.G = true;
+        syVar7.c.H = false;
+        tyVar.x4(true, true);
+        tyVar.Z3(this.S);
+        this.T.d.l();
+        this.T.G.l();
+        float f7 = !z10 ? tyVar.N : -tyVar.N;
+        sy syVar8 = this.T;
+        syVar8.a.z1(syVar8.F, f7, false);
+        this.T.a.setClipChildren(false);
+        this.T.a.B0();
+        tyVar.A3();
+        tyVar.R4();
+    }
+
+    @Override // org.telegram.ui.l41
+    public final boolean getOccupyStatusbar() {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        ty tyVar = this.W;
+        kVar = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+        if (kVar == null) {
+            return false;
+        }
+        kVar2 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+        return kVar2.getOccupyStatusBar();
+    }
+
+    @Override // org.telegram.ui.l41
+    public final void setOpenProgress(float f7) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        py pyVar;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        org.telegram.ui.ActionBar.k kVar5;
+        org.telegram.ui.ActionBar.k kVar6;
+        boolean z10 = f7 > 0.0f;
+        if (this.S != z10) {
+            this.S = z10;
+        }
+        ty tyVar = this.W;
+        View view = tyVar.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+        kVar = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+        if (kVar.getTitleTextView() != null) {
+            kVar4 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+            kVar4.getTitleTextView().setAlpha(1.0f - f7);
+            kVar5 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+            if (kVar5.getTitleTextView().getAlpha() > 0.0f) {
+                kVar6 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+                kVar6.getTitleTextView().setVisibility(0);
+            }
+        }
+        kVar2 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+        if (kVar2.getBackButton() != null) {
+            kVar3 = ((org.telegram.ui.ActionBar.n2) tyVar).actionBar;
+            kVar3.getBackButton().setAlpha(f7 != 1.0f ? 1.0f : 0.0f);
+        }
+        if (tyVar.V2 != 0 || tyVar.X2 != 0) {
+            Paint paint = tyVar.f1;
+            int i10 = org.telegram.ui.ActionBar.i6.d6;
+            paint.setColor(i0.a.d(f7, tyVar.getThemedColor(i10), tyVar.getThemedColor(i10)));
+        }
+        sy syVar = this.T;
+        if (syVar != null) {
+            syVar.a.setOpenRightFragmentProgress(f7);
+        }
+        tyVar.z3();
+        tyVar.E3();
+        tyVar.r3();
+        tyVar.B3();
+        sy syVar2 = tyVar.e0[0];
+        if (syVar2 != null && (pyVar = syVar2.a) != null) {
+            pyVar.requestLayout();
+        }
+        View view2 = tyVar.fragmentView;
+        if (view2 != null) {
+            view2.invalidate();
         }
     }
 }

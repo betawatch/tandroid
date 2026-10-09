@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e extends Thread {
     public EGLContext E;
@@ -85,6 +85,7 @@ public final class e extends Thread {
         this.v = egl10;
         EGLDisplay eglGetDisplay = egl10.eglGetDisplay(0);
         this.w = eglGetDisplay;
+        int i11 = 3;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             this.a = false;
         } else {
@@ -180,14 +181,14 @@ public final class e extends Thread {
             if (d < d10) {
                 double d11 = d10 - d;
                 long j3 = (long) (d11 * 1000.0d);
-                i10 = 3;
+                i10 = i11;
                 try {
                     Thread.sleep(j3, (int) ((d11 - (j3 / 1000.0d)) * 1.0E9d));
                 } catch (Exception unused) {
                 }
                 d = this.Q.a;
             } else {
-                i10 = 3;
+                i10 = i11;
                 double d12 = fVar.b;
                 if (d > d12) {
                     d = d12;
@@ -264,6 +265,7 @@ public final class e extends Thread {
             AndroidUtilities.cancelRunOnUIThread(this.c);
             AndroidUtilities.runOnUIThread(this.c);
             nanoTime = nanoTime2;
+            i11 = i10;
         }
         int[] iArr2 = this.O;
         if (iArr2 != null) {
@@ -274,10 +276,10 @@ public final class e extends Thread {
             }
             this.O = null;
         }
-        int i11 = this.F;
-        if (i11 != 0) {
+        int i12 = this.F;
+        if (i12 != 0) {
             try {
-                GLES20.glDeleteProgram(i11);
+                GLES20.glDeleteProgram(i12);
             } catch (Exception e10) {
                 FileLog.e(e10);
             }

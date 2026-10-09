@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class s3 extends j1.b {
     public final Rect o;
@@ -38,7 +38,7 @@ public final class s3 extends j1.b {
             float f11 = v3Var.i;
             RectF rectF = v3Var.a;
             if (Math.abs(f11) < 0.4f && rectF.contains(f7, f10)) {
-                Rect bounds = v3Var.d.k.getBounds();
+                Rect bounds = v3Var.d.l.getBounds();
                 return (bounds.isEmpty() || !bounds.contains((int) (f7 - rectF.left), (int) ((f10 - rectF.top) - ((float) AndroidUtilities.dp(24.0f))))) ? size + MediaDataController.MAX_STYLE_RUNS_COUNT : size + 2000;
             }
         }
@@ -61,7 +61,7 @@ public final class s3 extends j1.b {
             if (Math.abs(v3Var.i) < 0.4f && !v3Var.a.isEmpty()) {
                 arrayList.add(Integer.valueOf(i10 + MediaDataController.MAX_STYLE_RUNS_COUNT));
                 k3 k3Var = v3Var.d;
-                if (k3Var != null && !k3Var.k.getBounds().isEmpty()) {
+                if (k3Var != null && !k3Var.l.getBounds().isEmpty()) {
                     arrayList.add(Integer.valueOf(i10 + 2000));
                 }
             }
@@ -95,7 +95,7 @@ public final class s3 extends j1.b {
                 if (z10) {
                     n3 n3Var2 = w3Var.a;
                     if (n3Var2 != null) {
-                        n3Var2.g(v3Var.c, new ai.g3(26, this, v3Var));
+                        n3Var2.g(v3Var.c, new ai.h3(26, this, v3Var));
                         return true;
                     }
                 } else if (w3Var.a != null) {
@@ -166,7 +166,7 @@ public final class s3 extends j1.b {
             dVar.j(str);
             return;
         }
-        Rect bounds = v3Var.d.k.getBounds();
+        Rect bounds = v3Var.d.l.getBounds();
         rect.set((int) (rectF.left + bounds.left), (int) (rectF.top + AndroidUtilities.dp(24.0f) + bounds.top), (int) (rectF.left + bounds.right), (int) (rectF.top + AndroidUtilities.dp(24.0f) + bounds.bottom));
         dVar.h(rect);
         if (TextUtils.isEmpty(b10)) {

@@ -8,9 +8,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
-import m.p3;
+import m.q3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d0 implements Runnable {
     public final /* synthetic */ g0 a;
@@ -33,7 +33,7 @@ public final class d0 implements Runnable {
                 g0 g0Var = this.c;
                 m0 m0Var = g0Var.a;
                 Context context = g0Var.c;
-                n4.y yVar = new n4.y(g0Var.d);
+                n6.t tVar = new n6.t(g0Var.d);
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
                 HashMap hashMap = (HashMap) this.d;
@@ -49,7 +49,7 @@ public final class d0 implements Runnable {
                 if (arrayList.isEmpty()) {
                     int size = arrayList2.size();
                     while (i10 < size) {
-                        i11 = yVar.b0(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
+                        i11 = tVar.d0(context, (com.google.android.gms.common.api.c) arrayList2.get(i10));
                         i10++;
                         if (i11 == 0) {
                         }
@@ -57,7 +57,7 @@ public final class d0 implements Runnable {
                 } else {
                     int size2 = arrayList.size();
                     while (i10 < size2) {
-                        i11 = yVar.b0(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
+                        i11 = tVar.d0(context, (com.google.android.gms.common.api.c) arrayList.get(i10));
                         i10++;
                         if (i11 != 0) {
                         }
@@ -74,8 +74,8 @@ public final class d0 implements Runnable {
                 }
                 for (com.google.android.gms.common.api.c cVar2 : hashMap.keySet()) {
                     n6.b bVar = (n6.b) hashMap.get(cVar2);
-                    if (!cVar2.k() || yVar.b0(context, cVar2) == 0) {
-                        cVar2.e(bVar);
+                    if (!cVar2.k() || tVar.d0(context, cVar2) == 0) {
+                        cVar2.f(bVar);
                     } else {
                         z zVar = new z(g0Var, bVar);
                         h0 h0Var2 = m0Var.e;
@@ -87,12 +87,12 @@ public final class d0 implements Runnable {
                 g0 g0Var2 = this.c;
                 m0 m0Var2 = g0Var2.a;
                 j0 j0Var = m0Var2.o;
-                p3 p3Var = g0Var2.H;
-                if (p3Var == null) {
+                q3 q3Var = g0Var2.H;
+                if (q3Var == null) {
                     set = Collections.EMPTY_SET;
                 } else {
-                    HashSet hashSet = new HashSet((Set) p3Var.a);
-                    Map map = (Map) p3Var.c;
+                    HashSet hashSet = new HashSet((Set) q3Var.a);
+                    Map map = (Map) q3Var.c;
                     for (com.google.android.gms.common.api.e eVar : map.keySet()) {
                         if (!m0Var2.i.containsKey(eVar.b)) {
                             map.get(eVar).getClass();

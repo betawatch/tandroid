@@ -1,29 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ka1 extends mq {
-    public final /* synthetic */ boolean[] d1;
-    public final /* synthetic */ ta1 e1;
-    public final /* synthetic */ ma1 f1;
+public final class ka1 {
+    public final org.telegram.ui.Components.i10 a;
+    public kg.f b;
+    public final int c;
+    public final /* synthetic */ la1 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ka1(ma1 ma1Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, ta1 ta1Var) {
-        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
-        this.f1 = ma1Var;
-        this.d1 = zArr;
-        this.e1 = ta1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        if (!z10 && z11 && this.d1[0]) {
-            ta1 ta1Var = this.e1;
-            if (org.telegram.ui.Components.yc.a(ta1Var)) {
-                org.telegram.ui.Components.yc.C(ta1Var, this.f1.a.first_name).j();
-            }
-        }
+    public ka1(la1 la1Var, int i10) {
+        this.d = la1Var;
+        this.c = i10;
+        org.telegram.ui.Components.i10 i10Var = new org.telegram.ui.Components.i10(la1Var.getContext());
+        i10Var.c = true;
+        TextPaint textPaint = new TextPaint(1);
+        i10Var.e = textPaint;
+        i10Var.f = new Paint(1);
+        Paint paint = new Paint(1);
+        i10Var.h = paint;
+        Paint paint2 = new Paint(1);
+        i10Var.n = paint2;
+        i10Var.w = AndroidUtilities.dp(35.0f);
+        i10Var.x = AndroidUtilities.dp(22.0f);
+        i10Var.y = AndroidUtilities.dp(8.0f);
+        i10Var.E = AndroidUtilities.dp(3.5f);
+        i10Var.F = new RectF();
+        i10Var.G = 0.0f;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint2.setStyle(style);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        this.a = i10Var;
+        i10Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        la1Var.h.addView(i10Var);
+        la1Var.n.add(this);
     }
 }

@@ -1,54 +1,117 @@
 package xh;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.vb1;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.dc1;
+import w7.x5;
 import w7.z5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class p1 extends FrameLayout {
-    public final vb1 a;
-    public int b;
-    public final e6 c;
-    public final ArrayList d;
-    public final RectF e;
-    public final RectF f;
-    public final RectF h;
-    public final Paint n;
-    public int r;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class p1 extends o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public p1(Context context) {
-        super(context);
-        this.d = new ArrayList();
-        this.e = new RectF();
-        this.f = new RectF();
-        this.h = new RectF();
-        this.n = new Paint(1);
-        this.r = TLObject.FLAG_31;
-        vb1 vb1Var = new vb1(this, context, 18);
-        this.a = vb1Var;
-        vb1Var.setClipToPadding(false);
-        vb1Var.setClipChildren(false);
-        vb1Var.setOrientation(0);
-        vb1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(vb1Var, z5.e(-2, -1, 1));
-        setHorizontalScrollBarEnabled(false);
-        setClipToPadding(false);
-        setClipChildren(false);
-        this.c = new e6(vb1Var, 0L, 320L, tr.h);
+    static {
+        o61.setup(new p1());
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
+        q1 q1Var = (q1) view;
+        int i10 = p61Var.d;
+        ArrayList arrayList = (ArrayList) p61Var.G;
+        int i11 = p61Var.z;
+        Utilities.Callback callback = (Utilities.Callback) p61Var.H;
+        dc1 dc1Var = q1Var.a;
+        ArrayList arrayList2 = q1Var.d;
+        boolean z11 = q1Var.r == i10;
+        q1Var.r = i10;
+        if (arrayList2.size() != arrayList.size()) {
+            int i12 = 0;
+            int i13 = 0;
+            while (true) {
+                if (i12 >= arrayList2.size()) {
+                    break;
+                }
+                CharSequence charSequence = i13 < arrayList.size() ? (CharSequence) arrayList.get(i13) : null;
+                if (charSequence == null) {
+                    dc1Var.removeView((View) arrayList2.remove(i12));
+                    i12--;
+                } else {
+                    ((TextView) arrayList2.get(i12)).setText(charSequence);
+                }
+                i13++;
+                i12++;
+            }
+            while (i13 < arrayList.size()) {
+                ea0 ea0Var = new ea0(q1Var.getContext(), null);
+                ea0Var.setGravity(17);
+                ea0Var.setText((CharSequence) arrayList.get(i13));
+                ea0Var.setTypeface(AndroidUtilities.bold());
+                ea0Var.setTextColor(i6.v(i6.x0(null, i6.b6, false), i6.x0(null, i6.c6, false)));
+                ea0Var.setTextSize(1, 14.0f);
+                ea0Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                ea0Var.setEllipsize(TextUtils.TruncateAt.END);
+                ea0Var.setSingleLine();
+                ea0Var.setMaxLines(1);
+                z5.b(ea0Var, 0.075f, 1.4f);
+                dc1Var.addView(ea0Var, x5.n(-2, 26));
+                arrayList2.add(ea0Var);
+                i13++;
+            }
+        }
+        q1Var.b = i11;
+        if (!z11) {
+            q1Var.c.d(i11, true);
+        }
+        dc1Var.invalidate();
+        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+            ((TextView) arrayList2.get(i14)).setOnClickListener(new org.telegram.ui.Components.a0(i14, 1, callback));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean contentsEquals(p61 p61Var, p61 p61Var2) {
+        return p61Var.z == p61Var2.z && p61Var.H == p61Var2.H && equals(p61Var, p61Var2);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, e6 e6Var) {
+        return new q1(context);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final boolean equals(p61 p61Var, p61 p61Var2) {
+        if (p61Var.d == p61Var2.d) {
+            ArrayList arrayList = (ArrayList) p61Var.G;
+            ArrayList arrayList2 = (ArrayList) p61Var2.G;
+            if (arrayList == arrayList2) {
+                return true;
+            }
+            if (arrayList == null && arrayList2 == null) {
+                return true;
+            }
+            if (arrayList != null && arrayList2 != null && arrayList.size() == arrayList2.size()) {
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    if (TextUtils.equals((CharSequence) arrayList.get(i10), (CharSequence) arrayList2.get(i10))) {
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
     }
 }

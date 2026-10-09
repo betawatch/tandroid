@@ -6,42 +6,42 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.o61;
+import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class p3 extends g61 {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class p3 extends o61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        g61.setup(new p3());
+        o61.setup(new p3());
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
         q3 q3Var = (q3) view;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) h61Var.G;
-        int i10 = h61Var.z;
-        String str = (String) h61Var.l;
-        boolean z11 = h61Var.e;
-        nj0 nj0Var = q3Var.c;
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) p61Var.G;
+        int i10 = p61Var.z;
+        String str = (String) p61Var.l;
+        boolean z11 = p61Var.e;
+        fk0 fk0Var = q3Var.c;
         o3 o3Var = q3Var.N;
         if (o3Var == null || q3Var.M != stargiftattributemodel.document.id) {
             q3Var.M = stargiftattributemodel.document.id;
             if (o3Var != null) {
-                o3Var.o(nj0Var);
+                o3Var.o(fk0Var);
             }
             q3Var.N = new o3(3, q3Var.L, stargiftattributemodel.document);
         }
-        if (nj0Var.isAttachedToWindow()) {
-            q3Var.N.a(nj0Var);
+        if (fk0Var.isAttachedToWindow()) {
+            q3Var.N.a(fk0Var);
         }
         CharSequence charSequence = stargiftattributemodel.name;
         if (!TextUtils.isEmpty(str)) {
@@ -52,15 +52,15 @@ public final class p3 extends g61 {
             spannableStringBuilder.append((CharSequence) "  ");
             int length = spannableStringBuilder.length();
             spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
             charSequence = spannableStringBuilder;
         }
         q3Var.g(charSequence, 0, q3Var.N);
         q3Var.setChecked(z11);
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
-        return new q3(context, i10, d6Var);
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, qm0 qm0Var, int i10, int i11, e6 e6Var) {
+        return new q3(context, i10, e6Var);
     }
 }

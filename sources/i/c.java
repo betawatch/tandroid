@@ -2,11 +2,11 @@ package i;
 
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.AnimationDrawable;
-import v7.f8;
+import v7.b8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c extends f8 {
+public final class c extends b8 {
     public final ObjectAnimator a;
     public final boolean b;
 
@@ -37,22 +37,22 @@ public final class c extends f8 {
         this.a = ofInt;
     }
 
-    @Override // v7.f8
+    @Override // v7.b8
     public final boolean a() {
         return this.b;
     }
 
-    @Override // v7.f8
+    @Override // v7.b8
     public final void b() {
         this.a.reverse();
     }
 
-    @Override // v7.f8
+    @Override // v7.b8
     public final void c() {
         this.a.start();
     }
 
-    @Override // v7.f8
+    @Override // v7.b8
     public final void d() {
         this.a.cancel();
     }

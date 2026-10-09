@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class CheckBox extends View {
     public static Paint H;
@@ -93,7 +93,7 @@ public class CheckBox extends View {
         this.v = z10;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new r8(this, 12));
+        ofFloat.addListener(new t8(this, 12));
         this.s.setDuration(300L);
         this.s.start();
     }
@@ -121,10 +121,10 @@ public class CheckBox extends View {
         this.w = false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x010d  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0135  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.

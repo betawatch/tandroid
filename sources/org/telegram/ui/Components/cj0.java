@@ -1,85 +1,97 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.graphics.RectF;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class cj0 extends Drawable {
-    public final View a;
+public final class cj0 extends Button {
+    public final RectF a;
     public final Paint b;
-    public final Path c;
-    public int d;
-    public boolean e;
-    public final e6 f;
+    public boolean c;
+    public float d;
+    public long e;
+    public int f;
 
-    public cj0(View view) {
+    public cj0(Context context) {
+        super(context);
+        setAllCaps(false);
+        setTextSize(1, 14.0f);
+        setTypeface(AndroidUtilities.bold());
+        setOutlineProvider(null);
+        w7.d6.a(this, 8.0f, 0.0f, 8.0f, 0.0f);
+        int dp = AndroidUtilities.dp(60.0f);
+        setMinWidth(dp);
+        setMinimumWidth(dp);
+        this.a = new RectF();
         Paint paint = new Paint(1);
         this.b = paint;
-        Path path = new Path();
-        this.c = path;
-        this.d = 255;
-        this.a = view;
-        paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        this.f = new e6(view, 0L, 350L, tr.h);
-        float dpf2 = AndroidUtilities.dpf2(4.66f);
-        float dpf22 = AndroidUtilities.dpf2(2.16f);
-        path.rewind();
-        path.moveTo(dpf2 / 2.0f, 0.0f);
-        float f7 = (-dpf2) / 2.0f;
-        path.lineTo(f7, 0.0f);
-        float f10 = f7 + dpf22;
-        path.lineTo(f10, -dpf22);
-        path.moveTo(f7, 0.0f);
-        path.lineTo(f10, dpf22);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        float e7 = this.f.e(this.e);
-        float dpf2 = AndroidUtilities.dpf2(2.51f);
-        canvas.save();
-        canvas.translate(centerX, centerY);
-        canvas.save();
-        canvas.translate(dpf2, dpf2);
-        canvas.rotate(45.0f);
-        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
-        Path path = this.c;
-        Paint paint = this.b;
-        canvas.drawPath(path, paint);
-        canvas.restore();
-        canvas.save();
-        float f7 = -dpf2;
-        canvas.translate(f7, f7);
-        canvas.rotate(225.0f);
-        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
-        canvas.drawPath(path, paint);
-        canvas.restore();
-        canvas.restore();
+    public final void a(boolean z10, boolean z11) {
+        if (this.c != z10) {
+            this.c = z10;
+            if (!z11) {
+                this.d = z10 ? 1.0f : 0.0f;
+            }
+            this.e = System.currentTimeMillis();
+            invalidate();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.c || this.d != 0.0f) {
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(11.0f);
+            float f7 = measuredWidth;
+            float dp = AndroidUtilities.dp(3.0f);
+            float dp2 = AndroidUtilities.dp(8.0f) + measuredWidth;
+            float dp3 = AndroidUtilities.dp(11.0f);
+            RectF rectF = this.a;
+            rectF.set(f7, dp, dp2, dp3);
+            int min = Math.min(255, (int) (this.d * 255.0f));
+            Paint paint = this.b;
+            paint.setAlpha(min);
+            canvas.drawArc(rectF, this.f, 220.0f, false, paint);
+            long currentTimeMillis = System.currentTimeMillis();
+            if (Math.abs(this.e - System.currentTimeMillis()) < 1000) {
+                long j3 = currentTimeMillis - this.e;
+                int i10 = (int) (this.f + ((360 * j3) / 2000.0f));
+                this.f = i10 - ((i10 / 360) * 360);
+                if (this.c) {
+                    float f10 = this.d;
+                    if (f10 < 1.0f) {
+                        float f11 = (j3 / 200.0f) + f10;
+                        this.d = f11;
+                        if (f11 > 1.0f) {
+                            this.d = 1.0f;
+                        }
+                    }
+                } else {
+                    float f12 = this.d;
+                    if (f12 > 0.0f) {
+                        float f13 = f12 - (j3 / 200.0f);
+                        this.d = f13;
+                        if (f13 < 0.0f) {
+                            this.d = 0.0f;
+                        }
+                    }
+                }
+            }
+            this.e = currentTimeMillis;
+            postInvalidateOnAnimation();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-        this.b.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void setProgressColor(int i10) {
+        this.b.setColor(i10);
     }
 }

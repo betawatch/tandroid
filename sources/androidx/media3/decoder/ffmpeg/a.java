@@ -6,7 +6,7 @@ import h2.i;
 import h2.j;
 import h2.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements i {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class a implements i {
     }
 
     @Override // h2.i
-    public final void k(j jVar) {
+    public final void h(j jVar) {
         switch (this.a) {
             case 0:
                 ((ExperimentalFfmpegVideoDecoder) this.b).n((VideoDecoderOutputBuffer) jVar);

@@ -2,13 +2,13 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.u90;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.tc;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.uy;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                u90 u90Var = hVar.d;
-                if (u90Var != null) {
-                    hVar.h.E.l(u90Var, true);
+                ia0 ia0Var = hVar.d;
+                if (ia0Var != null) {
+                    hVar.h.E.l(ia0Var, true);
                     break;
                 }
                 break;
             case 1:
                 l1 l1Var = ((v1) this.b).e;
                 if (l1Var != null) {
-                    l1Var.l();
+                    l1Var.k();
                     break;
                 }
                 break;
@@ -48,30 +48,30 @@ public final /* synthetic */ class g implements Runnable {
                 break;
             case 5:
                 i6 i6Var = (i6) this.b;
-                if (!(i6Var.getParent() instanceof zl0)) {
+                if (!(i6Var.getParent() instanceof qm0)) {
                     i6Var.callOnClick();
                     break;
                 } else {
-                    ((zl0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.R(i6Var), i6Var);
+                    ((qm0) i6Var.getParent()).getOnItemClickListener().d(RecyclerView.R(i6Var), i6Var);
                     break;
                 }
             case 6:
                 ((t7) this.b).h();
                 break;
             case 7:
-                da daVar = (da) this.b;
-                daVar.C.invalidate();
-                daVar.U();
+                ba baVar = (ba) this.b;
+                baVar.C.invalidate();
+                baVar.T();
                 break;
             case 8:
-                ((n9) this.b).b.U();
+                ((l9) this.b).b.T();
                 break;
             case 9:
-                ia iaVar = (ia) this.b;
-                iaVar.s = -1;
+                ga gaVar = (ga) this.b;
+                gaVar.s = -1;
                 int i10 = 0;
                 while (true) {
-                    u1[] u1VarArr = iaVar.e;
+                    u1[] u1VarArr = gaVar.e;
                     if (i10 >= u1VarArr.length) {
                         break;
                     } else {
@@ -83,9 +83,9 @@ public final /* synthetic */ class g implements Runnable {
                     }
                 }
             case 10:
-                uy uyVar = (uy) this.b;
-                rc.e();
-                uyVar.presentFragment(new SessionsActivity(0));
+                ty tyVar = (ty) this.b;
+                tc.e();
+                tyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;

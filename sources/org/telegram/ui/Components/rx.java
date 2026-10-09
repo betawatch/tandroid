@@ -1,125 +1,143 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class rx extends gw {
-    public final /* synthetic */ nz g0;
+public final class rx implements z4.e {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ a00 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rx(nz nzVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, hw hwVar, boolean z11) {
-        super(context, d6Var, true, false, true, z10, 0, hwVar, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, d6Var), z11);
-        this.g0 = nzVar;
+    public rx(a00 a00Var, boolean z10) {
+        this.b = a00Var;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.gw
-    public final boolean d() {
-        return this.g0.U0;
-    }
-
-    @Override // org.telegram.ui.Components.gw
-    public final void e() {
-        nz nzVar = this.g0;
-        ArrayList arrayList = nzVar.n1;
-        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || MessagesController.getEmojiSettings(nzVar.c1).getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
-            return;
+    @Override // z4.e
+    public final void a(int i10) {
+        a00 a00Var = this.b;
+        ox oxVar = a00Var.h;
+        boolean z10 = false;
+        if (oxVar != null) {
+            int currentItem = oxVar.getCurrentItem();
+            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
+            if (a00Var.A1 != i11) {
+                a00Var.A1 = i11;
+                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
+            }
         }
-        UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
+        a00Var.L(i10 == 0, true);
+        if (i10 == 2 && (this.a || a00Var.v0)) {
+            z10 = true;
+        }
+        a00Var.Q(z10, true);
+        if (a00Var.t1.z()) {
+            if (i10 == 0) {
+                zw zwVar = a00Var.V;
+                if (zwVar != null) {
+                    zwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            if (i10 == 1) {
+                fx fxVar = a00Var.o0;
+                if (fxVar != null) {
+                    fxVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            lx lxVar = a00Var.G0;
+            if (lxVar != null) {
+                lxVar.d.requestFocus();
+            }
+        }
     }
 
-    @Override // org.telegram.ui.Components.gw
-    public final boolean g(ay ayVar) {
-        return ayVar.f || this.g0.p1.contains(Long.valueOf(ayVar.b.id));
-    }
-
-    @Override // org.telegram.ui.Components.gw
-    public final ColorFilter getEmojiColorFilter() {
-        return this.g0.e2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0095  */
-    @Override // org.telegram.ui.Components.gw
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean h(int i10) {
-        Integer num;
-        int i11;
-        zy zyVar;
-        nz nzVar = this.g0;
-        ArrayList arrayList = nzVar.q1;
-        wx wxVar = nzVar.R;
-        if (nzVar.f0) {
-            return false;
-        }
-        ny nyVar = nzVar.S;
-        if (nyVar != null) {
-            nyVar.F(null, true);
-        }
-        nw nwVar = nzVar.V;
-        if (nwVar != null && (zyVar = nwVar.r) != null) {
-            zyVar.G1(null);
-        }
-        if (i10 == 0) {
-            num = Integer.valueOf(nzVar.d0 ? 1 : 0);
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        float f10;
+        a00 a00Var = this.b;
+        mz mzVar = a00Var.G0;
+        mz mzVar2 = a00Var.o0;
+        mz mzVar3 = a00Var.V;
+        nx nxVar = a00Var.C0;
+        ix ixVar = a00Var.D0;
+        hy hyVar = a00Var.p0;
+        cx cxVar = a00Var.h0;
+        my myVar = a00Var.P;
+        boolean z10 = true;
+        if (a00Var.x0 == null || a00Var.g0 == null) {
+            f10 = 0.0f;
         } else {
-            i10--;
-            num = null;
-        }
-        if (num == null && i10 < EmojiData.dataColored.length && wxVar.s.indexOfKey(i10) >= 0) {
-            num = Integer.valueOf(wxVar.s.get(i10));
-        }
-        if (num == null) {
-            ArrayList<ay> emojipacks = nzVar.getEmojipacks();
-            int length = i10 - EmojiData.dataColored.length;
-            if (emojipacks != null && length >= 0 && length < emojipacks.size()) {
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= arrayList.size()) {
-                        i12 = -1;
-                        break;
-                    }
-                    if (((ay) arrayList.get(i12)).b.id == emojipacks.get(length).b.id) {
-                        break;
-                    }
-                    i12++;
+            if (i10 == 0) {
+                myVar.setVisibility(0);
+                f10 = 0.0f;
+                cxVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                hyVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                ixVar.setVisibility(8);
+                if (nxVar != null) {
+                    nxVar.setVisibility(8);
                 }
-                num = Integer.valueOf(wxVar.s.get(i12 + EmojiData.dataColored.length));
-                i11 = AndroidUtilities.dp(-9.0f);
-                if (num != null) {
-                    nzVar.P.C0();
-                    nzVar.S(num.intValue());
-                    nzVar.E(num.intValue(), i11);
-                    nzVar.n(0, null);
+            } else {
+                f10 = 0.0f;
+                if (i10 == 1) {
+                    myVar.setVisibility(8);
+                    cxVar.setVisibility(0);
+                    hyVar.setVisibility(0);
+                    ixVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                    if (nxVar != null) {
+                        nxVar.setVisibility(f7 != 0.0f ? 0 : 8);
+                    }
+                } else if (i10 == 2) {
+                    myVar.setVisibility(8);
+                    cxVar.setVisibility(8);
+                    hyVar.setVisibility(8);
+                    ixVar.setVisibility(0);
+                    if (nxVar != null) {
+                        nxVar.setVisibility(0);
+                    }
                 }
-                return true;
             }
         }
-        i11 = 0;
-        if (num != null) {
+        a00Var.getMeasuredWidth();
+        a00Var.getPaddingLeft();
+        a00Var.getPaddingRight();
+        az azVar = a00Var.t1;
+        if (azVar != null) {
+            if (i10 == 1) {
+                azVar.s(i11 == 0 ? 0 : 2);
+            } else if (i10 == 2) {
+                azVar.s(3);
+            } else {
+                azVar.s(0);
+            }
         }
-        return true;
+        a00Var.M(true);
+        int currentItem = a00Var.h.getCurrentItem();
+        mz mzVar4 = currentItem == 0 ? mzVar3 : currentItem == 1 ? mzVar2 : mzVar;
+        String obj = mzVar4.d.getText().toString();
+        int i12 = 0;
+        while (i12 < 3) {
+            mz mzVar5 = i12 == 0 ? mzVar3 : i12 == 1 ? mzVar2 : mzVar;
+            if (mzVar5 != null) {
+                yq yqVar = mzVar5.d;
+                if (mzVar5 != mzVar4 && yqVar != null && !yqVar.getText().toString().equals(obj)) {
+                    yqVar.setText(obj);
+                    yqVar.setSelection(obj.length());
+                }
+            }
+            i12++;
+        }
+        if ((i10 != 0 || f7 <= f10) && i10 != 1) {
+            z10 = false;
+        }
+        a00.a(a00Var, z10);
+        a00Var.Y();
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            nz nzVar = this.g0;
-            View view = nzVar.O;
-            if (view != null) {
-                view.setTranslationY(f7);
-            }
-            nzVar.J.invalidate();
-        }
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

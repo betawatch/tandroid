@@ -1,31 +1,40 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController.KeywordResultCallback b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ a7(MediaDataController.KeywordResultCallback keywordResultCallback, ArrayList arrayList, String str, int i10) {
+    public /* synthetic */ a7(MediaDataController mediaDataController, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = keywordResultCallback;
-        this.c = arrayList;
-        this.d = str;
+        this.b = mediaDataController;
+        this.c = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c, this.d);
+                this.b.lambda$checkPremiumGiftStickers$75(this.c);
+                break;
+            case 1:
+                this.b.lambda$loadReactions$13(this.c);
+                break;
+            case 2:
+                this.b.lambda$checkTonGiftStickers$77(this.c);
+                break;
+            case 3:
+                this.b.lambda$checkDefaultTopicIcons$81(this.c);
+                break;
+            case 4:
+                this.b.lambda$clearRecentStickers$18(this.c);
                 break;
             default:
-                this.b.run(this.c, this.d);
+                this.b.lambda$checkGenericAnimations$79(this.c);
                 break;
         }
     }

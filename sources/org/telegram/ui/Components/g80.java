@@ -1,23 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class g80 extends zl0 {
-    public final /* synthetic */ k80 e3;
+public final /* synthetic */ class g80 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g80(k80 k80Var, Context context) {
-        super(context, null);
-        this.e3 = k80Var;
+    public /* synthetic */ g80(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.e3.n) {
-            return;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        switch (this.a) {
+            case 0:
+                p80 p80Var = (p80) this.b;
+                if (p80Var.D()) {
+                    p80Var.O();
+                    break;
+                }
+                break;
+            default:
+                fy0 fy0Var = (fy0) this.b;
+                ai.q4 q4Var = fy0Var.h;
+                if (q4Var != null && q4Var.getLayout() != null) {
+                    fy0Var.F = q4Var.getLayout().getLineWidth(0);
+                    break;
+                }
+                break;
         }
-        super.requestLayout();
     }
 }

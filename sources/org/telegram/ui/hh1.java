@@ -1,61 +1,101 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.graphics.Rect;
+import android.os.Build;
+import android.util.Property;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hh1 extends org.telegram.ui.Components.g61 {
-    public static final /* synthetic */ int a = 0;
+public final class hh1 extends ScrollView {
+    public final int[] a;
+    public final Rect b;
+    public boolean c;
+    public final /* synthetic */ ih1 d;
 
-    static {
-        org.telegram.ui.Components.g61.setup(new hh1());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh1(ih1 ih1Var, Context context) {
+        super(context);
+        this.d = ih1Var;
+        this.a = new int[2];
+        this.b = new Rect();
+        this.c = true;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, org.telegram.ui.Components.h61 h61Var, boolean z10, org.telegram.ui.Components.w61 w61Var, org.telegram.ui.Components.e71 e71Var) {
-        ih1 ih1Var = (ih1) view;
-        int i10 = h61Var.k;
-        CharSequence charSequence = h61Var.l;
-        CharSequence charSequence2 = h61Var.m;
-        boolean z11 = h61Var.q;
-        boolean z12 = h61Var.r;
-        int i11 = h61Var.z;
-        TextView textView = ih1Var.d;
-        TextView textView2 = ih1Var.e;
-        ImageView imageView = ih1Var.f;
-        ih1Var.h = z11;
-        ih1Var.n = z12;
-        ImageView imageView2 = ih1Var.b;
-        imageView2.setImageResource(i10);
-        if (i11 != 0) {
-            imageView.setVisibility(0);
-            imageView.setImageResource(i11);
-        } else {
-            imageView.setVisibility(8);
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.c = false;
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        super.onScrollChanged(i10, i11, i12, i13);
+        ih1 ih1Var = this.d;
+        TextView textView = ih1Var.c;
+        if (textView == null) {
+            return;
         }
-        textView.setText(charSequence);
-        textView2.setText(charSequence2);
-        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
-        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
-        ih1Var.c.setPadding(0, dp, 0, dp);
-        org.telegram.ui.ActionBar.d6 d6Var = ih1Var.a;
-        int v02 = org.telegram.ui.ActionBar.i6.v0(ih1Var.n ? org.telegram.ui.ActionBar.i6.q7 : ih1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, d6Var);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(ih1Var.n ? org.telegram.ui.ActionBar.i6.q7 : ih1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, d6Var), mode));
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(ih1Var.n ? org.telegram.ui.ActionBar.i6.p7 : ih1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, d6Var));
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(ih1Var.n ? org.telegram.ui.ActionBar.i6.p7 : ih1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, d6Var));
+        int[] iArr = this.a;
+        textView.getLocationOnScreen(iArr);
+        int measuredHeight = ih1Var.c.getMeasuredHeight() + iArr[1];
+        kVar = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
+        boolean z10 = measuredHeight < kVar.getBottom();
+        if (z10 != (ih1Var.c.getTag() == null)) {
+            ih1Var.c.setTag(z10 ? null : 1);
+            AnimatorSet animatorSet = ih1Var.K;
+            if (animatorSet != null) {
+                animatorSet.cancel();
+                ih1Var.K = null;
+            }
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            ih1Var.K = animatorSet2;
+            ci.r6 r6Var = ih1Var.y;
+            float[] fArr = {z10 ? 1.0f : 0.0f};
+            Property property = View.ALPHA;
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(r6Var, (Property<ci.r6, Float>) property, fArr);
+            kVar2 = ((org.telegram.ui.ActionBar.n2) ih1Var).actionBar;
+            animatorSet2.playTogether(ofFloat, ObjectAnimator.ofFloat(kVar2.getTitleTextView(), (Property<org.telegram.ui.ActionBar.j5, Float>) property, z10 ? 1.0f : 0.0f));
+            ih1Var.K.setDuration(150L);
+            ih1Var.K.addListener(new ep0(this, 26));
+            ih1Var.K.start();
+        }
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, org.telegram.ui.Components.zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new ih1(context, d6Var);
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
+        if (Build.VERSION.SDK_INT < 29 && view2 != null && !this.c) {
+            scrollToDescendant(view2);
+        }
+        super.requestChildFocus(view, view2);
+    }
+
+    @Override // android.widget.ScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        this.c = true;
+        super.requestLayout();
+    }
+
+    @Override // android.widget.ScrollView
+    public final void scrollToDescendant(View view) {
+        Rect rect = this.b;
+        view.getDrawingRect(rect);
+        offsetDescendantRectToMyCoords(view, rect);
+        rect.bottom = AndroidUtilities.dp(120.0f) + rect.bottom;
+        int computeScrollDeltaToGetChildRectOnScreen = computeScrollDeltaToGetChildRectOnScreen(rect);
+        if (computeScrollDeltaToGetChildRectOnScreen < 0) {
+            computeScrollDeltaToGetChildRectOnScreen -= (getMeasuredHeight() - view.getMeasuredHeight()) / 2;
+        }
+        if (computeScrollDeltaToGetChildRectOnScreen != 0) {
+            smoothScrollBy(0, computeScrollDeltaToGetChildRectOnScreen);
+        }
     }
 }

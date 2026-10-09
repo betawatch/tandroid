@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class w70 extends ReplacementSpan {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class w70 extends ReplacementSpan {
     public int n;
 
     public w70(View view, float f7, int i10) {
-        g5 g5Var = new g5(this, 2);
+        f5 f5Var = new f5(this, 2);
         this.f = true;
         this.n = 255;
         ImageReceiver imageReceiver = new ImageReceiver(view);
@@ -36,7 +36,7 @@ public final class w70 extends ReplacementSpan {
             return;
         }
         if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(g5Var);
+            view2.removeOnAttachStateChangeListener(f5Var);
             if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
                 imageReceiver.onDetachedFromWindow();
             }
@@ -48,7 +48,7 @@ public final class w70 extends ReplacementSpan {
         this.e = view;
         imageReceiver.setParentView(view);
         if (view != null) {
-            view.addOnAttachStateChangeListener(g5Var);
+            view.addOnAttachStateChangeListener(f5Var);
         }
     }
 
@@ -66,7 +66,7 @@ public final class w70 extends ReplacementSpan {
             int alpha = paint.getAlpha();
             this.n = alpha;
             paint2.setAlpha(alpha);
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.l1(this.n / 255.0f, 855638016));
+            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.m1(this.n / 255.0f, 855638016));
         }
         float f10 = this.h + f7;
         float dp = (((i12 + i14) / 2.0f) + 0.0f) - (AndroidUtilities.dp(this.c) / 2.0f);

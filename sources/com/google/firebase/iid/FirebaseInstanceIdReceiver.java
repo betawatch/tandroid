@@ -22,14 +22,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import v7.n6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
 
     public static int a(Context context, Intent intent) {
         int i10;
-        Task m10;
+        Task l4;
         int i11 = 500;
         if (intent.getExtras() == null) {
             return 500;
@@ -39,7 +39,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             stringExtra = intent.getStringExtra("message_id");
         }
         if (TextUtils.isEmpty(stringExtra)) {
-            m10 = Tasks.forResult(null);
+            l4 = Tasks.forResult(null);
         } else {
             Bundle bundle = new Bundle();
             String stringExtra2 = intent.getStringExtra("google.message_id");
@@ -52,12 +52,12 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 bundle.putInt("google.product_id", valueOf.intValue());
             }
             bundle.putBoolean("supports_message_handled", true);
-            l l4 = l.l(context);
-            synchronized (l4) {
-                i10 = l4.a;
-                l4.a = i10 + 1;
+            l k10 = l.k(context);
+            synchronized (k10) {
+                i10 = k10.a;
+                k10.a = i10 + 1;
             }
-            m10 = l4.m(new k(i10, 2, bundle, 0));
+            l4 = k10.l(new k(i10, 2, bundle, 0));
         }
         try {
             i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
@@ -65,7 +65,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             Log.e("FirebaseMessaging", "Failed to send message to service.", e7);
         }
         try {
-            Tasks.await(m10, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
+            Tasks.await(l4, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e10) {
             Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
         }

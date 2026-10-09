@@ -1,81 +1,34 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.gw;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.di1;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class xa implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ xa(Object obj, float f7, float f10, int i10) {
+    public /* synthetic */ xa(int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = f10;
+        this.b = callback;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        float f7 = this.c;
-        float f10 = this.b;
-        Object obj = this.d;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                kc kcVar = (kc) obj;
-                kcVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kcVar.r.setTranslationY(f10 * floatValue);
-                kcVar.r.b(f7 * floatValue);
+                this.b.run(LaunchActivity.U());
                 break;
             case 1:
-                le.e eVar = (le.e) obj;
-                if (eVar.g) {
-                    DecelerateInterpolator decelerateInterpolator = ke.a.a;
-                    float animatedFraction = valueAnimator.getAnimatedFraction();
-                    eVar.d((f7 * animatedFraction) + f10, animatedFraction);
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new xa(3, this.b));
                 break;
             case 2:
-                gw gwVar = (gw) obj;
-                gwVar.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                gwVar.L = floatValue2;
-                gwVar.K = AndroidUtilities.lerp(f10, f7, floatValue2);
-                gwVar.b.invalidate();
-                break;
-            case 3:
-                di1 di1Var = (di1) obj;
-                di1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float dp = f10 + AndroidUtilities.dp(28.0f);
-                float dp2 = f7 + AndroidUtilities.dp(52.0f);
-                float f11 = di1Var.y;
-                di1Var.G = dp - (dp * f11);
-                di1Var.H = dp2 - (f11 * dp2);
-                di1Var.invalidate();
+                this.b.run(null);
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                CropAreaView cropAreaView = photoViewer.C1.b.a;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue() * f10;
-                float f12 = photoViewer.a6;
-                float f13 = ((photoViewer.e6 - f12) * photoViewer.l6) + f12;
-                cropAreaView.n0 = floatValue3;
-                cropAreaView.o0 = f13;
-                cropAreaView.p0 = 0.0f;
-                cropAreaView.q0 = 0.0f;
-                cropAreaView.invalidate();
-                photoViewer.C1.c.b(AndroidUtilities.lerp(f7, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                this.b.run(null);
                 break;
         }
     }

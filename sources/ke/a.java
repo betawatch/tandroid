@@ -1,24 +1,14 @@
 package ke;
 
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.AnticipateOvershootInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final DecelerateInterpolator a;
+public final class a implements Executor {
+    public static final a a = new a();
 
-    static {
-        new AnticipateOvershootInterpolator();
-        a = new DecelerateInterpolator();
-        new AccelerateInterpolator();
-        new DecelerateInterpolator(1.78f);
-        new LinearInterpolator();
-        new OvershootInterpolator(3.2f);
-        new AccelerateDecelerateInterpolator();
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        runnable.run();
     }
 }

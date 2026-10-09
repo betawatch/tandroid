@@ -1,117 +1,42 @@
 package g;
 
-import android.content.Context;
-import android.content.IntentFilter;
-import android.util.SparseIntArray;
-import android.view.MenuItem;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import androidx.appcompat.widget.ContentFrameLayout;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class p {
-    public Object a;
-    public Object b;
+public final class p extends ContentFrameLayout {
+    public final /* synthetic */ r r;
 
-    public p(Context context) {
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p(r rVar, k.c cVar) {
+        super(cVar);
+        this.r = rVar;
     }
 
-    public void c() {
-        androidx.mediarouter.app.g gVar = (androidx.mediarouter.app.g) this.a;
-        if (gVar != null) {
-            try {
-                ((s) this.b).e.unregisterReceiver(gVar);
-            } catch (IllegalArgumentException unused) {
-            }
-            this.a = null;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
     }
 
-    public abstract IntentFilter d();
-
-    public abstract int e();
-
-    public MenuItem f(MenuItem menuItem) {
-        if (!(menuItem instanceof l0.a)) {
-            return menuItem;
-        }
-        l0.a aVar = (l0.a) menuItem;
-        if (((a0.m) this.b) == null) {
-            this.b = new a0.m(0);
-        }
-        MenuItem menuItem2 = (MenuItem) ((a0.m) this.b).get(aVar);
-        if (menuItem2 != null) {
-            return menuItem2;
-        }
-        l.r rVar = new l.r((Context) this.a, aVar);
-        ((a0.m) this.b).put(aVar, rVar);
-        return rVar;
-    }
-
-    public int g(int i10, int i11) {
-        int i12 = i(i10);
-        int i13 = 0;
-        int i14 = 0;
-        for (int i15 = 0; i15 < i10; i15++) {
-            int i16 = i(i15);
-            i13 += i16;
-            if (i13 == i11) {
-                i14++;
-                i13 = 0;
-            } else if (i13 > i11) {
-                i14++;
-                i13 = i16;
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            int x10 = (int) motionEvent.getX();
+            int y3 = (int) motionEvent.getY();
+            if (x10 < -5 || y3 < -5 || x10 > getWidth() + 5 || y3 > getHeight() + 5) {
+                r rVar = this.r;
+                rVar.h(rVar.p(0), true);
+                return true;
             }
         }
-        return i13 + i12 > i11 ? i14 + 1 : i14;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public int h(int i10, int i11) {
-        int i12 = i(i10);
-        if (i12 == i11) {
-            return 0;
-        }
-        int i13 = 0;
-        for (int i14 = 0; i14 < i10; i14++) {
-            int i15 = i(i14);
-            i13 += i15;
-            if (i13 == i11) {
-                i13 = 0;
-            } else if (i13 > i11) {
-                i13 = i15;
-            }
-        }
-        if (i12 + i13 <= i11) {
-            return i13;
-        }
-        return 0;
-    }
-
-    public abstract int i(int i10);
-
-    public void j() {
-        ((SparseIntArray) this.a).clear();
-    }
-
-    public abstract void k();
-
-    public void l() {
-        c();
-        IntentFilter d = d();
-        if (d.countActions() == 0) {
-            return;
-        }
-        if (((androidx.mediarouter.app.g) this.a) == null) {
-            this.a = new androidx.mediarouter.app.g(this, 3);
-        }
-        ((s) this.b).e.registerReceiver((androidx.mediarouter.app.g) this.a, d);
-    }
-
-    public p() {
-        this.a = new SparseIntArray();
-        this.b = new SparseIntArray();
-    }
-
-    public p(s sVar) {
-        this.b = sVar;
+    @Override // android.view.View
+    public final void setBackgroundResource(int i10) {
+        setBackgroundDrawable(s7.b(getContext(), i10));
     }
 }

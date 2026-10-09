@@ -1,29 +1,63 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class ox extends g.p {
-    public final /* synthetic */ nz c;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 
-    public ox(nz nzVar) {
-        this.c = nzVar;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class ox extends z4.g {
+    public final /* synthetic */ a00 w0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ox(a00 a00Var, Context context) {
+        super(context);
+        this.w0 = a00Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        nz nzVar = this.c;
-        wx wxVar = nzVar.R;
-        nx nxVar = nzVar.Q;
-        s4.h0 adapter = nzVar.P.getAdapter();
-        ny nyVar = nzVar.S;
-        if (adapter == nyVar) {
-            int j3 = nyVar.j(i10);
-            if (j3 == 1 || j3 == 3 || j3 == 2 || j3 == 4 || j3 == 5) {
-                return nxVar.J;
-            }
-        } else if ((nzVar.d0 && i10 == 0) || i10 == wxVar.d || i10 == wxVar.c || i10 == wxVar.f || wxVar.r.indexOfKey(i10) >= 0 || wxVar.v.indexOfKey(i10) >= 0) {
-            return nxVar.J;
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
         }
-        return 1;
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        a00 a00Var = this.w0;
+        ey eyVar = a00Var.I;
+        a00.a(a00Var, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
+            return;
+        }
+        if (i10 != 0) {
+            if (i10 == 1) {
+                a00Var.h0.x0(0);
+                return;
+            } else {
+                a00Var.D0.x0(1);
+                return;
+            }
+        }
+        a00Var.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(eyVar, (Property<ey, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(hs.h);
+        ofFloat.start();
+        a00Var.G(1, 0);
+        if (eyVar != null) {
+            eyVar.j(0, true);
+        }
     }
 }

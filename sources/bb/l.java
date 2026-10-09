@@ -1,20 +1,20 @@
 package bb;
 
+import ae.c1;
+import ae.e0;
+import ae.e2;
+import ae.g0;
+import ae.o0;
+import ae.v;
+import ae.y;
+import ae.y0;
 import java.util.concurrent.locks.LockSupport;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import rd.p;
-import v7.t7;
-import zd.a1;
-import zd.c2;
-import zd.d0;
-import zd.e0;
-import zd.m0;
-import zd.v;
-import zd.w0;
-import zd.x;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l {
     public static final n1.d c = new n1.d("firebase_sessions_enabled");
@@ -27,39 +27,39 @@ public final class l {
 
     /* JADX WARN: Multi-variable type inference failed */
     public l(k1.f fVar) {
-        id.h hVar;
+        jd.h hVar;
         this.a = fVar;
         p iVar = new i(this, 0 == true ? 1 : 0, 0);
         Thread currentThread = Thread.currentThread();
-        w0 a2 = c2.a();
-        boolean booleanValue = ((Boolean) a2.fold(Boolean.FALSE, x.d)).booleanValue();
+        y0 a2 = e2.a();
+        boolean booleanValue = ((Boolean) a2.fold(Boolean.FALSE, y.d)).booleanValue();
         if (booleanValue) {
-            id.i iVar2 = id.i.a;
-            hVar = (id.h) (booleanValue ? a2.fold(iVar2, x.c) : a2);
+            jd.i iVar2 = jd.i.a;
+            hVar = (jd.h) (booleanValue ? a2.fold(iVar2, y.c) : a2);
             iVar2.plus(hVar);
         } else {
             hVar = a2;
         }
-        ge.e eVar = m0.a;
-        if (hVar != eVar && hVar.get(id.d.a) == null) {
+        he.e eVar = o0.a;
+        if (hVar != eVar && hVar.get(jd.d.a) == null) {
             hVar = hVar.plus(eVar);
         }
-        zd.h hVar2 = new zd.h(hVar, currentThread, a2);
-        hVar2.L(d0.a, hVar2, iVar);
-        w0 w0Var = hVar2.e;
-        if (w0Var != null) {
-            int i10 = w0.f;
-            w0Var.h(false);
+        ae.h hVar2 = new ae.h(hVar, currentThread, a2);
+        hVar2.L(e0.a, hVar2, iVar);
+        y0 y0Var = hVar2.e;
+        if (y0Var != null) {
+            int i10 = y0.f;
+            y0Var.h(false);
         }
         while (!Thread.interrupted()) {
             try {
-                long i11 = w0Var != null ? w0Var.i() : Long.MAX_VALUE;
-                if (!(hVar2.u() instanceof a1)) {
-                    if (w0Var != null) {
-                        int i12 = w0.f;
-                        w0Var.f(false);
+                long i11 = y0Var != null ? y0Var.i() : Long.MAX_VALUE;
+                if (!(hVar2.u() instanceof c1)) {
+                    if (y0Var != null) {
+                        int i12 = y0.f;
+                        y0Var.f(false);
                     }
-                    Object u10 = e0.u(hVar2.u());
+                    Object u10 = g0.u(hVar2.u());
                     v vVar = u10 instanceof v ? (v) u10 : null;
                     if (vVar != null) {
                         throw vVar.a;
@@ -68,9 +68,9 @@ public final class l {
                 }
                 LockSupport.parkNanos(hVar2, i11);
             } catch (Throwable th2) {
-                if (w0Var != null) {
-                    int i13 = w0.f;
-                    w0Var.f(false);
+                if (y0Var != null) {
+                    int i13 = y0.f;
+                    y0Var.f(false);
                 }
                 throw th2;
             }
@@ -114,7 +114,7 @@ public final class l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object c(n1.d dVar, Object obj, kd.c cVar) {
+    public final Object c(n1.d dVar, Object obj, ld.c cVar) {
         j jVar;
         int i10;
         if (cVar instanceof j) {
@@ -123,31 +123,31 @@ public final class l {
             if ((i11 & TLObject.FLAG_31) != 0) {
                 jVar.c = i11 - TLObject.FLAG_31;
                 Object obj2 = jVar.a;
-                jd.a aVar = jd.a.a;
+                kd.a aVar = kd.a.a;
                 i10 = jVar.c;
                 if (i10 != 0) {
-                    t7.b(obj2);
+                    a8.b(obj2);
                     k1.f fVar = this.a;
                     k kVar = new k(obj, dVar, this, null);
                     jVar.c = 1;
-                    if (fVar.t(new n1.c(kVar, null, 1), jVar) == aVar) {
+                    if (fVar.c(new n1.c(kVar, null, 1), jVar) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    t7.b(obj2);
+                    a8.b(obj2);
                 }
-                return gd.i.a;
+                return hd.i.a;
             }
         }
         jVar = new j(this, cVar);
         Object obj22 = jVar.a;
-        jd.a aVar2 = jd.a.a;
+        kd.a aVar2 = kd.a.a;
         i10 = jVar.c;
         if (i10 != 0) {
         }
-        return gd.i.a;
+        return hd.i.a;
     }
 }

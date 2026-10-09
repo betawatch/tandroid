@@ -1,33 +1,24 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o7 extends og.a {
-    public u6 c;
-    public zh.a d;
+public final class o7 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ j7 l0;
+    public final /* synthetic */ p7 m0;
 
-    public final boolean equals(Object obj) {
-        zh.a aVar;
-        zh.a aVar2;
-        u6 u6Var;
-        u6 u6Var2;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && o7.class == obj.getClass()) {
-            o7 o7Var = (o7) obj;
-            int i10 = this.a;
-            if (i10 == o7Var.a) {
-                if (i10 == 1 && (u6Var = this.c) != null && (u6Var2 = o7Var.c) != null) {
-                    return u6Var.a == u6Var2.a;
-                }
-                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = o7Var.d) != null) {
-                    return Objects.equals(aVar.a, aVar2.a);
-                }
-            }
-        }
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o7(p7 p7Var, Context context, j7 j7Var) {
+        super(context, 0, null);
+        this.m0 = p7Var;
+        this.l0 = j7Var;
+    }
+
+    @Override // org.telegram.ui.Cells.j7
+    public final void a() {
+        r7 r7Var = this.m0.n;
+        j7 j7Var = this.l0;
+        r7.b(r7Var, (zh.a) j7Var.getTag(), j7Var);
     }
 }

@@ -1,132 +1,93 @@
 package org.telegram.ui.web;
 
-import android.R;
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.JavascriptInterface;
-import android.webkit.WebSettings;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
-import java.io.InputStream;
-import org.json.JSONObject;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Timer;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import w7.z5;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b2 implements Utilities.Callback {
+public final /* synthetic */ class b2 implements ValueCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Timer.Task b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ Timer d;
-    public final /* synthetic */ j2 e;
-    public final /* synthetic */ Utilities.Callback f;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ WebView c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ b2(Timer.Task task, boolean[] zArr, Timer timer, j2 j2Var, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = task;
-        this.c = zArr;
-        this.d = timer;
-        this.e = j2Var;
-        this.f = callback;
+    public /* synthetic */ b2(oi.k kVar, gg.t tVar, WebView webView, b5.h hVar) {
+        this.a = 2;
+        this.b = kVar;
+        this.d = tVar;
+        this.c = webView;
+        this.e = hVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.webkit.ValueCallback
+    public final void onReceiveValue(Object obj) {
+        int i10 = 1;
         switch (this.a) {
             case 0:
-                Timer.Task task = this.b;
-                boolean[] zArr = this.c;
-                Timer timer = this.d;
-                j2 j2Var = this.e;
-                Utilities.Callback callback = this.f;
-                InputStream inputStream = (InputStream) obj;
-                Timer.done(task);
-                if (!zArr[0]) {
-                    Timer.Task start = Timer.start(timer, "readHTML");
-                    String str = j2Var.a;
-                    final b2 b2Var = new b2(start, zArr, timer, j2Var, callback, 1);
-                    if (inputStream != null) {
-                        Context context = LaunchActivity.G1;
-                        if (context == null) {
-                            context = ApplicationLoader.applicationContext;
-                        }
-                        Activity findActivity = AndroidUtilities.findActivity(context);
-                        if (findActivity != null) {
-                            View rootView = findActivity.findViewById(R.id.content).getRootView();
-                            if (!(rootView instanceof ViewGroup)) {
-                                b2Var.run(null);
-                                break;
-                            } else {
-                                final d2 d2Var = new d2(context);
-                                ((ViewGroup) rootView).addView(d2Var);
-                                final WebView webView = new WebView(context);
-                                WebSettings settings = webView.getSettings();
-                                settings.setAllowContentAccess(false);
-                                settings.setDatabaseEnabled(false);
-                                settings.setAllowFileAccess(false);
-                                settings.setJavaScriptEnabled(true);
-                                settings.setSaveFormData(false);
-                                settings.setGeolocationEnabled(false);
-                                settings.setDomStorageEnabled(false);
-                                settings.setAllowFileAccessFromFileURLs(false);
-                                settings.setAllowUniversalAccessFromFileURLs(false);
-                                webView.setWebViewClient(new e2(j2Var, inputStream));
-                                webView.setWebChromeClient(new f2());
-                                d2Var.addView(webView, z5.c(-1.0f, -1));
-                                final boolean[] zArr2 = {false};
-                                webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
-                                    @JavascriptInterface
-                                    public void done(String str2) {
-                                        AndroidUtilities.runOnUIThread(new b0(zArr2, webView, d2Var, str2, b2Var, 6));
-                                    }
-                                }, "Instant");
-                                webView.loadUrl(str);
-                                break;
-                            }
-                        } else {
-                            b2Var.run(null);
-                            break;
-                        }
-                    } else {
-                        b2Var.run(null);
-                        break;
+                i2 i2Var = (i2) this.b;
+                WebView webView = this.c;
+                File file = (File) this.d;
+                webView.saveWebArchive(file.getAbsolutePath(), false, new b2(i2Var, webView, file, (a2) this.e, 1));
+                return;
+            case 1:
+                i2 i2Var2 = (i2) this.b;
+                WebView webView2 = this.c;
+                File file2 = (File) this.d;
+                a2 a2Var = (a2) this.e;
+                webView2.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new h0(i10));
+                try {
+                    oi.f fVar = new oi.f(file2);
+                    i2Var2.b = fVar;
+                    if (!((ArrayList) fVar.b).isEmpty()) {
+                        a2Var.run(((k1) ((ArrayList) i2Var2.b.b).get(0)).a());
+                        return;
                     }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
-                break;
+                a2Var.run(null);
+                return;
             default:
-                Timer.Task task2 = this.b;
-                boolean[] zArr3 = this.c;
-                Timer timer2 = this.d;
-                j2 j2Var2 = this.e;
-                Utilities.Callback callback2 = this.f;
-                JSONObject jSONObject = (JSONObject) obj;
-                Timer.done(task2);
-                if (!zArr3[0]) {
-                    Timer.Task start2 = Timer.start(timer2, "parseJSON");
-                    try {
-                        j2Var2.c = j2Var2.i(j2Var2.a, jSONObject);
-                    } catch (Exception e7) {
-                        Timer.log(timer2, "error: " + e7);
-                        FileLog.e(e7);
+                oi.k kVar = (oi.k) this.b;
+                gg.t tVar = (gg.t) this.d;
+                WebView webView3 = this.c;
+                b5.h hVar = (b5.h) this.e;
+                String str = (String) obj;
+                AndroidUtilities.cancelRunOnUIThread(tVar);
+                synchronized (kVar.a) {
+                    if (!kVar.u && kVar.o == webView3 && kVar.p == hVar && !kVar.r) {
+                        if (!"true".equals(str)) {
+                            FileLog.e("WEB proxy: Base64 bridge installation failed; transport stopped");
+                            kVar.o();
+                            return;
+                        } else {
+                            if (!kVar.h(webView3)) {
+                                kVar.f();
+                                return;
+                            }
+                            kVar.s = false;
+                            kVar.r = true;
+                            FileLog.d("WEB proxy: Base64 bridge ready");
+                            kVar.l(16, 0, new byte[]{1});
+                            return;
+                        }
                     }
-                    Timer.done(start2);
-                    callback2.run(j2Var2);
-                    TLRPC.TL_webPage tL_webPage = j2Var2.c;
-                    if (tL_webPage != null) {
-                        j2.e.put(tL_webPage, j2Var2);
-                    }
-                    Timer.finish(timer2);
-                    break;
+                    return;
                 }
-                break;
         }
+    }
+
+    public /* synthetic */ b2(i2 i2Var, WebView webView, File file, a2 a2Var, int i10) {
+        this.a = i10;
+        this.b = i2Var;
+        this.c = webView;
+        this.d = file;
+        this.e = a2Var;
     }
 }

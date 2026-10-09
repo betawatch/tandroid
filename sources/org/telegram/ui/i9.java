@@ -1,13 +1,42 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i9 {
-    public long a;
-    public final ArrayList b = new ArrayList();
-    public final ArrayList c = new ArrayList();
-    public int d;
-    public boolean e;
+public final class i9 extends FrameLayout {
+    public final org.telegram.ui.Cells.i6 a;
+    public final org.telegram.ui.Components.cj0 b;
+    public TLRPC.Chat c;
+
+    public i9(Context context) {
+        super(context);
+        String string = LocaleController.getString(R.string.VoipChatJoin);
+        org.telegram.ui.Components.cj0 cj0Var = new org.telegram.ui.Components.cj0(context);
+        this.b = cj0Var;
+        int ceil = (int) Math.ceil(cj0Var.getPaint().measureText(string));
+        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
+        this.a = i6Var;
+        i6Var.M0 = true;
+        i6Var.E0 = true;
+        i6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(44.0f) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(44.0f) + ceil, 0);
+        int i10 = -AndroidUtilities.dp(4.0f);
+        i6Var.b0 = 0;
+        i6Var.c0 = i10;
+        addView(i6Var, w7.x5.d(-1.0f, -1));
+        cj0Var.setText(string);
+        cj0Var.setTextSize(1, 14.0f);
+        cj0Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+        cj0Var.setProgressColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Nh, false));
+        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.hl, false);
+        org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Qh, false);
+        cj0Var.setBackground(org.telegram.ui.ActionBar.y5.e(new float[]{16.0f}, x02));
+        cj0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+        addView(cj0Var, w7.x5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
+    }
 }

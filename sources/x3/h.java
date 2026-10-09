@@ -8,9 +8,9 @@ import e2.v;
 import e9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n7.z0;
+import n6.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -35,35 +35,35 @@ public final class h extends i {
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, z0 z0Var) {
+    public final boolean c(v vVar, long j3, t tVar) {
         if (e(vVar, o)) {
             byte[] copyOf = Arrays.copyOf(vVar.a, vVar.c);
             int i10 = copyOf[9] & 255;
             ArrayList a2 = c3.b.a(copyOf);
-            if (((s) z0Var.b) == null) {
+            if (((s) tVar.b) == null) {
                 r rVar = new r();
                 rVar.p = r0.n("audio/ogg");
                 rVar.q = r0.n("audio/opus");
                 rVar.I = i10;
                 rVar.J = 48000;
                 rVar.t = a2;
-                z0Var.b = new s(rVar);
+                tVar.b = new s(rVar);
                 return true;
             }
         } else {
             if (!e(vVar, p)) {
-                e2.d.h((s) z0Var.b);
+                e2.d.h((s) tVar.b);
                 return false;
             }
-            e2.d.h((s) z0Var.b);
+            e2.d.h((s) tVar.b);
             if (!this.n) {
                 this.n = true;
                 vVar.K(8);
                 p0 r10 = c3.b.r(i0.w((String[]) c3.b.v(vVar, false, false).b));
                 if (r10 != null) {
-                    r a10 = ((s) z0Var.b).a();
-                    a10.k = r10.b(((s) z0Var.b).l);
-                    z0Var.b = new s(a10);
+                    r a10 = ((s) tVar.b).a();
+                    a10.k = r10.b(((s) tVar.b).l);
+                    tVar.b = new s(a10);
                     return true;
                 }
             }

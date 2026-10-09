@@ -1,130 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v00 extends View {
-    public int E;
-    public RectF F;
-    public float G;
-    public ValueAnimator H;
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public String d;
-    public TextPaint e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public int r;
-    public int s;
-    public int v;
-    public int w;
-    public int x;
-    public int y;
+public final class v00 extends pm0 {
+    public final Context c;
+    public final /* synthetic */ a10 d;
 
-    public final void a(boolean z10, boolean z11) {
-        this.b = z10;
-        if (!this.a || !z11) {
-            this.G = z10 ? 1.0f : 0.0f;
-            return;
-        }
-        ValueAnimator valueAnimator = this.H;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.H.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, z10 ? 1.0f : 0.0f);
-        this.H = ofFloat;
-        ofFloat.addUpdateListener(new k6(this, 24));
-        this.H.setDuration(300L);
-        this.H.start();
+    public v00(a10 a10Var, Context context) {
+        this.d = a10Var;
+        this.c = context;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        float f7;
-        Canvas canvas2;
-        int i10 = this.w;
-        RectF rectF = this.F;
-        Paint paint = this.h;
-        Paint paint2 = this.n;
-        Paint paint3 = this.f;
-        TextPaint textPaint = this.e;
-        super.draw(canvas);
-        float f10 = this.G;
-        if (f10 <= 0.5f) {
-            f7 = f10 / 0.5f;
-            paint3.setColor(Color.rgb(Color.red(this.r) + ((int) ((Color.red(this.s) - Color.red(this.r)) * f7)), Color.green(this.r) + ((int) ((Color.green(this.s) - Color.green(this.r)) * f7)), Color.blue(this.r) + ((int) ((Color.blue(this.s) - Color.blue(this.r)) * f7))));
-            textPaint.setColor(Color.rgb(Color.red(this.s) + ((int) ((Color.red(this.v) - Color.red(this.s)) * f7)), Color.green(this.s) + ((int) ((Color.green(this.v) - Color.green(this.s)) * f7)), Color.blue(this.s) + ((int) ((Color.blue(this.v) - Color.blue(this.s)) * f7))));
-        } else {
-            textPaint.setColor(this.v);
-            paint3.setColor(this.s);
-            f7 = 1.0f;
-        }
-        int measuredHeight = getMeasuredHeight() >> 1;
-        paint.setColor(this.s);
-        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint3);
-        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint);
-        String str = this.d;
-        if (str != null) {
-            canvas.drawText(str, (f7 * this.y) + (getMeasuredWidth() >> 1), (textPaint.getTextSize() * 0.35f) + measuredHeight, textPaint);
-        }
-        float f11 = 2.0f - (this.G / 0.5f);
-        canvas.save();
-        canvas.scale(0.9f, 0.9f, AndroidUtilities.dpf2(7.0f), measuredHeight);
-        canvas.translate(AndroidUtilities.dp(12.0f), measuredHeight - AndroidUtilities.dp(9.0f));
-        if (this.G > 0.5f) {
-            paint2.setColor(this.v);
-            float f12 = 1.0f - f11;
-            canvas2 = canvas;
-            canvas2.drawLine(AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) - (AndroidUtilities.dp(4.0f) * f12)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(4.0f) * f12)), paint2);
-            canvas2.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) ((AndroidUtilities.dp(8.0f) * f12) + AndroidUtilities.dpf2(7.0f)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(8.0f) * f12)), paint2);
-        } else {
-            canvas2 = canvas;
-        }
-        canvas2.restore();
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        return true;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a = true;
+    @Override // s4.i0
+    public final int h() {
+        return this.d.h.size();
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a = false;
+    @Override // s4.i0
+    public final long i(int i10) {
+        return this.d.k0.get(i10);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        Paint paint = this.h;
-        RectF rectF = this.F;
-        int i12 = this.E;
-        String str = this.d;
-        setMeasuredDimension((i12 * 2) + (str == null ? 0 : (int) this.e.measureText(str)) + (this.x << 1), AndroidUtilities.dp(4.0f) + this.w);
-        if (getMeasuredWidth() != 0) {
-            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            rectF.inset((paint.getStrokeWidth() / 2.0f) + i12, (paint.getStrokeWidth() / 2.0f) + i12);
+    @Override // s4.i0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        y00 y00Var = (y00) d1Var.a;
+        int id2 = y00Var.b != null ? y00Var.getId() : -1;
+        w00 w00Var = (w00) this.d.h.get(i10);
+        y00Var.b = w00Var;
+        y00Var.e = i10;
+        y00Var.setContentDescription(w00Var.b);
+        y00Var.requestLayout();
+        boolean z10 = y00Var.n;
+        w00 w00Var2 = y00Var.b;
+        if (z10 != (w00Var2 != null && w00Var2.g)) {
+            b6.release(y00Var, y00Var.r);
+            b6.release(y00Var, y00Var.O);
+            b6.release(y00Var, y00Var.Q);
+            b6.release(y00Var, y00Var.S);
+            if (y00Var.l0) {
+                y00Var.r = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.r, y00Var.s);
+                y00Var.O = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.O, y00Var.P);
+                y00Var.Q = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.Q, y00Var.R);
+                y00Var.S = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.S, y00Var.T);
+            }
+            y00Var.n = y00Var.b.g;
+        }
+        if (id2 != y00Var.getId()) {
+            y00Var.k0 = y00Var.b.f ? 1.0f : 0.0f;
         }
     }
 
-    public void setChecked(boolean z10) {
-        a(z10, true);
-    }
-
-    public void setText(String str) {
-        this.d = str;
-        requestLayout();
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        return new am0(new y00(this.d, this.c));
     }
 }

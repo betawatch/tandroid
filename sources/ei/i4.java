@@ -1,32 +1,33 @@
 package ei;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i4 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r4 b;
+public final /* synthetic */ class i4 implements org.telegram.ui.ActionBar.a2, n4, GenericProvider {
+    public final /* synthetic */ p4 a;
 
-    public /* synthetic */ i4(r4 r4Var, int i10) {
-        this.a = i10;
-        this.b = r4Var;
+    public /* synthetic */ i4(p4 p4Var) {
+        this.a = p4Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.I.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                k4 k4Var = this.b.n;
-                if (k4Var.getWebView() != null) {
-                    k4Var.getWebView().setScrollY(intValue);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        this.a.b.dismiss();
+    }
+
+    @Override // ei.n4
+    public void j(boolean z10) {
+        p4 p4Var = this.a;
+        if (p4Var.N()) {
+            return;
         }
+        p4Var.J.e(0.0f);
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        return Boolean.valueOf(this.a.b.u1.getKeyboardHeight() >= AndroidUtilities.dp(20.0f));
     }
 }

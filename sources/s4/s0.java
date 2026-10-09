@@ -1,13 +1,14 @@
 package s4;
 
+import android.view.MotionEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class s0 {
-    public void a(RecyclerView recyclerView, int i10) {
-    }
+public interface s0 {
+    void a(RecyclerView recyclerView, MotionEvent motionEvent);
 
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-    }
+    boolean b(RecyclerView recyclerView, MotionEvent motionEvent);
+
+    void c(boolean z10);
 }

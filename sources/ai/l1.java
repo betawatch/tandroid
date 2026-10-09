@@ -9,32 +9,32 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class l1 extends FrameLayout {
     public final i1 a;
-    public final org.telegram.ui.Components.w9 b;
-    public final org.telegram.ui.Components.h9 c;
+    public final org.telegram.ui.Components.y9 b;
+    public final org.telegram.ui.Components.j9 c;
     public final ImageView d;
     public final j1 e;
     public n1 f;
 
     public l1(Context context) {
         super(context);
-        w7.b6.a(this);
+        w7.z5.a(this);
         i1 i1Var = new i1(this, context);
         this.a = i1Var;
         i1Var.setOrientation(0);
-        addView(i1Var, w7.z5.d(-2, -2.0f, 119, 0.0f, 0.0f, 6.0f, 0.0f));
-        this.c = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.b = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        i1Var.addView(w9Var, w7.z5.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
+        addView(i1Var, w7.x5.a(-2.0f, 0.0f, 0.0f, 6.0f, 0.0f, -2, 119));
+        this.c = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
+        this.b = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
+        i1Var.addView(y9Var, w7.x5.p(22, 22, 0.0f, 51, 3, 2, 7, 2));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setVisibility(8);
-        i1Var.addView(imageView, w7.z5.t(18, 18, 19, 0, 0, 3, 0));
+        i1Var.addView(imageView, w7.x5.t(18, 18, 19, 0, 0, 3, 0));
         j1 j1Var = new j1(context);
         this.e = j1Var;
         j1Var.setLines(1);
@@ -42,22 +42,22 @@ public final class l1 extends FrameLayout {
         j1Var.setTextColor(-1);
         j1Var.setTextSize(1, 14.0f);
         j1Var.setTypeface(AndroidUtilities.bold());
-        i1Var.addView(j1Var, w7.z5.t(-2, -2, 16, 0, 0, 7, 0));
+        i1Var.addView(j1Var, w7.x5.t(-2, -2, 16, 0, 0, 7, 0));
     }
 
     public void set(n1 n1Var) {
         this.f = n1Var;
         long j3 = n1Var.b;
-        org.telegram.ui.Components.w9 w9Var = this.b;
-        org.telegram.ui.Components.h9 h9Var = this.c;
+        org.telegram.ui.Components.y9 y9Var = this.b;
+        org.telegram.ui.Components.j9 j9Var = this.c;
         if (j3 >= 0) {
             TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(n1Var.b));
-            h9Var.r(user);
-            w9Var.e(user, h9Var);
+            j9Var.r(user);
+            y9Var.e(user, j9Var);
         } else {
             TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-n1Var.b));
-            h9Var.q(chat);
-            w9Var.e(chat, h9Var);
+            j9Var.q(chat);
+            y9Var.e(chat, j9Var);
         }
         int i10 = n1Var.e;
         ImageView imageView = this.d;

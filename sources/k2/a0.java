@@ -1,43 +1,31 @@
 package k2;
 
-import android.media.AudioDeviceInfo;
-import android.media.AudioRouting;
-import android.media.AudioTrack;
 import android.os.Handler;
-import android.os.Looper;
-import ci.e7;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a0 {
-    public final AudioTrack a;
-    public final e7 b;
-    public z c = new AudioRouting.OnRoutingChangedListener() { // from class: k2.z
-        @Override // android.media.AudioRouting.OnRoutingChangedListener
-        public final void onRoutingChanged(AudioRouting audioRouting) {
-            a0.a(a0.this, audioRouting);
-        }
-    };
+public final /* synthetic */ class a0 implements Executor {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: Type inference failed for: r3v1, types: [k2.z] */
-    public a0(AudioTrack audioTrack, e7 e7Var) {
-        this.a = audioTrack;
-        this.b = e7Var;
-        audioTrack.addOnRoutingChangedListener(this.c, new Handler(Looper.myLooper()));
+    public /* synthetic */ a0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static void a(a0 a0Var, AudioRouting audioRouting) {
-        AudioDeviceInfo routedDevice;
-        if (a0Var.c == null || (routedDevice = audioRouting.getRoutedDevice()) == null) {
-            return;
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((Handler) this.b).post(runnable);
+                break;
+            case 1:
+                e2.d0.T(((m4.b0) this.b).l, runnable);
+                break;
+            default:
+                ((p4.b) this.b).post(runnable);
+                break;
         }
-        a0Var.b.c(routedDevice);
-    }
-
-    public final void b() {
-        z zVar = this.c;
-        zVar.getClass();
-        this.a.removeOnRoutingChangedListener(zVar);
-        this.c = null;
     }
 }

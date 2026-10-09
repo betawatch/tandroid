@@ -1,9 +1,9 @@
 package ra;
 
+import a1.g;
 import m1.j;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -102,7 +102,7 @@ public final class b {
         sb2.append(this.a);
         sb2.append(", registrationStatus=");
         int i10 = this.b;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? BuildConfig.BETA_URL : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? "null" : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
         sb2.append(", authToken=");
         sb2.append(this.c);
         sb2.append(", refreshToken=");
@@ -112,6 +112,6 @@ public final class b {
         sb2.append(", tokenCreationEpochInSecs=");
         sb2.append(this.f);
         sb2.append(", fisError=");
-        return a4.a.t(sb2, this.g, "}");
+        return g.t(sb2, this.g, "}");
     }
 }

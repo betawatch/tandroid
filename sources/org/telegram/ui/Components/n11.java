@@ -1,74 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
 import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n11 {
-    public int a;
-    public int b;
-    public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+public final class n11 extends MetricAffectingSpan {
+    public TextPaint a;
 
-    public n11() {
-    }
-
-    public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-        } else {
-            int i10 = this.a;
-            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
-                int i11 = i10 & 1;
-                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            } else {
-                typeface = Typeface.MONOSPACE;
-            }
-        }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i12 = this.a;
-        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.R9, false);
-        }
-        int i13 = this.a;
-        if ((i13 & 8192) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-        } else if ((i13 & 4096) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false));
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
     }
 
-    public final void b(n11 n11Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= n11Var.a;
-        if (this.d != null || (messageEntity = n11Var.d) == null) {
-            return;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        if (textPaint2 != null) {
+            textPaint.setColor(textPaint2.getColor());
+            textPaint.setTypeface(textPaint2.getTypeface());
+            textPaint.setFlags(textPaint2.getFlags());
+            textPaint.setTextSize(textPaint2.getTextSize());
+            textPaint.baselineShift = textPaint2.baselineShift;
+            textPaint.bgColor = textPaint2.bgColor;
         }
-        this.d = messageEntity;
-    }
-
-    public n11(n11 n11Var) {
-        this.a = n11Var.a;
-        this.b = n11Var.b;
-        this.c = n11Var.c;
-        this.d = n11Var.d;
-        this.e = n11Var.e;
     }
 }

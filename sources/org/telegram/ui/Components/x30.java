@@ -1,53 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class x30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z30 b;
+public final class x30 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.f50 a;
 
-    public /* synthetic */ x30(z30 z30Var, int i10) {
-        this.a = i10;
-        this.b = z30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x30(org.telegram.ui.f50 f50Var, Context context) {
+        super(context);
+        this.a = f50Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                z30 z30Var = this.b;
-                if (z30Var.b0 == animator) {
-                    z30Var.b0 = null;
-                    z30Var.b();
-                    break;
-                }
-                break;
-            default:
-                z30 z30Var2 = this.b;
-                if (z30Var2.a0 == animator) {
-                    z30Var2.a0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        c40.o(this.a);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                y30 y30Var = this.b.W;
-                if (y30Var != null) {
-                    ((org.telegram.ui.qs0) y30Var).a.e0.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
+        org.telegram.ui.f50 f50Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) f50Var.c.getLayoutParams();
+        if (z10) {
+            int dp = AndroidUtilities.dp(80.0f);
+            marginLayoutParams.leftMargin = dp;
+            marginLayoutParams.rightMargin = dp;
+        } else {
+            int dp2 = AndroidUtilities.dp(16.0f);
+            marginLayoutParams.leftMargin = dp2;
+            marginLayoutParams.rightMargin = dp2;
         }
+        int A = org.telegram.messenger.bi.A(200.0f, View.MeasureSpec.getSize(i10), 2);
+        f50Var.b.setPadding(A, 0, A, 0);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
+        measureChildWithMargins(f50Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 }

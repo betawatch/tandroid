@@ -1,50 +1,27 @@
 package de;
 
-import ee.s;
-import org.telegram.tgnet.TLObject;
-import rd.p;
-import zd.b0;
-import zd.f1;
+import za.a0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class j extends kotlin.jvm.internal.j implements p {
-    public final /* synthetic */ g b;
+public final class j implements c {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(g gVar) {
-        super(2);
-        this.b = gVar;
+    public /* synthetic */ j(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // rd.p
-    public final Object invoke(Object obj, Object obj2) {
-        int intValue = ((Number) obj).intValue();
-        id.f fVar = (id.f) obj2;
-        id.g key = fVar.getKey();
-        id.f fVar2 = this.b.b.get(key);
-        if (key != b0.b) {
-            return Integer.valueOf(fVar != fVar2 ? TLObject.FLAG_31 : intValue + 1);
+    @Override // de.c
+    public final Object b(Object obj, ld.c cVar) {
+        switch (this.a) {
+            case 0:
+                ((kotlin.jvm.internal.p) this.b).a = obj;
+                throw new ee.a(this);
+            default:
+                ((a0) this.b).c.set((za.n) obj);
+                return hd.i.a;
         }
-        f1 f1Var = (f1) fVar2;
-        f1 f1Var2 = (f1) fVar;
-        while (true) {
-            if (f1Var2 != null) {
-                if (f1Var2 == f1Var || !(f1Var2 instanceof s)) {
-                    break;
-                }
-                f1Var2 = f1Var2.getParent();
-            } else {
-                f1Var2 = null;
-                break;
-            }
-        }
-        if (f1Var2 == f1Var) {
-            if (f1Var != null) {
-                intValue++;
-            }
-            return Integer.valueOf(intValue);
-        }
-        throw new IllegalStateException(("Flow invariant is violated:\n\t\tEmission from another coroutine is detected.\n\t\tChild of " + f1Var2 + ", expected child of " + f1Var + ".\n\t\tFlowCollector is not thread-safe and concurrent emissions are prohibited.\n\t\tTo mitigate this restriction please use 'channelFlow' builder instead of 'flow'").toString());
     }
 }

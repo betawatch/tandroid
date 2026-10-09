@@ -1,57 +1,40 @@
 package org.telegram.ui.ActionBar;
 
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.os.SystemClock;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MediaController;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o5 implements SensorEventListener {
-    @Override // android.hardware.SensorEventListener
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        float f7 = sensorEvent.values[0];
-        if (f7 <= 0.0f) {
-            f7 = 0.1f;
-        }
-        if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
-            return;
-        }
-        if (f7 > 500.0f) {
-            i6.h = 1.0f;
-        } else {
-            i6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
-        }
-        if (i6.h > i6.q) {
-            if (i6.k) {
-                i6.k = false;
-                AndroidUtilities.cancelRunOnUIThread(i6.m);
-            }
-            if (i6.j) {
-                return;
-            }
-            i6.j = true;
-            AndroidUtilities.runOnUIThread(i6.l, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
-            return;
-        }
-        if (MediaController.getInstance().isRecordingOrListeningByProximity()) {
-            return;
-        }
-        if (i6.j) {
-            i6.j = false;
-            AndroidUtilities.cancelRunOnUIThread(i6.l);
-        }
-        if (i6.k) {
-            return;
-        }
-        i6.k = true;
-        AndroidUtilities.runOnUIThread(i6.m, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+public final class o5 extends Drawable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+
+    public o5(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int max = Math.max(bounds.width(), bounds.height()) / 2;
+        int i10 = this.a;
+        int i11 = this.b;
+        canvas.drawCircle((bounds.centerX() - i10) + i11, bounds.centerY(), max + i10 + i11, i6.z);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

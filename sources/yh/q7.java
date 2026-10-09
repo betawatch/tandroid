@@ -1,150 +1,35 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.w70;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class q7 extends g61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class q7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h8 b;
 
-    static {
-        g61.setup(new q7());
+    public /* synthetic */ q7(h8 h8Var, int i10) {
+        this.a = i10;
+        this.b = h8Var;
     }
 
-    @Override // org.telegram.ui.Components.g61
-    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
-        String userName;
-        boolean z11;
-        boolean z12;
-        org.telegram.ui.ActionBar.i5 i5Var;
-        r7 r7Var = (r7) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) h61Var.G;
-        org.telegram.ui.ActionBar.i5 i5Var2 = r7Var.d;
-        w9 w9Var = r7Var.c;
-        org.telegram.ui.ActionBar.d6 d6Var = r7Var.b;
-        TextView textView = r7Var.h;
-        TextView textView2 = r7Var.f;
-        TextView textView3 = r7Var.e;
-        int i10 = r7Var.a;
-        TextView textView4 = r7Var.n;
-        long peerDialogId = DialogObject.getPeerDialogId(starsSubscription.peer);
-        r7Var.r = !TextUtils.isEmpty(starsSubscription.title);
-        if (peerDialogId < 0) {
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId));
-            h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
-            h9Var.q(chat);
-            w9Var.e(chat, h9Var);
-            userName = chat != null ? chat.title : null;
-            z11 = false;
-        } else {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId));
-            h9 h9Var2 = new h9((org.telegram.ui.ActionBar.d6) null);
-            h9Var2.r(user);
-            w9Var.e(user, h9Var2);
-            userName = UserObject.getUserName(user);
-            z11 = !UserObject.isBot(user);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                h8 h8Var = this.b;
+                h8Var.S = true;
+                h8Var.q(null);
+                AndroidUtilities.runOnUIThread(new q7(h8Var, 1), 240L);
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            default:
+                v7 v7Var = this.b.r;
+                v7Var.F = false;
+                v7Var.invalidate();
+                break;
         }
-        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        i5Var2.l(Emoji.replaceEmoji(userName, i5Var2.getPaint().getFontMetricsInt(), false), false);
-        if (TextUtils.isEmpty(starsSubscription.title)) {
-            z12 = z11;
-            textView3.setVisibility(8);
-        } else {
-            textView3.setVisibility(0);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (starsSubscription.photo != null) {
-                w70 w70Var = new w70(textView3, 14.0f, i10);
-                w70Var.a(4.0f);
-                w70Var.f = false;
-                SpannableString spannableString = new SpannableString("x");
-                i5Var = i5Var2;
-                z12 = z11;
-                spannableString.setSpan(w70Var, 0, 1, 33);
-                w70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
-                spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
-            } else {
-                i5Var = i5Var2;
-                z12 = z11;
-            }
-            spannableStringBuilder.append(Emoji.replaceEmoji(starsSubscription.title, i5Var.getPaint().getFontMetricsInt(), false));
-            textView3.setText(spannableStringBuilder);
-        }
-        textView2.setTextSize(1, r7Var.r ? 13.0f : 14.0f);
-        if (starsSubscription.canceled || starsSubscription.bot_canceled) {
-            long j3 = starsSubscription.until_date;
-            textView2.setText(LocaleController.formatString(j3 < currentTime ? R.string.StarsSubscriptionExpired : R.string.StarsSubscriptionExpires, LocaleController.formatDateChat(j3)));
-            textView.setVisibility(8);
-            textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wj, d6Var));
-            textView4.setText(LocaleController.getString(starsSubscription.bot_canceled ? z12 ? R.string.StarsSubscriptionStatusBizCancelled : R.string.StarsSubscriptionStatusBotCancelled : R.string.StarsSubscriptionStatusCancelled));
-        } else {
-            long j10 = starsSubscription.until_date;
-            if (j10 < currentTime) {
-                textView2.setText(LocaleController.formatString(R.string.StarsSubscriptionExpired, LocaleController.formatDateChat(j10)));
-                textView.setVisibility(8);
-                textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wj, d6Var));
-                textView4.setText(LocaleController.getString(R.string.StarsSubscriptionStatusExpired));
-            } else {
-                textView2.setText(LocaleController.formatString(R.string.StarsSubscriptionRenews, LocaleController.formatDateChat(j10)));
-                textView.setVisibility(0);
-                textView.setText(z7.d1(false, "⭐️ " + Long.toString(starsSubscription.pricing.amount), 0.8f, null));
-                textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, d6Var));
-                int i11 = starsSubscription.pricing.period;
-                if (i11 == 2592000) {
-                    textView4.setText(LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth));
-                } else if (i11 == 60) {
-                    textView4.setText("per minute");
-                } else if (i11 == 300) {
-                    textView4.setText("per 5 minutes");
-                }
-            }
-        }
-        r7Var.s = z10;
-        r7Var.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        r7 r7Var = (r7) getCached();
-        return r7Var != null ? r7Var : new r7(context, i10, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.g61
-    public final boolean equals(h61 h61Var, h61 h61Var2) {
-        if (h61Var2 == null) {
-            return false;
-        }
-        Object obj = h61Var.G;
-        if (!(obj instanceof TL_stars.StarsSubscription)) {
-            return false;
-        }
-        Object obj2 = h61Var2.G;
-        if (obj2 instanceof TL_stars.StarsSubscription) {
-            return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
-        }
-        return false;
     }
 }

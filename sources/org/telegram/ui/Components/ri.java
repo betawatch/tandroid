@@ -3,51 +3,68 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ri extends si {
-    public int b;
-    public final /* synthetic */ xi c;
+public final class ri extends ti {
+    public TLRPC.User b;
+    public TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ yi d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ri(xi xiVar, Context context) {
+    public ri(yi yiVar, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var;
-        this.c = xiVar;
+        org.telegram.ui.ActionBar.e6 e6Var;
+        this.d = yiVar;
         setWillNotDraw(false);
         setFocusable(true);
-        d6Var = ((org.telegram.ui.ActionBar.f3) xiVar).resourcesProvider;
+        setFocusableInTouchMode(true);
+        e6Var = ((org.telegram.ui.ActionBar.f3) yiVar).resourcesProvider;
         oh.b bVar = new oh.b(context);
-        bVar.d = d6Var;
+        bVar.d = e6Var;
         bVar.Q = true;
         TextView textView = bVar.a;
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+        bVar.b.setVisibility(8);
         bVar.a(false);
-        bVar.b.setLayoutParams(w7.z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.cl, d6Var);
-        bVar.s = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.al, d6Var);
-        bVar.v = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.bl, d6Var);
+        y9 y9Var = new y9(context);
+        bVar.c = y9Var;
+        bVar.addView(y9Var, w7.x5.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
+        bVar.w = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.cl, e6Var);
+        bVar.s = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.al, e6Var);
+        bVar.v = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.bl, e6Var);
         bVar.f();
         this.a = bVar;
-        addView(bVar, w7.z5.c(-1.0f, -1));
+        bVar.getBackupImageView().a.setDelegate(new f2(17));
+        addView(this.a, w7.x5.d(-1.0f, -1));
     }
 
-    public final void a(int i10, String str, oh.a aVar) {
-        this.a.setText(str);
-        this.a.setTabAnimation(aVar);
-        this.b = i10;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
+    public final void a(boolean z10) {
+        boolean z11 = this.c != null && (-this.b.id) == this.d.Z0;
+        this.a.e(z11, z10);
+        ck0 lottieAnimation = this.a.getBackupImageView().getImageReceiver().getLottieAnimation();
+        if (!z10) {
+            if (lottieAnimation != null) {
+                lottieAnimation.stop();
+                lottieAnimation.T(0.0f, false);
+                return;
+            }
+            return;
+        }
+        if (!z11 || lottieAnimation == null) {
+            return;
+        }
+        lottieAnimation.K(0);
+        lottieAnimation.P(-1);
+        lottieAnimation.T(0.0f, false);
+        lottieAnimation.start();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.e(((long) this.b) == this.c.W0, false);
+        a(false);
     }
 }

@@ -1,24 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class eb0 extends z5 {
-    public final /* synthetic */ hb0 a;
+public final class eb0 extends wh.l {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eb0(hb0 hb0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = hb0Var;
+    public eb0(org.telegram.ui.ai0 ai0Var, org.telegram.ui.ai0 ai0Var2, FrameLayout frameLayout, long j3) {
+        super(ai0Var2, frameLayout, j3, true);
+        this.F = ai0Var;
     }
 
-    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = i14 + i12;
-        int i16 = this.measuredSize;
-        this.a.c.set((int) f7, (i15 - i16) / 2, (int) (f7 + i16), (i15 + i16) / 2);
+    @Override // wh.l
+    public final void f(String str, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.E) {
+            case 0:
+                wh.b bVar = (wh.b) this.F;
+                ay0 ay0Var = bVar.W;
+                if (!this.e.isEmpty()) {
+                    if (!z11) {
+                        super.f(str, z10, z11);
+                        break;
+                    } else {
+                        bVar.w.J.setText("");
+                        break;
+                    }
+                } else if (ay0Var.getVisibility() != 4) {
+                    ay0Var.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z11) {
+                    super.f(str, z10, z11);
+                    break;
+                } else {
+                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.ai0) this.F)).actionBar;
+                    kVar.setSearchFieldText("");
+                    break;
+                }
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eb0(wh.b bVar, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, long j3) {
+        super(n2Var, frameLayout, j3, false);
+        this.F = bVar;
     }
 }

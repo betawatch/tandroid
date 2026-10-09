@@ -10,13 +10,13 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class w1 extends mw0 {
+public final class w1 extends sw0 {
     public boolean w0;
     public final Paint x0;
     public final RectF y0;
@@ -31,13 +31,13 @@ public final class w1 extends mw0 {
         this.y0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         e2 e2Var = this.z0;
         Rect rect = e2Var.w;
-        int l1 = org.telegram.ui.ActionBar.i6.l1(e2Var.I, e2Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6));
+        int m12 = org.telegram.ui.ActionBar.i6.m1(e2Var.I, e2Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6));
         Paint paint = this.x0;
-        paint.setColor(l1);
+        paint.setColor(m12);
         if (!e2Var.E || e2Var.x == null) {
             canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
             super.dispatchDraw(canvas);
@@ -52,7 +52,7 @@ public final class w1 extends mw0 {
         AndroidUtilities.lerp(e2Var.y, rectF, e2Var.I, rectF);
         rect.set(e2Var.x.getBounds());
         e2Var.x.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        e2Var.x.y(lerp);
+        e2Var.x.q(lerp);
         e2Var.x.setAlpha((int) ((1.0f - e2Var.I) * 255.0f));
         e2Var.x.draw(canvas);
         e2Var.x.setBounds(rect);
@@ -83,7 +83,7 @@ public final class w1 extends mw0 {
         e2 e2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (e2Var.q0()) {
-                org.telegram.messenger.q.p(R.string.RichEditorDraftSaved, new yc(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.q.q(R.string.RichEditorDraftSaved, new ad(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!e2Var.P.i3(keyEvent)) {
@@ -102,10 +102,10 @@ public final class w1 extends mw0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        nz nzVar;
+        a00 a00Var;
         e2 e2Var = this.z0;
-        if (!e2Var.P.u3.y() || !e2Var.P.v3.onTouchEvent(motionEvent)) {
-            int height = (!e2Var.C0 || (nzVar = e2Var.A0) == null) ? (getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(e2Var.D0, e2Var.T0), e2Var.U0) : (int) nzVar.getY();
+        if (!e2Var.P.l3.x() || !e2Var.P.m3.onTouchEvent(motionEvent)) {
+            int height = (!e2Var.C0 || (a00Var = e2Var.A0) == null) ? (getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(e2Var.D0, e2Var.T0), e2Var.U0) : (int) a00Var.getY();
             if (motionEvent.getAction() == 0 && e2Var.B0 && motionEvent.getY() < height) {
                 e2Var.k0(true);
             }
@@ -119,7 +119,7 @@ public final class w1 extends mw0 {
                     return super.dispatchTouchEvent(motionEvent);
                 }
             }
-            if (e2Var.P.v3.b(motionEvent)) {
+            if (e2Var.P.m3.b(motionEvent)) {
                 motionEvent.setAction(3);
             }
             if (motionEvent.getAction() == 0) {

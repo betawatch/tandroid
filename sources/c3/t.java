@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class t implements b0 {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public class t implements b0 {
             case 0:
                 u uVar = (u) this.c;
                 e2.d.h(uVar.k);
-                of.b bVar = uVar.k;
+                pf.b bVar = uVar.k;
                 long[] jArr = (long[]) bVar.b;
                 long[] jArr2 = (long[]) bVar.c;
                 int e7 = e2.d0.e(jArr, e2.d0.i((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);

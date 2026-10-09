@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class EmuDetector {
     private static final String IP = "10.0.2.15";
@@ -38,7 +38,7 @@ public class EmuDetector {
     private boolean isTelephony = false;
     private boolean isCheckPackage = true;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public enum EmulatorTypes {
         GENY,
         ANDY,
@@ -48,12 +48,12 @@ public class EmuDetector {
         X86
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface OnEmulatorDetectorListener {
         void onResult(boolean z10);
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class Property {
         public String name;
         public String seek_value;
@@ -130,7 +130,7 @@ public class EmuDetector {
     private boolean checkFiles(String[] strArr, EmulatorTypes emulatorTypes) {
         File file;
         for (String str : strArr) {
-            if (f0.e.b(this.mContext, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
+            if (f0.c.b(this.mContext, "android.permission.READ_EXTERNAL_STORAGE") != 0) {
                 file = new File(str);
             } else if ((str.contains("/") && emulatorTypes == EmulatorTypes.NOX) || emulatorTypes == EmulatorTypes.BLUE) {
                 file = new File(Environment.getExternalStorageDirectory() + str);
@@ -155,7 +155,7 @@ public class EmuDetector {
     }
 
     private boolean checkIp() {
-        if (f0.e.b(this.mContext, "android.permission.INTERNET") != 0) {
+        if (f0.c.b(this.mContext, "android.permission.INTERNET") != 0) {
             return false;
         }
         String[] strArr = {"/system/bin/netcfg"};
@@ -252,7 +252,7 @@ public class EmuDetector {
     }
 
     private boolean checkTelephony() {
-        if (f0.e.b(this.mContext, "android.permission.READ_PHONE_STATE") == 0 && this.isTelephony && isSupportTelePhony()) {
+        if (f0.c.b(this.mContext, "android.permission.READ_PHONE_STATE") == 0 && this.isTelephony && isSupportTelePhony()) {
             return checkPhoneNumber() || checkDeviceId() || checkImsi() || checkOperatorNameAndroid();
         }
         return false;

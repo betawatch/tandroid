@@ -1,6 +1,6 @@
 package m2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j {
     public final long a;
@@ -27,7 +27,7 @@ public final class j {
                     long j12 = this.a;
                     jVar2 = null;
                     if (j12 + j11 == jVar.a) {
-                        return new j(j12, j3 == -1 ? -1L : j11 + j3, l4);
+                        return new j(j12, j3 != -1 ? j11 + j3 : -1L, l4);
                     }
                 } else {
                     jVar2 = null;
@@ -38,7 +38,7 @@ public final class j {
                 }
                 long j13 = jVar.a;
                 if (j13 + j3 == this.a) {
-                    return new j(j13, j11 == -1 ? -1L : j3 + j11, l4);
+                    return new j(j13, j11 != -1 ? j3 + j11 : -1L, l4);
                 }
                 return jVar2;
             }
@@ -72,6 +72,6 @@ public final class j {
         sb2.append(", start=");
         sb2.append(this.a);
         sb2.append(", length=");
-        return a4.a.s(sb2, this.b, ")");
+        return a1.g.s(sb2, this.b, ")");
     }
 }

@@ -11,10 +11,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.yn;
-import org.telegram.ui.zg1;
+import org.telegram.ui.ih1;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,23 +43,23 @@ public final /* synthetic */ class o0 implements RequestDelegate {
                 ((ContactsController) this.d).lambda$deleteContact$57((ArrayList) this.b, (ArrayList) this.e, this.c, (String) this.f, tLObject, tL_error);
                 break;
             case 2:
-                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$37((TLRPC.TL_messages_requestUrlAuth) this.e, (yn) this.b, (String) this.f, this.c, tLObject, tL_error);
+                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (zn) this.b, (String) this.f, this.c, tLObject, tL_error);
                 break;
             case 3:
-                ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$26(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (n2) this.f, tLObject, tL_error);
+                ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$29(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (n2) this.f, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new r0((zg1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
+                AndroidUtilities.runOnUIThread(new r0((ih1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
-                wh.n nVar = (wh.n) this.d;
+                wh.l lVar = (wh.l) this.d;
                 TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
                 TLRPC.User user = (TLRPC.User) this.f;
                 TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.b;
                 if (tL_error == null) {
-                    MessagesController.getInstance(nVar.k).processUpdates((TLRPC.TL_updates) tLObject, false);
+                    MessagesController.getInstance(lVar.k).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
                 }
-                AndroidUtilities.runOnUIThread(new r0(nVar, tL_error, tLObject, tL_chatInviteImporter, this.c, user, tL_messages_hideChatJoinRequest));
+                AndroidUtilities.runOnUIThread(new r0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.c, user, tL_messages_hideChatJoinRequest));
                 break;
         }
     }
@@ -82,18 +82,18 @@ public final /* synthetic */ class o0 implements RequestDelegate {
         this.f = str;
     }
 
-    public /* synthetic */ o0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, yn ynVar, String str, boolean z10) {
+    public /* synthetic */ o0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, zn znVar, String str, boolean z10) {
         this.a = 2;
         this.d = sendMessagesHelper;
         this.e = tL_messages_requestUrlAuth;
-        this.b = ynVar;
+        this.b = znVar;
         this.f = str;
         this.c = z10;
     }
 
-    public /* synthetic */ o0(wh.n nVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
+    public /* synthetic */ o0(wh.l lVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
         this.a = 5;
-        this.d = nVar;
+        this.d = lVar;
         this.e = tL_chatInviteImporter;
         this.c = z10;
         this.f = user;

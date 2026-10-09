@@ -26,7 +26,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((TranslateController) this.b).lambda$detectStoryLanguage$33((TL_stories.StoryItem) this.c, (TranslateController.StoryKey) this.d);
                 break;
             case 7:
-                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.ad[]) this.c, (qi.b) this.d);
+                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.b, (org.telegram.ui.Components.cd[]) this.c, (oi.b) this.d);
                 break;
             case 8:
                 ((BetaUpdaterController) this.b).lambda$checkForUpdate$1((String) this.c, (Runnable) this.d);
@@ -108,10 +108,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 FactCheckController.lambda$getFromDatabase$5((MessagesStorage) this.b, (ArrayList) this.d, (Utilities.Callback) this.c);
                 break;
             case 21:
-                ((FileLoadOperation) this.b).lambda$getCurrentFile$3((File[]) this.c, (CountDownLatch) this.d);
+                ((FileLoadOperation) this.b).lambda$getCurrentFile$4((File[]) this.c, (CountDownLatch) this.d);
                 break;
             case 22:
-                FileLoadOperation.lambda$cancelRequests$15((FileLoadOperation.RequestInfo) this.b, (int[]) this.c, (Runnable) this.d);
+                FileLoadOperation.lambda$cancelRequests$16((FileLoadOperation.RequestInfo) this.b, (int[]) this.c, (Runnable) this.d);
                 break;
             case 23:
                 ((FileLoader) this.b).lambda$setForceStreamLoadingFile$6((TLRPC.FileLocation) this.c, (String) this.d);
@@ -128,8 +128,11 @@ public final /* synthetic */ class g0 implements Runnable {
             case 27:
                 ((LocationController) this.b).lambda$addSharingLocation$11((LocationController.SharingLocationInfo) this.c, (LocationController.SharingLocationInfo) this.d);
                 break;
-            default:
+            case 28:
                 ((MediaDataController) this.b).lambda$saveToRingtones$204((TLObject) this.c, (TLRPC.Document) this.d);
+                break;
+            default:
+                ((MediaDataController) this.b).lambda$processLoadedDiceStickers$88((String) this.c, (TLRPC.TL_messages_stickerSet) this.d);
                 break;
         }
     }

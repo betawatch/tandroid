@@ -1,52 +1,161 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class rb0 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+public final class rb0 extends Drawable {
+    public Paint a;
+    public Paint b;
+    public long c;
+    public float d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public long l;
+    public org.telegram.ui.Cells.u1 m;
+
+    public final void a() {
+        Rect bounds = getBounds();
+        float centerX = bounds.centerX();
+        float centerY = bounds.centerY();
+        int i10 = bounds.left;
+        float f7 = (i10 - centerX) * (i10 - centerX);
+        int i11 = bounds.top;
+        this.g = (float) Math.ceil(Math.sqrt(com.google.android.gms.internal.vision.e2.y(i11, centerY, i11 - centerY, f7)));
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0056, code lost:
+    
+        if (r7 >= 0.0f) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00b8  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        float f7;
         org.telegram.ui.Cells.u1 u1Var;
-        MessageObject.GroupedMessages currentMessagesGroup;
-        MessageObject.GroupedMessagePosition currentPosition;
-        int i10 = 0;
-        rect.bottom = 0;
-        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+        Paint paint = this.a;
+        float f10 = this.d;
+        if (f10 == 1.0f) {
+            Rect bounds = getBounds();
+            Paint paint2 = this.b;
+            if (paint2 != null) {
+                paint = paint2;
+            }
+            canvas.drawRect(bounds, paint);
+        } else if (f10 != 0.0f) {
+            float interpolation = this.e ? hs.h.getInterpolation(f10) : 1.0f - hs.h.getInterpolation(1.0f - f10);
+            Rect bounds2 = getBounds();
+            float centerX = bounds2.centerX();
+            float centerY = bounds2.centerY();
+            float f11 = this.j;
+            if (f11 >= 0.0f) {
+                f7 = this.k;
+            }
+            f11 = this.h;
+            if (f11 >= 0.0f) {
+                f7 = this.i;
+            }
+            f7 = centerY;
+            f11 = centerX;
+            float f12 = 1.0f - interpolation;
+            float y3 = com.google.android.gms.internal.vision.e2.y(f11, centerX, f12, centerX);
+            float y10 = com.google.android.gms.internal.vision.e2.y(f7, centerY, f12, centerY);
+            float f13 = this.g * interpolation;
+            Paint paint3 = this.b;
+            if (paint3 != null) {
+                paint = paint3;
+            }
+            canvas.drawCircle(y3, y10, f13, paint);
+        }
+        if (!this.f) {
             return;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int extraInsetHeight = u1Var.getExtraInsetHeight();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= currentPosition.siblingHeights.length) {
-                break;
-            }
-            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = elapsedRealtime - this.c;
+        if (j3 > 20) {
+            j3 = 17;
         }
-        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
-        int size = currentMessagesGroup.posArray.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
-                byte b10 = groupedMessagePosition.minY;
-                byte b11 = currentPosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
-                    round = org.telegram.messenger.q.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
-                    break;
+        this.c = elapsedRealtime;
+        if (this.e) {
+            float f14 = (j3 / 240.0f) + this.d;
+            this.d = f14;
+            if (f14 >= 1.0f) {
+                this.d = 1.0f;
+                this.h = -1.0f;
+                this.i = -1.0f;
+                this.j = -1.0f;
+                this.k = -1.0f;
+                this.f = false;
+            }
+            u1Var = this.m;
+            if (u1Var == null) {
+                u1Var.invalidate();
+                if (u1Var.getParent() != null) {
+                    ((ViewGroup) u1Var.getParent()).invalidate();
+                    return;
                 }
-                i10++;
-            } else {
-                break;
+                return;
             }
+            return;
         }
-        rect.bottom = -round;
+        float f15 = this.d - (j3 / 240.0f);
+        this.d = f15;
+        if (f15 <= 0.0f) {
+            this.d = 0.0f;
+            this.h = -1.0f;
+            this.i = -1.0f;
+            this.j = -1.0f;
+            this.k = -1.0f;
+            this.f = false;
+        }
+        u1Var = this.m;
+        if (u1Var == null) {
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        super.setBounds(i10, i11, i12, i13);
+        a();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(Rect rect) {
+        super.setBounds(rect);
+        a();
     }
 }

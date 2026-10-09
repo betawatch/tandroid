@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class i implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
@@ -74,7 +74,7 @@ public final class i implements NotificationCenter.NotificationCenterDelegate {
         int i10 = this.b;
         long clientUserId = UserConfig.getInstance(i10).getClientUserId();
         int i11 = 0;
-        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i12 = Integer.MAX_VALUE;
         while (true) {
             arrayList = this.a;
             if (i11 >= arrayList.size()) {

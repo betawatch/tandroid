@@ -1,22 +1,31 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ul extends ci.e4 {
-    public final /* synthetic */ yn L0;
+public final class ul extends uu0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ zn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ul(yn ynVar, Activity activity) {
-        super(activity, 3);
-        this.L0 = ynVar;
+    public ul(zn znVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = znVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.L0.A1);
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
     }
 }

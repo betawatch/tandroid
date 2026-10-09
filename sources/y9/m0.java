@@ -2,7 +2,7 @@ package y9;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m0 extends u1 {
     public final s1 a;
@@ -74,6 +74,6 @@ public final class m0 extends u1 {
         sb2.append(", appProcessDetails=");
         sb2.append(this.f);
         sb2.append(", uiOrientation=");
-        return a4.a.o(this.g, "}", sb2);
+        return a1.g.o(this.g, "}", sb2);
     }
 }

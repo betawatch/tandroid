@@ -1,146 +1,82 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import java.util.Collections;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class cs0 extends s4.v {
-    public iu0 d;
-    public final /* synthetic */ qv0 e;
+public final /* synthetic */ class cs0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bw0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ TLObject f;
 
-    public cs0(qv0 qv0Var) {
-        this.e = qv0Var;
+    public /* synthetic */ cs0(bw0 bw0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
+        this.a = i12;
+        this.b = bw0Var;
+        this.c = tL_error;
+        this.d = i10;
+        this.e = i11;
+        this.f = tLObject;
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
-        super.a(recyclerView, c1Var);
-        c1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
-        s4.h0 adapter = recyclerView.getAdapter();
-        nv0 nv0Var = adapter instanceof nv0 ? (nv0) adapter : null;
-        if (!k() || nv0Var == null || !nv0Var.L(c1Var.b())) {
-            return s4.v.l(0, 0);
-        }
-        ju0 ju0Var = this.e.k0[0];
-        ps0 ps0Var = ju0Var != null ? ju0Var.h : null;
-        this.d = ps0Var;
-        if (ps0Var != null) {
-            ps0Var.setItemAnimator(ju0Var.d);
-        }
-        return s4.v.l(15, 0);
-    }
-
-    @Override // s4.v
-    public final boolean k() {
-        qv0 qv0Var = this.e;
-        if (qv0Var.C1) {
-            return true;
-        }
-        ls0 ls0Var = qv0Var.W;
-        return ls0Var != null && ls0Var.w;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        ai.d9 d9Var;
-        ArrayList arrayList;
-        s4.h0 adapter = recyclerView.getAdapter();
-        nv0 nv0Var = adapter instanceof nv0 ? (nv0) adapter : null;
-        if (nv0Var == null || !nv0Var.L(c1Var.b()) || !nv0Var.L(c1Var2.b())) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        ArrayList arrayList2 = nv0Var.y;
-        if (!nv0Var.h && (d9Var = nv0Var.s) != null && b10 >= 0 && b10 < d9Var.i.size() && b11 >= 0 && b11 < nv0Var.s.i.size()) {
-            if ((nv0Var.s instanceof ai.u8) || nv0Var.n > 0) {
-                arrayList = new ArrayList();
-                for (int i10 = 0; i10 < nv0Var.s.i.size(); i10++) {
-                    arrayList.add(Integer.valueOf(((MessageObject) nv0Var.s.i.get(i10)).getId()));
-                }
-            } else {
-                arrayList = new ArrayList(nv0Var.s.g);
-            }
-            if (!nv0Var.E) {
-                arrayList2.clear();
-                arrayList2.addAll(arrayList);
-                nv0Var.E = true;
-            }
-            MessageObject messageObject = (MessageObject) nv0Var.s.i.get(b10);
-            arrayList.remove(Integer.valueOf(messageObject.getId()));
-            arrayList.add(Utilities.clamp(b11, arrayList.size(), 0), Integer.valueOf(messageObject.getId()));
-            nv0Var.s.C(arrayList, false);
-            nv0Var.p(b10, b11);
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        ai.d9 d9Var;
-        ArrayList arrayList;
-        iu0 iu0Var = this.d;
-        if (iu0Var != null && c1Var != null) {
-            iu0Var.d1(false);
-        }
-        if (i10 != 0) {
-            iu0 iu0Var2 = this.d;
-            if (iu0Var2 != null) {
-                iu0Var2.J0(false);
-            }
-            if (c1Var != null) {
-                c1Var.a.setPressed(true);
-                return;
-            }
-            return;
-        }
-        iu0 iu0Var3 = this.d;
-        if (iu0Var3 != null && (iu0Var3.getAdapter() instanceof nv0)) {
-            nv0 nv0Var = (nv0) this.d.getAdapter();
-            ArrayList arrayList2 = nv0Var.y;
-            if (!nv0Var.h && (d9Var = nv0Var.s) != null && nv0Var.E) {
-                if ((d9Var instanceof ai.u8) || nv0Var.n > 0) {
-                    arrayList = new ArrayList();
-                    for (int i11 = 0; i11 < nv0Var.s.i.size(); i11++) {
-                        arrayList.add(Integer.valueOf(((MessageObject) nv0Var.s.i.get(i11)).getId()));
-                    }
-                } else {
-                    arrayList = d9Var.g;
-                }
-                boolean z10 = arrayList2.size() != arrayList.size();
-                if (!z10) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= arrayList2.size()) {
-                            break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                bw0 bw0Var = this.b;
+                NotificationCenter.getInstance(bw0Var.v1.getCurrentAccount()).doOnIdle(new cs0(bw0Var, this.c, this.d, this.e, this.f, 1));
+                break;
+            default:
+                bw0 bw0Var2 = this.b;
+                qv0[] qv0VarArr = bw0Var2.t1;
+                if (this.c == null) {
+                    int i10 = this.e;
+                    qv0 qv0Var = qv0VarArr[i10];
+                    if (this.d == qv0Var.p) {
+                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
+                        qv0Var.e.clear();
+                        int size = tL_messages_searchResultsPositions.positions.size();
+                        int i11 = 0;
+                        for (int i12 = 0; i12 < size; i12++) {
+                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
+                            int i13 = tL_searchResultPosition.date;
+                            if (i13 != 0) {
+                                zu0 zu0Var = new zu0();
+                                zu0Var.c = i13;
+                                zu0Var.d = tL_searchResultPosition.msg_id;
+                                zu0Var.b = tL_searchResultPosition.offset;
+                                zu0Var.a = LocaleController.formatYearMont(i13, true);
+                                qv0VarArr[i10].e.add(zu0Var);
+                            }
                         }
-                        if (arrayList2.get(i12) != arrayList.get(i12)) {
-                            z10 = true;
-                            break;
+                        Collections.sort(qv0VarArr[i10].e, new org.telegram.ui.gf(17));
+                        qv0 qv0Var2 = qv0VarArr[i10];
+                        qv0Var2.f[0] = tL_messages_searchResultsPositions.count;
+                        qv0Var2.h = true;
+                        if (!qv0Var2.e.isEmpty()) {
+                            while (true) {
+                                uu0[] uu0VarArr = bw0Var2.k0;
+                                if (i11 < uu0VarArr.length) {
+                                    uu0 uu0Var = uu0VarArr[i11];
+                                    if (uu0Var.F == i10) {
+                                        uu0Var.b = true;
+                                        bw0Var2.o1(uu0Var, true);
+                                    }
+                                    i11++;
+                                }
+                            }
                         }
-                        i12++;
+                        bw0Var2.H.l();
+                        break;
                     }
                 }
-                if (z10) {
-                    nv0Var.s.C(arrayList, true);
-                }
-                nv0Var.E = false;
-            }
+                break;
         }
-        iu0 iu0Var4 = this.d;
-        if (iu0Var4 != null) {
-            iu0Var4.setItemAnimator(null);
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
     }
 }

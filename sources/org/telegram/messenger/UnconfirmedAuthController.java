@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class UnconfirmedAuthController {
     private final int currentAccount;
@@ -256,7 +256,7 @@ public class UnconfirmedAuthController {
                 }
             };
         }
-        Utilities.raceCallbacks(new ci.u1(this, zArr, arrayList2, z10, callback, 12), callbackArr);
+        Utilities.raceCallbacks(new ci.t1(this, zArr, arrayList2, z10, callback, 12), callbackArr);
         if (z10) {
             HashSet hashSet = new HashSet();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
@@ -358,7 +358,7 @@ public class UnconfirmedAuthController {
         saveCache();
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class UnconfirmedAuth extends TLObject {
         public boolean bot;
         public long bot_id;
@@ -411,7 +411,7 @@ public class UnconfirmedAuthController {
         public /* synthetic */ void lambda$deny$3(TLObject tLObject, Utilities.Callback callback, TLRPC.TL_error tL_error) {
             boolean z10 = tLObject instanceof TLRPC.Updates;
             if (z10) {
-                MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
+                MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
             }
             hg.g.a(UnconfirmedAuthController.this.currentAccount).b();
             if (callback != null) {

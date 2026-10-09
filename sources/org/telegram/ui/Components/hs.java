@@ -1,146 +1,91 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.PointF;
+import android.view.animation.Interpolator;
+import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hs {
-    public final int a;
-    public String b;
-    public final ArrayList c;
-    public final boolean[] d;
-    public boolean[] e;
-    public boolean f;
-    public final int g;
-    public int h;
-    public int i;
-    public final /* synthetic */ is j;
+public final class hs implements Interpolator {
+    public static final hs f = new hs(0.25d, 0.1d, 0.25d, 1.0d);
+    public static final hs g = new hs(0.0d, 0.0d, 0.58d, 1.0d);
+    public static final hs h = new hs(0.23d, 1.0d, 0.32d, 1.0d);
+    public static final hs i = new hs(0.42d, 0.0d, 1.0d, 1.0d);
+    public static final hs j = new hs(0.42d, 0.0d, 0.58d, 1.0d);
+    public static final hs k = new hs(0.34d, 1.56d, 0.64d, 1.0d);
+    public static final PathInterpolator l;
+    public final PointF a;
+    public final PointF b;
+    public final PointF c;
+    public final PointF d;
+    public final PointF e;
 
-    public hs(is isVar, int i10, ArrayList arrayList) {
-        this.j = isVar;
-        this.a = i10;
-        int size = arrayList.size();
-        this.g = size;
-        this.i = 0;
-        if (size > 0) {
-            this.c = arrayList;
-            this.d = new boolean[size];
-            this.f = true;
-            g();
+    static {
+        new PathInterpolator(v7.c8.d("M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1"));
+        new PathInterpolator(0.05f, 0.7f, 0.1f, 1.0f);
+        new PathInterpolator(0.3f, 0.0f, 0.8f, 0.15f);
+        l = new PathInterpolator(0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    public hs(float f7, float f10, float f11, float f12) {
+        PointF pointF = new PointF(f7, f10);
+        PointF pointF2 = new PointF(f11, f12);
+        this.c = new PointF();
+        this.d = new PointF();
+        this.e = new PointF();
+        float f13 = pointF.x;
+        if (f13 < 0.0f || f13 > 1.0f) {
+            throw new IllegalArgumentException("startX value must be in the range [0, 1]");
         }
-    }
-
-    public final boolean a() {
-        boolean[] zArr;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
-                return false;
-            }
+        float f14 = pointF2.x;
+        if (f14 < 0.0f || f14 > 1.0f) {
+            throw new IllegalArgumentException("endX value must be in the range [0, 1]");
         }
-        return true;
+        this.a = pointF;
+        this.b = pointF2;
     }
 
-    public final boolean b() {
-        return (this.e != null ? this.h : this.g) > 1;
-    }
-
-    public final boolean c() {
-        return (this.e != null ? this.h : this.g) > 0;
-    }
-
-    public final void d() {
-        int i10;
-        boolean[] zArr;
-        boolean[] zArr2;
-        boolean z10 = false;
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        PointF pointF;
+        PointF pointF2;
+        PointF pointF3;
+        PointF pointF4;
+        PointF pointF5;
+        int i10 = 1;
+        float f10 = f7;
         while (true) {
-            int i11 = this.g;
-            zArr = this.d;
-            if (i10 >= i11) {
-                break;
-            } else {
-                i10 = (zArr[i10] && ((zArr2 = this.e) == null || zArr2[i10])) ? 0 : i10 + 1;
-            }
-        }
-        z10 = true;
-        Arrays.fill(zArr, !z10);
-        f();
-        this.j.X.N(true);
-    }
-
-    public final void e(int i10) {
-        boolean[] zArr = this.e;
-        if (zArr == null || zArr[i10]) {
-            boolean[] zArr2 = this.d;
-            boolean z10 = zArr2[i10];
-            zArr2[i10] = !z10;
-            if (z10) {
-                this.i--;
-            } else {
-                this.i++;
-            }
-            this.j.X.N(true);
-        }
-    }
-
-    public final void f() {
-        this.i = 0;
-        this.h = 0;
-        for (int i10 = 0; i10 < this.g; i10++) {
-            boolean[] zArr = this.e;
-            boolean[] zArr2 = this.d;
-            if (zArr == null) {
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            } else if (zArr[i10]) {
-                this.h++;
-                if (zArr2[i10]) {
-                    this.i++;
-                }
-            }
-        }
-    }
-
-    public final void g() {
-        TLObject tLObject;
-        int i10 = this.g;
-        if (i10 == 0) {
-            return;
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            boolean[] zArr = this.e;
-            if (zArr == null || zArr[i11]) {
-                tLObject = (TLObject) this.c.get(i11);
+            pointF = this.b;
+            pointF2 = this.a;
+            pointF3 = this.c;
+            pointF4 = this.d;
+            pointF5 = this.e;
+            if (i10 >= 14) {
                 break;
             }
-        }
-        tLObject = null;
-        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
-        int i12 = this.a;
-        if (i12 == 0) {
-            this.b = LocaleController.getString(R.string.DeleteReportSpam);
-            return;
-        }
-        if (i12 == 1) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
-            return;
-        }
-        if (i12 == 3) {
-            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
-        } else if (i12 == 2) {
-            if (this.j.g0) {
-                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
-            } else {
-                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
+            float f11 = pointF2.x * 3.0f;
+            pointF5.x = f11;
+            float f12 = ((pointF.x - pointF2.x) * 3.0f) - f11;
+            pointF4.x = f12;
+            float f13 = (1.0f - pointF5.x) - f12;
+            pointF3.x = f13;
+            float f14 = (((((f13 * f10) + pointF4.x) * f10) + pointF5.x) * f10) - f7;
+            if (Math.abs(f14) < 0.001d) {
+                break;
             }
+            f10 -= f14 / (((((pointF3.x * 3.0f) * f10) + (pointF4.x * 2.0f)) * f10) + pointF5.x);
+            i10++;
         }
+        float f15 = pointF2.y * 3.0f;
+        pointF5.y = f15;
+        float f16 = ((pointF.y - pointF2.y) * 3.0f) - f15;
+        pointF4.y = f16;
+        float f17 = (1.0f - pointF5.y) - f16;
+        pointF3.y = f17;
+        return ((((f17 * f10) + pointF4.y) * f10) + pointF5.y) * f10;
+    }
+
+    public hs(double d, double d10, double d11, double d12) {
+        this((float) d, (float) d10, (float) d11, (float) d12);
     }
 }

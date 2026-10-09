@@ -3,9 +3,9 @@ package ji;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.mo;
+import org.telegram.ui.Components.zo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ u1 a;
@@ -29,9 +29,9 @@ public final class e extends AnimatorListenerAdapter {
         u1 u1Var = this.a;
         u1Var.getTransitionParams().j();
         u1Var.getPhotoImage().setImageCoords(this.b, this.c, this.d, this.e);
-        mo moVar = this.f.P;
-        if (moVar != null) {
-            moVar.h.setAlpha(1.0f);
+        zo zoVar = this.f.P;
+        if (zoVar != null) {
+            zoVar.h.setAlpha(1.0f);
         }
         u1Var.invalidate();
     }

@@ -1,92 +1,91 @@
 package ei;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.os.Bundle;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i5;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.ui.tr;
+import org.telegram.ui.tw0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public abstract class b2 {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static void a(Activity activity, final int i10, final long j3, final long j10, TL_bots.botVerifierSettings botverifiersettings, final w1 w1Var) {
-        String str;
-        TLRPC.Chat chat;
-        if (j10 >= 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
-            str = UserObject.getForcedFirstName(user);
-            chat = user;
-        } else {
-            TLRPC.Chat chat2 = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-            if (chat2 == null) {
-                str = "";
-                chat = chat2;
-            } else {
-                str = chat2.title;
-                chat = chat2;
-            }
-        }
-        FrameLayout frameLayout = new FrameLayout(activity);
-        FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(i6.c0(AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), i6.w0(null, i6.ci, false)));
-        w9 w9Var = new w9(activity);
-        w9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        h9 h9Var = new h9((d6) null);
-        h9Var.p(chat);
-        w9Var.e(chat, h9Var);
-        frameLayout2.addView(w9Var, z5.e(28, 28, 51));
-        w9 w9Var2 = new w9(activity);
-        w9Var2.setEmojiColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.z9, false), PorterDuff.Mode.SRC_IN));
-        w9Var2.setAnimatedEmojiDrawable(q5.n(i10, botverifiersettings.icon, null, 3));
-        frameLayout2.addView(w9Var2, z5.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
-        i5 i5Var = new i5(activity);
-        i5Var.setTextColor(i6.w0(null, i6.j5, false));
-        i5Var.setTextSize(13);
-        i5Var.setEllipsizeByGradient(true);
-        i5Var.l(str, false);
-        i5Var.setWidthWrapContent(true);
-        frameLayout2.addView(i5Var, z5.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
-        frameLayout.addView(frameLayout2, z5.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
-        final boolean[] zArr = new boolean[1];
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.BotRemoveVerificationTitle);
-        alertDialog$Builder.a.T = LocaleController.getString(j10 >= 0 ? R.string.BotRemoveVerificationText : R.string.BotRemoveVerificationChatText);
-        alertDialog$Builder.n(frameLayout);
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new org.telegram.ui.ActionBar.a2() { // from class: ei.z1
-            @Override // org.telegram.ui.ActionBar.a2
-            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i11) {
-                boolean[] zArr2 = zArr;
-                if (zArr2[0]) {
+public final /* synthetic */ class b2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+
+    public /* synthetic */ b2(int i10, long j3, int i11) {
+        this.a = i11;
+        this.b = i10;
+        this.c = j3;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                SendMessagesHelper.getInstance(this.b).sendMessage(SendMessagesHelper.SendMessageParams.of("/privacy", this.c, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                break;
+            case 1:
+                int i10 = this.b;
+                long j3 = this.c;
+                try {
+                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(i10).getDatabase().executeFast("REPLACE INTO search_recent VALUES(?, ?)");
+                    executeFast.requery();
+                    executeFast.bindLong(1, j3);
+                    executeFast.bindInteger(2, (int) (System.currentTimeMillis() / 1000));
+                    executeFast.step();
+                    executeFast.dispose();
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
-                zArr2[0] = true;
-                TL_bots.setCustomVerification setcustomverification = new TL_bots.setCustomVerification();
-                setcustomverification.enabled = false;
-                setcustomverification.flags |= 1;
-                int i12 = i10;
-                setcustomverification.bot = MessagesController.getInstance(i12).getInputUser(j3);
-                setcustomverification.peer = MessagesController.getInstance(i12).getInputPeer(j10);
-                ConnectionsManager.getInstance(i12).sendRequest(setcustomverification, new ai.v1(8, zArr2, w1Var));
-            }
-        });
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.o();
+            case 2:
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(zn.V9(this.b, this.c));
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    long j10 = this.c;
+                    if (j10 < 0) {
+                        int i11 = this.b;
+                        long j11 = -j10;
+                        if (!ChatObject.isChannelAndNotMegaGroup(MessagesController.getInstance(i11).getChat(Long.valueOf(j11)))) {
+                            Bundle bundle = new Bundle();
+                            bundle.putLong("chat_id", j11);
+                            bundle.putInt(TeXSymbolParser.TYPE_ATTR, 3);
+                            tr trVar = new tr(bundle);
+                            trVar.x0(MessagesController.getInstance(i11).getChatFull(j11));
+                            U2.presentFragment(trVar);
+                            break;
+                        } else {
+                            U2.presentFragment(new tw0(j11));
+                            break;
+                        }
+                    } else {
+                        U2.presentFragment(new PrivacyControlActivity(10, false));
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ b2(long j3, int i10, int i11) {
+        this.a = i11;
+        this.c = j3;
+        this.b = i10;
     }
 }

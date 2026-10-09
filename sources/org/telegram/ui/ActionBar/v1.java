@@ -9,13 +9,13 @@ import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.p70;
+import org.telegram.ui.Components.d80;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.k80;
-import org.telegram.ui.kn0;
-import org.telegram.ui.ug0;
+import org.telegram.ui.l80;
+import org.telegram.ui.nn0;
+import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class v1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class v1 extends ScrollView {
         switch (this.a) {
             case 3:
                 int action = motionEvent.getAction();
-                float f7 = ((k80) this.b).b.e;
+                float f7 = ((l80) this.b).b.e;
                 float y3 = motionEvent.getY();
                 if (action != 0 || y3 <= f7) {
                     return super.dispatchTouchEvent(motionEvent);
@@ -68,15 +68,15 @@ public final class v1 extends ScrollView {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                p70 p70Var = (p70) this.b;
+                d80 d80Var = (d80) this.b;
                 int size = View.MeasureSpec.getSize(i10);
                 int size2 = View.MeasureSpec.getSize(i11);
                 if (AndroidUtilities.isTablet() || size2 > size) {
-                    p70Var.s0 = AndroidUtilities.dp(144.0f);
+                    d80Var.s0 = AndroidUtilities.dp(144.0f);
                 } else {
-                    p70Var.s0 = AndroidUtilities.dp(56.0f);
+                    d80Var.s0 = AndroidUtilities.dp(56.0f);
                 }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(p70Var.s0, TLObject.FLAG_31));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(d80Var.s0, TLObject.FLAG_31));
                 break;
             case 2:
                 super.onMeasure(i10, i11);
@@ -88,7 +88,7 @@ public final class v1 extends ScrollView {
                 super.onMeasure(i10, i11);
                 break;
             case 5:
-                ((kn0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
+                ((nn0) this.b).s0 = View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(30.0f);
                 super.onMeasure(i10, i11);
                 break;
         }
@@ -108,24 +108,24 @@ public final class v1 extends ScrollView {
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
         switch (this.a) {
             case 3:
-                k80 k80Var = (k80) this.b;
-                if (!k80Var.v) {
+                l80 l80Var = (l80) this.b;
+                if (!l80Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.q.C(20.0f, k80Var.I, rect.top);
-                    rect.bottom = org.telegram.messenger.q.C(50.0f, k80Var.I, rect.bottom);
+                    rect.top = org.telegram.messenger.q.C(20.0f, l80Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.q.C(50.0f, l80Var.I, rect.bottom);
                     break;
                 } else {
-                    k80Var.v = false;
+                    l80Var.v = false;
                     break;
                 }
             case 4:
-                int i10 = ((ug0) this.b).a;
+                int i10 = ((wg0) this.b).a;
                 if (i10 == 1 || i10 == 2 || i10 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }
                 break;
             case 5:
-                int i11 = ((kn0) this.b).I1;
+                int i11 = ((nn0) this.b).I1;
                 if (i11 == 1 || i11 == 2 || i11 == 4) {
                     rect.bottom = AndroidUtilities.dp(40.0f) + rect.bottom;
                 }

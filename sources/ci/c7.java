@@ -9,7 +9,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,16 +52,16 @@ public final /* synthetic */ class c7 implements Runnable {
                         if (bitmap2 != null && (nVar = (r8.n) f7Var.a.get()) != null && nVar.b.k()) {
                             int width2 = bitmap2.getWidth();
                             int height2 = bitmap2.getHeight();
-                            la.h hVar = new la.h(22);
+                            la.h hVar = new la.h(24);
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
                             hVar.d = bitmap2;
                             a3.l lVar = (a3.l) hVar.b;
                             lVar.a = width3;
                             lVar.b = height3;
-                            SparseArray Z0 = nVar.Z0(hVar);
-                            for (int i11 = 0; i11 < Z0.size(); i11++) {
-                                r8.m mVar = (r8.m) Z0.valueAt(i11);
+                            SparseArray b12 = nVar.b1(hVar);
+                            for (int i11 = 0; i11 < b12.size(); i11++) {
+                                r8.m mVar = (r8.m) b12.valueAt(i11);
                                 String str2 = mVar.b;
                                 Point[] pointArr = mVar.e;
                                 if (str2 != null) {
@@ -98,7 +98,7 @@ public final /* synthetic */ class c7 implements Runnable {
                             }
                         }
                         f7Var.d = d7Var;
-                        AndroidUtilities.runOnUIThread(new ai.ba(23, f7Var, d7Var));
+                        AndroidUtilities.runOnUIThread(new ai.ca(23, f7Var, d7Var));
                     }
                     if (!f7Var.b.get()) {
                         Utilities.globalQueue.cancelRunnable(f7Var.h);

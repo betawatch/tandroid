@@ -5,7 +5,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements n5, g1 {
     public final /* synthetic */ x3 a;
@@ -14,25 +14,25 @@ public final /* synthetic */ class u2 implements n5, g1 {
         this.a = x3Var;
     }
 
-    public void a(i1 i1Var, l4 l4Var, boolean z10) {
+    public void a(i1 i1Var, m4 m4Var, boolean z10) {
         x3 x3Var = this.a;
-        v3 v3Var = x3Var.o3;
+        v3 v3Var = x3Var.f3;
         Editable text = i1Var.getText();
-        int spanStart = text == null ? -1 : text.getSpanStart(l4Var);
-        int spanEnd = text == null ? -1 : text.getSpanEnd(l4Var);
+        int spanStart = text == null ? -1 : text.getSpanStart(m4Var);
+        int spanEnd = text != null ? text.getSpanEnd(m4Var) : -1;
         if (spanStart < 0 || spanEnd <= spanStart) {
             return;
         }
         if (z10) {
             x3Var.p3(false);
-            v3Var.e(new w3(x3Var, i1Var, spanStart, spanEnd, l4Var), i1Var);
+            v3Var.e(new w3(x3Var, i1Var, spanStart, spanEnd, m4Var), i1Var);
             return;
         }
-        TL_iv.textButton textbutton = l4Var.a;
+        TL_iv.textButton textbutton = m4Var.a;
         if (textbutton == null) {
             return;
         }
-        i2 i2Var = x3Var.Q3;
+        i2 i2Var = x3Var.H3;
         if (i2Var != null) {
             i2Var.d();
         }
@@ -48,18 +48,18 @@ public final /* synthetic */ class u2 implements n5, g1 {
         richButtonStyle.link = false;
         textbutton.style = richButtonStyle;
         Editable text2 = i1Var.getText();
-        if (text2 == null || text2.getSpanStart(l4Var) < 0) {
+        if (text2 == null || text2.getSpanStart(m4Var) < 0) {
             return;
         }
-        RichMessageLayout.RichButtonSpan richButtonSpan = l4Var.b;
-        if (richButtonSpan != null && l4Var.c == i1Var) {
+        RichMessageLayout.RichButtonSpan richButtonSpan = m4Var.b;
+        if (richButtonSpan != null && m4Var.c == i1Var) {
             richButtonSpan.detach(i1Var);
-            l4Var.c = null;
+            m4Var.c = null;
         }
-        text2.removeSpan(l4Var);
-        l4 l4Var2 = new l4(textbutton);
-        l4Var2.a(x3Var.m3, i1Var, x3Var.n3);
-        text2.setSpan(l4Var2, spanStart, spanEnd, 33);
+        text2.removeSpan(m4Var);
+        m4 m4Var2 = new m4(textbutton);
+        m4Var2.a(x3Var.d3, i1Var, x3Var.e3);
+        text2.setSpan(m4Var2, spanStart, spanEnd, 33);
         i1Var.notifySpansChanged();
         i1Var.requestLayout();
         i1Var.invalidateEffects();

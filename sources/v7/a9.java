@@ -1,18 +1,18 @@
 package v7;
 
 import w7.pa;
-import x7.ia;
+import x7.ja;
 import z7.zf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a9 implements pa.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l5.r b;
+    public final /* synthetic */ l5.q b;
 
-    public /* synthetic */ a9(l5.r rVar, int i10) {
+    public /* synthetic */ a9(l5.q qVar, int i10) {
         this.a = i10;
-        this.b = rVar;
+        this.b = qVar;
     }
 
     @Override // pa.b
@@ -27,9 +27,9 @@ public final /* synthetic */ class a9 implements pa.b {
             case 3:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), pa.d);
             case 4:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ia.e);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ja.e);
             case 5:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ia.d);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ja.d);
             case 6:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), zf.e);
             default:

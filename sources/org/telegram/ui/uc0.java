@@ -1,51 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class uc0 extends gg.t0 {
-    public boolean m0;
-    public final /* synthetic */ gd0 n0;
+public final class uc0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ hd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uc0(gd0 gd0Var, Context context, int i10, long j3, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
-        super(context, i10, j3, false, d6Var, false, z10, z11);
-        this.n0 = gd0Var;
-        this.m0 = true;
+    public uc0(hd0 hd0Var) {
+        this.a = hd0Var;
     }
 
-    @Override // gg.t0
-    public final void K() {
-        this.n0.r0(null);
-    }
-
-    @Override // gg.t0
-    public final void N(ArrayList arrayList) {
-        int i10;
-        gd0 gd0Var = this.n0;
-        MessageObject messageObject = gd0Var.B0;
-        if (messageObject != null && messageObject.isLiveLocation()) {
-            if (arrayList != null) {
-                i10 = 0;
-                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    ad0 ad0Var = (ad0) arrayList.get(i11);
-                    if (ad0Var != null && !UserObject.isUserSelf(ad0Var.c)) {
-                        i10++;
-                    }
-                }
-            } else {
-                i10 = 0;
-            }
-            if (this.m0 && i10 == 1) {
-                gd0Var.i0 = ((ad0) arrayList.get(0)).a;
-            }
-            this.m0 = false;
-            gd0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        hd0 hd0Var = this.a;
+        if (i10 == -1) {
+            hd0Var.finishFragment();
+            return;
         }
-        super.N(arrayList);
+        if (i10 != 1) {
+            if (i10 == 5) {
+                hd0Var.r0(false);
+                return;
+            } else {
+                if (i10 == 6) {
+                    hd0Var.q0(null);
+                    return;
+                }
+                return;
+            }
+        }
+        try {
+            TLRPC.GeoPoint geoPoint = hd0Var.B0.messageOwner.media.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            hd0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
     }
 }

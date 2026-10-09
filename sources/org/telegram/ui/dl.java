@@ -1,37 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ el b;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-    public /* synthetic */ dl(el elVar, int i10) {
-        this.a = i10;
-        this.b = elVar;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class dl implements LayoutTransition.TransitionListener {
+    public cl a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
+    public final /* synthetic */ zn d;
+
+    public dl(zn znVar, org.telegram.ui.ActionBar.z zVar) {
+        this.d = znVar;
+        this.c = zVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                jk jkVar = this.b.H.W;
-                if (jkVar != null) {
-                    jkVar.T0 = false;
-                    org.telegram.ui.Components.fg fgVar = jkVar.U0;
-                    if (fgVar != null) {
-                        fgVar.u(false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                jk jkVar2 = this.b.H.W;
-                if (jkVar2 != null) {
-                    jkVar2.H0();
-                    break;
-                }
-                break;
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
+            return;
         }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.cl] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.cl
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) dl.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
+                }
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

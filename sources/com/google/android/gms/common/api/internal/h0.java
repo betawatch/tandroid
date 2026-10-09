@@ -5,9 +5,9 @@ import android.os.Message;
 import android.util.Log;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class h0 extends com.google.android.gms.internal.cast.c0 {
+public final class h0 extends com.google.android.gms.internal.cast.a0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -36,7 +36,7 @@ public final class h0 extends com.google.android.gms.internal.cast.c0 {
                 reentrantLock.lock();
                 try {
                     if (j0Var.h()) {
-                        j0Var.k();
+                        j0Var.j();
                     }
                     return;
                 } finally {

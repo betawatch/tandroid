@@ -1,47 +1,11 @@
 package ei;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.Date;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.RadioButton;
-import w7.d6;
-import w7.z5;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class s1 extends FrameLayout {
-    public final String a;
-    public final RadioButton b;
-    public final boolean c;
-
-    public s1(t1 t1Var, boolean z10, Context context) {
-        super(context);
-        this.a = t1Var.a;
-        RadioButton radioButton = new RadioButton(context);
-        this.b = radioButton;
-        radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(i6.w0(null, i6.D5, false), i6.w0(null, i6.E5, false));
-        addView(radioButton, z5.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
-        TextView b10 = d6.b(context, 16.0f, i6.G6, true, null);
-        b10.setText(t1Var.c);
-        addView(b10, z5.t(-1, -2, 7, 62, 9, 8, 0));
-        TextView b11 = d6.b(context, 14.0f, i6.y6, false, null);
-        b11.setText(LocaleController.formatString(R.string.BotRestoreStorageCreatedAt, LocaleController.formatString(R.string.formatDateAtTime, LocaleController.formatSmallDateChat(t1Var.d / 1000), LocaleController.getInstance().getFormatterDay().format(new Date(t1Var.d / 1000)))));
-        addView(b11, z5.t(-1, -2, 7, 62, 32, 8, 0));
-        this.c = z10;
-        setWillNotDraw(!z10);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c) {
-            canvas.drawLine(AndroidUtilities.dp(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, i6.k0);
-        }
-    }
+public final class s1 {
+    public String a;
+    public long b;
+    public String c;
+    public long d;
+    public long e;
 }

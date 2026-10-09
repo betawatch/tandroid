@@ -1,0 +1,13 @@
+package he;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public abstract class i implements Runnable {
+    public long a;
+    public com.google.android.gms.internal.cast.a b;
+
+    public i(long j3, com.google.android.gms.internal.cast.a aVar) {
+        this.a = j3;
+        this.b = aVar;
+    }
+}

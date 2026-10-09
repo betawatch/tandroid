@@ -1,13 +1,22 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class yl extends org.telegram.ui.Cells.w0 {
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class yl extends ci.d4 {
+    public final /* synthetic */ zn L0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yl(zn znVar, Activity activity) {
+        super(activity, 3);
+        this.L0 = znVar;
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.L0.C1);
     }
 }

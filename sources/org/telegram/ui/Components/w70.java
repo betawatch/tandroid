@@ -1,31 +1,49 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class w70 extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ ViewGroup o;
-    public final /* synthetic */ b80 p;
+public final class w70 extends ay0 {
+    public final /* synthetic */ int K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w70(b80 b80Var, View view, ViewGroup viewGroup) {
-        super(view, -2, -2);
-        this.p = b80Var;
-        this.o = viewGroup;
+    public /* synthetic */ w70(Context context, View view, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11) {
+        super(context, view, i10, e6Var);
+        this.K = i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ViewGroup viewGroup = this.o;
-        b80 b80Var = this.p;
-        b80.a(b80Var, viewGroup);
-        Runnable runnable = b80Var.p;
-        if (runnable != null) {
-            runnable.run();
-            b80Var.p = null;
+    @Override // org.telegram.ui.Components.ay0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.K) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ay0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.K) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
         }
     }
 }

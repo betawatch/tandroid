@@ -1,21 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class su implements DialogInterface.OnShowListener {
-    public final /* synthetic */ zu a;
+public final /* synthetic */ class su implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tu b;
 
-    public su(zu zuVar) {
-        this.a = zuVar;
+    public /* synthetic */ su(tu tuVar, int i10) {
+        this.a = i10;
+        this.b = tuVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        aa1 aa1Var = this.a.c;
-        if (rg0.p0.P && aa1Var.f()) {
-            aa1Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 1));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tu tuVar = this.b;
+                tuVar.post(new su(tuVar, 1));
+                break;
+            case 1:
+                tu tuVar2 = this.b;
+                tuVar2.invalidateSpoilers();
+                tuVar2.b();
+                break;
+            case 2:
+                tu.a(this.b);
+                break;
+            case 3:
+                tu tuVar3 = this.b;
+                tuVar3.post(new su(tuVar3, 4));
+                break;
+            default:
+                this.b.setSpoilersRevealed(false, true);
+                break;
         }
     }
 }

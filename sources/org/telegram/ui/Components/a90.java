@@ -1,132 +1,88 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a90 extends View {
-    public static DecelerateInterpolator v;
-    public static Paint w;
-    public long a;
-    public float b;
-    public float c;
-    public long d;
-    public float e;
-    public float f;
-    public int h;
-    public int n;
-    public final RectF r;
-    public org.telegram.ui.Components.voip.h s;
+public abstract class a90 extends org.telegram.ui.ActionBar.f3 {
+    public boolean b;
 
-    public a90(Context context) {
-        super(context);
-        this.f = 1.0f;
-        this.r = new RectF();
-        if (v == null) {
-            v = new DecelerateInterpolator();
-            Paint paint = new Paint(1);
-            w = paint;
-            paint.setStrokeCap(Paint.Cap.ROUND);
-            w.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        }
-    }
-
-    public final void a(float f7, boolean z10) {
-        if (z10) {
-            this.c = this.e;
+    public a90(Context context, TLRPC.Chat chat) {
+        super(context, true);
+        setApplyBottomPadding(false);
+        setApplyTopPadding(false);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        setCustomView(linearLayout);
+        y9 y9Var = new y9(context);
+        y9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
+        linearLayout.addView(y9Var, w7.x5.t(90, 90, 49, 0, 29, 0, 0));
+        y9Var.e(chat, new j9(chat));
+        TextView textView = new TextView(context);
+        org.telegram.messenger.bi.k(18.0f, 1, textView);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.j5, null, false, textView, 1);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-2, -2, 49, 17, 24, 17, 0), context);
+        h.setTextSize(1, 14.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.r5, null, false, h, 1);
+        linearLayout.addView(h, w7.x5.t(-2, -2, 49, 30, 8, 30, 0));
+        ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(chat.id, false);
+        if (groupCall != null) {
+            if (TextUtils.isEmpty(groupCall.call.title)) {
+                textView.setText(chat.title);
+            } else {
+                textView.setText(groupCall.call.title);
+            }
+            int i10 = groupCall.call.participants_count;
+            if (i10 == 0) {
+                h.setText(LocaleController.getString(R.string.NoOneJoinedYet));
+            } else {
+                h.setText(LocaleController.formatPluralString("Participants", i10, new Object[0]));
+            }
         } else {
-            this.e = f7;
-            this.c = f7;
+            textView.setText(chat.title);
+            h.setText(LocaleController.getString(R.string.NoOneJoinedYet));
         }
-        if (f7 != 1.0f) {
-            this.f = 1.0f;
+        z80 z80Var = new z80(context);
+        View view = new View(context);
+        z80Var.a = view;
+        view.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
+        z80Var.addView(view, w7.x5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
+        TextView textView2 = new TextView(context);
+        z80Var.b = textView2;
+        textView2.setLines(1);
+        textView2.setSingleLine(true);
+        textView2.setGravity(1);
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        textView2.setGravity(17);
+        org.telegram.messenger.q.m(14.0f, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, textView2);
+        z80Var.addView(textView2, w7.x5.e(-2, -2, 17));
+        z80Var.setBackground(null);
+        if (ChatObject.isChannelOrGiga(chat)) {
+            z80Var.setText(LocaleController.getString(R.string.VoipChannelJoinVoiceChatUrl));
+        } else {
+            z80Var.setText(LocaleController.getString(R.string.VoipGroupJoinVoiceChatUrl));
         }
-        this.b = f7;
-        this.d = 0L;
-        this.a = System.currentTimeMillis();
-        invalidate();
+        view.setOnClickListener(new f0(this, 29));
+        linearLayout.addView(z80Var, w7.x5.t(-1, 50, 51, 0, 30, 0, 0));
     }
 
-    public float getCurrentProgress() {
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = this.h;
-        RectF rectF = this.r;
-        if (i10 != 0 && this.e != 1.0f) {
-            w.setColor(i10);
-            w.setAlpha((int) (this.f * 255.0f));
-            getWidth();
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        }
-        w.setColor(this.n);
-        w.setAlpha((int) (this.f * 255.0f));
-        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
-        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, w);
-        if (this.f > 0.0f) {
-            if (this.s == null) {
-                org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h(160, 0);
-                this.s = hVar;
-                hVar.k = false;
-                hVar.n = 0.8f;
-                hVar.m = 1.2f;
-            }
-            this.s.f = getMeasuredWidth();
-            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
-            invalidate();
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        float f7 = this.e;
-        if (f7 != 1.0f) {
-            float f10 = this.b;
-            if (f7 != f10) {
-                float f11 = this.c;
-                float f12 = f10 - f11;
-                if (f12 > 0.0f) {
-                    long j10 = this.d + j3;
-                    this.d = j10;
-                    if (j10 >= 300) {
-                        this.e = f10;
-                        this.c = f10;
-                        this.d = 0L;
-                    } else {
-                        this.e = (v.getInterpolation(j10 / 300.0f) * f12) + f11;
-                    }
-                }
-                invalidate();
-            }
-        }
-        float f13 = this.e;
-        if (f13 < 1.0f || f13 != 1.0f) {
-            return;
-        }
-        float f14 = this.f;
-        if (f14 != 0.0f) {
-            float f15 = f14 - (j3 / 200.0f);
-            this.f = f15;
-            if (f15 <= 0.0f) {
-                this.f = 0.0f;
-            }
-            invalidate();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        if (this.b) {
+            o();
         }
     }
 
-    public void setBackColor(int i10) {
-        this.h = i10;
-    }
-
-    public void setProgressColor(int i10) {
-        this.n = i10;
-    }
+    public abstract void o();
 }

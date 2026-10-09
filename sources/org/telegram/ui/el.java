@@ -1,86 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagePreviewParams;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class el extends org.telegram.ui.Components.ic0 {
-    public final /* synthetic */ yn H;
+public final class el extends org.telegram.ui.Components.kl0 {
+    public final int[] l1;
+    public ValueAnimator m1;
+    public boolean n1;
+    public final /* synthetic */ zn o1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public el(yn ynVar, Context context, yn ynVar2, ah.c cVar, MessagePreviewParams messagePreviewParams, TLRPC.User user, TLRPC.Chat chat, int i10, org.telegram.ui.Components.ec0 ec0Var, int i11, boolean z10) {
-        super(context, ynVar2, cVar, messagePreviewParams, user, chat, i10, ec0Var, i11, z10);
-        this.H = ynVar;
+    public el(zn znVar, zn znVar2, Activity activity, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(3, i10, activity, znVar2, e6Var);
+        this.o1 = znVar;
+        this.l1 = new int[2];
+        this.n1 = true;
     }
 
-    @Override // org.telegram.ui.Components.ic0
-    public final void b() {
-        MessageObject messageObject;
-        on onVar;
-        yn ynVar = this.H;
-        on onVar2 = ynVar.j5;
-        if (onVar2 == null || (messageObject = onVar2.a) == null || !((onVar = ynVar.d5.quote) == null || onVar.a == null || messageObject.getId() == ynVar.d5.quote.a.getId())) {
-            ynVar.j5 = ynVar.d5.quote;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ic0
-    public final void c(boolean z10) {
-        int i10;
-        boolean z11;
-        MessagePreviewParams.Messages messages;
-        a(false);
-        yn ynVar = this.H;
-        MessagePreviewParams messagePreviewParams = ynVar.d5;
-        if (messagePreviewParams != null) {
-            if (!z10) {
-                ynVar.k5 = true;
-            }
-            MessagePreviewParams.Messages messages2 = messagePreviewParams.forwardMessages;
-            if (messages2 != null) {
-                int size = messages2.messages.size();
-                i10 = 0;
-                z11 = false;
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject messageObject = ynVar.d5.forwardMessages.messages.get(i11);
-                    if (messageObject.isTodo()) {
-                        i10 = 3;
-                    } else if (messageObject.isPoll()) {
-                        if (i10 != 2) {
-                            i10 = messageObject.isPublicPoll() ? 2 : 1;
-                        }
-                    } else if (messageObject.isInvoice()) {
-                        z11 = true;
-                    }
-                    ynVar.U5[0].put(messageObject.getId(), messageObject);
-                }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        org.telegram.ui.ActionBar.k kVar;
+        super.onLayout(z10, i10, i11, i12, i13);
+        kVar = ((org.telegram.ui.ActionBar.n2) this.o1).actionBar;
+        org.telegram.ui.ActionBar.v0 k10 = kVar.j(null).k(28);
+        if (k10 != null) {
+            int[] iArr = this.l1;
+            getLocationInWindow(iArr);
+            float x10 = getX();
+            float width = getWidth() + x10;
+            k10.getLocationInWindow(iArr);
+            float width2 = (k10.getWidth() / 2.0f) + iArr[0];
+            int dp = AndroidUtilities.dp(20.0f);
+            boolean z11 = LocaleController.isRTL;
+            float f7 = width2 + (dp * (z11 ? -1 : 1));
+            if (z11) {
+                s(f7 - x10, !this.n1);
             } else {
-                i10 = 0;
-                z11 = false;
+                s(f7 - width, !this.n1);
             }
-            Bundle d = org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true);
-            d.putBoolean("quote", !z10);
-            boolean z12 = (z10 || (messages = ynVar.d5.replyMessage) == null || messages.messages.isEmpty() || ynVar.d5.quote != null) ? false : true;
-            d.putBoolean("reply_to", z12);
-            if (z12) {
-                long peerDialogId = DialogObject.getPeerDialogId(ynVar.d5.replyMessage.messages.get(0).getFromPeer());
-                if (peerDialogId != 0 && peerDialogId != ynVar.a() && peerDialogId != ynVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    d.putLong("reply_to_author", peerDialogId);
-                }
-            }
-            d.putInt("hasPoll", i10);
-            d.putBoolean("hasInvoice", z11);
-            MessagePreviewParams.Messages messages3 = ynVar.d5.forwardMessages;
-            d.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            d.putBoolean("canSelectTopics", true);
-            uy uyVar = new uy(d);
-            uyVar.C2 = ynVar;
-            ynVar.presentFragment(uyVar);
+            this.n1 = false;
         }
+    }
+
+    public final void s(float f7, boolean z10) {
+        ValueAnimator valueAnimator = this.m1;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.m1 = null;
+        }
+        if (!z10) {
+            setBubbleOffset(f7);
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U0, f7);
+        this.m1 = ofFloat;
+        ofFloat.addUpdateListener(new c3(this, 6));
+        this.m1.setInterpolator(org.telegram.ui.Components.hs.h);
+        this.m1.setDuration(420L);
+        this.m1.start();
     }
 }

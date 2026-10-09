@@ -1,81 +1,62 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class eu0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+public final class eu0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.kn0 b;
 
-    public eu0(PhotoViewer photoViewer, String str, long j3, int i10) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j3;
-        this.c = i10;
+    public /* synthetic */ eu0(org.telegram.ui.Components.kn0 kn0Var, int i10) {
+        this.a = i10;
+        this.b = kn0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.x8 != this) {
-            return;
-        }
-        int videoBitrate = MediaController.getVideoBitrate(this.a);
-        int[] iArr = new int[11];
-        AnimatedFileNative.d(this.a, iArr, this.b);
-        boolean z10 = iArr[10] != 0;
-        this.d.k8 = (iArr[0] == 0 || (z10 && iArr[9] == 0)) ? false : true;
-        PhotoViewer photoViewer = this.d;
-        if (videoBitrate == -1) {
-            videoBitrate = iArr[3];
-        }
-        photoViewer.g8 = videoBitrate;
-        photoViewer.h8 = videoBitrate;
-        if (this.d.k8) {
-            PhotoViewer photoViewer2 = this.d;
-            int i10 = iArr[1];
-            photoViewer2.c8 = i10;
-            photoViewer2.e8 = i10;
-            PhotoViewer photoViewer3 = this.d;
-            int i11 = iArr[2];
-            photoViewer3.d8 = i11;
-            photoViewer3.f8 = i11;
-            PhotoViewer photoViewer4 = this.d;
-            int max = Math.max(photoViewer4.c8, this.d.d8);
-            if (max > 1280) {
-                photoViewer4.Z7 = 4;
-            } else if (max > 854) {
-                photoViewer4.Z7 = 3;
-            } else if (max > 640) {
-                photoViewer4.Z7 = 2;
-            } else {
-                photoViewer4.Z7 = 1;
-            }
-            PhotoViewer photoViewer5 = this.d;
-            int i12 = this.c;
-            if (i12 == -1) {
-                i12 = photoViewer5.v2();
-            }
-            photoViewer5.Y7 = i12;
-            PhotoViewer photoViewer6 = this.d;
-            if (photoViewer6.g8 != 0 && photoViewer6.c2 != 1) {
-                Size p02 = photoViewer6.p0();
-                if (p02.getWidth() == photoViewer6.c8 && p02.getHeight() == photoViewer6.d8) {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), photoViewer6.h8, false);
-                } else {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.d8, photoViewer6.c8, photoViewer6.h8, p02.getHeight(), p02.getWidth()), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.Q1.getNextView().setText((CharSequence) null);
+                cu0 cu0Var = photoViewer.T1;
+                cu0Var.l0 = false;
+                if (cu0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) cu0Var.o0.getLayoutParams()).topMargin = cu0Var.m0;
+                    cu0Var.m0 = -1;
+                    cu0Var.requestLayout();
+                    break;
                 }
-            }
-            this.d.l8 = MediaController.isH264Video(this.a);
+                break;
+            default:
+                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                break;
         }
-        if (this.d.x8 != this) {
-            return;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                cu0 cu0Var = ((PhotoViewer) this.b.b).T1;
+                Method method = cu0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(cu0Var, null);
+                        break;
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        AndroidUtilities.runOnUIThread(new nf0(this, this, iArr, 20));
     }
 }

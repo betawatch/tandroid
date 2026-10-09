@@ -2,7 +2,7 @@ package q3;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends j {
     public final byte[] b;
@@ -26,6 +26,6 @@ public final class b extends j {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b) + a4.a.h(527, 31, this.a);
+        return Arrays.hashCode(this.b) + a1.g.h(527, 31, this.a);
     }
 }

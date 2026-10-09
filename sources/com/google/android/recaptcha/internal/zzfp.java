@@ -1,19 +1,17 @@
 package com.google.android.recaptcha.internal;
 
+import ae.f2;
 import android.app.Application;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import android.net.NetworkInfo;
-import android.os.Build;
 import com.google.android.recaptcha.RecaptchaAction;
-import gd.c;
-import gd.g;
+import hd.c;
+import hd.g;
 import kotlin.jvm.internal.i;
-import v7.s7;
-import zd.d2;
+import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -29,14 +27,14 @@ public final class zzfp {
     public zzfp(String str) {
         this.zza = str;
         int i10 = zzby.zza;
-        this.zzb = s7.a(zzff.zza);
-        this.zzc = s7.a(zzfg.zza);
-        this.zzd = s7.a(zzfh.zza);
-        this.zze = s7.a(zzfi.zza);
-        this.zzf = s7.a(zzfj.zza);
-        this.zzg = s7.a(zzfk.zza);
-        this.zzh = s7.a(zzfl.zza);
-        this.zzi = s7.a(zzfm.zza);
+        this.zzb = z7.a(zzff.zza);
+        this.zzc = z7.a(zzfg.zza);
+        this.zzd = z7.a(zzfh.zza);
+        this.zze = z7.a(zzfi.zza);
+        this.zzf = z7.a(zzfj.zza);
+        this.zzg = z7.a(zzfk.zza);
+        this.zzh = z7.a(zzfl.zza);
+        this.zzi = z7.a(zzfm.zza);
     }
 
     public static final /* synthetic */ zzq zzb(zzfp zzfpVar) {
@@ -44,7 +42,7 @@ public final class zzfp {
     }
 
     public static final /* synthetic */ zzcg zzd(zzfp zzfpVar, Exception exc) {
-        return exc instanceof d2 ? zzfpVar.zzt(exc, new zzcg(zzce.zzc, zzcd.zzb, exc.getMessage(), null, 8, null)) : exc instanceof zzcg ? zzfpVar.zzt(exc, (zzcg) exc) : zzfpVar.zzt(exc, new zzcg(zzce.zzc, zzcd.zzZ, exc.getMessage(), null, 8, null));
+        return exc instanceof f2 ? zzfpVar.zzt(exc, new zzcg(zzce.zzc, zzcd.zzb, exc.getMessage(), null, 8, null)) : exc instanceof zzcg ? zzfpVar.zzt(exc, (zzcg) exc) : zzfpVar.zzt(exc, new zzcg(zzce.zzc, zzcd.zzZ, exc.getMessage(), null, 8, null));
     }
 
     public static final /* synthetic */ zzci zze(zzfp zzfpVar) {
@@ -88,13 +86,9 @@ public final class zzfp {
             Object systemService = zzs().getSystemService("connectivity");
             i.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
             ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
-            if (Build.VERSION.SDK_INT >= 23) {
-                Network activeNetwork = connectivityManager.getActiveNetwork();
-                return (activeNetwork == null || (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) == null || !networkCapabilities.hasCapability(16)) ? false : true;
-            }
-            NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-            if (activeNetworkInfo != null) {
-                return activeNetworkInfo.isConnected();
+            Network activeNetwork = connectivityManager.getActiveNetwork();
+            if (activeNetwork != null && (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) != null) {
+                return networkCapabilities.hasCapability(16);
             }
             return false;
         } catch (Exception unused) {
@@ -107,7 +101,7 @@ public final class zzfp {
         try {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i10 = zzby.zza;
-            ((zziq) s7.a(zzeu.zza).a()).zza(zzj);
+            ((zziq) z7.a(zzeu.zza).a()).zza(zzj);
         } catch (Exception e7) {
             throw new zzcg(zzce.zzl, zzcd.zzan, e7.getMessage(), null, 8, null);
         }
@@ -123,23 +117,23 @@ public final class zzfp {
         return (zzye) zzf.zzk();
     }
 
-    public final Object zzl(String str, long j3, id.c cVar) {
+    public final Object zzl(String str, long j3, jd.c cVar) {
         return new zzhf(27, new zzet(this, str, j3, null), null);
     }
 
-    public final Object zzm(zzye zzyeVar, long j3, id.c cVar) {
+    public final Object zzm(zzye zzyeVar, long j3, jd.c cVar) {
         return new zzhf(28, new zzex(this, j3, zzyeVar, null), null);
     }
 
-    public final Object zzn(zzxn zzxnVar, long j3, id.c cVar) {
+    public final Object zzn(zzxn zzxnVar, long j3, jd.c cVar) {
         return new zzhg(new zzfd(j3, this, zzxnVar, null));
     }
 
-    public final Object zzo(zzyg zzygVar, id.c cVar) {
+    public final Object zzo(zzyg zzygVar, jd.c cVar) {
         return new zzhf(29, new zzfe(zzygVar, this, null), null);
     }
 
-    public final Object zzp(long j3, id.c cVar) {
+    public final Object zzp(long j3, jd.c cVar) {
         return new zzhf(22, new zzfo(j3, this, null), null);
     }
 }

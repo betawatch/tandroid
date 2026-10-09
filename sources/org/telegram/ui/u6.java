@@ -1,41 +1,46 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import android.content.Context;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class u6 {
-    public long a;
-    public int b;
-    public long c;
-    public final SparseArray d = new SparseArray();
+public final class u6 extends org.telegram.ui.Components.gd {
+    public final /* synthetic */ w6 e0;
 
-    public u6(long j3) {
-        this.a = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u6(w6 w6Var, Context context) {
+        super(context, 11, org.telegram.ui.Components.gd.W, 0, org.telegram.ui.Components.gd.a0);
+        this.e0 = w6Var;
     }
 
-    public final void a(zh.a aVar, int i10) {
-        SparseArray sparseArray = this.d;
-        v6 v6Var = (v6) sparseArray.get(i10, null);
-        if (v6Var == null) {
-            v6Var = new v6();
-            sparseArray.put(i10, v6Var);
+    @Override // org.telegram.ui.Components.gd
+    public final void d(int i10, boolean z10) {
+        y6 y6Var = this.e0.e;
+        if (!z10) {
+            y6Var.b.j1();
+            return;
         }
-        long j3 = aVar.c;
-        v6Var.a += j3;
-        this.c += j3;
-        this.b++;
-        v6Var.b.add(aVar);
-    }
-
-    public final void b(zh.a aVar) {
-        v6 v6Var = (v6) this.d.get(aVar.d, null);
-        if (v6Var != null && v6Var.b.remove(aVar)) {
-            long j3 = v6Var.a;
-            long j10 = aVar.c;
-            v6Var.a = j3 - j10;
-            this.c -= j10;
-            this.b--;
+        int i11 = -1;
+        if (i10 == 8) {
+            i10 = -1;
+        }
+        int i12 = 0;
+        while (true) {
+            if (i12 < y6Var.a0.size()) {
+                t6 t6Var = (t6) y6Var.a0.get(i12);
+                if (t6Var != null && t6Var.a == 11 && t6Var.f == i10) {
+                    i11 = i12;
+                    break;
+                }
+                i12++;
+            } else {
+                break;
+            }
+        }
+        if (i11 >= 0) {
+            y6Var.b.e1(new i2.w(i11, 7), 0, true);
+        } else {
+            y6Var.b.j1();
         }
     }
 }

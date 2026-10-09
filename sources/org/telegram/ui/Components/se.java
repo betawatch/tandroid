@@ -1,29 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class se implements d5 {
+public final class se extends View.AccessibilityDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ se(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.d5
-    public final void K(int i10, int i11, boolean z10) {
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         switch (this.a) {
             case 0:
-                this.b.T0(i10, z10, i11, true, 0L);
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.T0(i10, z10, i11, true, 0L);
-                of ofVar = chatActivityEnterView.L0;
-                if (ofVar != null) {
-                    ofVar.i();
-                    chatActivityEnterView.L0 = null;
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
                     break;
                 }
                 break;

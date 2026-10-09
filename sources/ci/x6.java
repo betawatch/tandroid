@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x6 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -54,7 +54,7 @@ public final /* synthetic */ class x6 implements Runnable {
                     }
                 }
                 Utilities.stackBlurBitmap(createBitmap, 1);
-                AndroidUtilities.runOnUIThread(new ai.ba(19, callback, createBitmap));
+                AndroidUtilities.runOnUIThread(new ai.ca(19, callback, createBitmap));
                 break;
             default:
                 ((MessagesStorage) this.e).lambda$getDialogs$240(this.b, this.c, this.d, (long[]) this.f);

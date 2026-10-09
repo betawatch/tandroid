@@ -3,7 +3,7 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public enum f0 implements Parcelable {
     /* JADX INFO: Fake field, exist only in values array */
@@ -26,7 +26,7 @@ public enum f0 implements Parcelable {
                 return f0Var;
             }
         }
-        throw new g0(a4.a.q("TokenBindingStatus ", str, " not supported"));
+        throw new g0(a1.g.q("TokenBindingStatus ", str, " not supported"));
     }
 
     @Override // android.os.Parcelable

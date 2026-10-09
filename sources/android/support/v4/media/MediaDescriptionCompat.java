@@ -3,13 +3,12 @@ package android.support.v4.media;
 import android.graphics.Bitmap;
 import android.media.MediaDescription;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.media.session.b0;
+import android.support.v4.media.session.a0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class MediaDescriptionCompat implements Parcelable {
     public static final Parcelable.Creator<MediaDescriptionCompat> CREATOR = new w.a(5);
@@ -34,7 +33,7 @@ public final class MediaDescriptionCompat implements Parcelable {
         this.n = uri2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0050  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -43,26 +42,25 @@ public final class MediaDescriptionCompat implements Parcelable {
         if (obj == null) {
             return null;
         }
-        int i10 = Build.VERSION.SDK_INT;
         MediaDescription mediaDescription = (MediaDescription) obj;
         String g10 = a.g(mediaDescription);
-        CharSequence i11 = a.i(mediaDescription);
+        CharSequence i10 = a.i(mediaDescription);
         CharSequence h = a.h(mediaDescription);
         CharSequence c10 = a.c(mediaDescription);
         Bitmap e7 = a.e(mediaDescription);
         Uri f7 = a.f(mediaDescription);
         Bundle d = a.d(mediaDescription);
         if (d != null) {
-            d = b0.j(d);
+            d = a0.j(d);
         }
         Uri uri = d != null ? (Uri) d.getParcelable("android.support.v4.media.description.MEDIA_URI") : null;
         if (uri != null) {
             if (d.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") && d.size() == 2) {
                 bundle = null;
                 if (uri == null) {
-                    uri = i10 >= 23 ? b.a(mediaDescription) : null;
+                    uri = b.a(mediaDescription);
                 }
-                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g10, i11, h, c10, e7, f7, bundle, uri);
+                MediaDescriptionCompat mediaDescriptionCompat = new MediaDescriptionCompat(g10, i10, h, c10, e7, f7, bundle, uri);
                 mediaDescriptionCompat.r = mediaDescription;
                 return mediaDescriptionCompat;
             }
@@ -72,7 +70,7 @@ public final class MediaDescriptionCompat implements Parcelable {
         bundle = d;
         if (uri == null) {
         }
-        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g10, i11, h, c10, e7, f7, bundle, uri);
+        MediaDescriptionCompat mediaDescriptionCompat2 = new MediaDescriptionCompat(g10, i10, h, c10, e7, f7, bundle, uri);
         mediaDescriptionCompat2.r = mediaDescription;
         return mediaDescriptionCompat2;
     }
@@ -82,7 +80,6 @@ public final class MediaDescriptionCompat implements Parcelable {
         if (mediaDescription != null) {
             return mediaDescription;
         }
-        int i10 = Build.VERSION.SDK_INT;
         MediaDescription.Builder b10 = a.b();
         a.n(b10, this.a);
         a.p(b10, this.b);
@@ -90,18 +87,8 @@ public final class MediaDescriptionCompat implements Parcelable {
         a.j(b10, this.d);
         a.l(b10, this.e);
         a.m(b10, this.f);
-        Bundle bundle = this.h;
-        Uri uri = this.n;
-        if (i10 >= 23 || uri == null) {
-            a.k(b10, bundle);
-        } else {
-            Bundle i11 = bundle == null ? a4.a.i("android.support.v4.media.description.NULL_BUNDLE_FLAG", true) : new Bundle(bundle);
-            i11.putParcelable("android.support.v4.media.description.MEDIA_URI", uri);
-            a.k(b10, i11);
-        }
-        if (i10 >= 23) {
-            b.b(b10, uri);
-        }
+        a.k(b10, this.h);
+        b.b(b10, this.n);
         MediaDescription a2 = a.a(b10);
         this.r = a2;
         return a2;

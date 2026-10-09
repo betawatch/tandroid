@@ -1,89 +1,79 @@
 package ci;
 
-import android.text.TextUtils;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w0 implements Runnable {
+public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ w0(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+    public /* synthetic */ w0(a1 a1Var, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
+        this.b = a1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        File file;
+        File file2;
+        ArrayList arrayList = (ArrayList) obj;
         switch (this.a) {
             case 0:
-                MessagesStorage messagesStorage = this.b;
-                ArrayList arrayList = this.c;
-                try {
-                    SQLiteDatabase database = messagesStorage.getDatabase();
-                    if (database == null) {
-                        return;
+                a1 a1Var = this.b;
+                a1Var.getClass();
+                long currentTimeMillis = System.currentTimeMillis();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    l8 a2 = ((z0) arrayList.get(i10)).a();
+                    if ((a2.v() || ((file = a2.L) != null && file.exists())) && currentTimeMillis - a2.d <= 604800000) {
+                        arrayList4.add(a2);
+                        arrayList2.add(Long.valueOf(a2.b));
+                    } else {
+                        arrayList3.add(a2);
                     }
-                    database.executeFast("DELETE FROM story_drafts WHERE id IN (" + TextUtils.join(", ", arrayList) + ")").stepThis().dispose();
-                    return;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
                 }
-            case 1:
-                MessagesStorage messagesStorage2 = this.b;
-                ArrayList arrayList2 = this.c;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        SQLiteDatabase database2 = messagesStorage2.getDatabase();
-                        database2.executeFast("DELETE FROM business_links").stepThis().dispose();
-                        sQLitePreparedStatement = database2.executeFast("REPLACE INTO business_links VALUES(?, ?)");
-                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                            TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList2.get(i10);
-                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_businessChatLink.getObjectSize());
-                            tL_businessChatLink.serializeToStream(nativeByteBuffer);
-                            sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
-                            sQLitePreparedStatement.bindInteger(2, i10);
-                            sQLitePreparedStatement.step();
-                        }
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
-                    }
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
+                a1Var.c(arrayList3);
+                a1Var.f = false;
+                a1Var.e = true;
+                ai.m9 storiesController = MessagesController.getInstance(a1Var.a).getStoriesController();
+                storiesController.getClass();
+                int size = arrayList4.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj2 = arrayList4.get(i11);
+                    i11++;
+                    ai.l9 l9Var = new ai.l9(storiesController, (l8) obj2);
+                    storiesController.d(l9Var.J, l9Var, storiesController.b, false);
                 }
+                NotificationCenter.getInstance(storiesController.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                break;
             default:
-                MessagesStorage messagesStorage3 = this.b;
-                ArrayList arrayList3 = this.c;
-                try {
-                    messagesStorage3.getDatabase().executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
-                    return;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    return;
+                a1 a1Var2 = this.b;
+                a1Var2.getClass();
+                long currentTimeMillis2 = System.currentTimeMillis();
+                ArrayList arrayList5 = new ArrayList();
+                ArrayList arrayList6 = new ArrayList();
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    l8 a10 = ((z0) arrayList.get(i12)).a();
+                    if ((a10.v() || ((file2 = a10.L) != null && file2.exists())) && (!a10.g ? currentTimeMillis2 - a10.d <= 604800000 : currentTimeMillis2 <= a10.J)) {
+                        a1Var2.b.add(a10);
+                        arrayList5.add(Long.valueOf(a10.b));
+                    } else {
+                        arrayList6.add(a10);
+                    }
                 }
+                a1Var2.c(arrayList6);
+                a1Var2.d = false;
+                a1Var2.c = true;
+                NotificationCenter.getInstance(a1Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
+                break;
         }
     }
 }

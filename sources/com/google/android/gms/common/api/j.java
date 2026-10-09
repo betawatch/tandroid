@@ -11,13 +11,13 @@ import com.google.android.gms.common.api.internal.i1;
 import com.google.android.gms.common.api.internal.j1;
 import com.google.android.gms.common.api.internal.t0;
 import com.google.android.gms.common.api.internal.w;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Collections;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
@@ -58,8 +58,8 @@ public abstract class j {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         hVar.f(taskCompletionSource, uVar.b, this);
         a1 a1Var = new a1(new i1(new b1(uVar, g1Var2), taskCompletionSource), hVar.r.get(), this);
-        c0 c0Var = hVar.x;
-        c0Var.sendMessage(c0Var.obtainMessage(8, a1Var));
+        a0 a0Var = hVar.x;
+        a0Var.sendMessage(a0Var.obtainMessage(8, a1Var));
         return taskCompletionSource.getTask();
     }
 
@@ -70,8 +70,8 @@ public abstract class j {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         hVar.f(taskCompletionSource, i10, this);
         a1 a1Var = new a1(new i1(nVar, taskCompletionSource), hVar.r.get(), this);
-        c0 c0Var = hVar.x;
-        c0Var.sendMessage(c0Var.obtainMessage(13, a1Var));
+        a0 a0Var = hVar.x;
+        a0Var.sendMessage(a0Var.obtainMessage(13, a1Var));
         return taskCompletionSource.getTask();
     }
 
@@ -80,8 +80,8 @@ public abstract class j {
         com.google.android.gms.common.api.internal.h hVar = this.j;
         hVar.getClass();
         a1 a1Var = new a1(new h1(i10, eVar), hVar.r.get(), this);
-        c0 c0Var = hVar.x;
-        c0Var.sendMessage(c0Var.obtainMessage(4, a1Var));
+        a0 a0Var = hVar.x;
+        a0Var.sendMessage(a0Var.obtainMessage(4, a1Var));
     }
 
     public final Task e(int i10, w wVar) {
@@ -90,8 +90,8 @@ public abstract class j {
         hVar.getClass();
         hVar.f(taskCompletionSource, wVar.a, this);
         a1 a1Var = new a1(new j1(i10, wVar, taskCompletionSource, this.i), hVar.r.get(), this);
-        c0 c0Var = hVar.x;
-        c0Var.sendMessage(c0Var.obtainMessage(4, a1Var));
+        a0 a0Var = hVar.x;
+        a0Var.sendMessage(a0Var.obtainMessage(4, a1Var));
         return taskCompletionSource.getTask();
     }
 
@@ -113,7 +113,7 @@ public abstract class j {
         this.j = g10;
         this.g = g10.n.getAndIncrement();
         this.i = iVar.a;
-        c0 c0Var = g10.x;
-        c0Var.sendMessage(c0Var.obtainMessage(7, this));
+        a0 a0Var = g10.x;
+        a0Var.sendMessage(a0Var.obtainMessage(7, this));
     }
 }

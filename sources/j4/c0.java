@@ -2,9 +2,10 @@ package j4;
 
 import b2.r0;
 import c3.h0;
+import ei.c5;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -18,14 +19,14 @@ public final class c0 {
             case 1:
                 this.b = list;
                 this.c = new h0[list.size()];
-                e2.c cVar = new e2.c(new ei.f(this, 28));
+                e2.c cVar = new e2.c(new c5(this, 27));
                 this.d = cVar;
                 cVar.k(3);
                 break;
             default:
                 this.b = list;
                 this.c = new h0[list.size()];
-                this.d = new e2.c(new ei.f(this, 27));
+                this.d = new e2.c(new c5(this, 26));
                 break;
         }
     }
@@ -51,16 +52,16 @@ public final class c0 {
                     if (i10 >= h0VarArr.length) {
                         break;
                     } else {
-                        f0Var.a();
                         f0Var.b();
-                        h0 Z1 = qVar.Z1(f0Var.d, 3);
+                        f0Var.c();
+                        h0 f22 = qVar.f2(f0Var.c, 3);
                         b2.s sVar = (b2.s) this.b.get(i10);
                         String str = sVar.r;
                         e2.d.a("Invalid closed caption MIME type provided: " + str, "application/cea-608".equals(str) || "application/cea-708".equals(str));
                         String str2 = sVar.a;
                         if (str2 == null) {
-                            f0Var.b();
-                            str2 = f0Var.e;
+                            f0Var.c();
+                            str2 = (String) f0Var.e;
                         }
                         b2.r rVar = new b2.r();
                         rVar.a = str2;
@@ -70,8 +71,8 @@ public final class c0 {
                         rVar.d = sVar.d;
                         rVar.N = sVar.O;
                         rVar.t = sVar.u;
-                        hg.c.s(rVar, Z1);
-                        h0VarArr[i10] = Z1;
+                        hg.c.s(rVar, f22);
+                        h0VarArr[i10] = f22;
                         i10++;
                     }
                 }
@@ -83,23 +84,23 @@ public final class c0 {
                     if (i11 >= h0VarArr2.length) {
                         break;
                     } else {
-                        f0Var.a();
                         f0Var.b();
-                        h0 Z12 = qVar.Z1(f0Var.d, 3);
+                        f0Var.c();
+                        h0 f23 = qVar.f2(f0Var.c, 3);
                         b2.s sVar2 = (b2.s) this.b.get(i11);
                         String str3 = sVar2.r;
                         e2.d.a("Invalid closed caption MIME type provided: " + str3, "application/cea-608".equals(str3) || "application/cea-708".equals(str3));
                         b2.r rVar2 = new b2.r();
-                        f0Var.b();
-                        rVar2.a = f0Var.e;
+                        f0Var.c();
+                        rVar2.a = (String) f0Var.e;
                         rVar2.p = r0.n("video/mp2t");
                         rVar2.q = r0.n(str3);
                         rVar2.e = sVar2.e;
                         rVar2.d = sVar2.d;
                         rVar2.N = sVar2.O;
                         rVar2.t = sVar2.u;
-                        hg.c.s(rVar2, Z12);
-                        h0VarArr2[i11] = Z12;
+                        hg.c.s(rVar2, f23);
+                        h0VarArr2[i11] = f23;
                         i11++;
                     }
                 }

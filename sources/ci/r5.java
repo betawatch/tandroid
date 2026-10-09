@@ -1,73 +1,21 @@
 package ci;
 
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class r5 implements pg.u {
-    public boolean a;
-    public final /* synthetic */ pg.u0 b;
-    public final /* synthetic */ mb c;
+public final class r5 extends h4 {
+    public final /* synthetic */ nb m;
 
-    public r5(mb mbVar, pg.u0 u0Var) {
-        this.c = mbVar;
-        this.b = u0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r5(nb nbVar, kc kcVar, ai.h3 h3Var) {
+        super(kcVar, false, h3Var);
+        this.m = nbVar;
     }
 
-    @Override // pg.u
-    public final void a() {
-        this.a = true;
-    }
-
-    @Override // pg.u
-    public final void b(Canvas canvas) {
-        f6 f6Var = this.c.O0;
-        Matrix matrix = f6Var.getMatrix();
-        canvas.save();
-        canvas.translate(f6Var.getX(), f6Var.getY());
-        canvas.concat(matrix);
-        f6Var.getWidth();
-        throw null;
-    }
-
-    @Override // pg.u
-    public final boolean c() {
-        return this.a;
-    }
-
-    @Override // pg.u
-    public final void d() {
-        this.a = false;
-    }
-
-    @Override // pg.u
-    public final View e() {
-        return this.c;
-    }
-
-    @Override // pg.u
-    public final FrameLayout f() {
-        return this.c.V0;
-    }
-
-    @Override // pg.u
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // pg.u
-    public final void h(int i10) {
-        mb mbVar = this.c;
-        mbVar.I0(false);
-        pg.u0 u0Var = this.b;
-        u0Var.h(i10, true);
-        u0Var.g();
-        mbVar.setNewColor(i10);
-        q5 q5Var = mbVar.w1;
-        q5Var.setSelectedColorIndex(u0Var.d());
-        q5Var.getAdapter().l();
+    @Override // ci.h4
+    public final void b(boolean z10) {
+        super.b(z10);
+        if (z10) {
+            this.m.O0(false);
+        }
     }
 }

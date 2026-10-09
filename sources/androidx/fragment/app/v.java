@@ -10,14 +10,13 @@ import android.view.View;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
-import n7.z0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class v extends androidx.activity.l implements e0.c, e0.d {
+public abstract class v extends androidx.activity.l implements e0.b {
     public boolean L;
     public boolean M;
-    public final xa.c J = new xa.c(new u(this), 4);
+    public final xa.d J = new xa.d(new u(this), 4);
     public final androidx.lifecycle.v K = new androidx.lifecycle.v(this);
     public boolean N = true;
 
@@ -35,10 +34,10 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i10) {
                     case 0:
-                        this.b.J.J();
+                        this.b.J.o();
                         break;
                     default:
-                        this.b.J.J();
+                        this.b.J.o();
                         break;
                 }
             }
@@ -55,21 +54,21 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.J.J();
+                        this.b.J.o();
                         break;
                     default:
-                        this.b.J.J();
+                        this.b.J.o();
                         break;
                 }
             }
         });
         androidx.activity.f fVar = new androidx.activity.f(this, 1);
-        com.google.android.gms.internal.cast.f0 f0Var = this.b;
-        f0Var.getClass();
-        if (((androidx.activity.l) f0Var.c) != null) {
+        com.google.android.gms.internal.cast.d0 d0Var = this.b;
+        d0Var.getClass();
+        if (((androidx.activity.l) d0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) f0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) d0Var.b).add(fVar);
     }
 
     public static boolean t(k0 k0Var) {
@@ -144,18 +143,18 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
         printWriter.print(" mStopped=");
         printWriter.print(this.N);
         if (getApplication() != null) {
-            new z0(this, f()).r(str3, printWriter);
+            new n6.t(this, f()).F(str3, printWriter);
         }
         ((u) this.J.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
     @Override // androidx.activity.l, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.J.J();
+        this.J.o();
         super.onActivityResult(i10, i11, intent);
     }
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.f, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.K.e(androidx.lifecycle.m.ON_CREATE);
@@ -211,24 +210,24 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // androidx.activity.l, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.J.J();
+        this.J.o();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
-        xa.c cVar = this.J;
-        cVar.J();
+        xa.d dVar = this.J;
+        dVar.o();
         super.onResume();
         this.M = true;
-        ((u) cVar.b).d.A(true);
+        ((u) dVar.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        xa.c cVar = this.J;
-        cVar.J();
-        u uVar = (u) cVar.b;
+        xa.d dVar = this.J;
+        dVar.o();
+        u uVar = (u) dVar.b;
         super.onStart();
         this.N = false;
         if (!this.L) {
@@ -250,7 +249,7 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.J.J();
+        this.J.o();
     }
 
     @Override // android.app.Activity

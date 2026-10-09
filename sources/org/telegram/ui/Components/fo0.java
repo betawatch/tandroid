@@ -1,97 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fo0 extends s4.s0 {
+public final /* synthetic */ class fo0 implements em0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.uy b;
-    public final /* synthetic */ org.telegram.ui.dy c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ fo0(org.telegram.ui.dy dyVar, org.telegram.ui.uy uyVar, int i10) {
-        this.a = i10;
-        this.c = dyVar;
-        this.b = uyVar;
+    public /* synthetic */ fo0(Object obj, int i10, org.telegram.ui.ActionBar.n2 n2Var, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = n2Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
+    @Override // org.telegram.ui.Components.em0
+    public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.fy fyVar;
-        int i12;
-        zl0 zl0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.dy dyVar = this.c;
-                dyVar.q0.V();
-                dyVar.U();
-                break;
-            case 1:
-                org.telegram.ui.dy dyVar2 = this.c;
-                dyVar2.x0.W();
-                dyVar2.U();
-                break;
-            case 2:
-                org.telegram.ui.dy dyVar3 = this.c;
-                jo0 jo0Var = dyVar3.d0;
-                s4.c0 c0Var = dyVar3.e0;
-                int L0 = c0Var.L0();
-                int N0 = c0Var.N0();
-                int abs = Math.abs(c0Var.N0() - L0) + 1;
-                int h = recyclerView.getAdapter().h();
-                if (abs > 0 && (((jo0Var.U.a() != 0 && !jo0Var.X) || !jo0Var.W) && (N0 == h - 1 || ((fyVar = jo0Var.U) != null && fyVar.a() != 0 && (i12 = jo0Var.Y) >= 0 && L0 <= i12 && N0 >= i12)))) {
-                    jo0Var.Q();
-                }
-                dyVar3.U();
-                break;
-            default:
-                org.telegram.ui.dy dyVar4 = this.c;
-                lo0 lo0Var = dyVar4.l0;
-                if (lo0Var.Y && !lo0Var.W && !TextUtils.isEmpty(lo0Var.b0) && (zl0Var = lo0Var.d) != null) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < zl0Var.getChildCount()) {
-                            if (!(zl0Var.getChildAt(i13) instanceof w00)) {
-                                i13++;
-                            } else if (lo0Var.Y && !lo0Var.W && !TextUtils.isEmpty(lo0Var.b0)) {
-                                lo0Var.V(true);
+                no0 no0Var = (no0) this.d;
+                ArrayList arrayList = no0Var.r;
+                ai.w0 w0Var = no0Var.d;
+                if (i10 >= 0 && i10 < arrayList.size()) {
+                    if (!UserConfig.getInstance(this.b).isPremium()) {
+                        new rg.y0(this.c, 24, true).show();
+                        break;
+                    } else {
+                        long j3 = ((ko0) arrayList.get(i10)).a.h;
+                        if (no0Var.f(no0Var.h == j3 ? null : ((ko0) arrayList.get(i10)).a)) {
+                            int i11 = 0;
+                            while (i11 < w0Var.getChildCount()) {
+                                if (w0Var.getChildAt(i11) == view) {
+                                    if (i11 <= 1) {
+                                        w0Var.v0(-AndroidUtilities.dp(i11 == 0 ? 90.0f : 50.0f), 0, null);
+                                    } else if (i11 >= w0Var.getChildCount() - 2) {
+                                        w0Var.v0(AndroidUtilities.dp(i11 == w0Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
+                                    }
+                                }
+                                i11++;
+                            }
+                            w0Var.M(new org.telegram.ui.ir(3));
+                            if (no0Var.h != j3) {
+                                no0Var.h = j3;
+                                ((mo0) view).a(true, true);
+                                break;
+                            } else {
+                                no0Var.h = 0L;
+                                break;
                             }
                         }
                     }
                 }
-                dyVar4.U();
+                break;
+            default:
+                rg.l1 l1Var = (rg.l1) this.d;
+                if (view instanceof org.telegram.ui.uw0) {
+                    org.telegram.ui.uw0 uw0Var = (org.telegram.ui.uw0) view;
+                    PremiumPreviewFragment.q0(this.b, uw0Var.f.a);
+                    l1Var.showDialog(new rg.y0(this.c, uw0Var.f.a, false));
+                    break;
+                }
                 break;
         }
     }

@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a;
@@ -115,33 +115,33 @@ public final class v implements Runnable {
                     throw th2;
                 }
             default:
-                w9.n nVar = (w9.n) this.e;
-                w9.r rVar = nVar.n;
-                if (rVar == null || !rVar.e.get()) {
+                w9.m mVar = (w9.m) this.e;
+                w9.q qVar = mVar.n;
+                if (qVar == null || !qVar.e.get()) {
                     long j3 = this.b / 1000;
-                    String e10 = nVar.e();
+                    String e10 = mVar.e();
                     if (e10 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
-                    n nVar2 = nVar.m;
+                    n nVar = mVar.m;
                     Throwable th3 = (Throwable) this.c;
                     Thread thread = (Thread) this.d;
-                    nVar2.getClass();
+                    nVar.getClass();
                     String concat = "Persisting non-fatal event for session ".concat(e10);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    nVar2.v(th3, thread, e10, "error", j3, false);
+                    nVar.v(th3, thread, e10, "error", j3, false);
                     return;
                 }
                 return;
         }
     }
 
-    public v(w9.n nVar, long j3, Throwable th2, Thread thread) {
+    public v(w9.m mVar, long j3, Throwable th2, Thread thread) {
         this.a = 1;
-        this.e = nVar;
+        this.e = mVar;
         this.b = j3;
         this.c = th2;
         this.d = thread;

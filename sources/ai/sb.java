@@ -1,151 +1,45 @@
 package ai;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.oj0;
+import android.window.OnBackInvokedCallback;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class sb extends AnimatorListenerAdapter {
+public final /* synthetic */ class sb implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jc b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ sb(jc jcVar, int i10) {
+    public /* synthetic */ sb(Object obj, int i10) {
         this.a = i10;
-        this.b = jcVar;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        e6 t10;
-        oj0 oj0Var;
+    public final void onBackInvoked() {
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                jc jcVar = this.b;
-                gc gcVar = jcVar.s0;
-                yb ybVar = jcVar.v;
-                if (ybVar != null) {
-                    ybVar.a(true);
-                }
-                jcVar.o();
-                jcVar.J0.unlock();
-                p9 p9Var = jcVar.u1;
-                if (p9Var != null) {
-                    p9Var.b();
-                    AndroidUtilities.removeFromParent(jcVar.u1);
-                    jcVar.u1 = null;
-                }
-                ImageReceiver imageReceiver = gcVar.b;
-                if (imageReceiver != null) {
-                    imageReceiver.setVisible(true, true);
-                    gcVar.b = null;
-                }
-                ImageReceiver imageReceiver2 = gcVar.c;
-                if (imageReceiver2 != null) {
-                    imageReceiver2.setAlpha(1.0f);
-                    gcVar.c.setVisible(true, true);
-                }
-                if (gcVar.d != null && (t10 = jcVar.t()) != null && (oj0Var = t10.o1.d) != null) {
-                    oj0 oj0Var2 = gcVar.d;
-                    oj0Var2.getClass();
-                    oj0Var2.c = oj0Var.c;
-                    oj0Var2.f = oj0Var.f;
-                    oj0Var2.b = oj0Var.b;
-                    oj0Var2.a = System.currentTimeMillis();
-                    oj0Var2.c();
-                }
-                d6 d6Var = jcVar.G0;
-                if (d6Var != null) {
-                    d6Var.b();
-                }
-                SurfaceView surfaceView = jcVar.C0;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(4);
-                }
-                jcVar.I();
-                try {
-                    AndroidUtilities.runOnUIThread(new a3.d(this, 22));
-                } catch (Exception unused) {
-                }
-                jcVar.m0 = false;
-                jcVar.d = false;
-                d5 d5Var = jcVar.o1;
-                if (d5Var != null) {
-                    d5Var.run();
-                    jcVar.o1 = null;
+                kc kcVar = (kc) this.b;
+                kcVar.getClass();
+                LaunchActivity launchActivity = LaunchActivity.G1;
+                if (launchActivity == null) {
+                    kcVar.onAttachedBackPressed();
+                    break;
+                } else {
+                    launchActivity.onBackPressed();
                     break;
                 }
-                break;
             case 1:
-                jc jcVar2 = this.b;
-                jcVar2.H = null;
-                jcVar2.Z = 0.0f;
-                jcVar2.d0 = 0.0f;
-                zb zbVar = jcVar2.n0;
-                e6 currentPeerView = zbVar != null ? zbVar.getCurrentPeerView() : null;
-                if (currentPeerView != null) {
-                    currentPeerView.invalidate();
-                    break;
-                }
+                sd.a onBackInvoked = (sd.a) this.b;
+                kotlin.jvm.internal.i.e(onBackInvoked, "$onBackInvoked");
+                onBackInvoked.invoke();
+                break;
+            case 2:
+                ((ci.lc) this.b).L();
+                break;
+            case 3:
+                ((g.r) this.b).s();
                 break;
             default:
-                jc jcVar3 = this.b;
-                gc gcVar2 = jcVar3.s0;
-                jcVar3.U = 1.0f;
-                jcVar3.o();
-                jc.x1 = false;
-                yb ybVar2 = jcVar3.v;
-                if (ybVar2 != null) {
-                    ybVar2.a(true);
-                }
-                xb xbVar = jcVar3.s;
-                if (xbVar != null) {
-                    xbVar.invalidate();
-                }
-                ImageReceiver imageReceiver3 = gcVar2.b;
-                if (imageReceiver3 != null && !jcVar3.d) {
-                    imageReceiver3.setVisible(true, true);
-                    gcVar2.b = null;
-                }
-                ImageReceiver imageReceiver4 = gcVar2.c;
-                if (imageReceiver4 != null && !jcVar3.d) {
-                    imageReceiver4.setAlpha(1.0f);
-                    gcVar2.c.setVisible(true, true);
-                    gcVar2.c = null;
-                }
-                e6 t11 = jcVar3.t();
-                if (t11 != null) {
-                    t11.f1(false);
-                }
-                d2 d2Var = jcVar3.A0;
-                if (d2Var != null) {
-                    d2Var.v((1.0f - jcVar3.V) * jcVar3.U);
-                }
-                if (jcVar3.w1) {
-                    jcVar3.w1 = false;
-                    jcVar3.p();
-                    AndroidUtilities.runOnUIThread(new d5(jcVar3, 1), 30L);
-                } else if (!SharedConfig.storiesIntroShown) {
-                    if (jcVar3.u1 == null && jcVar3.v != null) {
-                        p9 p9Var2 = new p9(jcVar3.v.getContext(), jcVar3.s);
-                        jcVar3.u1 = p9Var2;
-                        p9Var2.setAlpha(0.0f);
-                        jcVar3.v.addView(jcVar3.u1);
-                    }
-                    p9 p9Var3 = jcVar3.u1;
-                    if (p9Var3 != null) {
-                        p9Var3.setOnClickListener(new v0(this, 4));
-                        jcVar3.u1.animate().alpha(1.0f).setDuration(150L).setListener(new cc(this, 1)).start();
-                    }
-                    SharedConfig.setStoriesIntroShown(true);
-                }
-                jcVar3.P();
-                jcVar3.J0.unlock();
+                ((Runnable) this.b).run();
                 break;
         }
     }

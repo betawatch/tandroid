@@ -9,17 +9,17 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.zo0;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.t6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public zo0 a;
+    public kp0 a;
     public float b;
     public float c;
     public float d;
-    public r6 e;
+    public t6 e;
     public String f;
     public TextPaint h;
     public int n;
@@ -33,9 +33,9 @@ public final class h extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.h;
-        textPaint.setColor(i6.w0(null, i6.G6, false));
+        textPaint.setColor(i6.x0(null, i6.G6, false));
         canvas.drawText(this.f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), textPaint);
-        textPaint.setColor(i6.w0(null, i6.I6, false));
+        textPaint.setColor(i6.x0(null, i6.I6, false));
         String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
         canvas.drawText(format, (getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - textPaint.measureText(format), this.a.getY() + AndroidUtilities.dp(23.0f), textPaint);
     }
@@ -51,10 +51,10 @@ public final class h extends FrameLayout {
         super.onMeasure(i10, i11);
         int size = View.MeasureSpec.getSize(i10);
         if (this.n != size) {
-            zo0 zo0Var = this.a;
+            kp0 kp0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f7 = this.b;
-            zo0Var.setProgress((floatValue - f7) / (this.c - f7));
+            kp0Var.setProgress((floatValue - f7) / (this.c - f7));
             this.n = size;
         }
     }

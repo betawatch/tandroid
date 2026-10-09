@@ -12,15 +12,16 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
+import m.f3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public k2.v F;
+    public m4.w F;
     public final ComponentName r;
-    public final com.google.android.gms.internal.cast.c0 s;
+    public final com.google.android.gms.internal.cast.a0 s;
     public final ArrayList v;
     public boolean w;
     public boolean x;
@@ -31,10 +32,10 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new l2.g(componentName, 12));
+        super(context, new f3(componentName, 12));
         this.v = new ArrayList();
         this.r = componentName;
-        this.s = new com.google.android.gms.internal.cast.c0();
+        this.s = new com.google.android.gms.internal.cast.a0();
     }
 
     @Override // com.google.android.gms.internal.vision.h3

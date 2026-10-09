@@ -1,10 +1,11 @@
 package ac;
 
+import ci.u5;
 import java.util.Arrays;
 import n6.l;
 import z7.ve;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e {
     public final boolean a;
@@ -18,14 +19,14 @@ public final class e {
     }
 
     public final ve a() {
-        cf.c cVar = new cf.c();
+        u5 u5Var = new u5();
         Boolean bool = Boolean.FALSE;
-        cVar.a = bool;
-        cVar.b = Boolean.valueOf(this.a);
-        cVar.c = Boolean.valueOf(this.b);
-        cVar.d = bool;
-        cVar.e = Boolean.valueOf(this.c);
-        return new ve(cVar);
+        u5Var.a = bool;
+        u5Var.b = Boolean.valueOf(this.a);
+        u5Var.c = Boolean.valueOf(this.b);
+        u5Var.d = bool;
+        u5Var.e = Boolean.valueOf(this.c);
+        return new ve(u5Var);
     }
 
     public final boolean equals(Object obj) {

@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import java.io.InputStream;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public class Font {
     public static final int BOLD = 1;
@@ -19,7 +19,7 @@ public class Font {
     }
 
     private static Typeface applyStyle(Typeface typeface, int i10) {
-        if (((typeface.isBold() ? 1 : 0) | (typeface.isItalic() ? 2 : 0)) != i10) {
+        if ((typeface.isBold() | (typeface.isItalic() ? 2 : false)) != i10) {
             return Typeface.create(typeface, ((i10 & 1) != 0 ? 1 : 0) | ((i10 & 2) != 0 ? 2 : 0));
         }
         return typeface;

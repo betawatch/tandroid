@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class t0 implements b1 {
     public final a a;
@@ -22,7 +22,7 @@ public final class t0 implements b1 {
     @Override // androidx.datastore.preferences.protobuf.b1
     public final void b(Object obj, k0 k0Var) {
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 
@@ -43,7 +43,7 @@ public final class t0 implements b1 {
         this.b.getClass();
         ((w) obj).unknownFields.e = false;
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 
@@ -58,8 +58,7 @@ public final class t0 implements b1 {
         int i11 = 0;
         for (int i12 = 0; i12 < i1Var.a; i12++) {
             int i13 = i1Var.b[i12] >>> 3;
-            g gVar = (g) i1Var.c[i12];
-            i11 += j.r(3, gVar) + j.z(i13) + j.y(2) + (j.y(1) * 2);
+            i11 += j.r(3, (g) i1Var.c[i12]) + j.z(i13) + j.y(2) + (j.y(1) * 2);
         }
         i1Var.d = i11;
         return i11;
@@ -68,7 +67,7 @@ public final class t0 implements b1 {
     @Override // androidx.datastore.preferences.protobuf.b1
     public final boolean f(Object obj) {
         this.c.getClass();
-        a4.a.z(obj);
+        a1.g.z(obj);
         throw null;
     }
 

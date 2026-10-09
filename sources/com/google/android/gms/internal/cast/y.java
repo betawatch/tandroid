@@ -1,54 +1,73 @@
 package com.google.android.gms.internal.cast;
 
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.LinkProperties;
 import android.net.Network;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class y extends ConnectivityManager.NetworkCallback {
-    public final /* synthetic */ z a;
+public final class y {
+    public static final g6.b j = new g6.b("ConnectivityMonitor", null);
+    public final l4 a;
+    public final ConnectivityManager c;
+    public boolean f;
+    public final Context g;
+    public final Object h = new Object();
+    public final Set i = DesugarCollections.synchronizedSet(new HashSet());
+    public final Map d = DesugarCollections.synchronizedMap(new HashMap());
+    public final List e = DesugarCollections.synchronizedList(new ArrayList());
+    public final x b = new x(this);
 
-    public y(z zVar) {
-        this.a = zVar;
+    public y(Context context, l4 l4Var) {
+        this.a = l4Var;
+        this.g = context;
+        this.c = (ConnectivityManager) context.getSystemService("connectivity");
     }
 
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onLinkPropertiesChanged(Network network, LinkProperties linkProperties) {
-        this.a.a(network, linkProperties);
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onLost(Network network) {
-        z zVar = this.a;
-        synchronized (zVar.n) {
+    public final void a(Network network, LinkProperties linkProperties) {
+        synchronized (this.h) {
             try {
-                if (zVar.d != null && zVar.e != null) {
-                    z.s.b("the network is lost", new Object[0]);
-                    if (zVar.e.remove(network)) {
-                        zVar.d.remove(network);
+                if (this.d != null && this.e != null) {
+                    j.b("a new network is available", new Object[0]);
+                    if (this.d.containsKey(network)) {
+                        this.e.remove(network);
                     }
-                    zVar.b();
+                    this.d.put(network, linkProperties);
+                    this.e.add(network);
+                    b();
                 }
             } finally {
             }
         }
     }
 
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onUnavailable() {
-        z zVar = this.a;
-        synchronized (zVar.n) {
-            if (zVar.d != null && zVar.e != null) {
-                z.s.b("all networks are unavailable.", new Object[0]);
-                zVar.d.clear();
-                zVar.e.clear();
-                zVar.b();
+    public final void b() {
+        if (this.a == null) {
+            return;
+        }
+        synchronized (this.i) {
+            try {
+                Iterator it = this.i.iterator();
+                while (it.hasNext()) {
+                    if (it.next() != null) {
+                        throw new ClassCastException();
+                    }
+                    if (!((m4) this.a).a.isShutdown()) {
+                        ((m4) this.a).execute(new w(this, 0));
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-    }
-
-    @Override // android.net.ConnectivityManager.NetworkCallback
-    public final void onAvailable(Network network) {
     }
 }

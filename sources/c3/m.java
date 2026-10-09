@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m implements r {
     public static final int[] e = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14, 17, 18, 19, 20, 21};
-    public static final n4.y f = new n4.y(new w1(18));
-    public static final n4.y h = new n4.y(new w1(19));
+    public static final n4.x f = new n4.x(new w1(18));
+    public static final n4.x h = new n4.x(new w1(19));
     public a1 a;
     public int d;
-    public qb.b c = new qb.b(28);
+    public ob.a c = new ob.a(28);
     public boolean b = true;
 
     public final void a(int i10, ArrayList arrayList) {
@@ -33,12 +33,12 @@ public final class m implements r {
                 arrayList.add(new d3.a(1));
                 break;
             case 4:
-                o R = f.R(0);
-                if (R == null) {
+                o T = f.T(0);
+                if (T == null) {
                     arrayList.add(new h3.b());
                     break;
                 } else {
-                    arrayList.add(R);
+                    arrayList.add(T);
                     break;
                 }
             case 5:
@@ -51,11 +51,11 @@ public final class m implements r {
                 arrayList.add(new v3.d(1));
                 break;
             case 8:
-                qb.b bVar = this.c;
+                ob.a aVar = this.c;
                 int i11 = this.b ? 0 : 32;
                 e9.g0 g0Var = e9.i0.b;
-                arrayList.add(new w3.h(bVar, i11, null, a1.e, null));
-                arrayList.add(new w3.k(this.c, this.b ? 0 : 16));
+                arrayList.add(new w3.j(aVar, i11, null, a1.e, null));
+                arrayList.add(new w3.m(this.c, this.b ? 0 : 16));
                 break;
             case 9:
                 arrayList.add(new x3.d());
@@ -82,9 +82,9 @@ public final class m implements r {
                 arrayList.add(new k3.a(this.d));
                 break;
             case 15:
-                o R2 = h.R(new Object[0]);
-                if (R2 != null) {
-                    arrayList.add(R2);
+                o T2 = h.T(new Object[0]);
+                if (T2 != null) {
+                    arrayList.add(T2);
                     break;
                 }
                 break;
@@ -127,11 +127,11 @@ public final class m implements r {
             List list = (List) map.get("Content-Type");
             if (list != null && !list.isEmpty()) {
                 str = (String) list.get(0);
-                a2 = v7.h0.a(str);
+                a2 = v7.d0.a(str);
                 if (a2 != -1) {
                     a(a2, arrayList);
                 }
-                b10 = v7.h0.b(uri);
+                b10 = v7.d0.b(uri);
                 if (b10 != -1 && b10 != a2) {
                     a(b10, arrayList);
                 }
@@ -143,10 +143,10 @@ public final class m implements r {
                 }
             }
             str = null;
-            a2 = v7.h0.a(str);
+            a2 = v7.d0.a(str);
             if (a2 != -1) {
             }
-            b10 = v7.h0.b(uri);
+            b10 = v7.d0.b(uri);
             if (b10 != -1) {
                 a(b10, arrayList);
             }

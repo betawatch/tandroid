@@ -1,171 +1,87 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
+import android.content.SharedPreferences;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class lf1 extends og.b {
-    public final /* synthetic */ wf1 d;
+public final class lf1 implements org.telegram.ui.Components.ep {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ fg1 b;
 
-    public lf1(wf1 wf1Var) {
-        this.d = wf1Var;
+    public lf1(fg1 fg1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = fg1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
-        return i10 == 0 || i10 == 3;
+    @Override // org.telegram.ui.Components.ep
+    public final void dismiss() {
+        this.b.finishPreviewFragment();
     }
 
-    public final ArrayList F() {
-        wf1 wf1Var = this.d;
-        wf1Var.getClass();
-        return wf1Var.b;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return F().size() + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == h() - 1) {
-            return 2;
+    @Override // org.telegram.ui.Components.ep
+    public final void o() {
+        fg1 fg1Var = this.b;
+        fg1Var.finishPreviewFragment();
+        MessagesController messagesController = fg1Var.getMessagesController();
+        long j3 = fg1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        boolean isDialogMuted = messagesController.isDialogMuted(-j3, tL_forumTopic.id);
+        fg1Var.getNotificationsController().muteDialog(-j3, tL_forumTopic.id, !isDialogMuted);
+        if (org.telegram.ui.Components.ad.a(fg1Var)) {
+            org.telegram.ui.Components.ad.z(fg1Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, fg1Var.getResourceProvider()).j();
         }
-        return ((nf1) this.d.b.get(i10)).a;
     }
 
-    @Override // s4.h0
-    public final void l() {
-        this.d.c = h();
-        super.l();
+    @Override // org.telegram.ui.Components.ep
+    public final void p() {
+        this.b.finishPreviewFragment();
+        AndroidUtilities.runOnUIThread(new n31(20, this, this.a), 500L);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0112  */
-    @Override // s4.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.c1 c1Var, int i10) {
-        tf1 tf1Var;
-        int i11;
-        boolean z10;
-        int i12;
-        wf1 wf1Var = this.d;
-        ArrayList arrayList = wf1Var.b;
-        long j3 = wf1Var.a;
-        int i13 = c1Var.f;
-        View view = c1Var.a;
-        if (i13 != 0) {
-            boolean z11 = true;
-            if (i13 == 3) {
-                tf1 tf1Var2 = (tf1) view;
-                tf1Var2.setCurrentDialogId(-j3);
-                if (i10 == arrayList.size() - 1 && !wf1Var.N.S0()) {
-                    z11 = false;
-                }
-                tf1Var2.W4 = z11;
-                tf1Var2.X4 = i10;
+    @Override // org.telegram.ui.Components.ep
+    public final void s() {
+        int i10;
+        fg1 fg1Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) fg1Var).currentAccount;
+        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
+        StringBuilder sb2 = new StringBuilder("sound_enabled_");
+        long j3 = fg1Var.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.q.i(-j3, tL_forumTopic.id, sb2), true);
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.q.i(-j3, tL_forumTopic.id, new StringBuilder("sound_enabled_")), !z10).apply();
+        fg1Var.finishPreviewFragment();
+        if (org.telegram.ui.Components.ad.a(fg1Var)) {
+            org.telegram.ui.Components.ad.S(z10 ? 1 : 0, fg1Var, fg1Var.getResourceProvider()).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ep
+    public final void x(int i10) {
+        fg1 fg1Var = this.b;
+        long j3 = fg1Var.a;
+        fg1Var.finishPreviewFragment();
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        if (i10 != 0) {
+            fg1Var.getNotificationsController().muteUntil(-j3, tL_forumTopic.id, i10);
+            if (org.telegram.ui.Components.ad.a(fg1Var)) {
+                org.telegram.ui.Components.ad.z(fg1Var, 5, i10, fg1Var.getResourceProvider()).j();
                 return;
             }
             return;
         }
-        TLRPC.TL_forumTopic tL_forumTopic = ((nf1) F().get(i10)).c;
-        int i14 = i10 + 1;
-        TLRPC.TL_forumTopic tL_forumTopic2 = i14 < F().size() ? ((nf1) F().get(i14)).c : null;
-        tf1 tf1Var3 = (tf1) view;
-        TLRPC.Message message = tL_forumTopic.topMessage;
-        TLRPC.TL_forumTopic tL_forumTopic3 = tf1Var3.N;
-        int i15 = tL_forumTopic3 == null ? 0 : tL_forumTopic3.id;
-        int i16 = tL_forumTopic.id;
-        boolean z12 = i15 == i16 && tf1Var3.X4 == i10 && wf1Var.G;
-        if (message != null) {
-            i12 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
-            MessageObject messageObject = new MessageObject(i12, message, false, false);
-            if (!wf1Var.getMessagesController().isMonoForum(-j3)) {
-                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic2;
-                tf1Var = tf1Var3;
-                i11 = i16;
-                boolean z13 = z12;
-                tf1Var.X(tL_forumTopic, -j3, messageObject, wf1Var.isInPreviewMode(), z13);
-                z10 = z13;
-                tf1Var.W4 = i10 != arrayList.size() - 1 || wf1Var.N.S0();
-                boolean z14 = tL_forumTopic.pinned;
-                tf1Var.t2 = z14 && (tL_forumTopic4 == null || !tL_forumTopic4.pinned);
-                tf1Var.setPinForced(z14 && !tL_forumTopic.hidden);
-                tf1Var.X4 = i10;
-                if (!wf1Var.getMessagesController().isMonoForum(-j3)) {
-                    tf1Var.setTopicIcon(tL_forumTopic);
-                }
-                tf1Var.T(wf1Var.a0.contains(Integer.valueOf(i11)), z10);
-                tf1Var.setDialogSelected(wf1Var.Q0 != ((long) i11));
-                tf1Var.R(wf1Var.b0, true);
-            }
-            tf1Var3.q0 = true;
-            tf1Var3.x = true;
-            tf1Var3.N = tL_forumTopic;
-            tf1Var3.I = 72;
-            tf1Var3.U = 42.0f;
-            tf1Var3.J = 72;
-            tf1Var3.K = 78;
-            long peerDialogId = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
-            int i17 = message.date;
-            i11 = i16;
-            tf1Var3.U(peerDialogId, messageObject, i17, false, false);
-            tf1Var3.s0 = true;
-            tf1Var3.s2 = i14 < h();
-            tf1Var = tf1Var3;
-        } else {
-            tf1Var = tf1Var3;
-            i11 = i16;
+        if (fg1Var.getMessagesController().isDialogMuted(-j3, tL_forumTopic.id)) {
+            fg1Var.getNotificationsController().muteDialog(-j3, tL_forumTopic.id, false);
         }
-        z10 = z12;
-        if (!wf1Var.getMessagesController().isMonoForum(-j3)) {
+        if (org.telegram.ui.Components.ad.a(fg1Var)) {
+            org.telegram.ui.Components.ad.z(fg1Var, 4, i10, fg1Var.getResourceProvider()).j();
         }
-        tf1Var.T(wf1Var.a0.contains(Integer.valueOf(i11)), z10);
-        tf1Var.setDialogSelected(wf1Var.Q0 != ((long) i11));
-        tf1Var.R(wf1Var.b0, true);
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        boolean z10;
-        int i11;
-        wf1 wf1Var = this.d;
-        if (i10 != 0 && i10 != 3) {
-            if (i10 == 2) {
-                kf1 kf1Var = new kf1(this, wf1Var.getParentActivity());
-                wf1Var.E0 = kf1Var;
-                return new org.telegram.ui.Components.il0(kf1Var);
-            }
-            org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(viewGroup.getContext(), null);
-            w00Var.setViewType(24);
-            w00Var.setIsSingleCell(true);
-            w00Var.w = true;
-            return new org.telegram.ui.Components.il0(w00Var);
-        }
-        tf1 tf1Var = new tf1(wf1Var, viewGroup.getContext(), false);
-        if (i10 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
-            boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(i11, -wf1Var.a);
-            tf1Var.setForumIcon(ng.d.d(ng.a.k[0], ""));
-            tf1Var.setTitleOverride(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatTitle : R.string.BotForumAskForStartNewChatTitle));
-            tf1Var.setCustomMessage(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatForward : R.string.BotForumAskForStartNewChatForward));
-        }
-        z10 = ((org.telegram.ui.ActionBar.n2) wf1Var).inPreviewMode;
-        tf1Var.k0 = z10;
-        tf1Var.setArchivedPullAnimation(wf1Var.w);
-        return new org.telegram.ui.Components.il0(tf1Var);
+    @Override // org.telegram.ui.Components.ep
+    public final /* synthetic */ void m() {
     }
 }

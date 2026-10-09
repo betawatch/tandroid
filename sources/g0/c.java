@@ -9,14 +9,13 @@ import android.os.Build;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.p0;
-import f0.h;
+import e0.n0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public Context a;
@@ -27,9 +26,9 @@ public final class c {
     public CharSequence f;
     public CharSequence g;
     public IconCompat h;
-    public p0[] i;
+    public n0[] i;
     public Set j;
-    public h k;
+    public f0.f k;
     public boolean l;
     public int m;
     public PersistableBundle n;
@@ -78,52 +77,52 @@ public final class c {
         }
         int i10 = 0;
         if (Build.VERSION.SDK_INT >= 29) {
-            p0[] p0VarArr = this.i;
-            if (p0VarArr != null && p0VarArr.length > 0) {
-                int length = p0VarArr.length;
+            n0[] n0VarArr = this.i;
+            if (n0VarArr != null && n0VarArr.length > 0) {
+                int length = n0VarArr.length;
                 Person[] personArr = new Person[length];
                 while (i10 < length) {
-                    p0 p0Var = this.i[i10];
-                    p0Var.getClass();
-                    personArr[i10] = b5.d.E(p0Var);
+                    n0 n0Var = this.i[i10];
+                    n0Var.getClass();
+                    personArr[i10] = b5.d.E(n0Var);
                     i10++;
                 }
                 intents.setPersons(personArr);
             }
-            h hVar = this.k;
-            if (hVar != null) {
-                intents.setLocusId(hVar.b);
+            f0.f fVar = this.k;
+            if (fVar != null) {
+                intents.setLocusId(fVar.b);
             }
             intents.setLongLived(this.l);
         } else {
             if (this.n == null) {
                 this.n = new PersistableBundle();
             }
-            p0[] p0VarArr2 = this.i;
-            if (p0VarArr2 != null && p0VarArr2.length > 0) {
-                this.n.putInt("extraPersonCount", p0VarArr2.length);
+            n0[] n0VarArr2 = this.i;
+            if (n0VarArr2 != null && n0VarArr2.length > 0) {
+                this.n.putInt("extraPersonCount", n0VarArr2.length);
                 while (i10 < this.i.length) {
                     PersistableBundle persistableBundle2 = this.n;
                     StringBuilder sb2 = new StringBuilder("extraPerson_");
                     int i11 = i10 + 1;
                     sb2.append(i11);
                     String sb3 = sb2.toString();
-                    p0 p0Var2 = this.i[i10];
-                    p0Var2.getClass();
+                    n0 n0Var2 = this.i[i10];
+                    n0Var2.getClass();
                     PersistableBundle persistableBundle3 = new PersistableBundle();
-                    CharSequence charSequence = p0Var2.a;
+                    CharSequence charSequence = n0Var2.a;
                     persistableBundle3.putString("name", charSequence != null ? charSequence.toString() : null);
-                    persistableBundle3.putString("uri", p0Var2.c);
-                    persistableBundle3.putString("key", p0Var2.d);
-                    persistableBundle3.putBoolean("isBot", p0Var2.e);
-                    persistableBundle3.putBoolean("isImportant", p0Var2.f);
+                    persistableBundle3.putString("uri", n0Var2.c);
+                    persistableBundle3.putString("key", n0Var2.d);
+                    persistableBundle3.putBoolean("isBot", n0Var2.e);
+                    persistableBundle3.putBoolean("isImportant", n0Var2.f);
                     persistableBundle2.putPersistableBundle(sb3, persistableBundle3);
                     i10 = i11;
                 }
             }
-            h hVar2 = this.k;
-            if (hVar2 != null) {
-                this.n.putString("extraLocusId", hVar2.a);
+            f0.f fVar2 = this.k;
+            if (fVar2 != null) {
+                this.n.putString("extraLocusId", fVar2.a);
             }
             this.n.putBoolean("extraLongLived", this.l);
             intents.setExtras(this.n);

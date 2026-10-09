@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c extends g {
     public long b;
     public long[] c;
     public long[] d;
 
-    public static Serializable Z0(int i10, v vVar) {
+    public static Serializable b1(int i10, v vVar) {
         if (i10 == 0) {
             return Double.valueOf(Double.longBitsToDouble(vVar.r()));
         }
@@ -22,11 +22,11 @@ public final class c extends g {
             return Boolean.valueOf(vVar.x() == 1);
         }
         if (i10 == 2) {
-            return b1(vVar);
+            return d1(vVar);
         }
         if (i10 != 3) {
             if (i10 == 8) {
-                return a1(vVar);
+                return c1(vVar);
             }
             if (i10 != 10) {
                 if (i10 != 11) {
@@ -39,41 +39,41 @@ public final class c extends g {
             int B = vVar.B();
             ArrayList arrayList = new ArrayList(B);
             for (int i11 = 0; i11 < B; i11++) {
-                Serializable Z0 = Z0(vVar.x(), vVar);
-                if (Z0 != null) {
-                    arrayList.add(Z0);
+                Serializable b12 = b1(vVar.x(), vVar);
+                if (b12 != null) {
+                    arrayList.add(b12);
                 }
             }
             return arrayList;
         }
         HashMap hashMap = new HashMap();
         while (true) {
-            String b12 = b1(vVar);
+            String d12 = d1(vVar);
             int x10 = vVar.x();
             if (x10 == 9) {
                 return hashMap;
             }
-            Serializable Z02 = Z0(x10, vVar);
-            if (Z02 != null) {
-                hashMap.put(b12, Z02);
+            Serializable b13 = b1(x10, vVar);
+            if (b13 != null) {
+                hashMap.put(d12, b13);
             }
         }
     }
 
-    public static HashMap a1(v vVar) {
+    public static HashMap c1(v vVar) {
         int B = vVar.B();
         HashMap hashMap = new HashMap(B);
         for (int i10 = 0; i10 < B; i10++) {
-            String b12 = b1(vVar);
-            Serializable Z0 = Z0(vVar.x(), vVar);
-            if (Z0 != null) {
-                hashMap.put(b12, Z0);
+            String d12 = d1(vVar);
+            Serializable b12 = b1(vVar.x(), vVar);
+            if (b12 != null) {
+                hashMap.put(d12, b12);
             }
         }
         return hashMap;
     }
 
-    public static String b1(v vVar) {
+    public static String d1(v vVar) {
         int D = vVar.D();
         int i10 = vVar.b;
         vVar.K(D);

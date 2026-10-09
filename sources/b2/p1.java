@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class p1 {
     public boolean A;
@@ -67,7 +67,7 @@ public class p1 {
         e9.f0 u10 = e9.i0.u();
         for (String str : strArr) {
             str.getClass();
-            u10.b(e2.d0.R(str));
+            u10.b(e2.d0.Q(str));
         }
         return u10.i();
     }

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import o1.l;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class f extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -40,8 +40,8 @@ public final class f extends GestureDetector.SimpleOnGestureListener {
         }
         lVar.i = i.a(displayMetrics, f11);
         iVar.d.u.i = i.b(iVar.getResources().getDisplayMetrics(), (f10 / 10.0f) + ((float) iVar.d.u.i));
-        iVar.c.f();
-        iVar.d.f();
+        iVar.c.h();
+        iVar.d.h();
         iVar.h = true;
         return true;
     }
@@ -61,8 +61,8 @@ public final class f extends GestureDetector.SimpleOnGestureListener {
         if (iVar.f && !iVar.n) {
             iVar.c.u.i = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
             iVar.d.u.i = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
-            iVar.c.f();
-            iVar.d.f();
+            iVar.c.h();
+            iVar.d.h();
         }
         return iVar.f;
     }

@@ -1,151 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vj extends ul0 {
-    public final int r = UserConfig.selectedAccount;
-    public final Context s;
-    public final /* synthetic */ bk v;
+public final /* synthetic */ class vj implements ak {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
 
-    public vj(bk bkVar, Context context) {
-        this.v = bkVar;
-        this.s = context;
+    public /* synthetic */ vj(int i10, TLRPC.User user) {
+        this.a = i10;
+        this.b = user;
     }
 
-    @Override // org.telegram.ui.Components.gl0
-    public final String F(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.gl0
-    public final void G(zl0 zl0Var, float f7, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final int M(int i10) {
-        if (i10 == 0 || i10 == R() - 1) {
-            return 1;
+    @Override // org.telegram.ui.Components.ak
+    public final String run() {
+        hf.b c10;
+        StringBuilder sb2;
+        String str;
+        switch (this.a) {
+            case 0:
+                c10 = hf.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
+            default:
+                c10 = hf.b.c();
+                sb2 = new StringBuilder("+");
+                str = this.b.phone;
+                break;
         }
-        int i11 = i10 - 1;
-        int i12 = this.r;
-        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i12).phoneBookSectionsDict;
-        ArrayList<String> arrayList = ContactsController.getInstance(i12).phoneBookSectionsArray;
-        if (i11 < arrayList.size()) {
-            return hashMap.get(arrayList.get(i11)).size();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final Object O(int i10, int i11) {
-        if (i10 == 0) {
-            return null;
-        }
-        int i12 = i10 - 1;
-        int i13 = this.r;
-        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i13).phoneBookSectionsDict;
-        ArrayList<String> arrayList = ContactsController.getInstance(i13).phoneBookSectionsArray;
-        if (i12 < arrayList.size()) {
-            ArrayList<Object> arrayList2 = hashMap.get(arrayList.get(i12));
-            if (i11 < arrayList2.size()) {
-                return arrayList2.get(i11);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final int P(int i10, int i11) {
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == R() - 1 ? 2 : 0;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final int R() {
-        return ContactsController.getInstance(this.r).phoneBookSectionsArray.size() + 2;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final View T(int i10, View view) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final boolean V(int i10, int i11, s4.c1 c1Var) {
-        if (i10 == 0 || i10 == R() - 1) {
-            return false;
-        }
-        int i12 = this.r;
-        return i11 < ContactsController.getInstance(i12).phoneBookSectionsDict.get(ContactsController.getInstance(i12).phoneBookSectionsArray.get(i10 + (-1))).size();
-    }
-
-    @Override // org.telegram.ui.Components.ul0
-    public final void W(int i10, int i11, s4.c1 c1Var) {
-        TLRPC.User user;
-        if (c1Var.f == 0) {
-            ak akVar = (ak) c1Var.a;
-            Object O = O(i10, i11);
-            boolean z10 = true;
-            if (i10 == R() - 2 && i11 == M(i10) - 1) {
-                z10 = false;
-            }
-            if (O instanceof ContactsController.Contact) {
-                ContactsController.Contact contact = (ContactsController.Contact) O;
-                user = contact.user;
-                if (user == null) {
-                    akVar.setCurrentId(contact.contact_id);
-                    akVar.a(null, ContactsController.formatName(contact.first_name, contact.last_name), new tj(contact, 0), z10);
-                    user = null;
-                }
-            } else {
-                user = (TLRPC.User) O;
-            }
-            if (user != null) {
-                akVar.a(user, null, new uj(0, user), z10);
-            }
-            boolean containsKey = this.v.w.containsKey(rj.a(O));
-            qp qpVar = akVar.d;
-            if (qpVar.getVisibility() != 0) {
-                qpVar.setVisibility(0);
-            }
-            qpVar.a(containsKey, false);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ul0, s4.h0
-    public final void l() {
-        X(false);
-        this.v.L();
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View akVar;
-        Context context = this.s;
-        if (i10 == 0) {
-            akVar = new ak(context, this.v.a);
-        } else if (i10 != 1) {
-            akVar = new View(context);
-            akVar.setTag(-33024);
-        } else {
-            akVar = new View(context);
-            akVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-            akVar.setTag(-33024);
-        }
-        return new il0(akVar);
+        return org.telegram.messenger.bi.g(sb2, str, c10);
     }
 }

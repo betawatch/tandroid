@@ -7,9 +7,10 @@ import i5.d;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import l5.s;
+import l5.r;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c {
     public final double a;
@@ -19,19 +20,19 @@ public final class c {
     public final int e;
     public final ArrayBlockingQueue f;
     public final ThreadPoolExecutor g;
-    public final s h;
-    public final o0.a i;
+    public final r h;
+    public final b5 i;
     public int j;
     public long k;
 
-    public c(s sVar, da.a aVar, o0.a aVar2) {
-        double d = aVar.d;
-        double d10 = aVar.e;
+    public c(r rVar, da.b bVar, b5 b5Var) {
+        double d = bVar.d;
+        double d10 = bVar.e;
         this.a = d;
         this.b = d10;
-        this.c = aVar.f * 1000;
-        this.h = sVar;
-        this.i = aVar2;
+        this.c = bVar.f * 1000;
+        this.h = rVar;
+        this.i = b5Var;
         this.d = SystemClock.elapsedRealtime();
         int i10 = (int) d;
         this.e = i10;

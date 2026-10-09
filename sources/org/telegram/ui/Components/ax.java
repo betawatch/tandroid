@@ -1,110 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.Collections;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ax extends ux {
-    public static final /* synthetic */ int H0 = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 E0;
-    public final /* synthetic */ boolean F0;
-    public final /* synthetic */ nz G0;
+public final class ax implements View.OnFocusChangeListener {
+    public final /* synthetic */ a00 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(nz nzVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var, boolean z10) {
-        super(nzVar, context, d6Var);
-        this.G0 = nzVar;
-        this.E0 = n2Var;
-        this.F0 = z10;
+    public ax(a00 a00Var) {
+        this.a = a00Var;
     }
 
-    @Override // org.telegram.ui.Components.an0
-    public final void j() {
-        bx bxVar = this.G0.C0;
-        if (bxVar != null) {
-            bxVar.invalidate();
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.an0
-    public final void o(int i10, int i11) {
-        nz nzVar = this.G0;
-        org.telegram.ui.Cells.t6 t6Var = nzVar.f2;
-        int i12 = nzVar.E1;
-        int i13 = i10 - i12;
-        int i14 = i11 - i12;
-        int i15 = nzVar.c1;
-        MediaDataController mediaDataController = MediaDataController.getInstance(i15);
-        ArrayList arrayList = nzVar.d1;
-        arrayList.add(i14, (TLRPC.TL_messages_stickerSet) arrayList.remove(i13));
-        int i16 = 1;
-        Collections.sort(mediaDataController.getStickerSets(0), new rl(this, i16));
-        ArrayList arrayList2 = nzVar.E2;
-        if (arrayList2 != null) {
-            arrayList2.clear();
-            nzVar.E2.addAll(arrayList);
-        }
-        nzVar.C();
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        AndroidUtilities.runOnUIThread(t6Var, 1500L);
-        MediaDataController.getInstance(i15).calcNewHash(0);
-        TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
-        tL_messages_reorderStickerSets.masks = false;
-        tL_messages_reorderStickerSets.emojis = false;
-        for (int i17 = nzVar.e0; i17 < arrayList.size(); i17 = com.google.android.gms.internal.vision.e2.g(((TLRPC.TL_messages_stickerSet) arrayList.get(i17)).set.id, tL_messages_reorderStickerSets.order, i17, 1)) {
-        }
-        ConnectionsManager.getInstance(i15).sendRequest(tL_messages_reorderStickerSets, new ai.u7(13));
-        NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);
-        nzVar.W(true);
-        if (SharedConfig.updateStickersOrderOnSend) {
-            SharedConfig.toggleUpdateStickersOrderOnSend();
-            org.telegram.ui.ActionBar.n2 n2Var = this.E0;
-            if (n2Var != null) {
-                yc.a0(n2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new ud(i16, n2Var)).j();
-                return;
-            }
-            FrameLayout frameLayout = nzVar.r;
-            if (frameLayout != null) {
-                new yc(frameLayout, nzVar.Z1).M(LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), R.raw.filter_reorder).j();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.an0
-    public final void p() {
-        nz nzVar = this.G0;
-        nzVar.X();
-        bx bxVar = nzVar.C0;
-        if (bxVar != null) {
-            bxVar.invalidate();
-        }
-        invalidate();
-        oy oyVar = nzVar.t1;
-        if (oyVar != null) {
-            oyVar.u();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            if (this.F0) {
-                return;
-            }
-            this.G0.x0.invalidate();
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
+        if (z10) {
+            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+            a00 a00Var = this.a;
+            a00Var.W0 = currentKeyboardLanguage;
+            MediaDataController.getInstance(a00Var.c1).fetchNewEmojiKeywords(a00Var.W0);
         }
     }
 }

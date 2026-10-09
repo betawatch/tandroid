@@ -2,18 +2,19 @@ package zb;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
+import ci.u5;
 import com.google.android.gms.internal.cast.p;
 import com.google.firebase.messaging.n;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 import n6.j;
 import n6.l;
-import n7.z0;
+import n6.t;
 import org.telegram.tgnet.ConnectionsManager;
-import w7.l8;
-import w9.k;
+import org.telegram.ui.ActionBar.b5;
+import v7.k;
+import w7.j8;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -21,6 +22,7 @@ import x7.f8;
 import x7.fa;
 import x7.g7;
 import x7.g8;
+import x7.ga;
 import x7.h8;
 import x7.m;
 import x7.m7;
@@ -30,23 +32,23 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
     public final h8 e;
     public final b f;
     public final fa g;
-    public final o0.a h;
+    public final ga h;
 
     public f(yb.a aVar, b bVar, fa faVar) {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        k kVar = new k();
-        kVar.a = Float.valueOf(aVar.a);
-        this.e = new h8(kVar);
-        this.h = new o0.a(qb.g.c().b());
+        w3.b bVar2 = new w3.b();
+        bVar2.a = Float.valueOf(aVar.a);
+        this.e = new h8(bVar2);
+        this.h = new ga(qb.g.c().b(), 0);
     }
 
     @Override // qb.i
@@ -55,13 +57,13 @@ public final class f extends qb.e {
         fa faVar = this.g;
         n nVar = new n();
         nVar.c = m7.b;
-        z0 z0Var = new z0(26);
-        z0Var.b = this.e;
+        t tVar = new t(27);
+        tVar.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
-        l8.a(1, objArr);
-        z0Var.c = new s(1, objArr);
-        nVar.d = new g8(z0Var);
+        j8.a(1, objArr);
+        tVar.c = new s(1, objArr);
+        nVar.d = new g8(tVar);
         qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.e, faVar.b(), 7));
     }
 
@@ -104,15 +106,15 @@ public final class f extends qb.e {
             faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
             n nVar = new n();
             nVar.c = m7.b;
-            v7.k kVar = new v7.k(10, false);
-            cf.c cVar = new cf.c();
-            cVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            cVar.b = n7Var;
-            cVar.c = Boolean.valueOf(this.d);
+            k kVar = new k(11, false);
+            u5 u5Var = new u5();
+            u5Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            u5Var.b = n7Var;
+            u5Var.c = Boolean.valueOf(this.d);
             Boolean bool = Boolean.TRUE;
-            cVar.d = bool;
-            cVar.e = bool;
-            kVar.b = new g7(cVar);
+            u5Var.d = bool;
+            u5Var.e = bool;
+            kVar.b = new g7(u5Var);
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
@@ -129,29 +131,29 @@ public final class f extends qb.e {
                 }
                 i10 = 0;
             }
-            o0.a aVar2 = new o0.a(25, b10);
-            aVar2.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
-            aVar2.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            kVar.d = new e7(aVar2);
+            b5 b5Var = new b5(24, b10);
+            b5Var.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
+            b5Var.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+            kVar.d = new e7(b5Var);
             kVar.c = this.e;
             nVar.e = new f8(kVar);
             qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
         }
-        v7.k kVar2 = new v7.k(9, false);
+        k kVar2 = new k(10, false);
         kVar2.d = this.e;
         kVar2.b = n7Var;
         kVar2.c = Boolean.valueOf(this.d);
         qb.m.a.execute(new da(this.g, new r0(kVar2), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
-        o0.a aVar3 = this.h;
+        ga gaVar = this.h;
         int i12 = n7Var.a;
         long j10 = currentTimeMillis - elapsedRealtime;
-        synchronized (aVar3) {
+        synchronized (gaVar) {
             long elapsedRealtime3 = SystemClock.elapsedRealtime();
-            if (((AtomicLong) aVar3.c).get() != -1 && elapsedRealtime3 - ((AtomicLong) aVar3.c).get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (gaVar.b.get() != -1 && elapsedRealtime3 - gaVar.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            ((p6.b) aVar3.b).f(new n6.o(0, Arrays.asList(new j(24305, i12, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(aVar3, elapsedRealtime3, 8));
+            gaVar.a.f(new n6.o(0, Arrays.asList(new j(24305, i12, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new e6.n(gaVar, elapsedRealtime3, 8));
         }
     }
 }

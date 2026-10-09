@@ -1,96 +1,73 @@
 package ci;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.net.Socket;
+import java.util.ArrayDeque;
+import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
+import org.telegram.ui.Components.nq;
+import org.telegram.ui.tk0;
+import org.telegram.ui.uz;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class n2 extends m2 {
-    public Drawable i;
-    public Drawable j;
-    public StaticLayout k;
-    public float l;
-    public float m;
-    public Paint n;
-    public final /* synthetic */ q2 o;
+public final class n2 extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(q2 q2Var, int i10, int i11, String str) {
-        super(q2Var);
-        this.o = q2Var;
+    public /* synthetic */ n2(Object obj, int i10) {
         this.a = i10;
-        Drawable mutate = q2Var.getContext().getResources().getDrawable(i11).mutate();
-        this.i = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        String upperCase = str.toUpperCase();
-        TextPaint textPaint = q2Var.b;
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(upperCase, textPaint, AndroidUtilities.displaySize.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.k = staticLayout;
-        this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;
-        this.m = this.k.getLineCount() > 0 ? this.k.getLineLeft(0) : 0.0f;
-        this.b = AndroidUtilities.dpf2(45.6f) + this.l;
-        this.c = AndroidUtilities.dpf2(36.0f);
+        this.b = obj;
     }
 
-    @Override // ci.m2
-    public final void a(Canvas canvas, float f7, float f10) {
-        float f11 = this.b + f7;
-        float f12 = this.c + f10;
-        RectF rectF = this.f;
-        rectF.set(f7, f10, f11, f12);
-        float a2 = this.g.a(0.05f);
-        canvas.save();
-        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.o.a);
-        if (this.j != null) {
-            canvas.saveLayerAlpha(rectF, 255, 31);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        BasePendingResult basePendingResult;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(this, 14));
+                break;
+            case 1:
+                e6.c cVar = (e6.c) this.b;
+                ArrayDeque arrayDeque = cVar.h;
+                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
+                    e6.h hVar = cVar.c;
+                    int[] e7 = g6.a.e(arrayDeque);
+                    hVar.getClass();
+                    n6.l.e("Must be called from the main thread.");
+                    if (hVar.w()) {
+                        e6.k kVar = new e6.k(hVar, e7);
+                        e6.h.x(kVar);
+                        basePendingResult = kVar;
+                    } else {
+                        basePendingResult = e6.h.t();
+                    }
+                    cVar.k = basePendingResult;
+                    basePendingResult.i(new e6.r(cVar, 1));
+                    arrayDeque.clear();
+                    break;
+                }
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new nq(this, 24));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new uz(this, 24));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new tk0(this, 6));
+                break;
+            default:
+                try {
+                    Socket socket = ((sc.q) this.b).a.a.g;
+                    if (socket != null) {
+                        socket.close();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
         }
-        if (this.i == null) {
-            Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(null);
-            this.i = emojiBigDrawable;
-            if (emojiBigDrawable instanceof Emoji.EmojiDrawable) {
-                ((Emoji.EmojiDrawable) emojiBigDrawable).fullSize = false;
-            }
-        }
-        if (this.i != null) {
-            float dp = AndroidUtilities.dp(24.0f) / 2;
-            this.i.setBounds((int) ((rectF.left + AndroidUtilities.dp(18.0f)) - dp), (int) (((this.c / 2.0f) + rectF.top) - dp), (int) (rectF.left + AndroidUtilities.dp(18.0f) + dp), (int) ((this.c / 2.0f) + rectF.top + dp));
-            this.i.draw(canvas);
-        }
-        if (this.j != null) {
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(rectF.left + AndroidUtilities.dp(18.55f), ((rectF.top + this.c) - AndroidUtilities.dp(5.0f)) - AndroidUtilities.dp(12.55f), rectF.left + AndroidUtilities.dp(29.45f), rectF.left + AndroidUtilities.dp(31.0f));
-            canvas.drawRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.n);
-            this.j.setBounds((int) (rectF.left + AndroidUtilities.dp(18.0f)), (int) (((rectF.top + this.c) - AndroidUtilities.dp(5.0f)) - AndroidUtilities.dp(12.0f)), (int) (rectF.left + AndroidUtilities.dp(30.0f)), (int) ((rectF.top + this.c) - AndroidUtilities.dp(5.0f)));
-            this.j.draw(canvas);
-            canvas.restore();
-        }
-        canvas.translate((rectF.left + AndroidUtilities.dp((this.i != null ? 28 : 0) + 6)) - this.m, ((this.c / 2.0f) + rectF.top) - (this.k.getHeight() / 2.0f));
-        this.k.draw(canvas);
-        canvas.restore();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(q2 q2Var, CharSequence charSequence) {
-        super(q2Var);
-        this.o = q2Var;
-        this.a = 5;
-        TextPaint textPaint = q2Var.b;
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(charSequence, textPaint, AndroidUtilities.displaySize.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.k = staticLayout;
-        this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;
-        this.m = this.k.getLineCount() > 0 ? this.k.getLineLeft(0) : 0.0f;
-        this.b = AndroidUtilities.dpf2(12.0f) + this.l;
-        this.c = AndroidUtilities.dpf2(36.0f);
     }
 }

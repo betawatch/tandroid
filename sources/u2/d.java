@@ -1,6 +1,8 @@
 package u2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import i2.q1;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements d0, c0 {
     public final d0 a;
@@ -18,26 +20,23 @@ public final class d implements d0, c0 {
         this.f = j10;
     }
 
+    @Override // u2.c1
+    public final void D(d1 d1Var) {
+        c0 c0Var = this.b;
+        c0Var.getClass();
+        c0Var.D(this);
+    }
+
     public final boolean a() {
         return this.d != -9223372036854775807L;
     }
 
-    @Override // u2.c0
-    public final void b(d0 d0Var) {
-        if (this.h != null) {
-            return;
-        }
-        c0 c0Var = this.b;
-        c0Var.getClass();
-        c0Var.b(this);
-    }
-
-    @Override // u2.e1
+    @Override // u2.d1
     public final boolean c() {
         return this.a.c();
     }
 
-    @Override // u2.e1
+    @Override // u2.d1
     public final long d() {
         long d = this.a.d();
         if (d != Long.MIN_VALUE) {
@@ -47,13 +46,6 @@ public final class d implements d0, c0 {
             }
         }
         return Long.MIN_VALUE;
-    }
-
-    @Override // u2.d1
-    public final void f(e1 e1Var) {
-        c0 c0Var = this.b;
-        c0Var.getClass();
-        c0Var.f(this);
     }
 
     @Override // u2.d0
@@ -109,9 +101,19 @@ public final class d implements d0, c0 {
         return j11 != Long.MIN_VALUE ? Math.min(max, j11) : max;
     }
 
-    @Override // u2.e1
-    public final boolean m(i2.s0 s0Var) {
-        return this.a.m(s0Var);
+    @Override // u2.c0
+    public final void m(d0 d0Var) {
+        if (this.h != null) {
+            return;
+        }
+        c0 c0Var = this.b;
+        c0Var.getClass();
+        c0Var.m(this);
+    }
+
+    @Override // u2.d1
+    public final boolean n(i2.s0 s0Var) {
+        return this.a.n(s0Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0079  */
@@ -119,26 +121,26 @@ public final class d implements d0, c0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long n(x2.r[] rVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
+    public final long o(x2.r[] rVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
         long j10;
         int i10;
-        this.c = new c[c1VarArr.length];
-        c1[] c1VarArr2 = new c1[c1VarArr.length];
-        for (int i11 = 0; i11 < c1VarArr.length; i11++) {
+        this.c = new c[b1VarArr.length];
+        b1[] b1VarArr2 = new b1[b1VarArr.length];
+        for (int i11 = 0; i11 < b1VarArr.length; i11++) {
             c[] cVarArr = this.c;
-            c cVar = (c) c1VarArr[i11];
+            c cVar = (c) b1VarArr[i11];
             cVarArr[i11] = cVar;
-            c1VarArr2[i11] = cVar != null ? cVar.a : null;
+            b1VarArr2[i11] = cVar != null ? cVar.a : null;
         }
-        long n10 = this.a.n(rVarArr, zArr, c1VarArr2, zArr2, j3);
+        long o9 = this.a.o(rVarArr, zArr, b1VarArr2, zArr2, j3);
         long j11 = this.f;
-        long max = Math.max(n10, j3);
+        long max = Math.max(o9, j3);
         if (j11 != Long.MIN_VALUE) {
             max = Math.min(max, j11);
         }
         if (a()) {
-            if (n10 >= j3) {
-                if (n10 != 0) {
+            if (o9 >= j3) {
+                if (o9 != 0) {
                     for (x2.r rVar : rVarArr) {
                         if (rVar != null) {
                             b2.s m10 = rVar.m();
@@ -150,47 +152,47 @@ public final class d implements d0, c0 {
             }
             j10 = max;
             this.d = j10;
-            for (i10 = 0; i10 < c1VarArr.length; i10++) {
-                c1 c1Var = c1VarArr2[i10];
-                if (c1Var == null) {
+            for (i10 = 0; i10 < b1VarArr.length; i10++) {
+                b1 b1Var = b1VarArr2[i10];
+                if (b1Var == null) {
                     this.c[i10] = null;
                 } else {
                     c[] cVarArr2 = this.c;
                     c cVar2 = cVarArr2[i10];
-                    if (cVar2 == null || cVar2.a != c1Var) {
-                        cVarArr2[i10] = new c(this, c1Var);
+                    if (cVar2 == null || cVar2.a != b1Var) {
+                        cVarArr2[i10] = new c(this, b1Var);
                     }
                 }
-                c1VarArr[i10] = this.c[i10];
+                b1VarArr[i10] = this.c[i10];
             }
             return max;
         }
         j10 = -9223372036854775807L;
         this.d = j10;
-        while (i10 < c1VarArr.length) {
+        while (i10 < b1VarArr.length) {
         }
         return max;
     }
 
     @Override // u2.d0
-    public final p1 o() {
-        return this.a.o();
+    public final o1 p() {
+        return this.a.p();
     }
 
-    @Override // u2.e1
-    public final long p() {
-        long p5 = this.a.p();
-        if (p5 != Long.MIN_VALUE) {
+    @Override // u2.d1
+    public final long q() {
+        long q6 = this.a.q();
+        if (q6 != Long.MIN_VALUE) {
             long j3 = this.f;
-            if (j3 == Long.MIN_VALUE || p5 < j3) {
-                return p5;
+            if (j3 == Long.MIN_VALUE || q6 < j3) {
+                return q6;
             }
         }
         return Long.MIN_VALUE;
     }
 
     @Override // u2.d0
-    public final long q(long j3, i2.q1 q1Var) {
+    public final long r(long j3, q1 q1Var) {
         long j10 = this.e;
         if (j3 == j10) {
             return j10;
@@ -200,13 +202,13 @@ public final class d implements d0, c0 {
         long j12 = this.f;
         long i11 = e2.d0.i(j11, 0L, j12 == Long.MIN_VALUE ? Long.MAX_VALUE : j12 - j3);
         if (i10 != q1Var.a || i11 != q1Var.b) {
-            q1Var = new i2.q1(i10, i11);
+            q1Var = new q1(i10, i11);
         }
-        return this.a.q(j3, q1Var);
+        return this.a.r(j3, q1Var);
     }
 
-    @Override // u2.e1
-    public final void r(long j3) {
-        this.a.r(j3);
+    @Override // u2.d1
+    public final void s(long j3) {
+        this.a.s(j3);
     }
 }

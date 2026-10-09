@@ -8,29 +8,29 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.y5;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.Components.y9;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout implements y5 {
-    public final w9 a;
+public final class n extends FrameLayout implements z5 {
+    public final y9 a;
 
     public n(Context context) {
         super(context);
-        w9 w9Var = new w9(context);
-        this.a = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, z5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+        y9 y9Var = new y9(context);
+        this.a = y9Var;
+        y9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(y9Var, x5.a(72.0f, 0.0f, 0.0f, 0.0f, 28.0f, 72, 81));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         Drawable drawable = i6.S0;
-        w9 w9Var = this.a;
-        yf.p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
+        y9 y9Var = this.a;
+        yf.p.a(canvas, drawable, (y9Var.getWidth() / 2.0f) + y9Var.getLeft(), (y9Var.getHeight() / 2.0f) + y9Var.getTop(), y9Var.getHeight());
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -38,7 +38,7 @@ public final class n extends FrameLayout implements y5 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
     }
 }

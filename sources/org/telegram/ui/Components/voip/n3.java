@@ -1,51 +1,30 @@
 package org.telegram.ui.Components.voip;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class n3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p3 b;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class n3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ o3 a;
 
-    public /* synthetic */ n3(p3 p3Var, int i10) {
-        this.a = i10;
-        this.b = p3Var;
+    public n3(o3 o3Var) {
+        this.a = o3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p3 p3Var = this.b;
-                p3Var.n = floatValue;
-                p3Var.k.invalidate();
-                if (p3Var.n > 1.0f && p3Var.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(AndroidUtilities.dp(12), 0);
-                    p3Var.r = ofInt;
-                    ofInt.addUpdateListener(new n3(p3Var, 2));
-                    p3Var.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    p3Var.r.start();
-                    break;
-                }
-                break;
-            case 1:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                p3 p3Var2 = this.b;
-                p3Var2.m = intValue;
-                p3Var2.k.invalidate();
-                break;
-            default:
-                int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                p3 p3Var3 = this.b;
-                if (p3Var3.i <= p3Var3.o / 2) {
-                    intValue2 = -intValue2;
-                }
-                p3Var3.p = intValue2;
-                p3Var3.k.invalidate();
-                break;
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator, boolean z10) {
+        o3 o3Var = this.a;
+        o3Var.e = o3Var.c;
+        o3Var.f = o3Var.d;
+        o3Var.c = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        o3Var.d = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        ValueAnimator valueAnimator = o3Var.b;
+        if (valueAnimator != null) {
+            valueAnimator.start();
         }
     }
 }

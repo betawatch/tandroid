@@ -26,12 +26,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.w10;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.jb0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -516,7 +516,7 @@ public class ApplicationLoader extends Application {
             sb3.append(", model=");
             sb3.append(Build.MODEL);
             sb3.append(", product=");
-            com.google.android.gms.internal.vision.e2.t(Build.PRODUCT, sb3);
+            hg.c.t(Build.PRODUCT, sb3);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -524,8 +524,8 @@ public class ApplicationLoader extends Application {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             ConnectionsManager.native_setJava(false);
-            new j10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.ui.Components.j10, android.app.Application.ActivityLifecycleCallbacks
+            new w10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.ui.Components.w10, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -544,9 +544,9 @@ public class ApplicationLoader extends Application {
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.g6.b(jb0.h);
+                    w7.e6.b(jb0.h);
                     break;
-                } else if (w7.g6.a(values[i10])) {
+                } else if (w7.e6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(b80 b80Var) {
+    public void addItemOptions(p80 p80Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

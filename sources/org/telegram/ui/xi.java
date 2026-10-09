@@ -1,61 +1,100 @@
 package org.telegram.ui;
 
-import android.text.style.CharacterStyle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xi extends nf.e {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ yn g;
-    public final /* synthetic */ Object h;
+public final class xi extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ xi(yn ynVar, int i10, Object obj, org.telegram.ui.Cells.u1 u1Var, int i11) {
-        this.d = i11;
-        this.g = ynVar;
-        this.e = i10;
-        this.h = obj;
-        this.f = u1Var;
+    public /* synthetic */ xi(zn znVar, int i10) {
+        this.a = i10;
+        this.b = znVar;
     }
 
-    @Override // nf.e
-    public final void c(boolean z10) {
-        switch (this.d) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        wj wjVar;
+        switch (this.a) {
             case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ai.o8(this, this.e, 20), 240L);
+                zn znVar = this.b;
+                org.telegram.ui.Components.y60 y60Var = znVar.b3;
+                if (y60Var != null) {
+                    y60Var.setIsMessageTransition(false);
+                    znVar.b3.c(true);
+                    znVar.b3.setVisibility(4);
                     break;
                 }
                 break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ai.o8(this, this.e, 22), 240L);
+            case 1:
+                float dp = AndroidUtilities.dp(30.0f);
+                zn znVar2 = this.b;
+                znVar2.A9 = dp;
+                znVar2.t9();
+                break;
+            case 2:
+                zn znVar3 = this.b;
+                if (znVar3.fragmentView != null && (wjVar = znVar3.x0) != null) {
+                    wjVar.invalidate();
+                    znVar3.fragmentView.invalidate();
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // nf.e
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                yn ynVar = this.g;
-                ynVar.tb = i10;
-                ynVar.ub = 1;
-                ynVar.vb = (CharacterStyle) this.h;
-                this.f.invalidate();
+            case 3:
+                this.b.P.setVisibility(4);
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new cj(this, 4), 2000L);
+                break;
+            case 5:
+                zn znVar4 = this.b;
+                if (animator.equals(znVar4.g3)) {
+                    znVar4.g3 = null;
+                    break;
+                }
+                break;
+            case 6:
+                zn znVar5 = this.b;
+                if (animator.equals(znVar5.g3)) {
+                    znVar5.g3 = null;
+                    break;
+                }
+                break;
+            case 7:
+                zn znVar6 = this.b;
+                if (animator.equals(znVar6.h3)) {
+                    znVar6.i3 = 1.0f;
+                    znVar6.pc();
+                    znVar6.h3 = null;
+                    break;
+                }
+                break;
+            case 8:
+                zn znVar7 = this.b;
+                if (animator.equals(znVar7.h3)) {
+                    znVar7.i3 = 0.0f;
+                    znVar7.pc();
+                    znVar7.h3 = null;
+                    break;
+                }
+                break;
+            case 9:
+                this.b.T4 = null;
+                break;
+            case 10:
+                zn znVar8 = this.b;
+                znVar8.Ea = 1.0f;
+                znVar8.Y.setVisibility(4);
+                znVar8.O0.setVisibility(4);
+                znVar8.t9();
                 break;
             default:
-                int i11 = this.e;
-                yn ynVar2 = this.g;
-                ynVar2.tb = i11;
-                ynVar2.ub = 3;
-                ynVar2.wb = (String) this.h;
-                this.f.invalidate();
+                zn znVar9 = this.b;
+                znVar9.Ea = 0.0f;
+                znVar9.t9();
                 break;
         }
     }

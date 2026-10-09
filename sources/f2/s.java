@@ -1,9 +1,15 @@
 package f2;
 
-import e2.v;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public interface s {
-    void b(long j3, v vVar);
+public final class s implements Comparable {
+    public long b = -9223372036854775807L;
+    public final ArrayList a = new ArrayList();
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Long.compare(this.b, ((s) obj).b);
+    }
 }

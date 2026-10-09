@@ -1,91 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fi extends z4.a {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ MessageObject g;
-    public final /* synthetic */ org.telegram.ui.Components.sj0 h;
-    public final /* synthetic */ MessageObject i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ z4.g l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ yn p;
+public final class fi implements org.telegram.ui.Components.p8 {
+    public final /* synthetic */ zn a;
 
-    public fi(yn ynVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.sj0 sj0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
-        this.p = ynVar;
-        this.c = i10;
-        this.d = sparseArray;
-        this.e = z10;
-        this.f = list;
-        this.g = messageObject;
-        this.h = sj0Var;
-        this.i = messageObject2;
-        this.j = sparseIntArray;
-        this.k = i11;
-        this.l = gVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i12;
+    public fi(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        int i11;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i10);
-        if (view != null) {
-            gVar.addView(view);
-            return view;
+    @Override // org.telegram.ui.Components.p8
+    public final void Q0(int i10, int i11) {
+        zn znVar = this.a;
+        znVar.getMessagesController().setDialogHistoryTTL(znVar.T5, i10);
+        if (znVar.a8 == null && znVar.Z7 == null) {
+            return;
         }
-        int i12 = this.e ? i10 - 1 : i10;
-        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
-        Context context = gVar.getContext();
-        yn ynVar = this.p;
-        wn wnVar = ynVar.ca;
-        i11 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, wnVar, i11, this.g, reactionCount, true);
-        org.telegram.ui.Components.sj0 sj0Var = this.h;
-        ck0Var.h(sj0Var.getSeenUsers());
-        ck0Var.G = new z0(this, 18);
-        ck0Var.E = new o(12, this, this.i);
-        ck0Var.y = new ei.v4(this.j, i10, this.k, this.l, this.m, this.n);
-        if (i12 < 0) {
-            ck0Var.setPredictiveCount(this.o);
-            sj0Var.setSeenCallback(new h3(ck0Var, 1));
+        znVar.T7();
+        UndoView undoView = znVar.y3;
+        if (undoView == null) {
+            return;
         }
-        gVar.addView(ck0Var);
-        sparseArray.put(i10, ck0Var);
-        return ck0Var;
+        long j3 = znVar.T5;
+        TLRPC.User user = znVar.f;
+        TLRPC.UserFull userFull = znVar.a8;
+        undoView.k(j3, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : znVar.Z7.ttl_period), null, null);
     }
 
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    @Override // org.telegram.ui.Components.p8
+    public final void dismiss() {
+        org.telegram.ui.ActionBar.n1 n1Var = this.a.Q8;
+        if (n1Var != null) {
+            n1Var.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.p8
+    public final /* synthetic */ void h1() {
     }
 }

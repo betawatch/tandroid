@@ -1,76 +1,162 @@
 package com.google.android.gms.internal.cast;
 
+import j$.util.List;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.RandomAccess;
+import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class h0 extends a9.o implements ListIterator {
-    public final int b;
-    public int c;
-    public final j0 d;
+public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List {
+    public static final f0 b = new f0(m0.e, 0);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(j0 j0Var, int i10) {
-        super(1);
-        int size = j0Var.size();
-        v7.k5.b(i10, size);
-        this.b = size;
-        this.c = i10;
-        this.d = j0Var;
+    public static m0 r(int i10, Object[] objArr) {
+        return i10 == 0 ? m0.e : new m0(i10, objArr);
     }
 
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
+    @Override // java.util.List
+    public final void add(int i10, Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
+    @Override // java.util.List
+    public final boolean addAll(int i10, Collection collection) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean contains(Object obj) {
+        return indexOf(obj) >= 0;
+    }
+
+    @Override // java.util.Collection, java.util.List
+    public final boolean equals(Object obj) {
+        Object next;
+        Object next2;
+        int i10;
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof List) {
+            List list = (List) obj;
+            int size = size();
+            if (size == list.size()) {
+                if (list instanceof RandomAccess) {
+                    for (0; i10 < size; i10 + 1) {
+                        Object obj2 = get(i10);
+                        Object obj3 = list.get(i10);
+                        i10 = (obj2 == obj3 || (obj2 != null && obj2.equals(obj3))) ? i10 + 1 : 0;
+                    }
+                    return true;
+                }
+                f0 listIterator = listIterator(0);
+                Iterator it = list.iterator();
+                while (true) {
+                    if (listIterator.hasNext()) {
+                        if (!it.hasNext() || ((next = listIterator.next()) != (next2 = it.next()) && (next == null || !next.equals(next2)))) {
+                            break;
+                        }
+                    } else if (!it.hasNext()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // java.util.Collection, java.util.List
+    public final int hashCode() {
+        int size = size();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
+        }
+        return i10;
+    }
+
+    @Override // com.google.android.gms.internal.cast.e0
+    public int i(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
+    @Override // java.util.List
+    public final int indexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (obj.equals(get(i10))) {
+                return i10;
+            }
+        }
+        return -1;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
+    public final /* synthetic */ Iterator iterator() {
+        return listIterator(0);
+    }
+
+    @Override // java.util.List
+    public final int lastIndexOf(Object obj) {
+        if (obj == null) {
+            return -1;
+        }
+        for (int size = size() - 1; size >= 0; size--) {
+            if (obj.equals(get(size))) {
+                return size;
+            }
+        }
+        return -1;
+    }
+
+    @Override // java.util.List
+    public final /* synthetic */ ListIterator listIterator() {
+        return listIterator(0);
+    }
+
+    @Override // java.util.List
+    /* renamed from: q */
+    public h0 subList(int i10, int i11) {
+        v7.k5.c(i10, i11, size());
+        int i12 = i11 - i10;
+        return i12 == size() ? this : i12 == 0 ? m0.e : new g0(this, i10, i12);
+    }
+
+    @Override // java.util.List
+    public final Object remove(int i10) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List, j$.util.List
+    public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
+        List.-CC.$default$replaceAll(this, unaryOperator);
+    }
+
+    @Override // java.util.List
+    /* renamed from: s, reason: merged with bridge method [inline-methods] */
+    public final f0 listIterator(int i10) {
+        v7.k5.b(i10, size());
+        return isEmpty() ? b : new f0(this, i10);
+    }
+
+    @Override // java.util.List
+    public final Object set(int i10, Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.List, j$.util.List
+    public /* synthetic */ void sort(Comparator comparator) {
+        List.-CC.$default$sort(this, comparator);
     }
 }

@@ -1,90 +1,58 @@
 package r0;
 
-import android.graphics.Rect;
-import android.util.Log;
 import android.view.WindowInsets;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class x0 extends b1 {
-    public static Field e = null;
-    public static boolean f = false;
-    public static Constructor g = null;
-    public static boolean h = false;
-    public WindowInsets c;
-    public i0.b d;
+public class x0 extends a1 {
+    public final WindowInsets.Builder c;
 
     public x0() {
-        this.c = i();
+        this.c = ah.e.h();
     }
 
-    private static WindowInsets i() {
-        if (!f) {
-            try {
-                e = WindowInsets.class.getDeclaredField("CONSUMED");
-            } catch (ReflectiveOperationException e7) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets.CONSUMED field", e7);
-            }
-            f = true;
-        }
-        Field field = e;
-        if (field != null) {
-            try {
-                WindowInsets windowInsets = (WindowInsets) field.get(null);
-                if (windowInsets != null) {
-                    return new WindowInsets(windowInsets);
-                }
-            } catch (ReflectiveOperationException e10) {
-                Log.i("WindowInsetsCompat", "Could not get value from WindowInsets.CONSUMED field", e10);
-            }
-        }
-        if (!h) {
-            try {
-                g = WindowInsets.class.getConstructor(Rect.class);
-            } catch (ReflectiveOperationException e11) {
-                Log.i("WindowInsetsCompat", "Could not retrieve WindowInsets(Rect) constructor", e11);
-            }
-            h = true;
-        }
-        Constructor constructor = g;
-        if (constructor != null) {
-            try {
-                return (WindowInsets) constructor.newInstance(new Rect());
-            } catch (ReflectiveOperationException e12) {
-                Log.i("WindowInsetsCompat", "Could not invoke WindowInsets(Rect) constructor", e12);
-            }
-        }
-        return null;
-    }
-
-    @Override // r0.b1
-    public l1 b() {
+    @Override // r0.a1
+    public k1 b() {
         a();
-        l1 h10 = l1.h(null, this.c);
-        i0.b[] bVarArr = this.b;
-        i1 i1Var = h10.a;
-        i1Var.q(bVarArr);
-        i1Var.s(this.d);
-        return h10;
+        k1 h = k1.h(null, this.c.build());
+        h.a.q(this.b);
+        return h;
     }
 
-    @Override // r0.b1
+    @Override // r0.a1
+    public void d(i0.b bVar) {
+        this.c.setMandatorySystemGestureInsets(bVar.d());
+    }
+
+    @Override // r0.a1
     public void e(i0.b bVar) {
-        this.d = bVar;
+        this.c.setStableInsets(bVar.d());
     }
 
-    @Override // r0.b1
+    @Override // r0.a1
+    public void f(i0.b bVar) {
+        this.c.setSystemGestureInsets(bVar.d());
+    }
+
+    @Override // r0.a1
     public void g(i0.b bVar) {
-        WindowInsets windowInsets = this.c;
-        if (windowInsets != null) {
-            this.c = windowInsets.replaceSystemWindowInsets(bVar.a, bVar.b, bVar.c, bVar.d);
-        }
+        this.c.setSystemWindowInsets(bVar.d());
     }
 
-    public x0(l1 l1Var) {
-        super(l1Var);
-        this.c = l1Var.g();
+    @Override // r0.a1
+    public void h(i0.b bVar) {
+        this.c.setTappableElementInsets(bVar.d());
+    }
+
+    public x0(k1 k1Var) {
+        super(k1Var);
+        WindowInsets.Builder h;
+        WindowInsets g10 = k1Var.g();
+        if (g10 != null) {
+            h = ah.e.i(g10);
+        } else {
+            h = ah.e.h();
+        }
+        this.c = h;
     }
 }

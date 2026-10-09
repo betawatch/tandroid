@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f implements a {
     public final i0 a;
@@ -102,14 +102,14 @@ public final class f implements a {
                                     vVar.K(6);
                                     int q11 = vVar.q();
                                     String str3 = d0.a;
-                                    int B = d0.B(q11, ByteOrder.LITTLE_ENDIAN);
+                                    int A = d0.A(q11, ByteOrder.LITTLE_ENDIAN);
                                     int q12 = vVar.a() > 0 ? vVar.q() : 0;
                                     r rVar2 = new r();
                                     rVar2.q = r0.n(str2);
                                     rVar2.I = q10;
                                     rVar2.J = l14;
-                                    if (str2.equals("audio/raw") && B != 0) {
-                                        rVar2.K = B;
+                                    if (str2.equals("audio/raw") && A != 0) {
+                                        rVar2.K = A;
                                     }
                                     if (str2.equals(MediaController.AUDIO_MIME_TYPE) && q12 > 0) {
                                         byte[] bArr = new byte[q12];
@@ -122,7 +122,7 @@ public final class f implements a {
                                     e2.m(q6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
                                 }
                             } else {
-                                e2.a.n("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + d0.G(i13));
+                                e2.a.n("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + d0.F(i13));
                             }
                             gVar = dVar;
                         }

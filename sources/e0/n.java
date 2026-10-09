@@ -1,54 +1,21 @@
 package e0;
 
 import android.app.Notification;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Build;
-import androidx.core.graphics.drawable.IconCompat;
+import android.app.PendingIntent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class n extends b0 {
-    public IconCompat e;
-    public IconCompat f;
-    public boolean g;
-
-    @Override // e0.b0
-    public final void b(i0 i0Var) {
-        Notification.Builder builder = (Notification.Builder) i0Var.c;
-        Context context = (Context) i0Var.b;
-        Notification.BigPictureStyle bigContentTitle = new Notification.BigPictureStyle(builder).setBigContentTitle(this.b);
-        IconCompat iconCompat = this.e;
-        if (iconCompat != null) {
-            if (Build.VERSION.SDK_INT >= 31) {
-                m.a(bigContentTitle, iconCompat.m(context));
-            } else if (iconCompat.i() == 1) {
-                bigContentTitle = bigContentTitle.bigPicture(this.e.f());
-            }
+public abstract class n {
+    public static Notification.BubbleMetadata a(p pVar) {
+        PendingIntent pendingIntent;
+        if (pVar == null || (pendingIntent = pVar.a) == null) {
+            return null;
         }
-        if (this.g) {
-            IconCompat iconCompat2 = this.f;
-            if (iconCompat2 == null) {
-                bigContentTitle.bigLargeIcon((Bitmap) null);
-            } else if (Build.VERSION.SDK_INT >= 23) {
-                l.a(bigContentTitle, iconCompat2.m(context));
-            } else if (iconCompat2.i() == 1) {
-                bigContentTitle.bigLargeIcon(this.f.f());
-            } else {
-                bigContentTitle.bigLargeIcon((Bitmap) null);
-            }
+        Notification.BubbleMetadata.Builder suppressNotification = new Notification.BubbleMetadata.Builder().setIcon(pVar.b.m(null)).setIntent(pendingIntent).setDeleteIntent(null).setAutoExpandBubble((pVar.d & 1) != 0).setSuppressNotification((pVar.d & 2) != 0);
+        int i10 = pVar.c;
+        if (i10 != 0) {
+            suppressNotification.setDesiredHeight(i10);
         }
-        if (this.d) {
-            bigContentTitle.setSummaryText(this.c);
-        }
-        if (Build.VERSION.SDK_INT >= 31) {
-            m.c(bigContentTitle, false);
-            m.b(bigContentTitle, null);
-        }
-    }
-
-    @Override // e0.b0
-    public final String c() {
-        return "androidx.core.app.NotificationCompat$BigPictureStyle";
+        return suppressNotification.build();
     }
 }

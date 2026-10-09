@@ -4,23 +4,25 @@ import android.app.Activity;
 import android.content.Context;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.a90;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class e2 extends n80 {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class e2 extends a90 {
     public final /* synthetic */ TLRPC.User c;
     public final /* synthetic */ TLRPC.Chat d;
     public final /* synthetic */ String e;
     public final /* synthetic */ TLRPC.InputPeer f;
     public final /* synthetic */ boolean h;
     public final /* synthetic */ boolean n;
-    public final /* synthetic */ Activity r;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 s;
-    public final /* synthetic */ AccountInstance v;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ Activity s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
+    public final /* synthetic */ AccountInstance w;
+    public final /* synthetic */ boolean x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance) {
+    public e2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance, boolean z13) {
         super(context, chat);
         this.c = user;
         this.d = chat2;
@@ -28,13 +30,15 @@ public final class e2 extends n80 {
         this.f = inputPeer;
         this.h = z10;
         this.n = z11;
-        this.r = activity;
-        this.s = n2Var;
-        this.v = accountInstance;
+        this.r = z12;
+        this.s = activity;
+        this.v = n2Var;
+        this.w = accountInstance;
+        this.x = z13;
     }
 
-    @Override // org.telegram.ui.Components.n80
-    public final void m() {
-        g2.b(this.c, this.d, this.e, this.f, true, this.h, this.n, false, this.r, this.s, this.v, false, false, false);
+    @Override // org.telegram.ui.Components.a90
+    public final void o() {
+        f2.b(this.c, this.d, this.e, this.f, false, this.h, this.n, this.r, this.s, this.v, this.w, false, true, this.x);
     }
 }

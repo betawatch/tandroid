@@ -2,7 +2,7 @@ package g6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g extends b8.b implements h {
     public g() {
@@ -10,7 +10,7 @@ public abstract class g extends b8.b implements h {
     }
 
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         switch (i10) {
             case 1:
                 int readInt = parcel.readInt();
@@ -48,7 +48,7 @@ public abstract class g extends b8.b implements h {
                 String readString5 = parcel.readString();
                 byte[] createByteArray = parcel.createByteArray();
                 com.google.android.gms.internal.cast.v.b(parcel);
-                B0(readString5, createByteArray);
+                A0(readString5, createByteArray);
                 return true;
             case 7:
                 int readInt3 = parcel.readInt();
@@ -81,12 +81,12 @@ public abstract class g extends b8.b implements h {
             case 12:
                 c cVar = (c) com.google.android.gms.internal.cast.v.a(parcel, c.CREATOR);
                 com.google.android.gms.internal.cast.v.b(parcel);
-                z0(cVar);
+                y0(cVar);
                 return true;
             case 13:
                 d dVar2 = (d) com.google.android.gms.internal.cast.v.a(parcel, d.CREATOR);
                 com.google.android.gms.internal.cast.v.b(parcel);
-                u0(dVar2);
+                t0(dVar2);
                 return true;
             case 14:
                 int readInt7 = parcel.readInt();
@@ -96,7 +96,7 @@ public abstract class g extends b8.b implements h {
             case 15:
                 int readInt8 = parcel.readInt();
                 com.google.android.gms.internal.cast.v.b(parcel);
-                w0(readInt8);
+                v0(readInt8);
                 return true;
             default:
                 return false;

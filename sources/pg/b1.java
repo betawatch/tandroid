@@ -1,36 +1,37 @@
 package pg;
 
 import android.os.Looper;
+import org.telegram.ui.Wallet.n5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d1 b;
+    public final /* synthetic */ c1 b;
 
-    public /* synthetic */ b1(d1 d1Var, int i10) {
+    public /* synthetic */ b1(c1 c1Var, int i10) {
         this.a = i10;
-        this.b = d1Var;
+        this.b = c1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                d1 d1Var = this.b;
-                c1 c1Var = d1Var.w;
-                b1 b1Var = d1Var.s;
+                c1 c1Var = this.b;
+                n5 n5Var = c1Var.w;
+                b1 b1Var = c1Var.s;
                 if (b1Var != null) {
-                    d1Var.cancelRunnable(b1Var);
-                    d1Var.s = null;
+                    c1Var.cancelRunnable(b1Var);
+                    c1Var.s = null;
                 }
-                d1Var.cancelRunnable(c1Var);
-                d1Var.postRunnable(c1Var);
+                c1Var.cancelRunnable(n5Var);
+                c1Var.postRunnable(n5Var);
                 break;
             case 1:
-                d1 d1Var2 = this.b;
-                d1Var2.s = null;
-                d1Var2.w.run();
+                c1 c1Var2 = this.b;
+                c1Var2.s = null;
+                c1Var2.w.run();
                 break;
             default:
                 this.b.finish();

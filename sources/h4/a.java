@@ -1,10 +1,10 @@
 package h4;
 
-import a4.h;
+import a4.g;
 import android.graphics.Rect;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public boolean b;
@@ -25,7 +25,7 @@ public final class a {
         return (i10 & 16777215) | ((i11 * 17) << 24);
     }
 
-    public final void b(h hVar, boolean z10, Rect rect, int[] iArr) {
+    public final void b(g gVar, boolean z10, Rect rect, int[] iArr) {
         int i10;
         int i11;
         int width = rect.width();
@@ -37,12 +37,12 @@ public final class a {
             do {
                 int i15 = 0;
                 for (int i16 = 1; i15 < i16 && i16 <= 64; i16 <<= 2) {
-                    if (hVar.b() < 4) {
-                        i11 = 0;
+                    if (gVar.b() < 4) {
                         i10 = -1;
+                        i11 = 0;
                         break;
                     }
-                    i15 = (i15 << 4) | hVar.i(4);
+                    i15 = (i15 << 4) | gVar.i(4);
                 }
                 i10 = i15 & 3;
                 i11 = i15 < 4 ? width : i15 >> 2;
@@ -59,7 +59,7 @@ public final class a {
                 return;
             }
             i13 = i12 * width;
-            hVar.c();
+            gVar.c();
         }
     }
 }

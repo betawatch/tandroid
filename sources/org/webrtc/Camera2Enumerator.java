@@ -1,12 +1,10 @@
 package org.webrtc;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.params.StreamConfigurationMap;
-import android.os.Build;
 import android.os.SystemClock;
 import android.util.AndroidException;
 import android.util.Range;
@@ -20,7 +18,7 @@ import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -71,19 +69,8 @@ public class Camera2Enumerator implements CameraEnumerator {
 
     public static List<Size> getSupportedSizes(CameraCharacteristics cameraCharacteristics) {
         StreamConfigurationMap streamConfigurationMap = (StreamConfigurationMap) cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
-        int intValue = ((Integer) cameraCharacteristics.get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL)).intValue();
-        List<Size> convertSizes = convertSizes(streamConfigurationMap.getOutputSizes(SurfaceTexture.class));
-        if (Build.VERSION.SDK_INT >= 22 || intValue != 2) {
-            return convertSizes;
-        }
-        Rect rect = (Rect) cameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);
-        ArrayList arrayList = new ArrayList();
-        for (Size size : convertSizes) {
-            if (rect.width() * size.height == rect.height() * size.width) {
-                arrayList.add(size);
-            }
-        }
-        return arrayList;
+        ((Integer) cameraCharacteristics.get(CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL)).intValue();
+        return convertSizes(streamConfigurationMap.getOutputSizes(SurfaceTexture.class));
     }
 
     public static boolean isSupported(Context context) {

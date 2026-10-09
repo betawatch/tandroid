@@ -2,54 +2,33 @@ package a3;
 
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
-import android.view.Surface;
-import b2.x1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m implements Handler.Callback {
     public final Handler a;
     public final /* synthetic */ n b;
 
-    public m(n nVar, r2.l lVar) {
+    public m(n nVar, r2.m mVar) {
         this.b = nVar;
         Handler o9 = e2.d0.o(this);
         this.a = o9;
-        lVar.d(this, o9);
+        mVar.d(this, o9);
     }
 
     public final void a(long j3) {
-        Surface surface;
         n nVar = this.b;
-        if (this != nVar.H1 || nVar.b0 == null) {
+        if (this != nVar.G1 || nVar.b0 == null) {
             return;
         }
         if (j3 == Long.MAX_VALUE) {
-            nVar.M0 = true;
+            nVar.L0 = true;
             return;
         }
         try {
-            of.b bVar = nVar.Z0;
-            nVar.y0(j3);
-            x1 x1Var = nVar.C1;
-            if (!x1Var.equals(x1.d) && !x1Var.equals(nVar.D1)) {
-                nVar.D1 = x1Var;
-                bVar.S(x1Var);
-            }
-            nVar.O0.e++;
-            a0 a0Var = nVar.c1;
-            boolean z10 = a0Var.e != 3;
-            a0Var.e = 3;
-            a0Var.l.getClass();
-            a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
-            if (z10 && (surface = nVar.n1) != null) {
-                bVar.M(surface);
-                nVar.q1 = true;
-            }
-            nVar.d0(j3);
+            nVar.H0(j3);
         } catch (i2.n e7) {
-            nVar.N0 = e7;
+            nVar.M0 = e7;
         }
     }
 

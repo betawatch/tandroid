@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c10 extends og.b {
     public final Context d;
@@ -26,18 +26,18 @@ public final class c10 extends og.b {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        int i10 = c1Var.f;
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        int i10 = d1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 2 || i10 == 5 || i10 == 9 || i10 == 11) ? false : true;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
         return this.e.P.size();
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int j(int i10) {
         w00 w00Var = (w00) this.e.P.get(i10);
         if (w00Var == null) {
@@ -46,8 +46,8 @@ public final class c10 extends og.b {
         return w00Var.a;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
         int i11;
         f10 f10Var = this.e;
         ArrayList arrayList = f10Var.P;
@@ -58,8 +58,8 @@ public final class c10 extends og.b {
         int i12 = i10 + 1;
         boolean z10 = false;
         boolean z11 = (i12 >= arrayList.size() || (i11 = ((w00) arrayList.get(i12)).a) == 3 || i11 == 6) ? false : true;
-        int i13 = c1Var.f;
-        View view = c1Var.a;
+        int i13 = d1Var.f;
+        View view = d1Var.a;
         if (i13 == 0) {
             org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
             if (w00Var.f) {
@@ -71,24 +71,24 @@ public final class c10 extends og.b {
             }
         }
         if (i13 == 1) {
-            org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
+            org.telegram.ui.Cells.xa xaVar = (org.telegram.ui.Cells.xa) view;
             String str = w00Var.i;
             if (str != null) {
-                zaVar.d(str, w00Var.d, null, z11);
+                xaVar.d(str, w00Var.d, null, z11);
                 return;
             }
             long j3 = w00Var.h;
             if (j3 > 0) {
                 TLRPC.User user = f10Var.getMessagesController().getUser(Long.valueOf(j3));
                 if (user != null) {
-                    zaVar.d(user, null, user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z11);
+                    xaVar.d(user, null, user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z11);
                     return;
                 }
                 return;
             }
             TLRPC.Chat chat = f10Var.getMessagesController().getChat(Long.valueOf(-j3));
             if (chat != null) {
-                zaVar.d(chat, null, ChatObject.isCommunity(chat) ? LocaleController.getString(R.string.Community) : chat.participants_count != 0 ? ChatObject.isChannelAndNotMegaGroup(chat) ? LocaleController.formatPluralStringComma("Subscribers", chat.participants_count) : LocaleController.formatPluralStringComma("Members", chat.participants_count) : !ChatObject.isPublic(chat) ? (!ChatObject.isChannel(chat) || chat.megagroup) ? LocaleController.getString(R.string.MegaPrivate) : LocaleController.getString(R.string.ChannelPrivate) : (!ChatObject.isChannel(chat) || chat.megagroup) ? LocaleController.getString(R.string.MegaPublic) : LocaleController.getString(R.string.ChannelPublic), z11);
+                xaVar.d(chat, null, ChatObject.isCommunity(chat) ? LocaleController.getString(R.string.Community) : chat.participants_count != 0 ? ChatObject.isChannelAndNotMegaGroup(chat) ? LocaleController.formatPluralStringComma("Subscribers", chat.participants_count) : LocaleController.formatPluralStringComma("Members", chat.participants_count) : !ChatObject.isPublic(chat) ? (!ChatObject.isChannel(chat) || chat.megagroup) ? LocaleController.getString(R.string.MegaPrivate) : LocaleController.getString(R.string.ChannelPrivate) : (!ChatObject.isChannel(chat) || chat.megagroup) ? LocaleController.getString(R.string.MegaPublic) : LocaleController.getString(R.string.ChannelPublic), z11);
                 return;
             }
             return;
@@ -112,15 +112,15 @@ public final class c10 extends og.b {
                 case 9:
                     t00 t00Var = (t00) view;
                     f10Var.I = t00Var;
-                    t00Var.e(org.telegram.ui.Components.z5.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), false);
+                    t00Var.e(org.telegram.ui.Components.b6.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), false);
                     f10Var.I.d(f10Var.getUserConfig().isPremium() ? f10Var.E : -1, false);
                     f10Var.I.setText(LocaleController.getString(R.string.FolderTagColor));
                     break;
                 case 10:
-                    tp0 tp0Var = (tp0) view;
-                    tp0Var.setCloseAsLock(!f10Var.getUserConfig().isPremium());
-                    tp0Var.a(f10Var.getUserConfig().isPremium() ? f10Var.E : -1, false);
-                    tp0Var.setOnColorClick(new ft(3, this, tp0Var));
+                    xp0 xp0Var = (xp0) view;
+                    xp0Var.setCloseAsLock(!f10Var.getUserConfig().isPremium());
+                    xp0Var.a(f10Var.getUserConfig().isPremium() ? f10Var.E : -1, false);
+                    xp0Var.setOnColorClick(new ft(3, this, xp0Var));
                     break;
                 case 11:
                     u00 u00Var = (u00) view;
@@ -137,8 +137,8 @@ public final class c10 extends og.b {
         boolean z12 = w00Var.l;
         ImageView imageView = k00Var.a;
         TextView textView = k00Var.b;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, z12 ? org.telegram.ui.ActionBar.i6.q7 : org.telegram.ui.ActionBar.i6.o6, false), PorterDuff.Mode.MULTIPLY));
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, z12 ? org.telegram.ui.ActionBar.i6.p7 : org.telegram.ui.ActionBar.i6.q6, false));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, z12 ? org.telegram.ui.ActionBar.i6.q7 : org.telegram.ui.ActionBar.i6.o6, false), PorterDuff.Mode.MULTIPLY));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, z12 ? org.telegram.ui.ActionBar.i6.p7 : org.telegram.ui.ActionBar.i6.q6, false));
         int i14 = w00Var.k;
         CharSequence charSequence = w00Var.d;
         ImageView imageView2 = k00Var.a;
@@ -163,7 +163,7 @@ public final class c10 extends og.b {
             k00Var.e = Boolean.valueOf(z10);
             if (k00Var.c == i14) {
                 textView.clearAnimation();
-                textView.animate().translationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f).setDuration(180L).setInterpolator(org.telegram.ui.Components.tr.h).start();
+                textView.animate().translationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f).setDuration(180L).setInterpolator(org.telegram.ui.Components.hs.h).start();
             } else {
                 textView.setTranslationX(z10 ? AndroidUtilities.dp(i15 * (-7)) : 0.0f);
             }
@@ -173,15 +173,15 @@ public final class c10 extends og.b {
         k00Var.c = i14;
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
         View view;
-        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.e6 e6Var;
         int i11;
         int i12;
         int i13;
-        org.telegram.ui.ActionBar.d6 d6Var2;
-        org.telegram.ui.ActionBar.d6 d6Var3;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        org.telegram.ui.ActionBar.e6 e6Var3;
         Context context = this.d;
         f10 f10Var = this.e;
         switch (i10) {
@@ -189,15 +189,15 @@ public final class c10 extends og.b {
                 view = new org.telegram.ui.Cells.m4(context, 22);
                 break;
             case 1:
-                org.telegram.ui.Cells.za zaVar = new org.telegram.ui.Cells.za(context, 6, 0, false);
-                zaVar.setSelfAsSavedMessages(true);
-                view = zaVar;
+                org.telegram.ui.Cells.xa xaVar = new org.telegram.ui.Cells.xa(6, 0, context, false);
+                xaVar.setSelfAsSavedMessages(true);
+                view = xaVar;
                 break;
             case 2:
-                org.telegram.ui.Components.mw0 mw0Var = (org.telegram.ui.Components.mw0) f10Var.fragmentView;
+                org.telegram.ui.Components.sw0 sw0Var = (org.telegram.ui.Components.sw0) f10Var.fragmentView;
                 String string = LocaleController.getString(R.string.FilterNameHint);
-                d6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
-                z00 z00Var = new z00(this.d, mw0Var, string, false, 12, d6Var);
+                e6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
+                z00 z00Var = new z00(this.d, sw0Var, string, false, 12, e6Var);
                 f10Var.K = z00Var;
                 z00Var.n = false;
                 org.telegram.ui.Cells.e3 e3Var = z00Var.b;
@@ -205,8 +205,8 @@ public final class c10 extends og.b {
                 e3Var.setEmojiViewCacheType(25);
                 e3Var.setText(f10Var.w);
                 i11 = ((org.telegram.ui.ActionBar.n2) f10Var).currentAccount;
-                org.telegram.ui.Components.q5.s(i11, f10Var.x);
-                org.telegram.ui.Components.eu editText = e3Var.getEditText();
+                org.telegram.ui.Components.s5.s(i11, f10Var.x);
+                org.telegram.ui.Components.ru editText = e3Var.getEditText();
                 editText.addTextChangedListener(new org.telegram.ui.Cells.i3());
                 editText.addTextChangedListener(new a10(this));
                 editText.setPadding(AndroidUtilities.dp(7.0f), editText.getPaddingTop(), editText.getPaddingRight(), editText.getPaddingBottom());
@@ -223,7 +223,7 @@ public final class c10 extends og.b {
                 ImageView imageView = new ImageView(context);
                 k00Var.a = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                k00Var.addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
+                k00Var.addView(imageView, w7.x5.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
                 TextView textView = new TextView(context);
                 k00Var.b = textView;
                 textView.setTextSize(1, 16.0f);
@@ -233,18 +233,18 @@ public final class c10 extends og.b {
                 textView.setPadding(z10 ? 24 : 0, 0, z10 ? 0 : 24, 0);
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
                 boolean z11 = LocaleController.isRTL;
-                k00Var.addView(textView, w7.z5.d(-1, -2.0f, 23, z11 ? 0.0f : 72.0f, 0.0f, z11 ? 72.0f : 0.0f, 0.0f));
+                k00Var.addView(textView, w7.x5.a(-2.0f, z11 ? 0.0f : 72.0f, 0.0f, z11 ? 72.0f : 0.0f, 0.0f, -1, 23));
                 view = k00Var;
                 break;
             case 5:
                 v00 v00Var = new v00(context);
-                org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
-                v00Var.a = nj0Var;
-                nj0Var.f(R.raw.filter_new, 100, 100, null);
-                nj0Var.setScaleType(ImageView.ScaleType.CENTER);
-                nj0Var.d();
-                v00Var.addView(nj0Var, w7.z5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
-                nj0Var.setOnClickListener(new a(v00Var, 24));
+                org.telegram.ui.Components.fk0 fk0Var = new org.telegram.ui.Components.fk0(context);
+                v00Var.a = fk0Var;
+                fk0Var.f(R.raw.filter_new, 100, 100, null);
+                fk0Var.setScaleType(ImageView.ScaleType.CENTER);
+                fk0Var.d();
+                v00Var.addView(fk0Var, w7.x5.a(100.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100, 17));
+                fk0Var.setOnClickListener(new a(v00Var, 23));
                 view = v00Var;
                 break;
             case 6:
@@ -264,31 +264,31 @@ public final class c10 extends og.b {
             case 10:
                 Activity parentActivity = f10Var.getParentActivity();
                 i13 = ((org.telegram.ui.ActionBar.n2) f10Var).currentAccount;
-                d6Var2 = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
-                view = new tp0(2, i13, parentActivity, d6Var2);
+                e6Var2 = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
+                view = new xp0(2, i13, parentActivity, e6Var2);
                 break;
             case 11:
-                d6Var3 = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
-                view = new u00(context, d6Var3);
+                e6Var3 = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
+                view = new u00(context, e6Var3);
                 break;
         }
-        return new org.telegram.ui.Components.il0(view);
+        return new org.telegram.ui.Components.am0(view);
     }
 
-    @Override // s4.h0
-    public final void y(s4.c1 c1Var) {
-        int i10 = c1Var.f;
+    @Override // s4.i0
+    public final void y(s4.d1 d1Var) {
+        int i10 = d1Var.f;
         if (i10 != 2 && i10 == 9) {
-            t00 t00Var = (t00) c1Var.a;
+            t00 t00Var = (t00) d1Var.a;
             f10 f10Var = this.e;
-            t00Var.e(org.telegram.ui.Components.z5.cloneSpans(f10Var.w, -1, f10Var.I.s.getPaint().getFontMetricsInt(), 0.5f), true);
+            t00Var.e(org.telegram.ui.Components.b6.cloneSpans(f10Var.w, -1, f10Var.I.s.getPaint().getFontMetricsInt(), 0.5f), true);
         }
     }
 
-    @Override // s4.h0
-    public final void z(s4.c1 c1Var) {
-        if (c1Var.f == 2) {
-            org.telegram.ui.Cells.g3 g3Var = (org.telegram.ui.Cells.g3) c1Var.a;
+    @Override // s4.i0
+    public final void z(s4.d1 d1Var) {
+        if (d1Var.f == 2) {
+            org.telegram.ui.Cells.g3 g3Var = (org.telegram.ui.Cells.g3) d1Var.a;
             g3Var.b.k(true);
             g3Var.b.d();
         }

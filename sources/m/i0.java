@@ -6,10 +6,10 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
-    public g.g a;
+    public g.f a;
     public j0 b;
     public CharSequence c;
     public final /* synthetic */ p0 d;
@@ -20,9 +20,9 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
 
     @Override // m.o0
     public final boolean a() {
-        g.g gVar = this.a;
-        if (gVar != null) {
-            return gVar.isShowing();
+        g.f fVar = this.a;
+        if (fVar != null) {
+            return fVar.isShowing();
         }
         return false;
     }
@@ -44,9 +44,9 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
 
     @Override // m.o0
     public final void dismiss() {
-        g.g gVar = this.a;
-        if (gVar != null) {
-            gVar.dismiss();
+        g.f fVar = this.a;
+        if (fVar != null) {
+            fVar.dismiss();
             this.a = null;
         }
     }
@@ -83,18 +83,18 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
         }
         p0 p0Var = this.d;
         c5.b0 b0Var = new c5.b0(p0Var.getPopupContext());
-        g.c cVar = (g.c) b0Var.c;
+        g.b bVar = (g.b) b0Var.c;
         CharSequence charSequence = this.c;
         if (charSequence != null) {
-            cVar.d = charSequence;
+            bVar.d = charSequence;
         }
         j0 j0Var = this.b;
         int selectedItemPosition = p0Var.getSelectedItemPosition();
-        cVar.i = j0Var;
-        cVar.j = this;
-        cVar.m = selectedItemPosition;
-        cVar.l = true;
-        g.g e7 = b0Var.e();
+        bVar.i = j0Var;
+        bVar.j = this;
+        bVar.m = selectedItemPosition;
+        bVar.l = true;
+        g.f e7 = b0Var.e();
         this.a = e7;
         AlertController$RecycleListView alertController$RecycleListView = e7.f.e;
         g0.d(alertController$RecycleListView, i10);

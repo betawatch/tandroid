@@ -1,93 +1,21 @@
 package xh;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.widget.FrameLayout;
-import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.m7;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import w7.z5;
+import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class c extends cb {
-    public static final /* synthetic */ int a0 = 0;
-    public final List X;
-    public final GiftAuctionController.Auction Y;
-    public w61 Z;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class c extends FrameLayout {
+    public static final /* synthetic */ int c = 0;
+    public final e6 a;
+    public final int b;
 
-    public c(Context context, d6 d6Var, GiftAuctionController.Auction auction, List list) {
-        super(context, null, false, false, 2, d6Var);
-        this.Y = auction;
-        this.X = list;
-        this.v = 0.2f;
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(y());
-        fixNavigationBar();
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new m7(3));
-        this.d.setOverScrollMode(2);
-        ci.d dVar = new ci.d(context, d6Var, true);
-        dVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 15));
-        dVar.g(LocaleController.getString(R.string.OK), false, true);
-        FrameLayout.LayoutParams d = z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
-        int i10 = d.leftMargin;
-        int i11 = this.backgroundPaddingLeft;
-        d.leftMargin = i10 + i11;
-        d.rightMargin += i11;
-        this.containerView.addView(dVar, d);
-        this.Z.N(false);
-    }
-
-    public static void N(c cVar, TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift) {
-        long peerDialogId = DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer);
-        cVar.dismiss();
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if (U == null || UserObject.isService(peerDialogId)) {
-            return;
-        }
-        Bundle bundle = new Bundle();
-        if (peerDialogId > 0) {
-            bundle.putLong("user_id", peerDialogId);
-            if (peerDialogId == UserConfig.getInstance(cVar.currentAccount).getClientUserId()) {
-                bundle.putBoolean("my_profile", true);
-            }
-        } else {
-            bundle.putLong("chat_id", -peerDialogId);
-        }
-        bundle.putBoolean("open_gifts", true);
-        U.presentFragment(new ProfileActivity(bundle, null));
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
-        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
-        this.Z = w61Var;
-        w61Var.r = false;
-        return w61Var;
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        List list = this.X;
-        if (list == null) {
-            return null;
-        }
-        return LocaleController.formatPluralString("Gift2AuctionsAcquiredGifts", list.size(), new Object[0]);
+    public c(Context context, int i10, e6 e6Var) {
+        super(context);
+        this.b = i10;
+        this.a = e6Var;
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
     }
 }

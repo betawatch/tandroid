@@ -1,45 +1,74 @@
 package w3;
 
-import e2.d0;
-import org.telegram.tgnet.TLObject;
+import c3.g0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r {
-    public final o a;
-    public final int b;
-    public final long[] c;
-    public final int[] d;
-    public final int e;
-    public final long[] f;
-    public final int[] g;
-    public final long h;
+    public final boolean a;
+    public final String b;
+    public final g0 c;
+    public final int d;
+    public final byte[] e;
 
-    public r(o oVar, long[] jArr, int[] iArr, int i10, long[] jArr2, int[] iArr2, long j3) {
-        e2.d.b(iArr.length == jArr2.length);
-        e2.d.b(jArr.length == jArr2.length);
-        e2.d.b(iArr2.length == jArr2.length);
-        this.a = oVar;
-        this.c = jArr;
-        this.d = iArr;
-        this.e = i10;
-        this.f = jArr2;
-        this.g = iArr2;
-        this.h = j3;
-        this.b = jArr.length;
-        if (iArr2.length > 0) {
-            int length = iArr2.length - 1;
-            iArr2[length] = iArr2[length] | TLObject.FLAG_29;
-        }
-    }
-
-    public final int a(long j3) {
-        long[] jArr = this.f;
-        for (int a2 = d0.a(jArr, j3, true); a2 < jArr.length; a2++) {
-            if ((this.g[a2] & 1) != 0) {
-                return a2;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0052, code lost:
+    
+        if (r6.equals("cbc1") == false) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public r(boolean z10, String str, int i10, byte[] bArr, int i11, int i12, byte[] bArr2) {
+        char c10 = 0;
+        int i13 = 1;
+        e2.d.b((i10 == 0) ^ (bArr2 == null));
+        this.a = z10;
+        this.b = str;
+        this.d = i10;
+        this.e = bArr2;
+        if (str != null) {
+            switch (str.hashCode()) {
+                case 3046605:
+                    break;
+                case 3046671:
+                    if (str.equals("cbcs")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3049879:
+                    if (str.equals("cenc")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3049895:
+                    if (str.equals("cens")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
+            }
+            switch (c10) {
+                case 0:
+                case 1:
+                    i13 = 2;
+                    break;
+                case 2:
+                case 3:
+                    break;
+                default:
+                    e2.a.n("TrackEncryptionBox", "Unsupported protection scheme type '" + str + "'. Assuming AES-CTR crypto mode.");
+                    break;
             }
         }
-        return -1;
+        this.c = new g0(i13, i11, i12, bArr);
     }
 }

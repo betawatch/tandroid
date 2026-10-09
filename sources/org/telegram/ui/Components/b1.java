@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -21,36 +21,41 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ((org.telegram.ui.ug) obj).run();
+                ((org.telegram.ui.tg) obj).run();
                 break;
             case 1:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj);
                 break;
             case 2:
-                AndroidUtilities.hideKeyboard((f4) obj);
+                AndroidUtilities.hideKeyboard((h4) obj);
                 break;
             case 3:
                 ((ChatActivityEnterView) obj).L0 = null;
                 break;
             case 4:
-                ((xi) obj).z2 = false;
+                ((yi) obj).C2 = false;
                 break;
             case 5:
-                eu.i((eu) obj);
+                gl glVar = (gl) obj;
+                glVar.Q0 = null;
+                glVar.P.post(new al(glVar, 2));
                 break;
             case 6:
-                float[] fArr = FragmentContextView.P0;
-                ((FragmentContextView) obj).c(false);
+                ru.i((ru) obj);
                 break;
             case 7:
-                ao0.H = null;
-                ((View) obj).requestFocus();
+                float[] fArr = FragmentContextView.Q0;
+                ((FragmentContextView) obj).c(false);
                 break;
             case 8:
-                AndroidUtilities.hideKeyboard((un0) obj);
+                no0.H = null;
+                ((View) obj).requestFocus();
+                break;
+            case 9:
+                AndroidUtilities.hideKeyboard((ho0) obj);
                 break;
             default:
-                ThemeEditorView themeEditorView = ((x11) obj).d;
+                ThemeEditorView themeEditorView = ((d21) obj).d;
                 themeEditorView.l = null;
                 if (themeEditorView.b != null) {
                     AndroidUtilities.setPreferredMaxRefreshRate(themeEditorView.h, themeEditorView.a, themeEditorView.g);

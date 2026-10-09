@@ -1,50 +1,20 @@
 package o0;
 
-import android.content.Context;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
+import android.graphics.Typeface;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class f implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final class f {
+    public final Typeface a;
+    public final int b;
 
-    public /* synthetic */ f(String str, Context context, Object obj, int i10, int i11) {
-        this.a = i11;
-        this.b = str;
-        this.c = context;
-        this.e = obj;
-        this.d = i10;
+    public f(int i10) {
+        this.a = null;
+        this.b = i10;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        int i10 = this.a;
-        int i11 = this.d;
-        Object obj = this.e;
-        Context context = this.c;
-        String str = this.b;
-        switch (i10) {
-            case 0:
-                Object[] objArr = {(e) obj};
-                ArrayList arrayList = new ArrayList(1);
-                Object obj2 = objArr[0];
-                Objects.requireNonNull(obj2);
-                arrayList.add(obj2);
-                return h.b(str, context, DesugarCollections.unmodifiableList(arrayList), i11);
-            default:
-                try {
-                    return h.b(str, context, (List) obj, i11);
-                } catch (Throwable unused) {
-                    return new g(-3);
-                }
-        }
+    public f(Typeface typeface) {
+        this.a = typeface;
+        this.b = 0;
     }
 }

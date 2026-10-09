@@ -1,33 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ou extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public int b;
+public final class ou implements ActionMode.Callback {
+    public final /* synthetic */ ActionMode.Callback a;
+    public final /* synthetic */ ru b;
 
-    public /* synthetic */ ou(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public ou(ru ruVar, ActionMode.Callback callback) {
+        this.b = ruVar;
+        this.a = callback;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.i6.l1(textPaint.getAlpha() / 255.0f, this.b));
-                break;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        if (this.b.performMenuAction(menuItem.getItemId())) {
+            actionMode.finish();
+            return true;
+        }
+        try {
+            return this.a.onActionItemClicked(actionMode, menuItem);
+        } catch (Exception unused) {
+            return true;
         }
     }
 
-    public ou() {
-        this.a = 0;
-        this.b = 0;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        ru ruVar = this.b;
+        ruVar.copyPasteShowed = true;
+        ruVar.onContextMenuOpen();
+        return this.a.onCreateActionMode(actionMode, menu);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        ru ruVar = this.b;
+        ruVar.copyPasteShowed = false;
+        ruVar.onContextMenuClose();
+        this.a.onDestroyActionMode(actionMode);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return this.a.onPrepareActionMode(actionMode, menu);
     }
 }

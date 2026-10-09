@@ -1,70 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ androidx.activity.g b;
+public final class hw0 {
+    public static final hw0 a;
+    public static final hw0 b;
+    public static final /* synthetic */ hw0[] c;
 
-    public /* synthetic */ hw0(androidx.activity.g gVar, int i10) {
-        this.a = i10;
-        this.b = gVar;
+    static {
+        hw0 hw0Var = new hw0("DEFAULT", 0);
+        a = hw0Var;
+        hw0 hw0Var2 = new hw0("RECORDING", 1);
+        b = hw0Var2;
+        c = new hw0[]{hw0Var, hw0Var2};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        androidx.activity.g gVar = this.b;
-        switch (i10) {
-            case 0:
-                mw0 mw0Var = (mw0) gVar.c;
-                boolean z10 = mw0Var.O;
-                Paint paint = mw0Var.b0;
-                Paint paint2 = mw0Var.W;
-                if (!z10) {
-                    iw0 iw0Var = (iw0) gVar.d;
-                    if (iw0Var != null) {
-                        iw0Var.c.recycle();
-                    }
-                    mw0Var.P = false;
-                    break;
-                } else {
-                    iw0 iw0Var2 = mw0Var.Q;
-                    mw0Var.R = iw0Var2;
-                    mw0Var.a0.setShader(paint2.getShader());
-                    mw0Var.c0.setShader(paint.getShader());
-                    Bitmap bitmap = ((iw0) gVar.d).c;
-                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                    paint2.setShader(new BitmapShader(bitmap, tileMode, tileMode));
-                    ((iw0) gVar.d).getClass();
-                    ValueAnimator valueAnimator = mw0Var.g0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    mw0Var.f0 = 0.0f;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    mw0Var.g0 = ofFloat;
-                    ofFloat.addUpdateListener(new v70(gVar, 22));
-                    mw0Var.g0.addListener(new cl0(2, gVar, iw0Var2));
-                    mw0Var.g0.setDuration(50L);
-                    mw0Var.g0.start();
-                    mw0Var.N();
-                    mw0Var.Q = (iw0) gVar.d;
-                    AndroidUtilities.runOnUIThread(new hw0(gVar, 1), 16L);
-                    break;
-                }
-            default:
-                mw0 mw0Var2 = (mw0) gVar.c;
-                mw0Var2.P = false;
-                mw0Var2.W();
-                break;
-        }
+    public static hw0 valueOf(String str) {
+        return (hw0) Enum.valueOf(hw0.class, str);
+    }
+
+    public static hw0[] values() {
+        return (hw0[]) c.clone();
     }
 }

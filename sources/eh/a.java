@@ -6,27 +6,83 @@ import android.graphics.drawable.Drawable;
 import dh.d;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements d, d6 {
+public final /* synthetic */ class a implements d, e6 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d6 b;
+    public final /* synthetic */ e6 b;
 
-    public /* synthetic */ a(int i10, d6 d6Var) {
+    public /* synthetic */ a(int i10, e6 e6Var) {
         this.a = i10;
-        this.b = d6Var;
+        this.b = e6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public Paint H(String str) {
-        return i6.S0(str);
+    @Override // org.telegram.ui.ActionBar.e6
+    public Paint F(String str) {
+        return i6.T0(str);
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public int H0(int i10) {
+    @Override // org.telegram.ui.ActionBar.e6
+    public boolean a() {
+        return i6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public int a1(int i10) {
+        return x0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public int c0(int i10) {
+        return x0(i10);
+    }
+
+    @Override // dh.d
+    public int g(e6 e6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.Sd, e6Var));
+                }
+                return i0.a.k(i6.w0(i6.Sd, e6Var), 255);
+            case 1:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.ce, e6Var));
+                }
+                return i0.a.k(i6.w0(z10 ? i6.s8 : i6.ce, e6Var), 255);
+            default:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.ce, e6Var));
+                }
+                return i0.a.k(i6.w0(z10 ? i6.s8 : i6.ce, e6Var), 255);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public /* synthetic */ boolean k0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public void m(float f7, float f10, int i10, int i11) {
+        i6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public ColorFilter x() {
+        return i6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e6
+    public int x0(int i10) {
         if (i10 == i6.G8) {
             return -14145495;
         }
@@ -91,67 +147,11 @@ public final /* synthetic */ class a implements d, d6 {
         if (i10 == i6.d7) {
             return -16777216;
         }
-        d6 d6Var = this.b;
-        return d6Var != null ? d6Var.H0(i10) : i6.w0(null, i10, false);
+        e6 e6Var = this.b;
+        return e6Var != null ? e6Var.x0(i10) : i6.x0(null, i10, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public boolean a() {
-        return i6.I.q();
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public /* synthetic */ Drawable getDrawable(String str) {
-        return null;
-    }
-
-    @Override // dh.d
-    public int h(d6 d6Var, boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.Sd, d6Var));
-                }
-                return i0.a.k(i6.v0(i6.Sd, d6Var), 255);
-            case 1:
-                if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.ce, d6Var));
-                }
-                return i0.a.k(i6.v0(z10 ? i6.s8 : i6.ce, d6Var), 255);
-            default:
-                if (b.c(UserConfig.selectedAccount, this.b)) {
-                    return i6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.v0(i6.ce, d6Var));
-                }
-                return i0.a.k(i6.v0(z10 ? i6.s8 : i6.ce, d6Var), 255);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int j0(int i10) {
-        return H0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int j1(int i10) {
-        return H0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public void m(float f7, float f10, int i10, int i11) {
-        i6.q(f7, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public /* synthetic */ boolean r0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public ColorFilter x() {
-        return i6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public /* synthetic */ void L0(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.e6
+    public /* synthetic */ void I0(int i10, int i11) {
     }
 }

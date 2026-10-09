@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import ci.a7;
 import ci.b6;
-import ci.k8;
+import ci.l8;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -21,31 +21,31 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ka;
-import org.telegram.ui.Components.uk0;
-import org.telegram.ui.u5;
-import w7.z5;
+import org.telegram.ui.Components.ma;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.t5;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class e1 extends j {
     public boolean A0;
     public boolean B0;
     public final SparseIntArray C0;
     public final com.google.firebase.messaging.n D0;
-    public e5 E0;
-    public e5 F0;
-    public e5 G0;
-    public e5 H0;
-    public e5 I0;
-    public e5 J0;
-    public e5 K0;
-    public e5 L0;
-    public final u5 q0;
+    public f5 E0;
+    public f5 F0;
+    public f5 G0;
+    public f5 H0;
+    public f5 I0;
+    public f5 J0;
+    public f5 K0;
+    public f5 L0;
+    public final t5 q0;
     public final x0 r0;
     public final ArrayList s0;
     public final MessageObject.GroupedMessages t0;
@@ -56,7 +56,7 @@ public abstract class e1 extends j {
     public int y0;
     public int z0;
 
-    public e1(Context context, PointF pointF, ArrayList arrayList, ka kaVar, boolean z10, a7 a7Var) {
+    public e1(Context context, PointF pointF, ArrayList arrayList, ma maVar, boolean z10, a7 a7Var) {
         super(context, pointF);
         hi.a aVar;
         TLRPC.Message message;
@@ -101,7 +101,7 @@ public abstract class e1 extends j {
                 tL_messageService = new TLRPC.TL_messageService();
             } else {
                 message = message2;
-                D = k8.D(messageObject);
+                D = l8.D(messageObject);
                 if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                     message.from_id = peer;
                     message.peer_id = peer;
@@ -181,7 +181,7 @@ public abstract class e1 extends j {
             tL_messageService.translatedText = message2.translatedText;
             tL_messageService.replyStory = message2.replyStory;
             message = tL_messageService;
-            D = k8.D(messageObject);
+            D = l8.D(messageObject);
             if (D != null) {
                 message.from_id = peer;
                 message.peer_id = peer;
@@ -202,17 +202,17 @@ public abstract class e1 extends j {
             groupedMessages.groupId = ((MessageObject) this.s0.get(0)).getGroupId();
             groupedMessages.calculate();
         }
-        u5 u5Var = new u5(b6Var, context);
-        this.q0 = u5Var;
-        addView(u5Var, z5.c(-1.0f, -1));
+        t5 t5Var = new t5(b6Var, context);
+        this.q0 = t5Var;
+        addView(t5Var, x5.d(-1.0f, -1));
         x0 x0Var = new x0(b6Var, context, this.D0);
         this.r0 = x0Var;
-        x0Var.setAdapter(new a1(b6Var, context, kaVar, a7Var, z10));
+        x0Var.setAdapter(new a1(b6Var, context, maVar, a7Var, z10));
         b1 b1Var = new b1(b6Var);
         b1Var.O = new c1(b6Var);
         x0Var.setLayoutManager(b1Var);
         x0Var.i(new d1());
-        u5Var.addView(x0Var, z5.c(-1.0f, -1));
+        t5Var.addView(x0Var, x5.d(-1.0f, -1));
         if (a7Var != null && a7Var.g) {
             ii.q1 q1Var = new ii.q1(b6Var, 8);
             hi.a aVar2 = new hi.a(b6Var, 7);
@@ -254,13 +254,13 @@ public abstract class e1 extends j {
     }
 
     @Override // qg.j
-    public uk0 getSelectionBounds() {
+    public ml0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new uk0();
+            return new ml0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new uk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
+        return new ml0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
     }
 
     @Override // qg.j
@@ -283,9 +283,9 @@ public abstract class e1 extends j {
     */
     public final void onMeasure(int i10, int i11) {
         boolean z10;
-        u5 u5Var = this.q0;
-        u5Var.measure(i10, i11);
-        setMeasuredDimension(u5Var.getMeasuredWidth(), u5Var.getMeasuredHeight());
+        t5 t5Var = this.q0;
+        t5Var.measure(i10, i11);
+        setMeasuredDimension(t5Var.getMeasuredWidth(), t5Var.getMeasuredHeight());
         k();
         if (this.A0) {
             ArrayList arrayList = this.s0;
@@ -314,53 +314,53 @@ public abstract class e1 extends j {
         float f10;
         float f11;
         float f12 = 2.14748365E9f;
-        float f13 = 2.14748365E9f;
-        float f14 = -2.14748365E9f;
-        float f15 = -2.14748365E9f;
+        float f13 = -2.14748365E9f;
         int i10 = 0;
+        float f14 = 2.14748365E9f;
+        float f15 = -2.14748365E9f;
         while (true) {
             x0 x0Var = this.r0;
             if (i10 >= x0Var.getChildCount()) {
-                rectF.set(f12, f13, f14, f15);
+                rectF.set(f12, f14, f15, f13);
                 return AndroidUtilities.dp(SharedConfig.bubbleRadius);
             }
             View childAt = x0Var.getChildAt(i10);
             boolean z10 = childAt instanceof org.telegram.ui.Cells.u1;
-            u5 u5Var = this.q0;
+            t5 t5Var = this.q0;
             if (z10) {
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
                 if (u1Var.getMessageObject() == null || !u1Var.getMessageObject().isRoundVideo() || u1Var.getPhotoImage() == null) {
-                    float x10 = childAt.getX() + u5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
+                    float x10 = childAt.getX() + t5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
                     if (this.t0 == null) {
                         x10 += AndroidUtilities.dp(8.0f);
                     }
-                    float x11 = ((childAt.getX() + u5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
-                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + u5Var.getY() + u1Var.getBackgroundDrawableTop();
-                    y3 = ((childAt.getY() + u5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
+                    float x11 = ((childAt.getX() + t5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
+                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + t5Var.getY() + u1Var.getBackgroundDrawableTop();
+                    y3 = ((childAt.getY() + t5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
                     f7 = x10;
                     f10 = x11;
                     f11 = dp;
                 } else {
-                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + u5Var.getX();
-                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + u5Var.getX();
-                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + u5Var.getY();
-                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + u5Var.getY();
+                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + t5Var.getX();
+                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + t5Var.getX();
+                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + t5Var.getY();
+                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + t5Var.getY();
                 }
                 f12 = Math.min(Math.min(f12, f7), f10);
-                f14 = Math.max(Math.max(f14, f7), f10);
-                f13 = Math.min(Math.min(f13, f11), y3);
-                f15 = Math.max(Math.max(f15, f11), y3);
+                f15 = Math.max(Math.max(f15, f7), f10);
+                f14 = Math.min(Math.min(f14, f11), y3);
+                f13 = Math.max(Math.max(f13, f11), y3);
             } else if (childAt instanceof org.telegram.ui.Cells.w0) {
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
-                if (w0Var.F0.d()) {
-                    float x12 = w0Var.getX() + u5Var.getX() + w0Var.getBoundsLeft();
-                    float x13 = w0Var.getX() + u5Var.getX() + w0Var.getBoundsRight();
-                    float y10 = w0Var.getY() + u5Var.getY();
-                    float y11 = w0Var.getY() + u5Var.getY() + w0Var.getMeasuredHeight();
+                if (w0Var.L()) {
+                    float x12 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsLeft();
+                    float x13 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsRight();
+                    float y10 = w0Var.getY() + t5Var.getY();
+                    float y11 = w0Var.getY() + t5Var.getY() + w0Var.getMeasuredHeight();
                     f12 = Math.min(Math.min(f12, x12), x13);
-                    f14 = Math.max(Math.max(f14, x12), x13);
-                    f13 = Math.min(Math.min(f13, y10), y11);
-                    f15 = Math.max(Math.max(f15, y10), y11);
+                    f15 = Math.max(Math.max(f15, x12), x13);
+                    f14 = Math.min(Math.min(f14, y10), y11);
+                    f13 = Math.max(Math.max(f13, y10), y11);
                 }
             }
             i10++;
@@ -385,24 +385,24 @@ public abstract class e1 extends j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setupTheme(k8 k8Var) {
-        SparseIntArray Q0;
+    public void setupTheme(l8 l8Var) {
+        SparseIntArray R0;
         int[] iArr;
         int i10;
-        f6 k10;
-        if (k8Var == null) {
+        g6 k10;
+        if (l8Var == null) {
             this.C0.clear();
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
         String str = "Blue";
         String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (i6.N0(string) == null || i6.N0(string).q()) {
+        if (i6.O0(string) == null || i6.O0(string).q()) {
             string = "Blue";
         }
         String str2 = "Dark Blue";
         String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (i6.N0(string2) == null || !i6.N0(string2).q()) {
+        if (i6.O0(string2) == null || !i6.O0(string2).q()) {
             string2 = "Dark Blue";
         }
         h6 h6Var = i6.I;
@@ -410,44 +410,44 @@ public abstract class e1 extends j {
             str2 = string2;
         } else if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
             str2 = string2;
-            boolean z10 = k8Var.y0;
+            boolean z10 = l8Var.y0;
             this.B0 = z10;
-            h6 N0 = !z10 ? i6.N0(str2) : i6.N0(str);
+            h6 O0 = !z10 ? i6.O0(str2) : i6.O0(str);
             String[] strArr = new String[1];
-            String str3 = N0.d;
-            Q0 = str3 == null ? i6.Q0(null, str3, strArr) : i6.Q0(new File(N0.b), null, strArr);
+            String str3 = O0.d;
+            R0 = str3 == null ? i6.R0(null, str3, strArr) : i6.R0(new File(O0.b), null, strArr);
             this.C0.clear();
-            iArr = i6.nl;
+            iArr = i6.ql;
             if (iArr != null) {
                 for (int i11 = 0; i11 < iArr.length; i11++) {
                     this.C0.put(i11, iArr[i11]);
                 }
             }
-            for (i10 = 0; i10 < Q0.size(); i10++) {
-                this.C0.put(Q0.keyAt(i10), Q0.valueAt(i10));
+            for (i10 = 0; i10 < R0.size(); i10++) {
+                this.C0.put(R0.keyAt(i10), R0.valueAt(i10));
             }
-            k10 = N0.k(false);
+            k10 = O0.k(false);
             if (k10 != null) {
-                k10.c(Q0, this.C0);
+                k10.c(R0, this.C0);
             }
             s();
         }
         str = string;
-        boolean z102 = k8Var.y0;
+        boolean z102 = l8Var.y0;
         this.B0 = z102;
         if (!z102) {
         }
         String[] strArr2 = new String[1];
-        String str32 = N0.d;
+        String str32 = O0.d;
         if (str32 == null) {
         }
         this.C0.clear();
-        iArr = i6.nl;
+        iArr = i6.ql;
         if (iArr != null) {
         }
-        while (i10 < Q0.size()) {
+        while (i10 < R0.size()) {
         }
-        k10 = N0.k(false);
+        k10 = O0.k(false);
         if (k10 != null) {
         }
         s();

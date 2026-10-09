@@ -1,460 +1,439 @@
 package ci;
 
-import android.graphics.Bitmap;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.view.View;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ha implements Utilities.Callback {
+public final /* synthetic */ class ha implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kc b;
+    public final /* synthetic */ lc b;
 
-    public /* synthetic */ ha(kc kcVar, int i10) {
+    public /* synthetic */ ha(lc lcVar, int i10) {
         this.a = i10;
-        this.b = kcVar;
+        this.b = lcVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        boolean z10;
-        vc vcVar;
-        bb bbVar;
-        switch (this.a) {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:229:0x0358  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i10;
+        int i11;
+        ArrayList arrayList;
+        zb zbVar;
+        kc kcVar;
+        int i12 = this.a;
+        int i13 = 6;
+        int i14 = 2;
+        int i15 = 1;
+        lc lcVar = this.b;
+        switch (i12) {
             case 0:
-                x2 x2Var = this.b.s;
-                x2Var.p = ((Float) obj).floatValue();
-                x2Var.i();
+                lcVar.q();
                 break;
             case 1:
-                Bitmap bitmap = (Bitmap) obj;
-                kc kcVar = this.b;
-                k8 k8Var = kcVar.K1;
-                if (k8Var != null) {
-                    AndroidUtilities.recycleBitmap(k8Var.g0);
-                    kcVar.K1.g0 = bitmap;
-                    ea eaVar = kcVar.q0;
-                    if (eaVar != null) {
-                        eaVar.n1(bitmap);
-                        break;
-                    }
+                if (lcVar.t2 >= 0) {
+                    MessagesController.getGlobalMainSettings().edit().putFloat("frontflash_warmth", lcVar.s.o).putFloat("frontflash_intensity", lcVar.s.p).apply();
                 }
+                lcVar.s.e(0.0f, 240L, null);
+                lcVar.E0.setSelected(false);
                 break;
             case 2:
-                k8 k8Var2 = (k8) obj;
-                kc kcVar2 = this.b;
-                kcVar2.W(k8Var2, false);
-                int i10 = kcVar2.c;
-                ai.l9 storiesController = MessagesController.getInstance(i10).getStoriesController();
-                a0.i iVar = storiesController.e;
-                int i11 = storiesController.a;
-                ArrayList arrayList = storiesController.h;
-                ArrayList arrayList2 = storiesController.g;
-                ai.k9 k9Var = new ai.k9(storiesController, k8Var2);
-                boolean z11 = k8Var2.g;
-                long j3 = k9Var.J;
-                if (z11) {
-                    HashMap hashMap = (HashMap) iVar.f(j3);
-                    if (hashMap == null) {
-                        hashMap = new HashMap();
-                        iVar.k(hashMap, j3);
-                    }
-                    hashMap.put(Integer.valueOf(k8Var2.f), k9Var);
+                lcVar.l();
+                lcVar.W1 = false;
+                int i16 = lcVar.c;
+                if (lcVar.K1 == null) {
+                    lcVar.p(true);
+                    break;
                 } else {
-                    storiesController.d(j3, k9Var, storiesController.b, false);
-                }
-                storiesController.d(j3, k9Var, storiesController.c, true);
-                if (j3 != UserConfig.getInstance(i11).clientUserId) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= arrayList2.size()) {
-                            z10 = false;
-                        } else if (DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList2.get(i12)).peer) == j3) {
-                            arrayList2.add(0, (TL_stories.PeerStories) arrayList2.remove(i12));
-                            z10 = true;
-                        } else {
-                            i12++;
-                        }
-                    }
-                    if (!z10) {
-                        int i13 = 0;
-                        while (true) {
-                            if (i13 < arrayList.size()) {
-                                if (DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(i13)).peer) == j3) {
-                                    arrayList.add(0, (TL_stories.PeerStories) arrayList.remove(i13));
-                                    z10 = true;
+                    lcVar.x();
+                    ia iaVar = new ia(lcVar, i14);
+                    if (lcVar.H1 == null) {
+                        l8 l8Var = lcVar.K1;
+                        if (l8Var.K && !l8Var.v() && !l8Var.g) {
+                            long j3 = l8Var.h0;
+                            if (j3 > 0 && !l8Var.n) {
+                                long j10 = (long) ((l8Var.a0 - l8Var.Z) * j3);
+                                if (j10 < 68999) {
+                                    i10 = i16;
+                                    arrayList = null;
+                                    i11 = 0;
                                 } else {
-                                    i13++;
+                                    arrayList = new ArrayList();
+                                    l8Var.a0 = (59000.0f / l8Var.h0) + l8Var.Z;
+                                    arrayList.add(l8Var);
+                                    long j11 = 59000;
+                                    i11 = 0;
+                                    long j12 = 59000;
+                                    while (j12 < j10) {
+                                        if (Math.min(j11, j10 - j12) < 1000) {
+                                            i10 = i16;
+                                        } else {
+                                            long j13 = j11;
+                                            l8 g10 = l8Var.g();
+                                            float f7 = l8Var.Z;
+                                            float f10 = l8Var.h0;
+                                            g10.Z = (j12 / f10) + f7;
+                                            g10.a0 = ((r14 + j12) / f10) + l8Var.Z;
+                                            g10.C0 = "";
+                                            j12 += j13;
+                                            arrayList.add(g10);
+                                            j11 = j13;
+                                            i16 = i16;
+                                        }
+                                    }
+                                    i10 = i16;
+                                }
+                                lcVar.H1 = arrayList;
+                                if (arrayList != null) {
+                                    lcVar.I1 = new ArrayList();
+                                    lcVar.J1 = new ArrayList();
+                                    for (int i17 = i11; i17 < lcVar.H1.size(); i17 = com.google.android.gms.internal.vision.e2.e(i17, i17, 1, lcVar.J1)) {
+                                        lcVar.I1.add(Integer.valueOf(i17));
+                                    }
                                 }
                             }
                         }
+                        i10 = i16;
+                        i11 = 0;
+                        arrayList = null;
+                        lcVar.H1 = arrayList;
+                        if (arrayList != null) {
+                        }
+                    } else {
+                        i10 = i16;
+                        i11 = 0;
                     }
-                    if (!z10) {
-                        TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
-                        tL_peerStories.peer = MessagesController.getInstance(i11).getPeer(j3);
-                        storiesController.b0(j3, tL_peerStories);
-                        arrayList2.add(0, tL_peerStories);
-                        storiesController.O(j3);
+                    if (lcVar.H1 != null) {
+                        ArrayList arrayList2 = lcVar.J1;
+                        int size = arrayList2.size();
+                        int i18 = i11;
+                        while (i18 < size) {
+                            Object obj = arrayList2.get(i18);
+                            i18++;
+                            Integer num = (Integer) obj;
+                            if (lcVar.I1.contains(num)) {
+                                l8 l8Var2 = (l8) lcVar.H1.get(num.intValue());
+                                l8 l8Var3 = lcVar.K1;
+                                if (l8Var3 == l8Var2) {
+                                    CharSequence[] charSequenceArr = new CharSequence[1];
+                                    charSequenceArr[i11] = lcVar.c1.getText();
+                                    ArrayList<TLRPC.MessageEntity> entities = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr, true) : new ArrayList<>();
+                                    CharSequence[] charSequenceArr2 = new CharSequence[1];
+                                    charSequenceArr2[i11] = lcVar.K1.C0;
+                                    ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr2, true) : new ArrayList<>();
+                                    l8 l8Var4 = lcVar.K1;
+                                    l8Var4.k = (TextUtils.equals(l8Var4.C0, charSequenceArr[i11]) && MediaDataController.entitiesEqual(entities, entities2)) ? i11 : 1;
+                                    lcVar.K1.C0 = new SpannableString(lcVar.c1.getText());
+                                } else if (l8Var2.C0 == null) {
+                                    l8Var3.k = i11;
+                                    l8Var3.C0 = new SpannableString("");
+                                }
+                                iaVar.run(l8Var2);
+                                i11 = 0;
+                            }
+                        }
+                    } else {
+                        CharSequence[] charSequenceArr3 = {lcVar.c1.getText()};
+                        ArrayList<TLRPC.MessageEntity> entities3 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr3, true) : new ArrayList<>();
+                        ArrayList<TLRPC.MessageEntity> entities4 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(new CharSequence[]{lcVar.K1.C0}, true) : new ArrayList<>();
+                        l8 l8Var5 = lcVar.K1;
+                        l8Var5.k = (TextUtils.equals(l8Var5.C0, charSequenceArr3[0]) && MediaDataController.entitiesEqual(entities3, entities4)) ? false : true;
+                        lcVar.K1.C0 = new SpannableString(lcVar.c1.getText());
+                        iaVar.run(lcVar.K1);
                     }
-                }
-                k9Var.d();
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
-                if (k8Var2.c && !k8Var2.g) {
-                    MessagesController.getInstance(i10).getStoriesController().w.b(k8Var2);
-                }
-                if (k8Var2.e1 != 0) {
-                    ConnectionsManager.getInstance(k8Var2.a).cancelRequest(k8Var2.e1, true);
+                    long j14 = UserConfig.getInstance(i10).clientUserId;
+                    TLRPC.InputPeer inputPeer = lcVar.K1.v0;
+                    if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
+                        j14 = DialogObject.getPeerDialogId(inputPeer);
+                    }
+                    lcVar.K1 = null;
+                    lcVar.v = true;
+                    lcVar.w = j14;
+                    lcVar.B2 = true;
+                    lcVar.n();
+                    ai.j jVar = new ai.j(lcVar, j14, 6);
+                    cc ccVar = lcVar.x;
+                    if (ccVar != null) {
+                        ccVar.b(j14, jVar);
+                    } else {
+                        jVar.run();
+                    }
+                    MessagesController.getGlobalMainSettings().edit().putInt("storyhint2", 2).apply();
                     break;
                 }
                 break;
             case 3:
-                d7 d7Var = (d7) obj;
-                kc kcVar3 = this.b;
-                if (kcVar3.C0 != null) {
-                    kcVar3.D0.setLink(d7Var == null ? null : d7Var.a);
-                    xb xbVar = kcVar3.A0;
-                    if (xbVar != null) {
-                        xbVar.c.b(kcVar3.D0.y ? kcVar3.C0.d : null);
-                        break;
-                    }
-                }
+                lcVar.Y(false);
                 break;
             case 4:
-                Integer num = (Integer) obj;
-                k8 k8Var3 = this.b.K1;
-                if (k8Var3 != null) {
-                    k8Var3.I0 = num.intValue();
-                    MessagesController.getGlobalMainSettings().edit().putInt("story_period", num.intValue()).apply();
+                l8 l8Var6 = lcVar.K1;
+                if (l8Var6 != null) {
+                    l8Var6.y0 = !l8Var6.y0;
+                    zb zbVar2 = lcVar.X0;
+                    if (zbVar2 != null) {
+                        zbVar2.u(l8Var6);
+                    }
+                    nb nbVar = lcVar.v1;
+                    if (nbVar != null && nbVar.R0 != null) {
+                        while (r10 < lcVar.v1.R0.getChildCount()) {
+                            View childAt = lcVar.v1.R0.getChildAt(r10);
+                            if (childAt instanceof qg.e1) {
+                                ((qg.e1) childAt).setupTheme(lcVar.K1);
+                            }
+                            r10++;
+                        }
+                    }
+                    lcVar.n0(true);
                     break;
                 }
                 break;
             case 5:
-                kc kcVar4 = this.b;
-                ai.d dVar = kcVar4.a;
-                int intValue = ((Integer) obj).intValue() / 3600;
-                org.telegram.ui.Components.lb lbVar = new org.telegram.ui.Components.mb(kcVar4.b, new z8(1)).a;
-                WindowManager.LayoutParams layout = lbVar.getLayout();
-                if (layout != null) {
-                    layout.height = -2;
-                    layout.width = kcVar4.r.getWidth();
-                    layout.y = (int) (kcVar4.r.getY() + AndroidUtilities.dp(56.0f));
-                    org.telegram.ui.Components.mb mbVar = lbVar.a;
-                    mbVar.getWindow().setAttributes(mbVar.b);
-                }
-                lbVar.setTouchable(true);
-                new org.telegram.ui.Components.yc(lbVar, dVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.i6.gc, 0, new ga(kcVar4, 27), dVar)).k(true);
+                lcVar.p(true);
                 break;
             case 6:
-                Boolean bool = (Boolean) obj;
-                boolean booleanValue = bool.booleanValue();
-                kc kcVar5 = this.b;
-                if (booleanValue && (vcVar = kcVar5.Z0) != null && vcVar.P) {
-                    vcVar.P = false;
-                    if (vcVar.E && vcVar.h == null) {
-                        vcVar.G = true;
-                        oc ocVar = vcVar.a;
-                        if (ocVar != null) {
-                            ocVar.X(true);
-                        }
+                lcVar.d = true;
+                lcVar.v = false;
+                if (lcVar.J == 1) {
+                    lcVar.h0.setAlpha(1.0f);
+                    lcVar.h0.setTranslationX(0.0f);
+                    lcVar.h0.setTranslationY(0.0f);
+                    lcVar.i0.setAlpha(1.0f);
+                    lcVar.k0.setAlpha(1.0f);
+                    lcVar.n.setBackgroundColor(-16777216);
+                    if (lcVar.f0 == 2) {
+                        lcVar.u1.setAlpha(1.0f);
                     }
                 }
-                kcVar5.X0.x(2, bool.booleanValue());
-                kcVar5.Y0.clearAnimation();
-                bi.q(kcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
-                org.telegram.ui.Components.rc rcVar = org.telegram.ui.Components.rc.w;
-                if (rcVar != null && rcVar.a == 2) {
-                    rcVar.l();
+                ha haVar = lcVar.x2;
+                if (haVar != null) {
+                    haVar.run();
+                    lcVar.x2 = null;
+                } else {
+                    lcVar.O();
+                }
+                l8 l8Var7 = lcVar.K1;
+                if (l8Var7 != null && l8Var7.n) {
+                    lcVar.t();
+                    lcVar.G();
+                    lcVar.r();
+                    break;
+                } else if (l8Var7 != null && l8Var7.u) {
+                    if (l8Var7.K) {
+                        lcVar.X0.t(l8Var7, null, 0L);
+                    }
+                    lcVar.r();
                     break;
                 }
                 break;
             case 7:
-                kc kcVar6 = this.b;
-                kcVar6.l();
-                kcVar6.m();
-                kcVar6.i((Runnable) obj);
+                lcVar.f(1.0f, true, new ha(lcVar, i13));
                 break;
             case 8:
-                t tVar = (t) obj;
-                kc kcVar7 = this.b;
-                xb xbVar2 = kcVar7.A0;
-                kcVar7.z0 = tVar;
-                xbVar2.o(tVar);
-                kcVar7.I0.setSelected(tVar);
-                nb nbVar = kcVar7.B0;
-                if (nbVar != null) {
-                    nbVar.recordHevc = !kcVar7.A0.j();
-                }
-                kcVar7.G0.setDrawable(new u(tVar, false));
-                kcVar7.c0(kcVar7.H0, kcVar7.I0.e, true);
-                kcVar7.O0.e(kcVar7.A0.j() ? kcVar7.A0.getFilledProgress() : 0.0f, true);
-                jb jbVar = kcVar7.M0;
-                if (jbVar != null) {
-                    jbVar.setMultipleOnClick(kcVar7.A0.j());
-                    kcVar7.M0.setMaxCount(Math.min(10, t.b() - kcVar7.A0.getFilledCount()));
+                lcVar.A0.setCameraThumb(lcVar.z());
+                ob obVar = lcVar.B0;
+                if (obVar != null) {
+                    obVar.destroy(true, null);
+                    AndroidUtilities.removeFromParent(lcVar.B0);
+                    yb ybVar = lcVar.A0;
+                    if (ybVar != null) {
+                        ybVar.setCameraView(null);
+                    }
+                    lcVar.B0 = null;
                     break;
                 }
                 break;
             case 9:
-                kc kcVar8 = this.b;
-                kcVar8.O = true;
-                kcVar8.q(true);
-                AndroidUtilities.runOnUIThread(new wa(0, (Utilities.Callback) obj), 210L);
+                lcVar.A0.setCameraThumb(lcVar.z());
                 break;
             case 10:
-                Integer num2 = (Integer) obj;
-                kc kcVar9 = this.b;
-                if (!kcVar9.P1 && !kcVar9.Q1) {
-                    int intValue2 = num2.intValue();
-                    kcVar9.O1 = intValue2;
-                    kcVar9.o0.a(intValue2 == -1, true);
-                    kcVar9.i0(kcVar9.O1 == 1 && !kcVar9.I0.e, true);
-                    kcVar9.Q0.a(num2.intValue());
-                    j7 j7Var = kcVar9.O0;
-                    boolean z12 = num2.intValue() == 1;
-                    j7Var.n0 = -1.0f;
-                    j7Var.o0 = z12;
-                    j7Var.invalidate();
-                    if (num2.intValue() == -1) {
-                        nb nbVar2 = kcVar9.B0;
-                        if (nbVar2 != null && nbVar2.isDual()) {
-                            kcVar9.B0.toggleDual();
-                        }
-                        e4 e4Var = kcVar9.l1;
-                        if (e4Var != null) {
-                            e4Var.e(true);
-                        }
-                        e4 e4Var2 = kcVar9.m1;
-                        if (e4Var2 != null) {
-                            e4Var2.e(true);
-                        }
-                        e4 e4Var3 = kcVar9.W0;
-                        if (e4Var3 != null) {
-                            e4Var3.e(true);
-                        }
-                        kcVar9.A0.o(null);
-                        kcVar9.A0.e();
-                        kcVar9.I0.setSelected((t) null);
-                        nb nbVar3 = kcVar9.B0;
-                        if (nbVar3 != null) {
-                            nbVar3.recordHevc = !kcVar9.A0.j();
-                        }
-                    }
-                    kcVar9.I0.a(false, true);
-                    kcVar9.m0(true);
+                if (lcVar.f0 == 1) {
+                    lcVar.k0(2, false, true);
                     break;
                 }
                 break;
             case 11:
-                Float f7 = (Float) obj;
-                kc kcVar10 = this.b;
-                j7 j7Var2 = kcVar10.O0;
-                j7Var2.n0 = f7.floatValue();
-                j7Var2.invalidate();
-                kcVar10.O0.setVisibility(f7.floatValue() <= -1.0f ? 8 : 0);
-                kcVar10.O0.setAlpha(Utilities.clamp01(f7.floatValue() + 1.0f));
-                kcVar10.P0.setVisibility(f7.floatValue() < 0.0f ? 0 : 8);
-                kcVar10.P0.setAlpha(AndroidUtilities.ilerp(f7.floatValue(), 0.0f, -1.0f));
-                kcVar10.P0.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, AndroidUtilities.ilerp(f7.floatValue(), 0.0f, -1.0f)));
-                kcVar10.P0.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, AndroidUtilities.ilerp(f7.floatValue(), 0.0f, -1.0f)));
-                kcVar10.P0.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.ilerp(f7.floatValue(), 0.0f, -1.0f)));
-                if (f7.floatValue() < 0.0f) {
-                    kcVar10.f(false);
+                cb cbVar = lcVar.d1;
+                if (cbVar != null) {
+                    int i19 = -(AndroidUtilities.dp(24.0f) + lcVar.c1.getEditTextHeight());
+                    cbVar.setTranslationY(i19 - (lcVar.Z0 != null ? r3.getContentHeight() - AndroidUtilities.dp(5.0f) : 0));
                     break;
                 }
                 break;
             case 12:
-                Integer num3 = (Integer) obj;
-                kc kcVar11 = this.b;
-                if (kcVar11.K1 != null) {
-                    ac acVar = kcVar11.c1;
-                    if (!acVar.O1) {
-                        acVar.clearFocus();
-                        if (num3.intValue() != 5) {
-                            if (num3.intValue() != 0) {
-                                if (num3.intValue() != 1) {
-                                    if (num3.intValue() != 2) {
-                                        if (num3.intValue() != 4) {
-                                            if (num3.intValue() == 3) {
-                                                kcVar11.l0(3, false, true);
-                                                break;
-                                            }
-                                        } else {
-                                            kcVar11.l0(1, false, true);
-                                            break;
-                                        }
-                                    } else {
-                                        kcVar11.u();
-                                        kcVar11.H();
-                                        mb mbVar2 = kcVar11.v1;
-                                        if (mbVar2 != null) {
-                                            mbVar2.R0(1);
-                                            mbVar2.A0();
-                                            break;
-                                        }
-                                    }
-                                } else {
-                                    kcVar11.l0(0, false, true);
-                                    mb mbVar3 = kcVar11.v1;
-                                    if (mbVar3 != null) {
-                                        mbVar3.R0(2);
-                                        mbVar3.l2 = true;
-                                        mbVar3.o0(true);
-                                        kcVar11.v1.M0 = true;
-                                        break;
-                                    }
-                                }
+                yb ybVar2 = lcVar.A0;
+                if (ybVar2 != null) {
+                    ybVar2.c.b(lcVar.D0.y ? lcVar.C0.d : null);
+                    break;
+                }
+                break;
+            case 13:
+                lcVar.l0(true);
+                break;
+            case 14:
+                lcVar.r();
+                break;
+            case 15:
+                bc bcVar = lcVar.c1;
+                if (bcVar != null) {
+                    bcVar.m();
+                    break;
+                }
+                break;
+            case 16:
+                if (lcVar.g0 == -1 && lcVar.f0 == 1) {
+                    bc bcVar2 = lcVar.c1;
+                    if (!bcVar2.p0 && !bcVar2.O1) {
+                        wc wcVar = lcVar.Z0;
+                        if (!wcVar.P) {
+                            cb cbVar2 = lcVar.d1;
+                            if (cbVar2.M) {
+                                cbVar2.c(false, true);
+                                break;
                             } else {
-                                kcVar11.l0(0, false, true);
-                                mb mbVar4 = kcVar11.v1;
-                                if (mbVar4 != null) {
-                                    mbVar4.M0 = false;
-                                    mbVar4.R0(0);
-                                    mbVar4.D0(null, true);
+                                lcVar.k0(0, false, true);
+                                nb nbVar2 = lcVar.v1;
+                                if (nbVar2 != null) {
+                                    nbVar2.Q0(2);
+                                    nbVar2.l2 = true;
+                                    nbVar2.n0(true);
+                                    lcVar.v1.M0 = true;
                                     break;
                                 }
                             }
                         } else {
-                            kcVar11.X();
-                            break;
+                            wcVar.P = false;
+                            if (wcVar.E && wcVar.h == null) {
+                                wcVar.G = true;
+                                pc pcVar = wcVar.a;
+                                if (pcVar != null) {
+                                    pcVar.G(true);
+                                    break;
+                                }
+                            }
                         }
-                    }
-                }
-                break;
-            case 13:
-                kc kcVar12 = this.b;
-                FrameLayout frameLayout = kcVar12.Y0;
-                if (frameLayout != null) {
-                    frameLayout.setTranslationY(kcVar12.g0 == 2 ? AndroidUtilities.dp(68.0f) : AndroidUtilities.dp(64.0f) + (-(AndroidUtilities.dp(12.0f) + kcVar12.c1.getEditTextHeight())));
-                }
-                bb bbVar2 = kcVar12.d1;
-                if (bbVar2 != null) {
-                    int i14 = -(AndroidUtilities.dp(24.0f) + kcVar12.c1.getEditTextHeight());
-                    bbVar2.setTranslationY(i14 - (kcVar12.Z0 == null ? 0 : r6.getContentHeight() - AndroidUtilities.dp(5.0f)));
-                }
-                org.telegram.ui.Components.rc rcVar2 = org.telegram.ui.Components.rc.w;
-                if (rcVar2 != null && rcVar2.a == 2) {
-                    rcVar2.l();
-                }
-                if (kcVar12.c1.p0 && (bbVar = kcVar12.d1) != null) {
-                    bbVar.c(false, true);
-                    break;
-                }
-                break;
-            case 14:
-                ca caVar = (ca) obj;
-                kc kcVar13 = this.b;
-                k8 k8Var4 = kcVar13.K1;
-                if (k8Var4 != null) {
-                    k8Var4.E0 = caVar;
-                }
-                ArrayList arrayList3 = kcVar13.H1;
-                if (arrayList3 != null) {
-                    int size = arrayList3.size();
-                    int i15 = 0;
-                    while (i15 < size) {
-                        Object obj2 = arrayList3.get(i15);
-                        i15++;
-                        ((k8) obj2).E0 = caVar;
-                    }
-                    break;
-                }
-                break;
-            case 15:
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
-                kc kcVar14 = this.b;
-                k8 k8Var5 = kcVar14.K1;
-                if (k8Var5 != null) {
-                    if (inputPeer == null) {
-                        inputPeer = new TLRPC.TL_inputPeerSelf();
-                    }
-                    k8Var5.v0 = inputPeer;
-                    ArrayList arrayList4 = kcVar14.H1;
-                    if (arrayList4 != null) {
-                        int size2 = arrayList4.size();
-                        int i16 = 0;
-                        while (i16 < size2) {
-                            Object obj3 = arrayList4.get(i16);
-                            i16++;
-                            ((k8) obj3).v0 = kcVar14.K1.v0;
-                        }
-                        break;
-                    }
-                }
-                break;
-            case 16:
-                HashSet hashSet = (HashSet) obj;
-                kc kcVar15 = this.b;
-                k8 k8Var6 = kcVar15.K1;
-                if (k8Var6 != null) {
-                    k8Var6.w0 = hashSet;
-                    ArrayList arrayList5 = kcVar15.H1;
-                    if (arrayList5 != null) {
-                        int size3 = arrayList5.size();
-                        int i17 = 0;
-                        while (i17 < size3) {
-                            Object obj4 = arrayList5.get(i17);
-                            i17++;
-                            ((k8) obj4).w0 = hashSet;
-                        }
-                        break;
                     }
                 }
                 break;
             case 17:
-                Bitmap bitmap2 = (Bitmap) obj;
-                kc kcVar16 = this.b;
-                k8 k8Var7 = kcVar16.K1;
-                if (k8Var7 != null) {
-                    Bitmap bitmap3 = k8Var7.g0;
-                    if (bitmap3 != null) {
-                        bitmap3.recycle();
-                    }
-                    kcVar16.K1.g0 = bitmap2;
-                    ea eaVar2 = kcVar16.q0;
-                    if (eaVar2 != null) {
-                        eaVar2.n1(bitmap2);
-                        break;
-                    }
-                }
+                lcVar.N1 = true;
+                lcVar.b1.setShareEnabled(false);
+                t0 t0Var = lcVar.e1;
+                t0Var.getClass();
+                t0Var.c(R.raw.error, LocaleController.getString("VideoConvertFail"));
                 break;
             case 18:
-                this.b.y0 = (ca) obj;
+                lcVar.A0.setCameraThumb(lcVar.z());
                 break;
             case 19:
-                TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) obj;
-                kc kcVar17 = this.b;
-                d8 d8Var = kcVar17.o0;
-                kcVar17.x0 = inputPeer2;
-                d8Var.set(inputPeer2);
+                kc kcVar2 = lcVar.n;
+                ai.d dVar = lcVar.a;
+                new org.telegram.ui.Components.ad(kcVar2, dVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.i6.gc, 0, new ha(lcVar, 27), dVar)).k(true);
                 break;
             case 20:
-                TLRPC.InputPeer inputPeer3 = (TLRPC.InputPeer) obj;
-                kc kcVar18 = this.b;
-                d8 d8Var2 = kcVar18.o0;
-                kcVar18.x0 = inputPeer3;
-                d8Var2.set(inputPeer3);
+                fa faVar = lcVar.q0;
+                if (faVar != null) {
+                    faVar.dismiss();
+                }
+                lcVar.J(2, true);
+                break;
+            case 21:
+                lcVar.k0(-1, false, true);
+                break;
+            case 22:
+                lcVar.k0(-1, false, true);
+                break;
+            case 23:
+                lcVar.d = false;
+                AndroidUtilities.unlockOrientation(lcVar.b);
+                if (lcVar.B0 != null) {
+                    if (lcVar.Q1) {
+                        CameraController.getInstance().stopVideoRecording(lcVar.B0.getCameraSession(), false);
+                    }
+                    lcVar.u(false);
+                }
+                zb zbVar3 = lcVar.X0;
+                if (zbVar3 != null) {
+                    zbVar3.set(null);
+                }
+                lcVar.y();
+                lcVar.x();
+                File file = lcVar.G1;
+                if (file != null && !lcVar.v) {
+                    try {
+                        file.delete();
+                    } catch (Exception unused) {
+                    }
+                }
+                lcVar.G1 = null;
+                AndroidUtilities.runOnUIThread(new ha(lcVar, 28), 16L);
+                gc gcVar = lcVar.F;
+                if (gcVar != null) {
+                    gcVar.f(false);
+                }
+                if (lcVar.x2 != null) {
+                    lcVar.x2 = null;
+                }
+                lcVar.l2 = null;
+                lc lcVar2 = lc.F2;
+                if (lcVar2 != null) {
+                    lcVar2.p(false);
+                }
+                lc.F2 = null;
+                kc kcVar3 = lcVar.n;
+                if (kcVar3 != null) {
+                    org.telegram.ui.Components.tc.h(kcVar3);
+                }
+                ai.f0 f0Var = lcVar.l0;
+                if (f0Var != null) {
+                    org.telegram.ui.Components.tc.h(f0Var);
+                }
+                yb ybVar3 = lcVar.A0;
+                if (ybVar3 != null) {
+                    ybVar3.e();
+                    break;
+                }
+                break;
+            case 24:
+                if (!lcVar.K1.b0 && lcVar.q0 != null && (zbVar = lcVar.X0) != null) {
+                    zbVar.h(new ia(lcVar, i15), zbVar, lcVar.w1, lcVar.z1);
+                }
+                lcVar.J(1, true);
+                break;
+            case 25:
+                lcVar.i0(false);
+                lcVar.e2 = null;
+                break;
+            case 26:
+                lcVar.i0(false);
+                lcVar.e2 = null;
+                break;
+            case 27:
+                lcVar.S();
                 break;
             default:
-                x2 x2Var2 = this.b.s;
-                float floatValue = ((Float) obj).floatValue();
-                x2Var2.o = floatValue;
-                x2Var2.n = x2.f(floatValue);
-                x2Var2.g();
+                WindowManager windowManager = lcVar.f;
+                if (windowManager != null && (kcVar = lcVar.n) != null && kcVar.getParent() != null) {
+                    windowManager.removeView(lcVar.n);
+                    break;
+                }
                 break;
         }
     }

@@ -1,61 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ph implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xi b;
-    public final /* synthetic */ boolean c;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ ph(xi xiVar, boolean z10, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ph implements Utilities.Callback4 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+
+    public /* synthetic */ ph(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = xiVar;
-        this.c = z10;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback4
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                xi xiVar = this.b;
-                if (!z10) {
-                    xiVar.c1.setVisibility(8);
-                    break;
-                } else {
-                    xiVar.getClass();
-                    break;
-                }
+                yi yiVar = (yi) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                di diVar = yiVar.H0;
+                diVar.setText(charSequence);
+                diVar.w(charSequence.length(), charSequence.length());
+                yiVar.C1();
+                break;
             case 1:
-                boolean z11 = this.c;
-                xi xiVar2 = this.b;
-                if (!z11) {
-                    xiVar2.w.setVisibility(8);
-                    break;
-                } else {
-                    xiVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z12 = this.c;
-                xi xiVar3 = this.b;
-                if (!z12) {
-                    xiVar3.y.setVisibility(8);
-                    break;
-                } else {
-                    xiVar3.getClass();
-                    break;
-                }
+                yi yiVar2 = (yi) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                gi giVar = yiVar2.S0;
+                giVar.setText(charSequence2);
+                giVar.w(charSequence2.length(), charSequence2.length());
+                yiVar2.C1();
+                break;
             default:
-                boolean z13 = this.c;
-                xi xiVar4 = this.b;
-                if (!z13) {
-                    xiVar4.getClass();
-                    break;
-                } else {
-                    xiVar4.x1.setVisibility(4);
-                    break;
-                }
+                od odVar = (od) this.b;
+                ci.g gVar = odVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                ci.e eVar = odVar.c0;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
+                break;
         }
     }
 }

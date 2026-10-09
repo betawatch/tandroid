@@ -16,9 +16,11 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.n21;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.a80;
+import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static final k0 e;
@@ -29,25 +31,25 @@ public final class k0 {
     public final String a;
     public final String b;
     public final String c;
-    public final o0.a d;
+    public final b5 d;
 
     static {
-        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new o0.a(new org.telegram.ui.web.w(5)));
+        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new b5(new a80(27)));
         e = k0Var;
-        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new o0.a(new org.telegram.ui.web.w(6))), new k0("serif", "PhotoEditorTypefaceSerif", new o0.a(new org.telegram.ui.web.w(7))), new k0("condensed", "PhotoEditorTypefaceCondensed", new o0.a(new org.telegram.ui.web.w(8))), new k0("mono", "PhotoEditorTypefaceMono", new o0.a(new org.telegram.ui.web.w(9))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new o0.a(new org.telegram.ui.web.w(10))));
+        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new b5(new a80(28))), new k0("serif", "PhotoEditorTypefaceSerif", new b5(new a80(29))), new k0("condensed", "PhotoEditorTypefaceCondensed", new b5(new e0(0))), new k0("mono", "PhotoEditorTypefaceMono", new b5(new e0(1))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new b5(new e0(2))));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
-    public k0(String str, String str2, o0.a aVar) {
+    public k0(String str, String str2, b5 b5Var) {
         this.a = str;
         this.b = str2;
         this.c = null;
-        this.d = aVar;
+        this.d = b5Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00e2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x00dd, code lost:
     
-        if (r7 == null) goto L45;
+        if (r7 == null) goto L43;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -112,20 +114,20 @@ public final class k0 {
                                             }
                                         }
                                     }
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    randomAccessFile2 = randomAccessFile;
-                                    if (randomAccessFile2 != null) {
-                                        try {
-                                            randomAccessFile2.close();
-                                        } catch (Exception unused2) {
-                                        }
-                                    }
-                                    throw th;
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    FileLog.e(e);
                                 }
-                            } catch (Exception e7) {
-                                e = e7;
-                                FileLog.e(e);
+                            } catch (Throwable th2) {
+                                th = th2;
+                                randomAccessFile2 = randomAccessFile;
+                                if (randomAccessFile2 != null) {
+                                    try {
+                                        randomAccessFile2.close();
+                                    } catch (Exception unused2) {
+                                    }
+                                }
+                                throw th;
                             }
                         } catch (Exception e10) {
                             e = e10;
@@ -202,7 +204,7 @@ public final class k0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.themeQueue.postRunnable(new n21(10));
+            Utilities.themeQueue.postRunnable(new t21(12));
         }
         return f;
     }
@@ -218,17 +220,17 @@ public final class k0 {
     }
 
     public final Typeface d() {
-        o0.a aVar = this.d;
-        if (((Typeface) aVar.c) == null) {
-            aVar.c = ((i0) aVar.b).a();
+        b5 b5Var = this.d;
+        if (((Typeface) b5Var.c) == null) {
+            b5Var.c = ((i0) b5Var.b).a();
         }
-        return (Typeface) aVar.c;
+        return (Typeface) b5Var.c;
     }
 
     public k0(Font font, String str) {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new o0.a(new k2.v(font, 18));
+        this.d = new b5(new m4.w(font, 17));
     }
 }

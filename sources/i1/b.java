@@ -2,12 +2,12 @@ package i1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import m.j3;
+import m.k3;
 import m.w2;
-import s4.w0;
+import s4.x0;
 import z4.f;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b implements Parcelable.ClassLoaderCreator {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2(parcel, classLoader);
             case 2:
-                return new j3(parcel, classLoader);
+                return new k3(parcel, classLoader);
             case 3:
-                return new w0(parcel, classLoader);
+                return new x0(parcel, classLoader);
             default:
                 return new f(parcel, classLoader);
         }
@@ -43,9 +43,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2[i10];
             case 2:
-                return new j3[i10];
+                return new k3[i10];
             case 3:
-                return new w0[i10];
+                return new x0[i10];
             default:
                 return new f[i10];
         }
@@ -62,9 +62,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 1:
                 return new w2(parcel, null);
             case 2:
-                return new j3(parcel, null);
+                return new k3(parcel, null);
             case 3:
-                return new w0(parcel, null);
+                return new x0(parcel, null);
             default:
                 return new f(parcel, null);
         }

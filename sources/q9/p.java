@@ -1,18 +1,18 @@
 package q9;
 
-import org.telegram.ui.fs0;
-import org.telegram.ui.web.w;
+import org.telegram.ui.ls0;
+import pg.e0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p implements pa.b {
-    public static final w c = new w(13);
+    public static final e0 c = new e0(5);
     public static final f d = new f(1);
     public pa.a a;
     public volatile pa.b b;
 
-    public p(w wVar, pa.b bVar) {
-        this.a = wVar;
+    public p(e0 e0Var, pa.b bVar) {
+        this.a = e0Var;
         this.b = bVar;
     }
 
@@ -22,7 +22,7 @@ public final class p implements pa.b {
         pa.b bVar3 = this.b;
         f fVar = d;
         if (bVar3 != fVar) {
-            aVar.f(bVar3);
+            aVar.g(bVar3);
             return;
         }
         synchronized (this) {
@@ -30,12 +30,12 @@ public final class p implements pa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new fs0(26, this.a, aVar);
+                this.a = new ls0(29, this.a, aVar);
                 bVar2 = null;
             }
         }
         if (bVar2 != null) {
-            aVar.f(bVar);
+            aVar.g(bVar);
         }
     }
 

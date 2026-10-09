@@ -1,52 +1,39 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class r51 {
-    public final /* synthetic */ a61 a;
-    public final /* synthetic */ d61 b;
+public final class r51 extends ScrollView {
+    public Drawable a;
+    public g6 b;
+    public boolean c;
 
-    public r51(d61 d61Var, a61 a61Var) {
-        this.b = d61Var;
-        this.a = a61Var;
-    }
-
-    public final int a() {
-        return this.b.s.v;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z10) {
-        d61 d61Var = this.b;
-        t51 t51Var = d61Var.n;
-        if (z10) {
-            s4.h0 adapter = t51Var.getAdapter();
-            gg.g2 g2Var = d61Var.v;
-            if (adapter != g2Var) {
-                t51Var.setAdapter(g2Var);
-                if (t51Var.getAdapter().h() <= 0) {
-                    d61Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-t51Var.getPaddingTop()) + d61Var.E, false);
-                    return;
-                }
-                return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
             }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
         }
-        if (z10) {
-            return;
-        }
-        s4.h0 adapter2 = t51Var.getAdapter();
-        c61 c61Var = d61Var.s;
-        if (adapter2 == c61Var) {
-            return;
-        }
-        t51Var.setAdapter(c61Var);
-        if (t51Var.getAdapter().h() <= 0) {
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
     }
 }

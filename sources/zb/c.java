@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import n6.l;
 import qb.j;
-import w7.g0;
+import w7.d0;
 import x7.j1;
 import x7.k2;
 import x7.l3;
@@ -21,7 +21,7 @@ import x7.m4;
 import x7.n6;
 import x7.y;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements b {
     public final Context a;
@@ -79,17 +79,17 @@ public final class c implements b {
             m0 m0Var = this.e;
             l.h(m0Var);
             x6.b bVar = new x6.b(createBitmap);
-            Parcel O0 = m0Var.O0();
+            Parcel N0 = m0Var.N0();
             int i14 = y.a;
-            O0.writeStrongBinder(bVar);
-            O0.writeInt(1);
-            int q6 = g0.q(O0, 20293);
-            g0.s(O0, 2, 4);
-            O0.writeInt(-1);
-            g0.r(O0, q6);
-            Parcel Q0 = m0Var.Q0(O0, 1);
-            m4[] m4VarArr = (m4[]) Q0.createTypedArray(m4.CREATOR);
-            Q0.recycle();
+            N0.writeStrongBinder(bVar);
+            N0.writeInt(1);
+            int q6 = d0.q(N0, 20293);
+            d0.s(N0, 2, 4);
+            N0.writeInt(-1);
+            d0.r(N0, q6);
+            Parcel P0 = m0Var.P0(N0, 1);
+            m4[] m4VarArr = (m4[]) P0.createTypedArray(m4.CREATOR);
+            P0.recycle();
             ArrayList arrayList = new ArrayList();
             for (m4 m4Var : m4VarArr) {
                 arrayList.add(new xb.a(m4Var.c, m4Var.d, m4Var.b, m4Var.a));
@@ -118,9 +118,9 @@ public final class c implements b {
                 IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator");
                 j1Var = queryLocalInterface instanceof l3 ? (l3) queryLocalInterface : new j1(b10, "com.google.android.gms.vision.label.internal.client.INativeImageLabelerCreator", 10);
             }
-            m0 W0 = ((j1) j1Var).W0(new x6.b(context), this.b);
-            this.e = W0;
-            if (W0 != null || this.d) {
+            m0 V0 = ((j1) j1Var).V0(new x6.b(context), this.b);
+            this.e = V0;
+            if (V0 != null || this.d) {
                 return;
             }
             Log.d("LegacyLabelDelegate", "Request ICA optional module download.");
@@ -146,7 +146,7 @@ public final class c implements b {
         m0 m0Var = this.e;
         if (m0Var != null) {
             try {
-                m0Var.S0(m0Var.O0(), 2);
+                m0Var.R0(m0Var.N0(), 2);
             } catch (RemoteException e7) {
                 Log.e("LegacyLabelDelegate", "Failed to release legacy image labeler.", e7);
             }

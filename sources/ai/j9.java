@@ -1,50 +1,24 @@
 package ai;
 
-import java.io.File;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j9 implements Utilities.Callback {
+public final /* synthetic */ class j9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k9 b;
+    public final /* synthetic */ l9 b;
 
-    public /* synthetic */ j9(k9 k9Var, int i10) {
+    public /* synthetic */ j9(l9 l9Var, int i10) {
         this.a = i10;
-        this.b = k9Var;
+        this.b = l9Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k9 k9Var = this.b;
-                ci.k8 k8Var = k9Var.c;
-                k8Var.c0 = (TLRPC.Document) obj;
-                TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
-                tL_inputFileStoryDocument.doc = MessagesController.toInputDocument(k8Var.c0);
-                k9Var.c(tL_inputFileStoryDocument);
+                this.b.e();
                 break;
             default:
-                VideoEditedInfo videoEditedInfo = (VideoEditedInfo) obj;
-                k9 k9Var2 = this.b;
-                k9Var2.F = videoEditedInfo;
-                k9Var2.E.videoEditedInfo = videoEditedInfo;
-                k9Var2.y = videoEditedInfo.estimatedDuration / 1000;
-                if (!videoEditedInfo.needConvert()) {
-                    if (new File(k9Var2.E.videoEditedInfo.originalPath).renameTo(new File(k9Var2.e))) {
-                        FileLoader.getInstance(k9Var2.M.a).uploadFile(k9Var2.e, false, false, 33554432);
-                        break;
-                    }
-                } else {
-                    MediaController.getInstance().scheduleVideoConvert(k9Var2.E, false, false, false);
-                    break;
-                }
+                this.b.b();
                 break;
         }
     }

@@ -1,819 +1,373 @@
 package org.telegram.ui.Components;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.text.TextUtils;
-import j$.util.Comparator$-CC;
-import j$.util.DesugarCollections;
-import java.io.File;
-import java.io.FileInputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class ea0 {
-    public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
-    public static final Pattern b = Pattern.compile("\\[\\^([^\\]]+)\\]");
-    public static final Pattern c = Pattern.compile("^(\\d+)[.)]\\s");
+public class ea0 extends TextView {
+    public static Field I;
+    public static Class J;
+    public static Method K;
+    public boolean E;
+    public boolean F;
+    public PorterDuffColorFilter G;
+    public int H;
+    public final boolean a;
+    public final ba0 b;
+    public final org.telegram.ui.ActionBar.e6 c;
+    public x5 d;
+    public fa0 e;
+    public da0 f;
+    public da0 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public CharacterStyle v;
+    public int w;
+    public boolean x;
+    public Object y;
 
-    public static TL_iv.RichText a(bf.p pVar, TL_iv.PageBlock pageBlock) {
-        ba0 ba0Var = new ba0(pageBlock);
-        pVar.a(ba0Var);
-        return g(h(ba0.x(ba0Var.c)));
+    public ea0(Context context) {
+        this(context, null);
     }
 
-    public static List b(TL_iv.RichText richText) {
-        int i10;
-        if (richText == null) {
-            return Collections.singletonList(j(""));
-        }
-        if (k(richText) <= 8192) {
-            return Collections.singletonList(richText);
-        }
-        String l4 = l(richText);
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (i11 < l4.length()) {
-            if (l4.length() - i11 <= 8192) {
-                arrayList.add(j(l4.substring(i11)));
-                return arrayList;
-            }
-            int i12 = i11 + 8192;
-            int i13 = i11 + 8191;
-            int lastIndexOf = l4.lastIndexOf(10, i13);
-            if (lastIndexOf <= i11) {
-                lastIndexOf = l4.lastIndexOf(32, i13);
-            }
-            if (lastIndexOf <= i11) {
-                i10 = 0;
-            } else {
-                i12 = lastIndexOf;
-                i10 = 1;
-            }
-            arrayList.add(j(l4.substring(i11, i12)));
-            i11 = i12 + i10;
-        }
-        return arrayList;
+    public int a() {
+        return 0;
     }
 
-    public static TL_iv.textMath c(String str) {
-        TL_iv.textMath textmath = new TL_iv.textMath();
-        String trim = str == null ? "" : str.trim();
-        textmath.source = trim;
-        textmath.tried = true;
-        ii.s a2 = ii.s.a(trim, AndroidUtilities.dp(20.0f), true);
-        if (a2 != null) {
-            textmath.w = a2.b;
-            textmath.h = a2.c;
-            textmath.depth = a2.d;
-            textmath.bitmap = a2.a;
-        }
-        return textmath;
-    }
-
-    public static TL_iv.RichText d(TL_iv.RichText richText) {
-        if (richText == null) {
+    public final ClickableSpan b(int i10, int i11) {
+        Layout layout = getLayout();
+        if (layout == null) {
             return null;
         }
-        if (k(richText) <= 8192) {
-            return richText;
-        }
-        String l4 = l(richText);
-        return j(l4.substring(0, Math.min(l4.length(), 8192)));
-    }
-
-    public static void e(ArrayList arrayList, List list) {
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            ad.a aVar = (ad.a) it.next();
-            arrayList.add(aVar);
-            ArrayList arrayList2 = aVar.f;
-            e(arrayList, arrayList2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList2));
-        }
-    }
-
-    public static TLRPC.TL_webPage f(MessageObject messageObject) {
-        TLRPC.Document document;
-        if (messageObject.messageOwner != null && (document = messageObject.getDocument()) != null) {
-            File file = !TextUtils.isEmpty(messageObject.messageOwner.attachPath) ? new File(messageObject.messageOwner.attachPath) : null;
-            if (file == null || !file.exists()) {
-                file = FileLoader.getInstance(messageObject.currentAccount).getPathToMessage(messageObject.messageOwner, true);
-            }
-            if (file == null || !file.exists()) {
-                file = FileLoader.getInstance(messageObject.currentAccount).getPathToMessage(messageObject.messageOwner, true, true);
-            }
-            if (file != null && file.exists() && file.length() <= 65536) {
-                TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = (TLRPC.TL_documentAttributeFilename) AndroidUtilities.find(document.attributes, TLRPC.TL_documentAttributeFilename.class);
-                String str = tL_documentAttributeFilename != null ? tL_documentAttributeFilename.file_name : null;
-                TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
-                tL_webPage.url = str == null ? "" : str;
-                tL_webPage.display_url = str != null ? str : "";
-                if (!TextUtils.isEmpty(str)) {
-                    tL_webPage.flags |= 4;
-                    tL_webPage.title = str;
-                }
-                TL_iv.TL_page tL_page = new TL_iv.TL_page();
-                tL_page.local = file;
-                tL_page.url = tL_webPage.url;
-                try {
-                    FileInputStream fileInputStream = new FileInputStream(file);
-                    try {
-                        byte[] bArr = new byte[(int) file.length()];
-                        fileInputStream.read(bArr);
-                        String str2 = new String(bArr, StandardCharsets.UTF_8);
-                        fileInputStream.close();
-                        if (str2.length() <= 65536) {
-                            String i10 = i(str2, tL_page.blocks);
-                            if (!TextUtils.isEmpty(i10)) {
-                                tL_webPage.flags |= 4;
-                                tL_webPage.title = i10;
-                            }
-                            tL_webPage.flags |= 1024;
-                            tL_webPage.cached_page = tL_page;
-                            return tL_webPage;
-                        }
-                    } finally {
-                    }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
+        int paddingLeft = i10 - getPaddingLeft();
+        int textPaddingTop = i11 - getTextPaddingTop();
+        int lineForVertical = layout.getLineForVertical(textPaddingTop);
+        float f7 = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f7);
+        float lineLeft = layout.getLineLeft(lineForVertical);
+        if (lineLeft <= f7 && layout.getLineWidth(lineForVertical) + lineLeft >= f7 && textPaddingTop >= 0 && textPaddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                return clickableSpanArr[0];
             }
         }
         return null;
     }
 
-    public static TL_iv.RichText g(TL_iv.RichText richText) {
-        if (richText == null) {
-            return null;
-        }
-        if (richText instanceof TL_iv.textConcat) {
-            TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
-            for (int i10 = 0; i10 < textconcat.texts.size(); i10++) {
-                ArrayList<TL_iv.RichText> arrayList = textconcat.texts;
-                arrayList.set(i10, g(arrayList.get(i10)));
-            }
-            return textconcat;
-        }
-        if (!(richText instanceof da0)) {
-            TL_iv.RichText richText2 = richText.text;
-            if (richText2 != null) {
-                richText.text = g(richText2);
-            }
-            return richText;
-        }
-        da0 da0Var = (da0) richText;
-        TL_iv.RichText g10 = g(da0Var.text);
-        int i11 = da0Var.a;
-        if ((i11 & 4) != 0) {
-            TL_iv.textFixed textfixed = new TL_iv.textFixed();
-            textfixed.text = g10;
-            g10 = textfixed;
-        }
-        if ((i11 & 32) != 0) {
-            TL_iv.textStrike textstrike = new TL_iv.textStrike();
-            textstrike.text = g10;
-            g10 = textstrike;
-        }
-        if ((i11 & 16) != 0) {
-            TL_iv.textUnderline textunderline = new TL_iv.textUnderline();
-            textunderline.text = g10;
-            g10 = textunderline;
-        }
-        if ((i11 & 64) != 0) {
-            TL_iv.textMarked textmarked = new TL_iv.textMarked();
-            textmarked.text = g10;
-            g10 = textmarked;
-        }
-        if ((i11 & 128) != 0) {
-            TL_iv.textSubscript textsubscript = new TL_iv.textSubscript();
-            textsubscript.text = g10;
-            g10 = textsubscript;
-        }
-        if ((i11 & 256) != 0) {
-            TL_iv.textSuperscript textsuperscript = new TL_iv.textSuperscript();
-            textsuperscript.text = g10;
-            g10 = textsuperscript;
-        }
-        if ((i11 & 2) != 0) {
-            TL_iv.textItalic textitalic = new TL_iv.textItalic();
-            textitalic.text = g10;
-            g10 = textitalic;
-        }
-        if ((i11 & 1) == 0) {
-            return g10;
-        }
-        TL_iv.textBold textbold = new TL_iv.textBold();
-        textbold.text = g10;
-        return textbold;
+    public int c() {
+        return org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Ld, this.c);
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02a9 A[LOOP:6: B:108:0x02a7->B:109:0x02a9, LOOP_END] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static TL_iv.RichText h(TL_iv.RichText richText) {
-        TL_iv.RichText textconcat;
-        int i10;
-        char c10;
-        TL_iv.textPlain textplain;
-        String str;
-        if (richText == null) {
-            return null;
-        }
-        if (richText instanceof TL_iv.textConcat) {
-            TL_iv.textConcat textconcat2 = (TL_iv.textConcat) richText;
-            for (int i11 = 0; i11 < textconcat2.texts.size(); i11++) {
-                ArrayList<TL_iv.RichText> arrayList = textconcat2.texts;
-                arrayList.set(i11, h(arrayList.get(i11)));
-            }
-            StringBuilder sb2 = new StringBuilder();
-            ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = new ArrayList();
-            ad.d dVar = new ad.d(new qb.b(1), new rb.a(1));
-            ArrayList<TL_iv.RichText> arrayList4 = textconcat2.texts;
-            int size = arrayList4.size();
-            int i12 = 0;
-            while (i12 < size) {
-                int i13 = i12 + 1;
-                TL_iv.RichText richText2 = arrayList4.get(i12);
-                if ((richText2 instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText2).text) != null && str.length() >= 2 && str.charAt(0) == '<' && str.charAt(str.length() - 1) == '>') {
-                    int length = sb2.length();
+    public int getTextPaddingTop() {
+        int paddingTop = getPaddingTop();
+        return (getGravity() != 17 || getLayout() == null) ? paddingTop : Math.max(0, (((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2) + paddingTop;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (!this.x) {
+            this.x = true;
+            try {
+                if (J == null) {
+                    Field declaredField = TextView.class.getDeclaredField("mEditor");
+                    I = declaredField;
+                    declaredField.setAccessible(true);
+                    Class<?> cls = Class.forName("android.widget.Editor");
+                    J = cls;
                     try {
-                        dVar.b(sb2, ((TL_iv.textPlain) richText2).text);
-                    } catch (Throwable th2) {
-                        FileLog.e(th2);
-                        sb2.append(textplain.text);
-                    }
-                    int length2 = sb2.length();
-                    if (length2 > length) {
-                        arrayList2.add(j(sb2.substring(length, length2)));
-                        arrayList3.add(new int[]{length, length2});
-                    }
-                } else {
-                    String l4 = l(richText2);
-                    int length3 = sb2.length();
-                    sb2.append(l4);
-                    int length4 = sb2.length();
-                    arrayList2.add(richText2);
-                    arrayList3.add(new int[]{length3, length4});
-                }
-                i12 = i13;
-            }
-            ArrayList arrayList5 = new ArrayList();
-            int i14 = -1;
-            try {
-                int length5 = sb2.length();
-                ArrayList arrayList6 = dVar.c;
-                if (arrayList6.size() > 0) {
-                    if (length5 > -1) {
-                        int size2 = arrayList6.size();
-                        int i15 = 0;
-                        while (i15 < size2) {
-                            Object obj = arrayList6.get(i15);
-                            i15++;
-                            ad.b bVar = (ad.b) obj;
-                            if (bVar.d <= -1) {
-                                bVar.d = length5;
-                            }
-                        }
-                    }
-                    arrayList5.addAll(DesugarCollections.unmodifiableList(arrayList6));
-                    arrayList6.clear();
-                } else {
-                    arrayList5.addAll(Collections.EMPTY_LIST);
-                }
-            } catch (Throwable th3) {
-                FileLog.e(th3);
-            }
-            try {
-                int length6 = sb2.length();
-                ad.a aVar = dVar.d;
-                while (true) {
-                    ad.a aVar2 = aVar.e;
-                    if (aVar2 == null) {
-                        break;
-                    }
-                    aVar = aVar2;
-                }
-                if (length6 > -1) {
-                    aVar.b(length6);
-                }
-                ArrayList arrayList7 = aVar.f;
-                List unmodifiableList = arrayList7 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(arrayList7);
-                if (unmodifiableList.size() > 0) {
-                    e(arrayList5, unmodifiableList);
-                } else {
-                    e(arrayList5, Collections.EMPTY_LIST);
-                }
-                dVar.d = new ad.a("", 0, Collections.EMPTY_MAP, null);
-            } catch (Throwable th4) {
-                FileLog.e(th4);
-            }
-            Collections.sort(arrayList5, Comparator$-CC.comparingInt(new ai.g7(10)));
-            int size3 = arrayList5.size();
-            int i16 = 0;
-            while (i16 < size3) {
-                Object obj2 = arrayList5.get(i16);
-                i16++;
-                ad.c cVar = (ad.c) obj2;
-                int i17 = cVar.d;
-                if (i17 > i14) {
-                    int i18 = cVar.b;
-                    int i19 = -1;
-                    int i20 = -1;
-                    for (int i21 = 0; i21 < arrayList3.size(); i21++) {
-                        int i22 = ((int[]) arrayList3.get(i21))[0];
-                        int i23 = ((int[]) arrayList3.get(i21))[1];
-                        if (i22 >= i18 && i23 <= i17) {
-                            if (i19 == i14) {
-                                i19 = i21;
-                            }
-                            i20 = i21;
-                        }
-                    }
-                    if (i19 != i14) {
-                        if (i19 == i20) {
-                            textconcat = (TL_iv.RichText) arrayList2.get(i19);
-                        } else {
-                            textconcat = new TL_iv.textConcat();
-                            for (int i24 = i19; i24 <= i20; i24++) {
-                                textconcat.texts.add((TL_iv.RichText) arrayList2.get(i24));
-                            }
-                        }
-                        String str2 = cVar.a;
-                        if (str2 != null) {
-                            String lowerCase = str2.toLowerCase();
-                            lowerCase.getClass();
-                            i10 = 4;
-                            switch (lowerCase.hashCode()) {
-                                case -891985998:
-                                    if (lowerCase.equals("strike")) {
-                                        c10 = 0;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case -891980137:
-                                    if (lowerCase.equals("strong")) {
-                                        c10 = 1;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 98:
-                                    if (lowerCase.equals("b")) {
-                                        c10 = 2;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 105:
-                                    if (lowerCase.equals("i")) {
-                                        c10 = 3;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 115:
-                                    if (lowerCase.equals("s")) {
-                                        c10 = 4;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 117:
-                                    if (lowerCase.equals("u")) {
-                                        c10 = 5;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 3240:
-                                    if (lowerCase.equals("em")) {
-                                        c10 = 6;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 3712:
-                                    if (lowerCase.equals("tt")) {
-                                        c10 = 7;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 99339:
-                                    if (lowerCase.equals(TeXSymbolParser.DELIMITER_ATTR)) {
-                                        c10 = '\b';
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 104430:
-                                    if (lowerCase.equals("ins")) {
-                                        c10 = '\t';
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 114240:
-                                    if (lowerCase.equals("sub")) {
-                                        c10 = '\n';
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 114254:
-                                    if (lowerCase.equals("sup")) {
-                                        c10 = 11;
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 3059181:
-                                    if (lowerCase.equals("code")) {
-                                        c10 = '\f';
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                case 3344077:
-                                    if (lowerCase.equals("mark")) {
-                                        c10 = '\r';
-                                        break;
-                                    }
-                                    c10 = 65535;
-                                    break;
-                                default:
-                                    c10 = 65535;
-                                    break;
-                            }
-                            switch (c10) {
-                                case 0:
-                                case 4:
-                                case '\b':
-                                    i10 = 32;
-                                    break;
-                                case 1:
-                                case 2:
-                                    i10 = 1;
-                                    break;
-                                case 3:
-                                case 6:
-                                    i10 = 2;
-                                    break;
-                                case 5:
-                                case '\t':
-                                    i10 = 16;
-                                    break;
-                                case '\n':
-                                    i10 = 128;
-                                    break;
-                                case 11:
-                                    i10 = 256;
-                                    break;
-                                case '\r':
-                                    i10 = 64;
-                                    break;
-                            }
-                            if (i10 != 0) {
-                                if (textconcat instanceof da0) {
-                                    ((da0) textconcat).a |= i10;
-                                } else {
-                                    da0 da0Var = new da0();
-                                    da0Var.a = i10;
-                                    da0Var.text = textconcat;
-                                    textconcat = da0Var;
-                                }
-                            }
-                            while (i20 >= i19) {
-                                arrayList2.remove(i20);
-                                arrayList3.remove(i20);
-                                i20--;
-                            }
-                            arrayList2.add(i19, textconcat);
-                            arrayList3.add(i19, new int[]{i18, i17});
-                            i14 = -1;
-                        }
-                        i10 = 0;
-                        if (i10 != 0) {
-                        }
-                        while (i20 >= i19) {
-                        }
-                        arrayList2.add(i19, textconcat);
-                        arrayList3.add(i19, new int[]{i18, i17});
-                        i14 = -1;
+                        Method declaredMethod = cls.getDeclaredMethod("invalidateTextDisplayList", null);
+                        K = declaredMethod;
+                        declaredMethod.setAccessible(true);
+                    } catch (Exception unused) {
                     }
                 }
+            } catch (Throwable th2) {
+                FileLog.e(th2);
             }
-            if (arrayList2.isEmpty()) {
-                return new TL_iv.textEmpty();
-            }
-            if (arrayList2.size() == 1) {
-                TL_iv.RichText richText3 = (TL_iv.RichText) arrayList2.get(0);
-                if ((richText3 instanceof TL_iv.textPlain) || (richText3 instanceof TL_iv.textEmpty)) {
-                    return richText3;
-                }
-            }
-            TL_iv.textConcat textconcat3 = new TL_iv.textConcat();
-            textconcat3.texts.addAll(arrayList2);
-            return textconcat3;
         }
-        TL_iv.RichText richText4 = richText;
-        while (true) {
-            TL_iv.RichText richText5 = richText4.text;
-            if (richText5 == null) {
-                return richText;
+        super.invalidate();
+        if (isHardwareAccelerated()) {
+            try {
+                if (K != null) {
+                    if (this.y == null) {
+                        this.y = I.get(this);
+                    }
+                    Object obj = this.y;
+                    if (obj != null) {
+                        K.invoke(obj, null);
+                    }
+                }
+            } catch (Exception unused2) {
             }
-            if (richText5 instanceof TL_iv.textConcat) {
-                richText4.text = h(richText5);
-                return richText;
-            }
-            richText4 = richText5;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x02b8  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x02ae  */
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.d = b6.update(a(), this, this.d, getLayout());
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        b6.release(this, this.d);
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(21:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|(4:21|22|(1:74)(1:25)|26)|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
+    /* JADX WARN: Can't wrap try/catch for region: R(24:0|1|(5:3|(5:5|(1:7)(1:13)|8|(1:10)(1:12)|11)|14|(1:18)|19)|20|21|22|(1:74)(1:25)|26|(12:31|32|33|34|35|36|(3:38|(2:40|(1:42))|43)|44|45|46|47|(2:49|50)(1:52))|66|67|68|69|32|33|34|35|36|(0)|44|45|46|47|(0)(0)) */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x00d0, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x00ad, code lost:
+    
+        r2 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x00db, code lost:
+    
+        if (r14.E == false) goto L63;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x00dd, code lost:
+    
+        org.telegram.messenger.FileLog.e((java.lang.Throwable) r0, true);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x00e0, code lost:
+    
+        r14.E = true;
+        r1 = r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00d2, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d3, code lost:
+    
+        r4 = r15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x00ab, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00ac, code lost:
+    
+        r4 = r15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x00d6, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x00d7, code lost:
+    
+        r4 = r15;
+        r2 = true;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x009c A[Catch: Exception -> 0x00ab, TryCatch #1 {Exception -> 0x00ab, blocks: (B:33:0x0084, B:36:0x0092, B:38:0x009c, B:40:0x00a0, B:43:0x00af, B:44:0x00c0), top: B:32:0x0084 }] */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e5  */
+    /* JADX WARN: Removed duplicated region for block: B:52:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00dd  */
+    @Override // android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static String i(String str, ArrayList arrayList) {
-        String str2;
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        String[] split = str.split("\n", -1);
-        StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
-        while (i10 < split.length) {
-            Matcher matcher = a.matcher(split[i10]);
-            if (matcher.matches()) {
-                String group = matcher.group(1);
-                StringBuilder sb3 = new StringBuilder(matcher.group(2));
-                i10++;
-                while (i10 < split.length) {
-                    String str3 = split[i10];
-                    if (str3.startsWith("    ") || str3.startsWith("\t")) {
-                        sb3.append('\n');
-                        sb3.append(str3.startsWith("\t") ? str3.substring(1) : str3.substring(4));
-                        i10++;
-                    } else {
-                        if (!str3.trim().isEmpty()) {
-                            break;
-                        }
-                        int i11 = i10 + 1;
-                        int i12 = i11;
-                        while (i12 < split.length && split[i12].trim().isEmpty()) {
-                            i12++;
-                        }
-                        if (i12 >= split.length || (!split[i12].startsWith("    ") && !split[i12].startsWith("\t"))) {
-                            break;
-                        }
-                        sb3.append('\n');
-                        i10 = i11;
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        boolean z10;
+        Layout layout;
+        float height;
+        if (!this.a) {
+            canvas.save();
+            if (!this.n) {
+                canvas.translate(this.r ? 0.0f : getPaddingLeft(), this.s ? 0.0f : getTextPaddingTop());
+            }
+            ba0 ba0Var = this.b;
+            if (ba0Var != null && ba0Var.f(canvas)) {
+                invalidate();
+            }
+            canvas.restore();
+        }
+        super.onDraw(canvas);
+        boolean z11 = false;
+        try {
+            layout = getLayout();
+            height = ((getGravity() & 16) == 0 || layout == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - layout.getHeight()) / 2.0f) + getPaddingTop();
+        } catch (Exception e7) {
+            e = e7;
+            canvas2 = canvas;
+        }
+        if (height == 0.0f && getPaddingLeft() == 0) {
+            z10 = false;
+            this.d = b6.update(a(), this, this.d, getLayout());
+            if (this.F) {
+                if (this.G == null) {
+                    if (this.H != getPaint().linkColor) {
                     }
                 }
-                linkedHashMap.put(group, sb3.toString().trim());
-            } else {
-                sb2.append(split[i10]);
-                if (i10 < split.length - 1) {
-                    sb2.append('\n');
-                }
-                i10++;
+                int i10 = getPaint().linkColor;
+                this.H = i10;
+                this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
             }
-        }
-        Matcher matcher2 = b.matcher(sb2.toString());
-        StringBuffer stringBuffer = new StringBuffer();
-        while (matcher2.find()) {
-            String group2 = matcher2.group(1);
-            matcher2.appendReplacement(stringBuffer, Matcher.quoteReplacement("<sup>[\\[" + group2 + "\\]](#fn-" + group2 + ")</sup>"));
-        }
-        matcher2.appendTail(stringBuffer);
-        String stringBuffer2 = stringBuffer.toString();
-        List<te.a> asList = Arrays.asList(new ue.b(0), new ue.b(1));
-        Pattern pattern = ed.i.j;
-        ArrayList arrayList2 = new ArrayList(3);
-        ArrayList arrayList3 = new ArrayList(3);
-        arrayList2.addAll(Arrays.asList(new ed.a(), new ed.b(), new ed.c(), new ed.d(0), new ed.e(), new ed.f(), new ed.g(), new ed.j(), new ed.d(1)));
-        arrayList3.addAll(Arrays.asList(new ze.a(0), new ze.a(1)));
-        AndroidUtilities.dp(18.0f);
-        Executors.newCachedThreadPool();
-        new Handler(Looper.getMainLooper());
-        new HashMap(3);
-        arrayList2.add(new zc.c());
-        arrayList2.add(new ca0());
-        cf.c cVar = new cf.c();
-        cVar.a = new ArrayList();
-        cVar.b = new ArrayList();
-        cVar.c = new ArrayList();
-        cVar.d = ye.d.p;
-        if (asList == null) {
-            throw new NullPointerException("extensions must not be null");
-        }
-        for (te.a aVar : asList) {
-            if (aVar instanceof ue.b) {
-                switch (((ue.b) aVar).a) {
-                    case 0:
-                        ((ArrayList) cVar.b).add(new ve.a());
-                        break;
-                    default:
-                        ((ArrayList) cVar.a).add(new xe.a(0));
-                        break;
-                }
-            }
-        }
-        cVar.e = new of.b(arrayList2, arrayList3, false, 14);
-        ((ArrayList) cVar.a).add(new xe.a(8));
-        qi.f fVar = new qi.f();
-        ArrayList arrayList4 = (ArrayList) cVar.a;
-        LinkedHashSet linkedHashSet = (LinkedHashSet) cVar.d;
-        LinkedHashSet linkedHashSet2 = ye.d.p;
-        ArrayList arrayList5 = new ArrayList();
-        arrayList5.addAll(arrayList4);
-        Iterator it = linkedHashSet.iterator();
-        while (it.hasNext()) {
-            arrayList5.add(ye.d.q.get((Class) it.next()));
-        }
-        fVar.a = arrayList5;
-        cf.b bVar = (of.b) cVar.e;
-        if (bVar == null) {
-            bVar = new ob.a(6);
-        }
-        fVar.c = bVar;
-        fVar.d = (ArrayList) cVar.c;
-        ArrayList arrayList6 = (ArrayList) cVar.b;
-        fVar.b = arrayList6;
-        bVar.F1(new n7.z0(27, arrayList6, Collections.EMPTY_MAP));
-        ArrayDeque arrayDeque = new ArrayDeque();
-        boolean z10 = false;
-        String str4 = null;
-        for (String str5 : stringBuffer2.split("\n", -1)) {
-            for (int i13 = 0; i13 < str5.length() && i13 < 3; i13++) {
-                str2 = null;
-                if (str5.charAt(i13) != ' ') {
-                    String substring = str5.substring(i13);
-                    if (z10) {
-                        String str6 = "```";
-                        if (!substring.startsWith("```")) {
-                            str6 = "~~~";
-                            if (!substring.startsWith("~~~")) {
-                                Matcher matcher3 = c.matcher(str5);
-                                if (matcher3.find()) {
-                                    arrayDeque.add(matcher3.group(1));
-                                }
-                            }
-                        }
-                        str4 = str6;
-                        z10 = true;
-                    } else if (substring.startsWith(str4)) {
-                        str4 = str2;
-                        z10 = false;
-                    }
-                }
-            }
-            str2 = null;
-            String substring2 = str5.substring(i13);
+            canvas2 = canvas;
+            b6.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
             if (z10) {
+                return;
             }
+            canvas2.restore();
+            return;
         }
-        aa0 aa0Var = new aa0(arrayList, arrayDeque);
-        aa0Var.v(fVar.I(stringBuffer2));
-        aa0Var.y();
-        if (!linkedHashMap.isEmpty()) {
-            TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
-            String string = LocaleController.getString(R.string.InstantViewReferences);
-            TL_iv.textBold textbold = new TL_iv.textBold();
-            textbold.text = j(string);
-            pageblockdetails.title = textbold;
-            for (Map.Entry entry : linkedHashMap.entrySet()) {
-                String str7 = (String) entry.getKey();
-                String str8 = (String) entry.getValue();
-                ArrayList arrayList7 = new ArrayList();
-                aa0 aa0Var2 = new aa0(arrayList7, new ArrayDeque());
-                aa0Var2.v(fVar.I(str8));
-                aa0Var2.y();
-                TL_iv.RichText textconcat = new TL_iv.textConcat();
-                int size = arrayList7.size();
-                int i14 = 0;
-                while (i14 < size) {
-                    Object obj = arrayList7.get(i14);
-                    i14++;
-                    TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) obj;
-                    TL_iv.RichText richText = pageBlock instanceof TL_iv.pageBlockParagraph ? ((TL_iv.pageBlockParagraph) pageBlock).text : pageBlock instanceof TL_iv.pageBlockHeader ? ((TL_iv.pageBlockHeader) pageBlock).text : pageBlock instanceof TL_iv.pageBlockSubheader ? ((TL_iv.pageBlockSubheader) pageBlock).text : pageBlock instanceof TL_iv.pageBlockTitle ? ((TL_iv.pageBlockTitle) pageBlock).text : null;
-                    if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
-                        if (!textconcat.texts.isEmpty()) {
-                            textconcat.texts.add(j("\n\n"));
-                        }
-                        textconcat.texts.add(richText);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), height);
+        z10 = true;
+        this.d = b6.update(a(), this, this.d, getLayout());
+        if (this.F) {
+        }
+        canvas2 = canvas;
+        b6.drawAnimatedEmojis(canvas2, layout, this.d, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.G);
+        if (z10) {
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        int i12 = this.w;
+        if (i12 > 0) {
+            i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
+        }
+        super.onMeasure(i10, i11);
+        this.d = b6.update(a(), this, this.d, getLayout());
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        ba0 ba0Var = this.b;
+        if (ba0Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan b10 = b((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (b10 != null && motionEvent.getAction() == 0) {
+                fa0 fa0Var = new fa0(b10, this.c, motionEvent.getX(), motionEvent.getY(), 0);
+                fa0Var.d(c());
+                this.e = fa0Var;
+                ba0Var.a(fa0Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.e.i);
+                int spanEnd = spannableString.getSpanEnd(this.e.i);
+                y90 b11 = this.e.b();
+                b11.d(layout, spanStart, getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b11);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.f(this, fa0Var, b10, 27), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                ba0Var.d(true);
+                fa0 fa0Var2 = this.e;
+                if (fa0Var2 != null && (characterStyle = fa0Var2.i) == b10) {
+                    da0 da0Var = this.f;
+                    if (da0Var != null) {
+                        da0Var.a((ClickableSpan) characterStyle);
+                    } else if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
                     }
+                    this.e = null;
+                    return true;
                 }
-                if (textconcat.texts.isEmpty()) {
-                    textconcat = new TL_iv.textEmpty();
-                } else if (textconcat.texts.size() == 1) {
-                    textconcat = textconcat.texts.get(0);
-                }
-                TL_iv.RichText d = d(textconcat);
-                TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
-                textanchor.name = sa.e.i("fn-", str7);
-                textanchor.text = d;
-                TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-                String v = sa.e.v(str7, ". ");
-                TL_iv.textBold textbold2 = new TL_iv.textBold();
-                textbold2.text = j(v);
-                TL_iv.RichText[] richTextArr = {textbold2, textanchor};
-                TL_iv.textConcat textconcat2 = new TL_iv.textConcat();
-                for (int i15 = 0; i15 < 2; i15++) {
-                    textconcat2.texts.add(richTextArr[i15]);
-                }
-                pageblockparagraph.text = textconcat2;
-                pageblockdetails.blocks.add(pageblockparagraph);
+                this.e = null;
             }
-            arrayList.add(pageblockdetails);
+            if (motionEvent.getAction() == 3) {
+                ba0Var.d(true);
+                this.e = null;
+            }
         }
-        TL_iv.RichText richText2 = aa0Var.b;
-        if (richText2 != null) {
-            return l(richText2);
-        }
-        return null;
+        return this.e != null || super.onTouchEvent(motionEvent);
     }
 
-    public static TL_iv.textPlain j(String str) {
-        TL_iv.textPlain textplain = new TL_iv.textPlain();
-        if (str == null) {
-            str = "";
-        }
-        textplain.text = str;
-        return textplain;
+    public void setDisablePaddingsOffset(boolean z10) {
+        this.n = z10;
     }
 
-    public static int k(TL_iv.RichText richText) {
-        int i10 = 0;
-        if (richText == null || (richText instanceof TL_iv.textEmpty)) {
-            return 0;
-        }
-        if (richText instanceof TL_iv.textPlain) {
-            String str = ((TL_iv.textPlain) richText).text;
-            if (str == null) {
-                return 0;
+    public void setDisablePaddingsOffsetX(boolean z10) {
+        this.r = z10;
+    }
+
+    public void setDisablePaddingsOffsetY(boolean z10) {
+        this.s = z10;
+    }
+
+    public void setEmojiColor(int i10) {
+        this.F = false;
+        this.G = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+        invalidate();
+    }
+
+    public void setLoading(CharacterStyle characterStyle) {
+        if (this.v != characterStyle) {
+            ba0 ba0Var = this.b;
+            ba0Var.e();
+            this.v = characterStyle;
+            ia0 i10 = ba0.i(getLayout(), characterStyle, getPaddingTop());
+            if (i10 != null) {
+                int d = d(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Ld, this.c));
+                i10.g(org.telegram.ui.ActionBar.i6.m1(0.8f, d), org.telegram.ui.ActionBar.i6.m1(1.3f, d), org.telegram.ui.ActionBar.i6.m1(1.0f, d), org.telegram.ui.ActionBar.i6.m1(4.0f, d));
+                i10.x.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                ba0Var.b(i10, null);
             }
-            return str.length();
         }
-        if (!(richText instanceof TL_iv.textConcat)) {
-            return k(richText.text);
-        }
-        ArrayList<TL_iv.RichText> arrayList = richText.texts;
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            TL_iv.RichText richText2 = arrayList.get(i11);
-            i11++;
-            i10 += k(richText2);
-        }
+    }
+
+    @Override // android.widget.TextView
+    public void setMaxWidth(int i10) {
+        this.w = i10;
+    }
+
+    public void setOnLinkLongPressListener(da0 da0Var) {
+        this.h = da0Var;
+    }
+
+    public void setOnLinkPressListener(da0 da0Var) {
+        this.f = da0Var;
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.d = b6.update(a(), this, this.d, getLayout());
+    }
+
+    public ea0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.E = false;
+        this.F = true;
+        this.a = false;
+        this.b = new ba0(this);
+        this.c = e6Var;
+    }
+
+    public ea0(Context context, ba0 ba0Var, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context);
+        this.E = false;
+        this.F = true;
+        this.a = true;
+        this.b = ba0Var;
+        this.c = e6Var;
+    }
+
+    public int d(int i10) {
         return i10;
-    }
-
-    public static String l(TL_iv.RichText richText) {
-        if (richText == null || (richText instanceof TL_iv.textEmpty)) {
-            return "";
-        }
-        if (richText instanceof TL_iv.textPlain) {
-            return ((TL_iv.textPlain) richText).text;
-        }
-        if (!(richText instanceof TL_iv.textConcat)) {
-            return l(richText.text);
-        }
-        StringBuilder sb2 = new StringBuilder();
-        ArrayList<TL_iv.RichText> arrayList = richText.texts;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            TL_iv.RichText richText2 = arrayList.get(i10);
-            i10++;
-            sb2.append(l(richText2));
-        }
-        return sb2.toString();
     }
 }

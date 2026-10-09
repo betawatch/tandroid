@@ -2,63 +2,46 @@ package gg;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c1 implements Comparator {
-    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ a0.i a;
     public final /* synthetic */ ArrayList b;
 
-    public c1(ArrayList arrayList, ArrayList arrayList2) {
-        this.a = arrayList;
-        this.b = arrayList2;
-    }
-
-    public final int a(j1 j1Var) {
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.a;
-            if (i11 >= arrayList.size()) {
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    if (i10 >= Math.min(20, arrayList2.size())) {
-                        return -1;
-                    }
-                    if (((TLRPC.Document) arrayList2.get(i10)).id == j1Var.a.id) {
-                        return (arrayList2.size() - i10) + MediaController.VIDEO_BITRATE_480;
-                    }
-                    i10++;
-                }
-            } else {
-                if (((TLRPC.Document) arrayList.get(i11)).id == j1Var.a.id) {
-                    return i11 + 2000000;
-                }
-                i11++;
-            }
-        }
+    public c1(a0.i iVar, ArrayList arrayList) {
+        this.a = iVar;
+        this.b = arrayList;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        j1 j1Var = (j1) obj;
-        j1 j1Var2 = (j1) obj2;
-        boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(j1Var.a, true);
-        if (isAnimatedStickerDocument == MessageObject.isAnimatedStickerDocument(j1Var2.a, true)) {
-            int a2 = a(j1Var);
-            int a10 = a(j1Var2);
-            if (a2 > a10) {
-                return -1;
-            }
-            if (a2 >= a10) {
-                return 0;
-            }
-        } else if (isAnimatedStickerDocument) {
-            return -1;
+        TLObject tLObject = (TLObject) obj;
+        TLObject tLObject2 = (TLObject) obj2;
+        long j3 = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : -((TLRPC.Chat) tLObject).id;
+        long j10 = tLObject2 instanceof TLRPC.User ? ((TLRPC.User) tLObject2).id : -((TLRPC.Chat) tLObject2).id;
+        a0.i iVar = this.a;
+        if (iVar.h(j3) >= 0 && iVar.h(j10) >= 0) {
+            return 0;
         }
-        return 1;
+        if (iVar.h(j3) < 0) {
+            if (iVar.h(j10) >= 0) {
+                return 1;
+            }
+            Long valueOf = Long.valueOf(j3);
+            ArrayList arrayList = this.b;
+            int indexOf = arrayList.indexOf(valueOf);
+            int indexOf2 = arrayList.indexOf(Long.valueOf(j10));
+            if (indexOf == -1 || indexOf2 == -1) {
+                if (indexOf == -1 || indexOf2 != -1) {
+                    return (indexOf != -1 || indexOf2 == -1) ? 0 : 1;
+                }
+            } else if (indexOf >= indexOf2) {
+                return indexOf == indexOf2 ? 0 : 1;
+            }
+        }
+        return -1;
     }
 }

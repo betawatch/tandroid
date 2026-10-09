@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class b0 implements Runnable {
                 MediaController.lambda$saveFile$55((File) this.b, (File) this.c, (boolean[]) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.b2) this.f, (boolean[]) this.h);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$didReceivedNotification$44((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.a6) this.e, (File) this.f, (String) this.h);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$454((org.telegram.ui.ActionBar.b2) this.c, (of.e) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.n2) this.f, (Bundle) this.h);
                 break;
             case 4:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$451((org.telegram.ui.ActionBar.b2) this.c, (nf.e) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.n2) this.f, (Bundle) this.h);
+                ((MessagesController) this.b).lambda$didReceivedNotification$43((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.b6) this.e, (File) this.f, (String) this.h);
                 break;
             case 5:
                 ((SavedMessagesController) this.b).lambda$loadCache$6((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (Runnable) this.h);
@@ -63,13 +63,13 @@ public final /* synthetic */ class b0 implements Runnable {
                 ((SecretChatHelper) this.b).lambda$startSecretChat$26((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLObject) this.e, (byte[]) this.f, (TLRPC.User) this.h);
                 break;
             case 8:
-                ((SendMessagesHelper) this.b).lambda$processUnsentMessages$104((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h);
+                ((SendMessagesHelper) this.b).lambda$processUnsentMessages$107((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h);
                 break;
             case 9:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$55((TLObject) this.c, (TLRPC.InputMedia) this.d, (SendMessagesHelper.DelayedMessage) this.e, (String) this.f, (MessageObject) this.h);
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$58((TLObject) this.c, (TLRPC.InputMedia) this.d, (SendMessagesHelper.DelayedMessage) this.e, (String) this.f, (MessageObject) this.h);
                 break;
             case 10:
-                ((SendMessagesHelper) this.b).lambda$prepareImportStickers$113((String) this.c, (String) this.d, (String) this.e, (ArrayList) this.f, (MessagesStorage.StringCallback) this.h);
+                ((SendMessagesHelper) this.b).lambda$prepareImportStickers$116((String) this.c, (String) this.d, (String) this.e, (ArrayList) this.f, (MessagesStorage.StringCallback) this.h);
                 break;
             default:
                 ((SendMessagesHelper) this.b).lambda$didReceivedNotification$1((TLRPC.TL_photo) this.c, (MessageObject) this.d, (File) this.e, (SendMessagesHelper.DelayedMessage) this.f, (String) this.h);

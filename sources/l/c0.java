@@ -1,6 +1,6 @@
 package l;
 
-import ai.u2;
+import ai.v2;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -20,7 +20,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
@@ -40,7 +40,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View x;
     public w y;
     public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 2);
-    public final u2 s = new u2(this, 3);
+    public final v2 s = new v2(this, 3);
     public int I = 0;
 
     public c0(Context context, k kVar, View view, int i10, boolean z10) {
@@ -62,20 +62,20 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void c(k kVar, boolean z10) {
+    public final boolean c() {
+        return false;
+    }
+
+    @Override // l.x
+    public final void d(k kVar, boolean z10) {
         if (kVar != this.c) {
             return;
         }
         dismiss();
         w wVar = this.y;
         if (wVar != null) {
-            wVar.c(kVar, z10);
+            wVar.d(kVar, z10);
         }
-    }
-
-    @Override // l.x
-    public final boolean d() {
-        return false;
     }
 
     @Override // l.b0

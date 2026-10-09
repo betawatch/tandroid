@@ -1,6 +1,6 @@
 package org.telegram.messenger.voip;
 
-import ai.g3;
+import ai.h3;
 import android.text.TextUtils;
 import java.io.File;
 import java.util.HashMap;
@@ -14,15 +14,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.g2;
+import org.telegram.ui.Components.voip.f2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public final class Data {
         long access_hash;
         long callId;
@@ -50,7 +50,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new g3(23, this, savecalldebug));
+        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new h3(23, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,7 +68,7 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new m(this, data, new File(a4.a.t(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.searchQueue.postRunnable(new m(this, data, new File(a1.g.t(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j3, boolean z10) {
@@ -90,7 +90,7 @@ public class VoIPDebugToSend {
     public void push(long j3, long j10, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(g2.e("" + j3, true));
+                finalState.debugLog = VoIPService.getStringFromFile(f2.e("" + j3, true));
             } catch (Exception e7) {
                 e7.printStackTrace();
             }

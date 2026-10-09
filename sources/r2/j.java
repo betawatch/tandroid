@@ -1,59 +1,29 @@
 package r2;
 
-import android.media.LoudnessCodecController;
-import android.media.MediaCodec;
-import java.util.HashSet;
-import java.util.Iterator;
+import android.media.MediaCodecInfo;
+import android.os.Build;
+import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class j {
-    public final HashSet a;
-    public final i b;
-    public LoudnessCodecController c;
+public final /* synthetic */ class j implements w {
+    public static final j a = new j();
+    public static final j b = new j();
 
-    public j() {
-        i iVar = i.a;
-        this.a = new HashSet();
-        this.b = iVar;
+    public static /* bridge */ /* synthetic */ MediaCodecInfo.VideoCapabilities.PerformancePoint c(Object obj) {
+        return (MediaCodecInfo.VideoCapabilities.PerformancePoint) obj;
     }
 
-    public final void a(MediaCodec mediaCodec) {
-        LoudnessCodecController loudnessCodecController = this.c;
-        if (loudnessCodecController == null || loudnessCodecController.addMediaCodec(mediaCodec)) {
-            e2.d.g(this.a.add(mediaCodec));
-        }
+    public List a(String str, boolean z10, boolean z11) {
+        return x.d(str, z10, z11);
     }
 
-    public final void b() {
-        this.a.clear();
-        LoudnessCodecController loudnessCodecController = this.c;
-        if (loudnessCodecController != null) {
-            loudnessCodecController.close();
+    @Override // r2.w
+    public int b(Object obj) {
+        String str = ((p) obj).a;
+        if (str.startsWith("OMX.google") || str.startsWith("c2.android")) {
+            return 1;
         }
-    }
-
-    public final void c(MediaCodec mediaCodec) {
-        LoudnessCodecController loudnessCodecController;
-        if (!this.a.remove(mediaCodec) || (loudnessCodecController = this.c) == null) {
-            return;
-        }
-        loudnessCodecController.removeMediaCodec(mediaCodec);
-    }
-
-    public final void d(int i10) {
-        LoudnessCodecController loudnessCodecController = this.c;
-        if (loudnessCodecController != null) {
-            loudnessCodecController.close();
-            this.c = null;
-        }
-        LoudnessCodecController create = LoudnessCodecController.create(i10, i9.q.a, new h(this));
-        this.c = create;
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            if (!create.addMediaCodec((MediaCodec) it.next())) {
-                it.remove();
-            }
-        }
+        return (Build.VERSION.SDK_INT >= 26 || !str.equals("OMX.MTK.AUDIO.DECODER.RAW")) ? 0 : -1;
     }
 }

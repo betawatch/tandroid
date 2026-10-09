@@ -1,9 +1,9 @@
 package g9;
 
 import java.math.RoundingMode;
-import v7.n7;
+import v7.l7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final /* synthetic */ int a = 0;
@@ -13,15 +13,15 @@ public abstract class c {
     }
 
     public static boolean a(double d) {
-        if (n7.b(d)) {
-            return d == 0.0d || 52 - Long.numberOfTrailingZeros(n7.a(d)) <= Math.getExponent(d);
+        if (l7.b(d)) {
+            return d == 0.0d || 52 - Long.numberOfTrailingZeros(l7.a(d)) <= Math.getExponent(d);
         }
         return false;
     }
 
     public static boolean b(double d) {
-        if (d > 0.0d && n7.b(d)) {
-            long a2 = n7.a(d);
+        if (d > 0.0d && l7.b(d)) {
+            long a2 = l7.a(d);
             if ((a2 & (a2 - 1)) == 0) {
                 return true;
             }
@@ -30,7 +30,7 @@ public abstract class c {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x006d  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -38,7 +38,7 @@ public abstract class c {
     public static int c(double d) {
         boolean b10;
         RoundingMode roundingMode = RoundingMode.CEILING;
-        if (!(d > 0.0d && n7.b(d))) {
+        if (!(d > 0.0d && l7.b(d))) {
             throw new IllegalArgumentException("x must be positive and finite");
         }
         int exponent = Math.getExponent(d);
@@ -50,28 +50,28 @@ public abstract class c {
                 if (!b(d)) {
                     throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
                 }
-                return !r3 ? exponent + 1 : exponent;
+                return !r2 ? exponent + 1 : exponent;
             case 2:
-                if (!r3) {
+                if (!r2) {
                 }
                 break;
             case 3:
-                r3 = !b(d);
-                if (!r3) {
+                r2 = !b(d);
+                if (!r2) {
                 }
                 break;
             case 4:
-                r3 = exponent < 0;
+                r2 = exponent < 0;
                 b10 = b(d);
-                r3 &= !b10;
-                if (!r3) {
+                r2 &= !b10;
+                if (!r2) {
                 }
                 break;
             case 5:
-                r3 = exponent >= 0;
+                r2 = exponent >= 0;
                 b10 = b(d);
-                r3 &= !b10;
-                if (!r3) {
+                r2 &= !b10;
+                if (!r2) {
                 }
                 break;
             case 6:
@@ -79,9 +79,9 @@ public abstract class c {
             case 8:
                 double longBitsToDouble = Double.longBitsToDouble((Double.doubleToRawLongBits(d) & 4503599627370495L) | 4607182418800017408L);
                 if (longBitsToDouble * longBitsToDouble > 2.0d) {
-                    r3 = true;
+                    r2 = true;
                 }
-                if (!r3) {
+                if (!r2) {
                 }
                 break;
             default:

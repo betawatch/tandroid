@@ -11,9 +11,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class j3 extends FrameLayout {
     public boolean a;
@@ -24,28 +24,28 @@ public class j3 extends FrameLayout {
     public boolean f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.h5 r;
+    public final org.telegram.ui.Components.j5 r;
     public int s;
-    public final org.telegram.ui.Components.o6 v;
+    public final org.telegram.ui.Components.q6 v;
     public boolean w;
 
-    public j3(Context context, String str, boolean z10, boolean z11, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public j3(Context context, String str, boolean z10, boolean z11, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.e = -1;
-        this.r = new org.telegram.ui.Components.h5(this);
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
-        this.v = o6Var;
-        o6Var.k(0.2f, 160L, tr.h);
-        o6Var.t(AndroidUtilities.dp(15.33f));
-        o6Var.b = 5;
+        this.r = new org.telegram.ui.Components.j5(this);
+        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(false, true, true);
+        this.v = q6Var;
+        q6Var.n(0.2f, 160L, hs.h);
+        q6Var.w(AndroidUtilities.dp(15.33f));
+        q6Var.b = 5;
         this.c = i10;
-        h3 h3Var = new h3(this, context, d6Var, i10, d6Var, z11);
+        h3 h3Var = new h3(this, context, e6Var, i10, e6Var, z11);
         this.b = h3Var;
-        o6Var.setCallback(h3Var);
+        q6Var.setCallback(h3Var);
         h3Var.setTextSize(1, 17.0f);
-        h3Var.setHintTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.H6, d6Var));
+        h3Var.setHintTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.H6, e6Var));
         int i11 = org.telegram.ui.ActionBar.i6.G6;
-        h3Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        h3Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         h3Var.setBackground(null);
         if (z10) {
             h3Var.setMaxLines(5);
@@ -59,12 +59,12 @@ public class j3 extends FrameLayout {
         h3Var.setInputType((z10 ? 131072 : 0) | 573441);
         h3Var.setRawInputType((z10 ? 131072 : 0) | 573441);
         h3Var.setHint(str);
-        h3Var.setCursorColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        h3Var.setCursorColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         h3Var.setCursorSize(AndroidUtilities.dp(19.0f));
         h3Var.setCursorWidth(1.5f);
         h3Var.addTextChangedListener(new i3(this, i10, z10));
         h3Var.setOnFocusChangeListener(new m.r2(this, 2));
-        addView(h3Var, w7.z5.e(-1, -1, 48));
+        addView(h3Var, w7.x5.e(-1, -1, 48));
         c();
     }
 
@@ -78,7 +78,7 @@ public class j3 extends FrameLayout {
         if ((!TextUtils.isEmpty(getText()) || this.d) && ((!this.f || (this.n && !this.h)) && ((i10 = this.e) == -1 || this.s <= i10))) {
             str = "" + this.s;
         }
-        this.v.q(str, true, true);
+        this.v.t(str, true, true);
     }
 
     public CharSequence getText() {

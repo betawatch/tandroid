@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k implements c {
     public static final Charset c = Charset.forName("UTF-8");
@@ -16,12 +16,6 @@ public final class k implements c {
         this.a = file;
     }
 
-    @Override // x9.c
-    public final void b() {
-        w9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
-        this.b = null;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
     /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
@@ -30,7 +24,7 @@ public final class k implements c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final String f() {
+    public final String H() {
         hc.a aVar;
         byte[] bArr;
         File file = this.a;
@@ -78,5 +72,11 @@ public final class k implements c {
         }
         if (bArr == null) {
         }
+    }
+
+    @Override // x9.c
+    public final void c() {
+        w9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
     }
 }

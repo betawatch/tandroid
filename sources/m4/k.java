@@ -5,8 +5,9 @@ import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import m.f3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final /* synthetic */ int a = 0;
@@ -47,56 +48,56 @@ public abstract class k {
 
     public static n4.m b(b2.n0 n0Var, String str, Uri uri, long j3, Bitmap bitmap) {
         Long l4;
-        android.support.v4.media.c cVar = new android.support.v4.media.c(1);
-        cVar.e("android.media.metadata.MEDIA_ID", str);
+        l2.f fVar = new l2.f(5);
+        fVar.A("android.media.metadata.MEDIA_ID", str);
         CharSequence charSequence = n0Var.a;
         Bundle bundle = n0Var.I;
         Integer num = n0Var.p;
         Uri uri2 = n0Var.m;
         if (charSequence != null) {
-            cVar.f(charSequence, "android.media.metadata.TITLE");
+            fVar.B(charSequence, "android.media.metadata.TITLE");
         }
         CharSequence charSequence2 = n0Var.e;
         if (charSequence2 != null) {
-            cVar.f(charSequence2, "android.media.metadata.DISPLAY_TITLE");
+            fVar.B(charSequence2, "android.media.metadata.DISPLAY_TITLE");
         }
         CharSequence charSequence3 = n0Var.f;
         if (charSequence3 != null) {
-            cVar.f(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
+            fVar.B(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
         }
         CharSequence charSequence4 = n0Var.g;
         if (charSequence4 != null) {
-            cVar.f(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
+            fVar.B(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
         }
         CharSequence charSequence5 = n0Var.b;
         if (charSequence5 != null) {
-            cVar.f(charSequence5, "android.media.metadata.ARTIST");
+            fVar.B(charSequence5, "android.media.metadata.ARTIST");
         }
         CharSequence charSequence6 = n0Var.c;
         if (charSequence6 != null) {
-            cVar.f(charSequence6, "android.media.metadata.ALBUM");
+            fVar.B(charSequence6, "android.media.metadata.ALBUM");
         }
         CharSequence charSequence7 = n0Var.d;
         if (charSequence7 != null) {
-            cVar.f(charSequence7, "android.media.metadata.ALBUM_ARTIST");
+            fVar.B(charSequence7, "android.media.metadata.ALBUM_ARTIST");
         }
         if (n0Var.t != null) {
-            cVar.c(r7.intValue(), "android.media.metadata.YEAR");
+            fVar.y(r7.intValue(), "android.media.metadata.YEAR");
         }
         if (uri != null) {
-            cVar.e("android.media.metadata.MEDIA_URI", uri.toString());
+            fVar.A("android.media.metadata.MEDIA_URI", uri.toString());
         }
         if (uri2 != null) {
-            cVar.e("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
-            cVar.e("android.media.metadata.ALBUM_ART_URI", uri2.toString());
-            cVar.e("android.media.metadata.ART_URI", uri2.toString());
+            fVar.A("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
+            fVar.A("android.media.metadata.ALBUM_ART_URI", uri2.toString());
+            fVar.A("android.media.metadata.ART_URI", uri2.toString());
         }
         if (bitmap != null) {
-            cVar.a("android.media.metadata.DISPLAY_ICON", bitmap);
-            cVar.a("android.media.metadata.ALBUM_ART", bitmap);
+            fVar.v("android.media.metadata.DISPLAY_ICON", bitmap);
+            fVar.v("android.media.metadata.ALBUM_ART", bitmap);
         }
         if (num != null && num.intValue() != -1) {
-            cVar.c(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
+            fVar.y(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
         }
         if (j3 == -9223372036854775807L && (l4 = n0Var.h) != null) {
             j3 = l4.longValue();
@@ -104,59 +105,59 @@ public abstract class k {
         if (j3 == -9223372036854775807L) {
             j3 = -1;
         }
-        cVar.c(j3, "android.media.metadata.DURATION");
-        n4.i0 d = d(n0Var.i);
+        fVar.y(j3, "android.media.metadata.DURATION");
+        n4.g0 d = d(n0Var.i);
         if (d != null) {
-            cVar.d("android.media.metadata.USER_RATING", d);
+            fVar.z("android.media.metadata.USER_RATING", d);
         }
-        n4.i0 d10 = d(n0Var.j);
+        n4.g0 d10 = d(n0Var.j);
         if (d10 != null) {
-            cVar.d("android.media.metadata.RATING", d10);
+            fVar.z("android.media.metadata.RATING", d10);
         }
         if (n0Var.H != null) {
-            cVar.c(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
+            fVar.y(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
         }
         if (bundle != null) {
             for (String str2 : bundle.keySet()) {
                 Object obj = bundle.get(str2);
                 if (obj == null || (obj instanceof CharSequence)) {
-                    cVar.f((CharSequence) obj, str2);
+                    fVar.B((CharSequence) obj, str2);
                 } else if ((obj instanceof Byte) || (obj instanceof Short) || (obj instanceof Integer) || (obj instanceof Long)) {
-                    cVar.c(((Number) obj).longValue(), str2);
+                    fVar.y(((Number) obj).longValue(), str2);
                 }
             }
         }
-        return new n4.m(cVar.b);
+        return new n4.m((Bundle) fVar.b);
     }
 
-    public static b2.c1 c(n4.i0 i0Var) {
-        if (i0Var == null) {
+    public static b2.c1 c(n4.g0 g0Var) {
+        if (g0Var == null) {
             return null;
         }
-        float f7 = i0Var.b;
-        int i10 = i0Var.a;
+        float f7 = g0Var.b;
+        int i10 = g0Var.a;
         switch (i10) {
             case 1:
-                if (i0Var.b()) {
+                if (g0Var.b()) {
                     return new b2.u(i10 == 1 && f7 == 1.0f);
                 }
                 return new b2.u();
             case 2:
-                if (i0Var.b()) {
+                if (g0Var.b()) {
                     return new b2.f1(i10 == 2 && f7 == 1.0f);
                 }
                 return new b2.f1();
             case 3:
-                return i0Var.b() ? new b2.d1(3, i0Var.a()) : new b2.d1(3);
+                return g0Var.b() ? new b2.d1(3, g0Var.a()) : new b2.d1(3);
             case 4:
-                return i0Var.b() ? new b2.d1(4, i0Var.a()) : new b2.d1(4);
+                return g0Var.b() ? new b2.d1(4, g0Var.a()) : new b2.d1(4);
             case 5:
-                return i0Var.b() ? new b2.d1(5, i0Var.a()) : new b2.d1(5);
+                return g0Var.b() ? new b2.d1(5, g0Var.a()) : new b2.d1(5);
             case 6:
-                if (!i0Var.b()) {
+                if (!g0Var.b()) {
                     return new b2.t0();
                 }
-                if (i10 != 6 || !i0Var.b()) {
+                if (i10 != 6 || !g0Var.b()) {
                     f7 = -1.0f;
                 }
                 return new b2.t0(f7);
@@ -165,7 +166,7 @@ public abstract class k {
         }
     }
 
-    public static n4.i0 d(b2.c1 c1Var) {
+    public static n4.g0 d(b2.c1 c1Var) {
         if (c1Var != null) {
             int f7 = f(c1Var);
             if (!c1Var.b()) {
@@ -176,34 +177,34 @@ public abstract class k {
                     case 4:
                     case 5:
                     case 6:
-                        return new n4.i0(f7, -1.0f);
+                        return new n4.g0(f7, -1.0f);
                     default:
                         return null;
                 }
             }
             switch (f7) {
                 case 1:
-                    return new n4.i0(1, ((b2.u) c1Var).c ? 1.0f : 0.0f);
+                    return new n4.g0(1, ((b2.u) c1Var).c ? 1.0f : 0.0f);
                 case 2:
-                    return new n4.i0(2, ((b2.f1) c1Var).c ? 1.0f : 0.0f);
+                    return new n4.g0(2, ((b2.f1) c1Var).c ? 1.0f : 0.0f);
                 case 3:
                 case 4:
                 case 5:
-                    return n4.i0.d(((b2.d1) c1Var).c, f7);
+                    return n4.g0.d(((b2.d1) c1Var).c, f7);
                 case 6:
-                    return n4.i0.c(((b2.t0) c1Var).b);
+                    return n4.g0.c(((b2.t0) c1Var).b);
             }
         }
         return null;
     }
 
     public static int e(b2.e eVar) {
-        k2.e bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(5) : new k2.e(5);
+        f3 bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(2) : new f3(2);
         AudioAttributes.Builder builder = (AudioAttributes.Builder) bVar.b;
         builder.setContentType(eVar.a);
         builder.setFlags(eVar.b);
-        bVar.o(eVar.c);
-        AudioAttributes audioAttributes = bVar.a().a;
+        bVar.q(eVar.c);
+        AudioAttributes audioAttributes = bVar.f().a;
         audioAttributes.getClass();
         int flags = audioAttributes.getFlags();
         int usage = audioAttributes.getUsage();

@@ -1,74 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.webkit.WebView;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class t91 extends WebView {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
+public final class t91 implements org.telegram.ui.jq0 {
+    public final /* synthetic */ v91 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t91(org.telegram.ui.so0 so0Var, Context context) {
-        super(context);
-        this.b = so0Var;
+    public t91(v91 v91Var) {
+        this.a = v91Var;
     }
 
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme((Context) this.b, true);
-                super.onAttachedToWindow();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+    @Override // org.telegram.ui.jq0
+    public final void a(ArrayList arrayList) {
+        v91 v91Var = this.a;
+        try {
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
+            if (sendingMediaInfo.path != null) {
+                v91Var.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                Bitmap loadBitmap = ImageLoader.loadBitmap(sendingMediaInfo.path, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
+                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(v91Var.e));
+                v91Var.d.b(v91Var.e, loadBitmap, true);
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme((Context) this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
+    @Override // org.telegram.ui.jq0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.a.b.startActivityForResult(intent, 11);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-    }
-
-    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ((ViewGroup) ((org.telegram.ui.so0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t91(Context context, Context context2) {
-        super(context);
-        this.b = context2;
     }
 }

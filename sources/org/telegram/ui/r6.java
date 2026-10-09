@@ -1,19 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class r6 extends n6 {
-    public final /* synthetic */ a7 d;
+public final class r6 {
+    public long a;
+    public int b;
+    public long c;
+    public final SparseArray d = new SparseArray();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(a7 a7Var, Context context) {
-        super(context);
-        this.d = a7Var;
-        ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = AndroidUtilities.dp(5.0f);
-        this.a.setOnClickListener(new a(this, 6));
+    public r6(long j3) {
+        this.a = j3;
+    }
+
+    public final void a(zh.a aVar, int i10) {
+        SparseArray sparseArray = this.d;
+        s6 s6Var = (s6) sparseArray.get(i10, null);
+        if (s6Var == null) {
+            s6Var = new s6();
+            sparseArray.put(i10, s6Var);
+        }
+        long j3 = aVar.c;
+        s6Var.a += j3;
+        this.c += j3;
+        this.b++;
+        s6Var.b.add(aVar);
+    }
+
+    public final void b(zh.a aVar) {
+        s6 s6Var = (s6) this.d.get(aVar.d, null);
+        if (s6Var != null && s6Var.b.remove(aVar)) {
+            long j3 = s6Var.a;
+            long j10 = aVar.c;
+            s6Var.a = j3 - j10;
+            this.c -= j10;
+            this.b--;
+        }
     }
 }

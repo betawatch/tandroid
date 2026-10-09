@@ -1,34 +1,267 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.os.Build;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class dx0 {
-    public MessagesController.PeerColor a;
-    public org.telegram.ui.ActionBar.d6 b;
-    public int c;
-    public int d;
-    public float e;
+    public final e0.g0 a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public int g;
+    public final int h;
+    public final int i;
+    public Bitmap j;
+    public long k;
+    public int n;
+    public final Paint e = new Paint();
+    public final int f = org.telegram.ui.ActionBar.i6.A8;
+    public final ArrayList l = new ArrayList();
+    public final ArrayList m = new ArrayList();
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        this.a = peerColor;
-        if (peerColor == null) {
-            this.c = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s8, this.b);
-            this.c = i0.a.d(this.e, this.c, 603979776);
-            this.d = i0.a.d(this.e, this.d, -1);
+    public dx0(int i10) {
+        this.h = i10;
+        int i11 = i10 == 0 ? 100 : 300;
+        this.i = i11;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        Paint.Cap cap = Paint.Cap.ROUND;
+        paint.setStrokeCap(cap);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        paint2.setStrokeWidth(AndroidUtilities.dp(0.5f));
+        paint2.setStrokeCap(cap);
+        paint2.setStyle(style);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.a = new e0.g0(i11);
+            this.b = g0.a.a(a(true));
+        } else {
+            this.a = null;
+            this.b = null;
+        }
+        c();
+        for (int i12 = 0; i12 < 20; i12++) {
+            this.m.add(new cx0(this));
+        }
+    }
+
+    public static Bitmap a(boolean z10) {
+        Paint paint = new Paint(1);
+        paint.setStrokeWidth(AndroidUtilities.dp(0.5f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(-1);
+        Bitmap createBitmap = Bitmap.createBitmap(z10 ? AndroidUtilities.dp(20.0f) : AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        float dpf2 = AndroidUtilities.dpf2(2.0f) * 2.0f;
+        float f7 = (-AndroidUtilities.dpf2(0.57f)) * 2.0f;
+        float dpf22 = AndroidUtilities.dpf2(1.55f) * 2.0f;
+        float f10 = 5.0f;
+        float dp = AndroidUtilities.dp(5.0f);
+        float dp2 = AndroidUtilities.dp(5.0f);
+        float f11 = -1.5707964f;
+        int i10 = 0;
+        while (i10 < 6) {
+            double d = f11;
+            float f12 = f10;
+            float f13 = f11;
+            float cos = ((float) Math.cos(d)) * dpf2;
+            Bitmap bitmap = createBitmap;
+            float sin = ((float) Math.sin(d)) * dpf2;
+            float f14 = cos * 0.66f;
+            float f15 = 0.66f * sin;
+            canvas.drawLine(dp, dp2, cos + dp, sin + dp2, paint);
+            float f16 = dp;
+            float f17 = dp2;
+            double d10 = (float) (d - 1.5707963267948966d);
+            double d11 = f7;
+            double d12 = dpf22;
+            float f18 = f16 + f14;
+            float f19 = f17 + f15;
+            canvas.drawLine(f18, f19, f16 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) hg.c.e(d10, d12, Math.sin(d10) * d11)) + f17, paint);
+            canvas.drawLine(f18, f19, f16 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) hg.c.e(d10, d12, (-Math.sin(d10)) * d11)) + f17, paint);
+            f11 = f13 + 1.0471976f;
+            i10++;
+            dp2 = f17;
+            f10 = f12;
+            createBitmap = bitmap;
+            dp = f16;
+        }
+        Bitmap bitmap2 = createBitmap;
+        float f20 = f10;
+        if (z10) {
+            Paint paint2 = new Paint(1);
+            paint2.setStrokeWidth(AndroidUtilities.dp(1.5f));
+            paint2.setStrokeCap(Paint.Cap.ROUND);
+            paint2.setStyle(Paint.Style.STROKE);
+            paint2.setColor(-1);
+            canvas.drawPoint(AndroidUtilities.dp(15.0f), AndroidUtilities.dp(f20), paint2);
+        }
+        return bitmap2;
+    }
+
+    public final void b(Canvas canvas, View view) {
+        int i10;
+        cx0 cx0Var;
+        if (view == null || canvas == null || !LiteMode.isEnabled(32)) {
             return;
         }
-        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.i6.I.q());
-        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.i6.I.q());
-        org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        int d = i0.a.d(0.75f, bgColor2, bgColor1);
-        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, d6Var) : org.telegram.ui.ActionBar.i6.b(0.08f, -0.08f, d);
-        this.c = v02;
-        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
-        this.c = i0.a.d(this.e, this.c, 603979776);
-        this.d = i0.a.d(this.e, this.d, -1);
+        int i11 = this.i;
+        e0.g0 g0Var = this.a;
+        int i12 = 0;
+        ArrayList arrayList = this.l;
+        if (g0Var != null) {
+            int min = Math.min(i11, arrayList.size());
+            int dp = AndroidUtilities.dp(10.0f);
+            for (int i13 = 0; i13 < min; i13++) {
+                cx0 cx0Var2 = (cx0) arrayList.get(i13);
+                float f7 = cx0Var2.a;
+                float f10 = cx0Var2.b;
+                int i14 = cx0Var2.j;
+                float f11 = dp / 2.0f;
+                if (i14 != 0) {
+                    f11 *= cx0Var2.i;
+                }
+                float f12 = i14 == 0 ? dp : 0.0f;
+                g0Var.e(i13, i0.a.k(this.n, (int) (cx0Var2.f * 255.0f)));
+                e0.g0.c((float[]) g0Var.b, i13, f7 - f11, f10 - f11, f7 + f11, f10 + f11);
+                float f13 = dp;
+                e0.g0.c((float[]) g0Var.c, i13, f12, 0.0f, f12 + f13, f13);
+            }
+            g0.a.b(canvas, g0Var, min, this.b);
+        } else {
+            int size = arrayList.size();
+            for (int i15 = 0; i15 < size; i15++) {
+                cx0 cx0Var3 = (cx0) arrayList.get(i15);
+                dx0 dx0Var = cx0Var3.k;
+                Paint paint = dx0Var.c;
+                if (cx0Var3.j != 0) {
+                    Bitmap bitmap = dx0Var.j;
+                    Paint paint2 = dx0Var.e;
+                    if (bitmap == null) {
+                        dx0Var.j = a(false);
+                    }
+                    paint2.setAlpha((int) (cx0Var3.f * 255.0f));
+                    canvas.save();
+                    float f14 = cx0Var3.i;
+                    canvas.scale(f14, f14, cx0Var3.a, cx0Var3.b);
+                    canvas.drawBitmap(dx0Var.j, cx0Var3.a, cx0Var3.b, paint2);
+                    canvas.restore();
+                } else {
+                    paint.setAlpha((int) (cx0Var3.f * 255.0f));
+                    canvas.drawPoint(cx0Var3.a, cx0Var3.b, paint);
+                }
+            }
+        }
+        int i16 = this.h;
+        int i17 = i16 == 0 ? 1 : 10;
+        int size2 = arrayList.size();
+        int i18 = 40;
+        ArrayList arrayList2 = this.m;
+        if (size2 < i11) {
+            int i19 = 0;
+            while (i19 < i17) {
+                if (arrayList.size() >= i11 || Utilities.random.nextFloat() <= 0.7f) {
+                    i10 = i11;
+                } else {
+                    int i20 = AndroidUtilities.statusBarHeight;
+                    float nextFloat = Utilities.random.nextFloat() * view.getMeasuredWidth();
+                    float nextFloat2 = i16 == 0 ? (Utilities.random.nextFloat() * org.telegram.messenger.q.B(20.0f, view.getMeasuredHeight(), i20)) + i20 : Utilities.random.nextFloat() * view.getMeasuredHeight();
+                    double nextInt = (Utilities.random.nextInt(40) + 70) * 0.017453292519943295d;
+                    i10 = i11;
+                    float cos = (float) Math.cos(nextInt);
+                    float sin = (float) Math.sin(nextInt);
+                    if (arrayList2.isEmpty()) {
+                        cx0Var = new cx0(this);
+                    } else {
+                        cx0Var = (cx0) arrayList2.get(0);
+                        arrayList2.remove(0);
+                    }
+                    cx0Var.a = nextFloat;
+                    cx0Var.b = nextFloat2;
+                    cx0Var.c = cos;
+                    cx0Var.d = sin;
+                    cx0Var.f = 0.0f;
+                    cx0Var.h = 0.0f;
+                    cx0Var.i = Utilities.random.nextFloat() * 1.2f;
+                    cx0Var.j = Utilities.random.nextInt(2);
+                    if (i16 == 0) {
+                        cx0Var.g = Utilities.random.nextInt(100) + 2000;
+                    } else {
+                        cx0Var.g = Utilities.random.nextInt(2000) + 3000;
+                    }
+                    cx0Var.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
+                    arrayList.add(cx0Var);
+                }
+                i19++;
+                i11 = i10;
+            }
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long min2 = Math.min(17L, currentTimeMillis - this.k);
+        int size3 = arrayList.size();
+        while (i12 < size3) {
+            cx0 cx0Var4 = (cx0) arrayList.get(i12);
+            float f15 = cx0Var4.h;
+            float f16 = cx0Var4.g;
+            if (f15 >= f16) {
+                if (arrayList2.size() < i18) {
+                    arrayList2.add(cx0Var4);
+                }
+                arrayList.remove(i12);
+                i12--;
+                size3--;
+            } else {
+                if (i16 == 0) {
+                    if (f15 < 200.0f) {
+                        cx0Var4.f = AndroidUtilities.accelerateInterpolator.getInterpolation(f15 / 200.0f);
+                    } else {
+                        cx0Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation((f15 - 200.0f) / (f16 - 200.0f));
+                    }
+                } else if (f15 < 200.0f) {
+                    cx0Var4.f = AndroidUtilities.accelerateInterpolator.getInterpolation(f15 / 200.0f);
+                } else {
+                    float f17 = f16 - f15;
+                    if (f17 < 2000.0f) {
+                        cx0Var4.f = AndroidUtilities.decelerateInterpolator.getInterpolation(f17 / 2000.0f);
+                    }
+                }
+                float f18 = cx0Var4.a;
+                float f19 = cx0Var4.c;
+                float f20 = cx0Var4.e;
+                float f21 = min2;
+                cx0Var4.a = a1.g.B(f19 * f20, f21, 500.0f, f18);
+                cx0Var4.b = (((cx0Var4.d * f20) * f21) / 500.0f) + cx0Var4.b;
+                cx0Var4.h += f21;
+            }
+            i12++;
+            i18 = 40;
+        }
+        this.k = currentTimeMillis;
+        view.invalidate();
+    }
+
+    public final void c() {
+        int i10 = this.g;
+        if (i10 == 0) {
+            i10 = org.telegram.ui.ActionBar.i6.x0(null, this.f, false) & (-1644826);
+        }
+        if (this.n != i10) {
+            this.n = i10;
+            this.c.setColor(i10);
+            this.d.setColor(i10);
+        }
     }
 }

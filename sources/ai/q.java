@@ -8,29 +8,29 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.jx;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class q extends zl0 {
-    public final /* synthetic */ int e3;
-    public final /* synthetic */ jx f3;
+public final class q extends qm0 {
+    public final /* synthetic */ int V2;
+    public final /* synthetic */ kx W2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q(jx jxVar, Context context, int i10) {
+    public /* synthetic */ q(kx kxVar, Context context, int i10) {
         super(context, null);
-        this.e3 = i10;
-        this.f3 = jxVar;
+        this.V2 = i10;
+        this.W2 = kxVar;
     }
 
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qm0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        switch (this.e3) {
+        switch (this.V2) {
             case 1:
-                jx jxVar = this.f3;
-                ArrayList arrayList = jxVar.P;
+                kx kxVar = this.W2;
+                ArrayList arrayList = kxVar.P;
                 arrayList.clear();
                 int i10 = 0;
                 for (int i11 = 0; i11 < getChildCount(); i11++) {
@@ -40,13 +40,13 @@ public final class q extends zl0 {
                     boolean z10 = true;
                     a0Var.a = true;
                     a0Var.d = R == 0;
-                    if (R != jxVar.y.size() - 1) {
+                    if (R != kxVar.y.size() - 1) {
                         z10 = false;
                     }
                     a0Var.c = z10;
                     arrayList.add(a0Var);
                 }
-                Collections.sort(arrayList, jxVar.w0);
+                Collections.sort(arrayList, kxVar.w0);
                 while (i10 < arrayList.size()) {
                     a0 a0Var2 = (a0) arrayList.get(i10);
                     int save = canvas.save();
@@ -70,13 +70,13 @@ public final class q extends zl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qm0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
+        switch (this.V2) {
             case 0:
                 if (motionEvent.getAction() == 0) {
-                    jx jxVar = this.f3;
-                    if (jxVar.c0 > 0.2f || jxVar.getAlpha() == 0.0f) {
+                    kx kxVar = this.W2;
+                    if (kxVar.c0 > 0.2f || kxVar.getAlpha() == 0.0f) {
                         return false;
                     }
                 }
@@ -86,11 +86,11 @@ public final class q extends zl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.e3) {
+        switch (this.V2) {
             case 0:
-                if (!this.f3.P.contains(view)) {
+                if (!this.W2.P.contains(view)) {
                     break;
                 }
                 break;
@@ -99,21 +99,21 @@ public final class q extends zl0 {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView
-    public void l0(int i10) {
-        switch (this.e3) {
+    public void k0(int i10, int i11) {
+        switch (this.V2) {
             case 1:
-                ci.e4 e4Var = this.f3.J;
-                if (e4Var != null) {
-                    e4Var.e(true);
+                ci.d4 d4Var = this.W2.J;
+                if (d4Var != null) {
+                    d4Var.e(true);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
+        switch (this.V2) {
             case 1:
                 return false;
             default:
@@ -121,11 +121,11 @@ public final class q extends zl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.e3) {
+        switch (this.V2) {
             case 0:
-                ArrayList arrayList = this.f3.b0;
+                ArrayList arrayList = this.W2.b0;
                 super.onLayout(z10, i10, i11, i12, i13);
                 for (int i14 = 0; i14 < arrayList.size(); i14++) {
                     ((Runnable) arrayList.get(i14)).run();
@@ -138,9 +138,9 @@ public final class q extends zl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.e3) {
+        switch (this.V2) {
             case 1:
                 return false;
             default:

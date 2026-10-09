@@ -1,15 +1,17 @@
 package ci;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class y5 extends s2 {
+public final class y5 extends r2 {
     public final /* synthetic */ int H;
     public final /* synthetic */ q6 I;
 
@@ -20,13 +22,13 @@ public final class y5 extends s2 {
         this.H = i10;
     }
 
-    @Override // ci.s2
-    public final boolean l0(Integer num) {
+    @Override // ci.r2
+    public final boolean m0(Integer num) {
         j6 j6Var = this.I.R0;
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < j6Var.getChildCount(); i11++) {
-                if (j6Var.getChildAt(i11) instanceof qg.a2) {
+                if (j6Var.getChildAt(i11) instanceof qg.b2) {
                     i10++;
                 }
             }
@@ -36,7 +38,7 @@ public final class y5 extends s2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.i6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
+                new org.telegram.ui.Components.ad(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.i6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
                 return false;
             }
             if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium) {
@@ -44,15 +46,15 @@ public final class y5 extends s2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused2) {
                 }
-                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString("LimitReached", R.string.LimitReached), LocaleController.formatPluralString("StoryReactionsWidgetLimit2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]), R.raw.chats_infotip).k(true);
+                new org.telegram.ui.Components.ad(this.container, this.resourcesProvider).M(LocaleController.getString("LimitReached", R.string.LimitReached), LocaleController.formatPluralString("StoryReactionsWidgetLimit2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]), R.raw.chats_infotip).k(true);
                 return false;
             }
         }
         return true;
     }
 
-    @Override // ci.s2
-    public final boolean m0(Integer num) {
+    @Override // ci.r2
+    public final boolean n0(Integer num) {
         q6 q6Var = this.I;
         j6 j6Var = q6Var.R0;
         boolean z10 = false;
@@ -66,7 +68,7 @@ public final class y5 extends s2 {
                 if (i10 >= j6Var.getChildCount()) {
                     break;
                 }
-                if (j6Var.getChildAt(i10) instanceof qg.w2) {
+                if (j6Var.getChildAt(i10) instanceof qg.x2) {
                     z10 = true;
                     break;
                 }
@@ -77,14 +79,32 @@ public final class y5 extends s2 {
         return true;
     }
 
-    @Override // ci.s2
-    public final boolean n0(ai.o8 o8Var) {
-        return this.I.f0(o8Var);
+    @Override // ci.r2
+    public final boolean o0(Runnable runnable) {
+        lc lcVar = ((nb) this.I).A2;
+        Activity activity = lcVar.b;
+        if (activity == null) {
+            return true;
+        }
+        if (Build.VERSION.SDK_INT >= 33) {
+            if (activity.checkSelfPermission("android.permission.READ_MEDIA_AUDIO") == 0) {
+                return true;
+            }
+            activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_AUDIO"}, 115);
+            lcVar.y2 = (ai.p8) runnable;
+            return false;
+        }
+        if (activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") == 0) {
+            return true;
+        }
+        activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 115);
+        lcVar.y2 = (ai.p8) runnable;
+        return false;
     }
 
     @Override // org.telegram.ui.ActionBar.f3
     public final void onDismissAnimationStart() {
         super.onDismissAnimationStart();
-        this.I.R0(this.H);
+        this.I.Q0(this.H);
     }
 }

@@ -1,41 +1,36 @@
 package k2;
 
-import android.os.SystemClock;
+import android.media.AudioTrack;
+import android.media.AudioTrack$StreamEventCallback;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b0 {
-    public Exception a;
-    public long b = -9223372036854775807L;
-    public long c = -9223372036854775807L;
+public final class b0 extends AudioTrack$StreamEventCallback {
+    public final /* synthetic */ c0 a;
 
-    public final void a(Exception exc) {
-        boolean z10;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.a == null) {
-            this.a = exc;
+    public b0(c0 c0Var) {
+        this.a = c0Var;
+    }
+
+    public final void onDataRequest(AudioTrack audioTrack, int i10) {
+        d0 d0Var;
+        n nVar;
+        if (audioTrack.equals(this.a.c.w) && (nVar = (d0Var = this.a.c).s) != null && d0Var.W) {
+            nVar.y0();
         }
-        if (this.b == -9223372036854775807L) {
-            synchronized (f0.o0) {
-                z10 = f0.q0 > 0;
-            }
-            if (!z10) {
-                this.b = 200 + elapsedRealtime;
-            }
+    }
+
+    public final void onPresentationEnded(AudioTrack audioTrack) {
+        if (audioTrack.equals(this.a.c.w)) {
+            this.a.c.V = true;
         }
-        long j3 = this.b;
-        if (j3 == -9223372036854775807L || elapsedRealtime < j3) {
-            this.c = elapsedRealtime + 50;
-            return;
+    }
+
+    public final void onTearDown(AudioTrack audioTrack) {
+        d0 d0Var;
+        n nVar;
+        if (audioTrack.equals(this.a.c.w) && (nVar = (d0Var = this.a.c).s) != null && d0Var.W) {
+            nVar.y0();
         }
-        Exception exc2 = this.a;
-        if (exc2 != exc) {
-            exc2.addSuppressed(exc);
-        }
-        Exception exc3 = this.a;
-        this.a = null;
-        this.b = -9223372036854775807L;
-        this.c = -9223372036854775807L;
-        throw exc3;
     }
 }

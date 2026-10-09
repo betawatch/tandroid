@@ -3,7 +3,7 @@ package b2;
 import android.net.Uri;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public static final String h;
@@ -94,7 +94,8 @@ public final class a {
     }
 
     public final int hashCode() {
-        int i10 = (int) 0;
-        return (((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + (((((this.a * 31) + this.b) * 31) + i10) * 31)) * 31)) * 31)) * 31) + i10) * 961) + Arrays.hashCode(this.g)) * 31;
+        int i10 = ((this.a * 31) + this.b) * 31;
+        int i11 = (int) 0;
+        return (((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + ((i10 + i11) * 31)) * 31)) * 31)) * 31) + i11) * 961) + Arrays.hashCode(this.g)) * 31;
     }
 }

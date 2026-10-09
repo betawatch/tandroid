@@ -3,9 +3,9 @@ package ii;
 import android.text.Editable;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class r0 implements h1 {
     public final /* synthetic */ u0 a;
@@ -15,7 +15,16 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(Editable editable) {
+    public final void E(CharSequence charSequence) {
+        e3 e3Var = this.a.h;
+        if (e3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        e3Var.a.u4(charSequence.toString());
+    }
+
+    @Override // ii.h1
+    public final void L(Editable editable) {
         u0 u0Var = this.a;
         a aVar = u0Var.f;
         if (aVar != null) {
@@ -33,30 +42,30 @@ public final class r0 implements h1 {
             return;
         }
         x3 x3Var = e3Var.a;
-        i2 i2Var = x3Var.Q3;
+        i2 i2Var = x3Var.H3;
         if (i2Var != null) {
             i2Var.g();
         }
-        x3Var.o3.onContentChanged();
+        x3Var.f3.onContentChanged();
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean C(boolean z10) {
+    public final /* synthetic */ boolean N(boolean z10) {
         return false;
     }
 
     @Override // ii.h1
-    public final void b(i1 i1Var) {
+    public final void c(i1 i1Var) {
         e3 e3Var = this.a.h;
         if (e3Var != null) {
             x3 x3Var = e3Var.a;
             x3.N1(x3Var, i1Var);
-            x3Var.o3.P(i1Var, true);
+            x3Var.f3.r(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean e() {
+    public final boolean f() {
         u0 u0Var = this.a;
         e3 e3Var = u0Var.h;
         if (e3Var == null || u0Var.f == null) {
@@ -66,20 +75,20 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void l(i1 i1Var) {
+    public final void k(i1 i1Var) {
         a aVar;
         x3 x3Var;
         ArrayList arrayList;
         int indexOf;
         u0 u0Var = this.a;
         e3 e3Var = u0Var.h;
-        if (e3Var == null || (aVar = u0Var.f) == null || (indexOf = (arrayList = (x3Var = e3Var.a).s3).indexOf(aVar)) < 0) {
+        if (e3Var == null || (aVar = u0Var.f) == null || (indexOf = (arrayList = (x3Var = e3Var.a).j3).indexOf(aVar)) < 0) {
             return;
         }
         TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
         if (!pageblockdetails.open) {
             pageblockdetails.open = true;
-            x3Var.f3.N(true);
+            x3Var.W2.N(true);
         }
         int i10 = indexOf + 1;
         if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || x3.y3((a) arrayList.get(i10))) {
@@ -89,12 +98,12 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean n(i1 i1Var) {
+    public final /* synthetic */ boolean m(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final boolean p(i1 i1Var) {
+    public final boolean r(i1 i1Var) {
         u0 u0Var = this.a;
         if (u0Var.h == null || u0Var.f == null || i1Var.length() != 0) {
             return false;
@@ -104,7 +113,7 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void r() {
+    public final void t() {
         a aVar;
         u0 u0Var = this.a;
         e3 e3Var = u0Var.h;
@@ -115,29 +124,20 @@ public final class r0 implements h1 {
     }
 
     @Override // ii.h1
-    public final void t(i1 i1Var, int i10, int i11) {
+    public final void x(i1 i1Var, int i10, int i11) {
         e3 e3Var;
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         u0 u0Var = this.a;
         if (u0Var.n || i10 == i11 || (e3Var = u0Var.h) == null || (textSelectionHelper = e3Var.a.getTextSelectionHelper()) == null) {
             return;
         }
-        if (textSelectionHelper.y() && textSelectionHelper.W == u0Var) {
+        if (textSelectionHelper.x() && textSelectionHelper.W == u0Var) {
             return;
         }
-        u0Var.post(new ei.y4(this, i1Var, i11, textSelectionHelper, i10, 2));
+        u0Var.post(new ei.w4(this, i1Var, i11, textSelectionHelper, i10, 2));
     }
 
     @Override // ii.h1
-    public final void w(CharSequence charSequence) {
-        e3 e3Var = this.a.h;
-        if (e3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
-        }
-        e3Var.a.u4(charSequence.toString());
-    }
-
-    @Override // ii.h1
-    public final /* synthetic */ void f(int i10, int i11) {
+    public final /* synthetic */ void i(int i10, int i11) {
     }
 }

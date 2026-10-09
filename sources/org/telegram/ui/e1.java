@@ -7,17 +7,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class e1 extends s4.n0 {
+public final class e1 extends s4.o0 {
     public final /* synthetic */ k1 a;
 
     public e1(k1 k1Var) {
         this.a = k1Var;
     }
 
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+    @Override // s4.o0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.a1 a1Var) {
         int i10 = 0;
         rect.bottom = 0;
         boolean z10 = view instanceof d2;

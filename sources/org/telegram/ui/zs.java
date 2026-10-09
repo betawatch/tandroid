@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zs extends s4.s0 {
+public final class zs extends s4.t0 {
     public boolean a;
     public boolean b;
     public final /* synthetic */ ContactsActivity c;
@@ -16,7 +16,7 @@ public final class zs extends s4.s0 {
         this.c = contactsActivity;
     }
 
-    @Override // s4.s0
+    @Override // s4.t0
     public final void a(RecyclerView recyclerView, int i10) {
         if (i10 != 1) {
             this.b = false;
@@ -29,9 +29,9 @@ public final class zs extends s4.s0 {
         this.b = true;
     }
 
-    @Override // s4.s0
+    @Override // s4.t0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.i iVar;
+        ah.h hVar;
         ContactsActivity contactsActivity = this.c;
         int L0 = contactsActivity.n.L0();
         View childAt = recyclerView.getChildAt(0);
@@ -44,9 +44,9 @@ public final class zs extends s4.s0 {
             }
             this.a = true;
         }
-        ((le.b) contactsActivity.Y.c).a(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (iVar = contactsActivity.t0) != null) {
-            iVar.f(i10, i11);
+        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
+        if (Build.VERSION.SDK_INT >= 31 && (hVar = contactsActivity.t0) != null) {
+            hVar.f(i10, i11);
             contactsActivity.g0();
         }
         ContactsActivity.d0(contactsActivity);

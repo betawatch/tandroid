@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class c2 implements Runnable {
                 FactCheckController.lambda$saveToDatabase$6((MessagesStorage) this.b, (TLRPC.TL_factCheck) this.c);
                 break;
             case 3:
-                ((FileLoadOperation) this.b).lambda$start$11((boolean[]) this.c);
+                ((FileLoadOperation) this.b).lambda$start$12((boolean[]) this.c);
                 break;
             case 4:
-                ((FileLoadOperation) this.b).lambda$addPart$2((ArrayList) this.c);
+                ((FileLoadOperation) this.b).lambda$addPart$3((ArrayList) this.c);
                 break;
             case 5:
                 ((FileLoader) this.b).lambda$uploadFile$19((NotificationCenter.NotificationCenterDelegate[]) this.c);
@@ -49,7 +49,7 @@ public final /* synthetic */ class c2 implements Runnable {
                 ((FileLoader) this.b).lambda$checkCurrentDownloadsFiles$17((ArrayList) this.c);
                 break;
             case 7:
-                FileLog.lambda$e$2((String) this.b, (Throwable) this.c);
+                FileLog.lambda$e$3((String) this.b, (Throwable) this.c);
                 break;
             case 8:
                 ((FilePathDatabase) this.b).lambda$removeFiles$6((List) this.c);
@@ -85,7 +85,7 @@ public final /* synthetic */ class c2 implements Runnable {
                 MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
                 break;
             case 19:
-                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (t6) this.c);
+                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (u6) this.c);
                 break;
             case 20:
                 ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
@@ -97,25 +97,25 @@ public final /* synthetic */ class c2 implements Runnable {
                 ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
                 break;
             case 23:
-                ((MessagesController) this.b).lambda$getDifference$351((TLRPC.updates_Difference) this.c);
+                ((MessagesController) this.b).lambda$processUpdateArray$415((TL_update.TL_updateChannel) this.c);
                 break;
             case 24:
-                ((MessagesController) this.b).lambda$requestContactToken$475((Utilities.Callback) this.c);
+                ((MessagesController) this.b).lambda$createChat$256((TLRPC.TL_messages_invitedUsers) this.c);
                 break;
             case 25:
-                ((MessagesController) this.b).lambda$checkTosUpdate$162((TLRPC.TL_help_termsOfServiceUpdate) this.c);
+                ((MessagesController) this.b).lambda$processMessageIDUpdate$376((TL_update.TL_updateMessageID) this.c);
                 break;
             case 26:
-                ((MessagesController) this.b).lambda$changeChatAvatar$318((Runnable) this.c);
+                ((MessagesController) this.b).lambda$createChat$259((TLRPC.Updates) this.c);
                 break;
             case 27:
-                ((MessagesController) this.b).lambda$createChat$260((TLRPC.Updates) this.c);
+                MessagesController.lambda$addUserToChat$298((Utilities.Callback) this.b, (Runnable) this.c);
                 break;
             case 28:
-                ((MessagesController) this.b).lambda$processUpdateArray$392((TL_update.TL_updateServiceNotification) this.c);
+                ((MessagesController) this.b).lambda$checkChatInviter$370((TLRPC.TL_channels_channelParticipant) this.c);
                 break;
             default:
-                ((MessagesController) this.b).lambda$processUpdateArray$393((TLRPC.Message) this.c);
+                ((MessagesController) this.b).lambda$checkTosUpdate$161((TLRPC.TL_help_termsOfServiceUpdate) this.c);
                 break;
         }
     }

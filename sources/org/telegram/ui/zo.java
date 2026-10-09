@@ -1,35 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zo extends org.telegram.ui.Components.so0 {
-    public final /* synthetic */ hp N;
+public final /* synthetic */ class zo implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ip b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zo(hp hpVar, Context context, org.telegram.ui.Components.ro0 ro0Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, ro0Var, d6Var, false);
-        this.N = hpVar;
+    public /* synthetic */ zo(ip ipVar, int i10) {
+        this.a = i10;
+        this.b = ipVar;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.N.M && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.N.M && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        ip ipVar = this.b;
+        switch (i10) {
+            case 0:
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ipVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                if (ipVar.a0) {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, ipVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, ipVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new o(16, ipVar, currentChannel));
+                ipVar.showDialog(b2Var);
+                break;
+            case 1:
+                if (!ipVar.V) {
+                    ipVar.V = true;
+                    ipVar.b0();
+                    break;
+                }
+                break;
+            case 2:
+                if (ipVar.V) {
+                    if (!ipVar.c0) {
+                        ipVar.Z();
+                        break;
+                    } else {
+                        ipVar.V = false;
+                        ipVar.b0();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                zh0 zh0Var = new zh0(ipVar.Z, 0L, 0);
+                zh0Var.g0(ipVar.Y, ipVar.l0);
+                ipVar.presentFragment(zh0Var);
+                break;
+            default:
+                boolean z10 = !ipVar.b0;
+                ipVar.b0 = z10;
+                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
+                break;
+        }
     }
 }

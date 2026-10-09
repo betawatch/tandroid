@@ -10,15 +10,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.w9;
-import w7.z5;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.y9;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class t0 extends FrameLayout {
     public final s0 a;
-    public final w9 b;
+    public final y9 b;
     public AnimatorSet c;
     public boolean d;
     public boolean e;
@@ -33,14 +33,14 @@ public final class t0 extends FrameLayout {
             invalidate();
         }
         s0Var.e = true;
-        w9 w9Var = new w9(activity);
-        this.b = w9Var;
-        addView(w9Var, z5.e(135, 135, 17));
+        y9 y9Var = new y9(activity);
+        this.b = y9Var;
+        addView(y9Var, x5.e(135, 135, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(tr.g);
+        this.c.setInterpolator(hs.g);
         this.c.setDuration(3000L);
         boolean isEnabled = LiteMode.isEnabled(512);
         this.f = isEnabled;
@@ -62,7 +62,7 @@ public final class t0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(tr.g);
+        this.c.setInterpolator(hs.g);
         this.c.setDuration(400L);
         this.c.start();
     }

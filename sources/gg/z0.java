@@ -1,31 +1,21 @@
 package gg;
 
-import android.location.Location;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class z0 implements SendMessagesHelper.LocationProvider.LocationProviderDelegate {
-    public final /* synthetic */ k1 a;
+public final class z0 extends SendMessagesHelper.LocationProvider {
+    public final /* synthetic */ j1 a;
 
-    public z0(k1 k1Var) {
-        this.a = k1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z0(j1 j1Var, y0 y0Var) {
+        super(y0Var);
+        this.a = j1Var;
     }
 
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
-    public final void onLocationAcquired(Location location) {
-        k1 k1Var = this.a;
-        TLRPC.User user = k1Var.w0;
-        if (user == null || !user.bot_inline_geo) {
-            return;
-        }
-        k1Var.z0 = location;
-        k1Var.T(true, user, k1Var.r0, "");
-    }
-
-    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider.LocationProviderDelegate
-    public final void onUnableLocationAcquire() {
-        this.a.Q();
+    @Override // org.telegram.messenger.SendMessagesHelper.LocationProvider
+    public final void stop() {
+        super.stop();
+        this.a.z0 = null;
     }
 }

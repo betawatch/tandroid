@@ -1,60 +1,106 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.RunnableFuture;
-import java.util.concurrent.locks.LockSupport;
+import java.util.AbstractList;
+import java.util.Collection;
+import java.util.List;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class u4 extends h4 implements RunnableFuture {
-    public volatile t4 n;
+public abstract class u4 extends AbstractList implements k5 {
+    public boolean a;
 
-    public u4(Callable callable) {
-        this.n = new t4(this, callable);
+    public u4(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // com.google.android.gms.internal.cast.h4
-    public final String c() {
-        t4 t4Var = this.n;
-        return t4Var != null ? a4.a.q("task=[", t4Var.toString(), "]") : super.c();
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean add(Object obj) {
+        i();
+        return super.add(obj);
     }
 
-    @Override // com.google.android.gms.internal.cast.h4
-    public final void e() {
-        t4 t4Var;
-        Object obj = this.a;
-        if ((obj instanceof z3) && ((z3) obj).a && (t4Var = this.n) != null) {
-            m4 m4Var = t4.d;
-            m4 m4Var2 = t4.c;
-            Runnable runnable = (Runnable) t4Var.get();
-            if (runnable instanceof Thread) {
-                l4 l4Var = new l4(t4Var);
-                l4Var.setExclusiveOwnerThread(Thread.currentThread());
-                if (t4Var.compareAndSet(runnable, l4Var)) {
-                    try {
-                        Thread thread = (Thread) runnable;
-                        thread.interrupt();
-                        if (((Runnable) t4Var.getAndSet(m4Var2)) == m4Var) {
-                            LockSupport.unpark(thread);
-                        }
-                    } catch (Throwable th2) {
-                        if (((Runnable) t4Var.getAndSet(m4Var2)) == m4Var) {
-                            LockSupport.unpark((Thread) runnable);
-                        }
-                        throw th2;
-                    }
-                }
+    @Override // java.util.AbstractList, java.util.List
+    public boolean addAll(int i10, Collection collection) {
+        i();
+        return super.addAll(i10, collection);
+    }
+
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public void clear() {
+        i();
+        super.clear();
+    }
+
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof List)) {
+            return false;
+        }
+        if (!(obj instanceof RandomAccess)) {
+            return super.equals(obj);
+        }
+        List list = (List) obj;
+        int size = size();
+        if (size != list.size()) {
+            return false;
+        }
+        for (int i10 = 0; i10 < size; i10++) {
+            if (!get(i10).equals(list.get(i10))) {
+                return false;
             }
         }
-        this.n = null;
+        return true;
     }
 
-    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
-    public final void run() {
-        t4 t4Var = this.n;
-        if (t4Var != null) {
-            t4Var.run();
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
+    public int hashCode() {
+        int size = size();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
         }
-        this.n = null;
+        return i10;
+    }
+
+    public final void i() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public abstract Object remove(int i10);
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean remove(Object obj) {
+        i();
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
+            return false;
+        }
+        remove(indexOf);
+        return true;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean removeAll(Collection collection) {
+        i();
+        return super.removeAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean retainAll(Collection collection) {
+        i();
+        return super.retainAll(collection);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public boolean addAll(Collection collection) {
+        i();
+        return super.addAll(collection);
     }
 }

@@ -1,38 +1,40 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.zl0;
+import android.app.Activity;
+import android.view.ViewGroup;
+import bi.v;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.qm0;
+import s4.d1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements aw0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+public final class e extends c71 {
+    public final /* synthetic */ i N;
 
-    public /* synthetic */ e(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e(i iVar, qm0 qm0Var, Activity activity, int i10, int i11, v vVar, e6 e6Var) {
+        super(qm0Var, activity, i10, i11, true, vVar, e6Var);
+        this.N = iVar;
     }
 
-    @Override // org.telegram.ui.Components.aw0
-    public final void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
-        switch (this.a) {
-            case 0:
-                zl0 zl0Var = (zl0) recyclerView;
-                gh.d.a(zl0Var, canvas, rectF, zl0Var, this.b);
-                break;
-            case 1:
-                zl0 zl0Var2 = (zl0) recyclerView;
-                gh.d.a(zl0Var2, canvas, rectF, zl0Var2, this.b);
-                break;
-            default:
-                zl0 zl0Var3 = (zl0) recyclerView;
-                gh.d.a(zl0Var3, canvas, rectF, zl0Var3, this.b);
-                break;
+    @Override // org.telegram.ui.Components.c71, s4.i0
+    public final d1 x(ViewGroup viewGroup, int i10) {
+        e6 e6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
+        i iVar = this.N;
+        Activity parentActivity = iVar.getParentActivity();
+        int i11 = i6.L6;
+        e6Var = ((n2) iVar).resourceProvider;
+        m4 m4Var = new m4(parentActivity, i11, 21, 0, false, e6Var);
+        m4Var.setHeight(25);
+        return new am0(m4Var);
     }
 }

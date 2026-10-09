@@ -2,9 +2,9 @@ package d4;
 
 import android.graphics.Color;
 import com.google.android.gms.internal.vision.e2;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -74,7 +74,7 @@ public final class d {
         try {
             long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
             e2.d.b(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(y7.b(((parseLong >> 24) & 255) ^ 255), y7.b(parseLong & 255), y7.b((parseLong >> 8) & 255), y7.b((parseLong >> 16) & 255)));
+            return Integer.valueOf(Color.argb(v7.b(((parseLong >> 24) & 255) ^ 255), v7.b(parseLong & 255), v7.b((parseLong >> 8) & 255), v7.b((parseLong >> 16) & 255)));
         } catch (IllegalArgumentException e7) {
             e2.a.o("SsaStyle", "Failed to parse color expression: '" + str + "'", e7);
             return null;

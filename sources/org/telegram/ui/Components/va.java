@@ -1,35 +1,81 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class va extends cb {
-    public final LinearLayout X;
-    public FrameLayout Y;
-    public ci.d Z;
+public final class va extends View {
+    public final Paint a;
+    public float b;
+    public int c;
+    public int d;
+    public final RectF e;
+    public final z4.g f;
+    public final int h;
+    public int n;
+    public int r;
 
-    public va(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, false, false, d6Var);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.X = linearLayout;
-        linearLayout.setOrientation(1);
+    public va(Context context, z4.g gVar, int i10) {
+        super(context);
+        this.a = new Paint(1);
+        new DecelerateInterpolator();
+        this.e = new RectF();
+        this.n = -1;
+        this.r = -1;
+        this.f = gVar;
+        this.h = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void setTitle(CharSequence charSequence) {
-        this.e.setTitle(charSequence);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        RectF rectF;
+        AndroidUtilities.dp(5.0f);
+        int i10 = this.n;
+        Paint paint = this.a;
+        if (i10 >= 0) {
+            paint.setColor((org.telegram.ui.ActionBar.i6.x0(null, i10, false) & 16777215) | (-1275068416));
+        } else {
+            paint.setColor(org.telegram.ui.ActionBar.i6.B0().q() ? -11184811 : -4473925);
+        }
+        this.d = this.f.getCurrentItem();
+        int i11 = 0;
+        while (true) {
+            int i12 = this.h;
+            rectF = this.e;
+            if (i11 >= i12) {
+                break;
+            }
+            if (i11 != this.d) {
+                rectF.set(AndroidUtilities.dp(11.0f) * i11, 0.0f, AndroidUtilities.dp(5.0f) + r5, AndroidUtilities.dp(5.0f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
+            }
+            i11++;
+        }
+        int i13 = this.r;
+        if (i13 >= 0) {
+            paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, i13, false));
+        } else {
+            paint.setColor(-14509328);
+        }
+        int dp = AndroidUtilities.dp(11.0f) * this.d;
+        if (this.b == 0.0f) {
+            rectF.set(dp, 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else if (this.c >= this.d) {
+            rectF.set(dp, 0.0f, (AndroidUtilities.dp(11.0f) * this.b) + AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else {
+            rectF.set(com.google.android.gms.internal.vision.e2.b(1.0f, this.b, AndroidUtilities.dp(11.0f), dp), 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final yl0 v(zl0 zl0Var) {
-        return new gg.n0(this, 1);
-    }
-
-    @Override // org.telegram.ui.Components.cb
-    public final CharSequence y() {
-        return null;
+    public void setCurrentPage(int i10) {
+        this.d = i10;
+        invalidate();
     }
 }

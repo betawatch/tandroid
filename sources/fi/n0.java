@@ -6,9 +6,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.uy;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n0 implements MessagesStorage.LongCallback, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
@@ -27,13 +27,13 @@ public final /* synthetic */ class n0 implements MessagesStorage.LongCallback, M
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        uy uyVar = (uy) this.d;
+        ty tyVar = (ty) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        uy.u0(this.a, this.b, chat, uyVar, this.c, z10);
+        ty.t0(this.a, this.b, chat, tyVar, this.c, z10);
     }
 
-    public /* synthetic */ n0(uy uyVar, int i10, TLRPC.Chat chat, long j3, boolean z10) {
-        this.d = uyVar;
+    public /* synthetic */ n0(ty tyVar, int i10, TLRPC.Chat chat, long j3, boolean z10) {
+        this.d = tyVar;
         this.a = i10;
         this.e = chat;
         this.b = j3;

@@ -16,10 +16,9 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.v7;
-import w7.r7;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.b0 {
     public static final Method P;
@@ -93,9 +92,9 @@ public abstract class d2 implements l.b0 {
         x xVar = new x(context, attributeSet, i10, 0);
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
-            r7.a(xVar, obtainStyledAttributes2.getBoolean(2, false));
+            xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : v7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : s7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
@@ -190,7 +189,7 @@ public abstract class d2 implements l.b0 {
             paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
         }
         boolean z11 = xVar.getInputMethodMode() == 2;
-        r7.b(xVar, this.n);
+        xVar.setWindowLayoutType(this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
             WeakHashMap weakHashMap = r0.i0.a;
@@ -255,7 +254,7 @@ public abstract class d2 implements l.b0 {
         xVar.setOutsideTouchable(true);
         xVar.setTouchInterceptor(this.H);
         if (this.v) {
-            r7.a(xVar, this.s);
+            xVar.setOverlapAnchor(this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
             Method method3 = R;

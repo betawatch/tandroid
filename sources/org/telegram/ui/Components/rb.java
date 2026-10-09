@@ -1,42 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class rb extends o1.i {
-    public final /* synthetic */ int a;
+public interface rb {
+    boolean a();
 
-    public /* synthetic */ rb(int i10) {
-        this.a = i10;
-    }
+    void b(tc tcVar);
 
-    @Override // o1.i
-    public final float a(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((vb) obj).inOutOffset;
-            case 1:
-                return ((org.telegram.ui.eh0) obj).N;
-            default:
-                return ((org.telegram.ui.eh0) obj).M;
-        }
-    }
+    void c(float f7);
 
-    @Override // o1.i
-    public final void b(Object obj, float f7) {
-        switch (this.a) {
-            case 0:
-                ((vb) obj).setInOutOffset(f7);
-                break;
-            case 1:
-                org.telegram.ui.eh0 eh0Var = (org.telegram.ui.eh0) obj;
-                eh0Var.N = f7;
-                eh0Var.invalidate();
-                break;
-            default:
-                org.telegram.ui.eh0 eh0Var2 = (org.telegram.ui.eh0) obj;
-                eh0Var2.M = f7;
-                eh0Var2.invalidate();
-                break;
-        }
-    }
+    void d(tc tcVar);
+
+    boolean e();
+
+    int f(int i10);
+
+    boolean g(int i10);
+
+    int h(int i10);
 }

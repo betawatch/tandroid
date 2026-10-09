@@ -4,7 +4,6 @@ import a0.n;
 import a6.b;
 import a6.d;
 import a6.i;
-import a6.m;
 import aa.a;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -18,10 +17,12 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.m;
 import java.lang.reflect.Modifier;
 import java.util.Set;
+import pb.c;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -49,18 +50,18 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i R = i.R(this);
+                i U = i.U(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (R) {
-                    synchronized (R) {
-                        ((b) R.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (U) {
+                    synchronized (U) {
+                        ((b) U.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
                     this.Q = true;
                     this.R = i11;
                     this.S = intent;
-                    v();
+                    u();
                     return;
                 }
                 intent.removeExtra("signInAccount");
@@ -68,7 +69,7 @@ public class SignInHubActivity extends v {
                 this.Q = true;
                 this.R = i11;
                 this.S = intent;
-                v();
+                u();
                 return;
             }
             if (intent.hasExtra("errorCode")) {
@@ -76,26 +77,26 @@ public class SignInHubActivity extends v {
                 if (intExtra == 13) {
                     intExtra = 12501;
                 }
-                w(intExtra);
+                v(intExtra);
                 return;
             }
         }
-        w(8);
+        v(8);
     }
 
-    @Override // androidx.fragment.app.v, androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.fragment.app.v, androidx.activity.l, e0.f, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
         String action = intent.getAction();
         if (action == null) {
             Log.e("AuthSignInClient", "Null action");
-            w(12500);
+            v(12500);
             return;
         }
         if (action.equals("com.google.android.gms.auth.NO_IMPL")) {
             Log.e("AuthSignInClient", "Action not implemented");
-            w(12500);
+            v(12500);
             return;
         }
         if (!action.equals("com.google.android.gms.auth.GOOGLE_SIGN_IN") && !action.equals("com.google.android.gms.auth.APPAUTH_SIGN_IN")) {
@@ -126,7 +127,7 @@ public class SignInHubActivity extends v {
                 Intent intent2 = (Intent) bundle.getParcelable("signInResultData");
                 if (intent2 != null) {
                     this.S = intent2;
-                    v();
+                    u();
                     return;
                 } else {
                     Log.e("AuthSignInClient", "Sign in result data cannot be null");
@@ -139,7 +140,7 @@ public class SignInHubActivity extends v {
         }
         if (T) {
             setResult(0);
-            w(12502);
+            v(12502);
             return;
         }
         T = true;
@@ -155,7 +156,7 @@ public class SignInHubActivity extends v {
         } catch (ActivityNotFoundException unused) {
             this.O = true;
             Log.w("AuthSignInClient", "Could not launch sign in Intent. Google Play Service is probably being updated...");
-            w(17);
+            v(17);
         }
     }
 
@@ -165,7 +166,7 @@ public class SignInHubActivity extends v {
         T = false;
     }
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.f, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("signingInGoogleApiClients", this.Q);
@@ -175,9 +176,9 @@ public class SignInHubActivity extends v {
         }
     }
 
-    public final void v() {
+    public final void u() {
         w1.b bVar = (w1.b) new a(f(), w1.b.f).j(w1.b.class);
-        m mVar = new m(this, 0);
+        c cVar = new c(this, 1);
         boolean z10 = bVar.e;
         n nVar = bVar.d;
         if (z10) {
@@ -190,7 +191,7 @@ public class SignInHubActivity extends v {
         if (aVar == null) {
             try {
                 bVar.e = true;
-                Set set = com.google.android.gms.common.api.m.a;
+                Set set = m.a;
                 synchronized (set) {
                 }
                 d dVar = new d(this, set);
@@ -200,7 +201,7 @@ public class SignInHubActivity extends v {
                 w1.a aVar2 = new w1.a(dVar);
                 nVar.d(0, aVar2);
                 bVar.e = false;
-                p pVar = new p(aVar2.l, mVar);
+                p pVar = new p(aVar2.l, cVar);
                 aVar2.d(this, pVar);
                 p pVar2 = aVar2.n;
                 if (pVar2 != null) {
@@ -213,7 +214,7 @@ public class SignInHubActivity extends v {
                 throw th2;
             }
         } else {
-            p pVar3 = new p(aVar.l, mVar);
+            p pVar3 = new p(aVar.l, cVar);
             aVar.d(this, pVar3);
             p pVar4 = aVar.n;
             if (pVar4 != null) {
@@ -225,7 +226,7 @@ public class SignInHubActivity extends v {
         T = false;
     }
 
-    public final void w(int i10) {
+    public final void v(int i10) {
         Status status = new Status(i10, null, null, null);
         Intent intent = new Intent();
         intent.putExtra("googleSignInStatus", status);

@@ -1,77 +1,104 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.ui.db1;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class x20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class x20 extends LinearLayout {
+    public final ci.d a;
+    public final ci.d b;
+    public final ci.d c;
+    public final long d;
 
-    public x20(db1 db1Var, wi wiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.jk jkVar, org.telegram.ui.yn ynVar) {
-        this.f = db1Var;
-        this.b = wiVar;
-        this.c = u1Var;
-        this.d = jkVar;
-        this.e = ynVar;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                WindowManager windowManager = (WindowManager) this.f;
-                View view = this.b;
-                if (view.getParent() != null) {
-                    view.setVisibility(8);
-                    View view2 = this.c;
-                    view2.setVisibility(8);
-                    View view3 = this.d;
-                    view3.setVisibility(8);
-                    windowManager.removeView(view);
-                    windowManager.removeView(view2);
-                    windowManager.removeView(view3);
-                    windowManager.removeView((View) this.e);
-                    break;
-                }
-                break;
-            default:
-                db1 db1Var = (db1) this.f;
-                db1Var.D.unlock();
-                wi wiVar = (wi) this.b;
-                ((ArrayList) wiVar.c).remove(db1Var);
-                wiVar.a();
-                ((ViewGroup) wiVar.d).invalidate();
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
-                u1Var.setEnterTransitionInProgress(false);
-                u1Var.getTransitionParams().D0.set(u1Var.getBackgroundDrawableLeft(), u1Var.getBackgroundDrawableTop(), u1Var.getBackgroundDrawableRight(), u1Var.getBackgroundDrawableBottom());
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
-                chatActivityEnterView.setTextTransitionIsRunning(false);
-                chatActivityEnterView.getEditField().setAlpha(1.0f);
-                org.telegram.ui.yn ynVar = (org.telegram.ui.yn) this.e;
-                ((to[]) ynVar.Y.b)[0].c.setAlpha(1.0f);
-                ((to[]) ynVar.Y.b)[0].d.setAlpha(1.0f);
-                z5.release((View) null, db1Var.H);
-                break;
+    public x20(Context context, int i10) {
+        super(context);
+        TLRPC.TL_emojiList a2 = i9.a(i10);
+        setOrientation(1);
+        y9 y9Var = new y9(context);
+        y9Var.setImageDrawable(new ck0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(y9Var, w7.x5.q(110, 110, 49));
         }
+        TextView f7 = org.telegram.messenger.q.f(context, 1, 20.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.G6, null, false, f7, 1);
+        f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
+        f7.setTypeface(AndroidUtilities.bold());
+        addView(f7, w7.x5.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.c7, null, false, textView, 1);
+        textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, w7.x5.t(-2, -2, 49, 0, 0, 0, 14));
+        ci.d dVar = new ci.d(context, null, true);
+        this.a = dVar;
+        dVar.e();
+        dVar.g(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
+        addView(dVar, w7.x5.q(-2, 44, 49));
+        ci.d dVar2 = new ci.d(context, null, false);
+        this.b = dVar2;
+        dVar2.e();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new er(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
+        dVar2.g(spannableStringBuilder, false, true);
+        addView(dVar2, w7.x5.t(-2, 44, 49, 0, 8, 0, 0));
+        ci.d dVar3 = new ci.d(context, null, false);
+        this.c = dVar3;
+        dVar3.e();
+        dVar3.setVisibility(8);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
+        ArrayList<Long> arrayList = a2.document_id;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.d = 0L;
+        } else {
+            long longValue = a2.document_id.get(0).longValue();
+            this.d = longValue;
+            spannableStringBuilder2.setSpan(new b6(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.append((CharSequence) "  ");
+        }
+        spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
+        dVar3.g(spannableStringBuilder2, false, true);
+        addView(dVar3, w7.x5.t(-2, 44, 49, 0, 1, 0, 0));
     }
 
-    public x20(b30 b30Var, ai.f0 f0Var, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.x7 x7Var) {
-        this.b = b30Var;
-        this.c = f0Var;
-        this.d = frameLayout;
-        this.f = windowManager;
-        this.e = x7Var;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30);
+        ci.d dVar = this.a;
+        dVar.setUseWrapContent(true);
+        ci.d dVar2 = this.b;
+        dVar2.setUseWrapContent(true);
+        ci.d dVar3 = this.c;
+        dVar3.setUseWrapContent(true);
+        dVar.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar2.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar3.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar.setUseWrapContent(false);
+        dVar2.setUseWrapContent(false);
+        dVar3.setUseWrapContent(false);
+        int max = Math.max(Math.max(dVar.getMeasuredWidth(), dVar2.getMeasuredWidth()), dVar3.getMeasuredWidth());
+        dVar.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        dVar2.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        dVar3.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        super.onMeasure(i10, i11);
+    }
+
+    public void setUseAnEmojiVisible(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 8);
     }
 }

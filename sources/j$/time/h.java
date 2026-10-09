@@ -447,23 +447,28 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v4, types: [int] */
+    /* JADX WARN: Type inference failed for: r7v4, types: [int] */
     public static h Q(DataInput dataInput) {
         int readInt;
         int i10;
         int readByte = dataInput.readByte();
         byte b10 = 0;
-        if (readByte >= 0) {
+        if (readByte < 0) {
+            readByte = ~readByte;
+            i10 = 0;
+            readInt = 0;
+        } else {
             byte readByte2 = dataInput.readByte();
             if (readByte2 < 0) {
-                ?? r62 = ~readByte2;
+                ?? r72 = ~readByte2;
                 readInt = 0;
-                b10 = r62;
+                b10 = r72;
                 i10 = 0;
             } else {
                 byte readByte3 = dataInput.readByte();
                 if (readByte3 < 0) {
                     i10 = ~readByte3;
+                    readInt = 0;
                     b10 = readByte2;
                 } else {
                     readInt = dataInput.readInt();
@@ -471,15 +476,7 @@ public final class h implements Temporal, j$.time.temporal.m, Comparable, Serial
                     i10 = readByte3;
                 }
             }
-            j$.time.temporal.a.HOUR_OF_DAY.w(readByte);
-            j$.time.temporal.a.MINUTE_OF_HOUR.w(b10);
-            j$.time.temporal.a.SECOND_OF_MINUTE.w(i10);
-            j$.time.temporal.a.NANO_OF_SECOND.w(readInt);
-            return H(readByte, b10, i10, readInt);
         }
-        readByte = ~readByte;
-        i10 = 0;
-        readInt = 0;
         j$.time.temporal.a.HOUR_OF_DAY.w(readByte);
         j$.time.temporal.a.MINUTE_OF_HOUR.w(b10);
         j$.time.temporal.a.SECOND_OF_MINUTE.w(i10);

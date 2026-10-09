@@ -13,50 +13,50 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.u90;
-import w7.z5;
+import org.telegram.ui.Components.ia0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class k1 extends LinearLayout {
-    public final d6 a;
-    public final u90 b;
+    public final e6 a;
+    public final ia0 b;
     public final ImageReceiver c;
     public final TextView d;
     public boolean e;
 
-    public k1(Context context, d6 d6Var) {
+    public k1(Context context, e6 e6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
-        this.a = d6Var;
+        this.a = e6Var;
         setOrientation(1);
-        u90 u90Var = new u90();
-        this.b = u90Var;
+        ia0 ia0Var = new ia0();
+        this.b = ia0Var;
         int i10 = i6.G6;
-        int v02 = i6.v0(i10, d6Var);
-        u90Var.f(i6.l1(0.05f, v02), i6.l1(0.15f, v02), i6.l1(0.1f, v02), i6.l1(0.3f, v02));
-        u90Var.j(4.0f);
-        u90Var.w.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        int w02 = i6.w0(i10, e6Var);
+        ia0Var.g(i6.m1(0.05f, w02), i6.m1(0.15f, w02), i6.m1(0.1f, w02), i6.m1(0.3f, w02));
+        ia0Var.k(4.0f);
+        ia0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTextColor(i6.v0(i10, d6Var));
+        textView.setTextColor(i6.w0(i10, e6Var));
         textView.setTextSize(1, 16.0f);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, z5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        addView(textView, x5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
         TextView textView2 = new TextView(context);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setTextColor(i6.v0(i6.z6, d6Var));
-        textView2.setText(LocaleController.getString(R.string.BusinessProfileLocation));
-        textView2.setTextSize(1, 13.0f);
+        textView2.setTextColor(i6.w0(i6.z6, e6Var));
+        bi.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, z5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        addView(textView2, x5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
         setWillNotDraw(false);
     }
 
@@ -85,11 +85,11 @@ public final class k1 extends LinearLayout {
         imageReceiver.draw(canvas);
         super.onDraw(canvas);
         if (this.e) {
-            Paint T0 = i6.T0("paintDivider", this.a);
-            if (T0 == null) {
-                T0 = i6.k0;
+            Paint U0 = i6.U0("paintDivider", this.a);
+            if (U0 == null) {
+                U0 = i6.k0;
             }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 21.33f : 0.0f), getMeasuredHeight(), T0);
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 21.33f : 0.0f), getMeasuredHeight(), U0);
         }
     }
 

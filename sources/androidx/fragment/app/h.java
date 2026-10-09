@@ -6,7 +6,7 @@ import android.os.Build;
 import android.util.Log;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends u0 {
     public final f b;
@@ -46,7 +46,7 @@ public final class h extends u0 {
         }
         Context context = container.getContext();
         kotlin.jvm.internal.i.d(context, "context");
-        of.b b10 = fVar.b(context);
+        pf.b b10 = fVar.b(context);
         this.c = b10 != null ? (AnimatorSet) b10.c : null;
         throw null;
     }

@@ -3,18 +3,18 @@ package r0;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static l1 a(View view) {
+    public static k1 a(View view) {
         WindowInsets rootWindowInsets = view.getRootWindowInsets();
         if (rootWindowInsets == null) {
             return null;
         }
-        l1 h = l1.h(null, rootWindowInsets);
-        i1 i1Var = h.a;
-        i1Var.r(h);
-        i1Var.d(view.getRootView());
+        k1 h = k1.h(null, rootWindowInsets);
+        h1 h1Var = h.a;
+        h1Var.r(h);
+        h1Var.d(view.getRootView());
         return h;
     }
 

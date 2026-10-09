@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.eh;
-import org.telegram.ui.Components.nw0;
-import org.telegram.ui.hu0;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.fh;
+import org.telegram.ui.Components.tw0;
+import org.telegram.ui.cj;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class x5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class x5 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ x5(nw0 nw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
+    public /* synthetic */ x5(tw0 tw0Var, ViewGroup viewGroup, ViewGroup viewGroup2, int i10, int i11) {
         this.a = i11;
-        this.e = nw0Var;
+        this.e = tw0Var;
         this.c = viewGroup;
         this.d = viewGroup2;
         this.b = i10;
@@ -46,34 +46,34 @@ public final class x5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                yn ynVar = (yn) this.e;
-                ynVar.M5 = true;
-                ((org.telegram.ui.ActionBar.n2) ynVar).fragmentBeginToShow = true;
-                ynVar.T9 = null;
-                AndroidUtilities.runOnUIThread(new hu0(this, 29), 32L);
+                zn znVar = (zn) this.e;
+                znVar.O5 = true;
+                ((org.telegram.ui.ActionBar.n2) znVar).fragmentBeginToShow = true;
+                znVar.V9 = null;
+                AndroidUtilities.runOnUIThread(new cj(this, 0), 32L);
                 super.onAnimationEnd(animator);
-                ynVar.V0.invalidate();
-                ynVar.V0.setSkipBackgroundDrawing(false);
-                ynVar.Q9 = false;
-                yn ynVar2 = (yn) this.c;
-                ynVar2.S9 = 0.0f;
-                ynVar2.fragmentView.invalidate();
-                ynVar2.v0.invalidate();
-                ynVar2.R9 = null;
-                ynVar.fragmentView.setAlpha(1.0f);
+                znVar.X0.invalidate();
+                znVar.X0.setSkipBackgroundDrawing(false);
+                znVar.S9 = false;
+                zn znVar2 = (zn) this.c;
+                znVar2.U9 = 0.0f;
+                znVar2.fragmentView.invalidate();
+                znVar2.x0.invalidate();
+                znVar2.T9 = null;
+                znVar.fragmentView.setAlpha(1.0f);
                 ((Runnable) this.d).run();
-                ynVar.Y0.setTranslationY(0.0f);
-                ynVar2.Y0.setTranslationY(0.0f);
-                ynVar2.Y0.getAvatarImageView().setTranslationY(0.0f);
-                ynVar.Y0.getAvatarImageView().setScaleX(1.0f);
-                ynVar.Y0.getAvatarImageView().setScaleY(1.0f);
-                ynVar.Y0.getAvatarImageView().setAlpha(1.0f);
-                ynVar2.Y0.getAvatarImageView().setScaleX(1.0f);
-                ynVar2.Y0.getAvatarImageView().setScaleY(1.0f);
-                ynVar2.Y0.getAvatarImageView().setAlpha(1.0f);
-                eh ehVar = ynVar2.K0;
-                if (ehVar != null) {
-                    ehVar.setAlpha(1.0f);
+                znVar.a1.setTranslationY(0.0f);
+                znVar2.a1.setTranslationY(0.0f);
+                znVar2.a1.getAvatarImageView().setTranslationY(0.0f);
+                znVar.a1.getAvatarImageView().setScaleX(1.0f);
+                znVar.a1.getAvatarImageView().setScaleY(1.0f);
+                znVar.a1.getAvatarImageView().setAlpha(1.0f);
+                znVar2.a1.getAvatarImageView().setScaleX(1.0f);
+                znVar2.a1.getAvatarImageView().setScaleY(1.0f);
+                znVar2.a1.getAvatarImageView().setAlpha(1.0f);
+                fh fhVar = znVar2.M0;
+                if (fhVar != null) {
+                    fhVar.setAlpha(1.0f);
                     break;
                 }
                 break;
@@ -122,7 +122,7 @@ public final class x5 extends AnimatorListenerAdapter {
                 break;
             case 1:
                 super.onAnimationStart(animator);
-                i10 = ((org.telegram.ui.ActionBar.n2) ((yn) this.e)).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((zn) this.e)).currentAccount;
                 this.b = NotificationCenter.getInstance(i10).setAnimationInProgress(this.b, null);
                 break;
             default:
@@ -148,10 +148,10 @@ public final class x5 extends AnimatorListenerAdapter {
         }
     }
 
-    public x5(yn ynVar, yn ynVar2, Runnable runnable) {
+    public x5(zn znVar, zn znVar2, Runnable runnable) {
         this.a = 1;
-        this.e = ynVar;
-        this.c = ynVar2;
+        this.e = znVar;
+        this.c = znVar2;
         this.d = runnable;
     }
 }

@@ -2,20 +2,20 @@ package i2;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p1 {
     public static final p1 b;
     public final e9.m0 a;
 
     static {
-        a6.m mVar = new a6.m(23);
-        mVar.b = e9.m0.u(2, 1, 5);
-        b = new p1(mVar);
+        a6.i iVar = new a6.i(25, false);
+        iVar.b = e9.m0.u(2, 1, 5);
+        b = new p1(iVar);
     }
 
-    public p1(a6.m mVar) {
-        this.a = (e9.m0) mVar.b;
+    public p1(a6.i iVar) {
+        this.a = (e9.m0) iVar.b;
     }
 
     public final boolean equals(Object obj) {

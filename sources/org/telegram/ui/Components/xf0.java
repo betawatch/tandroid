@@ -1,73 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class xf0 extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout b;
+public final class xf0 extends View {
+    public Paint a;
+    public Paint b;
+    public int c;
+    public int d;
+    public float e;
+    public boolean f;
+    public int h;
+    public int n;
+    public wf0 r;
 
-    public xf0(Context context) {
-        super(context);
-        setOrientation(0);
-        setGravity(17);
-        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
-        this.b = a2;
-        addView(a2, w7.z5.n(-2, -1));
-        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
-        this.a = a10;
-        addView(a10, w7.z5.n(-2, -1));
+    public final void a(int i10, boolean z10) {
+        wf0 wf0Var;
+        int i11 = this.h;
+        if (i10 < i11) {
+            i10 = i11;
+        } else {
+            int i12 = this.n;
+            if (i10 > i12) {
+                i10 = i12;
+            }
+        }
+        this.e = (i10 - i11) / (this.n - i11);
+        invalidate();
+        if (!z10 || (wf0Var = this.r) == null) {
+            return;
+        }
+        wf0Var.k(((Integer) getTag()).intValue(), getProgress());
     }
 
-    public final LinearLayout a(int i10, String str) {
-        Context context = getContext();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(17);
-        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(i10);
-        linearLayout.addView(imageView, w7.z5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
-        TextView textView = new TextView(context);
-        textView.setGravity(16);
-        textView.setText(str);
-        textView.setTextSize(2, 14.0f);
-        textView.setSingleLine(true);
-        textView.setTextColor(-1);
-        linearLayout.addView(textView, w7.z5.n(-2, -2));
-        w7.b6.a(linearLayout);
-        return linearLayout;
+    public int getProgress() {
+        return (int) ((this.e * (this.n - r0)) + this.h);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        LinearLayout linearLayout = this.a;
-        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        int max = Math.max(0, size - paddingRight);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
-        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
-        LinearLayout linearLayout2 = this.b;
-        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
-        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
-        layoutParams2.width = min;
-        layoutParams.width = min;
-        super.onMeasure(i10, i11);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        int measuredHeight = getMeasuredHeight();
+        int i10 = this.c;
+        int i11 = (measuredHeight - i10) / 2;
+        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+        float f7 = i10 / 2;
+        canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() - r9, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), this.a);
+        if (this.h == 0) {
+            canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else if (this.e > 0.5f) {
+            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else {
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, AndroidUtilities.dp(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        }
+        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10 = this.c;
+        if (motionEvent != null) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+            if (motionEvent.getAction() == 0) {
+                float measuredHeight = (getMeasuredHeight() - i10) / 2;
+                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
+                    this.f = true;
+                    this.d = (int) (x10 - measuredWidth);
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (this.f) {
+                    this.f = false;
+                    invalidate();
+                    return true;
+                }
+            } else if (motionEvent.getAction() == 2 && this.f) {
+                float f7 = (int) (x10 - this.d);
+                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
+                wf0 wf0Var = this.r;
+                if (wf0Var != null) {
+                    wf0Var.k(((Integer) getTag()).intValue(), getProgress());
+                }
+                invalidate();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void setDelegate(wf0 wf0Var) {
+        this.r = wf0Var;
+    }
+
+    public void setProgress(int i10) {
+        a(i10, true);
     }
 }

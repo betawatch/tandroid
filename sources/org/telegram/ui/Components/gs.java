@@ -1,20 +1,93 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gs extends s4.j {
-    public final /* synthetic */ is F;
+public final class gs extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
+    public ValueAnimator e;
 
-    public gs(is isVar) {
-        this.F = isVar;
+    public gs(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new fs(this, 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new fs(this, 1));
+        }
     }
 
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
-        viewGroup.invalidate();
+    public final void a(float f7) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f7);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new m6(this, 16));
+        this.e.setDuration((long) (Math.abs(this.c - f7) * 200.0f));
+        this.e.setInterpolator(hs.f);
+        this.e.start();
+    }
+
+    public final void b(float f7) {
+        this.c = f7;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        int i11 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i11);
+        if (i10 > 0) {
+            drawable.draw(canvas);
+        }
+        if (i11 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

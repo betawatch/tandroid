@@ -1,55 +1,25 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s61 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w61 b;
-    public final /* synthetic */ Integer c;
+public final class s61 extends rg.c1 {
+    public final /* synthetic */ t61 M;
 
-    public /* synthetic */ s61(w61 w61Var, Integer num, int i10) {
-        this.a = i10;
-        this.b = w61Var;
-        this.c = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s61(t61 t61Var, Context context) {
+        super(context, 2, null);
+        this.M = t61Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        w61 w61Var = this.b;
-        switch (i10) {
-            case 0:
-                w61.a(w61Var, this.c);
-                break;
-            default:
-                w61Var.getClass();
-                Integer num = this.c;
-                if (num != null) {
-                    try {
-                        w61Var.P.performHapticFeedback(0, 1);
-                    } catch (Exception unused) {
-                    }
-                    p51 p51Var = (p51) w61Var;
-                    q51 q51Var = p51Var.S;
-                    a71 a71Var = q51Var.e;
-                    List list = a71.Z1;
-                    a71Var.l();
-                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-                    View view = p51Var.Q;
-                    long j3 = ((j61) view).e.documentId;
-                    tL_emojiStatus.document_id = j3;
-                    q51Var.e.p(view, Long.valueOf(j3), ((j61) p51Var.Q).e.document, p51Var.R, num);
-                    if (p51Var.R == null) {
-                        MediaDataController.getInstance(q51Var.e.V).pushRecentEmojiStatus(tL_emojiStatus);
-                        break;
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        t61 t61Var = this.M;
+        if (t61Var.getParent() instanceof View) {
+            ((View) t61Var.getParent()).invalidate();
         }
     }
 }

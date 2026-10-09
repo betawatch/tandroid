@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class w1 extends ViewGroup {
     public int E;
@@ -40,9 +40,9 @@ public abstract class w1 extends ViewGroup {
         this.c = 0;
         this.e = 8388659;
         int[] iArr = f.a.n;
-        la.h Q = la.h.Q(context, attributeSet, iArr, i10);
-        r0.i0.j(this, context, iArr, attributeSet, (TypedArray) Q.c, i10);
-        TypedArray typedArray = (TypedArray) Q.c;
+        la.h R = la.h.R(context, attributeSet, iArr, i10);
+        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) R.c, i10);
+        TypedArray typedArray = (TypedArray) R.c;
         int i11 = typedArray.getInt(1, -1);
         if (i11 >= 0) {
             setOrientation(i11);
@@ -58,10 +58,10 @@ public abstract class w1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(Q.A(5));
+        setDividerDrawable(R.G(5));
         this.y = typedArray.getInt(8, 0);
         this.E = typedArray.getDimensionPixelSize(6, 0);
-        Q.R();
+        R.S();
     }
 
     public final void c(Canvas canvas, int i10) {
@@ -126,7 +126,7 @@ public abstract class w1 extends ViewGroup {
         int i12 = this.c;
         if (this.d == 1 && (i10 = this.e & 112) != 48) {
             if (i10 == 16) {
-                i12 = hg.c.y(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
+                i12 = hg.c.z(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
             } else if (i10 == 80) {
                 i12 = ((getBottom() - getTop()) - getPaddingBottom()) - this.f;
             }
@@ -213,7 +213,7 @@ public abstract class w1 extends ViewGroup {
             return;
         }
         int virtualChildCount2 = getVirtualChildCount();
-        boolean a2 = s3.a(this);
+        boolean a2 = t3.a(this);
         while (i11 < virtualChildCount2) {
             View childAt3 = getChildAt(i11);
             if (childAt3 != null && childAt3.getVisibility() != 8 && h(i11)) {
@@ -256,19 +256,18 @@ public abstract class w1 extends ViewGroup {
         accessibilityNodeInfo.setClassName("androidx.appcompat.widget.LinearLayoutCompat");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01a4  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0191  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x015b  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01a5  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0192  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        char c10;
-        int y3;
         int i14;
+        int z11;
         int i15;
         int i16;
         int i17;
@@ -276,150 +275,151 @@ public abstract class w1 extends ViewGroup {
         int i19;
         int i20;
         int i21;
-        int y10;
-        int i22 = 8;
+        int i22;
+        int z12;
+        int i23 = 8;
         if (this.d == 1) {
             int paddingLeft = getPaddingLeft();
-            int i23 = i12 - i10;
-            int paddingRight = i23 - getPaddingRight();
-            int paddingRight2 = (i23 - paddingLeft) - getPaddingRight();
+            int i24 = i12 - i10;
+            int paddingRight = i24 - getPaddingRight();
+            int paddingRight2 = (i24 - paddingLeft) - getPaddingRight();
             int virtualChildCount = getVirtualChildCount();
-            int i24 = this.e;
-            int i25 = i24 & 112;
-            int i26 = 8388615 & i24;
-            int paddingTop = i25 != 16 ? i25 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : hg.c.y(i13 - i11, this.f, 2, getPaddingTop());
-            int i27 = 0;
-            while (i27 < virtualChildCount) {
-                View childAt = getChildAt(i27);
-                if (childAt != null && childAt.getVisibility() != i22) {
+            int i25 = this.e;
+            int i26 = i25 & 112;
+            int i27 = 8388615 & i25;
+            int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : hg.c.z(i13 - i11, this.f, 2, getPaddingTop());
+            int i28 = 0;
+            while (i28 < virtualChildCount) {
+                View childAt = getChildAt(i28);
+                if (childAt != null && childAt.getVisibility() != i23) {
                     int measuredWidth = childAt.getMeasuredWidth();
                     int measuredHeight = childAt.getMeasuredHeight();
                     v1 v1Var = (v1) childAt.getLayoutParams();
-                    int i28 = ((LinearLayout.LayoutParams) v1Var).gravity;
-                    if (i28 < 0) {
-                        i28 = i26;
+                    int i29 = ((LinearLayout.LayoutParams) v1Var).gravity;
+                    if (i29 < 0) {
+                        i29 = i27;
                     }
                     WeakHashMap weakHashMap = r0.i0.a;
-                    int absoluteGravity = Gravity.getAbsoluteGravity(i28, getLayoutDirection()) & 7;
-                    int y11 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (hg.c.y(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
-                    if (h(i27)) {
+                    int absoluteGravity = Gravity.getAbsoluteGravity(i29, getLayoutDirection()) & 7;
+                    int z13 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (hg.c.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
+                    if (h(i28)) {
                         paddingTop += this.x;
                     }
-                    int i29 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;
-                    childAt.layout(y11, i29, measuredWidth + y11, i29 + measuredHeight);
-                    paddingTop = measuredHeight + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i29;
+                    int i30 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;
+                    childAt.layout(z13, i30, measuredWidth + z13, i30 + measuredHeight);
+                    paddingTop = measuredHeight + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i30;
                 }
-                i27++;
-                i22 = 8;
+                i28++;
+                i23 = 8;
             }
             return;
         }
-        boolean a2 = s3.a(this);
+        boolean a2 = t3.a(this);
         int paddingTop2 = getPaddingTop();
-        int i30 = i13 - i11;
-        int paddingBottom = i30 - getPaddingBottom();
-        int paddingBottom2 = (i30 - paddingTop2) - getPaddingBottom();
+        int i31 = i13 - i11;
+        int paddingBottom = i31 - getPaddingBottom();
+        int paddingBottom2 = (i31 - paddingTop2) - getPaddingBottom();
         int virtualChildCount2 = getVirtualChildCount();
-        int i31 = this.e;
-        int i32 = 8388615 & i31;
-        int i33 = i31 & 112;
-        boolean z11 = this.a;
+        int i32 = this.e;
+        int i33 = 8388615 & i32;
+        int i34 = i32 & 112;
+        boolean z14 = this.a;
         int[] iArr = this.r;
         int[] iArr2 = this.s;
         WeakHashMap weakHashMap2 = r0.i0.a;
-        int absoluteGravity2 = Gravity.getAbsoluteGravity(i32, getLayoutDirection());
+        int absoluteGravity2 = Gravity.getAbsoluteGravity(i33, getLayoutDirection());
         if (absoluteGravity2 != 1) {
-            y3 = absoluteGravity2 != 5 ? getPaddingLeft() : ((getPaddingLeft() + i12) - i10) - this.f;
-            c10 = 1;
+            z11 = absoluteGravity2 != 5 ? getPaddingLeft() : ((getPaddingLeft() + i12) - i10) - this.f;
+            i14 = 1;
         } else {
-            c10 = 1;
-            y3 = hg.c.y(i12 - i10, this.f, 2, getPaddingLeft());
+            i14 = 1;
+            z11 = hg.c.z(i12 - i10, this.f, 2, getPaddingLeft());
         }
         if (a2) {
-            i14 = virtualChildCount2 - 1;
+            i16 = virtualChildCount2 - 1;
             i15 = -1;
         } else {
-            i14 = 0;
-            i15 = 1;
+            i15 = i14;
+            i16 = 0;
         }
-        int i34 = 0;
-        while (i34 < virtualChildCount2) {
-            int i35 = (i15 * i34) + i14;
-            View childAt2 = getChildAt(i35);
+        int i35 = 0;
+        while (i35 < virtualChildCount2) {
+            int i36 = (i15 * i35) + i16;
+            View childAt2 = getChildAt(i36);
             if (childAt2 == null) {
-                i16 = i14;
+                i17 = i16;
             } else {
-                i16 = i14;
+                i17 = i16;
                 if (childAt2.getVisibility() != 8) {
                     int measuredWidth2 = childAt2.getMeasuredWidth();
                     int measuredHeight2 = childAt2.getMeasuredHeight();
-                    int i36 = y3;
+                    int i37 = z11;
                     v1 v1Var2 = (v1) childAt2.getLayoutParams();
-                    if (z11) {
-                        i17 = i15;
+                    if (z14) {
+                        i18 = i15;
                         if (((LinearLayout.LayoutParams) v1Var2).height != -1) {
-                            i18 = childAt2.getBaseline();
-                            i19 = ((LinearLayout.LayoutParams) v1Var2).gravity;
-                            if (i19 < 0) {
-                                i19 = i33;
+                            i19 = childAt2.getBaseline();
+                            i20 = ((LinearLayout.LayoutParams) v1Var2).gravity;
+                            if (i20 < 0) {
+                                i20 = i34;
                             }
-                            i20 = i19 & 112;
-                            i21 = i34;
-                            if (i20 != 16) {
-                                y10 = (hg.c.y(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
-                            } else if (i20 == 48) {
-                                y10 = ((LinearLayout.LayoutParams) v1Var2).topMargin + paddingTop2;
-                                if (i18 != -1) {
-                                    y10 = (iArr[c10] - i18) + y10;
+                            i21 = i20 & 112;
+                            i22 = i35;
+                            if (i21 != 16) {
+                                z12 = (hg.c.z(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
+                            } else if (i21 == 48) {
+                                z12 = ((LinearLayout.LayoutParams) v1Var2).topMargin + paddingTop2;
+                                if (i19 != -1) {
+                                    z12 = (iArr[i14] - i19) + z12;
                                 }
-                            } else if (i20 != 80) {
-                                y10 = paddingTop2;
+                            } else if (i21 != 80) {
+                                z12 = paddingTop2;
                             } else {
-                                y10 = (paddingBottom - measuredHeight2) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
-                                if (i18 != -1) {
-                                    y10 -= iArr2[2] - (childAt2.getMeasuredHeight() - i18);
+                                z12 = (paddingBottom - measuredHeight2) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
+                                if (i19 != -1) {
+                                    z12 -= iArr2[2] - (childAt2.getMeasuredHeight() - i19);
                                 }
                             }
-                            int i37 = (!h(i35) ? i36 + this.w : i36) + ((LinearLayout.LayoutParams) v1Var2).leftMargin;
-                            childAt2.layout(i37, y10, i37 + measuredWidth2, measuredHeight2 + y10);
-                            y3 = measuredWidth2 + ((LinearLayout.LayoutParams) v1Var2).rightMargin + i37;
-                            i34 = i21 + 1;
-                            i15 = i17;
-                            i14 = i16;
+                            int i38 = (!h(i36) ? i37 + this.w : i37) + ((LinearLayout.LayoutParams) v1Var2).leftMargin;
+                            childAt2.layout(i38, z12, i38 + measuredWidth2, measuredHeight2 + z12);
+                            z11 = measuredWidth2 + ((LinearLayout.LayoutParams) v1Var2).rightMargin + i38;
+                            i35 = i22 + 1;
+                            i15 = i18;
+                            i16 = i17;
                         }
                     } else {
-                        i17 = i15;
+                        i18 = i15;
                     }
-                    i18 = -1;
-                    i19 = ((LinearLayout.LayoutParams) v1Var2).gravity;
-                    if (i19 < 0) {
+                    i19 = -1;
+                    i20 = ((LinearLayout.LayoutParams) v1Var2).gravity;
+                    if (i20 < 0) {
                     }
-                    i20 = i19 & 112;
-                    i21 = i34;
-                    if (i20 != 16) {
+                    i21 = i20 & 112;
+                    i22 = i35;
+                    if (i21 != 16) {
                     }
-                    int i372 = (!h(i35) ? i36 + this.w : i36) + ((LinearLayout.LayoutParams) v1Var2).leftMargin;
-                    childAt2.layout(i372, y10, i372 + measuredWidth2, measuredHeight2 + y10);
-                    y3 = measuredWidth2 + ((LinearLayout.LayoutParams) v1Var2).rightMargin + i372;
-                    i34 = i21 + 1;
-                    i15 = i17;
-                    i14 = i16;
+                    int i382 = (!h(i36) ? i37 + this.w : i37) + ((LinearLayout.LayoutParams) v1Var2).leftMargin;
+                    childAt2.layout(i382, z12, i382 + measuredWidth2, measuredHeight2 + z12);
+                    z11 = measuredWidth2 + ((LinearLayout.LayoutParams) v1Var2).rightMargin + i382;
+                    i35 = i22 + 1;
+                    i15 = i18;
+                    i16 = i17;
                 }
             }
-            i17 = i15;
-            i21 = i34;
-            i34 = i21 + 1;
-            i15 = i17;
-            i14 = i16;
+            i18 = i15;
+            i22 = i35;
+            i35 = i22 + 1;
+            i15 = i18;
+            i16 = i17;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:222:0x04f4  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0538  */
-    /* JADX WARN: Removed duplicated region for block: B:240:0x0542  */
-    /* JADX WARN: Removed duplicated region for block: B:244:0x0522  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x013c  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x04f8  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x053d  */
+    /* JADX WARN: Removed duplicated region for block: B:240:0x0547  */
+    /* JADX WARN: Removed duplicated region for block: B:244:0x0526  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0148  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -430,25 +430,25 @@ public abstract class w1 extends ViewGroup {
         int i14;
         int i15;
         int i16;
+        int i17;
         boolean z10;
         int baseline;
-        int i17;
         int i18;
-        int[] iArr;
         int i19;
+        int[] iArr;
         int i20;
+        int i21;
         boolean z11;
         boolean z12;
         v1 v1Var;
-        int i21;
-        int[] iArr2;
         int i22;
-        View view;
+        int[] iArr2;
         int i23;
+        View view;
+        int i24;
         boolean z13;
         boolean z14;
         int max;
-        int i24;
         int i25;
         int i26;
         int i27;
@@ -456,103 +456,104 @@ public abstract class w1 extends ViewGroup {
         int i29;
         int i30;
         int i31;
-        boolean z15;
         int i32;
+        boolean z15;
         int i33;
         int i34;
+        int i35;
         View view2;
         boolean z16;
         boolean z17;
         w1 w1Var = this;
-        int i35 = w1Var.d;
-        int i36 = -2;
-        int i37 = 0;
-        int i38 = TLObject.FLAG_30;
-        int i39 = 8;
-        if (i35 == 1) {
+        int i36 = w1Var.d;
+        int i37 = -2;
+        int i38 = 0;
+        int i39 = TLObject.FLAG_30;
+        int i40 = 8;
+        if (i36 == 1) {
             w1Var.f = 0;
             int virtualChildCount = w1Var.getVirtualChildCount();
             int mode = View.MeasureSpec.getMode(i10);
             int mode2 = View.MeasureSpec.getMode(i11);
-            int i40 = w1Var.b;
+            int i41 = w1Var.b;
             boolean z18 = w1Var.n;
-            int i41 = 0;
             int i42 = 0;
             int i43 = 0;
             int i44 = 0;
-            float f7 = 0.0f;
             boolean z19 = false;
             int i45 = 0;
             boolean z20 = false;
             boolean z21 = true;
-            while (i41 < virtualChildCount) {
-                int i46 = mode;
-                View childAt = w1Var.getChildAt(i41);
+            float f7 = 0.0f;
+            int i46 = 0;
+            while (i42 < virtualChildCount) {
+                int i47 = mode;
+                View childAt = w1Var.getChildAt(i42);
                 if (childAt == null) {
                     w1Var.f = w1Var.f;
-                } else if (childAt.getVisibility() != i39) {
-                    if (w1Var.h(i41)) {
+                } else if (childAt.getVisibility() != i40) {
+                    if (w1Var.h(i42)) {
                         w1Var.f += w1Var.x;
                     }
                     v1 v1Var2 = (v1) childAt.getLayoutParams();
                     float f10 = ((LinearLayout.LayoutParams) v1Var2).weight;
                     f7 += f10;
-                    if (mode2 == i38 && ((LinearLayout.LayoutParams) v1Var2).height == 0 && f10 > 0.0f) {
-                        int i47 = w1Var.f;
-                        w1Var.f = Math.max(i47, ((LinearLayout.LayoutParams) v1Var2).topMargin + i47 + ((LinearLayout.LayoutParams) v1Var2).bottomMargin);
+                    if (mode2 == i39 && ((LinearLayout.LayoutParams) v1Var2).height == 0 && f10 > 0.0f) {
+                        int i48 = w1Var.f;
+                        w1Var.f = Math.max(i48, ((LinearLayout.LayoutParams) v1Var2).topMargin + i48 + ((LinearLayout.LayoutParams) v1Var2).bottomMargin);
                         view2 = childAt;
-                        i31 = mode2;
-                        i32 = i40;
-                        z15 = z18;
+                        i32 = mode2;
                         i33 = i41;
-                        i34 = i46;
+                        z15 = z18;
+                        i34 = i42;
                         z19 = true;
+                        i35 = i47;
                     } else {
                         if (((LinearLayout.LayoutParams) v1Var2).height != 0 || f10 <= 0.0f) {
-                            i28 = TLObject.FLAG_31;
+                            i29 = TLObject.FLAG_31;
                         } else {
-                            ((LinearLayout.LayoutParams) v1Var2).height = i36;
-                            i28 = 0;
+                            ((LinearLayout.LayoutParams) v1Var2).height = i37;
+                            i29 = 0;
                         }
                         if (f7 == 0.0f) {
-                            i29 = i41;
-                            i30 = w1Var.f;
+                            i30 = i42;
+                            i31 = w1Var.f;
                         } else {
-                            i29 = i41;
-                            i30 = 0;
+                            i30 = i42;
+                            i31 = 0;
                         }
-                        i31 = mode2;
+                        i32 = mode2;
                         z15 = z18;
-                        i32 = i40;
-                        i33 = i29;
-                        i34 = i46;
-                        w1Var.measureChildWithMargins(childAt, i10, 0, i11, i30);
-                        if (i28 != Integer.MIN_VALUE) {
-                            ((LinearLayout.LayoutParams) v1Var2).height = i28;
+                        i33 = i41;
+                        i34 = i30;
+                        i35 = i47;
+                        w1Var.measureChildWithMargins(childAt, i10, 0, i11, i31);
+                        if (i29 != Integer.MIN_VALUE) {
+                            ((LinearLayout.LayoutParams) v1Var2).height = i29;
                         }
                         int measuredHeight = childAt.getMeasuredHeight();
-                        int i48 = w1Var.f;
+                        int i49 = w1Var.f;
                         view2 = childAt;
-                        w1Var.f = Math.max(i48, i48 + measuredHeight + ((LinearLayout.LayoutParams) v1Var2).topMargin + ((LinearLayout.LayoutParams) v1Var2).bottomMargin);
+                        w1Var.f = Math.max(i49, i49 + measuredHeight + ((LinearLayout.LayoutParams) v1Var2).topMargin + ((LinearLayout.LayoutParams) v1Var2).bottomMargin);
                         if (z15) {
-                            i44 = Math.max(measuredHeight, i44);
+                            i46 = Math.max(measuredHeight, i46);
                         }
                     }
-                    if (i32 >= 0 && i32 == i33 + 1) {
+                    if (i33 >= 0 && i33 == i34 + 1) {
                         w1Var.c = w1Var.f;
                     }
-                    if (i33 < i32 && ((LinearLayout.LayoutParams) v1Var2).weight > 0.0f) {
+                    if (i34 < i33 && ((LinearLayout.LayoutParams) v1Var2).weight > 0.0f) {
                         throw new RuntimeException("A child of LinearLayout with index less than mBaselineAlignedChildIndex has weight > 0, which won't work.  Either remove the weight, or don't set mBaselineAlignedChildIndex.");
                     }
-                    if (i34 == 1073741824 || ((LinearLayout.LayoutParams) v1Var2).width != -1) {
+                    if (i35 == 1073741824 || ((LinearLayout.LayoutParams) v1Var2).width != -1) {
                         z16 = false;
                     } else {
                         z16 = true;
                         z20 = true;
                     }
-                    int i49 = ((LinearLayout.LayoutParams) v1Var2).leftMargin + ((LinearLayout.LayoutParams) v1Var2).rightMargin;
-                    int measuredWidth = view2.getMeasuredWidth() + i49;
-                    i37 = Math.max(i37, measuredWidth);
+                    int i50 = ((LinearLayout.LayoutParams) v1Var2).leftMargin + ((LinearLayout.LayoutParams) v1Var2).rightMargin;
+                    int measuredWidth = view2.getMeasuredWidth() + i50;
+                    i38 = Math.max(i38, measuredWidth);
                     int measuredState = view2.getMeasuredState();
                     boolean z22 = z16;
                     int combineMeasuredStates = View.combineMeasuredStates(i45, measuredState);
@@ -562,24 +563,24 @@ public abstract class w1 extends ViewGroup {
                             z17 = true;
                             if (((LinearLayout.LayoutParams) v1Var2).weight <= 0.0f) {
                                 if (!z22) {
-                                    i49 = measuredWidth;
+                                    i50 = measuredWidth;
                                 }
-                                i43 = Math.max(i43, i49);
+                                i44 = Math.max(i44, i50);
                             } else {
                                 if (!z22) {
-                                    i49 = measuredWidth;
+                                    i50 = measuredWidth;
                                 }
-                                i42 = Math.max(i42, i49);
+                                i43 = Math.max(i43, i50);
                             }
                             z21 = z17;
-                            i41 = i33 + 1;
-                            i40 = i32;
-                            mode = i34;
+                            i42 = i34 + 1;
+                            i41 = i33;
+                            mode = i35;
                             z18 = z15;
-                            mode2 = i31;
-                            i36 = -2;
-                            i38 = TLObject.FLAG_30;
-                            i39 = 8;
+                            mode2 = i32;
+                            i37 = -2;
+                            i39 = TLObject.FLAG_30;
+                            i40 = 8;
                         }
                     } else {
                         i45 = combineMeasuredStates;
@@ -588,157 +589,157 @@ public abstract class w1 extends ViewGroup {
                     if (((LinearLayout.LayoutParams) v1Var2).weight <= 0.0f) {
                     }
                     z21 = z17;
-                    i41 = i33 + 1;
-                    i40 = i32;
-                    mode = i34;
+                    i42 = i34 + 1;
+                    i41 = i33;
+                    mode = i35;
                     z18 = z15;
-                    mode2 = i31;
-                    i36 = -2;
-                    i38 = TLObject.FLAG_30;
-                    i39 = 8;
+                    mode2 = i32;
+                    i37 = -2;
+                    i39 = TLObject.FLAG_30;
+                    i40 = 8;
                 }
-                i31 = mode2;
-                i32 = i40;
-                z15 = z18;
+                i32 = mode2;
                 i33 = i41;
-                i34 = i46;
-                i41 = i33 + 1;
-                i40 = i32;
-                mode = i34;
+                z15 = z18;
+                i34 = i42;
+                i35 = i47;
+                i42 = i34 + 1;
+                i41 = i33;
+                mode = i35;
                 z18 = z15;
-                mode2 = i31;
-                i36 = -2;
-                i38 = TLObject.FLAG_30;
-                i39 = 8;
+                mode2 = i32;
+                i37 = -2;
+                i39 = TLObject.FLAG_30;
+                i40 = 8;
             }
-            int i50 = mode;
-            int i51 = mode2;
+            int i51 = mode;
+            int i52 = mode2;
             boolean z23 = z18;
-            int i52 = i45;
-            int i53 = i11;
+            int i53 = i45;
+            int i54 = i11;
             if (w1Var.f > 0 && w1Var.h(virtualChildCount)) {
                 w1Var.f += w1Var.x;
             }
-            if (z23 && (i51 == Integer.MIN_VALUE || i51 == 0)) {
+            if (z23 && (i52 == Integer.MIN_VALUE || i52 == 0)) {
                 w1Var.f = 0;
-                for (int i54 = 0; i54 < virtualChildCount; i54++) {
-                    View childAt2 = w1Var.getChildAt(i54);
+                for (int i55 = 0; i55 < virtualChildCount; i55++) {
+                    View childAt2 = w1Var.getChildAt(i55);
                     if (childAt2 == null) {
                         w1Var.f = w1Var.f;
                     } else if (childAt2.getVisibility() != 8) {
                         v1 v1Var3 = (v1) childAt2.getLayoutParams();
-                        int i55 = w1Var.f;
-                        w1Var.f = Math.max(i55, i55 + i44 + ((LinearLayout.LayoutParams) v1Var3).topMargin + ((LinearLayout.LayoutParams) v1Var3).bottomMargin);
+                        int i56 = w1Var.f;
+                        w1Var.f = Math.max(i56, i56 + i46 + ((LinearLayout.LayoutParams) v1Var3).topMargin + ((LinearLayout.LayoutParams) v1Var3).bottomMargin);
                     }
                 }
             }
             int paddingBottom = w1Var.getPaddingBottom() + w1Var.getPaddingTop() + w1Var.f;
             w1Var.f = paddingBottom;
-            int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingBottom, w1Var.getSuggestedMinimumHeight()), i53, 0);
-            int i56 = (resolveSizeAndState & 16777215) - w1Var.f;
-            if (z19 || (i56 != 0 && f7 > 0.0f)) {
+            int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingBottom, w1Var.getSuggestedMinimumHeight()), i54, 0);
+            int i57 = (resolveSizeAndState & 16777215) - w1Var.f;
+            if (z19 || (i57 != 0 && f7 > 0.0f)) {
                 float f11 = w1Var.h;
                 if (f11 > 0.0f) {
                     f7 = f11;
                 }
                 w1Var.f = 0;
-                int i57 = i52;
-                int i58 = 0;
-                while (i58 < virtualChildCount) {
-                    View childAt3 = w1Var.getChildAt(i58);
+                int i58 = i53;
+                int i59 = 0;
+                while (i59 < virtualChildCount) {
+                    View childAt3 = w1Var.getChildAt(i59);
                     if (childAt3.getVisibility() == 8) {
-                        i25 = i58;
+                        i26 = i59;
                     } else {
                         v1 v1Var4 = (v1) childAt3.getLayoutParams();
                         float f12 = ((LinearLayout.LayoutParams) v1Var4).weight;
                         if (f12 > 0.0f) {
-                            int i59 = (int) ((i56 * f12) / f7);
+                            int i60 = (int) ((i57 * f12) / f7);
                             f7 -= f12;
-                            i56 -= i59;
-                            i25 = i58;
+                            i57 -= i60;
+                            i26 = i59;
                             int childMeasureSpec = ViewGroup.getChildMeasureSpec(i10, w1Var.getPaddingRight() + w1Var.getPaddingLeft() + ((LinearLayout.LayoutParams) v1Var4).leftMargin + ((LinearLayout.LayoutParams) v1Var4).rightMargin, ((LinearLayout.LayoutParams) v1Var4).width);
                             if (((LinearLayout.LayoutParams) v1Var4).height == 0) {
-                                i27 = TLObject.FLAG_30;
-                                if (i51 == 1073741824) {
-                                    if (i59 <= 0) {
-                                        i59 = 0;
+                                i28 = TLObject.FLAG_30;
+                                if (i52 == 1073741824) {
+                                    if (i60 <= 0) {
+                                        i60 = 0;
                                     }
-                                    childAt3.measure(childMeasureSpec, View.MeasureSpec.makeMeasureSpec(i59, TLObject.FLAG_30));
-                                    i57 = View.combineMeasuredStates(i57, childAt3.getMeasuredState() & (-256));
+                                    childAt3.measure(childMeasureSpec, View.MeasureSpec.makeMeasureSpec(i60, TLObject.FLAG_30));
+                                    i58 = View.combineMeasuredStates(i58, childAt3.getMeasuredState() & (-256));
                                 }
                             } else {
-                                i27 = TLObject.FLAG_30;
+                                i28 = TLObject.FLAG_30;
                             }
-                            int measuredHeight2 = childAt3.getMeasuredHeight() + i59;
+                            int measuredHeight2 = childAt3.getMeasuredHeight() + i60;
                             if (measuredHeight2 < 0) {
                                 measuredHeight2 = 0;
                             }
-                            childAt3.measure(childMeasureSpec, View.MeasureSpec.makeMeasureSpec(measuredHeight2, i27));
-                            i57 = View.combineMeasuredStates(i57, childAt3.getMeasuredState() & (-256));
+                            childAt3.measure(childMeasureSpec, View.MeasureSpec.makeMeasureSpec(measuredHeight2, i28));
+                            i58 = View.combineMeasuredStates(i58, childAt3.getMeasuredState() & (-256));
                         } else {
-                            i25 = i58;
+                            i26 = i59;
                         }
-                        int i60 = ((LinearLayout.LayoutParams) v1Var4).leftMargin + ((LinearLayout.LayoutParams) v1Var4).rightMargin;
-                        int measuredWidth2 = childAt3.getMeasuredWidth() + i60;
-                        i37 = Math.max(i37, measuredWidth2);
-                        if (i50 != 1073741824) {
-                            i26 = -1;
+                        int i61 = ((LinearLayout.LayoutParams) v1Var4).leftMargin + ((LinearLayout.LayoutParams) v1Var4).rightMargin;
+                        int measuredWidth2 = childAt3.getMeasuredWidth() + i61;
+                        i38 = Math.max(i38, measuredWidth2);
+                        if (i51 != 1073741824) {
+                            i27 = -1;
                             if (((LinearLayout.LayoutParams) v1Var4).width == -1) {
-                                measuredWidth2 = i60;
+                                measuredWidth2 = i61;
                             }
                         } else {
-                            i26 = -1;
+                            i27 = -1;
                         }
-                        i42 = Math.max(i42, measuredWidth2);
-                        boolean z24 = z21 && ((LinearLayout.LayoutParams) v1Var4).width == i26;
-                        int i61 = w1Var.f;
-                        w1Var.f = Math.max(i61, childAt3.getMeasuredHeight() + i61 + ((LinearLayout.LayoutParams) v1Var4).topMargin + ((LinearLayout.LayoutParams) v1Var4).bottomMargin);
+                        i43 = Math.max(i43, measuredWidth2);
+                        boolean z24 = z21 && ((LinearLayout.LayoutParams) v1Var4).width == i27;
+                        int i62 = w1Var.f;
+                        w1Var.f = Math.max(i62, childAt3.getMeasuredHeight() + i62 + ((LinearLayout.LayoutParams) v1Var4).topMargin + ((LinearLayout.LayoutParams) v1Var4).bottomMargin);
                         z21 = z24;
                     }
-                    i58 = i25 + 1;
+                    i59 = i26 + 1;
                 }
                 w1Var.f = w1Var.getPaddingBottom() + w1Var.getPaddingTop() + w1Var.f;
-                i52 = i57;
+                i53 = i58;
             } else {
-                i42 = Math.max(i42, i43);
-                if (z23 && i51 != 1073741824) {
-                    for (int i62 = 0; i62 < virtualChildCount; i62++) {
-                        View childAt4 = w1Var.getChildAt(i62);
+                i43 = Math.max(i43, i44);
+                if (z23 && i52 != 1073741824) {
+                    for (int i63 = 0; i63 < virtualChildCount; i63++) {
+                        View childAt4 = w1Var.getChildAt(i63);
                         if (childAt4 != null && childAt4.getVisibility() != 8 && ((LinearLayout.LayoutParams) ((v1) childAt4.getLayoutParams())).weight > 0.0f) {
-                            childAt4.measure(View.MeasureSpec.makeMeasureSpec(childAt4.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i44, TLObject.FLAG_30));
+                            childAt4.measure(View.MeasureSpec.makeMeasureSpec(childAt4.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i46, TLObject.FLAG_30));
                         }
                     }
                 }
             }
-            if (z21 || i50 == 1073741824) {
-                i42 = i37;
+            if (z21 || i51 == 1073741824) {
+                i43 = i38;
             }
-            w1Var.setMeasuredDimension(View.resolveSizeAndState(Math.max(w1Var.getPaddingRight() + w1Var.getPaddingLeft() + i42, w1Var.getSuggestedMinimumWidth()), i10, i52), resolveSizeAndState);
+            w1Var.setMeasuredDimension(View.resolveSizeAndState(Math.max(w1Var.getPaddingRight() + w1Var.getPaddingLeft() + i43, w1Var.getSuggestedMinimumWidth()), i10, i53), resolveSizeAndState);
             if (z20) {
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(w1Var.getMeasuredWidth(), TLObject.FLAG_30);
-                int i63 = 0;
-                while (i63 < virtualChildCount) {
-                    View childAt5 = w1Var.getChildAt(i63);
+                int i64 = 0;
+                while (i64 < virtualChildCount) {
+                    View childAt5 = w1Var.getChildAt(i64);
                     if (childAt5.getVisibility() != 8) {
                         v1 v1Var5 = (v1) childAt5.getLayoutParams();
                         if (((LinearLayout.LayoutParams) v1Var5).width == -1) {
-                            int i64 = ((LinearLayout.LayoutParams) v1Var5).height;
+                            int i65 = ((LinearLayout.LayoutParams) v1Var5).height;
                             ((LinearLayout.LayoutParams) v1Var5).height = childAt5.getMeasuredHeight();
-                            w1Var.measureChildWithMargins(childAt5, makeMeasureSpec, 0, i53, 0);
-                            ((LinearLayout.LayoutParams) v1Var5).height = i64;
+                            w1Var.measureChildWithMargins(childAt5, makeMeasureSpec, 0, i54, 0);
+                            ((LinearLayout.LayoutParams) v1Var5).height = i65;
                         }
                     }
-                    i63++;
-                    i53 = i11;
+                    i64++;
+                    i54 = i11;
                 }
                 return;
             }
             return;
         }
-        int i65 = i10;
+        int i66 = i10;
         w1Var.f = 0;
         int virtualChildCount2 = w1Var.getVirtualChildCount();
-        int mode3 = View.MeasureSpec.getMode(i65);
+        int mode3 = View.MeasureSpec.getMode(i66);
         int mode4 = View.MeasureSpec.getMode(i11);
         if (w1Var.r == null || w1Var.s == null) {
             w1Var.r = new int[4];
@@ -747,6 +748,7 @@ public abstract class w1 extends ViewGroup {
         int[] iArr3 = w1Var.r;
         int[] iArr4 = w1Var.s;
         iArr3[3] = -1;
+        char c10 = 2;
         iArr3[2] = -1;
         iArr3[1] = -1;
         iArr3[0] = -1;
@@ -757,51 +759,52 @@ public abstract class w1 extends ViewGroup {
         boolean z25 = w1Var.a;
         boolean z26 = w1Var.n;
         boolean z27 = mode3 == 1073741824;
-        int i66 = 0;
+        float f13 = 0.0f;
+        boolean z28 = true;
         int i67 = 0;
         int i68 = 0;
         int i69 = 0;
         int i70 = 0;
         int i71 = 0;
-        boolean z28 = false;
+        int i72 = 0;
         boolean z29 = false;
-        float f13 = 0.0f;
-        boolean z30 = true;
-        while (i66 < virtualChildCount2) {
-            View childAt6 = w1Var.getChildAt(i66);
+        boolean z30 = false;
+        while (i67 < virtualChildCount2) {
+            char c11 = c10;
+            View childAt6 = w1Var.getChildAt(i67);
             if (childAt6 == null) {
                 w1Var.f = w1Var.f;
-                i20 = i66;
-                i24 = i68;
+                i21 = i67;
+                i25 = i69;
                 iArr2 = iArr3;
                 iArr = iArr4;
                 z11 = z25;
                 z12 = z26;
             } else {
-                int i72 = i67;
+                int i73 = i68;
                 if (childAt6.getVisibility() == 8) {
-                    i65 = i10;
-                    i20 = i66;
-                    i24 = i68;
+                    i66 = i10;
+                    i21 = i67;
+                    i25 = i69;
                     iArr = iArr4;
                     z11 = z25;
                     z12 = z26;
-                    i67 = i72;
+                    i68 = i73;
                     iArr2 = iArr3;
                 } else {
-                    if (w1Var.h(i66)) {
+                    if (w1Var.h(i67)) {
                         w1Var.f += w1Var.w;
                     }
                     v1 v1Var6 = (v1) childAt6.getLayoutParams();
                     float f14 = ((LinearLayout.LayoutParams) v1Var6).weight;
                     f13 += f14;
-                    int i73 = i66;
+                    int i74 = i67;
                     if (mode3 == 1073741824 && ((LinearLayout.LayoutParams) v1Var6).width == 0 && f14 > 0.0f) {
                         if (z27) {
                             w1Var.f = ((LinearLayout.LayoutParams) v1Var6).leftMargin + ((LinearLayout.LayoutParams) v1Var6).rightMargin + w1Var.f;
                         } else {
-                            int i74 = w1Var.f;
-                            w1Var.f = Math.max(i74, ((LinearLayout.LayoutParams) v1Var6).leftMargin + i74 + ((LinearLayout.LayoutParams) v1Var6).rightMargin);
+                            int i75 = w1Var.f;
+                            w1Var.f = Math.max(i75, ((LinearLayout.LayoutParams) v1Var6).leftMargin + i75 + ((LinearLayout.LayoutParams) v1Var6).rightMargin);
                         }
                         if (z25) {
                             int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
@@ -809,93 +812,93 @@ public abstract class w1 extends ViewGroup {
                             view = childAt6;
                             z11 = z25;
                             z12 = z26;
-                            i21 = i72;
-                            i20 = i73;
+                            i22 = i73;
+                            i21 = i74;
                             v1Var = v1Var6;
                             iArr2 = iArr3;
                             iArr = iArr4;
-                            i65 = i10;
-                            i22 = i68;
-                            i19 = i69;
+                            i66 = i10;
+                            i23 = i69;
+                            i20 = i70;
                         } else {
                             view = childAt6;
                             z11 = z25;
                             z12 = z26;
-                            i21 = i72;
-                            i20 = i73;
-                            i23 = TLObject.FLAG_30;
-                            z29 = true;
+                            z30 = true;
+                            i22 = i73;
+                            i21 = i74;
+                            i24 = TLObject.FLAG_30;
                             v1Var = v1Var6;
                             iArr2 = iArr3;
                             iArr = iArr4;
-                            i65 = i10;
-                            i22 = i68;
-                            i19 = i69;
-                            if (mode4 == i23 && ((LinearLayout.LayoutParams) v1Var).height == -1) {
+                            i66 = i10;
+                            i23 = i69;
+                            i20 = i70;
+                            if (mode4 == i24 && ((LinearLayout.LayoutParams) v1Var).height == -1) {
                                 z13 = true;
-                                z28 = true;
+                                z29 = true;
                             } else {
                                 z13 = false;
                             }
-                            int i75 = ((LinearLayout.LayoutParams) v1Var).topMargin + ((LinearLayout.LayoutParams) v1Var).bottomMargin;
-                            int measuredHeight3 = view.getMeasuredHeight() + i75;
-                            i71 = View.combineMeasuredStates(i71, view.getMeasuredState());
+                            int i76 = ((LinearLayout.LayoutParams) v1Var).topMargin + ((LinearLayout.LayoutParams) v1Var).bottomMargin;
+                            int measuredHeight3 = view.getMeasuredHeight() + i76;
+                            i72 = View.combineMeasuredStates(i72, view.getMeasuredState());
                             if (z11) {
                                 z14 = z13;
                             } else {
                                 int baseline2 = view.getBaseline();
                                 z14 = z13;
                                 if (baseline2 != -1) {
-                                    int i76 = ((LinearLayout.LayoutParams) v1Var).gravity;
-                                    if (i76 < 0) {
-                                        i76 = w1Var.e;
+                                    int i77 = ((LinearLayout.LayoutParams) v1Var).gravity;
+                                    if (i77 < 0) {
+                                        i77 = w1Var.e;
                                     }
-                                    int i77 = (((i76 & 112) >> 4) & (-2)) >> 1;
-                                    iArr2[i77] = Math.max(iArr2[i77], baseline2);
-                                    iArr[i77] = Math.max(iArr[i77], measuredHeight3 - baseline2);
+                                    int i78 = (((i77 & 112) >> 4) & (-2)) >> 1;
+                                    iArr2[i78] = Math.max(iArr2[i78], baseline2);
+                                    iArr[i78] = Math.max(iArr[i78], measuredHeight3 - baseline2);
                                 }
                             }
-                            int max2 = Math.max(i21, measuredHeight3);
-                            boolean z31 = !z30 && ((LinearLayout.LayoutParams) v1Var).height == -1;
+                            int max2 = Math.max(i22, measuredHeight3);
+                            boolean z31 = !z28 && ((LinearLayout.LayoutParams) v1Var).height == -1;
                             if (((LinearLayout.LayoutParams) v1Var).weight <= 0.0f) {
                                 if (!z14) {
-                                    i75 = measuredHeight3;
+                                    i76 = measuredHeight3;
                                 }
-                                i69 = Math.max(i19, i75);
-                                max = i22;
+                                i70 = Math.max(i20, i76);
+                                max = i23;
                             } else {
                                 if (!z14) {
-                                    i75 = measuredHeight3;
+                                    i76 = measuredHeight3;
                                 }
-                                max = Math.max(i22, i75);
-                                i69 = i19;
+                                max = Math.max(i23, i76);
+                                i70 = i20;
                             }
-                            int i78 = max;
-                            i67 = max2;
-                            i24 = i78;
-                            z30 = z31;
+                            int i79 = max;
+                            i68 = max2;
+                            i25 = i79;
+                            z28 = z31;
                         }
                     } else {
                         if (((LinearLayout.LayoutParams) v1Var6).width != 0 || f14 <= 0.0f) {
-                            i18 = TLObject.FLAG_31;
+                            i19 = TLObject.FLAG_31;
                         } else {
                             ((LinearLayout.LayoutParams) v1Var6).width = -2;
-                            i18 = 0;
+                            i19 = 0;
                         }
                         iArr = iArr4;
-                        i19 = i69;
-                        i20 = i73;
+                        i20 = i70;
+                        i21 = i74;
                         z11 = z25;
                         z12 = z26;
-                        int i79 = i18;
+                        int i80 = i19;
                         v1Var = v1Var6;
-                        i21 = i72;
-                        i65 = i10;
+                        i22 = i73;
+                        i66 = i10;
                         iArr2 = iArr3;
-                        i22 = i68;
-                        w1Var.measureChildWithMargins(childAt6, i65, f13 == 0.0f ? w1Var.f : 0, i11, 0);
-                        if (i79 != Integer.MIN_VALUE) {
-                            ((LinearLayout.LayoutParams) v1Var).width = i79;
+                        i23 = i69;
+                        w1Var.measureChildWithMargins(childAt6, i66, f13 == 0.0f ? w1Var.f : 0, i11, 0);
+                        if (i80 != Integer.MIN_VALUE) {
+                            ((LinearLayout.LayoutParams) v1Var).width = i80;
                         }
                         int measuredWidth3 = childAt6.getMeasuredWidth();
                         if (z27) {
@@ -903,207 +906,213 @@ public abstract class w1 extends ViewGroup {
                             w1Var.f = ((LinearLayout.LayoutParams) v1Var).leftMargin + measuredWidth3 + ((LinearLayout.LayoutParams) v1Var).rightMargin + w1Var.f;
                         } else {
                             view = childAt6;
-                            int i80 = w1Var.f;
-                            w1Var.f = Math.max(i80, i80 + measuredWidth3 + ((LinearLayout.LayoutParams) v1Var).leftMargin + ((LinearLayout.LayoutParams) v1Var).rightMargin);
+                            int i81 = w1Var.f;
+                            w1Var.f = Math.max(i81, i81 + measuredWidth3 + ((LinearLayout.LayoutParams) v1Var).leftMargin + ((LinearLayout.LayoutParams) v1Var).rightMargin);
                         }
                         if (z12) {
-                            i70 = Math.max(measuredWidth3, i70);
+                            i71 = Math.max(measuredWidth3, i71);
                         }
                     }
-                    i23 = TLObject.FLAG_30;
-                    if (mode4 == i23) {
+                    i24 = TLObject.FLAG_30;
+                    if (mode4 == i24) {
                     }
                     z13 = false;
-                    int i752 = ((LinearLayout.LayoutParams) v1Var).topMargin + ((LinearLayout.LayoutParams) v1Var).bottomMargin;
-                    int measuredHeight32 = view.getMeasuredHeight() + i752;
-                    i71 = View.combineMeasuredStates(i71, view.getMeasuredState());
+                    int i762 = ((LinearLayout.LayoutParams) v1Var).topMargin + ((LinearLayout.LayoutParams) v1Var).bottomMargin;
+                    int measuredHeight32 = view.getMeasuredHeight() + i762;
+                    i72 = View.combineMeasuredStates(i72, view.getMeasuredState());
                     if (z11) {
                     }
-                    int max22 = Math.max(i21, measuredHeight32);
-                    if (z30) {
+                    int max22 = Math.max(i22, measuredHeight32);
+                    if (z28) {
                     }
                     if (((LinearLayout.LayoutParams) v1Var).weight <= 0.0f) {
                     }
-                    int i782 = max;
-                    i67 = max22;
-                    i24 = i782;
-                    z30 = z31;
+                    int i792 = max;
+                    i68 = max22;
+                    i25 = i792;
+                    z28 = z31;
                 }
             }
-            i68 = i24;
-            i66 = i20 + 1;
+            i69 = i25;
+            i67 = i21 + 1;
+            c10 = c11;
             iArr3 = iArr2;
             iArr4 = iArr;
             z25 = z11;
             z26 = z12;
         }
-        int i81 = i67;
         int[] iArr5 = iArr3;
         int[] iArr6 = iArr4;
+        char c12 = c10;
         boolean z32 = z25;
         boolean z33 = z26;
         int i82 = i68;
         int i83 = i69;
+        int i84 = i70;
         if (w1Var.f > 0 && w1Var.h(virtualChildCount2)) {
             w1Var.f += w1Var.w;
         }
-        int i84 = iArr5[1];
-        int max3 = (i84 == -1 && iArr5[0] == -1 && iArr5[2] == -1 && iArr5[3] == -1) ? i81 : Math.max(i81, Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))) + Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i84, iArr5[2]))));
+        int i85 = iArr5[1];
+        int max3 = (i85 == -1 && iArr5[0] == -1 && iArr5[c12] == -1 && iArr5[3] == -1) ? i82 : Math.max(i82, Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[c12]))) + Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i85, iArr5[c12]))));
         if (z33 && (mode3 == Integer.MIN_VALUE || mode3 == 0)) {
             w1Var.f = 0;
-            for (int i85 = 0; i85 < virtualChildCount2; i85++) {
-                View childAt7 = w1Var.getChildAt(i85);
+            for (int i86 = 0; i86 < virtualChildCount2; i86++) {
+                View childAt7 = w1Var.getChildAt(i86);
                 if (childAt7 == null) {
                     w1Var.f = w1Var.f;
                 } else if (childAt7.getVisibility() != 8) {
                     v1 v1Var7 = (v1) childAt7.getLayoutParams();
                     if (z27) {
-                        w1Var.f = ((LinearLayout.LayoutParams) v1Var7).leftMargin + i70 + ((LinearLayout.LayoutParams) v1Var7).rightMargin + w1Var.f;
+                        w1Var.f = ((LinearLayout.LayoutParams) v1Var7).leftMargin + i71 + ((LinearLayout.LayoutParams) v1Var7).rightMargin + w1Var.f;
                     } else {
-                        int i86 = w1Var.f;
-                        w1Var.f = Math.max(i86, i86 + i70 + ((LinearLayout.LayoutParams) v1Var7).leftMargin + ((LinearLayout.LayoutParams) v1Var7).rightMargin);
+                        int i87 = w1Var.f;
+                        w1Var.f = Math.max(i87, i87 + i71 + ((LinearLayout.LayoutParams) v1Var7).leftMargin + ((LinearLayout.LayoutParams) v1Var7).rightMargin);
                     }
                 }
             }
         }
         int paddingRight = w1Var.getPaddingRight() + w1Var.getPaddingLeft() + w1Var.f;
         w1Var.f = paddingRight;
-        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingRight, w1Var.getSuggestedMinimumWidth()), i65, 0);
-        int i87 = (resolveSizeAndState2 & 16777215) - w1Var.f;
-        if (z29 || (i87 != 0 && f13 > 0.0f)) {
+        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingRight, w1Var.getSuggestedMinimumWidth()), i66, 0);
+        int i88 = (resolveSizeAndState2 & 16777215) - w1Var.f;
+        if (z30 || (i88 != 0 && f13 > 0.0f)) {
             float f15 = w1Var.h;
             if (f15 > 0.0f) {
                 f13 = f15;
             }
             iArr5[3] = -1;
-            iArr5[2] = -1;
+            iArr5[c12] = -1;
             iArr5[1] = -1;
             iArr5[0] = -1;
             iArr6[3] = -1;
-            iArr6[2] = -1;
+            iArr6[c12] = -1;
             iArr6[1] = -1;
             iArr6[0] = -1;
             w1Var.f = 0;
             max3 = -1;
-            int i88 = 0;
-            while (i88 < virtualChildCount2) {
-                View childAt8 = w1Var.getChildAt(i88);
+            int i89 = 0;
+            while (i89 < virtualChildCount2) {
+                View childAt8 = w1Var.getChildAt(i89);
                 if (childAt8 == null || childAt8.getVisibility() == 8) {
-                    i15 = resolveSizeAndState2;
+                    i16 = resolveSizeAndState2;
                 } else {
                     v1 v1Var8 = (v1) childAt8.getLayoutParams();
                     float f16 = ((LinearLayout.LayoutParams) v1Var8).weight;
                     if (f16 > 0.0f) {
-                        int i89 = (int) ((i87 * f16) / f13);
+                        int i90 = (int) ((i88 * f16) / f13);
                         f13 -= f16;
-                        i87 -= i89;
-                        i15 = resolveSizeAndState2;
+                        i88 -= i90;
+                        i16 = resolveSizeAndState2;
                         int childMeasureSpec2 = ViewGroup.getChildMeasureSpec(i11, w1Var.getPaddingBottom() + w1Var.getPaddingTop() + ((LinearLayout.LayoutParams) v1Var8).topMargin + ((LinearLayout.LayoutParams) v1Var8).bottomMargin, ((LinearLayout.LayoutParams) v1Var8).height);
                         if (((LinearLayout.LayoutParams) v1Var8).width == 0) {
-                            i17 = TLObject.FLAG_30;
+                            i18 = TLObject.FLAG_30;
                             if (mode3 == 1073741824) {
-                                if (i89 <= 0) {
-                                    i89 = 0;
+                                if (i90 <= 0) {
+                                    i90 = 0;
                                 }
-                                childAt8.measure(View.MeasureSpec.makeMeasureSpec(i89, TLObject.FLAG_30), childMeasureSpec2);
-                                i71 = View.combineMeasuredStates(i71, childAt8.getMeasuredState() & (-16777216));
+                                childAt8.measure(View.MeasureSpec.makeMeasureSpec(i90, TLObject.FLAG_30), childMeasureSpec2);
+                                i72 = View.combineMeasuredStates(i72, childAt8.getMeasuredState() & (-16777216));
                             }
                         } else {
-                            i17 = TLObject.FLAG_30;
+                            i18 = TLObject.FLAG_30;
                         }
-                        int measuredWidth4 = childAt8.getMeasuredWidth() + i89;
+                        int measuredWidth4 = childAt8.getMeasuredWidth() + i90;
                         if (measuredWidth4 < 0) {
                             measuredWidth4 = 0;
                         }
-                        childAt8.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth4, i17), childMeasureSpec2);
-                        i71 = View.combineMeasuredStates(i71, childAt8.getMeasuredState() & (-16777216));
+                        childAt8.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth4, i18), childMeasureSpec2);
+                        i72 = View.combineMeasuredStates(i72, childAt8.getMeasuredState() & (-16777216));
                     } else {
-                        i15 = resolveSizeAndState2;
+                        i16 = resolveSizeAndState2;
                     }
                     if (z27) {
                         w1Var.f = childAt8.getMeasuredWidth() + ((LinearLayout.LayoutParams) v1Var8).leftMargin + ((LinearLayout.LayoutParams) v1Var8).rightMargin + w1Var.f;
                     } else {
-                        int i90 = w1Var.f;
-                        w1Var.f = Math.max(i90, childAt8.getMeasuredWidth() + i90 + ((LinearLayout.LayoutParams) v1Var8).leftMargin + ((LinearLayout.LayoutParams) v1Var8).rightMargin);
+                        int i91 = w1Var.f;
+                        w1Var.f = Math.max(i91, childAt8.getMeasuredWidth() + i91 + ((LinearLayout.LayoutParams) v1Var8).leftMargin + ((LinearLayout.LayoutParams) v1Var8).rightMargin);
                     }
                     boolean z34 = mode4 != 1073741824 && ((LinearLayout.LayoutParams) v1Var8).height == -1;
-                    int i91 = ((LinearLayout.LayoutParams) v1Var8).topMargin + ((LinearLayout.LayoutParams) v1Var8).bottomMargin;
-                    int measuredHeight4 = childAt8.getMeasuredHeight() + i91;
+                    int i92 = ((LinearLayout.LayoutParams) v1Var8).topMargin + ((LinearLayout.LayoutParams) v1Var8).bottomMargin;
+                    int measuredHeight4 = childAt8.getMeasuredHeight() + i92;
                     max3 = Math.max(max3, measuredHeight4);
                     if (!z34) {
-                        i91 = measuredHeight4;
+                        i92 = measuredHeight4;
                     }
-                    int max4 = Math.max(i82, i91);
-                    if (z30) {
-                        i16 = -1;
+                    int max4 = Math.max(i83, i92);
+                    if (z28) {
+                        i17 = -1;
                         if (((LinearLayout.LayoutParams) v1Var8).height == -1) {
                             z10 = true;
-                            if (!z32 && (baseline = childAt8.getBaseline()) != i16) {
-                                int i92 = ((LinearLayout.LayoutParams) v1Var8).gravity;
-                                if (i92 < 0) {
-                                    i92 = w1Var.e;
+                            if (!z32 && (baseline = childAt8.getBaseline()) != i17) {
+                                int i93 = ((LinearLayout.LayoutParams) v1Var8).gravity;
+                                if (i93 < 0) {
+                                    i93 = w1Var.e;
                                 }
-                                int i93 = (((i92 & 112) >> 4) & (-2)) >> 1;
-                                iArr5[i93] = Math.max(iArr5[i93], baseline);
-                                iArr6[i93] = Math.max(iArr6[i93], measuredHeight4 - baseline);
+                                int i94 = (((i93 & 112) >> 4) & (-2)) >> 1;
+                                iArr5[i94] = Math.max(iArr5[i94], baseline);
+                                iArr6[i94] = Math.max(iArr6[i94], measuredHeight4 - baseline);
                             }
-                            z30 = z10;
-                            i82 = max4;
+                            z28 = z10;
+                            i83 = max4;
                         }
                     } else {
-                        i16 = -1;
+                        i17 = -1;
                     }
                     z10 = false;
                     if (!z32) {
                     }
-                    z30 = z10;
-                    i82 = max4;
+                    z28 = z10;
+                    i83 = max4;
                 }
-                i88++;
-                resolveSizeAndState2 = i15;
+                i89++;
+                resolveSizeAndState2 = i16;
             }
             i12 = resolveSizeAndState2;
             i13 = -16777216;
             w1Var.f = w1Var.getPaddingRight() + w1Var.getPaddingLeft() + w1Var.f;
-            int i94 = iArr5[1];
-            if (i94 != -1 || iArr5[0] != -1 || iArr5[2] != -1 || iArr5[3] != -1) {
-                max3 = Math.max(max3, Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[2]))) + Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i94, iArr5[2]))));
+            int i95 = iArr5[1];
+            if (i95 == -1 && iArr5[0] == -1 && iArr5[c12] == -1 && iArr5[3] == -1) {
+                i14 = 0;
+            } else {
+                i14 = 0;
+                max3 = Math.max(max3, Math.max(iArr6[3], Math.max(iArr6[0], Math.max(iArr6[1], iArr6[c12]))) + Math.max(iArr5[3], Math.max(iArr5[0], Math.max(i95, iArr5[c12]))));
             }
-            i14 = i82;
+            i15 = i83;
         } else {
-            i14 = Math.max(i82, i83);
+            i15 = Math.max(i83, i84);
             if (z33 && mode3 != 1073741824) {
-                for (int i95 = 0; i95 < virtualChildCount2; i95++) {
-                    View childAt9 = w1Var.getChildAt(i95);
+                for (int i96 = 0; i96 < virtualChildCount2; i96++) {
+                    View childAt9 = w1Var.getChildAt(i96);
                     if (childAt9 != null && childAt9.getVisibility() != 8 && ((LinearLayout.LayoutParams) ((v1) childAt9.getLayoutParams())).weight > 0.0f) {
-                        childAt9.measure(View.MeasureSpec.makeMeasureSpec(i70, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt9.getMeasuredHeight(), TLObject.FLAG_30));
+                        childAt9.measure(View.MeasureSpec.makeMeasureSpec(i71, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt9.getMeasuredHeight(), TLObject.FLAG_30));
                     }
                 }
             }
             i12 = resolveSizeAndState2;
             i13 = -16777216;
+            i14 = 0;
         }
-        if (!z30 && mode4 != 1073741824) {
-            max3 = i14;
+        if (!z28 && mode4 != 1073741824) {
+            max3 = i15;
         }
-        w1Var.setMeasuredDimension(i12 | (i71 & i13), View.resolveSizeAndState(Math.max(w1Var.getPaddingBottom() + w1Var.getPaddingTop() + max3, w1Var.getSuggestedMinimumHeight()), i11, i71 << 16));
-        if (z28) {
+        w1Var.setMeasuredDimension(i12 | (i72 & i13), View.resolveSizeAndState(Math.max(w1Var.getPaddingBottom() + w1Var.getPaddingTop() + max3, w1Var.getSuggestedMinimumHeight()), i11, i72 << 16));
+        if (z29) {
             int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(w1Var.getMeasuredHeight(), TLObject.FLAG_30);
-            int i96 = 0;
-            while (i96 < virtualChildCount2) {
-                View childAt10 = w1Var.getChildAt(i96);
+            int i97 = i14;
+            while (i97 < virtualChildCount2) {
+                View childAt10 = w1Var.getChildAt(i97);
                 if (childAt10.getVisibility() != 8) {
                     v1 v1Var9 = (v1) childAt10.getLayoutParams();
                     if (((LinearLayout.LayoutParams) v1Var9).height == -1) {
-                        int i97 = ((LinearLayout.LayoutParams) v1Var9).width;
+                        int i98 = ((LinearLayout.LayoutParams) v1Var9).width;
                         ((LinearLayout.LayoutParams) v1Var9).width = childAt10.getMeasuredWidth();
-                        w1Var.measureChildWithMargins(childAt10, i65, 0, makeMeasureSpec3, 0);
-                        ((LinearLayout.LayoutParams) v1Var9).width = i97;
+                        w1Var.measureChildWithMargins(childAt10, i66, 0, makeMeasureSpec3, 0);
+                        ((LinearLayout.LayoutParams) v1Var9).width = i98;
                     }
                 }
-                i96++;
+                i97++;
                 w1Var = this;
-                i65 = i10;
+                i66 = i10;
             }
         }
     }

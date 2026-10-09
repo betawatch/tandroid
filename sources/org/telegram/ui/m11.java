@@ -1,87 +1,112 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.tgnet.ConnectionsManager;
+import j$.time.LocalDate;
+import j$.time.Period;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.BirthdayController;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m11 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ p11 b;
+public final class m11 {
+    public final int a;
+    public boolean b;
+    public o11 c;
+    public final boolean[] g;
+    public boolean i;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final ArrayList j = new ArrayList();
 
-    public m11(p11 p11Var, String str) {
-        this.b = p11Var;
-        this.a = str;
+    public m11(int i10, int i11) {
+        boolean[] zArr = new boolean[2];
+        this.g = zArr;
+        this.a = i11;
+        if (i11 <= 0) {
+            zArr[0] = true;
+        } else {
+            ArrayList arrayList = new ArrayList();
+            HashSet hashSet = new HashSet();
+            String h = hg.c.h(i11, "");
+            for (int i12 = 0; i12 < h.length(); i12++) {
+                int charAt = h.charAt(i12) - '0';
+                if (charAt >= 0 && charAt <= 9) {
+                    arrayList.add(Integer.valueOf(charAt));
+                    hashSet.add(Integer.valueOf(charAt));
+                }
+            }
+            TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+            String[] strArr = p11.s;
+            tL_inputStickerSetShortName.short_name = "FestiveFontEmoji";
+            MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName, 0, false, new z(this, hashSet, arrayList, 11));
+        }
+        String str = p11.s[Utilities.random.nextInt(3)];
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
+        tL_inputStickerSetShortName2.short_name = "EmojiAnimations";
+        MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName2, 0, false, new ft(14, this, str));
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        p11 p11Var = this.b;
-        long j3 = p11Var.h;
-        long j10 = p11Var.f;
-        String str = this.a;
-        if (i10 == -1) {
-            if (!p11Var.n && p11Var.r) {
-                i17 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
+    public static m11 c(int i10, TLRPC.UserFull userFull, m11 m11Var) {
+        TL_account.TL_birthday tL_birthday;
+        if (!LiteMode.isEnabled(2) || !BirthdayController.isToday(userFull)) {
+            if (m11Var == null) {
+                return null;
             }
-        } else if (i10 == 1) {
-            i11 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
-            SharedPreferences.Editor edit = notificationsSettings.edit();
-            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
-            i12 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j10);
-            if (p11Var.r) {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
-                if (j3 == 0) {
-                    i16 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-                    MessagesStorage.getInstance(i16).setDialogFlags(j10, 0L);
-                    if (dialog != null) {
-                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-                    }
-                }
+            m11Var.b(false);
+            return null;
+        }
+        int years = (userFull == null || (tL_birthday = userFull.birthday) == null || (tL_birthday.flags & 1) == 0) ? 0 : Period.between(LocalDate.of(tL_birthday.year, tL_birthday.month, tL_birthday.day), LocalDate.now()).getYears();
+        if (m11Var != null) {
+            if (m11Var.a == years) {
+                return m11Var;
+            }
+            m11Var.b(false);
+        }
+        return new m11(i10, years);
+    }
+
+    public final void a() {
+        if (this.b || this.f.size() < this.e.size()) {
+            return;
+        }
+        boolean[] zArr = this.g;
+        int i10 = 0;
+        if (zArr[0] && zArr[1]) {
+            this.b = true;
+            ArrayList arrayList = this.h;
+            int size = arrayList.size();
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ((Runnable) obj).run();
+            }
+            arrayList.clear();
+        }
+    }
+
+    public final void b(boolean z10) {
+        if (!z10 && !this.j.isEmpty()) {
+            this.i = true;
+            return;
+        }
+        this.h.clear();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i10 >= arrayList.size()) {
+                arrayList.clear();
+                return;
             } else {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
-                if (j3 == 0) {
-                    i13 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j10);
-                    i14 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-                    MessagesStorage.getInstance(i14).setDialogFlags(j10, 1L);
-                    if (dialog != null) {
-                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
-                        dialog.notify_settings = tL_peerNotifySettings;
-                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                }
-            }
-            edit.apply();
-            i15 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
-            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j10, j3);
-            if (p11Var.s != null) {
-                rk0 rk0Var = new rk0();
-                rk0Var.d = j10;
-                rk0Var.b = true;
-                int c10 = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
-                rk0Var.c = c10;
-                if (c10 != 0) {
-                    rk0Var.a = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
-                }
-                p11Var.s.v(rk0Var);
+                ((o11) arrayList.get(i10)).onDetachedFromWindow();
+                i10++;
             }
         }
-        p11Var.finishFragment();
     }
 }

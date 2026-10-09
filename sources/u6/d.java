@@ -1,17 +1,17 @@
 package u6;
 
+import ae.x;
 import android.app.Application;
 import android.os.Build;
 import android.os.Process;
 import android.os.StrictMode;
-import androidx.car.app.j;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import n6.l;
-import w7.w;
+import w7.u;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static String a;
@@ -76,7 +76,7 @@ public abstract class d {
                     Object invoke = Process.class.getDeclaredMethod("isIsolated", null).invoke(null, null);
                     Object[] objArr = new Object[0];
                     if (invoke == null) {
-                        throw new j(w.a(objArr));
+                        throw new x(u.a(objArr));
                     }
                     bool = (Boolean) invoke;
                 } catch (ReflectiveOperationException unused) {

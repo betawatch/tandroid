@@ -1,5 +1,6 @@
 package h8;
 
+import ae.x;
 import android.R;
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +13,11 @@ import android.widget.TextView;
 import androidx.mediarouter.app.a0;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import m2.t;
 import n6.q;
-import v7.j8;
+import v7.h8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j {
     public aa.a a;
@@ -23,8 +25,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public k2.e g;
-    public final k2.e d = new k2.e(this, 24);
+    public t g;
+    public final t d = new t(this, 22);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -88,11 +90,11 @@ public final class j {
                 synchronized (e.class) {
                     e.b(context);
                 }
-                i8.g X0 = j8.a(context).X0(new x6.b(context));
-                if (X0 == null) {
+                i8.g W0 = h8.a(context).W0(new x6.b(context));
+                if (W0 == null) {
                     return;
                 }
-                this.g.h(new aa.a(this.e, X0));
+                this.g.C(new aa.a(this.e, W0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
@@ -102,7 +104,7 @@ public final class j {
                 }
                 arrayList.clear();
             } catch (RemoteException e7) {
-                throw new androidx.car.app.j(e7);
+                throw new x(e7);
             } catch (k6.f unused) {
             }
         }

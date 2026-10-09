@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class NotificationBadge {
     private static final List<Class<? extends Badger>> BADGERS;
@@ -28,7 +28,7 @@ public class NotificationBadge {
     private static ComponentName componentName;
     private static boolean initied;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class AdwHomeBadger implements Badger {
         public static final String CLASSNAME = "CNAME";
         public static final String COUNT = "COUNT";
@@ -57,7 +57,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class ApexHomeBadger implements Badger {
         private static final String CLASS = "class";
         private static final String COUNT = "count";
@@ -86,7 +86,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class AsusHomeBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -116,14 +116,14 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface Badger {
         void executeBadge(int i10);
 
         List<String> getSupportLaunchers();
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class DefaultBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -153,7 +153,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class HuaweiHomeBadger implements Badger {
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
@@ -179,7 +179,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class NewHtcHomeBadger implements Badger {
         public static final String COUNT = "count";
         public static final String EXTRA_COMPONENT = "com.htc.launcher.extra.COMPONENT";
@@ -203,7 +203,7 @@ public class NotificationBadge {
             intent2.putExtra(PACKAGENAME, NotificationBadge.componentName.getPackageName());
             intent2.putExtra(COUNT, i10);
             if (NotificationBadge.canResolveBroadcast(intent) || NotificationBadge.canResolveBroadcast(intent2)) {
-                AndroidUtilities.runOnUIThread(new dc(29, intent, intent2));
+                AndroidUtilities.runOnUIThread(new vg(0, intent, intent2));
             }
         }
 
@@ -213,7 +213,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class NovaHomeBadger implements Badger {
         private static final String CONTENT_URI = "content://com.teslacoilsw.notifier/unread_count";
         private static final String COUNT = "count";
@@ -233,7 +233,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class OPPOHomeBader implements Badger {
         private static final String INTENT_ACTION = "com.oppo.unsettledevent";
         private static final String INTENT_EXTRA_BADGEUPGRADE_COUNT = "app_badge_count";
@@ -267,7 +267,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SamsungHomeBadger implements Badger {
         private static final String[] CONTENT_PROJECTION = {"_id", "class"};
         private static final String CONTENT_URI = "content://com.sec.badge/apps?notify=true";
@@ -323,7 +323,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SonyHomeBadger implements Badger {
         private static final String INTENT_ACTION = "com.sonyericsson.home.action.UPDATE_BADGE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME";
@@ -397,7 +397,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class VivoHomeBadger implements Badger {
         @Override // org.telegram.messenger.NotificationBadge.Badger
         public void executeBadge(int i10) {
@@ -415,7 +415,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class XiaomiHomeBadger implements Badger {
         public static final String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
         public static final String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
@@ -449,7 +449,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class ZukHomeBadger implements Badger {
         private final Uri CONTENT_URI = Uri.parse("content://com.android.badge/badge");
 
@@ -464,7 +464,7 @@ public class NotificationBadge {
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
         public void executeBadge(int i10) {
-            AndroidUtilities.runOnUIThread(new vg(0, this, org.telegram.ui.Cells.c1.h(i10, "app_badge_count")));
+            AndroidUtilities.runOnUIThread(new vg(1, this, org.telegram.ui.Cells.c1.f(i10, "app_badge_count")));
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger

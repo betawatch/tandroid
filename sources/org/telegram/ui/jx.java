@@ -1,23 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jx extends ai.b0 {
-    public final /* synthetic */ uy O0;
+public final /* synthetic */ class jx {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kx b;
+    public final /* synthetic */ View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx(uy uyVar, Context context, uy uyVar2, int i10, int i11) {
-        super(context, uyVar2, i10, i11);
-        this.O0 = uyVar;
+    public /* synthetic */ jx(kx kxVar, View view, int i10) {
+        this.a = i10;
+        this.b = kxVar;
+        this.c = view;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        kVar = ((org.telegram.ui.ActionBar.n2) this.O0).actionBar;
-        return !kVar.s() && super.dispatchTouchEvent(motionEvent);
+    public final void a(boolean z10) {
+        switch (this.a) {
+            case 0:
+                View view = this.c;
+                if (view instanceof ai.a0) {
+                    this.b.O0.E0.i((ai.a0) view, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vh(17), 500L);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view2 = this.c;
+                if (view2 instanceof ai.a0) {
+                    this.b.O0.E0.i((ai.a0) view2, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vh(17), 500L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

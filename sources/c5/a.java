@@ -1,66 +1,41 @@
 package c5;
 
-import android.content.Context;
-import android.util.Log;
-import java.io.IOException;
-import java.io.InputStream;
-import n7.z0;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
-    public String a;
+    public final /* synthetic */ int a;
     public String b;
+    public String c;
 
-    public a(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public /* synthetic */ a() {
+        this.a = 1;
     }
 
     public r a() {
-        if ("first_party".equals(this.b)) {
+        if ("first_party".equals(this.c)) {
             throw new IllegalArgumentException("Serialized doc id must be provided for first party products.");
         }
-        if (this.a == null) {
+        if (this.b == null) {
             throw new IllegalArgumentException("Product id must be provided.");
         }
-        if (this.b != null) {
+        if (this.c != null) {
             return new r(this);
         }
         throw new IllegalArgumentException("Product type must be provided.");
     }
 
-    public a(z0 z0Var) {
-        Context context = (Context) z0Var.b;
-        int e7 = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
-        if (e7 != 0) {
-            this.a = "Unity";
-            String string = context.getResources().getString(e7);
-            this.b = string;
-            String i10 = sa.e.i("Unity Editor version is: ", string);
-            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", i10, null);
-                return;
-            }
-            return;
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                return this.b + ", " + this.c;
+            default:
+                return super.toString();
         }
-        if (context.getAssets() != null) {
-            try {
-                InputStream open = context.getAssets().open("flutter_assets/NOTICES.Z");
-                if (open != null) {
-                    open.close();
-                }
-                this.a = "Flutter";
-                this.b = null;
-                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", "Development platform is: Flutter", null);
-                    return;
-                }
-                return;
-            } catch (IOException unused) {
-            }
-        }
-        this.a = null;
-        this.b = null;
+    }
+
+    public /* synthetic */ a(int i10, String str, String str2) {
+        this.a = i10;
+        this.b = str;
+        this.c = str2;
     }
 }

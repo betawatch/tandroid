@@ -2,7 +2,7 @@ package n7;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class y extends o {
     public static final Object[] r;
@@ -38,7 +38,7 @@ public final class y extends o {
         }
         int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
         while (true) {
-            int i10 = this.h & rotateLeft;
+            int i10 = rotateLeft & this.h;
             Object obj2 = objArr[i10];
             if (obj2 == null) {
                 return false;

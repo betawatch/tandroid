@@ -1,15 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.messenger.MessagesController;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class iy0 extends org.telegram.ui.ou0 {
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean P() {
-        return true;
+public final /* synthetic */ class iy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xy0 b;
+
+    public /* synthetic */ iy0(xy0 xy0Var, int i10) {
+        this.a = i10;
+        this.b = xy0Var;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final boolean z() {
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d.l();
+                break;
+            case 1:
+                this.b.d.l();
+                break;
+            case 2:
+                xy0.v(this.b);
+                break;
+            case 3:
+                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
+                break;
+            default:
+                xy0.u(this.b);
+                break;
+        }
     }
 }

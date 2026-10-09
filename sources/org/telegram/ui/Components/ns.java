@@ -1,172 +1,54 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ns extends g6 {
-    public boolean E;
-    public boolean F;
-    public ch.d s;
-    public final Path v;
-    public final RectF w;
-    public int x;
-    public FragmentContextView y;
+public abstract class ns {
+    public final org.telegram.ui.ActionBar.n1 a;
+    public boolean b;
 
-    public ns(Context context) {
-        super(context);
-        this.v = new Path();
-        this.w = new RectF();
-        this.x = 24;
-        setOrientation(1);
-        ch.d dVar = this.s;
-        if (dVar != null) {
-            dVar.k();
+    public ns(Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, e6Var);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new wk(this, 1));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new s(this, 27));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
+        b(actionBarPopupWindow$ActionBarPopupWindowLayout);
+        org.telegram.ui.ActionBar.n1 n1Var = new org.telegram.ui.ActionBar.n1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.a = n1Var;
+        n1Var.b = false;
+        n1Var.setAnimationStyle(R.style.PopupContextAnimation2);
+        n1Var.setOutsideTouchable(true);
+        n1Var.setClippingEnabled(true);
+        n1Var.setInputMethodMode(2);
+        n1Var.setSoftInputMode(0);
+        n1Var.getContentView().setFocusableInTouchMode(true);
+        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+            n1Var.setFocusable(true);
         }
-        invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int currentStyle;
-        FragmentContextView fragmentContextView;
-        Canvas canvas2 = canvas;
-        if (getMetadata().c.a == 0.0f) {
-            return;
-        }
-        ch.d dVar = this.s;
-        if (dVar != null) {
-            dVar.draw(canvas2);
-        }
-        FragmentContextView fragmentContextView2 = this.y;
-        le.j jVar = this.c;
-        View view = null;
-        if (fragmentContextView2 != null && ((currentStyle = fragmentContextView2.getCurrentStyle()) == 3 || currentStyle == 1)) {
-            int entriesCount = getEntriesCount();
-            for (int i10 = 0; i10 < entriesCount; i10++) {
-                le.g n10 = jVar.n(i10);
-                float paddingTop = getPaddingTop() + n10.b().top;
-                View view2 = ((f6) n10.a).a;
-                float c10 = n10.c();
-                if (c10 > 0.0f && (fragmentContextView = this.y) != null && (fragmentContextView == view2 || fragmentContextView.getParent() == view2)) {
-                    jd capsuleBlobDrawable = this.y.getCapsuleBlobDrawable();
-                    int dp = AndroidUtilities.dp(1.0f) + ((int) capsuleBlobDrawable.c());
-                    int i11 = -dp;
-                    capsuleBlobDrawable.setBounds(getPaddingLeft() - dp, i11, (getMeasuredWidth() - getPaddingRight()) + dp, (dp * 2) + AndroidUtilities.dp(36.0f) + i11);
-                    capsuleBlobDrawable.setAlpha((int) (c10 * 255.0f));
-                    canvas2.save();
-                    canvas2.translate(0.0f, paddingTop);
-                    capsuleBlobDrawable.draw(canvas2);
-                    canvas2.restore();
-                    view = view2;
-                }
+        n1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.ms
+            @Override // android.widget.PopupWindow.OnDismissListener
+            public final void onDismiss() {
+                ns nsVar = ns.this;
+                nsVar.c();
+                nsVar.b = false;
             }
-        }
-        View view3 = view;
-        canvas2.save();
-        canvas2.clipPath(this.v);
-        int entriesCount2 = getEntriesCount();
-        int i12 = 0;
-        while (i12 < entriesCount2) {
-            le.g n11 = jVar.n(i12);
-            float paddingTop2 = getPaddingTop() + n11.b().top;
-            View view4 = ((f6) n11.a).a;
-            float min = Math.min(1.0f, n11.c.a) * n11.c();
-            if (min > 0.0f && view3 != view4) {
-                int alpha = org.telegram.ui.ActionBar.i6.k0.getAlpha();
-                org.telegram.ui.ActionBar.i6.k0.setAlpha((int) (alpha * min));
-                float f7 = 1.0f - min;
-                canvas2.drawLine(getPaddingLeft() + (AndroidUtilities.dp(16.0f) * f7), paddingTop2, getWidth() - ((AndroidUtilities.dp(16.0f) * f7) + getPaddingRight()), paddingTop2, org.telegram.ui.ActionBar.i6.k0);
-                org.telegram.ui.ActionBar.i6.k0.setAlpha(alpha);
-            }
-            i12++;
-            canvas2 = canvas;
-        }
-        this.E = view3 != null;
-        this.F = false;
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (view3 != null) {
-            this.F = true;
-            this.E = false;
-            super.dispatchDraw(canvas);
+        });
+    }
+
+    public final void a() {
+        org.telegram.ui.ActionBar.n1 n1Var = this.a;
+        if (n1Var != null) {
+            n1Var.d(true);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ch.d dVar;
-        if (super.dispatchTouchEvent(motionEvent)) {
-            return true;
-        }
-        return motionEvent.getAction() == 0 && (dVar = this.s) != null && dVar.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY());
-    }
+    public abstract void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout);
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        FragmentContextView fragmentContextView = this.y;
-        boolean z10 = fragmentContextView != null && (fragmentContextView == view || fragmentContextView.getParent() == view);
-        if (!(z10 && this.E) && (z10 || !this.F)) {
-            return super.drawChild(canvas, view, j3);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.g6
-    public final void e() {
-        j();
-        invalidate();
-    }
-
-    public final void j() {
-        float f7 = getMetadata().g.a;
-        float f10 = getMetadata().c.a;
-        RectF rectF = this.w;
-        rectF.set(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getPaddingTop() + f7);
-        float min = Math.min(AndroidUtilities.dp(this.x), Math.min(rectF.width(), rectF.height()) / 2.0f);
-        Path path = this.v;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        ch.d dVar = this.s;
-        if (dVar != null) {
-            dVar.setAlpha((int) (f10 * 255.0f));
-            this.s.setBounds(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(14.0f), getMeasuredWidth() - AndroidUtilities.dp(4.0f), ((getPaddingBottom() + getPaddingTop()) + ((int) f7)) - AndroidUtilities.dp(14.0f));
-            this.s.y(Math.min(AndroidUtilities.dp(this.x), f7 / 2.0f));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.g6, android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        j();
-    }
-
-    public void setBlurredBackground(ch.d dVar) {
-        this.s = dVar;
-    }
-
-    public void setCallFragmentContextView(FragmentContextView fragmentContextView) {
-        this.y = fragmentContextView;
-        fragmentContextView.getCapsuleBlobDrawable().setCallback(this);
-    }
-
-    public void setDefaultRadiusDp(int i10) {
-        this.x = i10;
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        if (super.verifyDrawable(drawable)) {
-            return true;
-        }
-        FragmentContextView fragmentContextView = this.y;
-        return fragmentContextView != null && fragmentContextView.getCapsuleBlobDrawable() == drawable;
-    }
+    public abstract void c();
 }

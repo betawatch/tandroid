@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class b1 {
     public static b1 j;
@@ -81,8 +81,8 @@ public final class b1 {
 
     public final void b() {
         int i10 = i6.z9;
-        if (i6.w0(null, i10, false) != this.i) {
-            this.i = i6.w0(null, i10, false);
+        if (i6.x0(null, i10, false) != this.i) {
+            this.i = i6.x0(null, i10, false);
             this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
         }
         this.f = a(this.f);
@@ -96,7 +96,7 @@ public final class b1 {
         if (this.c == null) {
             this.c = new Paint(1);
         }
-        this.c.setColor(i6.w0(null, i6.Oh, false));
+        this.c.setColor(i6.x0(null, i6.Oh, false));
         return this.c;
     }
 

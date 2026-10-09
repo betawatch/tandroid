@@ -1,46 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f71 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public abstract class f71 extends org.telegram.ui.ActionBar.n2 {
+    public e71 a;
+    public int b;
+    public int c;
 
-    public /* synthetic */ f71(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public f71() {
+        super(null);
+        this.b = -1;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                g71 g71Var = (g71) this.b;
-                g71Var.getClass();
-                g71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g71Var.invalidate();
-                break;
-            case 1:
-                m71 m71Var = (m71) this.b;
-                m71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m71Var.b = floatValue;
-                m71Var.setTranslationY(floatValue);
-                break;
-            default:
-                g91 g91Var = (g91) this.b;
-                g91Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                g91Var.setAnimationIdicatorProgress(floatValue2);
-                f91 f91Var = g91Var.y;
-                if (f91Var != null) {
-                    ((n2.c) f91Var).k(floatValue2);
-                    break;
-                }
-                break;
-        }
+    public abstract void U(ArrayList arrayList, c71 c71Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(p61 p61Var, View view);
+
+    public abstract boolean X(p61 p61Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public View createView(Context context) {
+        hg.c.v(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.ro(this, 13));
+        hg.r1 r1Var = new hg.r1(context, null, 1);
+        r1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        e71 e71Var = new e71(this, this, new d(this, 22), new d71(this), new d71(this));
+        this.a = e71Var;
+        r1Var.addView(e71Var, w7.x5.d(-1.0f, -1));
+        this.fragmentView = r1Var;
+        return r1Var;
     }
 }

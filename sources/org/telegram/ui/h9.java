@@ -1,62 +1,35 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.CheckBoxBase;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h9 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.Components.k9 b;
-    public final ImageView c;
-    public final org.telegram.ui.Cells.i6 d;
-    public final org.telegram.ui.Components.qp e;
+public final class h9 extends org.telegram.ui.Components.o61 {
+    public static final /* synthetic */ int a = 0;
 
-    public h9(Context context, int i10) {
-        super(context);
-        this.a = i10;
-        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
-        this.d = i6Var;
-        i6Var.M0 = true;
-        i6Var.E0 = true;
-        i6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
-        int dp = AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f);
-        int i11 = -AndroidUtilities.dp(7.0f);
-        i6Var.b0 = dp;
-        i6Var.c0 = i11;
-        addView(i6Var, w7.z5.c(-1.0f, -1));
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context, false);
-        this.b = k9Var;
-        k9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        k9Var.setStepFactor(0.4f);
-        k9Var.setSize(AndroidUtilities.dp(29.0f));
-        k9Var.setCentered(true);
-        k9Var.setVisibility(8);
-        addView(k9Var, w7.z5.d(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.il, false), PorterDuff.Mode.SRC_IN);
-        imageView.setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 1, -1));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(LocaleController.getString(R.string.Call));
-        addView(imageView, w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
-        org.telegram.ui.Components.qp qpVar = new org.telegram.ui.Components.qp(context, 21, null);
-        this.e = qpVar;
-        CheckBoxBase checkBoxBase = qpVar.getCheckBoxBase();
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hl, false);
-        if (checkBoxBase.x != w02) {
-            checkBoxBase.x = w02;
-            checkBoxBase.b();
-        }
-        qpVar.b(-1, org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.k7);
-        qpVar.setDrawUnchecked(false);
-        qpVar.setDrawBackgroundAsArc(3);
-        addView(qpVar, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
+    static {
+        org.telegram.ui.Components.o61.setup(new h9());
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final void bindView(View view, org.telegram.ui.Components.p61 p61Var, boolean z10, org.telegram.ui.Components.c71 c71Var, org.telegram.ui.Components.k71 k71Var) {
+        i9 i9Var = (i9) view;
+        TLRPC.Chat chat = (TLRPC.Chat) p61Var.G;
+        View.OnClickListener onClickListener = p61Var.D;
+        i9Var.c = chat;
+        org.telegram.ui.Components.cj0 cj0Var = i9Var.b;
+        cj0Var.setTag(Long.valueOf(chat.id));
+        i9Var.a.u(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
+        cj0Var.setOnClickListener(onClickListener);
+    }
+
+    @Override // org.telegram.ui.Components.o61
+    public final View createView(Context context, org.telegram.ui.Components.qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+        return new i9(context);
     }
 }

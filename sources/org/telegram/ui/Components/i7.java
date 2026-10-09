@@ -1,34 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ l8 b;
+    public final /* synthetic */ p80 c;
 
-    public /* synthetic */ i7(j8 j8Var, TLRPC.TL_error tL_error, int i10) {
+    public /* synthetic */ i7(l8 l8Var, p80 p80Var, int i10) {
         this.a = i10;
-        this.b = j8Var;
-        this.c = tL_error;
+        this.b = l8Var;
+        this.c = p80Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                j8.s(this.b, this.c);
+                l8 l8Var = this.b;
+                l8Var.getClass();
+                this.c.u();
+                l8Var.u0(1);
                 break;
             case 1:
-                j8.w(this.b, this.c);
+                l8 l8Var2 = this.b;
+                l8Var2.getClass();
+                this.c.u();
+                l8Var2.u0(2);
                 break;
             case 2:
-                j8.F(this.b, this.c);
+                l8 l8Var3 = this.b;
+                l8Var3.getClass();
+                this.c.u();
+                l8Var3.u0(4);
+                break;
+            case 3:
+                l8 l8Var4 = this.b;
+                l8Var4.getClass();
+                this.c.u();
+                l8Var4.u0(7);
                 break;
             default:
-                j8.G(this.b, this.c);
+                l8.s(this.b, this.c);
                 break;
         }
     }

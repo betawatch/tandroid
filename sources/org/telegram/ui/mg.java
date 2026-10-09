@@ -1,76 +1,61 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class mg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ zn b;
 
-    public /* synthetic */ mg(Object obj, float f7, int i10) {
+    public /* synthetic */ mg(zn znVar, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = znVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                yn ynVar = (yn) this.c;
-                ynVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ynVar.F8 = floatValue;
-                ynVar.J8 = floatValue / this.b;
-                View view = ynVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+                Integer num = (Integer) obj;
+                zn znVar = this.b;
+                znVar.getClass();
+                if (num.intValue() != 0) {
+                    znVar.Fc(true);
+                    znVar.F(num.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    znVar.l1 = 0;
+                    znVar.Fc(true);
+                    znVar.getMessagesController().markReactionsAsRead(znVar.T5, znVar.d());
                     break;
                 }
-                break;
             case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
+                Integer num2 = (Integer) obj;
+                zn znVar2 = this.b;
+                znVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = znVar2.m1 - 1;
+                    znVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
                     }
+                    znVar2.Ec(true);
+                    znVar2.F(num2.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    znVar2.m1 = 0;
+                    znVar2.Ec(true);
+                    znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
+                    break;
                 }
-                break;
-            case 2:
-                ((org.telegram.ui.Components.xn) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((uv0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
             default:
-                y11 y11Var = (y11) this.c;
-                y11Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                y11Var.a.setTranslationX(lerp);
-                y11Var.b.setTranslationX(lerp);
-                ImageView imageView = y11Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.qp qpVar = y11Var.f;
-                qpVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f7 = (floatValue3 * 0.5f) + 0.5f;
-                qpVar.setScaleX(f7);
-                qpVar.setScaleY(f7);
-                qpVar.setAlpha(floatValue3);
-                float f10 = 1.0f - floatValue3;
-                float f11 = (f10 * 0.5f) + 0.5f;
-                imageView.setScaleX(f11);
-                imageView.setScaleY(f11);
-                imageView.setAlpha(f10);
+                zn znVar3 = this.b;
+                znVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                znVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    znVar3.v8();
+                    break;
+                }
                 break;
         }
     }

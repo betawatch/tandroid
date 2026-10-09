@@ -12,11 +12,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.pc0;
-import w7.z5;
+import org.telegram.ui.Components.cd0;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class w0 extends z4.a {
     public final /* synthetic */ x0 c;
 
@@ -45,17 +45,17 @@ public final class w0 extends z4.a {
         int i11 = 1;
         if (z10 && i10 == 0) {
             ?? frameLayout = new FrameLayout(x0Var.getContext());
-            frameLayout.setBackground(new pc0(true, -14602694, -13935795, -14395293, -14203560));
+            frameLayout.setBackground(new cd0(true, -14602694, -13935795, -14395293, -14203560));
             ImageView imageView2 = new ImageView(x0Var.getContext());
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             imageView2.setImageResource(R.drawable.screencast_big);
-            frameLayout.addView(imageView2, z5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+            frameLayout.addView(imageView2, x5.a(82.0f, 0.0f, 0.0f, 0.0f, 60.0f, 82, 17));
             TextView textView = new TextView(x0Var.getContext());
             textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
             textView.setGravity(17);
             textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            org.telegram.messenger.q.q(textView, -1, 1, 15.0f);
-            frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+            org.telegram.messenger.q.m(15.0f, -1, 1, textView);
+            frameLayout.addView(textView, x5.a(-2.0f, 21.0f, 28.0f, 21.0f, 0.0f, -1, 17));
             imageView = frameLayout;
         } else {
             ImageView imageView3 = new ImageView(x0Var.getContext());

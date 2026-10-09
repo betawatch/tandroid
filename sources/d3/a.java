@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -66,11 +66,16 @@ public final class a implements o {
         this.n = nVar;
     }
 
-    public final int a(p pVar) {
+    @Override // c3.o
+    public final boolean a(p pVar) {
+        return d(pVar);
+    }
+
+    public final int b(p pVar) {
         boolean z10;
-        pVar.m();
+        pVar.q();
         byte[] bArr = this.a;
-        pVar.b(0, 1, bArr);
+        pVar.a(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
             throw s0.a(null, "Invalid padding bits for frame header " + ((int) b10));
@@ -86,40 +91,35 @@ public final class a implements o {
         throw s0.a(null, sb2.toString());
     }
 
-    @Override // c3.o
-    public final boolean b(p pVar) {
-        return d(pVar);
-    }
-
     public final boolean d(p pVar) {
-        pVar.m();
+        pVar.q();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
-        pVar.b(0, bArr.length, bArr2);
+        pVar.a(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.o(bArr.length);
+            pVar.r(bArr.length);
             return true;
         }
-        pVar.m();
+        pVar.q();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
-        pVar.b(0, bArr3.length, bArr4);
+        pVar.a(0, bArr3.length, bArr4);
         if (!Arrays.equals(bArr4, bArr3)) {
             return false;
         }
         this.d = true;
-        pVar.o(bArr3.length);
+        pVar.r(bArr3.length);
         return true;
     }
 
     @Override // c3.o
     public final void g(q qVar) {
         this.l = qVar;
-        h0 Z1 = qVar.Z1(0, 1);
-        this.m = Z1;
-        this.n = Z1;
-        qVar.e1();
+        h0 f22 = qVar.f2(0, 1);
+        this.m = f22;
+        this.n = f22;
+        qVar.k1();
     }
 
     @Override // c3.o
@@ -140,9 +140,9 @@ public final class a implements o {
         }
         y yVar = (y) b0Var;
         c5.b0 b0Var2 = yVar.b;
-        long f7 = b0Var2.b == 0 ? -9223372036854775807L : b0Var2.f(d0.b(yVar.a, j3));
-        this.k = f7;
-        if (Math.abs(this.q - f7) < 20000) {
+        long i10 = b0Var2.b == 0 ? -9223372036854775807L : b0Var2.i(d0.b(yVar.a, j3));
+        this.k = i10;
+        if (Math.abs(this.q - i10) < 20000) {
             return;
         }
         this.p = true;
@@ -155,8 +155,8 @@ public final class a implements o {
         return a1.e;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0169  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0167  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -188,9 +188,9 @@ public final class a implements o {
         int i13 = 0;
         if (this.g == 0) {
             try {
-                int a2 = a(pVar);
-                this.f = a2;
-                this.g = a2;
+                int b10 = b(pVar);
+                this.f = b10;
+                this.g = b10;
                 if (this.i == -1) {
                     this.h = pVar.getPosition();
                     this.i = this.f;
@@ -205,7 +205,7 @@ public final class a implements o {
                     long position = pVar.getPosition() + this.f;
                     c5.b0 b0Var2 = yVar.b;
                     int i14 = b0Var2.b;
-                    if (i14 == 0 || j3 - b0Var2.f(i14 - 1) >= 100000) {
+                    if (i14 == 0 || j3 - b0Var2.i(i14 - 1) >= 100000) {
                         c5.b0 b0Var3 = yVar.a;
                         c5.b0 b0Var4 = yVar.b;
                         if (b0Var4.b == 0 && j3 > 0) {
@@ -225,9 +225,9 @@ public final class a implements o {
             }
         }
         pVar2 = pVar;
-        int a10 = this.n.a(pVar2, this.g, true);
-        if (a10 != -1) {
-            int i15 = this.g - a10;
+        int a2 = this.n.a(pVar2, this.g, true);
+        if (a2 != -1) {
+            int i15 = this.g - a2;
             this.g = i15;
             if (i15 <= 0) {
                 this.n.c(this.k + this.e, 1, this.f, 0, null);
@@ -243,14 +243,14 @@ public final class a implements o {
                 }
                 b0 b0Var5 = this.o;
                 if (b0Var5 != null) {
-                    this.l.X1(b0Var5);
+                    this.l.d2(b0Var5);
                 }
             }
             if (i13 == -1) {
                 b0 b0Var6 = this.o;
                 if (b0Var6 instanceof y) {
                     ((y) b0Var6).c = this.k + this.e;
-                    this.l.X1(b0Var6);
+                    this.l.d2(b0Var6);
                     this.m.getClass();
                 }
             }

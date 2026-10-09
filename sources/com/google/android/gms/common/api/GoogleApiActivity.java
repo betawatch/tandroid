@@ -9,9 +9,9 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -27,8 +27,8 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             if (booleanExtra) {
                 com.google.android.gms.common.api.internal.h g10 = com.google.android.gms.common.api.internal.h.g(this);
                 if (i11 == -1) {
-                    c0 c0Var = g10.x;
-                    c0Var.sendMessage(c0Var.obtainMessage(3));
+                    a0 a0Var = g10.x;
+                    a0Var.sendMessage(a0Var.obtainMessage(3));
                 } else if (i11 == 0) {
                     g10.h(new k6.a(13, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
@@ -90,7 +90,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 if (extras.getBoolean("notify_manager", true)) {
                     com.google.android.gms.common.api.internal.h.g(this).h(new k6.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
-                    String q6 = a4.a.q("Activity not found while launching ", pendingIntent.toString(), ".");
+                    String q6 = a1.g.q("Activity not found while launching ", pendingIntent.toString(), ".");
                     if (Build.FINGERPRINT.contains("generic")) {
                         q6 = q6.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }

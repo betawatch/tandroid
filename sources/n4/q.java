@@ -12,7 +12,7 @@ import java.util.AbstractCollection;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class q extends Binder implements h {
     public static final /* synthetic */ int b = 0;
@@ -23,20 +23,20 @@ public final class q extends Binder implements h {
         this.a = new WeakReference(rVar);
     }
 
-    public final void G0(f fVar) {
+    public final void F0(f fVar) {
         r rVar = (r) this.a.get();
         if (rVar == null || fVar == null) {
             return;
         }
-        rVar.f.register(fVar, new a0("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
+        rVar.f.register(fVar, new z("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
         synchronized (rVar.d) {
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0247  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0242  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0245  */
     /* JADX WARN: Type inference failed for: r7v8, types: [n4.f] */
     @Override // android.os.Binder
     /*
@@ -55,7 +55,7 @@ public final class q extends Binder implements h {
         f fVar = null;
         r7 = null;
         Bundle bundle2 = null;
-        h0 h0Var = null;
+        f0 f0Var = null;
         e eVar = null;
         switch (i10) {
             case 1:
@@ -64,7 +64,7 @@ public final class q extends Binder implements h {
                 if (parcel.readInt() != 0) {
                 }
                 if (parcel.readInt() != 0) {
-                    w.CREATOR.createFromParcel(parcel);
+                    v.CREATOR.createFromParcel(parcel);
                 }
                 throw new AssertionError();
             case 2:
@@ -85,7 +85,7 @@ public final class q extends Binder implements h {
                         fVar = (f) queryLocalInterface;
                     }
                 }
-                G0(fVar);
+                F0(fVar);
                 parcel2.getClass();
                 parcel2.writeNoException();
                 return true;
@@ -194,7 +194,7 @@ public final class q extends Binder implements h {
             case 25:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
                 if (parcel.readInt() != 0) {
-                    i0.CREATOR.createFromParcel(parcel);
+                    g0.CREATOR.createFromParcel(parcel);
                 }
                 throw new AssertionError();
             case 26:
@@ -210,13 +210,13 @@ public final class q extends Binder implements h {
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
                 r rVar2 = (r) this.a.get();
                 if (rVar2 != null) {
-                    h0Var = rVar2.g;
+                    f0Var = rVar2.g;
                     m mVar = rVar2.i;
-                    if (h0Var != null) {
-                        float f7 = h0Var.d;
-                        long j10 = h0Var.n;
-                        int i13 = h0Var.a;
-                        long j11 = h0Var.b;
+                    if (f0Var != null) {
+                        float f7 = f0Var.d;
+                        long j10 = f0Var.n;
+                        int i13 = f0Var.a;
+                        long j11 = f0Var.b;
                         if (j11 != -1 && ((i13 == 3 || i13 == 4 || i13 == 5) && j10 > 0)) {
                             long elapsedRealtime = SystemClock.elapsedRealtime();
                             long j12 = ((long) (f7 * (elapsedRealtime - j10))) + j11;
@@ -226,40 +226,40 @@ public final class q extends Binder implements h {
                                     j3 = bundle3.getLong("android.media.metadata.DURATION", 0L);
                                     long j13 = (j3 >= 0 || j12 <= j3) ? j12 >= 0 ? 0L : j12 : j3;
                                     ArrayList arrayList = new ArrayList();
-                                    long j14 = h0Var.c;
-                                    long j15 = h0Var.e;
-                                    int i14 = h0Var.f;
-                                    CharSequence charSequence = h0Var.h;
-                                    abstractCollection = h0Var.r;
+                                    long j14 = f0Var.c;
+                                    long j15 = f0Var.e;
+                                    int i14 = f0Var.f;
+                                    CharSequence charSequence = f0Var.h;
+                                    abstractCollection = f0Var.r;
                                     if (abstractCollection != null) {
                                         arrayList.addAll(abstractCollection);
                                     }
-                                    h0Var = new h0(h0Var.a, j13, j14, h0Var.d, j15, i14, charSequence, elapsedRealtime, arrayList, h0Var.s, h0Var.v);
+                                    f0Var = new f0(f0Var.a, j13, j14, f0Var.d, j15, i14, charSequence, elapsedRealtime, arrayList, f0Var.s, f0Var.v);
                                 }
                             }
                             j3 = -1;
                             if (j3 >= 0) {
                             }
                             ArrayList arrayList2 = new ArrayList();
-                            long j142 = h0Var.c;
-                            long j152 = h0Var.e;
-                            int i142 = h0Var.f;
-                            CharSequence charSequence2 = h0Var.h;
-                            abstractCollection = h0Var.r;
+                            long j142 = f0Var.c;
+                            long j152 = f0Var.e;
+                            int i142 = f0Var.f;
+                            CharSequence charSequence2 = f0Var.h;
+                            abstractCollection = f0Var.r;
                             if (abstractCollection != null) {
                             }
-                            h0Var = new h0(h0Var.a, j13, j142, h0Var.d, j152, i142, charSequence2, elapsedRealtime, arrayList2, h0Var.s, h0Var.v);
+                            f0Var = new f0(f0Var.a, j13, j142, f0Var.d, j152, i142, charSequence2, elapsedRealtime, arrayList2, f0Var.s, f0Var.v);
                         }
                     }
                 }
                 parcel2.getClass();
                 parcel2.writeNoException();
-                if (h0Var == null) {
+                if (f0Var == null) {
                     parcel2.writeInt(0);
                     return true;
                 }
                 parcel2.writeInt(1);
-                h0Var.writeToParcel(parcel2, 1);
+                f0Var.writeToParcel(parcel2, 1);
                 return true;
             case 29:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
@@ -275,11 +275,9 @@ public final class q extends Binder implements h {
                 throw new AssertionError();
             case 32:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar3 = (r) this.a.get();
-                int i15 = rVar3 != null ? rVar3.j : 0;
                 parcel2.getClass();
                 parcel2.writeNoException();
-                parcel2.writeInt(i15);
+                parcel2.writeInt(0);
                 return true;
             case 33:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
@@ -305,8 +303,8 @@ public final class q extends Binder implements h {
                 throw new AssertionError();
             case 37:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar4 = (r) this.a.get();
-                i12 = rVar4 != null ? rVar4.k : -1;
+                r rVar3 = (r) this.a.get();
+                i12 = rVar3 != null ? rVar3.j : -1;
                 parcel2.getClass();
                 parcel2.writeNoException();
                 parcel2.writeInt(i12);
@@ -362,8 +360,8 @@ public final class q extends Binder implements h {
                 throw new AssertionError();
             case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar5 = (r) this.a.get();
-                i12 = rVar5 != null ? rVar5.l : -1;
+                r rVar4 = (r) this.a.get();
+                i12 = rVar4 != null ? rVar4.k : -1;
                 parcel2.getClass();
                 parcel2.writeNoException();
                 parcel2.writeInt(i12);
@@ -378,8 +376,8 @@ public final class q extends Binder implements h {
                 throw new AssertionError();
             case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar6 = (r) this.a.get();
-                if (rVar6 != null && (bundle = rVar6.e) != null) {
+                r rVar5 = (r) this.a.get();
+                if (rVar5 != null && (bundle = rVar5.e) != null) {
                     bundle2 = new Bundle(bundle);
                 }
                 parcel2.getClass();
@@ -394,7 +392,7 @@ public final class q extends Binder implements h {
             case 51:
                 parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
                 if (parcel.readInt() != 0) {
-                    i0.CREATOR.createFromParcel(parcel);
+                    g0.CREATOR.createFromParcel(parcel);
                 }
                 if (parcel.readInt() != 0) {
                 }

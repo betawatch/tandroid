@@ -1,49 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sq0 extends org.telegram.ui.Components.w00 {
-    public final /* synthetic */ int U;
+public final class sq0 extends org.telegram.ui.ActionBar.g5 {
+    public final tk0 f = new tk0(this, 12);
+    public final /* synthetic */ br0 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ sq0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.U = i10;
+    public sq0(br0 br0Var) {
+        this.h = br0Var;
     }
 
-    @Override // org.telegram.ui.Components.w00
-    public int getColumnsCount() {
-        switch (this.U) {
-            case 0:
-                return 3;
-            default:
-                return super.getColumnsCount();
-        }
+    @Override // org.telegram.ui.ActionBar.g5
+    public final boolean b() {
+        this.h.finishFragment();
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.w00
-    public int getViewType() {
-        switch (this.U) {
-            case 0:
-                return 2;
-            default:
-                return super.getViewType();
-        }
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void p(ci.g2 g2Var) {
+        this.h.b0(g2Var);
     }
 
-    @Override // org.telegram.ui.Components.w00, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.U) {
-            case 1:
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        int i10;
+        if (editText.getText().length() != 0) {
+            tk0 tk0Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(tk0Var);
+            AndroidUtilities.runOnUIThread(tk0Var, 1200L);
+            return;
         }
+        br0 br0Var = this.h;
+        br0Var.f.clear();
+        br0Var.h.clear();
+        br0Var.v = null;
+        br0Var.s = true;
+        br0Var.r = false;
+        if (br0Var.x != 0) {
+            i10 = ((org.telegram.ui.ActionBar.n2) br0Var).currentAccount;
+            ConnectionsManager.getInstance(i10).cancelRequest(br0Var.x, true);
+            br0Var.x = 0;
+        }
+        br0Var.N.d.setText(LocaleController.getString(R.string.NoRecentSearches));
+        br0Var.N.e(false, true);
+        br0Var.j0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 }

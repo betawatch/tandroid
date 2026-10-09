@@ -6,7 +6,7 @@ import android.text.SpannableString;
 import j$.util.stream.IntStream;
 import java.util.stream.IntStream;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class x implements Spannable {
     public boolean a = false;
@@ -19,7 +19,7 @@ public final class x implements Spannable {
     public final void a() {
         Spannable spannable = this.b;
         if (!this.a) {
-            if ((Build.VERSION.SDK_INT < 28 ? new na.d(3) : new w(3)).r3(spannable)) {
+            if ((Build.VERSION.SDK_INT < 28 ? new qb.b(2) : new w(2)).N3(spannable)) {
                 this.b = new SpannableString(spannable);
             }
         }

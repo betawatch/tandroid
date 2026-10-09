@@ -1,24 +1,64 @@
 package v7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ProviderInfo;
+import android.content.pm.ResolveInfo;
+import android.content.pm.Signature;
+import android.os.Build;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class s {
-    public static Object a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() != 0) {
-            return creator.createFromParcel(parcel);
+    /* JADX WARN: Removed duplicated region for block: B:19:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static androidx.emoji2.text.q a(Context context) {
+        ProviderInfo providerInfo;
+        o0.d dVar;
+        ApplicationInfo applicationInfo;
+        t7.t cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c() : new t7.t();
+        PackageManager packageManager = context.getPackageManager();
+        w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
+        Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                providerInfo = null;
+                break;
+            }
+            providerInfo = it.next().providerInfo;
+            if (providerInfo != null && (applicationInfo = providerInfo.applicationInfo) != null && (applicationInfo.flags & 1) == 1) {
+                break;
+            }
         }
-        return null;
-    }
-
-    public static void b(Parcel parcel, Parcelable parcelable, int i10) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, i10);
+        if (providerInfo != null) {
+            try {
+                String str = providerInfo.authority;
+                String str2 = providerInfo.packageName;
+                Signature[] C = cVar.C(packageManager, str2);
+                ArrayList arrayList = new ArrayList();
+                for (Signature signature : C) {
+                    arrayList.add(signature.toByteArray());
+                }
+                dVar = new o0.d(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
+            } catch (PackageManager.NameNotFoundException e7) {
+                Log.wtf("emoji2.text.DefaultEmojiConfig", e7);
+            }
+            if (dVar != null) {
+                return null;
+            }
+            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, dVar));
+        }
+        dVar = null;
+        if (dVar != null) {
         }
     }
 }

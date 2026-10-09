@@ -13,11 +13,11 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ResultReceiver;
 import android.util.Log;
-import e0.t;
+import e0.r;
 import org.telegram.messenger.beta.R;
-import v7.e5;
+import v7.k0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c extends IntentService {
     private static final int CONNECTION_TIMEOUT_IN_MS = 1000;
@@ -80,7 +80,7 @@ public abstract class c extends IntentService {
         String message;
         boolean b10;
         if (str.equals("com.google.android.googlequicksearchbox") || str.equals("com.google.android.apps.assistant")) {
-            if (a() || e5.a(this, str)) {
+            if (a() || k0.a(this, str)) {
                 if (intent.hasExtra(EXTRA_INTENT)) {
                     Intent intent2 = (Intent) intent.getParcelableExtra(EXTRA_INTENT);
                     if (this.dbg) {
@@ -104,9 +104,9 @@ public abstract class c extends IntentService {
                             aVar.getClass();
                             Parcel obtain = Parcel.obtain();
                             obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
-                            Parcel G0 = aVar.G0(obtain, 2);
-                            int readInt = G0.readInt();
-                            G0.recycle();
+                            Parcel F0 = aVar.F0(obtain, 2);
+                            int readInt = F0.readInt();
+                            F0.recycle();
                             Log.i(TAG, str + " Service API version: " + readInt);
                             Bundle bundle = new Bundle();
                             b10 = bVar.b(intent2, bundle);
@@ -170,11 +170,11 @@ public abstract class c extends IntentService {
         }
         super.onCreate();
         this.searchActionVerificationServiceConnection = new b(this);
-        if (b("com.google.android.googlequicksearchbox") && (a() || e5.a(this, "com.google.android.googlequicksearchbox"))) {
+        if (b("com.google.android.googlequicksearchbox") && (a() || k0.a(this, "com.google.android.googlequicksearchbox"))) {
             bindService(this.gsaServiceIntent, this.searchActionVerificationServiceConnection, 1);
         }
         this.assistantGoVerificationServiceConnection = new b(this);
-        if (b("com.google.android.apps.assistant") && (a() || e5.a(this, "com.google.android.apps.assistant"))) {
+        if (b("com.google.android.apps.assistant") && (a() || k0.a(this, "com.google.android.apps.assistant"))) {
             bindService(this.assistantGoServiceIntent, this.assistantGoVerificationServiceConnection, 1);
         }
         if (Build.VERSION.SDK_INT >= 26) {
@@ -257,12 +257,12 @@ public abstract class c extends IntentService {
         notificationChannel.enableLights(false);
         notificationChannel.setShowBadge(false);
         ((NotificationManager) getApplicationContext().getSystemService(NotificationManager.class)).createNotificationChannel(notificationChannel);
-        t tVar = new t(getApplicationContext(), NOTIFICATION_CHANNEL_ID);
-        tVar.q = NOTIFICATION_CHANNEL_ID;
-        tVar.e = t.d(getApplicationContext().getResources().getString(R.drawable.$avd_flip__1));
-        tVar.E.icon = android.R.drawable.ic_dialog_email;
-        tVar.j = -2;
-        tVar.x = 1;
-        startForeground(NOTIFICATION_ID, tVar.b());
+        r rVar = new r(getApplicationContext(), NOTIFICATION_CHANNEL_ID);
+        rVar.q = NOTIFICATION_CHANNEL_ID;
+        rVar.e = r.d(getApplicationContext().getResources().getString(R.drawable.$avd_flip__1));
+        rVar.E.icon = android.R.drawable.ic_dialog_email;
+        rVar.j = -2;
+        rVar.x = 1;
+        startForeground(NOTIFICATION_ID, rVar.b());
     }
 }

@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class t5 {
-    public static String a(com.google.android.gms.internal.cast.z4 z4Var) {
-        StringBuilder sb2 = new StringBuilder(z4Var.o());
-        for (int i10 = 0; i10 < z4Var.o(); i10++) {
-            byte i11 = z4Var.i(i10);
+    public static String a(com.google.android.gms.internal.cast.x4 x4Var) {
+        StringBuilder sb2 = new StringBuilder(x4Var.o());
+        for (int i10 = 0; i10 < x4Var.o(); i10++) {
+            byte i11 = x4Var.i(i10);
             if (i11 == 34) {
                 sb2.append("\\\"");
             } else if (i11 == 39) {

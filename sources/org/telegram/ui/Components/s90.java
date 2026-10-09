@@ -1,98 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class s90 extends View {
-    public final Drawable a;
-    public final Paint b;
-    public final Paint c;
-    public final e6 d;
-    public boolean e;
+public final class s90 extends mr0 {
+    public final /* synthetic */ x90 b1;
 
-    public s90(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        this.d = new e6(this, 0L, 320L, tr.h);
-        w7.b6.a(this);
-        this.a = context.getResources().getDrawable(R.drawable.media_live_on).mutate();
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint2.setColor(-65536);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint.setStyle(style);
-        paint.setColor(-1);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s90(x90 x90Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.b1 = x90Var;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (this.e == z10) {
-            return;
-        }
-        this.e = z10;
-        if (!z11) {
-            this.d.a(z10);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e7 = this.d.e(!this.e);
-        int width = getWidth();
-        Drawable drawable = this.a;
-        drawable.setBounds((width - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
-        Rect bounds = drawable.getBounds();
-        float width2 = (bounds.width() * 0.325f) + bounds.left;
-        float height = (bounds.height() * 0.152f) + bounds.top;
-        float height2 = bounds.bottom - (bounds.height() * 0.152f);
-        float width3 = bounds.right - (bounds.width() * 0.101f);
-        if (e7 > 0.0f) {
-            float dp = AndroidUtilities.dp(4.0f);
-            Paint paint = this.c;
-            paint.setStrokeWidth(dp);
-            canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
-            drawable.draw(canvas);
-            if (this.e) {
-                canvas.drawLine(width3 - AndroidUtilities.dp(4.0f), height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(width3 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + width2, e7), AndroidUtilities.lerp(height2 - AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f) + height, e7), paint);
-                canvas2 = canvas;
+    @Override // org.telegram.ui.Components.mr0
+    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        String formatString;
+        if (z10) {
+            if (iVar == null || iVar.m() != 1) {
+                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", i10, new Object[0]));
             } else {
-                canvas2 = canvas;
-                canvas2.drawLine(width2 + AndroidUtilities.dp(4.0f), height + AndroidUtilities.dp(4.0f), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + width2, width3 - AndroidUtilities.dp(4.0f), e7), AndroidUtilities.lerp(AndroidUtilities.dp(4.0f) + height, height2 - AndroidUtilities.dp(4.0f), e7), paint);
+                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
+                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
             }
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-            drawable.draw(canvas2);
+            this.b1.e(R.raw.forward, AndroidUtilities.replaceTags(formatString));
         }
-        if (e7 > 0.0f) {
-            float dp2 = AndroidUtilities.dp(2.0f);
-            Paint paint2 = this.b;
-            paint2.setStrokeWidth(dp2);
-            if (this.e) {
-                canvas2.drawLine(width3, height2, AndroidUtilities.lerp(width3, width2, e7), AndroidUtilities.lerp(height2, height, e7), paint2);
-            } else {
-                canvas.drawLine(width2, height, AndroidUtilities.lerp(width2, width3, e7), AndroidUtilities.lerp(height, height2, e7), paint2);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30));
     }
 }

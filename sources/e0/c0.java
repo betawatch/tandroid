@@ -1,26 +1,11 @@
 package e0;
 
 import android.app.Notification;
-import android.app.PendingIntent;
-import android.app.RemoteInput;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static Notification.Action.Builder a(Notification.Action.Builder builder, Bundle bundle) {
-        return builder.addExtras(bundle);
-    }
-
-    public static Notification.Action.Builder b(Notification.Action.Builder builder, RemoteInput remoteInput) {
-        return builder.addRemoteInput(remoteInput);
-    }
-
-    public static Notification.Action c(Notification.Action.Builder builder) {
-        return builder.build();
-    }
-
-    public static Notification.Action.Builder d(int i10, CharSequence charSequence, PendingIntent pendingIntent) {
-        return new Notification.Action.Builder(i10, charSequence, pendingIntent);
+    public static Notification.Action.Builder a(Notification.Action.Builder builder, boolean z10) {
+        return builder.setAllowGeneratedReplies(z10);
     }
 }

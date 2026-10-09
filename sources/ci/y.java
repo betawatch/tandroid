@@ -5,9 +5,9 @@ import android.app.Activity;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class y extends FrameLayout {
     public final v a;
@@ -17,17 +17,17 @@ public final class y extends FrameLayout {
     public boolean e;
     public ValueAnimator f;
 
-    public y(Activity activity, x2 x2Var) {
+    public y(Activity activity, w2 w2Var) {
         super(activity);
         v vVar = new v(this, activity);
         this.a = vVar;
-        vVar.setAdapter(new w(this, activity, x2Var));
-        vVar.setLayoutManager(new s4.c0(0, false));
+        vVar.setAdapter(new w(this, activity, w2Var));
+        vVar.setLayoutManager(new s4.d0(0, false));
         vVar.setClipToPadding(false);
         vVar.setVisibility(8);
         vVar.setWillNotDraw(false);
         vVar.setOnItemClickListener(new ai.g(this, 2));
-        addView(vVar, w7.z5.c(56.0f, -1));
+        addView(vVar, w7.x5.d(56.0f, -1));
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -51,7 +51,7 @@ public final class y extends FrameLayout {
         this.f = ofFloat;
         ofFloat.addUpdateListener(new ai.a(this, 16));
         this.f.addListener(new ai.n(r0, this, z10));
-        this.f.setInterpolator(tr.h);
+        this.f.setInterpolator(hs.h);
         this.f.setDuration(340L);
         this.f.start();
     }

@@ -1,253 +1,168 @@
 package ai;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.hm0;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.ns;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class y6 extends FrameLayout {
-    public final LinearLayout a;
-    public final Paint b;
-    public final TextView c;
-    public final TextView d;
-    public final RectF e;
-    public float f;
-    public float h;
-    public final RectF n;
-    public float r;
-    public int s;
-    public final hm0 v;
-    public ValueAnimator w;
-    public final /* synthetic */ k7 x;
+public final class y6 extends ns {
+    public final /* synthetic */ z6 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y6(k7 k7Var, Context context) {
-        super(context);
-        this.x = k7Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.e = new RectF();
-        this.n = new RectF();
-        this.r = 1.0f;
-        int i10 = org.telegram.ui.ActionBar.i6.i6;
-        d dVar = k7Var.s;
-        paint.setColor(org.telegram.ui.ActionBar.i6.v0(i10, dVar));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setText(LocaleController.getString(R.string.AllViewers));
-        int i11 = org.telegram.ui.ActionBar.i6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setText(LocaleController.getString(R.string.Contacts));
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, dVar));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
-        linearLayout.setPadding(0, AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f));
-        linearLayout.addView(textView, w7.z5.t(-2, -2, 0, 13, 0, 0, 0));
-        linearLayout.addView(textView2, w7.z5.t(-2, -2, 0, 0, 0, 0, 0));
-        LinearLayout linearLayout2 = new LinearLayout(getContext());
-        this.a = linearLayout2;
-        linearLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
-        linearLayout2.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.i6.v0(i10, dVar)));
-        linearLayout2.setOrientation(0);
-        hm0 hm0Var = new hm0(getContext());
-        this.v = hm0Var;
-        hm0Var.r = true;
-        hm0Var.a(R.drawable.menu_views_reactions3, false);
-        ImageView imageView = new ImageView(getContext());
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        imageView.setImageDrawable(hm0Var);
-        imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-        linearLayout2.addView(imageView, w7.z5.n(26, 26));
-        ImageView imageView2 = new ImageView(getContext());
-        imageView2.setImageResource(R.drawable.arrow_more);
-        linearLayout2.addView(imageView2, w7.z5.n(16, 26));
-        addView(linearLayout, w7.z5.c(-2.0f, -2));
-        addView(linearLayout2, w7.z5.d(-2, -2.0f, 5, 13.0f, 6.0f, 13.0f, 6.0f));
-        final int i12 = 0;
-        textView.setOnClickListener(new View.OnClickListener(this) { // from class: ai.v6
-            public final /* synthetic */ y6 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        k7 k7Var2 = this.b.x;
-                        u6 u6Var = k7Var2.O;
-                        if (u6Var.b) {
-                            u6Var.b = false;
-                            k7Var2.h(true);
-                            k7.b(k7Var2);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        k7 k7Var3 = this.b.x;
-                        u6 u6Var2 = k7Var3.O;
-                        if (!u6Var2.b) {
-                            u6Var2.b = true;
-                            k7Var3.h(true);
-                            k7.b(k7Var3);
-                            break;
-                        }
-                        break;
-                    default:
-                        y6 y6Var = this.b;
-                        k7 k7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
-                        k7Var4.f = x6Var;
-                        LinearLayout linearLayout3 = y6Var.a;
-                        int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
-                        x6Var.b = true;
-                        x6Var.a.showAsDropDown(linearLayout3, 0, dp);
-                        break;
-                }
-            }
-        });
-        final int i13 = 1;
-        textView2.setOnClickListener(new View.OnClickListener(this) { // from class: ai.v6
-            public final /* synthetic */ y6 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i13) {
-                    case 0:
-                        k7 k7Var2 = this.b.x;
-                        u6 u6Var = k7Var2.O;
-                        if (u6Var.b) {
-                            u6Var.b = false;
-                            k7Var2.h(true);
-                            k7.b(k7Var2);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        k7 k7Var3 = this.b.x;
-                        u6 u6Var2 = k7Var3.O;
-                        if (!u6Var2.b) {
-                            u6Var2.b = true;
-                            k7Var3.h(true);
-                            k7.b(k7Var3);
-                            break;
-                        }
-                        break;
-                    default:
-                        y6 y6Var = this.b;
-                        k7 k7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
-                        k7Var4.f = x6Var;
-                        LinearLayout linearLayout3 = y6Var.a;
-                        int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
-                        x6Var.b = true;
-                        x6Var.a.showAsDropDown(linearLayout3, 0, dp);
-                        break;
-                }
-            }
-        });
-        final int i14 = 2;
-        linearLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: ai.v6
-            public final /* synthetic */ y6 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i14) {
-                    case 0:
-                        k7 k7Var2 = this.b.x;
-                        u6 u6Var = k7Var2.O;
-                        if (u6Var.b) {
-                            u6Var.b = false;
-                            k7Var2.h(true);
-                            k7.b(k7Var2);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        k7 k7Var3 = this.b.x;
-                        u6 u6Var2 = k7Var3.O;
-                        if (!u6Var2.b) {
-                            u6Var2.b = true;
-                            k7Var3.h(true);
-                            k7.b(k7Var3);
-                            break;
-                        }
-                        break;
-                    default:
-                        y6 y6Var = this.b;
-                        k7 k7Var4 = y6Var.x;
-                        x6 x6Var = new x6(y6Var, y6Var.getContext(), k7Var4.s);
-                        k7Var4.f = x6Var;
-                        LinearLayout linearLayout3 = y6Var.a;
-                        int dp = (-linearLayout3.getMeasuredHeight()) - AndroidUtilities.dp(8.0f);
-                        x6Var.b = true;
-                        x6Var.a.showAsDropDown(linearLayout3, 0, dp);
-                        break;
-                }
-            }
-        });
+    public y6(z6 z6Var, Context context, d dVar) {
+        super(context, dVar, false);
+        this.c = z6Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        if (this.x.T) {
-            int i10 = this.s;
-            TextView textView = this.d;
-            float f10 = 0.5f;
-            TextView textView2 = this.c;
-            if (i10 == 0) {
-                textView2.getHitRect(AndroidUtilities.rectTmp2);
-                f7 = 0.5f;
-                f10 = 1.0f;
-            } else {
-                textView.getHitRect(AndroidUtilities.rectTmp2);
-                f7 = 1.0f;
-            }
-            Rect rect = AndroidUtilities.rectTmp2;
-            RectF rectF = this.n;
-            rectF.set(rect);
-            float f11 = this.r;
-            if (f11 != 1.0f) {
-                f10 = AndroidUtilities.lerp(this.f, f10, f11);
-                f7 = AndroidUtilities.lerp(this.h, f7, this.r);
-                AndroidUtilities.lerp(this.e, rectF, this.r, rectF);
-            }
-            textView2.setAlpha(f10);
-            textView.setAlpha(f7);
-            float height = rectF.height() / 2.0f;
-            canvas.drawRoundRect(rectF, height, height, this.b);
+    @Override // org.telegram.ui.Components.ns
+    public final void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(i0.a.d(0.18f, -16777216, -1));
+        z6 z6Var = this.c;
+        l7 l7Var = z6Var.x;
+        k7 k7Var = l7Var.E;
+        boolean z10 = k7Var != null && k7Var.f;
+        org.telegram.ui.ActionBar.f1 c10 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : l7Var.O.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, LocaleController.getString(z10 ? R.string.SortByReposts : R.string.SortByReactions), false, l7Var.s);
+        if (!l7Var.O.a) {
+            c10.setAlpha(0.5f);
         }
-        super.dispatchDraw(canvas);
+        final int i10 = 0;
+        c10.setOnClickListener(new View.OnClickListener(this) { // from class: ai.x6
+            public final /* synthetic */ y6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        l7 l7Var2 = this.b.c.x;
+                        v6 v6Var = l7Var2.O;
+                        if (!v6Var.a) {
+                            v6 v6Var2 = l7Var2.M;
+                            if (v6Var2 != null) {
+                                v6Var.a = true;
+                                v6Var2.a = true;
+                            } else {
+                                v6Var.a = true;
+                            }
+                            l7Var2.h(true);
+                            l7.b(l7Var2);
+                            l7Var2.N.run(l7Var2);
+                        }
+                        y6 y6Var = l7Var2.f;
+                        if (y6Var != null) {
+                            y6Var.a();
+                            break;
+                        }
+                        break;
+                    default:
+                        l7 l7Var3 = this.b.c.x;
+                        v6 v6Var3 = l7Var3.O;
+                        if (v6Var3.a) {
+                            v6 v6Var4 = l7Var3.M;
+                            if (v6Var4 != null) {
+                                v6Var3.a = false;
+                                v6Var4.a = false;
+                            } else {
+                                v6Var3.a = false;
+                            }
+                            l7Var3.h(true);
+                            l7.b(l7Var3);
+                            l7Var3.N.run(l7Var3);
+                        }
+                        y6 y6Var2 = l7Var3.f;
+                        if (y6Var2 != null) {
+                            y6Var2.a();
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        org.telegram.ui.ActionBar.f1 c11 = org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !l7Var.O.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, LocaleController.getString(R.string.SortByTime), false, l7Var.s);
+        if (l7Var.O.a) {
+            c11.setAlpha(0.5f);
+        }
+        final int i11 = 1;
+        c11.setOnClickListener(new View.OnClickListener(this) { // from class: ai.x6
+            public final /* synthetic */ y6 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        l7 l7Var2 = this.b.c.x;
+                        v6 v6Var = l7Var2.O;
+                        if (!v6Var.a) {
+                            v6 v6Var2 = l7Var2.M;
+                            if (v6Var2 != null) {
+                                v6Var.a = true;
+                                v6Var2.a = true;
+                            } else {
+                                v6Var.a = true;
+                            }
+                            l7Var2.h(true);
+                            l7.b(l7Var2);
+                            l7Var2.N.run(l7Var2);
+                        }
+                        y6 y6Var = l7Var2.f;
+                        if (y6Var != null) {
+                            y6Var.a();
+                            break;
+                        }
+                        break;
+                    default:
+                        l7 l7Var3 = this.b.c.x;
+                        v6 v6Var3 = l7Var3.O;
+                        if (v6Var3.a) {
+                            v6 v6Var4 = l7Var3.M;
+                            if (v6Var4 != null) {
+                                v6Var3.a = false;
+                                v6Var4.a = false;
+                            } else {
+                                v6Var3.a = false;
+                            }
+                            l7Var3.h(true);
+                            l7.b(l7Var3);
+                            l7Var3.N.run(l7Var3);
+                        }
+                        y6 y6Var2 = l7Var3.f;
+                        if (y6Var2 != null) {
+                            y6Var2.a();
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        View k1Var = new org.telegram.ui.ActionBar.k1(z6Var.getContext(), org.telegram.ui.ActionBar.i6.H8, l7Var.s);
+        k1Var.setTag(R.id.fit_width_tag, 1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(k1Var, w7.x5.n(-1, 8));
+        String string = LocaleController.getString(z10 ? R.string.StoryReactionsSortDescription : R.string.StoryViewsSortDescription);
+        d dVar = l7Var.s;
+        TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
+        textView.setTextSize(1, 13.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.j5, dVar));
+        textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        textView.setText(string);
+        textView.setTag(R.id.fit_width_tag, 1);
+        textView.setMaxWidth(AndroidUtilities.dp(200.0f));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, w7.x5.n(-1, -2));
+    }
+
+    @Override // org.telegram.ui.Components.ns
+    public final void c() {
     }
 }

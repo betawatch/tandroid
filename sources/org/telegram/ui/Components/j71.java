@@ -1,68 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import androidx.core.widget.NestedScrollView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j71 extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ k71 a0;
+public final class j71 extends s4.j {
+    public final /* synthetic */ k71 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j71(k71 k71Var, Context context) {
-        super(context);
-        this.a0 = k71Var;
+    public j71(k71 k71Var) {
+        this.F = k71Var;
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        k71.m(this.a0);
+    @Override // s4.j
+    public final void M() {
+        k71 k71Var = this.F;
+        if (k71Var.b1()) {
+            k71Var.invalidate();
+        }
+        k71Var.D1();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
-    
-        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        k71 k71Var = this.a0;
-        measureChildWithMargins(k71Var.f, i10, 0, i11, 0);
-        int measuredHeight = k71Var.f.getMeasuredHeight();
-        int i12 = (size / 5) * 2;
-        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
+    @Override // s4.j
+    public final void O() {
+        k71 k71Var = this.F;
+        if (k71Var.b1()) {
+            k71Var.invalidate();
         }
-        i12 = size - measuredHeight;
-        if (i12 < 0) {
-            i12 = 0;
-        }
-        if (getPaddingTop() != i12) {
-            this.W = true;
-            setPadding(0, i12, 0, 0);
-            this.W = false;
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        k71Var.D1();
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        k71.m(this.a0);
+    @Override // s4.j
+    public final void P(s4.d1 d1Var) {
+        k71 k71Var = this.F;
+        k71Var.invalidate();
+        k71Var.D1();
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W) {
-            return;
+    @Override // s4.j
+    public final void Q() {
+        k71 k71Var = this.F;
+        if (k71Var.b1()) {
+            k71Var.invalidate();
         }
-        super.requestLayout();
+        k71Var.D1();
     }
 }

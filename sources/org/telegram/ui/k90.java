@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k90 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -76,7 +76,7 @@ public final /* synthetic */ class k90 implements Runnable {
                             } else {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong("chat_id", -j3);
-                                launchActivity.p0(wf1.F0(launchActivity, bundle));
+                                launchActivity.p0(fg1.F0(launchActivity, bundle));
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -98,29 +98,29 @@ public final /* synthetic */ class k90 implements Runnable {
                 Pattern pattern2 = LaunchActivity.B1;
                 final LaunchActivity launchActivity3 = this.b;
                 launchActivity3.getClass();
-                final yn ynVar = new yn(bundle2);
+                final zn znVar = new zn(bundle2);
                 final byte[] bArr = this.c;
                 final int i14 = this.d;
                 final Integer num2 = this.e;
                 final String str = this.f;
                 final int i15 = this.h;
                 if (bArr != null) {
-                    ynVar.P7 = bArr;
-                    ynVar.J7 = i14;
+                    znVar.R7 = bArr;
+                    znVar.L7 = i14;
                 } else if (num2 != null) {
-                    ynVar.O7 = num2;
-                    ynVar.J7 = i14;
+                    znVar.Q7 = num2;
+                    znVar.L7 = i14;
                 } else {
-                    ynVar.lb(i14, i15, str);
+                    znVar.qb(i14, i15, str);
                 }
-                if (!((ActionBarLayout) (AndroidUtilities.isTablet() ? launchActivity3.s0 : launchActivity3.O())).P(ynVar)) {
+                if (!((ActionBarLayout) (AndroidUtilities.isTablet() ? launchActivity3.s0 : launchActivity3.O())).P(znVar)) {
                     final long j10 = this.n;
                     if (j10 < 0) {
                         TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
                         TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
                         tL_inputChannel.channel_id = -j10;
                         tL_channels_getChannels.id.add(tL_inputChannel);
-                        j0Var.b = new t80(launchActivity3, ConnectionsManager.getInstance(launchActivity3.O).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.y90
+                        j0Var.b = new u80(launchActivity3, ConnectionsManager.getInstance(launchActivity3.O).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.y90
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error) {
                                 Pattern pattern3 = LaunchActivity.B1;
@@ -133,7 +133,7 @@ public final /* synthetic */ class k90 implements Runnable {
                                 final byte[] bArr2 = bArr;
                                 final org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
                                 final Bundle bundle3 = bundle2;
-                                final yn ynVar2 = ynVar;
+                                final zn znVar2 = znVar;
                                 final String str2 = str;
                                 final int i17 = i15;
                                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ba0
@@ -156,15 +156,15 @@ public final /* synthetic */ class k90 implements Runnable {
                                                 org.telegram.ui.ActionBar.n2 n2Var3 = n2Var2;
                                                 Bundle bundle4 = bundle3;
                                                 if (n2Var3 == null || MessagesController.getInstance(launchActivity5.O).checkCanOpenChat(bundle4, n2Var3)) {
-                                                    yn ynVar3 = new yn(bundle4);
-                                                    ynVar2.lb(i18, i17, str2);
-                                                    ((ActionBarLayout) launchActivity5.O()).P(ynVar3);
+                                                    zn znVar3 = new zn(bundle4);
+                                                    znVar2.qb(i18, i17, str2);
+                                                    ((ActionBarLayout) launchActivity5.O()).P(znVar3);
                                                     return;
                                                 }
                                                 return;
                                             }
                                         }
-                                        launchActivity5.B0(org.telegram.ui.Components.e5.H(launchActivity5, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
+                                        launchActivity5.B0(org.telegram.ui.Components.g5.G(launchActivity5, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
                                     }
                                 });
                             }

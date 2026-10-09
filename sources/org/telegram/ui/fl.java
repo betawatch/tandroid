@@ -1,31 +1,25 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.style.CharacterStyle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fl extends UndoView {
-    public final /* synthetic */ yn f0;
+public final class fl implements NotificationCenter.PostponeNotificationCallback {
+    public final /* synthetic */ zn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl(yn ynVar, Activity activity, yn ynVar2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity, ynVar2, true, d6Var);
-        this.f0 = ynVar;
+    public fl(zn znVar) {
+        this.a = znVar;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void b(CharacterStyle characterStyle) {
-        this.f0.U7(characterStyle, false, null, null);
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j3, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        int i11;
-        ek ekVar = this.f0.V1;
-        setAdditionalTranslationY((ekVar == null || !(((i11 = ekVar.T) == 1 || i11 == 3) && ekVar.S)) ? 0.0f : AndroidUtilities.dp(ekVar.getStyleHeight()));
-        super.k(j3, i10, obj, obj2, runnable, runnable2);
+    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
+    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
+        if (i10 == NotificationCenter.didReceiveNewMessages) {
+            long longValue = ((Long) objArr[0]).longValue();
+            zn znVar = this.a;
+            if (znVar.H6 && longValue == znVar.T5) {
+                return true;
+            }
+        }
+        return false;
     }
 }

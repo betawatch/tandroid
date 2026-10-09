@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import id.c;
-import id.h;
+import ae.c0;
+import ae.g0;
+import ae.h1;
+import hd.i;
 import java.util.Iterator;
 import java.util.List;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
-import wd.b;
-import wd.d;
-import zd.b0;
-import zd.e0;
-import zd.f1;
+import jd.c;
+import jd.h;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
+import xd.b;
+import xd.d;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzfb extends j implements p {
     int zza;
@@ -32,14 +32,14 @@ final class zzfb extends j implements p {
         this.zzd = j3;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         zzfb zzfbVar = new zzfb(this.zzb, this.zzc, this.zzd, cVar);
         zzfbVar.zze = obj;
         return zzfbVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzfb) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
@@ -56,19 +56,19 @@ final class zzfb extends j implements p {
     
         if (r10 != r1) goto L17;
      */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         b children;
         zzhk zzhkVar;
-        b0 b0Var = b0.b;
+        c0 c0Var = c0.b;
         a aVar = a.a;
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                a8.b(obj);
                 zzhkVar = (zzhk) this.zze;
                 zzfp zzfpVar = this.zzb;
                 zzxn zzxnVar = this.zzc;
@@ -81,36 +81,36 @@ final class zzfb extends j implements p {
             } else {
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        t7.b(obj);
+                        a8.b(obj);
                         return i.a;
                     }
                     zzcg zzcgVar = (zzcg) this.zze;
-                    t7.b(obj);
+                    a8.b(obj);
                     throw zzcgVar;
                 }
                 zzhkVar = (zzhk) this.zze;
-                t7.b(obj);
+                a8.b(obj);
             }
             this.zze = null;
             this.zza = 2;
         } catch (zzcg e7) {
             zzfp zzfpVar2 = this.zzb;
-            f1 f1Var = (f1) zzfp.zzf(zzfpVar2).zzd().c().get(b0Var);
-            if (f1Var != null && (children = f1Var.getChildren()) != null) {
+            h1 h1Var = (h1) zzfp.zzf(zzfpVar2).zzd().c().get(c0Var);
+            if (h1Var != null && (children = h1Var.getChildren()) != null) {
                 Iterator it = children.iterator();
                 while (it.hasNext()) {
-                    ((f1) it.next()).cancel(null);
+                    ((h1) it.next()).cancel(null);
                 }
             }
             h c10 = zzfp.zzf(zzfpVar2).zzd().c();
-            f1 f1Var2 = (f1) c10.get(b0Var);
-            if (f1Var2 == null) {
+            h1 h1Var2 = (h1) c10.get(c0Var);
+            if (h1Var2 == null) {
                 throw new IllegalStateException(("Current context doesn't contain Job in it: " + c10).toString());
             }
-            List a2 = d.a(f1Var2.getChildren());
+            List a2 = d.a(h1Var2.getChildren());
             this.zze = e7;
             this.zza = 3;
-            if (e0.o(a2, this) != aVar) {
+            if (g0.o(a2, this) != aVar) {
                 throw e7;
             }
         }

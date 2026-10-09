@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FastDatePrinter implements DatePrinter, Serializable {
     public static final int FULL = 0;
@@ -30,7 +30,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
     private transient Rule[] mRules;
     private final TimeZone mTimeZone;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class CharacterLiteral implements Rule {
         private final char mValue;
 
@@ -49,12 +49,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface NumberRule extends Rule {
         void appendTo(StringBuffer stringBuffer, int i10);
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class PaddedNumberField implements NumberRule {
         private final int mField;
         private final int mSize;
@@ -105,14 +105,14 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public interface Rule {
         void appendTo(StringBuffer stringBuffer, Calendar calendar);
 
         int estimateLength();
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class StringLiteral implements Rule {
         private final String mValue;
 
@@ -131,7 +131,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TextField implements Rule {
         private final int mField;
         private final String[] mValues;
@@ -163,7 +163,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TimeZoneDisplayKey {
         private final Locale mLocale;
         private final int mStyle;
@@ -197,7 +197,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TimeZoneNameRule implements Rule {
         private final String mDaylight;
         private final Locale mLocale;
@@ -227,7 +227,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TimeZoneNumberRule implements Rule {
         static final TimeZoneNumberRule INSTANCE_COLON = new TimeZoneNumberRule(true);
         static final TimeZoneNumberRule INSTANCE_NO_COLON = new TimeZoneNumberRule(false);
@@ -263,7 +263,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TwoDigitMonthField implements NumberRule {
         static final TwoDigitMonthField INSTANCE = new TwoDigitMonthField();
 
@@ -284,7 +284,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TwoDigitNumberField implements NumberRule {
         private final int mField;
 
@@ -313,7 +313,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TwoDigitYearField implements NumberRule {
         static final TwoDigitYearField INSTANCE = new TwoDigitYearField();
 
@@ -334,7 +334,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class UnpaddedMonthField implements NumberRule {
         static final UnpaddedMonthField INSTANCE = new UnpaddedMonthField();
 
@@ -359,7 +359,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class UnpaddedNumberField implements NumberRule {
         private final int mField;
 
@@ -492,9 +492,12 @@ public class FastDatePrinter implements DatePrinter, Serializable {
 
     public List<Rule> parsePattern() {
         int i10;
+        int i11;
         Rule selectNumberRule;
         Rule rule;
         Rule timeZoneNameRule;
+        int i12;
+        Rule textField;
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(this.mLocale);
         ArrayList arrayList = new ArrayList();
         String[] eras = dateFormatSymbols.getEras();
@@ -504,147 +507,197 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         String[] shortWeekdays = dateFormatSymbols.getShortWeekdays();
         String[] amPmStrings = dateFormatSymbols.getAmPmStrings();
         int length = this.mPattern.length();
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < length) {
-            int[] iArr = {i12};
+        int i13 = 0;
+        int i14 = 0;
+        while (i14 < length) {
+            int[] iArr = {i14};
             String parseToken = parseToken(this.mPattern, iArr);
-            int i13 = iArr[i11];
+            int i15 = iArr[i13];
             int length2 = parseToken.length();
             if (length2 == 0) {
                 return arrayList;
             }
-            char charAt = parseToken.charAt(i11);
-            if (charAt != 'y') {
-                if (charAt != 'z') {
-                    switch (charAt) {
-                        case Maneuver.TYPE_DESTINATION /* 39 */:
-                            String substring = parseToken.substring(1);
-                            selectNumberRule = substring.length() == 1 ? new CharacterLiteral(substring.charAt(0)) : new StringLiteral(substring);
-                            i10 = 1;
-                            break;
-                        case 'S':
-                            timeZoneNameRule = selectNumberRule(14, length2);
-                            break;
-                        case 'W':
-                            timeZoneNameRule = selectNumberRule(4, length2);
-                            break;
-                        case 'Z':
-                            if (length2 != 1) {
-                                timeZoneNameRule = TimeZoneNumberRule.INSTANCE_COLON;
-                                break;
-                            } else {
-                                timeZoneNameRule = TimeZoneNumberRule.INSTANCE_NO_COLON;
-                                break;
-                            }
-                        case 'a':
-                            timeZoneNameRule = new TextField(9, amPmStrings);
-                            break;
-                        case 'd':
-                            timeZoneNameRule = selectNumberRule(5, length2);
-                            break;
-                        case 'h':
-                            timeZoneNameRule = new TwelveHourField(selectNumberRule(10, length2));
-                            break;
-                        case 'k':
-                            timeZoneNameRule = new TwentyFourHourField(selectNumberRule(11, length2));
-                            break;
-                        case 'm':
-                            timeZoneNameRule = selectNumberRule(12, length2);
-                            break;
-                        case 's':
-                            timeZoneNameRule = selectNumberRule(13, length2);
-                            break;
-                        case 'w':
-                            timeZoneNameRule = selectNumberRule(3, length2);
-                            break;
-                        default:
-                            switch (charAt) {
-                                case 'D':
-                                    timeZoneNameRule = selectNumberRule(6, length2);
-                                    break;
-                                case 'E':
-                                    selectNumberRule = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
-                                    i10 = 1;
-                                    break;
-                                case 'F':
-                                    timeZoneNameRule = selectNumberRule(8, length2);
-                                    break;
-                                case 'G':
-                                    timeZoneNameRule = new TextField(0, eras);
-                                    break;
-                                case 'H':
-                                    timeZoneNameRule = selectNumberRule(11, length2);
-                                    break;
-                                default:
-                                    switch (charAt) {
-                                        case 'K':
-                                            timeZoneNameRule = selectNumberRule(10, length2);
-                                            break;
-                                        case 'L':
-                                            if (length2 < 4) {
-                                                if (length2 != 3) {
-                                                    if (length2 != 2) {
-                                                        timeZoneNameRule = UnpaddedMonthField.INSTANCE;
-                                                        break;
-                                                    } else {
-                                                        timeZoneNameRule = TwoDigitMonthField.INSTANCE;
-                                                        break;
-                                                    }
-                                                } else {
-                                                    timeZoneNameRule = new TextField(2, shortMonths);
-                                                    break;
-                                                }
-                                            } else {
-                                                timeZoneNameRule = new TextField(2, months);
-                                                break;
-                                            }
-                                        case 'M':
-                                            if (length2 < 4) {
-                                                if (length2 != 3) {
-                                                    if (length2 != 2) {
-                                                        timeZoneNameRule = UnpaddedMonthField.INSTANCE;
-                                                        break;
-                                                    } else {
-                                                        timeZoneNameRule = TwoDigitMonthField.INSTANCE;
-                                                        break;
-                                                    }
-                                                } else {
-                                                    timeZoneNameRule = new TextField(2, shortMonths);
-                                                    break;
-                                                }
-                                            } else {
-                                                timeZoneNameRule = new TextField(2, months);
-                                                break;
-                                            }
-                                        default:
-                                            throw new IllegalArgumentException("Illegal pattern component: ".concat(parseToken));
-                                    }
-                            }
-                    }
-                } else if (length2 >= 4) {
-                    timeZoneNameRule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 1);
-                } else {
-                    rule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 0);
+            char charAt = parseToken.charAt(i13);
+            if (charAt == 'y') {
+                i10 = 0;
+                if (length2 == 2) {
+                    rule = TwoDigitYearField.INSTANCE;
                     selectNumberRule = rule;
-                    i10 = 1;
+                    i11 = 1;
+                } else {
+                    if (length2 < 4) {
+                        length2 = 4;
+                    }
+                    i11 = 1;
+                    selectNumberRule = selectNumberRule(1, length2);
                 }
+            } else if (charAt != 'z') {
+                switch (charAt) {
+                    case Maneuver.TYPE_DESTINATION /* 39 */:
+                        String substring = parseToken.substring(1);
+                        selectNumberRule = substring.length() == 1 ? new CharacterLiteral(substring.charAt(0)) : new StringLiteral(substring);
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'S':
+                        i12 = 1;
+                        timeZoneNameRule = selectNumberRule(14, length2);
+                        selectNumberRule = timeZoneNameRule;
+                        i11 = i12;
+                        i10 = 0;
+                        break;
+                    case 'W':
+                        i12 = 1;
+                        timeZoneNameRule = selectNumberRule(4, length2);
+                        selectNumberRule = timeZoneNameRule;
+                        i11 = i12;
+                        i10 = 0;
+                        break;
+                    case 'Z':
+                        i12 = 1;
+                        timeZoneNameRule = length2 == 1 ? TimeZoneNumberRule.INSTANCE_NO_COLON : TimeZoneNumberRule.INSTANCE_COLON;
+                        selectNumberRule = timeZoneNameRule;
+                        i11 = i12;
+                        i10 = 0;
+                        break;
+                    case 'a':
+                        textField = new TextField(9, amPmStrings);
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'd':
+                        textField = selectNumberRule(5, length2);
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'h':
+                        textField = new TwelveHourField(selectNumberRule(10, length2));
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'k':
+                        textField = new TwentyFourHourField(selectNumberRule(11, length2));
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'm':
+                        textField = selectNumberRule(12, length2);
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 's':
+                        textField = selectNumberRule(13, length2);
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    case 'w':
+                        textField = selectNumberRule(3, length2);
+                        selectNumberRule = textField;
+                        i11 = 1;
+                        i10 = 0;
+                        break;
+                    default:
+                        switch (charAt) {
+                            case 'D':
+                                textField = selectNumberRule(6, length2);
+                                selectNumberRule = textField;
+                                i11 = 1;
+                                i10 = 0;
+                                break;
+                            case 'E':
+                                selectNumberRule = new TextField(7, length2 < 4 ? shortWeekdays : weekdays);
+                                i11 = 1;
+                                i10 = 0;
+                                break;
+                            case 'F':
+                                textField = selectNumberRule(8, length2);
+                                selectNumberRule = textField;
+                                i11 = 1;
+                                i10 = 0;
+                                break;
+                            case 'G':
+                                rule = new TextField(0, eras);
+                                i10 = 0;
+                                selectNumberRule = rule;
+                                i11 = 1;
+                                break;
+                            case 'H':
+                                textField = selectNumberRule(11, length2);
+                                selectNumberRule = textField;
+                                i11 = 1;
+                                i10 = 0;
+                                break;
+                            default:
+                                switch (charAt) {
+                                    case 'K':
+                                        textField = selectNumberRule(10, length2);
+                                        break;
+                                    case 'L':
+                                        if (length2 < 4) {
+                                            if (length2 != 3) {
+                                                if (length2 != 2) {
+                                                    textField = UnpaddedMonthField.INSTANCE;
+                                                    break;
+                                                } else {
+                                                    textField = TwoDigitMonthField.INSTANCE;
+                                                    break;
+                                                }
+                                            } else {
+                                                textField = new TextField(2, shortMonths);
+                                                break;
+                                            }
+                                        } else {
+                                            textField = new TextField(2, months);
+                                            break;
+                                        }
+                                    case 'M':
+                                        if (length2 < 4) {
+                                            if (length2 != 3) {
+                                                if (length2 != 2) {
+                                                    textField = UnpaddedMonthField.INSTANCE;
+                                                    break;
+                                                } else {
+                                                    textField = TwoDigitMonthField.INSTANCE;
+                                                    break;
+                                                }
+                                            } else {
+                                                textField = new TextField(2, shortMonths);
+                                                break;
+                                            }
+                                        } else {
+                                            textField = new TextField(2, months);
+                                            break;
+                                        }
+                                    default:
+                                        throw new IllegalArgumentException("Illegal pattern component: ".concat(parseToken));
+                                }
+                                selectNumberRule = textField;
+                                i11 = 1;
+                                i10 = 0;
+                                break;
+                        }
+                }
+            } else if (length2 >= 4) {
+                i12 = 1;
+                timeZoneNameRule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 1);
                 selectNumberRule = timeZoneNameRule;
-                i10 = 1;
-            } else if (length2 == 2) {
-                rule = TwoDigitYearField.INSTANCE;
-                selectNumberRule = rule;
-                i10 = 1;
+                i11 = i12;
+                i10 = 0;
             } else {
-                if (length2 < 4) {
-                    length2 = 4;
-                }
-                i10 = 1;
-                selectNumberRule = selectNumberRule(1, length2);
+                i10 = 0;
+                rule = new TimeZoneNameRule(this.mTimeZone, this.mLocale, 0);
+                selectNumberRule = rule;
+                i11 = 1;
             }
             arrayList.add(selectNumberRule);
-            i12 = i13 + i10;
-            i11 = 0;
+            i14 = i15 + i11;
+            i13 = i10;
         }
         return arrayList;
     }
@@ -699,7 +752,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         return "FastDatePrinter[" + this.mPattern + "," + this.mLocale + "," + this.mTimeZone.getID() + "]";
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TwelveHourField implements NumberRule {
         private final NumberRule mRule;
 
@@ -727,7 +780,7 @@ public class FastDatePrinter implements DatePrinter, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class TwentyFourHourField implements NumberRule {
         private final NumberRule mRule;
 

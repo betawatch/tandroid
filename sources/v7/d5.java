@@ -1,15 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class d5 {
-    public abstract boolean a(c0.h hVar, c0.d dVar, c0.d dVar2);
+public final class d5 implements ia.d {
+    public static final d5 a = new d5();
 
-    public abstract boolean b(c0.h hVar, Object obj, Object obj2);
+    static {
+        sc.v.t(sc.v.l(h.class, sc.v.p(3, sc.v.l(h.class, sc.v.p(2, sc.v.l(h.class, new e(1)))))));
+    }
 
-    public abstract boolean c(c0.h hVar, c0.g gVar, c0.g gVar2);
-
-    public abstract void d(c0.g gVar, c0.g gVar2);
-
-    public abstract void e(c0.g gVar, Thread thread);
+    @Override // ia.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

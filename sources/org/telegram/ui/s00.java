@@ -8,17 +8,17 @@ import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class s00 extends org.telegram.ui.Components.p6 {
+public final class s00 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int s = 0;
     public final Object v;
     public final /* synthetic */ ViewGroup w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s00(yh.m7 m7Var, Context context, Drawable drawable) {
+    public s00(yh.d7 d7Var, Context context, Drawable drawable) {
         super(context, false, false, false);
-        this.w = m7Var;
+        this.w = d7Var;
         this.v = drawable;
     }
 
@@ -30,17 +30,17 @@ public final class s00 extends org.telegram.ui.Components.p6 {
                 int a2 = t00Var.w.a(t00Var.v, false);
                 setTextColor(a2);
                 Paint paint = (Paint) this.v;
-                paint.setColor(org.telegram.ui.ActionBar.i6.l1(org.telegram.ui.ActionBar.i6.I.q() ? 0.2f : 0.1f, a2));
+                paint.setColor(org.telegram.ui.ActionBar.i6.m1(org.telegram.ui.ActionBar.i6.I.q() ? 0.2f : 0.1f, a2));
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set((getWidth() - getDrawable().d()) - AndroidUtilities.dpf2(9.32f), (getHeight() - AndroidUtilities.dpf2(14.66f)) / 2.0f, getWidth(), (AndroidUtilities.dpf2(14.66f) + getHeight()) / 2.0f);
+                rectF.set((getWidth() - getDrawable().c()) - AndroidUtilities.dpf2(9.32f), (getHeight() - AndroidUtilities.dpf2(14.66f)) / 2.0f, getWidth(), (AndroidUtilities.dpf2(14.66f) + getHeight()) / 2.0f);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
                 super.dispatchDraw(canvas);
                 break;
             default:
                 Drawable drawable = (Drawable) this.v;
-                if (!((yh.m7) this.w).d) {
-                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().d()) - AndroidUtilities.dp(20.0f));
-                    drawable.setBounds(measuredWidth, org.telegram.messenger.bi.z(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
+                if (!((yh.d7) this.w).d) {
+                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().c()) - AndroidUtilities.dp(20.0f));
+                    drawable.setBounds(measuredWidth, org.telegram.messenger.bi.A(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
                     drawable.draw(canvas);
                 }
                 super.dispatchDraw(canvas);

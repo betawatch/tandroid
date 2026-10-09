@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class q extends AsyncTask {
     public final Bitmap a;
@@ -61,7 +61,7 @@ public final class q extends AsyncTask {
         if (r5 != null) goto L11;
      */
     /* JADX WARN: Not initialized variable reg: 5, insn: 0x002f: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:48), block:B:60:0x002f */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x00f2  */
     @Override // android.os.AsyncTask
     /*
         Code decompiled incorrectly, please refer to instructions dump.

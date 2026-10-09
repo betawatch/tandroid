@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MulticolumnAtom extends Atom {
     protected int afterVlines;
@@ -26,38 +26,37 @@ public class MulticolumnAtom extends Atom {
         while (i10 < length) {
             char charAt = str.charAt(i10);
             if (charAt == 'c') {
+                z10 = false;
                 i11 = 2;
             } else if (charAt == 'l') {
                 i11 = 0;
-            } else if (charAt != 'r') {
-                if (charAt == '|') {
-                    if (z10) {
-                        this.beforeVlines = 1;
-                    } else {
-                        this.afterVlines = 1;
-                    }
-                    while (true) {
-                        int i12 = i10 + 1;
-                        if (i12 >= length) {
-                            i10 = i12;
-                            break;
-                        }
-                        if (str.charAt(i12) != '|') {
-                            break;
-                        }
-                        if (z10) {
-                            this.beforeVlines++;
-                        } else {
-                            this.afterVlines++;
-                        }
-                        i10 = i12;
-                    }
-                }
-                i10++;
-            } else {
+                z10 = false;
+            } else if (charAt == 'r') {
+                z10 = false;
                 i11 = 1;
+            } else if (charAt == '|') {
+                if (z10) {
+                    this.beforeVlines = 1;
+                } else {
+                    this.afterVlines = 1;
+                }
+                while (true) {
+                    int i12 = i10 + 1;
+                    if (i12 >= length) {
+                        i10 = i12;
+                        break;
+                    }
+                    if (str.charAt(i12) != '|') {
+                        break;
+                    }
+                    if (z10) {
+                        this.beforeVlines++;
+                    } else {
+                        this.afterVlines++;
+                    }
+                    i10 = i12;
+                }
             }
-            z10 = false;
             i10++;
         }
         return i11;

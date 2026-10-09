@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -25,7 +25,7 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void D0(PlaybackStateCompat playbackStateCompat) {
+    public final void C0(PlaybackStateCompat playbackStateCompat) {
         androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
         if (rVar != null) {
             rVar.e(2, playbackStateCompat, null);
@@ -33,12 +33,12 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void F(List list) {
+    public final void E0(ParcelableVolumeInfo parcelableVolumeInfo) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void F0(ParcelableVolumeInfo parcelableVolumeInfo) {
+    public final void F(List list) {
         throw new AssertionError();
     }
 
@@ -86,7 +86,7 @@ public final class g extends Binder implements b {
         switch (i10) {
             case 1:
                 String readString = parcel.readString();
-                Bundle bundle = (Bundle) v7.l.a(parcel, Bundle.CREATOR);
+                Bundle bundle = (Bundle) k9.b.a(parcel, Bundle.CREATOR);
                 androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) weakReference.get();
                 if (rVar != null) {
                     rVar.e(1, readString, bundle);
@@ -96,22 +96,22 @@ public final class g extends Binder implements b {
                 e0();
                 return true;
             case 3:
-                D0((PlaybackStateCompat) v7.l.a(parcel, PlaybackStateCompat.CREATOR));
+                C0((PlaybackStateCompat) k9.b.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                g0((MediaMetadataCompat) v7.l.a(parcel, MediaMetadataCompat.CREATOR));
+                g0((MediaMetadataCompat) k9.b.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
                 F(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                c0((CharSequence) v7.l.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                c0((CharSequence) k9.b.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                C((Bundle) v7.l.a(parcel, Bundle.CREATOR));
+                C((Bundle) k9.b.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                F0((ParcelableVolumeInfo) v7.l.a(parcel, ParcelableVolumeInfo.CREATOR));
+                E0((ParcelableVolumeInfo) k9.b.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 onRepeatModeChanged(parcel.readInt());

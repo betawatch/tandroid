@@ -8,13 +8,13 @@ import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import ii.n4;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-import t7.u;
-import w7.l7;
+import k2.g0;
+import t7.t;
+import w7.n7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -35,17 +35,17 @@ public abstract class j {
         k6.c cVar9 = new k6.c("mlkit.barcode.ui", 1L);
         k6.c cVar10 = new k6.c("mlkit.smartreply", 1L);
         c = new k6.c("mlkit.segmentation.subject", 1L);
-        a5.a aVar = new a5.a(19, (byte) 0);
-        aVar.z("barcode", cVar);
-        aVar.z("custom_ica", cVar2);
-        aVar.z("face", cVar3);
-        aVar.z("ica", cVar4);
-        aVar.z("ocr", cVar5);
-        aVar.z("langid", cVar6);
-        aVar.z("nlclassifier", cVar7);
-        aVar.z("tflite_dynamite", cVar8);
-        aVar.z("barcode_ui", cVar9);
-        aVar.z("smart_reply", cVar10);
+        a5.a aVar = new a5.a(20, (byte) 0);
+        aVar.B("barcode", cVar);
+        aVar.B("custom_ica", cVar2);
+        aVar.B("face", cVar3);
+        aVar.B("ica", cVar4);
+        aVar.B("ocr", cVar5);
+        aVar.B("langid", cVar6);
+        aVar.B("nlclassifier", cVar7);
+        aVar.B("tflite_dynamite", cVar8);
+        aVar.B("barcode_ui", cVar9);
+        aVar.B("smart_reply", cVar10);
         t7.e eVar = (t7.e) aVar.d;
         if (eVar != null) {
             throw eVar.a();
@@ -56,16 +56,16 @@ public abstract class j {
             throw eVar2.a();
         }
         d = b10;
-        a5.a aVar2 = new a5.a(19, (byte) 0);
-        aVar2.z("com.google.android.gms.vision.barcode", cVar);
-        aVar2.z("com.google.android.gms.vision.custom.ica", cVar2);
-        aVar2.z("com.google.android.gms.vision.face", cVar3);
-        aVar2.z("com.google.android.gms.vision.ica", cVar4);
-        aVar2.z("com.google.android.gms.vision.ocr", cVar5);
-        aVar2.z("com.google.android.gms.mlkit.langid", cVar6);
-        aVar2.z("com.google.android.gms.mlkit.nlclassifier", cVar7);
-        aVar2.z("com.google.android.gms.tflite_dynamite", cVar8);
-        aVar2.z("com.google.android.gms.mlkit_smartreply", cVar10);
+        a5.a aVar2 = new a5.a(20, (byte) 0);
+        aVar2.B("com.google.android.gms.vision.barcode", cVar);
+        aVar2.B("com.google.android.gms.vision.custom.ica", cVar2);
+        aVar2.B("com.google.android.gms.vision.face", cVar3);
+        aVar2.B("com.google.android.gms.vision.ica", cVar4);
+        aVar2.B("com.google.android.gms.vision.ocr", cVar5);
+        aVar2.B("com.google.android.gms.mlkit.langid", cVar6);
+        aVar2.B("com.google.android.gms.mlkit.nlclassifier", cVar7);
+        aVar2.B("com.google.android.gms.tflite_dynamite", cVar8);
+        aVar2.B("com.google.android.gms.mlkit_smartreply", cVar10);
         t7.e eVar3 = (t7.e) aVar2.d;
         if (eVar3 != null) {
             throw eVar3.a();
@@ -79,7 +79,7 @@ public abstract class j {
 
     public static boolean a(Context context, k6.c[] cVarArr) {
         try {
-            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new u()))).a;
+            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new t()))).a;
         } catch (InterruptedException | ExecutionException e7) {
             Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e7);
             return false;
@@ -89,7 +89,7 @@ public abstract class j {
     public static void b(Context context) {
         t7.b bVar = t7.d.b;
         Object[] objArr = {"ica"};
-        l7.a(1, objArr);
+        n7.a(1, objArr);
         t7.g gVar = new t7.g(1, objArr);
         k6.e.b.getClass();
         if (k6.e.a(context) < 221500000) {
@@ -125,7 +125,7 @@ public abstract class j {
             e10.d = new k6.c[]{k7.b.c};
             e10.b = true;
             e10.a = 27304;
-            e10.c = new n4(gVar, b10);
+            e10.c = new g0(gVar, b10);
             e7 = gVar.e(0, e10.a());
         }
         e7.addOnFailureListener(new rb.a(19));

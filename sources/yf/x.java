@@ -17,21 +17,20 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.k0;
-import pg.c1;
+import org.telegram.ui.Wallet.n5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class x extends View {
-    public tf.a E;
+    public uf.a E;
     public final AtomicBoolean F;
     public final AtomicBoolean G;
     public final Handler H;
-    public final c1 I;
+    public final n5 I;
     public int a;
     public long b;
     public int c;
-    public pf.b d;
+    public qf.b d;
     public final AtomicInteger e;
     public int f;
     public final Paint h;
@@ -57,7 +56,7 @@ public final class x extends View {
         this.F = new AtomicBoolean(false);
         this.G = new AtomicBoolean(false);
         this.H = new Handler(Looper.getMainLooper());
-        this.I = new c1(this, 11);
+        this.I = new n5(this, 14);
         paint.setColor(-1342177280);
         paint2.setColor(-1);
         paint2.setTextSize(AndroidUtilities.dp(9.0f));
@@ -85,7 +84,7 @@ public final class x extends View {
         }
     }
 
-    public static x b(LaunchActivity launchActivity, k0 k0Var) {
+    public static x b(LaunchActivity launchActivity, org.telegram.ui.k0 k0Var) {
         x xVar = new x(launchActivity);
         xVar.setObservedView(k0Var);
         xVar.r = (WindowManager) launchActivity.getSystemService("window");
@@ -110,11 +109,11 @@ public final class x extends View {
         v vVar = new v();
         xVar.x = vVar;
         xVar.v.addOnFrameMetricsAvailableListener(vVar, handler);
-        xVar.d = new pf.b(xVar, 3);
+        xVar.d = new qf.b(xVar, 3);
         Choreographer.getInstance().postFrameCallback(xVar.d);
         View view = xVar.y;
         if (view != null) {
-            xVar.E = new tf.a(1, xVar);
+            xVar.E = new uf.a(1, xVar);
             ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
                 viewTreeObserver.addOnDrawListener(xVar.E);
@@ -295,7 +294,7 @@ public final class x extends View {
         if (!this.F.get() || (view2 = this.y) == null) {
             return;
         }
-        this.E = new tf.a(1, this);
+        this.E = new uf.a(1, this);
         ViewTreeObserver viewTreeObserver2 = view2.getViewTreeObserver();
         if (viewTreeObserver2.isAlive()) {
             viewTreeObserver2.addOnDrawListener(this.E);

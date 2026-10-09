@@ -3,15 +3,15 @@ package s2;
 import b2.s;
 import q3.i;
 import s3.c;
-import sa.e;
-import w7.m;
+import sc.v;
+import w7.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
 
-    public final m a(s sVar) {
+    public final l a(s sVar) {
         String str = sVar.r;
         if (str != null) {
             switch (str) {
@@ -27,7 +27,7 @@ public final class a {
                     return new c();
             }
         }
-        throw new IllegalArgumentException(e.i("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(v.i("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
     public final boolean b(s sVar) {

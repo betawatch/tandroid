@@ -1,86 +1,84 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.TextPaint;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
+import android.view.animation.Interpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ac1 extends FrameLayout {
-    public final org.telegram.ui.Cells.ia a;
-    public final org.telegram.ui.Components.zo0 b;
-    public final int c;
-    public final int d;
-    public final TextPaint e;
-    public int f;
-    public final /* synthetic */ ThemeActivity h;
+public final /* synthetic */ class ac1 implements org.telegram.ui.Components.em0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ac1(ThemeActivity themeActivity, Context context) {
-        super(context);
-        org.telegram.ui.ActionBar.c5 c5Var;
-        this.h = themeActivity;
-        this.c = 12;
-        this.d = 30;
-        setWillNotDraw(false);
-        TextPaint textPaint = new TextPaint(1);
-        this.e = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.zo0 zo0Var = new org.telegram.ui.Components.zo0(context);
-        this.b = zo0Var;
-        zo0Var.setReportChanges(true);
-        zo0Var.setSeparatorsCount(19);
-        zo0Var.setDelegate(new dw0(this, 4));
-        zo0Var.setImportantForAccessibility(2);
-        addView(zo0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
-        c5Var = ((org.telegram.ui.ActionBar.n2) themeActivity).parentLayout;
-        org.telegram.ui.Cells.ia iaVar = new org.telegram.ui.Cells.ia(context, c5Var, 0);
-        this.a = iaVar;
-        iaVar.setImportantForAccessibility(4);
-        addView(iaVar, w7.z5.d(-1, -2.0f, 51, 0.0f, 53.0f, 0.0f, 0.0f));
+    public /* synthetic */ ac1(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.a.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I6, false);
-        TextPaint textPaint = this.e;
-        textPaint.setColor(w02);
-        canvas.drawText("" + SharedConfig.fontSize, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.b.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int size = View.MeasureSpec.getSize(i10);
-        if (this.f != size) {
-            int i12 = SharedConfig.fontSize;
-            int i13 = this.c;
-            this.b.setProgress((i12 - i13) / (this.d - i13));
-            this.f = size;
+    @Override // org.telegram.ui.Components.em0
+    public final void d(int i10, View view) {
+        Interpolator interpolator;
+        int i11 = this.a;
+        Object obj = this.d;
+        Object obj2 = this.c;
+        Object obj3 = this.b;
+        switch (i11) {
+            case 0:
+                jc1 jc1Var = (jc1) obj2;
+                fc1 fc1Var = (fc1) obj;
+                ThemeActivity themeActivity = ((hc1) obj3).e;
+                int i12 = themeActivity.f;
+                org.telegram.ui.ActionBar.h6 B0 = i12 == 1 ? org.telegram.ui.ActionBar.i6.J : org.telegram.ui.ActionBar.i6.B0();
+                if (i10 == jc1Var.h() - 1) {
+                    interpolator = null;
+                    themeActivity.presentFragment(new xd1(B0, false, 1, false, i12 == 1));
+                } else {
+                    interpolator = null;
+                    org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) jc1Var.e.get(i10);
+                    if (!TextUtils.isEmpty(g6Var.o) && g6Var.a != org.telegram.ui.ActionBar.i6.n) {
+                        org.telegram.ui.ActionBar.d6.a(false);
+                    }
+                    int i13 = B0.Y;
+                    int i14 = g6Var.a;
+                    if (i13 != i14) {
+                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, B0, Boolean.valueOf(i12 == 1), null, Integer.valueOf(g6Var.a));
+                        org.telegram.ui.ActionBar.c4.q(B0, g6Var.a);
+                        org.telegram.ui.ActionBar.i6.G1(themeActivity);
+                    } else {
+                        themeActivity.presentFragment(new xd1(B0, false, 1, i14 >= 100, i12 == 1));
+                    }
+                }
+                int left = view.getLeft();
+                int right = view.getRight();
+                int dp = AndroidUtilities.dp(52.0f);
+                int i15 = left - dp;
+                if (i15 < 0) {
+                    fc1Var.v0(i15, 0, interpolator);
+                } else {
+                    int i16 = right + dp;
+                    if (i16 > fc1Var.getMeasuredWidth()) {
+                        fc1Var.v0(i16 - fc1Var.getMeasuredWidth(), 0, interpolator);
+                    }
+                }
+                int childCount = fc1Var.getChildCount();
+                for (int i17 = 0; i17 < childCount; i17++) {
+                    View childAt = fc1Var.getChildAt(i17);
+                    if (childAt instanceof ThemeActivity.InnerAccentView) {
+                        ((ThemeActivity.InnerAccentView) childAt).a(true);
+                    }
+                }
+                break;
+            default:
+                v11.V((v11) obj3, (Context) obj2, (String) obj, view, i10);
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        return super.performAccessibilityAction(i10, bundle) || this.b.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
     }
 }

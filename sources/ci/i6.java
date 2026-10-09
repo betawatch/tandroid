@@ -1,25 +1,25 @@
 package ci;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class i6 implements qg.c {
-    public final /* synthetic */ mb a;
+    public final /* synthetic */ nb a;
 
-    public i6(mb mbVar) {
-        this.a = mbVar;
+    public i6(nb nbVar) {
+        this.a = nbVar;
     }
 
     @Override // qg.c
     public final void a() {
-        mb mbVar = this.a;
-        mbVar.D0(null, true);
-        if (mbVar.M0) {
-            kc kcVar = mbVar.A2;
-            kcVar.c1.f.d();
-            kcVar.l0(-1, false, true);
-            mbVar.M0 = false;
+        nb nbVar = this.a;
+        nbVar.C0(null, true);
+        if (nbVar.M0) {
+            lc lcVar = nbVar.A2;
+            lcVar.c1.f.d();
+            lcVar.k0(-1, false, true);
+            nbVar.M0 = false;
         }
-        mbVar.O0(false);
+        nbVar.N0(false);
     }
 
     @Override // qg.c

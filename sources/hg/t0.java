@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                     if (TextUtils.isEmpty(u0Var.f.getText())) {
                         u0Var.y = null;
                         u0Var.d.b();
-                        u0Var.c.f3.N(true);
+                        u0Var.c.W2.N(true);
                     } else {
                         AndroidUtilities.runOnUIThread(n0Var);
                     }
@@ -46,16 +46,16 @@ public final /* synthetic */ class t0 implements TextView.OnEditorActionListener
                 if (i1Var.r) {
                     i1Var.p();
                 } else {
-                    h1Var.l(i1Var);
+                    h1Var.k(i1Var);
                 }
                 return true;
             default:
-                yh.h hVar = (yh.h) this.b;
+                yh.g gVar = (yh.g) this.b;
                 if (i10 == 5) {
-                    hVar.t0();
+                    gVar.k0();
                     return true;
                 }
-                hVar.getClass();
+                gVar.getClass();
                 return false;
         }
     }

@@ -1,38 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class kb0 extends y81 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ic0 b;
+public final class kb0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ pb0 b;
 
-    public kb0(ic0 ic0Var, Context context) {
-        this.b = ic0Var;
-        this.a = context;
+    public kb0(pb0 pb0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = pb0Var;
+        this.a = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final void b(View view, int i10, int i11) {
-        cc0 cc0Var = (cc0) view;
-        cc0Var.h();
-        cc0Var.k(false);
+    public final void a(boolean z10) {
+        pb0 pb0Var = this.b;
+        if (pb0Var.getNeededLayoutManager() != pb0Var.getCurrentLayoutManager() && pb0Var.a()) {
+            if (pb0Var.f.M0 > 0) {
+                pb0Var.N = true;
+                pb0Var.o(false);
+                return;
+            }
+            pb0Var.b.setLayoutManager(pb0Var.getNeededLayoutManager());
+        }
+        if (z10 && !pb0Var.a()) {
+            z10 = false;
+        }
+        pb0Var.o((!z10 || pb0Var.f.K() > 0) ? z10 : false);
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final View d(int i10) {
-        return new cc0(this.b, this.a, i10);
+    public final void b(boolean z10) {
+        this.b.l(z10);
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final int h(int i10) {
-        return ((fc0) this.b.e.a.get(i10)).a;
+    public final void c() {
+        pb0 pb0Var = this.b;
+        nq nqVar = pb0Var.J;
+        if (pb0Var.b.getLayoutManager() == pb0Var.d || !pb0Var.I) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(nqVar);
+        AndroidUtilities.runOnUIThread(nqVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

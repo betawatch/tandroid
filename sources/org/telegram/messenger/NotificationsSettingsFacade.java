@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -45,12 +45,12 @@ public class NotificationsSettingsFacade {
         int c11 = q.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
-            edit.putBoolean(sa.e.i(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
+            edit.putBoolean(sc.v.i(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
         } else {
             edit.remove(PROPERTY_SILENT + sharedPrefKey);
         }
         if ((peerNotifySettings.flags & 64) != 0) {
-            edit.putBoolean(sa.e.i(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
+            edit.putBoolean(sc.v.i(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
         } else {
             edit.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey);
         }
@@ -148,13 +148,13 @@ public class NotificationsSettingsFacade {
         if (notificationSound == null) {
             return;
         }
-        int i12 = 1;
-        int i13 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
-        if (i13 != 0) {
+        int i12 = (j3 > 0L ? 1 : (j3 == 0L ? 0 : -1));
+        int i13 = 1;
+        if (i12 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j3, j10, true);
-            str = sa.e.i("sound_", sharedPrefKey);
-            str3 = sa.e.i("sound_path_", sharedPrefKey);
-            str2 = sa.e.i("sound_document_id_", sharedPrefKey);
+            str = sc.v.i("sound_", sharedPrefKey);
+            str3 = sc.v.i("sound_path_", sharedPrefKey);
+            str2 = sc.v.i("sound_document_id_", sharedPrefKey);
         } else if (i10 == 0) {
             str = "GroupSound";
             str2 = "GroupSoundDocId";
@@ -193,9 +193,9 @@ public class NotificationsSettingsFacade {
                         ringtoneManager.setType(2);
                         Cursor cursor = ringtoneManager.getCursor();
                         while (cursor.moveToNext()) {
-                            String string = cursor.getString(i12);
+                            String string = cursor.getString(i13);
                             StringBuilder sb2 = new StringBuilder();
-                            i11 = i13;
+                            i11 = i12;
                             try {
                                 sb2.append(cursor.getString(2));
                                 sb2.append("/");
@@ -205,8 +205,8 @@ public class NotificationsSettingsFacade {
                                     str4 = sb3;
                                     break;
                                 } else {
-                                    i13 = i11;
-                                    i12 = 1;
+                                    i12 = i11;
+                                    i13 = 1;
                                 }
                             } catch (Throwable th2) {
                                 th = th2;
@@ -218,10 +218,10 @@ public class NotificationsSettingsFacade {
                         }
                     } catch (Throwable th3) {
                         th = th3;
-                        i11 = i13;
+                        i11 = i12;
                     }
                 }
-                i11 = i13;
+                i11 = i12;
                 str4 = null;
                 if (str4 != null) {
                     return;
@@ -229,7 +229,7 @@ public class NotificationsSettingsFacade {
                     tL_notificationSoundLocal.data = str4;
                 }
             }
-            i11 = i13;
+            i11 = i12;
             if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
                 editor.putString(str6, "Default");
                 editor.putString(str5, "Default");
@@ -261,7 +261,7 @@ public class NotificationsSettingsFacade {
             }
             return;
         }
-        i11 = i13;
+        i11 = i12;
         notificationSound2 = notificationSound;
         if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
         }
@@ -303,7 +303,7 @@ public class NotificationsSettingsFacade {
     public void setSettingsForDialog(SharedPreferences.Editor editor, TLRPC.Dialog dialog, TLRPC.PeerNotifySettings peerNotifySettings) {
         long peerId = MessageObject.getPeerId(dialog.peer);
         if ((dialog.notify_settings.flags & 2) != 0) {
-            editor.putBoolean(a4.a.p(peerId, PROPERTY_SILENT), dialog.notify_settings.silent);
+            editor.putBoolean(a1.g.p(peerId, PROPERTY_SILENT), dialog.notify_settings.silent);
         } else {
             editor.remove(PROPERTY_SILENT + peerId);
         }
@@ -322,7 +322,7 @@ public class NotificationsSettingsFacade {
                 return;
             }
             editor.putInt(PROPERTY_NOTIFY + peerId, 3);
-            editor.putInt(a4.a.p(peerId, PROPERTY_NOTIFY_UNTIL), dialog.notify_settings.mute_until);
+            editor.putInt(a1.g.p(peerId, PROPERTY_NOTIFY_UNTIL), dialog.notify_settings.mute_until);
         }
     }
 

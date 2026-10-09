@@ -1,32 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m21 extends EditTextBoldCursor {
-    public final /* synthetic */ o21 b;
+public final class m21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m21(o21 o21Var, Context context) {
-        super(context);
-        this.b = o21Var;
+    public m21(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    @Override // org.telegram.ui.Components.gu, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ViewGroup viewGroup;
-        MotionEvent obtain = MotionEvent.obtain(motionEvent);
-        float rawX = obtain.getRawX();
-        float rawY = obtain.getRawY();
-        ThemeEditorView.EditorAlert editorAlert = this.b.c;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) editorAlert).containerView;
-        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
-        editorAlert.c.dispatchTouchEvent(obtain);
-        obtain.recycle();
-        return super.dispatchTouchEvent(motionEvent);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        if (editorAlert.c.getAdapter() == editorAlert.r) {
+            s21 s21Var = editorAlert.f.b;
+            s21Var.requestFocus();
+            AndroidUtilities.showKeyboard(s21Var);
+        }
+        editorAlert.b.setVisibility(8);
+        editorAlert.v.setVisibility(8);
+        editorAlert.H = false;
     }
 }

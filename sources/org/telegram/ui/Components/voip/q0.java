@@ -9,17 +9,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class q0 extends TextView {
     public final RectF a;
-    public final r1 b;
+    public final q1 b;
 
-    public q0(Activity activity, r1 r1Var) {
+    public q0(Activity activity, q1 q1Var) {
         super(activity);
         this.a = new RectF();
-        this.b = r1Var;
-        r1Var.a(this);
+        this.b = q1Var;
+        q1Var.a(this);
         setText(LocaleController.getString(R.string.VoipHideEmoji));
         setContentDescription(LocaleController.getString(R.string.VoipHideEmoji));
         setTextColor(-1);
@@ -35,9 +35,9 @@ public final class q0 extends TextView {
         rectF.set(0.0f, 0.0f, width, height);
         float x10 = ((View) getParent()).getX() + getX();
         float y3 = ((View) getParent()).getY() + getY();
-        r1 r1Var = this.b;
-        r1Var.d(x10, y3);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), r1Var.b());
+        q1 q1Var = this.b;
+        q1Var.d(x10, y3);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), q1Var.b());
         super.onDraw(canvas);
     }
 }

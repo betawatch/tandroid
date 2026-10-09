@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -63,7 +63,7 @@ public final class s0 implements b1 {
                     return field;
                 }
             }
-            StringBuilder w10 = a4.a.w("Field ", str, " for ");
+            StringBuilder w10 = a1.g.w("Field ", str, " for ");
             w10.append(cls.getName());
             w10.append(" not found. Known fields are ");
             w10.append(Arrays.toString(declaredFields));
@@ -95,12 +95,12 @@ public final class s0 implements b1 {
         throw new ClassCastException();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x035d  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x035b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x03ad  */
     /* JADX WARN: Removed duplicated region for block: B:65:0x0283  */
     /* JADX WARN: Removed duplicated region for block: B:69:0x02a1  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0287  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0287  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -140,495 +140,508 @@ public final class s0 implements b1 {
         int i28;
         int i29;
         int i30;
-        Field D;
-        char charAt11;
         int i31;
         int i32;
+        Field D;
+        char charAt11;
+        int i33;
+        int i34;
         Object obj;
         Field D2;
         Object obj2;
         Field D3;
-        int i33;
-        char charAt12;
-        int i34;
-        char charAt13;
         int i35;
+        char charAt12;
         int i36;
-        char charAt14;
+        char charAt13;
         int i37;
+        int i38;
+        char charAt14;
+        int i39;
         char charAt15;
         char charAt16;
-        int i38 = 0;
+        int i40 = 0;
         boolean z11 = (a1Var.d & 1) != 1;
         String str = a1Var.b;
         int length = str.length();
         int charAt17 = str.charAt(0);
         if (charAt17 >= 55296) {
-            int i39 = charAt17 & 8191;
-            int i40 = 1;
-            int i41 = 13;
+            int i41 = charAt17 & 8191;
+            int i42 = 1;
+            int i43 = 13;
             while (true) {
-                i10 = i40 + 1;
-                charAt16 = str.charAt(i40);
+                i10 = i42 + 1;
+                charAt16 = str.charAt(i42);
                 if (charAt16 < 55296) {
                     break;
                 }
-                i39 |= (charAt16 & 8191) << i41;
-                i41 += 13;
-                i40 = i10;
+                i41 |= (charAt16 & 8191) << i43;
+                i43 += 13;
+                i42 = i10;
             }
-            charAt17 = i39 | (charAt16 << i41);
+            charAt17 = i41 | (charAt16 << i43);
         } else {
             i10 = 1;
         }
-        int i42 = i10 + 1;
+        int i44 = i10 + 1;
         int charAt18 = str.charAt(i10);
         if (charAt18 >= 55296) {
-            int i43 = charAt18 & 8191;
-            int i44 = 13;
+            int i45 = charAt18 & 8191;
+            int i46 = 13;
             while (true) {
-                i37 = i42 + 1;
-                charAt15 = str.charAt(i42);
+                i39 = i44 + 1;
+                charAt15 = str.charAt(i44);
                 if (charAt15 < 55296) {
                     break;
                 }
-                i43 |= (charAt15 & 8191) << i44;
-                i44 += 13;
-                i42 = i37;
+                i45 |= (charAt15 & 8191) << i46;
+                i46 += 13;
+                i44 = i39;
             }
-            charAt18 = i43 | (charAt15 << i44);
-            i42 = i37;
+            charAt18 = i45 | (charAt15 << i46);
+            i44 = i39;
         }
         if (charAt18 == 0) {
-            iArr = o;
             i13 = 0;
-            i14 = 0;
             i15 = 0;
             charAt = 0;
             charAt2 = 0;
             i12 = 0;
+            iArr = o;
+            i14 = 0;
         } else {
-            int i45 = i42 + 1;
-            int charAt19 = str.charAt(i42);
+            int i47 = i44 + 1;
+            int charAt19 = str.charAt(i44);
             if (charAt19 >= 55296) {
-                int i46 = charAt19 & 8191;
-                int i47 = 13;
+                int i48 = charAt19 & 8191;
+                int i49 = 13;
                 while (true) {
-                    i23 = i45 + 1;
-                    charAt10 = str.charAt(i45);
+                    i23 = i47 + 1;
+                    charAt10 = str.charAt(i47);
                     if (charAt10 < 55296) {
                         break;
                     }
-                    i46 |= (charAt10 & 8191) << i47;
-                    i47 += 13;
-                    i45 = i23;
+                    i48 |= (charAt10 & 8191) << i49;
+                    i49 += 13;
+                    i47 = i23;
                 }
-                charAt19 = i46 | (charAt10 << i47);
-                i45 = i23;
+                charAt19 = i48 | (charAt10 << i49);
+                i47 = i23;
             }
-            int i48 = i45 + 1;
-            int charAt20 = str.charAt(i45);
+            int i50 = i47 + 1;
+            int charAt20 = str.charAt(i47);
             if (charAt20 >= 55296) {
-                int i49 = charAt20 & 8191;
-                int i50 = 13;
+                int i51 = charAt20 & 8191;
+                int i52 = 13;
                 while (true) {
-                    i22 = i48 + 1;
-                    charAt9 = str.charAt(i48);
+                    i22 = i50 + 1;
+                    charAt9 = str.charAt(i50);
                     if (charAt9 < 55296) {
                         break;
                     }
-                    i49 |= (charAt9 & 8191) << i50;
-                    i50 += 13;
-                    i48 = i22;
+                    i51 |= (charAt9 & 8191) << i52;
+                    i52 += 13;
+                    i50 = i22;
                 }
-                charAt20 = i49 | (charAt9 << i50);
-                i48 = i22;
+                charAt20 = i51 | (charAt9 << i52);
+                i50 = i22;
             }
-            int i51 = i48 + 1;
-            int charAt21 = str.charAt(i48);
+            int i53 = i50 + 1;
+            int charAt21 = str.charAt(i50);
             if (charAt21 >= 55296) {
-                int i52 = charAt21 & 8191;
-                int i53 = 13;
+                int i54 = charAt21 & 8191;
+                int i55 = 13;
                 while (true) {
-                    i21 = i51 + 1;
-                    charAt8 = str.charAt(i51);
+                    i21 = i53 + 1;
+                    charAt8 = str.charAt(i53);
                     if (charAt8 < 55296) {
                         break;
                     }
-                    i52 |= (charAt8 & 8191) << i53;
-                    i53 += 13;
-                    i51 = i21;
+                    i54 |= (charAt8 & 8191) << i55;
+                    i55 += 13;
+                    i53 = i21;
                 }
-                charAt21 = i52 | (charAt8 << i53);
-                i51 = i21;
+                charAt21 = i54 | (charAt8 << i55);
+                i53 = i21;
             }
-            int i54 = i51 + 1;
-            int charAt22 = str.charAt(i51);
+            int i56 = i53 + 1;
+            int charAt22 = str.charAt(i53);
             if (charAt22 >= 55296) {
-                int i55 = charAt22 & 8191;
-                int i56 = 13;
+                int i57 = charAt22 & 8191;
+                int i58 = 13;
                 while (true) {
-                    i20 = i54 + 1;
-                    charAt7 = str.charAt(i54);
+                    i20 = i56 + 1;
+                    charAt7 = str.charAt(i56);
                     if (charAt7 < 55296) {
                         break;
                     }
-                    i55 |= (charAt7 & 8191) << i56;
-                    i56 += 13;
-                    i54 = i20;
+                    i57 |= (charAt7 & 8191) << i58;
+                    i58 += 13;
+                    i56 = i20;
                 }
-                charAt22 = i55 | (charAt7 << i56);
-                i54 = i20;
+                charAt22 = i57 | (charAt7 << i58);
+                i56 = i20;
             }
-            int i57 = i54 + 1;
-            charAt = str.charAt(i54);
+            int i59 = i56 + 1;
+            charAt = str.charAt(i56);
             if (charAt >= 55296) {
-                int i58 = charAt & 8191;
-                int i59 = 13;
+                int i60 = charAt & 8191;
+                int i61 = 13;
                 while (true) {
-                    i19 = i57 + 1;
-                    charAt6 = str.charAt(i57);
+                    i19 = i59 + 1;
+                    charAt6 = str.charAt(i59);
                     if (charAt6 < 55296) {
                         break;
                     }
-                    i58 |= (charAt6 & 8191) << i59;
-                    i59 += 13;
-                    i57 = i19;
+                    i60 |= (charAt6 & 8191) << i61;
+                    i61 += 13;
+                    i59 = i19;
                 }
-                charAt = i58 | (charAt6 << i59);
-                i57 = i19;
+                charAt = i60 | (charAt6 << i61);
+                i59 = i19;
             }
-            int i60 = i57 + 1;
-            charAt2 = str.charAt(i57);
+            int i62 = i59 + 1;
+            charAt2 = str.charAt(i59);
             if (charAt2 >= 55296) {
-                int i61 = charAt2 & 8191;
-                int i62 = 13;
+                int i63 = charAt2 & 8191;
+                int i64 = 13;
                 while (true) {
-                    i18 = i60 + 1;
-                    charAt5 = str.charAt(i60);
+                    i18 = i62 + 1;
+                    charAt5 = str.charAt(i62);
                     if (charAt5 < 55296) {
                         break;
                     }
-                    i61 |= (charAt5 & 8191) << i62;
-                    i62 += 13;
-                    i60 = i18;
+                    i63 |= (charAt5 & 8191) << i64;
+                    i64 += 13;
+                    i62 = i18;
                 }
-                charAt2 = i61 | (charAt5 << i62);
-                i60 = i18;
+                charAt2 = i63 | (charAt5 << i64);
+                i62 = i18;
             }
-            int i63 = i60 + 1;
-            int charAt23 = str.charAt(i60);
+            int i65 = i62 + 1;
+            int charAt23 = str.charAt(i62);
             if (charAt23 >= 55296) {
-                int i64 = charAt23 & 8191;
-                int i65 = i63;
-                int i66 = 13;
+                int i66 = charAt23 & 8191;
+                int i67 = i65;
+                int i68 = 13;
                 while (true) {
-                    i17 = i65 + 1;
-                    charAt4 = str.charAt(i65);
+                    i17 = i67 + 1;
+                    charAt4 = str.charAt(i67);
                     if (charAt4 < 55296) {
                         break;
                     }
-                    i64 |= (charAt4 & 8191) << i66;
-                    i66 += 13;
-                    i65 = i17;
+                    i66 |= (charAt4 & 8191) << i68;
+                    i68 += 13;
+                    i67 = i17;
                 }
-                charAt23 = i64 | (charAt4 << i66);
+                charAt23 = i66 | (charAt4 << i68);
                 i11 = i17;
             } else {
-                i11 = i63;
+                i11 = i65;
             }
-            int i67 = i11 + 1;
+            int i69 = i11 + 1;
             int charAt24 = str.charAt(i11);
             if (charAt24 >= 55296) {
-                int i68 = charAt24 & 8191;
-                int i69 = i67;
-                int i70 = 13;
+                int i70 = charAt24 & 8191;
+                int i71 = i69;
+                int i72 = 13;
                 while (true) {
-                    i16 = i69 + 1;
-                    charAt3 = str.charAt(i69);
+                    i16 = i71 + 1;
+                    charAt3 = str.charAt(i71);
                     if (charAt3 < 55296) {
                         break;
                     }
-                    i68 |= (charAt3 & 8191) << i70;
-                    i70 += 13;
-                    i69 = i16;
+                    i70 |= (charAt3 & 8191) << i72;
+                    i72 += 13;
+                    i71 = i16;
                 }
-                charAt24 = i68 | (charAt3 << i70);
-                i67 = i16;
+                charAt24 = i70 | (charAt3 << i72);
+                i69 = i16;
             }
             int[] iArr3 = new int[charAt24 + charAt2 + charAt23];
             i12 = (charAt19 * 2) + charAt20;
-            int i71 = charAt21;
+            int i73 = charAt21;
             iArr = iArr3;
-            i13 = i71;
+            i13 = i73;
             i14 = charAt22;
             i15 = charAt24;
-            i38 = charAt19;
-            i42 = i67;
+            i40 = charAt19;
+            i44 = i69;
         }
         Unsafe unsafe = p;
         Object[] objArr = a1Var.c;
-        int i72 = i38;
+        int i74 = i40;
         Class<?> cls = a1Var.a.getClass();
-        int i73 = charAt17;
+        int i75 = charAt17;
         int[] iArr4 = new int[charAt * 3];
         Object[] objArr2 = new Object[charAt * 2];
-        int i74 = charAt2 + i15;
-        int i75 = i15;
-        int i76 = i74;
-        int i77 = 0;
-        int i78 = 0;
-        while (i42 < length) {
-            int i79 = i42 + 1;
-            int charAt25 = str.charAt(i42);
-            int i80 = length;
+        int i76 = charAt2 + i15;
+        int i77 = i15;
+        int i78 = i76;
+        int i79 = 0;
+        int i80 = 0;
+        while (i44 < length) {
+            int i81 = i44 + 1;
+            int charAt25 = str.charAt(i44);
+            int i82 = length;
             if (charAt25 >= 55296) {
-                int i81 = charAt25 & 8191;
-                int i82 = i79;
-                int i83 = 13;
+                int i83 = charAt25 & 8191;
+                int i84 = i81;
+                int i85 = 13;
                 while (true) {
-                    i36 = i82 + 1;
-                    charAt14 = str.charAt(i82);
+                    i38 = i84 + 1;
+                    charAt14 = str.charAt(i84);
                     iArr2 = iArr4;
                     if (charAt14 < 55296) {
                         break;
                     }
-                    i81 |= (charAt14 & 8191) << i83;
-                    i83 += 13;
-                    i82 = i36;
+                    i83 |= (charAt14 & 8191) << i85;
+                    i85 += 13;
+                    i84 = i38;
                     iArr4 = iArr2;
                 }
-                charAt25 = i81 | (charAt14 << i83);
-                i24 = i36;
+                charAt25 = i83 | (charAt14 << i85);
+                i24 = i38;
             } else {
                 iArr2 = iArr4;
-                i24 = i79;
+                i24 = i81;
             }
-            int i84 = i24 + 1;
+            int i86 = i24 + 1;
             int charAt26 = str.charAt(i24);
             if (charAt26 >= 55296) {
-                int i85 = charAt26 & 8191;
-                int i86 = i84;
-                int i87 = 13;
+                int i87 = charAt26 & 8191;
+                int i88 = i86;
+                int i89 = 13;
                 while (true) {
-                    i34 = i86 + 1;
-                    charAt13 = str.charAt(i86);
-                    i35 = i85;
+                    i36 = i88 + 1;
+                    charAt13 = str.charAt(i88);
+                    i37 = i87;
                     if (charAt13 < 55296) {
                         break;
                     }
-                    i85 = i35 | ((charAt13 & 8191) << i87);
-                    i87 += 13;
-                    i86 = i34;
+                    i87 = i37 | ((charAt13 & 8191) << i89);
+                    i89 += 13;
+                    i88 = i36;
                 }
-                charAt26 = i35 | (charAt13 << i87);
-                i25 = i34;
+                charAt26 = i37 | (charAt13 << i89);
+                i25 = i36;
             } else {
-                i25 = i84;
+                i25 = i86;
             }
-            int i88 = i13;
-            int i89 = charAt26 & 255;
+            int i90 = i13;
+            int i91 = charAt26 & 255;
             Object[] objArr3 = objArr;
             if ((charAt26 & 1024) != 0) {
-                iArr[i77] = i78;
-                i77++;
+                iArr[i79] = i80;
+                i79++;
             }
-            int i90 = charAt25;
-            if (i89 >= 51) {
-                int i91 = i25 + 1;
+            int i92 = charAt25;
+            if (i91 >= 51) {
+                int i93 = i25 + 1;
                 int charAt27 = str.charAt(i25);
                 char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                 if (charAt27 >= 55296) {
-                    int i92 = charAt27 & 8191;
-                    int i93 = 13;
+                    int i94 = charAt27 & 8191;
+                    int i95 = 13;
                     while (true) {
-                        i33 = i91 + 1;
-                        charAt12 = str.charAt(i91);
+                        i35 = i93 + 1;
+                        charAt12 = str.charAt(i93);
                         if (charAt12 < c10) {
                             break;
                         }
-                        i92 |= (charAt12 & 8191) << i93;
-                        i93 += 13;
-                        i91 = i33;
+                        i94 |= (charAt12 & 8191) << i95;
+                        i95 += 13;
+                        i93 = i35;
                         c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                     }
-                    charAt27 = i92 | (charAt12 << i93);
-                    i91 = i33;
+                    charAt27 = i94 | (charAt12 << i95);
+                    i93 = i35;
                 }
-                int i94 = i89 - 51;
-                int i95 = charAt27;
-                if (i94 == 9 || i94 == 17) {
-                    i32 = i12 + 1;
-                    objArr2[((i78 / 3) * 2) + 1] = objArr3[i12];
+                int i96 = i91 - 51;
+                int i97 = charAt27;
+                if (i96 == 9 || i96 == 17) {
+                    i34 = i12 + 1;
+                    objArr2[((i80 / 3) * 2) + 1] = objArr3[i12];
                 } else {
-                    if (i94 == 12 && (i73 & 1) == 1) {
-                        i32 = i12 + 1;
-                        objArr2[((i78 / 3) * 2) + 1] = objArr3[i12];
+                    if (i96 == 12 && (i75 & 1) == 1) {
+                        i34 = i12 + 1;
+                        objArr2[((i80 / 3) * 2) + 1] = objArr3[i12];
                     }
-                    int i96 = i95 * 2;
-                    obj = objArr3[i96];
+                    int i98 = i97 * 2;
+                    obj = objArr3[i98];
                     if (obj instanceof Field) {
                         D2 = D(cls, (String) obj);
-                        objArr3[i96] = D2;
+                        objArr3[i98] = D2;
                     } else {
                         D2 = (Field) obj;
                     }
-                    int i97 = i91;
+                    int i99 = i93;
                     int objectFieldOffset2 = (int) unsafe.objectFieldOffset(D2);
-                    int i98 = i96 + 1;
-                    obj2 = objArr3[i98];
+                    int i100 = i98 + 1;
+                    obj2 = objArr3[i100];
                     if (obj2 instanceof Field) {
                         D3 = D(cls, (String) obj2);
-                        objArr3[i98] = D3;
+                        objArr3[i100] = D3;
                     } else {
                         D3 = (Field) obj2;
                     }
-                    i27 = i12;
-                    objectFieldOffset = objectFieldOffset2;
+                    int i101 = i12;
                     z10 = z11;
-                    i28 = i97;
-                    i30 = (int) unsafe.objectFieldOffset(D3);
+                    i31 = i101;
+                    i44 = i99;
+                    i32 = objectFieldOffset2;
                     i26 = i14;
+                    i30 = (int) unsafe.objectFieldOffset(D3);
                     i29 = 0;
                 }
-                i12 = i32;
-                int i962 = i95 * 2;
-                obj = objArr3[i962];
+                i12 = i34;
+                int i982 = i97 * 2;
+                obj = objArr3[i982];
                 if (obj instanceof Field) {
                 }
-                int i972 = i91;
+                int i992 = i93;
                 int objectFieldOffset22 = (int) unsafe.objectFieldOffset(D2);
-                int i982 = i962 + 1;
-                obj2 = objArr3[i982];
+                int i1002 = i982 + 1;
+                obj2 = objArr3[i1002];
                 if (obj2 instanceof Field) {
                 }
-                i27 = i12;
-                objectFieldOffset = objectFieldOffset22;
+                int i1012 = i12;
                 z10 = z11;
-                i28 = i972;
-                i30 = (int) unsafe.objectFieldOffset(D3);
+                i31 = i1012;
+                i44 = i992;
+                i32 = objectFieldOffset22;
                 i26 = i14;
+                i30 = (int) unsafe.objectFieldOffset(D3);
                 i29 = 0;
             } else {
-                int i99 = i12 + 1;
+                int i102 = i12 + 1;
                 Field D4 = D(cls, (String) objArr3[i12]);
-                if (i89 == 9 || i89 == 17) {
+                if (i91 == 9 || i91 == 17) {
                     i26 = i14;
-                    objArr2[((i78 / 3) * 2) + 1] = D4.getType();
+                    objArr2[((i80 / 3) * 2) + 1] = D4.getType();
                 } else {
-                    if (i89 == 27 || i89 == 49) {
+                    if (i91 == 27 || i91 == 49) {
                         i26 = i14;
-                        i31 = i12 + 2;
-                        objArr2[((i78 / 3) * 2) + 1] = objArr3[i99];
-                    } else if (i89 == 12 || i89 == 30 || i89 == 44) {
+                        i33 = i12 + 2;
+                        objArr2[((i80 / 3) * 2) + 1] = objArr3[i102];
+                    } else if (i91 == 12 || i91 == 30 || i91 == 44) {
                         i26 = i14;
-                        if ((i73 & 1) == 1) {
-                            i31 = i12 + 2;
-                            objArr2[((i78 / 3) * 2) + 1] = objArr3[i99];
+                        if ((i75 & 1) == 1) {
+                            i33 = i12 + 2;
+                            objArr2[((i80 / 3) * 2) + 1] = objArr3[i102];
                         }
-                    } else if (i89 == 50) {
-                        int i100 = i75 + 1;
-                        iArr[i75] = i78;
-                        int i101 = (i78 / 3) * 2;
-                        int i102 = i12 + 2;
-                        objArr2[i101] = objArr3[i99];
+                    } else if (i91 == 50) {
+                        int i103 = i77 + 1;
+                        iArr[i77] = i80;
+                        int i104 = (i80 / 3) * 2;
+                        int i105 = i12 + 2;
+                        objArr2[i104] = objArr3[i102];
                         if ((charAt26 & 2048) != 0) {
                             i27 = i12 + 3;
-                            objArr2[i101 + 1] = objArr3[i102];
+                            objArr2[i104 + 1] = objArr3[i105];
                             i26 = i14;
                             z10 = z11;
-                            i75 = i100;
+                            i77 = i103;
                         } else {
                             z10 = z11;
-                            i27 = i102;
-                            i75 = i100;
+                            i27 = i105;
+                            i77 = i103;
                             i26 = i14;
                         }
                         objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                        if ((i73 & 1) == 1 || i89 > 17) {
+                        if ((i75 & 1) == 1 || i91 > 17) {
                             i28 = i25;
                             i29 = 0;
                             i30 = 0;
                         } else {
-                            int i103 = i25 + 1;
+                            int i106 = i25 + 1;
                             int charAt28 = str.charAt(i25);
                             if (charAt28 >= 55296) {
-                                int i104 = charAt28 & 8191;
-                                int i105 = 13;
+                                int i107 = charAt28 & 8191;
+                                int i108 = 13;
                                 while (true) {
-                                    i28 = i103 + 1;
-                                    charAt11 = str.charAt(i103);
+                                    i28 = i106 + 1;
+                                    charAt11 = str.charAt(i106);
                                     if (charAt11 < 55296) {
                                         break;
                                     }
-                                    i104 |= (charAt11 & 8191) << i105;
-                                    i105 += 13;
-                                    i103 = i28;
+                                    i107 |= (charAt11 & 8191) << i108;
+                                    i108 += 13;
+                                    i106 = i28;
                                 }
-                                charAt28 = i104 | (charAt11 << i105);
+                                charAt28 = i107 | (charAt11 << i108);
                             } else {
-                                i28 = i103;
+                                i28 = i106;
                             }
-                            int i106 = (charAt28 / 32) + (i72 * 2);
-                            Object obj3 = objArr3[i106];
+                            int i109 = (charAt28 / 32) + (i74 * 2);
+                            Object obj3 = objArr3[i109];
                             if (obj3 instanceof Field) {
                                 D = (Field) obj3;
                             } else {
                                 D = D(cls, (String) obj3);
-                                objArr3[i106] = D;
+                                objArr3[i109] = D;
                             }
                             i30 = (int) unsafe.objectFieldOffset(D);
                             i29 = charAt28 % 32;
                         }
-                        if (i89 >= 18 && i89 <= 49) {
-                            iArr[i76] = objectFieldOffset;
-                            i76++;
+                        if (i91 >= 18 && i91 <= 49) {
+                            iArr[i78] = objectFieldOffset;
+                            i78++;
                         }
+                        i31 = i27;
+                        i32 = objectFieldOffset;
+                        i44 = i28;
                     } else {
                         i26 = i14;
                     }
-                    i27 = i31;
+                    i27 = i33;
                     z10 = z11;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                    if ((i73 & 1) == 1) {
+                    if ((i75 & 1) == 1) {
                     }
                     i28 = i25;
                     i29 = 0;
                     i30 = 0;
-                    if (i89 >= 18) {
-                        iArr[i76] = objectFieldOffset;
-                        i76++;
+                    if (i91 >= 18) {
+                        iArr[i78] = objectFieldOffset;
+                        i78++;
                     }
+                    i31 = i27;
+                    i32 = objectFieldOffset;
+                    i44 = i28;
                 }
                 z10 = z11;
-                i27 = i99;
+                i27 = i102;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                if ((i73 & 1) == 1) {
+                if ((i75 & 1) == 1) {
                 }
                 i28 = i25;
                 i29 = 0;
                 i30 = 0;
-                if (i89 >= 18) {
+                if (i91 >= 18) {
                 }
+                i31 = i27;
+                i32 = objectFieldOffset;
+                i44 = i28;
             }
-            int i107 = i78 + 1;
-            iArr2[i78] = i90;
-            int i108 = i78 + 2;
+            int i110 = i80 + 1;
+            iArr2[i80] = i92;
+            int i111 = i80 + 2;
             String str2 = str;
-            iArr2[i107] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i89 << 20) | objectFieldOffset;
-            i78 += 3;
-            iArr2[i108] = (i29 << 20) | i30;
-            z11 = z10;
-            i13 = i88;
-            length = i80;
+            iArr2[i110] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i91 << 20) | i32;
+            i80 += 3;
+            iArr2[i111] = (i29 << 20) | i30;
+            boolean z12 = z10;
+            i12 = i31;
+            z11 = z12;
+            i13 = i90;
+            length = i82;
+            objArr = objArr3;
             iArr4 = iArr2;
             i14 = i26;
-            i42 = i28;
             str = str2;
-            i12 = i27;
-            objArr = objArr3;
         }
-        return new s0(iArr4, objArr2, i13, i14, a1Var.a, z11, iArr, i15, i74, u0Var, h0Var, j1Var, nVar, o0Var);
+        return new s0(iArr4, objArr2, i13, i14, a1Var.a, z11, iArr, i15, i76, u0Var, h0Var, j1Var, nVar, o0Var);
     }
 
     public static long y(int i10) {
@@ -690,6 +703,7 @@ public final class s0 implements b1 {
         int i11;
         int i12;
         int i13;
+        boolean z10;
         int[] iArr = this.a;
         int length = iArr.length;
         Unsafe unsafe = p;
@@ -718,14 +732,14 @@ public final class s0 implements b1 {
             switch (G) {
                 case 0:
                     i13 = i10;
-                    if ((i12 & i15) == 0) {
-                        break;
-                    } else {
+                    if ((i12 & i15) != 0) {
                         double e7 = r1.d.e(obj, j3);
                         j jVar = (j) k0Var.a;
                         jVar.getClass();
                         jVar.K(i17, Double.doubleToRawLongBits(e7));
-                        continue;
+                        break;
+                    } else {
+                        break;
                     }
                 case 1:
                     i13 = i10;
@@ -736,7 +750,7 @@ public final class s0 implements b1 {
                         jVar2.I(i17, Float.floatToRawIntBits(f7));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 2:
                     i13 = i10;
@@ -744,7 +758,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).U(i17, unsafe.getLong(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 3:
                     i13 = i10;
@@ -752,7 +766,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).U(i17, unsafe.getLong(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 4:
                     i13 = i10;
@@ -760,7 +774,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).M(i17, unsafe.getInt(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 5:
                     i13 = i10;
@@ -768,7 +782,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).K(i17, unsafe.getLong(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 6:
                     i13 = i10;
@@ -776,7 +790,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).I(i17, unsafe.getInt(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 7:
                     i13 = i10;
@@ -784,7 +798,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).F(i17, r1.d.c(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 8:
                     i13 = i10;
@@ -792,7 +806,7 @@ public final class s0 implements b1 {
                         K(i17, unsafe.getObject(obj, j3), k0Var);
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 9:
                     i13 = i10;
@@ -800,7 +814,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).O(i17, (a) unsafe.getObject(obj, j3), n(i13));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 10:
                     i13 = i10;
@@ -808,7 +822,7 @@ public final class s0 implements b1 {
                         k0Var.a(i17, (g) unsafe.getObject(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 11:
                     i13 = i10;
@@ -816,7 +830,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).S(i17, unsafe.getInt(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 12:
                     i13 = i10;
@@ -824,7 +838,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).M(i17, unsafe.getInt(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 13:
                     i13 = i10;
@@ -832,7 +846,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).I(i17, unsafe.getInt(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 14:
                     i13 = i10;
@@ -840,7 +854,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).K(i17, unsafe.getLong(obj, j3));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 15:
                     i13 = i10;
@@ -849,7 +863,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).S(i17, (i20 >> 31) ^ (i20 << 1));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 16:
                     i13 = i10;
@@ -858,7 +872,7 @@ public final class s0 implements b1 {
                         ((j) k0Var.a).U(i17, (j10 >> 63) ^ (j10 << 1));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 17:
                     i13 = i10;
@@ -866,40 +880,40 @@ public final class s0 implements b1 {
                         k0Var.b(i17, unsafe.getObject(obj, j3), n(i13));
                         break;
                     } else {
-                        continue;
+                        break;
                     }
                 case 18:
                     i13 = i10;
                     c1.A(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 19:
                     i13 = i10;
                     c1.E(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 20:
                     i13 = i10;
                     c1.H(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 21:
                     i13 = i10;
                     c1.P(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 22:
                     i13 = i10;
                     c1.G(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 23:
                     i13 = i10;
                     c1.D(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 24:
                     i13 = i10;
                     c1.C(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 25:
                     i13 = i10;
                     c1.y(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
-                    continue;
+                    break;
                 case 26:
                     i13 = i10;
                     c1.N(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var);
@@ -914,26 +928,32 @@ public final class s0 implements b1 {
                     break;
                 case 29:
                     i13 = i10;
+                    z10 = false;
                     c1.O(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case MessageObject.TYPE_GIFT_STARS /* 30 */:
                     i13 = i10;
+                    z10 = false;
                     c1.B(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                     i13 = i10;
+                    z10 = false;
                     c1.J(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case 32:
                     i13 = i10;
+                    z10 = false;
                     c1.K(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case 33:
                     i13 = i10;
+                    z10 = false;
                     c1.L(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case 34:
                     i13 = i10;
+                    z10 = false;
                     c1.M(iArr[i13], (List) unsafe.getObject(obj, j3), k0Var, false);
                     break;
                 case 35:
@@ -1007,7 +1027,6 @@ public final class s0 implements b1 {
                         j jVar3 = (j) k0Var.a;
                         jVar3.getClass();
                         jVar3.K(i17, Double.doubleToRawLongBits(doubleValue));
-                        break;
                     }
                     break;
                 case 52:
@@ -1017,106 +1036,91 @@ public final class s0 implements b1 {
                         j jVar4 = (j) k0Var.a;
                         jVar4.getClass();
                         jVar4.I(i17, Float.floatToRawIntBits(floatValue));
-                        break;
                     }
                     break;
                 case 53:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).U(i17, A(obj, j3));
-                        break;
                     }
                     break;
                 case 54:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).U(i17, A(obj, j3));
-                        break;
                     }
                     break;
                 case 55:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).M(i17, z(obj, j3));
-                        break;
                     }
                     break;
                 case 56:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).K(i17, A(obj, j3));
-                        break;
                     }
                     break;
                 case 57:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).I(i17, z(obj, j3));
-                        break;
                     }
                     break;
                 case 58:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).F(i17, ((Boolean) r1.d.i(obj, j3)).booleanValue());
-                        break;
                     }
                     break;
                 case 59:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         K(i17, unsafe.getObject(obj, j3), k0Var);
-                        break;
                     }
                     break;
                 case 60:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).O(i17, (a) unsafe.getObject(obj, j3), n(i13));
-                        break;
                     }
                     break;
                 case 61:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         k0Var.a(i17, (g) unsafe.getObject(obj, j3));
-                        break;
                     }
                     break;
                 case 62:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).S(i17, z(obj, j3));
-                        break;
                     }
                     break;
                 case 63:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).M(i17, z(obj, j3));
-                        break;
                     }
                     break;
                 case 64:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).I(i17, z(obj, j3));
-                        break;
                     }
                     break;
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         ((j) k0Var.a).K(i17, A(obj, j3));
-                        break;
                     }
                     break;
                 case 66:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
-                        int z10 = z(obj, j3);
-                        ((j) k0Var.a).S(i17, (z10 >> 31) ^ (z10 << 1));
-                        break;
+                        int z11 = z(obj, j3);
+                        ((j) k0Var.a).S(i17, (z11 >> 31) ^ (z11 << 1));
                     }
                     break;
                 case 67:
@@ -1124,14 +1128,12 @@ public final class s0 implements b1 {
                     if (r(i17, i13, obj)) {
                         long A = A(obj, j3);
                         ((j) k0Var.a).U(i17, (A >> 63) ^ (A << 1));
-                        break;
                     }
                     break;
                 case 68:
                     i13 = i10;
                     if (r(i17, i13, obj)) {
                         k0Var.b(i17, unsafe.getObject(obj, j3), n(i13));
-                        break;
                     }
                     break;
                 default:
@@ -1143,26 +1145,26 @@ public final class s0 implements b1 {
         ((w) obj).unknownFields.d(k0Var);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x015d  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x017e  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x018a  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0196  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x01b0  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x01c2  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01d8  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01e0  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01e6  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0202  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x020d  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0214  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0147 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x013f  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x014e  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0176  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x017f  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0197  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x01bc  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x01c3  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01e1  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01f8  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0203  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x020e  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0215  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0148 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -3065,7 +3067,7 @@ public final class s0 implements b1 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0217, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x0216, code lost:
     
         if (r4 != false) goto L42;
      */
@@ -3077,7 +3079,7 @@ public final class s0 implements b1 {
     
         r8 = 1231;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00e3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00e2, code lost:
     
         r3 = r8 + r3;
      */
@@ -3771,14 +3773,14 @@ public final class s0 implements b1 {
             switch (G) {
                 case 0:
                     if ((i10 & i15) != 0) {
-                        i14 = a4.a.f(i16, 8, i14);
+                        i14 = a1.g.f(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.a.f(i16, 4, i14);
+                        i14 = a1.g.f(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -3834,7 +3836,7 @@ public final class s0 implements b1 {
                     }
                 case 7:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.a.f(i16, 1, i14);
+                        i14 = a1.g.f(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -3847,7 +3849,7 @@ public final class s0 implements b1 {
                         if (object instanceof g) {
                             int y13 = j.y(i16);
                             int size = ((g) object).size();
-                            g10 = a4.a.g(size, size, y13, i14);
+                            g10 = a1.g.g(size, size, y13, i14);
                             i14 = g10;
                             break;
                         } else {
@@ -3864,7 +3866,7 @@ public final class s0 implements b1 {
                         Class cls = c1.a;
                         int y14 = j.y(i16);
                         int b10 = ((a) object2).b(n10);
-                        i14 = a4.a.g(b10, b10, y14, i14);
+                        i14 = a1.g.g(b10, b10, y14, i14);
                         break;
                     } else {
                         break;
@@ -3901,14 +3903,14 @@ public final class s0 implements b1 {
                     }
                 case 13:
                     if ((i15 & i10) != 0) {
-                        i14 = a4.a.f(i16, 4, i14);
+                        i14 = a1.g.f(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if ((i10 & i15) != 0) {
-                        i14 = a4.a.f(i16, 8, i14);
+                        i14 = a1.g.f(i16, 8, i14);
                         break;
                     } else {
                         break;
@@ -4017,7 +4019,7 @@ public final class s0 implements b1 {
                 case 35:
                     int g11 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g11 > 0) {
-                        i14 = a4.a.g(g11, j.y(i16), g11, i14);
+                        i14 = a1.g.g(g11, j.y(i16), g11, i14);
                         break;
                     } else {
                         break;
@@ -4025,7 +4027,7 @@ public final class s0 implements b1 {
                 case 36:
                     int e7 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e7 > 0) {
-                        i14 = a4.a.g(e7, j.y(i16), e7, i14);
+                        i14 = a1.g.g(e7, j.y(i16), e7, i14);
                         break;
                     } else {
                         break;
@@ -4033,7 +4035,7 @@ public final class s0 implements b1 {
                 case 37:
                     int k10 = c1.k((List) unsafe.getObject(obj, j3));
                     if (k10 > 0) {
-                        i14 = a4.a.g(k10, j.y(i16), k10, i14);
+                        i14 = a1.g.g(k10, j.y(i16), k10, i14);
                         break;
                     } else {
                         break;
@@ -4041,7 +4043,7 @@ public final class s0 implements b1 {
                 case 38:
                     int u11 = c1.u((List) unsafe.getObject(obj, j3));
                     if (u11 > 0) {
-                        i14 = a4.a.g(u11, j.y(i16), u11, i14);
+                        i14 = a1.g.g(u11, j.y(i16), u11, i14);
                         break;
                     } else {
                         break;
@@ -4049,7 +4051,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i23 = c1.i((List) unsafe.getObject(obj, j3));
                     if (i23 > 0) {
-                        i14 = a4.a.g(i23, j.y(i16), i23, i14);
+                        i14 = a1.g.g(i23, j.y(i16), i23, i14);
                         break;
                     } else {
                         break;
@@ -4057,7 +4059,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int g12 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g12 > 0) {
-                        i14 = a4.a.g(g12, j.y(i16), g12, i14);
+                        i14 = a1.g.g(g12, j.y(i16), g12, i14);
                         break;
                     } else {
                         break;
@@ -4065,7 +4067,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     int e10 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e10 > 0) {
-                        i14 = a4.a.g(e10, j.y(i16), e10, i14);
+                        i14 = a1.g.g(e10, j.y(i16), e10, i14);
                         break;
                     } else {
                         break;
@@ -4075,7 +4077,7 @@ public final class s0 implements b1 {
                     Class cls3 = c1.a;
                     int size3 = list2.size();
                     if (size3 > 0) {
-                        i14 = a4.a.g(size3, j.y(i16), size3, i14);
+                        i14 = a1.g.g(size3, j.y(i16), size3, i14);
                         break;
                     } else {
                         break;
@@ -4083,7 +4085,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int s10 = c1.s((List) unsafe.getObject(obj, j3));
                     if (s10 > 0) {
-                        i14 = a4.a.g(s10, j.y(i16), s10, i14);
+                        i14 = a1.g.g(s10, j.y(i16), s10, i14);
                         break;
                     } else {
                         break;
@@ -4091,7 +4093,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c10 = c1.c((List) unsafe.getObject(obj, j3));
                     if (c10 > 0) {
-                        i14 = a4.a.g(c10, j.y(i16), c10, i14);
+                        i14 = a1.g.g(c10, j.y(i16), c10, i14);
                         break;
                     } else {
                         break;
@@ -4099,7 +4101,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     int e11 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e11 > 0) {
-                        i14 = a4.a.g(e11, j.y(i16), e11, i14);
+                        i14 = a1.g.g(e11, j.y(i16), e11, i14);
                         break;
                     } else {
                         break;
@@ -4107,7 +4109,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int g13 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g13 > 0) {
-                        i14 = a4.a.g(g13, j.y(i16), g13, i14);
+                        i14 = a1.g.g(g13, j.y(i16), g13, i14);
                         break;
                     } else {
                         break;
@@ -4115,7 +4117,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = c1.n((List) unsafe.getObject(obj, j3));
                     if (n11 > 0) {
-                        i14 = a4.a.g(n11, j.y(i16), n11, i14);
+                        i14 = a1.g.g(n11, j.y(i16), n11, i14);
                         break;
                     } else {
                         break;
@@ -4123,7 +4125,7 @@ public final class s0 implements b1 {
                 case 48:
                     int p5 = c1.p((List) unsafe.getObject(obj, j3));
                     if (p5 > 0) {
-                        i14 = a4.a.g(p5, j.y(i16), p5, i14);
+                        i14 = a1.g.g(p5, j.y(i16), p5, i14);
                         break;
                     } else {
                         break;
@@ -4152,14 +4154,14 @@ public final class s0 implements b1 {
                     break;
                 case 51:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.a.f(i16, 8, i14);
+                        i14 = a1.g.f(i16, 8, i14);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.a.f(i16, 4, i14);
+                        i14 = a1.g.f(i16, 4, i14);
                         break;
                     } else {
                         break;
@@ -4215,7 +4217,7 @@ public final class s0 implements b1 {
                     }
                 case 58:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.a.f(i16, 1, i14);
+                        i14 = a1.g.f(i16, 1, i14);
                         break;
                     } else {
                         break;
@@ -4228,7 +4230,7 @@ public final class s0 implements b1 {
                         if (object4 instanceof g) {
                             int y15 = j.y(i16);
                             int size5 = ((g) object4).size();
-                            g10 = a4.a.g(size5, size5, y15, i14);
+                            g10 = a1.g.g(size5, size5, y15, i14);
                             i14 = g10;
                             break;
                         } else {
@@ -4245,7 +4247,7 @@ public final class s0 implements b1 {
                         Class cls5 = c1.a;
                         int y16 = j.y(i16);
                         int b11 = ((a) object5).b(n13);
-                        i14 = a4.a.g(b11, b11, y16, i14);
+                        i14 = a1.g.g(b11, b11, y16, i14);
                         break;
                     } else {
                         break;
@@ -4282,14 +4284,14 @@ public final class s0 implements b1 {
                     }
                 case 64:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.a.f(i16, 4, i14);
+                        i14 = a1.g.f(i16, 4, i14);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i16, i13, obj)) {
-                        i14 = a4.a.f(i16, 8, i14);
+                        i14 = a1.g.f(i16, 8, i14);
                         break;
                     } else {
                         break;
@@ -4359,14 +4361,14 @@ public final class s0 implements b1 {
             switch (G) {
                 case 0:
                     if (q(i11, obj)) {
-                        i12 = a4.a.f(i13, 8, i12);
+                        i12 = a1.g.f(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 1:
                     if (q(i11, obj)) {
-                        i12 = a4.a.f(i13, 4, i12);
+                        i12 = a1.g.f(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4422,7 +4424,7 @@ public final class s0 implements b1 {
                     }
                 case 7:
                     if (q(i11, obj)) {
-                        i12 = a4.a.f(i13, 1, i12);
+                        i12 = a1.g.f(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4433,7 +4435,7 @@ public final class s0 implements b1 {
                         if (i15 instanceof g) {
                             int y13 = j.y(i13);
                             int size = ((g) i15).size();
-                            i12 = a4.a.g(size, size, y13, i12);
+                            i12 = a1.g.g(size, size, y13, i12);
                             break;
                         } else {
                             y11 = j.y(i13);
@@ -4451,7 +4453,7 @@ public final class s0 implements b1 {
                         Class cls = c1.a;
                         int y14 = j.y(i13);
                         int b10 = ((a) i16).b(n10);
-                        i12 = a4.a.g(b10, b10, y14, i12);
+                        i12 = a1.g.g(b10, b10, y14, i12);
                         break;
                     } else {
                         break;
@@ -4488,14 +4490,14 @@ public final class s0 implements b1 {
                     }
                 case 13:
                     if (q(i11, obj)) {
-                        i12 = a4.a.f(i13, 4, i12);
+                        i12 = a1.g.f(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case 14:
                     if (q(i11, obj)) {
-                        i12 = a4.a.f(i13, 8, i12);
+                        i12 = a1.g.f(i13, 8, i12);
                         break;
                     } else {
                         break;
@@ -4603,7 +4605,7 @@ public final class s0 implements b1 {
                 case 35:
                     int g14 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g14 > 0) {
-                        i12 = a4.a.g(g14, j.y(i13), g14, i12);
+                        i12 = a1.g.g(g14, j.y(i13), g14, i12);
                         break;
                     } else {
                         break;
@@ -4611,7 +4613,7 @@ public final class s0 implements b1 {
                 case 36:
                     int e7 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e7 > 0) {
-                        i12 = a4.a.g(e7, j.y(i13), e7, i12);
+                        i12 = a1.g.g(e7, j.y(i13), e7, i12);
                         break;
                     } else {
                         break;
@@ -4619,7 +4621,7 @@ public final class s0 implements b1 {
                 case 37:
                     int k10 = c1.k((List) unsafe.getObject(obj, j3));
                     if (k10 > 0) {
-                        i12 = a4.a.g(k10, j.y(i13), k10, i12);
+                        i12 = a1.g.g(k10, j.y(i13), k10, i12);
                         break;
                     } else {
                         break;
@@ -4627,7 +4629,7 @@ public final class s0 implements b1 {
                 case 38:
                     int u11 = c1.u((List) unsafe.getObject(obj, j3));
                     if (u11 > 0) {
-                        i12 = a4.a.g(u11, j.y(i13), u11, i12);
+                        i12 = a1.g.g(u11, j.y(i13), u11, i12);
                         break;
                     } else {
                         break;
@@ -4635,7 +4637,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     int i17 = c1.i((List) unsafe.getObject(obj, j3));
                     if (i17 > 0) {
-                        i12 = a4.a.g(i17, j.y(i13), i17, i12);
+                        i12 = a1.g.g(i17, j.y(i13), i17, i12);
                         break;
                     } else {
                         break;
@@ -4643,7 +4645,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
                     int g15 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g15 > 0) {
-                        i12 = a4.a.g(g15, j.y(i13), g15, i12);
+                        i12 = a1.g.g(g15, j.y(i13), g15, i12);
                         break;
                     } else {
                         break;
@@ -4651,7 +4653,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
                     int e10 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e10 > 0) {
-                        i12 = a4.a.g(e10, j.y(i13), e10, i12);
+                        i12 = a1.g.g(e10, j.y(i13), e10, i12);
                         break;
                     } else {
                         break;
@@ -4661,7 +4663,7 @@ public final class s0 implements b1 {
                     Class cls3 = c1.a;
                     int size3 = list.size();
                     if (size3 > 0) {
-                        i12 = a4.a.g(size3, j.y(i13), size3, i12);
+                        i12 = a1.g.g(size3, j.y(i13), size3, i12);
                         break;
                     } else {
                         break;
@@ -4669,7 +4671,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
                     int s11 = c1.s((List) unsafe.getObject(obj, j3));
                     if (s11 > 0) {
-                        i12 = a4.a.g(s11, j.y(i13), s11, i12);
+                        i12 = a1.g.g(s11, j.y(i13), s11, i12);
                         break;
                     } else {
                         break;
@@ -4677,7 +4679,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
                     int c10 = c1.c((List) unsafe.getObject(obj, j3));
                     if (c10 > 0) {
-                        i12 = a4.a.g(c10, j.y(i13), c10, i12);
+                        i12 = a1.g.g(c10, j.y(i13), c10, i12);
                         break;
                     } else {
                         break;
@@ -4685,7 +4687,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     int e11 = c1.e((List) unsafe.getObject(obj, j3));
                     if (e11 > 0) {
-                        i12 = a4.a.g(e11, j.y(i13), e11, i12);
+                        i12 = a1.g.g(e11, j.y(i13), e11, i12);
                         break;
                     } else {
                         break;
@@ -4693,7 +4695,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
                     int g16 = c1.g((List) unsafe.getObject(obj, j3));
                     if (g16 > 0) {
-                        i12 = a4.a.g(g16, j.y(i13), g16, i12);
+                        i12 = a1.g.g(g16, j.y(i13), g16, i12);
                         break;
                     } else {
                         break;
@@ -4701,7 +4703,7 @@ public final class s0 implements b1 {
                 case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
                     int n11 = c1.n((List) unsafe.getObject(obj, j3));
                     if (n11 > 0) {
-                        i12 = a4.a.g(n11, j.y(i13), n11, i12);
+                        i12 = a1.g.g(n11, j.y(i13), n11, i12);
                         break;
                     } else {
                         break;
@@ -4709,7 +4711,7 @@ public final class s0 implements b1 {
                 case 48:
                     int p5 = c1.p((List) unsafe.getObject(obj, j3));
                     if (p5 > 0) {
-                        i12 = a4.a.g(p5, j.y(i13), p5, i12);
+                        i12 = a1.g.g(p5, j.y(i13), p5, i12);
                         break;
                     } else {
                         break;
@@ -4738,14 +4740,14 @@ public final class s0 implements b1 {
                     break;
                 case 51:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.a.f(i13, 8, i12);
+                        i12 = a1.g.f(i13, 8, i12);
                         break;
                     } else {
                         break;
                     }
                 case 52:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.a.f(i13, 4, i12);
+                        i12 = a1.g.f(i13, 4, i12);
                         break;
                     } else {
                         break;
@@ -4801,7 +4803,7 @@ public final class s0 implements b1 {
                     }
                 case 58:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.a.f(i13, 1, i12);
+                        i12 = a1.g.f(i13, 1, i12);
                         break;
                     } else {
                         break;
@@ -4812,7 +4814,7 @@ public final class s0 implements b1 {
                         if (i20 instanceof g) {
                             int y15 = j.y(i13);
                             int size5 = ((g) i20).size();
-                            i12 = a4.a.g(size5, size5, y15, i12);
+                            i12 = a1.g.g(size5, size5, y15, i12);
                             break;
                         } else {
                             y11 = j.y(i13);
@@ -4830,7 +4832,7 @@ public final class s0 implements b1 {
                         Class cls5 = c1.a;
                         int y16 = j.y(i13);
                         int b11 = ((a) i21).b(n13);
-                        i12 = a4.a.g(b11, b11, y16, i12);
+                        i12 = a1.g.g(b11, b11, y16, i12);
                         break;
                     } else {
                         break;
@@ -4867,14 +4869,14 @@ public final class s0 implements b1 {
                     }
                 case 64:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.a.f(i13, 4, i12);
+                        i12 = a1.g.f(i13, 4, i12);
                         break;
                     } else {
                         break;
                     }
                 case VoIPService.CALL_MIN_LAYER /* 65 */:
                     if (r(i13, i11, obj)) {
-                        i12 = a4.a.f(i13, 8, i12);
+                        i12 = a1.g.f(i13, 8, i12);
                         break;
                     } else {
                         break;

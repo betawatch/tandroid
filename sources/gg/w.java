@@ -1,41 +1,74 @@
 package gg;
 
-import org.telegram.ui.o10;
-import org.telegram.ui.xv;
+import android.view.View;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.gm0;
+import org.telegram.ui.fy;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+public final /* synthetic */ class w implements f0, gm0 {
+    public final /* synthetic */ h0 a;
 
-    public /* synthetic */ w(i0 i0Var, int i10) {
-        this.a = i10;
-        this.b = i0Var;
+    public /* synthetic */ w(h0 h0Var) {
+        this.a = h0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                i0 i0Var = this.b;
-                o10 o10Var = i0Var.A0;
-                if (o10Var != null) {
-                    ((xv) o10Var).j(false, null, i0Var.y0, i0Var.z0);
-                    break;
-                }
-                break;
-            default:
-                i0 i0Var2 = this.b;
-                i0Var2.getClass();
-                i0Var2.c = f0.d;
-                i0Var2.I.clear();
-                int i10 = i0Var2.F0;
-                if (i10 >= 0 && i10 < i0Var2.h()) {
-                    i0Var2.m(i0Var2.F0);
-                }
-                i0Var2.Q();
-                break;
+    @Override // gg.f0
+    public void a(a0.i iVar, ArrayList arrayList) {
+        h0 h0Var = this.a;
+        int i10 = h0Var.s0;
+        h0Var.t0 = arrayList;
+        h0Var.x0 = iVar;
+        for (int i11 = 0; i11 < h0Var.t0.size(); i11++) {
+            g0 g0Var = (g0) h0Var.t0.get(i11);
+            TLObject tLObject = g0Var.a;
+            if (tLObject instanceof TLRPC.User) {
+                MessagesController.getInstance(i10).putUser((TLRPC.User) g0Var.a, true);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                MessagesController.getInstance(i10).putChat((TLRPC.Chat) g0Var.a, true);
+            } else if (tLObject instanceof TLRPC.EncryptedChat) {
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) g0Var.a, true);
+            }
         }
+        h0Var.G(null);
+        h0Var.l();
+    }
+
+    @Override // org.telegram.ui.Components.gm0
+    public boolean d(int i10, View view) {
+        TLRPC.User user;
+        fy fyVar = this.a.U;
+        if (fyVar != null) {
+            Long l4 = (Long) view.getTag();
+            long longValue = l4.longValue();
+            ty tyVar = fyVar.a;
+            if (tyVar.getParentActivity() != null && (user = tyVar.getMessagesController().getUser(l4)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(tyVar.getParentActivity());
+                String string = LocaleController.getString(R.string.ChatHintsDeleteAlertTitle);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("ChatHintsDeleteAlert", R.string.ChatHintsDeleteAlert, ContactsController.formatName(user.first_name, user.last_name)));
+                alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ai.z1(fyVar, longValue, 9));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                tyVar.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(tyVar.getThemedColor(i6.q7));
+                }
+            }
+        }
+        return true;
     }
 }

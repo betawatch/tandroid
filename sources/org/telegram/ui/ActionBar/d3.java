@@ -21,10 +21,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.n80;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class d3 extends FrameLayout {
     public boolean E;
@@ -89,7 +89,7 @@ public abstract class d3 extends FrameLayout {
         ofFloat.addUpdateListener(new b3(this, 4));
         this.h.playTogether(ObjectAnimator.ofFloat(f3Var.containerView, "translationY", 0.0f), ofFloat);
         this.h.setDuration((int) ((Math.max(0.0f, r1) / AndroidUtilities.getPixelsInCM(0.8f, false)) * 250.0f));
-        this.h.setInterpolator(tr.f);
+        this.h.setInterpolator(hs.f);
         this.h.addListener(new c3(this, 3));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.h.start();
@@ -235,13 +235,13 @@ public abstract class d3 extends FrameLayout {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, getMeasuredWidth());
                             ofFloat.addUpdateListener(new b3(this, i15));
                             ofFloat.addListener(new c3(this, i13));
-                            tr trVar = tr.h;
-                            ofFloat.setInterpolator(trVar);
+                            hs hsVar = hs.h;
+                            ofFloat.setInterpolator(hsVar);
                             ofFloat.setDuration(320L);
                             ofFloat.start();
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
                             ofFloat2.addUpdateListener(new b3(this, i14));
-                            ofFloat2.setInterpolator(trVar);
+                            ofFloat2.setInterpolator(hsVar);
                             ofFloat2.setDuration(320L);
                             ofFloat2.start();
                         } else {
@@ -250,7 +250,7 @@ public abstract class d3 extends FrameLayout {
                             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(max, 0.0f);
                             ofFloat3.addUpdateListener(new b3(this, i13));
                             ofFloat3.addListener(new c3(this, i12));
-                            ofFloat3.setInterpolator(tr.f);
+                            ofFloat3.setInterpolator(hs.f);
                             ofFloat3.setDuration(220L);
                             ofFloat3.start();
                         }
@@ -509,34 +509,34 @@ public abstract class d3 extends FrameLayout {
         return (f3Var.canDismissWithSwipe() || f3Var.canSwipeToBack(motionEvent)) ? d(motionEvent, true) : super.onInterceptTouchEvent(motionEvent);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00c0, code lost:
     
         r11 = r3.containerView;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00c4, code lost:
     
         if (r3.smoothKeyboardByBottom == false) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c6, code lost:
     
         r12 = r11.getBottom() - (r3.containerView.getMeasuredHeight() + r6);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x00db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00da, code lost:
     
         r11.setTranslationY(r12);
         r3.onContainerViewTranslation();
         r3.onSmoothContainerViewLayout(r3.containerView.getTranslationY());
         r11 = r3.keyboardContentAnimator;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00eb, code lost:
     
         if (r11 == null) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ee, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ed, code lost:
     
         r11.cancel();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00f1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00f0, code lost:
     
         r11 = android.animation.ValueAnimator.ofFloat(r3.containerView.getTranslationY(), 0.0f);
         r3.keyboardContentAnimator = r11;
@@ -546,17 +546,17 @@ public abstract class d3 extends FrameLayout {
         r3.keyboardContentAnimator.start();
         r3.smoothContainerViewLayoutUntil = -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00d5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00d4, code lost:
     
         r12 = r11.getTop() - r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00bf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00be, code lost:
     
         if (r11 < r13) goto L40;
      */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01a8  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01b7  */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -717,16 +717,16 @@ public abstract class d3 extends FrameLayout {
         this.v = false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x0111, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x010e, code lost:
     
         if (r3 > (org.telegram.messenger.AndroidUtilities.dp(10.0f) + org.telegram.messenger.AndroidUtilities.navigationBarHeight)) goto L54;
      */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00ff  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x019b  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x0120  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0197  */
     @Override // android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -839,7 +839,7 @@ public abstract class d3 extends FrameLayout {
                 for (int i18 = 0; i18 < childCount; i18++) {
                     View childAt = getChildAt(i18);
                     if (childAt.getVisibility() != 8 && childAt != f3Var.containerView) {
-                        if (childAt instanceof z70) {
+                        if (childAt instanceof n80) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30), 0);
                         } else if (!f3Var.onCustomMeasure(childAt, i17, i16)) {
                             measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0);

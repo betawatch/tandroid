@@ -1,41 +1,24 @@
 package ci;
 
-import android.text.TextUtils;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ux0;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class l3 extends v3 {
-    public final /* synthetic */ w3 x;
+public final class l3 extends s4.t0 {
+    public final /* synthetic */ v3 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(w3 w3Var) {
-        super(w3Var);
-        this.x = w3Var;
+    public l3(v3 v3Var) {
+        this.a = v3Var;
     }
 
-    @Override // ci.v3
-    public final void F(boolean z10) {
-        w3 w3Var = this.x;
-        org.telegram.ui.ActionBar.v0 v0Var = w3Var.G;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(z10);
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        org.telegram.ui.ActionBar.v0 v0Var;
+        v3 v3Var = this.a;
+        if (!v3Var.n.I1 || (v0Var = v3Var.G) == null || v0Var.getSearchField() == null) {
+            return;
         }
-        w3Var.s.e(z10, true);
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        ux0 ux0Var = this.x.s;
-        super.l();
-        if (TextUtils.isEmpty(this.f)) {
-            ux0Var.setStickerType(11);
-            ux0Var.d.setText(LocaleController.getString(R.string.SearchImagesType));
-        } else {
-            ux0Var.setStickerType(1);
-            ux0Var.d.setText(LocaleController.formatString(R.string.NoResultFoundFor, this.f));
-        }
+        AndroidUtilities.hideKeyboard(v3Var.G.getSearchContainer());
     }
 }

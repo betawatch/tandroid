@@ -1,80 +1,32 @@
 package e0;
 
-import android.app.Notification;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class z {
-    public final CharSequence a;
-    public final long b;
-    public final p0 c;
-    public final Bundle d = new Bundle();
-    public String e;
-    public Uri f;
+public abstract class z {
+    public r a;
+    public CharSequence b;
+    public CharSequence c;
+    public boolean d = false;
 
-    public z(CharSequence charSequence, long j3, p0 p0Var) {
-        this.a = charSequence;
-        this.b = j3;
-        this.c = p0Var;
+    public void a(Bundle bundle) {
+        if (this.d) {
+            bundle.putCharSequence("android.summaryText", this.c);
+        }
+        CharSequence charSequence = this.b;
+        if (charSequence != null) {
+            bundle.putCharSequence("android.title.big", charSequence);
+        }
+        String c10 = c();
+        if (c10 != null) {
+            bundle.putString("androidx.core.app.extra.COMPAT_TEMPLATE", c10);
+        }
     }
 
-    public static Bundle[] a(ArrayList arrayList) {
-        Bundle[] bundleArr = new Bundle[arrayList.size()];
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            z zVar = (z) arrayList.get(i10);
-            p0 p0Var = zVar.c;
-            Bundle bundle = new Bundle();
-            CharSequence charSequence = zVar.a;
-            if (charSequence != null) {
-                bundle.putCharSequence("text", charSequence);
-            }
-            bundle.putLong("time", zVar.b);
-            if (p0Var != null) {
-                bundle.putCharSequence("sender", p0Var.a);
-                if (Build.VERSION.SDK_INT >= 28) {
-                    bundle.putParcelable("sender_person", y.a(b5.d.E(p0Var)));
-                } else {
-                    bundle.putBundle("person", p0Var.c());
-                }
-            }
-            String str = zVar.e;
-            if (str != null) {
-                bundle.putString(TeXSymbolParser.TYPE_ATTR, str);
-            }
-            Uri uri = zVar.f;
-            if (uri != null) {
-                bundle.putParcelable("uri", uri);
-            }
-            Bundle bundle2 = zVar.d;
-            if (bundle2 != null) {
-                bundle.putBundle("extras", bundle2);
-            }
-            bundleArr[i10] = bundle;
-        }
-        return bundleArr;
-    }
+    public abstract void b(g0 g0Var);
 
-    public final Notification.MessagingStyle.Message b() {
-        Notification.MessagingStyle.Message a2;
-        int i10 = Build.VERSION.SDK_INT;
-        long j3 = this.b;
-        CharSequence charSequence = this.a;
-        p0 p0Var = this.c;
-        if (i10 >= 28) {
-            a2 = y.b(charSequence, j3, p0Var != null ? b5.d.E(p0Var) : null);
-        } else {
-            a2 = x.a(charSequence, j3, p0Var != null ? p0Var.a : null);
-        }
-        String str = this.e;
-        if (str != null) {
-            x.b(a2, str, this.f);
-        }
-        return a2;
+    public String c() {
+        return null;
     }
 }

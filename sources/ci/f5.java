@@ -1,57 +1,48 @@
 package ci;
 
-import java.util.List;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.ui.Components.tw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f5 implements Runnable {
+public final /* synthetic */ class f5 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q6 b;
+    public final /* synthetic */ tw0 b;
 
-    public /* synthetic */ f5(q6 q6Var, int i10) {
+    public /* synthetic */ f5(tw0 tw0Var, int i10) {
         this.a = i10;
-        this.b = q6Var;
+        this.b = tw0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
+        org.telegram.ui.ActionBar.n1 n1Var2;
         switch (this.a) {
             case 0:
-                qg.w1 w1Var = this.b.d1;
-                if (w1Var != null) {
-                    w1Var.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                new rg.y0((org.telegram.ui.ActionBar.n2) new ai.y3(this.b, 3), 14, true).show();
-                break;
-            case 2:
-                this.b.z0(false);
-                break;
-            default:
-                q6 q6Var = this.b;
-                boolean z10 = pg.u0.e(q6Var.F1).k;
-                int i10 = 0;
-                while (true) {
-                    List list = pg.l.b;
-                    if (i10 >= list.size()) {
+                q6 q6Var = (q6) this.b;
+                q6Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (n1Var = q6Var.H1) != null && n1Var.isShowing()) {
+                    view.getHitRect(q6Var.J1);
+                    if (!q6Var.J1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        q6Var.H1.d(true);
                         break;
-                    } else {
-                        pg.l lVar = (pg.l) list.get(i10);
-                        int m10 = z10 ? lVar.m() : lVar.e();
-                        String n10 = lVar.n();
-                        ai.s1 s1Var = new ai.s1(q6Var, lVar, m10, 5);
-                        n6 n6Var = new n6(q6Var, q6Var.getContext());
-                        n6Var.setIcon(m10);
-                        n6Var.setText(n10);
-                        n6Var.setSelected(false);
-                        n6Var.setOnClickListener(new ai.v0(s1Var, 10));
-                        n6Var.setOnLongClickListener(new m5(q6Var, 0));
-                        q6Var.I1.a(n6Var, w7.z5.n(-1, 48));
-                        i10++;
                     }
                 }
+                break;
+            default:
+                qg.m0 m0Var = (qg.m0) this.b;
+                m0Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (n1Var2 = m0Var.R1) != null && n1Var2.isShowing()) {
+                    view.getHitRect(m0Var.T1);
+                    if (!m0Var.T1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        m0Var.R1.d(true);
+                        break;
+                    }
+                }
+                break;
         }
+        return false;
     }
 }

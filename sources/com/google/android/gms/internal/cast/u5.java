@@ -1,205 +1,228 @@
 package com.google.android.gms.internal.cast;
 
+import android.content.SharedPreferences;
+import android.util.Log;
 import java.nio.charset.Charset;
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class u5 extends w4 implements RandomAccess, l5, f6 {
-    public static final u5 d = new u5(new long[0], 0, false);
-    public long[] b;
-    public int c;
+public final class u5 implements d6.h {
+    public static final d5 b = new d5(1);
+    public final Object a;
 
-    public u5(long[] jArr, int i10, boolean z10) {
-        super(z10);
-        this.b = jArr;
-        this.c = i10;
+    public u5(a1 a1Var) {
+        this.a = a1Var;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        long longValue = ((Long) obj).longValue();
-        i();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
-        }
-        int i12 = i10 + 1;
-        long[] jArr = this.b;
-        if (i11 < jArr.length) {
-            System.arraycopy(jArr, i10, jArr, i12, i11 - i10);
+    public void a(int i10, Object obj, h6 h6Var) {
+        y4 y4Var = (y4) this.a;
+        y4Var.i(i10, 3);
+        h6Var.e((t4) obj, y4Var.a);
+        y4Var.i(i10, 4);
+    }
+
+    public void b(int i10, Object obj, h6 h6Var) {
+        t4 t4Var = (t4) obj;
+        y4 y4Var = (y4) this.a;
+        y4Var.j((i10 << 3) | 2);
+        y4Var.j(t4Var.a(h6Var));
+        h6Var.e(t4Var, y4Var.a);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00c4  */
+    @Override // d6.h
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void d(d6.f fVar, String str) {
+        b1 b1Var;
+        g6.b bVar = a1.j;
+        boolean z10 = false;
+        bVar.b("onSessionResuming with sessionId = %s", str);
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        SharedPreferences sharedPreferences = a1Var.f;
+        boolean g10 = a1Var.g(str);
+        d dVar = a1Var.b;
+        if (g10) {
+            bVar.b("Use the existing ApplicationAnalyticsSession if it is available and valid.", new Object[0]);
+            n6.l.h(a1Var.g);
         } else {
-            long[] jArr2 = new long[((i11 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i10);
-            System.arraycopy(this.b, i10, jArr2, i12, this.c - i10);
-            this.b = jArr2;
-        }
-        this.b[i10] = longValue;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        i();
-        Charset charset = n5.a;
-        collection.getClass();
-        if (!(collection instanceof u5)) {
-            return super.addAll(collection);
-        }
-        u5 u5Var = (u5) collection;
-        int i10 = u5Var.c;
-        if (i10 == 0) {
-            return false;
-        }
-        int i11 = this.c;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
-            throw new OutOfMemoryError();
-        }
-        int i12 = i11 + i10;
-        long[] jArr = this.b;
-        if (i12 > jArr.length) {
-            this.b = Arrays.copyOf(jArr, i12);
-        }
-        System.arraycopy(u5Var.b, 0, this.b, this.c, u5Var.c);
-        this.c = i12;
-        ((AbstractList) this).modCount++;
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) != -1;
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof u5)) {
-            return super.equals(obj);
-        }
-        u5 u5Var = (u5) obj;
-        if (this.c != u5Var.c) {
-            return false;
-        }
-        long[] jArr = u5Var.b;
-        for (int i10 = 0; i10 < this.c; i10++) {
-            if (this.b[i10] != jArr[i10]) {
-                return false;
+            if (sharedPreferences == null) {
+                g6.b bVar2 = b1.k;
+            } else {
+                b1Var = new b1(dVar);
+                b1Var.i = sharedPreferences.getBoolean("is_output_switcher_enabled", false);
+                if (sharedPreferences.contains("application_id")) {
+                    b1Var.b = sharedPreferences.getString("application_id", "");
+                    if (sharedPreferences.contains("receiver_metrics_id")) {
+                        b1Var.c = sharedPreferences.getString("receiver_metrics_id", "");
+                        if (sharedPreferences.contains("analytics_session_id")) {
+                            b1Var.d = sharedPreferences.getLong("analytics_session_id", 0L);
+                            if (sharedPreferences.contains("event_sequence_number")) {
+                                b1Var.e = sharedPreferences.getInt("event_sequence_number", 0);
+                                if (sharedPreferences.contains("receiver_session_id")) {
+                                    b1Var.f = sharedPreferences.getString("receiver_session_id", "");
+                                    b1Var.g = sharedPreferences.getInt("device_capabilities", 0);
+                                    b1Var.h = sharedPreferences.getString("device_model_name", "");
+                                    b1Var.j = sharedPreferences.getInt("analytics_session_start_type", 0);
+                                    a1Var.g = b1Var;
+                                    if (a1Var.g(str)) {
+                                        bVar.b("The restored ApplicationAnalyticsSession is not valid, create a new one.", new Object[0]);
+                                        b1 b1Var2 = new b1(dVar);
+                                        b1.l++;
+                                        a1Var.g = b1Var2;
+                                        d6.c cVar = a1Var.h;
+                                        if (cVar != null && cVar.g.i) {
+                                            z10 = true;
+                                        }
+                                        b1Var2.i = z10;
+                                        g6.b bVar3 = d6.a.l;
+                                        n6.l.e("Must be called from the main thread.");
+                                        d6.a aVar = d6.a.n;
+                                        n6.l.h(aVar);
+                                        n6.l.e("Must be called from the main thread.");
+                                        b1Var2.b = aVar.e.a;
+                                        b1 b1Var3 = a1Var.g;
+                                        n6.l.h(b1Var3);
+                                        b1Var3.f = str;
+                                    } else {
+                                        bVar.b("Use the restored ApplicationAnalyticsSession if it is valid.", new Object[0]);
+                                        n6.l.h(a1Var.g);
+                                        b1.l = a1Var.g.d + 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            b1Var = null;
+            a1Var.g = b1Var;
+            if (a1Var.g(str)) {
             }
         }
-        return true;
+        n6.l.h(a1Var.g);
+        r1 b10 = a1Var.c.b(a1Var.g);
+        m1 m10 = n1.m(b10.d());
+        m10.c();
+        n1.r((n1) m10.b, 10);
+        b10.e((n1) m10.a());
+        m1 m11 = n1.m(b10.d());
+        m11.c();
+        n1.p((n1) m11.b, true);
+        b10.c();
+        s1.p((s1) b10.b, (n1) m11.a());
+        a1Var.a.a((s1) b10.a(), 226);
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i10) {
-        n(i10);
-        return Long.valueOf(this.b[i10]);
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1.a(a1Var, i10);
     }
 
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.c; i11++) {
-            long j3 = this.b[i11];
-            Charset charset = n5.a;
-            i10 = (i10 * 31) + ((int) (j3 ^ (j3 >>> 32)));
+    @Override // d6.h
+    public void h(d6.f fVar, boolean z10) {
+        a1.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1Var.c();
+        n6.l.h(a1Var.g);
+        r1 b10 = a1Var.c.b(a1Var.g);
+        m1 m10 = n1.m(b10.d());
+        m10.c();
+        n1.p((n1) m10.b, z10);
+        b10.c();
+        s1.p((s1) b10.b, (n1) m10.a());
+        a1Var.a.a((s1) b10.a(), 227);
+        a1.b(a1Var);
+        a1Var.e();
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void j(d6.f fVar, int i10) {
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1.a(a1Var, i10);
+    }
+
+    @Override // d6.h
+    public void o(d6.f fVar) {
+        g6.b bVar = a1.j;
+        bVar.b("onSessionStarting", new Object[0]);
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        if (a1Var.g != null) {
+            Log.w(bVar.a, bVar.d("Start a session while there's already an active session. Create a new one.", new Object[0]));
         }
-        return i10;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Long)) {
-            return -1;
+        a1Var.d();
+        c1 c1Var = a1Var.c;
+        b1 b1Var = a1Var.g;
+        r1 b10 = c1Var.b(b1Var);
+        if (b1Var.j == 1) {
+            m1 m10 = n1.m(b10.d());
+            m10.c();
+            n1.r((n1) m10.b, 17);
+            b10.e((n1) m10.a());
         }
-        long longValue = ((Long) obj).longValue();
-        int i10 = this.c;
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (this.b[i11] == longValue) {
-                return i11;
-            }
+        a1Var.a.a((s1) b10.a(), 221);
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void u(d6.f fVar, int i10) {
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1.a(a1Var, i10);
+    }
+
+    @Override // d6.h
+    public /* synthetic */ void v(d6.f fVar) {
+        ((a1) this.a).h = (d6.c) fVar;
+    }
+
+    @Override // d6.h
+    public void x(d6.f fVar, String str) {
+        a1.j.b("onSessionStarted with sessionId = %s", str);
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1Var.c();
+        b1 b1Var = a1Var.g;
+        b1Var.f = str;
+        a1Var.a.a((s1) a1Var.c.b(b1Var).a(), 222);
+        a1.b(a1Var);
+        a1Var.e();
+    }
+
+    @Override // d6.h
+    public void y(d6.f fVar, int i10) {
+        a1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
+        a1 a1Var = (a1) this.a;
+        a1Var.h = (d6.c) fVar;
+        a1Var.c();
+        n6.l.h(a1Var.g);
+        a1Var.a.a(a1Var.c.a(a1Var.g, i10), 225);
+        a1.b(a1Var);
+        a1Var.e.removeCallbacks(a1Var.d);
+    }
+
+    public u5() {
+        x5 x5Var;
+        try {
+            x5Var = (x5) Class.forName("com.google.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
+        } catch (Exception unused) {
+            x5Var = b;
         }
-        return -1;
+        t5 t5Var = new t5(d5.b, x5Var);
+        Charset charset = l5.a;
+        this.a = t5Var;
     }
 
-    public final void n(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
-        }
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i10) {
-        i();
-        n(i10);
-        long[] jArr = this.b;
-        long j3 = jArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
-        }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return Long.valueOf(j3);
-    }
-
-    @Override // java.util.AbstractList
-    public final void removeRange(int i10, int i11) {
-        i();
-        if (i11 < i10) {
-            throw new IndexOutOfBoundsException("toIndex < fromIndex");
-        }
-        long[] jArr = this.b;
-        System.arraycopy(jArr, i11, jArr, i10, this.c - i11);
-        this.c -= i11 - i10;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
-        long longValue = ((Long) obj).longValue();
-        i();
-        n(i10);
-        long[] jArr = this.b;
-        long j3 = jArr[i10];
-        jArr[i10] = longValue;
-        return Long.valueOf(j3);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.m5
-    public final /* bridge */ /* synthetic */ m5 zzg(int i10) {
-        if (i10 >= this.c) {
-            return new u5(Arrays.copyOf(this.b, i10), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    @Override // com.google.android.gms.internal.cast.w4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        long longValue = ((Long) obj).longValue();
-        i();
-        int i10 = this.c;
-        long[] jArr = this.b;
-        if (i10 == jArr.length) {
-            long[] jArr2 = new long[((i10 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i10);
-            this.b = jArr2;
-        }
-        long[] jArr3 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        jArr3[i11] = longValue;
-        return true;
+    public u5(y4 y4Var) {
+        Charset charset = l5.a;
+        this.a = y4Var;
+        y4Var.a = this;
     }
 }

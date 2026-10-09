@@ -1,92 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f7 extends org.telegram.ui.Components.y81 {
-    public org.telegram.ui.ActionBar.n1 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ li.p c;
-    public final /* synthetic */ a7 d;
-    public final /* synthetic */ org.telegram.ui.Components.bw0 e;
-    public final /* synthetic */ v7 f;
+public abstract class f7 extends e7 {
+    public final ArrayList f;
+    public final /* synthetic */ r7 h;
 
-    public f7(v7 v7Var, Context context, li.p pVar, a7 a7Var, org.telegram.ui.Components.bw0 bw0Var) {
-        this.f = v7Var;
-        this.b = context;
-        this.c = pVar;
-        this.d = a7Var;
-        this.e = bw0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f7(r7 r7Var, int i10) {
+        super(i10);
+        this.h = r7Var;
+        this.f = new ArrayList();
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final void b(View view, int i10, int i11) {
-        org.telegram.ui.Components.zl0 c10 = v7.c(view);
-        v7 v7Var = this.f;
-        ArrayList arrayList = v7Var.e;
-        c10.setAdapter(((t7) arrayList.get(i10)).c);
-        if (((t7) arrayList.get(i10)).b == 1 || ((t7) arrayList.get(i10)).b == 4) {
-            view.getContext();
-            c10.setLayoutManager(new s4.s(3));
-        } else {
-            view.getContext();
-            c10.setLayoutManager(new s4.c0());
+    @Override // org.telegram.ui.Components.pm0
+    public boolean D(s4.d1 d1Var) {
+        return !(this instanceof n7);
+    }
+
+    @Override // org.telegram.ui.e7
+    public void F() {
+        ArrayList arrayList = this.f;
+        arrayList.clear();
+        ArrayList arrayList2 = this.e;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        zh.b bVar = this.h.f;
+        if (bVar != null) {
+            int i10 = this.d;
+            ArrayList arrayList3 = i10 == 1 ? bVar.d : i10 == 2 ? bVar.e : i10 == 3 ? bVar.f : i10 == 5 ? bVar.g : i10 == 4 ? bVar.h : null;
+            if (arrayList3 != null) {
+                for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                    zh.a aVar = (zh.a) arrayList3.get(i11);
+                    l7 l7Var = new l7(2, true);
+                    l7Var.d = aVar;
+                    arrayList2.add(l7Var);
+                }
+            }
         }
-        c10.setTag(Integer.valueOf(((t7) arrayList.get(i10)).b));
-        view.setTag(Integer.valueOf(((t7) arrayList.get(i10)).b));
-        if (this.e != null) {
-            ((org.telegram.ui.Components.bm0) v7Var.h).L(view);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final View d(int i10) {
-        Context context = this.b;
-        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        li.p pVar = this.c;
-        if (pVar != null) {
-            pVar.b(zl0Var);
-        }
-        s4.j jVar = (s4.j) zl0Var.getItemAnimator();
-        jVar.C = false;
-        jVar.m = false;
-        zl0Var.setClipToPadding(false);
-        if (i10 != 1 && i10 != 4 && pVar != null) {
-            zl0Var.setSections(false);
-        }
-        zl0Var.setCaptureSectionsDecoratorAllowed(true);
-        v7 v7Var = this.f;
-        if (i10 == 1) {
-            zl0Var.setPadding(AndroidUtilities.dp(2.0f), 0, 0, v7Var.s);
-        } else {
-            zl0Var.setPadding(0, 0, 0, v7Var.s);
-        }
-        zl0Var.setOnItemClickListener(new e7(this, zl0Var));
-        zl0Var.setOnItemLongClickListener(new c7(this, zl0Var, this.d, 0));
-        return this.e == null ? zl0Var : new u7(context, zl0Var);
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final int e() {
-        return this.f.e.size();
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final int f(int i10) {
-        return ((t7) this.f.e.get(i10)).b;
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final CharSequence g(int i10) {
-        return ((t7) this.f.e.get(i10)).a;
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final int h(int i10) {
-        return ((t7) this.f.e.get(i10)).b;
+        E(arrayList, arrayList2);
     }
 }

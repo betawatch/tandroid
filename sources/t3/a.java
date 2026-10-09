@@ -1,12 +1,13 @@
 package t3;
 
+import a1.g;
 import b2.m0;
 import b2.o0;
 import b2.s;
 import v7.r6;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final String a;
@@ -93,21 +94,21 @@ public final class a implements o0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = y7.g(str2);
+                Integer g10 = v7.g(str2);
                 if (g10 != null) {
                     m0Var.o = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = y7.g(str2);
+                Integer g11 = v7.g(str2);
                 if (g11 != null) {
                     m0Var.C = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = y7.g(str2);
+                Integer g12 = v7.g(str2);
                 if (g12 != null) {
                     m0Var.n = g12;
                     break;
@@ -126,7 +127,7 @@ public final class a implements o0 {
                 m0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = y7.g(str2);
+                Integer g13 = v7.g(str2);
                 if (g13 != null) {
                     m0Var.B = g13;
                     break;
@@ -160,7 +161,7 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + a4.a.h(527, 31, this.a);
+        return this.b.hashCode() + g.h(527, 31, this.a);
     }
 
     public final String toString() {

@@ -1,20 +1,19 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class w1 extends h5 {
+public final class w1 extends f5 {
     private static final w1 zzb;
     private int zzd;
     private int zze;
     private int zzf;
     private int zzg;
-    private int zzh;
-    private int zzi;
+    private boolean zzh;
 
     static {
         w1 w1Var = new w1();
         zzb = w1Var;
-        h5.e(w1.class, w1Var);
+        f5.e(w1.class, w1Var);
     }
 
     public static v1 l() {
@@ -31,29 +30,24 @@ public final class w1 extends h5 {
         w1Var.zzg = i10;
     }
 
-    public static /* synthetic */ void o(w1 w1Var, int i10) {
+    public static /* synthetic */ void o(w1 w1Var, boolean z10) {
         w1Var.zzd |= 8;
-        w1Var.zzh = i10;
+        w1Var.zzh = z10;
     }
 
     public static /* synthetic */ void p(w1 w1Var, int i10) {
-        w1Var.zzd |= 16;
-        w1Var.zzi = i10;
-    }
-
-    public static /* synthetic */ void q(w1 w1Var, int i10) {
         w1Var.zze = i10 - 1;
         w1Var.zzd |= 1;
     }
 
-    @Override // com.google.android.gms.internal.cast.h5
-    public final Object h(int i10, h5 h5Var) {
+    @Override // com.google.android.gms.internal.cast.f5
+    public final Object h(int i10, f5 f5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002\u0004င\u0003\u0005င\u0004", new Object[]{"zzd", "zze", b1.r, "zzf", "zzg", "zzh", "zzi"});
+            return new g6(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003င\u0002\u0004ဇ\u0003", new Object[]{"zzd", "zze", z0.s, "zzf", "zzg", "zzh"});
         }
         if (i11 == 3) {
             return new w1();

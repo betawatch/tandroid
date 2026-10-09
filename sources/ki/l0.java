@@ -1,27 +1,15 @@
 package ki;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class l0 {
-    public static final l0 a;
-    public static final l0 b;
-    public static final /* synthetic */ l0[] c;
+    public final m0 a;
+    public final int b;
+    public final float c;
 
-    static {
-        l0 l0Var = new l0("FRONT", 0);
-        a = l0Var;
-        l0 l0Var2 = new l0("BACK", 1);
-        b = l0Var2;
-        c = new l0[]{l0Var, l0Var2};
-    }
-
-    public static l0 valueOf(String str) {
-        return (l0) Enum.valueOf(l0.class, str);
-    }
-
-    public static l0[] values() {
-        return (l0[]) c.clone();
+    public l0(m0 m0Var, m0 m0Var2, int i10, float f7) {
+        this.a = m0Var;
+        this.b = i10;
+        this.c = f7;
     }
 }

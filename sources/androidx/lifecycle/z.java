@@ -1,10 +1,10 @@
 package androidx.lifecycle;
 
-import ai.q4;
+import ai.r4;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -17,12 +17,12 @@ public class z {
     public int g;
     public boolean h;
     public boolean i;
-    public final q4 j;
+    public final r4 j;
 
     public z() {
         Object obj = k;
         this.f = obj;
-        this.j = new q4(this, 8);
+        this.j = new r4(this, 8);
         this.e = obj;
         this.g = -1;
     }
@@ -30,7 +30,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a4.a.q("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a1.g.q("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -46,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.w0(this.e);
+            yVar.a.X(this.e);
         }
     }
 
@@ -112,25 +112,25 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(a6.m mVar) {
+    public final void e(pb.c cVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, mVar);
+        x xVar = new x(this, cVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(mVar);
+        o.c i10 = fVar.i(cVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar = new o.c(mVar, xVar);
+            o.c cVar2 = new o.c(cVar, xVar);
             fVar.d++;
-            o.c cVar2 = fVar.b;
-            if (cVar2 == null) {
-                fVar.a = cVar;
-                fVar.b = cVar;
+            o.c cVar3 = fVar.b;
+            if (cVar3 == null) {
+                fVar.a = cVar2;
+                fVar.b = cVar2;
             } else {
-                cVar2.c = cVar;
-                cVar.d = cVar2;
-                fVar.b = cVar;
+                cVar3.c = cVar2;
+                cVar2.d = cVar3;
+                fVar.b = cVar2;
             }
             obj = null;
         }

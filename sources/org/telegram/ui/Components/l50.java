@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class l50 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ h50 b;
-    public final /* synthetic */ f60 c;
+public interface l50 {
+    void D(float f7);
 
-    public l50(f60 f60Var, boolean[] zArr, h50 h50Var) {
-        this.c = f60Var;
-        this.a = zArr;
-        this.b = h50Var;
-    }
+    void L(boolean z10, boolean z11);
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (floatValue > 0.5f) {
-            boolean[] zArr = this.a;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                this.b.run();
-            }
-        }
-        if (floatValue >= 0.5f) {
-            floatValue -= 1.0f;
-        }
-        float f7 = floatValue * 180.0f;
-        f60 f60Var = this.c;
-        f60Var.h.setRotationY(f7);
-        f60Var.r0.setRotationY(f7);
-    }
+    void P();
+
+    void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize);
+
+    boolean e();
+
+    org.telegram.ui.ev0 getCloseIntoObject();
+
+    String getInitialSearchString();
+
+    boolean u();
 }

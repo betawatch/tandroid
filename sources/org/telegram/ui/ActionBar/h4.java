@@ -17,7 +17,7 @@ import android.widget.PopupMenu;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class h4 extends ActionMode {
     public final Context a;
@@ -50,9 +50,8 @@ public final class h4 extends ActionMode {
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.d4
             @Override // android.widget.PopupMenu.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean onActionItemClicked;
-                onActionItemClicked = r0.b.onActionItemClicked(h4.this, menuItem);
-                return onActionItemClicked;
+                h4 h4Var = h4.this;
+                return h4Var.b.onActionItemClicked(h4Var, menuItem);
             }
         });
         this.d = new Rect();
@@ -73,9 +72,8 @@ public final class h4 extends ActionMode {
         w4Var.g = new MenuItem.OnMenuItemClickListener() { // from class: org.telegram.ui.ActionBar.e4
             @Override // android.view.MenuItem.OnMenuItemClickListener
             public final boolean onMenuItemClick(MenuItem menuItem) {
-                boolean onActionItemClicked;
-                onActionItemClicked = r0.b.onActionItemClicked(h4.this, menuItem);
-                return onActionItemClicked;
+                h4 h4Var = h4.this;
+                return h4Var.b.onActionItemClicked(h4Var, menuItem);
             }
         };
         this.r = w4Var;
@@ -88,11 +86,11 @@ public final class h4 extends ActionMode {
         g4Var.f = true;
     }
 
-    public static boolean c(Rect rect, Rect rect2) {
+    public static boolean a(Rect rect, Rect rect2) {
         return rect.left <= rect2.right && rect2.left <= rect.right && rect.top <= rect2.bottom && rect2.top <= rect.bottom;
     }
 
-    public final void d() {
+    public final void b() {
         Rect rect = this.d;
         Rect rect2 = this.e;
         rect2.set(rect);
@@ -113,11 +111,11 @@ public final class h4 extends ActionMode {
         int i11 = point.y;
         Rect rect3 = this.l;
         rect3.set(0, 0, i10, i11);
-        boolean c10 = c(rect2, rect3);
+        boolean a2 = a(rect2, rect3);
         Rect rect4 = this.f;
-        if (c10) {
+        if (a2) {
             Rect rect5 = this.j;
-            if (c(rect2, rect5)) {
+            if (a(rect2, rect5)) {
                 this.s.d = false;
                 rect2.set(Math.max(rect2.left, rect5.left), Math.max(rect2.top, rect5.top), Math.min(rect2.right, rect5.right), Math.min(rect2.bottom, rect5.bottom + this.o));
                 if (!rect2.equals(rect4)) {
@@ -145,7 +143,7 @@ public final class h4 extends ActionMode {
         rect4.set(rect2);
     }
 
-    public final void e() {
+    public final void c() {
         View view = this.m;
         int[] iArr = this.g;
         view.getLocationOnScreen(iArr);
@@ -161,7 +159,7 @@ public final class h4 extends ActionMode {
         if (equals && rect.equals(rect2)) {
             return;
         }
-        d();
+        b();
         iArr3[0] = iArr[0];
         iArr3[1] = iArr[1];
         rect2.set(rect);
@@ -258,7 +256,7 @@ public final class h4 extends ActionMode {
             rect.left = 1;
             rect.right = 1;
         }
-        d();
+        b();
     }
 
     @Override // android.view.ActionMode

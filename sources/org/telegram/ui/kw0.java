@@ -1,229 +1,78 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class kw0 implements org.telegram.ui.Components.pg {
-    public final /* synthetic */ PopupNotificationActivity a;
+public final class kw0 extends org.telegram.ui.Cells.u1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ byte[] Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ mw0 Le;
 
-    public kw0(PopupNotificationActivity popupNotificationActivity) {
-        this.a = popupNotificationActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw0(mw0 mw0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, e6Var);
+        this.Le = mw0Var;
+        this.Ie = bArr;
+        this.Je = i11;
+        this.Ke = i12;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean C0() {
-        return true;
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
+        super.Y1(canvas);
     }
 
-    @Override // org.telegram.ui.Components.pg
-    public final void E1() {
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        MessageObject messageObject = popupNotificationActivity.Q;
-        if (messageObject != null) {
-            MessagesController.getInstance(messageObject.currentAccount).sendTyping(popupNotificationActivity.Q.getDialogId(), 0L, 0, popupNotificationActivity.K);
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int I2 = I2(this.Ie);
+        float H2 = H2(I2);
+        float G2 = G2(I2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        float f7 = rectF.top;
+        float dp = AndroidUtilities.dp(3.0f);
+        mw0 mw0Var = this.Le;
+        rectF.top = AndroidUtilities.lerp(dp, mw0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, mw0Var.y) + f7;
+        float f10 = rectF.bottom;
+        boolean z10 = mw0Var.V;
+        float dp2 = AndroidUtilities.dp(3.0f);
+        if (!z10) {
+            dp2 = AndroidUtilities.lerp(dp2, 0.0f, mw0Var.y);
         }
+        rectF.bottom = f10 + dp2;
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.m1(mw0Var.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.pg
-    public final void H(CharSequence charSequence, boolean z10, int i10, int i11, long j3) {
-        PopupNotificationActivity popupNotificationActivity = this.a;
-        if (popupNotificationActivity.Q == null) {
-            return;
-        }
-        int i12 = popupNotificationActivity.S;
-        if (i12 >= 0 && i12 < popupNotificationActivity.a0.size()) {
-            popupNotificationActivity.a0.remove(popupNotificationActivity.S);
-        }
-        MessagesController.getInstance(popupNotificationActivity.Q.currentAccount).markDialogAsRead(popupNotificationActivity.Q.getDialogId(), popupNotificationActivity.Q.getId(), Math.max(0, popupNotificationActivity.Q.getId()), popupNotificationActivity.Q.messageOwner.date, true, 0L, 0, true, 0);
-        popupNotificationActivity.Q = null;
-        popupNotificationActivity.f();
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.Je, this.Ke);
     }
 
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ TLRPC.TL_channels_sendAsPeers I() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ int b1() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ TL_stories.StoryItem d1() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean f1(long j3) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final boolean i1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean m() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean o1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ on p0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ int q() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ TLRPC.Peer v() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ boolean w1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void A2() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void B(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void D() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void G0() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void J0() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void T0() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void V() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void X(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void a1(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void d2() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void f() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void f2(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void i() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void i2() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void j2(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void m0() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void n1() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void o2() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void q1() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void r1() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void s0() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void s1() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void v1(CharSequence charSequence) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void w2() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void x() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void y(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final /* synthetic */ void z1() {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void E0(int i10, int i11) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void K(float f7, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void l1(CharSequence charSequence, boolean z10, boolean z11) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void t1(View view, CharSequence charSequence, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.pg
-    public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

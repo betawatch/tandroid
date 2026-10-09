@@ -1,6 +1,6 @@
 package rg;
 
-import ai.l4;
+import ai.m4;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,16 +15,16 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.s5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class c1 extends ImageView {
     public static final /* synthetic */ int L = 0;
     public ImageReceiver E;
-    public q5 F;
+    public s5 F;
     public float G;
     public boolean H;
     public boolean I;
@@ -32,8 +32,8 @@ public class c1 extends ImageView {
     public Integer K;
     public final int a;
     public final float[] b;
-    public final x1 c;
-    public final d6 d;
+    public final v1 c;
+    public final e6 d;
     public boolean e;
     public final float f;
     public boolean h;
@@ -45,7 +45,7 @@ public class c1 extends ImageView {
     public Paint x;
     public Paint y;
 
-    public c1(Context context, int i10, d6 d6Var) {
+    public c1(Context context, int i10, e6 e6Var) {
         super(context);
         this.b = new float[3];
         this.f = 1.0f;
@@ -56,23 +56,23 @@ public class c1 extends ImageView {
         this.x = new Paint(1);
         this.G = 1.0f;
         this.a = i10;
-        this.d = d6Var;
+        this.d = e6Var;
         setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
         if (i10 == 0) {
-            x1 x1Var = new x1(5);
-            this.c = x1Var;
-            x1Var.g();
-            x1Var.M = false;
-            x1Var.s = 4;
-            x1Var.t = 4;
-            x1Var.r = 2;
-            x1Var.o = 0.1f;
-            x1Var.c();
+            v1 v1Var = new v1(5);
+            this.c = v1Var;
+            v1Var.g();
+            v1Var.M = false;
+            v1Var.s = 4;
+            v1Var.t = 4;
+            v1Var.r = 2;
+            v1Var.o = 0.1f;
+            v1Var.c();
             return;
         }
         if (i10 == 2) {
             this.f = 0.8f;
-            this.x.setColor(i6.w0(null, i6.a7, false));
+            this.x.setColor(i6.x0(null, i6.a7, false));
         } else if (i10 == 3) {
             setScaleType(ImageView.ScaleType.CENTER);
             setImageResource(R.drawable.msg_archive_hide);
@@ -95,9 +95,9 @@ public class c1 extends ImageView {
         }
         int HSVToColor = Color.HSVToColor(fArr);
         int i11 = i6.d6;
-        d6 d6Var = this.d;
-        int d = i0.a.d(0.5f, HSVToColor, i6.v0(i11, d6Var));
-        int d10 = i0.a.d(0.4f, HSVToColor, i6.v0(i11, d6Var));
+        e6 e6Var = this.d;
+        int d = i0.a.d(0.5f, HSVToColor, i6.w0(i11, e6Var));
+        int d10 = i0.a.d(0.4f, HSVToColor, i6.w0(i11, e6Var));
         if (this.v != null && this.r == d10 && this.s == d) {
             return;
         }
@@ -151,23 +151,23 @@ public class c1 extends ImageView {
     */
     public final void onDraw(Canvas canvas) {
         int intValue;
-        l4 l4Var;
+        m4 m4Var;
         if (this.H) {
             ImageReceiver imageReceiver = this.E;
             if (imageReceiver == null || imageReceiver.getBitmap() == null) {
-                q5 q5Var = this.F;
-                if (q5Var != null) {
-                    SparseArray sparseArray = q5.q;
-                    long i10 = q5Var.i();
+                s5 s5Var = this.F;
+                if (s5Var != null) {
+                    SparseArray sparseArray = s5.q;
+                    long i10 = s5Var.i();
                     if (i10 != 0) {
-                        if (q5.w == null) {
-                            q5.w = new HashMap();
+                        if (s5.w == null) {
+                            s5.w = new HashMap();
                         }
-                        Integer num = (Integer) q5.w.get(Long.valueOf(i10));
-                        if (num == null && (l4Var = q5Var.k) != null && l4Var.getBitmap() != null) {
-                            HashMap hashMap = q5.w;
+                        Integer num = (Integer) s5.w.get(Long.valueOf(i10));
+                        if (num == null && (m4Var = s5Var.k) != null && m4Var.getBitmap() != null) {
+                            HashMap hashMap = s5.w;
                             Long valueOf = Long.valueOf(i10);
-                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(q5Var.k.getBitmap()));
+                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(s5Var.k.getBitmap()));
                             hashMap.put(valueOf, valueOf2);
                             num = valueOf2;
                         }
@@ -279,14 +279,14 @@ public class c1 extends ImageView {
         rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(2.5f), AndroidUtilities.dpf2(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
         path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), direction);
         path.close();
-        x1 x1Var = this.c;
-        x1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        x1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
+        v1 v1Var = this.c;
+        v1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        v1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
     }
 
-    public void setAnimatedEmojiDrawable(q5 q5Var) {
-        this.F = q5Var;
-        if (q5Var != null) {
+    public void setAnimatedEmojiDrawable(s5 s5Var) {
+        this.F = s5Var;
+        if (s5Var != null) {
             this.H = true;
             invalidate();
         }

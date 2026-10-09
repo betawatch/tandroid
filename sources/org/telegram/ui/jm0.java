@@ -1,86 +1,113 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import j$.util.Objects;
+import java.util.regex.Pattern;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jm0 extends ou0 {
-    public final /* synthetic */ kn0 a;
+public final class jm0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public String c;
+    public final /* synthetic */ Object d;
 
-    public jm0(kn0 kn0Var) {
-        this.a = kn0Var;
+    public /* synthetic */ jm0(nn0 nn0Var, EditTextBoldCursor editTextBoldCursor, String str, int i10) {
+        this.a = i10;
+        this.d = nn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final void B(int i10) {
-        kn0 kn0Var = this.a;
-        int i11 = kn0Var.S0;
-        SecureDocument secureDocument = i11 == 1 ? kn0Var.j1 : i11 == 4 ? (SecureDocument) kn0Var.k1.get(i10) : i11 == 2 ? kn0Var.l1 : i11 == 3 ? kn0Var.m1 : (SecureDocument) kn0Var.i1.get(i10);
-        in0 in0Var = (in0) kn0Var.n1.remove(secureDocument);
-        if (in0Var == null) {
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00bc  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long parseLong;
+        int i10;
+        switch (this.a) {
+            case 0:
+                nn0.I0((nn0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                break;
+            case 1:
+                nn0.I0((nn0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
+                break;
+            default:
+                pg.w wVar = (pg.w) this.d;
+                pg.x xVar = wVar.f;
+                EditTextBoldCursor editTextBoldCursor = wVar.d;
+                if (!wVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                    String obj = editable.toString();
+                    if (obj.length() > 8) {
+                        editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
+                        editTextBoldCursor.setSelection(8);
+                        break;
+                    } else if (((Pattern) this.b).matcher(editable).find()) {
+                        int length = obj.length();
+                        if (length != 3) {
+                            if (length == 6) {
+                                i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
+                            } else if (length != 8) {
+                                i10 = xVar.f;
+                            } else {
+                                parseLong = Long.parseLong(obj, 16);
+                            }
+                            if (i10 == xVar.f) {
+                                xVar.o(i10, 5);
+                                break;
+                            }
+                        } else {
+                            parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
+                        }
+                        i10 = (int) parseLong;
+                        if (i10 == xVar.f) {
+                        }
+                    }
+                }
+                break;
         }
-        String n12 = kn0.n1(secureDocument);
-        int i12 = kn0Var.S0;
-        String str = null;
-        if (i12 == 1) {
-            kn0Var.j1 = null;
-            str = sa.e.i("selfie", n12);
-        } else if (i12 == 4) {
-            str = sa.e.i("translation", n12);
-        } else if (i12 == 2) {
-            kn0Var.l1 = null;
-            str = sa.e.i("front", n12);
-        } else if (i12 == 3) {
-            kn0Var.m1 = null;
-            str = sa.e.i("reverse", n12);
-        } else if (i12 == 0) {
-            str = sa.e.i("files", n12);
-        }
-        if (str != null) {
-            HashMap hashMap = kn0Var.x1;
-            if (hashMap != null) {
-                hashMap.remove(str);
-            }
-            HashMap hashMap2 = kn0Var.y1;
-            if (hashMap2 != null) {
-                hashMap2.remove(str);
-            }
-        }
-        kn0Var.S1(kn0Var.S0);
-        kn0Var.i0.removeView(in0Var);
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        if (i10 < 0) {
-            return null;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+            case 1:
+                break;
+            default:
+                this.c = charSequence.toString();
+                break;
         }
-        kn0 kn0Var = this.a;
-        if (i10 >= kn0Var.i0.getChildCount()) {
-            return null;
-        }
-        in0 in0Var = (in0) kn0Var.i0.getChildAt(i10);
-        int[] iArr = new int[2];
-        in0Var.c.getLocationInWindow(iArr);
-        yu0 yu0Var = new yu0();
-        yu0Var.b = iArr[0];
-        yu0Var.c = iArr[1];
-        yu0Var.d = kn0Var.i0;
-        ImageReceiver imageReceiver = in0Var.c.getImageReceiver();
-        yu0Var.a = imageReceiver;
-        yu0Var.e = imageReceiver.getBitmapSafe();
-        return yu0Var;
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final String a0() {
-        return this.a.S0 == 1 ? LocaleController.formatString("PassportDeleteSelfieAlert", R.string.PassportDeleteSelfieAlert, new Object[0]) : LocaleController.formatString("PassportDeleteScanAlert", R.string.PassportDeleteScanAlert, new Object[0]);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public jm0(pg.w wVar) {
+        this.a = 2;
+        this.d = wVar;
+        this.b = Pattern.compile("^[0-9a-fA-F]*$");
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

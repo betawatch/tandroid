@@ -1,13 +1,17 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class q {
-    public static float a(float f7, float f10, float f11) {
-        return f7 < f10 ? f10 : f7 > f11 ? f11 : f7;
-    }
-
-    public static int b(int i10, int i11, int i12) {
-        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
+    public static void a(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

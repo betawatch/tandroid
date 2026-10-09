@@ -8,21 +8,21 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class b0 extends LinearLayout {
     public final RectF a;
     public final RectF b;
     public final RectF c;
     public final Paint d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
     public final /* synthetic */ d0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public b0(d0 d0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.f = d0Var;
-        this.e = d6Var;
+        this.e = e6Var;
         this.a = new RectF();
         this.b = new RectF();
         this.c = new RectF();
@@ -31,8 +31,8 @@ public final class b0 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        e6 e6Var = this.f.h;
-        float d = e6Var == null ? 0.0f : e6Var.d(r0.f, false);
+        g6 g6Var = this.f.h;
+        float d = g6Var == null ? 0.0f : g6Var.d(r0.f, false);
         double d10 = d;
         int floor = (int) Math.floor(d10);
         int ceil = (int) Math.ceil(d10);
@@ -49,9 +49,9 @@ public final class b0 extends LinearLayout {
         }
         RectF rectF3 = this.c;
         AndroidUtilities.lerp(rectF, rectF2, f7, rectF3);
-        int l1 = org.telegram.ui.ActionBar.i6.l1(0.1f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, this.e));
+        int m12 = org.telegram.ui.ActionBar.i6.m1(0.1f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Oh, this.e));
         Paint paint = this.d;
-        paint.setColor(l1);
+        paint.setColor(m12);
         canvas.drawRoundRect(rectF3, AndroidUtilities.dp(r0.d), AndroidUtilities.dp(r0.d), paint);
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             View childAt3 = getChildAt(i10);

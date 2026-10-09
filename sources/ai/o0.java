@@ -5,53 +5,53 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r3 b;
+    public final /* synthetic */ s3 b;
 
-    public /* synthetic */ o0(r3 r3Var, int i10) {
+    public /* synthetic */ o0(s3 s3Var, int i10) {
         this.a = i10;
-        this.b = r3Var;
+        this.b = s3Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                r3 r3Var = this.b;
-                if (r3Var.O != null && !r3Var.U) {
-                    AndroidUtilities.cancelRunOnUIThread(r3Var.V);
-                    r3Var.U = true;
+                s3 s3Var = this.b;
+                if (s3Var.O != null && !s3Var.U) {
+                    AndroidUtilities.cancelRunOnUIThread(s3Var.V);
+                    s3Var.U = true;
                     TL_phone.getGroupCallStars getgroupcallstars = new TL_phone.getGroupCallStars();
-                    getgroupcallstars.call = r3Var.O;
-                    ConnectionsManager.getInstance(r3Var.N).sendRequestTyped(getgroupcallstars, new org.telegram.messenger.a(), new m0(0, r3Var, getgroupcallstars));
+                    getgroupcallstars.call = s3Var.O;
+                    ConnectionsManager.getInstance(s3Var.N).sendRequestTyped(getgroupcallstars, new org.telegram.messenger.a(), new m0(0, s3Var, getgroupcallstars));
                     break;
                 }
                 break;
             case 1:
-                r3 r3Var2 = this.b;
-                AndroidUtilities.cancelRunOnUIThread(r3Var2.d0);
-                org.telegram.ui.Components.rc rcVar = r3Var2.W;
-                if (rcVar != null) {
-                    rcVar.b();
-                    r3Var2.W = null;
+                s3 s3Var2 = this.b;
+                AndroidUtilities.cancelRunOnUIThread(s3Var2.d0);
+                org.telegram.ui.Components.tc tcVar = s3Var2.W;
+                if (tcVar != null) {
+                    tcVar.b();
+                    s3Var2.W = null;
                 }
-                long j3 = r3Var2.R;
+                long j3 = s3Var2.R;
                 if (j3 <= 0) {
-                    r3Var2.j();
+                    s3Var2.j();
                     break;
                 } else {
-                    r3Var2.R = 0L;
-                    r3Var2.S = true;
-                    r3Var2.o(new TLRPC.TL_textWithEntities(), j3);
+                    s3Var2.R = 0L;
+                    s3Var2.S = true;
+                    s3Var2.o(new TLRPC.TL_textWithEntities(), j3);
                     break;
                 }
             default:
-                r3 r3Var3 = this.b;
-                r3Var3.e.N(true);
-                r3Var3.n.N(true);
+                s3 s3Var3 = this.b;
+                s3Var3.e.N(true);
+                s3Var3.n.N(true);
                 break;
         }
     }

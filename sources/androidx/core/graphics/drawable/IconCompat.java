@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -19,7 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import b5.d;
-import e0.b;
+import g0.f;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,7 +28,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -149,7 +150,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public final Bitmap f() {
         int i10 = this.a;
-        if (i10 == -1 && Build.VERSION.SDK_INT >= 23) {
+        if (i10 == -1) {
             Object obj = this.b;
             if (obj instanceof Bitmap) {
                 return (Bitmap) obj;
@@ -166,16 +167,16 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final int g() {
-        int i10;
-        int i11 = this.a;
-        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
-            if (i11 == 2) {
+        int i10 = this.a;
+        if (i10 != -1) {
+            if (i10 == 2) {
                 return this.e;
             }
             throw new IllegalStateException("called getResId() on " + this);
         }
+        int i11 = Build.VERSION.SDK_INT;
         Object obj = this.b;
-        if (i10 >= 28) {
+        if (i11 >= 28) {
             return d.i(obj);
         }
         try {
@@ -193,17 +194,17 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final String h() {
-        int i10;
-        int i11 = this.a;
-        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
-            if (i11 == 2) {
+        int i10 = this.a;
+        if (i10 != -1) {
+            if (i10 == 2) {
                 String str = this.j;
                 return (str == null || TextUtils.isEmpty(str)) ? ((String) this.b).split(":", -1)[0] : this.j;
             }
             throw new IllegalStateException("called getResPackage() on " + this);
         }
+        int i11 = Build.VERSION.SDK_INT;
         Object obj = this.b;
-        if (i10 >= 28) {
+        if (i11 >= 28) {
             return d.j(obj);
         }
         try {
@@ -221,13 +222,13 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final int i() {
-        int i10;
-        int i11 = this.a;
-        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
-            return i11;
+        int i10 = this.a;
+        if (i10 != -1) {
+            return i10;
         }
+        int i11 = Build.VERSION.SDK_INT;
         Object obj = this.b;
-        if (i10 >= 28) {
+        if (i11 >= 28) {
             return d.q(obj);
         }
         try {
@@ -245,16 +246,16 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Uri j() {
-        int i10;
-        int i11 = this.a;
-        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
-            if (i11 == 4 || i11 == 6) {
+        int i10 = this.a;
+        if (i10 != -1) {
+            if (i10 == 4 || i10 == 6) {
                 return Uri.parse((String) this.b);
             }
             throw new IllegalStateException("called getUri() on " + this);
         }
+        int i11 = Build.VERSION.SDK_INT;
         Object obj = this.b;
-        if (i10 >= 28) {
+        if (i11 >= 28) {
             return d.r(obj);
         }
         try {
@@ -328,10 +329,64 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Icon m(Context context) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return b.I(this, context);
+        Icon createWithBitmap;
+        int i10 = Build.VERSION.SDK_INT;
+        switch (this.a) {
+            case -1:
+                return (Icon) this.b;
+            case 0:
+            default:
+                throw new IllegalArgumentException("Unknown type");
+            case 1:
+                createWithBitmap = Icon.createWithBitmap((Bitmap) this.b);
+                break;
+            case 2:
+                createWithBitmap = Icon.createWithResource(h(), this.e);
+                break;
+            case 3:
+                createWithBitmap = Icon.createWithData((byte[]) this.b, this.e, this.f);
+                break;
+            case 4:
+                createWithBitmap = Icon.createWithContentUri((String) this.b);
+                break;
+            case 5:
+                if (i10 < 26) {
+                    createWithBitmap = Icon.createWithBitmap(b((Bitmap) this.b, false));
+                    break;
+                } else {
+                    createWithBitmap = c2.d.c((Bitmap) this.b);
+                    break;
+                }
+            case 6:
+                if (i10 >= 30) {
+                    createWithBitmap = f.d(j());
+                    break;
+                } else {
+                    if (context == null) {
+                        throw new IllegalArgumentException("Context is required to resolve the file uri of the icon: " + j());
+                    }
+                    InputStream k10 = k(context);
+                    if (k10 == null) {
+                        throw new IllegalStateException("Cannot load adaptive icon from uri: " + j());
+                    }
+                    if (i10 < 26) {
+                        createWithBitmap = Icon.createWithBitmap(b(BitmapFactory.decodeStream(k10), false));
+                        break;
+                    } else {
+                        createWithBitmap = c2.d.c(BitmapFactory.decodeStream(k10));
+                        break;
+                    }
+                }
         }
-        throw new UnsupportedOperationException("This method is only supported on API level 23+");
+        ColorStateList colorStateList = this.g;
+        if (colorStateList != null) {
+            createWithBitmap.setTintList(colorStateList);
+        }
+        PorterDuff.Mode mode = this.h;
+        if (mode != k) {
+            createWithBitmap.setTintMode(mode);
+        }
+        return createWithBitmap;
     }
 
     public final String toString() {

@@ -1,71 +1,50 @@
 package yh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ zf.a d;
-    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ TLRPC.TL_error f;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ n1(y3 y3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = y3Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
+    public /* synthetic */ n1(s3 s3Var, TLObject tLObject, long j3, long j10, Utilities.Callback callback, TLRPC.TL_error tL_error, long j11) {
+        this.b = s3Var;
+        this.c = tLObject;
+        this.d = j3;
+        this.e = j10;
+        this.n = callback;
+        this.f = tL_error;
+        this.h = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        zf.b bVar = zf.b.a;
-        zf.b bVar2 = zf.b.b;
-        Runnable runnable = this.e;
-        zf.a aVar = this.d;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
-        y3 y3Var = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                y3Var.getClass();
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList;
-                arrayList.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                y3Var.e0.setResellPrice(aVar);
-                xh.d2 d2Var = y3Var.d1;
-                if (d2Var != null) {
-                    d2Var.run();
-                }
-                if (runnable != null) {
-                    runnable.run();
-                }
-                hg.c.q(R.string.Gift2ResaleEnable, new Object[]{y3Var.C1()}, y3Var.getBulletinFactory(), R.raw.contact_check, 36);
+                s3.I0(this.b, (org.telegram.ui.ActionBar.b2) this.n, this.c, this.d, this.e, this.h, this.f);
                 break;
             default:
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList2;
-                arrayList2.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                y3Var.e0.setResellPrice(aVar);
-                xh.d2 d2Var2 = y3Var.d1;
-                if (d2Var2 != null) {
-                    d2Var2.run();
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                s3.g0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
                 break;
         }
+    }
+
+    public /* synthetic */ n1(s3 s3Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
+        this.b = s3Var;
+        this.n = b2Var;
+        this.c = tLObject;
+        this.d = j3;
+        this.e = j10;
+        this.h = j11;
+        this.f = tL_error;
     }
 }

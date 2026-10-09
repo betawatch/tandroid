@@ -12,27 +12,27 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
 import android.util.SparseArray;
-import com.google.android.gms.internal.cast.c0;
+import com.google.android.gms.internal.cast.a0;
 import i9.s;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import n4.y;
+import n4.x;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j implements ServiceConnection {
     public int a = 0;
     public final Messenger b;
-    public y c;
+    public x c;
     public final ArrayDeque d;
     public final SparseArray e;
     public final /* synthetic */ l f;
 
     public j(l lVar) {
         this.f = lVar;
-        c0 c0Var = new c0(Looper.getMainLooper(), new Handler.Callback() { // from class: j6.i
+        a0 a0Var = new a0(Looper.getMainLooper(), new Handler.Callback() { // from class: j6.i
             @Override // android.os.Handler.Callback
             public final boolean handleMessage(Message message) {
                 int i10 = message.arg1;
@@ -76,7 +76,7 @@ public final class j implements ServiceConnection {
             }
         });
         Looper.getMainLooper();
-        this.b = new Messenger(c0Var);
+        this.b = new Messenger(a0Var);
         this.d = new ArrayDeque();
         this.e = new SparseArray();
     }
@@ -201,7 +201,7 @@ public final class j implements ServiceConnection {
         if (Log.isLoggable("MessengerIpcClient", 2)) {
             Log.v("MessengerIpcClient", "Service connected");
         }
-        ((ScheduledExecutorService) this.f.c).execute(new s(16, this, iBinder));
+        ((ScheduledExecutorService) this.f.c).execute(new s(17, this, iBinder));
     }
 
     @Override // android.content.ServiceConnection

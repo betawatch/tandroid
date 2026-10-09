@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class o1 extends Drawable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public abstract class o1 extends Drawable {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeJoin(Paint.Join.ROUND);
                 paint.setStrokeCap(Paint.Cap.ROUND);
-                this.d = new org.telegram.ui.Components.e6(new org.telegram.ui.web.u0(this, 3), 350L, tr.h, 0);
+                this.d = new org.telegram.ui.Components.g6(new org.telegram.ui.web.q0(this, 4), 350L, hs.h, 0);
                 break;
             default:
                 Paint paint2 = new Paint(1);
@@ -47,7 +47,7 @@ public abstract class o1 extends Drawable {
                 canvas.drawPath(this.b, this.c);
                 break;
             default:
-                float e7 = ((org.telegram.ui.Components.e6) this.d).e(true);
+                float e7 = ((org.telegram.ui.Components.g6) this.d).e(true);
                 float centerX = getBounds().centerX();
                 float centerY = getBounds().centerY();
                 float width = getBounds().width();

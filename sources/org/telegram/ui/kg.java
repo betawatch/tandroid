@@ -1,108 +1,85 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.SpannableStringBuilder;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kg implements Utilities.Callback {
+public final /* synthetic */ class kg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ kg(Object obj, long j3, long j10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = j3;
-        this.c = j10;
+    public /* synthetic */ kg(org.telegram.ui.ActionBar.n2 n2Var, int i10, TLObject tLObject, int i11) {
+        this.a = i11;
+        this.c = n2Var;
+        this.b = i10;
+        this.d = tLObject;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0089 A[LOOP:1: B:19:0x0085->B:21:0x0089, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x00bd  */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        SpannableStringBuilder spannableStringBuilder;
-        int size;
-        int i10;
-        int i11 = this.a;
-        Object obj2 = this.d;
-        switch (i11) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.Updates updates;
+        int i10 = this.a;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                yn.l1((yn) obj2, this.b, this.c, (Long) obj);
+                AndroidUtilities.runOnUIThread(new ei.l3((zn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 16));
                 break;
             case 1:
-                lj ljVar = (lj) obj2;
-                Long l4 = (Long) obj;
-                yn ynVar = ljVar.b;
-                if (ynVar.getParentActivity() != null) {
-                    Activity parentActivity = ynVar.getParentActivity();
-                    String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
-                    int i12 = ChatObject.isMonoForum(ynVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
-                    long j3 = this.b;
-                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i12, DialogObject.getShortName(j3)));
-                    String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
-                    String string2 = LocaleController.getString(R.string.Confirm);
-                    nh nhVar = new nh(ljVar, j3, this.c, l4, 1);
-                    d6Var = ((org.telegram.ui.ActionBar.n2) ynVar).resourceProvider;
-                    org.telegram.ui.Components.e5.i0(parentActivity, string, replaceTags, formatPluralStringComma, string2, nhVar, d6Var, true);
+                LaunchActivity launchActivity = (LaunchActivity) obj4;
+                m70 m70Var = (m70) obj3;
+                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                Pattern pattern = LaunchActivity.B1;
+                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
+                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
+                    MessagesController.getInstance(launchActivity.O).lambda$processUpdates$377(updates2, false);
+                    updates = updates2;
+                } else {
+                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
+                        AndroidUtilities.runOnUIThread(new m70(8, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
+                    }
+                    updates = null;
+                }
+                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, m70Var, tL_error, updates, this.b, 26));
+                break;
+            default:
+                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
+                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                ArrayList arrayList = passkeysActivity.b;
+                boolean z10 = ((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse;
+                int i11 = this.b;
+                if (!z10) {
+                    if (tL_error2 != null) {
+                        org.telegram.ui.Components.ad.a0(passkeysActivity).f0(tL_error2, false);
+                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
+                        passkeysActivity.a.W2.N(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.Components.ad.a0(passkeysActivity).e0("FALSE", false);
+                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
+                    passkeysActivity.a.W2.N(true);
                     break;
                 }
                 break;
-            default:
-                yh.y2 y2Var = (yh.y2) obj2;
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.y5 y5Var = y2Var.E;
-                if (this.b == this.c) {
-                    y2Var.d0 = arrayList;
-                    y5Var.animate().alpha(y2Var.s ? 0.0f : y2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.tr.h).setDuration(420L).start();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                        if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
-                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i13));
-                            if (arrayList2.size() >= 3) {
-                                spannableStringBuilder = new SpannableStringBuilder();
-                                size = arrayList2.size();
-                                i10 = 0;
-                                while (i10 < size) {
-                                    Object obj3 = arrayList2.get(i10);
-                                    i10++;
-                                    spannableStringBuilder.append((CharSequence) "x");
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.z5(((TL_stars.starGiftAttributeModel) obj3).document, y5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                if (spannableStringBuilder.length() > 0) {
-                                    spannableStringBuilder.append((CharSequence) " ");
-                                }
-                                spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                                y5Var.setText(spannableStringBuilder);
-                                break;
-                            }
-                        }
-                    }
-                    spannableStringBuilder = new SpannableStringBuilder();
-                    size = arrayList2.size();
-                    i10 = 0;
-                    while (i10 < size) {
-                    }
-                    if (spannableStringBuilder.length() > 0) {
-                    }
-                    spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    y5Var.setText(spannableStringBuilder);
-                }
-                break;
         }
+    }
+
+    public /* synthetic */ kg(LaunchActivity launchActivity, m70 m70Var, int i10) {
+        this.a = 1;
+        this.c = launchActivity;
+        this.d = m70Var;
+        this.b = i10;
     }
 }

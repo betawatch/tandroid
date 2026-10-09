@@ -1,45 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wz implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ wz(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
-        this.a = i10;
-        this.e = obj;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yz yzVar = (yz) this.e;
-                if (this.b) {
-                    c00 c00Var = yzVar.J;
-                    c00Var.a = true;
-                    c00Var.b = true;
-                }
-                if (this.c) {
-                    yzVar.x = true;
-                }
-                long currentTimeMillis = System.currentTimeMillis();
-                if (this.d || Math.abs(yzVar.a0 - currentTimeMillis) > 30) {
-                    yzVar.a0 = currentTimeMillis;
-                    yzVar.d0.run();
-                    break;
-                }
-                break;
-            default:
-                ((org.telegram.ui.ug0) this.e).w1(this.b, this.c, this.d);
-                break;
-        }
-    }
+public final class wz {
+    public int a;
+    public FrameLayout b;
 }

@@ -7,7 +7,7 @@ import e9.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String l;
@@ -25,12 +25,12 @@ public final class g {
     public static final String x;
     public static final String y;
     public final j a;
-    public final h1 b;
+    public final i1 b;
     public final b2.x0 c;
     public final b2.x0 d;
     public final Bundle e;
     public final Bundle f;
-    public final c1 g;
+    public final d1 g;
     public final e9.i0 h;
     public final e9.i0 i;
     public final MediaSession.Token j;
@@ -55,17 +55,17 @@ public final class g {
         y = Integer.toString(12, 36);
     }
 
-    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, h1 h1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, c1 c1Var, MediaSession.Token token) {
+    public g(j jVar, e9.i0 i0Var, e9.i0 i0Var2, e9.i0 i0Var3, i1 i1Var, b2.x0 x0Var, b2.x0 x0Var2, Bundle bundle, Bundle bundle2, d1 d1Var, MediaSession.Token token) {
         this.a = jVar;
         this.h = i0Var;
         this.i = i0Var2;
         this.k = i0Var3;
-        this.b = h1Var;
+        this.b = i1Var;
         this.c = x0Var;
         this.d = x0Var2;
         this.e = bundle;
         this.f = bundle2;
-        this.g = c1Var;
+        this.g = d1Var;
         this.j = token;
     }
 
@@ -81,7 +81,7 @@ public final class g {
             ArrayList<? extends Parcelable> arrayList = new ArrayList<>(i0Var.size());
             Iterator<E> it = i0Var.iterator();
             if (it.hasNext()) {
-                a4.a.z(it.next());
+                a1.g.z(it.next());
                 throw null;
             }
             bundle.putParcelableArrayList(str, arrayList);
@@ -92,7 +92,7 @@ public final class g {
                 ArrayList<? extends Parcelable> arrayList2 = new ArrayList<>(i0Var2.size());
                 Iterator<E> it2 = i0Var2.iterator();
                 if (it2.hasNext()) {
-                    a4.a.z(it2.next());
+                    a1.g.z(it2.next());
                     throw null;
                 }
                 bundle.putParcelableArrayList(p, arrayList2);
@@ -101,7 +101,7 @@ public final class g {
                 ArrayList<? extends Parcelable> arrayList3 = new ArrayList<>(a2.d);
                 e9.g0 listIterator = a2.listIterator(0);
                 if (listIterator.hasNext()) {
-                    a4.a.z(listIterator.next());
+                    a1.g.z(listIterator.next());
                     throw null;
                 }
                 bundle.putParcelableArrayList(str, arrayList3);
@@ -112,26 +112,26 @@ public final class g {
             ArrayList<? extends Parcelable> arrayList4 = new ArrayList<>(i0Var3.size());
             Iterator<E> it3 = i0Var3.iterator();
             if (it3.hasNext()) {
-                a4.a.z(it3.next());
+                a1.g.z(it3.next());
                 throw null;
             }
             bundle.putParcelableArrayList(q, arrayList4);
         }
-        h1 h1Var = this.b;
-        h1Var.getClass();
+        i1 i1Var = this.b;
+        i1Var.getClass();
         Bundle bundle2 = new Bundle();
         ArrayList<? extends Parcelable> arrayList5 = new ArrayList<>();
-        o1 it4 = h1Var.a.iterator();
+        o1 it4 = i1Var.a.iterator();
         while (it4.hasNext()) {
-            g1 g1Var = (g1) it4.next();
-            g1Var.getClass();
+            h1 h1Var = (h1) it4.next();
+            h1Var.getClass();
             Bundle bundle3 = new Bundle();
-            bundle3.putInt(g1.f, g1Var.a);
-            bundle3.putString(g1.g, g1Var.b);
-            bundle3.putBundle(g1.h, g1Var.c);
+            bundle3.putInt(h1.f, h1Var.a);
+            bundle3.putString(h1.g, h1Var.b);
+            bundle3.putBundle(h1.h, h1Var.c);
             arrayList5.add(bundle3);
         }
-        bundle2.putParcelableArrayList(h1.b, arrayList5);
+        bundle2.putParcelableArrayList(i1.b, arrayList5);
         bundle.putBundle(r, bundle2);
         String str2 = s;
         b2.x0 x0Var = this.c;
@@ -141,7 +141,7 @@ public final class g {
         bundle.putBundle(str3, x0Var2.b());
         bundle.putBundle(u, this.e);
         bundle.putBundle(v, this.f);
-        bundle.putBundle(w, this.g.e(w7.u.a(x0Var, x0Var2), false, false).f(i10));
+        bundle.putBundle(w, this.g.e(w7.s.a(x0Var, x0Var2), false, false).f(i10));
         bundle.putInt(x, 5);
         MediaSession.Token token = this.j;
         if (token != null) {

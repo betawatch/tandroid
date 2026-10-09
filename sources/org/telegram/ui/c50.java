@@ -1,37 +1,44 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c50 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h60 b;
+public final class c50 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ org.telegram.ui.Components.hq u1;
+    public final /* synthetic */ g60 v1;
 
-    public /* synthetic */ c50(h60 h60Var, int i10) {
-        this.a = i10;
-        this.b = h60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c50(g60 g60Var, LaunchActivity launchActivity, org.telegram.ui.Components.hq hqVar) {
+        super(launchActivity, null);
+        this.v1 = g60Var;
+        this.u1 = hqVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                h60 h60Var = this.b;
-                h60Var.V.setVisibility(4);
-                h60Var.W.setVisibility(4);
-                h60Var.U.setVisibility(4);
-                break;
-            case 1:
-                this.b.h0 = null;
-                break;
-            default:
-                h60 h60Var2 = this.b;
-                h60Var2.h1 = null;
-                h60Var2.g1.setColor(h60Var2.T1 == 3 ? -1163700 : -12761513);
-                h60Var2.f1.invalidate();
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
+            canvas.save();
+            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
+            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
+            org.telegram.ui.Components.hq hqVar = this.u1;
+            hqVar.f = alpha;
+            hqVar.draw(canvas);
+            canvas.restore();
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        ViewGroup viewGroup;
+        if (getAlpha() != f7) {
+            super.setAlpha(f7);
+            viewGroup = ((org.telegram.ui.ActionBar.f3) this.v1).containerView;
+            viewGroup.invalidate();
         }
     }
 }

@@ -1,16 +1,18 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ko0 extends s4.j {
-    public final /* synthetic */ org.telegram.ui.dy F;
+public final class ko0 {
+    public zg.n0 a;
+    public int b;
+    public String c;
+    public int d;
 
-    public ko0(org.telegram.ui.dy dyVar) {
-        this.F = dyVar;
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        this.F.invalidate();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof ko0)) {
+            return false;
+        }
+        ko0 ko0Var = (ko0) obj;
+        return this.b == ko0Var.b && this.a.h == ko0Var.a.h && this.d == ko0Var.d;
     }
 }

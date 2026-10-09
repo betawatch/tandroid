@@ -6,21 +6,20 @@ import android.os.Bundle;
 import android.os.RemoteCallbackList;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class r {
     public final MediaSession a;
     public final q b;
-    public final x c;
+    public final w c;
     public final Bundle e;
-    public h0 g;
+    public f0 g;
     public List h;
     public m i;
     public int j;
     public int k;
-    public int l;
-    public p m;
-    public a0 n;
+    public p l;
+    public z m;
     public final Object d = new Object();
     public final RemoteCallbackList f = new RemoteCallbackList();
 
@@ -29,7 +28,7 @@ public class r {
         this.a = a2;
         q qVar = new q(this);
         this.b = qVar;
-        this.c = new x(a2.getSessionToken(), qVar);
+        this.c = new w(a2.getSessionToken(), qVar);
         this.e = bundle;
         a2.setFlags(3);
     }
@@ -41,26 +40,22 @@ public class r {
     public final p b() {
         p pVar;
         synchronized (this.d) {
-            pVar = this.m;
+            pVar = this.l;
         }
         return pVar;
     }
 
-    public a0 c() {
-        a0 a0Var;
+    public z c() {
+        z zVar;
         synchronized (this.d) {
-            a0Var = this.n;
+            zVar = this.m;
         }
-        return a0Var;
+        return zVar;
     }
 
-    public void d(a0 a0Var) {
+    public void d(z zVar) {
         synchronized (this.d) {
-            this.n = a0Var;
+            this.m = zVar;
         }
-    }
-
-    public void e(int i10) {
-        this.j = i10;
     }
 }

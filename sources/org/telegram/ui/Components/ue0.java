@@ -1,24 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ue0 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ bf0 v1;
+public final class ue0 extends te0 {
+    public final /* synthetic */ ve0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ue0(bf0 bf0Var, Activity activity) {
-        super(activity, null);
-        this.v1 = bf0Var;
+    public ue0(ve0 ve0Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.f0 = ve0Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        ViewGroup viewGroup;
-        super.setAlpha(f7);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.v1).containerView;
-        viewGroup.invalidate();
+    @Override // org.telegram.ui.Components.te0
+    public final void g(float f7) {
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.y3 y3Var = launchActivity.z0;
+        y3Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+        y3Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.25f, f7));
+    }
+
+    @Override // org.telegram.ui.Components.te0
+    public final void i() {
+        super/*android.app.Dialog*/.dismiss();
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity == null) {
+            return;
+        }
+        org.telegram.ui.ActionBar.y3 y3Var = launchActivity.z0;
+        y3Var.setScaleX(1.0f);
+        y3Var.setScaleY(1.0f);
     }
 }

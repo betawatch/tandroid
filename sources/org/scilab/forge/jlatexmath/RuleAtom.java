@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class RuleAtom extends Atom {
     private static final float MAX_LENGTH = 4096.0f;
@@ -26,10 +26,10 @@ public class RuleAtom extends Atom {
         float factor2 = SpaceAtom.getFactor(this.hunit, teXEnvironment) * this.h;
         float factor3 = SpaceAtom.getFactor(this.runit, teXEnvironment) * this.r;
         if (Float.isInfinite(factor) || Float.isNaN(factor) || factor > MAX_LENGTH) {
-            factor = MAX_LENGTH;
+            factor = 4096.0f;
         }
         if (Float.isInfinite(factor2) || Float.isNaN(factor2) || factor2 > MAX_LENGTH) {
-            factor2 = MAX_LENGTH;
+            factor2 = 4096.0f;
         }
         return new HorizontalRule(factor2, factor, factor3);
     }

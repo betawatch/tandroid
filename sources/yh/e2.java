@@ -1,66 +1,46 @@
 package yh;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.br0;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class e2 extends br0 {
-    public final /* synthetic */ y3 X0;
+public final class e2 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s3 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e2(y3 y3Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, null, str, null, false, str2, null, false, false, true, null, d6Var);
-        this.X0 = y3Var;
-        this.a0 = true;
+    public /* synthetic */ e2(s3 s3Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = s3Var;
     }
 
-    @Override // org.telegram.ui.Components.br0
-    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        yc bulletinFactory;
-        if (z10 && (bulletinFactory = getBulletinFactory()) != null) {
-            if (iVar.m() == 1) {
-                long j3 = iVar.j(0);
-                if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    rc G = bulletinFactory.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedToSavedMessages, new Object[0])));
-                    G.r = false;
-                    G.t = true;
-                    G.j();
-                } else if (j3 < 0) {
-                    rc G2 = bulletinFactory.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
-                    G2.r = false;
-                    G2.t = true;
-                    G2.j();
-                } else {
-                    rc G3 = bulletinFactory.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LinkSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
-                    G3.r = false;
-                    G3.t = true;
-                    G3.j();
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                if (this.b.Z0.c(0)) {
+                    break;
                 }
-            } else {
-                rc Q = bulletinFactory.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("LinkSharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
-                Q.r = false;
-                Q.t = true;
-                Q.j();
-            }
-            try {
-                this.container.performHapticFeedback(3);
-            } catch (Exception unused) {
-            }
+                break;
+            case 1:
+                if (this.b.Z0.c(1)) {
+                    break;
+                }
+                break;
+            case 2:
+                if (this.b.Z0.c(2)) {
+                    break;
+                }
+                break;
+            default:
+                if (this.b.Z0.c(3)) {
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.br0
-    public final void P0(View view) {
-        y3.k1(this.X0, view);
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

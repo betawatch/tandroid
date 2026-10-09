@@ -18,9 +18,9 @@ import l.n;
 import m.l1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.v7;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -85,6 +85,10 @@ public final class h extends MenuInflater {
                         xmlPullParser2 = xmlPullParser;
                         z11 = false;
                         str = null;
+                        eventType = xmlPullParser2.next();
+                        i10 = 2;
+                        z10 = z10;
+                        z11 = z11;
                     } else if (name2.equals("group")) {
                         gVar.b = 0;
                         gVar.c = 0;
@@ -107,12 +111,9 @@ public final class h extends MenuInflater {
                         xmlPullParser2 = xmlPullParser;
                         z10 = true;
                     }
-                    eventType = xmlPullParser2.next();
-                    i10 = 2;
                 }
                 xmlPullParser2 = xmlPullParser;
-                eventType = xmlPullParser2.next();
-                i10 = 2;
+                z10 = z10;
             } else {
                 if (!z11) {
                     String name3 = xmlPullParser.getName();
@@ -171,7 +172,7 @@ public final class h extends MenuInflater {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = v7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = s7.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -194,12 +195,17 @@ public final class h extends MenuInflater {
                         }
                         eventType = xmlPullParser2.next();
                         i10 = 2;
+                        z10 = z10;
+                        z11 = z11;
                     }
                 }
                 xmlPullParser2 = xmlPullParser;
-                eventType = xmlPullParser2.next();
-                i10 = 2;
+                z10 = z10;
             }
+            eventType = xmlPullParser2.next();
+            i10 = 2;
+            z10 = z10;
+            z11 = z11;
         }
     }
 

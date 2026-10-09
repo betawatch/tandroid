@@ -1,40 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class db implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public final class db {
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public org.telegram.ui.ActionBar.e6 g;
 
-    public db(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public db(db dbVar) {
+        this.a = dbVar.a;
+        this.b = dbVar.b;
+        this.c = dbVar.c;
+        this.d = dbVar.d;
+        this.e = dbVar.e;
+        this.f = dbVar.f;
+        this.g = dbVar.g;
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i15) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
-        }
-    }
-
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z10) {
-        return (this.b * 2) + this.a;
+    public db() {
+        this.b = 1;
+        this.f = 1;
     }
 }

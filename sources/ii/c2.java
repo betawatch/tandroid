@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class c2 extends Drawable {
     public final Context a;
@@ -43,24 +43,24 @@ public final class c2 extends Drawable {
         int centerX = bounds.centerX();
         int centerY = bounds.centerY();
         Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.ui.Cells.c1.t(2, centerX, drawable), org.telegram.ui.Cells.c1.e(2, centerY, drawable), org.telegram.ui.Cells.c1.x(2, centerX, drawable), org.telegram.ui.Cells.c1.w(2, centerY, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.s(2, centerX, drawable), org.telegram.ui.Cells.c1.c(2, centerY, drawable), org.telegram.ui.Cells.c1.w(2, centerX, drawable), org.telegram.ui.Cells.c1.v(2, centerY, drawable));
         drawable.draw(canvas);
         if (this.g) {
             int dp = AndroidUtilities.dp(9.0f) + centerX;
             int dp2 = AndroidUtilities.dp(9.0f) + centerY;
-            int w02 = org.telegram.ui.ActionBar.i6.w0(null, this.d, false);
+            int x02 = org.telegram.ui.ActionBar.i6.x0(null, this.d, false);
             Drawable drawable2 = this.c;
             Context context = this.a;
             if (drawable2 == null) {
                 Drawable mutate = context.getResources().getDrawable(R.drawable.star_premium_cutout).mutate();
                 this.c = mutate;
-                this.e = w02;
-                mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                this.e = x02;
+                mutate.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
-            if (w02 != this.e) {
+            if (x02 != this.e) {
                 Drawable drawable3 = this.c;
-                this.e = w02;
-                drawable3.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+                this.e = x02;
+                drawable3.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
             }
             if (this.f == null) {
                 this.f = context.getResources().getDrawable(R.drawable.star_premium).mutate();

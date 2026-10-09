@@ -1,44 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewParent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hl0 implements View.OnTouchListener {
-    public float a;
-    public float b;
-    public boolean c;
+public final class hl0 extends y9 {
+    public final /* synthetic */ int G;
+    public final /* synthetic */ il0 H;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        ViewParent parent = view.getParent();
-        if (parent != null) {
-            if (motionEvent.getAction() == 0) {
-                this.a = motionEvent.getX();
-                this.b = motionEvent.getY();
-                this.c = true;
-                parent.requestDisallowInterceptTouchEvent(true);
-            }
-            if (motionEvent.getAction() == 2) {
-                float x10 = this.a - motionEvent.getX();
-                float y3 = this.b - motionEvent.getY();
-                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-                if (this.c) {
-                    if (Math.sqrt((y3 * y3) + (x10 * x10)) > scaledTouchSlop) {
-                        this.c = false;
-                        parent.requestDisallowInterceptTouchEvent(false);
-                        return false;
-                    }
-                }
-            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                this.c = false;
-                parent.requestDisallowInterceptTouchEvent(false);
-                return false;
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hl0(il0 il0Var, Context context, int i10) {
+        super(context);
+        this.G = i10;
+        this.H = il0Var;
+    }
+
+    @Override // org.telegram.ui.Components.y9
+    public ImageReceiver c() {
+        switch (this.G) {
+            case 0:
+                return new gl0(0, this);
+            case 1:
+                return new gl0(1, this);
+            default:
+                return super.c();
         }
-        return false;
+    }
+
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                il0 il0Var = this.H;
+                hl0 hl0Var = il0Var.b;
+                super.dispatchDraw(canvas);
+                if (this.a.getLottieAnimation() != null && !il0Var.E) {
+                    this.a.getLottieAnimation().start();
+                }
+                if (il0Var.s && !il0Var.v && this.a.getLottieAnimation() != null && this.a.getLottieAnimation().A() && hl0Var.a.getLottieAnimation() != null && hl0Var.a.getLottieAnimation().u()) {
+                    il0Var.v = true;
+                    hl0Var.a.getLottieAnimation().N(0, false, true);
+                    hl0Var.setVisibility(0);
+                    Runnable runnable = il0Var.P.P0;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    AndroidUtilities.runOnUIThread(new bd0(this, 17));
+                }
+                invalidate();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(Rect rect) {
+        switch (this.G) {
+            case 0:
+                il0 il0Var = this.H;
+                if (!zg.d0.c(this, il0Var.P)) {
+                    super.invalidate(rect);
+                    il0Var.P.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(rect);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.y9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                this.H.b();
+                super.onDraw(canvas);
+                break;
+            case 2:
+                s5 s5Var = this.e;
+                ImageReceiver imageReceiver = s5Var != null ? s5Var.k : this.a;
+                if (imageReceiver != null && imageReceiver.getLottieAnimation() != null) {
+                    imageReceiver.getLottieAnimation().start();
+                }
+                super.onDraw(canvas);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.G) {
+            case 0:
+                if (!zg.d0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            case 1:
+                if (!zg.d0.c(this)) {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10 = this.G;
+        il0 il0Var = this.H;
+        switch (i10) {
+            case 0:
+                if (!zg.d0.c(this, il0Var.P)) {
+                    super.invalidate();
+                    il0Var.P.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                if (!zg.d0.c(this)) {
+                    super.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                il0Var.P.invalidate();
+                break;
+        }
     }
 }

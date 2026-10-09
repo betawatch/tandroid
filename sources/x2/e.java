@@ -11,7 +11,7 @@ import e9.z;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e extends n implements Comparable {
     public final int E;
@@ -36,14 +36,14 @@ public final class e extends n implements Comparable {
     public final boolean y;
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00f8  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0115  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x010d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x00e9 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00d7  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00f2  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x010f  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0107 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x00e5 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -52,7 +52,7 @@ public final class e extends n implements Comparable {
         int i14;
         int i15;
         boolean z11;
-        String[] E;
+        String[] D;
         int i16;
         int i17;
         int i18;
@@ -61,12 +61,12 @@ public final class e extends n implements Comparable {
         i iVar2;
         boolean z13;
         o1 o1Var;
-        char c10;
+        boolean z14;
         this.n = iVar;
-        boolean z14 = iVar.r0;
+        boolean z15 = iVar.r0;
         i0 i0Var = iVar.t;
         i0 i0Var2 = iVar.p;
-        int i19 = z14 ? 24 : 16;
+        int i19 = z15 ? 24 : 16;
         int i20 = 0;
         this.x = false;
         this.h = p.g(this.d.d);
@@ -76,8 +76,8 @@ public final class e extends n implements Comparable {
             int size = i0Var2.size();
             i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (i21 >= size) {
-                i21 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                 i15 = 0;
+                i21 = Integer.MAX_VALUE;
                 break;
             } else {
                 i15 = p.d(this.d, (String) i0Var2.get(i21), false);
@@ -92,7 +92,7 @@ public final class e extends n implements Comparable {
         this.s = i15;
         int i22 = this.d.f;
         int i23 = iVar.q;
-        this.w = (i22 == 0 || i22 != i23) ? Integer.bitCount(i22 & i23) : ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.w = (i22 == 0 || i22 != i23) ? Integer.bitCount(i22 & i23) : Integer.MAX_VALUE;
         b2.s sVar2 = this.d;
         int i24 = sVar2.f;
         this.y = i24 == 0 || (i24 & 1) != 0;
@@ -102,33 +102,33 @@ public final class e extends n implements Comparable {
             switch (str.hashCode()) {
                 case -2123537834:
                     if (str.equals("audio/eac3-joc")) {
-                        c10 = 0;
+                        z14 = false;
                         break;
                     }
-                    c10 = 65535;
+                    z14 = -1;
                     break;
                 case 187078297:
                     if (str.equals("audio/ac4")) {
-                        c10 = 1;
+                        z14 = true;
                         break;
                     }
-                    c10 = 65535;
+                    z14 = -1;
                     break;
                 case 1504698186:
                     if (str.equals("audio/iamf")) {
-                        c10 = 2;
+                        z14 = 2;
                         break;
                     }
-                    c10 = 65535;
+                    z14 = -1;
                     break;
                 default:
-                    c10 = 65535;
+                    z14 = -1;
                     break;
             }
-            switch (c10) {
-                case 0:
-                case 1:
-                case 2:
+            switch (z14) {
+                case false:
+                case true:
+                case true:
                     z11 = true;
                     break;
             }
@@ -139,17 +139,17 @@ public final class e extends n implements Comparable {
             int i26 = sVar2.j;
             this.J = i26;
             this.f = (i26 != -1 || i26 <= iVar.s) && (i25 == -1 || i25 <= iVar.r) && dVar.apply(sVar2);
-            E = d0.E();
+            D = d0.D();
             i16 = 0;
             while (true) {
-                if (i16 >= E.length) {
-                    i17 = p.d(this.d, E[i16], false);
+                if (i16 >= D.length) {
+                    i17 = p.d(this.d, D[i16], false);
                     if (i17 <= 0) {
                         i16++;
                     }
                 } else {
-                    i16 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     i17 = 0;
+                    i16 = Integer.MAX_VALUE;
                 }
             }
             this.E = i16;
@@ -186,10 +186,10 @@ public final class e extends n implements Comparable {
         int i262 = sVar2.j;
         this.J = i262;
         this.f = (i262 != -1 || i262 <= iVar.s) && (i252 == -1 || i252 <= iVar.r) && dVar.apply(sVar2);
-        E = d0.E();
+        D = d0.D();
         i16 = 0;
         while (true) {
-            if (i16 >= E.length) {
+            if (i16 >= D.length) {
             }
             i16++;
         }

@@ -1,113 +1,256 @@
 package ci;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Timer;
+import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.ef0;
+import org.telegram.ui.Components.ja0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class p2 extends m2 {
-    public zg.d0 i;
-    public zg.d0 j;
-    public int k;
-    public final org.telegram.ui.Components.e6 l;
-    public Timer m;
-    public final ai.ob n;
-    public final ArrayList o;
-    public final /* synthetic */ q2 p;
+public final class p2 extends View {
+    public final Paint a;
+    public final TextPaint b;
+    public final ArrayList c;
+    public float[] d;
+    public d1 e;
+    public final /* synthetic */ r2 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p2(q2 q2Var) {
-        super(q2Var);
+    public p2(r2 r2Var, Context context) {
+        super(context);
         int i10;
-        this.p = q2Var;
-        this.i = new zg.d0(q2Var);
-        this.j = new zg.d0(q2Var);
-        this.l = new org.telegram.ui.Components.e6(q2Var);
-        this.n = new ai.ob(q2Var);
-        this.o = new ArrayList();
-        this.a = 3;
-        this.b = AndroidUtilities.dp(44.0f);
-        this.c = AndroidUtilities.dp(36.0f);
-        i10 = ((org.telegram.ui.ActionBar.f3) q2Var.f).currentAccount;
-        List<TLRPC.TL_availableReaction> reactionsList = MediaDataController.getInstance(i10).getReactionsList();
-        for (int i11 = 0; i11 < Math.min(reactionsList.size(), 8); i11++) {
-            this.o.add(zg.m0.c(reactionsList.get(i11)));
+        int i11;
+        this.f = r2Var;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        paint.setColor(436207615);
+        textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        textPaint.setTextSize(AndroidUtilities.dpf2(21.3f));
+        textPaint.setColor(-1);
+        ArrayList arrayList = new ArrayList();
+        this.c = arrayList;
+        setPadding(0, 0, 0, 0);
+        if (r2Var.n0(4)) {
+            m2 m2Var = new m2(this, 4, R.drawable.msg_limit_links, LocaleController.getString(R.string.StoryWidgetLink));
+            i11 = ((org.telegram.ui.ActionBar.f3) r2Var).currentAccount;
+            if (!UserConfig.getInstance(i11).isPremium()) {
+                Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
+                m2Var.j = mutate;
+                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.m1(0.6f, -1), PorterDuff.Mode.SRC_IN));
+                Paint paint2 = new Paint(1);
+                m2Var.n = paint2;
+                paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+            }
+            arrayList.add(m2Var);
         }
-        Collections.sort(this.o, new a4.e(10));
-        if (!this.o.isEmpty()) {
-            this.i.e((zg.m0) this.o.get(this.k));
+        if (r2Var.n0(0)) {
+            arrayList.add(new m2(this, 0, R.drawable.map_pin3, LocaleController.getString(R.string.StoryWidgetLocation)));
         }
-        this.l.d(1.0f, true);
+        if (r2Var.n0(5)) {
+            kd kdVar = ld.b;
+            m2[] m2VarArr = {null};
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(kdVar == null ? "🌤" : kdVar.c);
+            sb2.append(" ");
+            sb2.append(kdVar == null ? ld.b() ? "24°C" : "72°F" : kdVar.a());
+            CharSequence replaceEmoji = Emoji.replaceEmoji(sb2.toString(), textPaint.getFontMetricsInt(), false);
+            i10 = ((org.telegram.ui.ActionBar.f3) r2Var).currentAccount;
+            CharSequence charSequence = replaceEmoji;
+            if (MessagesController.getInstance(i10).storyWeatherPreload) {
+                charSequence = replaceEmoji;
+                charSequence = replaceEmoji;
+                if (ef0.d("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
+                    spannableStringBuilder.setSpan(new ja0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    m2VarArr[0] = new m2(this, spannableStringBuilder);
+                    ld.a(false, new ai.h3(1, this, m2VarArr));
+                    charSequence = spannableStringBuilder;
+                }
+            }
+            m2 m2Var2 = m2VarArr[0];
+            arrayList.add(m2Var2 == null ? new m2(this, charSequence) : m2Var2);
+        }
+        if (r2Var.n0(1)) {
+            arrayList.add(new m2(this, 1, R.drawable.filled_widget_music, LocaleController.getString(R.string.StoryWidgetAudio)));
+        }
+        if (r2Var.n0(2)) {
+            arrayList.add(new m2(this, 2, R.drawable.filled_premium_camera, LocaleController.getString(R.string.StoryWidgetPhoto)));
+        }
+        if (r2Var.n0(3)) {
+            arrayList.add(new o2(this));
+        }
     }
 
-    @Override // ci.m2
-    public final void a(Canvas canvas, float f7, float f10) {
-        float dp = f10 - AndroidUtilities.dp(4.0f);
-        float f11 = (int) f7;
-        float f12 = (int) dp;
-        float f13 = this.b;
-        float f14 = (int) (f7 + f13);
-        float f15 = (int) (dp + f13);
-        RectF rectF = this.f;
-        rectF.set(f11, f12, f14, f15);
-        float a2 = this.g.a(0.05f);
-        canvas.save();
-        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        int i10 = (int) rectF.left;
-        int i11 = (int) rectF.top;
-        int i12 = (int) rectF.right;
-        int i13 = (int) rectF.bottom;
-        ai.ob obVar = this.n;
-        obVar.setBounds(i10, i11, i12, i13);
-        obVar.draw(canvas);
-        float dp2 = AndroidUtilities.dp(30.0f);
-        Rect rect = AndroidUtilities.rectTmp2;
-        float f16 = dp2 / 2.0f;
-        rect.set((int) (rectF.centerX() - f16), (int) (rectF.centerY() - f16), (int) (rectF.centerX() + f16), (int) (rectF.centerY() + f16));
-        float d = this.l.d(1.0f, false);
-        this.j.c(rect);
-        this.i.c(rect);
-        if (d == 1.0f) {
-            this.i.a(canvas);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ArrayList arrayList = this.c;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            try {
+                float[] fArr = this.d;
+                if (i11 >= fArr.length) {
+                    break;
+                }
+                fArr[i11] = 0.0f;
+                i11++;
+            } catch (Exception e7) {
+                FileLog.e(e7);
+            }
+        }
+        int size = arrayList.size();
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            i12++;
+            l2 l2Var = (l2) obj;
+            int i13 = l2Var.e - 1;
+            float[] fArr2 = this.d;
+            float f7 = fArr2[i13];
+            if (f7 > 0.0f) {
+                fArr2[i13] = f7 + AndroidUtilities.dp(10.0f);
+            }
+            float[] fArr3 = this.d;
+            fArr3[i13] = fArr3[i13] + l2Var.h.d(l2Var.b, false);
+        }
+        int size2 = arrayList.size();
+        while (i10 < size2) {
+            Object obj2 = arrayList.get(i10);
+            i10++;
+            l2 l2Var2 = (l2) obj2;
+            l2Var2.a(canvas, com.google.android.gms.internal.vision.e2.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[l2Var2.e - 1], 2.0f, getPaddingLeft()) + l2Var2.d, org.telegram.messenger.q.D(48.0f, l2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+        }
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((l2) obj).b(true);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((l2) obj).b(false);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
+        ArrayList arrayList = this.c;
+        int size2 = arrayList.size();
+        int i12 = 0;
+        int i13 = 1;
+        float f7 = 0.0f;
+        int i14 = 0;
+        while (i14 < size2) {
+            Object obj = arrayList.get(i14);
+            i14++;
+            l2 l2Var = (l2) obj;
+            l2Var.d = f7;
+            float dp = l2Var.b + AndroidUtilities.dp(10.0f) + f7;
+            if (dp > paddingLeft) {
+                i13++;
+                l2Var.d = 0.0f;
+                f7 = l2Var.b + AndroidUtilities.dp(10.0f) + 0.0f;
+            } else {
+                f7 = dp;
+            }
+            l2Var.e = i13;
+        }
+        float[] fArr = this.d;
+        if (fArr == null || fArr.length != i13) {
+            this.d = new float[i13];
         } else {
-            canvas.save();
-            float f17 = 1.0f - d;
-            canvas.scale(f17, f17, rectF.centerX(), rectF.top);
-            zg.d0 d0Var = this.j;
-            d0Var.h = f17;
-            d0Var.a(canvas);
-            canvas.restore();
-            canvas.save();
-            canvas.scale(d, d, rectF.centerX(), rectF.bottom);
-            zg.d0 d0Var2 = this.i;
-            d0Var2.h = d;
-            d0Var2.a(canvas);
-            canvas.restore();
+            Arrays.fill(fArr, 0.0f);
         }
-        canvas.restore();
+        int size3 = arrayList.size();
+        while (i12 < size3) {
+            Object obj2 = arrayList.get(i12);
+            i12++;
+            l2 l2Var2 = (l2) obj2;
+            int i15 = l2Var2.e - 1;
+            float[] fArr2 = this.d;
+            float f10 = fArr2[i15];
+            if (f10 > 0.0f) {
+                fArr2[i15] = f10 + AndroidUtilities.dp(10.0f);
+            }
+            float[] fArr3 = this.d;
+            fArr3[i15] = fArr3[i15] + l2Var2.b;
+        }
+        setMeasuredDimension(size, org.telegram.messenger.q.D(12.0f, i13 - 1, org.telegram.messenger.q.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
-    @Override // ci.m2
-    public final void b(boolean z10) {
-        this.i.b(z10);
-        this.j.b(z10);
-        Timer timer = this.m;
-        if (timer != null) {
-            timer.cancel();
-            this.m = null;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        l2 l2Var;
+        d1 d1Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= size) {
+                l2Var = null;
+                break;
+            }
+            Object obj = arrayList.get(i10);
+            i10++;
+            l2Var = (l2) obj;
+            if (l2Var.f.contains(motionEvent.getX(), motionEvent.getY())) {
+                break;
+            }
         }
-        if (z10) {
-            Timer timer2 = new Timer();
-            this.m = timer2;
-            timer2.schedule(new o2(this, 0), 2000L, 2000L);
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList.get(i11);
+            i11++;
+            l2 l2Var2 = (l2) obj2;
+            if (l2Var2 != l2Var) {
+                l2Var2.g.c(false);
+            }
         }
+        if (l2Var != null) {
+            l2Var.g.c((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) ? false : true);
+        }
+        if (motionEvent.getAction() == 1 && l2Var != null && (d1Var = this.e) != null) {
+            d1Var.run(Integer.valueOf(l2Var.a));
+        }
+        return l2Var != null;
     }
 }

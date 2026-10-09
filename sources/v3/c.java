@@ -5,7 +5,7 @@ import c3.a0;
 import c3.c0;
 import e2.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c implements f {
     public final long[] a;
@@ -15,10 +15,10 @@ public final class c implements f {
     public c(long j3, long[] jArr, long[] jArr2) {
         this.a = jArr;
         this.b = jArr2;
-        this.c = j3 == -9223372036854775807L ? d0.Q(jArr2[jArr2.length - 1]) : j3;
+        this.c = j3 == -9223372036854775807L ? d0.P(jArr2[jArr2.length - 1]) : j3;
     }
 
-    public static Pair b(long j3, long[] jArr, long[] jArr2) {
+    public static Pair a(long j3, long[] jArr, long[] jArr2) {
         int e7 = d0.e(jArr, j3, true);
         long j10 = jArr[e7];
         long j11 = jArr2[e7];
@@ -30,8 +30,8 @@ public final class c implements f {
     }
 
     @Override // v3.f
-    public final long a(long j3) {
-        return d0.Q(((Long) b(j3, this.a, this.b).second).longValue());
+    public final long b(long j3) {
+        return d0.P(((Long) a(j3, this.a, this.b).second).longValue());
     }
 
     @Override // v3.f
@@ -51,8 +51,8 @@ public final class c implements f {
 
     @Override // c3.b0
     public final a0 j(long j3) {
-        Pair b10 = b(d0.e0(d0.i(j3, 0L, this.c)), this.b, this.a);
-        c0 c0Var = new c0(d0.Q(((Long) b10.first).longValue()), ((Long) b10.second).longValue());
+        Pair a2 = a(d0.d0(d0.i(j3, 0L, this.c)), this.b, this.a);
+        c0 c0Var = new c0(d0.P(((Long) a2.first).longValue()), ((Long) a2.second).longValue());
         return new a0(c0Var, c0Var);
     }
 

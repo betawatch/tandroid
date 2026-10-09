@@ -1,5 +1,6 @@
 package o3;
 
+import a1.g;
 import b2.m0;
 import b2.o0;
 import b2.r0;
@@ -8,7 +9,7 @@ import e2.v;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final int a;
@@ -74,7 +75,7 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.h) + ((((((((a4.a.h(a4.a.h((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
+        return Arrays.hashCode(this.h) + ((((((((g.h(g.h((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
     }
 
     public final String toString() {

@@ -1,39 +1,27 @@
 package ee;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import de.q;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class b extends p {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(b.class, Object.class, "_consensus$volatile");
-    private volatile /* synthetic */ Object _consensus$volatile = a.a;
+public abstract class b {
+    public q[] a;
+    public int b;
+    public int c;
 
-    @Override // ee.p
-    public final Object a(Object obj) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
-        Object obj2 = atomicReferenceFieldUpdater.get(this);
-        com.google.android.gms.internal.clearcut.e eVar = a.a;
-        if (obj2 == eVar) {
-            com.google.android.gms.internal.clearcut.e c10 = c(obj);
-            obj2 = atomicReferenceFieldUpdater.get(this);
-            if (obj2 == eVar) {
-                while (true) {
-                    if (atomicReferenceFieldUpdater.compareAndSet(this, eVar, c10)) {
-                        obj2 = c10;
-                        break;
-                    }
-                    if (atomicReferenceFieldUpdater.get(this) != eVar) {
-                        obj2 = atomicReferenceFieldUpdater.get(this);
-                        break;
-                    }
+    public final void a(q qVar) {
+        synchronized (this) {
+            try {
+                int i10 = this.b - 1;
+                this.b = i10;
+                if (i10 == 0) {
+                    this.c = 0;
                 }
+                kotlin.jvm.internal.i.c(qVar, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
+                qVar.a.set(null);
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        b(obj, obj2);
-        return obj2;
     }
-
-    public abstract void b(Object obj, Object obj2);
-
-    public abstract com.google.android.gms.internal.clearcut.e c(Object obj);
 }

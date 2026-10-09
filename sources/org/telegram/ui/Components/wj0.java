@@ -1,29 +1,45 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import android.text.style.LineHeightSpan;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class wj0 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ ck0 b;
+public final class wj0 extends MetricAffectingSpan implements LineHeightSpan {
+    public xj0 a;
 
-    public wj0(ck0 ck0Var, s4.c0 c0Var) {
-        this.b = ck0Var;
-        this.a = c0Var;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int loadCount;
-        ck0 ck0Var = this.b;
-        if (ck0Var.w && ck0Var.x && !ck0Var.v) {
-            int N0 = this.a.N0();
-            int h = ck0Var.f.h() - 1;
-            loadCount = ck0Var.getLoadCount();
-            if (N0 >= h - loadCount) {
-                ck0Var.c();
+    @Override // android.text.style.LineHeightSpan
+    public final void chooseHeight(CharSequence charSequence, int i10, int i11, int i12, int i13, Paint.FontMetricsInt fontMetricsInt) {
+        xj0 xj0Var = this.a;
+        if (xj0Var.b) {
+            int i14 = xj0Var.f ? 7 : 2;
+            if (i10 <= xj0Var.c) {
+                fontMetricsInt.ascent -= AndroidUtilities.dp((xj0Var.n ? 2 : 0) + i14);
+                fontMetricsInt.top -= AndroidUtilities.dp((this.a.n ? 2 : 0) + i14);
+            }
+            if (i11 >= this.a.d) {
+                float f7 = i14;
+                fontMetricsInt.descent = AndroidUtilities.dp(f7) + fontMetricsInt.descent;
+                fontMetricsInt.bottom = AndroidUtilities.dp(f7) + fontMetricsInt.bottom;
             }
         }
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        if (textPaint == null) {
+            return;
+        }
+        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
+        textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
     }
 }

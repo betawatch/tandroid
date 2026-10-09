@@ -1,47 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class g7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
-    public final /* synthetic */ b80 c;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ g7(j8 j8Var, b80 b80Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class g7 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l8 b;
+
+    public /* synthetic */ g7(l8 l8Var, int i10) {
         this.a = i10;
-        this.b = j8Var;
-        this.c = b80Var;
+        this.b = l8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                j8 j8Var = this.b;
-                j8Var.getClass();
-                this.c.u();
-                j8Var.t0(1);
-                break;
-            case 1:
-                j8 j8Var2 = this.b;
-                j8Var2.getClass();
-                this.c.u();
-                j8Var2.t0(2);
-                break;
-            case 2:
-                j8 j8Var3 = this.b;
-                j8Var3.getClass();
-                this.c.u();
-                j8Var3.t0(4);
-                break;
-            case 3:
-                j8 j8Var4 = this.b;
-                j8Var4.getClass();
-                this.c.u();
-                j8Var4.t0(7);
+                l8.w(this.b, (MessageObject) obj);
                 break;
             default:
-                j8.q(this.b, this.c);
+                l8.z(this.b);
                 break;
         }
     }

@@ -12,9 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.bi;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.dc0;
+import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.qc0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class a6 extends FrameLayout {
     public final TextView a;
@@ -23,29 +24,29 @@ public final class a6 extends FrameLayout {
     public final Switch d;
     public boolean e;
     public boolean f;
-    public final org.telegram.ui.ActionBar.d6 h;
+    public final org.telegram.ui.ActionBar.e6 h;
 
-    public a6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public a6(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.h = d6Var;
+        this.h = e6Var;
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.z5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
+        addView(imageView, w7.x5.a(28.0f, 18.0f, 16.0f, 18.0f, 9.0f, 28, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.m(org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 16.0f);
+        bi.o(org.telegram.ui.ActionBar.i6.G6, e6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
+        addView(textView, w7.x5.a(-2.0f, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        bi.m(org.telegram.ui.ActionBar.i6.z6, d6Var, textView2, 1, 13.0f);
+        bi.o(org.telegram.ui.ActionBar.i6.z6, e6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);
@@ -53,97 +54,27 @@ public final class a6 extends FrameLayout {
         textView2.setEllipsize(null);
         textView2.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f));
-        Switch r32 = new Switch(context, d6Var);
+        addView(textView2, w7.x5.a(-2.0f, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f, -2, (z11 ? 5 : 3) | 48));
+        Switch r32 = new Switch(context, e6Var);
         this.d = r32;
         int i10 = org.telegram.ui.ActionBar.i6.M6;
         int i11 = org.telegram.ui.ActionBar.i6.N6;
         int i12 = org.telegram.ui.ActionBar.i6.d6;
         r32.d(i10, i11, i12, i12);
-        addView(r32, w7.z5.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
+        addView(r32, w7.x5.a(40.0f, 21.0f, 10.0f, 19.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 48));
         r32.setFocusable(false);
     }
 
-    public final void a(String str, String str2, int i10, int i11, boolean z10) {
+    public final void a(String str, String str2, d50 d50Var, int i10, boolean z10) {
         this.a.setText(str);
-        org.telegram.ui.ActionBar.d6 d6Var = this.h;
-        boolean a2 = d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.i6.I.q();
-        dc0 dc0Var = new dc0(1);
-        int i12 = -14899731;
-        switch (i10) {
-            case 1:
-            case 2:
-                break;
-            case 3:
-                i12 = -11565578;
-                break;
-            case 4:
-                i12 = -14965523;
-                break;
-            case 5:
-                i12 = -1007845;
-                break;
-            case 6:
-                i12 = -881871;
-                break;
-            case 7:
-                i12 = -11154873;
-                break;
-            case 8:
-                i12 = -765355;
-                break;
-            case 9:
-                i12 = -13451058;
-                break;
-            case 10:
-                i12 = -3903756;
-                break;
-            case 11:
-                i12 = -7956054;
-                break;
-            default:
-                throw null;
-        }
-        int i13 = -15431455;
-        switch (i10) {
-            case 1:
-            case 4:
-                break;
-            case 2:
-                i13 = -15497247;
-                break;
-            case 3:
-                i13 = -13276952;
-                break;
-            case 5:
-                i13 = -1996271;
-                break;
-            case 6:
-                i13 = -1940716;
-                break;
-            case 7:
-                i13 = -14175180;
-                break;
-            case 8:
-                i13 = -2148011;
-                break;
-            case 9:
-                i13 = -14836538;
-                break;
-            case 10:
-                i13 = -6335009;
-                break;
-            case 11:
-                i13 = -9534569;
-                break;
-            default:
-                throw null;
-        }
-        dc0Var.b(i12, i13);
-        dc0Var.b = a2;
+        org.telegram.ui.ActionBar.e6 e6Var = this.h;
+        boolean a2 = e6Var != null ? e6Var.a() : org.telegram.ui.ActionBar.i6.I.q();
+        qc0 qc0Var = new qc0(1);
+        qc0Var.b(d50Var.a, d50Var.b);
+        qc0Var.b = a2;
         ImageView imageView = this.c;
-        imageView.setBackground(dc0Var);
-        imageView.setImageResource(i11);
+        imageView.setBackground(qc0Var);
+        imageView.setImageResource(i10);
         boolean z11 = this.e;
         Switch r02 = this.d;
         r02.b(0, z10, z11);
@@ -155,12 +86,12 @@ public final class a6 extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            org.telegram.ui.ActionBar.d6 d6Var = this.h;
-            Paint H = d6Var != null ? d6Var.H("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
-            if (H == null) {
-                H = org.telegram.ui.ActionBar.i6.k0;
+            org.telegram.ui.ActionBar.e6 e6Var = this.h;
+            Paint F = e6Var != null ? e6Var.F("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
+            if (F == null) {
+                F = org.telegram.ui.ActionBar.i6.k0;
             }
-            Paint paint = H;
+            Paint paint = F;
             if (paint != null) {
                 canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(19.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(19.0f) : 0), getMeasuredHeight() - 1, paint);
             }

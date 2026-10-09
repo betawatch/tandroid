@@ -1,79 +1,40 @@
 package zg;
 
-import android.app.Activity;
-import android.text.SpannableString;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.z5;
-import org.telegram.ui.a71;
-import yh.s5;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.b6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m extends a71 {
-    public boolean d2;
-    public final /* synthetic */ o e2;
+public final class m extends b6 {
+    public final Bitmap a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(o oVar, o oVar2, Activity activity, d6 d6Var, int i10) {
-        super(oVar2, activity, false, null, 6, false, d6Var, 16, i10);
-        this.e2 = oVar;
-        this.d2 = true;
-        setDrawBackground(false);
+    public m(q qVar) {
+        super(-1L, (Paint.FontMetricsInt) null);
+        Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), Bitmap.Config.ARGB_8888);
+        this.a = createBitmap;
+        Drawable mutate = qVar.getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate();
+        mutate.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        mutate.draw(new Canvas(createBitmap));
     }
 
-    @Override // org.telegram.ui.a71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.d2) {
-            this.d2 = false;
-            this.e2.b.s(null);
-        }
+    @Override // org.telegram.ui.Components.b6, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.save();
+        canvas.translate(f7, ((i12 + i14) / 2.0f) - AndroidUtilities.dp(12.0f));
+        float f10 = this.extraScale;
+        canvas.scale(f10, f10, f7 + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        canvas.drawBitmap(this.a, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.a71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        o oVar = this.e2;
-        int i10 = oVar.M;
-        ArrayList arrayList = oVar.I;
-        LinkedHashMap linkedHashMap = oVar.H;
-        if (linkedHashMap.containsKey(l4)) {
-            arrayList.remove(l4);
-            z5 z5Var = (z5) linkedHashMap.remove(l4);
-            z5Var.setRemoved(new s5(5, this, z5Var));
-            oVar.W(z5Var);
-            oVar.b.x(l4, true);
-            oVar.Y(false);
-            return;
-        }
-        if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            yc.a0(oVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
-            return;
-        }
-        try {
-            int editTextSelectionEnd = oVar.h.getEditTextSelectionEnd();
-            SpannableString spannableString = new SpannableString("b");
-            z5 e7 = o0.e(document, l4, oVar.h.getFontMetricsInt());
-            e7.cacheType = q5.g();
-            e7.setAdded();
-            arrayList.add(w7.q.b(editTextSelectionEnd, 0, arrayList.size()), l4);
-            linkedHashMap.put(l4, e7);
-            spannableString.setSpan(e7, 0, spannableString.length(), 33);
-            oVar.h.getText().insert(editTextSelectionEnd, spannableString);
-            oVar.h.setSelection(editTextSelectionEnd + spannableString.length());
-            oVar.b.x(l4, true);
-            oVar.Y(true);
-            oVar.W(e7);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
+    @Override // org.telegram.ui.Components.b6, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return AndroidUtilities.dp(5.0f) + super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
     }
 }

@@ -1,21 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public interface pb {
-    boolean a();
+public abstract class pb extends FrameLayout implements ub {
+    @Override // org.telegram.ui.Components.ub
+    public final void c() {
+    }
 
-    void b(rc rcVar);
-
-    void c(float f7);
-
-    void d(rc rcVar);
-
-    boolean e();
-
-    int f(int i10);
-
-    boolean g(int i10);
-
-    int h(int i10);
+    @Override // org.telegram.ui.Components.ub
+    public final void d() {
+    }
 }

@@ -2,9 +2,9 @@ package ii;
 
 import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
+import org.telegram.ui.Cells.o9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class a6 implements h1 {
     public final /* synthetic */ f6 a;
@@ -14,7 +14,19 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(Editable editable) {
+    public final void E(CharSequence charSequence) {
+        c6 c6Var = this.a.y;
+        if (c6Var != null) {
+            f3 f3Var = (f3) c6Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            f3Var.a.u4(charSequence.toString());
+        }
+    }
+
+    @Override // ii.h1
+    public final void L(Editable editable) {
         f6 f6Var = this.a;
         if (f6Var.x == null) {
             return;
@@ -23,11 +35,11 @@ public final class a6 implements h1 {
         c6 c6Var = f6Var.y;
         if (c6Var != null) {
             x3 x3Var = ((f3) c6Var).a;
-            i2 i2Var = x3Var.Q3;
+            i2 i2Var = x3Var.H3;
             if (i2Var != null) {
                 i2Var.g();
             }
-            x3Var.o3.onContentChanged();
+            x3Var.f3.onContentChanged();
         }
         TL_iv.PageBlock pageBlock = f6Var.x.b;
         if (pageBlock instanceof TL_iv.pageBlockPullquote) {
@@ -47,22 +59,22 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean C(boolean z10) {
+    public final /* synthetic */ boolean N(boolean z10) {
         return false;
     }
 
     @Override // ii.h1
-    public final void b(i1 i1Var) {
+    public final void c(i1 i1Var) {
         c6 c6Var = this.a.y;
         if (c6Var != null) {
             x3 x3Var = ((f3) c6Var).a;
             x3.N1(x3Var, i1Var);
-            x3Var.o3.P(i1Var, true);
+            x3Var.f3.r(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean e() {
+    public final boolean f() {
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
         if (c6Var == null || f6Var.x == null) {
@@ -72,18 +84,18 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final void f(int i10, int i11) {
+    public final void i(int i10, int i11) {
         i2 i2Var;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
-        if (c6Var == null || f6Var.x == null || (i2Var = ((f3) c6Var).a.Q3) == null) {
+        if (c6Var == null || f6Var.x == null || (i2Var = ((f3) c6Var).a.H3) == null) {
             return;
         }
         i2Var.f(i10, i11);
     }
 
     @Override // ii.h1
-    public final void l(i1 i1Var) {
+    public final void k(i1 i1Var) {
         a aVar;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
@@ -94,12 +106,12 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean n(i1 i1Var) {
+    public final /* synthetic */ boolean m(i1 i1Var) {
         return false;
     }
 
     @Override // ii.h1
-    public final boolean p(i1 i1Var) {
+    public final boolean r(i1 i1Var) {
         f6 f6Var = this.a;
         f6Var.f.r();
         i1 i1Var2 = f6Var.f;
@@ -108,29 +120,17 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final void t(i1 i1Var, int i10, int i11) {
+    public final void x(i1 i1Var, int i10, int i11) {
         c6 c6Var;
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         f6 f6Var = this.a;
         if (f6Var.n || i10 == i11 || (c6Var = f6Var.y) == null || (textSelectionHelper = ((f3) c6Var).a.getTextSelectionHelper()) == null) {
             return;
         }
-        i1Var.post(new ei.y4(this, i1Var, i11, textSelectionHelper, i10, 6));
+        i1Var.post(new ei.w4(this, i1Var, i11, textSelectionHelper, i10, 6));
     }
 
     @Override // ii.h1
-    public final void w(CharSequence charSequence) {
-        c6 c6Var = this.a.y;
-        if (c6Var != null) {
-            f3 f3Var = (f3) c6Var;
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            f3Var.a.u4(charSequence.toString());
-        }
-    }
-
-    @Override // ii.h1
-    public final void r() {
+    public final void t() {
     }
 }

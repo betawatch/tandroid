@@ -1,12 +1,12 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.fd;
-import org.telegram.ui.Components.x00;
+import org.telegram.ui.Components.hd;
+import org.telegram.ui.Components.k10;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a1 extends x00 {
+public final class a1 extends k10 {
     public final /* synthetic */ b1 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,35 +15,35 @@ public final class a1 extends x00 {
         this.e = b1Var;
     }
 
-    @Override // org.telegram.ui.Components.wo0
+    @Override // org.telegram.ui.Components.hp0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(fd.a(this.e.getSpeed()));
+        sb2.append(hd.a(this.e.getSpeed()));
         sb2.append("x  ");
         return org.telegram.messenger.q.g(R.string.AccDescrSpeedSlider, sb2);
     }
 
-    @Override // org.telegram.ui.Components.x00
+    @Override // org.telegram.ui.Components.k10
     public final float h() {
         return 0.2f;
     }
 
-    @Override // org.telegram.ui.Components.x00
+    @Override // org.telegram.ui.Components.k10
     public final float i() {
         return 3.0f;
     }
 
-    @Override // org.telegram.ui.Components.x00
+    @Override // org.telegram.ui.Components.k10
     public final float j() {
         return 0.2f;
     }
 
-    @Override // org.telegram.ui.Components.x00
+    @Override // org.telegram.ui.Components.k10
     public final float k() {
         return this.e.getSpeed();
     }
 
-    @Override // org.telegram.ui.Components.x00
+    @Override // org.telegram.ui.Components.k10
     public final void l(float f7) {
         this.e.d(f7, true);
     }

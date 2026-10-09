@@ -1,41 +1,7 @@
 package v7;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class f7 {
-    public static f4.g a(f4.g gVar, String[] strArr, Map map) {
-        int i10 = 0;
-        if (gVar == null) {
-            if (strArr == null) {
-                return null;
-            }
-            if (strArr.length == 1) {
-                return (f4.g) map.get(strArr[0]);
-            }
-            if (strArr.length > 1) {
-                f4.g gVar2 = new f4.g();
-                int length = strArr.length;
-                while (i10 < length) {
-                    gVar2.a((f4.g) map.get(strArr[i10]));
-                    i10++;
-                }
-                return gVar2;
-            }
-        } else {
-            if (strArr != null && strArr.length == 1) {
-                gVar.a((f4.g) map.get(strArr[0]));
-                return gVar;
-            }
-            if (strArr != null && strArr.length > 1) {
-                int length2 = strArr.length;
-                while (i10 < length2) {
-                    gVar.a((f4.g) map.get(strArr[i10]));
-                    i10++;
-                }
-            }
-        }
-        return gVar;
-    }
+public final class f7 {
+    public final d7 a;
 }

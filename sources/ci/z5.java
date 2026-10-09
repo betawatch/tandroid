@@ -6,28 +6,33 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.yn;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class z5 extends yn {
-    public final /* synthetic */ Utilities.Callback2 Kc;
-    public final /* synthetic */ q6 Lc;
+public final class z5 extends zn {
+    public final /* synthetic */ Utilities.Callback2 Qc;
+    public final /* synthetic */ q6 Rc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public z5(q6 q6Var, Utilities.Callback2 callback2) {
         super(null);
-        this.Lc = q6Var;
-        this.Kc = callback2;
+        this.Rc = q6Var;
+        this.Qc = callback2;
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.Components.dh, org.telegram.ui.Components.r50
+    @Override // org.telegram.ui.zn
+    public final boolean C9() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.zn, org.telegram.ui.Components.eh, org.telegram.ui.Components.f60
     public final long a() {
         return 0L;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.yn, org.telegram.ui.bd0
+    @Override // org.telegram.ui.zn, org.telegram.ui.cd0
     public final void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
         TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
@@ -48,7 +53,7 @@ public final class z5 extends yn {
                 if (tL_geoPointAddress != null) {
                     tL_mediaAreaGeoPoint3.flags |= 1;
                 }
-                Utilities.globalQueue.postRunnable(new ai.ba(18, messageMedia, tL_mediaAreaGeoPoint3));
+                Utilities.globalQueue.postRunnable(new ai.ca(18, messageMedia, tL_mediaAreaGeoPoint3));
                 tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
             } else {
                 TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
@@ -58,31 +63,26 @@ public final class z5 extends yn {
             }
             tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
         }
-        this.Kc.run(messageMedia, tL_mediaAreaGeoPoint2);
+        this.Qc.run(messageMedia, tL_mediaAreaGeoPoint2);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.Lc.getContext());
+        return AndroidUtilities.findActivity(this.Rc.getContext());
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
-        return this.Lc.G1;
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.ActionBar.e6 getResourceProvider() {
+        return this.Rc.G1;
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.Components.dh
+    @Override // org.telegram.ui.zn, org.telegram.ui.Components.eh
     public final TLRPC.User i() {
         return UserConfig.getInstance(this.currentAccount).getCurrentUser();
     }
 
-    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.yn
-    public final boolean w9() {
         return false;
     }
 }

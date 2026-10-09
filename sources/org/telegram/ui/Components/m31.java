@@ -1,90 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class m31 extends e71 {
-    public final org.telegram.ui.k20 m3;
-    public final e6 n3;
-    public Drawable o3;
-    public int p3;
-    public final Paint q3;
+public final /* synthetic */ class m31 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ TLObject n;
 
-    public m31(Context context, int i10, j31 j31Var, b31 b31Var, b31 b31Var2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, 0, false, j31Var, b31Var, b31Var2, d6Var);
-        this.m3 = new org.telegram.ui.k20();
-        this.n3 = new e6(this, 320L, tr.h);
-        this.q3 = new Paint(1);
+    public /* synthetic */ m31(c41 c41Var, boolean z10, org.telegram.ui.ActionBar.f1 f1Var, p80 p80Var, long j3, TLRPC.User user, TLRPC.Chat chat) {
+        this.d = c41Var;
+        this.b = z10;
+        this.e = f1Var;
+        this.f = p80Var;
+        this.c = j3;
+        this.h = user;
+        this.n = chat;
     }
 
-    @Override // org.telegram.ui.Components.e71, org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e7 = this.n3.e(canScrollVertically(-1));
-        if (e7 > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        } else {
-            canvas2 = canvas;
-        }
-        float height = getHeight();
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof v31) {
-                v31 v31Var = (v31) childAt;
-                if (v31Var.y) {
-                    if (height > v31Var.getY()) {
-                        height = v31Var.getY();
-                        RecyclerView.R(v31Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                final c41 c41Var = (c41) this.d;
+                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.e;
+                final p80 p80Var = (p80) this.f;
+                final TLRPC.User user = (TLRPC.User) this.h;
+                final TLRPC.Chat chat = (TLRPC.Chat) this.n;
+                boolean z10 = this.b;
+                final boolean z11 = !z10;
+                f1Var.setVisibility(0);
+                f1Var.setText(LocaleController.getString(!z10 ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
+                final long j3 = this.c;
+                f1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.n31
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        c41 c41Var2 = c41.this;
+                        int i10 = c41Var2.b;
+                        p80Var.u();
+                        boolean z12 = z11;
+                        TLRPC.User user2 = user;
+                        if (!z12) {
+                            MessagesController.getInstance(i10).deleteParticipantFromChat(j3, user2, (TLRPC.Chat) null, false, false);
+                            return;
+                        }
+                        TLRPC.TL_channels_editBanned tL_channels_editBanned = new TLRPC.TL_channels_editBanned();
+                        tL_channels_editBanned.participant = MessagesController.getInputPeer(user2);
+                        tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
+                        tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new y1(c41Var2, 15));
                     }
-                    if (f7 < v31Var.getY() + v31Var.getHeight()) {
-                        f7 = v31Var.getY() + v31Var.getHeight();
-                        RecyclerView.R(v31Var);
-                    }
-                }
-            }
+                });
+                break;
+            default:
+                yh.g.Z((yh.g) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, this.n);
+                break;
         }
-        if (f7 > height) {
-            int i11 = org.telegram.ui.ActionBar.i6.s9;
-            org.telegram.ui.ActionBar.d6 d6Var = this.p2;
-            int v02 = org.telegram.ui.ActionBar.i6.v0(i11, d6Var);
-            Paint paint = this.q3;
-            paint.setColor(v02);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set((getWidth() - AndroidUtilities.dp(56.0f)) / 2.0f, height, (AndroidUtilities.dp(56.0f) + getWidth()) / 2.0f, f7);
-            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint);
-            if (this.o3 == null) {
-                this.o3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
-            }
-            int v03 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.b9, d6Var);
-            if (this.p3 != v03) {
-                Drawable drawable = this.o3;
-                this.p3 = v03;
-                drawable.setColorFilter(new PorterDuffColorFilter(v03, PorterDuff.Mode.SRC_IN));
-            }
-            this.o3.setBounds((int) (rectF.left + AndroidUtilities.dp(4.0f)), (int) (rectF.top + AndroidUtilities.dp(2.66f)), (int) (rectF.left + AndroidUtilities.dp(13.66f)), (int) (rectF.top + AndroidUtilities.dp(12.32f)));
-            this.o3.draw(canvas2);
-        }
-        super.dispatchDraw(canvas2);
-        if (e7 > 0.0f) {
-            canvas2.save();
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(0.0f, 0.0f, getWidth(), AndroidUtilities.dp(12.0f));
-            this.m3.b(canvas2, rectF2, 1, e7);
-            canvas2.restore();
-            canvas2.restore();
-        }
+    }
+
+    public /* synthetic */ m31(yh.g gVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j3, TLObject tLObject) {
+        this.d = gVar;
+        this.e = tL_error;
+        this.f = twoStepVerificationActivity;
+        this.h = activity;
+        this.b = z10;
+        this.c = j3;
+        this.n = tLObject;
     }
 }

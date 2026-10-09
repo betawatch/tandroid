@@ -15,9 +15,9 @@ import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.s6;
 import v7.t6;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -80,25 +80,25 @@ public abstract class q {
         }
     }
 
-    public static j1 j(Set set, d9.f fVar) {
+    public static j1 j(Set set, d9.g gVar) {
         if (set instanceof SortedSet) {
             Set set2 = (SortedSet) set;
             if (!(set2 instanceof j1)) {
-                return new k1(set2, fVar);
+                return new k1(set2, gVar);
             }
             j1 j1Var = (j1) set2;
-            d9.f fVar2 = j1Var.b;
-            fVar2.getClass();
-            return new k1((SortedSet) j1Var.a, new d9.g(Arrays.asList(fVar2, fVar)));
+            d9.g gVar2 = j1Var.b;
+            gVar2.getClass();
+            return new k1((SortedSet) j1Var.a, new d9.h(Arrays.asList(gVar2, gVar)));
         }
         if (!(set instanceof j1)) {
             set.getClass();
-            return new j1(set, fVar);
+            return new j1(set, gVar);
         }
         j1 j1Var2 = (j1) set;
-        d9.f fVar3 = j1Var2.b;
-        fVar3.getClass();
-        return new j1(j1Var2.a, new d9.g(Arrays.asList(fVar3, fVar)));
+        d9.g gVar3 = j1Var2.b;
+        gVar3.getClass();
+        return new j1(j1Var2.a, new d9.h(Arrays.asList(gVar3, gVar)));
     }
 
     public static Object k(AbstractCollection abstractCollection, String str) {
@@ -113,7 +113,7 @@ public abstract class q {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return sa.e.h(1, list);
+            return sc.v.h(1, list);
         }
         Iterator it = iterable.iterator();
         do {
@@ -145,7 +145,7 @@ public abstract class q {
     public static ArrayList p(Object... objArr) {
         int length = objArr.length;
         e(length, "arraySize");
-        ArrayList arrayList = new ArrayList(y7.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(v7.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -201,9 +201,9 @@ public abstract class q {
         return -1;
     }
 
-    public static void r(List list, d9.f fVar, int i10, int i11) {
+    public static void r(List list, d9.g gVar, int i10, int i11) {
         for (int size = list.size() - 1; size > i11; size--) {
-            if (fVar.apply(list.get(size))) {
+            if (gVar.apply(list.get(size))) {
                 list.remove(size);
             }
         }
@@ -235,7 +235,7 @@ public abstract class q {
     }
 
     public static AbstractList w(List list, d9.e eVar) {
-        return e2.u(list) ? new r0(list, eVar) : new s0(list, eVar);
+        return e2.t(list) ? new r0(list, eVar) : new s0(list, eVar);
     }
 
     public abstract Object g();

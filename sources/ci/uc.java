@@ -1,207 +1,191 @@
 package ci;
 
+import android.graphics.Bitmap;
+import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RectF;
+import android.media.MediaMetadataRetriever;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class uc extends Path {
-    public final int a = AndroidUtilities.dp(10.0f);
-    public final float[] b;
-    public ArrayList c;
-    public ArrayList d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
+public final class uc {
+    public long a;
+    public volatile long b;
+    public int c;
+    public volatile int f;
+    public volatile int g;
+    public final boolean h;
+    public boolean i;
+    public long j;
+    public Path m;
+    public final /* synthetic */ wc n;
+    public final ArrayList d = new ArrayList();
+    public boolean k = false;
+    public final Paint l = new Paint(3);
+    public MediaMetadataRetriever e = new MediaMetadataRetriever();
 
-    public uc() {
-        this.b = new float[]{r1, r1, r1, r1, 0.0f, 0.0f, 0.0f, 0.0f};
-        float dp = AndroidUtilities.dp(2.0f);
-    }
-
-    public static int c(ArrayList arrayList) {
-        if (arrayList == null) {
-            return 0;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (arrayList.get(i11) != null) {
-                i10 += ((nc) arrayList.get(i11)).e;
-            }
-        }
-        return i10;
-    }
-
-    public final void a(float f7, float f10, float f11, float f12, float f13, float f14, ArrayList arrayList) {
-        float f15 = f7;
-        float f16 = f11;
-        if (arrayList == null || arrayList.isEmpty()) {
-            rewind();
-            return;
-        }
-        if (Math.abs(this.e - f12) <= 1.0f && Math.abs(this.f - f13) <= 0.01f && Math.abs(this.g - 0.0f) <= 0.1f && Math.abs(this.h - f14) <= 1.0f && Math.abs(this.i - f15) <= 1.0f && Math.abs(this.j - f10) <= 1.0f && Math.abs(this.k - f16) <= 1.0f) {
-            ArrayList arrayList2 = this.c;
-            if (arrayList2 != null && arrayList2.size() == arrayList.size()) {
-                for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                    if (((Integer) arrayList2.get(i10)).intValue() == (arrayList.get(i10) == null ? 0 : ((nc) arrayList.get(i10)).b)) {
+    public uc(wc wcVar, boolean z10, final String str, final int i10, final int i11, final Long l4, final long j3, final long j10, final long j11, final Runnable runnable) {
+        this.n = wcVar;
+        this.h = z10;
+        Utilities.themeQueue.postRunnable(new Runnable() { // from class: ci.sc
+            /* JADX WARN: Removed duplicated region for block: B:27:0x0086  */
+            /* JADX WARN: Removed duplicated region for block: B:30:0x0092  */
+            /* JADX WARN: Removed duplicated region for block: B:34:0x009a A[ADDED_TO_REGION] */
+            /* JADX WARN: Removed duplicated region for block: B:38:0x00e2  */
+            /* JADX WARN: Removed duplicated region for block: B:41:0x00ec  */
+            /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
+            @Override // java.lang.Runnable
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
+            public final void run() {
+                int i12;
+                int i13;
+                uc ucVar = uc.this;
+                String str2 = str;
+                Long l10 = l4;
+                long j12 = j10;
+                long j13 = j11;
+                int i14 = i11;
+                long j14 = j3;
+                int i15 = i10;
+                Runnable runnable2 = runnable;
+                long maxScrollDuration = ucVar.n.getMaxScrollDuration();
+                try {
+                    ucVar.e.setDataSource(str2);
+                    String extractMetadata = ucVar.e.extractMetadata(9);
+                    if (extractMetadata != null) {
+                        maxScrollDuration = Long.parseLong(extractMetadata);
+                        ucVar.a = maxScrollDuration;
+                    }
+                    String extractMetadata2 = ucVar.e.extractMetadata(18);
+                    i12 = extractMetadata2 != null ? Integer.parseInt(extractMetadata2) : 0;
+                } catch (Exception e7) {
+                    e = e7;
+                    i12 = 0;
+                }
+                try {
+                    String extractMetadata3 = ucVar.e.extractMetadata(19);
+                    i13 = extractMetadata3 != null ? Integer.parseInt(extractMetadata3) : 0;
+                    try {
+                        String extractMetadata4 = ucVar.e.extractMetadata(24);
+                        if (extractMetadata4 != null) {
+                            int parseInt = Integer.parseInt(extractMetadata4);
+                            if (parseInt == 90 || parseInt == 270) {
+                                int i16 = i13;
+                                i13 = i12;
+                                i12 = i16;
+                            }
+                        }
+                    } catch (Exception e10) {
+                        e = e10;
+                        ucVar.e = null;
+                        FileLog.e(e);
+                        int i17 = i13;
+                        if (l10 != null) {
+                        }
+                        if (j12 != -1) {
+                            maxScrollDuration = j13 - j12;
+                        }
+                        float clamp = Utilities.clamp((i12 != 0 || i17 == 0) ? 1.0f : i12 / i17, 1.3333334f, 0.5625f);
+                        ucVar.g = Math.max(1, i14);
+                        ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp));
+                        int ceil = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                        ucVar.c = ceil;
+                        ucVar.b = (long) (maxScrollDuration / ceil);
+                        ucVar.j = -ucVar.b;
+                        if (j12 != -1) {
+                        }
+                        ucVar.c();
+                        if (runnable2 != null) {
+                        }
+                    }
+                } catch (Exception e11) {
+                    e = e11;
+                    i13 = 0;
+                    ucVar.e = null;
+                    FileLog.e(e);
+                    int i172 = i13;
+                    if (l10 != null) {
+                    }
+                    if (j12 != -1) {
+                    }
+                    float clamp2 = Utilities.clamp((i12 != 0 || i172 == 0) ? 1.0f : i12 / i172, 1.3333334f, 0.5625f);
+                    ucVar.g = Math.max(1, i14);
+                    ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp2));
+                    int ceil2 = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                    ucVar.c = ceil2;
+                    ucVar.b = (long) (maxScrollDuration / ceil2);
+                    ucVar.j = -ucVar.b;
+                    if (j12 != -1) {
+                    }
+                    ucVar.c();
+                    if (runnable2 != null) {
                     }
                 }
-            }
-            ArrayList arrayList3 = this.d;
-            if (arrayList3 == null || arrayList3.size() != arrayList.size()) {
-                return;
-            }
-            for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-                if (((Float) arrayList3.get(i11)).floatValue() != (arrayList.get(i11) == null ? 0.0f : ((nc) arrayList.get(i11)).a.d(((nc) arrayList.get(i11)).c, false))) {
-                    return;
+                int i1722 = i13;
+                if (l10 != null) {
+                    maxScrollDuration = l10.longValue();
+                    ucVar.a = maxScrollDuration;
+                }
+                if (j12 != -1 && j13 != -1) {
+                    maxScrollDuration = j13 - j12;
+                }
+                float clamp22 = Utilities.clamp((i12 != 0 || i1722 == 0) ? 1.0f : i12 / i1722, 1.3333334f, 0.5625f);
+                ucVar.g = Math.max(1, i14);
+                ucVar.f = Math.max(1, (int) Math.ceil(i14 * clamp22));
+                int ceil22 = (int) Math.ceil(((Math.max(maxScrollDuration, j14) / j14) * i15) / ucVar.f);
+                ucVar.c = ceil22;
+                ucVar.b = (long) (maxScrollDuration / ceil22);
+                ucVar.j = -ucVar.b;
+                if (j12 != -1) {
+                    ucVar.j = j12 - ucVar.b;
+                }
+                ucVar.c();
+                if (runnable2 != null) {
+                    AndroidUtilities.runOnUIThread(runnable2);
                 }
             }
-        }
-        ArrayList arrayList4 = this.c;
-        if (arrayList4 == null) {
-            this.c = new ArrayList();
-        } else {
-            arrayList4.clear();
-        }
-        int i12 = 0;
-        while (i12 < arrayList.size()) {
-            i12 = com.google.android.gms.internal.vision.e2.e(arrayList.get(i12) == null ? 0 : ((nc) arrayList.get(i12)).b, i12, 1, this.c);
-        }
-        ArrayList arrayList5 = this.d;
-        if (arrayList5 == null) {
-            this.d = new ArrayList();
-        } else {
-            arrayList5.clear();
-        }
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            this.d.add(Float.valueOf(arrayList.get(i13) == null ? 0.0f : ((nc) arrayList.get(i13)).a.d(((nc) arrayList.get(i13)).c, false)));
-        }
-        this.i = f15;
-        this.j = f10;
-        this.k = f16;
-        this.g = 0.0f;
-        this.f = f13;
-        this.e = f12;
-        this.h = f14;
-        ArrayList arrayList6 = this.d;
-        rewind();
-        float round = Math.round(AndroidUtilities.dpf2(3.3333f));
-        int i14 = 0;
-        for (int i15 = 0; i15 < arrayList.size(); i15++) {
-            if (arrayList.get(i15) != null) {
-                i14 = Math.max(i14, ((nc) arrayList.get(i15)).b);
+        });
+    }
+
+    public final void b() {
+        this.i = true;
+        int i10 = 0;
+        Utilities.themeQueue.cancelRunnable(new rc(this, i10));
+        ArrayList arrayList = this.d;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Bitmap bitmap = ((tc) obj).a;
+            if (bitmap != null) {
+                bitmap.recycle();
             }
         }
-        int max = Math.max(0, (int) (((f10 - this.a) - f15) / round));
-        int min = Math.min(i14 - 1, (int) Math.ceil(((f16 + r13) - f15) / round));
-        while (max <= min) {
-            float f17 = max;
-            float dp = (f17 * round) + f15 + AndroidUtilities.dp(2.0f);
-            int i16 = 0;
-            for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                short s10 = (arrayList.get(i17) == null || max >= ((nc) arrayList.get(i17)).b) ? (short) 0 : ((nc) arrayList.get(i17)).d[max];
-                if (f17 < ((Float) arrayList6.get(i17)).floatValue() && max + 1 > ((Float) arrayList6.get(i17)).floatValue()) {
-                    s10 = (short) ((((Float) arrayList6.get(i17)).floatValue() - f17) * s10);
-                } else if (f17 > ((Float) arrayList6.get(i17)).floatValue()) {
-                    s10 = 0;
-                }
-                i16 += s10;
+        this.d.clear();
+        MediaMetadataRetriever mediaMetadataRetriever = this.e;
+        if (mediaMetadataRetriever != null) {
+            try {
+                mediaMetadataRetriever.release();
+            } catch (Exception e7) {
+                this.e = null;
+                FileLog.e(e7);
             }
-            float f18 = f13 <= 0.0f ? 0.0f : (i16 / f13) * f12 * 0.6f;
-            if (dp < f10 || dp > f16) {
-                f18 *= 0.0f;
-                if (f18 <= 0.0f) {
-                    max++;
-                    f15 = f7;
-                    f16 = f11;
-                }
-            }
-            float max2 = Math.max(f18, AndroidUtilities.lerp(AndroidUtilities.dpf2(0.66f), AndroidUtilities.dpf2(1.5f), 0.0f));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(dp, AndroidUtilities.lerp(f14 - max2, f14 - ((f12 + max2) / 2.0f), 0.0f), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f14, org.telegram.messenger.q.x(f12, max2, 2.0f, f14), 0.0f));
-            addRoundRect(rectF, this.b, Path.Direction.CW);
-            max++;
-            f15 = f7;
-            f16 = f11;
         }
     }
 
-    public final void b(float f7, float f10, float f11, float f12, long j3, float f13, float f14, float f15, nc ncVar) {
-        ArrayList arrayList;
-        float f16 = f7;
-        float f17 = f10;
-        float f18 = f11;
-        if (ncVar == null) {
-            rewind();
+    public final void c() {
+        if (this.k || this.e == null || this.d.size() >= this.c) {
             return;
         }
-        int i10 = ncVar.b;
-        org.telegram.ui.Components.e6 e6Var = ncVar.a;
-        float d = e6Var.d(ncVar.c, false);
-        if (0 == j3 && Math.abs(this.e - f13) <= 1.0f && Math.abs(this.f - f14) <= 0.01f && Math.abs(this.g - f12) <= 0.1f && Math.abs(this.h - f15) <= 1.0f && Math.abs(this.i - f16) <= 1.0f && Math.abs(this.j - f17) <= 1.0f && Math.abs(this.k - f18) <= 1.0f && (arrayList = this.c) != null && arrayList.size() == 1) {
-            ArrayList arrayList2 = this.d;
-            if (Math.abs(((arrayList2 == null || arrayList2.isEmpty()) ? 0.0f : ((Float) this.d.get(0)).floatValue()) - d) <= 0.01f) {
-                return;
-            }
-        }
-        ArrayList arrayList3 = this.c;
-        if (arrayList3 == null) {
-            this.c = new ArrayList();
-        } else {
-            arrayList3.clear();
-        }
-        this.c.add(Integer.valueOf(i10));
-        ArrayList arrayList4 = this.d;
-        if (arrayList4 == null) {
-            this.d = new ArrayList();
-        } else {
-            arrayList4.clear();
-        }
-        this.d.add(Float.valueOf(d));
-        this.i = f16;
-        this.j = f17;
-        this.k = f18;
-        this.g = f12;
-        this.f = f14;
-        this.e = f13;
-        this.h = f15;
-        float d10 = e6Var.d(ncVar.c, false);
-        rewind();
-        float round = Math.round(AndroidUtilities.dpf2(3.3333f));
-        int max = Math.max(0, (int) (((f17 - this.a) - f16) / round));
-        int min = Math.min(i10 - 1, (int) Math.ceil(((r13 + f18) - f16) / round));
-        while (max <= min) {
-            float f19 = max;
-            float dp = (f19 * round) + f16 + AndroidUtilities.dp(2.0f);
-            float f20 = f14 <= 0.0f ? 0.0f : (ncVar.d[max] / f14) * f13 * 0.6f;
-            if (f19 < d10 && max + 1 > d10) {
-                f20 *= d10 - f19;
-            } else if (f19 > d10) {
-                f20 = 0.0f;
-            }
-            if (dp < f17 || dp > f18) {
-                f20 *= f12;
-                if (f20 <= 0.0f) {
-                    max++;
-                    f16 = f7;
-                    f17 = f10;
-                    f18 = f11;
-                }
-            }
-            float max2 = Math.max(f20, AndroidUtilities.lerp(AndroidUtilities.dpf2(0.66f), AndroidUtilities.dpf2(1.5f), f12));
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(dp, AndroidUtilities.lerp(f15 - max2, f15 - ((f13 + max2) / 2.0f), f12), AndroidUtilities.dpf2(1.66f) + dp, AndroidUtilities.lerp(f15, org.telegram.messenger.q.x(f13, max2, 2.0f, f15), f12));
-            addRoundRect(rectF, this.b, Path.Direction.CW);
-            max++;
-            f16 = f7;
-            f17 = f10;
-            f18 = f11;
-        }
+        this.k = true;
+        this.j += this.b;
+        int i10 = 0;
+        Utilities.themeQueue.cancelRunnable(new rc(this, i10));
+        Utilities.themeQueue.postRunnable(new rc(this, i10));
     }
 }

@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.Wallet.n5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -24,29 +25,29 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 String str = (String) obj;
                 z0 z0Var = this.b;
                 ArrayList arrayList = z0Var.g0;
-                pg.c1 c1Var = z0Var.v0;
+                n5 n5Var = z0Var.v0;
                 z0Var.n0 = str;
                 int i10 = z0Var.r0;
                 if (i10 == 1) {
-                    AndroidUtilities.cancelRunOnUIThread(c1Var);
-                    AndroidUtilities.runOnUIThread(c1Var, 350L);
+                    AndroidUtilities.cancelRunOnUIThread(n5Var);
+                    AndroidUtilities.runOnUIThread(n5Var, 350L);
                     break;
                 } else if (i10 == 2) {
                     if (!TextUtils.isEmpty(str)) {
-                        AndroidUtilities.cancelRunOnUIThread(c1Var);
-                        AndroidUtilities.runOnUIThread(c1Var, 350L);
+                        AndroidUtilities.cancelRunOnUIThread(n5Var);
+                        AndroidUtilities.runOnUIThread(n5Var, 350L);
                         break;
                     } else {
-                        AndroidUtilities.cancelRunOnUIThread(c1Var);
+                        AndroidUtilities.cancelRunOnUIThread(n5Var);
                         arrayList.clear();
                         arrayList.addAll(s.e(z0Var.q0.id));
-                        z0Var.Z(false, true);
-                        z0Var.W(true);
+                        z0Var.b0(false, true);
+                        z0Var.Y(true);
                         break;
                     }
                 } else if (i10 == 3) {
-                    z0Var.Z(false, true);
-                    z0Var.W(true);
+                    z0Var.b0(false, true);
+                    z0Var.Y(true);
                     break;
                 }
                 break;
@@ -57,8 +58,8 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 if (!TextUtils.isEmpty(z0Var2.n0)) {
                     arrayList2.clear();
                     arrayList2.addAll(list);
-                    z0Var2.b0(true, true);
-                    z0Var2.W(true);
+                    z0Var2.c0(true, true);
+                    z0Var2.Y(true);
                     break;
                 }
                 break;

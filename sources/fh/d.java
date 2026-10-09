@@ -1,78 +1,134 @@
 package fh;
 
-import ah.f;
-import ah.i;
+import ah.h;
+import ah.j;
 import ah.k;
 import android.graphics.Canvas;
 import android.graphics.RecordingCanvas;
+import android.graphics.RectF;
 import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.os.Build;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d implements a {
     public final a a;
-    public final RenderNode b = f.c();
     public k c;
-    public i d;
+    public h d;
     public int e;
     public a f;
-    public li.c h;
+    public boolean h;
     public boolean n;
-    public boolean r;
-    public RecordingCanvas s;
+    public RecordingCanvas r;
+    public Runnable v;
+    public final qe.b s = new qe.b();
+    public final RenderNode b = ah.e.c();
 
     public d(a aVar) {
         this.a = aVar;
     }
 
     public final RecordingCanvas a(int i10, int i11) {
-        if (this.r) {
+        if (this.n) {
             throw new IllegalStateException();
         }
-        this.r = true;
+        this.n = true;
         this.b.setPosition(0, 0, i10, i11);
         RecordingCanvas beginRecording = this.b.beginRecording(i10, i11);
-        this.s = beginRecording;
+        this.r = beginRecording;
         return beginRecording;
     }
 
-    @Override // fh.a
-    public final ch.d b() {
-        return new ch.e(this);
-    }
-
-    public final void c() {
-        if (!this.r) {
+    public final void b() {
+        if (!this.n) {
             throw new IllegalStateException();
         }
         this.b.endRecording();
-        this.r = false;
-        this.s = null;
+        this.n = false;
+        this.r = null;
     }
 
-    public final boolean d(int i10, int i11) {
+    public final int c(int i10, int i11, List list) {
+        RectF rectF;
+        Iterator it = this.s.iterator();
+        int i12 = 0;
+        while (it.hasNext()) {
+            ch.e eVar = (ch.e) it.next();
+            boolean j3 = eVar.j();
+            ch.c cVar = eVar.j;
+            if (j3 && eVar.l > 0 && !cVar.m.isEmpty()) {
+                if (i10 < list.size()) {
+                    rectF = (RectF) list.get(i10);
+                } else {
+                    rectF = new RectF();
+                    list.add(rectF);
+                }
+                rectF.set(cVar.m);
+                rectF.offset(eVar.a, eVar.b);
+                float f7 = -i11;
+                rectF.inset(f7, f7);
+                i10++;
+                i12++;
+            }
+        }
+        return i12;
+    }
+
+    @Override // fh.a
+    public final void d() {
+        Runnable runnable = this.v;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    public final void e() {
+        Iterator it = this.s.iterator();
+        while (it.hasNext()) {
+            ((ch.e) it.next()).O = true;
+        }
+    }
+
+    public final boolean f(int i10, int i11) {
         return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
     }
 
-    public final void e(float f7) {
+    public final void g(float f7) {
         this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
     }
 
-    public final void f(float f7, RenderEffect renderEffect) {
+    public final void h(float f7, RenderEffect renderEffect) {
         this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
     }
 
-    public final void g(int i10, int i11) {
+    public final void i(int i10, int i11) {
         this.b.setPosition(0, 0, i10, i11);
     }
 
-    @Override // oi.a
+    public final void j(j jVar) {
+        if (this.c == null) {
+            this.c = new k(this.b, jVar);
+        }
+    }
+
+    public final void k() {
+        this.c.a();
+    }
+
+    @Override // fh.a
+    public final ch.d l() {
+        ch.e eVar = new ch.e(this);
+        this.s.add(eVar);
+        return eVar;
+    }
+
+    @Override // fh.a
     public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
-        i iVar;
-        li.c cVar;
+        h hVar;
         if (!canvas.isHardwareAccelerated()) {
             a aVar = this.a;
             if (aVar != null) {
@@ -81,7 +137,7 @@ public final class d implements a {
             }
             return;
         }
-        if (this.r) {
+        if (this.n) {
             throw new IllegalStateException();
         }
         a aVar2 = this.f;
@@ -89,16 +145,13 @@ public final class d implements a {
             aVar2.v(canvas, f7, f10, f11, f12);
         }
         canvas.save();
-        if (!this.n) {
+        if (!this.h) {
             canvas.clipRect(f7, f10, f11, f12);
         }
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 31 && (cVar = this.h) != null) {
-            cVar.v(canvas, f7, f10, f11, f12);
-        } else if (i10 < 31 || (iVar = this.d) == null) {
+        if (Build.VERSION.SDK_INT < 31 || (hVar = this.d) == null) {
             canvas.drawRenderNode(this.b);
         } else {
-            iVar.c(canvas, this.e);
+            hVar.c(canvas, this.e);
         }
         canvas.restore();
     }

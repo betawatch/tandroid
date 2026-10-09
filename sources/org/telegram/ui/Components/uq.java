@@ -1,22 +1,90 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class uq extends Drawable {
-    public final Paint a = new Paint(1);
+public final class uq extends Drawable {
+    public final Drawable a;
+    public Path b;
+    public final RectF c;
+    public final RectF d;
+    public boolean e;
+    public final float[] f;
 
-    public uq(View view) {
-        if (view != null) {
-            view.addOnAttachStateChangeListener(new ai.u2(this, 7));
-            if (view.isAttachedToWindow()) {
-                view.post(new aq(this, 1));
-            }
+    public uq(Drawable drawable) {
+        i.f fVar = new i.f(this, 2);
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = false;
+        this.f = new float[8];
+        Drawable drawable2 = this.a;
+        if (drawable2 != null) {
+            drawable2.setCallback(null);
         }
+        this.a = drawable;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            this.a.setCallback(fVar);
+        }
+    }
+
+    public final void a() {
+        if (this.e) {
+            Path path = this.b;
+            if (path == null) {
+                this.b = new Path();
+            } else {
+                path.rewind();
+            }
+            Rect bounds = getBounds();
+            RectF rectF = this.c;
+            rectF.set(bounds);
+            float f7 = rectF.left;
+            RectF rectF2 = this.d;
+            rectF.left = f7 + rectF2.left;
+            rectF.top += rectF2.top;
+            rectF.right -= rectF2.right;
+            rectF.bottom -= rectF2.bottom;
+            this.b.addRoundRect(rectF, this.f, Path.Direction.CW);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            if (!this.e) {
+                canvas.save();
+                canvas.clipRect(getBounds());
+                this.a.draw(canvas);
+                canvas.restore();
+                return;
+            }
+            canvas.save();
+            a();
+            canvas.clipPath(this.b);
+            this.a.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicHeight() : super.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicWidth() : super.getIntrinsicWidth();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -25,18 +93,18 @@ public abstract class uq extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i10) {
-        this.a.setAlpha(i10);
+    public final void setAlpha(int i10) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setAlpha(i10);
+        }
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-    }
-
-    public void a() {
-    }
-
-    public void b() {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
+        }
     }
 }

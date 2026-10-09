@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import id.c;
-import jd.a;
+import ae.g0;
+import jd.c;
+import kd.a;
 import kotlin.jvm.internal.o;
 import org.telegram.tgnet.TLObject;
-import rd.l;
-import v7.t7;
-import zd.e0;
+import sd.l;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzcx {
     public static final zzcx zza = new zzcx();
@@ -17,31 +17,31 @@ public final class zzcx {
     }
 
     public static final Object zzc(long j3, int i10, long j10, long j11, double d, l lVar, c cVar) {
-        return e0.x(j3, new zzcw(20, 100L, 1000L, 2.0d, lVar, null), cVar);
+        return g0.x(j3, new zzcw(20, 100L, 1000L, 2.0d, lVar, null), cVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c1, code lost:
     
-        if (zd.e0.g(r5, r1) != r3) goto L18;
+        if (ae.g0.g(r5, r1) != r3) goto L18;
      */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0084 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0082 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x00c5 -> B:17:0x004d). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x00c1 -> B:17:0x004d). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object zza(int i10, long j3, long j10, double d, l lVar, c cVar) {
         zzcu zzcuVar;
         int i11;
-        double d10;
         o oVar;
         zzcu zzcuVar2;
         int i12;
         int i13;
         long j11;
+        double d10;
         l lVar2;
         l lVar3;
         o oVar2;
@@ -50,6 +50,7 @@ public final class zzcx {
         int i14;
         int i15;
         long j13;
+        char c10;
         if (cVar instanceof zzcu) {
             zzcuVar = (zzcu) cVar;
             int i16 = zzcuVar.zzh;
@@ -59,15 +60,15 @@ public final class zzcx {
                 a aVar = a.a;
                 i11 = zzcuVar.zzh;
                 if (i11 != 0) {
-                    t7.b(obj);
+                    a8.b(obj);
                     o oVar3 = new o();
                     oVar3.a = j3;
-                    d10 = d;
                     oVar = oVar3;
                     zzcuVar2 = zzcuVar;
                     i12 = i10 - 1;
                     i13 = 0;
                     j11 = j10;
+                    d10 = d;
                     lVar2 = lVar;
                     if (i13 >= i12) {
                     }
@@ -78,7 +79,7 @@ public final class zzcx {
                         if (i11 != 3) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        t7.b(obj);
+                        a8.b(obj);
                         return obj;
                     }
                     i15 = zzcuVar.zze;
@@ -87,7 +88,8 @@ public final class zzcx {
                     j12 = zzcuVar.zza;
                     oVar2 = zzcuVar.zzi;
                     lVar3 = (l) zzcuVar.zzc;
-                    t7.b(obj);
+                    a8.b(obj);
+                    c10 = 2;
                     zzcu zzcuVar3 = zzcuVar;
                     int i17 = i15;
                     int i18 = i14;
@@ -96,8 +98,8 @@ public final class zzcx {
                     lVar2 = lVar3;
                     i13 = i17 + 1;
                     j11 = j12;
-                    zzcuVar2 = zzcuVar3;
                     i12 = i18;
+                    zzcuVar2 = zzcuVar3;
                     if (i13 >= i12) {
                         try {
                         } catch (Exception unused) {
@@ -119,6 +121,7 @@ public final class zzcx {
                             zzcuVar.zzb = d11;
                             zzcuVar.zzd = i14;
                             zzcuVar.zze = i15;
+                            c10 = 2;
                             zzcuVar.zzh = 2;
                         }
                         zzcuVar2.zzc = lVar2;
@@ -150,7 +153,7 @@ public final class zzcx {
                 oVar2 = zzcuVar.zzi;
                 lVar3 = (l) zzcuVar.zzc;
                 try {
-                    t7.b(obj);
+                    a8.b(obj);
                     return obj;
                 } catch (Exception unused2) {
                     j13 = (long) (oVar2.a * d11);
@@ -163,6 +166,7 @@ public final class zzcx {
                     zzcuVar.zzb = d11;
                     zzcuVar.zzd = i14;
                     zzcuVar.zze = i15;
+                    c10 = 2;
                     zzcuVar.zzh = 2;
                 }
             }
@@ -175,17 +179,17 @@ public final class zzcx {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00ae, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00ad, code lost:
     
-        if (zd.e0.g(r7, r1) != r3) goto L13;
+        if (ae.g0.g(r7, r1) != r3) goto L13;
      */
     /* JADX WARN: Removed duplicated region for block: B:15:0x0081 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00b1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b0 A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0095  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0060  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0028  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x00ae -> B:11:0x003d). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x00ad -> B:11:0x003d). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -211,7 +215,7 @@ public final class zzcx {
                 a aVar = a.a;
                 i10 = zzcvVar.zzh;
                 if (i10 != 0) {
-                    t7.b(obj);
+                    a8.b(obj);
                     j11 = j3;
                     j12 = j10;
                     d10 = d;
@@ -237,7 +241,7 @@ public final class zzcx {
                         j13 = zzcvVar.zzc;
                         lVar3 = (l) zzcvVar.zzb;
                         lVar5 = (l) zzcvVar.zza;
-                        t7.b(obj);
+                        a8.b(obj);
                         l lVar6 = lVar5;
                         zzcvVar2 = zzcvVar;
                         lVar4 = lVar6;
@@ -271,7 +275,7 @@ public final class zzcx {
                     lVar3 = (l) zzcvVar.zzb;
                     lVar5 = (l) zzcvVar.zza;
                     try {
-                        t7.b(obj);
+                        a8.b(obj);
                         return obj;
                     } catch (Exception e11) {
                         e7 = e11;

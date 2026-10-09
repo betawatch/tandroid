@@ -10,9 +10,9 @@ import h2.j;
 import h2.l;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import v7.l7;
+import v7.j7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b extends l {
     public final Context o;
@@ -56,9 +56,9 @@ public final class b extends l {
             if (i10 == -1) {
                 Context context = this.o;
                 if (context != null) {
-                    Point w10 = d0.w(context);
-                    int i11 = w10.x;
-                    int i12 = w10.y;
+                    Point v = d0.v(context);
+                    int i11 = v.x;
+                    int i12 = v.y;
                     s sVar = hVar.a;
                     if (sVar != null) {
                         int i13 = sVar.Q;
@@ -75,7 +75,7 @@ public final class b extends l {
                     i10 = 4096;
                 }
             }
-            aVar.a = l7.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.a = j7.a(byteBuffer.remaining(), i10, byteBuffer.array());
             aVar.timeUs = hVar.e;
             return null;
         } catch (s0 e7) {

@@ -3,28 +3,73 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bx0 extends rg.r1 {
-    public final /* synthetic */ cx0 N;
+public final class bx0 extends uw0 {
+    public final /* synthetic */ int r = 0;
+    public final /* synthetic */ org.telegram.ui.Components.pm0 s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx0(rg.k1 k1Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, e6Var);
+        this.s = k1Var;
+    }
+
+    @Override // org.telegram.ui.uw0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.e6 e6Var;
+        boolean q6;
+        org.telegram.ui.ActionBar.e6 e6Var2;
+        switch (this.r) {
+            case 0:
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                ImageView imageView = this.c;
+                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
+                PremiumPreviewFragment premiumPreviewFragment = ((cx0) this.s).c;
+                premiumPreviewFragment.S.reset();
+                premiumPreviewFragment.S.postScale(1.0f, premiumPreviewFragment.N / 100.0f, 0.0f, 0.0f);
+                premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
+                premiumPreviewFragment.R.setLocalMatrix(premiumPreviewFragment.S);
+                canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.T);
+                e6Var = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                if (e6Var != null) {
+                    e6Var2 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                    q6 = e6Var2.a();
+                } else {
+                    q6 = org.telegram.ui.ActionBar.i6.I.q();
+                }
+                if (q6) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    premiumPreviewFragment.Q.setStrokeWidth(dp2);
+                    canvas.save();
+                    canvas.translate(rectF.left, rectF.top);
+                    rectF.offset(-rectF.left, -rectF.top);
+                    float f7 = dp2 / 2.0f;
+                    rectF.inset(f7, f7);
+                    canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.Q);
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                ImageView imageView2 = this.c;
+                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
+                rg.k1 k1Var = (rg.k1) this.s;
+                k1Var.c.p0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, k1Var.c.e0);
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), k1Var.c.p0.f);
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public bx0(cx0 cx0Var, Context context) {
-        super(context);
-        this.N = cx0Var;
-    }
-
-    @Override // rg.r1, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.r.getVisibility() == 0) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
-            cx0 cx0Var = this.N;
-            cx0Var.d.n.n0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, cx0Var.d.n.O);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), cx0Var.d.n.n0.f);
-        }
-        super.dispatchDraw(canvas);
+        super(context, null);
+        this.s = cx0Var;
     }
 }

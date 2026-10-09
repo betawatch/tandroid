@@ -4,9 +4,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashMap;
-import v7.m8;
+import v7.k8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class w extends t {
     public static final HashMap e;
@@ -30,11 +30,11 @@ public final class w extends t {
     public w(Class cls, v vVar) {
         super(vVar);
         this.d = new HashMap();
-        m8 m8Var = ib.c.a;
-        Constructor b10 = m8Var.b(cls);
+        k8 k8Var = ib.c.a;
+        Constructor b10 = k8Var.b(cls);
         this.b = b10;
         ib.c.f(b10);
-        String[] c10 = m8Var.c(cls);
+        String[] c10 = k8Var.c(cls);
         for (int i10 = 0; i10 < c10.length; i10++) {
             this.d.put(c10[i10], Integer.valueOf(i10));
         }
@@ -57,7 +57,7 @@ public final class w extends t {
         try {
             return constructor.newInstance(objArr);
         } catch (IllegalAccessException e7) {
-            m8 m8Var = ib.c.a;
+            k8 k8Var = ib.c.a;
             throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
         } catch (IllegalArgumentException e10) {
             e = e10;
@@ -83,9 +83,9 @@ public final class w extends t {
         if (read != null || !sVar.g) {
             objArr[intValue] = read;
         } else {
-            StringBuilder w10 = a4.a.w("null is not allowed as value for record component '", str, "' of primitive type; at path ");
+            StringBuilder w10 = a1.g.w("null is not allowed as value for record component '", str, "' of primitive type; at path ");
             w10.append(aVar.h());
-            throw new androidx.car.app.j(w10.toString());
+            throw new ae.x(w10.toString());
         }
     }
 }

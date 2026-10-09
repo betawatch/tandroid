@@ -11,9 +11,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class l extends Drawable {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class l extends Drawable {
     public final k c;
     public final k d;
     public boolean e;
-    public final org.telegram.ui.Components.e6 f;
+    public final org.telegram.ui.Components.g6 f;
     public final Path g;
     public final int h;
     public float i;
@@ -42,21 +42,21 @@ public final class l extends Drawable {
         this.d = kVar2;
         this.e = false;
         androidx.fragment.app.a0 a0Var = new androidx.fragment.app.a0(this, 6);
-        tr trVar = tr.h;
-        this.f = new org.telegram.ui.Components.e6(a0Var, 350L, trVar, 0);
+        hs hsVar = hs.h;
+        this.f = new org.telegram.ui.Components.g6(a0Var, 350L, hsVar, 0);
         this.g = new Path();
         this.i = 21.0f;
         this.h = i10;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.66f));
         paint.setStrokeCap(Paint.Cap.ROUND);
-        kVar.k(0.3f, 250L, trVar);
-        kVar.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        kVar.t(AndroidUtilities.dpf2(12.0f));
+        kVar.n(0.3f, 250L, hsVar);
+        kVar.x(AndroidUtilities.getTypeface("fonts/num.otf"));
+        kVar.w(AndroidUtilities.dpf2(12.0f));
         kVar.b = 17;
-        kVar2.k(0.3f, 250L, trVar);
-        kVar2.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        kVar2.t(AndroidUtilities.dpf2(12.0f));
+        kVar2.n(0.3f, 250L, hsVar);
+        kVar2.x(AndroidUtilities.getTypeface("fonts/num.otf"));
+        kVar2.w(AndroidUtilities.dpf2(12.0f));
         kVar2.b = 17;
         e(-1, -15033089, -1);
     }
@@ -80,8 +80,8 @@ public final class l extends Drawable {
         float f12 = ((i10 + 1) * 1.5f) + (i10 * 1.0f);
         float f13 = (1.0f / f12) * 180.0f;
         float f14 = (1.5f / f12) * 180.0f;
-        float f15 = f14;
         int i11 = 0;
+        float f15 = f14;
         while (i11 < i10) {
             float f16 = f13;
             canvas.drawArc(AndroidUtilities.rectTmp, f15 + 270.0f, f16, false, paint2);
@@ -95,7 +95,7 @@ public final class l extends Drawable {
         rect.set((int) (this.n - AndroidUtilities.dp(20.0f)), (int) (this.o - AndroidUtilities.dp(20.0f)), (int) (this.n + AndroidUtilities.dp(20.0f)), (int) (this.o + AndroidUtilities.dp(20.0f)));
         k kVar = this.c;
         kVar.setBounds(rect);
-        kVar.w = (int) (Color.alpha(this.l) * f7);
+        kVar.B = (int) (Color.alpha(this.l) * f7);
         kVar.draw(canvas);
         if (e7 > 0.0f) {
             Path path = this.g;
@@ -104,7 +104,7 @@ public final class l extends Drawable {
             canvas.clipPath(path);
             k kVar2 = this.d;
             kVar2.setBounds(rect);
-            kVar2.w = (int) (f7 * 255.0f);
+            kVar2.B = (int) (f7 * 255.0f);
             kVar2.draw(canvas);
         }
         canvas.restore();
@@ -119,13 +119,13 @@ public final class l extends Drawable {
     }
 
     public final void c(float f7) {
-        this.d.t(AndroidUtilities.dpf2(f7));
-        this.c.t(AndroidUtilities.dpf2(f7));
+        this.d.w(AndroidUtilities.dpf2(f7));
+        this.c.w(AndroidUtilities.dpf2(f7));
     }
 
     public final void d(int i10, boolean z10, boolean z11) {
-        this.c.q("" + i10, z11, true);
-        this.d.q("" + i10, z11, true);
+        this.c.t("" + i10, z11, true);
+        this.d.t("" + i10, z11, true);
         this.e = z10;
         if (!z11) {
             this.f.f(z10, true);
@@ -141,8 +141,8 @@ public final class l extends Drawable {
     public final void e(int i10, int i11, int i12) {
         this.l = i10;
         this.a.setColor(i10);
-        this.c.r(i10);
-        this.d.r(i12);
+        this.c.u(i10);
+        this.d.u(i12);
         this.b.setColor(i11);
     }
 

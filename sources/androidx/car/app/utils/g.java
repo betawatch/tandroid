@@ -1,26 +1,26 @@
 package androidx.car.app.utils;
 
 import a3.k0;
-import ai.h5;
-import ai.q5;
+import ae.x;
+import ai.i5;
+import ai.r5;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.j;
-import androidx.car.app.k;
 import androidx.lifecycle.o;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
-        final k kVar = null;
-        return new IOnDoneCallback.Stub(kVar) { // from class: androidx.car.app.utils.RemoteUtils$1
-            final /* synthetic */ k val$callback;
+        final j jVar = null;
+        return new IOnDoneCallback.Stub(jVar) { // from class: androidx.car.app.utils.RemoteUtils$1
+            final /* synthetic */ j val$callback;
 
             @Override // androidx.car.app.IOnDoneCallback
             public void onFailure(w.b bVar) {
@@ -39,7 +39,7 @@ public abstract class g {
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new h5(oVar, iOnDoneCallback, str, aVar, 4));
+        h.a(new i5(oVar, iOnDoneCallback, str, aVar, 4));
     }
 
     public static void d(String str, b bVar) {
@@ -59,12 +59,12 @@ public abstract class g {
         } catch (SecurityException e7) {
             throw e7;
         } catch (RuntimeException e10) {
-            throw new j(a4.a.q("Remote ", str, " call failed"), e10);
+            throw new x(a1.g.q("Remote ", str, " call failed"), e10);
         }
     }
 
     public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
-        d(str.concat(" onFailure"), new q5(iOnDoneCallback, exc, str, 3));
+        d(str.concat(" onFailure"), new r5(iOnDoneCallback, exc, str, 3));
     }
 
     public static List g(List list) {

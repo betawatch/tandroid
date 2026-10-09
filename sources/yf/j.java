@@ -8,16 +8,16 @@ import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.XMLReader;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j implements Html.TagHandler, ContentHandler {
-    public final rb.a a;
+    public final qb.b a;
     public ContentHandler b;
     public Editable c;
     public final ArrayDeque d = new ArrayDeque();
 
-    public j(rb.a aVar) {
-        this.a = aVar;
+    public j(qb.b bVar) {
+        this.a = bVar;
     }
 
     public static String a(String str, Attributes attributes) {
@@ -47,7 +47,7 @@ public final class j implements Html.TagHandler, ContentHandler {
         }
         Editable editable = this.c;
         this.a.getClass();
-        rb.a.r3(false, str2, editable, null);
+        qb.b.K3(false, str2, editable, null);
     }
 
     @Override // org.xml.sax.ContentHandler
@@ -94,9 +94,9 @@ public final class j implements Html.TagHandler, ContentHandler {
     public final void startElement(String str, String str2, String str3, Attributes attributes) {
         Editable editable = this.c;
         this.a.getClass();
-        boolean r32 = rb.a.r3(true, str2, editable, attributes);
-        this.d.addLast(Boolean.valueOf(r32));
-        if (r32) {
+        boolean K3 = qb.b.K3(true, str2, editable, attributes);
+        this.d.addLast(Boolean.valueOf(K3));
+        if (K3) {
             return;
         }
         this.b.startElement(str, str2, str3, attributes);

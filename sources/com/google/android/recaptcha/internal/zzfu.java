@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import gd.i;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
+import hd.i;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -22,14 +22,14 @@ final class zzfu extends j implements p {
         this.zzc = j3;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
@@ -44,7 +44,7 @@ final class zzfu extends j implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,7 +58,7 @@ final class zzfu extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                t7.b(obj);
+                a8.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j3 = this.zzc;
@@ -67,17 +67,17 @@ final class zzfu extends j implements p {
                 obj = zzgbVar.zzq(j3, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                t7.b(obj);
+                a8.b(obj);
             } else {
                 if (i10 != 2) {
-                    t7.b(obj);
+                    a8.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                t7.b(obj);
+                a8.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;

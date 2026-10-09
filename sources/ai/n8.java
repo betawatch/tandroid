@@ -1,255 +1,256 @@
 package ai;
 
-import android.os.Build;
-import j$.util.Objects;
+import android.content.Context;
 import java.io.Serializable;
-import java.text.Collator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.BotForumHelper;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.TelegramMediaSession;
+import org.telegram.messenger.TopicsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.in0;
-import org.telegram.ui.eb1;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n8 implements RequestDelegate {
+public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ n8(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ n8(Context context, int i10, GiftAuctionController.Auction auction, long j3, Runnable runnable) {
+        this.a = 12;
+        this.d = context;
+        this.c = i10;
+        this.e = auction;
+        this.b = j3;
+        this.f = runnable;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        final Comparator eb1Var;
-        final Comparator eb1Var2;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        int i11 = 28;
-        int i12 = 27;
-        int i13 = 29;
-        int i14 = 5;
-        int i15 = 2;
-        int i16 = 15;
-        final int i17 = 0;
-        final int i18 = 1;
-        Object obj = this.b;
+        TL_stories.StoryItem storyItem = null;
+        storyItem = null;
+        int i11 = 0;
+        long j3 = this.b;
+        int i12 = this.c;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a3.d((ci.l9) obj, 12));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new a1.e(i16, (v8) obj, tLObject));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new a1.e(17, (x8) obj, tLObject));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new ba(i16, (ci.w1) obj, tLObject));
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new ba(25, (ci.c8) obj, tLObject));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new ba(i12, (ci.k8) obj, tLObject));
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new ba(i11, (ci.t8) obj, tLObject));
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new ci.x8(21, (ei.r4) obj, tL_error));
-                break;
-            case 8:
-                gg.c cVar = (gg.c) obj;
+                m9 m9Var = (m9) obj3;
+                TLObject tLObject = (TLObject) obj2;
+                String str = (String) obj;
+                int i13 = m9Var.a;
+                HashSet hashSet = m9Var.t;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new ci.x8(25, cVar, tLObject));
-                    break;
+                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                    MessagesController.getInstance(i13).putUsers(tL_stories_stories.users, false);
+                    MessagesController.getInstance(i13).putChats(tL_stories_stories.chats, false);
+                    while (true) {
+                        if (i11 < tL_stories_stories.stories.size()) {
+                            if (tL_stories_stories.stories.get(i11).id == i12) {
+                                storyItem = tL_stories_stories.stories.get(i11);
+                            } else {
+                                i11++;
+                            }
+                        }
+                    }
                 }
-                break;
-            case 9:
-                gg.i0 i0Var = (gg.i0) obj;
-                i0Var.getClass();
-                AndroidUtilities.runOnUIThread(new ci.x8(26, i0Var, tLObject));
-                break;
-            case 10:
-                AndroidUtilities.runOnUIThread(new gg.t((hg.d) obj, tL_error, tLObject, i14));
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new gg.x1(i15, (hg.g) obj, tLObject));
-                break;
-            case 12:
-                AndroidUtilities.runOnUIThread(new gg.t((hg.n) obj, tL_error, tLObject, 6));
-                break;
-            case 13:
-                AndroidUtilities.runOnUIThread(new gg.t((hg.w0) obj, tL_error, tLObject, 10));
-                break;
-            case 14:
-                AndroidUtilities.runOnUIThread(new gg.t((hg.g1) obj, tL_error, tLObject, 11));
-                break;
-            case 15:
-                AndroidUtilities.runOnUIThread(new gg.x1(8, (hg.b2) obj, tLObject));
-                break;
-            case 16:
-                AndroidUtilities.runOnUIThread(new gg.x1(12, (ii.x) obj, tLObject));
-                break;
-            case 17:
-                AndroidUtilities.runOnUIThread(new gg.x1(17, (ii.c5) obj, tLObject));
-                break;
-            case 18:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.x1(i18, (org.telegram.ui.web.h2) obj, tLObject));
-                break;
-            case 19:
-                tg.x0 x0Var = (tg.x0) obj;
-                if (tLObject != null) {
-                    TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
-                    HashMap hashMap = new HashMap();
-                    ArrayList arrayList = new ArrayList();
-                    for (int i19 = 0; i19 < tL_help_countriesList.countries.size(); i19++) {
-                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i19);
-                        String str = tL_help_country.name;
-                        if (str != null) {
-                            tL_help_country.default_name = str;
-                        }
-                        if (!tL_help_country.hidden && !tL_help_country.iso2.equalsIgnoreCase("FT")) {
-                            String upperCase = tL_help_country.default_name.substring(0, 1).toUpperCase();
-                            List list = (List) hashMap.get(upperCase);
-                            if (list == null) {
-                                list = new ArrayList();
-                                hashMap.put(upperCase, list);
-                                arrayList.add(upperCase);
+                m9Var.W.remove(str);
+                if (storyItem == null) {
+                    Iterator it = hashSet.iterator();
+                    while (true) {
+                        if (it.hasNext()) {
+                            String str2 = (String) it.next();
+                            if (str2.endsWith(":" + j3 + ":" + i12)) {
+                                hashSet.remove(str2);
                             }
-                            list.add(tL_help_country);
                         }
                     }
-                    if (Build.VERSION.SDK_INT >= 24) {
-                        Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
-                        Objects.requireNonNull(collator);
-                        eb1Var = new e8(collator, i14);
-                    } else {
-                        eb1Var = new eb1(7);
-                    }
-                    Collections.sort(arrayList, eb1Var);
-                    Iterator it = hashMap.values().iterator();
-                    while (it.hasNext()) {
-                        Collections.sort((List) it.next(), new Comparator() { // from class: tg.p
-                            @Override // java.util.Comparator
-                            public final int compare(Object obj2, Object obj3) {
-                                TLRPC.TL_help_country tL_help_country2 = (TLRPC.TL_help_country) obj2;
-                                TLRPC.TL_help_country tL_help_country3 = (TLRPC.TL_help_country) obj3;
-                                switch (i17) {
-                                    case 0:
-                                        return eb1Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
-                                    default:
-                                        return eb1Var.compare(tL_help_country2.default_name, tL_help_country3.default_name);
-                                }
-                            }
-                        });
-                    }
-                    AndroidUtilities.runOnUIThread(new in0((Object) x0Var, (Serializable) hashMap, arrayList, i11));
-                    break;
-                }
-                break;
-            case 20:
-                ii.q1 q1Var = (ii.q1) obj;
-                if (tLObject != null) {
-                    TLRPC.TL_help_countriesList tL_help_countriesList2 = (TLRPC.TL_help_countriesList) tLObject;
-                    HashMap hashMap2 = new HashMap();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i20 = 0; i20 < tL_help_countriesList2.countries.size(); i20++) {
-                        TLRPC.TL_help_country tL_help_country2 = tL_help_countriesList2.countries.get(i20);
-                        boolean equalsIgnoreCase = tL_help_country2.iso2.equalsIgnoreCase("FT");
-                        String str2 = tL_help_country2.name;
-                        if (str2 != null) {
-                            tL_help_country2.default_name = str2;
-                        }
-                        if (!tL_help_country2.hidden || equalsIgnoreCase) {
-                            if (equalsIgnoreCase) {
-                                String string = LocaleController.getString(R.string.Fragment);
-                                tL_help_country2.default_name = string;
-                                tL_help_country2.name = string;
-                            }
-                            String upperCase2 = tL_help_country2.default_name.substring(0, 1).toUpperCase();
-                            List list2 = (List) hashMap2.get(upperCase2);
-                            if (list2 == null) {
-                                list2 = new ArrayList();
-                                hashMap2.put(upperCase2, list2);
-                                arrayList2.add(upperCase2);
-                            }
-                            list2.add(tL_help_country2);
-                        }
-                    }
-                    if (Build.VERSION.SDK_INT >= 24) {
-                        Collator collator2 = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
-                        Objects.requireNonNull(collator2);
-                        eb1Var2 = new e8(collator2, i14);
-                    } else {
-                        eb1Var2 = new eb1(7);
-                    }
-                    Collections.sort(arrayList2, eb1Var2);
-                    Iterator it2 = hashMap2.values().iterator();
-                    while (it2.hasNext()) {
-                        Collections.sort((List) it2.next(), new Comparator() { // from class: tg.p
-                            @Override // java.util.Comparator
-                            public final int compare(Object obj2, Object obj3) {
-                                TLRPC.TL_help_country tL_help_country22 = (TLRPC.TL_help_country) obj2;
-                                TLRPC.TL_help_country tL_help_country3 = (TLRPC.TL_help_country) obj3;
-                                switch (i18) {
-                                    case 0:
-                                        return eb1Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
-                                    default:
-                                        return eb1Var2.compare(tL_help_country22.default_name, tL_help_country3.default_name);
-                                }
-                            }
-                        });
-                    }
-                    AndroidUtilities.runOnUIThread(new tg.q(q1Var, hashMap2, arrayList2, i18));
-                    break;
-                }
-                break;
-            case 21:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.x1(i13, (tg.m1) obj, tLObject));
-                break;
-            case 22:
-                AndroidUtilities.runOnUIThread(new u2.i0(i15, (uf.c) obj, tLObject));
-                break;
-            case 23:
-                AndroidUtilities.runOnUIThread(new tg.q((NotificationCenter.NotificationCenterDelegate) obj, (Object) tLObject, tL_error, i15));
-                break;
-            case 24:
-                AndroidUtilities.runOnUIThread(new u2.i0(14, (yh.m) obj, tLObject));
-                break;
-            case 25:
-                AndroidUtilities.runOnUIThread(new u2.i0(i16, (yh.n) obj, tLObject));
-                break;
-            case 26:
-                AndroidUtilities.runOnUIThread(new u2.i0(i12, tLObject, (ii.q1) obj));
-                break;
-            case 27:
-                AndroidUtilities.runOnUIThread(new u2.i0(i13, (yh.l5) obj, tLObject));
-                break;
-            default:
-                yh.r8 r8Var = (yh.r8) obj;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    MessagesStorage.getInstance(r8Var.c).putMessages(new ArrayList<>(Arrays.asList(r8Var.K.messageOwner)), true, true, true, 0, 0, 0L);
+                    hashSet.add(str);
+                    m9Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
                     break;
                 } else {
-                    r8Var.getClass();
+                    storyItem.dialogId = j3;
+                    TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
+                    tL_updateStory.peer = MessagesController.getInstance(i13).getPeer(j3);
+                    tL_updateStory.story = storyItem;
+                    m9Var.Z(tL_updateStory);
                     break;
                 }
+            case 1:
+                ((BotForumHelper) obj3).lambda$beforeSendingFinalRequest$3((long[]) obj2, this.b, this.c, (Runnable) obj);
+                break;
+            case 2:
+                ((MediaDataController) obj3).lambda$loadStickers$100((TLObject) obj2, this.c, (Utilities.Callback) obj, this.b);
+                break;
+            case 3:
+                ((MessagesStorage) obj3).lambda$checkMessageId$154(this.b, this.c, (boolean[]) obj2, (CountDownLatch) obj);
+                break;
+            case 4:
+                ((MessagesStorage) obj3).lambda$overwriteChannel$190(this.b, this.c, (TLRPC.TL_updates_channelDifferenceTooLong) obj2, (Runnable) obj);
+                break;
+            case 5:
+                ((MessagesStorage) obj3).lambda$updateMessageVoiceTranscription$109(this.c, this.b, (TLRPC.Message) obj2, (String) obj);
+                break;
+            case 6:
+                ((MessagesStorage) obj3).lambda$setDialogsFolderId$244((ArrayList) obj2, (ArrayList) obj, this.c, this.b);
+                break;
+            case 7:
+                ((SendMessagesHelper) obj3).lambda$completeSendingGramTransfer$6((MessageObject) obj2, (TLRPC.Message) obj, this.b, this.c);
+                break;
+            case 8:
+                ((TelegramMediaSession) obj3).lambda$loadMusicForDialog$6(this.c, this.b, (ArrayList) obj2, (ArrayList) obj);
+                break;
+            case 9:
+                ((TopicsController) obj3).lambda$loadTopics$2((TLRPC.TL_messages_savedDialogs) obj2, this.b, (a0.i) obj, this.c);
+                break;
+            case 10:
+                ((TopicsController) obj3).lambda$loadTopics$3((TLRPC.TL_messages_savedDialogsSlice) obj2, this.b, (a0.i) obj, this.c);
+                break;
+            case 11:
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj3;
+                TLRPC.User user = (TLRPC.User) obj2;
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                int i14 = u1Var.I7;
+                if (user == null) {
+                    if (chat == null) {
+                        u1Var.X8[i12].n(j3, "", "");
+                        break;
+                    } else {
+                        u1Var.X8[i12].k(i14, chat);
+                        u1Var.W8[i12].setForUserOrChat(chat, u1Var.X8[i12]);
+                        break;
+                    }
+                } else {
+                    u1Var.X8[i12].m(i14, user);
+                    u1Var.W8[i12].setForUserOrChat(user, u1Var.X8[i12]);
+                    break;
+                }
+            case 12:
+                new xh.z4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
+                break;
+            case 13:
+                yh.n nVar = (yh.n) obj;
+                TLObject tLObject2 = (TLObject) obj2;
+                int i15 = ((yh.o) obj3).a;
+                boolean[] zArr = nVar.d;
+                boolean[] zArr2 = nVar.b;
+                ArrayList[] arrayListArr = nVar.a;
+                zArr[i12] = false;
+                if (tLObject2 instanceof TL_stars.StarsStatus) {
+                    TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
+                    MessagesController.getInstance(i15).putUsers(starsStatus.users, false);
+                    MessagesController.getInstance(i15).putChats(starsStatus.chats, false);
+                    arrayListArr[i12].addAll(starsStatus.history);
+                    zArr2[i12] = !arrayListArr[i12].isEmpty() || zArr2[i12];
+                    boolean[] zArr3 = nVar.e;
+                    boolean z10 = (starsStatus.flags & 1) == 0;
+                    zArr3[i12] = z10;
+                    nVar.c[i12] = z10 ? null : starsStatus.next_offset;
+                    NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsTransactionsLoaded, Long.valueOf(j3));
+                    break;
+                }
+                break;
+            default:
+                ci.d dVar = (ci.d) obj3;
+                dVar.setLoading(true);
+                TL_stars.TL_fulfillStarsSubscription tL_fulfillStarsSubscription = new TL_stars.TL_fulfillStarsSubscription();
+                tL_fulfillStarsSubscription.subscription_id = ((TL_stars.StarsSubscription) obj2).id;
+                tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
+                int i16 = this.c;
+                ConnectionsManager.getInstance(i16).sendRequest(tL_fulfillStarsSubscription, new l8(dVar, (org.telegram.ui.ActionBar.f3[]) obj, i16, this.b, 7));
+                break;
         }
+    }
+
+    public /* synthetic */ n8(Object obj, int i10, long j3, Object obj2, Serializable serializable, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.c = i10;
+        this.b = j3;
+        this.e = obj2;
+        this.f = serializable;
+    }
+
+    public /* synthetic */ n8(Object obj, TLObject tLObject, int i10, Object obj2, long j3, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.e = tLObject;
+        this.c = i10;
+        this.f = obj2;
+        this.b = j3;
+    }
+
+    public /* synthetic */ n8(BotForumHelper botForumHelper, long[] jArr, long j3, int i10, Runnable runnable) {
+        this.a = 1;
+        this.d = botForumHelper;
+        this.e = jArr;
+        this.b = j3;
+        this.c = i10;
+        this.f = runnable;
+    }
+
+    public /* synthetic */ n8(MessagesStorage messagesStorage, long j3, int i10, Object obj, Object obj2, int i11) {
+        this.a = i11;
+        this.d = messagesStorage;
+        this.b = j3;
+        this.c = i10;
+        this.e = obj;
+        this.f = obj2;
+    }
+
+    public /* synthetic */ n8(MessagesStorage messagesStorage, ArrayList arrayList, ArrayList arrayList2, int i10, long j3) {
+        this.a = 6;
+        this.d = messagesStorage;
+        this.e = arrayList;
+        this.f = arrayList2;
+        this.c = i10;
+        this.b = j3;
+    }
+
+    public /* synthetic */ n8(SendMessagesHelper sendMessagesHelper, MessageObject messageObject, TLRPC.Message message, long j3, int i10) {
+        this.a = 7;
+        this.d = sendMessagesHelper;
+        this.e = messageObject;
+        this.f = message;
+        this.b = j3;
+        this.c = i10;
+    }
+
+    public /* synthetic */ n8(TopicsController topicsController, TLRPC.messages_SavedDialogs messages_saveddialogs, long j3, a0.i iVar, int i10, int i11) {
+        this.a = i11;
+        this.d = topicsController;
+        this.e = messages_saveddialogs;
+        this.b = j3;
+        this.f = iVar;
+        this.c = i10;
+    }
+
+    public /* synthetic */ n8(yh.o oVar, yh.n nVar, int i10, TLObject tLObject, long j3) {
+        this.a = 13;
+        this.d = oVar;
+        this.f = nVar;
+        this.c = i10;
+        this.e = tLObject;
+        this.b = j3;
     }
 }

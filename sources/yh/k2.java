@@ -1,9 +1,28 @@
 package yh;
 
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.View;
+import org.telegram.ui.bi0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public interface k2 {
-    void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10);
+public final class k2 {
+    public final int a;
+    public final float b;
+    public final float c;
+    public final int d;
+    public final int e;
+    public final float f;
+    public final View g;
+    public final Runnable h;
+
+    public k2(int i10, float f7, float f10, int i11, int i12, float f11, View view, bi0 bi0Var) {
+        this.a = i10;
+        this.b = f7;
+        this.c = f10;
+        this.d = i11;
+        this.e = i12;
+        this.f = f11;
+        this.g = view;
+        this.h = bi0Var;
+    }
 }

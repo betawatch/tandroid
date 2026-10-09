@@ -1,13 +1,13 @@
 package dh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e implements a {
-    public final d6 a;
+    public final e6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public final class e implements a {
     public float n;
     public float r;
 
-    public e(d6 d6Var) {
-        this.a = d6Var;
+    public e(e6 e6Var) {
+        this.a = e6Var;
         float dpf2 = AndroidUtilities.dpf2(1.0f);
         float dpf22 = AndroidUtilities.dpf2(0.33333334f);
         this.n = dpf2;
@@ -29,47 +29,47 @@ public final class e implements a {
         this.h = dpf24;
     }
 
-    @Override // dh.a
-    public final int B() {
-        return b(this.b);
-    }
-
-    @Override // dh.a
-    public final int H() {
-        return b(this.e);
-    }
-
-    @Override // dh.a
-    public final int a() {
-        return b(this.c);
-    }
-
-    public final int b(d dVar) {
+    public final int a(d dVar) {
         boolean z10 = false;
         if (dVar == null) {
             return 0;
         }
-        d6 d6Var = this.a;
-        if ((d6Var instanceof ai.d) || (d6Var == null ? i6.I.q() : d6Var.a())) {
+        e6 e6Var = this.a;
+        if ((e6Var instanceof ai.d) || (e6Var == null ? i6.I.q() : e6Var.a())) {
             z10 = true;
         }
-        return dVar.h(d6Var, z10);
+        return dVar.g(e6Var, z10);
     }
 
-    @Override // dh.a
-    public final int c() {
-        return b(this.d);
-    }
-
-    public final void d(int i10, int i11) {
+    public final void b(int i10, int i11) {
         this.b = new c(i11, i10, 0);
     }
 
-    public final void e(int i10, int i11) {
+    public final void c(int i10, int i11) {
         this.d = new c(i11, i10, 0);
     }
 
-    public final void f(int i10, int i11) {
+    @Override // dh.a
+    public final int d() {
+        return a(this.c);
+    }
+
+    public final void e(int i10, int i11) {
         this.c = new c(i11, i10, 0);
+    }
+
+    @Override // dh.a
+    public final int m() {
+        return a(this.d);
+    }
+
+    @Override // dh.a
+    public final int q() {
+        return a(this.b);
+    }
+
+    @Override // dh.a
+    public final int x() {
+        return a(this.e);
     }
 }

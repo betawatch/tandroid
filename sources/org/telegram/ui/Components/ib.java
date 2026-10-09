@@ -1,66 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ib implements o1.f {
+public final /* synthetic */ class ib implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ xb b;
 
-    public /* synthetic */ ib(Object obj, int i10) {
+    public /* synthetic */ ib(xb xbVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = xbVar;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                rc rcVar = (rc) this.b;
-                if (rcVar.d == hVar) {
-                    rcVar.d = null;
-                    break;
-                }
-                break;
-            case 1:
-                eb ebVar = (eb) this.b;
-                if (!z10) {
-                    ebVar.run();
-                    break;
-                }
-                break;
-            case 2:
-                pp0 pp0Var = (pp0) this.b;
-                pp0Var.q = false;
-                pp0Var.dismiss();
-                break;
-            case 3:
-                qp0 qp0Var = (qp0) this.b;
-                qp0Var.s = false;
-                qp0Var.r = false;
-                if (!z10) {
-                    hVar.c();
-                }
-                if (hVar == qp0Var.f) {
-                    qp0Var.f = null;
-                    break;
-                }
-                break;
-            case 4:
-                br0 br0Var = (br0) this.b;
-                br0Var.E.setVisibility(8);
-                br0Var.z0.setVisibility(8);
-                yq0 yq0Var = br0Var.L;
-                yq0Var.f = null;
-                yq0Var.l();
-                br0Var.B0 = null;
-                br0Var.M0 = false;
+                this.b.onExitTransitionStart();
                 break;
             default:
-                br0 br0Var2 = ((iq0) this.b).d;
-                br0Var2.F.setVisibility(8);
-                br0Var2.G.setVisibility(8);
-                br0Var2.y0.setVisibility(8);
-                br0Var2.B0 = null;
+                this.b.onEnterTransitionStart();
                 break;
         }
     }

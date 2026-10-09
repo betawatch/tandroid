@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d3 extends e1 {
     public final /* synthetic */ int b;
@@ -202,100 +202,101 @@ public final class d3 extends e1 {
 
     @Override // com.google.android.gms.internal.vision.e1
     public final int i(byte[] bArr, int i10, int i11) {
-        long j3;
         int i12;
-        int i13 = i10;
+        long j3;
+        int i13;
+        int i14 = i10;
         byte b10 = -16;
         byte b11 = -62;
         switch (this.b) {
             case 0:
-                while (i13 < i11 && bArr[i13] >= 0) {
-                    i13++;
+                while (i14 < i11 && bArr[i14] >= 0) {
+                    i14++;
                 }
-                if (i13 < i11) {
-                    while (i13 < i11) {
-                        int i14 = i13 + 1;
-                        byte b12 = bArr[i13];
+                if (i14 < i11) {
+                    while (i14 < i11) {
+                        int i15 = i14 + 1;
+                        byte b12 = bArr[i14];
                         if (b12 < 0) {
                             if (b12 < -32) {
-                                if (i14 >= i11) {
+                                if (i15 >= i11) {
                                     return b12;
                                 }
                                 if (b12 >= -62) {
-                                    i13 += 2;
-                                    if (bArr[i14] > -65) {
+                                    i14 += 2;
+                                    if (bArr[i15] > -65) {
                                     }
                                 }
                                 return -1;
                             }
                             if (b12 >= -16) {
-                                if (i14 >= i11 - 2) {
-                                    return b3.b(i14, i11, bArr);
+                                if (i15 >= i11 - 2) {
+                                    return b3.b(i15, i11, bArr);
                                 }
-                                int i15 = i13 + 2;
-                                byte b13 = bArr[i14];
+                                int i16 = i14 + 2;
+                                byte b13 = bArr[i15];
                                 if (b13 <= -65 && (((b13 + 112) + (b12 << 28)) >> 30) == 0) {
-                                    int i16 = i13 + 3;
-                                    if (bArr[i15] <= -65) {
-                                        i13 += 4;
-                                        if (bArr[i16] > -65) {
+                                    int i17 = i14 + 3;
+                                    if (bArr[i16] <= -65) {
+                                        i14 += 4;
+                                        if (bArr[i17] > -65) {
                                         }
                                     }
                                 }
                                 return -1;
                             }
-                            if (i14 >= i11 - 1) {
-                                return b3.b(i14, i11, bArr);
+                            if (i15 >= i11 - 1) {
+                                return b3.b(i15, i11, bArr);
                             }
-                            int i17 = i13 + 2;
-                            byte b14 = bArr[i14];
+                            int i18 = i14 + 2;
+                            byte b14 = bArr[i15];
                             if (b14 <= -65 && ((b12 != -32 || b14 >= -96) && (b12 != -19 || b14 < -96))) {
-                                i13 += 3;
-                                if (bArr[i17] > -65) {
+                                i14 += 3;
+                                if (bArr[i18] > -65) {
                                 }
                             }
                             return -1;
                         }
-                        i13 = i14;
+                        i14 = i15;
                     }
                 }
                 return 0;
             default:
-                int i18 = 2;
-                if ((i13 | i11 | (bArr.length - i11)) < 0) {
-                    throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i13), Integer.valueOf(i11)));
+                int i19 = 2;
+                if ((i14 | i11 | (bArr.length - i11)) < 0) {
+                    throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i14), Integer.valueOf(i11)));
                 }
-                long j10 = i13;
-                int i19 = (int) (i11 - j10);
-                if (i19 < 16) {
-                    j3 = 1;
+                long j10 = i14;
+                int i20 = (int) (i11 - j10);
+                if (i20 < 16) {
                     i12 = 0;
+                    j3 = 1;
                 } else {
                     long j11 = j10;
-                    j3 = 1;
                     i12 = 0;
+                    j3 = 1;
                     while (true) {
-                        if (i12 < i19) {
+                        if (i12 < i20) {
                             long j12 = j11 + 1;
                             if (y2.a(j11, bArr) >= 0) {
                                 i12++;
                                 j11 = j12;
                             }
                         } else {
-                            i12 = i19;
+                            i12 = i20;
                         }
                     }
                 }
-                int i20 = i19 - i12;
+                int i21 = i20 - i12;
                 long j13 = j10 + i12;
                 while (true) {
                     byte b15 = 0;
                     while (true) {
-                        if (i20 > 0) {
+                        if (i21 > 0) {
                             long j14 = j13 + j3;
                             byte a2 = y2.a(j13, bArr);
                             if (a2 >= 0) {
-                                i20--;
+                                i21--;
                                 j13 = j14;
                                 b15 = a2;
                             } else {
@@ -304,54 +305,61 @@ public final class d3 extends e1 {
                             }
                         }
                     }
-                    if (i20 == 0) {
+                    if (i21 == 0) {
                         return 0;
                     }
-                    int i21 = i20 - 1;
+                    int i22 = i21 - 1;
                     if (b15 < -32) {
-                        if (i21 == 0) {
+                        if (i22 == 0) {
                             return b15;
                         }
-                        i20 -= 2;
+                        i21 -= 2;
                         if (b15 >= b11) {
                             long j15 = j13 + j3;
                             if (y2.a(j13, bArr) <= -65) {
                                 j13 = j15;
+                                i13 = i19;
+                                i19 = i13;
                                 b10 = -16;
                                 b11 = -62;
                             }
                         }
-                    } else if (b15 < b10) {
-                        if (i21 < i18) {
-                            return B(j13, bArr, b15, i21);
+                    } else if (b15 >= b10) {
+                        i13 = i19;
+                        if (i22 < 3) {
+                            return B(j13, bArr, b15, i22);
                         }
-                        i20 -= 3;
+                        i21 -= 4;
                         long j16 = j13 + j3;
                         byte a10 = y2.a(j13, bArr);
-                        if (a10 <= -65 && ((b15 != -32 || a10 >= -96) && (b15 != -19 || a10 < -96))) {
-                            j13 += 2;
-                            if (y2.a(j16, bArr) > -65) {
+                        if (a10 <= -65 && (((a10 + 112) + (b15 << 28)) >> 30) == 0) {
+                            long j17 = j13 + 2;
+                            if (y2.a(j16, bArr) <= -65) {
+                                j13 += 3;
+                                if (y2.a(j17, bArr) > -65) {
+                                }
+                                i19 = i13;
+                                b10 = -16;
+                                b11 = -62;
                             }
                         }
                     } else {
-                        if (i21 < 3) {
-                            return B(j13, bArr, b15, i21);
+                        if (i22 < i19) {
+                            return B(j13, bArr, b15, i22);
                         }
-                        i20 -= 4;
-                        long j17 = j13 + j3;
+                        i21 -= 3;
+                        long j18 = j13 + j3;
                         byte a11 = y2.a(j13, bArr);
-                        if (a11 <= -65 && (((a11 + 112) + (b15 << 28)) >> 30) == 0) {
-                            long j18 = j13 + 2;
-                            if (y2.a(j17, bArr) <= -65) {
-                                j13 += 3;
-                                if (y2.a(j18, bArr) > -65) {
+                        if (a11 <= -65 && (b15 != -32 || a11 >= -96)) {
+                            int i23 = i19;
+                            if (b15 != -19 || a11 < -96) {
+                                j13 += 2;
+                                if (y2.a(j18, bArr) <= -65) {
+                                    i19 = i23;
                                 }
-                                b10 = -16;
-                                b11 = -62;
                             }
                         }
                     }
-                    i18 = 2;
                 }
                 return -1;
         }

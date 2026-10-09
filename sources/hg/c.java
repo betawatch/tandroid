@@ -3,29 +3,40 @@ package hg;
 import android.media.MediaMetadataRetriever;
 import androidx.car.app.hardware.common.CarZone;
 import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.cast.k4;
+import com.google.android.gms.internal.cast.i4;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
-import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c {
-    public static /* synthetic */ String A(int i10) {
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
+    public static void A(n2.g gVar, n2.g gVar2) {
+        if (gVar == gVar2) {
+            return;
+        }
+        if (gVar2 != null) {
+            gVar2.b(null);
+        }
+        if (gVar != null) {
+            gVar.a(null);
+        }
     }
 
     public static /* synthetic */ String B(int i10) {
+        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
+    }
+
+    public static /* synthetic */ String C(int i10) {
         switch (i10) {
             case 1:
                 return "IDLE";
@@ -48,11 +59,11 @@ public abstract /* synthetic */ class c {
             case 10:
                 return "RELEASED";
             default:
-                return BuildConfig.BETA_URL;
+                return "null";
         }
     }
 
-    public static /* synthetic */ String C(int i10) {
+    public static /* synthetic */ String D(int i10) {
         switch (i10) {
             case 1:
                 return "BEGIN_ARRAY";
@@ -75,12 +86,8 @@ public abstract /* synthetic */ class c {
             case 10:
                 return "END_DOCUMENT";
             default:
-                return BuildConfig.BETA_URL;
+                return "null";
         }
-    }
-
-    public static /* synthetic */ String D(int i10) {
-        return i10 != 1 ? i10 != 2 ? i10 != 3 ? BuildConfig.BETA_URL : "FROSTED_GLASS" : "GLASS" : "BLURRED";
     }
 
     public static int a(int i10) {
@@ -409,7 +416,7 @@ public abstract /* synthetic */ class c {
     }
 
     public static void n(int i10, ArrayList arrayList) {
-        arrayList.add(h61.C(LocaleController.getString(i10)));
+        arrayList.add(p61.B(LocaleController.getString(i10)));
     }
 
     public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -422,17 +429,17 @@ public abstract /* synthetic */ class c {
         alertDialog$Builder.o();
     }
 
-    public static void q(int i10, Object[] objArr, yc ycVar, int i11, int i12) {
-        ycVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
+    public static void q(int i10, Object[] objArr, ad adVar, int i11, int i12) {
+        adVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
     }
 
     public static /* synthetic */ void r(MediaMetadataRetriever mediaMetadataRetriever) {
         if (mediaMetadataRetriever instanceof AutoCloseable) {
             mediaMetadataRetriever.close();
         } else if (mediaMetadataRetriever instanceof ExecutorService) {
-            k4.b();
+            i4.b();
         } else {
-            if (!com.google.android.gms.internal.vision.e2.u(mediaMetadataRetriever)) {
+            if (!com.google.android.gms.internal.vision.e2.t(mediaMetadataRetriever)) {
                 throw new IllegalArgumentException();
             }
             mediaMetadataRetriever.release();
@@ -443,42 +450,35 @@ public abstract /* synthetic */ class c {
         h0Var.b(new b2.s(rVar));
     }
 
-    public static void t(StringBuilder sb2, int i10, String str, int i11, String str2) {
+    public static void t(String str, StringBuilder sb2) {
+        sb2.append(str);
+        FileLog.d(sb2.toString());
+    }
+
+    public static void u(StringBuilder sb2, int i10, String str, int i11, String str2) {
         sb2.append(i10);
         sb2.append(str);
         sb2.append(i11);
         sb2.append(str2);
     }
 
-    public static void u(boolean z10, org.telegram.ui.ActionBar.k kVar) {
-        kVar.setBackButtonDrawable(new g2(z10));
+    public static void v(boolean z10, org.telegram.ui.ActionBar.k kVar) {
+        kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.g2(z10));
     }
 
-    public static int v(int i10, int i11, int i12, int i13) {
+    public static int w(int i10, int i11, int i12, int i13) {
         return Math.max(i13, Math.min(Math.max(i10, i11), i12));
     }
 
-    public static Object w(int i10, ArrayList arrayList) {
+    public static Object x(int i10, ArrayList arrayList) {
         return arrayList.remove(arrayList.size() - i10);
     }
 
-    public static int x(int i10, int i11, int i12, int i13) {
+    public static int y(int i10, int i11, int i12, int i13) {
         return Math.max(i13, Math.min(Math.min(i10, i11), i12));
     }
 
-    public static int y(int i10, int i11, int i12, int i13) {
+    public static int z(int i10, int i11, int i12, int i13) {
         return ((i10 - i11) / i12) + i13;
-    }
-
-    public static void z(n2.h hVar, n2.h hVar2) {
-        if (hVar == hVar2) {
-            return;
-        }
-        if (hVar2 != null) {
-            hVar2.b(null);
-        }
-        if (hVar != null) {
-            hVar.a(null);
-        }
     }
 }

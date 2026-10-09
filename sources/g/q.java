@@ -1,42 +1,25 @@
 package g;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import androidx.appcompat.widget.ContentFrameLayout;
-import v7.v7;
+import android.os.Bundle;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class q extends ContentFrameLayout {
-    public final /* synthetic */ s r;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(s sVar, k.c cVar) {
-        super(cVar);
-        this.r = sVar;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            int x10 = (int) motionEvent.getX();
-            int y3 = (int) motionEvent.getY();
-            if (x10 < -5 || y3 < -5 || x10 > getWidth() + 5 || y3 > getHeight() + 5) {
-                s sVar = this.r;
-                sVar.h(sVar.o(0), true);
-                return true;
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setBackgroundResource(int i10) {
-        setBackgroundDrawable(v7.b(getContext(), i10));
-    }
+public final class q {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public p e;
+    public View f;
+    public View g;
+    public l.k h;
+    public l.g i;
+    public k.c j;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public Bundle p;
 }

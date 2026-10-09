@@ -1,36 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cc0 b;
-    public final /* synthetic */ Context c;
+public interface mb0 {
+    void e(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
 
-    public /* synthetic */ mb0(cc0 cc0Var, Context context, int i10) {
-        this.a = i10;
-        this.b = cc0Var;
-        this.c = context;
-    }
+    Paint.FontMetricsInt f();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                cc0 cc0Var = this.b;
-                cc0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new mb0(cc0Var, this.c, 1));
-                break;
-            default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new rg.y0(context, 43, this.b.c0.F).show();
-                    break;
-                }
-                break;
-        }
-    }
+    void i(TLRPC.TL_document tL_document, String str, Object obj);
+
+    void k(int i10, int i11, CharSequence charSequence, boolean z10);
+
+    void m(String str);
 }

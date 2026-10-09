@@ -1,38 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j50 extends Paint {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class j50 extends org.telegram.ui.uu0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ m50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j50(Object obj, int i10) {
-        super(1);
-        this.a = i10;
-        this.b = obj;
+    public j50(m50 m50Var, ArrayList arrayList) {
+        this.b = m50Var;
+        this.a = arrayList;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(i10);
-                ((f60) this.b).invalidate();
-                break;
-            case 1:
-                super.setAlpha(i10);
-                om0 om0Var = (om0) this.b;
-                om0Var.a.setAlpha(Math.round(i10 * 0.2f));
-                om0Var.invalidate();
-                break;
-            default:
-                super.setAlpha(i10);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
-                break;
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final org.telegram.ui.ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        l50 l50Var = this.b.b;
+        if (l50Var == null) {
+            return null;
         }
+        return l50Var.getCloseIntoObject();
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.b.s((MediaController.PhotoEntry) this.a.get(0));
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final boolean z() {
+        return false;
     }
 }

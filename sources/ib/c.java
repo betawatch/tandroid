@@ -1,19 +1,20 @@
 package ib;
 
+import a1.g;
 import db.j;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import v7.m8;
+import v7.k8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static final m8 a;
+    public static final k8 a;
 
     static {
-        m8 aVar;
+        k8 aVar;
         try {
             aVar = new b();
         } catch (ReflectiveOperationException unused) {
@@ -76,7 +77,7 @@ public abstract class c {
         try {
             accessibleObject.setAccessible(true);
         } catch (Exception e7) {
-            StringBuilder w10 = a4.a.w("Failed making ", d(accessibleObject, false), " accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.");
+            StringBuilder w10 = g.w("Failed making ", d(accessibleObject, false), " accessible; either increase its visibility or write a custom TypeAdapter for its declaring type.");
             w10.append(e(e7));
             throw new j(w10.toString(), e7);
         }

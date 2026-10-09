@@ -1,221 +1,92 @@
 package u2;
 
 import android.net.Uri;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class l1 implements d0, y2.g {
-    public final g2.m a;
-    public final g2.g b;
-    public final g2.c0 c;
-    public final qb.b d;
-    public final a5.a e;
-    public final p1 f;
-    public final ArrayList h = new ArrayList();
-    public final long n;
-    public final y2.l r;
-    public final b2.s s;
-    public final boolean v;
-    public boolean w;
-    public byte[] x;
-    public int y;
+public final class l1 extends a {
+    public final g2.m h;
+    public final g2.g i;
+    public final b2.s j;
+    public final rb.a l;
+    public final h1 n;
+    public final b2.k0 o;
+    public g2.c0 p;
+    public final long k = -9223372036854775807L;
+    public final boolean m = true;
 
-    public l1(g2.m mVar, g2.g gVar, g2.c0 c0Var, b2.s sVar, long j3, qb.b bVar, a5.a aVar, boolean z10, z2.a aVar2) {
-        this.a = mVar;
-        this.b = gVar;
-        this.c = c0Var;
-        this.s = sVar;
-        this.n = j3;
-        this.d = bVar;
-        this.e = aVar;
-        this.v = z10;
-        this.f = new p1(new b2.l1("", sVar));
-        this.r = aVar2 != null ? new y2.l(aVar2) : new y2.l("SingleSampleMediaPeriod");
-    }
-
-    @Override // u2.e1
-    public final boolean c() {
-        return this.r.d();
-    }
-
-    @Override // u2.e1
-    public final long d() {
-        return (this.w || this.r.d()) ? Long.MIN_VALUE : 0L;
-    }
-
-    @Override // u2.d0
-    public final long h(long j3) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
-                return j3;
-            }
-            j1 j1Var = (j1) arrayList.get(i10);
-            if (j1Var.a == 2) {
-                j1Var.a = 1;
-            }
-            i10++;
+    public l1(b2.j0 j0Var, pf.b bVar, rb.a aVar) {
+        b2.f0 f0Var;
+        this.i = bVar;
+        this.l = aVar;
+        boolean z10 = true;
+        b2.y yVar = new b2.y();
+        b2.b0 b0Var = new b2.b0();
+        List list = Collections.EMPTY_LIST;
+        e9.a1 a1Var = e9.a1.e;
+        b2.d0 d0Var = new b2.d0();
+        b2.g0 g0Var = b2.g0.d;
+        Uri uri = Uri.EMPTY;
+        String uri2 = j0Var.a.toString();
+        uri2.getClass();
+        e9.i0 v = e9.i0.v(e9.i0.z(j0Var));
+        if (b0Var.b != null && b0Var.a == null) {
+            z10 = false;
         }
-    }
-
-    @Override // u2.d0
-    public final void k(c0 c0Var, long j3) {
-        c0Var.b(this);
-    }
-
-    @Override // u2.d0
-    public final long l() {
-        return -9223372036854775807L;
-    }
-
-    @Override // u2.e1
-    public final boolean m(i2.s0 s0Var) {
-        if (this.w) {
-            return false;
-        }
-        y2.l lVar = this.r;
-        if (lVar.d() || lVar.c()) {
-            return false;
-        }
-        g2.h createDataSource = this.b.createDataSource();
-        g2.c0 c0Var = this.c;
-        if (c0Var != null) {
-            createDataSource.addTransferListener(c0Var);
-        }
-        k1 k1Var = new k1(createDataSource, this.a);
-        this.d.getClass();
-        lVar.f(k1Var, this, 3);
-        return true;
-    }
-
-    @Override // u2.d0
-    public final long n(x2.r[] rVarArr, boolean[] zArr, c1[] c1VarArr, boolean[] zArr2, long j3) {
-        for (int i10 = 0; i10 < rVarArr.length; i10++) {
-            c1 c1Var = c1VarArr[i10];
-            ArrayList arrayList = this.h;
-            if (c1Var != null && (rVarArr[i10] == null || !zArr[i10])) {
-                arrayList.remove(c1Var);
-                c1VarArr[i10] = null;
-            }
-            if (c1VarArr[i10] == null && rVarArr[i10] != null) {
-                j1 j1Var = new j1(this);
-                arrayList.add(j1Var);
-                c1VarArr[i10] = j1Var;
-                zArr2[i10] = true;
-            }
-        }
-        return j3;
-    }
-
-    @Override // u2.d0
-    public final p1 o() {
-        return this.f;
-    }
-
-    @Override // u2.e1
-    public final long p() {
-        return this.w ? Long.MIN_VALUE : 0L;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x007a  */
-    @Override // y2.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
-        long j11;
-        k4.d dVar;
-        Uri uri = ((k1) iVar).b.c;
-        t tVar = new t(j10);
-        String str = e2.d0.a;
-        this.d.getClass();
-        if (!(iOException instanceof b2.s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof g2.u) && !(iOException instanceof y2.k)) {
-            int i11 = g2.j.b;
-            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
-                if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
-                }
-            }
-            j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-            boolean z10 = j11 != -9223372036854775807L || i10 >= 3;
-            if (this.v || !z10) {
-                dVar = j11 == -9223372036854775807L ? new k4.d(0, j11, false) : y2.l.f;
-            } else {
-                e2.a.o("SingleSampleMediaPeriod", "Loading failed, treating as end-of-stream.", iOException);
-                this.w = true;
-                dVar = y2.l.e;
-            }
-            k4.d dVar2 = dVar;
-            this.e.q(tVar, 1, -1, this.s, 0, null, 0L, this.n, iOException, !dVar2.a());
-            return dVar2;
-        }
-        j11 = -9223372036854775807L;
-        if (j11 != -9223372036854775807L) {
-        }
-        if (this.v) {
-        }
-        if (j11 == -9223372036854775807L) {
-        }
-        k4.d dVar22 = dVar;
-        this.e.q(tVar, 1, -1, this.s, 0, null, 0L, this.n, iOException, !dVar22.a());
-        return dVar22;
-    }
-
-    @Override // y2.g
-    public final void x(y2.i iVar, long j3, long j10, int i10) {
-        t tVar;
-        k1 k1Var = (k1) iVar;
-        g2.b0 b0Var = k1Var.b;
-        if (i10 == 0) {
-            tVar = new t(k1Var.a);
+        e2.d.g(z10);
+        if (uri != null) {
+            f0Var = new b2.f0(uri, null, b0Var.a != null ? new b2.c0(b0Var) : null, null, list, null, v, -9223372036854775807L);
         } else {
-            Uri uri = b0Var.c;
-            tVar = new t(j10);
+            f0Var = null;
         }
-        this.e.s(tVar, 1, -1, this.s, 0, null, 0L, this.n, i10);
+        b2.k0 k0Var = new b2.k0(uri2, new b2.a0(yVar), f0Var, new b2.e0(d0Var), b2.n0.K, g0Var);
+        this.o = k0Var;
+        b2.r rVar = new b2.r();
+        String str = j0Var.b;
+        rVar.q = b2.r0.n(str == null ? "text/x-unknown" : str);
+        rVar.d = j0Var.c;
+        rVar.e = j0Var.d;
+        rVar.f = j0Var.e;
+        rVar.b = j0Var.f;
+        String str2 = j0Var.g;
+        rVar.a = str2 != null ? str2 : null;
+        this.j = new b2.s(rVar);
+        Map map = Collections.EMPTY_MAP;
+        Uri uri3 = j0Var.a;
+        e2.d.i(uri3, "The uri must be set.");
+        this.h = new g2.m(uri3, 1, null, map, 0L, -1L, null, 1);
+        this.n = new h1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, k0Var, null);
     }
 
-    @Override // y2.g
-    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        Uri uri = ((k1) iVar).b.c;
-        t tVar = new t(j10);
-        this.d.getClass();
-        this.e.o(tVar, 1, -1, null, 0, null, 0L, this.n);
+    @Override // u2.a
+    public final d0 c(f0 f0Var, y2.d dVar, long j3) {
+        return new k1(this.h, this.i, this.p, this.j, this.k, this.l, b(f0Var), this.m, null);
     }
 
-    @Override // y2.g
-    public final void y(y2.i iVar, long j3, long j10) {
-        k1 k1Var = (k1) iVar;
-        this.y = (int) k1Var.b.b;
-        byte[] bArr = k1Var.c;
-        bArr.getClass();
-        this.x = bArr;
-        this.w = true;
-        Uri uri = k1Var.b.c;
-        t tVar = new t(j10);
-        this.d.getClass();
-        this.e.p(tVar, 1, -1, this.s, 0, null, 0L, this.n);
+    @Override // u2.a
+    public final b2.k0 i() {
+        return this.o;
     }
 
-    @Override // u2.d0
-    public final void g() {
+    @Override // u2.a
+    public final void m(g2.c0 c0Var) {
+        this.p = c0Var;
+        n(this.n);
     }
 
-    @Override // u2.d0
-    public final void i(long j3) {
+    @Override // u2.a
+    public final void o(d0 d0Var) {
+        ((k1) d0Var).r.e(null);
     }
 
-    @Override // u2.e1
-    public final void r(long j3) {
+    @Override // u2.a
+    public final void k() {
     }
 
-    @Override // u2.d0
-    public final long q(long j3, i2.q1 q1Var) {
-        return j3;
+    @Override // u2.a
+    public final void q() {
     }
 }

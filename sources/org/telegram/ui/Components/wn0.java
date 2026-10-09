@@ -1,33 +1,79 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class wn0 extends s4.o {
-    public final /* synthetic */ ao0 b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ bo0 k;
 
-    public wn0(ao0 ao0Var) {
-        this.b = ao0Var;
+    public wn0(bo0 bo0Var, int i10, int i11, int i12, int i13, int i14, ArrayList arrayList, int i15, int i16, ArrayList arrayList2) {
+        this.k = bo0Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = arrayList;
+        this.h = i15;
+        this.i = i16;
+        this.j = arrayList2;
     }
 
     @Override // s4.o
     public final boolean a(int i10, int i11) {
-        ao0 ao0Var = this.b;
-        return ((xn0) ao0Var.n.get(i10)).equals(ao0Var.r.get(i11));
+        return b(i10, i11);
     }
 
     @Override // s4.o
     public final boolean b(int i10, int i11) {
-        ao0 ao0Var = this.b;
-        return ((xn0) ao0Var.n.get(i10)).a.h == ((xn0) ao0Var.r.get(i11)).a.h;
+        MessageObject messageObject;
+        bo0 bo0Var = this.k;
+        if (i10 >= 0 && i11 >= 0) {
+            if (i10 == this.c && i11 == bo0Var.s) {
+                return true;
+            }
+            if (i10 == this.d && i11 == bo0Var.x) {
+                return true;
+            }
+        }
+        MessageObject messageObject2 = null;
+        int i12 = this.e;
+        if (i10 < i12 || i10 >= this.f) {
+            int i13 = this.h;
+            messageObject = (i10 < i13 || i10 >= this.i) ? null : (MessageObject) this.j.get(i10 - i13);
+        } else {
+            messageObject = (MessageObject) this.g.get(i10 - i12);
+        }
+        int i14 = bo0Var.v;
+        if (i11 < i14 || i11 >= bo0Var.w) {
+            int i15 = bo0Var.y;
+            if (i11 >= i15 && i11 < bo0Var.E) {
+                messageObject2 = (MessageObject) bo0Var.f.get(i11 - i15);
+            }
+        } else {
+            messageObject2 = (MessageObject) bo0Var.e.get(i11 - i14);
+        }
+        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
     }
 
     @Override // s4.o
     public final int d() {
-        return this.b.r.size();
+        return this.k.r;
     }
 
     @Override // s4.o
     public final int e() {
-        return this.b.n.size();
+        return this.b;
     }
 }

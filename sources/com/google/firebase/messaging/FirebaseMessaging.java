@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import ai.q5;
+import ai.r5;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -23,7 +23,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
@@ -106,7 +106,7 @@ public class FirebaseMessaging {
                 switch (i10) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.e.n() && firebaseMessaging.g(firebaseMessaging.d())) {
+                        if (firebaseMessaging.e.q() && firebaseMessaging.g(firebaseMessaging.d())) {
                             synchronized (firebaseMessaging) {
                                 if (!firebaseMessaging.j) {
                                     firebaseMessaging.f(0L);
@@ -197,7 +197,7 @@ public class FirebaseMessaging {
                 switch (i11) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.e.n() && firebaseMessaging.g(firebaseMessaging.d())) {
+                        if (firebaseMessaging.e.q() && firebaseMessaging.g(firebaseMessaging.d())) {
                             synchronized (firebaseMessaging) {
                                 if (!firebaseMessaging.j) {
                                     firebaseMessaging.f(0L);
@@ -292,7 +292,7 @@ public class FirebaseMessaging {
                     Log.d("FirebaseMessaging", "Making new request for: " + c10);
                 }
                 n nVar = this.c;
-                task = nVar.o(nVar.D(p.c((k9.h) nVar.a), "*", new Bundle())).onSuccessTask(this.h, new q5(this, c10, d, 6)).continueWithTask((Executor) jVar.a, new ah.b(8, jVar, c10));
+                task = nVar.o(nVar.D(p.c((k9.h) nVar.a), "*", new Bundle())).onSuccessTask(this.h, new r5(this, c10, d, 6)).continueWithTask((Executor) jVar.a, new ah.b(8, jVar, c10));
                 ((a0.f) jVar.b).put(c10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
                 Log.d("FirebaseMessaging", "Joining ongoing request for: " + c10);

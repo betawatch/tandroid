@@ -11,7 +11,7 @@ import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class l6 extends FrameLayout {
     public final TextView a;
@@ -19,31 +19,31 @@ public final class l6 extends FrameLayout {
     public final RadioButton c;
     public int d;
 
-    public l6(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public l6(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.d = 50;
         RadioButton radioButton = new RadioButton(context);
         this.c = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.D5, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E5, d6Var));
+        radioButton.b(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.D5, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.E5, e6Var));
         boolean z10 = LocaleController.isRTL;
-        addView(radioButton, w7.z5.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f));
+        addView(radioButton, w7.x5.a(22.0f, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f, 22, (z10 ? 5 : 3) | 48));
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.m(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 16.0f);
+        bi.o(org.telegram.ui.ActionBar.i6.j5, e6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f));
+        addView(textView, w7.x5.a(-2.0f, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        bi.m(org.telegram.ui.ActionBar.i6.y6, d6Var, textView2, 1, 14.0f);
+        bi.o(org.telegram.ui.ActionBar.i6.y6, e6Var, textView2, 1, 14.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView2.setVisibility(8);
         boolean z12 = LocaleController.isRTL;
-        addView(textView2, w7.z5.d(-2, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 21 : 51, 37.0f, z12 ? 51 : 21, 0.0f));
+        addView(textView2, w7.x5.a(-2.0f, z12 ? 21 : 51, 37.0f, z12 ? 51 : 21, 0.0f, -2, (z12 ? 5 : 3) | 48));
     }
 
     public final void a(int i10, int i11) {

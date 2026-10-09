@@ -1,6 +1,6 @@
 package r2;
 
-import ai.e8;
+import ai.f8;
 import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
@@ -16,22 +16,22 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class x {
     public static final HashMap a = new HashMap();
 
     public static void a(String str, ArrayList arrayList) {
         if ("audio/raw".equals(str)) {
-            if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && arrayList.size() == 1 && ((o) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
-                arrayList.add(o.i("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false));
+            if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && arrayList.size() == 1 && ((p) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
+                arrayList.add(p.i("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false));
             }
-            Collections.sort(arrayList, new e8(new i(), 3));
+            Collections.sort(arrayList, new f8(new j(), 3));
         }
-        if (Build.VERSION.SDK_INT >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((o) arrayList.get(0)).a)) {
+        if (Build.VERSION.SDK_INT >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((p) arrayList.get(0)).a)) {
             return;
         }
-        arrayList.add((o) arrayList.remove(0));
+        arrayList.add((p) arrayList.remove(0));
     }
 
     public static String b(b2.s sVar) {
@@ -105,7 +105,7 @@ public abstract class x {
                 if (z10 && e7.isEmpty() && Build.VERSION.SDK_INT <= 23) {
                     e7 = e(tVar, new qb.b(20));
                     if (!e7.isEmpty()) {
-                        e2.a.n("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((o) e7.get(0)).a);
+                        e2.a.n("MediaCodecUtil", "MediaCodecList API didn't list secure decoder for: " + str + ". Assuming: " + ((p) e7.get(0)).a);
                     }
                 }
                 a(str, e7);
@@ -118,8 +118,8 @@ public abstract class x {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:50:0x0109 A[Catch: Exception -> 0x0153, TRY_ENTER, TryCatch #4 {Exception -> 0x0153, blocks: (B:3:0x000c, B:5:0x0020, B:7:0x002a, B:11:0x0128, B:12:0x0036, B:15:0x0041, B:47:0x0101, B:50:0x0109, B:52:0x010f, B:55:0x0130, B:56:0x0151), top: B:2:0x000c }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0130 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x010b A[Catch: Exception -> 0x0155, TRY_ENTER, TryCatch #4 {Exception -> 0x0155, blocks: (B:3:0x000c, B:5:0x0021, B:7:0x002b, B:11:0x012a, B:12:0x0037, B:15:0x0042, B:47:0x0103, B:50:0x010b, B:52:0x0111, B:55:0x0132, B:56:0x0153), top: B:2:0x000c }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0132 A[ADDED_TO_REGION, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -128,8 +128,8 @@ public abstract class x {
         String str;
         int i10;
         MediaCodecInfo.CodecCapabilities capabilitiesForType;
-        boolean y3;
-        boolean Y;
+        boolean m10;
+        boolean D;
         boolean z11;
         boolean i11;
         boolean z12;
@@ -138,36 +138,36 @@ public abstract class x {
         try {
             ArrayList arrayList = new ArrayList();
             String str2 = tVar2.a;
-            int d02 = vVar.d0();
-            boolean p02 = vVar.p0();
+            int F = vVar.F();
+            boolean X = vVar.X();
             int i12 = 0;
-            while (i12 < d02) {
+            while (i12 < F) {
                 MediaCodecInfo a2 = vVar.a(i12);
                 int i13 = Build.VERSION.SDK_INT;
                 if (i13 < 29 || !a2.isAlias()) {
                     String name = a2.getName();
-                    if (g(a2, name, p02, str2)) {
+                    if (g(a2, name, X, str2)) {
                         int i14 = i12;
                         String c10 = c(a2, name, str2);
                         if (c10 != null) {
                             try {
                                 capabilitiesForType = a2.getCapabilitiesForType(c10);
-                                y3 = vVar.y("tunneled-playback", c10, capabilitiesForType);
-                                Y = vVar.Y("tunneled-playback", capabilitiesForType);
+                                m10 = vVar.m("tunneled-playback", c10, capabilitiesForType);
+                                D = vVar.D("tunneled-playback", capabilitiesForType);
                                 z11 = tVar2.c;
                             } catch (Exception e7) {
                                 e = e7;
-                                z10 = p02;
+                                z10 = X;
                                 str = name;
                             }
-                            if (z11 || !Y) {
-                                if (!z11 || y3) {
-                                    boolean y10 = vVar.y("secure-playback", c10, capabilitiesForType);
-                                    boolean Y2 = vVar.Y("secure-playback", capabilitiesForType);
-                                    if (z13 || !Y2) {
-                                        if (!z13 || y10) {
+                            if (z11 || !D) {
+                                if (!z11 || m10) {
+                                    boolean m11 = vVar.m("secure-playback", c10, capabilitiesForType);
+                                    boolean D2 = vVar.D("secure-playback", capabilitiesForType);
+                                    if (z13 || !D2) {
+                                        if (!z13 || m11) {
                                             boolean h = h(a2, str2);
-                                            z10 = p02;
+                                            z10 = X;
                                             try {
                                                 i11 = i(a2, str2);
                                                 if (i13 >= 29) {
@@ -185,13 +185,13 @@ public abstract class x {
                                                 e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                 throw e;
                                             }
-                                            if (!(z10 && z13 == y10) && (z10 || z13)) {
+                                            if (!(z10 && z13 == m11) && (z10 || z13)) {
                                                 boolean z14 = z12;
                                                 i10 = i14;
-                                                if (!z10 && y10) {
+                                                if (!z10 && m11) {
                                                     str = name;
                                                     try {
-                                                        arrayList.add(o.i(name + ".secure", str2, c10, capabilitiesForType, h, i11, z14, true));
+                                                        arrayList.add(p.i(name + ".secure", str2, c10, capabilitiesForType, h, i11, z14, true));
                                                         break;
                                                     } catch (Exception e11) {
                                                         e = e11;
@@ -203,11 +203,11 @@ public abstract class x {
                                                 }
                                                 i12 = i10 + 1;
                                                 tVar2 = tVar;
-                                                p02 = z10;
+                                                X = z10;
                                             } else {
                                                 i10 = i14;
                                                 try {
-                                                    arrayList.add(o.i(name, str2, c10, capabilitiesForType, h, i11, z12, false));
+                                                    arrayList.add(p.i(name, str2, c10, capabilitiesForType, h, i11, z12, false));
                                                 } catch (Exception e12) {
                                                     e = e12;
                                                     str = name;
@@ -218,29 +218,29 @@ public abstract class x {
                                                     e2.a.e("MediaCodecUtil", "Skipping codec " + str + " (failed to query capabilities)");
                                                     i12 = i10 + 1;
                                                     tVar2 = tVar;
-                                                    p02 = z10;
+                                                    X = z10;
                                                 }
                                                 i12 = i10 + 1;
                                                 tVar2 = tVar;
-                                                p02 = z10;
+                                                X = z10;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-                        z10 = p02;
+                        z10 = X;
                         i10 = i14;
                         i12 = i10 + 1;
                         tVar2 = tVar;
-                        p02 = z10;
+                        X = z10;
                     }
                 }
-                z10 = p02;
+                z10 = X;
                 i10 = i12;
                 i12 = i10 + 1;
                 tVar2 = tVar;
-                p02 = z10;
+                X = z10;
             }
             return arrayList;
         } catch (Exception e13) {
@@ -248,10 +248,10 @@ public abstract class x {
         }
     }
 
-    public static a1 f(i iVar, b2.s sVar, boolean z10, boolean z11) {
-        List a2 = iVar.a(sVar.r, z10, z11);
+    public static a1 f(j jVar, b2.s sVar, boolean z10, boolean z11) {
+        List a2 = jVar.a(sVar.r, z10, z11);
         String b10 = b(sVar);
-        List a10 = b10 == null ? a1.e : iVar.a(b10, z10, z11);
+        List a10 = b10 == null ? a1.e : jVar.a(b10, z10, z11);
         f0 u10 = i0.u();
         u10.d(a2);
         u10.d(a10);

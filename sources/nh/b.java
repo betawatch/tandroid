@@ -2,31 +2,36 @@ package nh;
 
 import android.content.Context;
 import android.os.Build;
-import le.e;
+import me.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
-import yf.f0;
+import org.telegram.ui.Components.hs;
+import yf.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class b extends ci.d implements le.d {
-    public final le.b h0;
-    public final d6 i0;
+public final class b extends ci.d implements me.d {
+    public final me.b h0;
+    public final e6 i0;
 
-    public b(Context context, d6 d6Var) {
-        super(context, d6Var, true);
-        this.h0 = new le.b(0, this, tr.h, 320L, true);
-        this.i0 = d6Var;
+    public b(Context context, e6 e6Var) {
+        super(context, e6Var, true);
+        this.h0 = new me.b(0, this, hs.h, 320L, true);
+        this.i0 = e6Var;
         e();
-        setOutlineProvider(f0.b);
+        setOutlineProvider(i0.b);
     }
 
-    @Override // le.d
-    public final void a0(int i10, float f7, float f10, e eVar) {
-        d6 d6Var = this.i0;
-        boolean a2 = d6Var != null ? d6Var.a() : i6.I.q();
+    public final int m(int i10) {
+        e6 e6Var = this.i0;
+        return e6Var != null ? e6Var.x0(i10) : i6.x0(null, i10, false);
+    }
+
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, e eVar) {
+        e6 e6Var = this.i0;
+        boolean a2 = e6Var != null ? e6Var.a() : i6.I.q();
         float f11 = this.h0.e;
         setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
         setColor(i0.a.d(f11, m(i6.d6), m(i6.Oh)));
@@ -42,12 +47,7 @@ public final class b extends ci.d implements le.d {
         }
     }
 
-    public final int m(int i10) {
-        d6 d6Var = this.i0;
-        return d6Var != null ? d6Var.H0(i10) : i6.w0(null, i10, false);
-    }
-
-    @Override // le.d
-    public final /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

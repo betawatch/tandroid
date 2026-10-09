@@ -5,14 +5,14 @@ import b2.r0;
 import b2.x1;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f0 {
-    public final n4.y a;
+    public final n4.x a;
     public final a0 b;
     public final z c = new z();
-    public final e2.a0 d = new e2.a0();
-    public final e2.a0 e = new e2.a0();
+    public final e2.a0 d = new e2.a0(0, (byte) 0);
+    public final e2.a0 e = new e2.a0(0, (byte) 0);
     public final e2.q f;
     public long g;
     public long h;
@@ -20,8 +20,8 @@ public final class f0 {
     public x1 j;
     public long k;
 
-    public f0(n4.y yVar, a0 a0Var) {
-        this.a = yVar;
+    public f0(n4.x xVar, a0 a0Var) {
+        this.a = xVar;
         this.b = a0Var;
         e2.q qVar = new e2.q();
         int highestOneBit = Integer.bitCount(16) != 1 ? Integer.highestOneBit(15) << 1 : 16;
@@ -38,8 +38,8 @@ public final class f0 {
     }
 
     public final void a(long j3, long j10) {
-        n4.y yVar = this.a;
-        f fVar = (f) yVar.c;
+        n4.x xVar = this.a;
+        f fVar = (f) xVar.c;
         while (true) {
             e2.q qVar = this.f;
             int i10 = qVar.c;
@@ -50,7 +50,7 @@ public final class f0 {
                 throw new NoSuchElementException();
             }
             long j11 = ((long[]) qVar.e)[qVar.a];
-            Long l4 = (Long) this.e.g(j11);
+            Long l4 = (Long) this.e.i(j11);
             a0 a0Var = this.b;
             if (l4 != null && l4.longValue() != this.k) {
                 this.k = l4.longValue();
@@ -64,32 +64,32 @@ public final class f0 {
                 this.h = j11;
                 boolean z10 = a2 == 0;
                 long d = qVar.d();
-                x1 x1Var = (x1) this.d.g(d);
+                x1 x1Var = (x1) this.d.i(d);
                 if (x1Var != null && !x1Var.equals(x1.d) && !x1Var.equals(this.j)) {
                     this.j = x1Var;
                     b2.r rVar = new b2.r();
                     rVar.x = x1Var.a;
                     rVar.y = x1Var.b;
                     rVar.q = r0.n("video/raw");
-                    yVar.b = new b2.s(rVar);
-                    fVar.h.execute(new e(yVar, x1Var));
+                    xVar.b = new b2.s(rVar);
+                    fVar.h.execute(new e(xVar, x1Var));
                 }
                 long nanoTime = z10 ? System.nanoTime() : zVar.b;
                 boolean z11 = a0Var.e != 3;
                 a0Var.e = 3;
                 a0Var.l.getClass();
-                a0Var.g = e2.d0.Q(SystemClock.elapsedRealtime());
+                a0Var.g = e2.d0.P(SystemClock.elapsedRealtime());
                 if (z11 && fVar.d != null) {
-                    fVar.h.execute(new e(0, yVar));
+                    fVar.h.execute(new e(0, xVar));
                 }
-                b2.s sVar = (b2.s) yVar.b;
+                b2.s sVar = (b2.s) xVar.b;
                 fVar.i.a(d, nanoTime, sVar == null ? new b2.s(new b2.r()) : sVar, null);
                 j jVar = (j) fVar.c.remove();
                 jVar.c.I0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {
                 this.h = j11;
                 qVar.d();
-                fVar.h.execute(new e(1, yVar));
+                fVar.h.execute(new e(1, xVar));
                 j jVar2 = (j) fVar.c.remove();
                 jVar2.c.M0(jVar2.a, jVar2.b);
             } else {

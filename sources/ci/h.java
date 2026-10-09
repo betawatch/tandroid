@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -26,7 +26,7 @@ public final class h implements TextWatcher {
         String str;
         m mVar = this.c;
         e eVar = mVar.c0;
-        org.telegram.ui.Components.p6 p6Var = mVar.v;
+        org.telegram.ui.Components.r6 r6Var = mVar.v;
         mVar.w = Character.codePointCount(editable, 0, editable.length());
         int captionLimit = mVar.getCaptionLimit();
         if (mVar.w + 25 > captionLimit) {
@@ -34,13 +34,13 @@ public final class h implements TextWatcher {
         } else {
             str = null;
         }
-        p6Var.a();
-        p6Var.setText(str);
-        p6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        r6Var.a();
+        r6Var.setText(str);
+        r6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
         if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
             int i10 = -mVar.N;
             mVar.N = i10;
-            AndroidUtilities.shakeViewSpring(p6Var, i10);
+            AndroidUtilities.shakeViewSpring(r6Var, i10);
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
         int i11 = mVar.w;
@@ -78,20 +78,20 @@ public final class h implements TextWatcher {
         if (mVar.M == null) {
             i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ai.d(), 0);
             mVar.M = iVar;
-            mVar.T = new org.telegram.ui.Components.oa(mVar.O, iVar, 0, false);
-            mVar.M.p(new a6.i(mVar, 11));
+            mVar.T = new org.telegram.ui.Components.qa(mVar.O, iVar, 0, false);
+            mVar.M.p(new xa.d(mVar, 9));
             ah.c cVar = mVar.h0;
             if (cVar != null) {
                 i iVar2 = mVar.M;
                 ch.d c10 = cVar.c(iVar2, null, false);
-                c10.w(eh.b.i(mVar.a));
+                c10.o(eh.b.i(mVar.a));
                 iVar2.setBackgroundDrawable(c10);
             }
-            mVar.b.addView(mVar.M, w7.z5.e(-1, -1, 83));
+            mVar.b.addView(mVar.M, w7.x5.e(-1, -1, 83));
             mVar.w();
         }
         if (mVar.M.getAdapter() != null) {
-            gg.k1 adapter = mVar.M.getAdapter();
+            gg.j1 adapter = mVar.M.getAdapter();
             MessagesController.getInstance(mVar.U).getUser(Long.valueOf(mVar.x));
             TLRPC.Chat chat = MessagesController.getInstance(mVar.U).getChat(Long.valueOf(-mVar.x));
             adapter.getClass();

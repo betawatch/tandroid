@@ -1,27 +1,10 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.LiteMode;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o61 extends org.telegram.ui.Components.sx0 {
-    public final /* synthetic */ p61 G3;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o61(p61 p61Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, d6Var);
-        this.G3 = p61Var;
-    }
-
-    @Override // org.telegram.ui.Components.sx0
-    public final boolean B1() {
-        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) || this.G3.y.W == 4;
-    }
-
-    @Override // org.telegram.ui.Components.sx0
-    public final void F1(int i10) {
-        super.F1(i10);
-        this.G3.d(false);
-    }
+public final class o61 extends FrameLayout {
+    public TextView a;
 }

@@ -4,15 +4,16 @@ import a3.k0;
 import android.graphics.Rect;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
+import androidx.car.app.n;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     private final o mLifecycle;
-    private final androidx.car.app.o mSurfaceCallback;
+    private final n mSurfaceCallback;
 
-    public RemoteUtils$SurfaceCallbackStub(o oVar, androidx.car.app.o oVar2) {
+    public RemoteUtils$SurfaceCallbackStub(o oVar, n nVar) {
         this.mLifecycle = oVar;
     }
 

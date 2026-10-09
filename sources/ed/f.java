@@ -1,24 +1,24 @@
 package ed;
 
-import bf.p;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class f extends h {
-    public static final Pattern e = Pattern.compile("^&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+public final class f extends k {
+    public final StringBuilder c;
+    public final StringBuilder d;
+    public final StringBuilder e;
 
-    @Override // ed.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 != null) {
-            return f(af.b.a(a2));
-        }
-        return null;
+    public f() {
+        super(1, 0);
+        this.c = new StringBuilder();
+        this.d = new StringBuilder();
+        this.e = new StringBuilder();
     }
 
-    @Override // ed.h
-    public final char d() {
-        return '&';
+    @Override // ed.k
+    public final k b() {
+        k.c(this.c);
+        k.c(this.d);
+        k.c(this.e);
+        return this;
     }
 }

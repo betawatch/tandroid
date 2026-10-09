@@ -1,24 +1,24 @@
 package rg;
 
-import ai.y3;
+import ai.z3;
 import android.content.Context;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.wv;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.iw;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h1 extends wv {
-    public final /* synthetic */ m1 W;
+public final class h1 extends iw {
+    public final /* synthetic */ l1 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(m1 m1Var, y3 y3Var, Context context, d6 d6Var, ArrayList arrayList) {
-        super(y3Var, context, d6Var, arrayList);
-        this.W = m1Var;
+    public h1(l1 l1Var, z3 z3Var, Context context, e6 e6Var, ArrayList arrayList) {
+        super(z3Var, context, e6Var, arrayList);
+        this.W = l1Var;
     }
 
-    @Override // org.telegram.ui.Components.wv
-    public final void X() {
+    @Override // org.telegram.ui.Components.iw
+    public final void Z() {
         this.W.dismiss();
     }
 }

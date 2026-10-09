@@ -1,45 +1,64 @@
 package ei;
 
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.p80;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m2 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class m2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l3 b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ p80 b;
+    public final /* synthetic */ p80 c;
 
-    public /* synthetic */ m2(l3 l3Var, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = l3Var;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ m2(p80 p80Var, p80 p80Var2, int i10) {
+        this.a = i10;
+        this.b = p80Var;
+        this.c = p80Var2;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        p80 p80Var = this.c;
+        p80 p80Var2 = this.b;
+        switch (i10) {
             case 0:
-                l3 l3Var = this.b;
-                Paint paint = l3Var.P;
-                paint.setColor(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d));
-                l3Var.A();
-                l3Var.e.invalidate();
-                org.telegram.ui.d3 d3Var = l3Var.U0;
-                if (d3Var != null) {
-                    d3Var.b(AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f, false);
-                    l3Var.U0.setBackgroundColor(paint.getColor());
-                }
-                l3Var.F();
+                p80Var2.K(p80Var);
+                break;
+            case 1:
+                p80Var2.K(p80Var);
+                break;
+            case 2:
+                p80Var2.K(p80Var);
+                break;
+            case 3:
+                p80Var2.K(p80Var);
+                break;
+            case 4:
+                p80Var2.K(p80Var);
+                break;
+            case 5:
+                p80Var2.K(p80Var);
+                break;
+            case 6:
+                p80Var2.K(p80Var);
+                break;
+            case 7:
+                p80Var2.K(p80Var);
+                break;
+            case 8:
+                p80Var2.K(p80Var);
+                break;
+            case 9:
+                p80Var2.K(p80Var);
+                break;
+            case 10:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                p80Var2.K(p80Var);
                 break;
             default:
-                l3 l3Var2 = this.b;
-                l3Var2.getClass();
-                l3Var2.R = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.c, this.d);
-                l3Var2.h();
+                p80Var2.K(p80Var);
                 break;
         }
     }

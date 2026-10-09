@@ -1,26 +1,26 @@
 package ai;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.sa0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class s8 implements RequestDelegate {
     public final /* synthetic */ long a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ l9 c;
+    public final /* synthetic */ sa0 b;
+    public final /* synthetic */ m9 c;
 
-    public s8(l9 l9Var, long j3, Utilities.Callback callback) {
-        this.c = l9Var;
+    public s8(m9 m9Var, long j3, sa0 sa0Var) {
+        this.c = m9Var;
         this.a = j3;
-        this.b = callback;
+        this.b = sa0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new q8(this, tLObject, this.a, this.b, 2));
+        AndroidUtilities.runOnUIThread(new r8(this, tLObject, this.a, this.b, 1));
     }
 }

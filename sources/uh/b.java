@@ -6,9 +6,9 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
-import w7.q;
+import w7.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final a b;
@@ -47,7 +47,7 @@ public final class b extends Drawable {
         this.d.translate(f10, f10);
         float f11 = 1.0f / f7;
         this.d.scale(f11, f11);
-        this.b.p(this.d, 255);
+        this.b.q(this.d, 255);
         Utilities.stackBlurBitmap(this.c, (int) f10);
         this.d.restore();
     }
@@ -59,7 +59,7 @@ public final class b extends Drawable {
         if (i10 == 255) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.p(canvas, 255);
+            aVar.q(canvas, 255);
             canvas.restore();
             return;
         }
@@ -70,8 +70,8 @@ public final class b extends Drawable {
         double d10 = d / ((1.0d - d) * 6.0d);
         double d11 = 1.0d + d10;
         double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
-        int b10 = q.b((int) (d10 * sqrt * 255.0d), 0, 255);
-        int b11 = q.b((int) (sqrt * 255.0d), 0, 255);
+        int b10 = o.b((int) (d10 * sqrt * 255.0d), 0, 255);
+        int b11 = o.b((int) (sqrt * 255.0d), 0, 255);
         if (b11 > 0 && this.c != null) {
             Paint paint = this.a;
             paint.setAlpha(b11);
@@ -87,7 +87,7 @@ public final class b extends Drawable {
         if (b10 > 0) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.p(canvas, b10);
+            aVar.q(canvas, b10);
             canvas.restore();
         }
     }

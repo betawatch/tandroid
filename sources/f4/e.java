@@ -3,6 +3,7 @@ package f4;
 import android.text.Layout;
 import android.text.TextUtils;
 import b2.q0;
+import ci.u5;
 import com.google.android.gms.internal.vision.e2;
 import e2.d0;
 import e2.h;
@@ -23,12 +24,13 @@ import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
+import sc.v;
 import v7.r6;
-import w7.g9;
+import w7.c9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -99,13 +101,13 @@ public final class e implements m {
             matcher = pattern.matcher(str);
         } else {
             if (split.length != 2) {
-                throw new z3.f(a4.a.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
+                throw new z3.f(a1.g.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
             }
             matcher = pattern.matcher(split[1]);
             e2.a.n("TtmlParser", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
-            throw new z3.f(a4.a.q("Invalid expression for fontSize: '", str, "'."));
+            throw new z3.f(a1.g.q("Invalid expression for fontSize: '", str, "'."));
         }
         group = matcher.group(3);
         group.getClass();
@@ -120,7 +122,7 @@ public final class e implements m {
                 gVar.j = 1;
                 break;
             default:
-                throw new z3.f(a4.a.q("Invalid unit for fontSize: '", group, "'."));
+                throw new z3.f(a1.g.q("Invalid unit for fontSize: '", group, "'."));
         }
         String group2 = matcher.group(1);
         group2.getClass();
@@ -154,8 +156,8 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x022f  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01db  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -183,7 +185,7 @@ public final class e implements m {
             xmlPullParser.next();
             if (e2.d.m(xmlPullParser, "style")) {
                 String k14 = e2.d.k(xmlPullParser, "style");
-                g i13 = i(xmlPullParser, new g());
+                g h10 = h(xmlPullParser, new g());
                 if (k14 != null) {
                     String trim = k14.trim();
                     if (trim.isEmpty()) {
@@ -193,12 +195,12 @@ public final class e implements m {
                         split = trim.split("\\s+", -1);
                     }
                     for (String str2 : split) {
-                        i13.a((g) hashMap.get(str2));
+                        h10.a((g) hashMap.get(str2));
                     }
                 }
-                String str3 = i13.l;
+                String str3 = h10.l;
                 if (str3 != null) {
-                    hashMap.put(str3, i13);
+                    hashMap.put(str3, h10);
                 }
             } else if (e2.d.m(xmlPullParser, "region")) {
                 String k15 = e2.d.k(xmlPullParser, "id");
@@ -207,6 +209,7 @@ public final class e implements m {
                     if (k16 == null && (k13 = e2.d.k(xmlPullParser, "style")) != null && (gVar2 = (g) hashMap.get(k13)) != null) {
                         k16 = gVar2.t;
                     }
+                    int i13 = 2;
                     Pattern pattern = h;
                     Pattern pattern2 = f;
                     if (k16 != null) {
@@ -332,7 +335,7 @@ public final class e implements m {
                             switch (c10) {
                                 case 0:
                                 case 1:
-                                    i12 = 2;
+                                    i12 = i13;
                                     break;
                                 case 2:
                                     i12 = 1;
@@ -343,7 +346,8 @@ public final class e implements m {
                                 hashMap2.put(fVar.a, fVar);
                             }
                         }
-                        i12 = TLObject.FLAG_31;
+                        i13 = TLObject.FLAG_31;
+                        i12 = i13;
                         fVar = new f(k15, f11, f14, 0, i11, f12, f13, 1, f17, i12);
                         if (fVar != null) {
                         }
@@ -354,7 +358,8 @@ public final class e implements m {
                     k11 = e2.d.k(xmlPullParser, "writingMode");
                     if (k11 != null) {
                     }
-                    i12 = TLObject.FLAG_31;
+                    i13 = TLObject.FLAG_31;
+                    i12 = i13;
                     fVar = new f(k15, f11, f14, 0, i11, f12, f13, 1, f172, i12);
                     if (fVar != null) {
                     }
@@ -380,15 +385,15 @@ public final class e implements m {
         String[] split;
         int attributeCount = xmlPullParser.getAttributeCount();
         String[] strArr = null;
-        g i10 = i(xmlPullParser, null);
+        g h10 = h(xmlPullParser, null);
         String str = null;
         String str2 = "";
         long j10 = -9223372036854775807L;
         long j11 = -9223372036854775807L;
         long j12 = -9223372036854775807L;
-        for (int i11 = 0; i11 < attributeCount; i11++) {
-            String attributeName = xmlPullParser.getAttributeName(i11);
-            String attributeValue = xmlPullParser.getAttributeValue(i11);
+        for (int i10 = 0; i10 < attributeCount; i10++) {
+            String attributeName = xmlPullParser.getAttributeName(i10);
+            String attributeValue = xmlPullParser.getAttributeValue(i10);
             attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -934795532:
@@ -446,13 +451,13 @@ public final class e implements m {
                         continue;
                     }
                 case 1:
-                    j12 = j(attributeValue, dVar);
+                    j12 = i(attributeValue, dVar);
                     break;
                 case 2:
-                    j11 = j(attributeValue, dVar);
+                    j11 = i(attributeValue, dVar);
                     break;
                 case 3:
-                    j10 = j(attributeValue, dVar);
+                    j10 = i(attributeValue, dVar);
                     break;
                 case 4:
                     String trim = attributeValue.trim();
@@ -493,27 +498,35 @@ public final class e implements m {
                 long j14 = cVar.e;
                 if (j14 != -9223372036854775807L) {
                     j3 = j14;
-                    return new c(xmlPullParser.getName(), null, j10, j3, i10, strArr, str2, str, cVar);
+                    return new c(xmlPullParser.getName(), null, j10, j3, h10, strArr, str2, str, cVar);
                 }
             }
         }
         j3 = j11;
-        return new c(xmlPullParser.getName(), null, j10, j3, i10, strArr, str2, str, cVar);
+        return new c(xmlPullParser.getName(), null, j10, j3, h10, strArr, str2, str, cVar);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:109:0x02d1  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x02b1  */
+    /* JADX WARN: Type inference failed for: r9v1 */
+    /* JADX WARN: Type inference failed for: r9v2 */
+    /* JADX WARN: Type inference failed for: r9v3 */
+    /* JADX WARN: Type inference failed for: r9v4 */
+    /* JADX WARN: Type inference failed for: r9v5 */
+    /* JADX WARN: Type inference failed for: r9v6 */
+    /* JADX WARN: Type inference failed for: r9v7 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static g i(XmlPullParser xmlPullParser, g gVar) {
+    public static g h(XmlPullParser xmlPullParser, g gVar) {
         char c10;
+        ?? r92;
+        boolean z10;
         char c11;
-        char c12;
-        char c13;
         int i10;
         i1 n10;
         int i11;
@@ -521,7 +534,7 @@ public final class e implements m {
         int i12;
         b bVar;
         int i13;
-        char c14;
+        char c12;
         int attributeCount = xmlPullParser.getAttributeCount();
         g gVar2 = gVar;
         for (int i14 = 0; i14 < attributeCount; i14++) {
@@ -673,44 +686,44 @@ public final class e implements m {
                     switch (b10.hashCode()) {
                         case -1364013995:
                             if (b10.equals("center")) {
-                                c11 = 0;
+                                r92 = false;
                                 break;
                             }
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                         case 100571:
                             if (b10.equals("end")) {
-                                c11 = 1;
+                                r92 = true;
                                 break;
                             }
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                         case 3317767:
                             if (b10.equals("left")) {
-                                c11 = 2;
+                                r92 = 2;
                                 break;
                             }
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                         case 108511772:
                             if (b10.equals("right")) {
-                                c11 = 3;
+                                r92 = 3;
                                 break;
                             }
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                         case 109757538:
                             if (b10.equals("start")) {
-                                c11 = 4;
+                                r92 = 4;
                                 break;
                             }
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                         default:
-                            c11 = 65535;
+                            r92 = -1;
                             break;
                     }
-                    switch (c11) {
+                    switch (r92) {
                         case 0:
                             alignment = Layout.Alignment.ALIGN_CENTER;
                             break;
@@ -735,50 +748,50 @@ public final class e implements m {
                     switch (b11.hashCode()) {
                         case -1461280213:
                             if (b11.equals("nounderline")) {
-                                c12 = 0;
+                                z10 = false;
                                 break;
                             }
-                            c12 = 65535;
+                            z10 = -1;
                             break;
                         case -1026963764:
                             if (b11.equals("underline")) {
-                                c12 = 1;
+                                z10 = true;
                                 break;
                             }
-                            c12 = 65535;
+                            z10 = -1;
                             break;
                         case 913457136:
                             if (b11.equals("nolinethrough")) {
-                                c12 = 2;
+                                z10 = 2;
                                 break;
                             }
-                            c12 = 65535;
+                            z10 = -1;
                             break;
                         case 1679736913:
                             if (b11.equals("linethrough")) {
-                                c12 = 3;
+                                z10 = 3;
                                 break;
                             }
-                            c12 = 65535;
+                            z10 = -1;
                             break;
                         default:
-                            c12 = 65535;
+                            z10 = -1;
                             break;
                     }
-                    switch (c12) {
-                        case 0:
+                    switch (z10) {
+                        case false:
                             gVar2 = a(gVar2);
                             gVar2.g = 0;
                             break;
-                        case 1:
+                        case true:
                             gVar2 = a(gVar2);
                             gVar2.g = 1;
                             break;
-                        case 2:
+                        case true:
                             gVar2 = a(gVar2);
                             gVar2.f = 0;
                             break;
-                        case 3:
+                        case true:
                             gVar2 = a(gVar2);
                             gVar2.f = 1;
                             break;
@@ -801,51 +814,51 @@ public final class e implements m {
                     switch (b12.hashCode()) {
                         case -618561360:
                             if (b12.equals("baseContainer")) {
-                                c13 = 0;
+                                c11 = 0;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         case -410956671:
                             if (b12.equals("container")) {
-                                c13 = 1;
+                                c11 = 1;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         case -250518009:
                             if (b12.equals("delimiter")) {
-                                c13 = 2;
+                                c11 = 2;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         case -136074796:
                             if (b12.equals("textContainer")) {
-                                c13 = 3;
+                                c11 = 3;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         case 3016401:
                             if (b12.equals("base")) {
-                                c13 = 4;
+                                c11 = 4;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         case 3556653:
                             if (b12.equals("text")) {
-                                c13 = 5;
+                                c11 = 5;
                                 break;
                             }
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                         default:
-                            c13 = 65535;
+                            c11 = 65535;
                             break;
                     }
-                    switch (c13) {
+                    switch (c11) {
                         case 0:
                         case 4:
                             gVar2 = a(gVar2);
@@ -1033,44 +1046,44 @@ public final class e implements m {
                     switch (b16.hashCode()) {
                         case -1364013995:
                             if (b16.equals("center")) {
-                                c14 = 0;
+                                c12 = 0;
                                 break;
                             }
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                         case 100571:
                             if (b16.equals("end")) {
-                                c14 = 1;
+                                c12 = 1;
                                 break;
                             }
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                         case 3317767:
                             if (b16.equals("left")) {
-                                c14 = 2;
+                                c12 = 2;
                                 break;
                             }
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                         case 108511772:
                             if (b16.equals("right")) {
-                                c14 = 3;
+                                c12 = 3;
                                 break;
                             }
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                         case 109757538:
                             if (b16.equals("start")) {
-                                c14 = 4;
+                                c12 = 4;
                                 break;
                             }
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                         default:
-                            c14 = 65535;
+                            c12 = 65535;
                             break;
                     }
-                    switch (c14) {
+                    switch (c12) {
                         case 0:
                             alignment = Layout.Alignment.ALIGN_CENTER;
                             break;
@@ -1091,14 +1104,14 @@ public final class e implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00aa, code lost:
     
         if (r13.equals("ms") == false) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static long j(String str, d dVar) {
+    public static long i(String str, d dVar) {
         double d10;
         double d11;
         Matcher matcher = b.matcher(str);
@@ -1116,7 +1129,7 @@ public final class e implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(sa.e.i("Malformed time expression: ", str));
+            throw new z3.f(v.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1182,7 +1195,7 @@ public final class e implements m {
         return (long) (parseDouble * 1000000.0d);
     }
 
-    public static q0 k(XmlPullParser xmlPullParser) {
+    public static q0 j(XmlPullParser xmlPullParser) {
         String k10 = e2.d.k(xmlPullParser, "extent");
         if (k10 == null) {
             return null;
@@ -1206,12 +1219,17 @@ public final class e implements m {
     }
 
     @Override // z3.m
-    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        g9.b(h(i10, i11, bArr), lVar, hVar);
+    public final int O() {
+        return 1;
     }
 
     @Override // z3.m
-    public final z3.d h(int i10, int i11, byte[] bArr) {
+    public final void P(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        c9.b(s(i10, i11, bArr), lVar, hVar);
+    }
+
+    @Override // z3.m
+    public final z3.d s(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1222,83 +1240,78 @@ public final class e implements m {
             newPullParser.setInput(new ByteArrayInputStream(bArr, i10, i11), null);
             ArrayDeque arrayDeque = new ArrayDeque();
             d dVar = r;
-            cf.c cVar = null;
-            int i12 = 15;
-            int i13 = 0;
+            int i12 = 0;
+            int i13 = 15;
+            u5 u5Var = null;
             for (int eventType = newPullParser.getEventType(); eventType != 1; eventType = newPullParser.getEventType()) {
-                c cVar2 = (c) arrayDeque.peek();
-                if (i13 == 0) {
+                c cVar = (c) arrayDeque.peek();
+                if (i12 == 0) {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
                             dVar = e(newPullParser);
-                            i12 = c(newPullParser);
-                            q0Var = k(newPullParser);
+                            i13 = c(newPullParser);
+                            q0Var = j(newPullParser);
                         }
                         d dVar2 = dVar;
                         q0 q0Var2 = q0Var;
-                        int i14 = i12;
+                        int i14 = i13;
                         if (b(name)) {
                             if ("head".equals(name)) {
                                 f(newPullParser, hashMap, i14, q0Var2, hashMap2, hashMap3);
                             } else {
                                 try {
-                                    c g10 = g(newPullParser, cVar2, hashMap2, dVar2);
+                                    c g10 = g(newPullParser, cVar, hashMap2, dVar2);
                                     arrayDeque.push(g10);
-                                    if (cVar2 != null) {
-                                        if (cVar2.m == null) {
-                                            cVar2.m = new ArrayList();
+                                    if (cVar != null) {
+                                        if (cVar.m == null) {
+                                            cVar.m = new ArrayList();
                                         }
-                                        cVar2.m.add(g10);
+                                        cVar.m.add(g10);
                                     }
                                 } catch (z3.f e7) {
                                     e2.a.o("TtmlParser", "Suppressing parser error", e7);
                                 }
                             }
-                            i12 = i14;
+                            i13 = i14;
                             q0Var = q0Var2;
                             dVar = dVar2;
                         } else {
                             e2.a.i("TtmlParser", "Ignoring unsupported tag: " + newPullParser.getName());
                         }
-                        i13++;
-                        i12 = i14;
+                        i12++;
+                        i13 = i14;
                         q0Var = q0Var2;
                         dVar = dVar2;
                     } else if (eventType == 4) {
-                        cVar2.getClass();
+                        cVar.getClass();
                         c a2 = c.a(newPullParser.getText());
-                        if (cVar2.m == null) {
-                            cVar2.m = new ArrayList();
+                        if (cVar.m == null) {
+                            cVar.m = new ArrayList();
                         }
-                        cVar2.m.add(a2);
+                        cVar.m.add(a2);
                     } else if (eventType == 3) {
                         if (newPullParser.getName().equals("tt")) {
-                            c cVar3 = (c) arrayDeque.peek();
-                            cVar3.getClass();
-                            cVar = new cf.c(cVar3, hashMap, hashMap2, hashMap3);
+                            c cVar2 = (c) arrayDeque.peek();
+                            cVar2.getClass();
+                            u5Var = new u5(cVar2, hashMap, hashMap2, hashMap3);
                         }
                         arrayDeque.pop();
                     }
                 } else if (eventType == 2) {
-                    i13++;
+                    i12++;
                 } else if (eventType == 3) {
-                    i13--;
+                    i12--;
                 }
                 newPullParser.next();
             }
-            cVar.getClass();
-            return cVar;
+            u5Var.getClass();
+            return u5Var;
         } catch (IOException e10) {
             throw new IllegalStateException("Unexpected error when reading input.", e10);
         } catch (XmlPullParserException e11) {
             throw new IllegalStateException("Unable to decode source", e11);
         }
-    }
-
-    @Override // z3.m
-    public final int y() {
-        return 1;
     }
 
     @Override // z3.m

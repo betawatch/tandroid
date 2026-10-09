@@ -1,25 +1,169 @@
 package ai;
 
-import java.util.List;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b9 implements Utilities.CallbackReturn {
-    public final /* synthetic */ d9 a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ List d;
+public final /* synthetic */ class b9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e9 b;
+    public final /* synthetic */ MessagesStorage c;
 
-    public /* synthetic */ b9(d9 d9Var, boolean z10, int i10, List list) {
-        this.a = d9Var;
-        this.b = z10;
-        this.c = i10;
-        this.d = list;
+    public /* synthetic */ b9(e9 e9Var, MessagesStorage messagesStorage, int i10) {
+        this.a = i10;
+        this.b = e9Var;
+        this.c = messagesStorage;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        return Boolean.valueOf(this.a.q(this.c, this.d, this.b));
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01a7, code lost:
+    
+        if (r12 == null) goto L70;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        e9 e9Var;
+        long j3;
+        long j10;
+        TLRPC.Peer peer;
+        switch (this.a) {
+            case 0:
+                MessagesStorage messagesStorage = this.c;
+                e9 e9Var2 = this.b;
+                long j11 = e9Var2.d;
+                ArrayList arrayList = new ArrayList();
+                HashSet hashSet = new HashSet();
+                HashSet<Long> hashSet2 = new HashSet<>();
+                HashSet hashSet3 = new HashSet();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
+                ArrayList<TLRPC.Chat> arrayList4 = new ArrayList<>();
+                SQLiteCursor sQLiteCursor = null;
+                try {
+                    messagesStorage.getDatabase();
+                    sQLiteCursor = messagesStorage.createLoadStoriesCursor(j11, e9Var2.f, e9Var2.e);
+                    while (sQLiteCursor.next()) {
+                        NativeByteBuffer byteBufferValue = sQLiteCursor.byteBufferValue(0);
+                        if (byteBufferValue != null) {
+                            TL_stories.StoryItem TLdeserialize = TL_stories.StoryItem.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                            TLdeserialize.dialogId = j11;
+                            TLdeserialize.messageId = TLdeserialize.id;
+                            MessageObject messageObject = new MessageObject(e9Var2.c, TLdeserialize);
+                            ArrayList<TLRPC.PrivacyRule> arrayList5 = TLdeserialize.privacy;
+                            e9Var = e9Var2;
+                            try {
+                                int size = arrayList5.size();
+                                j3 = j11;
+                                int i10 = 0;
+                                while (i10 < size) {
+                                    TLRPC.PrivacyRule privacyRule = arrayList5.get(i10);
+                                    i10++;
+                                    TLRPC.PrivacyRule privacyRule2 = privacyRule;
+                                    ArrayList<TLRPC.PrivacyRule> arrayList6 = arrayList5;
+                                    if (privacyRule2 instanceof TLRPC.TL_privacyValueDisallowUsers) {
+                                        hashSet2.addAll(((TLRPC.TL_privacyValueDisallowUsers) privacyRule2).users);
+                                    } else if (privacyRule2 instanceof TLRPC.TL_privacyValueAllowUsers) {
+                                        hashSet2.addAll(((TLRPC.TL_privacyValueAllowUsers) privacyRule2).users);
+                                    }
+                                    arrayList5 = arrayList6;
+                                }
+                                TL_stories.StoryFwdHeader storyFwdHeader = TLdeserialize.fwd_from;
+                                if (storyFwdHeader == null || (peer = storyFwdHeader.from) == null) {
+                                    j10 = 0;
+                                } else {
+                                    j10 = 0;
+                                    long peerDialogId = DialogObject.getPeerDialogId(peer);
+                                    if (peerDialogId >= 0) {
+                                        hashSet2.add(Long.valueOf(peerDialogId));
+                                    } else {
+                                        hashSet3.add(Long.valueOf(-peerDialogId));
+                                    }
+                                }
+                                for (int i11 = 0; i11 < TLdeserialize.media_areas.size(); i11++) {
+                                    if (TLdeserialize.media_areas.get(i11) instanceof TL_stories.TL_mediaAreaChannelPost) {
+                                        hashSet3.add(Long.valueOf(((TL_stories.TL_mediaAreaChannelPost) TLdeserialize.media_areas.get(i11)).channel_id));
+                                    }
+                                }
+                                TLRPC.Peer peer2 = TLdeserialize.from_id;
+                                if (peer2 != null) {
+                                    long peerDialogId2 = DialogObject.getPeerDialogId(peer2);
+                                    if (peerDialogId2 >= j10) {
+                                        hashSet2.add(Long.valueOf(peerDialogId2));
+                                    } else {
+                                        hashSet3.add(Long.valueOf(-peerDialogId2));
+                                    }
+                                }
+                                messageObject.generateThumbs(false);
+                                arrayList2.add(messageObject);
+                                byteBufferValue.reuse();
+                                if (sQLiteCursor.intValue(1) == 1) {
+                                    hashSet.add(Integer.valueOf(TLdeserialize.id));
+                                }
+                                int intValue = sQLiteCursor.intValue(2);
+                                if (intValue > 0) {
+                                    arrayList.add(Utilities.clamp(intValue, arrayList.size() - 1, 0), Integer.valueOf(TLdeserialize.id));
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                try {
+                                    messagesStorage.checkSQLException(th);
+                                    break;
+                                } catch (Throwable th3) {
+                                    if (sQLiteCursor != null) {
+                                        sQLiteCursor.dispose();
+                                    }
+                                    throw th3;
+                                }
+                            }
+                        } else {
+                            e9Var = e9Var2;
+                            j3 = j11;
+                        }
+                        e9Var2 = e9Var;
+                        j11 = j3;
+                    }
+                    e9Var = e9Var2;
+                    sQLiteCursor.dispose();
+                    if (!hashSet2.isEmpty()) {
+                        messagesStorage.getUsersInternal(hashSet2, arrayList3);
+                    }
+                    if (!hashSet3.isEmpty()) {
+                        messagesStorage.getChatsInternal(TextUtils.join(",", hashSet3), arrayList4);
+                    }
+                } catch (Throwable th4) {
+                    th = th4;
+                    e9Var = e9Var2;
+                }
+                sQLiteCursor.dispose();
+                AndroidUtilities.runOnUIThread(new a9(e9Var, arrayList2, arrayList, arrayList3, arrayList4, hashSet, 0));
+                return;
+            default:
+                e9 e9Var3 = this.b;
+                MessagesStorage messagesStorage2 = this.c;
+                try {
+                    SQLiteDatabase database = messagesStorage2.getDatabase();
+                    Locale locale = Locale.US;
+                    database.executeFast("DELETE FROM profile_stories WHERE dialog_id = " + e9Var3.d + " AND type = " + e9Var3.e).stepThis().dispose();
+                } catch (Throwable th5) {
+                    messagesStorage2.checkSQLException(th5);
+                }
+                AndroidUtilities.runOnUIThread(new z8(e9Var3, 3));
+                return;
+        }
     }
 }

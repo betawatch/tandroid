@@ -33,122 +33,124 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public static final int[][] i0 = {new int[]{-2368069, -9722489, -2762611, -7817084}, new int[]{-7487253, -4599318, -3755537, -1320977}, new int[]{-6832405, -5117462, -3755537, -1067044}, new int[]{-7676942, -7827988, -1859606, -9986835}, new int[]{-5190165, -6311702, -4461867, -5053475}, new int[]{-2430264, -6114049, -1258497, -4594945}, new int[]{-2298990, -7347754, -9985038, -8006011}, new int[]{-1399954, -990074, -876865, -1523602}, new int[]{-15438, -1916673, -6222, -471346}, new int[]{-2891798}, new int[]{-5913125}, new int[]{-9463352}, new int[]{-2956375}, new int[]{-5974898}, new int[]{-8537234}, new int[]{-1647186}, new int[]{-2769263}, new int[]{-3431303}, new int[]{-1326919}, new int[]{-2054243}, new int[]{-3573648}, new int[]{-1328696}, new int[]{-2056777}, new int[]{-2984557}, new int[]{-2440467}, new int[]{-2906649}, new int[]{-4880430}, new int[]{-4013331}, new int[]{-5921305}, new int[]{-8421424}, new int[]{-4005139}, new int[]{-5908761}, new int[]{-8406320}, new int[]{-2702663}, new int[]{-6518654}, new int[]{-16777216}};
-    public static final int[][] j0 = {new int[]{-14797481, -15394250, -14924974, -14006975}, new int[]{-14867905, -14870478, -14997181, -15460815}, new int[]{-14666695, -15720408, -14861254, -15260107}, new int[]{-14932175, -15066075, -14208965, -15000799}, new int[]{-12968902, -14411460, -13029826, -15067598}, new int[]{-13885157, -12307670, -14542561, -12899018}, new int[]{-14797481, -15196106, -14924974, -15325638}, new int[]{-15658442, -15449521, -16047308, -12897955}, new int[]{-13809610, -15258855, -13221071, -15715791}, new int[]{-14865092}, new int[]{-15656154}, new int[]{-16051170}, new int[]{-14731745}, new int[]{-15524075}, new int[]{-15853808}, new int[]{-13685209}, new int[]{-14014945}, new int[]{-15132649}, new int[]{-12374480}, new int[]{-13755362}, new int[]{-14740716}, new int[]{-12374468}, new int[]{-13755352}, new int[]{-14740709}, new int[]{-12833213}, new int[]{-14083026}, new int[]{-14872031}, new int[]{-13554109}, new int[]{-14803922}, new int[]{-15461855}, new int[]{-13680833}, new int[]{-14602960}, new int[]{-15458784}, new int[]{-14211804}, new int[]{-15132906}, new int[]{-16777216}};
-    public static final int[] k0 = {-16746753, -65536, -30208, -13824, -16718798, -14702165, -9240406, -409915, -9224159, -16777216, -10725281, -1};
-    public static final String[] l0 = {"Blue", "Red", "Orange", "Yellow", "Green", "Teal", "Purple", "Pink", "Brown", "Black", "Gray", "White"};
-    public static final int[] m0 = {R.string.Blue, R.string.Red, R.string.Orange, R.string.Yellow, R.string.Green, R.string.Teal, R.string.Purple, R.string.Pink, R.string.Brown, R.string.Black, R.string.Gray, R.string.White};
-    public xi1 E;
-    public org.telegram.ui.Components.zl0 F;
-    public yi1 G;
-    public zi1 H;
-    public gg.b0 I;
-    public org.telegram.ui.ActionBar.v0 J;
-    public NumberTextView K;
-    public org.telegram.ui.Components.pz L;
-    public final ArrayList M;
-    public org.telegram.ui.ActionBar.b2 N;
-    public org.telegram.ui.Components.o91 O;
-    public int P;
-    public String Q;
+    public static final int[][] k0 = {new int[]{-2368069, -9722489, -2762611, -7817084}, new int[]{-7487253, -4599318, -3755537, -1320977}, new int[]{-6832405, -5117462, -3755537, -1067044}, new int[]{-7676942, -7827988, -1859606, -9986835}, new int[]{-5190165, -6311702, -4461867, -5053475}, new int[]{-2430264, -6114049, -1258497, -4594945}, new int[]{-2298990, -7347754, -9985038, -8006011}, new int[]{-1399954, -990074, -876865, -1523602}, new int[]{-15438, -1916673, -6222, -471346}, new int[]{-2891798}, new int[]{-5913125}, new int[]{-9463352}, new int[]{-2956375}, new int[]{-5974898}, new int[]{-8537234}, new int[]{-1647186}, new int[]{-2769263}, new int[]{-3431303}, new int[]{-1326919}, new int[]{-2054243}, new int[]{-3573648}, new int[]{-1328696}, new int[]{-2056777}, new int[]{-2984557}, new int[]{-2440467}, new int[]{-2906649}, new int[]{-4880430}, new int[]{-4013331}, new int[]{-5921305}, new int[]{-8421424}, new int[]{-4005139}, new int[]{-5908761}, new int[]{-8406320}, new int[]{-2702663}, new int[]{-6518654}, new int[]{-16777216}};
+    public static final int[][] l0 = {new int[]{-14797481, -15394250, -14924974, -14006975}, new int[]{-14867905, -14870478, -14997181, -15460815}, new int[]{-14666695, -15720408, -14861254, -15260107}, new int[]{-14932175, -15066075, -14208965, -15000799}, new int[]{-12968902, -14411460, -13029826, -15067598}, new int[]{-13885157, -12307670, -14542561, -12899018}, new int[]{-14797481, -15196106, -14924974, -15325638}, new int[]{-15658442, -15449521, -16047308, -12897955}, new int[]{-13809610, -15258855, -13221071, -15715791}, new int[]{-14865092}, new int[]{-15656154}, new int[]{-16051170}, new int[]{-14731745}, new int[]{-15524075}, new int[]{-15853808}, new int[]{-13685209}, new int[]{-14014945}, new int[]{-15132649}, new int[]{-12374480}, new int[]{-13755362}, new int[]{-14740716}, new int[]{-12374468}, new int[]{-13755352}, new int[]{-14740709}, new int[]{-12833213}, new int[]{-14083026}, new int[]{-14872031}, new int[]{-13554109}, new int[]{-14803922}, new int[]{-15461855}, new int[]{-13680833}, new int[]{-14602960}, new int[]{-15458784}, new int[]{-14211804}, new int[]{-15132906}, new int[]{-16777216}};
+    public static final int[] m0 = {-16746753, -65536, -30208, -13824, -16718798, -14702165, -9240406, -409915, -9224159, -16777216, -10725281, -1};
+    public static final String[] n0 = {"Blue", "Red", "Orange", "Yellow", "Green", "Teal", "Purple", "Pink", "Brown", "Black", "Gray", "White"};
+    public static final int[] o0 = {R.string.Blue, R.string.Red, R.string.Orange, R.string.Yellow, R.string.Green, R.string.Teal, R.string.Purple, R.string.Pink, R.string.Brown, R.string.Black, R.string.Gray, R.string.White};
+    public jj1 E;
+    public ij1 F;
+    public jj1 G;
+    public org.telegram.ui.Components.qm0 H;
+    public kj1 I;
+    public lj1 J;
+    public gg.a0 K;
+    public org.telegram.ui.ActionBar.v0 L;
+    public NumberTextView M;
+    public org.telegram.ui.Components.c00 N;
+    public final ArrayList O;
+    public org.telegram.ui.ActionBar.b2 P;
+    public org.telegram.ui.Components.v91 Q;
     public int R;
-    public int S;
+    public String S;
     public int T;
     public int U;
     public int V;
-    public float W;
-    public boolean X;
-    public boolean Y;
-    public final ArrayList Z;
+    public int W;
+    public int X;
+    public float Y;
+    public boolean Z;
     public int a;
-    public final HashMap a0;
+    public boolean a0;
     public int b;
-    public final HashMap b0;
+    public final ArrayList b0;
     public int c;
-    public final ArrayList c0;
+    public final HashMap c0;
     public int d;
-    public final ArrayList d0;
+    public final HashMap d0;
     public int e;
-    public ArrayList e0;
+    public final ArrayList e0;
     public int f;
-    public final HashMap f0;
-    public final LongSparseArray g0;
+    public final ArrayList f0;
+    public ArrayList g0;
     public int h;
-    public boolean h0;
+    public final HashMap h0;
+    public final LongSparseArray i0;
+    public boolean j0;
     public int n;
-    public final int r;
-    public Paint s;
+    public int r;
+    public int s;
     private int uploadImageRow;
-    public Paint v;
-    public wi1 w;
-    public xi1 x;
-    public wi1 y;
+    public final int v;
+    public Paint w;
+    public Paint x;
+    public ij1 y;
 
     public WallpapersListActivity(int i10) {
         super(null);
-        this.M = new ArrayList();
-        this.P = 3;
-        this.Q = "";
-        this.Z = new ArrayList();
-        this.a0 = new HashMap();
-        this.b0 = new HashMap();
-        this.c0 = new ArrayList();
-        this.d0 = new ArrayList();
+        this.O = new ArrayList();
+        this.R = 3;
+        this.S = "";
+        this.b0 = new ArrayList();
+        this.c0 = new HashMap();
+        this.d0 = new HashMap();
         this.e0 = new ArrayList();
-        this.f0 = new HashMap();
-        this.g0 = new LongSparseArray();
-        this.r = i10;
+        this.f0 = new ArrayList();
+        this.g0 = new ArrayList();
+        this.h0 = new HashMap();
+        this.i0 = new LongSparseArray();
+        this.v = i10;
     }
 
-    public static void S(WallpapersListActivity wallpapersListActivity) {
-        if (wallpapersListActivity.actionBar.s()) {
-            wallpapersListActivity.g0.clear();
-            wallpapersListActivity.actionBar.r();
+    public static void U(WallpapersListActivity wallpapersListActivity) {
+        if (wallpapersListActivity.actionBar.t()) {
+            wallpapersListActivity.i0.clear();
+            wallpapersListActivity.actionBar.s();
             wallpapersListActivity.D0();
         }
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(wallpapersListActivity.getParentActivity(), 3, null);
-        wallpapersListActivity.N = b2Var;
+        wallpapersListActivity.P = b2Var;
         b2Var.g0 = false;
         b2Var.show();
         ConnectionsManager.getInstance(wallpapersListActivity.currentAccount).sendRequest(new TL_account.resetWallPapers(), new m(wallpapersListActivity, 24));
     }
 
-    public static void T(WallpapersListActivity wallpapersListActivity, int i10) {
-        if (wallpapersListActivity.getParentActivity() == null || wallpapersListActivity.F.getAdapter() == wallpapersListActivity.H) {
+    public static void V(WallpapersListActivity wallpapersListActivity, int i10) {
+        if (wallpapersListActivity.getParentActivity() == null || wallpapersListActivity.H.getAdapter() == wallpapersListActivity.J) {
             return;
         }
         if (i10 == wallpapersListActivity.uploadImageRow) {
-            wallpapersListActivity.O.b();
+            wallpapersListActivity.Q.b();
             return;
         }
         if (i10 == wallpapersListActivity.b) {
             WallpapersListActivity wallpapersListActivity2 = new WallpapersListActivity(1);
-            wallpapersListActivity2.e0 = wallpapersListActivity.e0;
+            wallpapersListActivity2.g0 = wallpapersListActivity.g0;
             wallpapersListActivity.presentFragment(wallpapersListActivity2);
-        } else if (i10 == wallpapersListActivity.e) {
+        } else if (i10 == wallpapersListActivity.h) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ResetChatBackgroundsAlertTitle);
             alertDialog$Builder.a.T = LocaleController.getString(R.string.ResetChatBackgroundsAlert);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new pi1(wallpapersListActivity));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Reset), new bj1(wallpapersListActivity));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             wallpapersListActivity.showDialog(b2Var);
             TextView textView = (TextView) b2Var.d(-1);
             if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
+                textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false));
             }
         }
     }
 
-    public static void r0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.lj ljVar, Object obj, int i10) {
+    public static void r0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.mj mjVar, Object obj, int i10) {
         Object obj2 = obj;
-        LongSparseArray longSparseArray = wallpapersListActivity.g0;
+        LongSparseArray longSparseArray = wallpapersListActivity.i0;
         boolean z10 = true;
-        if (wallpapersListActivity.actionBar.s()) {
-            Object obj3 = obj2 instanceof wi1 ? ((wi1) obj2).l : obj2;
+        if (wallpapersListActivity.actionBar.t()) {
+            Object obj3 = obj2 instanceof ij1 ? ((ij1) obj2).l : obj2;
             if (obj3 instanceof TLRPC.WallPaper) {
                 TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj3;
                 if (longSparseArray.indexOfKey(wallPaper.id) >= 0) {
@@ -157,64 +159,64 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                     longSparseArray.put(wallPaper.id, obj2);
                 }
                 if (longSparseArray.size() == 0) {
-                    wallpapersListActivity.actionBar.r();
+                    wallpapersListActivity.actionBar.s();
                 } else {
-                    wallpapersListActivity.K.a(longSparseArray.size(), true);
+                    wallpapersListActivity.M.a(longSparseArray.size(), true);
                 }
-                wallpapersListActivity.h0 = false;
-                ljVar.c(i10, longSparseArray.indexOfKey(wallPaper.id) >= 0, true);
+                wallpapersListActivity.j0 = false;
+                mjVar.c(i10, longSparseArray.indexOfKey(wallPaper.id) >= 0, true);
                 return;
             }
             return;
         }
         boolean z11 = obj2 instanceof TLRPC.TL_wallPaper;
         Bitmap bitmap = null;
-        String str = z11 ? ((TLRPC.TL_wallPaper) obj2).slug : obj2 instanceof wi1 ? ((wi1) obj2).a : obj2 instanceof xi1 ? ((xi1) obj2).a : null;
+        String str = z11 ? ((TLRPC.TL_wallPaper) obj2).slug : obj2 instanceof ij1 ? ((ij1) obj2).a : obj2 instanceof jj1 ? ((jj1) obj2).a : null;
         if (z11) {
             TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
             if (tL_wallPaper.pattern) {
                 String str2 = tL_wallPaper.slug;
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
-                wi1 wi1Var = new wi1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r1.intensity / 100.0f, tL_wallPaper.settings.motion, null);
-                wi1Var.g = tL_wallPaper;
-                wi1Var.l = tL_wallPaper;
-                obj2 = wi1Var;
+                ij1 ij1Var = new ij1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r1.intensity / 100.0f, tL_wallPaper.settings.motion, null);
+                ij1Var.g = tL_wallPaper;
+                ij1Var.l = tL_wallPaper;
+                obj2 = ij1Var;
             }
         }
-        org.telegram.ui.Components.dp dpVar = new org.telegram.ui.Components.dp(obj2, bitmap, z10, 4);
-        if (wallpapersListActivity.r == 1) {
-            dpVar.I1 = new pi1(wallpapersListActivity);
+        org.telegram.ui.Components.qp qpVar = new org.telegram.ui.Components.qp(obj2, bitmap, z10, 4);
+        if (wallpapersListActivity.v == 1) {
+            qpVar.I1 = new bj1(wallpapersListActivity);
         }
-        if (wallpapersListActivity.Q.equals(str)) {
-            boolean z12 = wallpapersListActivity.Y;
-            boolean z13 = wallpapersListActivity.X;
-            float f7 = wallpapersListActivity.W;
-            dpVar.F1 = z12;
-            dpVar.E1 = z13;
-            dpVar.n1 = f7;
+        if (wallpapersListActivity.S.equals(str)) {
+            boolean z12 = wallpapersListActivity.a0;
+            boolean z13 = wallpapersListActivity.Z;
+            float f7 = wallpapersListActivity.Y;
+            qpVar.F1 = z12;
+            qpVar.E1 = z13;
+            qpVar.n1 = f7;
         }
-        dpVar.U0 = wallpapersListActivity.e0;
-        if (dpVar.b == 1 || (dpVar.B1 instanceof wi1)) {
-            ((wi1) dpVar.B1).getClass();
+        qpVar.U0 = wallpapersListActivity.g0;
+        if (qpVar.b == 1 || (qpVar.B1 instanceof ij1)) {
+            ((ij1) qpVar.B1).getClass();
         }
-        dpVar.c1(0L);
+        qpVar.c1(0L);
         org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
         l2Var.a = true;
-        dpVar.a.a = wallpapersListActivity.resourceProvider;
-        l2Var.c = new n21(5);
+        qpVar.a.a = wallpapersListActivity.resourceProvider;
+        l2Var.c = new t21(7);
         l2Var.e = true;
-        wallpapersListActivity.showAsSheet(dpVar, l2Var);
+        wallpapersListActivity.showAsSheet(qpVar, l2Var);
     }
 
-    public static boolean s0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.lj ljVar, Object obj, int i10) {
-        ArrayList arrayList = wallpapersListActivity.M;
-        int i11 = wallpapersListActivity.r;
+    public static boolean s0(WallpapersListActivity wallpapersListActivity, org.telegram.ui.Components.mj mjVar, Object obj, int i10) {
+        ArrayList arrayList = wallpapersListActivity.O;
+        int i11 = wallpapersListActivity.v;
         if (i11 != 2 && i11 != 3) {
-            Object obj2 = obj instanceof wi1 ? ((wi1) obj).l : obj;
-            if (!wallpapersListActivity.actionBar.s() && wallpapersListActivity.getParentActivity() != null && (obj2 instanceof TLRPC.WallPaper)) {
+            Object obj2 = obj instanceof ij1 ? ((ij1) obj).l : obj;
+            if (!wallpapersListActivity.actionBar.t() && wallpapersListActivity.getParentActivity() != null && (obj2 instanceof TLRPC.WallPaper)) {
                 AndroidUtilities.hideKeyboard(wallpapersListActivity.getParentActivity().getCurrentFocus());
-                wallpapersListActivity.g0.put(((TLRPC.WallPaper) obj2).id, obj);
-                wallpapersListActivity.K.a(1, false);
+                wallpapersListActivity.i0.put(((TLRPC.WallPaper) obj2).id, obj);
+                wallpapersListActivity.M.a(1, false);
                 AnimatorSet animatorSet = new AnimatorSet();
                 ArrayList arrayList2 = new ArrayList();
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
@@ -225,9 +227,9 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                 animatorSet.playTogether(arrayList2);
                 animatorSet.setDuration(250L);
                 animatorSet.start();
-                wallpapersListActivity.h0 = false;
-                wallpapersListActivity.actionBar.L(null, null);
-                ljVar.c(i10, true, true);
+                wallpapersListActivity.j0 = false;
+                wallpapersListActivity.actionBar.O(null, null);
+                mjVar.c(i10, true, true);
                 return true;
             }
         }
@@ -235,11 +237,11 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     }
 
     public static void z0(ArrayList arrayList, boolean z10) {
-        for (int[] iArr : z10 ? j0 : i0) {
+        for (int[] iArr : z10 ? l0 : k0) {
             if (iArr.length == 1) {
-                arrayList.add(new wi1(iArr[0], 0, "c", 45));
+                arrayList.add(new ij1(iArr[0], 0, "c", 45));
             } else {
-                arrayList.add(new wi1("c", iArr[0], iArr[1], iArr[2], iArr[3]));
+                arrayList.add(new ij1("c", iArr[0], iArr[1], iArr[2], iArr[3]));
             }
         }
     }
@@ -248,9 +250,8 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     /* JADX WARN: Type inference failed for: r5v0 */
     /* JADX WARN: Type inference failed for: r5v1 */
     /* JADX WARN: Type inference failed for: r5v10, types: [org.telegram.tgnet.TLRPC$TL_wallPaper, org.telegram.tgnet.TLRPC$WallPaper] */
-    /* JADX WARN: Type inference failed for: r5v11, types: [org.telegram.ui.wi1] */
+    /* JADX WARN: Type inference failed for: r5v11, types: [org.telegram.ui.ij1] */
     public final void A0() {
-        int i10;
         HashMap hashMap;
         TLRPC.TL_wallPaper tL_wallPaper;
         final String str;
@@ -258,88 +259,93 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
         Object obj;
         TLRPC.TL_wallPaper tL_wallPaper2;
         TLRPC.WallPaper wallPaper;
+        int i10;
         int i11;
         int i12;
         int i13;
-        int i14;
         String str2;
         TLRPC.TL_wallPaper tL_wallPaper3;
         Object obj2;
-        int i15 = this.r;
-        if (i15 == 0 || i15 == 2) {
+        int i14 = this.v;
+        if (i14 == 0 || i14 == 2) {
             MessagesController.getGlobalMainSettings();
-            wi1 wi1Var = this.w;
-            ArrayList arrayList = this.c0;
-            if (wi1Var != null) {
-                arrayList.remove(wi1Var);
-                this.w = null;
+            ij1 ij1Var = this.y;
+            ArrayList arrayList = this.e0;
+            if (ij1Var != null) {
+                arrayList.remove(ij1Var);
+                this.y = null;
             }
-            xi1 xi1Var = this.x;
-            if (xi1Var != null) {
-                arrayList.remove(xi1Var);
-                this.x = null;
+            jj1 jj1Var = this.E;
+            if (jj1Var != null) {
+                arrayList.remove(jj1Var);
+                this.E = null;
             }
-            wi1 wi1Var2 = this.y;
-            if (wi1Var2 == null) {
-                wi1 wi1Var3 = new wi1("d", -2368069, -9722489, -2762611, -7817084);
-                this.y = wi1Var3;
-                wi1Var3.h = 0.34f;
+            ij1 ij1Var2 = this.F;
+            if (ij1Var2 == null) {
+                ij1 ij1Var3 = new ij1("d", -2368069, -9722489, -2762611, -7817084);
+                this.F = ij1Var3;
+                ij1Var3.h = 0.34f;
             } else {
-                arrayList.remove(wi1Var2);
+                arrayList.remove(ij1Var2);
             }
-            xi1 xi1Var2 = this.E;
-            if (xi1Var2 != null) {
-                arrayList.remove(xi1Var2);
+            jj1 jj1Var2 = this.G;
+            if (jj1Var2 != null) {
+                arrayList.remove(jj1Var2);
             }
             int size = arrayList.size();
+            int i15 = 0;
             while (true) {
-                hashMap = this.a0;
-                if (i10 >= size) {
+                hashMap = this.c0;
+                if (i15 >= size) {
                     tL_wallPaper = 0;
                     break;
                 }
-                Object obj3 = arrayList.get(i10);
-                if (obj3 instanceof wi1) {
-                    tL_wallPaper = (wi1) obj3;
+                Object obj3 = arrayList.get(i15);
+                if (obj3 instanceof ij1) {
+                    tL_wallPaper = (ij1) obj3;
                     String str3 = tL_wallPaper.a;
                     if (str3 != null) {
                         tL_wallPaper.g = (TLRPC.TL_wallPaper) hashMap.get(str3);
                     }
                     if (!"c".equals(tL_wallPaper.a)) {
                         String str4 = tL_wallPaper.a;
-                        i10 = (str4 == null || TextUtils.equals(this.Q, str4)) ? 0 : i10 + 1;
+                        if (str4 != null && !TextUtils.equals(this.S, str4)) {
+                            i15++;
+                        }
                     }
-                    if (this.R == tL_wallPaper.b) {
-                        int i16 = this.S;
+                    if (this.T == tL_wallPaper.b) {
+                        int i16 = this.U;
                         if (i16 != tL_wallPaper.c) {
                             continue;
-                        } else if (this.T != tL_wallPaper.d) {
+                        } else if (this.V != tL_wallPaper.d) {
                             continue;
-                        } else if (this.U != tL_wallPaper.e) {
+                        } else if (this.W != tL_wallPaper.e) {
                             continue;
-                        } else if (i16 == 0 || this.V == tL_wallPaper.f) {
+                        } else if (i16 == 0 || this.X == tL_wallPaper.f) {
                             break;
                         }
                     } else {
                         continue;
                     }
+                    i15++;
                 } else {
                     if (obj3 instanceof TLRPC.TL_wallPaper) {
                         tL_wallPaper = (TLRPC.TL_wallPaper) obj3;
-                        if (tL_wallPaper.settings != null && TextUtils.equals(this.Q, tL_wallPaper.slug) && this.R == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper.settings.background_color) && this.S == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper.settings.second_background_color) && this.T == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper.settings.third_background_color) && this.U == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper.settings.fourth_background_color) && ((this.S == 0 || this.V == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false)) && Math.abs(org.telegram.ui.ActionBar.i6.R0(tL_wallPaper.settings.intensity / 100.0f) - this.W) <= 0.001f)) {
+                        if (tL_wallPaper.settings != null && TextUtils.equals(this.S, tL_wallPaper.slug) && this.T == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper.settings.background_color) && this.U == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper.settings.second_background_color) && this.V == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper.settings.third_background_color) && this.W == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper.settings.fourth_background_color) && ((this.U == 0 || this.X == AndroidUtilities.getWallpaperRotation(tL_wallPaper.settings.rotation, false)) && Math.abs(org.telegram.ui.ActionBar.i6.S0(tL_wallPaper.settings.intensity / 100.0f) - this.Y) <= 0.001f)) {
                             break;
                         }
                     } else {
                         continue;
                     }
+                    i15++;
                 }
             }
             if (tL_wallPaper instanceof TLRPC.WallPaper) {
                 TLRPC.TL_wallPaper tL_wallPaper4 = tL_wallPaper;
-                org.telegram.ui.ActionBar.a6 a6Var = org.telegram.ui.ActionBar.i6.I.i0;
+                org.telegram.ui.ActionBar.b6 b6Var = org.telegram.ui.ActionBar.i6.I.i0;
                 TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper4.settings;
-                if (wallPaperSettings != null && this.R == org.telegram.ui.ActionBar.i6.X0(wallPaperSettings.background_color) && this.S == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper4.settings.second_background_color) && this.T == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper4.settings.third_background_color) && this.U == org.telegram.ui.ActionBar.i6.X0(tL_wallPaper4.settings.fourth_background_color) && (this.S == 0 || this.T != 0 || this.V == AndroidUtilities.getWallpaperRotation(tL_wallPaper4.settings.rotation, false) || Math.abs(org.telegram.ui.ActionBar.i6.R0(tL_wallPaper4.settings.intensity / 100.0f) - this.W) <= 0.001f)) {
-                    str2 = this.Q;
+                if (wallPaperSettings != null && this.T == org.telegram.ui.ActionBar.i6.Y0(wallPaperSettings.background_color) && this.U == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper4.settings.second_background_color) && this.V == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper4.settings.third_background_color) && this.W == org.telegram.ui.ActionBar.i6.Y0(tL_wallPaper4.settings.fourth_background_color) && (this.U == 0 || this.V != 0 || this.X == AndroidUtilities.getWallpaperRotation(tL_wallPaper4.settings.rotation, false) || Math.abs(org.telegram.ui.ActionBar.i6.S0(tL_wallPaper4.settings.intensity / 100.0f) - this.Y) <= 0.001f)) {
+                    str2 = this.S;
                     tL_wallPaper3 = null;
                     obj2 = tL_wallPaper;
                 } else {
@@ -352,22 +358,22 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                 obj = obj2;
                 j3 = tL_wallPaper4.id;
             } else {
-                str = this.Q;
-                j3 = (!(tL_wallPaper instanceof wi1) || (wallPaper = tL_wallPaper.l) == null) ? 0L : wallPaper.id;
+                str = this.S;
+                j3 = (!(tL_wallPaper instanceof ij1) || (wallPaper = tL_wallPaper.l) == null) ? 0L : wallPaper.id;
                 obj = tL_wallPaper;
                 tL_wallPaper2 = null;
             }
-            final boolean q6 = org.telegram.ui.ActionBar.i6.A0().q();
+            final boolean q6 = org.telegram.ui.ActionBar.i6.B0().q();
             try {
-                Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.oi1
+                Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.aj1
                     @Override // java.util.Comparator
                     public final int compare(Object obj4, Object obj5) {
-                        ArrayList arrayList2 = WallpapersListActivity.this.Z;
-                        if (obj4 instanceof wi1) {
-                            obj4 = ((wi1) obj4).l;
+                        ArrayList arrayList2 = WallpapersListActivity.this.b0;
+                        if (obj4 instanceof ij1) {
+                            obj4 = ((ij1) obj4).l;
                         }
-                        if (obj5 instanceof wi1) {
-                            obj5 = ((wi1) obj5).l;
+                        if (obj5 instanceof ij1) {
+                            obj5 = ((ij1) obj5).l;
                         }
                         if (!(obj4 instanceof TLRPC.WallPaper) || !(obj5 instanceof TLRPC.WallPaper)) {
                             return 0;
@@ -416,58 +422,58 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
             } catch (Exception e7) {
                 FileLog.e(e7);
             }
-            if (org.telegram.ui.ActionBar.i6.d1() && TextUtils.isEmpty(org.telegram.ui.ActionBar.i6.h0)) {
-                if (this.E == null) {
-                    xi1 xi1Var3 = new xi1();
-                    xi1Var3.a = "t";
-                    xi1Var3.b = -2;
-                    xi1Var3.c = -2;
-                    this.E = xi1Var3;
+            if (org.telegram.ui.ActionBar.i6.e1() && TextUtils.isEmpty(org.telegram.ui.ActionBar.i6.h0)) {
+                if (this.G == null) {
+                    jj1 jj1Var3 = new jj1();
+                    jj1Var3.a = "t";
+                    jj1Var3.b = -2;
+                    jj1Var3.c = -2;
+                    this.G = jj1Var3;
                 }
-                arrayList.add(0, this.E);
+                arrayList.add(0, this.G);
             } else {
-                this.E = null;
+                this.G = null;
             }
             org.telegram.ui.ActionBar.h6 h6Var = org.telegram.ui.ActionBar.i6.I;
-            if (TextUtils.isEmpty(this.Q) || (!"d".equals(this.Q) && obj == null)) {
-                if ("c".equals(this.Q) || (i12 = this.R) == 0) {
-                    int i17 = this.R;
+            if (TextUtils.isEmpty(this.S) || (!"d".equals(this.S) && obj == null)) {
+                if ("c".equals(this.S) || (i11 = this.T) == 0) {
+                    int i17 = this.T;
                     if (i17 != 0) {
-                        int i18 = this.S;
-                        if (i18 == 0 || (i11 = this.T) == 0) {
-                            this.w = new wi1(i17, i18, this.Q, this.V);
+                        int i18 = this.U;
+                        if (i18 == 0 || (i10 = this.V) == 0) {
+                            this.y = new ij1(i17, i18, this.S, this.X);
                         } else {
-                            wi1 wi1Var4 = new wi1(this.Q, i17, i18, i11, this.U);
-                            this.w = wi1Var4;
-                            wi1Var4.f = this.V;
+                            ij1 ij1Var4 = new ij1(this.S, i17, i18, i10, this.W);
+                            this.y = ij1Var4;
+                            ij1Var4.f = this.X;
                         }
-                        arrayList.add(0, this.w);
-                    } else if (h6Var.i0 != null && !hashMap.containsKey(this.Q)) {
-                        xi1 xi1Var4 = new xi1(new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.a), new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.b), this.Q);
-                        this.x = xi1Var4;
-                        arrayList.add(this.E != null ? 1 : 0, xi1Var4);
+                        arrayList.add(0, this.y);
+                    } else if (h6Var.i0 != null && !hashMap.containsKey(this.S)) {
+                        jj1 jj1Var4 = new jj1(new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.a), new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.b), this.S);
+                        this.E = jj1Var4;
+                        arrayList.add(this.G != null ? 1 : 0, jj1Var4);
                     }
                 } else if (h6Var.i0 != null) {
-                    wi1 wi1Var5 = new wi1(this.Q, i12, this.S, this.T, this.U, this.V, this.W, this.X, new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.a));
-                    this.w = wi1Var5;
-                    wi1Var5.g = tL_wallPaper2;
-                    arrayList.add(0, wi1Var5);
+                    ij1 ij1Var5 = new ij1(this.S, i11, this.U, this.V, this.W, this.X, this.Y, this.Z, new File(ApplicationLoader.getFilesDirFixed(), h6Var.i0.a));
+                    this.y = ij1Var5;
+                    ij1Var5.g = tL_wallPaper2;
+                    arrayList.add(0, ij1Var5);
                 }
-            } else if (obj == null && this.R != 0 && "c".equals(this.Q)) {
-                int i19 = this.S;
-                if (i19 == 0 || (i13 = this.T) == 0 || (i14 = this.U) == 0) {
-                    this.w = new wi1(this.R, i19, this.Q, this.V);
+            } else if (obj == null && this.T != 0 && "c".equals(this.S)) {
+                int i19 = this.U;
+                if (i19 == 0 || (i12 = this.V) == 0 || (i13 = this.W) == 0) {
+                    this.y = new ij1(this.T, i19, this.S, this.X);
                 } else {
-                    wi1 wi1Var6 = new wi1(this.Q, this.R, i19, i13, i14);
-                    this.w = wi1Var6;
-                    wi1Var6.f = this.V;
+                    ij1 ij1Var6 = new ij1(this.S, this.T, i19, i12, i13);
+                    this.y = ij1Var6;
+                    ij1Var6.f = this.X;
                 }
-                arrayList.add(0, this.w);
-            }
-            if ("d".equals(this.Q) || arrayList.isEmpty()) {
                 arrayList.add(0, this.y);
+            }
+            if ("d".equals(this.S) || arrayList.isEmpty()) {
+                arrayList.add(0, this.F);
             } else {
-                arrayList.add(1, this.y);
+                arrayList.add(1, this.F);
             }
             C0();
         }
@@ -476,7 +482,7 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     public final void B0(boolean z10) {
         long j3 = 0;
         if (!z10) {
-            ArrayList arrayList = this.Z;
+            ArrayList arrayList = this.b0;
             int size = arrayList.size();
             long j10 = 0;
             for (int i10 = 0; i10 < size; i10++) {
@@ -492,63 +498,68 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
         }
         TL_account.getWallPapers getwallpapers = new TL_account.getWallPapers();
         getwallpapers.hash = j3;
-        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new ci.t3(13, this, z10)), this.classGuid);
+        ConnectionsManager.getInstance(this.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(this.currentAccount).sendRequest(getwallpapers, new ci.s3(13, this, z10)), this.classGuid);
     }
 
     public final void C0() {
         this.a = 0;
-        int i10 = this.r;
+        int i10 = this.v;
         if (i10 == 0) {
             this.uploadImageRow = 0;
-            this.a = 2;
             this.b = 1;
-            this.h = -1;
-            this.n = -1;
+            this.a = 3;
+            this.c = 2;
+            this.r = -1;
+            this.s = -1;
         } else if (i10 == 2) {
             this.uploadImageRow = -1;
             this.b = -1;
-            this.h = 0;
+            this.c = -1;
+            this.r = 0;
             this.a = 2;
-            this.n = 1;
+            this.s = 1;
         } else {
             this.uploadImageRow = -1;
             this.b = -1;
-            this.h = -1;
-            this.n = -1;
-        }
-        if (this.c0.isEmpty()) {
             this.c = -1;
+            this.r = -1;
+            this.s = -1;
+        }
+        if (this.e0.isEmpty()) {
+            this.d = -1;
         } else {
-            int ceil = (int) Math.ceil(r0.size() / this.P);
-            this.d = ceil;
+            int ceil = (int) Math.ceil(r0.size() / this.R);
+            this.e = ceil;
             int i11 = this.a;
-            this.c = i11;
+            this.d = i11;
             this.a = i11 + ceil;
         }
         if (i10 == 0) {
             int i12 = this.a;
-            this.e = i12;
-            this.a = i12 + 2;
-            this.f = i12 + 1;
+            this.f = i12;
+            this.h = i12 + 1;
+            this.a = i12 + 3;
+            this.n = i12 + 2;
         } else {
-            this.e = -1;
             this.f = -1;
+            this.h = -1;
+            this.n = -1;
         }
-        yi1 yi1Var = this.G;
-        if (yi1Var != null) {
-            this.h0 = true;
-            yi1Var.l();
+        kj1 kj1Var = this.I;
+        if (kj1Var != null) {
+            this.j0 = true;
+            kj1Var.l();
         }
     }
 
     public final void D0() {
-        int childCount = this.F.getChildCount();
+        int childCount = this.H.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = this.F.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.eb) {
-                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) childAt;
+            View childAt = this.H.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.cb) {
+                org.telegram.ui.Cells.cb cbVar = (org.telegram.ui.Cells.cb) childAt;
                 for (int i11 = 0; i11 < 5; i11++) {
-                    ebVar.c(i11, false, true);
+                    cbVar.c(i11, false, true);
                 }
             }
         }
@@ -557,17 +568,17 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         int i10 = 1;
-        this.s = new Paint(1);
+        this.w = new Paint(1);
         Paint paint = new Paint(1);
-        this.v = paint;
+        this.x = paint;
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        this.v.setStyle(Paint.Style.STROKE);
-        this.v.setColor(855638016);
-        this.O = new org.telegram.ui.Components.o91(getParentActivity(), this, new qi1(this));
+        this.x.setStyle(Paint.Style.STROKE);
+        this.x.setColor(855638016);
+        this.Q = new org.telegram.ui.Components.v91(getParentActivity(), this, new cj1(this));
         this.hasOwnBackground = true;
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        int i11 = this.r;
+        int i11 = this.v;
         if (i11 == 0) {
             this.actionBar.setTitle(LocaleController.getString(R.string.ChatBackground));
         } else if (i11 == 2) {
@@ -575,66 +586,68 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
         } else if (i11 == 1) {
             this.actionBar.setTitle(LocaleController.getString(R.string.SelectColorTitle));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new ti1(this));
+        this.actionBar.setActionBarMenuOnItemClick(new fj1(this));
         boolean z10 = false;
         if (i11 == 0) {
-            org.telegram.ui.ActionBar.v0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
+            org.telegram.ui.ActionBar.v0 a2 = this.actionBar.o().a(0, R.drawable.outline_header_search);
             a2.F();
-            a2.H = new ui1(this);
-            this.J = a2;
+            a2.H = new gj1(this);
+            this.L = a2;
             a2.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
             org.telegram.ui.ActionBar.z j3 = this.actionBar.j(null);
-            j3.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.s8, false));
+            j3.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.s8, false));
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             int i12 = org.telegram.ui.ActionBar.i6.v8;
-            kVar.A(org.telegram.ui.ActionBar.i6.w0(null, i12, false), true);
-            this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.t8, false), true);
+            kVar.D(org.telegram.ui.ActionBar.i6.x0(null, i12, false), true);
+            this.actionBar.C(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.t8, false), true);
             NumberTextView numberTextView = new NumberTextView(j3.getContext());
-            this.K = numberTextView;
+            this.M = numberTextView;
             numberTextView.setTextSize(18);
-            this.K.setTypeface(AndroidUtilities.bold());
-            this.K.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-            this.K.setOnTouchListener(new xe1(1));
-            j3.addView(this.K, w7.z5.m(1.0f, 0, -1, 65, 0, 0));
+            this.M.setTypeface(AndroidUtilities.bold());
+            this.M.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
+            this.M.setOnTouchListener(new gf1(1));
+            j3.addView(this.M, w7.x5.m(1.0f, 0, -1, 65, 0, 0));
             org.telegram.ui.ActionBar.v0 h = j3.h(3, R.drawable.msg_forward, LocaleController.getString(R.string.Forward), AndroidUtilities.dp(54.0f));
-            ArrayList arrayList = this.M;
+            ArrayList arrayList = this.O;
             arrayList.add(h);
             arrayList.add(j3.h(4, R.drawable.msg_delete, LocaleController.getString(R.string.Delete), AndroidUtilities.dp(54.0f)));
-            this.g0.clear();
+            this.i0.clear();
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        this.F = zl0Var;
-        zl0Var.r1();
-        org.telegram.ui.Components.zl0 zl0Var2 = this.F;
+        org.telegram.ui.Components.qm0 qm0Var = new org.telegram.ui.Components.qm0(context, null);
+        this.H = qm0Var;
+        qm0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.H);
+        org.telegram.ui.Components.qm0 qm0Var2 = this.H;
         int i13 = org.telegram.ui.ActionBar.i6.a7;
-        zl0Var2.setBackgroundColor(getThemedColor(i13));
-        this.F.setHorizontalScrollBarEnabled(false);
-        this.F.setVerticalScrollBarEnabled(false);
-        this.F.setItemAnimator(null);
-        this.F.setLayoutAnimation(null);
-        org.telegram.ui.Components.zl0 zl0Var3 = this.F;
-        gg.b0 b0Var = new gg.b0(i10, z10, 19);
-        this.I = b0Var;
-        zl0Var3.setLayoutManager(b0Var);
-        frameLayout.addView(this.F, w7.z5.e(-1, -1, 51));
-        org.telegram.ui.Components.zl0 zl0Var4 = this.F;
-        yi1 yi1Var = new yi1(this, context);
-        this.G = yi1Var;
-        zl0Var4.setAdapter(yi1Var);
-        this.H = new zi1(this, context);
-        this.F.setGlowColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.e8, false));
-        this.F.setOnItemClickListener(new t21(this, 13));
-        this.F.setOnScrollListener(new u91(this, 5));
-        org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(context, null);
-        this.L = pzVar;
-        pzVar.setVisibility(8);
-        this.L.setShowAtCenter(true);
-        this.L.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
-        this.L.setText(LocaleController.getString(R.string.NoResult));
-        this.F.setEmptyView(this.L);
-        frameLayout.addView(this.L, w7.z5.c(-1.0f, -1));
+        qm0Var2.setBackgroundColor(getThemedColor(i13));
+        this.H.setClipToPadding(false);
+        this.H.setHorizontalScrollBarEnabled(false);
+        this.H.setVerticalScrollBarEnabled(false);
+        this.H.setItemAnimator(null);
+        this.H.setLayoutAnimation(null);
+        org.telegram.ui.Components.qm0 qm0Var3 = this.H;
+        gg.a0 a0Var = new gg.a0(i10, z10, 19);
+        this.K = a0Var;
+        qm0Var3.setLayoutManager(a0Var);
+        frameLayout.addView(this.H, w7.x5.e(-1, -1, 51));
+        org.telegram.ui.Components.qm0 qm0Var4 = this.H;
+        kj1 kj1Var = new kj1(this, context);
+        this.I = kj1Var;
+        qm0Var4.setAdapter(kj1Var);
+        this.J = new lj1(this, context);
+        this.H.setGlowColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.e8, false));
+        this.H.setOnItemClickListener(new z21(this, 13));
+        this.H.setOnScrollListener(new pe1(this, 3));
+        org.telegram.ui.Components.c00 c00Var = new org.telegram.ui.Components.c00(context, null);
+        this.N = c00Var;
+        c00Var.setVisibility(8);
+        this.N.setShowAtCenter(true);
+        this.N.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, i13, false));
+        this.N.setText(LocaleController.getString(R.string.NoResult));
+        this.H.setEmptyView(this.N);
+        frameLayout.addView(this.N, w7.x5.d(-1.0f, -1));
         C0();
         return this.fragmentView;
     }
@@ -643,7 +656,7 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12;
         ArrayList arrayList;
-        wi1 wi1Var;
+        ij1 ij1Var;
         HashMap hashMap;
         TLRPC.WallPaperSettings wallPaperSettings;
         int i13;
@@ -659,9 +672,9 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                 }
                 return;
             }
-            org.telegram.ui.Components.zl0 zl0Var = this.F;
-            if (zl0Var != null) {
-                zl0Var.g1();
+            org.telegram.ui.Components.qm0 qm0Var = this.H;
+            if (qm0Var != null) {
+                qm0Var.f1();
             }
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             if (kVar != null) {
@@ -671,19 +684,19 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
             return;
         }
         ArrayList arrayList2 = (ArrayList) objArr[0];
-        this.e0.clear();
-        HashMap hashMap2 = this.f0;
+        this.g0.clear();
+        HashMap hashMap2 = this.h0;
         hashMap2.clear();
-        HashMap hashMap3 = this.a0;
-        ArrayList arrayList3 = this.d0;
-        int i15 = this.r;
-        HashMap hashMap4 = this.b0;
-        ArrayList arrayList4 = this.c0;
+        HashMap hashMap3 = this.c0;
+        ArrayList arrayList3 = this.f0;
+        int i15 = this.v;
+        HashMap hashMap4 = this.d0;
+        ArrayList arrayList4 = this.e0;
         if (i15 != 1 && i15 != 2) {
             arrayList4.clear();
             arrayList3.clear();
             hashMap4.clear();
-            ArrayList arrayList5 = this.Z;
+            ArrayList arrayList5 = this.b0;
             arrayList5.clear();
             hashMap3.clear();
             arrayList5.addAll(arrayList2);
@@ -706,7 +719,7 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                         } else {
                             i12 = i15;
                             if (!hashMap2.containsKey(Long.valueOf(document.id))) {
-                                this.e0.add(wallPaper);
+                                this.g0.add(wallPaper);
                                 hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
                             }
                         }
@@ -726,18 +739,18 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                     if (i18 == 0 || (i13 = wallPaperSettings4.third_background_color) == 0) {
                         arrayList = arrayList2;
                         hashMap = hashMap2;
-                        wi1Var = new wi1(i17, i18, null, wallPaperSettings4.rotation);
+                        ij1Var = new ij1(i17, i18, null, wallPaperSettings4.rotation);
                     } else {
                         arrayList = arrayList2;
-                        wi1Var = new wi1(null, i17, i18, i13, wallPaperSettings4.fourth_background_color);
+                        ij1Var = new ij1(null, i17, i18, i13, wallPaperSettings4.fourth_background_color);
                         hashMap = hashMap2;
                     }
-                    wi1Var.a = wallPaper.slug;
-                    wi1Var.h = wallPaperSettings4.intensity / 100.0f;
-                    wi1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
-                    wi1Var.l = wallPaper;
+                    ij1Var.a = wallPaper.slug;
+                    ij1Var.h = wallPaperSettings4.intensity / 100.0f;
+                    ij1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
+                    ij1Var.l = wallPaper;
                     if (wallPaper.id < 0) {
-                        String a2 = wi1Var.a();
+                        String a2 = ij1Var.a();
                         if (hashMap4.containsKey(a2)) {
                             if (arrayList6 == null) {
                                 arrayList6 = new ArrayList();
@@ -749,12 +762,12 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                             arrayList2 = arrayList;
                             i14 = 1;
                         } else {
-                            arrayList3.add(wi1Var);
-                            hashMap4.put(a2, wi1Var);
+                            arrayList3.add(ij1Var);
+                            hashMap4.put(a2, ij1Var);
                         }
                     }
                     if (org.telegram.ui.ActionBar.i6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0) {
-                        arrayList4.add(wi1Var);
+                        arrayList4.add(ij1Var);
                     }
                     i16++;
                     i15 = i12;
@@ -777,14 +790,9 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
                 getMessagesStorage().deleteWallpaper(((TLRPC.WallPaper) arrayList6.get(i19)).id);
             }
         }
-        this.Q = org.telegram.ui.ActionBar.i6.H0();
+        this.S = org.telegram.ui.ActionBar.i6.I0();
         A0();
         B0(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
-        return this.F;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -796,55 +804,51 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
         View view2 = this.fragmentView;
         int i11 = org.telegram.ui.ActionBar.i6.a7;
         arrayList.add(new org.telegram.ui.ActionBar.k6(view2, 0, null, null, null, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 32768, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 32768, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 1, null, null, null, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 4096, null, null, null, null, org.telegram.ui.ActionBar.i6.i6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 48, new Class[]{org.telegram.ui.Cells.e9.class}, null, null, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 0, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.B6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.G6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.I6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.m6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 0, new Class[]{org.telegram.ui.Cells.v3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.f7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.F, 16, new Class[]{org.telegram.ui.Cells.v3.class}, null, null, null, org.telegram.ui.ActionBar.i6.e7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.L, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.c7));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.L, 2048, null, null, null, null, org.telegram.ui.ActionBar.i6.h6));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.L, 1, null, null, null, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 1, null, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 4096, null, null, null, null, org.telegram.ui.ActionBar.i6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 48, new Class[]{org.telegram.ui.Cells.e9.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 0, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 48, new Class[]{org.telegram.ui.Cells.b7.class}, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.G6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.m6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 0, new Class[]{org.telegram.ui.Cells.v3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.f7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.H, 16, new Class[]{org.telegram.ui.Cells.v3.class}, null, null, null, org.telegram.ui.ActionBar.i6.e7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.N, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.c7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.N, 2048, null, null, null, null, org.telegram.ui.ActionBar.i6.h6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.N, 1, null, null, null, null, i10));
         return arrayList;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
     public final void onActivityResultFragment(int i10, int i11, Intent intent) {
-        this.O.a(i10, i11, intent);
+        this.Q.a(i10, i11, intent);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        org.telegram.ui.Components.zl0 zl0Var = this.F;
-        if (zl0Var != null) {
-            zl0Var.getViewTreeObserver().addOnPreDrawListener(new g7(this, 7));
+        org.telegram.ui.Components.qm0 qm0Var = this.H;
+        if (qm0Var != null) {
+            qm0Var.getViewTreeObserver().addOnPreDrawListener(new ei(this, 6));
         }
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
-        int i10 = this.r;
+        int i10 = this.v;
         if (i10 == 0 || i10 == 2) {
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewWallpapper);
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersNeedReload);
             getMessagesStorage().getWallpapers();
         } else {
-            z0(this.c0, org.telegram.ui.ActionBar.i6.I.q());
-            if (i10 == 1 && this.e0.isEmpty()) {
+            z0(this.e0, org.telegram.ui.ActionBar.i6.I.q());
+            if (i10 == 1 && this.g0.isEmpty()) {
                 NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.wallpapersDidLoad);
                 getMessagesStorage().getWallpapers();
             }
@@ -854,12 +858,12 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
-        int i10 = this.r;
+        int i10 = this.v;
         if (i10 == 0 || i10 == 2) {
-            zi1 zi1Var = this.H;
-            if (zi1Var.s != 0) {
-                ConnectionsManager.getInstance(zi1Var.E.currentAccount).cancelRequest(zi1Var.s, true);
-                zi1Var.s = 0;
+            lj1 lj1Var = this.J;
+            if (lj1Var.s != 0) {
+                ConnectionsManager.getInstance(lj1Var.E.currentAccount).cancelRequest(lj1Var.s, true);
+                lj1Var.s = 0;
             }
             NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
             NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewWallpapper);
@@ -867,7 +871,7 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
         } else if (i10 == 1) {
             NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.wallpapersDidLoad);
         }
-        this.O.getClass();
+        this.Q.getClass();
         super.onFragmentDestroy();
     }
 
@@ -875,47 +879,47 @@ public class WallpapersListActivity extends org.telegram.ui.ActionBar.n2 impleme
     public final void onResume() {
         super.onResume();
         MessagesController.getGlobalMainSettings();
-        org.telegram.ui.ActionBar.a6 a6Var = org.telegram.ui.ActionBar.i6.I.i0;
-        if (a6Var != null) {
-            String str = a6Var.c;
-            this.Q = str;
+        org.telegram.ui.ActionBar.b6 b6Var = org.telegram.ui.ActionBar.i6.I.i0;
+        if (b6Var != null) {
+            String str = b6Var.c;
+            this.S = str;
             if (str == null) {
-                this.Q = "";
+                this.S = "";
             }
-            this.R = a6Var.d;
-            this.S = a6Var.e;
-            this.T = a6Var.f;
-            this.U = a6Var.g;
-            this.V = a6Var.h;
-            this.W = a6Var.k;
-            this.X = a6Var.j;
-            this.Y = a6Var.i;
+            this.T = b6Var.d;
+            this.U = b6Var.e;
+            this.V = b6Var.f;
+            this.W = b6Var.g;
+            this.X = b6Var.h;
+            this.Y = b6Var.k;
+            this.Z = b6Var.j;
+            this.a0 = b6Var.i;
         } else {
-            this.Q = org.telegram.ui.ActionBar.i6.d1() ? "t" : "d";
-            this.R = 0;
-            this.S = 0;
+            this.S = org.telegram.ui.ActionBar.i6.e1() ? "t" : "d";
             this.T = 0;
             this.U = 0;
-            this.V = 45;
-            this.W = 1.0f;
-            this.X = false;
-            this.Y = false;
+            this.V = 0;
+            this.W = 0;
+            this.X = 45;
+            this.Y = 1.0f;
+            this.Z = false;
+            this.a0 = false;
         }
         A0();
-        org.telegram.ui.Components.zl0 zl0Var = this.F;
-        if (zl0Var != null) {
-            zl0Var.getViewTreeObserver().addOnPreDrawListener(new g7(this, 7));
+        org.telegram.ui.Components.qm0 qm0Var = this.H;
+        if (qm0Var != null) {
+            qm0Var.getViewTreeObserver().addOnPreDrawListener(new ei(this, 6));
         }
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void restoreSelfArgs(Bundle bundle) {
-        this.O.a = bundle.getString("path");
+        this.Q.a = bundle.getString("path");
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void saveSelfArgs(Bundle bundle) {
-        String str = this.O.a;
+        String str = this.Q.a;
         if (str != null) {
             bundle.putString("path", str);
         }

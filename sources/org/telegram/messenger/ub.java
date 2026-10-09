@@ -1,65 +1,46 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.br0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ub implements RequestDelegate {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ ub(int i10, int i11, long j3, long j10, MessagesController messagesController, TLRPC.InputPeer inputPeer, boolean z10) {
-        this.b = messagesController;
-        this.c = j3;
-        this.f = j10;
-        this.d = i10;
-        this.e = i11;
-        this.g = z10;
-        this.h = inputPeer;
+    public /* synthetic */ ub(MessagesController messagesController, int i10, TLRPC.Chat chat, TLRPC.User user, boolean z10) {
+        this.e = messagesController;
+        this.b = i10;
+        this.f = chat;
+        this.d = user;
+        this.c = z10;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$deleteDialog$142(this.c, this.f, this.d, this.e, this.g, (TLRPC.InputPeer) this.h, tLObject, tL_error);
-                break;
-            case 1:
-                ((MessagesController) this.b).lambda$deleteMessagesRange$466(this.c, this.d, this.e, this.f, this.g, (Runnable) this.h, tLObject, tL_error);
+                ((MessagesController) this.e).lambda$pinMessage$129(this.b, (TLRPC.Chat) this.f, this.d, this.c, tLObject, tL_error);
                 break;
             default:
-                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) this.b, (String) this.h, tLObject, tL_error);
+                AndroidUtilities.runOnUIThread(new ii.s2((br0) this.e, (String) this.f, this.b, tLObject, this.c, this.d));
                 break;
         }
     }
 
-    public /* synthetic */ ub(Context context, int i10, long j3, String str, long j10, int i11, boolean z10) {
-        this.d = i10;
-        this.c = j3;
-        this.f = j10;
-        this.e = i11;
-        this.g = z10;
-        this.b = context;
-        this.h = str;
-    }
-
-    public /* synthetic */ ub(MessagesController messagesController, long j3, int i10, int i11, long j10, boolean z10, Runnable runnable) {
-        this.b = messagesController;
-        this.c = j3;
-        this.d = i10;
-        this.e = i11;
-        this.f = j10;
-        this.g = z10;
-        this.h = runnable;
+    public /* synthetic */ ub(br0 br0Var, String str, int i10, boolean z10, TLRPC.User user) {
+        this.e = br0Var;
+        this.f = str;
+        this.b = i10;
+        this.c = z10;
+        this.d = user;
     }
 }

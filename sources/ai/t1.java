@@ -6,9 +6,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.ef0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     DispatchQueue dispatchQueue = Utilities.globalQueue;
                     NativeInstance nativeInstance = d2Var2.E;
                     Objects.requireNonNull(nativeInstance);
-                    dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
+                    dispatchQueue.postRunnable(new org.telegram.messenger.voip.t0(nativeInstance, 3));
                     d2Var2.M.clear();
                     d2Var2.E = null;
                 }
@@ -67,7 +67,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     DispatchQueue dispatchQueue2 = Utilities.globalQueue;
                     NativeInstance nativeInstance2 = d2Var3.E;
                     Objects.requireNonNull(nativeInstance2);
-                    dispatchQueue2.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance2, 3));
+                    dispatchQueue2.postRunnable(new org.telegram.messenger.voip.t0(nativeInstance2, 3));
                     d2Var3.M.clear();
                     d2Var3.E = null;
                 }
@@ -82,7 +82,7 @@ public final /* synthetic */ class t1 implements Runnable {
             default:
                 d2 d2Var4 = this.b;
                 if (!d2Var4.n) {
-                    pe0.d(R.raw.permission_request_camera, R.string.PermissionNoCameraMicVideo, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new y1(d2Var4, i10));
+                    ef0.b(R.raw.permission_request_camera, R.string.PermissionNoCameraMicVideo, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new y1(d2Var4, i10));
                     break;
                 }
                 break;

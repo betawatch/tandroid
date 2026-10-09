@@ -5,35 +5,35 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ j0 b;
 
-    public /* synthetic */ v(k0 k0Var, int i10) {
+    public /* synthetic */ v(j0 j0Var, int i10) {
         this.a = i10;
-        this.b = k0Var;
+        this.b = j0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.x1(18, this.b, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.w1(15, this.b, tLObject));
                 break;
             case 1:
                 boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                k0 k0Var = this.b;
+                j0 j0Var = this.b;
                 if (!z10) {
-                    k0Var.getClass();
+                    j0Var.getClass();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(k0Var.H0);
+                    AndroidUtilities.runOnUIThread(j0Var.H0);
                     break;
                 }
             default:
-                k0.S(this.b, tLObject, tL_error);
+                j0.V(this.b, tLObject, tL_error);
                 break;
         }
     }

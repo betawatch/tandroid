@@ -1,108 +1,33 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ VoIPService b;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Runnable e;
 
-    public /* synthetic */ t(VoIPService voIPService, int i10) {
+    public /* synthetic */ t(TLObject tLObject, ArrayList arrayList, ArrayList arrayList2, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = voIPService;
+        this.b = tLObject;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateConnectionState$83();
-                break;
-            case 1:
-                this.b.lambda$playConnectedSound$88();
-                break;
-            case 2:
-                this.b.lambda$playStartRecordSound$120();
-                break;
-            case 3:
-                this.b.lambda$playAllowTalkSound$121();
-                break;
-            case 4:
-                this.b.lambda$getConnectionAndStartCall$106();
-                break;
-            case 5:
-                this.b.lambda$callFailed$115();
-                break;
-            case 6:
-                this.b.lambda$callFailed$116();
-                break;
-            case 7:
-                this.b.lambda$callEnded$123();
-                break;
-            case 8:
-                this.b.lambda$callEnded$124();
-                break;
-            case 9:
-                this.b.lambda$callEnded$125();
-                break;
-            case 10:
-                this.b.lambda$callEnded$126();
-                break;
-            case 11:
-                this.b.lambda$onCallUpdated$16();
-                break;
-            case 12:
-                this.b.lambda$onCallUpdated$17();
-                break;
-            case 13:
-                this.b.lambda$onCallUpdated$18();
-                break;
-            case 14:
-                this.b.lambda$setMicMute$0();
-                break;
-            case 15:
-                this.b.lambda$endConnectionServiceCall$127();
-                break;
-            case 16:
-                this.b.lambda$switchToSpeaker$92();
-                break;
-            case 17:
-                this.b.lambda$convertToConferenceCall$30();
-                break;
-            case 18:
-                this.b.lambda$initiateActualEncryptedCall$84();
-                break;
-            case 19:
-                this.b.lambda$loadResources$109();
-                break;
-            case 20:
-                this.b.lambda$setupCaptureDevice$14();
-                break;
-            case 21:
-                this.b.lambda$startOutgoingCall$8();
-                break;
-            case 22:
-                this.b.lambda$onStartCommand$2();
-                break;
-            case 23:
-                this.b.lambda$onStartCommand$3();
-                break;
-            case 24:
-                this.b.lambda$declineIncomingCall$104();
-                break;
-            case 25:
-                this.b.callFailed();
-                break;
-            case 26:
-                this.b.lambda$startGroupCheckShortpoll$65();
-                break;
-            case 27:
-                this.b.lambda$onDestroy$99();
-                break;
-            case 28:
-                this.b.lambda$onConnectionStateChanged$117();
+                VoIPService.lambda$startConferenceGroupCall$48(this.b, this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$startConnectingSound$89();
+                VoIPService.lambda$startConferenceGroupCall$40(this.b, this.c, this.d, this.e);
                 break;
         }
     }

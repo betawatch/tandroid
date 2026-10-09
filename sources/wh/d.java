@@ -18,12 +18,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.l9;
 import org.telegram.ui.re;
-import w7.z5;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
 public final class d {
     public final n2 a;
     public final TLRPC.Chat b;
@@ -67,7 +67,7 @@ public final class d {
         }
         c cVar = this.m;
         if (cVar != null) {
-            cVar.e(z10, z11);
+            cVar.g(z10, z11);
         }
     }
 
@@ -81,7 +81,7 @@ public final class d {
             n2 n2Var = this.a;
             FrameLayout frameLayout = new FrameLayout(n2Var.getParentActivity());
             this.d = frameLayout;
-            frameLayout.setBackground(i6.K0(false));
+            frameLayout.setBackground(i6.L0(false));
             final int i10 = 0;
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: wh.a
                 public final /* synthetic */ d b;
@@ -113,16 +113,15 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
-            int i11 = 1;
-            h0 h0Var = new h0(i11, n2Var.getParentActivity(), false);
+            this.d.addView(this.f, x5.a(-1.0f, 0.0f, 0.0f, 100.0f, 0.0f, -1, 48));
+            h0 h0Var = new h0(1, n2Var.getParentActivity(), false);
             this.e = h0Var;
             h0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-            j9 j9Var = this.e.a;
-            for (int i12 = 0; i12 < j9Var.c.length; i12++) {
-                j9Var.l(0, null, 0);
+            l9 l9Var = this.e.a;
+            for (int i11 = 0; i11 < l9Var.c.length; i11++) {
+                l9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, z5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
+            this.f.addView(this.e, x5.a(-1.0f, 8.0f, 0.0f, 10.0f, 0.0f, -2, 48));
             TextView textView = new TextView(n2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -131,15 +130,15 @@ public final class d {
             this.g.setText((CharSequence) null);
             this.g.setTextColor(n2Var.getThemedColor(i6.fe));
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
+            this.f.addView(this.g, x5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
             ImageView imageView = new ImageView(n2Var.getParentActivity());
             this.h = imageView;
-            imageView.setBackground(i6.f0(n2Var.getThemedColor(i6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+            imageView.setBackground(i6.g0(n2Var.getThemedColor(i6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
             this.h.setColorFilter(new PorterDuffColorFilter(n2Var.getThemedColor(i6.de), PorterDuff.Mode.MULTIPLY));
             this.h.setContentDescription(LocaleController.getString(R.string.Close));
             this.h.setImageResource(R.drawable.miniplayer_close);
             this.h.setScaleType(ImageView.ScaleType.CENTER);
-            final int i13 = 1;
+            final int i12 = 1;
             this.h.setOnClickListener(new View.OnClickListener(this) { // from class: wh.a
                 public final /* synthetic */ d b;
 
@@ -149,7 +148,7 @@ public final class d {
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    switch (i13) {
+                    switch (i12) {
                         case 0:
                             d dVar = this.b;
                             n2 n2Var2 = dVar.a;
@@ -167,7 +166,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, z5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
+            this.d.addView(this.h, x5.a(-1.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 e(chatFull.requests_pending, chatFull.recent_requesters, false);

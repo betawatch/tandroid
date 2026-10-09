@@ -1,51 +1,64 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j7 extends ou0 {
-    public org.telegram.ui.Components.zl0 a;
-    public final /* synthetic */ v7 b;
+public final class j7 extends FrameLayout {
+    public final org.telegram.ui.Components.dq a;
+    public final FrameLayout b;
+    public final TextView c;
+    public boolean d;
+    public int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ f7 h;
 
-    public j7(v7 v7Var) {
-        this.b = v7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j7(f7 f7Var, Context context, int i10) {
+        super(context);
+        this.f = i10;
+        this.h = f7Var;
+        org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(context, 21, null);
+        this.a = dqVar;
+        dqVar.setDrawBackgroundAsArc(14);
+        dqVar.b(org.telegram.ui.ActionBar.i6.i7, org.telegram.ui.ActionBar.i6.g7, org.telegram.ui.ActionBar.i6.k7);
+        View view = new View(getContext());
+        view.setOnClickListener(new a(this, 8));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setGravity(5);
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.n6, false));
+        if (LocaleController.isRTL) {
+            addView(dqVar, w7.x5.a(24.0f, 0.0f, 0.0f, 18.0f, 0.0f, 24, 21));
+            addView(view, w7.x5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, 40, 21));
+            addView(frameLayout, w7.x5.a(-2.0f, 90.0f, 0.0f, 40.0f, 0.0f, -1, 0));
+            addView(textView, w7.x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, 69, 19));
+            return;
+        }
+        addView(dqVar, w7.x5.a(24.0f, 18.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        addView(view, w7.x5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, 40, 19));
+        addView(frameLayout, w7.x5.a(-2.0f, 48.0f, 0.0f, 90.0f, 0.0f, -1, 0));
+        addView(textView, w7.x5.a(-2.0f, 0.0f, 0.0f, 21.0f, 0.0f, 69, 21));
     }
 
-    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
-    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        org.telegram.ui.Cells.t7 t7Var;
-        org.telegram.ui.Components.zl0 listView = this.b.getListView();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= listView.getChildCount()) {
-                t7Var = null;
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            if (LocaleController.isRTL) {
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            } else {
+                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             }
-            View childAt = listView.getChildAt(i11);
-            if (RecyclerView.R(childAt) == i10 && (childAt instanceof org.telegram.ui.Cells.t7)) {
-                t7Var = (org.telegram.ui.Cells.t7) childAt;
-                break;
-            }
-            i11++;
         }
-        if (t7Var == null) {
-            return null;
-        }
-        int[] iArr = new int[2];
-        t7Var.getLocationInWindow(iArr);
-        yu0 yu0Var = new yu0();
-        yu0Var.b = iArr[0];
-        yu0Var.c = iArr[1];
-        yu0Var.d = this.a;
-        ImageReceiver imageReceiver = t7Var.c;
-        yu0Var.a = imageReceiver;
-        yu0Var.e = imageReceiver.getBitmapSafe();
-        yu0Var.k = t7Var.getScaleX();
-        return yu0Var;
     }
 }

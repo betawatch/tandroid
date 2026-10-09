@@ -10,11 +10,11 @@ import android.util.Log;
 import android.util.SparseArray;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
-    public final g.d b;
+    public final g.c b;
     public final Messenger c;
     public int f;
     public int g;
@@ -26,9 +26,9 @@ public final class m0 implements IBinder.DeathRecipient {
     public m0(r0 r0Var, Messenger messenger) {
         this.i = r0Var;
         this.a = messenger;
-        g.d dVar = new g.d(this);
-        this.b = dVar;
-        this.c = new Messenger(dVar);
+        g.c cVar = new g.c(this);
+        this.b = cVar;
+        this.c = new Messenger(cVar);
     }
 
     public final void a(int i10) {
@@ -65,16 +65,16 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i10, int i11) {
-        Bundle h = c1.h(i11, "volume");
+        Bundle f7 = c1.f(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(7, i12, i10, null, h);
+        b(7, i12, i10, null, f7);
     }
 
     public final void d(int i10, int i11) {
-        Bundle h = c1.h(i11, "volume");
+        Bundle f7 = c1.f(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(8, i12, i10, null, h);
+        b(8, i12, i10, null, f7);
     }
 }

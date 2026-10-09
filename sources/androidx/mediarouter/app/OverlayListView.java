@@ -11,7 +11,7 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -47,15 +47,15 @@ public final class OverlayListView extends ListView {
                     Rect rect2 = p0Var.f;
                     rect.top = rect2.top + i10;
                     rect.bottom = rect2.bottom + i10;
-                    float z11 = e2.z(p0Var.h, 1.0f, interpolation, 1.0f);
-                    p0Var.b = z11;
+                    float y3 = e2.y(p0Var.h, 1.0f, interpolation, 1.0f);
+                    p0Var.b = y3;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (y3 * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
                     if (p0Var.j && max >= 1.0f) {
                         p0Var.k = true;
-                        of.b bVar = p0Var.l;
+                        pf.b bVar = p0Var.l;
                         if (bVar != null) {
                             u uVar = (u) bVar.c;
                             uVar.Z.remove((p4.v) bVar.b);

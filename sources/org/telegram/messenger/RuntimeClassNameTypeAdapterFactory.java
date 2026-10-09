@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -97,7 +97,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                     }
                     db.i iVar2 = (db.i) iVar.i().a.remove(RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     if (iVar2 == null) {
-                        throw new androidx.car.app.j("cannot deserialize " + RuntimeClassNameTypeAdapterFactory.this.baseType + " because it does not define a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                        throw new ae.x("cannot deserialize " + RuntimeClassNameTypeAdapterFactory.this.baseType + " because it does not define a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     }
                     String n10 = iVar2.n();
                     db.u uVar = (db.u) linkedHashMap.get(n10);
@@ -105,7 +105,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new kb.a(Class.forName(n10)));
                         } catch (ClassNotFoundException e11) {
-                            throw new androidx.car.app.j(sa.e.i("Cannot find class ", n10), e11);
+                            throw new ae.x(sc.v.i("Cannot find class ", n10), e11);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
@@ -124,7 +124,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                 String simpleName = cls3.getSimpleName();
                 db.u delegate = getDelegate(cls3);
                 if (delegate == null) {
-                    throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + "; did you forget to register a subtype?");
+                    throw new ae.x("cannot serialize " + cls3.getSimpleName() + "; did you forget to register a subtype?");
                 }
                 db.i jsonTree = delegate.toJsonTree(r10);
                 jsonTree.getClass();
@@ -134,7 +134,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                 }
                 fb.m mVar = jsonTree.i().a;
                 if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
-                    throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                    throw new ae.x("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
                 db.l lVar = new db.l();
                 lVar.o(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new db.m(simpleName));

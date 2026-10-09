@@ -5,15 +5,15 @@ import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class b implements vd.b, Serializable {
+public abstract class b implements wd.b, Serializable {
     public static final Object NO_RECEIVER = a.a;
     private final boolean isTopLevel;
     private final String name;
     private final Class owner;
     protected final Object receiver;
-    private transient vd.b reflected;
+    private transient wd.b reflected;
     private final String signature;
 
     public b(Object obj, Class cls, String str, String str2, boolean z10) {
@@ -24,29 +24,29 @@ public abstract class b implements vd.b, Serializable {
         this.isTopLevel = z10;
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public Object call(Object... objArr) {
         return getReflected().call(objArr);
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public Object callBy(Map map) {
         return getReflected().callBy(map);
     }
 
-    public vd.b compute() {
-        vd.b bVar = this.reflected;
+    public wd.b compute() {
+        wd.b bVar = this.reflected;
         if (bVar != null) {
             return bVar;
         }
-        vd.b computeReflected = computeReflected();
+        wd.b computeReflected = computeReflected();
         this.reflected = computeReflected;
         return computeReflected;
     }
 
-    public abstract vd.b computeReflected();
+    public abstract wd.b computeReflected();
 
-    @Override // vd.a
+    @Override // wd.a
     public List<Annotation> getAnnotations() {
         return getReflected().getAnnotations();
     }
@@ -59,7 +59,7 @@ public abstract class b implements vd.b, Serializable {
         return this.name;
     }
 
-    public vd.d getOwner() {
+    public wd.d getOwner() {
         Class cls = this.owner;
         if (cls == null) {
             return null;
@@ -71,15 +71,15 @@ public abstract class b implements vd.b, Serializable {
         return new k(cls);
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public List<Object> getParameters() {
         return getReflected().getParameters();
     }
 
-    public abstract vd.b getReflected();
+    public abstract wd.b getReflected();
 
-    @Override // vd.b
-    public vd.h getReturnType() {
+    @Override // wd.b
+    public wd.h getReturnType() {
         getReflected().getReturnType();
         return null;
     }
@@ -88,27 +88,27 @@ public abstract class b implements vd.b, Serializable {
         return this.signature;
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public List<Object> getTypeParameters() {
         return getReflected().getTypeParameters();
     }
 
-    @Override // vd.b
-    public vd.i getVisibility() {
+    @Override // wd.b
+    public wd.i getVisibility() {
         return getReflected().getVisibility();
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public boolean isAbstract() {
         return getReflected().isAbstract();
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public boolean isFinal() {
         return getReflected().isFinal();
     }
 
-    @Override // vd.b
+    @Override // wd.b
     public boolean isOpen() {
         return getReflected().isOpen();
     }

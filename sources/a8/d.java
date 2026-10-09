@@ -6,19 +6,19 @@ import android.os.Looper;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import com.google.android.gms.internal.clearcut.a2;
+import com.google.android.gms.internal.clearcut.z1;
 import g6.s;
 import g6.v;
 import g6.w;
 import kotlin.jvm.internal.i;
-import m.p3;
+import m.q3;
 import n6.p;
-import n7.m1;
+import n7.l1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class d {
         this.a = i10;
     }
 
-    public com.google.android.gms.common.api.c a(Context context, Looper looper, p3 commonSettings, Object obj, k kVar, l lVar) {
+    public com.google.android.gms.common.api.c a(Context context, Looper looper, q3 commonSettings, Object obj, k kVar, l lVar) {
         switch (this.a) {
             case 1:
                 c6.e eVar = (c6.e) obj;
@@ -77,11 +77,11 @@ public final class d {
                         throw new UnsupportedOperationException("buildClient must be implemented");
                 }
             case 5:
-                return new a2(context, looper, 40, commonSettings, kVar, lVar, 0);
+                return new z1(context, looper, 40, commonSettings, kVar, lVar, 0);
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:
-                return new m1(context, looper, 148, commonSettings, kVar, lVar, 0);
+                return new l1(context, looper, 148, commonSettings, kVar, lVar, 0);
             case 9:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.h;
@@ -100,7 +100,7 @@ public final class d {
                 bundle.putBoolean("com.google.android.gms.signin.internal.waitForAccessTokenRefresh", false);
                 return new o8.a(context, looper, commonSettings, bundle, kVar, lVar);
             case 10:
-                throw a4.a.j(obj);
+                throw a1.g.j(obj);
             case 15:
                 o oVar = (o) obj;
                 if (oVar == null) {

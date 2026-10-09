@@ -14,17 +14,17 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class q0 {
-    public final n4.y a;
-    public final qi.f b;
+    public final n4.x a;
+    public final oi.f b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public q0(n4.y yVar, qi.f fVar, s sVar) {
-        this.a = yVar;
+    public q0(n4.x xVar, oi.f fVar, s sVar) {
+        this.a = xVar;
         this.b = fVar;
         this.c = sVar;
     }
@@ -55,7 +55,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(4);
-        this.a.x(sVar, false);
+        this.a.z(sVar, false);
     }
 
     public final void b() {
@@ -66,7 +66,7 @@ public final class q0 {
         }
         s sVar2 = sVar.h;
         q0 q0Var = null;
-        qi.f fVar = this.b;
+        oi.f fVar = this.b;
         if (sVar2 != null) {
             q0 q0Var2 = (q0) ((HashMap) fVar.b).get(sVar2.e);
             if (q0Var2 == null) {
@@ -81,7 +81,7 @@ public final class q0 {
                 StringBuilder sb2 = new StringBuilder("Fragment ");
                 sb2.append(sVar);
                 sb2.append(" declared target fragment ");
-                throw new IllegalStateException(a4.a.t(sb2, sVar.n, " that does not belong to this FragmentManager!"));
+                throw new IllegalStateException(a1.g.t(sb2, sVar.n, " that does not belong to this FragmentManager!"));
             }
         }
         if (q0Var != null) {
@@ -90,8 +90,8 @@ public final class q0 {
         k0 k0Var = sVar.J;
         sVar.K = k0Var.w;
         sVar.M = k0Var.y;
-        n4.y yVar = this.a;
-        yVar.I(sVar, false);
+        n4.x xVar = this.a;
+        xVar.G(sVar, false);
         ArrayList arrayList = sVar.h0;
         int size = arrayList.size();
         int i10 = 0;
@@ -117,7 +117,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(0);
-        yVar.D(sVar, false);
+        xVar.A(sVar, false);
     }
 
     public final int c() {
@@ -228,8 +228,8 @@ public final class q0 {
             l0Var.u(1);
             return;
         }
-        n4.y yVar = this.a;
-        yVar.J(sVar, false);
+        n4.x xVar = this.a;
+        xVar.H(sVar, false);
         sVar.L.R();
         sVar.a = 1;
         sVar.U = false;
@@ -245,7 +245,7 @@ public final class q0 {
         sVar.a0 = true;
         if (sVar.U) {
             sVar.d0.e(androidx.lifecycle.m.ON_CREATE);
-            yVar.E(sVar, false);
+            xVar.B(sVar, false);
         } else {
             throw new x0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -305,7 +305,7 @@ public final class q0 {
         boolean z10 = true;
         int i10 = 0;
         boolean z11 = sVar.w && !sVar.v();
-        qi.f fVar = this.b;
+        oi.f fVar = this.b;
         if (z11) {
             fVar.O(sVar.e, null);
         }
@@ -325,7 +325,7 @@ public final class q0 {
             z10 = ((n0) fVar.d).h;
         } else {
             v vVar = uVar.b;
-            if (e2.u(vVar)) {
+            if (e2.t(vVar)) {
                 z10 = true ^ vVar.isChangingConfigurations();
             }
         }
@@ -341,7 +341,7 @@ public final class q0 {
         if (!sVar.U) {
             throw new x0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
-        this.a.F(sVar, false);
+        this.a.C(sVar, false);
         ArrayList p5 = fVar.p();
         int size = p5.size();
         while (i10 < size) {
@@ -406,7 +406,7 @@ public final class q0 {
             l0Var.l();
             sVar.L = new l0();
         }
-        this.a.G(sVar, false);
+        this.a.D(sVar, false);
         sVar.a = -1;
         sVar.K = null;
         sVar.M = null;
@@ -436,7 +436,7 @@ public final class q0 {
     }
 
     public final void j() {
-        qi.f fVar = this.b;
+        oi.f fVar = this.b;
         boolean z10 = this.d;
         s sVar = this.c;
         if (z10) {
@@ -556,7 +556,7 @@ public final class q0 {
         sVar.U = false;
         sVar.E();
         if (sVar.U) {
-            this.a.H(sVar, false);
+            this.a.F(sVar, false);
             return;
         }
         throw new x0("Fragment " + sVar + " did not call through to super.onPause()");
@@ -617,7 +617,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(7);
-        this.a.K(sVar, false);
+        this.a.I(sVar, false);
         this.b.O(sVar.e, null);
         sVar.b = null;
         sVar.c = null;
@@ -644,7 +644,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(5);
-        this.a.M(sVar, false);
+        this.a.K(sVar, false);
     }
 
     public final void o() {
@@ -662,14 +662,14 @@ public final class q0 {
         sVar.U = false;
         sVar.I();
         if (sVar.U) {
-            this.a.N(sVar, false);
+            this.a.M(sVar, false);
             return;
         }
         throw new x0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public q0(n4.y yVar, qi.f fVar, ClassLoader classLoader, d0 d0Var, Bundle bundle) {
-        this.a = yVar;
+    public q0(n4.x xVar, oi.f fVar, ClassLoader classLoader, d0 d0Var, Bundle bundle) {
+        this.a = xVar;
         this.b = fVar;
         p0 p0Var = (p0) bundle.getParcelable("state");
         s a2 = d0Var.a(p0Var.a);
@@ -700,8 +700,8 @@ public final class q0 {
         }
     }
 
-    public q0(n4.y yVar, qi.f fVar, s sVar, Bundle bundle) {
-        this.a = yVar;
+    public q0(n4.x xVar, oi.f fVar, s sVar, Bundle bundle) {
+        this.a = xVar;
         this.b = fVar;
         this.c = sVar;
         sVar.c = null;

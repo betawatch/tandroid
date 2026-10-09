@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class f3 implements c6 {
     public final /* synthetic */ x3 a;
@@ -17,25 +17,25 @@ public final class f3 implements c6 {
     public final int a(a aVar) {
         int i10;
         x3 x3Var = this.a;
-        int indexOf = x3Var.s3.indexOf(aVar);
-        return AndroidUtilities.dp((indexOf < 0 || (i10 = indexOf + 1) >= x3Var.s3.size() || ((a) x3Var.s3.get(i10)).c <= 0) ? 11.0f : 5.0f);
+        int indexOf = x3Var.j3.indexOf(aVar);
+        return AndroidUtilities.dp((indexOf < 0 || (i10 = indexOf + 1) >= x3Var.j3.size() || ((a) x3Var.j3.get(i10)).c <= 0) ? 11.0f : 5.0f);
     }
 
     public final int b(a aVar) {
         x3 x3Var = this.a;
-        int indexOf = x3Var.s3.indexOf(aVar);
-        return AndroidUtilities.dp((indexOf <= 0 || ((a) x3Var.s3.get(indexOf + (-1))).c <= 0) ? 8.0f : 2.0f);
+        int indexOf = x3Var.j3.indexOf(aVar);
+        return AndroidUtilities.dp((indexOf <= 0 || ((a) x3Var.j3.get(indexOf + (-1))).c <= 0) ? 8.0f : 2.0f);
     }
 
     public final void c(a aVar, int i10) {
         x3 x3Var = this.a;
-        v3 v3Var = x3Var.o3;
+        v3 v3Var = x3Var.f3;
         if (i10 == 7) {
             x3Var.S4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
         }
-        x3Var.i4 = null;
-        x3Var.j4 = aVar;
-        i2 i2Var = x3Var.Q3;
+        x3Var.Z3 = null;
+        x3Var.a4 = aVar;
+        i2 i2Var = x3Var.H3;
         if (i2Var != null) {
             i2Var.d();
         }
@@ -46,23 +46,23 @@ public final class f3 implements c6 {
                 ((f6) A1).getEditText().setTextSilently("");
             }
         }
-        i2 i2Var2 = x3Var.Q3;
+        i2 i2Var2 = x3Var.H3;
         if (i2Var2 != null) {
             i2Var2.h();
         }
         switch (i10) {
             case 1:
-                v3Var.r(3);
+                v3Var.k(3);
                 break;
             case 2:
-                v3Var.r(6);
+                v3Var.k(6);
                 break;
             case 3:
-                r.S(x3Var.getContext(), "", new q1(x3Var, 1), x3Var.n3);
+                r.X(x3Var.getContext(), "", new q1(x3Var, 1), x3Var.e3);
                 break;
             case 4:
             case 5:
-                v3Var.r(1);
+                v3Var.k(1);
                 break;
             case 6:
                 x3Var.u3();
@@ -82,10 +82,10 @@ public final class f3 implements c6 {
         }
         if (aVar != null) {
             ArrayList arrayList = aVar.k;
-            if (x3Var.s3.indexOf(aVar) < 0 || x3.y3(aVar) || aVar.i) {
+            if (x3Var.j3.indexOf(aVar) < 0 || x3.y3(aVar) || aVar.i) {
                 return;
             }
-            i2 i2Var = x3Var.Q3;
+            i2 i2Var = x3Var.H3;
             if (i2Var != null) {
                 i2Var.d();
             }
@@ -99,7 +99,7 @@ public final class f3 implements c6 {
                     long a2 = q0.a();
                     TL_iv.RichText k10 = f6.k(aVar.b);
                     if (k10 != null && !(k10 instanceof TL_iv.textEmpty)) {
-                        x3Var.t3.put(Long.valueOf(a2), k10);
+                        x3Var.k3.put(Long.valueOf(a2), k10);
                     }
                     arrayList.add(Long.valueOf(a2));
                 }
@@ -109,15 +109,15 @@ public final class f3 implements c6 {
             x3Var.t4();
             if (z13 && (x3Var.findFocus() instanceof i1)) {
                 x3Var.Y1();
-                i2 i2Var2 = x3Var.Q3;
+                i2 i2Var2 = x3Var.H3;
                 if (i2Var2 != null) {
                     i2Var2.h();
                 }
                 x3Var.e3(aVar);
                 return;
             }
-            x3Var.f3.N(false);
-            i2 i2Var3 = x3Var.Q3;
+            x3Var.W2.N(false);
+            i2 i2Var3 = x3Var.H3;
             if (i2Var3 != null) {
                 i2Var3.h();
             }

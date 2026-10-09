@@ -1,48 +1,71 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ki extends yh0 {
-    public final /* synthetic */ yn e;
+public final class ki extends uu0 {
+    public final /* synthetic */ zn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ki(yn ynVar, Context context, int i10, MessageObject messageObject) {
-        super(context);
-        this.e = ynVar;
-        this.a = null;
-        if (!messageObject.isRoundVideo()) {
-            messageObject.isVoice();
+    public ki(zn znVar) {
+        this.a = znVar;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        gk gkVar;
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            zn znVar = this.a;
+            if (i10 < znVar.Ia.size() && (gkVar = znVar.I1) != null && gkVar.getListView() != null) {
+                int childCount = znVar.I1.getListView().getChildCount();
+                Object obj = znVar.Ia.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = znVar.I1.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.f2) {
+                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
+                        if (f2Var.getResult() == obj) {
+                            imageReceiver = f2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                ev0 ev0Var = new ev0();
+                                ev0Var.b = iArr[0];
+                                ev0Var.c = iArr[1];
+                                ev0Var.d = znVar.I1.getListView();
+                                ev0Var.a = imageReceiver;
+                                ev0Var.e = imageReceiver.getBitmapSafe();
+                                ev0Var.h = imageReceiver.getRoundRadius(true);
+                                return ev0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
         }
-        org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(context, null);
-        this.c = w00Var;
-        w00Var.f(org.telegram.ui.ActionBar.i6.G8, org.telegram.ui.ActionBar.i6.i6, -1);
-        w00Var.setViewType(13);
-        w00Var.setIsSingleCell(false);
-        addView(w00Var, w7.z5.c(-1.0f, -2));
-        org.telegram.ui.Components.q90 q90Var = new org.telegram.ui.Components.q90(context, null);
-        this.b = q90Var;
-        q90Var.setTextSize(1, 14.0f);
-        q90Var.setGravity(19);
-        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false));
-        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gc, false));
-        q90Var.setEllipsize(TextUtils.TruncateAt.END);
-        q90Var.setSingleLine();
-        q90Var.setLines(1);
-        q90Var.setMaxLines(1);
-        addView(q90Var, w7.z5.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
-        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
-        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
-        tL_channels_getMessageAuthor.id = messageObject.getId();
-        q90Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.i8(this, i10, 6));
-        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), 6, 0));
-        setEnabled(false);
+        return null;
+    }
+
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            zn znVar = this.a;
+            if (i10 >= znVar.Ia.size()) {
+                return;
+            }
+            znVar.gb((TLRPC.BotInlineResult) znVar.Ia.get(i10), z10, i11, 0L);
+        }
     }
 }

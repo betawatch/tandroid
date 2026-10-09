@@ -1,43 +1,17 @@
 package com.google.android.gms.internal.cast;
 
-import java.io.IOException;
-import java.util.Locale;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b5 extends IOException {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public b5(int i10, int i11) {
-        super(r0.toString());
-        StringBuilder sb2 = new StringBuilder(108);
-        sb2.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
-        sb2.append(i10);
-        sb2.append(" limit ");
-        sb2.append(i11);
-        sb2.append(").");
-    }
+public abstract class b5 {
+    public static final a5 a = new a5();
+    public static final a5 b;
 
-    public /* synthetic */ b5(IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.", indexOutOfBoundsException);
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public b5(long j3, long j10, int i10, IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
-        Locale locale = Locale.US;
-        StringBuilder u10 = a4.a.u(j3, "Pos: ", ", limit: ");
-        u10.append(j10);
-        u10.append(", len: ");
-        u10.append(i10);
-    }
-
-    public b5(String str, IndexOutOfBoundsException indexOutOfBoundsException) {
-        super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(str), indexOutOfBoundsException);
+    static {
+        a5 a5Var = null;
+        try {
+            a5Var = (a5) Class.forName("com.google.protobuf.ExtensionSchemaFull").getDeclaredConstructor(null).newInstance(null);
+        } catch (Exception unused) {
+        }
+        b = a5Var;
     }
 }

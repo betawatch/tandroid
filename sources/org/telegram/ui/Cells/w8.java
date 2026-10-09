@@ -23,16 +23,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.fk0;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class w8 extends FrameLayout {
     public static final t8 J = new t8("animationProgress", 0);
     public int E;
-    public final org.telegram.ui.ActionBar.d6 F;
-    public nj0 G;
+    public final org.telegram.ui.ActionBar.e6 F;
+    public fk0 G;
     public boolean H;
     public boolean I;
     public boolean a;
@@ -69,9 +69,9 @@ public class w8 extends FrameLayout {
         int measuredHeight = getMeasuredHeight() / 2;
         float f10 = max * this.s;
         Switch r22 = this.e;
-        r22.R = lastTouchX;
-        r22.S = measuredHeight;
-        r22.T = f10;
+        r22.Q = lastTouchX;
+        r22.R = measuredHeight;
+        r22.S = f10;
         r22.invalidate();
     }
 
@@ -95,16 +95,16 @@ public class w8 extends FrameLayout {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, J, 0.0f, 1.0f);
         this.x = ofFloat;
         ofFloat.addListener(new u8(this, i10, 0));
-        this.x.setInterpolator(tr.g);
+        this.x.setInterpolator(hs.g);
         this.x.setDuration(240L).start();
     }
 
     public final void c(int i10, int i11) {
         if (this.G == null) {
-            nj0 nj0Var = new nj0(getContext());
-            this.G = nj0Var;
-            nj0Var.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.G, w7.z5.d(29, 29.0f, (LocaleController.isRTL ? 5 : 3) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
+            fk0 fk0Var = new fk0(getContext());
+            this.G = fk0Var;
+            fk0Var.setScaleType(ImageView.ScaleType.CENTER);
+            addView(this.G, w7.x5.a(29.0f, 19.0f, 0.0f, 19.0f, 0.0f, 29, (LocaleController.isRTL ? 5 : 3) | 16));
             this.E = AndroidUtilities.dp(65.0f);
             TextView textView = this.c;
             ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).leftMargin = LocaleController.isRTL ? 70 : this.E;
@@ -114,13 +114,13 @@ public class w8 extends FrameLayout {
         this.G.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         this.G.setImageResource(i11);
         this.G.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.G.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(9.0f), i10));
+        this.G.setBackground(org.telegram.ui.ActionBar.i6.c0(AndroidUtilities.dp(9.0f), i10));
     }
 
     public final void d(int i10, int i11, int i12, int i13, int i14) {
-        int v02 = org.telegram.ui.ActionBar.i6.v0(i10, this.F);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(i10, this.F);
         TextView textView = this.c;
-        textView.setTextColor(v02);
+        textView.setTextColor(w02);
         this.e.d(i11, i12, i13, i14);
         textView.setTag(Integer.valueOf(i10));
     }
@@ -149,7 +149,7 @@ public class w8 extends FrameLayout {
     }
 
     public final void f(CharSequence charSequence, boolean z10, boolean z11) {
-        org.telegram.ui.h5.a(charSequence, this);
+        org.telegram.ui.g5.a(charSequence, this);
         TextView textView = this.c;
         textView.setText(charSequence);
         this.h = false;
@@ -166,7 +166,7 @@ public class w8 extends FrameLayout {
     }
 
     public final void g(String str, String str2, boolean z10, boolean z11, boolean z12) {
-        org.telegram.ui.h5.a(str, this);
+        org.telegram.ui.g5.a(str, this);
         TextView textView = this.c;
         textView.setText(str);
         TextView textView2 = this.d;
@@ -220,14 +220,21 @@ public class w8 extends FrameLayout {
             canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.dp(40.0f)) * this.s, this.v);
         }
         if (this.f) {
-            org.telegram.ui.ActionBar.d6 d6Var = this.F;
-            Paint H = d6Var != null ? d6Var.H("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
-            if (H != null) {
+            org.telegram.ui.ActionBar.e6 e6Var = this.F;
+            Paint F = e6Var != null ? e6Var.F("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
+            if (F != null) {
                 if (this.G != null) {
-                    canvas.drawLine(LocaleController.isRTL ? 0.0f : this.E, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? this.E : 0), getMeasuredHeight() - 1, H);
-                } else {
-                    canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, H);
+                    canvas.drawLine(LocaleController.isRTL ? 0.0f : this.E, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? this.E : 0), getMeasuredHeight() - 1, F);
+                    return;
                 }
+                int i10 = 0;
+                float dp = LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f);
+                float measuredHeight = getMeasuredHeight() - 1;
+                int measuredWidth = getMeasuredWidth();
+                if (LocaleController.isRTL) {
+                    i10 = AndroidUtilities.dp(20.0f);
+                }
+                canvas.drawLine(dp, measuredHeight, measuredWidth - i10, getMeasuredHeight() - 1, F);
             }
         }
     }
@@ -296,7 +303,7 @@ public class w8 extends FrameLayout {
         ObjectAnimator duration = ObjectAnimator.ofFloat(this, J, 1.0f, 0.0f).setDuration(240L);
         this.x = duration;
         duration.addListener(new u8(this, i10, 1));
-        this.x.setInterpolator(tr.g);
+        this.x.setInterpolator(hs.g);
         this.x.start();
     }
 
@@ -343,18 +350,18 @@ public class w8 extends FrameLayout {
         this(i10, context, null, false);
     }
 
-    public w8(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        this(21, context, d6Var, false);
+    public w8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        this(21, context, e6Var, false);
     }
 
-    public w8(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+    public w8(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
         super(context);
         this.n = 50;
-        this.F = d6Var;
+        this.F = e6Var;
         this.E = i10;
         TextView textView = new TextView(context);
         this.c = textView;
-        bi.m(z10 ? org.telegram.ui.ActionBar.i6.j5 : org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 16.0f);
+        bi.o(z10 ? org.telegram.ui.ActionBar.i6.j5 : org.telegram.ui.ActionBar.i6.G6, e6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -362,10 +369,10 @@ public class w8 extends FrameLayout {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.z5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 70.0f : i10, 0.0f, z11 ? i10 : 70.0f, 0.0f));
+        addView(textView, w7.x5.a(-1.0f, z11 ? 70.0f : i10, 0.0f, z11 ? i10 : 70.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        bi.m(z10 ? org.telegram.ui.ActionBar.i6.J5 : org.telegram.ui.ActionBar.i6.z6, d6Var, textView2, 1, 13.0f);
+        bi.o(z10 ? org.telegram.ui.ActionBar.i6.J5 : org.telegram.ui.ActionBar.i6.z6, e6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(1);
         textView2.setMaxLines(1);
@@ -373,14 +380,14 @@ public class w8 extends FrameLayout {
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
         boolean z12 = LocaleController.isRTL;
-        addView(textView2, w7.z5.d(-2, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 70.0f : i10, 35.0f, z12 ? i10 : 70.0f, 0.0f));
-        Switch r12 = new Switch(context, d6Var);
+        addView(textView2, w7.x5.a(-2.0f, z12 ? 70.0f : i10, 35.0f, z12 ? i10 : 70.0f, 0.0f, -2, (z12 ? 5 : 3) | 48));
+        Switch r12 = new Switch(context, e6Var);
         this.e = r12;
         int i11 = org.telegram.ui.ActionBar.i6.M6;
         int i12 = org.telegram.ui.ActionBar.i6.N6;
         int i13 = org.telegram.ui.ActionBar.i6.d6;
         r12.d(i11, i12, i13, i13);
-        addView(r12, w7.z5.d(37, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+        addView(r12, w7.x5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
         setClipChildren(false);
         this.H = LocaleController.isRTL;
     }

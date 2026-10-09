@@ -1,142 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.Arrays;
+import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class us extends w61 {
-    public final int N;
-    public final int O;
-    public final boolean P;
-    public final ts Q;
-    public final ArrayList R;
-    public final ArrayList S;
-    public final ArrayList T;
-    public boolean U;
-    public boolean V;
-    public final CharSequence W;
-    public int X;
-    public int Y;
-    public boolean Z;
-    public boolean a0;
-    public boolean b0;
-    public int c0;
-    public int d0;
-    public String e0;
-    public final ps f0;
-    public boolean g0;
-    public final y2 h0;
+public final class us {
+    public final int a;
+    public String b;
+    public final ArrayList c;
+    public final boolean[] d;
+    public boolean[] e;
+    public boolean f;
+    public final int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ vs j;
 
-    public us(zl0 zl0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(zl0Var, context, i10, 0, true, null, d6Var);
-        this.R = new ArrayList();
-        this.S = new ArrayList();
-        this.T = new ArrayList();
-        this.f0 = new ps(this, 0);
-        this.g0 = true;
-        this.h0 = new y2(this, 3);
-        this.s = new d(this, 8);
-        this.N = i10;
-        this.O = i11;
-        this.P = z10;
-        this.Q = new ts(i10, new ps(this, 1));
-        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new qs(this, d6Var, context)), true);
-        N(false);
-        MediaDataController.getInstance(i10).loadHints(true);
+    public us(vs vsVar, int i10, ArrayList arrayList) {
+        this.j = vsVar;
+        this.a = i10;
+        int size = arrayList.size();
+        this.g = size;
+        this.i = 0;
+        if (size > 0) {
+            this.c = arrayList;
+            this.d = new boolean[size];
+            this.f = true;
+            g();
+        }
     }
 
-    public final void V() {
-        boolean isEmpty = TextUtils.isEmpty(this.e0);
-        zl0 zl0Var = this.d;
-        if (isEmpty) {
-            if (!this.g0) {
-                if (zl0Var != null) {
-                    for (int i10 = 0; i10 < zl0Var.getChildCount(); i10++) {
-                        if (!(zl0Var.getChildAt(i10) instanceof w00)) {
-                        }
-                    }
-                }
-            }
-            this.Q.a();
-            break;
-        }
-        if (this.b0 && !this.Z && zl0Var != null) {
-            int i11 = 0;
-            while (true) {
-                if (i11 >= zl0Var.getChildCount()) {
-                    break;
-                }
-                if (!(zl0Var.getChildAt(i11) instanceof w00)) {
-                    i11++;
-                } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
-                    W(true);
-                }
+    public final boolean a() {
+        boolean[] zArr;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
+                return false;
             }
         }
-        this.g0 = false;
+        return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void W(boolean z10) {
-        this.Z = true;
-        int i10 = this.d0 + 1;
-        this.d0 = i10;
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = false;
-        int i11 = this.O;
-        if (i11 != 0) {
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = i11;
-        }
-        tL_messages_searchGlobal.q = this.e0;
-        tL_messages_searchGlobal.limit = 25;
-        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i12 = this.N;
-        if (z10) {
-            ArrayList arrayList = this.T;
-            if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.c0;
-                tL_messages_searchGlobal.offset_id = messageObject.getId();
-                if (messageObject.messageOwner.peer_id == null) {
-                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                } else {
-                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
-                if (z10) {
-                    this.a0 = true;
-                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 30;
-                    tL_contacts_search.bots = true;
-                    tL_contacts_search.q = this.e0;
-                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.m0(11, this, tL_contacts_search));
-                    return;
-                }
-                return;
+    public final boolean b() {
+        return (this.e != null ? this.h : this.g) > 1;
+    }
+
+    public final boolean c() {
+        return (this.e != null ? this.h : this.g) > 0;
+    }
+
+    public final void d() {
+        boolean[] zArr;
+        boolean[] zArr2;
+        boolean z10 = false;
+        int i10 = 0;
+        while (true) {
+            int i11 = this.g;
+            zArr = this.d;
+            if (i10 >= i11) {
+                break;
+            }
+            if (!zArr[i10] || ((zArr2 = this.e) != null && !zArr2[i10])) {
+                i10++;
             }
         }
-        tL_messages_searchGlobal.offset_rate = 0;
-        tL_messages_searchGlobal.offset_id = 0;
-        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
-        if (z10) {
+        z10 = true;
+        Arrays.fill(zArr, !z10);
+        f();
+        this.j.X.N(true);
+    }
+
+    public final void e(int i10) {
+        boolean[] zArr = this.e;
+        if (zArr == null || zArr[i10]) {
+            boolean[] zArr2 = this.d;
+            boolean z10 = zArr2[i10];
+            zArr2[i10] = !z10;
+            if (z10) {
+                this.i--;
+            } else {
+                this.i++;
+            }
+            this.j.X.N(true);
+        }
+    }
+
+    public final void f() {
+        this.i = 0;
+        this.h = 0;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            boolean[] zArr = this.e;
+            boolean[] zArr2 = this.d;
+            if (zArr == null) {
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            } else if (zArr[i10]) {
+                this.h++;
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            }
+        }
+    }
+
+    public final void g() {
+        TLObject tLObject;
+        int i10 = this.g;
+        if (i10 == 0) {
+            return;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            boolean[] zArr = this.e;
+            if (zArr == null || zArr[i11]) {
+                tLObject = (TLObject) this.c.get(i11);
+                break;
+            }
+        }
+        tLObject = null;
+        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
+        int i12 = this.a;
+        if (i12 == 0) {
+            this.b = LocaleController.getString(R.string.DeleteReportSpam);
+            return;
+        }
+        if (i12 == 1) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
+            return;
+        }
+        if (i12 == 3) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
+        } else if (i12 == 2) {
+            if (this.j.g0) {
+                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
+            } else {
+                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
+            }
         }
     }
 }

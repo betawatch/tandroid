@@ -1,22 +1,22 @@
 package lc;
 
 import com.googlecode.mp4parser.c;
-import ii.n4;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import m2.t;
 import mc.k;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a extends c {
     public static final Logger f;
-    public static final /* synthetic */ n4 h;
+    public static final /* synthetic */ t h;
     public ByteBuffer e;
 
     static {
-        re.a aVar = new re.a(a.class, "AbstractDescriptorBox.java");
+        se.a aVar = new se.a(a.class, "AbstractDescriptorBox.java");
         aVar.e(aVar.d("getData", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.nio.ByteBuffer"));
         aVar.e(aVar.d("getDescriptor", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BaseDescriptor"));
         aVar.e(aVar.d("getDescriptorAsString", "com.googlecode.mp4parser.boxes.mp4.AbstractDescriptorBox", "", "", "java.lang.String"));

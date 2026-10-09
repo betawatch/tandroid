@@ -27,22 +27,22 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.LaunchActivity;
-import w7.q;
+import w7.o;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
     public int F;
     public m6 a;
-    public sq b;
+    public fr b;
     public k c;
     public k d;
     public SharedPreferences e;
@@ -54,14 +54,14 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public zl0 y;
+    public qm0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
-        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
+        return o.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
     }
 
     public static float b(DisplayMetrics displayMetrics, float f7) {
-        return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
+        return o.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.heightPixels - AndroidUtilities.dp(72.0f));
     }
 
     private List<a> getBuiltInDebugItems() {
@@ -87,17 +87,17 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
             this.w.setVisibility(0);
             arrayList.clear();
             if (getContext() instanceof LaunchActivity) {
-                c5 O = ((LaunchActivity) getContext()).O();
+                d5 O = ((LaunchActivity) getContext()).O();
                 if (O instanceof b) {
-                    arrayList.addAll(((b) O).z());
+                    arrayList.addAll(((b) O).B());
                 }
                 ActionBarLayout actionBarLayout = ((LaunchActivity) getContext()).s0;
                 if (actionBarLayout != null) {
-                    arrayList.addAll(actionBarLayout.z());
+                    arrayList.addAll(actionBarLayout.B());
                 }
                 ActionBarLayout actionBarLayout2 = ((LaunchActivity) getContext()).r0;
                 if (actionBarLayout2 != null) {
-                    arrayList.addAll(actionBarLayout2.z());
+                    arrayList.addAll(actionBarLayout2.B());
                 }
             }
             arrayList.addAll(getBuiltInDebugItems());
@@ -110,9 +110,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = m6Var.getTranslationX();
         final float translationY = m6Var.getTranslationY();
         k kVar = new k(new j(z10 ? 0.0f : 1000.0f));
-        l l4 = c1.l(1000.0f, 900.0f, 1.0f);
-        l4.i = z10 ? 1000.0f : 0.0f;
-        kVar.u = l4;
+        l j3 = c1.j(1000.0f, 900.0f, 1.0f);
+        j3.i = z10 ? 1000.0f : 0.0f;
+        kVar.u = j3;
         kVar.b(new o1.g() { // from class: mg.d
             @Override // o1.g
             public final void a(o1.h hVar, float f7, float f10) {
@@ -155,24 +155,24 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
                 iVar.w.setVisibility(8);
             }
         });
-        kVar.f();
+        kVar.h();
     }
 
     public final void d() {
-        z h02 = i6.h0(AndroidUtilities.dp(56.0f), i6.w0(null, i6.P9, false), i6.w0(null, i6.Q9, false));
+        z i02 = i6.i0(AndroidUtilities.dp(56.0f), i6.x0(null, i6.P9, false), i6.x0(null, i6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        sq sqVar = new sq(mutate, h02, 0, 0);
+        fr frVar = new fr(mutate, i02, 0, 0);
         int dp = AndroidUtilities.dp(56.0f);
         int dp2 = AndroidUtilities.dp(56.0f);
-        sqVar.e = dp;
-        sqVar.f = dp2;
-        this.b = sqVar;
+        frVar.e = dp;
+        frVar.f = dp2;
+        this.b = frVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        drawable.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.h5, false), mode));
+        drawable.setColorFilter(new PorterDuffColorFilter(i6.x0(null, i6.h5, false), mode));
         this.w.setBackground(drawable);
-        this.x.setTextColor(i6.w0(null, i6.j5, false));
+        this.x.setTextColor(i6.x0(null, i6.j5, false));
         invalidate();
     }
 

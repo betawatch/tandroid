@@ -1,53 +1,6 @@
 package n7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b1 extends d1 {
-    public final String a;
-
-    public b1(String str) {
-        this.a = str;
-    }
-
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
-        d1 d1Var = (d1) obj;
-        int zza = d1Var.zza();
-        int c10 = d1.c((byte) 96);
-        if (c10 != zza) {
-            return c10 - d1Var.zza();
-        }
-        String str = ((b1) d1Var).a;
-        int length = str.length();
-        String str2 = this.a;
-        if (str2.length() == length) {
-            return str2.compareTo(str);
-        }
-        return str2.length() - str.length();
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && b1.class == obj.getClass()) {
-            return this.a.equals(((b1) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(d1.c((byte) 96)), this.a});
-    }
-
-    public final String toString() {
-        return a4.a.t(new StringBuilder("\""), this.a, "\"");
-    }
-
-    @Override // n7.d1
-    public final int zza() {
-        return d1.c((byte) 96);
-    }
+public final class b1 extends Exception {
 }

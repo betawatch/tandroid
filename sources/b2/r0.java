@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 import v7.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class r0 {
     public static final ArrayList a = new ArrayList();
@@ -32,9 +32,9 @@ public abstract class r0 {
 
     public static String b(String str, String str2) {
         if (str != null && str2 != null) {
-            String[] b02 = e2.d0.b0(str);
+            String[] a02 = e2.d0.a0(str);
             StringBuilder sb2 = new StringBuilder();
-            for (String str3 : b02) {
+            for (String str3 : a02) {
                 if (str2.equals(d(str3))) {
                     if (sb2.length() > 0) {
                         sb2.append(",");

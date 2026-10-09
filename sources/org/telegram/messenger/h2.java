@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,16 +35,16 @@ public final /* synthetic */ class h2 implements RequestDelegate {
                 ((LocationController) this.b).lambda$broadcastLastKnownLocation$7((LocationController.SharingLocationInfo) this.c, (int[]) this.d, (TLRPC.TL_messages_editMessage) this.e, tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$didReceivedNotification$45((org.telegram.ui.ActionBar.a6) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$didReceivedNotification$44((org.telegram.ui.ActionBar.b6) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$deleteUserChannelHistory$133((TLRPC.Chat) this.c, (TLRPC.User) this.d, (TLRPC.Chat) this.e, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$deleteUserChannelHistory$132((TLRPC.Chat) this.c, (TLRPC.User) this.d, (TLRPC.Chat) this.e, tLObject, tL_error);
                 break;
             case 4:
                 ((SecretChatHelper) this.b).lambda$startSecretChat$30((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLRPC.User) this.e, tLObject, tL_error);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$sendVote$32((MessageObject) this.c, (String) this.d, (Runnable) this.e, tLObject, tL_error);
+                ((SendMessagesHelper) this.b).lambda$sendVote$35((MessageObject) this.c, (String) this.d, (Runnable) this.e, tLObject, tL_error);
                 break;
         }
     }

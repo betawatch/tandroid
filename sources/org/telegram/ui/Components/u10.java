@@ -1,65 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class u10 extends d8 {
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ FragmentContextView F;
-    public final /* synthetic */ int y;
+public final class u10 extends CharacterStyle implements UpdateAppearance {
+    public int a;
+    public int b;
+    public float c;
+    public final org.telegram.ui.ActionBar.e6 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u10(FragmentContextView fragmentContextView, Context context, Context context2, int i10) {
-        super(context);
-        this.y = i10;
-        this.F = fragmentContextView;
-        this.E = context2;
+    public u10(int i10) {
+        this(i10, null);
     }
 
-    @Override // org.telegram.ui.Components.d8
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                TextView textView = new TextView(this.E);
-                textView.setMaxLines(1);
-                textView.setLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextSize(1, 15.0f);
-                textView.setGravity(19);
-                FragmentContextView fragmentContextView = this.F;
-                int i10 = fragmentContextView.T;
-                if (i10 == 0 || i10 == 2) {
-                    textView.setGravity(19);
-                    textView.setTypeface(Typeface.DEFAULT);
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 4) {
-                    textView.setGravity(51);
-                    textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.t7, fragmentContextView.p0));
-                    textView.setTypeface(AndroidUtilities.bold());
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 1 || i10 == 3) {
-                    textView.setGravity(19);
-                    textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A7, fragmentContextView.p0));
-                    textView.setTypeface(AndroidUtilities.bold());
-                    textView.setTextSize(1, 14.0f);
-                }
-                return textView;
-            default:
-                TextView textView2 = new TextView(this.E);
-                textView2.setMaxLines(1);
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(3);
-                textView2.setTextSize(1, 13.0f);
-                textView2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.x7, this.F.p0));
-                return textView2;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        this.a = org.telegram.ui.ActionBar.i6.m1(this.c, org.telegram.ui.ActionBar.i6.w0(this.b, this.d));
+        int color = textPaint.getColor();
+        int i10 = this.a;
+        if (color != i10) {
+            textPaint.setColor(i10);
         }
+    }
+
+    public u10(int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+        this.c = 1.0f;
+        this.b = i10;
+        this.d = e6Var;
     }
 }

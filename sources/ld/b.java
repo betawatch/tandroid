@@ -1,66 +1,21 @@
 package ld;
 
-import hd.c;
-import java.io.Serializable;
-import kotlin.jvm.internal.i;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class b extends c implements a, Serializable {
-    public final Enum[] a;
+public final class b implements jd.c {
+    public static final b a = new b();
 
-    public b(Enum[] entries) {
-        i.e(entries, "entries");
-        this.a = entries;
+    @Override // jd.c
+    public final jd.h getContext() {
+        throw new IllegalStateException("This continuation is already complete");
     }
 
-    @Override // hd.c, java.util.List, java.util.Collection
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return false;
-        }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42;
+    @Override // jd.c
+    public final void resumeWith(Object obj) {
+        throw new IllegalStateException("This continuation is already complete");
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        Enum[] enumArr = this.a;
-        int length = enumArr.length;
-        if (i10 < 0 || i10 >= length) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, length, "index: ", ", size: "));
-        }
-        return enumArr[i10];
-    }
-
-    @Override // hd.c
-    public final int i() {
-        return this.a.length;
-    }
-
-    @Override // hd.c, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return -1;
-        }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42) {
-            return ordinal;
-        }
-        return -1;
-    }
-
-    @Override // hd.c, java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj instanceof Enum) {
-            return indexOf((Enum) obj);
-        }
-        return -1;
+    public final String toString() {
+        return "This continuation is already complete";
     }
 }

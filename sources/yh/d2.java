@@ -1,58 +1,92 @@
 package yh;
 
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.o91;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
+public final class d2 extends o91 {
+    public final /* synthetic */ s3 T;
 
-    public /* synthetic */ d2(y3 y3Var, int i10) {
-        this.a = i10;
-        this.b = y3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d2(s3 s3Var, Context context) {
+        super(context, null);
+        this.T = s3Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final y3 y3Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.f1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                y3.Z(y3Var, tLObject, tL_error);
-                                break;
-                            default:
-                                y3.z0(y3Var, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 1;
-                final y3 y3Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.f1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                y3.Z(y3Var2, tLObject, tL_error);
-                                break;
-                            default:
-                                y3.z0(y3Var2, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.Components.o91
+    public final void E(View view, float f7) {
+        int i10;
+        View view2;
+        xh.n2 n2Var;
+        xh.n2 n2Var2;
+        f2 f2Var;
+        f2 f2Var2;
+        f2 f2Var3;
+        if (getMeasuredWidth() <= 0) {
+            view.setTranslationX(f7);
+            return;
         }
+        float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
+        s3 s3Var = this.T;
+        i10 = ((org.telegram.ui.ActionBar.f3) s3Var).backgroundPaddingLeft;
+        view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
+        view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
+        view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
+        view.setScaleX(1.0f - Math.abs(0.25f * clamp));
+        view.setRotationY(clamp * 10.0f);
+        if (view instanceof FrameLayout) {
+            FrameLayout frameLayout = (FrameLayout) view;
+            if (frameLayout.getChildCount() > 0) {
+                view2 = frameLayout.getChildAt(0);
+                n2Var = s3Var.c0;
+                if (n2Var != null && view2 == n2Var.Y && (f2Var3 = n2Var.e0) != null) {
+                    f2Var3.invalidate();
+                }
+                if (view2 == s3Var.Y && (f2Var2 = s3Var.e0) != null) {
+                    f2Var2.invalidate();
+                }
+                n2Var2 = s3Var.d0;
+                if (n2Var2 == null && view2 == n2Var2.Y && (f2Var = n2Var2.e0) != null) {
+                    f2Var.invalidate();
+                    return;
+                }
+                return;
+            }
+        }
+        view2 = null;
+        n2Var = s3Var.c0;
+        if (n2Var != null) {
+            f2Var3.invalidate();
+        }
+        if (view2 == s3Var.Y) {
+            f2Var2.invalidate();
+        }
+        n2Var2 = s3Var.d0;
+        if (n2Var2 == null) {
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
+    @Override // org.telegram.ui.Components.o91
+    public final void F() {
+        super.F();
+        int i10 = this.b;
+        s3 s3Var = this.T;
+        if (i10 != s3Var.M1(false)) {
+            AndroidUtilities.runOnUIThread(new ds0(18, this, this.b > s3Var.M1(false)));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.o91
+    public final boolean i(MotionEvent motionEvent) {
+        f4.d dVar = this.T.Z0;
+        return dVar == null || dVar.c(0);
     }
 }

@@ -1,8 +1,8 @@
 package z4;
 
-import ai.e6;
-import ai.ma;
-import ai.zb;
+import ai.ac;
+import ai.f6;
+import ai.na;
 import android.R;
 import android.content.Context;
 import android.content.res.Resources;
@@ -29,22 +29,23 @@ import fb.i;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
+import n6.t;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.m2;
-import pg.c1;
+import org.telegram.ui.Wallet.n5;
 import r0.a0;
 import r0.i0;
-import s4.d1;
+import s4.e1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
-    public static final i t0 = new i(6);
+    public static final i t0 = new i(7);
     public static final m2 u0 = new m2(5);
-    public static final i v0 = new i(7);
+    public static final i v0 = new i(8);
     public int E;
     public float F;
     public float G;
@@ -88,7 +89,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final c1 q0;
+    public final n5 q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -109,7 +110,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new c1(this, 12);
+        this.q0 = new n5(this, 15);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -126,11 +127,11 @@ public class g extends ViewGroup {
         this.c0 = (int) (25.0f * f7);
         this.d0 = (int) (2.0f * f7);
         this.O = (int) (f7 * 16.0f);
-        i0.k(this, new d1(this));
+        i0.j(this, new e1(this));
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
-        a0.j(this, new o0.a(this));
+        a0.i(this, new t(this));
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -493,12 +494,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            c1 c1Var = this.q0;
+            n5 n5Var = this.q0;
             if (!z10) {
-                c1Var.run();
+                n5Var.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(c1Var);
+                postOnAnimation(n5Var);
             }
         }
     }
@@ -700,18 +701,18 @@ public class g extends ViewGroup {
         float f7 = 0.0f;
         float scrollX = clientWidth > 0 ? getScrollX() / clientWidth : 0.0f;
         float f10 = clientWidth > 0 ? this.w / clientWidth : 0.0f;
-        c cVar2 = null;
-        float f11 = 0.0f;
-        int i11 = -1;
-        int i12 = 0;
+        int i11 = 0;
         boolean z10 = true;
+        c cVar2 = null;
+        int i12 = -1;
+        float f11 = 0.0f;
         while (true) {
             ArrayList arrayList = this.b;
-            if (i12 >= arrayList.size()) {
+            if (i11 >= arrayList.size()) {
                 break;
             }
-            c cVar3 = (c) arrayList.get(i12);
-            if (z10 || cVar3.b == (i10 = i11 + 1)) {
+            c cVar3 = (c) arrayList.get(i11);
+            if (z10 || cVar3.b == (i10 = i12 + 1)) {
                 cVar = cVar3;
             } else {
                 float f12 = f7 + f11 + f10;
@@ -720,7 +721,7 @@ public class g extends ViewGroup {
                 cVar4.b = i10;
                 this.e.getClass();
                 cVar4.d = 1.0f;
-                i12--;
+                i11--;
                 cVar = cVar4;
             }
             f7 = cVar.e;
@@ -728,14 +729,14 @@ public class g extends ViewGroup {
             if (!z10 && scrollX < f7) {
                 break;
             }
-            if (scrollX < f13 || i12 == arrayList.size() - 1) {
+            if (scrollX < f13 || i11 == arrayList.size() - 1) {
                 break;
             }
             int i13 = cVar.b;
             float f14 = cVar.d;
-            i12++;
+            i11++;
             c cVar5 = cVar;
-            i11 = i13;
+            i12 = i13;
             f11 = f14;
             cVar2 = cVar5;
             z10 = false;
@@ -825,26 +826,26 @@ public class g extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((d) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    zb zbVar = (zb) this.m0.b;
-                    ma maVar = (ma) childAt2;
+                    ac acVar = (ac) this.m0.b;
+                    na naVar = (na) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        maVar.a(false);
-                        AndroidUtilities.runOnUIThread(new a3.d(maVar, 17), 16L);
+                        naVar.a(false);
+                        AndroidUtilities.runOnUIThread(new a3.d(naVar, 17), 16L);
                     } else {
-                        if (!maVar.d) {
-                            maVar.a(true);
-                            if (zbVar.x0 != null) {
-                                e6 e6Var = maVar.a;
-                                long j3 = maVar.b;
-                                ArrayList arrayList2 = maVar.c;
-                                e6Var.B1 = j3;
-                                e6Var.z1 = arrayList2;
-                                e6Var.o0(-1);
+                        if (!naVar.d) {
+                            naVar.a(true);
+                            if (acVar.x0 != null) {
+                                f6 f6Var = naVar.a;
+                                long j3 = naVar.b;
+                                ArrayList arrayList2 = naVar.c;
+                                f6Var.B1 = j3;
+                                f6Var.z1 = arrayList2;
+                                f6Var.o0(-1);
                             } else {
-                                maVar.a.U0(-1, maVar.b);
+                                naVar.a.U0(-1, naVar.b);
                             }
                         }
-                        maVar.a.setOffset(left2);
+                        naVar.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);
@@ -1146,19 +1147,14 @@ public class g extends ViewGroup {
         this.h0 = z11;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0083, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0081, code lost:
     
         if (r10 != (-1)) goto L36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x008b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0089, code lost:
     
         if (r3 != (-1)) goto L42;
      */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x008e  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1167,66 +1163,53 @@ public class g extends ViewGroup {
         d dVar;
         d dVar2;
         int i12;
-        int i13;
-        int i14;
         setMeasuredDimension(View.getDefaultSize(0, i10), View.getDefaultSize(0, i11));
         int measuredWidth = getMeasuredWidth();
         this.P = Math.min(measuredWidth / 10, this.O);
         int paddingLeft = (measuredWidth - getPaddingLeft()) - getPaddingRight();
         int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
         int childCount = getChildCount();
-        int i15 = 0;
+        int i13 = 0;
         while (true) {
             boolean z10 = true;
-            int i16 = TLObject.FLAG_30;
-            if (i15 >= childCount) {
+            int i14 = TLObject.FLAG_30;
+            if (i13 >= childCount) {
                 break;
             }
-            View childAt = getChildAt(i15);
+            View childAt = getChildAt(i13);
             if (childAt.getVisibility() != 8 && (dVar2 = (d) childAt.getLayoutParams()) != null && dVar2.a) {
-                int i17 = dVar2.b;
-                int i18 = i17 & 7;
-                int i19 = i17 & 112;
-                boolean z11 = i19 == 48 || i19 == 80;
-                if (i18 != 3 && i18 != 5) {
+                int i15 = dVar2.b;
+                int i16 = i15 & 7;
+                int i17 = i15 & 112;
+                boolean z11 = i17 == 48 || i17 == 80;
+                if (i16 != 3 && i16 != 5) {
                     z10 = false;
                 }
-                int i20 = TLObject.FLAG_31;
+                int i18 = TLObject.FLAG_31;
                 if (z11) {
-                    i20 = TLObject.FLAG_30;
+                    i12 = Integer.MIN_VALUE;
+                    i18 = 1073741824;
+                } else {
+                    i12 = z10 ? 1073741824 : Integer.MIN_VALUE;
+                }
+                int i19 = ((ViewGroup.LayoutParams) dVar2).width;
+                if (i19 != -2) {
+                    i18 = 1073741824;
+                }
+                i19 = paddingLeft;
+                int i20 = ((ViewGroup.LayoutParams) dVar2).height;
+                if (i20 == -2) {
+                    i14 = i12;
+                }
+                i20 = measuredHeight;
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(i19, i18), View.MeasureSpec.makeMeasureSpec(i20, i14));
+                if (z11) {
+                    measuredHeight -= childAt.getMeasuredHeight();
                 } else if (z10) {
-                    i12 = TLObject.FLAG_30;
-                    i13 = ((ViewGroup.LayoutParams) dVar2).width;
-                    if (i13 != -2) {
-                        i20 = TLObject.FLAG_30;
-                    }
-                    i13 = paddingLeft;
-                    i14 = ((ViewGroup.LayoutParams) dVar2).height;
-                    if (i14 != -2) {
-                        i16 = i12;
-                    }
-                    i14 = measuredHeight;
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i13, i20), View.MeasureSpec.makeMeasureSpec(i14, i16));
-                    if (!z11) {
-                        measuredHeight -= childAt.getMeasuredHeight();
-                    } else if (z10) {
-                        paddingLeft -= childAt.getMeasuredWidth();
-                    }
-                }
-                i12 = TLObject.FLAG_31;
-                i13 = ((ViewGroup.LayoutParams) dVar2).width;
-                if (i13 != -2) {
-                }
-                i13 = paddingLeft;
-                i14 = ((ViewGroup.LayoutParams) dVar2).height;
-                if (i14 != -2) {
-                }
-                i14 = measuredHeight;
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(i13, i20), View.MeasureSpec.makeMeasureSpec(i14, i16));
-                if (!z11) {
+                    paddingLeft -= childAt.getMeasuredWidth();
                 }
             }
-            i15++;
+            i13++;
         }
         View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30);
         this.H = View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30);
@@ -1659,7 +1642,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            hg.c.t(sb2, this.a, ", found: ", b10, " Pager id: ");
+            hg.c.u(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

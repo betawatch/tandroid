@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.gs0;
-import yh.k5;
+import org.telegram.ui.Components.rs0;
+import yh.d5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gs0 b;
+    public final /* synthetic */ rs0 b;
 
-    public /* synthetic */ u1(gs0 gs0Var, int i10) {
+    public /* synthetic */ u1(rs0 rs0Var, int i10) {
         this.a = i10;
-        this.b = gs0Var;
+        this.b = rs0Var;
     }
 
     @Override // java.lang.Runnable
@@ -28,12 +28,12 @@ public final /* synthetic */ class u1 implements Runnable {
                 this.b.setReorderingCollections(true);
                 break;
             default:
-                k5 k5Var = this.b.e;
-                k5Var.getClass();
+                d5 d5Var = this.b.e;
+                d5Var.getClass();
                 TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
-                int i10 = k5Var.a;
-                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(k5Var.b);
-                ArrayList arrayList = k5Var.e;
+                int i10 = d5Var.a;
+                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(d5Var.b);
+                ArrayList arrayList = d5Var.e;
                 int size = arrayList.size();
                 int i11 = 0;
                 while (i11 < size) {
@@ -42,7 +42,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
                 }
                 ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
-                k5Var.j();
+                d5Var.j();
                 break;
         }
     }

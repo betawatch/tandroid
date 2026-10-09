@@ -1,40 +1,19 @@
 package za;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class z {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final long d;
+public final class z implements de.b {
+    public final Object a;
+    public final Object b;
 
-    public z(int i10, long j3, String sessionId, String firstSessionId) {
-        kotlin.jvm.internal.i.e(sessionId, "sessionId");
-        kotlin.jvm.internal.i.e(firstSessionId, "firstSessionId");
-        this.a = sessionId;
-        this.b = firstSessionId;
-        this.c = i10;
-        this.d = j3;
+    public /* synthetic */ z(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof z)) {
-            return false;
-        }
-        z zVar = (z) obj;
-        return kotlin.jvm.internal.i.a(this.a, zVar.a) && kotlin.jvm.internal.i.a(this.b, zVar.b) && this.c == zVar.c && this.d == zVar.d;
-    }
-
-    public final int hashCode() {
-        int h = (a4.a.h(this.a.hashCode() * 31, 31, this.b) + this.c) * 31;
-        long j3 = this.d;
-        return h + ((int) (j3 ^ (j3 >>> 32)));
-    }
-
-    public final String toString() {
-        return "SessionDetails(sessionId=" + this.a + ", firstSessionId=" + this.b + ", sessionIndex=" + this.c + ", sessionStartTimestampUs=" + this.d + ')';
+    @Override // de.b
+    public Object z(de.c cVar, ld.c cVar2) {
+        Object z10 = ((pf.b) this.a).z(new k1.p(cVar, (a0) this.b), cVar2);
+        return z10 == kd.a.a ? z10 : hd.i.a;
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pk implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class pk implements Runnable {
                 ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
                 break;
             case 4:
-                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.ad[]) this.c, (qi.b) this.e, (Activity) this.b);
+                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.cd[]) this.c, (oi.b) this.e, (Activity) this.b);
                 break;
             case 5:
                 CodeHighlighting.lambda$highlightEditable$1((String) this.d, (String) this.c, (SpannableString) this.e, (Utilities.Callback) this.b);
@@ -62,7 +62,7 @@ public final /* synthetic */ class pk implements Runnable {
                 ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
                 break;
             case 8:
-                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ai.t8) this.b);
+                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ai.u8) this.b);
                 break;
             case 9:
                 ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
@@ -92,31 +92,31 @@ public final /* synthetic */ class pk implements Runnable {
                 ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
                 break;
             case 18:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (t6) this.b);
+                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (u6) this.b);
                 break;
             case 19:
                 ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
                 break;
             case 20:
-                ((MessagesController) this.d).lambda$setUserAdminRole$106((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
+                ((MessagesController) this.d).lambda$addUsersToChannel$271((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
                 break;
             case 21:
-                ((MessagesController) this.d).lambda$createChat$259((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.e);
+                ((MessagesController) this.d).lambda$getDifference$356((TLRPC.updates_Difference) this.c, (a0.i) this.e, (a0.i) this.b);
                 break;
             case 22:
-                ((MessagesController) this.d).lambda$addUsersToChannel$272((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
+                ((MessagesController) this.d).lambda$createChat$255((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.e);
                 break;
             case 23:
-                ((MessagesController) this.d).lambda$createChat$256((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.e);
+                ((MessagesController) this.d).lambda$createChat$258((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.e);
                 break;
             case 24:
-                ((MessagesController) this.d).lambda$completeDialogsReset$211((TLRPC.messages_Dialogs) this.c, (a0.i) this.e, (a0.i) this.b);
+                ((MessagesController) this.d).lambda$setUserAdminRole$105((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
                 break;
             case 25:
-                ((MessagesController) this.d).lambda$getDifference$356((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.i) this.b);
+                ((MessagesController) this.d).lambda$completeDialogsReset$210((TLRPC.messages_Dialogs) this.c, (a0.i) this.e, (a0.i) this.b);
                 break;
             case 26:
-                ((MessagesController) this.d).lambda$getDifference$357((TLRPC.updates_Difference) this.c, (a0.i) this.e, (a0.i) this.b);
+                ((MessagesController) this.d).lambda$getDifference$355((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.i) this.b);
                 break;
             case 27:
                 ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);

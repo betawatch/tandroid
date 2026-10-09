@@ -6,20 +6,20 @@ import android.graphics.Path;
 import android.widget.TableLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class b0 extends TableLayout {
-    public final /* synthetic */ d6 a;
+    public final /* synthetic */ e6 a;
     public final /* synthetic */ c0 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b0(c0 c0Var, Context context, d6 d6Var) {
+    public b0(c0 c0Var, Context context, e6 e6Var) {
         super(context);
         this.b = c0Var;
-        this.a = d6Var;
+        this.a = e6Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -29,7 +29,7 @@ public final class b0 extends TableLayout {
         c0Var.s.rewind();
         c0Var.s.addRoundRect(c0Var.v, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
         super.dispatchDraw(canvas);
-        c0Var.r.setColor(i0.a.d(0.1f, i6.v0(i6.d7, this.a), -1));
+        c0Var.r.setColor(i0.a.d(0.1f, i6.w0(i6.d7, this.a), -1));
         c0Var.r.setStrokeWidth(AndroidUtilities.dp(1.0f));
         float height = getHeight() / (c0Var.y.getVisibility() == 0 ? 5.0f : 4.0f);
         for (int i10 = 1; i10 <= 4; i10++) {

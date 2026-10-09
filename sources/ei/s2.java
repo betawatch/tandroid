@@ -1,74 +1,27 @@
 package ei;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationRepeat;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class s2 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ k3 a;
 
-    public /* synthetic */ s2(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public s2(k3 k3Var) {
+        this.a = k3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MediaDataController.getInstance(this.b).loadAttachMenuBots(false, true);
-                break;
-            case 1:
-                MediaController.lambda$loadGalleryPhotosAlbums$57(this.b);
-                break;
-            case 2:
-                MediaController.lambda$checkGallery$1(this.b);
-                break;
-            case 3:
-                NotificationRepeat.lambda$onHandleIntent$0(this.b);
-                break;
-            case 4:
-                PushListenerController.lambda$processRemoteMessage$3(this.b);
-                break;
-            case 5:
-                PushListenerController.lambda$processRemoteMessage$4(this.b);
-                break;
-            case 6:
-                SharedConfig.lambda$checkLogsToDelete$3(this.b);
-                break;
-            case 7:
-                ConnectionsManager.lambda$onUpdate$13(this.b);
-                break;
-            case 8:
-                ConnectionsManager.lambda$onSessionCreated$14(this.b);
-                break;
-            case 9:
-                ConnectionsManager.lambda$onLogout$16(this.b);
-                break;
-            case 10:
-                MediaDataController.getInstance(this.b).checkStickers(5);
-                break;
-            default:
-                int i10 = this.b;
-                Pattern pattern = LaunchActivity.B1;
-                ApplicationLoader.mainInterfacePausedStageQueue = true;
-                ApplicationLoader.mainInterfacePausedStageQueueTime = 0L;
-                if (VoIPService.getSharedInstance() == null) {
-                    MessagesController.getInstance(i10).ignoreSetOnline = false;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        k3 k3Var = this.a;
+        if (i10 == -1) {
+            if (k3Var.x.C()) {
+                return;
+            }
+            k3Var.r();
+        } else if (i10 == R.id.menu_collapse_bot) {
+            k3Var.x0 = true;
+            k3Var.k(true);
         }
     }
 }

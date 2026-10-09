@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a5 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,23 +23,23 @@ public final /* synthetic */ class a5 implements Runnable {
         this.b = c5Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x018b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x0188, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0114, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x0113, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0116, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0115, code lost:
     
         r1.recycle();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0156, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0153, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x0182, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x017f, code lost:
     
         if (r1.isRecycled() == false) goto L75;
      */
@@ -146,7 +146,7 @@ public final /* synthetic */ class a5 implements Runnable {
                     }
                 } catch (Throwable unused3) {
                 }
-                AndroidUtilities.runOnUIThread(new gg.x1(18, c5Var2, str4));
+                AndroidUtilities.runOnUIThread(new gg.w1(18, c5Var2, str4));
                 return;
             default:
                 c5 c5Var3 = this.b;

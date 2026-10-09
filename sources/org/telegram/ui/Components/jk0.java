@@ -1,31 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jk0 extends og.a {
-    public final zg.m0 c;
+public final class jk0 {
+    public final TLObject a;
+    public final long b;
+    public int c;
 
-    public jk0(int i10, zg.m0 m0Var) {
-        super(i10, false);
-        this.c = m0Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public jk0(int i10, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i10;
+        if (tLObject instanceof TLRPC.User) {
+            this.b = ((TLRPC.User) tLObject).id;
+        } else if (tLObject instanceof TLRPC.Chat) {
+            this.b = -((TLRPC.Chat) tLObject).id;
         }
-        if (obj != null && jk0.class == obj.getClass()) {
-            jk0 jk0Var = (jk0) obj;
-            int i10 = this.a;
-            int i11 = jk0Var.a;
-            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
-                zg.m0 m0Var = this.c;
-                return m0Var != null && m0Var.equals(jk0Var.c);
-            }
-            if (i10 == i11) {
-                return true;
-            }
-        }
-        return false;
     }
 }

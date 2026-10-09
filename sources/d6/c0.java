@@ -2,17 +2,17 @@ package d6;
 
 import android.util.Log;
 import android.util.SparseIntArray;
-import com.google.android.gms.internal.cast.j3;
-import com.google.android.gms.internal.cast.q4;
-import com.google.android.gms.internal.cast.u2;
-import com.google.android.gms.internal.cast.x6;
+import com.google.android.gms.internal.cast.h3;
+import com.google.android.gms.internal.cast.o4;
+import com.google.android.gms.internal.cast.s2;
+import com.google.android.gms.internal.cast.v6;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class c0 extends e6.g {
     public final /* synthetic */ int a;
@@ -84,17 +84,17 @@ public final class c0 extends e6.g {
     public void h(String str, long j3, int i10, long j10, long j11) {
         switch (this.a) {
             case 0:
-                q4 q4Var = ((c) this.b).l;
-                if (q4Var != null) {
-                    x6 w10 = q4Var.a.w();
-                    u2 u2Var = new u2(str);
-                    u2Var.b = j3;
-                    u2Var.c = i10;
-                    u2Var.d = j10;
-                    u2Var.e = j11;
-                    j3 j3Var = new j3(u2Var);
-                    j3Var.f = w10.h;
-                    w10.d.add(j3Var);
+                o4 o4Var = ((c) this.b).l;
+                if (o4Var != null) {
+                    v6 F = o4Var.a.F();
+                    s2 s2Var = new s2(str);
+                    s2Var.b = j3;
+                    s2Var.c = i10;
+                    s2Var.d = j10;
+                    s2Var.e = j11;
+                    h3 h3Var = new h3(s2Var);
+                    h3Var.f = F.h;
+                    F.d.add(h3Var);
                     break;
                 }
                 break;

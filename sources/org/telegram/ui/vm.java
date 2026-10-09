@@ -1,51 +1,68 @@
 package org.telegram.ui;
 
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vm implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kn b;
-    public final /* synthetic */ MessageObject c;
+public final class vm extends uu0 {
+    public final ArrayList a;
+    public final int[] b = new int[2];
+    public final /* synthetic */ zn c;
 
-    public /* synthetic */ vm(kn knVar, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = knVar;
-        this.c = messageObject;
+    public vm(zn znVar, ArrayList arrayList) {
+        this.c = znVar;
+        this.a = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                kn knVar = this.b;
-                yn ynVar = knVar.a;
-                ynVar.Q7();
-                UndoView undoView = ynVar.w3;
-                if (undoView != null) {
-                    int i10 = (ynVar.W.getVisibility() != 0 || ynVar.P.getVisibility() == 0) ? 17 : 16;
-                    MessageObject messageObject = this.c;
-                    undoView.k(0L, i10, messageObject.getDiceEmoji(), null, null, new vm(knVar, messageObject, 2));
-                    break;
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        ImageReceiver imageReceiver;
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject messageObject2;
+        RichMessageLayout richMessageLayout;
+        zn znVar = this.c;
+        if (znVar.x0 != null && i10 >= 0) {
+            ArrayList arrayList = this.a;
+            if (i10 < arrayList.size()) {
+                TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
+                int childCount = znVar.x0.getChildCount();
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = znVar.x0.getChildAt(i11);
+                    boolean z12 = childAt instanceof org.telegram.ui.Cells.u1;
+                    int[] iArr = this.b;
+                    if (!z12 || (messageObject2 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) == null || (richMessageLayout = messageObject2.richLayout) == null) {
+                        imageReceiver = null;
+                    } else {
+                        int[] iArr2 = new int[2];
+                        imageReceiver = richMessageLayout.findMediaImageReceiver(pageBlock, iArr2);
+                        if (imageReceiver != null) {
+                            childAt.getLocationInWindow(iArr);
+                            iArr[0] = u1Var.getTextX() + iArr2[0] + iArr[0];
+                            iArr[1] = u1Var.getTextY() + iArr2[1] + iArr[1];
+                        }
+                    }
+                    if (imageReceiver != null) {
+                        ev0 ev0Var = new ev0();
+                        ev0Var.b = iArr[0];
+                        ev0Var.c = iArr[1];
+                        ev0Var.d = znVar.x0;
+                        ev0Var.a = imageReceiver;
+                        ev0Var.e = imageReceiver.getBitmapSafe();
+                        ev0Var.h = imageReceiver.getRoundRadius(true);
+                        ev0Var.j = (int) ((znVar.s9 - znVar.u9) - AndroidUtilities.dp(4.0f));
+                        ev0Var.i = (int) (znVar.b9(org.telegram.ui.Components.y31.c) + znVar.v.d() + AndroidUtilities.dp(9.0f) + znVar.Ba + znVar.sc);
+                        return ev0Var;
+                    }
                 }
-                break;
-            case 1:
-                yn ynVar2 = this.b.a;
-                ynVar2.tb = this.c.getId();
-                ynVar2.ub = 0;
-                break;
-            default:
-                yn ynVar3 = this.b.a;
-                if (ynVar3.f7()) {
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(this.c.getDiceEmoji(), ynVar3.R5, ynVar3.l5, ynVar3.V3, null, false, null, null, null, true, 0, 0, null, false);
-                    of2.sendMessageChatArguments = ynVar3.D8();
-                    ynVar3.getSendMessagesHelper().sendMessage(of2);
-                    break;
-                }
-                break;
+            }
         }
+        return null;
     }
 }

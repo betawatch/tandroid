@@ -1,85 +1,124 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.List;
-import java.util.concurrent.AbstractExecutorService;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.RunnableFuture;
-import java.util.concurrent.TimeUnit;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public class o4 extends AbstractExecutorService implements n4, AutoCloseable {
-    public final ExecutorService a;
+public final class o4 implements d6.h {
+    public final /* synthetic */ ci.u5 a;
 
-    public o4(ExecutorService executorService) {
-        executorService.getClass();
-        this.a = executorService;
+    public /* synthetic */ o4(ci.u5 u5Var) {
+        this.a = u5Var;
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j3, TimeUnit timeUnit) {
-        return this.a.awaitTermination(j3, timeUnit);
+    @Override // d6.h
+    public void d(d6.f fVar, String str) {
+        w6 w6Var = new w6(new a5.a(7, 2));
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        v6 v6Var = (v6) u5Var.d;
+        n6.l.h(v6Var);
+        v6Var.a((d6.c) fVar);
+        v6 v6Var2 = (v6) u5Var.d;
+        n6.l.h(v6Var2);
+        String str2 = v6Var2.k;
+        if (str2 == null) {
+            v6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            v6Var2.b(4);
+        }
     }
 
-    @Override // java.lang.AutoCloseable
-    public /* synthetic */ void close() {
-        k4.c(this);
+    @Override // d6.h
+    public void g(d6.f fVar, int i10) {
+        a5.a aVar = new a5.a(5, 2);
+        aVar.c = Integer.valueOf(i10);
+        w6 w6Var = new w6(aVar);
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        u5Var.G();
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.execute(runnable);
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
+        w6 w6Var = new w6(new a5.a(4, 2));
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        v6 v6Var = (v6) u5Var.d;
+        n6.l.h(v6Var);
+        v6Var.a((d6.c) fVar);
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isShutdown() {
-        return this.a.isShutdown();
+    @Override // d6.h
+    public void j(d6.f fVar, int i10) {
+        a5.a aVar = new a5.a(9, 2);
+        aVar.c = Integer.valueOf(i10);
+        ci.u5 u5Var = this.a;
+        aVar.d = Boolean.valueOf(((d) u5Var.b).d == 2);
+        ci.u5.E(u5Var, new w6(aVar));
+        u5Var.G();
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final boolean isTerminated() {
-        return this.a.isTerminated();
+    @Override // d6.h
+    public void o(d6.f fVar) {
+        d6.c cVar = (d6.c) fVar;
+        a5.a aVar = new a5.a(2, 2);
+        ci.u5 u5Var = this.a;
+        aVar.d = Boolean.valueOf(((d) u5Var.b).d == 2);
+        ci.u5.E(u5Var, new w6(aVar));
+        v6 v6Var = (v6) u5Var.d;
+        n6.l.h(v6Var);
+        v6Var.a(cVar);
+        cVar.l = (o4) u5Var.e;
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
-        return new u4(Executors.callable(runnable, obj));
+    @Override // d6.h
+    public void u(d6.f fVar, int i10) {
+        a5.a aVar = new a5.a(8, 2);
+        aVar.c = Integer.valueOf(i10);
+        w6 w6Var = new w6(aVar);
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        u5Var.G();
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final void shutdown() {
-        this.a.shutdown();
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void v(d6.f fVar) {
     }
 
-    @Override // java.util.concurrent.ExecutorService
-    public final List shutdownNow() {
-        return this.a.shutdownNow();
+    @Override // d6.h
+    public void x(d6.f fVar, String str) {
+        w6 w6Var = new w6(new a5.a(4, 2));
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        v6 v6Var = (v6) u5Var.d;
+        n6.l.h(v6Var);
+        v6Var.a((d6.c) fVar);
+        v6 v6Var2 = (v6) u5Var.d;
+        n6.l.h(v6Var2);
+        String str2 = v6Var2.k;
+        if (str2 == null) {
+            v6Var2.k = str;
+        } else {
+            if (TextUtils.equals(str, str2)) {
+                return;
+            }
+            v6Var2.b(4);
+        }
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable) {
-        return (i9.w) super.submit(runnable);
-    }
-
-    public final String toString() {
-        return super.toString() + "[" + String.valueOf(this.a) + "]";
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService
-    public final RunnableFuture newTaskFor(Callable callable) {
-        return new u4(callable);
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
-        return (i9.w) super.submit(runnable, obj);
-    }
-
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
-    public final /* synthetic */ Future submit(Callable callable) {
-        return (i9.w) super.submit(callable);
+    @Override // d6.h
+    public void y(d6.f fVar, int i10) {
+        a5.a aVar = new a5.a(6, 2);
+        aVar.c = Integer.valueOf(i10);
+        w6 w6Var = new w6(aVar);
+        ci.u5 u5Var = this.a;
+        ci.u5.E(u5Var, w6Var);
+        v6 v6Var = (v6) u5Var.d;
+        n6.l.h(v6Var);
+        v6Var.a((d6.c) fVar);
     }
 }

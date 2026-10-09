@@ -1,446 +1,571 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.AnimatorSet;
-import android.content.Context;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.os.SystemClock;
+import android.graphics.Color;
 import android.text.TextUtils;
-import android.view.View;
+import android.util.SparseIntArray;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.op;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.w00;
-import org.telegram.ui.Components.w11;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.wi0;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.a7;
-import org.telegram.ui.ad;
-import org.telegram.ui.cd;
-import org.telegram.ui.dc;
-import org.telegram.ui.fd;
-import org.telegram.ui.fh;
-import org.telegram.ui.i9;
-import org.telegram.ui.me;
-import org.telegram.ui.n9;
-import org.telegram.ui.nd;
-import org.telegram.ui.o80;
-import org.telegram.ui.sa;
-import org.telegram.ui.ta1;
-import org.telegram.ui.ua;
-import org.telegram.ui.v9;
-import org.telegram.ui.w9;
-import org.telegram.ui.wb;
-import org.telegram.ui.xb1;
-import org.telegram.ui.yn;
-import org.telegram.ui.z8;
-import org.telegram.ui.zc;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class g6 {
+    public int a;
+    public h6 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public long j;
+    public long k;
+    public long l;
+    public long m;
+    public float p;
+    public boolean q;
+    public TLRPC.TL_theme r;
+    public TLRPC.TL_wallPaper s;
+    public int t;
+    public String u;
+    public String v;
+    public TLRPC.InputFile w;
+    public TLRPC.InputFile x;
+    public b6 y;
+    public boolean z;
+    public int n = 45;
+    public String o = "";
+    public final float[] A = new float[3];
 
-    public /* synthetic */ g6(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public static int a(SparseIntArray sparseIntArray, int... iArr) {
+        int i10 = 0;
+        int i11 = 0;
+        int i12 = 0;
+        int i13 = 0;
+        for (int i14 = 0; i14 < iArr.length; i14++) {
+            if (sparseIntArray.indexOfKey(iArr[i14]) >= 0) {
+                try {
+                    int i15 = sparseIntArray.get(iArr[i14]);
+                    i11 += Color.red(i15);
+                    i12 += Color.green(i15);
+                    i13 += Color.blue(i15);
+                    i10++;
+                } catch (Exception unused) {
+                }
+            }
+        }
+        if (i10 == 0) {
+            return 0;
+        }
+        return Color.argb(255, i11 / i10, i12 / i10, i13 / i10);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x014e, code lost:
+    public static void g(SparseIntArray sparseIntArray) {
+        for (int i10 = i6.za; i10 < i6.Ga; i10++) {
+            sparseIntArray.delete(i10);
+            sparseIntArray.put(i10, i6.ql[i10]);
+        }
+        for (int i11 = i6.Ha; i11 < i6.Tb; i11++) {
+            sparseIntArray.delete(i11);
+            sparseIntArray.put(i11, i6.ql[i11]);
+        }
+        for (int i12 = i6.Ub; i12 < i6.cc; i12++) {
+            sparseIntArray.delete(i12);
+            sparseIntArray.put(i12, i6.ql[i12]);
+        }
+    }
+
+    public final int b(int i10, int i11) {
+        float[] fArr = this.A;
+        Color.colorToHSV(i11, fArr);
+        float f7 = fArr[0];
+        Color.colorToHSV(i10, fArr);
+        float f10 = fArr[1];
+        if (f10 <= 0.0f) {
+            fArr[0] = f7;
+        }
+        fArr[1] = Math.max(0.0f, Math.min(1.0f, f10 + 0.6f));
+        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.05f));
+        return Color.HSVToColor(30, fArr);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x049e, code lost:
     
-        if (r6.text.equals("CHANNELS_ADMIN_PUBLIC_TOO_MUCH") == false) goto L62;
+        if (r13 < 85.0f) goto L209;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x037b  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x037f  */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Removed duplicated region for block: B:101:0x04be  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x04bb  */
+    /* JADX WARN: Type inference failed for: r16v1 */
+    /* JADX WARN: Type inference failed for: r16v2 */
+    /* JADX WARN: Type inference failed for: r16v3 */
+    /* JADX WARN: Type inference failed for: r16v4 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
+    public final boolean c(SparseIntArray sparseIntArray, SparseIntArray sparseIntArray2) {
+        int valueAt;
+        float f7;
+        boolean a2;
+        boolean z10;
+        char c10;
+        ?? r16;
+        int valueAt2;
+        int valueAt3;
         int i10;
-        yc a02;
+        boolean a10;
         int i11;
         int i12;
-        w61 w61Var;
-        w11 w11Var;
-        int i13 = this.a;
-        int i14 = -1;
-        int i15 = 0;
-        boolean z10 = false;
-        int i16 = 1;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i13) {
-            case 0:
-                h6 h6Var = (h6) obj2;
-                h6Var.d((File) obj, h6Var.h0);
-                AndroidUtilities.runOnUIThread(new q(h6Var, 19));
-                break;
-            case 1:
-                ((org.telegram.ui.q) obj2).W((TLRPC.TL_messages_archivedStickers) obj);
-                break;
-            case 2:
-                org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) obj2;
-                nf.e eVar = (nf.e) obj;
-                org.telegram.ui.v3 v3Var = i4Var.K;
-                if (v3Var != null) {
-                    v3Var.dismiss(true);
-                }
-                if (i4Var.M0 == eVar) {
-                    i4Var.M0 = null;
+        int i13;
+        int i14;
+        int i15;
+        float[] N0 = i6.N0(1);
+        float[] N02 = i6.N0(2);
+        Color.colorToHSV(this.b.X, N0);
+        Color.colorToHSV(this.c, N02);
+        boolean q6 = this.b.q();
+        if (this.c != this.b.X || this.d != 0) {
+            int i16 = 0;
+            while (true) {
+                int[] iArr = i6.ql;
+                if (i16 >= iArr.length) {
                     break;
                 }
-                break;
-            case 3:
-                ((org.telegram.ui.i4) obj2).R0.lock();
-                ((AnimatorSet) obj).start();
-                break;
-            case 4:
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.q4 q4Var = ((org.telegram.ui.n4) obj2).a;
-                if (!arrayList.isEmpty()) {
-                    for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                        q4Var.getMessagesController().setDialogHistoryTTL(((Long) arrayList.get(i17)).longValue(), q4Var.S() * 60);
-                    }
-                    if (q4Var.S() > 0) {
-                        yc.a0(q4Var).Q(R.raw.fire_on, 36, AndroidUtilities.replaceTags(LocaleController.formatString("AutodeleteTimerEnabledForChats", R.string.AutodeleteTimerEnabledForChats, LocaleController.formatTTLString(q4Var.S() * 60), LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size()))))).j();
-                        break;
-                    } else {
-                        yc.a0(q4Var).Q(R.raw.fire_off, 36, LocaleController.formatString("AutodeleteTimerDisabledForChats", R.string.AutodeleteTimerDisabledForChats, LocaleController.formatPluralString("Chats", arrayList.size(), Integer.valueOf(arrayList.size())))).j();
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                org.telegram.ui.w5 w5Var = (org.telegram.ui.w5) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                w5Var.R = tL_premium_boostsStatus;
-                if (tL_premium_boostsStatus != null) {
-                    w5Var.getMessagesController().getBoostsController().userCanBoostChannel(w5Var.P, w5Var.R, new org.telegram.ui.n5(w5Var, 0));
-                }
-                w5Var.f0.animate().cancel();
-                w5Var.f0.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new org.telegram.ui.u4(w5Var, i16));
-                w5Var.K0(true);
-                w5Var.L0(true);
-                w5Var.J0(null);
-                break;
-            case 6:
-                org.telegram.ui.b6 b6Var = (org.telegram.ui.b6) obj2;
-                CacheByChatsController.KeepMediaException keepMediaException = (CacheByChatsController.KeepMediaException) obj;
-                ArrayList arrayList2 = b6Var.c;
-                int i18 = 0;
-                while (true) {
-                    if (i18 >= arrayList2.size()) {
-                        i10 = 0;
-                    } else if (((org.telegram.ui.a6) arrayList2.get(i18)).c == null || ((org.telegram.ui.a6) arrayList2.get(i18)).c.dialogId != keepMediaException.dialogId) {
-                        i18++;
-                    } else {
-                        i10 = i18;
-                    }
-                }
-                s4.c1 K = b6Var.b.K(i10);
-                if (K != null) {
-                    View view = K.a;
-                    o80 o80Var = new o80(b6Var.getParentActivity(), b6Var);
-                    o80Var.g(true);
-                    o80Var.setParentWindow(org.telegram.ui.Components.e5.Q(b6Var, o80Var, view, view.getMeasuredWidth() / 2.0f, view.getMeasuredHeight() / 2.0f));
-                    o80Var.setCallback(new org.telegram.ui.y5(b6Var, keepMediaException, i16));
-                    break;
-                }
-                break;
-            case 7:
-                a7.U((a7) obj2, (b2) obj);
-                break;
-            case 8:
-                wi0 wi0Var = new wi0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
-                wi0Var.m(R.raw.qr_code_logo);
-                wi0Var.show();
-                break;
-            case 9:
-                ((z8) obj2).b.d0(((TLRPC.Message) hg.c.g(1, ((i9) obj).c)).id, 100);
-                break;
-            case 10:
-                w9 w9Var = (w9) obj2;
-                String str = (String) obj;
-                v9 v9Var = w9Var.L;
-                if (v9Var != null) {
-                    v9Var.L(str);
-                }
-                if (w9Var.V != 3) {
-                    w9Var.finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                w9 w9Var2 = (w9) obj2;
-                MrzRecognizer.Result result = (MrzRecognizer.Result) obj;
-                w9Var2.f.setText(result.rawMRZ);
-                w9Var2.f.animate().setDuration(200L).alpha(1.0f).setInterpolator(tr.f).start();
-                v9 v9Var2 = w9Var2.L;
-                if (v9Var2 != null) {
-                    v9Var2.T0(result);
-                }
-                AndroidUtilities.runOnUIThread(new n9(w9Var2, 3), 1200L);
-                break;
-            case 12:
-                w9 w9Var3 = (w9) obj2;
-                la.h hVar = (la.h) obj;
-                RectF rectF = (RectF) hVar.c;
-                PointF[] pointFArr = (PointF[]) hVar.d;
-                RectF rectF2 = w9Var3.I;
-                PointF[] pointFArr2 = w9Var3.E;
-                RectF rectF3 = w9Var3.J;
-                PointF[] pointFArr3 = w9Var3.F;
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                long j3 = w9Var3.K;
-                if (j3 == 0) {
-                    w9Var3.K = elapsedRealtime - 75;
-                    rectF3.set(rectF);
-                    rectF2.set(rectF);
-                    if (pointFArr == null) {
-                        w9.d0(rectF, pointFArr2);
-                        w9.d0(rectF, pointFArr3);
-                    } else {
-                        while (i15 < 4) {
-                            PointF pointF = pointFArr2[i15];
-                            PointF pointF2 = pointFArr[i15];
-                            pointF.set(pointF2.x, pointF2.y);
-                            PointF pointF3 = pointFArr3[i15];
-                            PointF pointF4 = pointFArr[i15];
-                            pointF3.set(pointF4.x, pointF4.y);
-                            i15++;
+                if (!i6.sl.contains(Integer.valueOf(i16))) {
+                    int indexOfKey = sparseIntArray.indexOfKey(i16);
+                    if (indexOfKey < 0) {
+                        int i17 = i6.rl.get(i16, -1);
+                        if (i17 < 0 || sparseIntArray.indexOfKey(i17) < 0) {
+                            valueAt = iArr[i16];
                         }
-                    }
-                } else {
-                    if (rectF2 != null) {
-                        long j10 = elapsedRealtime - j3;
-                        if (j10 < 75) {
-                            float min = Math.min(1.0f, Math.max(0.0f, j10 / 75.0f));
-                            AndroidUtilities.lerp(rectF2, rectF3, min, rectF2);
-                            for (int i19 = 0; i19 < 4; i19++) {
-                                PointF pointF5 = pointFArr2[i19];
-                                pointF5.set(AndroidUtilities.lerp(pointF5.x, pointFArr3[i19].x, min), AndroidUtilities.lerp(pointFArr2[i19].y, pointFArr3[i19].y, min));
-                            }
-                            rectF3.set(rectF);
-                            if (pointFArr != null) {
-                                w9.d0(rectF3, pointFArr3);
-                            } else {
-                                for (int i20 = 0; i20 < 4; i20++) {
-                                    PointF pointF6 = pointFArr3[i20];
-                                    PointF pointF7 = pointFArr[i20];
-                                    pointF6.set(pointF7.x, pointF7.y);
-                                }
-                            }
-                            w9Var3.K = elapsedRealtime;
-                        }
-                    }
-                    rectF2.set(rectF3);
-                    for (int i21 = 0; i21 < 4; i21++) {
-                        PointF pointF8 = pointFArr2[i21];
-                        PointF pointF9 = pointFArr3[i21];
-                        pointF8.set(pointF9.x, pointF9.y);
-                    }
-                    rectF3.set(rectF);
-                    if (pointFArr != null) {
-                    }
-                    w9Var3.K = elapsedRealtime;
-                }
-                w9Var3.fragmentView.invalidate();
-                break;
-            case 13:
-                sa.U((sa) obj2, (String) obj);
-                break;
-            case 14:
-                wb wbVar = (wb) obj2;
-                yc.a0(wbVar).Q(R.raw.ic_ban, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.RestrictedParticipantSending, UserObject.getFirstName((TLRPC.User) obj)))).k(false);
-                wbVar.V0();
-                break;
-            case 15:
-                wb wbVar2 = (wb) obj2;
-                TLObject tLObject = (TLObject) obj;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    a02 = yc.a0(wbVar2);
-                    i11 = R.raw.msg_antispam;
-                    i12 = R.string.ChannelAntiSpamFalsePositiveReported;
-                } else if (tLObject instanceof TLRPC.TL_boolFalse) {
-                    a02 = yc.a0(wbVar2);
-                    i11 = R.raw.error;
-                    i12 = R.string.UnknownError;
-                } else {
-                    a02 = yc.a0(wbVar2);
-                    i11 = R.raw.error;
-                    i12 = R.string.UnknownError;
-                }
-                org.telegram.messenger.q.p(i12, a02, i11, 36);
-                break;
-            case 16:
-                dc dcVar = (dc) obj2;
-                dcVar.d = (TL_stories.TL_premium_boostsStatus) obj;
-                dcVar.H.animate().cancel();
-                dcVar.H.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new org.telegram.ui.u4(dcVar, 16));
-                dcVar.d(true);
-                dcVar.c(null);
-                break;
-            case 17:
-                cd cdVar = (cd) obj2;
-                cdVar.getClass();
-                cdVar.presentFragment(ta1.b0((TLRPC.Chat) obj, true));
-                break;
-            case 18:
-                List list = (List) obj;
-                ad adVar = ((zc) obj2).b;
-                int i22 = adVar.a;
-                xb1 xb1Var = adVar.d;
-                ArrayList arrayList3 = adVar.c;
-                if (list != null && !list.isEmpty()) {
-                    adVar.n = true;
-                    arrayList3.clear();
-                    arrayList3.add(0, new op((c4) list.get(0)));
-                    if (adVar.v != null && adVar.f) {
-                        arrayList3.add(0, new op(c4.a(i22)));
-                    }
-                    d6 d6Var = adVar.b;
-                    int a2 = d6Var != null ? d6Var.a() : i6.I.q();
-                    for (int i23 = 1; i23 < list.size(); i23++) {
-                        c4 c4Var = (c4) list.get(i23);
-                        op opVar = new op(c4Var);
-                        c4Var.n(i22);
-                        opVar.c = a2;
-                        arrayList3.add(opVar);
-                    }
-                    for (int i24 = 0; i24 < arrayList3.size(); i24++) {
-                        op opVar2 = (op) arrayList3.get(i24);
-                        boolean z11 = TextUtils.equals(adVar.s, opVar2.a()) || (TextUtils.isEmpty(adVar.s) && opVar2.a.a);
-                        opVar2.d = z11;
-                        if (z11) {
-                            i14 = i24;
-                        }
-                    }
-                    org.telegram.ui.yc ycVar = adVar.h;
-                    if (ycVar != null) {
-                        ycVar.l();
-                    }
-                    xb1Var.animate().alpha(1.0f).setDuration(150L).start();
-                    w00 w00Var = adVar.e;
-                    if (adVar.n) {
-                        AndroidUtilities.updateViewVisibilityAnimated(w00Var, false, 1.0f, true, true);
                     } else {
-                        AndroidUtilities.updateViewVisibilityAnimated(w00Var, true, 1.0f, true, true);
+                        valueAt = sparseIntArray.valueAt(indexOfKey);
                     }
-                    if (i14 >= 0 && (xb1Var.getLayoutManager() instanceof s4.c0)) {
-                        ((s4.c0) xb1Var.getLayoutManager()).h1(i14, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
-                        break;
+                    int D = i6.D(N0, N02, valueAt, q6, valueAt);
+                    if (D != valueAt) {
+                        sparseIntArray2.put(i16, D);
                     }
                 }
-                break;
-            case 19:
-                nd ndVar = (nd) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null) {
-                    ndVar.getClass();
-                    break;
-                }
-                z10 = true;
-                ndVar.j0 = z10;
-                break;
-            case 20:
-                nd.U((nd) obj2, (String) obj);
-                break;
-            case 21:
-                nd ndVar2 = (nd) obj2;
-                TLObject tLObject2 = (TLObject) obj;
-                ArrayList arrayList4 = ndVar2.f0;
-                ndVar2.d0 = false;
-                if (tLObject2 != null && ndVar2.getParentActivity() != null) {
-                    for (int i25 = 0; i25 < arrayList4.size(); i25++) {
-                        ndVar2.K.removeView((View) arrayList4.get(i25));
-                    }
-                    arrayList4.clear();
-                    TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
-                    int i26 = 0;
-                    while (i26 < tL_messages_chats.chats.size()) {
-                        org.telegram.ui.Cells.n nVar = new org.telegram.ui.Cells.n(ndVar2.getParentActivity(), new fd(ndVar2, i15), false, 0);
-                        nVar.a(tL_messages_chats.chats.get(i26), i26 == tL_messages_chats.chats.size() - 1);
-                        arrayList4.add(nVar);
-                        ndVar2.L.addView(nVar, w7.z5.n(-1, 72));
-                        i26++;
-                    }
-                    ndVar2.h0();
-                    break;
-                }
-                break;
-            case 22:
-                me meVar = (me) obj2;
-                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
-                meVar.q0 = tL_premium_boostsStatus2;
-                if (tL_premium_boostsStatus2 != null) {
-                    meVar.r0 = tL_premium_boostsStatus2.level;
-                }
-                e71 e71Var = meVar.X0;
-                if (e71Var != null && (w61Var = e71Var.f3) != null) {
-                    w61Var.N(true);
-                    break;
-                }
-                break;
-            case 23:
-                ((me) obj2).D((TLRPC.TL_payments_starsRevenueStats) obj);
-                break;
-            case 24:
-                yn ynVar = (yn) obj2;
-                w11[] w11VarArr = (w11[]) obj;
-                if (!ynVar.hb && (w11Var = w11VarArr[0]) != null) {
-                    w11VarArr[0] = null;
-                    if (ynVar.t0 == w11Var) {
-                        ynVar.t0 = null;
-                    }
-                    AndroidUtilities.removeFromParent(w11Var);
-                    break;
-                }
-                break;
-            case 25:
-                ((ua) obj2).run((TLRPC.User) obj);
-                break;
-            case 26:
-                yn ynVar2 = (yn) obj2;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj;
-                u1Var.getLocationInWindow(new int[2]);
-                ynVar2.x1.setTranslationY(u1Var.getTimeY() + ((r1[1] - r3.getTop()) - AndroidUtilities.dp(120.0f)));
-                ynVar2.x1.m(0.0f, ((((-AndroidUtilities.dp(16.0f)) + r1[0]) + u1Var.rb) + u1Var.pb) - (u1Var.sb / 2.0f));
-                ynVar2.x1.u();
-                break;
-            case 27:
-                yn.I0((yn) obj2, (TLRPC.TL_inlineBotWebView) obj);
-                break;
-            case 28:
-                yn ynVar3 = (yn) obj2;
-                int[] iArr = (int[]) obj;
-                ynVar3.getClass();
-                if (iArr[0] != 0) {
-                    ynVar3.getConnectionsManager().cancelRequest(iArr[0], true);
-                    iArr[0] = 0;
-                    break;
-                }
-                break;
-            default:
-                ((yn) obj2).h8((fh) obj);
-                break;
+                i16++;
+            }
         }
+        int i18 = this.e;
+        if ((i18 == 0 && this.c == 0) || this.f == 0) {
+            r16 = 1;
+            c10 = 2;
+            f7 = 0.705f;
+            z10 = false;
+        } else {
+            if (i18 == 0) {
+                i18 = this.c;
+            }
+            int i19 = i6.Aa;
+            int i20 = sparseIntArray.get(i19);
+            if (i20 == 0) {
+                i20 = i6.ql[i19];
+            }
+            int colorDistance = AndroidUtilities.getColorDistance(i18, i6.D(N0, N02, i20, q6, i20));
+            boolean z11 = true;
+            int colorDistance2 = AndroidUtilities.getColorDistance(i18, this.f);
+            char c11 = 2;
+            if (this.g != 0) {
+                f7 = 0.705f;
+                int averageColor = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(this.e, this.f), this.g);
+                int i21 = this.h;
+                if (i21 != 0) {
+                    averageColor = AndroidUtilities.getAverageColor(averageColor, i21);
+                }
+                a2 = AndroidUtilities.computePerceivedBrightness(averageColor) > 0.705f;
+            } else {
+                f7 = 0.705f;
+                a2 = i6.a(this.e, this.f);
+            }
+            z10 = a2 && colorDistance <= 35000 && colorDistance2 <= 35000;
+            float[] N03 = i6.N0(3);
+            float[] N04 = i6.N0(4);
+            Color.colorToHSV(i20, N03);
+            Color.colorToHSV(i18, N04);
+            float min = Math.min((N03[1] * 1.5f) / N0[1], 1.0f);
+            N03[0] = (N04[0] - N03[0]) + N0[0];
+            N03[1] = (N04[1] * N0[1]) / N03[1];
+            float f10 = ((((N04[2] / N03[2]) + min) - 1.0f) * N0[2]) / min;
+            N03[2] = f10;
+            r16 = z11;
+            c10 = c11;
+            if (f10 >= 0.3f) {
+                i18 = Color.HSVToColor(255, N03);
+                r16 = z11;
+                c10 = c11;
+            }
+        }
+        boolean z12 = (i18 == 0 || (((i14 = this.b.X) == 0 || i18 == i14) && ((i15 = this.c) == 0 || i15 == i18))) ? false : r16;
+        if (z12 || this.d != 0) {
+            int i22 = this.d;
+            if (i22 != 0) {
+                Color.colorToHSV(i22, N02);
+            } else {
+                Color.colorToHSV(i18, N02);
+            }
+            for (int i23 = i6.Ha; i23 < i6.Tb; i23++) {
+                int indexOfKey2 = sparseIntArray.indexOfKey(i23);
+                if (indexOfKey2 < 0) {
+                    int i24 = i6.rl.get(i23, -1);
+                    if (i24 < 0 || sparseIntArray.get(i24, -1) < 0) {
+                        valueAt3 = i6.ql[i23];
+                    }
+                } else {
+                    valueAt3 = sparseIntArray.valueAt(indexOfKey2);
+                }
+                int D2 = i6.D(N0, N02, valueAt3, q6, valueAt3);
+                if (D2 != valueAt3) {
+                    sparseIntArray2.put(i23, D2);
+                }
+            }
+            for (int i25 : i6.Hk) {
+                int indexOfKey3 = sparseIntArray.indexOfKey(i25);
+                int valueAt4 = indexOfKey3 < 0 ? i6.ql[i25] : sparseIntArray.valueAt(indexOfKey3);
+                int D3 = i6.D(N0, N02, valueAt4, q6, valueAt4);
+                if (D3 != valueAt4) {
+                    sparseIntArray2.put(i25, D3);
+                }
+            }
+            if (z12) {
+                Color.colorToHSV(i18, N02);
+                for (int i26 = i6.za; i26 < i6.Ga; i26++) {
+                    int indexOfKey4 = sparseIntArray.indexOfKey(i26);
+                    if (indexOfKey4 < 0) {
+                        int i27 = i6.rl.get(i26, -1);
+                        if (i27 < 0 || sparseIntArray.get(i27, -1) < 0) {
+                            valueAt2 = i6.ql[i26];
+                        }
+                    } else {
+                        valueAt2 = sparseIntArray.valueAt(indexOfKey4);
+                    }
+                    int D4 = i6.D(N0, N02, valueAt2, q6, valueAt2);
+                    if (D4 != valueAt2) {
+                        sparseIntArray2.put(i26, D4);
+                    }
+                }
+            }
+        }
+        if (!z10 && (i10 = this.f) != 0) {
+            if (this.g != 0) {
+                int averageColor2 = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(this.e, i10), this.g);
+                int i28 = this.h;
+                if (i28 != 0) {
+                    averageColor2 = AndroidUtilities.getAverageColor(averageColor2, i28);
+                }
+                a10 = AndroidUtilities.computePerceivedBrightness(averageColor2) > f7 ? r16 : false;
+            } else {
+                a10 = i6.a(this.e, i10);
+            }
+            if (a10) {
+                i13 = -14606047;
+                i11 = -11184811;
+                i12 = 1291845632;
+            } else {
+                i11 = -1118482;
+                i12 = 1308622847;
+                i13 = -1;
+            }
+            if (this.d == 0) {
+                sparseIntArray2.put(i6.qb, i12);
+                sparseIntArray2.put(i6.rb, i12);
+                sparseIntArray2.put(i6.wb, i12);
+                sparseIntArray2.put(i6.xb, i12);
+                sparseIntArray2.put(i6.yb, i12);
+                sparseIntArray2.put(i6.zb, i13);
+                sparseIntArray2.put(i6.Ab, i12);
+                sparseIntArray2.put(i6.Bb, i12);
+                sparseIntArray2.put(i6.Cb, i13);
+                sparseIntArray2.put(i6.hc, i13);
+                sparseIntArray2.put(i6.Ya, i13);
+                sparseIntArray2.put(i6.Za, i13);
+                sparseIntArray2.put(i6.ab, i13);
+                sparseIntArray2.put(i6.bb, i13);
+                sparseIntArray2.put(i6.cb, i13);
+                sparseIntArray2.put(i6.gb, i13);
+                sparseIntArray2.put(i6.hb, i13);
+                sparseIntArray2.put(i6.Va, i13);
+                sparseIntArray2.put(i6.Wa, i13);
+                sparseIntArray2.put(i6.Xa, i13);
+                sparseIntArray2.put(i6.Ra, i13);
+                sparseIntArray2.put(i6.Sa, i13);
+                sparseIntArray2.put(i6.tb, i13);
+                sparseIntArray2.put(i6.Fb, i13);
+                sparseIntArray2.put(i6.ib, i13);
+                sparseIntArray2.put(i6.lb, i13);
+                sparseIntArray2.put(i6.mb, i13);
+                sparseIntArray2.put(i6.Ja, i13);
+                sparseIntArray2.put(i6.Ka, i13);
+                sparseIntArray2.put(i6.La, i13);
+                sparseIntArray2.put(i6.Ma, i13);
+                sparseIntArray2.put(i6.Na, i13);
+                sparseIntArray2.put(i6.Oa, i13);
+                sparseIntArray2.put(i6.Ta, i13);
+                sparseIntArray2.put(i6.Ua, i13);
+                sparseIntArray2.put(i6.sb, i13);
+                sparseIntArray2.put(i6.nb, i13);
+                sparseIntArray2.put(i6.ub, i11);
+                sparseIntArray2.put(i6.vb, i11);
+                sparseIntArray2.put(i6.jb, i11);
+                sparseIntArray2.put(i6.kb, i11);
+                sparseIntArray2.put(i6.Gb, i11);
+                sparseIntArray2.put(i6.Hb, i11);
+                sparseIntArray2.put(i6.Kb, i11);
+                sparseIntArray2.put(i6.Lb, i11);
+                sparseIntArray2.put(i6.Nb, i13);
+                sparseIntArray2.put(i6.Ob, i13);
+                sparseIntArray2.put(i6.Db, this.e);
+                sparseIntArray2.put(i6.Eb, this.e);
+                sparseIntArray2.put(i6.Pa, this.e);
+                sparseIntArray2.put(i6.Qa, this.e);
+            }
+            sparseIntArray2.put(i6.db, i13);
+            sparseIntArray2.put(i6.eb, i13);
+            sparseIntArray2.put(i6.fb, i13);
+            sparseIntArray2.put(i6.fc, i13);
+        }
+        if (z10) {
+            int i29 = i6.Nb;
+            if (AndroidUtilities.getColorDistance(-1, sparseIntArray2.indexOfKey(i29) >= 0 ? sparseIntArray2.get(i29) : 0) < 5000) {
+                z10 = false;
+            }
+        }
+        int i30 = this.e;
+        if (i30 != 0 && this.f != 0) {
+            sparseIntArray2.put(i6.Aa, i30);
+            sparseIntArray2.put(i6.Da, this.f);
+            int i31 = this.g;
+            if (i31 != 0) {
+                sparseIntArray2.put(i6.Ea, i31);
+                int i32 = this.h;
+                if (i32 != 0) {
+                    sparseIntArray2.put(i6.Fa, i32);
+                }
+            }
+            sparseIntArray2.put(i6.ac, this.i ? 1 : 0);
+        }
+        long j3 = this.j;
+        int i33 = (int) j3;
+        if (i33 != 0) {
+            sparseIntArray2.put(i6.Nd, i33);
+        } else if (j3 != 0) {
+            sparseIntArray2.delete(i6.Nd);
+        }
+        long j10 = this.k;
+        int i34 = (int) j10;
+        if (i34 != 0) {
+            sparseIntArray2.put(i6.Od, i34);
+        } else if (j10 != 0) {
+            sparseIntArray2.delete(i6.Od);
+        }
+        long j11 = this.l;
+        int i35 = (int) j11;
+        if (i35 != 0) {
+            sparseIntArray2.put(i6.Pd, i35);
+        } else if (j11 != 0) {
+            sparseIntArray2.delete(i6.Pd);
+        }
+        long j12 = this.m;
+        int i36 = (int) j12;
+        if (i36 != 0) {
+            sparseIntArray2.put(i6.Qd, i36);
+        } else if (j12 != 0) {
+            sparseIntArray2.delete(i6.Qd);
+        }
+        int i37 = this.n;
+        if (i37 != 45) {
+            sparseIntArray2.put(i6.Rd, i37);
+        }
+        int i38 = i6.Aa;
+        int i39 = sparseIntArray2.get(i38);
+        if (i39 == 0) {
+            i39 = i6.x0(null, i38, false);
+        }
+        int i40 = i6.ra;
+        int i41 = sparseIntArray2.get(i40);
+        if (i41 == 0) {
+            i41 = i6.x0(null, i40, false);
+        }
+        TLRPC.TL_theme tL_theme = this.r;
+        if (tL_theme != null && tL_theme.emoticon != null && !q6) {
+            sparseIntArray2.delete(i6.Hc);
+            int a11 = a(sparseIntArray2, i6.Od, i6.Pd, i6.Qd);
+            if (a11 == 0) {
+                a11 = a(sparseIntArray2, i6.Nd);
+            }
+            if (a11 == 0) {
+                a11 = this.c;
+            }
+            int b10 = b(i39, a11);
+            sparseIntArray2.put(i6.Yb, b10);
+            sparseIntArray2.put(i6.bc, b10);
+            sparseIntArray2.put(i6.Ba, i6.v(i39, b10));
+            int b11 = b(i41, this.c);
+            sparseIntArray2.put(i6.sa, b11);
+            sparseIntArray2.put(i6.dc, i6.v(i41, b11));
+        }
+        float[] fArr = this.A;
+        if (!q6) {
+            sparseIntArray2.put(i6.uf, h(i41, this.c));
+            sparseIntArray2.put(i6.Vb, h(i39, this.c));
+            int i42 = i6.Wb;
+            Color.colorToHSV(this.c, fArr);
+            float f11 = fArr[0];
+            Color.colorToHSV(i39, fArr);
+            float f12 = fArr[r16];
+            if (f12 > 0.0f) {
+                float f13 = fArr[0];
+                if (f13 > 45.0f) {
+                }
+                fArr[r16] = Math.max(0.0f, Math.min(1.0f, f12 + 0.6f));
+                float f14 = fArr[c10];
+                fArr[c10] = Math.max(0.0f, Math.min(1.0f, f14 - (f14 <= 0.7f ? 0.25f : 0.125f)));
+                sparseIntArray2.put(i42, i6.v(i39, Color.HSVToColor(255, fArr)));
+            }
+            fArr[0] = f11;
+            fArr[r16] = Math.max(0.0f, Math.min(1.0f, f12 + 0.6f));
+            float f142 = fArr[c10];
+            fArr[c10] = Math.max(0.0f, Math.min(1.0f, f142 - (f142 <= 0.7f ? 0.25f : 0.125f)));
+            sparseIntArray2.put(i42, i6.v(i39, Color.HSVToColor(255, fArr)));
+        }
+        Color.colorToHSV(i6.x0(null, i6.n6, false), fArr);
+        float f15 = fArr[0];
+        sparseIntArray2.put(i6.Xb, f(i39, f15, q6));
+        sparseIntArray2.put(i6.wf, f(i41, f15, q6));
+        int i43 = i6.gc;
+        int i44 = sparseIntArray2.get(i43);
+        if (i44 == 0) {
+            i44 = i6.x0(null, i43, false);
+        }
+        int i45 = i6.hc;
+        int i46 = sparseIntArray2.get(i45);
+        if (i46 == 0) {
+            i46 = i6.x0(null, i45, false);
+        }
+        sparseIntArray2.put(i6.Ld, e(i44, i41, q6));
+        sparseIntArray2.put(i6.Mb, e(i46, i39, q6));
+        int i47 = i6.G8;
+        int i48 = sparseIntArray2.get(i47);
+        if (i48 == 0) {
+            i48 = i6.x0(null, i47, false);
+        }
+        sparseIntArray2.put(i6.H8, Color.argb(Color.alpha(i48), Math.max(0, Color.red(i48) - 10), Math.max(0, Color.green(i48) - 10), Math.max(0, Color.blue(i48) - 10)));
+        int i49 = 64;
+        if (q6) {
+            int i50 = i6.Da;
+            if (sparseIntArray2.get(i50) != 0) {
+                Color.colorToHSV(a(sparseIntArray2, i50, i6.Ea, i6.Fa), fArr);
+                fArr[r16] = Utilities.clamp(fArr[r16] + 0.1f, 1.0f, 0.0f);
+                fArr[c10] = Utilities.clamp(fArr[c10] - 0.8f, 1.0f, 0.0f);
+                sparseIntArray2.put(i6.qk, Color.HSVToColor(64, fArr));
+                i6.g(sparseIntArray, sparseIntArray2, q6);
+                i6.f(sparseIntArray, sparseIntArray2, q6);
+                return !z10;
+            }
+        }
+        int i51 = i6.qk;
+        Color.colorToHSV(i39, fArr);
+        if (q6) {
+            fArr[r16] = Utilities.clamp(fArr[r16] - 0.08f, 1.0f, 0.0f);
+            fArr[c10] = 0.03f;
+        } else {
+            float f16 = fArr[r16];
+            if (f16 > 0.0f) {
+                float f17 = fArr[c10];
+                if (f17 < 1.0f && f17 > 0.0f) {
+                    fArr[r16] = Math.max(0.0f, Math.min(1.0f, f16 + 0.28f));
+                    fArr[c10] = Math.max(0.0f, Math.min(1.0f, fArr[c10] - 0.1f));
+                    i49 = 32;
+                }
+            }
+            fArr[c10] = Math.max(0.0f, Math.min(1.0f, fArr[c10] - 0.2f));
+            i49 = 32;
+        }
+        sparseIntArray2.put(i51, Color.HSVToColor(i49, fArr));
+        i6.g(sparseIntArray, sparseIntArray2, q6);
+        i6.f(sparseIntArray, sparseIntArray2, q6);
+        return !z10;
+    }
+
+    public final File d() {
+        if (this.a < 100) {
+            if (TextUtils.isEmpty(this.o)) {
+                return null;
+            }
+            File filesDirFixed = ApplicationLoader.getFilesDirFixed();
+            Locale locale = Locale.US;
+            return new File(filesDirFixed, this.b.m() + "_" + this.a + "_" + this.o + "_v5.jpg");
+        }
+        if (TextUtils.isEmpty(this.o)) {
+            return null;
+        }
+        File filesDirFixed2 = ApplicationLoader.getFilesDirFixed();
+        Locale locale2 = Locale.US;
+        return new File(filesDirFixed2, this.b.m() + "_" + this.a + "_" + this.o + "_v8_debug.jpg");
+    }
+
+    public final int e(int i10, int i11, boolean z10) {
+        int d = i0.a.d(0.25f, i10, i11);
+        float[] fArr = this.A;
+        Color.colorToHSV(d, fArr);
+        fArr[1] = Math.max(0.0f, Math.min(1.0f, fArr[1] - 0.1f));
+        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] + (z10 ? 0.1f : 0.0f)));
+        return Color.HSVToColor(51, fArr);
+    }
+
+    public final int f(int i10, float f7, boolean z10) {
+        if (z10) {
+            return 520093695;
+        }
+        float[] fArr = this.A;
+        Color.colorToHSV(i10, fArr);
+        if (fArr[1] > 0.0f) {
+            float f10 = fArr[2];
+            if (f10 < 1.0f && f10 > 0.0f) {
+                fArr[0] = w7.o.a(fArr[0] + 0.22f, 0.0f, 1.0f);
+                fArr[1] = w7.o.a(fArr[1] - 0.35f, 0.0f, 1.0f);
+                fArr[2] = w7.o.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+                return Color.HSVToColor(90, fArr);
+            }
+        }
+        fArr[0] = f7;
+        fArr[1] = 0.2f;
+        fArr[2] = w7.o.a(fArr[2] - 0.65f, 0.0f, 1.0f);
+        return Color.HSVToColor(90, fArr);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x001f, code lost:
+    
+        if (r4 < 85.0f) goto L8;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x002d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int h(int i10, int i11) {
+        float[] fArr = this.A;
+        Color.colorToHSV(i11, fArr);
+        float f7 = fArr[0];
+        Color.colorToHSV(i10, fArr);
+        float f10 = fArr[1];
+        if (f10 > 0.0f) {
+            float f11 = fArr[0];
+            if (f11 > 45.0f) {
+            }
+            fArr[1] = Math.max(0.0f, Math.min(1.0f, f10 + (fArr[2] <= 0.85f ? 0.25f : 0.45f)));
+            fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
+            return Color.HSVToColor(80, fArr);
+        }
+        fArr[0] = f7;
+        fArr[1] = Math.max(0.0f, Math.min(1.0f, f10 + (fArr[2] <= 0.85f ? 0.25f : 0.45f)));
+        fArr[2] = Math.max(0.0f, Math.min(1.0f, fArr[2] - 0.15f));
+        return Color.HSVToColor(80, fArr);
     }
 }

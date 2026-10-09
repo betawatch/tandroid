@@ -2,10 +2,10 @@ package ji;
 
 import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.ui.Cells.bb;
 import org.telegram.ui.Cells.h0;
+import org.telegram.ui.Cells.za;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,18 +26,18 @@ public final class h implements ValueAnimator.AnimatorUpdateListener {
             case 0:
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 n nVar = this.c;
-                float measuredHeight = ((nVar.G.getMeasuredHeight() - nVar.F.q9) - r2.ya) / 2.0f;
+                float measuredHeight = ((nVar.G.getMeasuredHeight() - nVar.F.s9) - r2.Ba) / 2.0f;
                 h0 h0Var = (h0) this.d;
-                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + nVar.F.q9;
+                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + nVar.F.s9;
                 h0Var.setTranslationY(((((float) h0Var.getTop()) > measuredHeight2 ? measuredHeight2 - h0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
                 break;
             default:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 n nVar2 = this.c;
-                float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.q9) - r2.ya) / 2.0f;
-                bb bbVar = (bb) this.d;
-                float measuredHeight4 = (measuredHeight3 - (bbVar.getMeasuredHeight() / 2.0f)) + nVar2.F.q9;
-                bbVar.setTranslationY(((((float) bbVar.getTop()) > measuredHeight4 ? measuredHeight4 - bbVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.s9) - r2.Ba) / 2.0f;
+                za zaVar = (za) this.d;
+                float measuredHeight4 = (measuredHeight3 - (zaVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
+                zaVar.setTranslationY(((((float) zaVar.getTop()) > measuredHeight4 ? measuredHeight4 - zaVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
                 break;
         }
     }

@@ -1,39 +1,59 @@
 package ci;
 
-import android.view.ViewGroup;
-import org.telegram.ui.a71;
+import android.content.Context;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.zx;
+import org.telegram.ui.k71;
+import org.telegram.ui.y51;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class l1 extends w7.a6 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class l1 extends ji.o {
+    public final /* synthetic */ int q;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ l1(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l1(Object obj, Context context, int i10) {
+        super(context, 2);
+        this.q = i10;
+        this.r = obj;
     }
 
-    @Override // w7.a6
-    public final void a() {
-        switch (this.a) {
+    @Override // ji.o, s4.z0
+    public void e() {
+        switch (this.q) {
             case 0:
-                ((p1) this.b).i3 = false;
+                ((o1) this.r).Z2 = true;
                 break;
-            default:
-                ((a71) this.b).w1 = false;
+            case 1:
+                ((a00) this.r).f0 = true;
+                break;
+            case 4:
+                ((k71) this.r).w1 = true;
                 break;
         }
     }
 
-    @Override // w7.a6
-    public final void b() {
-        switch (this.a) {
+    @Override // ji.o
+    public final void i() {
+        switch (this.q) {
             case 0:
-                ((p1) this.b).i3 = true;
+                ((o1) this.r).Z2 = false;
+                break;
+            case 1:
+                ((a00) this.r).f0 = false;
+                break;
+            case 2:
+                ((zx) this.r).Q.f0 = false;
+                break;
+            case 3:
+                ((y51) this.r).R.w1 = false;
+                break;
+            case 4:
+                ((k71) this.r).w1 = false;
                 break;
             default:
-                ((a71) this.b).w1 = true;
+                ((y51) this.r).R.w1 = false;
                 break;
         }
     }

@@ -7,13 +7,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.fd;
+import org.telegram.messenger.id;
 import org.telegram.messenger.rf;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class g6 {
     public final int a;
@@ -46,7 +46,7 @@ public final class g6 {
         messagesStorage.putMessages(messages_messages, -j3, 3, 0, false, 0, 0L);
         if (i10 == g6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.g7(7)));
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.h7(8)));
             TLRPC.Message message = (TLRPC.Message) hg.c.g(1, messages_messages.messages);
             long j10 = message.grouped_id;
             if (j10 != 0) {
@@ -79,7 +79,7 @@ public final class g6 {
         }
         if (!arrayList.isEmpty()) {
             arrayList2.clear();
-            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.g7(6)));
+            Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.h7(7)));
             TLRPC.Message message = (TLRPC.Message) arrayList.get(arrayList.size() - 1);
             long j10 = message.grouped_id;
             if (j10 != 0) {
@@ -109,7 +109,7 @@ public final class g6 {
                 tL_channels_getMessages.id.add(Integer.valueOf(i15));
             }
         }
-        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new fd(g6Var, messagesStorage, j3, i10, arrayList));
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new id(g6Var, messagesStorage, j3, i10, arrayList));
     }
 
     public final void c() {

@@ -1,173 +1,28 @@
 package org.telegram.ui.Components.voip;
 
-import android.R;
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.u90;
-import org.telegram.ui.ug0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public class o2 extends TextView {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes.dex */
+public final class o2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o2(q2 q2Var, Activity activity, r1 r1Var) {
-        super(activity);
-        this.d = q2Var;
-        this.c = r1Var;
-        this.b = new RectF();
-        r1Var.a(this);
+    public /* synthetic */ o2(p2 p2Var, int i10) {
+        this.a = i10;
+        this.b = p2Var;
     }
 
-    public boolean a() {
-        return false;
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public void c() {
-        CharSequence text;
-        u90 u90Var = (u90) this.c;
-        Layout layout = getLayout();
-        if (layout == null || (text = layout.getText()) == null) {
-            return;
-        }
-        k90 k90Var = new k90(0);
-        float dp = AndroidUtilities.dp(3.0f);
-        float dp2 = AndroidUtilities.dp(6.0f);
-        k90Var.q = dp;
-        k90Var.r = dp2;
-        int length = text.length();
-        k90Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, k90Var);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(k90Var.s, k90Var.u, k90Var.t, k90Var.v);
-        ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        u90Var.x = k90Var;
-        u90Var.j(4.0f);
-        int themedColor = ((ug0) this.d).getThemedColor(i6.Ld);
-        u90Var.f(i6.l1(0.85f, themedColor), i6.l1(2.0f, themedColor), i6.l1(3.5f, themedColor), i6.l1(6.0f, themedColor));
-        u90Var.k();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float paddingTop;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                RectF rectF = (RectF) this.b;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                float x10 = ((View) getParent()).getX() + getX();
-                q2 q2Var = (q2) this.d;
-                float x11 = ((View) q2Var.getParent()).getX() + q2Var.getX() + x10;
-                float y3 = ((View) q2Var.getParent()).getY() + q2Var.getY() + ((View) getParent()).getY() + getY();
-                r1 r1Var = (r1) this.c;
-                r1Var.d(x11, y3);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), r1Var.b());
-                super.onDraw(canvas);
+                this.b.b.setVisibility(8);
                 break;
             default:
-                u90 u90Var = (u90) this.c;
-                canvas.save();
-                if ((getGravity() & 16) == 0 || getLayout() == null) {
-                    paddingTop = getPaddingTop();
-                } else {
-                    paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-                }
-                canvas.translate(getPaddingLeft(), paddingTop);
-                ((org.telegram.ui.Cells.z) this.b).draw(canvas);
-                canvas.restore();
-                super.onDraw(canvas);
-                if (a() || u90Var.c()) {
-                    canvas.save();
-                    canvas.translate(getPaddingLeft(), paddingTop);
-                    u90Var.draw(canvas);
-                    canvas.restore();
-                    invalidate();
-                    break;
-                }
+                this.b.c.setVisibility(8);
                 break;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                c();
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) this.b;
-                if (b() && motionEvent.getAction() == 0) {
-                    zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-                    zVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
-                } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
-                    zVar.setState(new int[0]);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.a) {
-            case 1:
-                super.setText(charSequence, bufferType);
-                c();
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.Cells.z) this.b) || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o2(ug0 ug0Var, Context context) {
-        super(context);
-        this.d = ug0Var;
-        org.telegram.ui.Cells.z f02 = i6.f0(i6.l1(0.1f, i6.w0(null, i6.I6, false)), 7, -1);
-        this.b = f02;
-        u90 u90Var = new u90();
-        this.c = u90Var;
-        f02.setCallback(this);
-        u90Var.C = true;
-        u90Var.u = 0.8f;
     }
 }

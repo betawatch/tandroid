@@ -7,27 +7,27 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.PathInterpolator;
-import hh.k;
+import hh.j;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import r0.l1;
+import r0.k1;
 import r0.p0;
 import r0.q0;
 import r0.t0;
 import r0.v0;
-import w7.e0;
+import w7.g0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class e extends b2.g {
     public static final RectF e;
     public static final Rect f;
     public final ViewGroup b;
     public int c;
-    public final pe.b d = new pe.b();
+    public final qe.b d = new qe.b();
 
     static {
         new PointF();
@@ -50,12 +50,12 @@ public final class e extends b2.g {
         }
     }
 
-    public static l1 Z0(l1 l1Var, View view, View view2) {
-        if (view == null || view2 == null || l1Var == null) {
+    public static k1 b1(k1 k1Var, View view, View view2) {
+        if (view == null || view2 == null || k1Var == null) {
             return null;
         }
         RectF rectF = e;
-        if (!k.c(view, view2, rectF)) {
+        if (!j.c(view, view2, rectF)) {
             return null;
         }
         Rect rect = f;
@@ -65,9 +65,9 @@ public final class e extends b2.g {
         int width = view2.getWidth() - rect.right;
         int height = view2.getHeight() - rect.bottom;
         if (i10 == 0 && i11 == 0 && width == 0 && height == 0) {
-            return l1Var;
+            return k1Var;
         }
-        return l1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
+        return k1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
     }
 
     @Override // b2.g
@@ -83,22 +83,22 @@ public final class e extends b2.g {
     }
 
     @Override // b2.g
-    public final l1 T0(l1 l1Var, List list) {
+    public final k1 T0(k1 k1Var, List list) {
         Iterator it = list.iterator();
         int i10 = 0;
         while (it.hasNext()) {
             i10 |= ((v0) it.next()).a.c();
         }
-        if (e0.a(i10, 8)) {
+        if (g0.a(i10, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 d dVar = (d) it2.next();
-                l1 Z0 = Z0(l1Var, dVar.L(), this.b);
-                if (Z0 != null) {
-                    dVar.j(Z0);
+                k1 b12 = b1(k1Var, dVar.N(), this.b);
+                if (b12 != null) {
+                    dVar.j(b12);
                 }
             }
         }
-        return l1Var;
+        return k1Var;
     }
 }

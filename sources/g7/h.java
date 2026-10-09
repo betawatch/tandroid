@@ -3,9 +3,9 @@ package g7;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends o6.a {
     public static final Parcelable.Creator<h> CREATOR = new e6.i(19);
@@ -29,26 +29,26 @@ public final class h extends o6.a {
         this.d = requestMatcher;
         this.e = requestType;
         this.f = protocolType;
-        boolean z10 = (xd.j.e(requestType) || xd.j.e(protocolType)) ? false : true;
-        boolean z11 = !xd.j.e(type) && requestType.length() == 0 && protocolType.length() == 0;
+        boolean z10 = (yd.j.e(requestType) || yd.j.e(protocolType)) ? false : true;
+        boolean z11 = !yd.j.e(type) && requestType.length() == 0 && protocolType.length() == 0;
         if (z10 || z11) {
             return;
         }
         StringBuilder sb2 = new StringBuilder(protocolType.length() + requestType.length() + type.length() + 31 + 19 + 69);
-        a4.a.A(sb2, "Either type: ", type, ", or requestType: ", requestType);
-        throw new IllegalArgumentException(a4.a.r(" and protocolType: ", protocolType, " must be specified, but at least one contains an invalid blank value.", sb2));
+        a1.g.A(sb2, "Either type: ", type, ", or requestType: ", requestType);
+        throw new IllegalArgumentException(a1.g.r(" and protocolType: ", protocolType, " must be specified, but at least one contains an invalid blank value.", sb2));
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i10) {
         kotlin.jvm.internal.i.e(dest, "dest");
-        int q6 = g0.q(dest, 20293);
-        g0.l(dest, 1, this.a);
-        g0.b(dest, 2, this.b);
-        g0.b(dest, 3, this.c);
-        g0.l(dest, 4, this.d);
-        g0.l(dest, 5, this.e);
-        g0.l(dest, 6, this.f);
-        g0.r(dest, q6);
+        int q6 = d0.q(dest, 20293);
+        d0.l(dest, 1, this.a);
+        d0.b(dest, 2, this.b);
+        d0.b(dest, 3, this.c);
+        d0.l(dest, 4, this.d);
+        d0.l(dest, 5, this.e);
+        d0.l(dest, 6, this.f);
+        d0.r(dest, q6);
     }
 }

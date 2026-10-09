@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -32,7 +32,7 @@ public final /* synthetic */ class k8 implements Runnable {
                 ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
                 break;
             default:
-                ((NotificationsController) this.h).lambda$processReadMessages$21((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
+                ((NotificationsController) this.h).lambda$processReadMessages$22((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
                 break;
         }
     }

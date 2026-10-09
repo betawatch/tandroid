@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import r0.l1;
+import r0.k1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class x extends FrameLayout {
     public final ArrayList a;
@@ -43,7 +43,7 @@ public final class x extends FrameLayout {
         s C = k0Var.C(id2);
         if (classAttribute != null && C == null) {
             if (id2 == -1) {
-                throw new IllegalStateException(a4.a.q("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
+                throw new IllegalStateException(a1.g.q("FragmentContainerView must have an android:id to add Fragment ", classAttribute, string != null ? " with tag ".concat(string) : ""));
             }
             d0 H = k0Var.H();
             context.getClassLoader();
@@ -135,23 +135,23 @@ public final class x extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final WindowInsets dispatchApplyWindowInsets(WindowInsets insets) {
-        l1 h;
+        k1 g10;
         kotlin.jvm.internal.i.e(insets, "insets");
-        l1 h10 = l1.h(null, insets);
+        k1 h = k1.h(null, insets);
         View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.c;
         if (onApplyWindowInsetsListener != null) {
             kotlin.jvm.internal.i.b(onApplyWindowInsetsListener);
             WindowInsets onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(this, insets);
             kotlin.jvm.internal.i.d(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
-            h = l1.h(null, onApplyWindowInsets);
+            g10 = k1.h(null, onApplyWindowInsets);
         } else {
-            h = r0.i0.h(this, h10);
+            g10 = r0.i0.g(this, h);
         }
-        kotlin.jvm.internal.i.d(h, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
-        if (!h.a.n()) {
+        kotlin.jvm.internal.i.d(g10, "if (applyWindowInsetsLis…, insetsCompat)\n        }");
+        if (!g10.a.n()) {
             int childCount = getChildCount();
             for (int i10 = 0; i10 < childCount; i10++) {
-                r0.i0.b(getChildAt(i10), h);
+                r0.i0.b(getChildAt(i10), g10);
             }
         }
         return insets;

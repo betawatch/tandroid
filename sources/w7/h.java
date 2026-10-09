@@ -1,27 +1,22 @@
 package w7;
 
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.CancellationException;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h {
-    public static final Object a(Task task, kd.c cVar) {
-        if (!task.isComplete()) {
-            zd.m mVar = new zd.m(1, g.b(cVar));
-            mVar.s();
-            task.addOnCompleteListener(je.a.a, new je.b(mVar));
-            Object r10 = mVar.r();
-            jd.a aVar = jd.a.a;
-            return r10;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static jd.c a(jd.c cVar, jd.c cVar2, sd.p pVar) {
+        kotlin.jvm.internal.i.e(pVar, "<this>");
+        if (pVar instanceof ld.a) {
+            return ((ld.a) pVar).create(cVar, cVar2);
         }
-        Exception exception = task.getException();
-        if (exception != null) {
-            throw exception;
-        }
-        if (!task.isCanceled()) {
-            return task.getResult();
-        }
-        throw new CancellationException("Task " + task + " was cancelled normally.");
+        jd.h context = cVar2.getContext();
+        return context == jd.i.a ? new kd.b(cVar2, cVar, pVar) : new kd.c(cVar2, context, pVar, cVar);
+    }
+
+    public static jd.c b(jd.c cVar) {
+        jd.c intercepted;
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        ld.c cVar2 = cVar instanceof ld.c ? (ld.c) cVar : null;
+        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
     }
 }

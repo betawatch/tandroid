@@ -1,56 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class t41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretMediaViewer b;
+public final class t41 extends org.telegram.ui.Components.r6 {
+    public boolean s;
+    public final org.telegram.ui.Components.g6 v;
+    public final /* synthetic */ SaveToGallerySettingsActivity w;
 
-    public /* synthetic */ t41(SecretMediaViewer secretMediaViewer, int i10) {
-        this.a = i10;
-        this.b = secretMediaViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
+        super(activity, true, true, false);
+        this.w = saveToGallerySettingsActivity;
+        this.v = new org.telegram.ui.Components.g6(this);
+        getDrawable().J = true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = this.b;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                SecretMediaViewer secretMediaViewer2 = this.b;
-                AnimatorSet animatorSet = secretMediaViewer2.G;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    secretMediaViewer2.F.setVisibility(8);
-                    secretMediaViewer2.G = null;
-                    secretMediaViewer2.a0.scrollTo(0, 0);
-                    break;
-                }
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer3 = this.b;
-                Runnable runnable2 = secretMediaViewer3.o0;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    secretMediaViewer3.o0 = null;
-                    break;
-                }
-                break;
-            default:
-                SecretMediaViewer secretMediaViewer4 = this.b;
-                secretMediaViewer4.K0 = null;
-                secretMediaViewer4.e.invalidate();
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = this.s ? 1.0f : 0.0f;
+        org.telegram.ui.Components.g6 g6Var = this.v;
+        g6Var.d(f7, false);
+        int i10 = org.telegram.ui.ActionBar.i6.y6;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
+        setTextColor(i0.a.d(g6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.i6.n6)));
+        super.dispatchDraw(canvas);
+    }
+
+    public final void e(boolean z10, boolean z11) {
+        if (this.s != z10) {
+            this.s = z10;
+            this.v.d(z10 ? 1.0f : 0.0f, z11);
+            invalidate();
         }
     }
 }

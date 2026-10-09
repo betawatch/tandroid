@@ -1,56 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class e80 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ k80 b;
+public final /* synthetic */ class e80 implements org.telegram.ui.ActionBar.l1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p80 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e80(k80 k80Var, Context context) {
-        super(context);
-        this.b = k80Var;
+    public /* synthetic */ e80(p80 p80Var, int i10) {
+        this.a = i10;
+        this.b = p80Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        k80 k80Var = this.b;
-        ArrayList arrayList = k80Var.h;
-        if (k80Var.s == 0) {
-            int size = View.MeasureSpec.getSize(i10);
-            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) k80Var.d.getLayoutParams();
-            if (dp > size) {
-                layoutParams.width = -1;
-                layoutParams.gravity = 51;
-                if (!this.a) {
-                    TLRPC.Peer peer = k80Var.v;
-                    if (peer != null) {
-                        arrayList.remove(peer);
-                        arrayList.add(0, k80Var.v);
-                    }
-                    this.a = true;
+    @Override // org.telegram.ui.ActionBar.l1
+    public final void o(KeyEvent keyEvent) {
+        p80 p80Var;
+        k80 k80Var;
+        p80 p80Var2;
+        k80 k80Var2;
+        switch (this.a) {
+            case 0:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k80Var = (p80Var = this.b).m) != null && k80Var.isShowing()) {
+                    p80Var.u();
+                    break;
                 }
-            } else {
-                layoutParams.width = -2;
-                layoutParams.gravity = 49;
-                if (!this.a) {
-                    if (k80Var.v != null) {
-                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
-                        arrayList.remove(k80Var.v);
-                        arrayList.add(max, k80Var.v);
-                    }
-                    this.a = true;
+                break;
+            default:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k80Var2 = (p80Var2 = this.b).m) != null && k80Var2.isShowing()) {
+                    p80Var2.u();
+                    break;
                 }
-            }
+                break;
         }
-        super.onMeasure(i10, i11);
     }
 }

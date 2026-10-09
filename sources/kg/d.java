@@ -10,10 +10,10 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.q;
-import org.telegram.ui.me;
-import yh.z7;
+import org.telegram.ui.ke;
+import yh.p7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -31,10 +31,10 @@ public final class d {
     /* JADX WARN: Removed duplicated region for block: B:21:0x0091  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x008d  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0144  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0146  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0143  */
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, kg.d] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -227,7 +227,7 @@ public final class d {
                 return AndroidUtilities.formatWholeNumber((int) j3, 0);
             }
             if (i10 != 1) {
-                return z7.d1(false, q.h(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return p7.Y0(false, q.h(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + BillingController.getInstance().formatCurrency(j3, "USD");
         }
@@ -244,6 +244,6 @@ public final class d {
             this.h.setGroupingUsed(false);
         }
         this.h.setMaximumFractionDigits(j3 <= 1000000000 ? 6 : 2);
-        return me.K("TON " + this.h.format(j3 / 1.0E9d), textPaint, 0.8f, -AndroidUtilities.dp(0.66f), false);
+        return ke.f0("TON " + this.h.format(j3 / 1.0E9d), textPaint, 0.8f, -AndroidUtilities.dp(0.66f), false);
     }
 }

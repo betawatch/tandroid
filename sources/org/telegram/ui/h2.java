@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
+public final class h2 extends View implements org.telegram.ui.Cells.n9, e3 {
     public final t70 a;
     public final g4 b;
     public b3 c;
@@ -32,7 +32,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         this.b = g4Var;
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -51,7 +51,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         if (b3Var != null) {
             i10 = Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, b3Var.a() + b3Var.s);
         } else {
-            i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            i10 = Integer.MAX_VALUE;
         }
         b3 b3Var2 = this.d;
         if (b3Var2 != null) {
@@ -71,7 +71,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         if (b3Var != null) {
             i10 = Math.max(TLObject.FLAG_31, b3Var.b() + b3Var.s);
         } else {
-            i10 = TLObject.FLAG_31;
+            i10 = Integer.MIN_VALUE;
         }
         b3 b3Var2 = this.d;
         if (b3Var2 != null) {
@@ -194,6 +194,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
+        int i13;
         int size = View.MeasureSpec.getSize(i10);
         t70 t70Var = this.a;
         t70Var.getClass();
@@ -211,14 +212,14 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
             this.c = q6;
             if (q6 != null) {
                 t70Var.getClass();
-                int height = this.c.d.getHeight() + AndroidUtilities.dp(f7);
+                i13 = this.c.d.getHeight() + AndroidUtilities.dp(f7);
                 b3 b3Var = this.c;
                 b3Var.s = this.f;
                 b3Var.v = this.h;
-                i12 = height;
             } else {
-                i12 = 0;
+                i13 = 0;
             }
+            i12 = i13;
             this.e = AndroidUtilities.dp(2.0f) + i12;
             TL_iv.RichText richText2 = this.n.caption;
             t70 t70Var3 = this.a;

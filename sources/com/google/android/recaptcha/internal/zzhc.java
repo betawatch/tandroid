@@ -3,9 +3,9 @@ package com.google.android.recaptcha.internal;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
 import androidx.car.app.navigation.model.Maneuver;
-import gd.c;
-import gd.g;
-import hd.h;
+import hd.c;
+import hd.g;
+import id.h;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,16 +14,16 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 import kotlin.jvm.internal.i;
 import org.telegram.messenger.MessageObject;
-import v7.s7;
+import v7.z7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
         int i10 = zzby.zza;
-        this.zza = s7.a(zzhb.zza);
+        this.zza = z7.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {

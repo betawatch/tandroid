@@ -1,8 +1,29 @@
 package xd;
 
-import w7.v8;
+import id.h;
+import id.o;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
 /* loaded from: classes.dex */
-public abstract class d extends v8 {
+public abstract class d extends f {
+    public static List a(b bVar) {
+        i.e(bVar, "<this>");
+        Iterator it = bVar.iterator();
+        if (!it.hasNext()) {
+            return o.a;
+        }
+        Object next = it.next();
+        if (!it.hasNext()) {
+            return h.b(next);
+        }
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(next);
+        while (it.hasNext()) {
+            arrayList.add(it.next());
+        }
+        return arrayList;
+    }
 }

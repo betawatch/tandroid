@@ -7,13 +7,13 @@ import android.os.IInterface;
 import android.os.Parcel;
 import c5.c0;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.clearcut.t;
-import com.google.android.gms.internal.clearcut.z1;
+import com.google.android.gms.internal.clearcut.s;
+import com.google.android.gms.internal.clearcut.y1;
 import g7.l;
 import g7.q;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public abstract class b extends Binder implements IInterface {
         this.a = i10;
     }
 
-    public static void G0(Parcel parcel) {
+    public static void F0(Parcel parcel) {
         int i10 = q7.a.a;
         int dataAvail = parcel.dataAvail();
         if (dataAvail <= 0) {
@@ -34,15 +34,15 @@ public abstract class b extends Binder implements IInterface {
         throw new BadParcelableException(sb2.toString());
     }
 
+    public abstract boolean G0(int i10, Parcel parcel, Parcel parcel2);
+
     public abstract boolean H0(int i10, Parcel parcel, Parcel parcel2);
 
-    public abstract boolean I0(int i10, Parcel parcel, Parcel parcel2);
-
-    public boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         return false;
     }
 
-    public abstract boolean K0(Parcel parcel, int i10);
+    public abstract boolean J0(Parcel parcel, int i10);
 
     @Override // android.os.IInterface
     public IBinder asBinder() {
@@ -50,11 +50,11 @@ public abstract class b extends Binder implements IInterface {
         return this;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x034f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:132:0x034f, code lost:
     
         if (super.onTransact(r5, r6, r7, r8) != false) goto L132;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0247, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0247, code lost:
     
         if (super.onTransact(r5, r6, r7, r8) != false) goto L86;
      */
@@ -116,7 +116,7 @@ public abstract class b extends Binder implements IInterface {
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return J0(i10, parcel, parcel2);
+                return I0(i10, parcel, parcel2);
             case 2:
                 if (i10 > 16777215) {
                     z10 = super.onTransact(i10, parcel, parcel2, i11);
@@ -125,10 +125,10 @@ public abstract class b extends Binder implements IInterface {
                     z10 = false;
                 }
                 if (!z10) {
-                    z1 z1Var = (z1) this;
+                    y1 y1Var = (y1) this;
                     switch (i10) {
                         case 1:
-                            z1Var.b.a((Status) t.a(parcel, Status.CREATOR));
+                            y1Var.b.a((Status) s.a(parcel, Status.CREATOR));
                             break;
                         case 2:
                             throw new UnsupportedOperationException();
@@ -177,28 +177,28 @@ public abstract class b extends Binder implements IInterface {
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return J0(i10, parcel, parcel2);
+                return I0(i10, parcel, parcel2);
             case 5:
                 if (i10 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return I0(i10, parcel, parcel2);
+                return H0(i10, parcel, parcel2);
             case 6:
                 if (i10 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return H0(i10, parcel, parcel2);
+                return G0(i10, parcel, parcel2);
             case 7:
                 if (i10 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return J0(i10, parcel, parcel2);
+                return I0(i10, parcel, parcel2);
             case 8:
                 if (i10 > 16777215) {
                     z11 = super.onTransact(i10, parcel, parcel2, i11);
@@ -212,80 +212,80 @@ public abstract class b extends Binder implements IInterface {
                         case 1:
                             Status status = (Status) q7.a.a(parcel, Status.CREATOR);
                             l lVar = (l) q7.a.a(parcel, l.CREATOR);
-                            G0(parcel);
-                            fVar.E0(status, lVar);
+                            F0(parcel);
+                            fVar.D0(status, lVar);
                             break;
                         case 2:
                             Status status2 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status2, "status");
                             throw new UnsupportedOperationException();
                         case 3:
                             Status status3 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status3, "status");
                             throw new UnsupportedOperationException();
                         case 4:
                             Status status4 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status4, "status");
                             throw new UnsupportedOperationException();
                         case 5:
                             Status status5 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status5, "status");
                             throw new UnsupportedOperationException();
                         case 6:
                             Status status6 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status6, "status");
                             throw new UnsupportedOperationException();
                         case 7:
                             Status status7 = (Status) q7.a.a(parcel, Status.CREATOR);
                             g7.e eVar = (g7.e) q7.a.a(parcel, g7.e.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             fVar.o0(status7, eVar);
                             break;
                         case 8:
                             Status status8 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status8, "status");
                             throw new UnsupportedOperationException();
                         case 9:
                             Status status9 = (Status) q7.a.a(parcel, Status.CREATOR);
                             g7.b bVar = (g7.b) q7.a.a(parcel, g7.b.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             fVar.b0(status9, bVar);
                             break;
                         case 10:
                             Status status10 = (Status) q7.a.a(parcel, Status.CREATOR);
                             q qVar = (q) q7.a.a(parcel, q.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             fVar.r(status10, qVar);
                             break;
                         case 11:
                             Status status11 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status11, "status");
                             throw new UnsupportedOperationException();
                         case 12:
                             Status status12 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status12, "status");
                             throw new UnsupportedOperationException();
                         case 13:
                             Status status13 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status13, "status");
                             throw new UnsupportedOperationException();
                         case 14:
                             Status status14 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status14, "status");
                             throw new UnsupportedOperationException();
                         case 15:
                             Status status15 = (Status) q7.a.a(parcel, Status.CREATOR);
-                            G0(parcel);
+                            F0(parcel);
                             i.e(status15, "status");
                             throw new UnsupportedOperationException();
                         default:
@@ -299,14 +299,14 @@ public abstract class b extends Binder implements IInterface {
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return K0(parcel, i10);
+                return J0(parcel, i10);
             case 10:
                 if (i10 <= 16777215) {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 } else if (super.onTransact(i10, parcel, parcel2, i11)) {
                     return true;
                 }
-                return J0(i10, parcel, parcel2);
+                return I0(i10, parcel, parcel2);
             default:
                 return super.onTransact(i10, parcel, parcel2, i11);
         }

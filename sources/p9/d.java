@@ -1,19 +1,19 @@
 package p9;
 
 import android.content.Context;
-import com.google.android.gms.internal.clearcut.v0;
+import com.google.android.gms.internal.clearcut.u0;
 import java.lang.ref.WeakReference;
 import k9.i;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d {
     public static WeakReference b;
-    public final v0 a;
+    public final u0 a;
 
     public d(Context context) {
-        this.a = new v0(context, p7.d.a, com.google.android.gms.common.api.b.t, new i(4));
+        this.a = new u0(context, p7.d.a, com.google.android.gms.common.api.b.t, new i(4));
     }
 
     public static synchronized d b(LaunchActivity launchActivity) {

@@ -8,10 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.r1;
-import pg.c1;
+import org.telegram.ui.Wallet.n5;
 import r0.i0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int H = ViewConfiguration.getTapTimeout();
@@ -21,7 +21,7 @@ public final class d implements View.OnTouchListener {
     public final a a;
     public final AccelerateInterpolator b;
     public final r1 c;
-    public c1 d;
+    public n5 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -75,8 +75,8 @@ public final class d implements View.OnTouchListener {
         return f7 > f11 ? f11 : f7 < f10 ? f10 : f7;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x003c A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -196,17 +196,17 @@ public final class d implements View.OnTouchListener {
             aVar.d = a10;
             if (!this.E && e()) {
                 if (this.d == null) {
-                    this.d = new c1(this, 6);
+                    this.d = new n5(this, 9);
                 }
                 this.E = true;
                 this.x = true;
                 if (this.w || (i10 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    c1 c1Var = this.d;
+                    n5 n5Var = this.d;
                     long j3 = i10;
                     WeakHashMap weakHashMap = i0.a;
-                    r1Var.postOnAnimationDelayed(c1Var, j3);
+                    r1Var.postOnAnimationDelayed(n5Var, j3);
                 }
                 this.w = true;
             }

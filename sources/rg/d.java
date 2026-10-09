@@ -12,18 +12,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.bi;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.l41;
-import w7.z5;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.w51;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class d extends yl0 {
-    public final d6 c;
+public final class d extends pm0 {
+    public final e6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
@@ -32,12 +32,12 @@ public final class d extends yl0 {
     public c r;
     public final boolean s;
 
-    public d(int i10, d6 d6Var) {
+    public d(int i10, e6 e6Var) {
         ArrayList arrayList = new ArrayList();
         this.f = arrayList;
         this.s = true;
-        this.c = d6Var;
-        a1 a1Var = new a1(i6.Lj, i6.Mj, i6.Nj, i6.Oj, d6Var);
+        this.c = e6Var;
+        a1 a1Var = new a1(i6.Lj, i6.Mj, i6.Nj, i6.Oj, e6Var);
         this.h = a1Var;
         a1Var.o = 0.0f;
         a1Var.p = 0.0f;
@@ -59,17 +59,17 @@ public final class d extends yl0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
         return false;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
         return this.d;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int j(int i10) {
         if (i10 == 0) {
             return 1;
@@ -77,10 +77,10 @@ public final class d extends yl0 {
         return i10 == 0 ? 2 : 0;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (c1Var.f == 0) {
-            f fVar = (f) c1Var.a;
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        if (d1Var.f == 0) {
+            f fVar = (f) d1Var.a;
             int i11 = i10 - this.e;
             ArrayList arrayList = this.f;
             fVar.a((e) arrayList.get(i11));
@@ -91,16 +91,16 @@ public final class d extends yl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.l41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.w51] */
     /* JADX WARN: Type inference failed for: r1v7, types: [rg.f] */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
         t3 t3Var;
         Context context = viewGroup.getContext();
-        d6 d6Var = this.c;
+        e6 e6Var = this.c;
         if (i10 != 1) {
             if (i10 != 2) {
-                ?? fVar = new f(context, d6Var);
+                ?? fVar = new f(context, e6Var);
                 fVar.c.setParentViewForGradien(this.r);
                 fVar.c.setStaticGradinet(this.h);
                 t3Var = fVar;
@@ -108,20 +108,20 @@ public final class d extends yl0 {
                 t3Var = new t3(context, 16);
             }
         } else if (this.s) {
-            ?? l41Var = new l41(context, 11);
+            ?? w51Var = new w51(context, 10);
             LinearLayout e7 = bi.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
-            e7.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            e7.addView(imageView, x5.a(28.0f, 0.0f, 0.0f, 8.0f, 0.0f, 40, 16));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(i6.v0(i6.G6, d6Var));
+            textView.setTextColor(i6.w0(i6.G6, e6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            e7.addView(textView, z5.e(-2, -2, 16));
-            l41Var.addView(e7, z5.e(-2, -2, 17));
-            t3Var = l41Var;
+            e7.addView(textView, x5.e(-2, -2, 16));
+            w51Var.addView(e7, x5.e(-2, -2, 17));
+            t3Var = w51Var;
         } else {
             t3Var = new t3(context, 64);
         }

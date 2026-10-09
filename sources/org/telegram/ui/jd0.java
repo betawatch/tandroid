@@ -1,45 +1,45 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ug0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wg0 b;
 
-    public /* synthetic */ jd0(ug0 ug0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
-        this.b = ug0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z10;
+    public /* synthetic */ jd0(wg0 wg0Var, int i10) {
+        this.a = i10;
+        this.b = wg0Var;
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ug0.W(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
+                wg0 wg0Var = this.b;
+                wg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wg0Var.c.setAlpha(floatValue);
+                wg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
+                break;
+            case 1:
+                wg0 wg0Var2 = this.b;
+                wg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f7 = (0.9f * floatValue2) + 0.1f;
+                wg0Var2.V.setScaleX(f7);
+                wg0Var2.V.setScaleY(f7);
+                wg0Var2.V.setAlpha(floatValue2);
                 break;
             default:
-                ug0.T(this.b, this.c, this.d, this.e, this.f, (m8.d) obj);
+                wg0 wg0Var3 = this.b;
+                wg0Var3.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wg0Var3.c.setAlpha(floatValue3);
+                wg0Var3.c.setTranslationY((1.0f - floatValue3) * AndroidUtilities.dp(230.0f));
                 break;
         }
-    }
-
-    public /* synthetic */ jd0(ug0 ug0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
-        this.b = ug0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z10;
     }
 }

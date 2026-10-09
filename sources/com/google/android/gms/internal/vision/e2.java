@@ -8,21 +8,20 @@ import com.google.android.recaptcha.internal.zzqv;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.h61;
-import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.p61;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e2 {
     public static float A(float f7, float f10, float f11, float f12) {
-        return ((f7 - f10) / f11) + f12;
+        return ((f7 * f10) + f11) * f12;
     }
 
     public static float B(float f7, float f10, float f11, float f12) {
-        return ((f7 * f10) + f11) * f12;
+        return (f11 - (f7 * f10)) * f12;
     }
 
     public static float C(float f7, float f10, float f11, float f12) {
@@ -106,9 +105,9 @@ public abstract /* synthetic */ class e2 {
         return str + str2 + str3 + str4;
     }
 
-    public static il0 k(View view, View view2, int i10, int i11) {
-        view.setLayoutParams(new s4.p0(i10, i11));
-        return new il0(view2);
+    public static am0 k(View view, View view2, int i10, int i11) {
+        view.setLayoutParams(new s4.q0(i10, i11));
+        return new am0(view2);
     }
 
     public static void l(float f7, int i10, TextView textView) {
@@ -121,7 +120,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void n(int i10, ArrayList arrayList) {
-        arrayList.add(h61.u(LocaleController.getString(i10)));
+        arrayList.add(p61.t(LocaleController.getString(i10)));
     }
 
     public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -130,7 +129,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void p(int i10, boolean[] zArr, boolean z10, TextView textView, int i11) {
-        textView.setTextColor(i6.w0(zArr, i10, z10));
+        textView.setTextColor(i6.x0(zArr, i10, z10));
         textView.setGravity(i11);
     }
 
@@ -147,32 +146,31 @@ public abstract /* synthetic */ class e2 {
         e2.a.n(str3, str + str2);
     }
 
-    public static void t(String str, StringBuilder sb2) {
-        sb2.append(str);
-        FileLog.d(sb2.toString());
-    }
-
-    public static /* synthetic */ boolean u(Object obj) {
+    public static /* synthetic */ boolean t(Object obj) {
         return obj != null;
     }
 
-    public static float v(float f7, float f10, float f11, float f12) {
+    public static float u(float f7, float f10, float f11, float f12) {
         return (f11 - (f7 * f10)) / f12;
     }
 
-    public static int w(int i10, int i11, int i12) {
+    public static int v(int i10, int i11, int i12) {
         return zzqv.zzA(i10) + i11 + i12;
     }
 
-    public static float x(float f7, float f10, float f11, float f12) {
+    public static float w(float f7, float f10, float f11, float f12) {
         return (f7 * f10 * f11) + f12;
     }
 
-    public static float y(float f7, float f10, float f11, float f12) {
+    public static float x(float f7, float f10, float f11, float f12) {
         return ((f7 * f10) + f11) / f12;
     }
 
-    public static float z(float f7, float f10, float f11, float f12) {
+    public static float y(float f7, float f10, float f11, float f12) {
         return ((f7 - f10) * f11) + f12;
+    }
+
+    public static float z(float f7, float f10, float f11, float f12) {
+        return ((f7 - f10) / f11) + f12;
     }
 }

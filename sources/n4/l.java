@@ -3,12 +3,11 @@ package n4;
 import android.graphics.Bitmap;
 import android.media.MediaDescription;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l implements Parcelable {
     public static final Parcelable.Creator<l> CREATOR = new m8.h(3);
@@ -45,19 +44,8 @@ public final class l implements Parcelable {
         builder.setDescription(this.d);
         builder.setIconBitmap(this.e);
         builder.setIconUri(this.f);
-        int i10 = Build.VERSION.SDK_INT;
-        Bundle bundle = this.h;
-        Uri uri = this.n;
-        if (i10 >= 23 || uri == null) {
-            builder.setExtras(bundle);
-        } else {
-            Bundle i11 = bundle == null ? a4.a.i("android.support.v4.media.description.NULL_BUNDLE_FLAG", true) : new Bundle(bundle);
-            i11.putParcelable("android.support.v4.media.description.MEDIA_URI", uri);
-            builder.setExtras(i11);
-        }
-        if (i10 >= 23) {
-            e0.b.E(builder, uri);
-        }
+        builder.setExtras(this.h);
+        builder.setMediaUri(this.n);
         MediaDescription build = builder.build();
         this.r = build;
         return build;

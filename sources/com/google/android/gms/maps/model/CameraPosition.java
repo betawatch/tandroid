@@ -5,12 +5,12 @@ import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import g8.j;
 import java.util.Arrays;
-import n4.y;
+import n4.x;
 import n6.l;
 import o6.a;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class CameraPosition extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CameraPosition> CREATOR = new j(10);
@@ -44,24 +44,24 @@ public final class CameraPosition extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        y yVar = new y(this);
-        yVar.m(this.a, "target");
-        yVar.m(Float.valueOf(this.b), "zoom");
-        yVar.m(Float.valueOf(this.c), "tilt");
-        yVar.m(Float.valueOf(this.d), "bearing");
-        return yVar.toString();
+        x xVar = new x(this);
+        xVar.o(this.a, "target");
+        xVar.o(Float.valueOf(this.b), "zoom");
+        xVar.o(Float.valueOf(this.c), "tilt");
+        xVar.o(Float.valueOf(this.d), "bearing");
+        return xVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.k(parcel, 2, this.a, i10);
-        g0.s(parcel, 3, 4);
+        int q6 = d0.q(parcel, 20293);
+        d0.k(parcel, 2, this.a, i10);
+        d0.s(parcel, 3, 4);
         parcel.writeFloat(this.b);
-        g0.s(parcel, 4, 4);
+        d0.s(parcel, 4, 4);
         parcel.writeFloat(this.c);
-        g0.s(parcel, 5, 4);
+        d0.s(parcel, 5, 4);
         parcel.writeFloat(this.d);
-        g0.r(parcel, q6);
+        d0.r(parcel, q6);
     }
 }

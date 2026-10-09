@@ -1,41 +1,18 @@
 package ff;
 
-import com.google.android.gms.internal.cast.k4;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.FileLog;
+import cf.s;
+import ze.b;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a extends ThreadPoolExecutor implements AutoCloseable {
-    public final /* synthetic */ c a;
+public interface a {
+    int a(b bVar, b bVar2);
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(c cVar, PriorityBlockingQueue priorityBlockingQueue) {
-        super(1, 1, 60L, r5, priorityBlockingQueue);
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.a = cVar;
-    }
+    void b(s sVar, s sVar2, int i10);
 
-    @Override // java.util.concurrent.ThreadPoolExecutor
-    public final void beforeExecute(Thread thread, Runnable runnable) {
-        CountDownLatch countDownLatch = this.a.b;
-        if (countDownLatch != null) {
-            try {
-                countDownLatch.await();
-            } catch (InterruptedException e7) {
-                FileLog.e(e7);
-            }
-        }
-    }
+    char c();
 
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        k4.e(this);
-    }
+    int d();
+
+    char e();
 }

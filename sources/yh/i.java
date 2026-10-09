@@ -1,95 +1,101 @@
 package yh;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ o b;
 
-    public /* synthetic */ i(p pVar, long j3, int i10) {
+    public /* synthetic */ i(o oVar, int i10) {
         this.a = i10;
-        this.b = pVar;
-        this.c = j3;
+        this.b = oVar;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                final int i10 = 1;
-                final p pVar = this.b;
-                final long j3 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.l
+                final int i10 = 0;
+                final o oVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i11 = i10;
-                        long j10 = j3;
-                        TLObject tLObject2 = tLObject;
-                        p pVar2 = pVar;
-                        switch (i11) {
+                        switch (i10) {
                             case 0:
-                                HashMap hashMap = pVar2.e;
-                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
-                                    hashMap.put(Long.valueOf(j10), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap.put(Long.valueOf(j10), null);
+                                o oVar2 = oVar;
+                                oVar2.getClass();
+                                oVar2.j = new ArrayList();
+                                oVar2.i = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i11 = 0; i11 < vector.objects.size(); i11++) {
+                                        oVar2.j.add((TLRPC.User) vector.objects.get(i11));
+                                    }
+                                    MessagesController.getInstance(oVar2.a).putUsers(oVar2.j, false);
+                                    break;
                                 }
-                                pVar2.d.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                NotificationCenter.getInstance(pVar2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j10));
                                 break;
                             default:
-                                HashMap hashMap2 = pVar2.c;
-                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
-                                    hashMap2.put(Long.valueOf(j10), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap2.put(Long.valueOf(j10), null);
+                                o oVar3 = oVar;
+                                int i12 = oVar3.a;
+                                oVar3.l = new ArrayList();
+                                oVar3.k = false;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
+                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
+                                    oVar3.l.addAll(messages_chats.chats);
                                 }
-                                pVar2.b.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                NotificationCenter.getInstance(pVar2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j10));
+                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
                                 break;
                         }
                     }
                 });
                 break;
             default:
-                final int i11 = 0;
-                final p pVar2 = this.b;
-                final long j10 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.l
+                final int i11 = 1;
+                final o oVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i112 = i11;
-                        long j102 = j10;
-                        TLObject tLObject2 = tLObject;
-                        p pVar22 = pVar2;
-                        switch (i112) {
+                        switch (i11) {
                             case 0:
-                                HashMap hashMap = pVar22.e;
-                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
-                                    hashMap.put(Long.valueOf(j102), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap.put(Long.valueOf(j102), null);
+                                o oVar22 = oVar2;
+                                oVar22.getClass();
+                                oVar22.j = new ArrayList();
+                                oVar22.i = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i112 = 0; i112 < vector.objects.size(); i112++) {
+                                        oVar22.j.add((TLRPC.User) vector.objects.get(i112));
+                                    }
+                                    MessagesController.getInstance(oVar22.a).putUsers(oVar22.j, false);
+                                    break;
                                 }
-                                pVar22.d.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                NotificationCenter.getInstance(pVar22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j102));
                                 break;
                             default:
-                                HashMap hashMap2 = pVar22.c;
-                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
-                                    hashMap2.put(Long.valueOf(j102), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
-                                } else {
-                                    hashMap2.put(Long.valueOf(j102), null);
+                                o oVar3 = oVar2;
+                                int i12 = oVar3.a;
+                                oVar3.l = new ArrayList();
+                                oVar3.k = false;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
+                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
+                                    oVar3.l.addAll(messages_chats.chats);
                                 }
-                                pVar22.b.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                NotificationCenter.getInstance(pVar22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j102));
+                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
                                 break;
                         }
                     }

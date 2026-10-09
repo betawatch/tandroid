@@ -1,14 +1,20 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.nio.charset.Charset;
-
 /* loaded from: classes.dex */
-public abstract class p1 {
-    public static final Object a;
+public enum p1 {
+    b(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF15(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF23(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF31(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF39(4);
 
-    static {
-        Charset.forName("UTF-8");
-        Charset.forName("ISO-8859-1");
-        a = new Object();
+    public final int a;
+
+    p1(int i10) {
+        this.a = i10;
     }
 }

@@ -1,27 +1,85 @@
 package v7;
 
-import android.os.Build;
-import android.webkit.WebView;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import androidx.car.app.hardware.common.CarZone;
+import androidx.car.app.navigation.model.Maneuver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class i0 {
-    public static InvocationHandler a() {
-        ClassLoader classLoader;
-        if (Build.VERSION.SDK_INT >= 28) {
-            classLoader = b5.d.t();
-        } else {
-            try {
-                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
-                declaredMethod.setAccessible(true);
-                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
-            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e7) {
-                throw new RuntimeException(e7);
-            }
+    public static boolean a(int i10, CharSequence charSequence) {
+        if (i10 >= charSequence.length()) {
+            return false;
         }
-        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
+        char charAt = charSequence.charAt(i10);
+        switch (charAt) {
+            case '!':
+            case '\"':
+            case '#':
+            case '$':
+            case '%':
+            case '&':
+            case Maneuver.TYPE_DESTINATION /* 39 */:
+            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                return true;
+            default:
+                switch (charAt) {
+                    case ':':
+                    case ';':
+                    case '<':
+                    case '=':
+                    case '>':
+                    case '?':
+                    case '@':
+                        return true;
+                    default:
+                        switch (charAt) {
+                            case '[':
+                            case '\\':
+                            case ']':
+                            case '^':
+                            case '_':
+                            case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
+                                return true;
+                            default:
+                                switch (charAt) {
+                                    case '{':
+                                    case '|':
+                                    case '}':
+                                    case '~':
+                                        return true;
+                                    default:
+                                        return false;
+                                }
+                        }
+                }
+        }
+    }
+
+    public static int b(char c10, CharSequence charSequence, int i10, int i11) {
+        while (i10 < i11) {
+            if (charSequence.charAt(i10) != c10) {
+                return i10;
+            }
+            i10++;
+        }
+        return i11;
+    }
+
+    public static int c(int i10, int i11, CharSequence charSequence) {
+        while (i10 < i11) {
+            char charAt = charSequence.charAt(i10);
+            if (charAt != '\t' && charAt != ' ') {
+                return i10;
+            }
+            i10++;
+        }
+        return i11;
     }
 }

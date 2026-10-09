@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
+public final class c1 extends View implements org.telegram.ui.Cells.n9, e3 {
     public final t70 a;
     public final g4 b;
     public b3 c;
@@ -32,7 +32,7 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
         this.b = g4Var;
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -55,7 +55,7 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
         if (b3Var != null) {
             i10 = Math.min(ConnectionsManager.DEFAULT_DATACENTER_ID, (b3Var.a() + b3Var.s) - dp);
         } else {
-            i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            i10 = Integer.MAX_VALUE;
         }
         b3 b3Var2 = this.d;
         if (b3Var2 != null) {
@@ -79,7 +79,7 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
         if (b3Var != null) {
             i10 = Math.max(TLObject.FLAG_31, b3Var.b() + b3Var.s + dp);
         } else {
-            i10 = TLObject.FLAG_31;
+            i10 = Integer.MIN_VALUE;
         }
         b3 b3Var2 = this.d;
         if (b3Var2 != null) {
@@ -213,6 +213,7 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
+        int i13;
         int size = View.MeasureSpec.getSize(i10);
         t70 t70Var = this.a;
         t70Var.getClass();
@@ -224,25 +225,26 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
             if (this.n.level > 0) {
                 dp -= AndroidUtilities.dp(r2 * 14);
             }
-            int i13 = dp;
+            int i14 = dp;
             TL_iv.pageBlockBlockquote pageblockblockquote = this.n;
-            b3 q6 = i4.q(this.a, this, null, pageblockblockquote.text, i13, this.h, pageblockblockquote, this.b);
+            b3 q6 = i4.q(this.a, this, null, pageblockblockquote.text, i14, this.h, pageblockblockquote, this.b);
             this.c = q6;
             if (q6 != null) {
                 t70Var.getClass();
-                i12 = this.c.d.getHeight() + AndroidUtilities.dp(f7);
+                i13 = this.c.d.getHeight() + AndroidUtilities.dp(f7);
             } else {
-                i12 = 0;
+                i13 = 0;
             }
-            int i14 = this.n.level;
+            i12 = i13;
+            int i15 = this.n.level;
             g4 g4Var = this.b;
-            if (i14 > 0) {
+            if (i15 > 0) {
                 if (g4Var == null || !g4Var.G) {
-                    int dp2 = AndroidUtilities.dp(i14 * 14);
+                    int dp2 = AndroidUtilities.dp(i15 * 14);
                     t70Var.getClass();
                     this.f = AndroidUtilities.dp(32) + dp2;
                 } else {
-                    this.f = AndroidUtilities.dp((i14 * 14) + 14);
+                    this.f = AndroidUtilities.dp((i15 * 14) + 14);
                 }
             } else if (g4Var == null || !g4Var.G) {
                 t70Var.getClass();
@@ -254,7 +256,7 @@ public final class c1 extends View implements org.telegram.ui.Cells.p9, e3 {
             int dp3 = AndroidUtilities.dp(f7) + i12;
             this.e = dp3;
             TL_iv.pageBlockBlockquote pageblockblockquote2 = this.n;
-            b3 q10 = i4.q(this.a, this, null, pageblockblockquote2.caption, i13, dp3, pageblockblockquote2, this.b);
+            b3 q10 = i4.q(this.a, this, null, pageblockblockquote2.caption, i14, dp3, pageblockblockquote2, this.b);
             this.d = q10;
             if (q10 != null) {
                 t70Var.getClass();

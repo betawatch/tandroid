@@ -4,7 +4,7 @@ import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class a2 implements Runnable {
                 int i10 = this.b;
                 long j3 = this.c;
                 if (i10 == 0) {
-                    str = a4.a.p(j3, "");
+                    str = a1.g.p(j3, "");
                 } else {
                     str = i10 + "_" + j3 + "_" + this.d;
                 }

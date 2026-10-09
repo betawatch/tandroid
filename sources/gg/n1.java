@@ -1,141 +1,195 @@
 package gg;
 
-import ai.v8;
-import android.animation.ValueAnimator;
+import ai.w8;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import ci.rc;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.HashSet;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.HashtagSearchController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.j9;
-import w7.z5;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Cells.s2;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n1 extends FrameLayout {
-    public final d6 a;
-    public final j9 b;
-    public final TextView[] c;
-    public final TextView[] d;
-    public float e;
-    public ValueAnimator f;
+public final class n1 extends pm0 implements NotificationCenter.NotificationCenterDelegate {
+    public final Context c;
+    public final zn f;
+    public int h;
+    public int n;
+    public final e6 s;
+    public final int v;
+    public final boolean w;
+    public String x;
+    public w8 y;
+    public final HashSet d = new HashSet();
+    public final ArrayList e = new ArrayList();
+    public final int r = UserConfig.selectedAccount;
+    public final rc E = new rc(this, 16);
 
-    public n1(Context context, d6 d6Var) {
-        super(context);
-        this.c = new TextView[2];
-        this.d = new TextView[2];
-        this.a = d6Var;
-        setWillNotDraw(false);
-        j9 j9Var = new j9(this, false);
-        this.b = j9Var;
-        j9Var.l = true;
-        j9Var.p = AndroidUtilities.dp(75.0f);
-        j9Var.o = AndroidUtilities.dp(48.0f);
-        j9Var.x = true;
-        j9Var.s = AndroidUtilities.dp(22.0f);
-        int i10 = 0;
-        while (i10 < 2) {
-            this.c[i10] = new TextView(context);
-            this.c[i10].setTextColor(i6.v0(i6.G6, d6Var));
-            this.c[i10].setTypeface(AndroidUtilities.bold());
-            this.c[i10].setTextSize(1, 14.0f);
-            int i11 = 8;
-            this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], z5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
-            this.d[i10] = new TextView(context);
-            this.d[i10].setTextColor(i6.v0(i6.z6, d6Var));
-            this.d[i10].setTextSize(1, 12.0f);
-            TextView textView = this.d[i10];
-            if (i10 == 0) {
-                i11 = 0;
+    public n1(Context context, zn znVar, e6 e6Var, int i10, boolean z10) {
+        this.s = e6Var;
+        this.c = context;
+        this.f = znVar;
+        this.v = i10;
+        this.w = z10;
+    }
+
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        int i10 = d1Var.f;
+        return i10 == 0 || i10 == 2;
+    }
+
+    public final Object E(int i10) {
+        if (i10 < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.e;
+        if (i10 >= arrayList.size()) {
+            return null;
+        }
+        return arrayList.get(i10);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.storiesListUpdated && objArr[0] == this.y) {
+            l();
+        }
+    }
+
+    @Override // s4.i0
+    public final int h() {
+        return this.e.size() + this.n;
+    }
+
+    @Override // s4.i0
+    public final int j(int i10) {
+        return i10 < this.e.size() ? 0 : 1;
+    }
+
+    @Override // s4.i0
+    public final void l() {
+        int h = h();
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        HashSet hashSet = this.d;
+        hashSet.clear();
+        int i10 = this.r;
+        int i11 = this.v;
+        ArrayList<MessageObject> foundMessageObjects = i11 == 0 ? MediaDataController.getInstance(i10).getFoundMessageObjects() : HashtagSearchController.getInstance(i10).getMessages(i11);
+        int i12 = 0;
+        for (int i13 = 0; i13 < foundMessageObjects.size(); i13++) {
+            MessageObject messageObject = foundMessageObjects.get(i13);
+            if ((!messageObject.hasValidGroupId() || messageObject.isPrimaryGroupMessage) && !hashSet.contains(Integer.valueOf(messageObject.getId()))) {
+                arrayList.add(messageObject);
+                hashSet.add(Integer.valueOf(messageObject.getId()));
             }
-            textView.setVisibility(i11);
-            addView(this.d[i10], z5.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
-            i10++;
         }
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(R.drawable.msg_arrowright);
-        imageView.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.P5, d6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
-    }
-
-    public final boolean a(v8 v8Var) {
-        String str;
-        j9 j9Var;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = v8Var.i;
-            str = v8Var.D;
-            int size = arrayList.size();
-            j9Var = this.b;
-            if (i10 >= size || i11 >= 3) {
-                break;
+        int i14 = this.n;
+        this.h = arrayList.size();
+        if (i11 != 0) {
+            if (!HashtagSearchController.getInstance(i10).isEndReached(i11) && this.h != 0) {
+                i12 = Utilities.clamp(HashtagSearchController.getInstance(i10).getCount(i11) - this.h, 3, 0);
             }
-            MessageObject messageObject = (MessageObject) v8Var.i.get(i10);
-            long j3 = messageObject.storyItem.dialogId;
-            TextUtils.isEmpty(str);
-            j9Var.l(i11, messageObject.storyItem, v8Var.c);
-            i11++;
-            i10++;
-        }
-        j9Var.k(i11);
-        j9Var.b(false, true);
-        boolean isEmpty = TextUtils.isEmpty(str);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", v8Var.J));
+            this.n = i12;
         } else {
-            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", v8Var.J, "@" + str), i6.v0(i6.Oh, this.a), null));
+            if (!MediaDataController.getInstance(i10).searchEndReached() && this.h != 0) {
+                i12 = Utilities.clamp(MediaDataController.getInstance(i10).getSearchCount() - this.h, 3, 0);
+            }
+            this.n = i12;
         }
-        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, v8Var.C));
-        return i11 > 0;
+        int h10 = h();
+        if (h >= h10) {
+            super.l();
+            return;
+        }
+        if (i14 > 0) {
+            q(h - i14, i14);
+        }
+        s(h, h10 - h);
     }
 
-    public final void b(int i10, String str, String str2) {
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        TextView[] textViewArr = this.c;
-        if (isEmpty) {
-            textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
-        } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, sa.e.i("@", str2)), i6.v0(i6.Oh, this.a), null));
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        boolean z10;
+        int i11;
+        int i12;
+        int i13 = d1Var.f;
+        View view = d1Var.a;
+        if (i13 != 0) {
+            if (i13 == 2) {
+                ((m1) view).a(this.y);
+                return;
+            }
+            return;
         }
-        this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
+        s2 s2Var = (s2) view;
+        s2Var.s2 = true;
+        MessageObject messageObject = (MessageObject) E(i10);
+        long dialogId = messageObject.getDialogId();
+        int i14 = messageObject.messageOwner.date;
+        if (this.w) {
+            s2Var.r0 = true;
+            long savedDialogId = messageObject.getSavedDialogId();
+            TLRPC.Message message = messageObject.messageOwner;
+            TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
+            if (messageFwdHeader == null || ((i11 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
+                i12 = message.date;
+            } else {
+                if (i11 == 0) {
+                    i12 = messageFwdHeader.saved_date;
+                }
+                z10 = false;
+                dialogId = savedDialogId;
+            }
+            i11 = i12;
+            z10 = false;
+            dialogId = savedDialogId;
+        } else {
+            if (messageObject.isOutOwner() || ChatObject.isMonoForum(this.r, dialogId)) {
+                dialogId = messageObject.getFromChatId();
+            }
+            z10 = true;
+            i11 = i14;
+        }
+        s2Var.W(dialogId, messageObject, i11, z10, false);
+        s2Var.setDialogCellDelegate(new k1(this));
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e > 0.0f) {
-            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.e) * 255.0f), 31);
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        View s2Var;
+        View view;
+        if (i10 != 0) {
+            e6 e6Var = this.s;
+            Context context = this.c;
+            if (i10 == 1) {
+                j10 j10Var = new j10(context, e6Var);
+                j10Var.setIsSingleCell(true);
+                j10Var.setViewType(7);
+                view = j10Var;
+            } else if (i10 != 2) {
+                s2Var = null;
+            } else {
+                view = new m1(context, e6Var);
+            }
+            s2Var = view;
         } else {
-            canvas.save();
+            s2Var = new s2(null, this.c, true, this.r, this.s);
         }
-        canvas.translate(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), this.e), 0.0f);
-        this.b.i(canvas);
-        canvas.restore();
-        super.onDraw(canvas);
-        Paint T0 = i6.T0("paintDivider", this.a);
-        if (T0 == null) {
-            T0 = i6.k0;
-        }
-        canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), T0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        return com.google.android.gms.internal.vision.e2.k(s2Var, s2Var, -1, -2);
     }
 }

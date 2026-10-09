@@ -1,14 +1,14 @@
 package a3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ of.b b;
+    public final /* synthetic */ pf.b b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ i0(of.b bVar, int i10, long j3) {
+    public /* synthetic */ i0(pf.b bVar, int i10, long j3) {
         this.b = bVar;
         this.d = i10;
         this.c = j3;
@@ -19,7 +19,7 @@ public final /* synthetic */ class i0 implements Runnable {
         int i10 = this.a;
         int i11 = this.d;
         long j3 = this.c;
-        of.b bVar = this.b;
+        pf.b bVar = this.b;
         switch (i10) {
             case 0:
                 l0 l0Var = (l0) bVar.c;
@@ -38,7 +38,7 @@ public final /* synthetic */ class i0 implements Runnable {
         }
     }
 
-    public /* synthetic */ i0(of.b bVar, long j3, int i10) {
+    public /* synthetic */ i0(pf.b bVar, long j3, int i10) {
         this.b = bVar;
         this.c = j3;
         this.d = i10;

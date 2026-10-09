@@ -1,12 +1,12 @@
 package androidx.mediarouter.app;
 
-import ai.q4;
+import ai.r4;
 import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s implements SeekBar.OnSeekBarChangeListener {
-    public final q4 a = new q4(this, 10);
+    public final r4 a = new r4(this, 10);
     public final /* synthetic */ u b;
 
     public s(u uVar) {

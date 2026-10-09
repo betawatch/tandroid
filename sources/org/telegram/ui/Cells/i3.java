@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ve0;
+import org.telegram.ui.we0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class i3 implements TextWatcher {
     public final /* synthetic */ int a = 1;
@@ -55,24 +55,24 @@ public final class i3 implements TextWatcher {
             case 1:
                 break;
             default:
-                ve0 ve0Var = (ve0) this.d;
-                ci.h2 h2Var = ve0Var.c;
+                we0 we0Var = (we0) this.d;
+                ci.g2 g2Var = we0Var.c;
                 if (!this.b) {
-                    ve0Var.q(true);
-                    AndroidUtilities.cancelRunOnUIThread(ve0Var.V);
-                    ve0Var.o(false);
+                    we0Var.q(true);
+                    AndroidUtilities.cancelRunOnUIThread(we0Var.V);
+                    we0Var.o(false);
                     if (TextUtils.isEmpty(editable)) {
-                        ve0Var.y = false;
+                        we0Var.y = false;
                     }
-                    if (!ve0Var.p(editable.toString())) {
-                        ve0Var.s(true);
+                    if (!we0Var.p(editable.toString())) {
+                        we0Var.s(true);
                         this.b = true;
-                        boolean z10 = h2Var.getSelectionEnd() >= h2Var.getText().length();
-                        if (!ve0Var.y) {
-                            String str = ve0Var.K;
-                            h2Var.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
+                        boolean z10 = g2Var.getSelectionEnd() >= g2Var.getText().length();
+                        if (!we0Var.y) {
+                            String str = we0Var.K;
+                            g2Var.setText(str.substring(0, Utilities.clamp(this.c, str.length(), 0)));
                             if (z10) {
-                                h2Var.setSelection(h2Var.getText().length());
+                                g2Var.setSelection(g2Var.getText().length());
                             }
                         }
                         this.b = false;
@@ -122,8 +122,8 @@ public final class i3 implements TextWatcher {
                 }
                 break;
             default:
-                if (!this.b && charSequence != null && ((ve0) this.d).K != null) {
-                    this.c = ve0.u(charSequence.toString()).length();
+                if (!this.b && charSequence != null && ((we0) this.d).K != null) {
+                    this.c = we0.t(charSequence.toString()).length();
                     break;
                 }
                 break;
@@ -164,8 +164,8 @@ public final class i3 implements TextWatcher {
         this.b = z10;
     }
 
-    public i3(ve0 ve0Var) {
-        this.d = ve0Var;
+    public i3(we0 we0Var) {
+        this.d = we0Var;
     }
 
     private final void a(Editable editable) {

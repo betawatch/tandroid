@@ -1,73 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rd implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public abstract class rd extends LinearLayout {
+    public ImageView a;
+    public TextView b;
+    public Space c;
+    public boolean d;
 
-    public /* synthetic */ rd(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
+        if (this.a == null) {
+            this.a = imageView;
+            addView(imageView, layoutParams);
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        switch (i10) {
-            case 0:
-                bf bfVar = chatActivityEnterView.J1;
-                if (bfVar != null) {
-                    bfVar.setTranslationX(bfVar.a);
-                    break;
-                }
-                break;
-            case 1:
-                bf bfVar2 = chatActivityEnterView.J1;
-                if (bfVar2 != null) {
-                    bfVar2.setTranslationX(bfVar2.a);
-                    break;
-                }
-                break;
-            case 2:
-                chatActivityEnterView.m1.invalidate();
-                break;
-            case 3:
-                chatActivityEnterView.m1.invalidate();
-                break;
-            case 4:
-                int i11 = ChatActivityEnterView.n5;
-                chatActivityEnterView.w0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fg fgVar = chatActivityEnterView.U0;
-                if (fgVar != null) {
-                    fgVar.X();
-                    break;
-                }
-                break;
-            case 5:
-                chatActivityEnterView.J1.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 6:
-                int i12 = ChatActivityEnterView.n5;
-                chatActivityEnterView.N1.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                if (!chatActivityEnterView.c1) {
-                    chatActivityEnterView.h1.setAlpha(chatActivityEnterView.N1.getTransformToSeekbarProgressStep3());
-                    chatActivityEnterView.h1.invalidate();
-                }
-                chatActivityEnterView.x0();
-                break;
-            default:
-                int i13 = ChatActivityEnterView.n5;
-                chatActivityEnterView.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.w1.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
-                chatActivityEnterView.w1.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
-                chatActivityEnterView.w1.setAlpha(floatValue);
-                break;
+    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
+        if (this.c == null) {
+            this.c = space;
+            addView(space, layoutParams);
+        }
+    }
+
+    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = textView;
+            addView(textView, layoutParams);
+        }
+    }
+
+    public abstract void d();
+
+    public ImageView getImageView() {
+        return this.a;
+    }
+
+    public TextView getTextView() {
+        return this.b;
+    }
+
+    public void setEditButton(boolean z10) {
+        this.d = z10;
+    }
+
+    public void setOnlyIconMode(boolean z10) {
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setVisibility(z10 ? 8 : 0);
+        }
+        Space space = this.c;
+        if (space != null) {
+            space.setVisibility(z10 ? 8 : 0);
         }
     }
 }

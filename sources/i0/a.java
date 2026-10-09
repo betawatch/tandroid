@@ -3,7 +3,7 @@ package i0;
 import android.graphics.Color;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final ThreadLocal a = new ThreadLocal();
@@ -59,7 +59,7 @@ public abstract class a {
     }
 
     public static void b(float[] fArr, int i10, int i11, int i12) {
-        float A;
+        float z10;
         float abs;
         float f7 = i10 / 255.0f;
         float f10 = i11 / 255.0f;
@@ -69,13 +69,13 @@ public abstract class a {
         float f12 = max - min;
         float f13 = (max + min) / 2.0f;
         if (max == min) {
-            A = 0.0f;
+            z10 = 0.0f;
             abs = 0.0f;
         } else {
-            A = max == f7 ? ((f10 - f11) / f12) % 6.0f : max == f10 ? e2.A(f11, f7, f12, 2.0f) : e2.A(f7, f10, f12, 4.0f);
+            z10 = max == f7 ? ((f10 - f11) / f12) % 6.0f : max == f10 ? e2.z(f11, f7, f12, 2.0f) : e2.z(f7, f10, f12, 4.0f);
             abs = f12 / (1.0f - Math.abs((2.0f * f13) - 1.0f));
         }
-        float f14 = (A * 60.0f) % 360.0f;
+        float f14 = (z10 * 60.0f) % 360.0f;
         if (f14 < 0.0f) {
             f14 += 360.0f;
         }
@@ -88,7 +88,7 @@ public abstract class a {
         double d12 = (((-0.4986d) * d11) + (((-1.5372d) * d10) + (3.2406d * d))) / 100.0d;
         double d13 = ((0.0415d * d11) + ((1.8758d * d10) + ((-0.9689d) * d))) / 100.0d;
         double d14 = ((1.057d * d11) + (((-0.204d) * d10) + (0.0557d * d))) / 100.0d;
-        return Color.rgb(j((int) Math.round((d12 > 0.0031308d ? (Math.pow(d12, 0.4166666666666667d) * 1.055d) - 0.055d : d12 * 12.92d) * 255.0d)), j((int) Math.round((d13 > 0.0031308d ? (Math.pow(d13, 0.4166666666666667d) * 1.055d) - 0.055d : d13 * 12.92d) * 255.0d)), j((int) Math.round((d14 > 0.0031308d ? (Math.pow(d14, 0.4166666666666667d) * 1.055d) - 0.055d : 12.92d * d14) * 255.0d)));
+        return Color.rgb(j((int) Math.round((d12 > 0.0031308d ? (Math.pow(d12, 0.4166666666666667d) * 1.055d) - 0.055d : d12 * 12.92d) * 255.0d)), j((int) Math.round((d13 > 0.0031308d ? (Math.pow(d13, 0.4166666666666667d) * 1.055d) - 0.055d : d13 * 12.92d) * 255.0d)), j((int) Math.round((d14 > 0.0031308d ? (Math.pow(d14, 0.4166666666666667d) * 1.055d) - 0.055d : d14 * 12.92d) * 255.0d)));
     }
 
     public static int d(float f7, int i10, int i11) {

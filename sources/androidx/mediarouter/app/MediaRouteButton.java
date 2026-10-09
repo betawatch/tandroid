@@ -24,10 +24,9 @@ import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import java.util.Iterator;
-import v7.r8;
-import v7.v7;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -62,18 +61,18 @@ public class MediaRouteButton extends View {
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i10) {
         super(r7 != 0 ? new ContextThemeWrapper(r0, r7) : r0, attributeSet, i10);
         Drawable.ConstantState constantState;
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, v7.e0.e(context));
-        int g10 = v7.e0.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
+        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, v7.a0.e(context));
+        int g10 = v7.a0.g(contextThemeWrapper, org.telegram.messenger.beta.R.attr.mediaRouteTheme);
         this.mSelector = p4.r.c;
         this.mDialogFactory = w.a;
         Context context2 = getContext();
         int[] iArr = o4.a.a;
         TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr, i10, 0);
-        r0.i0.j(this, context2, iArr, attributeSet, obtainStyledAttributes, i10);
+        r0.i0.i(this, context2, iArr, attributeSet, obtainStyledAttributes, i10);
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = v7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = s7.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = p4.x.d(context2);
@@ -166,12 +165,12 @@ public class MediaRouteButton extends View {
                 }
                 bundle.putBundle("selector", rVar.a);
                 iVar.M(bundle);
-                g.u uVar = iVar.B0;
-                if (uVar != null) {
+                g.t tVar = iVar.B0;
+                if (tVar != null) {
                     if (iVar.A0) {
-                        ((d0) uVar).f(rVar);
+                        ((d0) tVar).f(rVar);
                     } else {
-                        ((h) uVar).h(rVar);
+                        ((h) tVar).h(rVar);
                     }
                 }
             }
@@ -213,9 +212,9 @@ public class MediaRouteButton extends View {
             }
             bundle3.putBundle("selector", rVar2.a);
             vVar.M(bundle3);
-            g.u uVar2 = vVar.B0;
-            if (uVar2 != null && vVar.A0) {
-                ((o0) uVar2).i(rVar2);
+            g.t tVar2 = vVar.B0;
+            if (tVar2 != null && vVar.A0) {
+                ((o0) tVar2).i(rVar2);
             }
         }
         if (i10 == 2) {
@@ -237,7 +236,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        w7.p.a(this, string);
+        w7.n.a(this, string);
     }
 
     @Override // android.view.View
@@ -451,7 +450,7 @@ public class MediaRouteButton extends View {
         }
         if (drawable != null) {
             if (this.mButtonTint != null) {
-                drawable = r8.d(drawable.mutate());
+                drawable = drawable.mutate();
                 drawable.setTintList(this.mButtonTint);
             }
             drawable.setCallback(this);
@@ -496,7 +495,7 @@ public class MediaRouteButton extends View {
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0093, code lost:
     
-        if (v7.f0.a(r3) != false) goto L35;
+        if (v7.b0.a(r3) != false) goto L35;
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00fb A[RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:23:0x00a3  */
@@ -579,7 +578,7 @@ public class MediaRouteButton extends View {
                     }
                 } else {
                     if (i10 == 30) {
-                        a2 = v7.f0.a(context);
+                        a2 = v7.b0.a(context);
                         if (!a2) {
                         }
                         z11 = true;

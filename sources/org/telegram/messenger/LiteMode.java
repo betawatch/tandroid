@@ -11,7 +11,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class LiteMode {
     private static int BATTERY_HIGH = 10;
@@ -54,7 +54,7 @@ public class LiteMode {
     private static int powerSaverLevel;
     private static int value;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class BatteryReceiver extends BroadcastReceiver {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -96,8 +96,8 @@ public class LiteMode {
             long r2 = org.telegram.messenger.LiteMode.lastBatteryLevelChecked
             long r2 = r0 - r2
             r4 = 12000(0x2ee0, double:5.929E-320)
-            int r6 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r6 <= 0) goto L2a
+            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
+            if (r2 <= 0) goto L2a
             goto L15
         L13:
             r0 = 0
@@ -216,17 +216,14 @@ public class LiteMode {
     private static void onFlagsUpdate(int i10, int i11) {
         int i12 = (~i10) & i11;
         if ((i12 & FLAGS_ANIMATED_EMOJI) > 0) {
-            org.telegram.ui.Components.q5.u();
+            org.telegram.ui.Components.s5.u();
         }
         int i13 = i12 & 32;
         if (i13 > 0) {
             SvgHelper.SvgDrawable.updateLiteValues();
         }
         if (i13 > 0) {
-            org.telegram.ui.ActionBar.i6.o1(true);
-        }
-        if (w7.e0.a(i12, 256) || w7.e0.a(i12, 262144)) {
-            li.p.f();
+            org.telegram.ui.ActionBar.i6.p1(true);
         }
     }
 
@@ -237,7 +234,7 @@ public class LiteMode {
             onFlagsUpdate(PRESET_POWER_SAVER, getValue(true));
         }
         if (onPowerSaverAppliedListeners != null) {
-            AndroidUtilities.runOnUIThread(new x3(2, z10));
+            AndroidUtilities.runOnUIThread(new y3(2, z10));
         }
     }
 
@@ -271,7 +268,7 @@ public class LiteMode {
     }
 
     public static void setPowerSaverLevel(int i10) {
-        powerSaverLevel = w7.q.b(i10, 0, 100);
+        powerSaverLevel = w7.o.b(i10, 0, 100);
         savePreference();
         getValue(false);
     }

@@ -1,23 +1,45 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f40 extends View {
-    public final /* synthetic */ h60 a;
+public final class f40 implements lh.a {
+    public final /* synthetic */ g60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f40(h60 h60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = h60Var;
+    public f40(g60 g60Var) {
+        this.a = g60Var;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            this.a.S0();
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
         }
+        boolean z10 = R instanceof ProfileActivity;
+        g60 g60Var = this.a;
+        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
+            g60Var.dismiss();
+            return;
+        }
+        int Q0 = g60Var.Q0();
+        Bundle bundle = new Bundle();
+        long j3 = groupCallMessage.fromId;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        boolean z11 = true;
+        if (groupCallMessage.fromId == g60Var.d.getUserConfig().getClientUserId()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        R.presentFragment(profileActivity, false, z11);
+        g60Var.dismiss();
     }
 }

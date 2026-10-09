@@ -1,88 +1,58 @@
 package ai;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.drawable.GradientDrawable;
+import android.view.GestureDetector;
+import android.view.animation.OvershootInterpolator;
+import android.widget.Scroller;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class m7 extends z4.g {
-    public boolean w0;
-    public final /* synthetic */ s7 x0;
-    public final /* synthetic */ s7 y0;
+public final class m7 extends n6 {
+    public final /* synthetic */ kc N;
+    public final /* synthetic */ t7 O;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m7(s7 s7Var, Context context) {
+    public m7(t7 t7Var, kc kcVar, Context context) {
         super(context);
-        this.y0 = s7Var;
-        this.x0 = s7Var;
+        this.O = t7Var;
+        this.N = kcVar;
+        this.w = -1;
+        this.E = new ArrayList();
+        this.F = new ArrayList();
+        this.G = new ArrayList();
+        this.I = new GestureDetector(new k6(this));
+        this.d = new Scroller(context, new OvershootInterpolator());
+        this.H = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.k(-16777216, 160)});
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.w0 = true;
+    @Override // ai.n6
+    public final void b(int i10) {
+        gc gcVar;
+        t7 t7Var = this.O;
+        n7 n7Var = t7Var.E;
+        if (t7Var.w) {
+            return;
         }
-        if (this.w0 && this.x0.x <= 0) {
+        if (n7Var.getCurrentItem() != i10) {
             try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception unused) {
+                n7Var.x(i10, false);
+            } catch (Throwable th2) {
+                FileLog.e(th2);
+                n7Var.getAdapter().g();
+                n7Var.x(i10, false);
             }
         }
-        return false;
-    }
-
-    public final boolean B(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.w0 = true;
+        kc kcVar = this.N;
+        if (kcVar.O0 == null || (gcVar = kcVar.t0) == null) {
+            return;
         }
-        if (!this.w0 || this.x0.x > 0) {
-            return false;
+        if (i10 < 10) {
+            gcVar.b(false);
+        } else if (i10 >= this.E.size() - 10) {
+            kcVar.t0.b(true);
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float y3 = motionEvent.getY();
-        currentTopOffset = this.y0.getCurrentTopOffset();
-        if (y3 >= currentTopOffset || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y3 = motionEvent.getY();
-        s7 s7Var = this.y0;
-        currentTopOffset = s7Var.getCurrentTopOffset();
-        if (y3 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = s7Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - s7Var.d) > AndroidUtilities.dp(1.0f)) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // z4.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y3 = motionEvent.getY();
-        s7 s7Var = this.y0;
-        currentTopOffset = s7Var.getCurrentTopOffset();
-        if (y3 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = s7Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - s7Var.d) > AndroidUtilities.dp(1.0f)) {
-            return false;
-        }
-        return B(motionEvent);
     }
 }

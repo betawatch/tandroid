@@ -6,7 +6,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -94,7 +94,7 @@ public final class o {
         String obj = this.b.toString();
         String valueOf = String.valueOf(this.h);
         StringBuilder sb2 = new StringBuilder("ProductDetails{jsonString='");
-        a4.a.A(sb2, this.a, "', parsedJson=", obj, ", productId='");
+        a1.g.A(sb2, this.a, "', parsedJson=", obj, ", productId='");
         sb2.append(this.c);
         sb2.append("', productType='");
         sb2.append(this.d);

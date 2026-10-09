@@ -1,39 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a41 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d41 b;
+public final class a41 extends org.telegram.ui.Cells.j3 {
+    public final /* synthetic */ b41 x;
 
-    public /* synthetic */ a41(d41 d41Var, int i10) {
-        this.a = i10;
-        this.b = d41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a41(b41 b41Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, "", true, false, 1024, e6Var);
+        this.x = b41Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d41 d41Var = this.b;
-                d41Var.getClass();
-                d41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d41Var.g();
-                break;
-            case 1:
-                d41 d41Var2 = this.b;
-                d41Var2.getClass();
-                d41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d41Var2.g();
-                break;
-            default:
-                d41 d41Var3 = this.b;
-                d41Var3.getClass();
-                d41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d41Var3.g();
-                break;
+    @Override // org.telegram.ui.Cells.j3
+    public final void b(Editable editable) {
+        b41 b41Var = this.x;
+        ci.d dVar = b41Var.s;
+        if (dVar != null) {
+            dVar.setEnabled(b41Var.d.optional || !TextUtils.isEmpty(b41Var.n.getText()));
         }
     }
 }

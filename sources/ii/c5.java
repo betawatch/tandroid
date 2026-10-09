@@ -1,6 +1,6 @@
 package ii;
 
-import ai.n8;
+import ai.o8;
 import android.graphics.BitmapFactory;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class c5 implements NotificationCenter.NotificationCenterDelegate {
     public volatile String E;
@@ -134,7 +134,7 @@ public final class c5 implements NotificationCenter.NotificationCenterDelegate {
                 tL_messages_uploadMedia.media = tL_inputMediaUploadedPhoto;
             }
         }
-        this.y = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new n8(this, 17));
+        this.y = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_uploadMedia, new o8(this, 17));
     }
 
     public final void d() {

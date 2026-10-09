@@ -1,9 +1,70 @@
 package zc;
 
-import bf.n;
+import c5.m;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.util.List;
+import java.util.logging.Level;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class a extends n {
-    public String g;
+public final class a implements Runnable {
+    public final InputStream a;
+    public final Socket b;
+    public final /* synthetic */ i c;
+
+    public a(i iVar, InputStream inputStream, Socket socket) {
+        this.c = iVar;
+        this.a = inputStream;
+        this.b = socket;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        OutputStream outputStream;
+        InputStream inputStream = this.a;
+        i iVar = this.c;
+        Socket socket = this.b;
+        OutputStream outputStream2 = null;
+        try {
+            try {
+                outputStream = socket.getOutputStream();
+            } catch (Exception e7) {
+                e = e7;
+            }
+        } catch (Throwable th2) {
+            th = th2;
+        }
+        try {
+            d dVar = new d(iVar, new m(2), this.a, outputStream, socket.getInetAddress());
+            while (!socket.isClosed()) {
+                dVar.c();
+            }
+            i.d(outputStream);
+        } catch (Exception e10) {
+            e = e10;
+            outputStream2 = outputStream;
+            if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
+                i.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
+            }
+            i.d(outputStream2);
+            i.d(inputStream);
+            i.d(socket);
+            ((List) iVar.c.c).remove(this);
+        } catch (Throwable th3) {
+            th = th3;
+            outputStream2 = outputStream;
+            i.d(outputStream2);
+            i.d(inputStream);
+            i.d(socket);
+            ((List) iVar.c.c).remove(this);
+            throw th;
+        }
+        i.d(inputStream);
+        i.d(socket);
+        ((List) iVar.c.c).remove(this);
+    }
 }

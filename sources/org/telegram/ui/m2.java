@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class m2 implements z4.e {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final class m2 implements z4.e {
                 q2Var.c.invalidate();
                 break;
             case 1:
-                ((c80) this.b).H = i10;
+                ((d80) this.b).H = i10;
                 break;
             default:
-                ((pd1) this.b).a0.invalidate();
+                ((xd1) this.b).a0.invalidate();
                 break;
         }
     }
@@ -37,20 +37,20 @@ public final class m2 implements z4.e {
                 q2 q2Var = (q2) this.b;
                 float measuredWidth = q2Var.a.getMeasuredWidth();
                 if (measuredWidth != 0.0f) {
-                    q2Var.s = com.google.android.gms.internal.vision.e2.v(q2Var.v, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
+                    q2Var.s = com.google.android.gms.internal.vision.e2.u(q2Var.v, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
                     q2Var.c.invalidate();
                     break;
                 }
                 break;
             case 1:
-                c80 c80Var = (c80) this.b;
-                org.telegram.ui.Components.ta taVar = c80Var.e;
-                taVar.b = f7;
-                taVar.c = i10;
-                taVar.invalidate();
-                float measuredWidth2 = c80Var.d.getMeasuredWidth();
+                d80 d80Var = (d80) this.b;
+                org.telegram.ui.Components.va vaVar = d80Var.e;
+                vaVar.b = f7;
+                vaVar.c = i10;
+                vaVar.invalidate();
+                float measuredWidth2 = d80Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (c80Var.H * measuredWidth2)) / measuredWidth2);
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (d80Var.H * measuredWidth2)) / measuredWidth2);
                     break;
                 }
                 break;
@@ -61,21 +61,21 @@ public final class m2 implements z4.e {
     public final void c(int i10) {
         switch (this.a) {
             case 1:
-                c80 c80Var = (c80) this.b;
+                d80 d80Var = (d80) this.b;
                 if (i10 != 1) {
                     if (i10 == 0 || i10 == 2) {
-                        if (c80Var.K) {
-                            c80Var.K = false;
+                        if (d80Var.K) {
+                            d80Var.K = false;
                         }
-                        if (c80Var.w != c80Var.d.getCurrentItem()) {
-                            c80Var.w = c80Var.d.getCurrentItem();
+                        if (d80Var.w != d80Var.d.getCurrentItem()) {
+                            d80Var.w = d80Var.d.getCurrentItem();
                             break;
                         }
                     }
                 } else {
-                    c80Var.K = true;
-                    c80Var.d.getCurrentItem();
-                    c80Var.d.getMeasuredWidth();
+                    d80Var.K = true;
+                    d80Var.d.getCurrentItem();
+                    d80Var.d.getMeasuredWidth();
                     break;
                 }
                 break;

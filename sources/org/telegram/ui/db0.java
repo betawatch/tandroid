@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class db0 implements View.OnLayoutChangeListener {
     public boolean a;
@@ -12,7 +12,7 @@ public final class db0 implements View.OnLayoutChangeListener {
     public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
         boolean z10 = i13 - i11 > i12 - i10;
         if (z10 != this.a) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.uh(this, 23));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vh(this, 23));
             this.a = z10;
         }
     }

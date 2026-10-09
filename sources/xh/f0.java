@@ -1,65 +1,44 @@
 package xh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.pc0;
+import org.telegram.ui.Components.r6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final class f0 extends mw0 {
-    public final /* synthetic */ j0 w0;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class f0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(j0 j0Var, Context context) {
-        super(context, null);
-        this.w0 = j0Var;
+    public /* synthetic */ f0(l0 l0Var, int i10) {
+        this.a = i10;
+        this.b = l0Var;
     }
 
-    @Override // org.telegram.ui.Components.mw0
-    public final boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final void U(Drawable drawable) {
-        if (drawable instanceof pc0) {
-            ((pc0) drawable).p();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l0 l0Var = this.b;
+                ph.i iVar = l0Var.h;
+                hh.f fVar = l0Var.f;
+                if (fVar != null) {
+                    fVar.d();
+                }
+                k0 k0Var = l0Var.H;
+                if (k0Var != null) {
+                    k0Var.setTranslationY(-iVar.d());
+                }
+                r6 r6Var = l0Var.w;
+                if (r6Var != null) {
+                    r6Var.setTranslationY(-iVar.d());
+                }
+                l0Var.q();
+                break;
+            case 1:
+                this.b.H.performClick();
+                break;
+            default:
+                this.b.dismiss();
+                break;
         }
-        j0 j0Var = this.w0;
-        j0Var.d.a = j0Var.c.c(drawable);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.L) {
-            return super.drawChild(canvas, view, j3);
-        }
-        j0 j0Var = this.w0;
-        fh.a aVar = j0Var.d.a;
-        if (aVar instanceof fh.b) {
-            ((fh.b) aVar).c(getWidth(), getHeight());
-        }
-        j0Var.d.v(canvas, 0.0f, 0.0f, getWidth(), getHeight());
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mw0
-    public final Drawable getNewDrawable() {
-        Drawable drawable = this.w0.y;
-        return drawable != null ? drawable : super.getNewDrawable();
-    }
-
-    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.w0.o();
     }
 }

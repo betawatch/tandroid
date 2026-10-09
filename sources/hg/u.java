@@ -15,68 +15,68 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import w7.z5;
+import org.telegram.ui.ActionBar.j5;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class u extends FrameLayout {
-    public final i5 a;
+    public final j5 a;
     public final vh.n b;
-    public final i5 c;
-    public final d6 d;
+    public final j5 c;
+    public final e6 d;
     public boolean e;
     public TL_account.TL_businessChatLink f;
 
-    public u(Context context, d6 d6Var) {
+    public u(Context context, e6 e6Var) {
         super(context);
-        this.d = d6Var;
+        this.d = e6Var;
         setWillNotDraw(false);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setImageResource(R.drawable.msg_limit_links);
         imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.w0(null, i6.Oh, false)));
+        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.x0(null, i6.Oh, false)));
         imageView.setOnClickListener(new ai.v0(this, 25));
-        addView(imageView, z5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        i5 i5Var = new i5(context);
-        this.a = i5Var;
-        i5Var.setTextSize(15);
-        i5Var.setTextColor(i6.w0(null, i6.G6, false));
-        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(i5Var, z5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        i5 i5Var2 = new i5(context);
-        this.c = i5Var2;
-        i5Var2.setTextSize(14);
+        addView(imageView, x5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        j5 j5Var = new j5(context);
+        this.a = j5Var;
+        j5Var.setTextSize(15);
+        j5Var.setTextColor(i6.x0(null, i6.G6, false));
+        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(j5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        j5 j5Var2 = new j5(context);
+        this.c = j5Var2;
+        j5Var2.setTextSize(14);
         int i10 = i6.z6;
-        i5Var2.setTextColor(i6.w0(null, i10, false));
-        i5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(i5Var2, z5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        j5Var2.setTextColor(i6.x0(null, i10, false));
+        j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(j5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         vh.n nVar = new vh.n(context);
         this.b = nVar;
         nVar.setTextSize(1, 13.0f);
         nVar.setMaxLines(1);
         nVar.setEllipsize(TextUtils.TruncateAt.END);
-        nVar.setTextColor(i6.v0(i10, d6Var));
+        nVar.setTextColor(i6.w0(i10, e6Var));
         nVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        nVar.f = false;
+        nVar.r = false;
         nVar.setUseAlphaForEmoji(false);
         NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, z5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        addView(nVar, x5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e) {
-            Paint T0 = i6.T0("paintDivider", this.d);
-            if (T0 == null) {
-                T0 = i6.k0;
+            Paint U0 = i6.U0("paintDivider", this.d);
+            if (U0 == null) {
+                U0 = i6.k0;
             }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), U0);
         }
     }
 
@@ -84,12 +84,12 @@ public final class u extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         boolean z11 = LocaleController.isRTL;
-        i5 i5Var = this.c;
-        i5 i5Var2 = this.a;
+        j5 j5Var = this.c;
+        j5 j5Var2 = this.a;
         if (z11) {
-            i5Var2.setPadding(i5Var.getTextWidth(), 0, 0, 0);
+            j5Var2.setPadding(j5Var.getTextWidth(), 0, 0, 0);
         } else {
-            i5Var2.setPadding(0, 0, i5Var.getTextWidth(), 0);
+            j5Var2.setPadding(0, 0, j5Var.getTextWidth(), 0);
         }
     }
 

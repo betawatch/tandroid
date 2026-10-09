@@ -1,65 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hx0 {
-    public final o5 a;
-    public Drawable b;
+public final class hx0 extends eb {
+    public ht X;
 
-    public hx0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+    public hx0(Context context) {
+        super(context, null, true, false, null);
+        fixNavigationBar();
+        this.E = true;
+        this.y = true;
+        L();
+        qm0 qm0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        qm0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new mh0(this, 5));
+        this.d.setOnItemClickListener(new j(this, 14));
     }
 
-    public final o5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
-        o5 o5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
-            }
-            this.b = drawable;
-            o5Var.g(drawable, z10);
-            o5Var.k(null);
-            return o5Var;
+    public static void Q(hx0 hx0Var, int i10) {
+        p61 G = hx0Var.X.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(hx0Var.currentAccount).openApp(hx0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
         }
-        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
-            o5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
-            o5Var.k(Integer.valueOf(i10));
-            return o5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
-            }
-            this.b = drawable2;
-            o5Var.g(drawable2, z10);
-            o5Var.k(null);
-            return o5Var;
-        }
-        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
-            o5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
-            o5Var.k(Integer.valueOf(i10));
-            return o5Var;
-        }
-        if (user == null || !user.premium) {
-            o5Var.g(null, z10);
-            o5Var.k(null);
-            return o5Var;
-        }
-        o5Var.g(rg.b1.d().e, z10);
-        o5Var.k(Integer.valueOf(i10));
-        return o5Var;
     }
 
-    public hx0(int i10, View view) {
-        this.a = new o5(AndroidUtilities.dp(i10), view);
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
+    }
+
+    @Override // org.telegram.ui.Components.eb
+    public final pm0 x(qm0 qm0Var) {
+        ht htVar = new ht(qm0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.X = htVar;
+        htVar.r = false;
+        return htVar;
     }
 }

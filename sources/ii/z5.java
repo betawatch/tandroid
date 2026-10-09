@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Cells.o9;
+import org.telegram.ui.Components.c71;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class z5 implements h1 {
     public final /* synthetic */ f6 a;
@@ -24,7 +24,19 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void B(Editable editable) {
+    public final void E(CharSequence charSequence) {
+        c6 c6Var = this.a.y;
+        if (c6Var != null) {
+            f3 f3Var = (f3) c6Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            f3Var.a.u4(charSequence.toString());
+        }
+    }
+
+    @Override // ii.h1
+    public final void L(Editable editable) {
         a aVar;
         f6 f6Var = this.a;
         if (f6Var.x == null) {
@@ -43,15 +55,15 @@ public final class z5 implements h1 {
         c6 c6Var = f6Var.y;
         if (c6Var != null) {
             x3 x3Var = ((f3) c6Var).a;
-            i2 i2Var = x3Var.Q3;
+            i2 i2Var = x3Var.H3;
             if (i2Var != null) {
                 i2Var.g();
             }
-            x3Var.o3.onContentChanged();
+            x3Var.f3.onContentChanged();
         }
         c6 c6Var2 = f6Var.y;
         if (c6Var2 != null) {
-            ((f3) c6Var2).a.o3.o(f6Var, f6.b(editable.toString()));
+            ((f3) c6Var2).a.f3.i(f6Var, f6.b(editable.toString()));
         }
         String obj = editable.toString();
         a aVar2 = f6Var.x;
@@ -72,7 +84,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean C(boolean z10) {
+    public final boolean N(boolean z10) {
         a aVar;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
@@ -83,17 +95,17 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void b(i1 i1Var) {
+    public final void c(i1 i1Var) {
         c6 c6Var = this.a.y;
         if (c6Var != null) {
             x3 x3Var = ((f3) c6Var).a;
             x3.N1(x3Var, i1Var);
-            x3Var.o3.P(i1Var, true);
+            x3Var.f3.r(i1Var, true);
         }
     }
 
     @Override // ii.h1
-    public final boolean e() {
+    public final boolean f() {
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
         if (c6Var == null || f6Var.x == null) {
@@ -103,21 +115,22 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void f(int i10, int i11) {
+    public final void i(int i10, int i11) {
         i2 i2Var;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
-        if (c6Var == null || f6Var.x == null || (i2Var = ((f3) c6Var).a.Q3) == null) {
+        if (c6Var == null || f6Var.x == null || (i2Var = ((f3) c6Var).a.H3) == null) {
             return;
         }
         i2Var.f(i10, i11);
     }
 
     @Override // ii.h1
-    public final void l(i1 i1Var) {
+    public final void k(i1 i1Var) {
         int length;
         Spanned spanned;
         boolean z10;
+        boolean z11;
         int i10;
         i1 editText;
         Editable text;
@@ -126,7 +139,7 @@ public final class z5 implements h1 {
             return;
         }
         String obj = i1Var.getText().toString();
-        ((f3) f6Var.y).a.o3.o(f6Var, null);
+        ((f3) f6Var.y).a.f3.i(f6Var, null);
         String b10 = f6.b(obj);
         if (b10 != null) {
             ArrayList a2 = o0.a(b10);
@@ -152,20 +165,20 @@ public final class z5 implements h1 {
         c6 c6Var = f6Var.y;
         a aVar = f6Var.x;
         x3 x3Var = ((f3) c6Var).a;
-        ArrayList arrayList = x3Var.w4;
-        w61 w61Var = x3Var.f3;
-        ArrayList arrayList2 = x3Var.s3;
+        ArrayList arrayList = x3Var.n4;
+        c71 c71Var = x3Var.W2;
+        ArrayList arrayList2 = x3Var.j3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
             return;
         }
-        i2 i2Var = x3Var.Q3;
+        i2 i2Var = x3Var.H3;
         if (i2Var != null) {
             i2Var.d();
         }
         View A1 = x3Var.A1(aVar);
-        boolean z11 = A1 instanceof f6;
-        if (z11) {
+        boolean z12 = A1 instanceof f6;
+        if (z12) {
             i1 editText2 = ((f6) A1).getEditText();
             Spanned text2 = editText2.getText();
             length = editText2.getSelectionEnd();
@@ -183,8 +196,8 @@ public final class z5 implements h1 {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
                 x3Var.t4();
-                w61Var.N(false);
-                i2 i2Var2 = x3Var.Q3;
+                c71Var.N(false);
+                i2 i2Var2 = x3Var.H3;
                 if (i2Var2 != null) {
                     i2Var2.h();
                 }
@@ -194,8 +207,8 @@ public final class z5 implements h1 {
             if (aVar.c > 0) {
                 x3Var.u2(indexOf);
                 x3Var.t4();
-                w61Var.N(false);
-                i2 i2Var3 = x3Var.Q3;
+                c71Var.N(false);
+                i2 i2Var3 = x3Var.H3;
                 if (i2Var3 != null) {
                     i2Var3.h();
                 }
@@ -210,14 +223,16 @@ public final class z5 implements h1 {
         if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
             long a10 = q0.a();
             TL_iv.RichText richText = ((TL_iv.pageBlockBlockquote) aVar.b).caption;
+            z10 = true;
             if (richText != null && !(richText instanceof TL_iv.textEmpty)) {
-                x3Var.t3.put(Long.valueOf(a10), richText);
+                x3Var.k3.put(Long.valueOf(a10), richText);
             }
             arrayList4.add(Long.valueOf(a10));
             aVar.b = new TL_iv.pageBlockParagraph();
-            z10 = true;
+            z11 = true;
         } else {
-            z10 = false;
+            z10 = true;
+            z11 = false;
         }
         f6.d(aVar.b, subSequence);
         TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
@@ -232,35 +247,35 @@ public final class z5 implements h1 {
         int i12 = indexOf + 1;
         arrayList2.add(i12, aVar2);
         x3Var.t4();
-        if (z10) {
-            w61Var.N(false);
-            i2 i2Var4 = x3Var.Q3;
+        if (z11) {
+            c71Var.N(false);
+            i2 i2Var4 = x3Var.H3;
             if (i2Var4 != null) {
                 i2Var4.h();
             }
             x3Var.post(new p2(x3Var, aVar2, 29));
             return;
         }
-        if (z11 && (text = (editText = ((f6) A1).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
-            editText.h = true;
+        if (z12 && (text = (editText = ((f6) A1).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
+            editText.h = z10;
             text.delete(length, text.length());
             editText.h = false;
         }
-        w61Var.S();
+        c71Var.S();
         x3Var.q4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            w61Var.l();
+            c71Var.l();
         } else {
-            s4.m0 itemAnimator = x3Var.getItemAnimator();
+            s4.n0 itemAnimator = x3Var.getItemAnimator();
             x3Var.setItemAnimator(null);
-            w61Var.o(indexOf2);
+            c71Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                w61Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                c71Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             x3Var.post(new z2(x3Var, itemAnimator, 0));
         }
-        i2 i2Var5 = x3Var.Q3;
+        i2 i2Var5 = x3Var.H3;
         if (i2Var5 != null) {
             i2Var5.h();
         }
@@ -268,7 +283,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean n(i1 i1Var) {
+    public final boolean m(i1 i1Var) {
         a aVar;
         ClipData primaryClip;
         int indexOf;
@@ -283,12 +298,12 @@ public final class z5 implements h1 {
                     if (!TextUtils.isEmpty(htmlText)) {
                         HashMap hashMap = new HashMap();
                         try {
-                            ArrayList x42 = x3Var.x4(e4.z(htmlText, hashMap));
-                            if (!x42.isEmpty() && ((x42.size() != 1 || !x3.G3((a) x42.get(0))) && (indexOf = x3Var.s3.indexOf(aVar)) >= 0)) {
+                            ArrayList x42 = x3Var.x4(f4.z(htmlText, hashMap));
+                            if (!x42.isEmpty() && ((x42.size() != 1 || !x3.G3((a) x42.get(0))) && (indexOf = x3Var.j3.indexOf(aVar)) >= 0)) {
                                 int max = Math.max(0, Math.min(i1Var.getSelectionStart(), i1Var.getSelectionEnd()));
                                 boolean J4 = x3Var.J4(indexOf, indexOf, max, Math.max(max, Math.max(i1Var.getSelectionStart(), i1Var.getSelectionEnd())), x42);
                                 if (J4 && !hashMap.isEmpty()) {
-                                    x3Var.t3.putAll(hashMap);
+                                    x3Var.k3.putAll(hashMap);
                                 }
                                 return J4;
                             }
@@ -304,7 +319,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final boolean p(i1 i1Var) {
+    public final boolean r(i1 i1Var) {
         a aVar;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
@@ -315,7 +330,7 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void r() {
+    public final void t() {
         a aVar;
         f6 f6Var = this.a;
         c6 c6Var = f6Var.y;
@@ -326,25 +341,13 @@ public final class z5 implements h1 {
     }
 
     @Override // ii.h1
-    public final void t(i1 i1Var, int i10, int i11) {
+    public final void x(i1 i1Var, int i10, int i11) {
         c6 c6Var;
-        q9 textSelectionHelper;
+        o9 textSelectionHelper;
         f6 f6Var = this.a;
         if (f6Var.F || i10 == i11 || (c6Var = f6Var.y) == null || (textSelectionHelper = ((f3) c6Var).a.getTextSelectionHelper()) == null) {
             return;
         }
-        f6Var.post(new ei.y4(this, i1Var, i11, textSelectionHelper, i10, 5));
-    }
-
-    @Override // ii.h1
-    public final void w(CharSequence charSequence) {
-        c6 c6Var = this.a.y;
-        if (c6Var != null) {
-            f3 f3Var = (f3) c6Var;
-            if (charSequence == null || charSequence.length() <= 0) {
-                return;
-            }
-            f3Var.a.u4(charSequence.toString());
-        }
+        f6Var.post(new ei.w4(this, i1Var, i11, textSelectionHelper, i10, 5));
     }
 }

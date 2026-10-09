@@ -1,30 +1,6 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x60 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z60 b;
-
-    public /* synthetic */ x60(z60 z60Var, int i10) {
-        this.a = i10;
-        this.b = z60Var;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this.b, tL_error, tLObject, 22));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new yw(14, this.b, tL_error));
-                break;
-        }
-    }
+public interface x60 {
 }

@@ -1,46 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class rq0 implements org.telegram.ui.Components.cm0 {
-    public final /* synthetic */ wq0 a;
+public final class rq0 implements org.telegram.ui.ActionBar.s0 {
+    public final /* synthetic */ br0 a;
 
-    public rq0(wq0 wq0Var) {
-        this.a = wq0Var;
+    public rq0(br0 br0Var) {
+        this.a = br0Var;
     }
 
-    @Override // org.telegram.ui.Components.cm0
-    public final void a(boolean z10) {
-        org.telegram.ui.ActionBar.c5 c5Var;
-        wq0 wq0Var = this.a;
-        wq0Var.W = z10 ? 1 : 0;
-        if (z10) {
-            c5Var = ((org.telegram.ui.ActionBar.n2) wq0Var).parentLayout;
-            c5Var.getView().requestDisallowInterceptTouchEvent(true);
-        }
-        wq0Var.K.d1(true);
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void e() {
+        br0 br0Var = this.a;
+        br0Var.Q.setText(LocaleController.getString(br0Var.Y ? R.string.ShowAsGrid : R.string.ShowAsList));
+        br0Var.Q.setIcon(br0Var.Y ? R.drawable.msg_media : R.drawable.msg_list);
     }
 
-    @Override // org.telegram.ui.Components.cm0
-    public final boolean b(int i10) {
-        return this.a.L.j(i10) == 0;
-    }
-
-    @Override // org.telegram.ui.Components.cm0
-    public final void c(View view, boolean z10) {
-        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.t5)) {
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.w.a(t5Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.cm0
-    public final boolean d(int i10) {
-        wq0 wq0Var = this.a;
-        MediaController.AlbumEntry albumEntry = wq0Var.J;
-        return wq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) wq0Var.f.get(i10)).id);
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void c() {
     }
 }

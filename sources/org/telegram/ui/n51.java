@@ -1,20 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class n51 extends c61 {
-    public final /* synthetic */ a71 m3;
+public final /* synthetic */ class n51 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.sl0 {
+    public final /* synthetic */ k71 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n51(a71 a71Var, Context context) {
-        super(a71Var, context);
-        this.m3 = a71Var;
+    public /* synthetic */ n51(k71 k71Var) {
+        this.a = k71Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i10) {
-        this.m3.h();
+    @Override // org.telegram.ui.Components.sl0
+    public void a() {
+        this.a.m();
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        k71 k71Var = this.a;
+        int i11 = k71Var.V;
+        ConnectionsManager.getInstance(i11).sendRequest(new TL_account.clearRecentEmojiStatuses(), null);
+        MediaDataController.getInstance(i11).clearRecentEmojiStatuses();
+        k71Var.B(false, true, true);
     }
 }

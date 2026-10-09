@@ -7,28 +7,28 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class f {
     public Bitmap a;
     public Canvas b;
     public final RectF c = new RectF();
     public final Paint d;
-    public final d6 e;
+    public final e6 e;
     public int f;
     public boolean g;
 
-    public f(d6 d6Var) {
+    public f(e6 e6Var) {
         Paint paint = new Paint(1);
         this.d = paint;
         this.f = 0;
         this.g = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.e = d6Var;
+        this.e = e6Var;
     }
 
     public final Bitmap a(int i10, int i11) {
@@ -40,7 +40,7 @@ public final class f {
             this.b = new Canvas(this.a);
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, i11, i10);
-            this.b.drawColor(i6.v0(i6.d6, this.e));
+            this.b.drawColor(i6.w0(i6.d6, this.e));
             this.b.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.d);
         }
         return this.a;

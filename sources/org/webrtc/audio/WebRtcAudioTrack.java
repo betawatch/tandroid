@@ -14,7 +14,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 class WebRtcAudioTrack {
     private static final int AUDIO_TRACK_START = 0;
@@ -41,7 +41,7 @@ class WebRtcAudioTrack {
     private boolean useLowLatency;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public class AudioTrackThread extends Thread {
         private LowLatencyAudioBufferManager bufferManager;
         private volatile boolean keepAlive;
@@ -191,10 +191,7 @@ class WebRtcAudioTrack {
     }
 
     private int getBufferSizeInFrames() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return this.audioTrack.getBufferSizeInFrames();
-        }
-        return -1;
+        return this.audioTrack.getBufferSizeInFrames();
     }
 
     private static int getDefaultUsageAttribute() {
@@ -252,11 +249,7 @@ class WebRtcAudioTrack {
                 releaseAudioResources();
                 return -1;
             }
-            if (Build.VERSION.SDK_INT >= 23) {
-                this.initialBufferSizeInFrames = this.audioTrack.getBufferSizeInFrames();
-            } else {
-                this.initialBufferSizeInFrames = -1;
-            }
+            this.initialBufferSizeInFrames = this.audioTrack.getBufferSizeInFrames();
             logMainParameters();
             logMainParametersExtended();
             return minBufferSize;
@@ -274,9 +267,7 @@ class WebRtcAudioTrack {
     }
 
     private void logBufferSizeInFrames() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            Logging.d(TAG, "AudioTrack: buffer size in frames: " + this.audioTrack.getBufferSizeInFrames());
-        }
+        Logging.d(TAG, "AudioTrack: buffer size in frames: " + this.audioTrack.getBufferSizeInFrames());
     }
 
     private void logMainParameters() {

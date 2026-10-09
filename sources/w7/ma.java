@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final q9.n a;
@@ -15,8 +15,8 @@ public final class ma implements ja {
     public ma(Context context, ia iaVar) {
         this.b = iaVar;
         j5.a aVar = j5.a.e;
-        l5.t.b(context);
-        l5.r c10 = l5.t.a().c(aVar);
+        l5.s.b(context);
+        l5.q c10 = l5.s.a().c(aVar);
         if (j5.a.d.contains(new i5.c("json"))) {
             new q9.n(new v7.a9(c10, 2));
         }
@@ -24,23 +24,23 @@ public final class ma implements ja {
     }
 
     @Override // w7.ja
-    public final void a(n7.z0 z0Var) {
+    public final void a(n6.t tVar) {
         f fVar;
         ia.d dVar;
         ia iaVar = this.b;
         iaVar.getClass();
-        l5.s sVar = (l5.s) this.a.get();
+        l5.r rVar = (l5.r) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        v7.k kVar = (v7.k) z0Var.b;
-        ((v7.d8) z0Var.c).h = false;
-        v7.d8 d8Var = (v7.d8) z0Var.c;
-        d8Var.f = Boolean.FALSE;
-        kVar.b = new l9(d8Var);
+        v7.k kVar = (v7.k) tVar.b;
+        ((v7.e8) tVar.c).h = false;
+        v7.e8 e8Var = (v7.e8) tVar.c;
+        e8Var.f = Boolean.FALSE;
+        kVar.b = new l9(e8Var);
         try {
             pa.b();
             k7 k7Var = new k7(kVar);
-            v7.k kVar2 = new v7.k(5);
+            v7.k kVar2 = new v7.k(6);
             paVar.a(kVar2);
             HashMap hashMap = new HashMap((HashMap) kVar2.b);
             HashMap hashMap2 = new HashMap((HashMap) kVar2.c);
@@ -55,7 +55,7 @@ public final class ma implements ja {
                 throw new ia.b("No encoder for ".concat(String.valueOf(k7.class)));
             }
             dVar.a(k7Var, fVar);
-            sVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(20));
+            rVar.a(new i5.a(null, byteArrayOutputStream.toByteArray(), i5.d.b, null), new j2.e(16));
         } catch (UnsupportedEncodingException e7) {
             throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e7);
         }

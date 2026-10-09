@@ -9,9 +9,9 @@ import android.os.Handler;
 import android.os.Looper;
 import e2.d0;
 import j$.util.Objects;
-import k2.c0;
+import k2.a0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k {
     public final Spatializer a;
@@ -37,7 +37,7 @@ public final class k {
         e2.d.h(myLooper);
         Handler handler = new Handler(myLooper);
         this.c = handler;
-        spatializer.addOnSpatializerStateChangedListener(new c0(handler, 0), jVar);
+        spatializer.addOnSpatializerStateChangedListener(new a0(handler, 0), jVar);
     }
 
     public final boolean a(b2.e eVar, b2.s sVar) {
@@ -55,11 +55,11 @@ public final class k {
         } else if (Objects.equals(str2, "audio/ac4") && (i10 == 18 || i10 == 21)) {
             i10 = 24;
         }
-        int s10 = d0.s(i10);
-        if (s10 == 0) {
+        int r10 = d0.r(i10);
+        if (r10 == 0) {
             return false;
         }
-        AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(s10);
+        AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(r10);
         int i11 = sVar.K;
         if (i11 != -1) {
             channelMask.setSampleRate(i11);

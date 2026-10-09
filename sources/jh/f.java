@@ -5,13 +5,13 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.ui.ActionBar.z5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f extends View implements y5 {
-    public ah.e a;
-    public ah.e b;
+public final class f extends View implements z5 {
+    public ah.d a;
+    public ah.d b;
     public int c;
     public int d;
     public fh.c e;
@@ -28,25 +28,25 @@ public final class f extends View implements y5 {
 
     public final void b(ah.c cVar, dh.e eVar) {
         ch.d c10 = cVar.c(this, null, false);
-        c10.w(eVar);
-        ah.e eVar2 = new ah.e(c10);
-        this.a = eVar2;
-        eVar2.b(-AndroidUtilities.dp(30.0f), true);
+        c10.o(eVar);
+        ah.d dVar = new ah.d(c10);
+        this.a = dVar;
+        dVar.b(-AndroidUtilities.dp(30.0f), true);
         ch.d c11 = cVar.c(this, null, false);
-        c11.w(eVar);
-        ah.e eVar3 = new ah.e(c11);
-        this.b = eVar3;
-        eVar3.b(AndroidUtilities.dp(30.0f), true);
+        c11.o(eVar);
+        ah.d dVar2 = new ah.d(c11);
+        this.b = dVar2;
+        dVar2.b(AndroidUtilities.dp(30.0f), true);
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         int i10;
         fh.c cVar = this.e;
         if (cVar == null || (i10 = this.f) == -1) {
             return;
         }
-        cVar.a(i6.w0(null, i10, false));
+        cVar.a(i6.x0(null, i10, false));
         invalidate();
     }
 
@@ -76,9 +76,9 @@ public final class f extends View implements y5 {
     }
 
     public void setFadeTopAlpha(int i10) {
-        ah.e eVar = this.a;
-        if (eVar.q != i10) {
-            eVar.q = i10;
+        ah.d dVar = this.a;
+        if (dVar.q != i10) {
+            dVar.q = i10;
             invalidate();
         }
     }
@@ -113,7 +113,7 @@ public final class f extends View implements y5 {
         if (this.e == null) {
             fh.c cVar = new fh.c();
             this.e = cVar;
-            cVar.a(i6.w0(null, i10, false));
+            cVar.a(i6.x0(null, i10, false));
             setup(new ah.c(this.e));
         }
     }

@@ -1,66 +1,105 @@
 package n6;
 
 import android.content.ComponentName;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Build;
+import android.os.IBinder;
+import android.os.StrictMode;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class i0 implements Handler.Callback {
-    public final /* synthetic */ j0 a;
+public final class i0 implements ServiceConnection {
+    public final HashMap a = new HashMap();
+    public int b = 2;
+    public boolean c;
+    public IBinder d;
+    public final h0 e;
+    public ComponentName f;
+    public final /* synthetic */ k0 h;
 
-    public /* synthetic */ i0(j0 j0Var) {
-        this.a = j0Var;
+    public i0(k0 k0Var, h0 h0Var) {
+        this.h = k0Var;
+        this.e = h0Var;
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        int i10 = message.what;
-        if (i10 == 0) {
-            synchronized (this.a.a) {
-                try {
-                    g0 g0Var = (g0) message.obj;
-                    h0 h0Var = (h0) this.a.a.get(g0Var);
-                    if (h0Var != null && h0Var.a.isEmpty()) {
-                        if (h0Var.c) {
-                            h0Var.h.c.removeMessages(1, h0Var.e);
-                            j0 j0Var = h0Var.h;
-                            j0Var.d.b(j0Var.b, h0Var);
-                            h0Var.c = false;
-                            h0Var.b = 2;
-                        }
-                        this.a.a.remove(g0Var);
-                    }
-                } finally {
-                }
+    public static k6.a a(i0 i0Var, String str, Executor executor) {
+        try {
+            Intent a2 = i0Var.e.a(i0Var.h.b);
+            i0Var.b = 3;
+            StrictMode.VmPolicy vmPolicy = StrictMode.getVmPolicy();
+            if (Build.VERSION.SDK_INT >= 31) {
+                StrictMode.setVmPolicy(u6.g.a(new StrictMode.VmPolicy.Builder(vmPolicy)).build());
             }
-            return true;
-        }
-        if (i10 != 1) {
-            return false;
-        }
-        synchronized (this.a.a) {
             try {
-                g0 g0Var2 = (g0) message.obj;
-                h0 h0Var2 = (h0) this.a.a.get(g0Var2);
-                if (h0Var2 != null && h0Var2.b == 3) {
-                    Log.e("GmsClientSupervisor", "Timeout waiting for ServiceConnection callback ".concat(String.valueOf(g0Var2)), new Exception());
-                    ComponentName componentName = h0Var2.f;
-                    if (componentName == null) {
-                        g0Var2.getClass();
-                        componentName = null;
-                    }
-                    if (componentName == null) {
-                        String str = g0Var2.b;
-                        l.h(str);
-                        componentName = new ComponentName(str, "unknown");
-                    }
-                    h0Var2.onServiceDisconnected(componentName);
+                k0 k0Var = i0Var.h;
+                boolean c10 = k0Var.d.c(k0Var.b, str, a2, i0Var, 4225, executor);
+                i0Var.c = c10;
+                if (c10) {
+                    i0Var.h.c.sendMessageDelayed(i0Var.h.c.obtainMessage(1, i0Var.e), i0Var.h.f);
+                    k6.a aVar = k6.a.e;
+                    StrictMode.setVmPolicy(vmPolicy);
+                    return aVar;
                 }
-            } finally {
+                i0Var.b = 2;
+                try {
+                    k0 k0Var2 = i0Var.h;
+                    k0Var2.d.b(k0Var2.b, i0Var);
+                } catch (IllegalArgumentException unused) {
+                }
+                k6.a aVar2 = new k6.a(16);
+                StrictMode.setVmPolicy(vmPolicy);
+                return aVar2;
+            } catch (Throwable th2) {
+                StrictMode.setVmPolicy(vmPolicy);
+                throw th2;
+            }
+        } catch (a0 e7) {
+            return e7.a;
+        }
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onBindingDied(ComponentName componentName) {
+        onServiceDisconnected(componentName);
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        synchronized (this.h.a) {
+            try {
+                this.h.c.removeMessages(1, this.e);
+                this.d = iBinder;
+                this.f = componentName;
+                Iterator it = this.a.values().iterator();
+                while (it.hasNext()) {
+                    ((ServiceConnection) it.next()).onServiceConnected(componentName, iBinder);
+                }
+                this.b = 1;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        return true;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        synchronized (this.h.a) {
+            try {
+                this.h.c.removeMessages(1, this.e);
+                this.d = null;
+                this.f = componentName;
+                Iterator it = this.a.values().iterator();
+                while (it.hasNext()) {
+                    ((ServiceConnection) it.next()).onServiceDisconnected(componentName);
+                }
+                this.b = 2;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 }

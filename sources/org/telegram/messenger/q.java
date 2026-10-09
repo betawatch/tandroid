@@ -10,7 +10,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class q {
     public static int A(float f7, int i10, int i11) {
@@ -88,28 +88,28 @@ public abstract /* synthetic */ class q {
         return messagesController.getEncryptedChat(Integer.valueOf(DialogObject.getEncryptedChatId(j3)));
     }
 
-    public static void m(int i10, TextView textView) {
+    public static void m(float f7, int i10, int i11, TextView textView) {
+        textView.setTextColor(i10);
+        textView.setTextSize(i11, f7);
+        textView.setTypeface(AndroidUtilities.bold());
+    }
+
+    public static void n(int i10, TextView textView) {
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
     }
 
-    public static void n(int i10, StringBuilder sb2) {
+    public static void o(int i10, StringBuilder sb2) {
         sb2.append(i10);
         FileLog.d(sb2.toString());
     }
 
-    public static void o(int i10, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.a2 a2Var) {
+    public static void p(int i10, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.a2 a2Var) {
         alertDialog$Builder.k(LocaleController.getString(i10), a2Var);
         alertDialog$Builder.o();
     }
 
-    public static void p(int i10, org.telegram.ui.Components.yc ycVar, int i11, int i12) {
-        ycVar.Q(i11, i12, LocaleController.getString(i10)).j();
-    }
-
-    public static void q(TextView textView, int i10, int i11, float f7) {
-        textView.setTextColor(i10);
-        textView.setTextSize(i11, f7);
-        textView.setTypeface(AndroidUtilities.bold());
+    public static void q(int i10, org.telegram.ui.Components.ad adVar, int i11, int i12) {
+        adVar.Q(i11, i12, LocaleController.getString(i10)).j();
     }
 
     public static void r(StringBuilder sb2, long j3) {

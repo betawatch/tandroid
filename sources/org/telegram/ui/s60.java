@@ -1,46 +1,35 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s60 implements org.telegram.ui.Components.g20, org.telegram.ui.ActionBar.a2, r0.n {
+public final /* synthetic */ class s60 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d70 b;
+    public final /* synthetic */ c70 b;
 
-    public /* synthetic */ s60(d70 d70Var, int i10) {
+    public /* synthetic */ s60(c70 c70Var, int i10) {
         this.a = i10;
-        this.b = d70Var;
+        this.b = c70Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
-        d70 d70Var = this.b;
-        d70Var.m0 = i10;
-        ai.w7 w7Var = d70Var.F;
-        if (w7Var != null) {
-            w7Var.setPadding(0, 0, 0, i10);
-        }
-        d70Var.j0();
-        d70Var.h0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.g20
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
             case 1:
-                this.b.o0();
+                c70 c70Var = this.b;
+                c70Var.i0();
+                c70Var.e0();
+                break;
+            case 2:
+                c70 c70Var2 = this.b;
+                c70Var2.getClass();
+                c70Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
                 break;
             default:
-                this.b.finishFragment();
+                c70 c70Var3 = this.b;
+                c70Var3.n.postOnAnimation(new s60(c70Var3, 1));
                 break;
         }
     }

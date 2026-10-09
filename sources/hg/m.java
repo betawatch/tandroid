@@ -2,24 +2,24 @@ package hg;
 
 import android.content.Context;
 import android.text.Editable;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.y61;
+import org.telegram.ui.Components.e71;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class m extends j3 {
     public final /* synthetic */ int x;
     public final /* synthetic */ n y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(n nVar, Context context, String str, int i10, d6 d6Var, int i11) {
-        super(context, str, false, false, i10, d6Var);
+    public m(n nVar, Context context, String str, int i10, e6 e6Var, int i11) {
+        super(context, str, false, false, i10, e6Var);
         this.x = i11;
         switch (i11) {
             case 1:
                 this.y = nVar;
-                super(context, str, true, false, i10, d6Var);
+                super(context, str, true, false, i10, e6Var);
                 break;
             default:
                 this.y = nVar;
@@ -29,18 +29,18 @@ public final class m extends j3 {
 
     @Override // org.telegram.ui.Cells.j3
     public final void a(boolean z10) {
-        y61 y61Var;
-        y61 y61Var2;
+        e71 e71Var;
+        e71 e71Var2;
         switch (this.x) {
             case 0:
-                if (z10 && (y61Var = this.y.a) != null) {
-                    y61Var.y0(2);
+                if (z10 && (e71Var = this.y.a) != null) {
+                    e71Var.x0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (y61Var2 = this.y.a) != null) {
-                    y61Var2.y0(3);
+                if (z10 && (e71Var2 = this.y.a) != null) {
+                    e71Var2.x0(3);
                     break;
                 }
                 break;
@@ -52,12 +52,12 @@ public final class m extends j3 {
         switch (this.x) {
             case 0:
                 n nVar = this.y;
-                nVar.r.d(nVar.v.getText().toString(), nVar.w.getText().toString());
+                nVar.n.d(nVar.s.getText().toString(), nVar.v.getText().toString());
                 nVar.e0(true);
                 break;
             default:
                 n nVar2 = this.y;
-                nVar2.r.d(nVar2.v.getText().toString(), nVar2.w.getText().toString());
+                nVar2.n.d(nVar2.s.getText().toString(), nVar2.v.getText().toString());
                 nVar2.e0(true);
                 break;
         }

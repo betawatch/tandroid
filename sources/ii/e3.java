@@ -3,7 +3,7 @@ package ii;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class e3 {
     public final /* synthetic */ x3 a;
@@ -14,7 +14,7 @@ public final class e3 {
 
     public final void a(a aVar) {
         x3 x3Var = this.a;
-        ArrayList arrayList = x3Var.s3;
+        ArrayList arrayList = x3Var.j3;
         int indexOf = arrayList.indexOf(aVar);
         if (indexOf < 0 || !x3.y3(aVar)) {
             return;
@@ -23,7 +23,7 @@ public final class e3 {
         if (Q3 >= arrayList.size()) {
             Q3 = arrayList.size() - 1;
         }
-        i2 i2Var = x3Var.Q3;
+        i2 i2Var = x3Var.H3;
         if (i2Var != null) {
             i2Var.d();
         }
@@ -40,8 +40,8 @@ public final class e3 {
             aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
             arrayList.add(aVar2);
         }
-        x3Var.f3.N(false);
-        i2 i2Var2 = x3Var.Q3;
+        x3Var.W2.N(false);
+        i2 i2Var2 = x3Var.H3;
         if (i2Var2 != null) {
             i2Var2.h();
         }

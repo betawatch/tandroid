@@ -8,11 +8,11 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.eu;
-import org.telegram.ui.Components.mw0;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.ru;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class g3 extends FrameLayout {
     public boolean a;
@@ -23,32 +23,32 @@ public abstract class g3 extends FrameLayout {
     public boolean f;
     public boolean h;
     public boolean n;
-    public final org.telegram.ui.Components.h5 r;
+    public final org.telegram.ui.Components.j5 r;
     public int s;
-    public final org.telegram.ui.Components.o6 v;
+    public final org.telegram.ui.Components.q6 v;
     public boolean w;
 
-    public g3(Context context, mw0 mw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public g3(Context context, sw0 sw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         this.e = -1;
         this.n = true;
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
-        this.v = o6Var;
-        o6Var.k(0.2f, 160L, tr.h);
-        o6Var.t(AndroidUtilities.dp(15.33f));
-        o6Var.b = 5;
+        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(false, true, true);
+        this.v = q6Var;
+        q6Var.n(0.2f, 160L, hs.h);
+        q6Var.w(AndroidUtilities.dp(15.33f));
+        q6Var.b = 5;
         this.c = i10;
-        e3 e3Var = new e3(this, context, mw0Var, d6Var, z10);
+        e3 e3Var = new e3(this, context, sw0Var, e6Var, z10);
         this.b = e3Var;
-        eu editText = e3Var.getEditText();
-        editText.setDelegate(new n7.z0(this, editText, false, 3));
+        ru editText = e3Var.getEditText();
+        editText.setDelegate(new org.telegram.ui.ActionBar.b5(2, this, editText));
         e3Var.setWillNotDraw(false);
-        this.r = new org.telegram.ui.Components.h5(e3Var);
-        o6Var.setCallback(e3Var);
+        this.r = new org.telegram.ui.Components.j5(e3Var);
+        q6Var.setCallback(e3Var);
         editText.setTextSize(1, 17.0f);
-        editText.setHintTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.H6, d6Var));
+        editText.setHintTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.H6, e6Var));
         int i11 = org.telegram.ui.ActionBar.i6.G6;
-        editText.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        editText.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         editText.setBackground(null);
         if (z10) {
             editText.setMaxLines(5);
@@ -62,17 +62,17 @@ public abstract class g3 extends FrameLayout {
         editText.setInputType((z10 ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
-        editText.setCursorColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        editText.setCursorColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
         editText.setCursorSize(AndroidUtilities.dp(19.0f));
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new f3(this, i10, editText, z10));
         editText.setOnFocusChangeListener(new m.r2(this, 1));
-        addView(e3Var, w7.z5.e(-1, -1, 48));
+        addView(e3Var, w7.x5.e(-1, -1, 48));
         c();
     }
 
     public int a() {
-        return org.telegram.ui.Components.q5.g();
+        return org.telegram.ui.Components.s5.g();
     }
 
     public final void c() {
@@ -86,7 +86,7 @@ public abstract class g3 extends FrameLayout {
         if ((!TextUtils.isEmpty(getText()) || this.d) && ((!this.f || this.h) && ((i10 = this.e) == -1 || this.s <= i10))) {
             str = "" + this.s;
         }
-        this.v.q(str, true, true);
+        this.v.t(str, true, true);
     }
 
     public CharSequence getText() {

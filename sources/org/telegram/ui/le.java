@@ -1,71 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class le extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final org.telegram.ui.Components.y5 b;
-    public final TextView c;
-    public final TextView d;
-    public final DecimalFormat e;
-    public boolean f;
+public final /* synthetic */ class le implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zn b;
+    public final /* synthetic */ long c;
 
-    public le(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.a = d6Var;
-        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
-        addView(e7, w7.z5.d(-1, -2.0f, 119, 17.0f, 9.0f, 130.0f, 9.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
-        TextView h = com.google.android.gms.internal.vision.e2.h(e7, textView, w7.z5.n(-1, -2), context);
-        this.d = h;
-        h.setTextSize(1, 13.0f);
-        h.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, d6Var));
-        e7.addView(h, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2));
-        org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(context);
-        this.b = y5Var;
-        y5Var.setTypeface(AndroidUtilities.bold());
-        y5Var.setTextSize(1, 13.0f);
-        addView(y5Var, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-        DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.US);
-        decimalFormatSymbols.setDecimalSeparator('.');
-        DecimalFormat decimalFormat = new DecimalFormat("#.##", decimalFormatSymbols);
-        this.e = decimalFormat;
-        decimalFormat.setMinimumFractionDigits(2);
-        decimalFormat.setMaximumFractionDigits(12);
-        decimalFormat.setGroupingUsed(false);
+    public /* synthetic */ le(long j3, zn znVar) {
+        this.a = 7;
+        this.c = j3;
+        this.b = znVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.f) {
-            org.telegram.ui.ActionBar.d6 d6Var = this.a;
-            Paint H = d6Var != null ? d6Var.H("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
-            if (H != null) {
-                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(17.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : 0), getMeasuredHeight() - 1, H);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                r0.getMediaDataController().loadBotInfo(this.c, r1, true, this.b.classGuid);
+                break;
+            case 1:
+                this.b.getMessagesController().loadFullChat(this.c, 0, true);
+                break;
+            case 2:
+                zn znVar = this.b;
+                LongSparseIntArray longSparseIntArray = znVar.M5;
+                long j3 = this.c;
+                longSparseIntArray.put(j3, 0);
+                org.telegram.ui.Components.c41 c41Var = znVar.R1;
+                if (c41Var != null) {
+                    c41Var.setAllTopicsHidden(false);
+                }
+                if (j3 == znVar.d4) {
+                    znVar.A0.O(false);
+                    break;
+                }
+                break;
+            case 3:
+                zn znVar2 = this.b;
+                znVar2.getClass();
+                znVar2.presentFragment(zn.W9(this.c));
+                break;
+            case 4:
+                zn znVar3 = this.b;
+                znVar3.getClass();
+                znVar3.presentFragment(ProfileActivity.m4(this.c));
+                break;
+            case 5:
+                zn znVar4 = this.b;
+                org.telegram.ui.Components.tc v = org.telegram.ui.Components.ad.v(znVar4.getParentActivity(), znVar4, null, 1, this.c, 1, znVar4.getThemedColor(org.telegram.ui.ActionBar.i6.Fi), znVar4.getThemedColor(org.telegram.ui.ActionBar.i6.Hi), 5000, true, null);
+                v.k = true;
+                v.k(true);
+                break;
+            case 6:
+                org.telegram.ui.Components.ad.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
+                break;
+            default:
+                this.b.presentFragment(new ProfileActivity(sc.v.f(this.c, "user_id"), null));
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public /* synthetic */ le(zn znVar, long j3, int i10) {
+        this.a = i10;
+        this.b = znVar;
+        this.c = j3;
     }
 }

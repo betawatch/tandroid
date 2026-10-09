@@ -12,9 +12,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class o extends kotlin.jvm.internal.j implements rd.l {
+public final class o extends kotlin.jvm.internal.j implements sd.l {
     public final /* synthetic */ int b;
     public final /* synthetic */ v c;
 
@@ -25,7 +25,7 @@ public final class o extends kotlin.jvm.internal.j implements rd.l {
         this.c = vVar;
     }
 
-    @Override // rd.l
+    @Override // sd.l
     public final Object invoke(Object obj) {
         Object obj2;
         Object obj3;
@@ -33,7 +33,7 @@ public final class o extends kotlin.jvm.internal.j implements rd.l {
             case 0:
                 kotlin.jvm.internal.i.e((b) obj, "backEvent");
                 v vVar = this.c;
-                hd.e eVar = vVar.b;
+                id.e eVar = vVar.b;
                 eVar.getClass();
                 ListIterator listIterator = eVar.listIterator(eVar.c);
                 while (true) {
@@ -55,14 +55,14 @@ public final class o extends kotlin.jvm.internal.j implements rd.l {
                     k0Var.x();
                     k0Var.y(new j0(k0Var), false);
                 }
-                return gd.i.a;
+                return hd.i.a;
             default:
                 b backEvent = (b) obj;
                 kotlin.jvm.internal.i.e(backEvent, "backEvent");
                 v vVar2 = this.c;
                 b0 b0Var2 = vVar2.c;
                 if (b0Var2 == null) {
-                    hd.e eVar2 = vVar2.b;
+                    id.e eVar2 = vVar2.b;
                     eVar2.getClass();
                     ListIterator listIterator2 = eVar2.listIterator(eVar2.c);
                     while (true) {
@@ -97,9 +97,9 @@ public final class o extends kotlin.jvm.internal.j implements rd.l {
                                 Object obj4 = arrayList.get(i10);
                                 i10++;
                                 ((v0) obj4).getClass();
-                                hd.m.e(arrayList2, null);
+                                id.m.e(arrayList2, null);
                             }
-                            List m10 = hd.g.m(hd.g.p(arrayList2));
+                            List m10 = id.g.m(id.g.p(arrayList2));
                             int size2 = m10.size();
                             for (int i11 = 0; i11 < size2; i11++) {
                                 ((u0) m10.get(i11)).b(backEvent, lVar.a);
@@ -107,11 +107,11 @@ public final class o extends kotlin.jvm.internal.j implements rd.l {
                         }
                         Iterator it2 = k0Var2.n.iterator();
                         if (it2.hasNext()) {
-                            throw a4.a.k(it2);
+                            throw a1.g.k(it2);
                         }
                     }
                 }
-                return gd.i.a;
+                return hd.i.a;
         }
     }
 }

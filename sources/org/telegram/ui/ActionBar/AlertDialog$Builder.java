@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class AlertDialog$Builder {
     public final b2 a;
@@ -23,8 +23,8 @@ public class AlertDialog$Builder {
         return this.a;
     }
 
-    public b2 b(Context context, int i10, d6 d6Var) {
-        return new b2(context, i10, d6Var);
+    public b2 b(Context context, int i10, e6 e6Var) {
+        return new b2(context, i10, e6Var);
     }
 
     public final void c() {
@@ -121,15 +121,15 @@ public class AlertDialog$Builder {
         return this;
     }
 
-    public AlertDialog$Builder(Context context, d6 d6Var) {
-        this(context, 0, d6Var);
+    public AlertDialog$Builder(Context context, e6 e6Var) {
+        this(context, 0, e6Var);
     }
 
-    public AlertDialog$Builder(Context context, int i10, d6 d6Var) {
+    public AlertDialog$Builder(Context context, int i10, e6 e6Var) {
         this.b = new boolean[3];
         if (context == null && (context = AndroidUtilities.findActivity(LaunchActivity.G1)) == null) {
             context = ApplicationLoader.applicationContext;
         }
-        this.a = b(context, i10, d6Var);
+        this.a = b(context, i10, e6Var);
     }
 }

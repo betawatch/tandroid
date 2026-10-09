@@ -6,16 +6,17 @@ import android.os.Bundle;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
 import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
+import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final a5.a a = new a5.a("GoogleSignInCommon", new String[0]);
 
     public static Intent a(Context context, GoogleSignInOptions googleSignInOptions) {
-        a.i("getSignInIntent()", new Object[0]);
+        a.j("getSignInIntent()", new Object[0]);
         SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
         Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
         intent.setPackage(context.getPackageName());
@@ -27,13 +28,13 @@ public abstract class h {
     }
 
     public static void b(Context context) {
-        i.R(context).S();
-        Set set = com.google.android.gms.common.api.m.a;
+        i.U(context).Y();
+        Set set = m.a;
         synchronized (set) {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((com.google.android.gms.common.api.m) it.next()).e();
+            ((m) it.next()).e();
         }
         com.google.android.gms.common.api.internal.h.a();
     }

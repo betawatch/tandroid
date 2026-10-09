@@ -6,31 +6,31 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ih;
-import org.telegram.ui.Components.vi;
-import org.telegram.ui.Components.xi;
+import org.telegram.ui.Components.jh;
+import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.yi;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class n implements vi {
-    public final /* synthetic */ xi a;
+public final class n implements wi {
+    public final /* synthetic */ yi a;
     public final /* synthetic */ r b;
 
-    public n(r rVar, xi xiVar) {
+    public n(r rVar, yi yiVar) {
         this.b = rVar;
-        this.a = xiVar;
+        this.a = yiVar;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        xi xiVar = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = xiVar.j0;
+    @Override // org.telegram.ui.Components.wi
+    public final void I1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+        yi yiVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = yiVar.j0;
         x3 x3Var = this.b.r;
         if (i10 == 7 || i10 == 8) {
             HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
             ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
-            a aVar = x3Var.i4;
-            x3Var.i4 = null;
+            a aVar = x3Var.Z3;
+            x3Var.Z3 = null;
             int i13 = 0;
             while (true) {
                 if (i13 >= selectedPhotosOrder.size()) {
@@ -46,42 +46,42 @@ public final class n implements vi {
                 }
             }
         }
-        x3Var.i4 = null;
-        xiVar.dismiss(true);
+        x3Var.Z3 = null;
+        yiVar.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ boolean S1() {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ boolean Y1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final boolean a0() {
+    @Override // org.telegram.ui.Components.wi
+    public final void f0(jh jhVar) {
+        NotificationCenter.getInstance(this.b.n).doOnIdle(jhVar);
+    }
+
+    @Override // org.telegram.ui.Components.wi
+    public final boolean i0() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void x0(ih ihVar) {
-        NotificationCenter.getInstance(this.b.n).doOnIdle(ihVar);
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void a1(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void U0(Object obj) {
+    @Override // org.telegram.ui.Components.wi
+    public final void p1(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void j1(TLRPC.User user) {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void B0() {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final void K0() {
+    @Override // org.telegram.ui.Components.wi
+    public final void P0() {
     }
 
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.vi
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.Components.wi
+    public final /* synthetic */ void c2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 }

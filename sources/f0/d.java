@@ -1,120 +1,44 @@
 package f0;
 
-import android.accounts.AccountManager;
-import android.app.ActivityManager;
-import android.app.AlarmManager;
-import android.app.AppOpsManager;
-import android.app.DownloadManager;
-import android.app.KeyguardManager;
-import android.app.NotificationManager;
-import android.app.SearchManager;
-import android.app.UiModeManager;
-import android.app.WallpaperManager;
-import android.app.admin.DevicePolicyManager;
-import android.app.job.JobScheduler;
-import android.app.usage.UsageStatsManager;
-import android.appwidget.AppWidgetManager;
-import android.bluetooth.BluetoothManager;
-import android.content.ClipboardManager;
-import android.content.RestrictionsManager;
-import android.content.pm.LauncherApps;
-import android.hardware.ConsumerIrManager;
-import android.hardware.SensorManager;
-import android.hardware.camera2.CameraManager;
-import android.hardware.display.DisplayManager;
-import android.hardware.input.InputManager;
-import android.hardware.usb.UsbManager;
-import android.location.LocationManager;
-import android.media.AudioManager;
-import android.media.MediaRouter;
-import android.media.projection.MediaProjectionManager;
-import android.media.session.MediaSessionManager;
-import android.media.tv.TvInputManager;
-import android.net.ConnectivityManager;
-import android.net.nsd.NsdManager;
-import android.net.wifi.WifiManager;
-import android.net.wifi.p2p.WifiP2pManager;
-import android.nfc.NfcManager;
-import android.os.BatteryManager;
-import android.os.Build;
-import android.os.DropBoxManager;
-import android.os.PowerManager;
-import android.os.UserManager;
-import android.os.Vibrator;
-import android.os.storage.StorageManager;
-import android.print.PrintManager;
-import android.telecom.TelecomManager;
-import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
-import android.view.LayoutInflater;
-import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.CaptioningManager;
-import android.view.inputmethod.InputMethodManager;
-import android.view.textservice.TextServicesManager;
+import android.net.Uri;
+import androidx.core.content.FileProvider;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final HashMap a;
+public final class d {
+    public final String a;
+    public final HashMap b = new HashMap();
 
-    static {
-        HashMap hashMap = new HashMap();
-        a = hashMap;
-        if (Build.VERSION.SDK_INT >= 22) {
-            hashMap.put(SubscriptionManager.class, "telephony_subscription_service");
-            hashMap.put(UsageStatsManager.class, "usagestats");
+    public d(String str) {
+        this.a = str;
+    }
+
+    public final File a(Uri uri) {
+        String encodedPath = uri.getEncodedPath();
+        int indexOf = encodedPath.indexOf(47, 1);
+        if (indexOf == -1) {
+            throw new IllegalArgumentException("Unable to find path from root: " + uri);
         }
-        hashMap.put(AppWidgetManager.class, "appwidget");
-        hashMap.put(BatteryManager.class, "batterymanager");
-        hashMap.put(CameraManager.class, "camera");
-        hashMap.put(JobScheduler.class, "jobscheduler");
-        hashMap.put(LauncherApps.class, "launcherapps");
-        hashMap.put(MediaProjectionManager.class, "media_projection");
-        hashMap.put(MediaSessionManager.class, "media_session");
-        hashMap.put(RestrictionsManager.class, "restrictions");
-        hashMap.put(TelecomManager.class, "telecom");
-        hashMap.put(TvInputManager.class, "tv_input");
-        hashMap.put(AppOpsManager.class, "appops");
-        hashMap.put(CaptioningManager.class, "captioning");
-        hashMap.put(ConsumerIrManager.class, "consumer_ir");
-        hashMap.put(PrintManager.class, "print");
-        hashMap.put(BluetoothManager.class, "bluetooth");
-        hashMap.put(DisplayManager.class, "display");
-        hashMap.put(UserManager.class, "user");
-        hashMap.put(InputManager.class, "input");
-        hashMap.put(MediaRouter.class, "media_router");
-        hashMap.put(NsdManager.class, "servicediscovery");
-        hashMap.put(AccessibilityManager.class, "accessibility");
-        hashMap.put(AccountManager.class, "account");
-        hashMap.put(ActivityManager.class, "activity");
-        hashMap.put(AlarmManager.class, "alarm");
-        hashMap.put(AudioManager.class, MediaStreamTrack.AUDIO_TRACK_KIND);
-        hashMap.put(ClipboardManager.class, "clipboard");
-        hashMap.put(ConnectivityManager.class, "connectivity");
-        hashMap.put(DevicePolicyManager.class, "device_policy");
-        hashMap.put(DownloadManager.class, "download");
-        hashMap.put(DropBoxManager.class, "dropbox");
-        hashMap.put(InputMethodManager.class, "input_method");
-        hashMap.put(KeyguardManager.class, "keyguard");
-        hashMap.put(LayoutInflater.class, "layout_inflater");
-        hashMap.put(LocationManager.class, "location");
-        hashMap.put(NfcManager.class, "nfc");
-        hashMap.put(NotificationManager.class, "notification");
-        hashMap.put(PowerManager.class, "power");
-        hashMap.put(SearchManager.class, "search");
-        hashMap.put(SensorManager.class, "sensor");
-        hashMap.put(StorageManager.class, "storage");
-        hashMap.put(TelephonyManager.class, "phone");
-        hashMap.put(TextServicesManager.class, "textservices");
-        hashMap.put(UiModeManager.class, "uimode");
-        hashMap.put(UsbManager.class, "usb");
-        hashMap.put(Vibrator.class, "vibrator");
-        hashMap.put(WallpaperManager.class, "wallpaper");
-        hashMap.put(WifiP2pManager.class, "wifip2p");
-        hashMap.put(WifiManager.class, "wifi");
-        hashMap.put(WindowManager.class, "window");
+        String decode = Uri.decode(encodedPath.substring(1, indexOf));
+        String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
+        File file = (File) this.b.get(decode);
+        if (file == null) {
+            throw new IllegalArgumentException("Unable to find configured root for " + uri);
+        }
+        File file2 = new File(file, decode2);
+        try {
+            File canonicalFile = file2.getCanonicalFile();
+            String path = canonicalFile.getPath();
+            String path2 = file.getPath();
+            if (FileProvider.a(path).startsWith(FileProvider.a(path2) + '/')) {
+                return canonicalFile;
+            }
+            throw new SecurityException("Resolved path jumped beyond configured root");
+        } catch (IOException unused) {
+            throw new IllegalArgumentException("Failed to resolve canonical path for " + file2);
+        }
     }
 }

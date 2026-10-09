@@ -1,34 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tg1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zg1 b;
-    public final /* synthetic */ byte[] c;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ tg1(zg1 zg1Var, byte[] bArr, int i10) {
-        this.a = i10;
-        this.b = zg1Var;
-        this.c = bArr;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class tg1 extends ih1 {
+    public final /* synthetic */ TwoStepVerificationActivity k0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
+        super(i10, 4, password);
+        this.k0 = twoStepVerificationActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zg1.X(this.b, this.c);
-                break;
-            default:
-                zg1 zg1Var = this.b;
-                zg1Var.w0();
-                zg1Var.V = this.c;
-                zg1Var.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                zg1 zg1Var2 = new zg1(9, zg1Var.U);
-                zg1Var2.H = zg1Var.H;
-                zg1Var2.G = zg1Var.G;
-                zg1Var.presentFragment(zg1Var2, true);
-                break;
-        }
+    @Override // org.telegram.ui.ih1
+    public final void B0() {
+        this.k0.N = true;
     }
 }

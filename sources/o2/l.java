@@ -8,7 +8,6 @@ import b2.k0;
 import b2.l0;
 import e9.i0;
 import g2.c0;
-import ii.n4;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.Collections;
@@ -17,16 +16,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import u2.d0;
-import u2.i1;
+import u2.h1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
-    public final n4 i;
-    public final ob.a j;
-    public final n2.n k;
-    public final qb.b l;
+    public final m2.t i;
+    public final t7.t j;
+    public final n2.m k;
+    public final rb.a l;
     public final boolean m;
     public final int n;
     public final p2.c o;
@@ -39,14 +38,14 @@ public final class l extends u2.a {
         l0.a("media3.exoplayer.hls");
     }
 
-    public l(k0 k0Var, n4 n4Var, c cVar, ob.a aVar, n2.n nVar, qb.b bVar, p2.c cVar2, long j3, boolean z10, int i10) {
+    public l(k0 k0Var, m2.t tVar, c cVar, t7.t tVar2, n2.m mVar, rb.a aVar, p2.c cVar2, long j3, boolean z10, int i10) {
         this.s = k0Var;
         this.q = k0Var.c;
-        this.i = n4Var;
+        this.i = tVar;
         this.h = cVar;
-        this.j = aVar;
-        this.k = nVar;
-        this.l = bVar;
+        this.j = tVar2;
+        this.k = mVar;
+        this.l = aVar;
         this.o = cVar2;
         this.p = j3;
         this.m = z10;
@@ -81,11 +80,11 @@ public final class l extends u2.a {
     @Override // u2.a
     public final d0 c(u2.f0 f0Var, y2.d dVar, long j3) {
         a5.a b10 = b(f0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
+        n2.j jVar = new n2.j(this.d.c, 0, f0Var);
         c0 c0Var = this.r;
-        j2.k kVar2 = this.g;
-        e2.d.h(kVar2);
-        return new k(this.h, this.o, this.i, c0Var, this.k, kVar, this.l, b10, dVar, this.j, this.m, this.n, kVar2);
+        j2.k kVar = this.g;
+        e2.d.h(kVar);
+        return new k(this.h, this.o, this.i, c0Var, this.k, jVar, this.l, b10, dVar, this.j, this.m, this.n, kVar);
     }
 
     @Override // u2.a
@@ -118,9 +117,9 @@ public final class l extends u2.a {
         myLooper.getClass();
         j2.k kVar = this.g;
         e2.d.h(kVar);
-        n2.n nVar = this.k;
-        nVar.C(myLooper, kVar);
-        nVar.b();
+        n2.m mVar = this.k;
+        mVar.F(myLooper, kVar);
+        mVar.b();
         a5.a b10 = b(null);
         f0 f0Var = i().b;
         f0Var.getClass();
@@ -132,11 +131,11 @@ public final class l extends u2.a {
         cVar.r = this;
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(((g2.g) cVar.a.b).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.K());
+        y2.o oVar = new y2.o(((g2.g) cVar.a.b).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.x());
         e2.d.g(cVar.h == null);
         y2.l lVar = new y2.l("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         cVar.h = lVar;
-        lVar.f(oVar, cVar, cVar.c.L3(oVar.c));
+        lVar.f(oVar, cVar, cVar.c.m3(oVar.c));
     }
 
     @Override // u2.a
@@ -147,9 +146,9 @@ public final class l extends u2.a {
             if (qVar.T) {
                 for (p pVar : qVar.L) {
                     pVar.k();
-                    n2.h hVar = pVar.h;
-                    if (hVar != null) {
-                        hVar.a(pVar.e);
+                    n2.g gVar = pVar.h;
+                    if (gVar != null) {
+                        gVar.a(pVar.e);
                         pVar.h = null;
                         pVar.g = null;
                     }
@@ -196,85 +195,93 @@ public final class l extends u2.a {
 
     public final void v(p2.l lVar) {
         long j3;
-        i1 i1Var;
+        h1 h1Var;
+        boolean z10;
         long j10;
         long j11;
         long j12;
-        boolean z10 = lVar.p;
-        boolean z11 = lVar.g;
+        long j13;
+        boolean z11 = lVar.p;
+        boolean z12 = lVar.g;
         i0 i0Var = lVar.r;
-        long j13 = lVar.u;
-        long j14 = lVar.e;
+        long j14 = lVar.u;
+        long j15 = lVar.e;
         int i10 = lVar.d;
-        long j15 = lVar.h;
-        long e02 = z10 ? e2.d0.e0(j15) : -9223372036854775807L;
-        long j16 = (i10 == 2 || i10 == 1) ? e02 : -9223372036854775807L;
+        long j16 = lVar.h;
+        long d02 = z11 ? e2.d0.d0(j16) : -9223372036854775807L;
+        long j17 = (i10 == 2 || i10 == 1) ? d02 : -9223372036854775807L;
         p2.c cVar = this.o;
         cVar.s.getClass();
-        na.d dVar = new na.d(16);
-        long j17 = 0;
+        t7.t tVar = new t7.t();
+        long j18 = 0;
         if (cVar.x) {
             p2.k kVar = lVar.v;
-            long j18 = j15 - cVar.y;
-            boolean z12 = lVar.o;
-            long j19 = z12 ? j18 + j13 : -9223372036854775807L;
-            long Q = lVar.p ? e2.d0.Q(e2.d0.A(this.p)) - (j15 + j13) : 0L;
-            long j20 = this.q.a;
-            if (j20 != -9223372036854775807L) {
-                j11 = e2.d0.Q(j20);
+            long j19 = j16 - cVar.y;
+            boolean z13 = lVar.o;
+            long j20 = z13 ? j19 + j14 : -9223372036854775807L;
+            if (lVar.p) {
+                z10 = z12;
+                j10 = e2.d0.P(e2.d0.z(this.p)) - (j16 + j14);
             } else {
-                if (j14 != -9223372036854775807L) {
-                    j10 = j13 - j14;
+                z10 = z12;
+                j10 = 0;
+            }
+            long j21 = this.q.a;
+            if (j21 != -9223372036854775807L) {
+                j12 = e2.d0.P(j21);
+            } else {
+                if (j15 != -9223372036854775807L) {
+                    j11 = j14 - j15;
                 } else {
-                    j10 = kVar.d;
-                    if (j10 == -9223372036854775807L || lVar.n == -9223372036854775807L) {
-                        j10 = kVar.c;
-                        if (j10 == -9223372036854775807L) {
-                            j10 = 3 * lVar.m;
+                    j11 = kVar.d;
+                    if (j11 == -9223372036854775807L || lVar.n == -9223372036854775807L) {
+                        j11 = kVar.c;
+                        if (j11 == -9223372036854775807L) {
+                            j11 = 3 * lVar.m;
                         }
                     }
                 }
-                j11 = j10 + Q;
+                j12 = j11 + j10;
             }
-            long j21 = j13 + Q;
-            long i11 = e2.d0.i(j11, Q, j21);
+            long j22 = j14 + j10;
+            long i11 = e2.d0.i(j12, j10, j22);
             e0 e0Var = i().c;
-            boolean z13 = e0Var.d == -3.4028235E38f && e0Var.e == -3.4028235E38f && kVar.c == -9223372036854775807L && kVar.d == -9223372036854775807L;
+            boolean z14 = e0Var.d == -3.4028235E38f && e0Var.e == -3.4028235E38f && kVar.c == -9223372036854775807L && kVar.d == -9223372036854775807L;
             b2.d0 d0Var = new b2.d0();
-            d0Var.a = e2.d0.e0(i11);
-            d0Var.d = z13 ? 1.0f : this.q.d;
-            d0Var.e = z13 ? 1.0f : this.q.e;
+            d0Var.a = e2.d0.d0(i11);
+            d0Var.d = z14 ? 1.0f : this.q.d;
+            d0Var.e = z14 ? 1.0f : this.q.e;
             e0 e0Var2 = new e0(d0Var);
             this.q = e0Var2;
-            if (j14 == -9223372036854775807L) {
-                j14 = j21 - e2.d0.Q(e0Var2.a);
+            if (j15 == -9223372036854775807L) {
+                j15 = j22 - e2.d0.P(e0Var2.a);
             }
-            if (z11) {
-                j17 = j14;
+            if (z10) {
+                j18 = j15;
             } else {
-                p2.g u10 = u(j14, lVar.s);
+                p2.g u10 = u(j15, lVar.s);
                 if (u10 != null) {
-                    j12 = u10.e;
+                    j13 = u10.e;
                 } else if (!i0Var.isEmpty()) {
-                    p2.i iVar = (p2.i) i0Var.get(e2.d0.c(i0Var, Long.valueOf(j14), true));
-                    p2.g u11 = u(j14, iVar.x);
-                    j12 = u11 != null ? u11.e : iVar.e;
+                    p2.i iVar = (p2.i) i0Var.get(e2.d0.c(i0Var, Long.valueOf(j15), true));
+                    p2.g u11 = u(j15, iVar.x);
+                    j13 = u11 != null ? u11.e : iVar.e;
                 }
-                j17 = j12;
+                j18 = j13;
             }
-            i1Var = new i1(j16, e02, j19, lVar.u, j18, j17, true, !z12, i10 == 2 && lVar.f, dVar, i(), this.q);
+            h1Var = new h1(j17, d02, j20, lVar.u, j19, j18, true, !z13, i10 == 2 && lVar.f, tVar, i(), this.q);
         } else {
-            if (j14 == -9223372036854775807L || i0Var.isEmpty()) {
+            if (j15 == -9223372036854775807L || i0Var.isEmpty()) {
                 j3 = 0;
             } else {
-                if (!z11 && j14 != j13) {
-                    j14 = ((p2.i) i0Var.get(e2.d0.c(i0Var, Long.valueOf(j14), true))).e;
+                if (!z12 && j15 != j14) {
+                    j15 = ((p2.i) i0Var.get(e2.d0.c(i0Var, Long.valueOf(j15), true))).e;
                 }
-                j3 = j14;
+                j3 = j15;
             }
-            long j22 = lVar.u;
-            i1Var = new i1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar, i(), null);
+            long j23 = lVar.u;
+            h1Var = new h1(j17, d02, j23, j23, 0L, j3, true, false, true, tVar, i(), null);
         }
-        n(i1Var);
+        n(h1Var);
     }
 }

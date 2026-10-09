@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.emoji2.text.f;
 import java.util.ArrayList;
-import t7.u;
-import u2.l0;
+import t7.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements u9.a {
     public final /* synthetic */ f a;
@@ -17,15 +16,15 @@ public final /* synthetic */ class a implements u9.a {
     }
 
     @Override // u9.a
-    public void H(Bundle bundle) {
-        ((u) this.a.a).H(bundle);
+    public void P(Bundle bundle) {
+        ((qb.b) this.a.a).P(bundle);
     }
 
-    public void a(l0 l0Var) {
+    public void a(s0.b bVar) {
         f fVar = this.a;
         synchronized (fVar) {
-            ((ArrayList) fVar.b).add(l0Var);
-            ((ob.a) fVar.c).getClass();
+            ((ArrayList) fVar.b).add(bVar);
+            ((t) fVar.c).getClass();
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
             }

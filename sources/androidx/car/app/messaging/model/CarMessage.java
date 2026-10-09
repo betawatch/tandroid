@@ -3,11 +3,11 @@ package androidx.car.app.messaging.model;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.car.app.model.CarText;
-import e0.p0;
+import e0.n0;
 import j$.util.Objects;
-import v7.v;
+import v7.r;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class CarMessage {
     private final CarText mBody;
@@ -29,7 +29,7 @@ public class CarMessage {
             return false;
         }
         CarMessage carMessage = (CarMessage) obj;
-        return v.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
+        return r.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
     }
 
     public CarText getBody() {
@@ -48,16 +48,16 @@ public class CarMessage {
         return this.mReceivedTimeEpochMillis;
     }
 
-    public p0 getSender() {
+    public n0 getSender() {
         Bundle bundle = this.mSender;
         if (bundle == null) {
             return null;
         }
-        return p0.a(bundle);
+        return n0.a(bundle);
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(v.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
+        return Objects.hash(Integer.valueOf(r.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
     }
 
     public boolean isRead() {

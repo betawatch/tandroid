@@ -6,11 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class o0 {
-    public static final List a = hd.h.c(Application.class, i0.class);
-    public static final List b = hd.h.b(i0.class);
+    public static final List a = id.h.c(Application.class, i0.class);
+    public static final List b = id.h.b(i0.class);
 
     public static final Constructor a(List signature, Class cls) {
         kotlin.jvm.internal.i.e(signature, "signature");
@@ -19,7 +19,7 @@ public abstract class o0 {
         for (Constructor<?> constructor : constructors) {
             Class<?>[] parameterTypes = constructor.getParameterTypes();
             kotlin.jvm.internal.i.d(parameterTypes, "constructor.parameterTypes");
-            List h = hd.f.h(parameterTypes);
+            List h = id.f.h(parameterTypes);
             if (signature.equals(h)) {
                 return constructor;
             }

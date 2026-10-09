@@ -1,6 +1,6 @@
 package androidx.activity;
 
-import ai.q4;
+import ai.r4;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import androidx.fragment.app.c0;
+import androidx.lifecycle.f0;
 import androidx.lifecycle.h0;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
@@ -20,7 +21,8 @@ import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import androidx.lifecycle.u0;
-import com.google.android.gms.internal.cast.f0;
+import com.google.android.gms.internal.cast.d0;
+import e0.o0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -28,17 +30,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import w7.b8;
+import w7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
+public abstract class l extends e0.f implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
     public final CopyOnWriteArrayList F;
     public final CopyOnWriteArrayList G;
     public boolean H;
     public boolean I;
-    public final f0 b;
+    public final d0 b;
     public final la.h c;
     public final androidx.lifecycle.v d;
     public final n e;
@@ -54,8 +56,8 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
 
     /* JADX WARN: Type inference failed for: r5v0, types: [androidx.activity.d] */
     public l() {
-        f0 f0Var = new f0(1);
-        this.b = f0Var;
+        d0 d0Var = new d0(1);
+        this.b = d0Var;
         this.c = new la.h(new a3.d(this, 25));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
@@ -64,8 +66,8 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         this.n = null;
         k kVar = new k(this);
         this.r = kVar;
-        this.s = new n(kVar, (d) new rd.a() { // from class: androidx.activity.d
-            @Override // rd.a
+        this.s = new n(kVar, (d) new sd.a() { // from class: androidx.activity.d
+            @Override // sd.a
             public final Object invoke() {
                 l.this.reportFullyDrawn();
                 return null;
@@ -133,10 +135,10 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         }
         ((m.p) nVar.d).f("android:support:activity-result", new e(this, 0));
         f fVar = new f(this, 0);
-        if (((l) f0Var.c) != null) {
+        if (((l) d0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) f0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) d0Var.b).add(fVar);
     }
 
     @Override // android.app.Activity
@@ -222,19 +224,19 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         }
     }
 
-    @Override // e0.h, android.app.Activity
+    @Override // e0.f, android.app.Activity
     public void onCreate(Bundle bundle) {
         this.e.c(bundle);
-        f0 f0Var = this.b;
-        f0Var.getClass();
-        f0Var.c = this;
-        Iterator it = ((CopyOnWriteArraySet) f0Var.b).iterator();
+        d0 d0Var = this.b;
+        d0Var.getClass();
+        d0Var.c = this;
+        Iterator it = ((CopyOnWriteArraySet) d0Var.b).iterator();
         while (it.hasNext()) {
             ((f) it.next()).a();
         }
         super.onCreate(bundle);
         int i10 = h0.b;
-        androidx.lifecycle.f0.b(this);
+        f0.b(this);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -274,7 +276,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         }
         Iterator it = this.F.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new e0.i(z10));
+            ((q0.a) it.next()).accept(new e0.g(z10));
         }
     }
 
@@ -303,7 +305,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         }
         Iterator it = this.G.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new e0.q0(z10));
+            ((q0.a) it.next()).accept(new o0(z10));
         }
     }
 
@@ -322,7 +324,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
 
     @Override // android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        if (this.w.a(i10, -1, new Intent().putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr).putExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS", iArr)) || Build.VERSION.SDK_INT < 23) {
+        if (this.w.a(i10, -1, new Intent().putExtra("androidx.activity.result.contract.extra.PERMISSIONS", strArr).putExtra("androidx.activity.result.contract.extra.PERMISSION_GRANT_RESULTS", iArr))) {
             return;
         }
         super.onRequestPermissionsResult(i10, strArr, iArr);
@@ -343,7 +345,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
         return jVar2;
     }
 
-    @Override // e0.h, android.app.Activity
+    @Override // e0.f, android.app.Activity
     public void onSaveInstanceState(Bundle bundle) {
         androidx.lifecycle.v vVar = this.d;
         if (vVar != null) {
@@ -364,7 +366,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
 
     public final v p() {
         if (this.n == null) {
-            this.n = new v(new q4(this, 3));
+            this.n = new v(new r4(this, 3));
             this.d.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$6
                 @Override // androidx.lifecycle.r
                 public final void d(androidx.lifecycle.t tVar, androidx.lifecycle.m mVar) {
@@ -408,8 +410,8 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (b8.b()) {
-                b8.a("reportFullyDrawn() for ComponentActivity");
+            if (a8.b()) {
+                a8.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;
@@ -422,7 +424,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((rd.a) obj).invoke();
+                        ((sd.a) obj).invoke();
                     }
                     ((ArrayList) nVar.d).clear();
                 } finally {
@@ -452,7 +454,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
             while (it.hasNext()) {
                 q0.a aVar = (q0.a) it.next();
                 kotlin.jvm.internal.i.e(newConfig, "newConfig");
-                aVar.accept(new e0.i(z10));
+                aVar.accept(new e0.g(z10));
             }
         } catch (Throwable th2) {
             this.H = false;
@@ -470,7 +472,7 @@ public abstract class l extends e0.h implements u0, androidx.lifecycle.i, t4.e {
             while (it.hasNext()) {
                 q0.a aVar = (q0.a) it.next();
                 kotlin.jvm.internal.i.e(newConfig, "newConfig");
-                aVar.accept(new e0.q0(z10));
+                aVar.accept(new o0(z10));
             }
         } catch (Throwable th2) {
             this.I = false;

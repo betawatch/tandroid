@@ -1,85 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class si1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class si1 extends LinearLayout {
+    public final /* synthetic */ wi1 a;
 
-    public /* synthetic */ si1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public si1(wi1 wi1Var, Activity activity) {
+        super(activity);
+        this.a = wi1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new e91(20, (ti1) this.b, (int[]) this.c));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new zr0((qg.n2) this.b, tLObject, (qg.l2) this.c, tL_error, 24));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.in0(tLObject, (MessagesController) this.b, (tg.x0) this.c, 29));
-                break;
-            case 3:
-                MessagesController messagesController = (MessagesController) this.b;
-                ft ftVar = (ft) this.c;
-                if (tLObject instanceof TLRPC.TL_contacts_found) {
-                    TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    messagesController.putUsers(tL_contacts_found.users, false);
-                    ArrayList arrayList = new ArrayList();
-                    for (int i10 = 0; i10 < tL_contacts_found.users.size(); i10++) {
-                        TLRPC.User user = tL_contacts_found.users.get(i10);
-                        if (!user.self && !UserObject.isDeleted(user) && !UserObject.isService(user.id)) {
-                            arrayList.add(user);
-                        }
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.x1(25, ftVar, arrayList));
-                    break;
-                }
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new tg.q((org.telegram.ui.Components.gs0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new tg.q((xh.v3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 8));
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new tg.q((yh.h) this.b, tLObject, (Context) this.c, 9));
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new zr0((yh.g) this.b, tLObject, (String) this.c, tL_error, 28));
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new yh.z0((yh.y3) this.b, tLObject, (tg.q) this.c, tL_error, 1));
-                break;
-            case 9:
-                yh.y3.f1((yh.y3) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
-                break;
-            case 10:
-                yh.y3.V0((yh.y3) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new tg.q((yh.u5) this.b, tLObject, tL_error, (Utilities.Callback) this.c));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new tg.q((yh.u5) this.b, tLObject, (Runnable) this.c, 18));
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.E.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(LocaleController.getString(R.string.VoipInCallBranding));
+        } else {
+            sb2.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(LocaleController.formatDuration((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

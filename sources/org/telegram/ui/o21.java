@@ -1,46 +1,40 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class o21 implements v9 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+public final /* synthetic */ class o21 implements org.telegram.ui.ActionBar.a2, r0.n {
+    public final /* synthetic */ e31 a;
 
-    public o21(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.b = n2Var;
+    public /* synthetic */ o21(e31 e31Var) {
+        this.a = e31Var;
     }
 
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ String J0() {
-        return null;
+    @Override // r0.n
+    public r0.k1 M0(View view, r0.k1 k1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        e31 e31Var = this.a;
+        e31Var.Q = defaultWindowInsets;
+        e31Var.fragmentView.requestLayout();
+        return r0.k1.b;
     }
 
-    @Override // org.telegram.ui.v9
-    public final void L(String str) {
-        String b10 = nf.f.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.uh(29));
-            return;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        e31 e31Var = this.a;
+        e31Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            e31Var.getParentActivity().startActivity(intent);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new t3(this.b, 21));
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ boolean g1(String str, n9 n9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void onDismiss() {
     }
 }

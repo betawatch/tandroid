@@ -1,74 +1,164 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.animation.ValueAnimator;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zd1 implements View.OnClickListener {
-    public final /* synthetic */ di0 a;
-    public final /* synthetic */ yn b;
-    public final /* synthetic */ org.telegram.ui.Components.zl0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.b80 e;
-    public final /* synthetic */ org.telegram.ui.Components.b80 f;
-    public final /* synthetic */ ee1 h;
+public final /* synthetic */ class zd1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public zd1(ee1 ee1Var, di0 di0Var, yn ynVar, org.telegram.ui.Components.zl0 zl0Var, LinearLayout linearLayout, org.telegram.ui.Components.b80 b80Var, org.telegram.ui.Components.b80 b80Var2) {
-        this.h = ee1Var;
-        this.a = di0Var;
-        this.b = ynVar;
-        this.c = zl0Var;
-        this.d = linearLayout;
-        this.e = b80Var;
-        this.f = b80Var2;
+    public /* synthetic */ zd1(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.d = obj2;
+        this.c = obj3;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        di0 di0Var = this.a;
-        ArrayList arrayList = di0Var.b;
-        ArrayList arrayList2 = di0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.Message message;
+        int i10;
+        int i11 = this.a;
+        pn pnVar = null;
+        boolean z10 = false;
+        Object obj = this.c;
+        Object obj2 = this.d;
+        Object obj3 = this.b;
+        switch (i11) {
+            case 0:
+                ce1 ce1Var = (ce1) obj3;
+                String str = (String) obj2;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                ce1Var.y = 0;
+                String str2 = ce1Var.E;
+                if (str2 != null && str2.equals(str)) {
+                    if (tL_error == null || (!"THEME_SLUG_INVALID".equals(tL_error.text) && !"THEME_SLUG_OCCUPIED".equals(tL_error.text))) {
+                        ce1Var.a0(org.telegram.ui.ActionBar.i6.w6, LocaleController.formatString("SetUrlAvailable", R.string.SetUrlAvailable, str));
+                        break;
+                    } else {
+                        ce1Var.a0(org.telegram.ui.ActionBar.i6.p7, LocaleController.getString(R.string.SetUrlInUse));
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                ce1.W((ce1) obj3, (TLRPC.TL_error) obj, (TL_account.updateTheme) obj2);
+                break;
+            case 2:
+                me1 me1Var = (me1) obj3;
+                zn znVar = (zn) obj2;
+                MessageObject messageObject = me1Var.G;
+                int i12 = ((TLRPC.TodoItem) obj).id;
+                if (messageObject != null && (message = messageObject.messageOwner) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
+                    messageObject.getDialogId();
+                    pnVar = new pn();
+                    pnVar.a = messageObject;
+                    pnVar.b = -1;
+                    pnVar.c = -1;
+                    pnVar.g = true;
+                    pnVar.d = i12;
+                    pnVar.e();
+                }
+                znVar.Gb(messageObject, pnVar);
+                me1Var.c(false);
+                break;
+            case 3:
+                ue1 ue1Var = (ue1) obj3;
+                ArrayList arrayList = ue1Var.h;
+                arrayList.clear();
+                ArrayList arrayList2 = ue1Var.f;
+                arrayList2.clear();
+                arrayList.addAll((ArrayList) obj2);
+                arrayList2.addAll(((TLRPC.TL_messages_inactiveChats) obj).chats);
+                ue1Var.d.l();
+                if (ue1Var.a.getMeasuredHeight() > 0) {
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    ue1Var.y = ofFloat;
+                    ofFloat.addUpdateListener(new y11(ue1Var, 15));
+                    ue1Var.y.setDuration(100L);
+                    ue1Var.y.start();
+                } else {
+                    ue1Var.E = 1.0f;
+                }
+                AndroidUtilities.cancelRunOnUIThread(ue1Var.I);
+                if (ue1Var.F.getVisibility() == 0) {
+                    ue1Var.F.animate().alpha(0.0f).setListener(new qe1(ue1Var, 2)).start();
+                    break;
+                }
+                break;
+            case 4:
+                fg1 fg1Var = (fg1) obj3;
+                fg1Var.s.deleteTopics(fg1Var.a, (ArrayList) obj2);
+                ((Runnable) obj).run();
+                break;
+            case 5:
+                bg1 bg1Var = (bg1) obj3;
+                String str3 = (String) obj2;
+                TLObject tLObject = (TLObject) obj;
+                ArrayList arrayList3 = bg1Var.d0;
+                if (str3.equals(bg1Var.b0)) {
+                    int i13 = bg1Var.k0;
+                    bg1Var.p0 = false;
+                    bg1Var.l0 = false;
+                    if (tLObject instanceof TLRPC.messages_Messages) {
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                        for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
+                            TLRPC.Message message2 = messages_messages.messages.get(i14);
+                            i10 = ((org.telegram.ui.ActionBar.n2) bg1Var.t0).currentAccount;
+                            MessageObject messageObject2 = new MessageObject(i10, message2, false, false);
+                            messageObject2.setQuery(str3);
+                            arrayList3.add(messageObject2);
+                        }
+                        bg1Var.L();
+                        if (arrayList3.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
+                            z10 = true;
+                        }
+                        bg1Var.m0 = z10;
+                    } else {
+                        bg1Var.m0 = false;
+                    }
+                    if (bg1Var.k0 == 0) {
+                        bg1Var.n0.e(bg1Var.l0, true);
+                    }
+                    bg1Var.o0.b(i13);
+                    break;
+                }
+                break;
+            default:
+                yh1 yh1Var = (yh1) obj3;
+                ArrayList arrayList4 = (ArrayList) obj2;
+                ArrayList arrayList5 = (ArrayList) obj;
+                gg.b2 b2Var = yh1Var.f;
+                if (yh1Var.n) {
+                    yh1Var.h = null;
+                    yh1Var.d = arrayList4;
+                    yh1Var.e = arrayList5;
+                    b2Var.f(arrayList4, null);
+                    if (yh1Var.n && !b2Var.e()) {
+                        yh1Var.v.f.e(false, true);
+                    }
+                    yh1Var.l();
+                    break;
+                }
+                break;
         }
-        int size = arrayList2.size();
-        ee1 ee1Var = this.h;
-        yn ynVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            ynVar.presentFragment(new ProfileActivity(bundle, null));
-            ee1Var.c(false);
-            return;
-        }
-        if (SharedConfig.messageSeenHintCount > 0 && ynVar.V0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.rc t10 = new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(ee1Var.getContext()), ee1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            ynVar.l1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.zl0 zl0Var = this.c;
-        zl0Var.requestLayout();
-        this.d.requestLayout();
-        zl0Var.getAdapter().l();
-        this.e.K(this.f);
+    }
+
+    public /* synthetic */ zd1(ce1 ce1Var, TLRPC.TL_error tL_error, TL_account.updateTheme updatetheme) {
+        this.a = 1;
+        this.b = ce1Var;
+        this.c = tL_error;
+        this.d = updatetheme;
     }
 }

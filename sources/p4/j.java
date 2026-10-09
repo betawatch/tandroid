@@ -2,28 +2,30 @@ package p4;
 
 import android.media.MediaRoute2Info;
 import android.media.MediaRouter2;
+import android.media.MediaRouter2$TransferCallback;
 import android.text.TextUtils;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.ui.a80;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class j extends MediaRouter2.TransferCallback {
+public final class j extends MediaRouter2$TransferCallback {
     public final /* synthetic */ k a;
 
     public j(k kVar) {
         this.a = kVar;
     }
 
-    @Override // android.media.MediaRouter2.TransferCallback
     public final void onStop(MediaRouter2.RoutingController routingController) {
-        q qVar = (q) this.a.v.remove(routingController);
+        k kVar = this.a;
+        q qVar = (q) kVar.v.remove(routingController);
         if (qVar == null) {
             Log.w("MR2Provider", "onStop: No matching routeController found. routingController=" + routingController);
             return;
         }
-        e eVar = (e) this.a.s.b;
+        e eVar = (e) kVar.s.b;
         if (qVar != eVar.e) {
             int i10 = e.F;
             return;
@@ -34,7 +36,6 @@ public final class j extends MediaRouter2.TransferCallback {
         }
     }
 
-    @Override // android.media.MediaRouter2.TransferCallback
     public final void onTransfer(MediaRouter2.RoutingController routingController, MediaRouter2.RoutingController routingController2) {
         v vVar;
         this.a.v.remove(routingController);
@@ -53,7 +54,7 @@ public final class j extends MediaRouter2.TransferCallback {
             return;
         }
         int i10 = 0;
-        String id2 = org.telegram.ui.web.w.e(selectedRoutes.get(0)).getId();
+        String id2 = a80.c(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new g(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;
@@ -78,7 +79,6 @@ public final class j extends MediaRouter2.TransferCallback {
         this.a.r(routingController2);
     }
 
-    @Override // android.media.MediaRouter2.TransferCallback
     public final void onTransferFailure(MediaRoute2Info mediaRoute2Info) {
         Log.w("MR2Provider", "Transfer failed. requestedRoute=" + mediaRoute2Info);
     }

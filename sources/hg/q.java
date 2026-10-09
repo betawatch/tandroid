@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,9 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.f;
                 if (i10 == 6) {
                     String obj = tVar.getText().toString();
-                    if (obj.length() <= 32) {
+                    if (obj.length() > 32) {
+                        AndroidUtilities.shakeView(tVar);
+                    } else {
                         z d = z.d(this.b);
                         TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
                         if (c10 != null) {
@@ -50,18 +52,15 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                         if (b2Var != null) {
                             b2Var.dismiss();
                         }
-                        if (b2VarArr[0] == w.e) {
-                            w.e = null;
+                        if (b2VarArr[0] == w.d) {
+                            w.d = null;
                         }
                         View view = this.d;
                         if (view != null) {
                             view.requestFocus();
-                            break;
                         }
-                    } else {
-                        AndroidUtilities.shakeView(tVar);
-                        break;
                     }
+                    break;
                 }
                 break;
             default:
@@ -69,7 +68,9 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                 if (i10 == 6) {
                     EditTextBoldCursor editTextBoldCursor = this.e;
                     String obj2 = editTextBoldCursor.getText().toString();
-                    if (obj2.length() <= this.b) {
+                    if (obj2.length() > this.b) {
+                        AndroidUtilities.shakeView(editTextBoldCursor);
+                    } else {
                         stringCallback.run(obj2);
                         org.telegram.ui.ActionBar.b2 b2Var2 = this.c[0];
                         if (b2Var2 != null) {
@@ -78,12 +79,9 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                         View view2 = this.d;
                         if (view2 != null) {
                             view2.requestFocus();
-                            break;
                         }
-                    } else {
-                        AndroidUtilities.shakeView(editTextBoldCursor);
-                        break;
                     }
+                    break;
                 }
                 break;
         }

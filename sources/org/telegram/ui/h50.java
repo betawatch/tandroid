@@ -1,75 +1,118 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h50 extends org.telegram.ui.Components.p30 {
-    public final /* synthetic */ l50 n;
+public final class h50 extends s4.o {
+    public final /* synthetic */ g60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h50(l50 l50Var, Context context, TLRPC.Chat chat, boolean z10) {
-        super(context, chat, z10);
-        this.n = l50Var;
+    public h50(g60 g60Var) {
+        this.b = g60Var;
     }
 
-    @Override // org.telegram.ui.Components.p30
-    public final void n(int i10) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
-        alertDialog$Builder.a.I = org.telegram.ui.ActionBar.i6.pg;
-        h60 h60Var = this.n.b;
-        h60Var.w0 = false;
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.VoipGroupStartRecordingTitle);
-        if (i10 == 0) {
-            alertDialog$Builder.a.T = LocaleController.getString(h60Var.a1.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpText : R.string.VoipGroupStartRecordingText);
-        } else if (ChatObject.isChannelOrGiga(h60Var.Z0)) {
-            alertDialog$Builder.a.T = LocaleController.getString(h60Var.a1.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipChannelStartRecordingVideoText);
-        } else {
-            alertDialog$Builder.a.T = LocaleController.getString(h60Var.a1.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipGroupStartRecordingVideoText);
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return true;
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        g60 g60Var = this.b;
+        a60 a60Var = g60Var.P;
+        int i17 = a60Var.w;
+        if (i17 >= 0) {
+            int i18 = g60Var.h3;
+            if (i10 == i18 && i11 == i17) {
+                return true;
+            }
+            if ((i10 == i18 && i11 != i17) || (i10 != i18 && i11 == i17)) {
+                return false;
+            }
         }
-        alertDialog$Builder.a.y0 = false;
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
-        editTextBoldCursor.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.T(getContext(), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.nh, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.oh, false)));
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(1);
-        alertDialog$Builder.n(linearLayout);
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        int i11 = org.telegram.ui.ActionBar.i6.ng;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setInputType(16385);
-        editTextBoldCursor.setGravity(51);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setHint(LocaleController.getString(R.string.VoipGroupSaveFileHint));
-        editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.og, false));
-        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
-        editTextBoldCursor.setCursorWidth(1.5f);
-        editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
-        linearLayout.addView(editTextBoldCursor, w7.z5.t(-1, 36, 51, 24, 0, 24, 12));
-        editTextBoldCursor.setOnEditorActionListener(new xz(alertDialog$Builder, 2));
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.fg, false);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.i(w02);
-        b2Var.setOnShowListener(new g50(this, b2Var, editTextBoldCursor, 1));
-        b2Var.setOnDismissListener(new yz(2, editTextBoldCursor));
-        alertDialog$Builder.k(LocaleController.getString(R.string.Start), new gg.d2(this, editTextBoldCursor, i10, 11));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new wz(2, editTextBoldCursor));
-        int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ug, false);
-        org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-        b2Var2.i(w03);
-        b2Var2.show();
-        b2Var2.o(org.telegram.ui.ActionBar.i6.w0(null, i11, false));
-        editTextBoldCursor.requestFocus();
+        int i19 = a60Var.x;
+        if (i19 >= 0) {
+            int i20 = g60Var.u3;
+            if (i10 == i20 && i11 == i19) {
+                return true;
+            }
+            if ((i10 == i20 && i11 != i19) || (i10 != i20 && i11 == i19)) {
+                return false;
+            }
+        }
+        int i21 = a60Var.y;
+        if (i21 >= 0) {
+            int i22 = g60Var.v3;
+            if (i10 == i22 && i11 == i21) {
+                return true;
+            }
+            if ((i10 == i22 && i11 != i21) || (i10 != i22 && i11 == i21)) {
+                return false;
+            }
+        }
+        int i23 = a60Var.K;
+        if (i23 >= 0) {
+            int i24 = g60Var.g3;
+            if (i10 == i24 && i11 == i23) {
+                return true;
+            }
+            if ((i10 == i24 && i11 != i23) || (i10 != i24 && i11 == i23)) {
+                return false;
+            }
+        }
+        int i25 = a60Var.J;
+        if (i25 >= 0) {
+            int i26 = g60Var.t3;
+            if (i10 == i26 && i11 == i25) {
+                return true;
+            }
+            if ((i10 == i26 && i11 != i25) || (i10 != i26 && i11 == i25)) {
+                return false;
+            }
+        }
+        int i27 = a60Var.I;
+        if (i27 >= 0 && i27 == i11 && i10 == g60Var.s3) {
+            return true;
+        }
+        int i28 = g60Var.I0;
+        if (i10 == i28 - 1 && i11 == a60Var.F - 1) {
+            return true;
+        }
+        if (i10 != i28 - 1 && i11 != a60Var.F - 1) {
+            if (i11 >= a60Var.G && i11 < a60Var.H && i10 >= (i16 = g60Var.q3) && i10 < g60Var.r3) {
+                return ((ChatObject.VideoParticipant) g60Var.E0.get(i10 - i16)).equals((ChatObject.VideoParticipant) g60Var.q0.get(i11 - g60Var.P.G));
+            }
+            if (i11 >= a60Var.d && i11 < a60Var.e && i10 >= (i15 = g60Var.i3) && i10 < g60Var.j3) {
+                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) g60Var.D0.get(i10 - i15);
+                return MessageObject.getPeerId(groupCallParticipant.peer) == MessageObject.getPeerId(g60Var.a1.visibleParticipants.get(i11 - g60Var.P.d).peer) && (i10 == i11 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
+            }
+            if (i11 >= a60Var.f && i11 < a60Var.h && i10 >= (i14 = g60Var.k3) && i10 < g60Var.l3) {
+                return ((Long) g60Var.F0.get(i10 - i14)).equals(g60Var.a1.invitedUsers.get(i11 - g60Var.P.f));
+            }
+            if (i11 >= a60Var.n && i11 < a60Var.r && i10 >= (i13 = g60Var.m3) && i10 < g60Var.n3) {
+                return ((Long) g60Var.G0.get(i10 - i13)).equals(g60Var.a1.shadyJoinParticipants.get(i11 - g60Var.P.n));
+            }
+            if (i11 >= a60Var.s && i11 < a60Var.v && i10 >= (i12 = g60Var.o3) && i10 < g60Var.p3) {
+                return ((Long) g60Var.H0.get(i10 - i12)).equals(g60Var.a1.shadyLeftParticipants.get(i11 - g60Var.P.s));
+            }
+        }
+        return false;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.b.P.F;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.I0;
     }
 }

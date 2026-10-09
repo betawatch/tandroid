@@ -1,46 +1,9 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class cd0 implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a;
-    public final float[] b = {0.0f, 1.0f};
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ dd0 d;
-
-    public cd0(dd0 dd0Var, FrameLayout frameLayout) {
-        this.d = dd0Var;
-        this.c = frameLayout;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
-        if (lerp >= 0.7f && !this.a) {
-            dd0 dd0Var = this.d;
-            gd0 gd0Var = dd0Var.b;
-            gd0 gd0Var2 = dd0Var.b;
-            if (gd0Var.o0 != null) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(gd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(gd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(gd0Var2.o0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
-                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-                animatorSet.setDuration(250L);
-                animatorSet.start();
-                this.a = true;
-            }
-        }
-        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.tr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.tr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.tr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(interpolation);
-        frameLayout.setScaleY(interpolation);
-    }
+public interface cd0 {
+    void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3);
 }

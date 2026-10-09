@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import v7.a6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class g4 implements t0 {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
@@ -129,7 +129,7 @@ public class g4 implements t0 {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.c1.j(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.c1.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -364,7 +364,7 @@ public class g4 implements t0 {
             if (isDone()) {
                 throw new TimeoutException(str.concat(" but future completed as timeout expired"));
             }
-            throw new TimeoutException(a4.a.D(str, " for ", g4Var));
+            throw new TimeoutException(a1.g.D(str, " for ", g4Var));
         }
         throw new InterruptedException();
     }

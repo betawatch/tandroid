@@ -1,29 +1,26 @@
 package ki;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class n implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+import android.os.SystemClock;
+import java.util.concurrent.atomic.AtomicLong;
+import org.telegram.messenger.FileLog;
 
-    public /* synthetic */ n(q qVar, int i10) {
-        this.a = i10;
-        this.b = qVar;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final class n {
+    public static final AtomicLong c = new AtomicLong(1);
+    public final long a = c.getAndIncrement();
+    public final long b = SystemClock.elapsedRealtime();
+
+    public final void a(String str, Exception exc) {
+        FileLog.e(c() + str + ": " + exc);
+        FileLog.e(exc);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                break;
-            default:
-                q qVar = this.b;
-                if (qVar.G != 0) {
-                    qVar.F = true;
-                    break;
-                }
-                break;
-        }
+    public final void b(String str) {
+        FileLog.d(c() + str);
+    }
+
+    public final String c() {
+        return "RoundVideo[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] ";
     }
 }

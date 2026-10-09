@@ -7,7 +7,7 @@ import i2.m0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
@@ -46,11 +46,11 @@ public final class k implements i {
         this.o = -9223372036854775807L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01b8  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01d2  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0203  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0204  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0206  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01ea  */
     @Override // j4.i
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -62,6 +62,8 @@ public final class k implements i {
         boolean z10;
         long j3;
         long j10;
+        boolean z11;
+        boolean z12;
         long j11;
         int i11;
         float f7;
@@ -76,7 +78,7 @@ public final class k implements i {
         this.i += vVar.a();
         this.b.d(vVar.a(), vVar);
         while (true) {
-            int b10 = f2.o.b(bArr, i14, i15, this.g);
+            int b10 = f2.p.b(bArr, i14, i15, this.g);
             jVar = this.h;
             m0Var = this.f;
             if (b10 == i15) {
@@ -181,7 +183,7 @@ public final class k implements i {
                     i11 = -i18;
                 }
                 if (m0Var.e(i11)) {
-                    int m10 = f2.o.m(m0Var.e, (byte[]) m0Var.f);
+                    int m10 = f2.p.m(m0Var.e, (byte[]) m0Var.f);
                     String str2 = e2.d0.a;
                     byte[] bArr2 = (byte[]) m0Var.f;
                     e2.v vVar2 = this.e;
@@ -208,11 +210,16 @@ public final class k implements i {
                                         j10 = j13 != j3 ? j13 + this.l : j3;
                                     }
                                     this.o = j10;
+                                    z11 = false;
                                     this.p = false;
                                     this.m = j3;
+                                    z12 = true;
                                     this.j = true;
+                                } else {
+                                    z12 = true;
+                                    z11 = false;
                                 }
-                                this.q = i17 == 0;
+                                this.q = i17 == 0 ? z12 : z11;
                             }
                         }
                         j3 = -9223372036854775807L;
@@ -223,10 +230,12 @@ public final class k implements i {
                         if (j10 == j3) {
                         }
                         this.o = j10;
+                        z11 = false;
                         this.p = false;
                         this.m = j3;
+                        z12 = true;
                         this.j = true;
-                        this.q = i17 == 0;
+                        this.q = i17 == 0 ? z12 : z11;
                     } else if (i17 == 184) {
                         this.p = z10;
                     }
@@ -251,10 +260,12 @@ public final class k implements i {
             if (j10 == j3) {
             }
             this.o = j10;
+            z11 = false;
             this.p = false;
             this.m = j3;
+            z12 = true;
             this.j = true;
-            this.q = i17 == 0;
+            this.q = i17 == 0 ? z12 : z11;
             i14 = i16;
             i15 = i10;
         }
@@ -268,7 +279,7 @@ public final class k implements i {
 
     @Override // j4.i
     public final void c() {
-        f2.o.a(this.g);
+        f2.p.a(this.g);
         j jVar = this.h;
         jVar.a = false;
         jVar.b = 0;
@@ -285,11 +296,11 @@ public final class k implements i {
 
     @Override // j4.i
     public final void d(c3.q qVar, f0 f0Var) {
-        f0Var.a();
         f0Var.b();
-        this.a = f0Var.e;
-        f0Var.b();
-        this.b = qVar.Z1(f0Var.d, 2);
+        f0Var.c();
+        this.a = (String) f0Var.e;
+        f0Var.c();
+        this.b = qVar.f2(f0Var.c, 2);
         c0 c0Var = this.c;
         if (c0Var != null) {
             c0Var.b(qVar, f0Var);

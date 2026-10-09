@@ -1,46 +1,227 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yt implements du, nl0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
-    public final /* synthetic */ Object d;
+public abstract class yt implements NotificationCenter.NotificationCenterDelegate {
+    public static xt L;
+    public boolean E;
+    public boolean G;
+    public boolean I;
+    public int J;
+    public final int K;
+    public boolean a;
+    public Bitmap b;
+    public Canvas c;
+    public Bitmap d;
+    public Canvas e;
+    public boolean f;
+    public int n;
+    public boolean r;
+    public int v;
+    public int w;
+    public int x;
+    public final DispatchQueue y;
+    public int h = 1;
+    public final Paint s = new Paint(1);
+    public final wt F = new wt(this, 0);
+    public final wt H = new wt(this, 1);
 
-    public /* synthetic */ yt(eu euVar, int i10, int i11, Runnable runnable) {
-        this.c = euVar;
-        this.a = i10;
-        this.b = i11;
-        this.d = runnable;
+    public yt() {
+        if (L == null) {
+            xt xtVar = new xt();
+            xtVar.b = new DispatchQueue[2];
+            L = xtVar;
+        }
+        xt xtVar2 = L;
+        int i10 = xtVar2.a + 1;
+        xtVar2.a = i10;
+        if (i10 > 1) {
+            xtVar2.a = 0;
+        }
+        DispatchQueue[] dispatchQueueArr = (DispatchQueue[]) xtVar2.b;
+        int i11 = xtVar2.a;
+        DispatchQueue dispatchQueue = dispatchQueueArr[i11];
+        if (dispatchQueue == null) {
+            dispatchQueue = new DispatchQueue("draw_background_queue_" + xtVar2.a);
+            dispatchQueueArr[i11] = dispatchQueue;
+        }
+        this.y = dispatchQueue;
+        this.K = L.a;
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public void c(float f7, float f10, int i10, View view) {
-        tg.m1.O((tg.m1) this.c, this.a, (org.telegram.ui.ActionBar.d6) this.d, this.b, view);
+    public void a(Canvas canvas, long j3, int i10, int i11, float f7) {
+        if (this.E) {
+            if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.i6.Ml);
+                return;
+            }
+            return;
+        }
+        this.w = i11;
+        this.x = i10;
+        if (this.G) {
+            this.G = false;
+            Bitmap bitmap = this.d;
+            Canvas canvas2 = this.e;
+            this.d = this.b;
+            this.e = this.c;
+            this.b = bitmap;
+            this.c = canvas2;
+        }
+        Bitmap bitmap2 = this.d;
+        if (bitmap2 == null || this.I) {
+            this.I = false;
+            if (bitmap2 != null) {
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(this.d);
+                AndroidUtilities.recycleBitmaps(arrayList);
+                this.d = null;
+            }
+            int i12 = this.w + 0;
+            Bitmap bitmap3 = this.d;
+            if (bitmap3 != null && bitmap3.getHeight() == i12 && this.d.getWidth() == this.x) {
+                this.d.eraseColor(0);
+            } else {
+                this.d = Bitmap.createBitmap(this.x, i12, Bitmap.Config.ARGB_8888);
+                this.e = new Canvas(this.d);
+            }
+            this.e.save();
+            this.e.translate(0.0f, 0);
+            d(this.e, f7);
+            this.e.restore();
+        }
+        if (!this.f && !this.r) {
+            this.f = true;
+            i(j3);
+            this.J = this.v;
+            this.y.postRunnable(this.F);
+        }
+        Bitmap bitmap4 = this.d;
+        if (bitmap4 != null) {
+            Paint paint = this.s;
+            paint.setAlpha((int) (f7 * 255.0f));
+            canvas.save();
+            canvas.translate(0.0f, -0);
+            b(canvas, bitmap4, paint);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public /* synthetic */ boolean f1(View view) {
-        return false;
+    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
     }
 
-    @Override // org.telegram.ui.Components.du
-    public void run(String str) {
-        eu.k((eu) this.c, this.a, this.b, (Runnable) this.d, str);
+    public abstract void c(Canvas canvas);
+
+    public abstract void d(Canvas canvas, float f7);
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12;
+        if (i10 == NotificationCenter.stopAllHeavyOperations) {
+            Integer num = (Integer) objArr[0];
+            if (this.h < num.intValue()) {
+                if (num.intValue() != 512 || SharedConfig.getDevicePerformanceClass() < 2) {
+                    int intValue = num.intValue() | this.n;
+                    this.n = intValue;
+                    if (intValue == 0 || this.r) {
+                        return;
+                    }
+                    this.r = true;
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (i10 == NotificationCenter.startAllHeavyOperations) {
+            Integer num2 = (Integer) objArr[0];
+            if (this.h >= num2.intValue() || (i12 = this.n) == 0) {
+                return;
+            }
+            int i13 = (~num2.intValue()) & i12;
+            this.n = i13;
+            if (i13 == 0 && this.r) {
+                this.r = false;
+            }
+        }
     }
 
-    public /* synthetic */ yt(tg.m1 m1Var, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        this.c = m1Var;
-        this.a = i10;
-        this.d = d6Var;
-        this.b = i11;
+    public final void e() {
+        if (this.a) {
+            return;
+        }
+        this.a = true;
+        this.E = false;
+        int currentHeavyOperationFlags = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        this.n = currentHeavyOperationFlags;
+        if (currentHeavyOperationFlags == 0 && this.r) {
+            this.r = false;
+        }
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.stopAllHeavyOperations);
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.startAllHeavyOperations);
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public /* synthetic */ void s0(View view, float f7, float f10) {
+    public final void f() {
+        if (this.a) {
+            if (!this.f) {
+                j();
+            }
+            this.a = false;
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.stopAllHeavyOperations);
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.startAllHeavyOperations);
+        }
+    }
+
+    public abstract void g();
+
+    public abstract void i(long j3);
+
+    public final void j() {
+        ArrayList arrayList = new ArrayList();
+        Bitmap bitmap = this.d;
+        if (bitmap != null) {
+            arrayList.add(bitmap);
+        }
+        Bitmap bitmap2 = this.b;
+        if (bitmap2 != null) {
+            arrayList.add(bitmap2);
+        }
+        this.d = null;
+        this.b = null;
+        this.c = null;
+        this.e = null;
+        AndroidUtilities.recycleBitmaps(arrayList);
+    }
+
+    public final void k() {
+        this.I = true;
+        this.v++;
+        if (this.d != null) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.d);
+            this.d = null;
+            AndroidUtilities.recycleBitmaps(arrayList);
+        }
+    }
+
+    public final void l(int i10) {
+        this.h = 7;
+        if (this.a) {
+            this.n = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
+        }
+    }
+
+    public void h() {
     }
 }

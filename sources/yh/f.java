@@ -2,51 +2,133 @@ package yh;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.y81;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class f extends y81 {
-    public final g[] a = new g[3];
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ bm0 c;
-    public final /* synthetic */ h d;
+public final class f extends sw0 implements r0.m {
+    public final b2.q0 w0;
+    public final /* synthetic */ g x0;
 
-    public f(h hVar, Context context, bm0 bm0Var) {
-        this.d = hVar;
-        this.b = context;
-        this.c = bm0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(g gVar, Context context) {
+        super(context, null);
+        this.x0 = gVar;
+        this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final void b(View view, int i10, int i11) {
-        this.c.L(view);
-    }
-
-    @Override // org.telegram.ui.Components.y81
-    public final View d(int i10) {
-        g[] gVarArr = this.a;
-        if (gVarArr[i10] == null) {
-            gVarArr[i10] = new g(this.d, this.b, i10);
+    @Override // r0.l
+    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+        org.telegram.ui.ActionBar.k kVar;
+        int i13;
+        org.telegram.ui.ActionBar.k kVar2;
+        g gVar = this.x0;
+        if (viewGroup == gVar.e && gVar.F.isAttachedToWindow()) {
+            kVar = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
+            boolean z10 = kVar.n0;
+            int top = (((View) gVar.F.getParent()).getTop() - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+            int bottom = ((View) gVar.F.getParent()).getBottom();
+            boolean z11 = false;
+            if (i11 >= 0) {
+                if (z10) {
+                    qm0 currentListView = gVar.F.getCurrentListView();
+                    iArr[1] = i11;
+                    if (top > 0) {
+                        iArr[1] = 0;
+                    }
+                    if (currentListView == null || (i13 = iArr[1]) <= 0) {
+                        return;
+                    }
+                    currentListView.scrollBy(0, i13);
+                    return;
+                }
+                if (i11 > 0) {
+                    qm0 currentListView2 = gVar.F.getCurrentListView();
+                    if (gVar.e.getHeight() - bottom < 0 || currentListView2 == null || currentListView2.canScrollVertically(1)) {
+                        return;
+                    }
+                    iArr[1] = i11;
+                    gVar.e.B0();
+                    return;
+                }
+                return;
+            }
+            kVar2 = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
+            kVar2.setCastShadows(gVar.e.getHeight() - bottom < 0);
+            if (gVar.e.getHeight() - bottom >= 0) {
+                qm0 currentListView3 = gVar.F.getCurrentListView();
+                int L0 = ((s4.d0) currentListView3.getLayoutManager()).L0();
+                if (L0 != -1) {
+                    s4.d1 K = currentListView3.K(L0);
+                    int top2 = K != null ? K.a.getTop() : -1;
+                    int paddingTop = currentListView3.getPaddingTop();
+                    if (top2 != paddingTop || L0 != 0) {
+                        iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
+                        currentListView3.scrollBy(0, i11);
+                        z11 = true;
+                    }
+                }
+            }
+            if (z10) {
+                if (z11 || top >= 0) {
+                    iArr[1] = i11;
+                } else {
+                    iArr[1] = i11 - Math.max(top, i11);
+                }
+            }
         }
-        return gVarArr[i10];
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final int e() {
-        return this.a.length;
+    @Override // r0.m
+    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        org.telegram.ui.ActionBar.k kVar;
+        g gVar = this.x0;
+        try {
+            if (viewGroup == gVar.e && gVar.F.isAttachedToWindow()) {
+                qm0 currentListView = gVar.F.getCurrentListView();
+                int bottom = ((View) gVar.F.getParent()).getBottom();
+                kVar = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
+                kVar.setCastShadows(gVar.e.getHeight() - bottom < 0);
+                if (gVar.e.getHeight() - bottom >= 0) {
+                    iArr[1] = i13;
+                    currentListView.scrollBy(0, i13);
+                }
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            AndroidUtilities.runOnUIThread(new rg.x1(this, 26));
+        }
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final CharSequence g(int i10) {
-        return LocaleController.getString(i10 == 1 ? R.string.StarsTransactionsIncoming : i10 == 2 ? R.string.StarsTransactionsOutgoing : R.string.StarsTransactionsAll);
+    @Override // r0.l
+    public final void o(int i10, View view) {
+        this.w0.a = 0;
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final int h(int i10) {
-        return i10;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // r0.l
+    public final boolean p(View view, View view2, int i10, int i11) {
+        return i10 == 2;
+    }
+
+    @Override // r0.l
+    public final void s(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+    }
+
+    @Override // r0.l
+    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

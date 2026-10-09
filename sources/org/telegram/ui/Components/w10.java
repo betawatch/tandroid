@@ -1,183 +1,153 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import android.app.Activity;
+import android.app.Application;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class w10 extends nj0 {
-    public boolean r;
-    public boolean s;
-    public final v10 v;
-    public final v10 w;
-    public final /* synthetic */ FragmentContextView x;
+public abstract class w10 implements Application.ActivityLifecycleCallbacks {
+    private static w10 Instance;
+    private int refs;
+    private boolean wasInBackground = true;
+    private long enterBackgroundTime = 0;
+    private CopyOnWriteArrayList<v10> listeners = new CopyOnWriteArrayList<>();
+    private final ArrayList<WeakReference<Activity>> resumedActivities = new ArrayList<>();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Components.v10] */
-    /* JADX WARN: Type inference failed for: r1v2, types: [org.telegram.ui.Components.v10] */
-    public w10(FragmentContextView fragmentContextView, Context context) {
-        super(context);
-        this.x = fragmentContextView;
-        final int i10 = 0;
-        this.v = new Runnable(this) { // from class: org.telegram.ui.Components.v10
-            public final /* synthetic */ w10 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        FragmentContextView fragmentContextView2 = this.b.x;
-                        if (VoIPService.getSharedInstance() != null) {
-                            VoIPService.getSharedInstance().setMicMute(false, true, false);
-                            if (fragmentContextView2.y.P(fragmentContextView2.O ? 15 : 29)) {
-                                if (fragmentContextView2.O) {
-                                    fragmentContextView2.y.M(0);
-                                } else {
-                                    fragmentContextView2.y.M(14);
-                                }
-                            }
-                            fragmentContextView2.x.d();
-                            org.telegram.ui.ActionBar.i6.D0().c(true);
-                            fragmentContextView2.a.f(true);
-                            break;
-                        }
-                        break;
-                    default:
-                        w10 w10Var = this.b;
-                        FragmentContextView fragmentContextView3 = w10Var.x;
-                        if (w10Var.r && VoIPService.getSharedInstance() != null) {
-                            w10Var.r = false;
-                            w10Var.s = true;
-                            fragmentContextView3.O = false;
-                            AndroidUtilities.runOnUIThread(w10Var.v, 90L);
-                            try {
-                                fragmentContextView3.x.performHapticFeedback(3, 2);
-                                break;
-                            } catch (Exception unused) {
-                                return;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        final int i11 = 1;
-        this.w = new Runnable(this) { // from class: org.telegram.ui.Components.v10
-            public final /* synthetic */ w10 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        FragmentContextView fragmentContextView2 = this.b.x;
-                        if (VoIPService.getSharedInstance() != null) {
-                            VoIPService.getSharedInstance().setMicMute(false, true, false);
-                            if (fragmentContextView2.y.P(fragmentContextView2.O ? 15 : 29)) {
-                                if (fragmentContextView2.O) {
-                                    fragmentContextView2.y.M(0);
-                                } else {
-                                    fragmentContextView2.y.M(14);
-                                }
-                            }
-                            fragmentContextView2.x.d();
-                            org.telegram.ui.ActionBar.i6.D0().c(true);
-                            fragmentContextView2.a.f(true);
-                            break;
-                        }
-                        break;
-                    default:
-                        w10 w10Var = this.b;
-                        FragmentContextView fragmentContextView3 = w10Var.x;
-                        if (w10Var.r && VoIPService.getSharedInstance() != null) {
-                            w10Var.r = false;
-                            w10Var.s = true;
-                            fragmentContextView3.O = false;
-                            AndroidUtilities.runOnUIThread(w10Var.v, 90L);
-                            try {
-                                fragmentContextView3.x.performHapticFeedback(3, 2);
-                                break;
-                            } catch (Exception unused) {
-                                return;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
+    public w10(Application application) {
+        Instance = this;
+        application.registerActivityLifecycleCallbacks(this);
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        accessibilityNodeInfo.setText(LocaleController.getString(this.x.O ? R.string.VoipUnmute : R.string.VoipMute));
+    public static w10 getInstance() {
+        return Instance;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        FragmentContextView fragmentContextView = this.x;
-        int i10 = fragmentContextView.T;
-        if (i10 != 3 && i10 != 1) {
-            return super.onTouchEvent(motionEvent);
-        }
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        v10 v10Var = this.v;
-        v10 v10Var2 = this.w;
-        if (sharedInstance == null) {
-            AndroidUtilities.cancelRunOnUIThread(v10Var2);
-            AndroidUtilities.cancelRunOnUIThread(v10Var);
-            this.r = false;
-            this.s = false;
-            return true;
-        }
-        if (motionEvent.getAction() == 0 && sharedInstance.isMicMute()) {
-            AndroidUtilities.runOnUIThread(v10Var2, 300L);
-            this.r = true;
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            AndroidUtilities.cancelRunOnUIThread(v10Var);
-            if (this.r) {
-                AndroidUtilities.cancelRunOnUIThread(v10Var2);
-                this.r = false;
-            } else if (this.s) {
-                fragmentContextView.O = true;
-                if (fragmentContextView.y.P(15)) {
-                    if (fragmentContextView.O) {
-                        fragmentContextView.y.M(0);
-                    } else {
-                        fragmentContextView.y.M(14);
-                    }
-                }
-                fragmentContextView.x.d();
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(true, true, false);
-                    try {
-                        fragmentContextView.x.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                }
-                this.s = false;
-                org.telegram.ui.ActionBar.i6.D0().c(true);
-                fragmentContextView.a.f(true);
-                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                super.onTouchEvent(obtain);
-                obtain.recycle();
-                return true;
+    public final void a(Activity activity) {
+        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
+            Activity activity2 = this.resumedActivities.get(size).get();
+            if (activity2 == null || activity2 == activity) {
+                this.resumedActivities.remove(size);
             }
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    public void addListener(v10 v10Var) {
+        this.listeners.add(v10Var);
+    }
+
+    public Activity getForegroundActivity() {
+        Activity activity = null;
+        for (int size = this.resumedActivities.size() - 1; size >= 0; size--) {
+            Activity activity2 = this.resumedActivities.get(size).get();
+            if (activity2 == null || activity2.isFinishing() || activity2.isDestroyed()) {
+                this.resumedActivities.remove(size);
+            } else {
+                if (activity2.hasWindowFocus()) {
+                    return activity2;
+                }
+                if (activity == null) {
+                    activity = activity2;
+                }
+            }
+        }
+        return activity;
+    }
+
+    public boolean isBackground() {
+        return this.refs == 0;
+    }
+
+    public boolean isForeground() {
+        return this.refs > 0;
+    }
+
+    public boolean isWasInBackground(boolean z10) {
+        if (z10 && SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+            this.wasInBackground = false;
+        }
+        return this.wasInBackground;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityDestroyed(Activity activity) {
+        a(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityPaused(Activity activity) {
+        a(activity);
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityResumed(Activity activity) {
+        a(activity);
+        this.resumedActivities.add(new WeakReference<>(activity));
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStarted(Activity activity) {
+        int i10 = this.refs + 1;
+        this.refs = i10;
+        if (i10 == 1) {
+            if (SystemClock.elapsedRealtime() - this.enterBackgroundTime < 200) {
+                this.wasInBackground = false;
+            }
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to foreground");
+            }
+            Iterator<v10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameForeground();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+            }
+        }
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityStopped(Activity activity) {
+        int i10 = this.refs - 1;
+        this.refs = i10;
+        if (i10 == 0) {
+            this.enterBackgroundTime = SystemClock.elapsedRealtime();
+            this.wasInBackground = true;
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("switch to background");
+            }
+            Iterator<v10> it = this.listeners.iterator();
+            while (it.hasNext()) {
+                try {
+                    it.next().onBecameBackground();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+            }
+        }
+    }
+
+    public void removeListener(v10 v10Var) {
+        this.listeners.remove(v10Var);
+    }
+
+    public void resetBackgroundVar() {
+        this.wasInBackground = false;
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+    }
+
+    @Override // android.app.Application.ActivityLifecycleCallbacks
+    public void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
     }
 }

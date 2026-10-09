@@ -12,16 +12,16 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n90 implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ LaunchActivity b;
     public final /* synthetic */ Bundle c;
     public final /* synthetic */ Long d;
-    public final /* synthetic */ h90 e;
+    public final /* synthetic */ m70 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ nf.e h;
+    public final /* synthetic */ of.e h;
     public final /* synthetic */ Long n;
     public final /* synthetic */ Integer r;
     public final /* synthetic */ Integer s;
@@ -30,12 +30,12 @@ public final /* synthetic */ class n90 implements Runnable {
     public final /* synthetic */ int x;
     public final /* synthetic */ Object y;
 
-    public /* synthetic */ n90(LaunchActivity launchActivity, Bundle bundle, Long l4, int[] iArr, h90 h90Var, boolean z10, nf.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+    public /* synthetic */ n90(LaunchActivity launchActivity, Bundle bundle, Long l4, int[] iArr, m70 m70Var, boolean z10, of.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
         this.b = launchActivity;
         this.c = bundle;
         this.d = l4;
         this.y = iArr;
-        this.e = h90Var;
+        this.e = m70Var;
         this.f = z10;
         this.h = eVar;
         this.n = l10;
@@ -52,11 +52,11 @@ public final /* synthetic */ class n90 implements Runnable {
         Object obj = this.y;
         switch (i10) {
             case 0:
-                h90 h90Var = this.e;
+                m70 m70Var = this.e;
                 TLObject tLObject = (TLObject) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    h90Var.run();
+                    m70Var.run();
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
@@ -83,20 +83,20 @@ public final /* synthetic */ class n90 implements Runnable {
                         org.telegram.ui.ActionBar.n2 n2Var = this.w;
                         Bundle bundle = this.c;
                         if (n2Var == null || MessagesController.getInstance(this.x).checkCanOpenChat(bundle, n2Var)) {
-                            ((ActionBarLayout) launchActivity.O()).P(new yn(bundle));
+                            ((ActionBarLayout) launchActivity.O()).P(new zn(bundle));
                             break;
                         }
                     }
                 }
-                launchActivity.B0(org.telegram.ui.Components.e5.H(launchActivity, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
+                launchActivity.B0(org.telegram.ui.Components.g5.G(launchActivity, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
                 break;
             default:
                 int[] iArr = (int[]) obj;
                 Pattern pattern2 = LaunchActivity.B1;
                 LaunchActivity launchActivity2 = this.b;
-                org.telegram.ui.ActionBar.c5 O = launchActivity2.O();
+                org.telegram.ui.ActionBar.d5 O = launchActivity2.O();
                 Bundle bundle2 = this.c;
-                if (!((ActionBarLayout) O).P(new yn(bundle2))) {
+                if (!((ActionBarLayout) O).P(new zn(bundle2))) {
                     TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
                     TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
                     Long l11 = this.d;
@@ -109,9 +109,9 @@ public final /* synthetic */ class n90 implements Runnable {
         }
     }
 
-    public /* synthetic */ n90(LaunchActivity launchActivity, h90 h90Var, TLObject tLObject, boolean z10, Long l4, nf.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10, Bundle bundle) {
+    public /* synthetic */ n90(LaunchActivity launchActivity, m70 m70Var, TLObject tLObject, boolean z10, Long l4, of.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10, Bundle bundle) {
         this.b = launchActivity;
-        this.e = h90Var;
+        this.e = m70Var;
         this.y = tLObject;
         this.f = z10;
         this.d = l4;

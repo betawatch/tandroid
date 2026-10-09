@@ -8,7 +8,7 @@ import android.os.Trace;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class h extends Handler implements Runnable {
     public final int a;
@@ -45,7 +45,7 @@ public final class h extends Handler implements Runnable {
             synchronized (this) {
                 try {
                     this.n = true;
-                    this.b.q();
+                    this.b.v();
                     Thread thread = this.h;
                     if (thread != null) {
                         thread.interrupt();
@@ -60,7 +60,7 @@ public final class h extends Handler implements Runnable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             g gVar = this.d;
             gVar.getClass();
-            gVar.x0(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
+            gVar.O0(this.b, elapsedRealtime, elapsedRealtime - this.c, true);
             this.d = null;
         }
     }
@@ -70,7 +70,7 @@ public final class h extends Handler implements Runnable {
         long j3 = elapsedRealtime - this.c;
         g gVar = this.d;
         gVar.getClass();
-        gVar.x(this.b, elapsedRealtime, j3, this.f);
+        gVar.C(this.b, elapsedRealtime, j3, this.f);
         this.e = null;
         l lVar = this.s;
         z2.a aVar = lVar.a;
@@ -98,13 +98,13 @@ public final class h extends Handler implements Runnable {
         g gVar = this.d;
         gVar.getClass();
         if (this.n) {
-            gVar.x0(this.b, elapsedRealtime, j3, false);
+            gVar.O0(this.b, elapsedRealtime, j3, false);
             return;
         }
         int i11 = message.what;
         if (i11 == 2) {
             try {
-                gVar.y(this.b, elapsedRealtime, j3);
+                gVar.F(this.b, elapsedRealtime, j3);
                 return;
             } catch (RuntimeException e7) {
                 e2.a.f("LoadTask", "Unexpected exception handling load completed", e7);
@@ -119,8 +119,8 @@ public final class h extends Handler implements Runnable {
         this.e = iOException;
         int i12 = this.f + 1;
         this.f = i12;
-        k4.d v = gVar.v(this.b, elapsedRealtime, j3, iOException, i12);
-        int i13 = v.a;
+        k4.d y3 = gVar.y(this.b, elapsedRealtime, j3, iOException, i12);
+        int i13 = y3.a;
         if (i13 == 3) {
             this.s.c = this.e;
             return;
@@ -129,7 +129,7 @@ public final class h extends Handler implements Runnable {
             if (i13 == 1) {
                 this.f = 1;
             }
-            long j10 = v.b;
+            long j10 = y3.b;
             if (j10 == -9223372036854775807L) {
                 j10 = Math.min((this.f - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             }

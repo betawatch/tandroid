@@ -1,18 +1,31 @@
 package ce;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class e extends kd.c {
-    public kotlin.jvm.internal.p a;
-    public /* synthetic */ Object b;
-    public int c;
+public final class e extends f {
+    public final Throwable a;
 
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.c |= TLObject.FLAG_31;
-        return o.a(null, null, this);
+    public e(Throwable th2) {
+        this.a = th2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof e) {
+            return kotlin.jvm.internal.i.a(this.a, ((e) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        Throwable th2 = this.a;
+        if (th2 != null) {
+            return th2.hashCode();
+        }
+        return 0;
+    }
+
+    @Override // ce.f
+    public final String toString() {
+        return "Closed(" + this.a + ')';
     }
 }

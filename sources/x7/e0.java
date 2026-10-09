@@ -10,12 +10,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e0 implements ia.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final ia.c g = new ia.c("key", hg.c.m(sa.e.n(c0.class, new z(1))));
-    public static final ia.c h = new ia.c("value", hg.c.m(sa.e.n(c0.class, new z(2))));
+    public static final ia.c g = new ia.c("key", hg.c.m(sc.v.n(c0.class, new z(1))));
+    public static final ia.c h = new ia.c("value", hg.c.m(sc.v.n(c0.class, new z(2))));
     public static final d0 i = d0.b;
     public OutputStream a;
     public final HashMap b;
@@ -223,30 +223,18 @@ public final class e0 implements ia.e {
     }
 
     public final void k(int i10) {
-        while (true) {
-            long j3 = i10 & (-128);
-            OutputStream outputStream = this.a;
-            if (j3 == 0) {
-                outputStream.write(i10 & 127);
-                return;
-            } else {
-                outputStream.write((i10 & 127) | 128);
-                i10 >>>= 7;
-            }
+        while ((i10 & (-128)) != 0) {
+            this.a.write((i10 & 127) | 128);
+            i10 >>>= 7;
         }
+        this.a.write(i10 & 127);
     }
 
     public final void l(long j3) {
-        while (true) {
-            long j10 = (-128) & j3;
-            OutputStream outputStream = this.a;
-            if (j10 == 0) {
-                outputStream.write(((int) j3) & 127);
-                return;
-            } else {
-                outputStream.write((((int) j3) & 127) | 128);
-                j3 >>>= 7;
-            }
+        while (((-128) & j3) != 0) {
+            this.a.write((((int) j3) & 127) | 128);
+            j3 >>>= 7;
         }
+        this.a.write(((int) j3) & 127);
     }
 }

@@ -1,84 +1,83 @@
 package v7;
 
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.util.Log;
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class r8 {
-    public static Method a;
-    public static boolean b;
-    public static Method c;
-    public static boolean d;
-
-    public static int a(Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return e0.b.i(drawable);
+    public static int a(a4.g gVar, int i10, int i11, int i12) {
+        e2.d.b(Math.max(Math.max(i10, i11), i12) <= 31);
+        int i13 = (1 << i10) - 1;
+        int i14 = (1 << i11) - 1;
+        m7.a(m7.a(i13, i14), 1 << i12);
+        if (gVar.b() < i10) {
+            return -1;
         }
-        if (!d) {
-            try {
-                Method declaredMethod = Drawable.class.getDeclaredMethod("getLayoutDirection", null);
-                c = declaredMethod;
-                declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e7) {
-                Log.i("DrawableCompat", "Failed to retrieve getLayoutDirection() method", e7);
+        int i15 = gVar.i(i10);
+        if (i15 == i13) {
+            if (gVar.b() < i11) {
+                return -1;
             }
-            d = true;
+            int i16 = gVar.i(i11);
+            i15 += i16;
+            if (i16 == i14) {
+                if (gVar.b() < i12) {
+                    return -1;
+                }
+                return gVar.i(i12) + i15;
+            }
         }
-        Method method = c;
-        if (method == null) {
-            return 0;
+        return i15;
+    }
+
+    public static void b(a4.g gVar) {
+        gVar.t(3);
+        gVar.t(8);
+        boolean h = gVar.h();
+        boolean h10 = gVar.h();
+        if (h) {
+            gVar.t(5);
         }
-        try {
-            return ((Integer) method.invoke(drawable, null)).intValue();
-        } catch (Exception e10) {
-            Log.i("DrawableCompat", "Failed to invoke getLayoutDirection() via reflection", e10);
-            c = null;
-            return 0;
+        if (h10) {
+            gVar.t(6);
         }
     }
 
-    public static boolean b(int i10, Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return e0.b.D(i10, drawable);
+    public static void c(a4.g gVar) {
+        int i10;
+        int i11 = gVar.i(2);
+        if (i11 == 0) {
+            gVar.t(6);
+            return;
         }
-        if (!b) {
-            try {
-                Method declaredMethod = Drawable.class.getDeclaredMethod("setLayoutDirection", Integer.TYPE);
-                a = declaredMethod;
-                declaredMethod.setAccessible(true);
-            } catch (NoSuchMethodException e7) {
-                Log.i("DrawableCompat", "Failed to retrieve setLayoutDirection(int) method", e7);
+        int a2 = a(gVar, 5, 8, 16) + 1;
+        if (i11 == 1) {
+            gVar.t(a2 * 7);
+            return;
+        }
+        if (i11 == 2) {
+            boolean h = gVar.h();
+            int i12 = h ? 1 : 5;
+            int i13 = h ? 7 : 5;
+            int i14 = h ? 8 : 6;
+            int i15 = 0;
+            while (i15 < a2) {
+                if (gVar.h()) {
+                    gVar.t(7);
+                    i10 = 0;
+                } else {
+                    if (gVar.i(2) == 3 && gVar.i(i13) * i12 != 0) {
+                        gVar.s();
+                    }
+                    i10 = gVar.i(i14) * i12;
+                    if (i10 != 0 && i10 != 180) {
+                        gVar.s();
+                    }
+                    gVar.s();
+                }
+                if (i10 != 0 && i10 != 180 && gVar.h()) {
+                    i15++;
+                }
+                i15++;
             }
-            b = true;
         }
-        Method method = a;
-        if (method != null) {
-            try {
-                method.invoke(drawable, Integer.valueOf(i10));
-                return true;
-            } catch (Exception e10) {
-                Log.i("DrawableCompat", "Failed to invoke setLayoutDirection(int) via reflection", e10);
-                a = null;
-            }
-        }
-        return false;
-    }
-
-    public static void c(int i10, Drawable drawable) {
-        drawable.setTint(i10);
-    }
-
-    public static Drawable d(Drawable drawable) {
-        if (Build.VERSION.SDK_INT >= 23 || (drawable instanceof j0.b)) {
-            return drawable;
-        }
-        j0.d dVar = new j0.d();
-        dVar.d = dVar.c();
-        dVar.h(drawable);
-        j0.d.a();
-        return dVar;
     }
 }

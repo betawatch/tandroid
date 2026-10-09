@@ -1,21 +1,20 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
-import ii.n4;
 import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ n4 E;
-    public static final /* synthetic */ n4 F;
-    public static final /* synthetic */ n4 w;
-    public static final /* synthetic */ n4 x;
-    public static final /* synthetic */ n4 y;
+    public static final /* synthetic */ m2.t E;
+    public static final /* synthetic */ m2.t F;
+    public static final /* synthetic */ m2.t w;
+    public static final /* synthetic */ m2.t x;
+    public static final /* synthetic */ m2.t y;
     public String e;
     public String f;
     public long h;
@@ -25,7 +24,7 @@ public final class j extends com.googlecode.mp4parser.c {
     public long v;
 
     static {
-        re.a aVar = new re.a(j.class, "HandlerBox.java");
+        se.a aVar = new se.a(j.class, "HandlerBox.java");
         w = aVar.e(aVar.d("getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
         x = aVar.e(aVar.d("setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "void"));
         y = aVar.e(aVar.d("setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "void"));
@@ -102,14 +101,14 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(F, this, this);
+        com.google.firebase.messaging.s b10 = se.a.b(F, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
-        e2.q(re.a.b(w, this, this));
+        e2.q(se.a.b(w, this, this));
         sb2.append(this.e);
         sb2.append(";name=");
-        e2.q(re.a.b(E, this, this));
-        return a4.a.t(sb2, this.f, "]");
+        e2.q(se.a.b(E, this, this));
+        return a1.g.t(sb2, this.f, "]");
     }
 }

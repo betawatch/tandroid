@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import org.telegram.ui.Cells.c1;
 import v7.f5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final Object a = new Object();
@@ -37,7 +37,7 @@ public abstract class l {
     public static void d(Handler handler) {
         Looper myLooper = Looper.myLooper();
         if (myLooper != handler.getLooper()) {
-            throw new IllegalStateException(c1.k("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
+            throw new IllegalStateException(c1.i("Must be called on ", handler.getLooper().getThread().getName(), " thread, but got ", myLooper != null ? myLooper.getThread().getName() : "null current looper", "."));
         }
     }
 
@@ -96,7 +96,7 @@ public abstract class l {
 
     public static Task n(f5 f5Var, k kVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        f5Var.b(new t(f5Var, taskCompletionSource, kVar));
+        f5Var.b(new u(f5Var, taskCompletionSource, kVar));
         return taskCompletionSource.getTask();
     }
 }

@@ -1,70 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.SurfaceTexture;
+import android.os.Looper;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i00 extends yl0 {
-    public final Context c;
-    public final /* synthetic */ n00 d;
+public final /* synthetic */ class i00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l00 b;
 
-    public i00(n00 n00Var, Context context) {
-        this.d = n00Var;
-        this.c = context;
+    public /* synthetic */ i00(l00 l00Var, int i10) {
+        this.a = i10;
+        this.b = l00Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.h.size();
-    }
-
-    @Override // s4.h0
-    public final long i(int i10) {
-        return this.d.k0.get(i10);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        l00 l00Var = (l00) c1Var.a;
-        int id2 = l00Var.b != null ? l00Var.getId() : -1;
-        j00 j00Var = (j00) this.d.h.get(i10);
-        l00Var.b = j00Var;
-        l00Var.e = i10;
-        l00Var.setContentDescription(j00Var.b);
-        l00Var.requestLayout();
-        boolean z10 = l00Var.n;
-        j00 j00Var2 = l00Var.b;
-        if (z10 != (j00Var2 != null && j00Var2.g)) {
-            z5.release(l00Var, l00Var.r);
-            z5.release(l00Var, l00Var.O);
-            z5.release(l00Var, l00Var.Q);
-            z5.release(l00Var, l00Var.S);
-            if (l00Var.l0) {
-                l00Var.r = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.r, l00Var.s);
-                l00Var.O = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.O, l00Var.P);
-                l00Var.Q = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.Q, l00Var.R);
-                l00Var.S = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.S, l00Var.T);
-            }
-            l00Var.n = l00Var.b.g;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+            case 1:
+                l00.b(this.b);
+                break;
+            default:
+                l00 l00Var = this.b;
+                bw bwVar = l00Var.b0;
+                SurfaceTexture surfaceTexture = l00Var.w;
+                z71 z71Var = (z71) bwVar.b;
+                if (z71Var.a != null) {
+                    z71Var.a.T(new Surface(surfaceTexture));
+                    break;
+                }
+                break;
         }
-        if (id2 != l00Var.getId()) {
-            l00Var.k0 = l00Var.b.f ? 1.0f : 0.0f;
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new il0(new l00(this.d, this.c));
     }
 }

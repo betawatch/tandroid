@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -41,16 +41,16 @@ public abstract class i0 {
         return l0Var2;
     }
 
-    public static l1 b(View view, l1 l1Var) {
+    public static k1 b(View view, k1 k1Var) {
         int i10 = Build.VERSION.SDK_INT;
-        WindowInsets g10 = l1Var.g();
+        WindowInsets g10 = k1Var.g();
         if (g10 != null) {
             WindowInsets a2 = i10 >= 30 ? f0.a(view, g10) : y.a(view, g10);
             if (!a2.equals(g10)) {
-                return l1.h(view, a2);
+                return k1.h(view, a2);
             }
         }
-        return l1Var;
+        return k1Var;
     }
 
     public static boolean c(View view, KeyEvent keyEvent) {
@@ -141,11 +141,7 @@ public abstract class i0 {
         return Build.VERSION.SDK_INT >= 31 ? g0.a(sVar) : (String[]) sVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
-    public static l1 f(View view) {
-        return Build.VERSION.SDK_INT >= 23 ? b0.a(view) : a0.f(view);
-    }
-
-    public static void g(int i10, View view) {
+    public static void f(int i10, View view) {
         Object tag;
         AccessibilityManager accessibilityManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
@@ -214,19 +210,19 @@ public abstract class i0 {
         }
     }
 
-    public static l1 h(View view, l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
+    public static k1 g(View view, k1 k1Var) {
+        WindowInsets g10 = k1Var.g();
         if (g10 != null) {
             WindowInsets b10 = y.b(view, g10);
             if (!b10.equals(g10)) {
-                return l1.h(view, b10);
+                return k1.h(view, b10);
             }
         }
-        return l1Var;
+        return k1Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static g i(View view, g gVar) {
+    public static g h(View view, g gVar) {
         if (Log.isLoggable("ViewCompat", 3)) {
             Log.d("ViewCompat", "performReceiveContent: " + gVar + ", view=" + view.getClass().getSimpleName() + "[" + view.getId() + "]");
         }
@@ -251,13 +247,13 @@ public abstract class i0 {
         return oVar.a(a2);
     }
 
-    public static void j(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10) {
+    public static void i(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10) {
         if (Build.VERSION.SDK_INT >= 29) {
             e0.b(view, context, iArr, attributeSet, typedArray, i10, 0);
         }
     }
 
-    public static void k(View view, b bVar) {
+    public static void j(View view, b bVar) {
         if (bVar == null && (d(view) instanceof a)) {
             bVar = new b();
         }
@@ -267,7 +263,7 @@ public abstract class i0 {
         view.setAccessibilityDelegate(bVar == null ? null : bVar.b);
     }
 
-    public static void l(View view, CharSequence charSequence) {
+    public static void k(View view, CharSequence charSequence) {
         new w(R.id.tag_accessibility_pane_title, CharSequence.class, 8, 28, 1).d(view, charSequence);
         x xVar = e;
         if (charSequence == null) {
@@ -283,7 +279,7 @@ public abstract class i0 {
         }
     }
 
-    public static void m(View view, n nVar) {
-        a0.j(view, nVar);
+    public static void l(View view, n nVar) {
+        a0.i(view, nVar);
     }
 }

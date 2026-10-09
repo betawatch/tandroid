@@ -1,10 +1,10 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class LifecycleCoroutineScopeImpl implements r, zd.c0 {
-    @Override // zd.c0
-    public final id.h c() {
+public final class LifecycleCoroutineScopeImpl implements r, ae.d0 {
+    @Override // ae.d0
+    public final jd.h c() {
         return null;
     }
 

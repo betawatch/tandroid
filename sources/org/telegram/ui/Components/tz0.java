@@ -1,31 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class tz0 extends xz0 {
-    public int d;
+public final class tz0 extends ud0 {
+    public final /* synthetic */ uz0 w0;
 
-    @Override // org.telegram.ui.Components.xz0
-    public final int a(g01 g01Var, zz0 zz0Var, sz0 sz0Var, int i10, boolean z10) {
-        return Math.max(0, this.a - sz0Var.a(zz0Var, i10));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tz0(uz0 uz0Var, Context context) {
+        super(context, 13, null);
+        this.w0 = uz0Var;
     }
 
-    @Override // org.telegram.ui.Components.xz0
-    public final void b(int i10, int i11) {
-        super.b(i10, i11);
-        this.d = Math.max(this.d, i10 + i11);
-    }
-
-    @Override // org.telegram.ui.Components.xz0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
-    }
-
-    @Override // org.telegram.ui.Components.xz0
-    public final int d(boolean z10) {
-        return Math.max(super.d(z10), this.d);
+    @Override // org.telegram.ui.Components.ud0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float dp = AndroidUtilities.dp(31.0f);
+        uz0 uz0Var = this.w0;
+        uz0Var.d.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h7, false));
+        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, uz0Var.d);
+        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
+        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, uz0Var.d);
     }
 }

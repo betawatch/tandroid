@@ -1,12 +1,12 @@
 package qg;
 
 import android.view.View;
-import ci.y7;
+import ci.x7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.vt0;
+import org.telegram.ui.bu0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,10 +36,10 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 m0Var2.postDelayed(new n(m0Var2, 1), 350L);
                 w wVar = new w(m0Var2.getContext(), m0Var2.Q1, false, false);
                 wVar.y = new q(m0Var2);
-                wVar.q0(new y7(m0Var2, 3));
+                wVar.r0(new x7(m0Var2, 3));
                 wVar.setOnDismissListener(new s(m0Var2, i10));
                 wVar.show();
-                PhotoViewer photoViewer = ((vt0) m0Var2).o2;
+                PhotoViewer photoViewer = ((bu0) m0Var2).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
@@ -50,11 +50,11 @@ public final /* synthetic */ class k implements View.OnClickListener {
             case 2:
                 m0 m0Var3 = this.b;
                 j jVar = m0Var3.S0;
-                if ((jVar instanceof v2) && !m0Var3.T0) {
-                    v2 v2Var = (v2) jVar;
+                if ((jVar instanceof w2) && !m0Var3.T0) {
+                    w2 w2Var = (w2) jVar;
                     m0Var3.T0 = true;
-                    v2Var.q();
-                    View focusedView = v2Var.getFocusedView();
+                    w2Var.q();
+                    View focusedView = w2Var.getFocusedView();
                     focusedView.requestFocus();
                     AndroidUtilities.showKeyboard(focusedView);
                 }
@@ -70,7 +70,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
             default:
                 m0 m0Var4 = this.b;
                 m0Var4.C0(2);
-                if (!(m0Var4.S0 instanceof v2)) {
+                if (!(m0Var4.S0 instanceof w2)) {
                     m0Var4.j0(true);
                     break;
                 }

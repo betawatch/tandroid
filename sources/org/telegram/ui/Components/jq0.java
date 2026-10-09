@@ -1,58 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jq0 implements View.OnTouchListener {
+public final /* synthetic */ class jq0 implements ah.m {
     public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ br0 c;
+    public final /* synthetic */ qm0 b;
 
-    public jq0(br0 br0Var, int i10) {
+    public /* synthetic */ jq0(qm0 qm0Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = br0Var;
-                this.b = new Rect();
-                break;
-            default:
-                this.c = br0Var;
-                this.b = new Rect();
-                break;
-        }
+        this.b = qm0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        br0 br0Var;
-        org.telegram.ui.ActionBar.n1 n1Var;
-        br0 br0Var2;
-        org.telegram.ui.ActionBar.n1 n1Var2;
+    @Override // ah.m
+    public final boolean a(Canvas canvas, View view, long j3) {
         switch (this.a) {
             case 0:
-                if (motionEvent.getActionMasked() == 0 && (n1Var = (br0Var = this.c).J0) != null && n1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        br0Var.J0.d(true);
-                        break;
-                    }
-                }
-                break;
+                return ((oq0) this.b).drawChild(canvas, view, j3);
             default:
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (br0Var2 = this.c).J0) != null && n1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        br0Var2.J0.d(true);
-                        break;
-                    }
-                }
-                break;
+                return ((tu0) this.b).drawChild(canvas, view, j3);
         }
-        return false;
     }
 }

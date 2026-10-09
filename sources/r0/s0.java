@@ -3,15 +3,16 @@ package r0;
 import android.os.Build;
 import android.view.WindowInsets;
 import android.view.WindowInsetsAnimation;
+import android.view.WindowInsetsAnimation$Callback;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class s0 extends WindowInsetsAnimation.Callback {
+public final class s0 extends WindowInsetsAnimation$Callback {
     public final ph.e a;
     public List b;
     public ArrayList c;
@@ -35,22 +36,17 @@ public final class s0 extends WindowInsetsAnimation.Callback {
         return v0Var;
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
     public final void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
         a(windowInsetsAnimation);
-        eVar.S0();
+        this.a.S0();
         this.d.remove(windowInsetsAnimation);
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
     public final void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
-        ph.e eVar = this.a;
         a(windowInsetsAnimation);
-        eVar.getClass();
+        this.a.getClass();
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
     public final WindowInsets onProgress(WindowInsets windowInsets, List list) {
         ArrayList arrayList = this.c;
         if (arrayList == null) {
@@ -66,22 +62,20 @@ public final class s0 extends WindowInsetsAnimation.Callback {
             a2.a.d(windowInsetsAnimation.getFraction());
             this.c.add(a2);
         }
-        ph.e eVar = this.a;
-        l1 h = l1.h(null, windowInsets);
-        eVar.T0(h, this.b);
+        k1 h = k1.h(null, windowInsets);
+        this.a.T0(h, this.b);
         return h.g();
     }
 
-    @Override // android.view.WindowInsetsAnimation.Callback
     public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
-        ph.e eVar = this.a;
         a(windowInsetsAnimation);
         i0.b f7 = t0.f(bounds);
         i0.b e7 = t0.e(bounds);
+        ph.e eVar = this.a;
         if (eVar.c == 0) {
             Iterator it = eVar.d.iterator();
             while (it.hasNext()) {
-                ((ph.d) it.next()).s();
+                ((ph.d) it.next()).t();
             }
         }
         eVar.c++;

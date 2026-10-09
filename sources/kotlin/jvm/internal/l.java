@@ -1,23 +1,23 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class l extends m implements vd.f {
+public final class l extends m implements wd.f {
     public l(Class cls) {
         super(b.NO_RECEIVER, cls, "dataStore", "getDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0);
     }
 
     public final void b() {
-        ((l) ((vd.f) getReflected())).b();
+        ((l) ((wd.f) getReflected())).b();
     }
 
     @Override // kotlin.jvm.internal.b
-    public final vd.b computeReflected() {
+    public final wd.b computeReflected() {
         q.a.getClass();
         return this;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final Object invoke(Object obj, Object obj2) {
         b();
         throw null;

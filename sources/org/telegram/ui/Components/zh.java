@@ -1,127 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class zh extends mu {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ xi c0;
+public final class zh extends org.telegram.ui.uu0 {
+    public final /* synthetic */ MediaController.PhotoEntry a;
+    public final /* synthetic */ yi b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zh(xi xiVar, Context context, ki kiVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, kiVar, null, 1, true, d6Var);
-        this.c0 = xiVar;
+    public zh(yi yiVar, MediaController.PhotoEntry photoEntry) {
+        this.b = yiVar;
+        this.a = photoEntry;
     }
 
-    @Override // org.telegram.ui.Components.mu
-    public final void c(float f7) {
-        xi xiVar = this.c0;
-        xiVar.g2 = f7;
-        wh whVar = xiVar.D0;
-        whVar.setTranslationY(f7);
-        whVar.invalidate();
-        xiVar.g1();
-        xiVar.W1(xiVar.y0, 0);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            eu editText = this.c0.E0.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new ai.x(14, this, editText));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
+    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z10, final int i11, int i12, final boolean z11) {
+        yi yiVar = this.b;
+        yiVar.v2 = true;
+        if (yiVar.c2 == null) {
+            return;
+        }
+        final MediaController.PhotoEntry photoEntry = this.a;
+        photoEntry.editedInfo = videoEditedInfo;
+        g5.Z(yiVar.M1, yiVar.l1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.yh
+            @Override // org.telegram.messenger.Utilities.Callback
+            public final void run(Object obj) {
+                ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
+                arrayList.clear();
+                HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
+                hashMap.clear();
+                arrayList.add(0);
+                hashMap.put(0, photoEntry);
+                zh.this.b.c2.I1(7, true, z10, i11, 0, 0L, false, z11, ((Long) obj).longValue());
             }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(tr.f);
-            ofFloat.start();
-            this.V = false;
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.mu
-    public final void e() {
-        super/*org.telegram.ui.ActionBar.f3*/.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.mu
-    public final void f() {
-        super.f();
-        nz emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.w2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mu
-    public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.c0.f0;
-        if (n2Var instanceof org.telegram.ui.yn) {
-            org.telegram.ui.yn.k8(menu, ((org.telegram.ui.yn) n2Var).h, true, true, true, true);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        xi xiVar = this.c0;
-        zh zhVar = xiVar.E0;
-        if (!xiVar.u1) {
-            if (motionEvent.getX() <= zhVar.getEditText().getLeft() || motionEvent.getX() >= zhVar.getEditText().getRight() || motionEvent.getY() <= zhVar.getEditText().getTop() || motionEvent.getY() >= zhVar.getEditText().getBottom()) {
-                xiVar.s1(zhVar.getEditText(), false);
-            } else {
-                xiVar.s1(zhVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.T1();
-    }
-
-    @Override // org.telegram.ui.Components.mu
-    public final void q(int i10, int i11) {
-        xi xiVar = this.c0;
-        wh whVar = xiVar.D0;
-        boolean z10 = false;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
-        }
-        if (!xiVar.c0) {
-            if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
-                z10 = true;
-            }
-            xiVar.L1(z10);
-        }
-        xiVar.W1 = whVar.getTop() + xiVar.V1;
-        whVar.invalidate();
-        xiVar.T1();
+        });
     }
 }

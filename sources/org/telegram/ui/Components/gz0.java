@@ -1,74 +1,86 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gz0 extends yl0 {
-    public final jz0 c;
-    public final /* synthetic */ jz0 d;
+public final class gz0 extends FrameLayout {
+    public float E;
+    public float F;
+    public ValueAnimator G;
+    public ValueAnimator H;
+    public com.google.firebase.messaging.m I;
+    public float J;
+    public boolean K;
+    public org.telegram.ui.Components.voip.h L;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public ci.bb f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView v;
+    public View w;
+    public int x;
+    public org.telegram.ui.Cells.ca y;
 
-    public gz0(jz0 jz0Var, jz0 jz0Var2) {
-        this.d = jz0Var;
-        this.c = jz0Var2;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.c.w;
-        if (arrayList == null) {
-            return 0;
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i10 = this.x;
+        int i11 = org.telegram.ui.ActionBar.i6.Vi;
+        if (i10 != org.telegram.ui.ActionBar.i6.x0(null, i11, false)) {
+            this.x = org.telegram.ui.ActionBar.i6.x0(null, i11, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         }
-        return arrayList.size();
+        this.y.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        this.w.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d7, false));
     }
 
-    @Override // s4.h0
-    public final long i(int i10) {
-        if (this.c.w == null) {
-            return 0L;
-        }
-        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        iz0 iz0Var = (iz0) c1Var.a;
-        jz0 jz0Var = this.c;
-        ArrayList arrayList = jz0Var.w;
-        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-        int direction = jz0Var.getDirection();
-        iz0Var.a = str;
-        if (str == null || !str.startsWith("animated_")) {
-            iz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
-        } else {
-            try {
-                long parseLong = Long.parseLong(str.substring(9));
-                Drawable drawable = iz0Var.b;
-                if (!(drawable instanceof q5) || ((q5) drawable).i() != parseLong) {
-                    iz0Var.setImageDrawable(q5.n(UserConfig.selectedAccount, parseLong, null, iz0Var.f.d()));
-                }
-            } catch (Exception unused) {
-                iz0Var.setImageDrawable(null);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        com.google.firebase.messaging.m mVar = this.I;
+        if (mVar != null) {
+            mVar.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) mVar.c;
+            if (animatorSet.isRunning()) {
+                return;
             }
-        }
-        if (iz0Var.d != direction) {
-            iz0Var.d = direction;
-            iz0Var.requestLayout();
+            animatorSet.start();
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new il0(new iz0(this.d, this.c.getContext()));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        com.google.firebase.messaging.m mVar = this.I;
+        if (mVar != null) {
+            mVar.a = false;
+            ((AnimatorSet) mVar.c).cancel();
+        }
     }
 }

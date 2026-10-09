@@ -1,112 +1,142 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yd implements TextView.OnEditorActionListener {
+public class yd extends LinearLayout {
+    public static float b = 1.0f;
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ yd(int i10, Object obj, Object obj2) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yd(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        int b10;
-        int b11;
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
-            case 0:
-                me meVar = (me) this.b;
-                ta1 ta1Var = (ta1) this.c;
-                if (i10 == 5) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
-                    ud udVar = new ud(meVar, twoStepVerificationActivity, 1);
-                    twoStepVerificationActivity.Z = 1;
-                    twoStepVerificationActivity.b0 = udVar;
-                    meVar.G0.setLoading(true);
-                    twoStepVerificationActivity.s0(new vd(meVar, ta1Var, twoStepVerificationActivity, 1));
-                    break;
+            case 4:
+                if (!(getParent() instanceof org.telegram.ui.Components.ep0)) {
+                    return super.drawChild(canvas, view, j3);
                 }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.b;
-                ei.v1 v1Var = (ei.v1) this.c;
-                if ((i10 == 6 || keyEvent.getKeyCode() == 66) && b2Var.isShowing()) {
-                    v1Var.g(b2Var, 0);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Components.vn vnVar = (org.telegram.ui.Components.vn) this.b;
-                org.telegram.ui.Components.un unVar = (org.telegram.ui.Components.un) this.c;
-                org.telegram.ui.Components.xn xnVar = vnVar.d;
-                xb1 xb1Var = xnVar.s;
-                if (i10 == 5) {
-                    View F = xb1Var.F(unVar);
-                    s4.c1 T = F == null ? null : xb1Var.T(F);
-                    if (T != null && (b10 = T.b()) != -1) {
-                        int i11 = b10 - xnVar.t0;
-                        int i12 = xnVar.M;
-                        int i13 = i12 - 1;
-                        if (i11 == i13 && i12 < xnVar.J) {
-                            xnVar.N();
-                            break;
-                        } else if (i11 != i13) {
-                            s4.c1 K = xb1Var.K(b10 + 1);
-                            if (K != null) {
-                                View view = K.a;
-                                if (view instanceof org.telegram.ui.Cells.d6) {
-                                    ((org.telegram.ui.Cells.d6) view).getTextView().requestFocus();
-                                    break;
-                                }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(unVar.getTextView());
-                            break;
+                org.telegram.ui.Components.ep0 ep0Var = (org.telegram.ui.Components.ep0) getParent();
+                canvas.save();
+                LinearLayout linearLayout = ep0Var.b;
+                Path path = ep0Var.n;
+                if (view != null && org.telegram.ui.Components.ep0.e(view)) {
+                    int indexOfChild = linearLayout.indexOfChild(view);
+                    int i10 = indexOfChild - 1;
+                    View childAt = i10 < 0 ? null : linearLayout.getChildAt(i10);
+                    int i11 = indexOfChild + 1;
+                    View childAt2 = i11 < linearLayout.getChildCount() ? linearLayout.getChildAt(i11) : null;
+                    boolean z10 = childAt != null && org.telegram.ui.Components.ep0.e(childAt);
+                    boolean z11 = childAt2 != null && org.telegram.ui.Components.ep0.e(childAt2);
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(view.getX(), Math.max(ep0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + ep0Var.getScrollY() + ep0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
+                    if (z10 && z11) {
+                        z10 = view.getY() >= rectF.top;
+                        boolean z12 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
+                        if (!z10 || !z12) {
+                            z11 = z12;
                         }
                     }
+                    if (!z10 && !z11) {
+                        path.rewind();
+                        float f7 = ep0Var.c;
+                        path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    } else if (!z10) {
+                        path.rewind();
+                        path.addRoundRect(rectF, ep0Var.d, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    } else if (!z11) {
+                        path.rewind();
+                        path.addRoundRect(rectF, ep0Var.e, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    }
                 }
-                break;
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild;
             default:
-                sv0 sv0Var = (sv0) this.b;
-                rv0 rv0Var = (rv0) this.c;
-                uv0 uv0Var = sv0Var.d;
-                if (i10 == 5) {
-                    xb1 xb1Var2 = uv0Var.c;
-                    View F2 = xb1Var2.F(rv0Var);
-                    s4.c1 T2 = F2 == null ? null : xb1Var2.T(F2);
-                    if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i14 = b11 - uv0Var.n0;
-                        int i15 = uv0Var.y;
-                        int i16 = i15 - 1;
-                        if (i14 == i16 && i15 < uv0Var.n) {
-                            uv0Var.f0();
-                            break;
-                        } else if (i14 != i16) {
-                            s4.c1 K2 = uv0Var.c.K(b11 + 1);
-                            if (K2 != null) {
-                                View view2 = K2.a;
-                                if (view2 instanceof org.telegram.ui.Cells.d6) {
-                                    ((org.telegram.ui.Cells.d6) view2).getTextView().requestFocus();
-                                    break;
-                                }
-                            }
-                        } else {
-                            AndroidUtilities.hideKeyboard(rv0Var.getTextView());
-                            break;
-                        }
-                    }
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 2:
+                super.onLayout(z10, i10, i11, i12, i13);
+                setPivotX(getWidth());
+                break;
+            case 3:
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+            case 4:
+                super.onLayout(z10, i10, i11, i12, i13);
+                if (getParent() instanceof org.telegram.ui.Components.ep0) {
+                    ((org.telegram.ui.Components.ep0) getParent()).invalidate();
+                    break;
                 }
                 break;
         }
-        return true;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 2:
+            case 4:
+            case 5:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 3:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)), i11);
+                break;
+            case 6:
+                super.onMeasure(i10, i11);
+                setPivotY(0.0f);
+                setPivotX(0.0f);
+                break;
+            case 7:
+                super.onMeasure(i10, i11);
+                setPivotY(0.0f);
+                setPivotX(getMeasuredWidth());
+                break;
+            case 8:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
+                break;
+            case 9:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 10:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yd(Context context) {
+        super(context);
+        this.a = 4;
+        setWillNotDraw(false);
     }
 }

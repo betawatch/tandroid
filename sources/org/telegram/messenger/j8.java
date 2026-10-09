@@ -9,8 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j8 implements Runnable {
     public final /* synthetic */ int a;
@@ -50,73 +51,73 @@ public final /* synthetic */ class j8 implements Runnable {
                 ((MediaDataController) this.b).lambda$findStickerSetByNameInCache$29((TLRPC.TL_messages_stickerSet) this.d, (Utilities.Callback) this.c);
                 break;
             case 7:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$494((TLObject) this.d, (ArrayList) this.c);
+                ((MessagesController) this.b).lambda$addUsersToChat$295((TLRPC.Chat) this.d, (TLRPC.TL_messages_invitedUsers) this.c);
                 break;
             case 8:
-                ((MessagesController) this.b).lambda$setUserAdminRole$104((TLRPC.TL_channels_editAdmin) this.d, (cb) this.c);
+                ((MessagesController) this.b).lambda$setUserAdminRole$103((TLRPC.TL_channels_editAdmin) this.d, (jb) this.c);
                 break;
             case 9:
-                ((MessagesController) this.b).lambda$setUserAdminRole$109((TLRPC.TL_messages_editChatAdmin) this.d, (db) this.c);
+                ((MessagesController) this.b).lambda$setUserAdminRole$108((TLRPC.TL_messages_editChatAdmin) this.d, (kb) this.c);
                 break;
             case 10:
-                ((MessagesController) this.b).lambda$updateChatAbout$289((TLRPC.ChatFull) this.d, (String) this.c);
+                MessagesController.lambda$openByUserName$461((org.telegram.ui.ActionBar.b2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.n2) this.c);
                 break;
             case 11:
-                ((MessagesController) this.b).lambda$addUsersToChat$296((TLRPC.Chat) this.d, (TLRPC.TL_messages_invitedUsers) this.c);
+                ((MessagesController) this.b).lambda$updateChatAbout$288((TLRPC.ChatFull) this.d, (String) this.c);
                 break;
             case 12:
-                MessagesController.lambda$openByUserName$458((org.telegram.ui.ActionBar.b2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.n2) this.c);
+                ((MessagesController) this.b).lambda$processMessageIDUpdate$375((long[]) this.d, (TL_update.TL_updateMessageID) this.c);
                 break;
             case 13:
-                ((MessagesController) this.b).lambda$didReceivedNotification$50((org.telegram.ui.ActionBar.h6) this.d, (org.telegram.ui.ActionBar.f6) this.c);
+                ((MessagesController) this.b).lambda$processDialogsUpdateRead$222((LongSparseIntArray) this.d, (LongSparseIntArray) this.c);
                 break;
             case 14:
-                ((MessagesController) this.b).lambda$processDialogsUpdateRead$223((LongSparseIntArray) this.d, (LongSparseIntArray) this.c);
+                ((MessagesController) this.b).lambda$getDifference$352((ArrayList) this.d, (TLRPC.updates_Difference) this.c);
                 break;
             case 15:
-                ((MessagesController) this.b).lambda$getDifference$353((ArrayList) this.d, (TLRPC.updates_Difference) this.c);
+                ((MessagesController) this.b).lambda$didReceivedNotification$49((org.telegram.ui.ActionBar.h6) this.d, (org.telegram.ui.ActionBar.g6) this.c);
                 break;
             case 16:
-                ((MessagesController) this.b).lambda$getChannelDifference$342((ArrayList) this.d, (TLRPC.updates_ChannelDifference) this.c);
+                ((MessagesController) this.b).lambda$getChannelDifference$341((ArrayList) this.d, (TLRPC.updates_ChannelDifference) this.c);
                 break;
             case 17:
-                ((MessagesController.SavedMusicList) this.b).lambda$load$0((TLObject) this.d, (ArrayList) this.c);
+                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$497((TLObject) this.d, (ArrayList) this.c);
                 break;
             case 18:
-                ((MessagesStorage) this.b).lambda$saveBotCache$126((TLObject) this.d, (String) this.c);
+                ((MessagesController.SavedMusicList) this.b).lambda$load$0((TLObject) this.d, (ArrayList) this.c);
                 break;
             case 19:
-                ((MessagesStorage) this.b).lambda$applyPhoneBookUpdates$148((String) this.c, (String) this.d);
+                ((MessagesStorage) this.b).lambda$saveBotCache$126((TLObject) this.d, (String) this.c);
                 break;
             case 20:
-                ((MessagesStorage) this.b).lambda$replaceMessageIfExists$232((MessageObject) this.d, (ArrayList) this.c);
+                ((MessagesStorage) this.b).lambda$applyPhoneBookUpdates$148((String) this.c, (String) this.d);
                 break;
             case 21:
-                ((MessagesStorage) this.b).lambda$getNewTask$111((a0.i) this.d, (a0.i) this.c);
+                ((MessagesStorage) this.b).lambda$replaceMessageIfExists$232((MessageObject) this.d, (ArrayList) this.c);
                 break;
             case 22:
-                ((SavedMessagesController) this.b).lambda$saveCache$11((MessagesStorage) this.d, (ArrayList) this.c);
+                ((MessagesStorage) this.b).lambda$getNewTask$111((a0.i) this.d, (a0.i) this.c);
                 break;
             case 23:
-                ((SecretChatHelper) this.b).lambda$processUpdateEncryption$2((TLRPC.EncryptedChat) this.d, (TLRPC.EncryptedChat) this.c);
+                ((SavedMessagesController) this.b).lambda$saveCache$11((MessagesStorage) this.d, (ArrayList) this.c);
                 break;
             case 24:
-                ((SendMessagesHelper) this.b).lambda$sendVote$31((String) this.c, (Runnable) this.d);
+                ((SecretChatHelper) this.b).lambda$processUpdateEncryption$2((TLRPC.EncryptedChat) this.d, (TLRPC.EncryptedChat) this.c);
                 break;
             case 25:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$49((TLObject) this.d, (SendMessagesHelper.DelayedMessage) this.c);
+                ((SendMessagesHelper) this.b).lambda$sendVote$34((String) this.c, (Runnable) this.d);
                 break;
             case 26:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$14((TLRPC.TL_error) this.d, (TLRPC.TL_messages_forwardMessages) this.c);
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$52((TLObject) this.d, (SendMessagesHelper.DelayedMessage) this.c);
                 break;
             case 27:
-                ((TelegramMediaSession) this.b).lambda$loadBrowseChildren$3((TelegramMediaSession.BrowseChildrenCallback) this.d, (String) this.c);
+                ((SendMessagesHelper) this.b).lambda$sendMessage$17((TLRPC.TL_error) this.d, (TLRPC.TL_messages_forwardMessages) this.c);
                 break;
             case 28:
-                ((TranslateController) this.b).lambda$checkDialogMessageSure$10((ArrayList) this.d, (ArrayList) this.c);
+                ((TelegramMediaSession) this.b).lambda$loadBrowseChildren$3((TelegramMediaSession.BrowseChildrenCallback) this.d, (String) this.c);
                 break;
             default:
-                Utilities.lambda$raceCallbacks$1((int[]) this.b, (Utilities.Callback[]) this.d, (Runnable) this.c);
+                ((TranslateController) this.b).lambda$checkDialogMessageSure$10((ArrayList) this.d, (ArrayList) this.c);
                 break;
         }
     }

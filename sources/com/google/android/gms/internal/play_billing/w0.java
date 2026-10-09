@@ -10,10 +10,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import org.telegram.messenger.BuildConfig;
 import v7.y5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -64,12 +63,13 @@ public final class w0 extends l0 implements g0 {
             return new e0(c10);
         }
         boolean isCancelled = t0Var.isCancelled();
+        boolean z10 = true;
         if ((!l0.f) && isCancelled) {
             b0 b0Var2 = b0.d;
             Objects.requireNonNull(b0Var2);
             return b0Var2;
         }
-        boolean z10 = false;
+        boolean z11 = false;
         while (true) {
             try {
                 try {
@@ -81,9 +81,9 @@ public final class w0 extends l0 implements g0 {
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
-                    z10 = true;
+                    z11 = z10;
                 } catch (Throwable th3) {
-                    if (z10) {
+                    if (z11) {
                         Thread.currentThread().interrupt();
                     }
                     throw th3;
@@ -97,7 +97,7 @@ public final class w0 extends l0 implements g0 {
                 return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
             }
         }
-        if (z10) {
+        if (z11) {
             Thread.currentThread().interrupt();
         }
         return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var))), false) : obj == null ? l0.d : obj;
@@ -222,8 +222,8 @@ public final class w0 extends l0 implements g0 {
             b0Var = z10 ? b0.c : b0.d;
             Objects.requireNonNull(b0Var);
         }
-        boolean z11 = false;
         w0 w0Var = this;
+        boolean z11 = false;
         while (true) {
             if (l0.h.f(w0Var, obj, b0Var)) {
                 j(w0Var);
@@ -256,7 +256,7 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String q6 = a4.a.q("inputFuture=[", t0Var.toString(), "]");
+        String q6 = a1.g.q("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
             return q6;
         }
@@ -339,7 +339,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else if (obj == this) {
             sb2.append("this future");
         } else {
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a4.a.D(str, " for ", w0Var));
+                        throw new TimeoutException(a1.g.D(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

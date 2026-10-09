@@ -1,34 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class if1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jf1 b;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public /* synthetic */ if1(jf1 jf1Var, int i10) {
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class if1 extends s4.t0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg1 b;
+
+    public /* synthetic */ if1(fg1 fg1Var, int i10) {
         this.a = i10;
-        this.b = jf1Var;
+        this.b = fg1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // s4.t0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z10;
+        fg1 fg1Var;
+        ah.h hVar;
         switch (this.a) {
             case 0:
-                jf1 jf1Var = this.b;
-                jf1Var.F = null;
-                if (jf1Var.G != -1) {
-                    jf1Var.H.getNotificationCenter().onAnimationFinish(jf1Var.G);
-                    jf1Var.G = -1;
+                fg1 fg1Var2 = this.b;
+                int L0 = fg1Var2.F.L0();
+                if (L0 != -1) {
+                    s4.d1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z10 = top < 0;
+                        Math.abs(i12);
+                    } else {
+                        z10 = L0 > 0;
+                    }
+                    fg1Var2.G0(z10 || !fg1Var2.K, true);
                     break;
                 }
                 break;
+            case 1:
+                this.b.y0();
+                break;
             default:
-                jf1 jf1Var2 = this.b;
-                jf1Var2.F = null;
-                if (jf1Var2.G != -1) {
-                    jf1Var2.H.getNotificationCenter().onAnimationFinish(jf1Var2.G);
-                    jf1Var2.G = -1;
+                if (Build.VERSION.SDK_INT >= 31 && (hVar = (fg1Var = this.b).f1) != null) {
+                    hVar.f(i10, i11);
+                    fg1Var.x0();
                     break;
                 }
                 break;

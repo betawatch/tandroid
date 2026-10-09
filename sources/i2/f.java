@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class f implements j1 {
     public boolean E;
@@ -12,13 +12,13 @@ public abstract class f implements j1 {
     public j2.k f;
     public e2.x h;
     public int n;
-    public u2.c1 r;
+    public u2.b1 r;
     public b2.s[] s;
     public long v;
     public long w;
     public boolean y;
     public final Object a = new Object();
-    public final n4.y c = new n4.y(17);
+    public final n4.x c = new n4.x(19, false);
     public long x = Long.MIN_VALUE;
     public b2.k1 F = b2.k1.a;
 
@@ -78,19 +78,19 @@ public abstract class f implements j1 {
         if (k()) {
             return this.y;
         }
-        u2.c1 c1Var = this.r;
-        c1Var.getClass();
-        return c1Var.e();
+        u2.b1 b1Var = this.r;
+        b1Var.getClass();
+        return b1Var.e();
     }
 
     public abstract void o();
 
     public abstract void q(long j3, boolean z10);
 
-    public final int w(n4.y yVar, h2.h hVar, int i10) {
-        u2.c1 c1Var = this.r;
-        c1Var.getClass();
-        int f7 = c1Var.f(yVar, hVar, i10);
+    public final int w(n4.x xVar, h2.h hVar, int i10) {
+        u2.b1 b1Var = this.r;
+        b1Var.getClass();
+        int f7 = b1Var.f(xVar, hVar, i10);
         if (f7 == -4) {
             if (hVar.isEndOfStream()) {
                 this.x = Long.MIN_VALUE;
@@ -102,13 +102,13 @@ public abstract class f implements j1 {
             return f7;
         }
         if (f7 == -5) {
-            b2.s sVar = (b2.s) yVar.c;
+            b2.s sVar = (b2.s) xVar.c;
             sVar.getClass();
             long j10 = sVar.w;
             if (j10 != Long.MAX_VALUE) {
                 b2.r a2 = sVar.a();
                 a2.v = j10 + this.v;
-                yVar.c = new b2.s(a2);
+                xVar.c = new b2.s(a2);
             }
         }
         return f7;
@@ -116,9 +116,9 @@ public abstract class f implements j1 {
 
     public abstract void x(long j3, long j10);
 
-    public final void y(b2.s[] sVarArr, u2.c1 c1Var, long j3, long j10, u2.f0 f0Var) {
+    public final void y(b2.s[] sVarArr, u2.b1 b1Var, long j3, long j10, u2.f0 f0Var) {
         e2.d.g(!this.y);
-        this.r = c1Var;
+        this.r = b1Var;
         this.G = f0Var;
         if (this.x == Long.MIN_VALUE) {
             this.x = j3;

@@ -1,57 +1,50 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class hk0 extends org.telegram.ui.ActionBar.f5 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity f;
+public final /* synthetic */ class hk0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsCustomSettingsActivity b;
+    public final /* synthetic */ vk0 c;
+    public final /* synthetic */ View d;
 
-    public hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.f = notificationsCustomSettingsActivity;
+    public /* synthetic */ hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, vk0 vk0Var, View view, int i10, int i11) {
+        this.a = i11;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = vk0Var;
+        this.d = view;
     }
 
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void m() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.d.F(null);
-        notificationsCustomSettingsActivity.f = false;
-        notificationsCustomSettingsActivity.getClass();
-        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
-        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
-        notificationsCustomSettingsActivity.b.l();
-        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
-        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
-        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void n() {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        notificationsCustomSettingsActivity.f = true;
-        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f5
-    public final void q(EditText editText) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
-        if (notificationsCustomSettingsActivity.d == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.k0(this.c, this.d, false);
+                break;
+            case 1:
+                this.b.e0(this.c, this.d);
+                break;
+            case 2:
+                NotificationsCustomSettingsActivity.X(this.b, this.c, this.d);
+                break;
+            case 3:
+                NotificationsCustomSettingsActivity.V(this.b, this.c, this.d);
+                break;
+            case 4:
+                this.b.e0(this.c, this.d);
+                break;
+            default:
+                this.b.k0(this.c, this.d, true);
+                break;
         }
-        String obj = editText.getText().toString();
-        if (obj.length() != 0) {
-            notificationsCustomSettingsActivity.getClass();
-            if (notificationsCustomSettingsActivity.a != null) {
-                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
-                notificationsCustomSettingsActivity.c.b();
-                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
-                notificationsCustomSettingsActivity.d.l();
-                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
-                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
-            }
-        }
-        notificationsCustomSettingsActivity.d.F(obj);
+    }
+
+    public /* synthetic */ hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, vk0 vk0Var, View view, boolean z10, int i10) {
+        this.a = i10;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = vk0Var;
+        this.d = view;
     }
 }

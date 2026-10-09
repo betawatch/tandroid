@@ -1,53 +1,53 @@
 package ai;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.jx;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.kx;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class v extends og.b {
     public final boolean d;
-    public final /* synthetic */ jx e;
+    public final /* synthetic */ kx e;
 
-    public v(jx jxVar, boolean z10) {
-        this.e = jxVar;
+    public v(kx kxVar, boolean z10) {
+        this.e = kxVar;
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
         return false;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
         boolean z10 = this.d;
-        jx jxVar = this.e;
-        return (z10 ? jxVar.y : jxVar.x).size();
+        kx kxVar = this.e;
+        return (z10 ? kxVar.y : kxVar.x).size();
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        a0 a0Var = (a0) c1Var.a;
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        a0 a0Var = (a0) d1Var.a;
         a0Var.b = i10;
         boolean z10 = this.d;
-        jx jxVar = this.e;
+        kx kxVar = this.e;
         if (z10) {
-            a0Var.setDialogId(((w) jxVar.y.get(i10)).c);
+            a0Var.setDialogId(((w) kxVar.y.get(i10)).c);
         } else {
-            a0Var.setDialogId(((w) jxVar.x.get(i10)).c);
+            a0Var.setDialogId(((w) kxVar.x.get(i10)).c);
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
         a0 a0Var = new a0(this.e, viewGroup.getContext());
         boolean z10 = this.d;
         a0Var.N = z10;
         if (z10) {
             a0Var.d(1.0f, 1.0f, 0.0f, false);
         }
-        return new il0(a0Var);
+        return new am0(a0Var);
     }
 }

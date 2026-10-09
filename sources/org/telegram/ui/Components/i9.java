@@ -1,20 +1,207 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i9 {
-    public h9 a;
-    public org.telegram.ui.Cells.c4 b;
-    public long c;
-    public long d;
-    public ImageReceiver e;
-    public TLRPC.GroupCallParticipant f;
-    public long g;
-    public TLObject h;
-    public int i;
-    public int j;
+public abstract class i9 extends FrameLayout {
+    public s5 a;
+    public s5 b;
+    public y9 c;
+    public y9 d;
+    public f30 e;
+    public f30 f;
+    public final TextView h;
+    public final TLRPC.TL_emojiList n;
+    public final int r;
+    public int s;
+    public int v;
+    public float w;
+    public boolean x;
+    public final h9 y;
+
+    public i9(Context context) {
+        super(context);
+        int i10 = UserConfig.selectedAccount;
+        this.r = i10;
+        this.s = 0;
+        this.v = 0;
+        this.w = 1.0f;
+        this.y = new h9((xm) this);
+        TLRPC.TL_emojiList a2 = a(i10);
+        this.n = a2;
+        this.c = new y9(context);
+        this.d = new y9(context);
+        addView(this.c, w7.x5.e(50, 50, 1));
+        addView(this.d, w7.x5.e(50, 50, 1));
+        if (!a2.document_id.isEmpty()) {
+            s5 s5Var = new s5(4, i10, a2.document_id.get(0).longValue());
+            this.a = s5Var;
+            this.c.setAnimatedEmojiDrawable(s5Var);
+            b();
+        }
+        int[] iArr = g9.c0[this.s];
+        int i11 = iArr[0];
+        int i12 = iArr[1];
+        int i13 = iArr[2];
+        int i14 = iArr[3];
+        f30 f30Var = new f30();
+        this.e = f30Var;
+        f30Var.d(i11, i12, i13, i14);
+        TextView textView = new TextView(context);
+        this.h = textView;
+        textView.setTextSize(1, 12.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.J7, false));
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setText(LocaleController.getString(R.string.UseEmoji));
+        addView(textView, w7.x5.a(28.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 80));
+    }
+
+    public static TLRPC.TL_emojiList a(int i10) {
+        TLRPC.TL_emojiList tL_emojiList = MediaDataController.getInstance(i10).groupAvatarConstructorDefault;
+        if (tL_emojiList != null && !tL_emojiList.document_id.isEmpty()) {
+            return tL_emojiList;
+        }
+        ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
+        TLRPC.TL_emojiList tL_emojiList2 = new TLRPC.TL_emojiList();
+        if (stickerSets.isEmpty()) {
+            ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = MediaDataController.getInstance(i10).getFeaturedEmojiSets();
+            for (int i11 = 0; i11 < featuredEmojiSets.size(); i11++) {
+                TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i11);
+                TLRPC.Document document = stickerSetCovered.cover;
+                if (document != null) {
+                    tL_emojiList2.document_id.add(Long.valueOf(document.id));
+                } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                    TLRPC.TL_stickerSetFullCovered tL_stickerSetFullCovered = (TLRPC.TL_stickerSetFullCovered) stickerSetCovered;
+                    if (!tL_stickerSetFullCovered.documents.isEmpty()) {
+                        tL_emojiList2.document_id.add(Long.valueOf(tL_stickerSetFullCovered.documents.get(0).id));
+                    }
+                }
+            }
+        } else {
+            for (int i12 = 0; i12 < stickerSets.size(); i12++) {
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSets.get(i12);
+                if (!tL_messages_stickerSet.documents.isEmpty()) {
+                    tL_emojiList2.document_id.add(Long.valueOf(tL_messages_stickerSet.documents.get(Math.abs(Utilities.fastRandom.nextInt() % tL_messages_stickerSet.documents.size())).id));
+                }
+            }
+        }
+        return tL_emojiList2;
+    }
+
+    public final void b() {
+        if (this.x) {
+            return;
+        }
+        int i10 = this.v + 1;
+        TLRPC.TL_emojiList tL_emojiList = this.n;
+        if (i10 > tL_emojiList.document_id.size() - 1) {
+            this.x = true;
+            return;
+        }
+        s5 s5Var = new s5(4, this.r, tL_emojiList.document_id.get(i10).longValue());
+        this.b = s5Var;
+        s5Var.m = true;
+        s5Var.v();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        f30 f30Var = this.e;
+        if (f30Var != null) {
+            f30Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        }
+        f30 f30Var2 = this.f;
+        if (f30Var2 != null) {
+            f30Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        }
+        float f7 = this.w;
+        if (f7 == 1.0f) {
+            this.e.c.setAlpha(255);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
+            this.c.setAlpha(1.0f);
+            this.c.setScaleX(1.0f);
+            this.c.setScaleY(1.0f);
+            this.d.setAlpha(0.0f);
+        } else {
+            float interpolation = hs.f.getInterpolation(f7);
+            this.e.c.setAlpha(255);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
+            this.f.c.setAlpha((int) (255.0f * interpolation));
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.f.c);
+            this.w += 0.064f;
+            float f10 = 1.0f - interpolation;
+            this.c.setAlpha(f10);
+            this.c.setScaleX(f10);
+            this.c.setScaleY(f10);
+            this.c.setPivotY(0.0f);
+            this.d.setAlpha(interpolation);
+            this.d.setScaleX(interpolation);
+            this.d.setScaleY(interpolation);
+            this.d.setPivotY(r1.getMeasuredHeight());
+            if (this.w > 1.0f) {
+                this.w = 1.0f;
+                this.e = this.f;
+                y9 y9Var = this.c;
+                this.c = this.d;
+                this.d = y9Var;
+            }
+            invalidate();
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    public s5 getAnimatedEmoji() {
+        return this.a;
+    }
+
+    public c9 getBackgroundGradient() {
+        c9 c9Var = new c9();
+        int[] iArr = g9.c0[this.s];
+        c9Var.c = iArr[0];
+        c9Var.d = iArr[1];
+        c9Var.e = iArr[2];
+        c9Var.f = iArr[3];
+        return c9Var;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        AndroidUtilities.runOnUIThread(this.y, 1000L);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        AndroidUtilities.cancelRunOnUIThread(this.y);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int top = (int) (this.h.getTop() * 0.7f);
+        int i12 = (int) ((r3 - top) * 0.7f);
+        ViewGroup.LayoutParams layoutParams = this.c.getLayoutParams();
+        this.c.getLayoutParams().height = top;
+        layoutParams.width = top;
+        ViewGroup.LayoutParams layoutParams2 = this.d.getLayoutParams();
+        this.d.getLayoutParams().height = top;
+        layoutParams2.width = top;
+        ((FrameLayout.LayoutParams) this.c.getLayoutParams()).topMargin = i12;
+        ((FrameLayout.LayoutParams) this.d.getLayoutParams()).topMargin = i12;
+    }
 }

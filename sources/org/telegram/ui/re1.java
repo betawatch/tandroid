@@ -1,50 +1,165 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.text.TextPaint;
 import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class re1 extends a71 {
-    public boolean d2;
-    public final /* synthetic */ se1 e2;
+public final class re1 extends org.telegram.ui.Components.pm0 {
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public final /* synthetic */ ue1 r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public re1(se1 se1Var, se1 se1Var2, Activity activity) {
-        super(se1Var2, activity, false, null, 3, null);
-        this.e2 = se1Var;
-        this.d2 = true;
+    public re1(ue1 ue1Var) {
+        this.r = ue1Var;
     }
 
-    @Override // org.telegram.ui.a71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.d2) {
-            this.d2 = false;
-            this.e2.f.s(null);
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        return d1Var.b() >= this.f && d1Var.b() < this.h;
+    }
+
+    public final void E() {
+        this.e = -1;
+        this.f = -1;
+        this.h = -1;
+        this.n = -1;
+        this.c = 2;
+        this.d = 1;
+        ArrayList arrayList = this.r.f;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        int i10 = this.c;
+        int i11 = i10 + 1;
+        this.e = i10;
+        int i12 = i10 + 2;
+        this.c = i12;
+        this.f = i11;
+        int size = (arrayList.size() - 1) + i12;
+        this.h = size;
+        this.c = size + 1;
+        this.n = size;
+    }
+
+    @Override // s4.i0
+    public final int h() {
+        return this.c;
+    }
+
+    @Override // s4.i0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        if (i10 == this.d) {
+            return 2;
+        }
+        if (i10 == this.e) {
+            return 3;
+        }
+        return i10 == this.n ? 5 : 4;
+    }
+
+    @Override // s4.i0
+    public final void l() {
+        E();
+        super.l();
+    }
+
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        View view = d1Var.a;
+        int i11 = this.e;
+        ue1 ue1Var = this.r;
+        if (i10 < i11 || i11 <= 0) {
+            view.setAlpha(1.0f);
+        } else {
+            view.setAlpha(ue1Var.E);
+        }
+        if (j(i10) == 4) {
+            org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
+            TLRPC.Chat chat = (TLRPC.Chat) ue1Var.f.get(i10 - this.f);
+            g4Var.e(chat, chat.title, (String) ue1Var.h.get(i10 - this.f), i10 != this.h - 1);
+            g4Var.c(ue1Var.w.contains(Long.valueOf(chat.id)), false);
         }
     }
 
-    @Override // org.telegram.ui.a71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        int i11;
-        se1 se1Var = this.e2;
-        i10 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
-        boolean z10 = false;
-        if (!TextUtils.isEmpty(UserConfig.getInstance(i10).defaultTopicIcons)) {
-            MediaDataController mediaDataController = se1Var.getMediaDataController();
-            i11 = ((org.telegram.ui.ActionBar.n2) se1Var).currentAccount;
-            TLRPC.TL_messages_stickerSet stickerSetByEmojiOrName = mediaDataController.getStickerSetByEmojiOrName(UserConfig.getInstance(i11).defaultTopicIcons);
-            if ((stickerSetByEmojiOrName == null ? 0L : stickerSetByEmojiOrName.set.id) == MediaDataController.getStickerSetId(document)) {
-                z10 = true;
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        View view2;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                org.telegram.ui.Cells.b7 b7Var = new org.telegram.ui.Cells.b7(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
+                org.telegram.ui.Components.fr frVar = new org.telegram.ui.Components.fr(new ColorDrawable(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false)), org.telegram.ui.ActionBar.i6.W0(viewGroup.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.i6.b7));
+                frVar.w = true;
+                b7Var.setBackground(frVar);
+                view2 = b7Var;
+            } else if (i10 != 3) {
+                view2 = i10 != 5 ? new org.telegram.ui.Cells.g4(1, 0, viewGroup.getContext(), false) : new org.telegram.ui.Cells.l3(viewGroup.getContext(), AndroidUtilities.dp(12.0f));
+            } else {
+                org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(viewGroup.getContext(), org.telegram.ui.ActionBar.i6.L6, 21, 8, false, null);
+                m4Var.setHeight(54);
+                m4Var.setText(LocaleController.getString(R.string.InactiveChats));
+                view = m4Var;
             }
+            view = view2;
+        } else {
+            Context context = viewGroup.getContext();
+            org.telegram.ui.Cells.oa oaVar = new org.telegram.ui.Cells.oa(context);
+            ImageView imageView = new ImageView(context);
+            int i11 = org.telegram.ui.ActionBar.i6.m9;
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+            TextView textView = new TextView(context);
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
+            textView.setTextSize(1, 20.0f);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setGravity(17);
+            oaVar.addView(textView, w7.x5.a(-2.0f, 52.0f, 75.0f, 52.0f, 0.0f, -1, 51));
+            TextView textView2 = new TextView(context);
+            oaVar.a = textView2;
+            textView2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.g9, false));
+            textView2.setTextSize(1, 14.0f);
+            textView2.setGravity(17);
+            oaVar.addView(textView2, w7.x5.a(-2.0f, 36.0f, 110.0f, 36.0f, 0.0f, -1, 51));
+            TextPaint textPaint = new TextPaint(1);
+            textPaint.setColor(-1);
+            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
+            textPaint.setTypeface(AndroidUtilities.bold());
+            ai.x7 x7Var = new ai.x7(context, new Paint(1), textPaint);
+            x7Var.setWillNotDraw(false);
+            x7Var.addView(imageView, w7.x5.e(-2, -2, 1));
+            oaVar.addView(x7Var, w7.x5.a(-2.0f, 0.0f, 12.0f, 0.0f, 6.0f, -2, 49));
+            textView.setText(LocaleController.getString(R.string.TooManyCommunities));
+            imageView.setImageResource(R.drawable.groups_limit1);
+            ue1 ue1Var = this.r;
+            ue1Var.x = oaVar;
+            int i12 = ue1Var.G;
+            ue1Var.x.setMessageText(i12 == 0 ? LocaleController.getString(R.string.TooManyCommunitiesHintJoin) : i12 == 1 ? LocaleController.getString(R.string.TooManyCommunitiesHintEdit) : LocaleController.getString(R.string.TooManyCommunitiesHintCreate));
+            s4.q0 q0Var = new s4.q0(-1, -2);
+            ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin = AndroidUtilities.dp(16.0f);
+            ((ViewGroup.MarginLayoutParams) q0Var).topMargin = AndroidUtilities.dp(23.0f);
+            ue1Var.x.setLayoutParams(q0Var);
+            view = oaVar;
         }
-        se1Var.b0(l4, z10);
+        return new org.telegram.ui.Components.am0(view);
     }
 }

@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import gd.f;
-import gd.i;
-import id.c;
-import jd.a;
-import kd.j;
-import rd.p;
-import v7.t7;
+import hd.f;
+import hd.i;
+import jd.c;
+import kd.a;
+import ld.j;
+import sd.p;
+import v7.a8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 final class zzb extends j implements p {
     int zza;
@@ -25,27 +25,27 @@ final class zzb extends j implements p {
         this.zzd = j3;
     }
 
-    @Override // kd.a
+    @Override // ld.a
     public final c create(Object obj, c cVar) {
         zzb zzbVar = new zzb(this.zzb, this.zzc, this.zzd, cVar);
         zzbVar.zze = obj;
         return zzbVar;
     }
 
-    @Override // rd.p
+    @Override // sd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
         return ((zzb) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x004d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x004b, code lost:
     
-        if (r12 != r0) goto L19;
+        if (r12 != r0) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x005f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x005d, code lost:
     
-        if (r12 != r0) goto L24;
+        if (r12 != r0) goto L23;
      */
-    @Override // kd.a
+    @Override // ld.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -62,7 +62,7 @@ final class zzb extends j implements p {
             obj = zzgVar.zza(str, this);
         }
         if (i10 == 0) {
-            t7.b(obj);
+            a8.b(obj);
             zzhkVar = (zzhk) this.zze;
             zzg zzgVar2 = this.zzb;
             String str2 = this.zzc;
@@ -77,15 +77,15 @@ final class zzb extends j implements p {
         }
         if (i10 != 1) {
             if (i10 != 2) {
-                t7.b(obj);
+                a8.b(obj);
                 return new f(obj);
             }
-            t7.b(obj);
+            a8.b(obj);
             obj = (zzxx) obj;
             return new f(obj);
         }
         zzhkVar = (zzhk) this.zze;
-        t7.b(obj);
+        a8.b(obj);
         this.zze = null;
         this.zza = 2;
         obj = ((zzhf) obj).zza(zzhkVar, this);

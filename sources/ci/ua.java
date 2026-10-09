@@ -1,99 +1,177 @@
 package ci;
 
-import android.graphics.Point;
-import android.graphics.RectF;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.uy;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
     public final /* synthetic */ TLObject h;
+    public final /* synthetic */ TLObject n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ ua(kc kcVar, boolean z10, TL_stories.StoryItem storyItem, long j3, TLRPC.InputGroupCall inputGroupCall, boolean z11) {
-        this.e = kcVar;
-        this.c = z10;
-        this.f = storyItem;
-        this.b = j3;
-        this.h = inputGroupCall;
-        this.d = z11;
+    public /* synthetic */ ua(lc lcVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z10, long j3, boolean z11, TLRPC.TL_error tL_error, androidx.fragment.app.a0 a0Var) {
+        this.e = lcVar;
+        this.f = tLObject;
+        this.h = tL_startLive;
+        this.b = z10;
+        this.d = j3;
+        this.c = z11;
+        this.n = tL_error;
+        this.r = a0Var;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00af  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        int i10 = this.a;
-        TLObject tLObject = this.h;
-        TLObject tLObject2 = this.f;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.e;
-        switch (i10) {
+        int i10;
+        int i11;
+        int i12;
+        TL_stories.StoryItem storyItem;
+        TLRPC.InputGroupCall inputGroupCall;
+        int i13 = this.a;
+        Object obj = this.r;
+        TLObject tLObject = this.n;
+        TLObject tLObject2 = this.h;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        int i14 = 0;
+        switch (i13) {
             case 0:
-                kc kcVar = (kc) notificationCenterDelegate;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
-                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
-                boolean z10 = this.c;
-                long j3 = this.b;
-                if (!z10) {
-                    ai.d2.W = new ai.d2(kcVar.b, kcVar.c, storyItem, j3, storyItem.id, z10, inputGroupCall, true, this.d);
-                }
-                fc fcVar = kcVar.F;
-                if (fcVar != null) {
-                    fcVar.f(false);
-                }
-                kcVar.F = null;
-                kcVar.J = 0;
-                RectF rectF = kcVar.H;
-                Point point = AndroidUtilities.displaySize;
-                rectF.set(0.0f, 0.0f, point.x, point.y);
-                kcVar.G = AndroidUtilities.dp(8.0f);
-                kcVar.q(true);
-                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                storyItem.dialogId = j3;
-                storyItem.justUploaded = true;
-                U.getOrCreateStoryViewer().F(kcVar.b, storyItem, null);
-                NotificationCenter.getInstance(kcVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
-                break;
-            default:
-                uy uyVar = (uy) notificationCenterDelegate;
-                TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
-                TLRPC.User user = (TLRPC.User) tLObject;
-                long j10 = this.b;
-                boolean z11 = this.c;
-                if (chat != null) {
-                    uyVar.getClass();
-                    if (ChatObject.isNotInChat(chat)) {
-                        uyVar.getMessagesController().deleteDialog(j10, 0, z11);
-                    } else {
-                        uyVar.getMessagesController().deleteParticipantFromChat(-j10, uyVar.getMessagesController().getUser(Long.valueOf(uyVar.getUserConfig().getClientUserId())), (TLRPC.Chat) null, z11, z11);
+                lc lcVar = (lc) obj3;
+                TLObject tLObject3 = (TLObject) obj2;
+                TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
+                androidx.fragment.app.a0 a0Var = (androidx.fragment.app.a0) obj;
+                ai.d dVar = lcVar.a;
+                int i15 = lcVar.c;
+                if (!(tLObject3 instanceof TLRPC.Updates)) {
+                    if (tL_error != null) {
+                        if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
+                            fa faVar = lcVar.q0;
+                            if (faVar != null) {
+                                new org.telegram.ui.Components.ad(faVar.container, dVar).f0(tL_error, true);
+                                a0Var.run();
+                                break;
+                            }
+                        } else {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lcVar.b, 0, dVar);
+                            String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
+                            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                            b2Var.R = string;
+                            b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
+                            org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                            break;
+                        }
                     }
                 } else {
-                    uyVar.getMessagesController().deleteDialog(j10, 0, z11);
-                    if (user != null && user.bot && this.d) {
-                        uyVar.getMessagesController().blockPeer(user.id);
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
+                    MessagesController.getInstance(i15).lambda$processUpdates$377(updates, false);
+                    ob obVar = lcVar.B0;
+                    if (obVar != null) {
+                        obVar.destroy(true, null);
+                    }
+                    ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateStoryID.class);
+                    int size = findUpdates.size();
+                    int i16 = 0;
+                    while (true) {
+                        if (i16 < size) {
+                            Object obj4 = findUpdates.get(i16);
+                            i16++;
+                            TL_update.TL_updateStoryID tL_updateStoryID = (TL_update.TL_updateStoryID) obj4;
+                            i10 = i14;
+                            i11 = i15;
+                            if (tL_updateStoryID.random_id == tL_startLive.random_id) {
+                                i12 = tL_updateStoryID.id;
+                            } else {
+                                i14 = i10;
+                                i15 = i11;
+                            }
+                        } else {
+                            i10 = i14;
+                            i11 = i15;
+                            i12 = -1;
+                        }
+                    }
+                    ArrayList findUpdates2 = MessagesController.findUpdates(updates, TL_stories.TL_updateStory.class);
+                    int size2 = findUpdates2.size();
+                    int i17 = i10;
+                    while (i17 < size2) {
+                        Object obj5 = findUpdates2.get(i17);
+                        i17++;
+                        TL_stories.StoryItem storyItem2 = ((TL_stories.TL_updateStory) obj5).story;
+                        if (storyItem2 != null && (storyItem2.id == i12 || i12 == -1)) {
+                            storyItem = storyItem2;
+                            if (storyItem != null) {
+                                TLRPC.MessageMedia messageMedia = storyItem.media;
+                                if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
+                                    inputGroupCall = ((TLRPC.TL_messageMediaVideoStream) messageMedia).call;
+                                    if (inputGroupCall != null) {
+                                        ai.d2 d2Var = ai.d2.W;
+                                        if (d2Var != null) {
+                                            d2Var.e();
+                                            if (ai.d2.W != null) {
+                                                ai.d2.W = null;
+                                                NotificationCenter notificationCenter = NotificationCenter.getInstance(i11);
+                                                int i18 = NotificationCenter.liveStoryUpdated;
+                                                Object[] objArr = new Object[1];
+                                                objArr[i10] = Long.valueOf(ai.d2.W.g());
+                                                notificationCenter.lambda$postNotificationNameOnUIThread$1(i18, objArr);
+                                            }
+                                        }
+                                        AndroidUtilities.runOnUIThread(new va(lcVar, this.b, storyItem, this.d, inputGroupCall, this.c), 100L);
+                                        break;
+                                    }
+                                }
+                            }
+                            inputGroupCall = null;
+                            if (inputGroupCall != null) {
+                            }
+                        }
+                    }
+                    storyItem = null;
+                    if (storyItem != null) {
+                    }
+                    inputGroupCall = null;
+                    if (inputGroupCall != null) {
                     }
                 }
-                uyVar.getMessagesController().checkIfFolderEmpty(uyVar.V2);
+                break;
+            default:
+                ((boolean[]) obj2)[0] = true;
+                ((yh.m5) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.c, this.d, (TLRPC.TL_textWithEntities) tLObject, (xh.n4) obj);
                 break;
         }
     }
 
-    public /* synthetic */ ua(uy uyVar, TLRPC.Chat chat, long j3, boolean z10, TLRPC.User user, boolean z11) {
-        this.e = uyVar;
-        this.f = chat;
-        this.b = j3;
-        this.c = z10;
-        this.h = user;
-        this.d = z11;
+    public /* synthetic */ ua(yh.m5 m5Var, boolean[] zArr, TL_stars.StarGift starGift, boolean z10, boolean z11, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, xh.n4 n4Var) {
+        this.e = m5Var;
+        this.f = zArr;
+        this.h = starGift;
+        this.b = z10;
+        this.c = z11;
+        this.d = j3;
+        this.n = tL_textWithEntities;
+        this.r = n4Var;
     }
 }

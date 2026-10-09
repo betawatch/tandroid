@@ -1,22 +1,21 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
-import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ n4 d;
-    public static final /* synthetic */ n4 e;
+    public static final /* synthetic */ m2.t d;
+    public static final /* synthetic */ m2.t e;
     public String a;
     public long b;
     public LinkedList c;
 
     static {
-        re.a aVar = new re.a(i.class, "FileTypeBox.java");
+        se.a aVar = new se.a(i.class, "FileTypeBox.java");
         d = aVar.e(aVar.d("getMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "", "", "java.lang.String"));
         aVar.e(aVar.d("setMajorBrand", "com.coremedia.iso.boxes.FileTypeBox", "java.lang.String", "majorBrand", "void"));
         aVar.e(aVar.d("setMinorVersion", "com.coremedia.iso.boxes.FileTypeBox", "long", "minorVersion", "void"));
@@ -53,10 +52,10 @@ public final class i extends com.googlecode.mp4parser.a {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        e2.q(re.a.b(d, this, this));
+        e2.q(se.a.b(d, this, this));
         sb2.append(this.a);
         sb2.append(";minorVersion=");
-        e2.q(re.a.b(e, this, this));
+        e2.q(se.a.b(e, this, this));
         sb2.append(this.b);
         for (String str : this.c) {
             sb2.append(";compatibleBrand=");

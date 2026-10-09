@@ -2,9 +2,9 @@ package fi;
 
 import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.f3;
-import s4.c1;
+import s4.d1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final class g0 extends s4.j {
     public final /* synthetic */ h0 F;
@@ -32,7 +32,7 @@ public final class g0 extends s4.j {
     }
 
     @Override // s4.j
-    public final void P(c1 c1Var) {
+    public final void P(d1 d1Var) {
         ViewGroup viewGroup;
         h0 h0Var = this.F;
         viewGroup = ((f3) h0Var.f).containerView;
@@ -50,8 +50,8 @@ public final class g0 extends s4.j {
         h0Var.c.invalidate();
     }
 
-    @Override // s4.f1
-    public final boolean t(c1 c1Var) {
+    @Override // s4.g1
+    public final boolean t(d1 d1Var) {
         return true;
     }
 }

@@ -92,9 +92,9 @@ public final class e implements Serializable {
             j$.time.h hVar2 = j$.time.h.e;
             j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
             int i16 = (int) (readInt2 / 3600);
-            dVar = dVar2;
             long j3 = readInt2 - (i16 * 3600);
-            hVar = j$.time.h.H(i16, (int) (j3 / 60), (int) (j3 - (r8 * 60)), 0);
+            dVar = dVar2;
+            hVar = j$.time.h.H(i16, (int) (j3 / 60), (int) (j3 - (r14 * 60)), 0);
         } else {
             dVar = dVar2;
             int i17 = i12 % 24;
@@ -108,7 +108,8 @@ public final class e implements Serializable {
         boolean z10 = i12 == 24;
         Objects.requireNonNull(J, "month");
         Objects.requireNonNull(hVar, "time");
-        Objects.requireNonNull(dVar, "timeDefnition");
+        d dVar3 = dVar;
+        Objects.requireNonNull(dVar3, "timeDefnition");
         Objects.requireNonNull(O, "standardOffset");
         Objects.requireNonNull(O2, "offsetBefore");
         Objects.requireNonNull(O3, "offsetAfter");
@@ -121,7 +122,7 @@ public final class e implements Serializable {
         if (hVar.d != 0) {
             throw new IllegalArgumentException("Time's nano-of-second must be zero");
         }
-        return new e(J, i10, G, hVar, z10, dVar, O, O2, O3);
+        return new e(J, i10, G, hVar, z10, dVar3, O, O2, O3);
     }
 
     public final boolean equals(Object obj) {

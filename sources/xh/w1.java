@@ -1,34 +1,34 @@
 package xh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gs0;
+import org.telegram.ui.Components.rs0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes.dex */
-public final /* synthetic */ class w1 implements le.d, Utilities.Callback2Return {
-    public final /* synthetic */ gs0 a;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class w1 implements me.d, Utilities.Callback2Return {
+    public final /* synthetic */ rs0 a;
 
-    public /* synthetic */ w1(gs0 gs0Var) {
-        this.a = gs0Var;
+    public /* synthetic */ w1(rs0 rs0Var) {
+        this.a = rs0Var;
     }
 
-    @Override // le.d
-    public void a0(int i10, float f7, float f10, le.e eVar) {
+    @Override // me.d
+    public void n(int i10, float f7, float f10, me.e eVar) {
         this.a.l();
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        gs0 gs0Var = this.a;
-        gs0Var.i();
+        rs0 rs0Var = this.a;
+        rs0Var.i();
         if (((Integer) obj).intValue() != -1) {
             return Boolean.FALSE;
         }
-        gs0Var.h(null, new t1(gs0Var, 0));
+        rs0Var.h(null, new t1(rs0Var, 0));
         return Boolean.TRUE;
     }
 
-    @Override // le.d
-    public /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public /* synthetic */ void A(float f7, int i10) {
     }
 }

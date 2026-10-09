@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class t implements Runnable {
     public final /* synthetic */ boolean a;
@@ -65,7 +65,7 @@ public final class t implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(w7.q.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int d = i0.a.d(w7.o.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             s sVar = actionBarLayout.G;
             if (sVar != null && sVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {
@@ -77,9 +77,9 @@ public final class t implements Runnable {
             }
             actionBarLayout.H.setNavigationBarColor(d);
         }
-        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : tr.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
+        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : hs.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
-            float a2 = w7.q.a(interpolation, 0.0f, 1.0f);
+            float a2 = w7.o.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z12) {
                 float f10 = (0.3f * interpolation) + 0.7f;
@@ -102,7 +102,7 @@ public final class t implements Runnable {
             }
         } else {
             float f13 = 1.0f - interpolation;
-            float a10 = w7.q.a(f13, 0.0f, 1.0f);
+            float a10 = w7.o.a(f13, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z12) {
                 float f14 = (f13 * 0.1f) + 0.9f;

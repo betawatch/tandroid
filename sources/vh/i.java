@@ -15,8 +15,9 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class i {
     public static i q;
@@ -31,10 +32,10 @@ public final class i {
     public boolean p;
     public final DispatchQueue a = new DispatchQueue("SpoilerEffectBitmapFactory", true, 3);
     public final b0[] b = new b0[g.C.length];
-    public final o0.a[] c = new o0.a[2];
+    public final b5[] c = new b5[2];
     public int d = 0;
     public final Rect m = new Rect();
-    public final pf.b n = new pf.b(this, 2);
+    public final qf.b n = new qf.b(this, 2);
     public final Rect o = new Rect();
 
     public i() {
@@ -48,7 +49,8 @@ public final class i {
             if (i10 >= b0VarArr.length) {
                 return;
             }
-            b0 b0Var = new b0((char) 0, 9);
+            boolean z10 = false;
+            b0 b0Var = new b0(13, z10, z10);
             b0Var.c = new float[Math.max(64, 2)];
             b0Var.b = 0;
             b0VarArr[i10] = b0Var;
@@ -60,7 +62,6 @@ public final class i {
         int i10;
         int[] iArr;
         int i11;
-        int[] iArr2;
         float f7;
         int i12;
         int i13;
@@ -75,7 +76,7 @@ public final class i {
             g gVar = (g) this.i.get(i14);
             if (Rect.intersects(gVar.getBounds(), rect2)) {
                 float[][] fArr = g.D;
-                int[] iArr3 = gVar.f;
+                int[] iArr2 = gVar.f;
                 float[] fArr2 = gVar.e;
                 if (b0VarArr != null) {
                     int length = b0VarArr.length;
@@ -173,7 +174,7 @@ public final class i {
                                     }
                                 }
                                 int i26 = i21;
-                                int[] iArr4 = iArr3;
+                                int[] iArr3 = iArr2;
                                 double d = ((f32 * 3.141592653589793d) * 2.0d) - 3.141592653589793d;
                                 cVar2.c = (float) Math.cos(d);
                                 cVar2.d = (float) Math.sin(d);
@@ -183,15 +184,15 @@ public final class i {
                                 cVar2.h = Utilities.fastRandom.nextInt(length2);
                                 arrayList.add(cVar2);
                                 i21 = i26 + 1;
-                                iArr3 = iArr4;
                                 f30 = f10;
+                                iArr2 = iArr3;
                                 i20 = 14;
                                 f29 = -1.0f;
                             }
-                            iArr = iArr3;
+                            iArr = iArr2;
                             size2 = arrayList.size();
                         } else {
-                            iArr = iArr3;
+                            iArr = iArr2;
                         }
                         for (int i27 = 0; i27 < length2; i27++) {
                             iArr[i27] = 0;
@@ -213,9 +214,8 @@ public final class i {
                                     int i33 = i31 + 2;
                                     float f36 = gVar.b[i30];
                                     if (f34 < f36) {
-                                        i11 = size2;
                                         int i34 = i31 + 3;
-                                        iArr2 = iArr;
+                                        i11 = size2;
                                         if (i34 < fArr4.length) {
                                             fArr4[i33] = i28 + f34;
                                             fArr4[i34] = f35;
@@ -223,7 +223,6 @@ public final class i {
                                         }
                                     } else {
                                         i11 = size2;
-                                        iArr2 = iArr;
                                     }
                                     float f37 = i28;
                                     float f38 = f37 - f36;
@@ -248,23 +247,19 @@ public final class i {
                                         fArr4[i12] = f35 - f7;
                                         i33 += 2;
                                     }
-                                    iArr2[i30] = i33;
+                                    iArr[i30] = i33;
                                     i29++;
                                     size2 = i11;
-                                    iArr = iArr2;
                                 }
                             }
                             i11 = size2;
-                            iArr2 = iArr;
                             i29++;
                             size2 = i11;
-                            iArr = iArr2;
                         }
-                        int[] iArr5 = iArr;
                         for (int i36 = 0; i36 < length2; i36++) {
                             b0 b0Var2 = b0VarArr[i36];
                             float[] fArr5 = fArr[i36];
-                            int i37 = iArr5[i36];
+                            int i37 = iArr[i36];
                             int i38 = b0Var2.b + i37;
                             float[] fArr6 = (float[]) b0Var2.c;
                             if (i38 > fArr6.length) {

@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ey0 extends br0 {
-    public final /* synthetic */ ry0 X0;
+public final class ey0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ FrameLayout c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ey0(ry0 ry0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.X0 = ry0Var;
+    public /* synthetic */ ey0(FrameLayout frameLayout, View view, int i10) {
+        this.a = i10;
+        this.c = frameLayout;
+        this.b = view;
     }
 
-    @Override // org.telegram.ui.Components.br0
-    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new zm(this, iVar, i10, 20), 100L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.br0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.n2 n2Var = this.X0.L;
-        if (n2Var instanceof org.telegram.ui.yn) {
-            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
-            if (((org.telegram.ui.yn) n2Var).W.getVisibility() == 0) {
-                n2Var.getFragmentView().requestLayout();
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                fy0 fy0Var = (fy0) this.c;
+                fy0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fy0Var.invalidate();
+                ((on0) this.b).invalidate();
+                break;
+            default:
+                ((o91) this.c).E(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

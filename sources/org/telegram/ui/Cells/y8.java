@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class y8 extends FrameLayout {
     public static Paint d;
@@ -24,19 +24,19 @@ public final class y8 extends FrameLayout {
     public boolean b;
     public int c;
 
-    public y8(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public y8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
         if (d == null) {
             d = new Paint(1);
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.m(org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 16.0f);
+        bi.o(org.telegram.ui.ActionBar.i6.G6, e6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        addView(textView, w7.x5.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
     }
 
     public final void a(ArrayList arrayList, boolean z10) {

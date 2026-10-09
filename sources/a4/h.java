@@ -1,396 +1,699 @@
 package a4;
 
-import e2.d0;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import androidx.car.app.navigation.model.Maneuver;
+import com.google.android.gms.internal.vision.e2;
 import e2.v;
+import j$.util.DesugarCollections;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class h {
-    public final /* synthetic */ int a;
-    public byte[] b;
-    public int c;
-    public int d;
-    public int e;
+public final class h extends k {
+    public final v h = new v();
+    public final g i = new g();
+    public int j = -1;
+    public final int k;
+    public final f[] l;
+    public f m;
+    public List n;
+    public List o;
+    public g p;
+    public int q;
 
-    public h() {
-        this.a = 2;
-        this.b = d0.b;
+    public h(int i10, List list) {
+        this.k = i10 == -1 ? 1 : i10;
+        if (list != null) {
+            byte[] bArr = e2.e.a;
+            if (list.size() == 1 && ((byte[]) list.get(0)).length == 1) {
+                byte b10 = ((byte[]) list.get(0))[0];
+            }
+        }
+        this.l = new f[8];
+        for (int i11 = 0; i11 < 8; i11++) {
+            this.l[i11] = new f();
+        }
+        this.m = this.l[0];
     }
 
-    public void a() {
+    @Override // a4.k
+    public final l f() {
+        List list = this.n;
+        this.o = list;
+        list.getClass();
+        return new l(list, 0);
+    }
+
+    @Override // a4.k, h2.e
+    public final void flush() {
+        super.flush();
+        this.n = null;
+        this.o = null;
+        this.q = 0;
+        this.m = this.l[0];
+        l();
+        this.p = null;
+    }
+
+    @Override // a4.k
+    public final void g(i iVar) {
+        ByteBuffer byteBuffer = iVar.c;
+        byteBuffer.getClass();
+        byte[] array = byteBuffer.array();
+        int limit = byteBuffer.limit();
+        v vVar = this.h;
+        vVar.H(limit, array);
+        while (vVar.a() >= 3) {
+            int x10 = vVar.x();
+            int i10 = x10 & 3;
+            boolean z10 = (x10 & 4) == 4;
+            byte x11 = (byte) vVar.x();
+            byte x12 = (byte) vVar.x();
+            if (i10 == 2 || i10 == 3) {
+                if (z10) {
+                    if (i10 == 3) {
+                        j();
+                        int i11 = (x11 & 192) >> 6;
+                        int i12 = this.j;
+                        if (i12 != -1 && i11 != (i12 + 1) % 4) {
+                            l();
+                            e2.a.n("Cea708Decoder", "Sequence number discontinuity. previous=" + this.j + " current=" + i11);
+                        }
+                        this.j = i11;
+                        int i13 = x11 & 63;
+                        if (i13 == 0) {
+                            i13 = 64;
+                        }
+                        g gVar = new g(i11, i13);
+                        this.p = gVar;
+                        byte[] bArr = gVar.b;
+                        gVar.e = 1;
+                        bArr[0] = x12;
+                    } else {
+                        e2.d.b(i10 == 2);
+                        g gVar2 = this.p;
+                        if (gVar2 == null) {
+                            e2.a.e("Cea708Decoder", "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
+                        } else {
+                            byte[] bArr2 = gVar2.b;
+                            int i14 = gVar2.e;
+                            int i15 = i14 + 1;
+                            gVar2.e = i15;
+                            bArr2[i14] = x11;
+                            gVar2.e = i14 + 2;
+                            bArr2[i15] = x12;
+                        }
+                    }
+                    g gVar3 = this.p;
+                    if (gVar3.e == (gVar3.d * 2) - 1) {
+                        j();
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // h2.e
+    public final String getName() {
+        return "Cea708Decoder";
+    }
+
+    @Override // a4.k
+    public final boolean i() {
+        return this.n != this.o;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public final void j() {
+        char c10;
+        int i10;
+        boolean z10;
+        g gVar = this.p;
+        if (gVar == null) {
+            return;
+        }
+        int i11 = 2;
+        if (gVar.e != (gVar.d * 2) - 1) {
+            e2.a.d("Cea708Decoder", "DtvCcPacket ended prematurely; size is " + ((this.p.d * 2) - 1) + ", but current index is " + this.p.e + " (sequence number " + this.p.c + ");");
+        }
+        g gVar2 = this.p;
+        byte[] bArr = gVar2.b;
+        int i12 = gVar2.e;
+        g gVar3 = this.i;
+        gVar3.o(i12, bArr);
+        boolean z11 = false;
+        while (true) {
+            if (gVar3.b() > 0) {
+                int i13 = 3;
+                int i14 = gVar3.i(3);
+                int i15 = gVar3.i(5);
+                if (i14 == 7) {
+                    gVar3.t(i11);
+                    i14 = gVar3.i(6);
+                    if (i14 < 7) {
+                        e2.m(i14, "Invalid extended service number: ", "Cea708Decoder");
+                    }
+                }
+                if (i15 == 0) {
+                    if (i14 != 0) {
+                        e2.a.n("Cea708Decoder", "serviceNumber is non-zero (" + i14 + ") when blockSize is 0");
+                    }
+                } else if (i14 != this.k) {
+                    gVar3.u(i15);
+                } else {
+                    int g10 = (i15 * 8) + gVar3.g();
+                    while (gVar3.g() < g10) {
+                        int i16 = gVar3.i(8);
+                        if (i16 != 16) {
+                            if (i16 <= 31) {
+                                if (i16 != 0) {
+                                    if (i16 == i13) {
+                                        this.n = k();
+                                    } else if (i16 != 8) {
+                                        switch (i16) {
+                                            case 12:
+                                                l();
+                                                break;
+                                            case 13:
+                                                this.m.a('\n');
+                                                break;
+                                            case 14:
+                                                break;
+                                            default:
+                                                if (i16 < 17 || i16 > 23) {
+                                                    if (i16 < 24 || i16 > 31) {
+                                                        e2.m(i16, "Invalid C0 command: ", "Cea708Decoder");
+                                                        break;
+                                                    } else {
+                                                        e2.a.n("Cea708Decoder", "Currently unsupported COMMAND_P16 Command: " + i16);
+                                                        gVar3.t(16);
+                                                        break;
+                                                    }
+                                                } else {
+                                                    e2.a.n("Cea708Decoder", "Currently unsupported COMMAND_EXT1 Command: " + i16);
+                                                    gVar3.t(8);
+                                                    break;
+                                                }
+                                        }
+                                    } else {
+                                        SpannableStringBuilder spannableStringBuilder = this.m.b;
+                                        int length = spannableStringBuilder.length();
+                                        if (length > 0) {
+                                            spannableStringBuilder.delete(length - 1, length);
+                                        }
+                                    }
+                                }
+                                i10 = i11;
+                            } else if (i16 <= 127) {
+                                if (i16 == 127) {
+                                    this.m.a((char) 9835);
+                                } else {
+                                    this.m.a((char) (i16 & 255));
+                                }
+                                i10 = i11;
+                                z11 = true;
+                            } else {
+                                if (i16 <= 159) {
+                                    f[] fVarArr = this.l;
+                                    switch (i16) {
+                                        case 128:
+                                        case 129:
+                                        case 130:
+                                        case 131:
+                                        case 132:
+                                        case 133:
+                                        case 134:
+                                        case 135:
+                                            z10 = true;
+                                            int i17 = i16 - 128;
+                                            if (this.q != i17) {
+                                                this.q = i17;
+                                                this.m = fVarArr[i17];
+                                                break;
+                                            }
+                                            break;
+                                        case 136:
+                                            z10 = true;
+                                            for (int i18 = 1; i18 <= 8; i18++) {
+                                                if (gVar3.h()) {
+                                                    f fVar = fVarArr[8 - i18];
+                                                    fVar.a.clear();
+                                                    fVar.b.clear();
+                                                    fVar.o = -1;
+                                                    fVar.p = -1;
+                                                    fVar.q = -1;
+                                                    fVar.s = -1;
+                                                    fVar.u = 0;
+                                                }
+                                            }
+                                            break;
+                                        case 137:
+                                            for (int i19 = 1; i19 <= 8; i19++) {
+                                                if (gVar3.h()) {
+                                                    fVarArr[8 - i19].d = true;
+                                                }
+                                            }
+                                            z10 = true;
+                                            break;
+                                        case 138:
+                                            for (int i20 = 1; i20 <= 8; i20++) {
+                                                if (gVar3.h()) {
+                                                    fVarArr[8 - i20].d = false;
+                                                }
+                                            }
+                                            z10 = true;
+                                            break;
+                                        case 139:
+                                            for (int i21 = 1; i21 <= 8; i21++) {
+                                                if (gVar3.h()) {
+                                                    fVarArr[8 - i21].d = !r1.d;
+                                                }
+                                            }
+                                            z10 = true;
+                                            break;
+                                        case 140:
+                                            for (int i22 = 1; i22 <= 8; i22++) {
+                                                if (gVar3.h()) {
+                                                    fVarArr[8 - i22].d();
+                                                }
+                                            }
+                                            z10 = true;
+                                            break;
+                                        case 141:
+                                            gVar3.t(8);
+                                            z10 = true;
+                                            break;
+                                        case 142:
+                                            z10 = true;
+                                            break;
+                                        case 143:
+                                            l();
+                                            z10 = true;
+                                            break;
+                                        case 144:
+                                            int i23 = i11;
+                                            if (!this.m.c) {
+                                                gVar3.t(16);
+                                                z10 = true;
+                                                i13 = 3;
+                                                break;
+                                            } else {
+                                                gVar3.i(4);
+                                                gVar3.i(i23);
+                                                gVar3.i(i23);
+                                                boolean h = gVar3.h();
+                                                boolean h10 = gVar3.h();
+                                                i13 = 3;
+                                                gVar3.i(3);
+                                                gVar3.i(3);
+                                                this.m.e(h, h10);
+                                                z10 = true;
+                                            }
+                                        case 145:
+                                            if (this.m.c) {
+                                                int c11 = f.c(gVar3.i(2), gVar3.i(2), gVar3.i(2), gVar3.i(2));
+                                                int c12 = f.c(gVar3.i(2), gVar3.i(2), gVar3.i(2), gVar3.i(2));
+                                                gVar3.t(2);
+                                                f.c(gVar3.i(2), gVar3.i(2), gVar3.i(2), 0);
+                                                this.m.f(c11, c12);
+                                            } else {
+                                                gVar3.t(24);
+                                            }
+                                            z10 = true;
+                                            i13 = 3;
+                                            break;
+                                        case 146:
+                                            if (this.m.c) {
+                                                gVar3.t(4);
+                                                int i24 = gVar3.i(4);
+                                                gVar3.t(2);
+                                                gVar3.i(6);
+                                                f fVar2 = this.m;
+                                                if (fVar2.u != i24) {
+                                                    fVar2.a('\n');
+                                                }
+                                                fVar2.u = i24;
+                                            } else {
+                                                gVar3.t(16);
+                                            }
+                                            z10 = true;
+                                            i13 = 3;
+                                            break;
+                                        case 147:
+                                        case 148:
+                                        case 149:
+                                        case ImageReceiver.DEFAULT_CROSSFADE_DURATION /* 150 */:
+                                        default:
+                                            e2.m(i16, "Invalid C1 command: ", "Cea708Decoder");
+                                            z10 = true;
+                                            break;
+                                        case 151:
+                                            if (this.m.c) {
+                                                int c13 = f.c(gVar3.i(2), gVar3.i(2), gVar3.i(2), gVar3.i(2));
+                                                gVar3.i(2);
+                                                f.c(gVar3.i(2), gVar3.i(2), gVar3.i(2), 0);
+                                                gVar3.h();
+                                                gVar3.h();
+                                                gVar3.i(2);
+                                                gVar3.i(2);
+                                                int i25 = gVar3.i(2);
+                                                gVar3.t(8);
+                                                f fVar3 = this.m;
+                                                fVar3.n = c13;
+                                                fVar3.k = i25;
+                                            } else {
+                                                gVar3.t(32);
+                                            }
+                                            z10 = true;
+                                            i13 = 3;
+                                            break;
+                                        case 152:
+                                        case 153:
+                                        case 154:
+                                        case 155:
+                                        case 156:
+                                        case 157:
+                                        case 158:
+                                        case 159:
+                                            int i26 = i16 - 152;
+                                            f fVar4 = fVarArr[i26];
+                                            gVar3.t(i11);
+                                            boolean h11 = gVar3.h();
+                                            gVar3.t(i11);
+                                            int i27 = gVar3.i(i13);
+                                            boolean h12 = gVar3.h();
+                                            int i28 = gVar3.i(7);
+                                            int i29 = gVar3.i(8);
+                                            int i30 = gVar3.i(4);
+                                            int i31 = gVar3.i(4);
+                                            gVar3.t(i11);
+                                            gVar3.t(6);
+                                            gVar3.t(i11);
+                                            int i32 = gVar3.i(3);
+                                            int i33 = gVar3.i(3);
+                                            ArrayList arrayList = fVar4.a;
+                                            fVar4.c = true;
+                                            fVar4.d = h11;
+                                            fVar4.e = i27;
+                                            fVar4.f = h12;
+                                            fVar4.g = i28;
+                                            fVar4.h = i29;
+                                            fVar4.i = i30;
+                                            int i34 = i31 + 1;
+                                            if (fVar4.j != i34) {
+                                                fVar4.j = i34;
+                                                while (true) {
+                                                    if (arrayList.size() >= fVar4.j || arrayList.size() >= 15) {
+                                                        arrayList.remove(0);
+                                                    }
+                                                }
+                                            }
+                                            if (i32 != 0 && fVar4.l != i32) {
+                                                fVar4.l = i32;
+                                                int i35 = i32 - 1;
+                                                int i36 = f.B[i35];
+                                                boolean z12 = f.A[i35];
+                                                int i37 = f.y[i35];
+                                                int i38 = f.z[i35];
+                                                int i39 = f.x[i35];
+                                                fVar4.n = i36;
+                                                fVar4.k = i39;
+                                            }
+                                            if (i33 != 0 && fVar4.m != i33) {
+                                                fVar4.m = i33;
+                                                int i40 = i33 - 1;
+                                                int i41 = f.D[i40];
+                                                int i42 = f.C[i40];
+                                                fVar4.e(false, false);
+                                                fVar4.f(f.v, f.E[i40]);
+                                            }
+                                            if (this.q != i26) {
+                                                this.q = i26;
+                                                this.m = fVarArr[i26];
+                                            }
+                                            z10 = true;
+                                            i13 = 3;
+                                            break;
+                                    }
+                                } else {
+                                    z10 = true;
+                                    if (i16 <= 255) {
+                                        this.m.a((char) (i16 & 255));
+                                    } else {
+                                        e2.m(i16, "Invalid base command: ", "Cea708Decoder");
+                                        i10 = 2;
+                                        c10 = 7;
+                                    }
+                                }
+                                z11 = z10;
+                                i10 = 2;
+                                c10 = 7;
+                            }
+                            c10 = 7;
+                        } else {
+                            int i43 = gVar3.i(8);
+                            if (i43 <= 31) {
+                                c10 = 7;
+                                if (i43 > 7) {
+                                    if (i43 <= 15) {
+                                        gVar3.t(8);
+                                    } else if (i43 <= 23) {
+                                        gVar3.t(16);
+                                    } else if (i43 <= 31) {
+                                        gVar3.t(24);
+                                    }
+                                }
+                            } else {
+                                c10 = 7;
+                                if (i43 <= 127) {
+                                    if (i43 == 32) {
+                                        this.m.a(' ');
+                                    } else if (i43 == 33) {
+                                        this.m.a((char) 160);
+                                    } else if (i43 == 37) {
+                                        this.m.a((char) 8230);
+                                    } else if (i43 == 42) {
+                                        this.m.a((char) 352);
+                                    } else if (i43 == 44) {
+                                        this.m.a((char) 338);
+                                    } else if (i43 == 63) {
+                                        this.m.a((char) 376);
+                                    } else if (i43 == 57) {
+                                        this.m.a((char) 8482);
+                                    } else if (i43 == 58) {
+                                        this.m.a((char) 353);
+                                    } else if (i43 == 60) {
+                                        this.m.a((char) 339);
+                                    } else if (i43 != 61) {
+                                        switch (i43) {
+                                            case 48:
+                                                this.m.a((char) 9608);
+                                                break;
+                                            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                                                this.m.a((char) 8216);
+                                                break;
+                                            case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                                                this.m.a((char) 8217);
+                                                break;
+                                            case 51:
+                                                this.m.a((char) 8220);
+                                                break;
+                                            case 52:
+                                                this.m.a((char) 8221);
+                                                break;
+                                            case 53:
+                                                this.m.a((char) 8226);
+                                                break;
+                                            default:
+                                                switch (i43) {
+                                                    case 118:
+                                                        this.m.a((char) 8539);
+                                                        break;
+                                                    case 119:
+                                                        this.m.a((char) 8540);
+                                                        break;
+                                                    case 120:
+                                                        this.m.a((char) 8541);
+                                                        break;
+                                                    case 121:
+                                                        this.m.a((char) 8542);
+                                                        break;
+                                                    case 122:
+                                                        this.m.a((char) 9474);
+                                                        break;
+                                                    case 123:
+                                                        this.m.a((char) 9488);
+                                                        break;
+                                                    case 124:
+                                                        this.m.a((char) 9492);
+                                                        break;
+                                                    case 125:
+                                                        this.m.a((char) 9472);
+                                                        break;
+                                                    case 126:
+                                                        this.m.a((char) 9496);
+                                                        break;
+                                                    case 127:
+                                                        this.m.a((char) 9484);
+                                                        break;
+                                                    default:
+                                                        e2.m(i43, "Invalid G2 character: ", "Cea708Decoder");
+                                                        break;
+                                                }
+                                        }
+                                    } else {
+                                        this.m.a((char) 8480);
+                                    }
+                                    i10 = 2;
+                                    z11 = true;
+                                } else if (i43 > 159) {
+                                    i10 = 2;
+                                    if (i43 <= 255) {
+                                        if (i43 == 160) {
+                                            this.m.a((char) 13252);
+                                        } else {
+                                            e2.m(i43, "Invalid G3 character: ", "Cea708Decoder");
+                                            this.m.a('_');
+                                        }
+                                        z11 = true;
+                                    } else {
+                                        e2.m(i43, "Invalid extended command: ", "Cea708Decoder");
+                                    }
+                                } else if (i43 <= 135) {
+                                    gVar3.t(32);
+                                } else if (i43 <= 143) {
+                                    gVar3.t(40);
+                                } else if (i43 <= 159) {
+                                    i10 = 2;
+                                    gVar3.t(2);
+                                    gVar3.t(gVar3.i(6) * 8);
+                                }
+                            }
+                            i10 = 2;
+                        }
+                        i11 = i10;
+                    }
+                }
+            }
+        }
+        if (z11) {
+            this.n = k();
+        }
+        this.p = null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00dd  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00df  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00a4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final List k() {
+        e eVar;
+        Layout.Alignment alignment;
+        float f7;
+        float f10;
         int i10;
         int i11;
-        switch (this.a) {
-            case 2:
-                int i12 = this.c;
-                e2.d.g(i12 >= 0 && (i12 < (i10 = this.e) || (i12 == i10 && this.d == 0)));
-                break;
-            default:
-                int i13 = this.d;
-                e2.d.g(i13 >= 0 && (i13 < (i11 = this.c) || (i13 == i11 && this.e == 0)));
-                break;
-        }
-    }
-
-    public int b() {
-        return ((this.e - this.c) * 8) - this.d;
-    }
-
-    public void c() {
-        if (this.d == 0) {
-            return;
-        }
-        this.d = 0;
-        this.c++;
-        a();
-    }
-
-    public boolean d(int i10) {
-        int i11 = this.d;
-        int i12 = i10 / 8;
-        int i13 = i11 + i12;
-        int i14 = (this.e + i10) - (i12 * 8);
-        if (i14 > 7) {
-            i13++;
-            i14 -= 8;
-        }
-        while (true) {
-            i11++;
-            if (i11 > i13 || i13 >= this.c) {
-                break;
-            }
-            if (r(i11)) {
-                i13++;
-                i11 += 2;
-            }
-        }
-        int i15 = this.c;
-        if (i13 >= i15) {
-            return i13 == i15 && i14 == 0;
-        }
-        return true;
-    }
-
-    public boolean e() {
-        int i10 = this.d;
-        int i11 = this.e;
-        int i12 = 0;
-        while (this.d < this.c && !h()) {
-            i12++;
-        }
-        boolean z10 = this.d == this.c;
-        this.d = i10;
-        this.e = i11;
-        return !z10 && d((i12 * 2) + 1);
-    }
-
-    public int f() {
-        e2.d.g(this.d == 0);
-        return this.c;
-    }
-
-    public int g() {
-        return (this.c * 8) + this.d;
-    }
-
-    public boolean h() {
-        switch (this.a) {
-            case 1:
-                boolean z10 = (((this.b[this.d] & 255) >> this.e) & 1) == 1;
-                t(1);
-                return z10;
-            case 2:
-                boolean z11 = (this.b[this.c] & (128 >> this.d)) != 0;
-                s();
-                return z11;
-            default:
-                boolean z12 = (this.b[this.d] & (128 >> this.e)) != 0;
-                s();
-                return z12;
-        }
-    }
-
-    public int i(int i10) {
-        switch (this.a) {
-            case 1:
-                int i11 = this.d;
-                int min = Math.min(i10, 8 - this.e);
-                byte[] bArr = this.b;
-                int i12 = i11 + 1;
-                int i13 = ((bArr[i11] & 255) >> this.e) & (255 >> (8 - min));
-                while (min < i10) {
-                    i13 |= (bArr[i12] & 255) << min;
-                    min += 8;
-                    i12++;
-                }
-                int i14 = i13 & ((-1) >>> (32 - i10));
-                t(i10);
-                return i14;
-            case 2:
-                if (i10 == 0) {
-                    return 0;
-                }
-                this.d += i10;
-                int i15 = 0;
-                while (true) {
-                    int i16 = this.d;
-                    if (i16 <= 8) {
-                        byte[] bArr2 = this.b;
-                        int i17 = this.c;
-                        int i18 = ((-1) >>> (32 - i10)) & (i15 | ((bArr2[i17] & 255) >> (8 - i16)));
-                        if (i16 == 8) {
-                            this.d = 0;
-                            this.c = i17 + 1;
+        int i12;
+        ArrayList arrayList = new ArrayList();
+        for (int i13 = 0; i13 < 8; i13++) {
+            f[] fVarArr = this.l;
+            f fVar = fVarArr[i13];
+            if (fVar.c && (!fVar.a.isEmpty() || fVar.b.length() != 0)) {
+                f fVar2 = fVarArr[i13];
+                if (fVar2.d) {
+                    ArrayList arrayList2 = fVar2.a;
+                    if (!fVar2.c || (arrayList2.isEmpty() && fVar2.b.length() == 0)) {
+                        eVar = null;
+                    } else {
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                            spannableStringBuilder.append((CharSequence) arrayList2.get(i14));
+                            spannableStringBuilder.append('\n');
                         }
-                        a();
-                        return i18;
-                    }
-                    int i19 = i16 - 8;
-                    this.d = i19;
-                    byte[] bArr3 = this.b;
-                    int i20 = this.c;
-                    this.c = i20 + 1;
-                    i15 |= (bArr3[i20] & 255) << i19;
-                }
-            default:
-                this.e += i10;
-                int i21 = 0;
-                while (true) {
-                    int i22 = this.e;
-                    if (i22 <= 8) {
-                        byte[] bArr4 = this.b;
-                        int i23 = this.d;
-                        int i24 = ((-1) >>> (32 - i10)) & (i21 | ((bArr4[i23] & 255) >> (8 - i22)));
-                        if (i22 == 8) {
-                            this.e = 0;
-                            this.d = i23 + (r(i23 + 1) ? 2 : 1);
+                        spannableStringBuilder.append((CharSequence) fVar2.b());
+                        int i15 = fVar2.k;
+                        if (i15 != 0) {
+                            if (i15 == 1) {
+                                alignment = Layout.Alignment.ALIGN_OPPOSITE;
+                            } else if (i15 == 2) {
+                                alignment = Layout.Alignment.ALIGN_CENTER;
+                            } else if (i15 != 3) {
+                                throw new IllegalArgumentException("Unexpected justification value: " + fVar2.k);
+                            }
+                            Layout.Alignment alignment2 = alignment;
+                            if (fVar2.f) {
+                                f7 = fVar2.h / 209.0f;
+                                f10 = fVar2.g / 74.0f;
+                            } else {
+                                f7 = fVar2.h / 99.0f;
+                                f10 = fVar2.g / 99.0f;
+                            }
+                            float f11 = (f7 * 0.9f) + 0.05f;
+                            float f12 = (f10 * 0.9f) + 0.05f;
+                            int i16 = fVar2.i;
+                            i10 = i16 / 3;
+                            if (i10 != 0) {
+                                i11 = i16;
+                                i12 = 0;
+                            } else if (i10 == 1) {
+                                i11 = i16;
+                                i12 = 1;
+                            } else {
+                                i11 = i16;
+                                i12 = 2;
+                            }
+                            int i17 = i11 % 3;
+                            int i18 = i17 != 0 ? 0 : i17 == 1 ? 1 : 2;
+                            int i19 = fVar2.n;
+                            eVar = new e(spannableStringBuilder, alignment2, f12, i12, f11, i18, i19 == f.w, i19, fVar2.e);
                         }
-                        a();
-                        return i24;
+                        alignment = Layout.Alignment.ALIGN_NORMAL;
+                        Layout.Alignment alignment22 = alignment;
+                        if (fVar2.f) {
+                        }
+                        float f112 = (f7 * 0.9f) + 0.05f;
+                        float f122 = (f10 * 0.9f) + 0.05f;
+                        int i162 = fVar2.i;
+                        i10 = i162 / 3;
+                        if (i10 != 0) {
+                        }
+                        int i172 = i11 % 3;
+                        if (i172 != 0) {
+                        }
+                        int i192 = fVar2.n;
+                        eVar = new e(spannableStringBuilder, alignment22, f122, i12, f112, i18, i192 == f.w, i192, fVar2.e);
                     }
-                    int i25 = i22 - 8;
-                    this.e = i25;
-                    byte[] bArr5 = this.b;
-                    int i26 = this.d;
-                    i21 |= (bArr5[i26] & 255) << i25;
-                    if (!r(i26 + 1)) {
-                        r3 = 1;
+                    if (eVar != null) {
+                        arrayList.add(eVar);
                     }
-                    this.d = i26 + r3;
+                } else {
+                    continue;
                 }
+            }
         }
-    }
-
-    public void j(int i10, byte[] bArr) {
-        int i11 = i10 >> 3;
-        for (int i12 = 0; i12 < i11; i12++) {
-            byte[] bArr2 = this.b;
-            int i13 = this.c;
-            int i14 = i13 + 1;
-            this.c = i14;
-            byte b10 = bArr2[i13];
-            int i15 = this.d;
-            byte b11 = (byte) (b10 << i15);
-            bArr[i12] = b11;
-            bArr[i12] = (byte) (((255 & bArr2[i14]) >> (8 - i15)) | b11);
+        Collections.sort(arrayList, e.c);
+        ArrayList arrayList3 = new ArrayList(arrayList.size());
+        for (int i20 = 0; i20 < arrayList.size(); i20++) {
+            arrayList3.add(((e) arrayList.get(i20)).a);
         }
-        int i16 = i10 & 7;
-        if (i16 == 0) {
-            return;
+        return DesugarCollections.unmodifiableList(arrayList3);
+    }
+
+    public final void l() {
+        for (int i10 = 0; i10 < 8; i10++) {
+            this.l[i10].d();
         }
-        byte b12 = (byte) (bArr[i11] & (255 >> i16));
-        bArr[i11] = b12;
-        int i17 = this.d;
-        if (i17 + i16 > 8) {
-            byte[] bArr3 = this.b;
-            int i18 = this.c;
-            this.c = i18 + 1;
-            bArr[i11] = (byte) (b12 | ((bArr3[i18] & 255) << i17));
-            this.d = i17 - 8;
-        }
-        int i19 = this.d + i16;
-        this.d = i19;
-        byte[] bArr4 = this.b;
-        int i20 = this.c;
-        bArr[i11] = (byte) (((byte) (((255 & bArr4[i20]) >> (8 - i19)) << (8 - i16))) | bArr[i11]);
-        if (i19 == 8) {
-            this.d = 0;
-            this.c = i20 + 1;
-        }
-        a();
-    }
-
-    public long k(int i10) {
-        if (i10 <= 32) {
-            int i11 = i(i10);
-            String str = d0.a;
-            return 4294967295L & i11;
-        }
-        int i12 = i(i10 - 32);
-        int i13 = i(32);
-        String str2 = d0.a;
-        return (4294967295L & i13) | ((i12 & 4294967295L) << 32);
-    }
-
-    public void l(int i10, byte[] bArr) {
-        e2.d.g(this.d == 0);
-        System.arraycopy(this.b, this.c, bArr, 0, i10);
-        this.c += i10;
-        a();
-    }
-
-    public int m() {
-        int i10 = 0;
-        while (!h()) {
-            i10++;
-        }
-        return ((1 << i10) - 1) + (i10 > 0 ? i(i10) : 0);
-    }
-
-    public int n() {
-        int m10 = m();
-        return ((m10 + 1) / 2) * (m10 % 2 == 0 ? -1 : 1);
-    }
-
-    public void o(int i10, byte[] bArr) {
-        this.b = bArr;
-        this.c = 0;
-        this.d = 0;
-        this.e = i10;
-    }
-
-    public void p(v vVar) {
-        o(vVar.c, vVar.a);
-        q(vVar.b * 8);
-    }
-
-    public void q(int i10) {
-        int i11 = i10 / 8;
-        this.c = i11;
-        this.d = i10 - (i11 * 8);
-        a();
-    }
-
-    public boolean r(int i10) {
-        if (2 > i10 || i10 >= this.c) {
-            return false;
-        }
-        byte[] bArr = this.b;
-        return bArr[i10] == 3 && bArr[i10 + (-2)] == 0 && bArr[i10 - 1] == 0;
-    }
-
-    public void s() {
-        switch (this.a) {
-            case 2:
-                int i10 = this.d + 1;
-                this.d = i10;
-                if (i10 == 8) {
-                    this.d = 0;
-                    this.c++;
-                }
-                a();
-                break;
-            default:
-                int i11 = this.e + 1;
-                this.e = i11;
-                if (i11 == 8) {
-                    this.e = 0;
-                    int i12 = this.d;
-                    this.d = i12 + (r(i12 + 1) ? 2 : 1);
-                }
-                a();
-                break;
-        }
-    }
-
-    public void t(int i10) {
-        int i11;
-        switch (this.a) {
-            case 1:
-                int i12 = i10 / 8;
-                int i13 = this.d + i12;
-                this.d = i13;
-                int i14 = (i10 - (i12 * 8)) + this.e;
-                this.e = i14;
-                boolean z10 = true;
-                if (i14 > 7) {
-                    this.d = i13 + 1;
-                    this.e = i14 - 8;
-                }
-                int i15 = this.d;
-                if (i15 < 0 || (i15 >= (i11 = this.c) && (i15 != i11 || this.e != 0))) {
-                    z10 = false;
-                }
-                e2.d.g(z10);
-                break;
-            case 2:
-                int i16 = i10 / 8;
-                int i17 = this.c + i16;
-                this.c = i17;
-                int i18 = (i10 - (i16 * 8)) + this.d;
-                this.d = i18;
-                if (i18 > 7) {
-                    this.c = i17 + 1;
-                    this.d = i18 - 8;
-                }
-                a();
-                break;
-            default:
-                int i19 = this.d;
-                int i20 = i10 / 8;
-                int i21 = i19 + i20;
-                this.d = i21;
-                int i22 = (i10 - (i20 * 8)) + this.e;
-                this.e = i22;
-                if (i22 > 7) {
-                    this.d = i21 + 1;
-                    this.e = i22 - 8;
-                }
-                while (true) {
-                    i19++;
-                    if (i19 > this.d) {
-                        a();
-                        break;
-                    } else if (r(i19)) {
-                        this.d++;
-                        i19 += 2;
-                    }
-                }
-        }
-    }
-
-    public void u(int i10) {
-        e2.d.g(this.d == 0);
-        this.c += i10;
-        a();
-    }
-
-    public h(byte[] bArr) {
-        this.a = 1;
-        this.b = bArr;
-        this.c = bArr.length;
-    }
-
-    public h(byte[] bArr, int i10, int i11) {
-        this.a = 3;
-        this.b = bArr;
-        this.d = i10;
-        this.c = i11;
-        this.e = 0;
-        a();
-    }
-
-    public h(byte[] bArr, int i10) {
-        this.a = 2;
-        this.b = bArr;
-        this.e = i10;
-    }
-
-    public h(int i10, int i11) {
-        this.a = 0;
-        this.c = i10;
-        this.d = i11;
-        this.b = new byte[(i11 * 2) - 1];
-        this.e = 0;
     }
 }

@@ -1,10 +1,9 @@
 package n4;
 
-import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class e implements f {
     public IBinder a;
@@ -43,40 +42,17 @@ public final class e implements f {
     }
 
     @Override // n4.f
-    public final void t(h0 h0Var) {
+    public final void t(f0 f0Var) {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
             obtain.writeInt(1);
-            h0Var.writeToParcel(obtain, 0);
+            f0Var.writeToParcel(obtain, 0);
             if (!this.a.transact(3, obtain, null, 1)) {
                 int i10 = i.b;
             }
         } finally {
             obtain.recycle();
-        }
-    }
-
-    @Override // n4.f
-    public final void t0(String str) {
-        Bundle bundle = Bundle.EMPTY;
-        Parcel obtain = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            obtain.writeString(str);
-            if (bundle != null) {
-                obtain.writeInt(1);
-                bundle.writeToParcel(obtain, 0);
-            } else {
-                obtain.writeInt(0);
-            }
-            if (!this.a.transact(1, obtain, null, 1)) {
-                int i10 = i.b;
-            }
-            obtain.recycle();
-        } catch (Throwable th2) {
-            obtain.recycle();
-            throw th2;
         }
     }
 }

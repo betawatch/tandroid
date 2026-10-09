@@ -1,57 +1,42 @@
 package gg;
 
-import android.view.ViewGroup;
-import ci.ab;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.yl0;
+import java.util.ArrayList;
+import org.telegram.ui.xs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class q1 extends yl0 {
-    public k1 c;
-    public Integer d;
-    public ab e;
-    public boolean f;
-    public int h;
+public final class q1 implements a2 {
+    public final /* synthetic */ xs a;
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        if (c1Var.b() == 0) {
-            return false;
-        }
-        return this.c.D(c1Var);
+    public q1(xs xsVar) {
+        this.a = xsVar;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        k1 k1Var = this.c;
-        int K = k1Var.K();
-        k1Var.M0 = K;
-        return K + 1;
+    @Override // gg.a2
+    public final /* synthetic */ a0.i V() {
+        return null;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return -983904;
-        }
-        return this.c.j(i10 - 1);
+    @Override // gg.a2
+    public final a0.i d0() {
+        return null;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (i10 > 0) {
-            this.c.v(c1Var, i10 - 1);
+    @Override // gg.a2
+    public final void h(int i10) {
+        xs xsVar = this.a;
+        xsVar.l();
+        if (i10 != 0) {
+            xsVar.F();
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        if (i10 != -983904) {
-            return this.c.x(viewGroup, i10);
-        }
-        ab abVar = new ab(this, viewGroup.getContext(), 4);
-        this.e = abVar;
-        return new il0(abVar);
+    @Override // gg.a2
+    public final /* synthetic */ boolean s0(int i10) {
+        return true;
+    }
+
+    @Override // gg.a2
+    public final /* synthetic */ void x0(ArrayList arrayList) {
     }
 }

@@ -1,153 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class gp extends org.telegram.ui.Components.zl0 {
-    public static final /* synthetic */ int i3 = 0;
-    public final fp e3;
-    public boolean f3;
-    public final Paint g3;
-    public final /* synthetic */ hp h3;
+public final class gp extends org.telegram.ui.Components.pm0 {
+    public final /* synthetic */ hp c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gp(hp hpVar, Context context) {
-        super(context, null);
-        this.h3 = hpVar;
-        this.f3 = false;
-        this.g3 = new Paint(1);
-        fp fpVar = new fp(this);
-        this.e3 = fpVar;
-        setAdapter(fpVar);
-        setLayoutManager(new s4.c0());
-        setOnItemClickListener(new ep(this));
-        new s4.y(new bi.g(this, 1)).e(this);
+    public gp(hp hpVar) {
+        this.c = hpVar;
     }
 
-    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int R;
-        int size = this.h3.O.size();
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i11 = TLObject.FLAG_31;
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt = getChildAt(i12);
-            if (childAt != null && (R = RecyclerView.R(childAt)) >= 1 && R <= size) {
-                i10 = Math.min(childAt.getTop(), i10);
-                i11 = Math.max(childAt.getBottom(), i11);
-            }
+    @Override // org.telegram.ui.Components.pm0
+    public final boolean D(s4.d1 d1Var) {
+        return d1Var.f == 1;
+    }
+
+    @Override // s4.i0
+    public final int h() {
+        return this.c.Y2.N.size() + 2;
+    }
+
+    @Override // s4.i0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
-        if (i10 < i11) {
-            int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, this.p2);
-            Paint paint = this.g3;
-            paint.setColor(v02);
-            canvas2 = canvas;
-            canvas2.drawRect(0.0f, i10, getWidth(), i11, paint);
-        } else {
-            canvas2 = canvas;
+        return i10 <= this.c.Y2.N.size() ? 1 : 2;
+    }
+
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
+        hp hpVar = this.c;
+        ip ipVar = hpVar.Y2;
+        int i11 = d1Var.f;
+        View view = d1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.d6, hpVar.n2));
+            m4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
+            return;
         }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
-    }
-
-    public final void x1(TLRPC.TL_username tL_username, boolean z10, boolean z11) {
-        TLRPC.TL_username tL_username2;
-        int min;
-        hp hpVar = this.h3;
-        ArrayList arrayList = hpVar.O;
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (arrayList.get(i11) == tL_username) {
-                int i12 = i11 + 1;
-                if (i11 < 0 || i11 >= arrayList.size() || (tL_username2 = (TLRPC.TL_username) arrayList.get(i11)) == null) {
-                    return;
-                }
-                int i13 = -1;
-                if (tL_username2.active != z10) {
-                    tL_username2.active = z10;
-                    if (z10) {
-                        int i14 = 0;
-                        while (true) {
-                            if (i14 >= arrayList.size()) {
-                                i14 = -1;
-                                break;
-                            } else if (!((TLRPC.TL_username) arrayList.get(i14)).active) {
-                                break;
-                            } else {
-                                i14++;
-                            }
-                        }
-                        if (i14 >= 0) {
-                            min = Math.max(0, i14 - 1);
-                            i13 = min + 1;
-                        }
-                    } else {
-                        int i15 = -1;
-                        for (int i16 = 0; i16 < arrayList.size(); i16++) {
-                            if (((TLRPC.TL_username) arrayList.get(i16)).active) {
-                                i15 = i16;
-                            }
-                        }
-                        if (i15 >= 0) {
-                            min = Math.min(arrayList.size() - 1, i15 + 1);
-                            i13 = min + 1;
-                        }
-                    }
-                }
-                int i17 = 0;
-                while (true) {
-                    if (i17 >= getChildCount()) {
-                        break;
-                    }
-                    View childAt = getChildAt(i17);
-                    if (RecyclerView.R(childAt) == i12) {
-                        if (z11) {
-                            AndroidUtilities.shakeView(childAt);
-                        }
-                        if (childAt instanceof pa) {
-                            pa paVar = (pa) childAt;
-                            paVar.setLoading(hpVar.Q.contains(tL_username2.username));
-                            TLRPC.TL_username tL_username3 = paVar.v;
-                            if (tL_username3 != null) {
-                                paVar.a(tL_username3, paVar.w, true, paVar.x);
-                            }
-                        }
-                    } else {
-                        i17++;
-                    }
-                }
-                if (i13 < 0 || i12 == i13) {
-                    return;
-                }
-                int i18 = i13 - 1;
-                fp fpVar = this.e3;
-                ArrayList arrayList2 = fpVar.c.h3.O;
-                if (i11 >= arrayList2.size() || i18 >= arrayList2.size()) {
-                    return;
-                }
-                arrayList2.add(i18, (TLRPC.TL_username) arrayList2.remove(i11));
-                fpVar.p(i12, i13);
-                while (i10 < arrayList2.size()) {
-                    i10++;
-                    fpVar.m(i10);
-                }
+        if (i11 != 1) {
+            if (i11 != 2) {
                 return;
             }
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            e9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
+            e9Var.setBackground(org.telegram.ui.ActionBar.i6.W0(hpVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7));
+            return;
         }
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) ipVar.N.get(i10 - 1);
+        oa oaVar = (oa) view;
+        if (oaVar.H) {
+            ipVar.O = null;
+        }
+        oaVar.a(tL_username, i10 < ipVar.N.size(), false, 0L);
+        if (tL_username == null || !tL_username.editable) {
+            return;
+        }
+        ipVar.O = oaVar;
+    }
+
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+        hp hpVar = this.c;
+        org.telegram.ui.ActionBar.e6 e6Var = hpVar.n2;
+        if (i10 == 0) {
+            return new org.telegram.ui.Components.am0(new org.telegram.ui.Cells.m4(hpVar.getContext(), e6Var));
+        }
+        if (i10 == 1) {
+            return new org.telegram.ui.Components.am0(new ha(this, hpVar.getContext(), e6Var));
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return new org.telegram.ui.Components.am0(new org.telegram.ui.Cells.e9(hpVar.getContext(), 12, e6Var));
     }
 }

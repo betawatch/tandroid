@@ -7,7 +7,7 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s implements o0 {
     public final String a;
@@ -53,7 +53,7 @@ public final class s implements o0 {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("HlsTrackMetadataEntry");
         String str = this.a;
-        sb2.append(str != null ? a4.a.t(a4.a.w(" [", str, ", "), this.b, "]") : "");
+        sb2.append(str != null ? a1.g.t(a1.g.w(" [", str, ", "), this.b, "]") : "");
         return sb2.toString();
     }
 

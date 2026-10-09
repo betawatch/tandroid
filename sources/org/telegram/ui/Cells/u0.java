@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class u0 {
     public TextPaint a;
@@ -59,7 +59,7 @@ public final class u0 {
         StaticLayout staticLayout = new StaticLayout(charSequence, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 1.1f, 0.0f, false);
         this.f = staticLayout;
         w0 w0Var2 = (w0) this.i;
-        MessageObject messageObject = w0Var2.H0;
+        MessageObject messageObject = w0Var2.P0;
         ArrayList arrayList = this.c;
         if (messageObject == null || !messageObject.isSpoilersRevealed) {
             w0Var = w0Var2;
@@ -70,7 +70,7 @@ public final class u0 {
             }
             w0Var = w0Var2;
         }
-        this.h = org.telegram.ui.Components.z5.update(0, (View) w0Var, false, (org.telegram.ui.Components.v5) this.h, (StaticLayout) this.f);
+        this.h = org.telegram.ui.Components.b6.update(0, (View) w0Var, false, (org.telegram.ui.Components.x5) this.h, (StaticLayout) this.f);
     }
 
     public u0(w0 w0Var) {

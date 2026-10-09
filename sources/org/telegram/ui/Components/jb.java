@@ -1,114 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class jb extends FrameLayout {
-    public final vb a;
-    public final Rect b;
-    public final GestureDetector c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public float h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public final /* synthetic */ FrameLayout x;
-    public final /* synthetic */ rc y;
+public final /* synthetic */ class jb implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jb(rc rcVar, vb vbVar, FrameLayout frameLayout) {
-        super(vbVar.getContext());
-        this.y = rcVar;
-        this.x = frameLayout;
-        this.b = new Rect();
-        this.a = vbVar;
-        GestureDetector gestureDetector = new GestureDetector(vbVar.getContext(), new gc(this, vbVar));
-        this.c = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(false);
-        addView(vbVar);
+    public /* synthetic */ jb(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z10 = this.e;
-        vb vbVar = this.a;
-        if (!z10) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            Rect rect = this.b;
-            vbVar.getHitRect(rect);
-            if (!rect.contains((int) x10, (int) y3)) {
-                return false;
-            }
-        }
-        this.c.onTouchEvent(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        FrameLayout frameLayout = this.x;
-        rc rcVar = this.y;
-        if (actionMasked == 0) {
-            if (!this.e && !this.s) {
-                vbVar.animate().cancel();
-                this.n = 0.0f;
-                this.h = 0.0f;
-                this.r = false;
-                this.f = vbVar.getTranslationX();
-                System.currentTimeMillis();
-                rc rcVar2 = vbVar.bulletin;
-                this.d = rcVar2 == null || rcVar2.m;
-                this.e = true;
-                rcVar.i(false);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                if (vbVar.onClickListener != null) {
-                    vbVar.setPressed(true);
-                    return true;
-                }
-            }
-        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
-            if (!this.s) {
-                if (Math.abs(this.f) > vbVar.getWidth() / 3.0f) {
-                    float signum = Math.signum(this.f) * vbVar.getWidth();
-                    float f7 = this.f;
-                    vbVar.animate().translationX(signum).alpha(((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f7 > 0.0f ? 1 : (f7 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.c0(this, signum, 1)).start();
-                    this.e = false;
-                    rcVar.i(true);
-                    if (frameLayout.getParent() != null) {
-                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                tc tcVar = (tc) this.b;
+                Float f7 = (Float) obj;
+                rb rbVar = tcVar.p;
+                if (rbVar != null) {
+                    if (!tcVar.e.top) {
+                        rbVar.c(r0.getHeight() - f7.floatValue());
+                        break;
                     }
-                    if (vbVar.onClickListener != null) {
-                        vbVar.setPressed(false);
-                    }
-                } else {
-                    vbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
                 }
-            }
-            if (actionMasked == 1 && vbVar.isPressed() && (onClickListener = vbVar.onClickListener) != null && !this.r) {
-                onClickListener.onClick(vbVar);
-            }
-            this.e = false;
-            rcVar.i(true);
-            if (frameLayout.getParent() != null) {
-            }
-            if (vbVar.onClickListener != null) {
-            }
+                break;
+            default:
+                wi wiVar = ((yi) this.b).c2;
+                if (wiVar != null) {
+                    wiVar.a1(obj);
+                    break;
+                }
+                break;
         }
-        return true;
     }
 }

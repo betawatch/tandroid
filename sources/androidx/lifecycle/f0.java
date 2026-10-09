@@ -6,7 +6,7 @@ import android.os.Build;
 import androidx.lifecycle.h0;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class f0 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -14,7 +14,7 @@ public abstract class f0 {
         kotlin.jvm.internal.i.e(event, "event");
         if (activity instanceof t) {
             o m10 = ((t) activity).m();
-            if (e2.u(m10)) {
+            if (e2.t(m10)) {
                 ((v) m10).e(event);
             }
         }

@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ci.h2;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -13,25 +12,25 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.pi;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.am0;
+import org.telegram.ui.Components.c00;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.ui;
 import org.telegram.ui.Components.xi;
-import w7.z5;
+import org.telegram.ui.Components.yi;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class j0 extends pi implements NotificationCenter.NotificationCenterDelegate, le.d {
-    public final pz E;
-    public final ti F;
-    public final le.b n;
+public final class j0 extends qi implements NotificationCenter.NotificationCenterDelegate, me.d {
+    public final c00 E;
+    public final ui F;
+    public final me.b n;
     public final FrameLayout r;
     public final ai.w0 s;
     public final f0 v;
@@ -39,34 +38,34 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
     public final g0 x;
     public final h0 y;
 
-    public j0(Context context, d6 d6Var, xi xiVar) {
-        super(context, d6Var, xiVar);
-        this.n = new le.b(0, this, tr.h, 380L, false);
+    public j0(Context context, e6 e6Var, yi yiVar) {
+        super(context, e6Var, yiVar);
+        this.n = new me.b(0, this, hs.h, 380L, false);
         this.w = new HashSet();
         this.y = new h0(this, context);
-        wi wiVar = new wi(context, i6.d6, d6Var);
-        wiVar.setVisibility(4);
+        xi xiVar = new xi(context, i6.d6, e6Var);
+        xiVar.setVisibility(4);
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
-        ti tiVar = new ti(context, d6Var, this.b);
-        this.F = tiVar;
-        tiVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        ui uiVar = new ui(context, e6Var, this.b);
+        this.F = uiVar;
+        uiVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         d0 d0Var = new d0(this);
-        h2 h2Var = tiVar.r;
-        h2Var.addTextChangedListener(d0Var);
-        h2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
-        frameLayout.addView(wiVar, z5.g());
-        FrameLayout.LayoutParams d = z5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
-        ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
-        frameLayout.addView(tiVar, d);
-        pz pzVar = new pz(context, d6Var);
-        this.E = pzVar;
-        pzVar.c();
-        addView(pzVar, z5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
-        ai.w0 w0Var = new ai.w0(this, context, d6Var, 3);
+        ci.g2 g2Var = uiVar.r;
+        g2Var.addTextChangedListener(d0Var);
+        g2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
+        frameLayout.addView(xiVar, x5.g());
+        FrameLayout.LayoutParams a2 = x5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
+        ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
+        frameLayout.addView(uiVar, a2);
+        c00 c00Var = new c00(context, e6Var);
+        this.E = c00Var;
+        c00Var.c();
+        addView(c00Var, x5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
+        ai.w0 w0Var = new ai.w0(this, context, e6Var, 3);
         this.s = w0Var;
-        w0Var.r1();
-        setBlur3Capture(w0Var);
+        w0Var.p1();
+        this.c = w0Var;
         this.d = w0Var;
         this.h = true;
         this.f = true;
@@ -80,18 +79,17 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
         w0Var.setHorizontalScrollBarEnabled(false);
         w0Var.setVerticalScrollBarEnabled(false);
         w0Var.setClipToPadding(false);
-        addView(w0Var, z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(w0Var, x5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
         g0 g0Var = new g0(this, context);
         this.x = g0Var;
         w0Var.setAdapter(g0Var);
-        w0Var.setGlowColor(i6.v0(i6.A5, this.a));
-        int i10 = 10;
-        w0Var.setOnItemClickListener(new ai.g(this, i10));
-        w0Var.setOnScrollListener(new ai.r(this, i10));
-        FrameLayout.LayoutParams e7 = z5.e(-1, 60, 51);
+        w0Var.setGlowColor(i6.w0(i6.A5, this.a));
+        w0Var.setOnItemClickListener(new ai.g(this, 10));
+        w0Var.setOnScrollListener(new ai.r(this, 9));
+        FrameLayout.LayoutParams e7 = x5.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e7).height += AndroidUtilities.statusBarHeight;
         addView(frameLayout, e7);
-        J();
+        O();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -102,52 +100,73 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = w0Var.getChildAt(0);
-        il0 il0Var = (il0) w0Var.G(childAt);
-        if (il0Var == null) {
+        am0 am0Var = (am0) w0Var.G(childAt);
+        if (am0Var == null) {
             return -1000;
         }
         int paddingTop = w0Var.getPaddingTop();
-        if (il0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (am0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
     }
 
-    @Override // org.telegram.ui.Components.pi
-    public final void C(pi piVar) {
+    @Override // org.telegram.ui.Components.qi
+    public final void C(int i10, int i11) {
+        int i12;
+        yi yiVar = this.b;
+        if (yiVar.u1.R() > AndroidUtilities.dp(20.0f)) {
+            i12 = AndroidUtilities.dp(8.0f);
+            yiVar.setAllowNestedScroll(false);
+        } else {
+            if (!AndroidUtilities.isTablet()) {
+                Point point = AndroidUtilities.displaySize;
+                if (point.x > point.y) {
+                    i12 = (int) (i11 / 3.5f);
+                    yiVar.setAllowNestedScroll(true);
+                }
+            }
+            i12 = (i11 / 5) * 2;
+            yiVar.setAllowNestedScroll(true);
+        }
+        this.s.o1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
+    }
+
+    @Override // org.telegram.ui.Components.qi
+    public final void G(qi qiVar) {
         this.v.h1(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.pi
-    public final void E() {
-        this.s.y0(0);
-    }
-
+    @Override // org.telegram.ui.Components.qi
     public final void J() {
-        this.E.setVisibility(this.s.getAdapter().h() == 2 ? 0 : 8);
-        K();
+        this.s.x0(0);
     }
 
-    public final void K() {
+    public final void O() {
+        this.E.setVisibility(this.s.getAdapter().h() == 2 ? 0 : 8);
+        P();
+    }
+
+    public final void P() {
         View childAt;
-        pz pzVar = this.E;
-        if (pzVar.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
-            pzVar.setTranslationY((childAt.getTop() + (pzVar.getMeasuredHeight() - getMeasuredHeight())) / 2);
+        c00 c00Var = this.E;
+        if (c00Var.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
+            c00Var.setTranslationY((childAt.getTop() + (c00Var.getMeasuredHeight() - getMeasuredHeight())) / 2);
         }
     }
 
-    @Override // org.telegram.ui.Components.pi
+    @Override // org.telegram.ui.Components.qi
     public int getCurrentItemTop() {
         ai.w0 w0Var = this.s;
         if (w0Var.getChildCount() <= 0) {
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = w0Var.getChildAt(0);
-        il0 il0Var = (il0) w0Var.G(childAt);
+        am0 am0Var = (am0) w0Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || il0Var == null || il0Var.b() != 0) ? 0 : top;
-        le.b bVar = this.n;
-        if (top < 0 || il0Var == null || il0Var.b() != 0) {
+        int i10 = (top <= 0 || am0Var == null || am0Var.b() != 0) ? 0 : top;
+        me.b bVar = this.n;
+        if (top < 0 || am0Var == null || am0Var.b() != 0) {
             bVar.a(true, true);
             top = i10;
         } else {
@@ -157,22 +176,22 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
         return AndroidUtilities.dp(12.0f) + top;
     }
 
-    @Override // org.telegram.ui.Components.pi
+    @Override // org.telegram.ui.Components.qi
     public int getFirstOffset() {
         return AndroidUtilities.dp(4.0f) + getListTopPadding();
     }
 
-    @Override // org.telegram.ui.Components.pi
+    @Override // org.telegram.ui.Components.qi
     public int getListTopPadding() {
         return this.s.getPaddingTop();
     }
 
-    @Override // org.telegram.ui.Components.pi
+    @Override // org.telegram.ui.Components.qi
     public int getSelectedItemsCount() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.pi
+    @Override // org.telegram.ui.Components.qi
     public ArrayList<k6> getThemeDescriptions() {
         j6 j6Var = new j6() { // from class: hg.c0
             @Override // org.telegram.ui.ActionBar.j6
@@ -215,7 +234,7 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        K();
+        P();
     }
 
     @Override // android.view.View
@@ -225,46 +244,25 @@ public final class j0 extends pi implements NotificationCenter.NotificationCente
     }
 
     public void setupBlurredSearchField(ah.c cVar) {
-        ti tiVar = this.F;
-        if (tiVar != null) {
-            tiVar.setupBlurredBackground(cVar.c(tiVar, eh.b.a(this.a), false));
+        ui uiVar = this.F;
+        if (uiVar != null) {
+            uiVar.setupBlurredBackground(cVar.c(uiVar, eh.b.a(this.a), false));
         }
     }
 
-    @Override // org.telegram.ui.Components.pi
-    public final void y(int i10, int i11) {
-        int i12;
-        xi xiVar = this.b;
-        if (xiVar.r1.R() > AndroidUtilities.dp(20.0f)) {
-            i12 = AndroidUtilities.dp(8.0f);
-            xiVar.setAllowNestedScroll(false);
-        } else {
-            if (!AndroidUtilities.isTablet()) {
-                Point point = AndroidUtilities.displaySize;
-                if (point.x > point.y) {
-                    i12 = (int) (i11 / 3.5f);
-                    xiVar.setAllowNestedScroll(true);
-                }
-            }
-            i12 = (i11 / 5) * 2;
-            xiVar.setAllowNestedScroll(true);
-        }
-        this.s.q1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
+    @Override // org.telegram.ui.Components.qi
+    public final void p() {
     }
 
-    @Override // org.telegram.ui.Components.pi
-    public final void m() {
-    }
-
-    @Override // le.d
-    public final /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
     }
 
-    @Override // le.d
-    public final void a0(int i10, float f7, float f10, le.e eVar) {
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, me.e eVar) {
     }
 }

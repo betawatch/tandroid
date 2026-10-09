@@ -1,7 +1,6 @@
 package com.android.billingclient.api;
 
 import a6.i;
-import a6.m;
 import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
@@ -11,8 +10,9 @@ import androidx.activity.result.c;
 import androidx.activity.result.g;
 import androidx.fragment.app.f0;
 import com.google.android.gms.internal.play_billing.u;
+import xa.d;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivityV2 extends l {
     public c J;
@@ -22,11 +22,11 @@ public class ProxyBillingActivityV2 extends l {
     public ResultReceiver N;
     public ResultReceiver O;
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.f, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new m(this, 9), new f0(3));
-        this.K = r(new xa.c(this, 8), new f0(3));
+        this.J = r(new pb.c(this, 10), new f0(3));
+        this.K = r(new d(this, 8), new f0(3));
         this.L = r(new i(this, 10), new f0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
@@ -73,7 +73,7 @@ public class ProxyBillingActivityV2 extends l {
         }
     }
 
-    @Override // androidx.activity.l, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.f, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         ResultReceiver resultReceiver = this.M;

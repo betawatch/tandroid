@@ -14,14 +14,14 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class y3 extends FrameLayout {
-    public c5 a;
+    public d5 a;
     public ActionBarLayout b;
     public boolean c;
     public final Paint d;
-    public r0.l1 e;
+    public r0.k1 e;
     public i0.b f;
     public i0.b h;
 
@@ -31,19 +31,19 @@ public final class y3 extends FrameLayout {
         i0.b bVar = i0.b.e;
         this.f = bVar;
         this.h = bVar;
-        p pVar = new p(this, 7);
+        n nVar = new n(this, 8);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(this, pVar);
+        r0.a0.i(this, nVar);
         setSystemUiVisibility(1280);
     }
 
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        r0.l1 l1Var = this.e;
-        if (l1Var != null) {
+        r0.k1 k1Var = this.e;
+        if (k1Var != null) {
             if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.i0.b(view, l1Var);
+                r0.i0.b(view, k1Var);
             }
         }
     }
@@ -148,7 +148,7 @@ public final class y3 extends FrameLayout {
         }
     }
 
-    public void setParentActionBarLayout(c5 c5Var) {
-        this.a = c5Var;
+    public void setParentActionBarLayout(d5 d5Var) {
+        this.a = d5Var;
     }
 }

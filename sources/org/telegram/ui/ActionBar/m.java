@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public abstract class m extends FrameLayout implements le.k {
-    public final d6 a;
+public abstract class m extends FrameLayout implements me.k {
+    public final e6 a;
     public final com.google.firebase.messaging.m b;
-    public final le.l c;
+    public final me.l c;
 
-    public m(Context context, d6 d6Var, com.google.firebase.messaging.m mVar) {
+    public m(Context context, e6 e6Var, com.google.firebase.messaging.m mVar) {
         super(context);
-        this.c = new le.l(this, tr.h, 350L);
-        this.a = d6Var;
+        this.c = new me.l(this, hs.h, 350L);
+        this.a = e6Var;
         this.b = mVar;
     }
 
@@ -26,7 +26,7 @@ public abstract class m extends FrameLayout implements le.k {
         boolean z10;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        le.l lVar = this.c;
+        me.l lVar = this.c;
         if (isEmpty) {
             lVar.a.r(null, true);
             return;
@@ -35,7 +35,7 @@ public abstract class m extends FrameLayout implements le.k {
         com.google.firebase.messaging.m mVar = this.b;
         if (indexOf >= 0) {
             SpannableString valueOf = SpannableString.valueOf(charSequence);
-            mVar.x(valueOf, indexOf);
+            mVar.A(valueOf, indexOf);
             z10 = true;
             charSequence2 = valueOf;
         } else {
@@ -44,23 +44,23 @@ public abstract class m extends FrameLayout implements le.k {
         }
         l lVar2 = new l(this, getContext());
         int i10 = i6.gl;
-        d6 d6Var = this.a;
-        lVar2.setTextColor(i6.v0(i10, d6Var));
-        lVar2.setLinkTextColor(i6.v0(i10, d6Var));
+        e6 e6Var = this.a;
+        lVar2.setTextColor(i6.w0(i10, e6Var));
+        lVar2.setLinkTextColor(i6.w0(i10, e6Var));
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
         if (z10) {
             mVar.c(lVar2);
         }
-        addView(lVar2, w7.z5.c(-2.0f, -2));
+        addView(lVar2, w7.x5.d(-2.0f, -2));
         lVar.i(lVar2, true);
     }
 
-    public void c(le.l lVar) {
+    public void c(me.l lVar) {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            le.g gVar = (le.g) it.next();
+            me.g gVar = (me.g) it.next();
             float c10 = gVar.c();
             Object obj = gVar.a;
             float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
@@ -75,12 +75,12 @@ public abstract class m extends FrameLayout implements le.k {
     public final void d() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            le.g gVar = (le.g) it.next();
+            me.g gVar = (me.g) it.next();
             l lVar = (l) gVar.a;
             int i10 = i6.gl;
-            d6 d6Var = this.a;
-            lVar.setTextColor(i6.v0(i10, d6Var));
-            ((l) gVar.a).setLinkTextColor(i6.v0(i10, d6Var));
+            e6 e6Var = this.a;
+            lVar.setTextColor(i6.w0(i10, e6Var));
+            ((l) gVar.a).setLinkTextColor(i6.w0(i10, e6Var));
         }
     }
 
@@ -88,7 +88,7 @@ public abstract class m extends FrameLayout implements le.k {
         return this.c.a.d.c.a;
     }
 
-    @Override // le.k
+    @Override // me.k
     public final /* synthetic */ void a() {
     }
 }

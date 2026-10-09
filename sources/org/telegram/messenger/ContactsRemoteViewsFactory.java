@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -30,7 +30,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
 
     public ContactsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.i6.R(context);
+        org.telegram.ui.ActionBar.i6.S(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
@@ -68,7 +68,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         TLRPC.FileLocation fileLocation;
         Bitmap decodeFile;
         int i11;
-        org.telegram.ui.Components.h9 h9Var;
+        org.telegram.ui.Components.j9 j9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         if (this.deleted) {
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_deleted);
@@ -90,7 +90,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         RemoteViews remoteViews3 = new RemoteViews(this.mContext.getPackageName(), R.layout.contacts_widget_item);
         int i12 = 0;
         while (i12 < 2) {
-            int i13 = (i10 * 2) + i12;
+            int i13 = (2 * i10) + i12;
             if (i13 >= this.dids.size()) {
                 remoteViews3.setViewVisibility(i12 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, 4);
             } else {
@@ -137,19 +137,19 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 Canvas canvas = new Canvas(createBitmap);
                 if (decodeFile == null) {
                     if (user != null) {
-                        h9Var = new org.telegram.ui.Components.h9(0, user);
+                        j9Var = new org.telegram.ui.Components.j9(0, user);
                         if (UserObject.isReplyUser(user)) {
-                            h9Var.g(12);
+                            j9Var.g(12);
                         } else if (UserObject.isUserSelf(user)) {
-                            h9Var.g(1);
+                            j9Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.h9 h9Var2 = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-                        h9Var2.k(this.accountInstance.getCurrentAccount(), chat);
-                        h9Var = h9Var2;
+                        org.telegram.ui.Components.j9 j9Var2 = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
+                        j9Var2.k(this.accountInstance.getCurrentAccount(), chat);
+                        j9Var = j9Var2;
                     }
-                    h9Var.setBounds(0, 0, dp, dp);
-                    h9Var.draw(canvas);
+                    j9Var.setBounds(0, 0, dp, dp);
+                    j9Var.draw(canvas);
                 } else {
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);

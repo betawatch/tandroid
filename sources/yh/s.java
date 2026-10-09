@@ -1,60 +1,78 @@
 package yh;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.q90;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.eb;
+import org.telegram.ui.Components.pm0;
+import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class s extends LinearLayout {
-    public final ImageView a;
-    public final q90 b;
-    public final q90 c;
+public final class s extends eb {
+    public p X;
+    public final LinearLayout Y;
 
-    public s(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        setOrientation(0);
-        setPadding(AndroidUtilities.dp(i10 == 1 ? 11.0f : 32.0f), 0, AndroidUtilities.dp(i10 == 1 ? 11.0f : 32.0f), AndroidUtilities.dp(i10 == 1 ? 8.0f : 12.0f));
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        int i11 = org.telegram.ui.ActionBar.i6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i11, false), PorterDuff.Mode.SRC_IN));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.z5.t(24, 24, 51, 0, 6, 16, 0));
+    public s(Context context) {
+        super(context, null, false, false, null);
+        this.v = 0.1f;
+        fixNavigationBar();
+        qm0 qm0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        qm0Var.setPadding(i10, 0, i10, 0);
         LinearLayout linearLayout = new LinearLayout(context);
+        this.Y = linearLayout;
         linearLayout.setOrientation(1);
-        q90 q90Var = new q90(context, null);
-        this.b = q90Var;
-        q90Var.setTypeface(AndroidUtilities.bold());
-        q90Var.setTextSize(1, 14.0f);
-        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
-        int i12 = org.telegram.ui.ActionBar.i6.gc;
-        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i12, d6Var));
-        linearLayout.addView(q90Var, w7.z5.t(-1, -2, 7, 0, 0, 0, 3));
-        q90 q90Var2 = new q90(context, null);
-        this.c = q90Var2;
-        q90Var2.setTextSize(1, 14.0f);
-        q90Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, d6Var));
-        q90Var2.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i12, d6Var));
-        linearLayout.addView(q90Var2, w7.z5.q(-1, -2, 7));
-        addView(linearLayout, w7.z5.p(-1, -2, 1.0f, 55, 0, 0, 0, 0));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setClipChildren(false);
+        frameLayout.setClipToPadding(false);
+        r6 r6Var = new r6(context, 70, 0);
+        frameLayout.addView(r6Var, w7.x5.d(-1.0f, -1));
+        sg.n nVar = new sg.n(context, 1, 2);
+        sg.g gVar = nVar.b;
+        gVar.z = org.telegram.ui.ActionBar.i6.fk;
+        gVar.A = org.telegram.ui.ActionBar.i6.gk;
+        gVar.b();
+        nVar.setStarParticlesView(r6Var);
+        frameLayout.addView(nVar, w7.x5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
+        nVar.setPaused(false);
+        linearLayout.addView(frameLayout, w7.x5.d(150.0f, -1));
+        TextView textView = new TextView(context);
+        com.google.android.gms.internal.vision.e2.l(20.0f, 1, textView);
+        int i11 = org.telegram.ui.ActionBar.i6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, this.resourcesProvider));
+        textView.setGravity(17);
+        textView.setText(LocaleController.getString(R.string.ExplainStarsTitle));
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-2, -2, 1, 0, 2, 0, 0), context);
+        h.setTextSize(1, 14.0f);
+        h.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, this.resourcesProvider));
+        h.setGravity(17);
+        h.setText(LocaleController.getString(R.string.ExplainStarsTitle2));
+        linearLayout.addView(h, w7.x5.t(-1, -2, 1, 16, 9, 16, 18));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        ci.d dVar = new ci.d(context, this.resourcesProvider, true);
+        dVar.g(LocaleController.getString(R.string.ExplainStarsButton), false, true);
+        dVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 18));
+        frameLayout2.addView(dVar, w7.x5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        int i12 = this.backgroundPaddingLeft;
+        frameLayout2.setPadding(i12, 0, i12, 0);
+        frameLayout2.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h5, false));
+        this.containerView.addView(frameLayout2, w7.x5.e(-1, -2, 87));
+        this.X.N(false);
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
-        this.a.setImageResource(i10);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
+    @Override // org.telegram.ui.Components.eb
+    public final CharSequence B() {
+        return LocaleController.getString(R.string.ExplainStarsTitle);
     }
 
-    public void setSubtitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.Components.eb
+    public final pm0 x(qm0 qm0Var) {
+        p pVar = new p(qm0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 22), this.resourcesProvider);
+        this.X = pVar;
+        return pVar;
     }
 }

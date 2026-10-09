@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.google.android.gms.internal.vision.h3;
-import ii.n4;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -15,8 +14,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
+import m.f3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -59,7 +59,7 @@ public final class v {
         return null;
     }
 
-    public final n4 b(v vVar) {
+    public final l2.f b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -68,7 +68,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new n4((o) this.w.get(str), 18);
+        return new l2.f((o) this.w.get(str), 17);
     }
 
     public final h3 c() {
@@ -87,7 +87,7 @@ public final class v {
         if (vVar == this || this.n == 3) {
             return true;
         }
-        return TextUtils.equals(((ComponentName) ((l2.g) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
+        return TextUtils.equals(((ComponentName) ((f3) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
     }
 
     public final boolean e() {
@@ -141,164 +141,169 @@ public final class v {
     */
     public final int i(m mVar) {
         int i10;
+        int i11;
         v vVar;
         int countActions;
-        if (this.u == mVar) {
-            return 0;
-        }
-        this.u = mVar;
-        if (mVar == null) {
-            return 0;
-        }
-        Bundle bundle = mVar.a;
-        if (Objects.equals(this.d, bundle.getString("name"))) {
-            i10 = 0;
-        } else {
-            this.d = bundle.getString("name");
-            i10 = 1;
-        }
-        if (!Objects.equals(this.e, bundle.getString("status"))) {
-            this.e = bundle.getString("status");
-            i10 = 1;
-        }
-        Uri uri = this.f;
-        String string = bundle.getString("iconUri");
-        if (!Objects.equals(uri, string == null ? null : Uri.parse(string))) {
-            String string2 = bundle.getString("iconUri");
-            this.f = string2 == null ? null : Uri.parse(string2);
-            i10 = 1;
-        }
-        if (this.g != bundle.getBoolean("enabled", true)) {
-            this.g = bundle.getBoolean("enabled", true);
-            i10 = 1;
-        }
-        if (this.i != bundle.getInt("connectionState", 0)) {
-            this.i = bundle.getInt("connectionState", 0);
-            i10 = 1;
-        }
-        ArrayList b10 = mVar.b();
-        ArrayList arrayList = this.k;
-        if (arrayList != b10) {
-            if (arrayList != null) {
-                ListIterator listIterator = arrayList.listIterator();
-                ListIterator listIterator2 = b10.listIterator();
-                loop0: while (listIterator.hasNext() && listIterator2.hasNext()) {
-                    IntentFilter intentFilter = (IntentFilter) listIterator.next();
-                    IntentFilter intentFilter2 = (IntentFilter) listIterator2.next();
-                    if (intentFilter != intentFilter2) {
-                        if (intentFilter == null || intentFilter2 == null || (countActions = intentFilter.countActions()) != intentFilter2.countActions()) {
-                            break;
-                        }
-                        int i11 = 0;
-                        while (true) {
-                            if (i11 >= countActions) {
-                                int countCategories = intentFilter.countCategories();
-                                if (countCategories != intentFilter2.countCategories()) {
+        int i12 = 0;
+        if (this.u != mVar) {
+            this.u = mVar;
+            if (mVar != null) {
+                Bundle bundle = mVar.a;
+                if (Objects.equals(this.d, bundle.getString("name"))) {
+                    i10 = 0;
+                } else {
+                    this.d = bundle.getString("name");
+                    i10 = 1;
+                }
+                if (!Objects.equals(this.e, bundle.getString("status"))) {
+                    this.e = bundle.getString("status");
+                    i10 = 1;
+                }
+                Uri uri = this.f;
+                String string = bundle.getString("iconUri");
+                if (!Objects.equals(uri, string == null ? null : Uri.parse(string))) {
+                    String string2 = bundle.getString("iconUri");
+                    this.f = string2 == null ? null : Uri.parse(string2);
+                    i10 = 1;
+                }
+                if (this.g != bundle.getBoolean("enabled", true)) {
+                    this.g = bundle.getBoolean("enabled", true);
+                    i10 = 1;
+                }
+                if (this.i != bundle.getInt("connectionState", 0)) {
+                    this.i = bundle.getInt("connectionState", 0);
+                    i10 = 1;
+                }
+                ArrayList b10 = mVar.b();
+                ArrayList arrayList = this.k;
+                if (arrayList != b10) {
+                    if (arrayList != null) {
+                        ListIterator listIterator = arrayList.listIterator();
+                        ListIterator listIterator2 = b10.listIterator();
+                        loop0: while (listIterator.hasNext() && listIterator2.hasNext()) {
+                            IntentFilter intentFilter = (IntentFilter) listIterator.next();
+                            IntentFilter intentFilter2 = (IntentFilter) listIterator2.next();
+                            if (intentFilter != intentFilter2) {
+                                if (intentFilter == null || intentFilter2 == null || (countActions = intentFilter.countActions()) != intentFilter2.countActions()) {
                                     break;
                                 }
-                                for (int i12 = 0; i12 < countCategories; i12++) {
-                                    if (!intentFilter.getCategory(i12).equals(intentFilter2.getCategory(i12))) {
-                                        break loop0;
+                                int i13 = 0;
+                                while (true) {
+                                    if (i13 >= countActions) {
+                                        int countCategories = intentFilter.countCategories();
+                                        if (countCategories != intentFilter2.countCategories()) {
+                                            break;
+                                        }
+                                        for (int i14 = 0; i14 < countCategories; i14++) {
+                                            if (!intentFilter.getCategory(i14).equals(intentFilter2.getCategory(i14))) {
+                                                break loop0;
+                                            }
+                                        }
+                                    } else {
+                                        if (!intentFilter.getAction(i13).equals(intentFilter2.getAction(i13))) {
+                                            break loop0;
+                                        }
+                                        i13++;
                                     }
                                 }
-                            } else {
-                                if (!intentFilter.getAction(i11).equals(intentFilter2.getAction(i11))) {
-                                    break loop0;
-                                }
-                                i11++;
                             }
                         }
+                        if (!listIterator.hasNext()) {
+                        }
+                    }
+                    arrayList.clear();
+                    arrayList.addAll(mVar.b());
+                    i10 = 1;
+                }
+                if (this.l != bundle.getInt("playbackType", 1)) {
+                    this.l = bundle.getInt("playbackType", 1);
+                    i10 = 1;
+                }
+                if (this.m != bundle.getInt("playbackStream", -1)) {
+                    this.m = bundle.getInt("playbackStream", -1);
+                    i10 = 1;
+                }
+                if (this.n != bundle.getInt("deviceType")) {
+                    this.n = bundle.getInt("deviceType");
+                    i10 = 1;
+                }
+                int i15 = 3;
+                if (this.o != bundle.getInt("volumeHandling", 0)) {
+                    this.o = bundle.getInt("volumeHandling", 0);
+                    i10 = 3;
+                }
+                if (this.p != bundle.getInt("volume")) {
+                    this.p = bundle.getInt("volume");
+                    i10 = 3;
+                }
+                if (this.q != bundle.getInt("volumeMax")) {
+                    this.q = bundle.getInt("volumeMax");
+                } else {
+                    i15 = i10;
+                }
+                if (this.r != bundle.getInt("presentationDisplayId", -1)) {
+                    this.r = bundle.getInt("presentationDisplayId", -1);
+                    i15 |= 5;
+                }
+                if (!Objects.equals(this.s, bundle.getBundle("extras"))) {
+                    this.s = bundle.getBundle("extras");
+                    i15 |= 1;
+                }
+                if (!Objects.equals(this.t, (IntentSender) bundle.getParcelable("settingsIntent"))) {
+                    this.t = (IntentSender) bundle.getParcelable("settingsIntent");
+                    i15 |= 1;
+                }
+                if (this.j != bundle.getBoolean("canDisconnect", false)) {
+                    this.j = bundle.getBoolean("canDisconnect", false);
+                    i15 |= 5;
+                }
+                ArrayList c10 = mVar.c();
+                ArrayList arrayList2 = new ArrayList();
+                boolean z10 = c10.size() != this.v.size();
+                if (!c10.isEmpty()) {
+                    e c11 = x.c();
+                    int size = c10.size();
+                    int i16 = 0;
+                    while (i16 < size) {
+                        Object obj = c10.get(i16);
+                        i16++;
+                        c11.getClass();
+                        String str = (String) c11.k.get(new q0.b(((ComponentName) this.a.d.b).flattenToShortString(), (String) obj));
+                        ArrayList arrayList3 = c11.j;
+                        int size2 = arrayList3.size();
+                        int i17 = i12;
+                        while (true) {
+                            if (i17 >= size2) {
+                                i11 = i12;
+                                vVar = null;
+                                break;
+                            }
+                            Object obj2 = arrayList3.get(i17);
+                            i17++;
+                            vVar = (v) obj2;
+                            i11 = i12;
+                            if (vVar.c.equals(str)) {
+                                break;
+                            }
+                            i12 = i11;
+                        }
+                        if (vVar != null) {
+                            arrayList2.add(vVar);
+                            if (!z10 && !this.v.contains(vVar)) {
+                                z10 = true;
+                            }
+                        }
+                        i12 = i11;
                     }
                 }
-                if (!listIterator.hasNext()) {
+                if (!z10) {
+                    return i15;
                 }
+                this.v = arrayList2;
+                return i15 | 1;
             }
-            arrayList.clear();
-            arrayList.addAll(mVar.b());
-            i10 = 1;
         }
-        if (this.l != bundle.getInt("playbackType", 1)) {
-            this.l = bundle.getInt("playbackType", 1);
-            i10 = 1;
-        }
-        if (this.m != bundle.getInt("playbackStream", -1)) {
-            this.m = bundle.getInt("playbackStream", -1);
-            i10 = 1;
-        }
-        if (this.n != bundle.getInt("deviceType")) {
-            this.n = bundle.getInt("deviceType");
-            i10 = 1;
-        }
-        int i13 = 3;
-        if (this.o != bundle.getInt("volumeHandling", 0)) {
-            this.o = bundle.getInt("volumeHandling", 0);
-            i10 = 3;
-        }
-        if (this.p != bundle.getInt("volume")) {
-            this.p = bundle.getInt("volume");
-            i10 = 3;
-        }
-        if (this.q != bundle.getInt("volumeMax")) {
-            this.q = bundle.getInt("volumeMax");
-        } else {
-            i13 = i10;
-        }
-        if (this.r != bundle.getInt("presentationDisplayId", -1)) {
-            this.r = bundle.getInt("presentationDisplayId", -1);
-            i13 |= 5;
-        }
-        if (!Objects.equals(this.s, bundle.getBundle("extras"))) {
-            this.s = bundle.getBundle("extras");
-            i13 |= 1;
-        }
-        if (!Objects.equals(this.t, (IntentSender) bundle.getParcelable("settingsIntent"))) {
-            this.t = (IntentSender) bundle.getParcelable("settingsIntent");
-            i13 |= 1;
-        }
-        if (this.j != bundle.getBoolean("canDisconnect", false)) {
-            this.j = bundle.getBoolean("canDisconnect", false);
-            i13 |= 5;
-        }
-        ArrayList c10 = mVar.c();
-        ArrayList arrayList2 = new ArrayList();
-        boolean z10 = c10.size() != this.v.size();
-        if (!c10.isEmpty()) {
-            e c11 = x.c();
-            int size = c10.size();
-            int i14 = 0;
-            while (i14 < size) {
-                Object obj = c10.get(i14);
-                i14++;
-                c11.getClass();
-                String str = (String) c11.k.get(new q0.b(((ComponentName) this.a.d.b).flattenToShortString(), (String) obj));
-                ArrayList arrayList3 = c11.j;
-                int size2 = arrayList3.size();
-                int i15 = 0;
-                while (true) {
-                    if (i15 >= size2) {
-                        vVar = null;
-                        break;
-                    }
-                    Object obj2 = arrayList3.get(i15);
-                    i15++;
-                    vVar = (v) obj2;
-                    if (vVar.c.equals(str)) {
-                        break;
-                    }
-                }
-                if (vVar != null) {
-                    arrayList2.add(vVar);
-                    if (!z10 && !this.v.contains(vVar)) {
-                        z10 = true;
-                    }
-                }
-            }
-        }
-        if (!z10) {
-            return i13;
-        }
-        this.v = arrayList2;
-        return i13 | 1;
+        return 0;
     }
 
     public final void j(int i10) {

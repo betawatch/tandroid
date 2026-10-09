@@ -3,15 +3,16 @@ package a6;
 import android.os.Parcel;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g extends com.google.android.gms.common.api.internal.e {
     public final /* synthetic */ int q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(com.google.android.gms.common.api.m mVar, int i10) {
+    public g(m mVar, int i10) {
         super(w5.a.a, mVar);
         this.q = i10;
     }
@@ -35,22 +36,22 @@ public final class g extends com.google.android.gms.common.api.internal.e {
                 k kVar = (k) eVar.u();
                 f fVar = new f(this, 0);
                 GoogleSignInOptions googleSignInOptions = eVar.U;
-                Parcel K0 = kVar.K0();
+                Parcel J0 = kVar.J0();
                 int i10 = i7.f.a;
-                K0.writeStrongBinder(fVar);
-                i7.f.c(K0, googleSignInOptions);
-                kVar.L0(K0, 102);
+                J0.writeStrongBinder(fVar);
+                i7.f.c(J0, googleSignInOptions);
+                kVar.K0(J0, 102);
                 break;
             default:
                 e eVar2 = (e) cVar;
                 k kVar2 = (k) eVar2.u();
                 f fVar2 = new f(this, 1);
                 GoogleSignInOptions googleSignInOptions2 = eVar2.U;
-                Parcel K02 = kVar2.K0();
+                Parcel J02 = kVar2.J0();
                 int i11 = i7.f.a;
-                K02.writeStrongBinder(fVar2);
-                i7.f.c(K02, googleSignInOptions2);
-                kVar2.L0(K02, 103);
+                J02.writeStrongBinder(fVar2);
+                i7.f.c(J02, googleSignInOptions2);
+                kVar2.K0(J02, 103);
                 break;
         }
     }

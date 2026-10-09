@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(z.b);
@@ -30,9 +30,9 @@ public class g implements Iterable, Serializable {
                 throw new IndexOutOfBoundsException(hg.c.i(i10, "Beginning index: ", " < 0"));
             }
             if (i12 < i10) {
-                throw new IndexOutOfBoundsException(a4.a.m(i10, i12, "Beginning index larger than ending index: ", ", "));
+                throw new IndexOutOfBoundsException(a1.g.m(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(a4.a.m(i12, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(a1.g.m(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:

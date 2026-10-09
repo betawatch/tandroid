@@ -5,15 +5,17 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.Signature;
+import android.os.CancellationSignal;
 import android.util.Log;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import v7.x;
+import k2.g0;
+import v7.t;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class h implements androidx.emoji2.text.k {
+public final class h implements androidx.emoji2.text.k, v0.h {
     public static h b;
     public final Context a;
 
@@ -25,13 +27,20 @@ public final class h implements androidx.emoji2.text.k {
             case 2:
                 this.a = context.getApplicationContext();
                 break;
+            case 3:
+                kotlin.jvm.internal.i.e(context, "context");
+                this.a = context;
+                break;
+            case 4:
+                this.a = context;
+                break;
             default:
                 this.a = context.getApplicationContext();
                 break;
         }
     }
 
-    public static h b(Context context) {
+    public static h c(Context context) {
         n6.l.h(context);
         synchronized (h.class) {
             try {
@@ -46,7 +55,7 @@ public final class h implements androidx.emoji2.text.k {
         return b;
     }
 
-    public static final l c(PackageInfo packageInfo, l... lVarArr) {
+    public static final l e(PackageInfo packageInfo, l... lVarArr) {
         Signature[] signatureArr = packageInfo.signatures;
         if (signatureArr != null) {
             if (signatureArr.length != 1) {
@@ -69,13 +78,13 @@ public final class h implements androidx.emoji2.text.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean d(PackageInfo packageInfo, boolean z10) {
+    public static final boolean f(PackageInfo packageInfo, boolean z10) {
         PackageInfo packageInfo2;
         if (z10) {
             if (packageInfo == null) {
                 packageInfo2 = null;
                 if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? c(packageInfo2, n.a) : c(packageInfo2, n.a[0])) == null) {
+                    if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
                         return true;
                     }
                 }
@@ -88,16 +97,41 @@ public final class h implements androidx.emoji2.text.k {
         }
         packageInfo2 = packageInfo;
         if (packageInfo != null) {
-            if ((!z10 ? c(packageInfo2, n.a) : c(packageInfo2, n.a[0])) == null) {
+            if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
             }
         }
         return false;
     }
 
     @Override // androidx.emoji2.text.k
-    public void a(x xVar) {
+    public void a(t tVar) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new k0(this, xVar, threadPoolExecutor, 11));
+        threadPoolExecutor.execute(new k0(this, tVar, threadPoolExecutor, 11));
+    }
+
+    public Object b(Context context, v0.e eVar, jd.c cVar) {
+        ae.m mVar = new ae.m(1, w7.h.b(cVar));
+        mVar.s();
+        CancellationSignal cancellationSignal = new CancellationSignal();
+        mVar.u(new v0.g(cancellationSignal));
+        g0 g0Var = new g0(mVar, 27);
+        a3.b bVar = new a3.b(2);
+        kotlin.jvm.internal.i.e(context, "context");
+        v0.j a2 = r2.h.a(new r2.h(this.a, 1), eVar);
+        if (a2 == null) {
+            g0Var.onError(new w0.c("createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added", 1));
+        } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+            g0Var.onError(new w0.c("createCredential is not supported on this device", 3));
+        } else {
+            a2.onCreateCredential(context, eVar, cancellationSignal, bVar, g0Var);
+        }
+        Object r10 = mVar.r();
+        kd.a aVar = kd.a.a;
+        return r10;
+    }
+
+    public PackageInfo d(int i10, String str) {
+        return this.a.getPackageManager().getPackageInfo(str, i10);
     }
 }

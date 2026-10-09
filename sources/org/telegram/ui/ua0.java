@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class ua0 extends RelativeLayout {
     public i0.b a;
@@ -22,9 +22,9 @@ public final class ua0 extends RelativeLayout {
         super(launchActivity2);
         this.c = launchActivity;
         this.a = i0.b.e;
-        bu buVar = new bu(this, 16);
+        gu guVar = new gu(this, 15);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(this, buVar);
+        r0.a0.i(this, guVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -53,8 +53,8 @@ public final class ua0 extends RelativeLayout {
         int measuredWidth2 = (measuredWidth - launchActivity.r0.getView().getMeasuredWidth()) / 2;
         int dp = AndroidUtilities.dp(8.0f) + this.a.b;
         launchActivity.r0.getView().layout(measuredWidth2, dp, launchActivity.r0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.r0.getView().getMeasuredHeight() + dp);
-        hg.q1 q1Var = launchActivity.v0;
-        q1Var.layout(0, 0, q1Var.getMeasuredWidth(), launchActivity.v0.getMeasuredHeight());
+        hg.r1 r1Var = launchActivity.v0;
+        r1Var.layout(0, 0, r1Var.getMeasuredWidth(), launchActivity.v0.getMeasuredHeight());
         FrameLayout frameLayout = launchActivity.u0;
         frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
     }

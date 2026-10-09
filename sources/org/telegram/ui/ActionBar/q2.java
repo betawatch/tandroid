@@ -2,13 +2,13 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.mu;
-import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.pa0;
-import org.telegram.ui.yq;
+import org.telegram.ui.Components.a00;
+import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.vl0;
+import org.telegram.ui.Components.zu;
+import org.telegram.ui.zq;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -40,41 +40,41 @@ public final /* synthetic */ class q2 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                mu muVar = (mu) this.c;
+                zu zuVar = (zu) this.c;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                muVar.d.setTranslationY(floatValue2);
+                zuVar.d.setTranslationY(floatValue2);
                 int i11 = this.b;
                 float f7 = i11;
                 float f10 = 1.0f - (floatValue2 / f7);
-                muVar.R = f10;
-                if (i11 > 0 && ((i10 = muVar.L) == 2 || i10 == 3)) {
-                    muVar.d.setAlpha(f10);
+                zuVar.R = f10;
+                if (i11 > 0 && ((i10 = zuVar.L) == 2 || i10 == 3)) {
+                    zuVar.d.setAlpha(f10);
                 }
-                muVar.c(floatValue2 - f7);
+                zuVar.c(floatValue2 - f7);
                 break;
             case 3:
-                ((nz) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((a00) this.c).Q0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
-                pa0 pa0Var = (pa0) this.c;
-                float[] fArr = pa0Var.Z;
+                db0 db0Var = (db0) this.c;
+                float[] fArr = db0Var.Z;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int i12 = this.b;
                 fArr[i12] = floatValue3;
-                i5[] i5VarArr = pa0Var.w;
-                i5VarArr[i12].setScaleX(AndroidUtilities.lerp(1.111f, 1.0f, floatValue3));
-                i5VarArr[i12].setScaleY(AndroidUtilities.lerp(1.111f, 1.0f, fArr[i12]));
-                i5VarArr[i12].setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), 0, fArr[i12]));
-                pa0Var.x[i12].setAlpha(fArr[i12]);
+                j5[] j5VarArr = db0Var.w;
+                j5VarArr[i12].setScaleX(AndroidUtilities.lerp(1.111f, 1.0f, floatValue3));
+                j5VarArr[i12].setScaleY(AndroidUtilities.lerp(1.111f, 1.0f, fArr[i12]));
+                j5VarArr[i12].setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), 0, fArr[i12]));
+                db0Var.x[i12].setAlpha(fArr[i12]);
                 break;
             case 5:
-                yq yqVar = (yq) this.c;
-                yqVar.getClass();
+                zq zqVar = (zq) this.c;
+                zqVar.getClass();
                 Float f11 = (Float) valueAnimator.getAnimatedValue();
-                dl0 dl0Var = (dl0) yqVar.d;
-                dl0Var.b.put(this.b, f11);
-                dl0Var.d = true;
-                dl0Var.a.invalidate();
+                vl0 vl0Var = (vl0) zqVar.d;
+                vl0Var.b.put(this.b, f11);
+                vl0Var.d = true;
+                vl0Var.a.invalidate();
                 break;
             default:
                 vh.g gVar = (vh.g) this.c;

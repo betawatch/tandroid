@@ -1,79 +1,120 @@
 package ai;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.bi;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.rg;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class m4 extends FrameLayout {
+public final class m4 extends ImageReceiver {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e6 b;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ m4(e6 e6Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ m4(View view, View view2, int i10) {
+        super(view2);
         this.a = i10;
-        this.b = e6Var;
+        this.b = view;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int x10;
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.y5
+    public void invalidate() {
         switch (this.a) {
+            case 3:
+                View view = ((co) this.b).b;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                ((org.telegram.ui.Components.s5) this.b).k();
+                super.invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver
+    public boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+        Runnable runnable;
+        int i12 = this.a;
+        Object obj = this.b;
+        switch (i12) {
             case 0:
-                e6 e6Var = this.b;
-                if (e6Var.F2.getVisibility() == 0 && e6Var.F2.getLayoutParams().width != (x10 = (int) (((e6Var.A2.getX() + e6Var.A2.getMeasuredWidth()) - e6Var.F2.getX()) + AndroidUtilities.dp(10.0f)))) {
-                    e6Var.F2.getLayoutParams().width = x10;
-                    e6Var.F2.invalidate();
-                    e6Var.F2.requestLayout();
+                f6 f6Var = (f6) obj;
+                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                if (i10 == 1 && (runnable = f6Var.i1) != null) {
+                    runnable.run();
+                    f6Var.i1 = null;
                 }
-                super.dispatchDraw(canvas);
-                break;
+                return imageBitmapByKey;
             case 1:
-                super.dispatchDraw(canvas);
-                e6 e6Var2 = this.b;
-                if (e6Var2.D1 && e6Var2.R0 != null) {
-                    canvas.save();
-                    canvas.translate((getMeasuredWidth() - e6Var2.R0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
-                    float d = e6Var2.T0.d(e6Var2.V0 ? 1.0f : 0.0f, false);
-                    canvas.scale(d, d, e6Var2.R0.d() / 2.0f, AndroidUtilities.dp(20.0f));
-                    org.telegram.ui.Components.o6 o6Var = e6Var2.R0;
-                    o6Var.w = 255;
-                    o6Var.draw(canvas);
-                    canvas.restore();
+                if (drawable != null && i10 != 1) {
+                    bi.t(((hg.e1) ((z5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), hs.k, 250L);
+                }
+                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+            case 2:
+            case 3:
+            default:
+                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+            case 4:
+                org.telegram.ui.Components.s5 s5Var = (org.telegram.ui.Components.s5) obj;
+                s5Var.k();
+                boolean imageBitmapByKey2 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                if (s5Var.m && hasImageLoaded()) {
+                    s5Var.m = false;
+                    AndroidUtilities.runOnUIThread(new rg(s5Var, 4));
+                }
+                return imageBitmapByKey2;
+            case 5:
+                boolean imageBitmapByKey3 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                ((PhotoViewer) obj).m2();
+                return imageBitmapByKey3;
+            case 6:
+                boolean imageBitmapByKey4 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(300L);
+                duration.addUpdateListener(new org.telegram.ui.Components.voip.r0(this, 5));
+                duration.start();
+                return imageBitmapByKey4;
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver
+    public void setRoundRadius(int[] iArr) {
+        switch (this.a) {
+            case 2:
+                super.setRoundRadius(iArr);
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.b;
+                int[] iArr2 = u1Var.R0;
+                iArr2[0] = iArr[0];
+                iArr2[1] = iArr[1];
+                int dp = AndroidUtilities.dp(6.0f);
+                iArr2[3] = dp;
+                iArr2[2] = dp;
+                qh.g gVar = u1Var.b6;
+                if (gVar != null) {
+                    gVar.b.setRoundRadius(u1Var.R0);
                     break;
                 }
                 break;
             default:
-                super.dispatchDraw(canvas);
-                e6 e6Var3 = this.b;
-                if (e6Var3.D1 && e6Var3.Q0 != null) {
-                    canvas.save();
-                    canvas.translate((getMeasuredWidth() - e6Var3.Q0.d()) - AndroidUtilities.dp(6.0f), 0.0f);
-                    float d10 = e6Var3.S0.d(e6Var3.U0 ? 1.0f : 0.0f, false);
-                    canvas.scale(d10, d10, e6Var3.Q0.d() / 2.0f, AndroidUtilities.dp(20.0f));
-                    org.telegram.ui.Components.o6 o6Var2 = e6Var3.Q0;
-                    o6Var2.w = 255;
-                    o6Var2.draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+                super.setRoundRadius(iArr);
                 break;
         }
     }
 
-    @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == this.b.R0 || super.verifyDrawable(drawable);
-            case 2:
-                return drawable == this.b.Q0 || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
-        }
+    public /* synthetic */ m4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 }

@@ -6,24 +6,24 @@ import android.os.Parcelable;
 import android.os.WorkSource;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
-import w7.g0;
+import w7.d0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n extends o6.a {
     public static final Parcelable.Creator<n> CREATOR = new m(1);
     public final LocationRequest a;
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x006a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -125,8 +125,8 @@ public final class n extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.k(parcel, 1, this.a, i10);
-        g0.r(parcel, q6);
+        int q6 = d0.q(parcel, 20293);
+        d0.k(parcel, 1, this.a, i10);
+        d0.r(parcel, q6);
     }
 }

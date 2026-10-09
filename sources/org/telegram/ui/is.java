@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class is implements Runnable {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class is implements Runnable {
                 }
                 break;
             case 1:
-                qs.Y(this.b);
+                qs.Z(this.b);
                 break;
             default:
                 qs qsVar2 = this.b;
-                qsVar2.presentFragment(yn.Q9(qsVar2.H), true);
+                qsVar2.presentFragment(zn.W9(qsVar2.H), true);
                 break;
         }
     }

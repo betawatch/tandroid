@@ -3,12 +3,13 @@ package org.telegram.messenger;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import e0.r;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class ImportingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    private e0.t builder;
+    private r builder;
 
     public ImportingService() {
         for (int i10 = 0; i10 < 4; i10++) {
@@ -55,7 +56,7 @@ public class ImportingService extends Service implements NotificationCenter.Noti
             stopForeground(true);
         } catch (Throwable unused) {
         }
-        new e0.n0(ApplicationLoader.applicationContext).b(5);
+        new e0.l0(ApplicationLoader.applicationContext).b(5, null);
         for (int i10 = 0; i10 < 4; i10++) {
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.historyImportProgressChanged);
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.stickersImportProgressChanged);
@@ -76,13 +77,13 @@ public class ImportingService extends Service implements NotificationCenter.Noti
         }
         if (this.builder == null) {
             NotificationsController.checkOtherNotificationsChannel();
-            e0.t tVar = new e0.t(ApplicationLoader.applicationContext, null);
-            this.builder = tVar;
-            tVar.E.icon = android.R.drawable.stat_sys_upload;
-            tVar.E.when = System.currentTimeMillis();
-            e0.t tVar2 = this.builder;
-            tVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
-            tVar2.g(LocaleController.getString(R.string.AppName));
+            r rVar = new r(ApplicationLoader.applicationContext, null);
+            this.builder = rVar;
+            rVar.E.icon = android.R.drawable.stat_sys_upload;
+            rVar.E.when = System.currentTimeMillis();
+            r rVar2 = this.builder;
+            rVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
+            rVar2.g(LocaleController.getString(R.string.AppName));
             if (hasImportingHistory()) {
                 this.builder.p(LocaleController.getString(R.string.ImporImportingService));
                 this.builder.f(LocaleController.getString(R.string.ImporImportingService));
@@ -91,12 +92,12 @@ public class ImportingService extends Service implements NotificationCenter.Noti
                 this.builder.f(LocaleController.getString(R.string.ImporImportingStickersService));
             }
         }
-        e0.t tVar3 = this.builder;
-        tVar3.n = 100;
-        tVar3.o = 0;
-        tVar3.p = true;
-        startForeground(5, tVar3.b());
-        new e0.n0(ApplicationLoader.applicationContext).d(5, this.builder.b());
+        r rVar3 = this.builder;
+        rVar3.n = 100;
+        rVar3.o = 0;
+        rVar3.p = true;
+        startForeground(5, rVar3.b());
+        new e0.l0(ApplicationLoader.applicationContext).e(null, 5, this.builder.b());
         return 2;
     }
 }

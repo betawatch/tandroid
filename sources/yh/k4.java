@@ -1,33 +1,60 @@
 package yh;
 
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.m0 b;
+public final /* synthetic */ class k4 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ m5 b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ TLObject i;
+    public final /* synthetic */ TLObject j;
 
-    public /* synthetic */ k4(ai.m0 m0Var, int i10) {
-        this.a = i10;
-        this.b = m0Var;
+    public /* synthetic */ k4(m5 m5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, long j10, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = m5Var;
+        this.c = callback2;
+        this.d = context;
+        this.e = e6Var;
+        this.f = j3;
+        this.g = str;
+        this.h = j10;
+        this.i = tLObject;
+        this.j = tL_textWithEntities;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
-                break;
-            case 1:
-                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new k4(this.b, 3));
+                AndroidUtilities.runOnUIThread(new l4(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, (TLRPC.TL_payments_paymentFormStarGift) this.i, (TL_stars.StarGift) this.j, this.h));
                 break;
             default:
-                this.b.run(Boolean.FALSE, null);
+                AndroidUtilities.runOnUIThread(new l4(this.b, tLObject, tL_error, this.c, this.d, this.e, this.f, this.g, this.h, this.i, (TLRPC.TL_textWithEntities) this.j));
                 break;
         }
+    }
+
+    public /* synthetic */ k4(m5 m5Var, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j10) {
+        this.b = m5Var;
+        this.c = callback2;
+        this.d = context;
+        this.e = e6Var;
+        this.f = j3;
+        this.g = str;
+        this.i = tL_payments_paymentFormStarGift;
+        this.j = starGift;
+        this.h = j10;
     }
 }

@@ -1,16 +1,17 @@
 package ci;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class g3 extends g.p {
-    public final /* synthetic */ w3 c;
-
-    public g3(w3 w3Var) {
-        this.c = w3Var;
-    }
-
-    @Override // g.p
-    public final int i(int i10) {
-        return (i10 == 0 || i10 == 1 || i10 == this.c.f.h() - 1) ? 3 : 1;
+public final class g3 extends s4.o0 {
+    @Override // s4.o0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.a1 a1Var) {
+        int dp = AndroidUtilities.dp(5.0f);
+        rect.right = dp;
+        rect.bottom = dp;
     }
 }

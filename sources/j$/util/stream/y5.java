@@ -6,21 +6,18 @@ import java.util.Arrays;
 public final class y5 extends u5 {
     public m6 c;
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [j$.util.stream.m6, j$.util.stream.s6] */
-    /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.s6] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.s6] */
     @Override // j$.util.stream.c5, j$.util.stream.j5
     public final void o(long j3) {
-        ?? r02;
+        m6 m6Var;
         if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
         if (j3 <= 0) {
-            r02 = new s6();
+            m6Var = new m6();
         } else {
-            r02 = new m6((int) j3);
+            m6Var = new m6((int) j3);
         }
-        this.c = r02;
+        this.c = m6Var;
     }
 
     @Override // j$.util.stream.c5, j$.util.stream.j5

@@ -1,44 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.R;
 import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sn extends org.telegram.ui.Cells.d6 {
-    public final /* synthetic */ vn F;
+public final class sn extends yi {
+    public final /* synthetic */ Runnable S2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sn(vn vnVar, Context context, int i10) {
-        super(context, i10, null, null);
-        this.F = vnVar;
+    public sn(Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.e6 e6Var, Runnable runnable) {
+        super(context, n2Var, false, false, true, e6Var);
+        this.S2 = runnable;
     }
 
-    @Override // org.telegram.ui.Cells.d6
-    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
-        if (c6Var.isFocused() && c6Var.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.yn.k8(menu, ((org.telegram.ui.yn) this.F.d.b.f0).h, false, true, true, true);
+    @Override // org.telegram.ui.Components.yi, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        Runnable runnable = this.S2;
+        if (runnable != null) {
+            runnable.run();
         }
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void i(boolean z10) {
-        xn.K(this.F.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void j(org.telegram.ui.Cells.d6 d6Var) {
-        xn.L(this.F.d, d6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void k(org.telegram.ui.Cells.c6 c6Var) {
-        this.F.d.b.s1(c6Var, true);
     }
 }

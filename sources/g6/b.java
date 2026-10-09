@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public final String a;
@@ -16,7 +16,7 @@ public final class b {
         n6.l.g(str, "The log tag cannot be null or empty.");
         this.a = str;
         this.b = str.length() <= 23;
-        this.c = TextUtils.isEmpty(str2) ? null : a4.a.q("[", str2, "] ");
+        this.c = TextUtils.isEmpty(str2) ? null : a1.g.q("[", str2, "] ");
     }
 
     public final void a(Exception exc, String str, Object... objArr) {

@@ -1,105 +1,295 @@
 package ei;
 
+import ai.e7;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.SparseArray;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import java.util.Arrays;
+import java.util.HashMap;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.gf1;
-import org.telegram.ui.wf1;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.hk;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.sk;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t3 implements Utilities.Callback {
+public final /* synthetic */ class t3 implements Runnable {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object v;
+    public final /* synthetic */ Object w;
+    public final /* synthetic */ Object x;
 
-    public /* synthetic */ t3(int i10, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.f3 f3Var, d6 d6Var) {
+    public /* synthetic */ t3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, e6 e6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+        this.n = dVar;
+        this.d = tLObject;
         this.b = i10;
-        this.d = connectedbotstarref;
-        this.e = f3Var;
-        this.f = context;
-        this.c = j3;
-        this.g = d6Var;
+        this.f = j3;
+        this.r = f3Var;
+        this.s = starrefprogram;
+        this.h = j10;
+        this.e = z10;
+        this.v = context;
+        this.w = e6Var;
+        this.x = user;
+        this.c = tL_error;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01f9, code lost:
+    
+        if (r3.getChildCount() > 1) goto L73;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
+    
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.zq(r13, (org.telegram.ui.Components.j10) r2, r1, r12));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
+    
+        r13.l();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x01fd, code lost:
+    
+        if (r2 != null) goto L74;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TL_payments.connectedBotStarRef connectedbotstarref;
+        org.telegram.ui.ActionBar.n2 U;
         int i10;
-        SpannableStringBuilder replaceTags;
+        ArrayList arrayList;
         int i11 = this.a;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
+        Object obj = this.x;
+        Object obj2 = this.w;
+        long j3 = this.h;
+        Object obj3 = this.v;
+        Object obj4 = this.s;
+        boolean z10 = this.e;
+        Object obj5 = this.r;
+        TLObject tLObject = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        Object obj6 = this.n;
         switch (i11) {
             case 0:
-                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj4;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
+                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
                 Context context = (Context) obj3;
-                d6 d6Var = (d6) obj2;
-                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
-                int i12 = this.b;
-                long j3 = this.c;
-                if (connectedbotstarref2 != null) {
-                    f3Var.dismiss();
-                    f4.M0(context, i12, connectedbotstarref2, j3, d6Var);
-                    break;
+                e6 e6Var = (e6) obj2;
+                TLRPC.User user = (TLRPC.User) obj;
+                ((ci.d) obj6).setLoading(false);
+                if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
+                    if (tL_error != null) {
+                        org.telegram.ui.Cells.c1.p(f3Var.topBulletinContainer, e6Var, tL_error, false);
+                        break;
+                    }
                 } else {
-                    TLRPC.User user = MessagesController.getInstance(i12).getUser(Long.valueOf(connectedbotstarref.bot_id));
-                    if (user != null) {
-                        MessagesController.getInstance(i12).loadFullUser(user, 0, true, new r3(f3Var, context, i12, j3, d6Var, 1));
+                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
+                    int i12 = this.b;
+                    yh.o g10 = yh.o.g(i12);
+                    long j10 = this.f;
+                    yh.l d = g10.d(j10);
+                    int i13 = d.a;
+                    MessagesController.getInstance(i13).putUsers(connectedstarrefbots.users, false);
+                    d.c = 0;
+                    d.h = false;
+                    d.d = false;
+                    ArrayList arrayList2 = d.e;
+                    arrayList2.clear();
+                    if (d.i != 0) {
+                        ConnectionsManager.getInstance(i13).cancelRequest(d.i, true);
+                        d.i = 0;
+                    }
+                    d.g = false;
+                    d.c = connectedstarrefbots.count;
+                    arrayList2.addAll(connectedstarrefbots.connected_bots);
+                    d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= d.c;
+                    d.h = false;
+                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
+                    d.a();
+                    f3Var.dismiss();
+                    int i14 = 0;
+                    while (true) {
+                        if (i14 < connectedstarrefbots.connected_bots.size()) {
+                            connectedbotstarref = connectedstarrefbots.connected_bots.get(i14);
+                            if (connectedbotstarref.bot_id != starrefprogram.bot_id) {
+                                i14++;
+                            }
+                        } else {
+                            connectedbotstarref = null;
+                        }
+                    }
+                    if ((j3 != j10 || z10) && (U = LaunchActivity.U()) != null && (!(U instanceof e4) || ((e4) U).P != j10)) {
+                        U.presentFragment(new e4(j10));
+                    }
+                    if (connectedbotstarref != null) {
+                        yh.m e7 = yh.o.g(i12).e(j10);
+                        long j11 = connectedbotstarref.bot_id;
+                        ArrayList arrayList3 = e7.e;
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < arrayList3.size()) {
+                                if (((TL_payments.starRefProgram) arrayList3.get(i15)).bot_id == j11) {
+                                    arrayList3.remove(i15);
+                                    e7.c--;
+                                    NotificationCenter.getInstance(e7.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(e7.b));
+                                } else {
+                                    i15++;
+                                }
+                            }
+                        }
+                        new ad(e4.I0(context, i12, connectedbotstarref, j10, e6Var).topBulletinContainer, e6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
                 break;
             default:
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
-                int[] iArr = (int[]) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                wf1 wf1Var = ((gf1) obj5).b;
-                if (tL_messages_invitedUsers2 != null) {
-                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
-                }
-                int i13 = iArr[0] + 1;
-                iArr[0] = i13;
-                if (i13 == this.b) {
-                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
-                    long j10 = this.c;
-                    if (!isEmpty) {
-                        TLRPC.Chat chat = wf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        i10 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
-                        org.telegram.ui.Components.e5.f(i10, chat, tL_messages_invitedUsers);
-                        break;
-                    } else {
-                        yc a02 = yc.a0(wf1Var);
-                        TLRPC.Chat chat2 = wf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        a02.getClass();
-                        if (arrayList.size() == 0) {
-                            replaceTags = null;
-                        } else if (arrayList.size() != 1) {
-                            replaceTags = ChatObject.isChannelAndNotMegaGroup(chat2) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedMembersToChannel", arrayList.size(), new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedSubscribersToChannel", arrayList.size(), new Object[0]));
-                        } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
-                        } else {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
+                rk rkVar = (rk) obj6;
+                AccountInstance accountInstance = (AccountInstance) obj5;
+                String str = (String) obj4;
+                ArrayList arrayList4 = (ArrayList) obj3;
+                ArrayList arrayList5 = (ArrayList) obj2;
+                ArrayList arrayList6 = (ArrayList) obj;
+                ArrayList arrayList7 = rkVar.P;
+                SparseArray sparseArray = rkVar.O;
+                ArrayList arrayList8 = rkVar.M;
+                HashMap hashMap = rkVar.Q;
+                ArrayList arrayList9 = rkVar.N;
+                ArrayList arrayList10 = rkVar.L;
+                sk skVar = rkVar.X;
+                e7 e7Var = skVar.L;
+                if (this.b == rkVar.T) {
+                    rkVar.S = false;
+                    if (tL_error == null) {
+                        hk hkVar = skVar.r;
+                        e7Var.e(false, true);
+                        ea0 ea0Var = e7Var.e;
+                        vh.n nVar = e7Var.d;
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                        rkVar.G = messages_messages.next_rate;
+                        hk hkVar2 = hkVar;
+                        accountInstance.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                        accountInstance.getMessagesController().putUsers(messages_messages.users, false);
+                        accountInstance.getMessagesController().putChats(messages_messages.chats, false);
+                        if (!z10) {
+                            arrayList9.clear();
+                            sparseArray.clear();
+                            arrayList7.clear();
+                            hashMap.clear();
                         }
-                        a02.V(arrayList, replaceTags, null, null).j();
+                        int i16 = messages_messages.count;
+                        rkVar.K = str;
+                        int size = arrayList4.size();
+                        int i17 = 0;
+                        while (i17 < size) {
+                            MessageObject messageObject = (MessageObject) arrayList4.get(i17);
+                            ArrayList arrayList11 = (ArrayList) hashMap.get(messageObject.monthKey);
+                            if (arrayList11 == null) {
+                                arrayList11 = new ArrayList();
+                                arrayList = arrayList4;
+                                hashMap.put(messageObject.monthKey, arrayList11);
+                                arrayList7.add(messageObject.monthKey);
+                            } else {
+                                arrayList = arrayList4;
+                            }
+                            arrayList11.add(messageObject);
+                            arrayList9.add(messageObject);
+                            sparseArray.put(messageObject.getId(), messageObject);
+                            i17++;
+                            arrayList4 = arrayList;
+                        }
+                        if (arrayList9.size() > i16) {
+                            i16 = arrayList9.size();
+                        }
+                        rkVar.V = arrayList9.size() >= i16;
+                        if (arrayList9.isEmpty()) {
+                            if (TextUtils.isEmpty(rkVar.K) && this.f == 0 && j3 == 0) {
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
+                                ea0Var.setVisibility(0);
+                                ea0Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                            } else {
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                                ea0Var.setVisibility(0);
+                                ea0Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                            }
+                        }
+                        if (!z10) {
+                            arrayList10.clear();
+                            if (arrayList5 != null) {
+                                arrayList10.addAll(arrayList5);
+                            }
+                            if (str.length() >= 3 && (LocaleController.getString(R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+                                int i18 = 0;
+                                while (true) {
+                                    if (i18 >= arrayList10.size()) {
+                                        arrayList10.add(0, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                                    } else if (!(arrayList10.get(i18) instanceof TLRPC.User) || UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id != ((TLRPC.User) arrayList10.get(i18)).id) {
+                                        i18++;
+                                    }
+                                }
+                            }
+                            arrayList8.clear();
+                            arrayList8.addAll(arrayList6);
+                            rkVar.a0(arrayList10, arrayList8, TextUtils.isEmpty(rkVar.K));
+                        }
+                        int i19 = -1;
+                        View view = null;
+                        int i20 = 0;
+                        while (i20 < size) {
+                            hk hkVar3 = hkVar2;
+                            View childAt = hkVar3.getChildAt(i20);
+                            if (childAt instanceof j10) {
+                                i19 = RecyclerView.R(childAt);
+                                view = childAt;
+                            }
+                            i20++;
+                            hkVar2 = hkVar3;
+                        }
+                        hk hkVar4 = hkVar2;
+                        if (view != null) {
+                            hkVar4.removeView(view);
+                        }
+                        if (skVar.J.getVisibility() != 0) {
+                            i10 = 1;
+                            break;
+                        } else {
+                            i10 = 1;
+                            break;
+                        }
+                    } else {
+                        vh.n nVar2 = e7Var.d;
+                        ea0 ea0Var2 = e7Var.e;
+                        nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        ea0Var2.setVisibility(0);
+                        ea0Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        e7Var.e(false, true);
                         break;
                     }
                 }
@@ -107,12 +297,18 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ t3(gf1 gf1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j3) {
-        this.d = gf1Var;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
+    public /* synthetic */ t3(rk rkVar, int i10, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z10, String str, ArrayList arrayList, long j3, long j10, ArrayList arrayList2, ArrayList arrayList3) {
+        this.n = rkVar;
         this.b = i10;
-        this.g = arrayList;
-        this.c = j3;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.r = accountInstance;
+        this.e = z10;
+        this.s = str;
+        this.v = arrayList;
+        this.f = j3;
+        this.h = j10;
+        this.w = arrayList2;
+        this.x = arrayList3;
     }
 }

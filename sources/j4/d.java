@@ -7,12 +7,12 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
     public final e2.v d;
-    public final a4.h e;
+    public final a4.g e;
     public c3.q f;
     public long g;
     public boolean j;
@@ -28,14 +28,53 @@ public final class d implements c3.o {
         e2.v vVar = new e2.v(10);
         this.d = vVar;
         byte[] bArr = vVar.a;
-        this.e = new a4.h(bArr, bArr.length);
+        this.e = new a4.g(bArr, bArr.length);
     }
 
-    public final int a(c3.p pVar) {
+    @Override // c3.o
+    public final boolean a(c3.p pVar) {
+        int b10 = b(pVar);
+        int i10 = b10;
+        int i11 = 0;
+        int i12 = 0;
+        do {
+            e2.v vVar = this.d;
+            c3.l lVar = (c3.l) pVar;
+            lVar.h(vVar.a, 0, 2, false);
+            vVar.J(0);
+            if ((vVar.D() & 65526) == 65520) {
+                i11++;
+                if (i11 >= 4 && i12 > 188) {
+                    return true;
+                }
+                lVar.h(vVar.a, 0, 4, false);
+                a4.g gVar = this.e;
+                gVar.q(14);
+                int i13 = gVar.i(13);
+                if (i13 <= 6) {
+                    i10++;
+                    lVar.f = 0;
+                    lVar.v(i10, false);
+                } else {
+                    lVar.v(i13 - 6, false);
+                    i12 += i13;
+                }
+            } else {
+                i10++;
+                lVar.f = 0;
+                lVar.v(i10, false);
+            }
+            i11 = 0;
+            i12 = 0;
+        } while (i10 - b10 < 8192);
+        return false;
+    }
+
+    public final int b(c3.p pVar) {
         int i10 = 0;
         while (true) {
             e2.v vVar = this.d;
-            pVar.b(0, 10, vVar.a);
+            pVar.a(0, 10, vVar.a);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -43,10 +82,10 @@ public final class d implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            pVar.h(w10);
+            pVar.l(w10);
         }
-        pVar.m();
-        pVar.h(i10);
+        pVar.q();
+        pVar.l(i10);
         if (this.h == -1) {
             this.h = i10;
         }
@@ -54,49 +93,10 @@ public final class d implements c3.o {
     }
 
     @Override // c3.o
-    public final boolean b(c3.p pVar) {
-        int a2 = a(pVar);
-        int i10 = a2;
-        int i11 = 0;
-        int i12 = 0;
-        do {
-            e2.v vVar = this.d;
-            c3.l lVar = (c3.l) pVar;
-            lVar.f(vVar.a, 0, 2, false);
-            vVar.J(0);
-            if ((vVar.D() & 65526) == 65520) {
-                i11++;
-                if (i11 >= 4 && i12 > 188) {
-                    return true;
-                }
-                lVar.f(vVar.a, 0, 4, false);
-                a4.h hVar = this.e;
-                hVar.q(14);
-                int i13 = hVar.i(13);
-                if (i13 <= 6) {
-                    i10++;
-                    lVar.f = 0;
-                    lVar.s(i10, false);
-                } else {
-                    lVar.s(i13 - 6, false);
-                    i12 += i13;
-                }
-            } else {
-                i10++;
-                lVar.f = 0;
-                lVar.s(i10, false);
-            }
-            i11 = 0;
-            i12 = 0;
-        } while (i10 - a2 < 8192);
-        return false;
-    }
-
-    @Override // c3.o
     public final void g(c3.q qVar) {
         this.f = qVar;
         this.b.d(qVar, new f0(0, 1));
-        qVar.e1();
+        qVar.k1();
     }
 
     @Override // c3.o
@@ -112,32 +112,32 @@ public final class d implements c3.o {
         return a1.e;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:69:0x010b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0109 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x010a  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int m(c3.p pVar, c3.s sVar) {
-        e eVar;
         int i10;
+        e eVar;
         e2.d.h(this.f);
         long length = pVar.getLength();
         int i11 = this.a;
         if ((i11 & 1) != 0 && length != -1) {
-            a4.h hVar = this.e;
+            a4.g gVar = this.e;
             e2.v vVar = this.d;
             if (!this.j) {
                 this.i = -1;
-                pVar.m();
+                pVar.q();
                 long j3 = 0;
                 if (pVar.getPosition() == 0) {
-                    a(pVar);
+                    b(pVar);
                 }
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.f(vVar.a, 0, 2, true)) {
+                        if (!pVar.h(vVar.a, 0, 2, true)) {
                             break;
                         }
                         vVar.J(0);
@@ -145,23 +145,23 @@ public final class d implements c3.o {
                             i12 = 0;
                             break;
                         }
-                        if (!pVar.f(vVar.a, 0, 4, true)) {
+                        if (!pVar.h(vVar.a, 0, 4, true)) {
                             break;
                         }
-                        hVar.q(14);
-                        int i13 = hVar.i(13);
+                        gVar.q(14);
+                        int i13 = gVar.i(13);
                         if (i13 <= 6) {
                             this.j = true;
                             throw s0.a(null, "Malformed ADTS stream");
                         }
                         j3 += i13;
                         i12++;
-                        if (i12 != 1000 && pVar.s(i13 - 6, true)) {
+                        if (i12 != 1000 && pVar.v(i13 - 6, true)) {
                         }
                     } catch (EOFException unused) {
                     }
                 }
-                pVar.m();
+                pVar.q();
                 if (i12 > 0) {
                     this.i = (int) (j3 / i12);
                 } else {
@@ -183,9 +183,9 @@ public final class d implements c3.o {
                     if (j10 != -9223372036854775807L) {
                         c3.q qVar = this.f;
                         int i14 = this.i;
-                        eVar = eVar2;
                         i10 = -1;
-                        qVar.X1(new c3.k(length, (int) ((i14 * 8000000) / j10), i14, false, this.h));
+                        eVar = eVar2;
+                        qVar.d2(new c3.k(length, (int) ((i14 * 8000000) / j10), i14, false, this.h));
                         this.l = true;
                         if (z10) {
                             return i10;
@@ -200,16 +200,16 @@ public final class d implements c3.o {
                         return 0;
                     }
                 }
-                eVar = eVar2;
                 i10 = -1;
-                this.f.X1(new c3.t(-9223372036854775807L));
+                eVar = eVar2;
+                this.f.d2(new c3.t(-9223372036854775807L));
                 this.l = true;
                 if (z10) {
                 }
             }
         }
-        eVar = eVar2;
         i10 = -1;
+        eVar = eVar2;
         if (z10) {
         }
     }

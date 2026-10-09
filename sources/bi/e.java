@@ -1,10 +1,10 @@
 package bi;
 
-import ai.u8;
+import ai.v8;
 import android.view.View;
-import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.qs0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class e implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 u uVar = this.b;
-                es0 es0Var = uVar.W;
-                u8 u8Var = uVar.a;
-                es0Var.a(u8Var == null ? "" : u8Var.E);
+                qs0 qs0Var = uVar.W;
+                v8 v8Var = uVar.a;
+                qs0Var.a(v8Var == null ? "" : v8Var.E);
                 break;
             default:
                 u uVar2 = this.b;

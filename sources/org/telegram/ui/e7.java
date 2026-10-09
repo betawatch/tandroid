@@ -1,31 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class e7 implements org.telegram.ui.Components.ml0 {
-    public final /* synthetic */ org.telegram.ui.Components.zl0 a;
-    public final /* synthetic */ f7 b;
+public abstract class e7 extends og.b {
+    public final int d;
+    public final ArrayList e = new ArrayList();
 
-    public e7(f7 f7Var, org.telegram.ui.Components.zl0 zl0Var) {
-        this.b = f7Var;
-        this.a = zl0Var;
+    public e7(int i10) {
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.ml0
-    public final void d(int i10, View view) {
-        v7 v7Var = this.b.f;
-        org.telegram.ui.Components.zl0 zl0Var = this.a;
-        h7 h7Var = (h7) zl0Var.getAdapter();
-        o7 o7Var = (o7) h7Var.e.get(i10);
-        if (view instanceof org.telegram.ui.Cells.t7) {
-            v7.a(v7Var, o7Var, (q7) h7Var, zl0Var);
-            return;
-        }
-        k7 k7Var = v7Var.E;
-        if (k7Var != null) {
-            k7Var.f(o7Var.c, o7Var.d, false);
-        }
+    public abstract void F();
+
+    @Override // s4.i0
+    public final int h() {
+        return this.e.size();
+    }
+
+    @Override // s4.i0
+    public final int j(int i10) {
+        return ((l7) this.e.get(i10)).a;
     }
 }

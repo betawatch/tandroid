@@ -1,172 +1,110 @@
 package yh;
 
-import android.content.Context;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.kc;
-import org.telegram.ui.Components.lc;
-import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
+import android.os.Bundle;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.zn;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class p5 {
-    public final org.telegram.ui.ActionBar.n2 a;
-    public final long b;
-    public final rc c;
-    public final lc d;
-    public final pc e;
-    public final kc f;
-    public int g;
-    public long h;
-    public ai.i3 i;
-    public final ArrayList j = new ArrayList();
-    public final HashSet k = new HashSet();
-    public final long l = System.currentTimeMillis();
-    public boolean m = true;
-    public boolean n;
-    public boolean o;
-    public final o5 p;
+public final /* synthetic */ class p5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+    public final /* synthetic */ TL_stars.StarsTransaction c;
+    public final /* synthetic */ long d;
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Runnable, yh.o5] */
-    public p5(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        final int i10 = 0;
-        ?? r22 = new Runnable(this) { // from class: yh.o5
-            public final /* synthetic */ p5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        this.b.a();
-                        break;
-                    default:
-                        p5 p5Var = this.b;
-                        if (!p5Var.n && !p5Var.o && p5Var.m) {
-                            p5Var.n = true;
-                            ai.i3 i3Var = p5Var.i;
-                            if (i3Var != null) {
-                                i3Var.run(p5Var.k);
-                            }
-                            if (p5Var.e != null) {
-                                p5Var.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        this.p = r22;
-        this.a = n2Var;
-        this.b = j3;
-        Context t10 = u5.t(n2Var);
-        lc lcVar = new lc(t10, n2Var.getResourceProvider());
-        this.d = lcVar;
-        lcVar.c(R.raw.stars_topup, new String[0]);
-        kc kcVar = new kc(t10, n2Var.getResourceProvider());
-        this.f = kcVar;
-        kcVar.b = 3000L;
-        kcVar.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, n2Var.getResourceProvider()));
-        pc pcVar = new pc(t10, n2Var.getResourceProvider(), true, false);
-        this.e = pcVar;
-        pcVar.e(LocaleController.getString(R.string.StarsSentUndo));
-        final int i11 = 1;
-        pcVar.a = new Runnable(this) { // from class: yh.o5
-            public final /* synthetic */ p5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        this.b.a();
-                        break;
-                    default:
-                        p5 p5Var = this.b;
-                        if (!p5Var.n && !p5Var.o && p5Var.m) {
-                            p5Var.n = true;
-                            ai.i3 i3Var = p5Var.i;
-                            if (i3Var != null) {
-                                i3Var.run(p5Var.k);
-                            }
-                            if (p5Var.e != null) {
-                                p5Var.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        pcVar.addView(kcVar, w7.z5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        pcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
-        lcVar.setButton(pcVar);
-        rc b10 = yc.a0(n2Var).b(lcVar, -1);
-        this.c = b10;
-        b10.r = false;
-        b10.k(true);
-        final int i12 = 0;
-        b10.v = new Runnable(this) { // from class: yh.o5
-            public final /* synthetic */ p5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i12) {
-                    case 0:
-                        this.b.a();
-                        break;
-                    default:
-                        p5 p5Var = this.b;
-                        if (!p5Var.n && !p5Var.o && p5Var.m) {
-                            p5Var.n = true;
-                            ai.i3 i3Var = p5Var.i;
-                            if (i3Var != null) {
-                                i3Var.run(p5Var.k);
-                            }
-                            if (p5Var.e != null) {
-                                p5Var.c.b();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        AndroidUtilities.cancelRunOnUIThread(r22);
-        AndroidUtilities.runOnUIThread(r22, 3000L);
+    public /* synthetic */ p5(org.telegram.ui.ActionBar.f3[] f3VarArr, long j3, TL_stars.StarsTransaction starsTransaction) {
+        this.a = 2;
+        this.b = f3VarArr;
+        this.d = j3;
+        this.c = starsTransaction;
     }
 
-    public final void a() {
-        if (this.n || this.o) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    TL_stars.StarsTransaction starsTransaction = this.c;
+                    int i10 = starsTransaction.flags & 8192;
+                    long j3 = this.d;
+                    if (i10 == 0) {
+                        U.presentFragment(zn.W9(j3));
+                        break;
+                    } else {
+                        U.presentFragment(zn.V9(starsTransaction.giveaway_post_id, j3));
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    TL_stars.StarsTransaction starsTransaction2 = this.c;
+                    int i11 = starsTransaction2.flags & 8192;
+                    long j10 = this.d;
+                    if (i11 == 0) {
+                        U2.presentFragment(zn.W9(j10));
+                        break;
+                    } else {
+                        U2.presentFragment(zn.V9(starsTransaction2.giveaway_post_id, j10));
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                if (U3 != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", -this.d);
+                    bundle.putInt("message_id", this.c.msg_id);
+                    U3.presentFragment(new zn(bundle));
+                    break;
+                }
+                break;
+            case 3:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
+                if (U4 != null) {
+                    TL_stars.StarsTransaction starsTransaction3 = this.c;
+                    int i12 = starsTransaction3.flags & 8192;
+                    long j11 = this.d;
+                    if (i12 == 0) {
+                        U4.presentFragment(zn.W9(j11));
+                        break;
+                    } else {
+                        U4.presentFragment(zn.V9(starsTransaction3.giveaway_post_id, j11));
+                        break;
+                    }
+                }
+                break;
+            default:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U5 = LaunchActivity.U();
+                if (U5 != null) {
+                    TL_stars.StarsTransaction starsTransaction4 = this.c;
+                    int i13 = starsTransaction4.flags & 8192;
+                    long j12 = this.d;
+                    if (i13 == 0) {
+                        U5.presentFragment(zn.W9(j12));
+                        break;
+                    } else {
+                        U5.presentFragment(zn.V9(starsTransaction4.giveaway_post_id, j12));
+                        break;
+                    }
+                }
+                break;
         }
-        this.o = true;
-        ArrayList arrayList = this.j;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((Runnable) obj).run();
-        }
-        if (this.e != null) {
-            this.c.b();
-        }
+    }
+
+    public /* synthetic */ p5(org.telegram.ui.ActionBar.f3[] f3VarArr, TL_stars.StarsTransaction starsTransaction, long j3, int i10) {
+        this.a = i10;
+        this.b = f3VarArr;
+        this.c = starsTransaction;
+        this.d = j3;
     }
 }

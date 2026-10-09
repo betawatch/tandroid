@@ -1,160 +1,38 @@
 package ai;
 
-import android.util.LongSparseArray;
-import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileRefController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ry0;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.an0;
-import org.telegram.ui.bj;
-import org.telegram.ui.f90;
-import org.telegram.ui.kn0;
-import org.telegram.ui.mq;
-import org.telegram.ui.ms0;
-import org.telegram.ui.no;
-import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p3 implements RequestDelegate {
+public final /* synthetic */ class p3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ p3(ci.k8 k8Var, TL_stories.StoryItem storyItem, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, n8 n8Var) {
-        this.a = 1;
-        this.c = k8Var;
-        this.b = storyItem;
-        this.d = tL_messages_getAttachedStickers;
-        this.e = n8Var;
+    public /* synthetic */ p3(int i10, long j3, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
+        this.c = j3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        TLRPC.TL_messages_exportedChatInvite tL_messages_exportedChatInvite;
-        int i10 = this.a;
-        Object obj = this.d;
-        Object obj2 = this.e;
-        Object obj3 = this.b;
-        Object obj4 = this.c;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new m3((e6) obj4, (Runnable) obj, tL_error, (TL_stories.StoryItem) obj3, (ci.ca) obj2));
+                Runnable runnable = this.b;
+                AndroidUtilities.cancelRunOnUIThread(runnable);
+                AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
             case 1:
-                ci.k8 k8Var = (ci.k8) obj4;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj;
-                n8 n8Var = (n8) obj2;
-                if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && storyItem != null) {
-                    FileRefController.getInstance(k8Var.a).requestReference(storyItem, tL_messages_getAttachedStickers, n8Var);
-                    break;
-                } else {
-                    n8Var.run(tLObject, tL_error);
-                    break;
-                }
-            case 2:
-                AndroidUtilities.runOnUIThread(new z8((gg.b1) obj4, (String) obj, tL_error, tLObject, (MessagesController) obj3, (MessagesStorage) obj2, 3));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new m3((gg.e2) obj4, (TLRPC.TL_messages_getStickers) obj, tLObject, (ArrayList) obj3, (LongSparseArray) obj2, 6));
-                break;
-            case 4:
-                org.telegram.ui.qb qbVar = (org.telegram.ui.qb) obj4;
-                TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) obj;
-                boolean[] zArr = (boolean[]) obj3;
-                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
-                org.telegram.ui.wb wbVar = qbVar.a.n;
-                if (tL_error == null) {
-                    tL_messages_exportedChatInvite = (TLRPC.TL_messages_exportedChatInvite) tLObject;
-                    for (int i11 = 0; i11 < tL_messages_exportedChatInvite.users.size(); i11++) {
-                        TLRPC.User user = tL_messages_exportedChatInvite.users.get(i11);
-                        if (wbVar.z0 == null) {
-                            wbVar.z0 = new HashMap();
-                        }
-                        wbVar.z0.put(Long.valueOf(user.id), user);
-                    }
-                } else {
-                    tL_messages_exportedChatInvite = null;
-                }
-                AndroidUtilities.runOnUIThread(new m3(qbVar, tL_chatInviteExported, tL_messages_exportedChatInvite, zArr, b2Var, 14));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.m5(obj4, obj, obj3, obj2, 11));
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new m3((mq) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj3, (TLRPC.TL_channels_editCreator) obj2, 20));
-                break;
-            case 7:
-                ry0.p((ms0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (no) obj2, tLObject, tL_error);
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new f90(obj4, tL_error, obj, obj3, obj2, 5));
-                break;
-            case 9:
-                AndroidUtilities.runOnUIThread(new z8((kn0) obj4, tL_error, (String) obj, (an0) obj3, tLObject, (TL_account.sendVerifyPhoneCode) obj2, 9));
-                break;
-            case 10:
-                AndroidUtilities.runOnUIThread(new f90(obj4, tL_error, obj, obj3, obj2, 12));
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new f90(obj4, tL_error, obj, obj3, obj2, 16));
-                break;
-            case 12:
-                t31 t31Var = (t31) obj4;
-                t31Var.getClass();
-                AndroidUtilities.runOnUIThread(new z8(t31Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2, 10));
-                break;
-            case 13:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.c1) obj4, tLObject, (da) obj, (String) obj3, (String) obj2));
-                break;
-            case 14:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj4;
-                c1Var.getClass();
-                AndroidUtilities.runOnUIThread(new z8(c1Var, tLObject, (TLRPC.TL_messages_requestUrlAuth) obj, (String) obj3, tL_error, (String) obj2, 13));
-                break;
-            case 15:
-                AndroidUtilities.runOnUIThread(new z8((xh.q1) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (xh.o0) obj3, (Utilities.Callback) obj2, tL_error, 15));
-                break;
-            case 16:
-                AndroidUtilities.runOnUIThread(new z8((yh.y3) obj4, tLObject, (CharSequence) obj, (TL_stars.TL_starGiftUnique) obj3, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj2, tL_error, 16));
-                break;
-            case 17:
-                AndroidUtilities.runOnUIThread(new z8((yh.y3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.q) obj2, tL_error, 17));
-                break;
-            case 18:
-                AndroidUtilities.runOnUIThread(new yh.v((yh.u5) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
-                break;
-            case 19:
-                AndroidUtilities.runOnUIThread(new z8((yh.u5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (bj) obj2, tL_error, 20));
+                Runnable runnable2 = this.b;
+                AndroidUtilities.cancelRunOnUIThread(runnable2);
+                AndroidUtilities.runOnUIThread(runnable2, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
             default:
-                yh.k5 k5Var = (yh.k5) obj4;
-                k5Var.getClass();
-                AndroidUtilities.runOnUIThread(new z8(k5Var, tLObject, (TL_stars.TL_starGiftCollection) obj, (yh.l5) obj3, (Utilities.Callback) obj2, tL_error, 22));
+                Runnable runnable3 = this.b;
+                AndroidUtilities.cancelRunOnUIThread(runnable3);
+                AndroidUtilities.runOnUIThread(runnable3, Math.max(0L, 32 - (System.currentTimeMillis() - this.c)));
                 break;
         }
-    }
-
-    public /* synthetic */ p3(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = obj3;
-        this.e = obj4;
     }
 }

@@ -1,64 +1,30 @@
 package ei;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.b80;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n2 implements Runnable {
+public final /* synthetic */ class n2 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b80 b;
-    public final /* synthetic */ b80 c;
+    public final /* synthetic */ k3 b;
 
-    public /* synthetic */ n2(b80 b80Var, b80 b80Var2, int i10) {
+    public /* synthetic */ n2(k3 k3Var, int i10) {
         this.a = i10;
-        this.b = b80Var;
-        this.c = b80Var2;
+        this.b = k3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        b80 b80Var = this.c;
-        b80 b80Var2 = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                b80Var2.K(b80Var);
-                break;
-            case 1:
-                b80Var2.K(b80Var);
-                break;
-            case 2:
-                b80Var2.K(b80Var);
-                break;
-            case 3:
-                b80Var2.K(b80Var);
-                break;
-            case 4:
-                b80Var2.K(b80Var);
-                break;
-            case 5:
-                b80Var2.K(b80Var);
-                break;
-            case 6:
-                b80Var2.K(b80Var);
-                break;
-            case 7:
-                b80Var2.K(b80Var);
-                break;
-            case 8:
-                b80Var2.K(b80Var);
-                break;
-            case 9:
-                b80Var2.K(b80Var);
-                break;
-            case 10:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                b80Var2.K(b80Var);
+                org.telegram.ui.web.y0 webView = this.b.x.getWebView();
+                if (webView != null) {
+                    webView.reload();
+                    break;
+                }
                 break;
             default:
-                b80Var2.K(b80Var);
+                this.b.s();
                 break;
         }
     }

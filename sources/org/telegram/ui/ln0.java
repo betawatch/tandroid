@@ -1,71 +1,181 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.webkit.WebView;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SecureDocument;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ so0 b;
-    public final /* synthetic */ TLObject c;
+public final class ln0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
+    public final TextView a;
+    public final TextView b;
+    public final org.telegram.ui.Components.y9 c;
+    public final org.telegram.ui.Components.gk0 d;
+    public int e;
+    public SecureDocument f;
+    public final int h;
+    public final /* synthetic */ nn0 n;
 
-    public /* synthetic */ ln0(so0 so0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = so0Var;
-        this.c = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ln0(nn0 nn0Var, Activity activity) {
+        super(activity);
+        int i10;
+        this.n = nn0Var;
+        i10 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
+        this.h = DownloadController.getInstance(i10).generateObserverTag();
+        this.d = new org.telegram.ui.Components.gk0(this);
+        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(activity);
+        this.c = y9Var;
+        addView(y9Var, w7.x5.a(48.0f, 21.0f, 8.0f, 21.0f, 0.0f, 48, (LocaleController.isRTL ? 5 : 3) | 48));
+        TextView textView = new TextView(activity);
+        this.a = textView;
+        org.telegram.messenger.bi.u(textView, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, w7.x5.a(-2.0f, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        TextView textView2 = new TextView(activity);
+        this.b = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setPadding(0, 0, 0, 0);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, w7.x5.a(-2.0f, z11 ? 21 : 81, 35.0f, z11 ? 81 : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                so0.e0(this.b, this.c);
-                break;
-            case 1:
-                so0 so0Var = this.b;
-                Utilities.Callback callback = so0Var.d1;
-                TLObject tLObject = this.c;
-                if (callback != null) {
-                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
-                }
-                so0Var.D0(false);
-                so0Var.z0 = true;
-                so0Var.H0(true, true);
-                org.telegram.ui.Components.wq wqVar = so0Var.r;
-                if (wqVar != null) {
-                    wqVar.setVisibility(0);
-                }
-                org.telegram.ui.ActionBar.v0 v0Var = so0Var.n;
-                if (v0Var != null) {
-                    v0Var.setEnabled(false);
-                    so0Var.n.getContentView().setVisibility(4);
-                }
-                org.telegram.ui.ActionBar.c5 parentLayout = so0Var.getParentLayout();
-                Activity parentActivity = so0Var.getParentActivity();
-                so0Var.getMessagesController().newMessageCallback = new c7(so0Var, parentLayout, parentActivity, 17);
-                WebView webView = so0Var.w;
-                if (webView != null) {
-                    webView.setVisibility(0);
-                    WebView webView2 = so0Var.w;
-                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
-                    so0Var.x = str;
-                    webView2.loadUrl(str);
-                }
-                so0Var.a1 = true;
-                so0Var.f1 = 3;
-                ro0 ro0Var = so0Var.Z0;
-                if (ro0Var != null) {
-                    ro0Var.a(3);
-                    break;
-                }
-                break;
-            default:
-                so0.c0(this.b, this.c);
-                break;
+    public final void a(boolean z10) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        String attachFileName = FileLoader.getAttachFileName(this.f);
+        boolean exists = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(this.f).exists();
+        boolean isEmpty = TextUtils.isEmpty(attachFileName);
+        org.telegram.ui.Components.gk0 gk0Var = this.d;
+        if (isEmpty) {
+            gk0Var.d(null, false, false);
+            return;
         }
+        SecureDocument secureDocument = this.f;
+        String str = secureDocument.path;
+        nn0 nn0Var = this.n;
+        if (str != null) {
+            if (secureDocument.inputFile != null) {
+                i13 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
+                DownloadController.getInstance(i13).removeLoadingFileObserver(this);
+                gk0Var.d(null, false, z10);
+                this.e = -1;
+                return;
+            }
+            i12 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
+            DownloadController.getInstance(i12).addLoadingFileObserver(this.f.path, this);
+            this.e = 1;
+            Float fileProgress = ImageLoader.getInstance().getFileProgress(this.f.path);
+            gk0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+            gk0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
+            invalidate();
+            return;
+        }
+        if (exists) {
+            i11 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
+            DownloadController.getInstance(i11).removeLoadingFileObserver(this);
+            this.e = -1;
+            gk0Var.d(null, false, z10);
+            invalidate();
+            return;
+        }
+        i10 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
+        DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this);
+        this.e = 1;
+        Float fileProgress2 = ImageLoader.getInstance().getFileProgress(attachFileName);
+        gk0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+        gk0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z10);
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (view == this.c) {
+            this.d.a(canvas);
+        }
+        return drawChild;
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public int getObserverTag() {
+        return this.h;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
+        a(false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        org.telegram.ui.Components.y9 y9Var = this.c;
+        int measuredWidth = ((y9Var.getMeasuredWidth() - AndroidUtilities.dp(24.0f)) / 2) + y9Var.getLeft();
+        int measuredHeight = ((y9Var.getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2) + y9Var.getTop();
+        this.d.f(measuredWidth, measuredHeight, AndroidUtilities.dp(24.0f) + measuredWidth, AndroidUtilities.dp(24.0f) + measuredHeight);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.bi.C(64.0f, 1, TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j3, long j10) {
+        this.d.e(Math.min(1.0f, j3 / j10), true);
+        if (this.e != 1) {
+            a(false);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
+        this.d.e(Math.min(1.0f, j3 / j10), true);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+        this.d.e(1.0f, true);
+        a(true);
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

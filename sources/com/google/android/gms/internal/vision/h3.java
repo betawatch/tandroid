@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.r6;
+import w7.p6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -114,7 +114,7 @@ public abstract class h3 {
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
                 } catch (y6.b e7) {
-                    r6.a(e7, "Error loading optional module %s", str);
+                    p6.a(e7, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -149,15 +149,15 @@ public abstract class h3 {
         }
     }
 
-    public h3(Context context, l2.g gVar) {
+    public h3(Context context, m.f3 f3Var) {
         this.e = new androidx.mediarouter.app.c(this, 10);
         if (context != null) {
             this.a = context;
-            if (gVar == null) {
-                this.d = new l2.g(new ComponentName(context, getClass()), 12);
+            if (f3Var == null) {
+                this.d = new m.f3(new ComponentName(context, getClass()), 12);
                 return;
             } else {
-                this.d = gVar;
+                this.d = f3Var;
                 return;
             }
         }

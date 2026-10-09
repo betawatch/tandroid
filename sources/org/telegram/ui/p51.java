@@ -1,27 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class p51 extends w61 {
-    public final /* synthetic */ View Q;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
-    public final /* synthetic */ q51 S;
+public final /* synthetic */ class p51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k71 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p51(q51 q51Var, Context context, Runnable runnable, View view, j61 j61Var, org.telegram.ui.ActionBar.d6 d6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(q51Var.e, context, runnable, view, j61Var, d6Var);
-        this.S = q51Var;
-        this.Q = view2;
-        this.R = tL_starGiftUnique;
+    public /* synthetic */ p51(k71 k71Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = k71Var;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.w61, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.S.e.X0 = null;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k71 k71Var = this.b;
+                h61 h61Var = k71Var.h0;
+                x51 x51Var = k71Var.i0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f7 = 1.0f - floatValue;
+                h61Var.setAlpha(f7);
+                h61Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                x51Var.setAlpha(floatValue);
+                x51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
+                k71Var.j0.setAlpha(x51Var.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                k71 k71Var2 = this.b;
+                k71Var2.j0.setAlpha(k71Var2.i0.getAlpha() * floatValue2);
+                break;
+        }
     }
 }

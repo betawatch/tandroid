@@ -3,17 +3,17 @@ package vg;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
-import w7.z5;
+import org.telegram.ui.ActionBar.e6;
+import w7.x5;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public class d extends c {
-    public static final /* synthetic */ int s = 0;
-    public int r;
+    public static final /* synthetic */ int v = 0;
+    public int s;
 
-    public d(Context context, d6 d6Var) {
-        super(context, d6Var);
+    public d(Context context, e6 e6Var) {
+        super(context, e6Var);
         this.d.setTypeface(AndroidUtilities.bold());
     }
 
@@ -24,15 +24,15 @@ public class d extends c {
 
     @Override // vg.c
     public void d() {
-        this.c.setLayoutParams(z5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 57.0f, 0.0f, 57.0f, 0.0f));
+        this.c.setLayoutParams(x5.a(40.0f, 57.0f, 0.0f, 57.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         boolean z10 = LocaleController.isRTL;
-        this.d.setLayoutParams(z5.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 20.0f : 109.0f, 0.0f, z10 ? 109.0f : 20.0f, 0.0f));
+        this.d.setLayoutParams(x5.a(-2.0f, z10 ? 20.0f : 109.0f, 0.0f, z10 ? 109.0f : 20.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
         boolean z11 = LocaleController.isRTL;
-        this.e.setLayoutParams(z5.d(-1, -2.0f, (z11 ? 5 : 3) | 16, z11 ? 20.0f : 109.0f, 0.0f, z11 ? 109.0f : 20.0f, 0.0f));
-        this.f.setLayoutParams(z5.d(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 15.0f, 0.0f));
+        this.e.setLayoutParams(x5.a(-2.0f, z11 ? 20.0f : 109.0f, 0.0f, z11 ? 109.0f : 20.0f, 0.0f, -1, (z11 ? 5 : 3) | 16));
+        this.f.setLayoutParams(x5.a(22.0f, 16.0f, 0.0f, 15.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
     public int getSelectedType() {
-        return this.r;
+        return this.s;
     }
 }

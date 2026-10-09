@@ -8,7 +8,7 @@ import z7.hb;
 import z7.lg;
 import z7.wf;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -56,7 +56,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (faVar.c(o7Var, elapsedRealtime)) {
                     faVar.i.put(o7Var, Long.valueOf(elapsedRealtime));
-                    qb.m.a.execute(new pg.c1(faVar, 8));
+                    qb.m.a.execute(new org.telegram.ui.Wallet.n5(faVar, 11));
                     return;
                 }
                 return;
@@ -90,7 +90,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
                 if (wfVar.d(hbVar, elapsedRealtime2)) {
                     wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
-                    qb.m.a.execute(new pg.c1(wfVar));
+                    qb.m.a.execute(new org.telegram.ui.Wallet.n5(wfVar));
                     return;
                 }
                 return;

@@ -12,7 +12,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class DatabaseMigrationHelper {
     private static void executeNoException(SQLiteDatabase sQLiteDatabase, String str) {
@@ -27,18 +27,23 @@ public class DatabaseMigrationHelper {
         return migrate(messagesStorage, messagesStorage.getDatabase(), i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x02f7 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02f8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x02fe A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02ff A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static boolean recoverDatabase(File file, File file2, File file3, int i10) {
+        int i11;
+        int i12;
+        long j3;
         boolean z10;
         boolean z11;
-        long j3;
         boolean z12;
         SQLiteDatabase sQLiteDatabase;
         int intValue;
+        int i13;
+        int i14;
         long j10;
         long longValue;
         StringBuilder sb2;
@@ -57,8 +62,8 @@ public class DatabaseMigrationHelper {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         FileLog.d("start recover database");
-        int i11 = 1;
-        int i12 = 0;
+        int i15 = 1;
+        int i16 = 0;
         try {
             j3 = System.currentTimeMillis();
             try {
@@ -73,20 +78,18 @@ public class DatabaseMigrationHelper {
                 try {
                 } catch (Exception e10) {
                     e = e10;
-                    z10 = false;
-                    z11 = true;
-                    FileLog.e(e);
-                    z12 = false;
-                    if (z12) {
-                    }
+                    i11 = 1;
+                    i12 = 0;
                 }
             } catch (Exception e11) {
                 e = e11;
+                i11 = i15;
+                i12 = i16;
             }
         } catch (Exception e12) {
             e = e12;
-            z10 = false;
-            z11 = true;
+            i11 = 1;
+            i12 = 0;
             j3 = 0;
         }
         if (intValue != 179) {
@@ -110,18 +113,18 @@ public class DatabaseMigrationHelper {
         hashSet.add("dialog_filter");
         hashSet.add("dialog_filter_ep");
         hashSet.add("dialog_filter_pin_v2");
-        int i13 = 0;
+        int i17 = 0;
         while (true) {
             String[] strArr = MessagesStorage.DATABASE_TABLES;
-            if (i13 >= strArr.length) {
+            if (i17 >= strArr.length) {
                 break;
             }
-            String str = strArr[i13];
+            String str = strArr[i17];
             if (!hashSet.contains(str)) {
                 Locale locale = Locale.US;
                 sQLiteDatabase.executeFast("INSERT OR IGNORE INTO " + str + " SELECT * FROM old." + str + ";").stepThis().dispose();
             }
-            i13++;
+            i17++;
         }
         SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT did FROM old.dialogs", new Object[0]);
         while (queryFinalized.next()) {
@@ -133,8 +136,8 @@ public class DatabaseMigrationHelper {
             }
         }
         queryFinalized.dispose();
-        for (int i14 = 0; i14 < arrayList.size(); i14++) {
-            Long l4 = (Long) arrayList.get(i14);
+        for (int i18 = 0; i18 < arrayList.size(); i18++) {
+            Long l4 = (Long) arrayList.get(i18);
             l4.longValue();
             Locale locale2 = Locale.US;
             sQLiteDatabase.executeFast("INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = " + l4 + ";").stepThis().dispose();
@@ -144,27 +147,31 @@ public class DatabaseMigrationHelper {
         }
         SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO messages_holes VALUES(?, ?, ?)");
         SQLitePreparedStatement executeFast2 = sQLiteDatabase.executeFast("REPLACE INTO media_holes_v2 VALUES(?, ?, ?, ?)");
-        int i15 = 0;
-        while (i15 < arrayList2.size()) {
-            Long l10 = (Long) arrayList2.get(i15);
-            SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT last_mid_i, last_mid FROM old.dialogs WHERE did = " + l10, new Object[i12]);
+        int i19 = 0;
+        while (i19 < arrayList2.size()) {
+            Long l10 = (Long) arrayList2.get(i19);
+            SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT last_mid_i, last_mid FROM old.dialogs WHERE did = " + l10, new Object[i16]);
             if (queryFinalized2.next()) {
-                long longValue3 = queryFinalized2.longValue(i12);
+                long longValue3 = queryFinalized2.longValue(i16);
+                i14 = i16;
                 j10 = j3;
-                z10 = false;
                 try {
-                    longValue = queryFinalized2.longValue(i11);
+                    longValue = queryFinalized2.longValue(i15);
                     sb2 = new StringBuilder();
                     sb2.append("INSERT OR IGNORE INTO messages_v2 SELECT * FROM old.messages_v2 WHERE uid = ");
                     sb2.append(l10);
-                    z11 = true;
+                    i13 = i15;
                 } catch (Exception e13) {
                     e = e13;
-                    z11 = true;
+                    i13 = i15;
                     j3 = j10;
+                    i11 = i13;
+                    i12 = i14;
                     FileLog.e(e);
-                    z12 = false;
-                    if (z12) {
+                    z12 = i12 == true ? 1 : 0;
+                    z11 = i11;
+                    z10 = i12;
+                    if (!z12) {
                     }
                 }
                 try {
@@ -178,30 +185,38 @@ public class DatabaseMigrationHelper {
                 } catch (Exception e14) {
                     e = e14;
                     j3 = j10;
+                    i11 = i13;
+                    i12 = i14;
                     FileLog.e(e);
-                    z12 = false;
-                    if (z12) {
+                    z12 = i12 == true ? 1 : 0;
+                    z11 = i11;
+                    z10 = i12;
+                    if (!z12) {
                     }
                 }
             } else {
+                i13 = i15;
+                i14 = i16;
                 j10 = j3;
             }
             queryFinalized2.dispose();
-            i15++;
+            i19++;
+            i16 = i14;
             j3 = j10;
-            i11 = 1;
-            i12 = 0;
+            i15 = i13;
         }
+        i13 = i15;
+        i14 = i16;
         j10 = j3;
-        z10 = false;
-        z11 = true;
         executeFast.dispose();
         executeFast2.dispose();
         sQLiteDatabase.executeFast("DETACH DATABASE old;").stepThis().dispose();
         sQLiteDatabase.close();
         j3 = j10;
-        z12 = true;
-        if (z12) {
+        z12 = i13 == true ? 1 : 0;
+        z11 = i13;
+        z10 = i14;
+        if (!z12) {
             return z10;
         }
         try {
@@ -920,9 +935,9 @@ public class DatabaseMigrationHelper {
                             nativeByteBuffer.reuse();
                         }
                         byteBufferValue6.reuse();
+                        i14 = 6;
                         sQLiteCursor2 = sQLiteCursor3;
                         i12 = 4;
-                        i14 = 6;
                         i15 = 2;
                         i16 = 1;
                         i19 = 3;

@@ -4,12 +4,11 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.os.Build;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -19,13 +18,13 @@ public abstract class a0 {
         }
     }
 
-    public static l1 b(View view, l1 l1Var, Rect rect) {
-        WindowInsets g10 = l1Var.g();
+    public static k1 b(View view, k1 k1Var, Rect rect) {
+        WindowInsets g10 = k1Var.g();
         if (g10 != null) {
-            return l1.h(view, view.computeSystemWindowInsets(g10, rect));
+            return k1.h(view, view.computeSystemWindowInsets(g10, rect));
         }
         rect.setEmpty();
-        return l1Var;
+        return k1Var;
     }
 
     public static ColorStateList c(View view) {
@@ -40,44 +39,19 @@ public abstract class a0 {
         return view.getElevation();
     }
 
-    public static l1 f(View view) {
-        if (w0.d && view.isAttachedToWindow()) {
-            try {
-                Object obj = w0.a.get(view.getRootView());
-                if (obj != null) {
-                    Rect rect = (Rect) w0.b.get(obj);
-                    Rect rect2 = (Rect) w0.c.get(obj);
-                    if (rect != null && rect2 != null) {
-                        int i10 = Build.VERSION.SDK_INT;
-                        b1 a1Var = i10 >= 34 ? new a1() : i10 >= 30 ? new z0() : i10 >= 29 ? new y0() : new x0();
-                        a1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
-                        a1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
-                        l1 b10 = a1Var.b();
-                        b10.a.r(b10);
-                        b10.a.d(view.getRootView());
-                        return b10;
-                    }
-                }
-            } catch (IllegalAccessException e7) {
-                Log.w("WindowInsetsCompat", "Failed to get insets from AttachInfo. " + e7.getMessage(), e7);
-            }
-        }
-        return null;
-    }
-
-    public static void g(View view, ColorStateList colorStateList) {
+    public static void f(View view, ColorStateList colorStateList) {
         view.setBackgroundTintList(colorStateList);
     }
 
-    public static void h(View view, PorterDuff.Mode mode) {
+    public static void g(View view, PorterDuff.Mode mode) {
         view.setBackgroundTintMode(mode);
     }
 
-    public static void i(View view, float f7) {
+    public static void h(View view, float f7) {
         view.setElevation(f7);
     }
 
-    public static void j(View view, n nVar) {
+    public static void i(View view, n nVar) {
         z zVar = nVar != null ? new z(view, nVar) : null;
         if (Build.VERSION.SDK_INT < 30) {
             view.setTag(R.id.tag_on_apply_window_listener, zVar);
@@ -92,7 +66,7 @@ public abstract class a0 {
         }
     }
 
-    public static void k(View view) {
+    public static void j(View view) {
         view.stopNestedScroll();
     }
 }

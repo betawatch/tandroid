@@ -18,7 +18,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -51,38 +51,39 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                     }
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    int i12 = 0;
                     MessagesController.getInstance(i11).putUsers(updates.users, false);
                     MessagesController.getInstance(i11).putChats(updates.chats, false);
                     ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCall.class);
                     int size2 = findUpdates.size();
-                    int i12 = 0;
-                    while (i12 < size2) {
-                        Object obj = findUpdates.get(i12);
-                        i12++;
+                    int i13 = 0;
+                    while (i13 < size2) {
+                        Object obj = findUpdates.get(i13);
+                        i13++;
                         d2Var.v = ((TL_update.TL_updateGroupCall) obj).call;
                     }
-                    AndroidUtilities.runOnUIThread(new a1.e(8, d2Var, MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCallMessage.class)));
-                    MessagesController.getInstance(i11).processUpdates(updates, false);
+                    AndroidUtilities.runOnUIThread(new a1.f(8, d2Var, MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCallMessage.class)));
+                    MessagesController.getInstance(i11).lambda$processUpdates$377(updates, false);
                     TLRPC.GroupCall groupCall = d2Var.v;
                     boolean z10 = groupCall != null && groupCall.rtmp_stream;
                     ArrayList findUpdates2 = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCallParticipants.class);
                     int size3 = findUpdates2.size();
-                    int i13 = 0;
-                    while (i13 < size3) {
-                        Object obj2 = findUpdates2.get(i13);
-                        i13++;
+                    int i14 = 0;
+                    while (i14 < size3) {
+                        Object obj2 = findUpdates2.get(i14);
+                        i14++;
                         TL_update.TL_updateGroupCallParticipants tL_updateGroupCallParticipants = (TL_update.TL_updateGroupCallParticipants) obj2;
                         if (tL_updateGroupCallParticipants.call.id != d2Var.g() || z10) {
                             arrayList = findUpdates2;
                         } else {
-                            int i14 = 0;
+                            int i15 = i12;
                             while (true) {
-                                if (i14 < tL_updateGroupCallParticipants.participants.size()) {
+                                if (i15 < tL_updateGroupCallParticipants.participants.size()) {
                                     arrayList = findUpdates2;
-                                    if (DialogObject.getPeerDialogId(tL_updateGroupCallParticipants.participants.get(i14).peer) == d2Var.b) {
-                                        d2Var.G = tL_updateGroupCallParticipants.participants.get(i14);
+                                    if (DialogObject.getPeerDialogId(tL_updateGroupCallParticipants.participants.get(i15).peer) == d2Var.b) {
+                                        d2Var.G = tL_updateGroupCallParticipants.participants.get(i15);
                                     } else {
-                                        i14++;
+                                        i15++;
                                         findUpdates2 = arrayList;
                                     }
                                 } else {
@@ -146,6 +147,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                             }
                         }
                         findUpdates2 = arrayList;
+                        i12 = 0;
                     }
                     ArrayList findUpdates32 = MessagesController.findUpdates(updates, TL_update.TL_updateGroupCallConnection.class);
                     size = findUpdates32.size();
@@ -163,24 +165,24 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                 }
                 break;
             case 1:
-                final int i15 = 0;
+                final int i16 = 0;
                 final d2 d2Var2 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.x1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i15) {
+                        switch (i16) {
                             case 0:
                                 d2 d2Var3 = d2Var2;
                                 TLObject tLObject2 = tLObject;
                                 TLRPC.TL_error tL_error2 = tL_error;
-                                int i16 = d2Var3.e;
+                                int i17 = d2Var3.e;
                                 if (!d2Var3.w) {
                                     if (tLObject2 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject2;
-                                        MessagesController.getInstance(i16).putUsers(groupcall.users, false);
-                                        MessagesController.getInstance(i16).putChats(groupcall.chats, false);
+                                        MessagesController.getInstance(i17).putUsers(groupcall.users, false);
+                                        MessagesController.getInstance(i17).putChats(groupcall.chats, false);
                                         d2Var3.v = groupcall.call;
-                                        NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2Var3.v.id));
+                                        NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2Var3.v.id));
                                     } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
                                         AndroidUtilities.runOnUIThread(new t1(d2Var3, 4));
                                     }
@@ -207,7 +209,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                                                 DispatchQueue dispatchQueue = Utilities.globalQueue;
                                                 NativeInstance nativeInstance2 = d2Var4.E;
                                                 Objects.requireNonNull(nativeInstance2);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance2, 3));
+                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.t0(nativeInstance2, 3));
                                                 d2Var4.M.clear();
                                                 d2Var4.E = null;
                                             }
@@ -245,19 +247,19 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                 break;
             case 2:
                 d2 d2Var3 = this.b;
-                int i16 = d2Var3.e;
+                int i17 = d2Var3.e;
                 if (tLObject instanceof TL_phone.groupCall) {
                     TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-                    int i17 = 0;
-                    MessagesController.getInstance(i16).putUsers(groupcall.users, false);
-                    MessagesController.getInstance(i16).putChats(groupcall.chats, false);
+                    int i18 = 0;
+                    MessagesController.getInstance(i17).putUsers(groupcall.users, false);
+                    MessagesController.getInstance(i17).putChats(groupcall.chats, false);
                     if (d2Var3.E != null && !d2Var3.w) {
                         while (true) {
-                            if (i17 < groupcall.participants.size()) {
-                                if (DialogObject.getPeerDialogId(groupcall.participants.get(i17).peer) == d2Var3.b) {
-                                    d2Var3.G = groupcall.participants.get(i17);
+                            if (i18 < groupcall.participants.size()) {
+                                if (DialogObject.getPeerDialogId(groupcall.participants.get(i18).peer) == d2Var3.b) {
+                                    d2Var3.G = groupcall.participants.get(i18);
                                 } else {
-                                    i17++;
+                                    i18++;
                                 }
                             }
                         }
@@ -277,24 +279,24 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                 }
                 break;
             case 3:
-                final int i18 = 1;
+                final int i19 = 1;
                 final d2 d2Var4 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.x1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i18) {
+                        switch (i19) {
                             case 0:
                                 d2 d2Var32 = d2Var4;
                                 TLObject tLObject2 = tLObject;
                                 TLRPC.TL_error tL_error2 = tL_error;
-                                int i162 = d2Var32.e;
+                                int i172 = d2Var32.e;
                                 if (!d2Var32.w) {
                                     if (tLObject2 instanceof TL_phone.groupCall) {
                                         TL_phone.groupCall groupcall2 = (TL_phone.groupCall) tLObject2;
-                                        MessagesController.getInstance(i162).putUsers(groupcall2.users, false);
-                                        MessagesController.getInstance(i162).putChats(groupcall2.chats, false);
+                                        MessagesController.getInstance(i172).putUsers(groupcall2.users, false);
+                                        MessagesController.getInstance(i172).putChats(groupcall2.chats, false);
                                         d2Var32.v = groupcall2.call;
-                                        NotificationCenter.getInstance(i162).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2Var32.v.id));
+                                        NotificationCenter.getInstance(i172).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(d2Var32.v.id));
                                     } else if (tL_error2 != null && "GROUPCALL_INVALID".equalsIgnoreCase(tL_error2.text)) {
                                         AndroidUtilities.runOnUIThread(new t1(d2Var32, 4));
                                     }
@@ -321,7 +323,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                                                 DispatchQueue dispatchQueue = Utilities.globalQueue;
                                                 NativeInstance nativeInstance22 = d2Var42.E;
                                                 Objects.requireNonNull(nativeInstance22);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance22, 3));
+                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.t0(nativeInstance22, 3));
                                                 d2Var42.M.clear();
                                                 d2Var42.E = null;
                                             }
@@ -359,7 +361,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                 break;
             case 4:
                 d2 d2Var5 = this.b;
-                int i19 = d2Var5.e;
+                int i20 = d2Var5.e;
                 if (!(tLObject instanceof TLRPC.Updates)) {
                     if (tL_error != null && "GROUPCALL_ALREADY_DISCARDED".equalsIgnoreCase(tL_error.text)) {
                         AndroidUtilities.runOnUIThread(new t1(d2Var5, 4));
@@ -367,9 +369,9 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                     }
                 } else {
                     TLRPC.Updates updates2 = (TLRPC.Updates) tLObject;
-                    MessagesController.getInstance(i19).putUsers(updates2.users, false);
-                    MessagesController.getInstance(i19).putChats(updates2.chats, false);
-                    MessagesController.getInstance(i19).processUpdates(updates2, false);
+                    MessagesController.getInstance(i20).putUsers(updates2.users, false);
+                    MessagesController.getInstance(i20).putChats(updates2.chats, false);
+                    MessagesController.getInstance(i20).lambda$processUpdates$377(updates2, false);
                     break;
                 }
                 break;
@@ -380,7 +382,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                     d2Var6.getClass();
                     break;
                 } else {
-                    MessagesController.getInstance(d2Var6.e).processUpdates((TLRPC.Updates) tLObject, false);
+                    MessagesController.getInstance(d2Var6.e).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                     break;
                 }
         }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -26,7 +26,7 @@ public final class f {
         String str = (String) lVar.b;
         if (i10 != 2) {
             if (i10 == 3 || i10 == 4) {
-                return new w(new u(str, lVar.e(), "video/mp2t"));
+                return new w(new u(str, lVar.d(), "video/mp2t"));
             }
             if (i10 == 21) {
                 return new w(new h());
@@ -47,34 +47,34 @@ public final class f {
                 return new w(new h((List) lVar.c));
             }
             if (i10 == 172) {
-                return new w(new b(lVar.e(), 1, str, "video/mp2t"));
+                return new w(new b(lVar.d(), 1, str, "video/mp2t"));
             }
             if (i10 == 257) {
                 return new b0(new aa.a("application/vnd.dvb.ait", 20));
             }
             if (i10 != 138) {
                 if (i10 == 139) {
-                    return new w(new g(str, lVar.e(), 5408));
+                    return new w(new g(str, lVar.d(), 5408));
                 }
                 switch (i10) {
                     case 15:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new e(lVar.e(), str, "video/mp2t", false));
+                        return new w(new e(lVar.d(), str, "video/mp2t", false));
                     case 16:
                         return new w(new n(new c0(1, b(lVar))));
                     case 17:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new t(str, lVar.e()));
+                        return new w(new t(str, lVar.d()));
                     default:
                         switch (i10) {
                             case 128:
                                 break;
                             case 129:
-                                return new w(new b(lVar.e(), 0, str, "video/mp2t"));
+                                return new w(new b(lVar.d(), 0, str, "video/mp2t"));
                             case 130:
                                 if (!c(64)) {
                                     return null;
@@ -97,7 +97,7 @@ public final class f {
                         }
                 }
             }
-            return new w(new g(str, lVar.e(), 4096));
+            return new w(new g(str, lVar.d(), 4096));
         }
         return new w(new k(new c0(1, b(lVar)), "video/mp2t"));
     }

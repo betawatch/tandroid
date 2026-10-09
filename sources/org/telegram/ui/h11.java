@@ -1,43 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h11 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ Runnable[] a;
+public final class h11 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final int f;
+    public int g;
+    public String h;
 
-    public h11(Runnable[] runnableArr) {
-        this.a = runnableArr;
+    public h11(String str, int i10, int i11, Runnable runnable) {
+        this(i10, str, null, null, null, i11, runnable);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        if (imageReceiver.hasBitmapImage()) {
-            Runnable[] runnableArr = this.a;
-            if (runnableArr[0] != null) {
-                org.telegram.ui.Components.kj0 lottieAnimation = imageReceiver.getLottieAnimation();
-                if (lottieAnimation == null) {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                } else if (lottieAnimation.y()) {
-                    lottieAnimation.A0 = new hz0(runnableArr, 6);
-                } else {
-                    runnableArr[0].run();
-                    runnableArr[0] = null;
-                }
-            }
+    public final void a(String str) {
+        this.h = str;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof h11) && this.f == ((h11) obj).f;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.bytesToHex(serializedData.toByteArray());
+    }
+
+    public h11(int i10, String str, String str2, int i11, Runnable runnable) {
+        this(i10, str, null, str2, null, i11, runnable);
+    }
+
+    public h11(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
+        this(i10, str, str2, str3, null, i11, runnable);
+    }
+
+    public h11(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
+        this.f = i10;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i11;
+        if (str3 != null && str4 != null) {
+            this.d = new String[]{str3, str4};
+        } else if (str3 != null) {
+            this.d = new String[]{str3};
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.h5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.h5.b(this, imageReceiver);
     }
 }

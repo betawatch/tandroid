@@ -1,79 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public class zc {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public boolean h;
-    public float i;
+public final class zc {
+    public static final zc E;
+    public static final zc F;
+    public static final zc G;
+    public static final zc H;
+    public static final zc I;
+    public static final /* synthetic */ zc[] J;
+    public static final zc e;
+    public static final zc f;
+    public static final zc h;
+    public static final zc n;
+    public static final zc r;
+    public static final zc s;
+    public static final zc v;
+    public static final zc w;
+    public static final zc x;
+    public static final zc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final yc d;
 
-    public zc(View view) {
-        this(view, 1.0f, 5.0f);
+    static {
+        int i10 = R.string.PhotoSavedHint;
+        yc ycVar = yc.e;
+        zc zcVar = new zc("PHOTO", 0, "PhotoSavedHint", i10, ycVar);
+        e = zcVar;
+        zc zcVar2 = new zc("PHOTOS", 1, "PhotosSavedHint", ycVar);
+        f = zcVar2;
+        zc zcVar3 = new zc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, ycVar);
+        h = zcVar3;
+        zc zcVar4 = new zc("VIDEOS", 3, "VideosSavedHint", ycVar);
+        n = zcVar4;
+        zc zcVar5 = new zc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, ycVar);
+        r = zcVar5;
+        zc zcVar6 = new zc("LIVEPHOTOS", 5, "LivePhotosSavedHint", ycVar);
+        s = zcVar6;
+        zc zcVar7 = new zc("MEDIA", 6, "MediaSavedHint", ycVar);
+        v = zcVar7;
+        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
+        yc ycVar2 = yc.d;
+        zc zcVar8 = new zc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, ycVar2);
+        w = zcVar8;
+        zc zcVar9 = new zc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, ycVar2);
+        x = zcVar9;
+        zc zcVar10 = new zc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, yc.h);
+        y = zcVar10;
+        zc zcVar11 = new zc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, ycVar2);
+        E = zcVar11;
+        int i12 = R.string.AudioSavedHint;
+        yc ycVar3 = yc.f;
+        zc zcVar12 = new zc("AUDIO", 11, "AudioSavedHint", i12, ycVar3);
+        F = zcVar12;
+        zc zcVar13 = new zc("AUDIOS", 12, "AudiosSavedHint", ycVar3);
+        G = zcVar13;
+        zc zcVar14 = new zc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, ycVar2);
+        H = zcVar14;
+        zc zcVar15 = new zc("UNKNOWNS", 14, "FilesSavedHintLinked", ycVar2);
+        I = zcVar15;
+        J = new zc[]{zcVar, zcVar2, zcVar3, zcVar4, zcVar5, zcVar6, zcVar7, zcVar8, zcVar9, zcVar10, zcVar11, zcVar12, zcVar13, zcVar14, zcVar15};
     }
 
-    public final float a(float f7) {
-        return com.google.android.gms.internal.vision.e2.z(1.0f, this.i, f7, 1.0f - f7);
+    public zc(String str, int i10, String str2, int i11, yc ycVar) {
+        this.a = str2;
+        this.b = i11;
+        this.d = ycVar;
+        this.c = false;
     }
 
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
-        }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
+    public static zc valueOf(String str) {
+        return (zc) Enum.valueOf(zc.class, str);
     }
 
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new k6(this, 7));
-            this.g.addListener(new da(1, this, z10));
-            if (this.h) {
-                this.g.setInterpolator(tr.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
-        }
+    public static zc[] values() {
+        return (zc[]) J.clone();
     }
 
-    public zc(View view, float f7, float f10) {
-        this.e = 0L;
-        this.a = view;
-        this.c = f7;
-        this.b = f7;
-        this.d = f10;
-    }
-
-    public zc(ci.o6 o6Var) {
-        this.e = 0L;
-        this.a = o6Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
+    public zc(String str, int i10, String str2, yc ycVar) {
+        this.a = str2;
+        this.d = ycVar;
+        this.b = 0;
+        this.c = true;
     }
 }

@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.p7;
-import v7.y7;
+import v7.n7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class g implements b1 {
     public Object a;
@@ -20,7 +20,7 @@ public abstract class g implements b1 {
         if (w02.p()) {
             return -9223372036854775807L;
         }
-        return e2.d0.e0(w02.m(f0Var.l0(), (j1) this.a, 0L).m);
+        return e2.d0.d0(w02.m(f0Var.l0(), (j1) this.a, 0L).m);
     }
 
     @Override // b2.b1
@@ -45,12 +45,12 @@ public abstract class g implements b1 {
             e7 = -1;
         } else {
             int l02 = f0Var.l0();
-            f0Var.B1();
+            f0Var.D1();
             int i10 = f0Var.F;
             if (i10 == 1) {
                 i10 = 0;
             }
-            f0Var.B1();
+            f0Var.D1();
             e7 = w02.e(l02, i10, f0Var.G);
         }
         if (e7 == -1) {
@@ -70,14 +70,14 @@ public abstract class g implements b1 {
     @Override // b2.b1
     public void F0() {
         i2.f0 f0Var = (i2.f0) this;
-        f0Var.B1();
+        f0Var.D1();
         X0(12, f0Var.w);
     }
 
     @Override // b2.b1
     public void G0() {
         i2.f0 f0Var = (i2.f0) this;
-        f0Var.B1();
+        f0Var.D1();
         X0(11, -f0Var.v);
     }
 
@@ -118,12 +118,12 @@ public abstract class g implements b1 {
             e7 = -1;
         } else {
             int l02 = f0Var.l0();
-            f0Var.B1();
+            f0Var.D1();
             int i10 = f0Var.F;
             if (i10 == 1) {
                 i10 = 0;
             }
-            f0Var.B1();
+            f0Var.D1();
             e7 = w02.e(l02, i10, f0Var.G);
         }
         return e7 != -1;
@@ -142,12 +142,12 @@ public abstract class g implements b1 {
             k10 = -1;
         } else {
             int l02 = f0Var.l0();
-            f0Var.B1();
+            f0Var.D1();
             int i10 = f0Var.F;
             if (i10 == 1) {
                 i10 = 0;
             }
-            f0Var.B1();
+            f0Var.D1();
             k10 = w02.k(l02, i10, f0Var.G);
         }
         return k10 != -1;
@@ -159,12 +159,12 @@ public abstract class g implements b1 {
     }
 
     public void R0() {
-        ((i2.f0) this).B1();
+        ((i2.f0) this).D1();
     }
 
     public abstract void S0();
 
-    public abstract r0.l1 T0(r0.l1 l1Var, List list);
+    public abstract r0.k1 T0(r0.k1 k1Var, List list);
 
     public void U0() {
         synchronized (this.a) {
@@ -190,7 +190,7 @@ public abstract class g implements b1 {
         }
         if (Q0) {
             long J0 = f0Var.J0();
-            f0Var.B1();
+            f0Var.D1();
             if (J0 <= f0Var.x) {
                 Y0(7);
                 return;
@@ -228,12 +228,12 @@ public abstract class g implements b1 {
             k10 = -1;
         } else {
             int l02 = f0Var.l0();
-            f0Var.B1();
+            f0Var.D1();
             int i11 = f0Var.F;
             if (i11 == 1) {
                 i11 = 0;
             }
-            f0Var.B1();
+            f0Var.D1();
             k10 = w02.k(l02, i11, f0Var.G);
         }
         if (k10 == -1) {
@@ -245,10 +245,21 @@ public abstract class g implements b1 {
         }
     }
 
+    public void Z0() {
+        synchronized (this) {
+        }
+    }
+
     @Override // b2.b1
     public void a(float f7) {
         i2.f0 f0Var = (i2.f0) this;
         f0Var.f(new v0(f7, f0Var.h().b));
+    }
+
+    public void a1() {
+        synchronized (this) {
+        }
+        Z0();
     }
 
     @Override // b2.b1
@@ -272,12 +283,12 @@ public abstract class g implements b1 {
             e7 = -1;
         } else {
             int l02 = f0Var.l0();
-            f0Var.B1();
+            f0Var.D1();
             int i10 = f0Var.F;
             if (i10 == 1) {
                 i10 = 0;
             }
-            f0Var.B1();
+            f0Var.D1();
             e7 = w02.e(l02, i10, f0Var.G);
         }
         if (e7 == -1) {
@@ -313,7 +324,7 @@ public abstract class g implements b1 {
     @Override // b2.b1
     public boolean m0(int i10) {
         i2.f0 f0Var = (i2.f0) this;
-        f0Var.B1();
+        f0Var.D1();
         return f0Var.N.a(i10);
     }
 
@@ -325,7 +336,7 @@ public abstract class g implements b1 {
         if (w02.p() || w02.m(f0Var.l0(), j1Var, 0L).f == -9223372036854775807L) {
             return -9223372036854775807L;
         }
-        return (e2.d0.A(j1Var.g) - j1Var.f) - f0Var.a0();
+        return (e2.d0.z(j1Var.g) - j1Var.f) - f0Var.a0();
     }
 
     @Override // b2.b1
@@ -348,6 +359,12 @@ public abstract class g implements b1 {
     @Override // b2.b1
     public void s0(k0 k0Var, int i10) {
         ((i2.f0) this).P(i10, i10 + 1, e9.i0.z(k0Var));
+    }
+
+    @Override // b2.b1
+    public void stop() {
+        synchronized (this) {
+        }
     }
 
     @Override // b2.b1
@@ -389,8 +406,8 @@ public abstract class g implements b1 {
             return 100;
         }
         String str = e2.d0.a;
-        long d = p7.d(c02, 100L);
-        return e2.d0.h(y7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
+        long d = n7.d(c02, 100L);
+        return e2.d0.h(v7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
     }
 
     public g(String str, Bundle data) {
@@ -406,14 +423,16 @@ public abstract class g implements b1 {
             case 4:
                 this.a = new HashMap();
                 break;
-            case 5:
-            case 6:
+            case 8:
+                this.a = new LinkedHashMap();
+                break;
             default:
                 this.a = new j1();
                 break;
-            case 7:
-                this.a = new LinkedHashMap();
-                break;
         }
+    }
+
+    public g(sc.u uVar, String str, ob.a aVar) {
+        this.a = uVar;
     }
 }

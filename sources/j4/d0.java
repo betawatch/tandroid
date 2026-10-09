@@ -9,9 +9,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.t8;
+import v7.s8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -64,7 +64,7 @@ public final class d0 implements c3.o {
         for (int i12 = 0; i12 < size; i12++) {
             sparseArray.put(sparseArray2.keyAt(i12), (g0) sparseArray2.valueAt(i12));
         }
-        sparseArray.put(0, new b0(new of.b(this)));
+        sparseArray.put(0, new b0(new pf.b(this)));
         this.r = null;
     }
 
@@ -76,10 +76,10 @@ public final class d0 implements c3.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(c3.p pVar) {
+    public final boolean a(c3.p pVar) {
         byte[] bArr = this.d.a;
         c3.l lVar = (c3.l) pVar;
-        lVar.f(bArr, 0, 940, false);
+        lVar.h(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -87,7 +87,7 @@ public final class d0 implements c3.o {
                     break;
                 }
             }
-            lVar.e(i10, false);
+            lVar.g(i10, false);
             return true;
         }
         return false;
@@ -149,12 +149,12 @@ public final class d0 implements c3.o {
     @Override // c3.o
     public final int m(c3.p pVar, c3.s sVar) {
         c3.p pVar2;
-        int i10;
         ?? r12;
+        int i10;
         int i11;
         int i12;
-        boolean z10;
         int i13;
+        boolean z10;
         long length = pVar.getLength();
         int i14 = this.a;
         boolean z11 = i14 == 2;
@@ -191,8 +191,8 @@ public final class d0 implements c3.o {
                         return 1;
                     }
                     vVar.G(min);
-                    pVar.m();
-                    pVar.b(0, min, vVar.a);
+                    pVar.q();
+                    pVar.a(0, min, vVar.a);
                     int i16 = vVar.b;
                     int i17 = vVar.c;
                     while (true) {
@@ -200,7 +200,7 @@ public final class d0 implements c3.o {
                             break;
                         }
                         if (vVar.a[i16] == 71) {
-                            long a2 = t8.a(vVar, i16, i15);
+                            long a2 = s8.a(vVar, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j3 = a2;
                                 break;
@@ -220,8 +220,8 @@ public final class d0 implements c3.o {
                     return 1;
                 }
                 vVar.G(min2);
-                pVar.m();
-                pVar.b(0, min2, vVar.a);
+                pVar.q();
+                pVar.a(0, min2, vVar.a);
                 int i18 = vVar.b;
                 int i19 = vVar.c;
                 int i20 = i19 - 188;
@@ -242,7 +242,7 @@ public final class d0 implements c3.o {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = t8.a(vVar, i20, i15);
+                                long a10 = s8.a(vVar, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j3 = a10;
                                     break;
@@ -258,24 +258,24 @@ public final class d0 implements c3.o {
                 return 0;
             }
             if (this.p) {
-                i10 = i14;
+                i10 = 1;
                 z10 = false;
-                i13 = 1;
+                i11 = i14;
             } else {
                 this.p = true;
                 long j13 = xVar.i;
                 if (j13 != -9223372036854775807L) {
-                    i10 = i14;
+                    i10 = 1;
                     z10 = false;
-                    i13 = 1;
-                    h3.a aVar = new h3.a(new t7.u(), new a5.a(this.t, xVar.b), j13, j13 + 1, 0L, length, 188L, 940);
+                    i11 = i14;
+                    h3.a aVar = new h3.a(new t7.t(), new a5.a(this.t, xVar.b), j13, 1 + j13, 0L, length, 188L, 940);
                     this.l = aVar;
-                    this.m.X1(aVar.a);
+                    this.m.d2(aVar.a);
                 } else {
-                    i10 = i14;
+                    i10 = 1;
                     z10 = false;
-                    i13 = 1;
-                    this.m.X1(new c3.t(j13));
+                    i11 = i14;
+                    this.m.d2(new c3.t(j13));
                 }
             }
             if (this.q) {
@@ -283,7 +283,7 @@ public final class d0 implements c3.o {
                 h(0L, 0L);
                 if (pVar.getPosition() != 0) {
                     sVar.a = 0L;
-                    return i13;
+                    return i10;
                 }
             }
             h3.a aVar2 = this.l;
@@ -294,8 +294,9 @@ public final class d0 implements c3.o {
             r12 = z10;
         } else {
             pVar2 = pVar;
-            i10 = i14;
             r12 = 0;
+            i10 = 1;
+            i11 = i14;
         }
         e2.v vVar2 = this.d;
         byte[] bArr2 = vVar2.a;
@@ -322,14 +323,14 @@ public final class d0 implements c3.o {
                 if (i27 > i25) {
                     int i28 = (i26 - i24) + this.s;
                     this.s = i28;
-                    i11 = i10;
-                    i12 = 2;
-                    if (i11 == 2 && i28 > 376) {
+                    i12 = i11;
+                    i13 = 2;
+                    if (i12 == 2 && i28 > 376) {
                         throw s0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
                     }
                 } else {
-                    i11 = i10;
-                    i12 = 2;
+                    i12 = i11;
+                    i13 = 2;
                     this.s = r12;
                 }
                 int i29 = vVar2.c;
@@ -341,15 +342,15 @@ public final class d0 implements c3.o {
                     vVar2.J(i27);
                     return r12;
                 }
-                int i30 = (4194304 & j14) != 0 ? 1 : 0;
+                int i30 = (4194304 & j14) != 0 ? 1 : r12;
                 int i31 = (2096896 & j14) >> 8;
-                boolean z12 = (j14 & 32) != 0;
+                boolean z12 = (j14 & 32) != 0 ? true : r12;
                 g0 g0Var = (j14 & 16) != 0 ? (g0) sparseArray.get(i31) : null;
                 if (g0Var == null) {
                     vVar2.J(i27);
                     return r12;
                 }
-                if (i11 != i12) {
+                if (i12 != i13) {
                     int i32 = j14 & 15;
                     SparseIntArray sparseIntArray = this.e;
                     int i33 = sparseIntArray.get(i31, i32 - 1);
@@ -364,16 +365,16 @@ public final class d0 implements c3.o {
                 }
                 if (z12) {
                     int x10 = vVar2.x();
-                    i30 |= (vVar2.x() & 64) != 0 ? 2 : 0;
+                    i30 |= (vVar2.x() & 64) != 0 ? i13 : r12;
                     vVar2.K(x10 - 1);
                 }
                 boolean z13 = this.o;
-                if (i11 == i12 || z13 || !this.j.get(i31, r12)) {
+                if (i12 == i13 || z13 || !this.j.get(i31, r12)) {
                     vVar2.I(i27);
                     g0Var.a(i30, vVar2);
                     vVar2.I(i29);
                 }
-                if (i11 != i12 && !z13 && this.o && length != -1) {
+                if (i12 != i13 && !z13 && this.o && length != -1) {
                     this.q = true;
                 }
                 vVar2.J(i27);
@@ -382,19 +383,23 @@ public final class d0 implements c3.o {
             int i34 = vVar2.c;
             int read = pVar2.read(bArr2, i34, 9400 - i34);
             if (read == -1) {
-                for (int i35 = 0; i35 < sparseArray.size(); i35++) {
+                int i35 = r12;
+                while (i35 < sparseArray.size()) {
                     g0 g0Var2 = (g0) sparseArray.valueAt(i35);
                     if (g0Var2 instanceof w) {
                         w wVar = (w) g0Var2;
-                        boolean z14 = !z11 || wVar.e();
-                        if (wVar.c == 3 && wVar.j == -1 && ((!z11 || !(wVar.a instanceof k)) && z14)) {
-                            wVar.a(1, new e2.v());
+                        int i36 = (!z11 || wVar.e()) ? i10 : r12;
+                        if (wVar.c == 3 && wVar.j == -1 && ((!z11 || !(wVar.a instanceof k)) && i36 != 0)) {
+                            wVar.a(i10, new e2.v());
                         }
                     }
+                    i35++;
+                    i10 = 1;
                 }
                 return -1;
             }
             vVar2.I(i34 + read);
+            i10 = 1;
         }
     }
 

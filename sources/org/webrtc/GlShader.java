@@ -4,7 +4,7 @@ import android.opengl.GLES20;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public class GlShader {
     private static final String TAG = "GlShader";
@@ -59,7 +59,7 @@ public class GlShader {
         if (glGetAttribLocation >= 0) {
             return glGetAttribLocation;
         }
-        throw new RuntimeException(a4.a.q("Could not locate '", str, "' in program"));
+        throw new RuntimeException(a1.g.q("Could not locate '", str, "' in program"));
     }
 
     public int getUniformLocation(String str) {
@@ -71,7 +71,7 @@ public class GlShader {
         if (glGetUniformLocation >= 0) {
             return glGetUniformLocation;
         }
-        throw new RuntimeException(a4.a.q("Could not locate uniform '", str, "' in program"));
+        throw new RuntimeException(a1.g.q("Could not locate uniform '", str, "' in program"));
     }
 
     public void release() {

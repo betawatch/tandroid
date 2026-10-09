@@ -12,18 +12,18 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
-    public final n4.y e;
+    public final pf.b e;
     public final Map c = DesugarCollections.synchronizedMap(new HashMap());
     public final LinkedHashSet d = new LinkedHashSet();
     public final Set b = DesugarCollections.synchronizedSet(new LinkedHashSet());
     public final m a = new m(this);
 
     public n(Context context) {
-        this.e = new n4.y(context, 10);
+        this.e = new pf.b((Object) context, 11);
     }
 
     @Override // p4.s
@@ -51,16 +51,16 @@ public final class n extends p4.s {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();
         } else {
-            new c0(Looper.getMainLooper(), 0).post(new k(this, 1));
+            new a0(Looper.getMainLooper(), 0).post(new k(this, 1));
         }
     }
 
     public final void n() {
-        n4.y yVar = this.e;
-        if (((p4.x) yVar.c) == null) {
-            yVar.c = p4.x.d((Context) yVar.b);
+        pf.b bVar = this.e;
+        if (((p4.x) bVar.c) == null) {
+            bVar.c = p4.x.d((Context) bVar.b);
         }
-        p4.x xVar = (p4.x) yVar.c;
+        p4.x xVar = (p4.x) bVar.c;
         if (xVar != null) {
             xVar.h(this);
         }
@@ -84,11 +84,11 @@ public final class n extends p4.s {
                         this.c.put(str, new l(rVar));
                     }
                     f.b("Adding mediaRouter callback for control category " + c6.y.a(str), new Object[0]);
-                    n4.y yVar2 = this.e;
-                    if (((p4.x) yVar2.c) == null) {
-                        yVar2.c = p4.x.d((Context) yVar2.b);
+                    pf.b bVar2 = this.e;
+                    if (((p4.x) bVar2.c) == null) {
+                        bVar2.c = p4.x.d((Context) bVar2.b);
                     }
-                    ((p4.x) yVar2.c).a(rVar, this, 4);
+                    ((p4.x) bVar2.c).a(rVar, this, 4);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -152,20 +152,20 @@ public final class n extends p4.s {
                         for (String str2 : this.c.keySet()) {
                             l lVar2 = (l) this.c.get(v7.j5.a(str2));
                             if (lVar2 == null) {
-                                int i10 = m0.c;
-                                r10 = v0.s;
+                                int i10 = k0.c;
+                                r10 = t0.s;
                             } else {
                                 LinkedHashSet linkedHashSet = lVar2.a;
-                                int i11 = m0.c;
+                                int i11 = k0.c;
                                 Object[] array = linkedHashSet.toArray();
-                                r10 = m0.r(array.length, array);
+                                r10 = k0.r(array.length, array);
                             }
                             if (!r10.isEmpty()) {
                                 hashMap.put(str2, r10);
                             }
                         }
                     }
-                    l0.a(hashMap.entrySet());
+                    j0.a(hashMap.entrySet());
                     Iterator it = this.b.iterator();
                     if (it.hasNext()) {
                         if (it.next() != null) {

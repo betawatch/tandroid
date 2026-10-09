@@ -9,35 +9,35 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.m71;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class v1 extends View implements org.telegram.ui.ActionBar.y5 {
-    public final h71 a;
-    public final org.telegram.ui.ActionBar.d6 b;
+public final class v1 extends View implements org.telegram.ui.ActionBar.z5 {
+    public final m71 a;
+    public final org.telegram.ui.ActionBar.e6 b;
     public int c;
     public int d;
     public l1 e;
     public float f;
     public int h;
 
-    public v1(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public v1(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
         super(context);
-        this.b = d6Var;
-        h71 h71Var = new h71();
-        this.a = h71Var;
-        h71Var.setCallback(this);
-        h71Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
-        h71Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
-        h71Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
-        h71Var.j = new g(this, 1);
+        this.b = e6Var;
+        m71 m71Var = new m71();
+        this.a = m71Var;
+        m71Var.setCallback(this);
+        m71Var.n = LocaleController.getString(R.string.UnsupportedMessageTitle);
+        m71Var.o = LocaleController.getString(R.string.UnsupportedMessageMessage);
+        m71Var.p = LocaleController.getString(R.string.UnsupportedUpdate);
+        m71Var.j = new g(this, 1);
     }
 
     public final void a(Canvas canvas) {
-        org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        if (d6Var != null) {
-            d6Var.m(0.0f, this.f, getMeasuredWidth(), this.h);
+        org.telegram.ui.ActionBar.e6 e6Var = this.b;
+        if (e6Var != null) {
+            e6Var.m(0.0f, this.f, getMeasuredWidth(), this.h);
         } else {
             org.telegram.ui.ActionBar.i6.q(0.0f, this.f, getMeasuredWidth(), this.h);
         }
@@ -47,12 +47,12 @@ public final class v1 extends View implements org.telegram.ui.ActionBar.y5 {
         float dp4 = AndroidUtilities.dp(6.0f) + this.d;
         float dp5 = AndroidUtilities.dp(18.0f);
         float dp6 = AndroidUtilities.dp(18.0f);
-        Paint H = d6Var != null ? d6Var.H("paintChatActionBackground") : null;
-        if (H == null) {
-            H = org.telegram.ui.ActionBar.i6.S0("paintChatActionBackground");
+        Paint F = e6Var != null ? e6Var.F("paintChatActionBackground") : null;
+        if (F == null) {
+            F = org.telegram.ui.ActionBar.i6.T0("paintChatActionBackground");
         }
-        canvas.drawRoundRect(dp, dp2, dp3, dp4, dp5, dp6, H);
-        if (d6Var != null ? d6Var.r0() : org.telegram.ui.ActionBar.i6.a1()) {
+        canvas.drawRoundRect(dp, dp2, dp3, dp4, dp5, dp6, F);
+        if (e6Var != null ? e6Var.k0() : org.telegram.ui.ActionBar.i6.b1()) {
             canvas.drawRoundRect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(18.0f) + this.c, AndroidUtilities.dp(6.0f) + this.d, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.i6.h2);
         }
     }
@@ -62,7 +62,7 @@ public final class v1 extends View implements org.telegram.ui.ActionBar.y5 {
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         this.a.b();
     }
@@ -77,9 +77,9 @@ public final class v1 extends View implements org.telegram.ui.ActionBar.y5 {
         int dp2 = AndroidUtilities.dp(6.0f);
         int dp3 = AndroidUtilities.dp(18.0f) + this.c;
         int dp4 = AndroidUtilities.dp(6.0f) + this.d;
-        h71 h71Var = this.a;
-        h71Var.setBounds(dp, dp2, dp3, dp4);
-        h71Var.draw(canvas);
+        m71 m71Var = this.a;
+        m71Var.setBounds(dp, dp2, dp3, dp4);
+        m71Var.draw(canvas);
     }
 
     @Override // android.view.View

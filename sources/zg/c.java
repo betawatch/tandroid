@@ -4,7 +4,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class c {
     public float a;
@@ -65,18 +65,18 @@ public final class c {
                 this.c = width - 0.1f;
             }
         }
-        this.b = a4.a.e(c1.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
+        this.b = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
         if (dVar.f) {
-            float e7 = a4.a.e(c1.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            float e7 = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
             this.f = e7;
-            this.g = (((c1.f(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * e7;
-            this.d = a4.a.e(c1.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
+            this.g = (((c1.d(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * e7;
+            this.d = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
             this.e = dVar.b.height() + this.f;
             this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
         } else {
-            float e10 = a4.a.e(c1.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            float e10 = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
             this.f = e10;
-            this.g = (((c1.f(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * e10;
+            this.g = (((c1.d(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * e10;
             this.d = c10;
             this.e = c10 + dVar.b.height();
             this.i = 1800L;
@@ -88,12 +88,12 @@ public final class c {
 
     public final float b() {
         if (!this.l.f) {
-            return (c1.f(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+            return (c1.d(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
         }
-        return a4.a.e(c1.f(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
+        return a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
     }
 
     public final float c() {
-        return (c1.f(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+        return (c1.d(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
     }
 }

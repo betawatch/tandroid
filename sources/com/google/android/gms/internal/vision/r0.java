@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
@@ -44,7 +44,7 @@ public final class r0 extends e1 {
     public static int J(int i10, q0 q0Var) {
         int T = T(i10 << 3);
         int n10 = q0Var.n();
-        return a4.a.E(n10, n10, T);
+        return a1.g.E(n10, n10, T);
     }
 
     public static int N(int i10, long j3) {

@@ -1,84 +1,25 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class oi {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ yn d;
+public final class oi implements org.telegram.ui.Components.wh0 {
+    public boolean a = true;
+    public final /* synthetic */ org.telegram.ui.Components.kl0 b;
 
-    public oi(yn ynVar, boolean z10, SparseArray sparseArray) {
-        this.d = ynVar;
-        this.b = z10;
-        this.c = sparseArray;
+    public oi(org.telegram.ui.Components.kl0 kl0Var) {
+        this.b = kl0Var;
     }
 
-    public final boolean a(int i10) {
-        yn ynVar = this.d;
-        int i11 = i10 - ynVar.y0.J;
-        if (i11 < 0 || i11 >= ynVar.s6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) ynVar.s6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.c1 K;
-        yn ynVar = this.d;
-        ArrayList arrayList = ynVar.s6;
-        SparseArray[] sparseArrayArr = ynVar.U5;
-        int i11 = i10 - ynVar.y0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = ynVar.v0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.u1) {
-                                yn.b2(ynVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        ynVar.x6(messageObject, false, true);
-                        ynVar.cc();
-                        ynVar.Vc(false);
-                    }
-                }
+    @Override // org.telegram.ui.Components.wh0
+    public final void a(float f7, float f10) {
+        org.telegram.ui.Components.kl0 kl0Var = this.b;
+        if (f7 == 0.0f && !this.a) {
+            kl0Var.r(false);
+            this.a = true;
+        } else if (f7 == 1.0f && this.a) {
+            kl0Var.setAlpha(1.0f - f10);
+            if (f10 == 1.0f) {
                 this.a = false;
-                K = ynVar.v0.K(i10);
-                if (K != null) {
-                }
-                ynVar.x6(messageObject, false, true);
-                ynVar.cc();
-                ynVar.Vc(false);
             }
         }
     }

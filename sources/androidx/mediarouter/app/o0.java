@@ -23,7 +23,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import ii.n4;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -32,9 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class o0 extends g.u {
+public final class o0 extends g.t {
     public static final /* synthetic */ int j0 = 0;
     public boolean E;
     public boolean F;
@@ -57,7 +56,7 @@ public final class o0 extends g.u {
     public TextView W;
     public TextView X;
     public String Y;
-    public n4.y Z;
+    public n4.x Z;
     public final r a0;
     public MediaDescriptionCompat b0;
     public f0 c0;
@@ -86,9 +85,9 @@ public final class o0 extends g.u {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public o0(Context context) {
-        super(r2, r0 == 0 ? v7.e0.e(r2) : r0);
-        ContextThemeWrapper a2 = v7.e0.a(context, false);
-        int g10 = v7.e0.g(a2, R.attr.mediaRouteTheme);
+        super(r2, r0 == 0 ? v7.a0.e(r2) : r0);
+        ContextThemeWrapper a2 = v7.a0.a(context, false);
+        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
         this.n = p4.r.c;
         this.s = new ArrayList();
         this.v = new ArrayList();
@@ -134,16 +133,16 @@ public final class o0 extends g.u {
 
     public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
-        n4.y yVar = this.Z;
+        n4.x xVar = this.Z;
         r rVar = this.a0;
-        if (yVar != null) {
-            yVar.a0(rVar);
+        if (xVar != null) {
+            xVar.c0(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
-            n4.y yVar2 = new n4.y(this.y, mediaSessionCompat$Token);
-            this.Z = yVar2;
-            yVar2.X(rVar);
+            n4.x xVar2 = new n4.x(this.y, mediaSessionCompat$Token);
+            this.Z = xVar2;
+            xVar2.Z(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -181,7 +180,7 @@ public final class o0 extends g.u {
 
     public final void j() {
         Context context = this.y;
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.d0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
         this.d0 = null;
         this.e0 = null;
         f();
@@ -292,7 +291,7 @@ public final class o0 extends g.u {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            n4 b10 = this.r.b(vVar);
+            l2.f b10 = this.r.b(vVar);
             if (b10 != null) {
                 p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {
@@ -351,13 +350,13 @@ public final class o0 extends g.u {
         h(p4.x.e());
     }
 
-    @Override // g.u, androidx.activity.m, android.app.Dialog
+    @Override // g.t, androidx.activity.m, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.mr_cast_dialog);
         View decorView = getWindow().getDecorView();
         Context context = this.y;
-        decorView.setBackgroundColor(f0.e.c(context, v7.e0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        decorView.setBackgroundColor(context.getColor(v7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
         ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
         this.R = imageButton;
         imageButton.setColorFilter(-1);
@@ -370,7 +369,7 @@ public final class o0 extends g.u {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
         this.I = recyclerView;
         recyclerView.setAdapter(this.J);
-        this.I.setLayoutManager(new s4.c0());
+        this.I.setLayoutManager(new s4.d0());
         this.K = new n0(this);
         this.L = new HashMap();
         this.N = new HashMap();

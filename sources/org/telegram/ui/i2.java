@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i2 extends View implements org.telegram.ui.Cells.p9 {
+public final class i2 extends View implements org.telegram.ui.Cells.n9 {
     public final t70 a;
     public final g4 b;
     public b3 c;
@@ -46,7 +46,7 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9 {
         imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
     }
 
-    @Override // org.telegram.ui.Cells.p9
+    @Override // org.telegram.ui.Cells.n9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         b3 b3Var = this.c;
         if (b3Var != null) {
@@ -155,11 +155,11 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9 {
     public final void onMeasure(int i10, int i11) {
         ImageReceiver imageReceiver;
         int i12;
-        char c10;
-        float f7;
-        boolean z10;
         int i13;
-        String formatString;
+        float f7;
+        int i14;
+        int i15;
+        String format;
         int size = View.MeasureSpec.getSize(i10);
         c4 c4Var = this.n;
         this.e = c4Var.b != c4Var.a.articles.size() - 1;
@@ -187,61 +187,66 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9 {
             imageReceiver.setImageCoords((size - r4) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), dp4, dp4);
             dp3 = (int) (dp3 - (imageReceiver.getImageWidth() + AndroidUtilities.dp(6.0f)));
         }
-        int i14 = dp3;
+        int i16 = dp3;
         int dp5 = AndroidUtilities.dp(18.0f);
         String str = pagerelatedarticle.title;
         if (str != null) {
+            i13 = 1;
             i12 = dp2;
-            c10 = 1;
             f7 = 6.0f;
-            this.c = i4.p(this.a, this, str, null, i14, this.v, this.n, Layout.Alignment.ALIGN_NORMAL, 3, this.b);
+            this.c = i4.p(this.a, this, str, null, i16, this.v, this.n, Layout.Alignment.ALIGN_NORMAL, 3, this.b);
         } else {
             i12 = dp2;
-            c10 = 1;
+            i13 = 1;
             f7 = 6.0f;
         }
         b3 b3Var = this.c;
-        int i15 = this.s;
-        int i16 = this.v;
+        int i17 = this.s;
+        int i18 = this.v;
         if (b3Var != null) {
             int lineCount = b3Var.d.getLineCount();
-            int i17 = 4 - lineCount;
+            i14 = 4 - lineCount;
             this.w = org.telegram.messenger.q.C(f7, this.c.d.getHeight(), dp);
             dp5 = this.c.d.getHeight() + dp5;
-            int i18 = 0;
+            int i19 = 0;
             while (true) {
-                if (i18 >= lineCount) {
-                    z10 = false;
+                if (i19 >= lineCount) {
+                    i15 = 0;
                     break;
                 } else {
-                    if (this.c.d.getLineLeft(i18) != 0.0f) {
-                        z10 = true;
+                    if (this.c.d.getLineLeft(i19) != 0.0f) {
+                        i15 = i13;
                         break;
                     }
-                    i18++;
+                    i19++;
                 }
             }
             b3 b3Var2 = this.c;
-            b3Var2.s = i15;
-            b3Var2.v = i16;
-            i13 = i17;
+            b3Var2.s = i17;
+            b3Var2.v = i18;
         } else {
             this.w = 0;
-            z10 = false;
-            i13 = 4;
+            i14 = 4;
+            i15 = 0;
         }
-        if (pagerelatedarticle.published_date == 0 || TextUtils.isEmpty(pagerelatedarticle.author)) {
-            formatString = !TextUtils.isEmpty(pagerelatedarticle.author) ? LocaleController.formatString(R.string.ArticleByAuthor, pagerelatedarticle.author) : pagerelatedarticle.published_date != 0 ? LocaleController.getInstance().getChatFullDate().format(pagerelatedarticle.published_date * 1000) : !TextUtils.isEmpty(pagerelatedarticle.description) ? pagerelatedarticle.description : pagerelatedarticle.url;
-        } else {
-            int i19 = R.string.ArticleDateByAuthor;
-            String format = LocaleController.getInstance().getChatFullDate().format(pagerelatedarticle.published_date * 1000);
+        int i20 = i14;
+        if (pagerelatedarticle.published_date != 0 && !TextUtils.isEmpty(pagerelatedarticle.author)) {
+            int i21 = R.string.ArticleDateByAuthor;
+            String format2 = LocaleController.getInstance().getChatFullDate().format(pagerelatedarticle.published_date * 1000);
             String str2 = pagerelatedarticle.author;
             Object[] objArr = new Object[2];
-            objArr[0] = format;
-            objArr[c10] = str2;
-            formatString = LocaleController.formatString(i19, objArr);
+            objArr[0] = format2;
+            objArr[i13] = str2;
+            format = LocaleController.formatString(i21, objArr);
+        } else if (TextUtils.isEmpty(pagerelatedarticle.author)) {
+            format = pagerelatedarticle.published_date != 0 ? LocaleController.getInstance().getChatFullDate().format(pagerelatedarticle.published_date * 1000) : !TextUtils.isEmpty(pagerelatedarticle.description) ? pagerelatedarticle.description : pagerelatedarticle.url;
+        } else {
+            int i22 = R.string.ArticleByAuthor;
+            Object[] objArr2 = new Object[i13];
+            objArr2[0] = pagerelatedarticle.author;
+            format = LocaleController.formatString(i22, objArr2);
         }
-        b3 p5 = i4.p(this.a, this, formatString, null, i14, this.w + i16, this.n, ((g4Var == null || !g4Var.G) && !z10) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), i13, this.b);
+        b3 p5 = i4.p(this.a, this, format, null, i16, this.w + i18, this.n, ((g4Var == null || !g4Var.G) && i15 == 0) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.mx0.a(), i20, this.b);
         this.d = p5;
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;
@@ -250,8 +255,8 @@ public final class i2 extends View implements org.telegram.ui.Cells.p9 {
             }
             dp5 = height;
             b3 b3Var3 = this.d;
-            b3Var3.s = i15;
-            b3Var3.v = i16 + this.w;
+            b3Var3.s = i17;
+            b3Var3.v = i18 + this.w;
         }
         setMeasuredDimension(size, Math.max(i12, dp5) + (this.e ? 1 : 0));
     }

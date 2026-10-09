@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.BuildConfig;
-import w7.g0;
+import w7.d0;
+import w7.g;
 
 /* loaded from: classes.dex */
 public final class a extends o6.a {
@@ -66,7 +66,7 @@ public final class a extends o6.a {
         sb2.append(str);
         sb2.append("=");
         if (bArr == null) {
-            str2 = BuildConfig.BETA_URL;
+            str2 = "null";
         } else {
             sb2.append("(");
             int length = bArr.length;
@@ -91,7 +91,7 @@ public final class a extends o6.a {
     public final boolean equals(Object obj) {
         if (obj instanceof a) {
             a aVar = (a) obj;
-            if (w7.j.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && w7.j.a(c(this.c), c(aVar.c)) && w7.j.a(c(this.d), c(aVar.d)) && w7.j.a(c(this.e), c(aVar.e)) && w7.j.a(c(this.f), c(aVar.f)) && w7.j.a(b(this.h), b(aVar.h)) && w7.j.a(c(this.n), c(aVar.n))) {
+            if (g.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && g.a(c(this.c), c(aVar.c)) && g.a(c(this.d), c(aVar.d)) && g.a(c(this.e), c(aVar.e)) && g.a(c(this.f), c(aVar.f)) && g.a(b(this.h), b(aVar.h)) && g.a(c(this.n), c(aVar.n))) {
                 return true;
             }
         }
@@ -104,7 +104,7 @@ public final class a extends o6.a {
         sb3.append("(");
         String str = this.a;
         if (str == null) {
-            sb2 = BuildConfig.BETA_URL;
+            sb2 = "null";
         } else {
             StringBuilder sb4 = new StringBuilder(String.valueOf(str).length() + 2);
             sb4.append("'");
@@ -116,7 +116,7 @@ public final class a extends o6.a {
         sb3.append(", direct=");
         byte[] bArr = this.b;
         if (bArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("'");
             sb3.append(Base64.encodeToString(bArr, 3));
@@ -135,7 +135,7 @@ public final class a extends o6.a {
         sb3.append("=");
         int[] iArr = this.h;
         if (iArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("(");
             int length = iArr.length;
@@ -160,15 +160,15 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = g0.q(parcel, 20293);
-        g0.l(parcel, 2, this.a);
-        g0.c(parcel, 3, this.b);
-        g0.d(parcel, 4, this.c);
-        g0.d(parcel, 5, this.d);
-        g0.d(parcel, 6, this.e);
-        g0.d(parcel, 7, this.f);
-        g0.g(parcel, 8, this.h);
-        g0.d(parcel, 9, this.n);
-        g0.r(parcel, q6);
+        int q6 = d0.q(parcel, 20293);
+        d0.l(parcel, 2, this.a);
+        d0.c(parcel, 3, this.b);
+        d0.d(parcel, 4, this.c);
+        d0.d(parcel, 5, this.d);
+        d0.d(parcel, 6, this.e);
+        d0.d(parcel, 7, this.f);
+        d0.g(parcel, 8, this.h);
+        d0.d(parcel, 9, this.n);
+        d0.r(parcel, q6);
     }
 }

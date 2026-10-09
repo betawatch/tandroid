@@ -1,45 +1,41 @@
 package yh;
 
-import android.os.Bundle;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ta1;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ m1(long j3, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.c = j3;
-        this.b = n2Var;
+    public /* synthetic */ m1(s3 s3Var, TLRPC.TL_error tL_error, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = s3Var;
+        this.c = tL_error;
+        this.d = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                long j3 = this.c;
-                if (j3 >= 0) {
-                    bundle.putLong("user_id", j3);
-                } else {
-                    bundle.putLong("chat_id", -j3);
+                this.b.getBulletinFactory().f0(this.c, false);
+                Runnable runnable = this.d;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-                bundle.putBoolean("my_profile", true);
-                bundle.putBoolean("open_gifts", true);
-                this.b.presentFragment(new ProfileActivity(bundle, null));
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b;
-                n2Var.presentFragment(ta1.b0(n2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
+                this.b.getBulletinFactory().f0(this.c, false);
+                Runnable runnable2 = this.d;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ m1(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        this.b = n2Var;
-        this.c = j3;
     }
 }

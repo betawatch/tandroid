@@ -1,46 +1,58 @@
 package ci;
 
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
+import android.net.Uri;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p0 implements Runnable {
+public final /* synthetic */ class p0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
-    public final /* synthetic */ File c;
+    public final /* synthetic */ t0 b;
 
-    public /* synthetic */ p0(u0 u0Var, File file, int i10) {
+    public /* synthetic */ p0(t0 t0Var, int i10) {
         this.a = i10;
-        this.b = u0Var;
-        this.c = file;
+        this.b = t0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                u0 u0Var = this.b;
-                if (u0Var.c && u0Var.r != null) {
-                    MediaController.saveFile(this.c.getAbsolutePath(), u0Var.getContext(), 1, null, null, new q0(u0Var, 1), false);
+                Float f7 = (Float) obj;
+                s0 s0Var = this.b.n;
+                if (s0Var != null) {
+                    s0Var.setProgress(f7.floatValue());
                     break;
                 }
                 break;
             case 1:
-                u0 u0Var2 = this.b;
-                k8 k8Var = u0Var2.r;
-                File file = this.c;
-                k8Var.c(file);
-                if (u0Var2.c && u0Var2.r != null) {
-                    AndroidUtilities.runOnUIThread(new p0(u0Var2, file, 2));
+                Uri uri = (Uri) obj;
+                t0 t0Var = this.b;
+                if (t0Var.c && t0Var.r != null) {
+                    t0Var.n.b(R.raw.ic_save_to_gallery, 3500, LocaleController.getString("VideoSavedHint"));
+                    t0Var.c = false;
+                    t0Var.d();
+                    t0Var.v = uri;
                     break;
                 }
                 break;
             default:
-                String absolutePath = this.c.getAbsolutePath();
-                u0 u0Var3 = this.b;
-                MediaController.saveFile(absolutePath, u0Var3.getContext(), 0, null, null, new q0(u0Var3, 2), false);
+                Uri uri2 = (Uri) obj;
+                t0 t0Var2 = this.b;
+                t0Var2.c = false;
+                t0Var2.d();
+                s0 s0Var2 = t0Var2.n;
+                if (s0Var2 != null) {
+                    s0Var2.a();
+                    t0Var2.n = null;
+                }
+                s0 s0Var3 = new s0(t0Var2.getContext());
+                t0Var2.n = s0Var3;
+                s0Var3.b(R.raw.ic_save_to_gallery, 2500, LocaleController.getString("PhotoSavedHint"));
+                t0Var2.b.addView(t0Var2.n);
+                t0Var2.v = uri2;
                 break;
         }
     }

@@ -1,29 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class vz0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final class vz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    public vz0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
+    public /* synthetic */ vz0(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final la.h i() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = ((Pair) get(i10)).first;
-            objArr2[i10] = ((Pair) get(i10)).second;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
         }
-        return new la.h(objArr, objArr2);
     }
 }

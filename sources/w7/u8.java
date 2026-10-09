@@ -1,41 +1,25 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.net.Uri;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static String a(String str) {
-        if (d(str)) {
-            return null;
+    public static Uri a(Uri uri) {
+        if (uri.getQueryParameter("CMCD") == null) {
+            return uri;
         }
-        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
-    }
-
-    public static String b(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
-    }
-
-    public static boolean c(String str, String... strArr) {
-        if (str != null) {
-            for (String str2 : strArr) {
-                if (str.startsWith(str2)) {
-                    return true;
+        Uri.Builder buildUpon = uri.buildUpon();
+        buildUpon.clearQuery();
+        for (String str : uri.getQueryParameterNames()) {
+            if (!str.equals("CMCD")) {
+                Iterator<String> it = uri.getQueryParameters(str).iterator();
+                while (it.hasNext()) {
+                    buildUpon.appendQueryParameter(str, it.next());
                 }
             }
         }
-        return false;
-    }
-
-    public static boolean d(String str) {
-        return str == null || str.trim().length() == 0;
-    }
-
-    public static String e(String str) {
-        if (d(str)) {
-            return null;
-        }
-        return str;
+        return buildUpon.build();
     }
 }

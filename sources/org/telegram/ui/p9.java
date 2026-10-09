@@ -1,38 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p9 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class p9 extends v9 {
+    public final /* synthetic */ q9 h0;
 
-    public /* synthetic */ p9(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p9(q9 q9Var, int i10) {
+        super(i10);
+        this.h0 = q9Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                w9 w9Var = (w9) this.b;
-                o1.k kVar = w9Var.x;
-                if (kVar != null) {
-                    kVar.c();
-                    w9Var.x = null;
-                    break;
-                }
-                break;
-            case 1:
-                oo0 oo0Var = (oo0) this.b;
-                if (hVar == oo0Var.c) {
-                    oo0Var.c = null;
-                    break;
-                }
-                break;
-            default:
-                ((ju0) this.b).E();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void finishFragment() {
+        setFinishing(true);
+        this.h0.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void removeSelfFromStack() {
+        this.h0.dismiss();
     }
 }

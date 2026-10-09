@@ -1,18 +1,17 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
-import ii.n4;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class s extends a {
-    public static final /* synthetic */ n4 f;
-    public static final /* synthetic */ n4 h;
+    public static final /* synthetic */ m2.t f;
+    public static final /* synthetic */ m2.t h;
     public float e;
 
     static {
-        re.a aVar = new re.a(s.class, "SoundMediaHeaderBox.java");
+        se.a aVar = new se.a(s.class, "SoundMediaHeaderBox.java");
         f = aVar.e(aVar.d("getBalance", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "float"));
         h = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "java.lang.String"));
     }
@@ -37,11 +36,11 @@ public final class s extends a {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = re.a.b(h, this, this);
+        com.google.firebase.messaging.s b10 = se.a.b(h, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SoundMediaHeaderBox[balance=");
-        e2.q(re.a.b(f, this, this));
+        e2.q(se.a.b(f, this, this));
         sb2.append(this.e);
         sb2.append("]");
         return sb2.toString();

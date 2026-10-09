@@ -2,8 +2,9 @@ package s4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import m.f3;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -85,10 +86,10 @@ public final class k {
         return null;
     }
 
-    public final void a(e0 e0Var) {
+    public final void a(f0 f0Var) {
         int[] iArr;
         int i10;
-        b bVar = e0Var instanceof b ? (b) e0Var : new b(e0Var);
+        b bVar = f0Var instanceof b ? (b) f0Var : new b(f0Var);
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = this.a;
         int size = arrayList2.size() - 1;
@@ -122,7 +123,7 @@ public final class k {
                                 if (i21 == 4) {
                                     int i23 = d.b - 1;
                                     oVar.getClass();
-                                    bVar.n1(i23, 1);
+                                    bVar.j1(i23, 1);
                                 }
                             } else {
                                 if (i21 != 16) {
@@ -136,7 +137,8 @@ public final class k {
                         } else {
                             iArr = iArr2;
                             i10 = i17;
-                            bVar.O0(i18, 1);
+                            boolean z11 = true;
+                            bVar.K0(i18, 1);
                             int size2 = arrayList.size();
                             int i24 = 0;
                             while (i24 < size2) {
@@ -144,6 +146,7 @@ public final class k {
                                 i24++;
                                 l lVar = (l) obj;
                                 lVar.b--;
+                                z11 = true;
                             }
                         }
                         i17 = i10 - 1;
@@ -151,7 +154,7 @@ public final class k {
                         iArr2 = iArr;
                     }
                 } else {
-                    bVar.O0(i14, i16);
+                    bVar.K0(i14, i16);
                 }
             }
             int i25 = size;
@@ -175,28 +178,30 @@ public final class k {
                             bVar.D(d(i29 >> 5, arrayList, true).b, i14);
                             if (i30 == 4) {
                                 oVar.getClass();
-                                bVar.n1(i14, 1);
+                                bVar.j1(i14, 1);
                             }
                         } else {
-                            bVar.m0(i14, 1);
+                            boolean z12 = true;
+                            bVar.f0(i14, 1);
                             int size3 = arrayList.size();
                             int i31 = 0;
                             while (i31 < size3) {
                                 Object obj2 = arrayList.get(i31);
                                 i31++;
                                 ((l) obj2).b++;
+                                z12 = true;
                             }
                         }
                     }
                 } else {
-                    bVar.m0(i14, i26);
+                    bVar.f0(i14, i26);
                 }
             }
             for (int i32 = i13 - 1; i32 >= 0; i32--) {
                 int i33 = nVar.a + i32;
                 if ((iArr3[i33] & 31) == 2) {
                     oVar.getClass();
-                    bVar.n1(i33, 1);
+                    bVar.j1(i33, 1);
                 }
             }
             i11 = nVar.a;
@@ -207,8 +212,8 @@ public final class k {
         bVar.a();
     }
 
-    public final void b(h0 h0Var) {
-        a(new n2.c(h0Var, 17));
+    public final void b(i0 i0Var) {
+        a(new f3(i0Var, 18));
     }
 
     public final void c(int i10, int i11, int i12, boolean z10) {

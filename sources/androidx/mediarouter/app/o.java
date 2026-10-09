@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class o implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ Map a;
@@ -96,7 +96,7 @@ public final class o implements ViewTreeObserver.OnGlobalLayoutListener {
                 p0Var2.g = i12;
                 p0Var2.e = uVar.x0;
                 p0Var2.d = uVar.A0;
-                p0Var2.l = new of.b(5, uVar, vVar4);
+                p0Var2.l = new pf.b(5, uVar, vVar4);
                 uVar.Z.add(vVar4);
                 p0Var = p0Var2;
             }

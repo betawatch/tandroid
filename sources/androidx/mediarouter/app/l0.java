@@ -12,12 +12,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import ii.n4;
 import org.telegram.messenger.beta.R;
-import v7.r8;
-import v7.v7;
+import v7.s7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l0 extends g0 {
     public final ImageView A;
@@ -49,13 +47,13 @@ public final class l0 extends g0 {
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
         Context context = o0Var.y;
-        Drawable d = r8.d(v7.b(context, R.drawable.mr_cast_checkbox));
-        if (v7.e0.h(context)) {
-            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
+        Drawable b10 = s7.b(context, R.drawable.mr_cast_checkbox);
+        if (v7.a0.h(context)) {
+            b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
-        checkBox.setButtonDrawable(d);
-        v7.e0.i(context, progressBar);
-        this.F = v7.e0.c(context);
+        checkBox.setButtonDrawable(b10);
+        v7.a0.i(context, progressBar);
+        this.F = v7.a0.c(context);
         Resources resources = context.getResources();
         DisplayMetrics displayMetrics = resources.getDisplayMetrics();
         TypedValue typedValue = new TypedValue();
@@ -67,7 +65,7 @@ public final class l0 extends g0 {
         if (vVar.g()) {
             return true;
         }
-        n4 b10 = this.I.w.r.b(vVar);
+        l2.f b10 = this.I.w.r.b(vVar);
         if (b10 == null) {
             return false;
         }

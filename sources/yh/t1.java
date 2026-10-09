@@ -1,44 +1,29 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.yn;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y3 b;
-    public final /* synthetic */ yn c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ s3 b;
+    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
 
-    public /* synthetic */ t1(y3 y3Var, yn ynVar, long j3, int i10) {
+    public /* synthetic */ t1(s3 s3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
         this.a = i10;
-        this.b = y3Var;
-        this.c = ynVar;
-        this.d = j3;
+        this.b = s3Var;
+        this.c = tL_payments_paymentResult;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        long j3 = this.d;
-        yn ynVar = this.c;
-        y3 y3Var = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                rc M = yc.a0(ynVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, y3Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
-                M.t = true;
-                M.j();
+                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
                 break;
             default:
-                rc M2 = yc.a0(ynVar).M(LocaleController.getString(R.string.Gift2TransferredTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2TransferredText, y3Var.C1(), DialogObject.getShortName(j3))), R.raw.forward);
-                M2.t = true;
-                M2.j();
+                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
                 break;
         }
     }

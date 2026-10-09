@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 1};
@@ -33,8 +33,8 @@ public abstract class e {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0168  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x0236  */
     /* JADX WARN: Removed duplicated region for block: B:28:0x023c  */
     /*
@@ -57,6 +57,7 @@ public abstract class e {
         char c12;
         Integer num2;
         char c13;
+        char c14;
         Integer num3 = 1;
         String str = sVar.k;
         String str2 = sVar.k;
@@ -222,48 +223,48 @@ public abstract class e {
                                             i13 = 4;
                                             break;
                                         case 3:
-                                            i12 = -1;
                                             i13 = 8;
+                                            i12 = -1;
                                             break;
                                         case 4:
-                                            i12 = -1;
                                             i13 = 16;
+                                            i12 = -1;
                                             break;
                                         case 5:
-                                            i12 = -1;
                                             i13 = 32;
+                                            i12 = -1;
                                             break;
                                         case 6:
-                                            i12 = -1;
                                             i13 = 64;
+                                            i12 = -1;
                                             break;
                                         case 7:
-                                            i12 = -1;
                                             i13 = 128;
+                                            i12 = -1;
                                             break;
                                         case 8:
-                                            i12 = -1;
                                             i13 = 256;
+                                            i12 = -1;
                                             break;
                                         case 9:
-                                            i12 = -1;
                                             i13 = 512;
+                                            i12 = -1;
                                             break;
                                         case 10:
-                                            i12 = -1;
                                             i13 = 1024;
+                                            i12 = -1;
                                             break;
                                         case 11:
-                                            i12 = -1;
                                             i13 = 2048;
+                                            i12 = -1;
                                             break;
                                         case 12:
-                                            i12 = -1;
                                             i13 = 4096;
+                                            i12 = -1;
                                             break;
                                         case 13:
-                                            i12 = -1;
                                             i13 = 8192;
+                                            i12 = -1;
                                             break;
                                         case 14:
                                             i13 = 16384;
@@ -352,24 +353,23 @@ public abstract class e {
                             } else if (parseInt == 77) {
                                 i14 = -1;
                                 i15 = 2;
-                            } else if (parseInt == 88) {
+                            } else if (parseInt != 88) {
+                                if (parseInt == 100) {
+                                    i15 = 8;
+                                } else if (parseInt == 110) {
+                                    i15 = 16;
+                                } else if (parseInt == 122) {
+                                    i15 = 32;
+                                } else if (parseInt != 244) {
+                                    i14 = -1;
+                                    i15 = -1;
+                                } else {
+                                    i15 = 64;
+                                }
                                 i14 = -1;
-                                i15 = 4;
-                            } else if (parseInt == 100) {
-                                i14 = -1;
-                                i15 = 8;
-                            } else if (parseInt == 110) {
-                                i14 = -1;
-                                i15 = 16;
-                            } else if (parseInt == 122) {
-                                i14 = -1;
-                                i15 = 32;
-                            } else if (parseInt != 244) {
-                                i14 = -1;
-                                i15 = -1;
                             } else {
                                 i14 = -1;
-                                i15 = 64;
+                                i15 = 4;
                             }
                             if (i15 != i14) {
                                 switch (parseInt2) {
@@ -890,14 +890,16 @@ public abstract class e {
                         break;
                     case 1569:
                         if (str5.equals("12")) {
-                            c13 = 11;
+                            c14 = 11;
+                            c13 = c14;
                             break;
                         }
                         c13 = 65535;
                         break;
                     case 1570:
                         if (str5.equals("13")) {
-                            c13 = '\f';
+                            c14 = '\f';
+                            c13 = c14;
                             break;
                         }
                         c13 = 65535;
@@ -961,12 +963,12 @@ public abstract class e {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x0169, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0167, code lost:
     
         if (r12.equals("L60") == false) goto L28;
      */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x026f  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x026d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0273  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

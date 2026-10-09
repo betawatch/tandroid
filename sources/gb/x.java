@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import v7.m8;
+import v7.k8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class x implements db.v {
-    public final of.b a;
+    public final n4.x a;
     public final fb.f b;
     public final j c;
     public final ArrayList d;
 
-    public x(of.b bVar, fb.f fVar, j jVar, ArrayList arrayList) {
-        this.a = bVar;
+    public x(n4.x xVar, fb.f fVar, j jVar, ArrayList arrayList) {
+        this.a = xVar;
         this.b = fVar;
         this.c = jVar;
         this.d = arrayList;
@@ -32,14 +32,21 @@ public final class x implements db.v {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x012f  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0134  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x010e  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0134  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x017d  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x018c A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0148  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0122  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00b1  */
     /* JADX WARN: Type inference failed for: r14v0 */
     /* JADX WARN: Type inference failed for: r14v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r14v5 */
@@ -49,11 +56,14 @@ public final class x implements db.v {
     public final v b(db.g gVar, kb.a aVar, Class cls, boolean z10) {
         boolean z11;
         Method method;
+        eb.b bVar;
+        boolean z12;
         List list;
         List singletonList;
         String str;
         eb.a aVar2;
         db.g gVar2;
+        boolean z13;
         Field field;
         List<String> list2;
         db.u uVar;
@@ -81,102 +91,136 @@ public final class x implements db.v {
                 if (c10 || c11) {
                     if (!z10) {
                         z11 = c11;
-                        method = null;
                     } else if (Modifier.isStatic(field3.getModifiers())) {
-                        method = null;
-                        z11 = false;
+                        z11 = r14;
                     } else {
                         Method a2 = ib.c.a.a(cls2, field3);
                         ib.c.f(a2);
                         if (a2.getAnnotation(eb.b.class) != null && field3.getAnnotation(eb.b.class) == null) {
-                            throw new db.j(a4.a.q("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
+                            throw new db.j(a1.g.q("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
                         }
                         z11 = c11;
                         method = a2;
-                    }
-                    if (method == null) {
-                        ib.c.f(field3);
-                    }
-                    Type j3 = fb.d.j(aVar3.b, cls2, field3.getGenericType(), new HashMap());
-                    eb.b bVar = (eb.b) field3.getAnnotation(eb.b.class);
-                    if (bVar == null) {
-                        singletonList = Collections.singletonList(field3.getName());
-                    } else {
-                        String value = bVar.value();
-                        String[] alternate = bVar.alternate();
-                        if (alternate.length == 0) {
-                            singletonList = Collections.singletonList(value);
+                        if (method == null) {
+                            ib.c.f(field3);
+                        }
+                        Type j3 = fb.d.j(aVar3.b, cls2, field3.getGenericType(), new HashMap());
+                        bVar = (eb.b) field3.getAnnotation(eb.b.class);
+                        if (bVar != null) {
+                            singletonList = Collections.singletonList(field3.getName());
                         } else {
-                            ArrayList arrayList = new ArrayList(alternate.length + 1);
-                            arrayList.add(value);
-                            Collections.addAll(arrayList, alternate);
-                            list = arrayList;
-                            str = (String) list.get(r14);
-                            kb.a aVar4 = new kb.a(j3);
-                            Class cls3 = aVar4.a;
-                            boolean z12 = cls3 == null && cls3.isPrimitive();
-                            int modifiers = field3.getModifiers();
-                            boolean z13 = !Modifier.isStatic(modifiers) && Modifier.isFinal(modifiers);
-                            aVar2 = (eb.a) field3.getAnnotation(eb.a.class);
-                            if (aVar2 == null) {
-                                field = field3;
-                                list2 = list;
-                                gVar2 = gVar;
-                                uVar = this.c.a(this.a, gVar2, aVar4, aVar2, false);
+                            String value = bVar.value();
+                            String[] alternate = bVar.alternate();
+                            if (alternate.length == 0) {
+                                singletonList = Collections.singletonList(value);
                             } else {
-                                gVar2 = gVar;
-                                field = field3;
-                                list2 = list;
-                                uVar = null;
-                            }
-                            boolean z14 = uVar == null;
-                            if (uVar == null) {
-                                uVar = gVar2.b(aVar4);
-                            }
-                            s sVar2 = new s(str, field, method, c10 ? uVar : z14 ? uVar : new o(gVar2, uVar, aVar4.b), uVar, z12, z13);
-                            field2 = field;
-                            if (z11) {
-                                for (String str2 : list2) {
-                                    s sVar3 = (s) linkedHashMap.put(str2, sVar2);
-                                    if (sVar3 != null) {
-                                        a(cls, str2, sVar3.b, field2);
-                                        throw null;
+                                z12 = true;
+                                ArrayList arrayList = new ArrayList(alternate.length + 1);
+                                arrayList.add(value);
+                                Collections.addAll(arrayList, alternate);
+                                list = arrayList;
+                                str = (String) list.get(r14);
+                                kb.a aVar4 = new kb.a(j3);
+                                Class cls3 = aVar4.a;
+                                boolean z14 = (cls3 == null && cls3.isPrimitive()) ? z12 : r14;
+                                int modifiers = field3.getModifiers();
+                                boolean z15 = (Modifier.isStatic(modifiers) || !Modifier.isFinal(modifiers)) ? r14 : z12;
+                                aVar2 = (eb.a) field3.getAnnotation(eb.a.class);
+                                if (aVar2 != null) {
+                                    field = field3;
+                                    z13 = z12;
+                                    list2 = list;
+                                    gVar2 = gVar;
+                                    uVar = this.c.a(this.a, gVar2, aVar4, aVar2, false);
+                                } else {
+                                    gVar2 = gVar;
+                                    z13 = z12;
+                                    field = field3;
+                                    list2 = list;
+                                    uVar = null;
+                                }
+                                boolean z16 = uVar != null ? z13 : r14;
+                                if (uVar == null) {
+                                    uVar = gVar2.b(aVar4);
+                                }
+                                s sVar2 = new s(str, field, method, c10 ? z16 ? uVar : new o(gVar2, uVar, aVar4.b) : uVar, uVar, z14, z15);
+                                field2 = field;
+                                if (z11) {
+                                    for (String str2 : list2) {
+                                        s sVar3 = (s) linkedHashMap.put(str2, sVar2);
+                                        if (sVar3 != null) {
+                                            a(cls, str2, sVar3.b, field2);
+                                            throw null;
+                                        }
                                     }
                                 }
-                            }
-                            if (c10 && (sVar = (s) linkedHashMap2.put(str, sVar2)) != null) {
-                                a(cls, str, sVar.b, field2);
-                                throw null;
+                                if (!c10 && (sVar = (s) linkedHashMap2.put(str, sVar2)) != null) {
+                                    a(cls, str, sVar.b, field2);
+                                    throw null;
+                                }
                             }
                         }
+                        z12 = true;
+                        list = singletonList;
+                        str = (String) list.get(r14);
+                        kb.a aVar42 = new kb.a(j3);
+                        Class cls32 = aVar42.a;
+                        if (cls32 == null) {
+                        }
+                        int modifiers2 = field3.getModifiers();
+                        if (Modifier.isStatic(modifiers2)) {
+                        }
+                        aVar2 = (eb.a) field3.getAnnotation(eb.a.class);
+                        if (aVar2 != null) {
+                        }
+                        if (uVar != null) {
+                        }
+                        if (uVar == null) {
+                        }
+                        if (c10) {
+                        }
+                        s sVar22 = new s(str, field, method, c10 ? z16 ? uVar : new o(gVar2, uVar, aVar42.b) : uVar, uVar, z14, z15);
+                        field2 = field;
+                        if (z11) {
+                        }
+                        if (!c10) {
+                            a(cls, str, sVar.b, field2);
+                            throw null;
+                        }
+                        continue;
                     }
+                    method = null;
+                    if (method == null) {
+                    }
+                    Type j32 = fb.d.j(aVar3.b, cls2, field3.getGenericType(), new HashMap());
+                    bVar = (eb.b) field3.getAnnotation(eb.b.class);
+                    if (bVar != null) {
+                    }
+                    z12 = true;
                     list = singletonList;
                     str = (String) list.get(r14);
-                    kb.a aVar42 = new kb.a(j3);
-                    Class cls32 = aVar42.a;
-                    if (cls32 == null) {
+                    kb.a aVar422 = new kb.a(j32);
+                    Class cls322 = aVar422.a;
+                    if (cls322 == null) {
                     }
-                    int modifiers2 = field3.getModifiers();
-                    if (Modifier.isStatic(modifiers2)) {
+                    int modifiers22 = field3.getModifiers();
+                    if (Modifier.isStatic(modifiers22)) {
                     }
                     aVar2 = (eb.a) field3.getAnnotation(eb.a.class);
-                    if (aVar2 == null) {
+                    if (aVar2 != null) {
                     }
-                    if (uVar == null) {
+                    if (uVar != null) {
                     }
                     if (uVar == null) {
                     }
                     if (c10) {
                     }
-                    s sVar22 = new s(str, field, method, c10 ? uVar : z14 ? uVar : new o(gVar2, uVar, aVar42.b), uVar, z12, z13);
+                    s sVar222 = new s(str, field, method, c10 ? z16 ? uVar : new o(gVar2, uVar, aVar422.b) : uVar, uVar, z14, z15);
                     field2 = field;
                     if (z11) {
                     }
-                    if (c10) {
-                        a(cls, str, sVar.b, field2);
-                        throw null;
+                    if (!c10) {
                     }
-                    continue;
                 }
                 i10++;
                 r14 = 0;
@@ -214,11 +258,11 @@ public final class x implements db.v {
         if (!Object.class.isAssignableFrom(cls)) {
             return null;
         }
-        m8 m8Var = ib.c.a;
+        k8 k8Var = ib.c.a;
         if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.z(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.S(aVar), b(gVar, aVar, cls, false));
     }
 }

@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.y5, e3 {
+public final class a2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.z5, e3 {
     public final t70 a;
     public final FrameLayout b;
     public final ImageView c;
@@ -24,15 +24,15 @@ public final class a2 extends HorizontalScrollView implements org.telegram.ui.Ac
         this.a = t70Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
-        addView(frameLayout, w7.z5.c(-2.0f, -2));
+        addView(frameLayout, w7.x5.d(-2.0f, -2));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, w7.z5.c(-2.0f, -2));
+        frameLayout.addView(imageView, w7.x5.d(-2.0f, -2));
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.ActionBar.z5
     public final void e() {
         this.c.setColorFilter(new PorterDuffColorFilter(this.a.b(), PorterDuff.Mode.SRC_IN));
     }

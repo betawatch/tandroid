@@ -2,9 +2,8 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class k40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,31 +19,34 @@ public final class k40 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 m40 m40Var = this.b;
-                m40Var.f = null;
-                if (!m40Var.H) {
-                    aq aqVar = new aq(this, 21);
-                    m40Var.h = aqVar;
-                    AndroidUtilities.runOnUIThread(aqVar, m40Var.n == 0 ? 10000L : 2000L);
-                    break;
-                }
-                break;
-            case 1:
-                m40 m40Var2 = this.b;
-                m40Var2.f = null;
-                if (!m40Var2.H) {
-                    aq aqVar2 = new aq(this, 22);
-                    m40Var2.h = aqVar2;
-                    AndroidUtilities.runOnUIThread(aqVar2, m40Var2.E);
+                if (m40Var.b0 == animator) {
+                    m40Var.b0 = null;
+                    m40Var.b();
                     break;
                 }
                 break;
             default:
-                m40 m40Var3 = this.b;
-                m40Var3.setVisibility(4);
-                m40Var3.getClass();
-                m40Var3.e = null;
-                m40Var3.d = null;
-                m40Var3.f = null;
+                m40 m40Var2 = this.b;
+                if (m40Var2.a0 == animator) {
+                    m40Var2.a0 = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                l40 l40Var = this.b.W;
+                if (l40Var != null) {
+                    ((org.telegram.ui.vs0) l40Var).a.e0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

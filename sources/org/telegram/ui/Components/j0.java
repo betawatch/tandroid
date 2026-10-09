@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -23,7 +22,7 @@ public final /* synthetic */ class j0 implements org.telegram.ui.ActionBar.a2 {
     }
 
     @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 Context context = this.b;
@@ -46,20 +45,18 @@ public final /* synthetic */ class j0 implements org.telegram.ui.ActionBar.a2 {
                     return;
                 }
             case 2:
-                nf.f.s(this.b, BuildVars.PLAYSTORE_APP_URL);
+                of.f.s(this.b, BuildVars.PLAYSTORE_APP_URL);
                 break;
             default:
                 Context context3 = this.b;
                 if (context3 != null) {
                     try {
-                        if (Build.VERSION.SDK_INT >= 23) {
-                            Intent intent2 = new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + context3.getPackageName()));
-                            Activity findActivity = AndroidUtilities.findActivity(context3);
-                            if (findActivity instanceof LaunchActivity) {
-                                findActivity.startActivityForResult(intent2, 105);
-                            } else {
-                                context3.startActivity(intent2);
-                            }
+                        Intent intent2 = new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + context3.getPackageName()));
+                        Activity findActivity = AndroidUtilities.findActivity(context3);
+                        if (findActivity instanceof LaunchActivity) {
+                            findActivity.startActivityForResult(intent2, 105);
+                        } else {
+                            context3.startActivity(intent2);
                         }
                         break;
                     } catch (Exception e11) {

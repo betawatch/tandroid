@@ -1,60 +1,36 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ky0 extends s4.x {
-    public int e;
-    public final /* synthetic */ ry0 f;
+public final class ky0 extends mr0 {
+    public final /* synthetic */ xy0 b1;
 
-    public ky0(ry0 ry0Var) {
-        this.f = ry0Var;
-        this.d = 15;
-        this.e = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ky0(xy0 xy0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
+        super(context, null, str, false, str2, false, e6Var);
+        this.b1 = xy0Var;
     }
 
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        int i10 = c1Var.f;
-        if (i10 == 3 || i10 != c1Var2.f) {
-            return false;
+    @Override // org.telegram.ui.Components.mr0
+    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new zk(this, iVar, i10, 21), 100L);
         }
-        ry0 ry0Var = this.f;
-        if (ry0Var.S == null) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        ry0Var.S.documents.add(b11, ry0Var.S.documents.remove(b10));
-        ry0Var.d.p(b10, b11);
-        this.e = b11;
-        return true;
     }
 
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        ry0 ry0Var = this.f;
-        if (i10 != 0 || ry0Var.f == null || this.e <= 0) {
-            if (i10 == 2) {
-                ry0Var.f = ((org.telegram.ui.Cells.f8) c1Var.a).getSticker();
+    @Override // org.telegram.ui.Components.mr0, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        org.telegram.ui.ActionBar.n2 n2Var = this.b1.L;
+        if (n2Var instanceof org.telegram.ui.zn) {
+            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
+            if (((org.telegram.ui.zn) n2Var).Y.getVisibility() == 0) {
+                n2Var.getFragmentView().requestLayout();
             }
-        } else {
-            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
-            tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(ry0Var.f, "").document;
-            this.e = -1;
-            ry0Var.f = null;
         }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
-    }
-
-    @Override // s4.v
-    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
     }
 }

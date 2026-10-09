@@ -23,13 +23,13 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
-import org.telegram.ui.da1;
-import org.telegram.ui.jl0;
+import org.telegram.ui.Components.hs;
+import org.telegram.ui.hq0;
+import org.telegram.ui.la1;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -92,7 +92,7 @@ public abstract class g extends View implements i {
     public final Rect V;
     public float V0;
     public final Path W;
-    public final d6 W0;
+    public final e6 W0;
     public int X0;
     public int Y0;
     public final Rect Z0;
@@ -148,15 +148,14 @@ public abstract class g extends View implements i {
     public kg.j z0;
 
     static {
-        int i10 = Build.VERSION.SDK_INT;
-        A1 = i10 < 28;
-        B1 = i10 > 21;
+        A1 = Build.VERSION.SDK_INT < 28;
+        B1 = true;
         C1 = new u1.a();
     }
 
     /* JADX WARN: Type inference failed for: r1v10, types: [ig.b] */
     /* JADX WARN: Type inference failed for: r1v9, types: [ig.b] */
-    public g(Context context, d6 d6Var) {
+    public g(Context context, e6 e6Var) {
         super(context);
         this.b = new ArrayList(10);
         this.c = new ArrayList(25);
@@ -269,7 +268,7 @@ public abstract class g extends View implements i {
         arrayList.add(rect);
         this.b1 = 0L;
         this.i1 = false;
-        this.W0 = d6Var;
+        this.W0 = e6Var;
         t();
         this.A0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
@@ -404,9 +403,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                da1 da1Var = (da1) ((jl0) eVar).b;
-                da1Var.f();
-                da1Var.b.t0.d(false, false);
+                la1 la1Var = (la1) ((hq0) eVar).b;
+                la1Var.f();
+                la1Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -585,7 +584,7 @@ public abstract class g extends View implements i {
                 this.v = f11;
             } else {
                 float f13 = this.T0;
-                this.v = (tr.g.getInterpolation(f12) * (f11 - f13)) + f13;
+                this.v = (hs.g.getInterpolation(f12) * (f11 - f13)) + f13;
             }
             invalidate();
         }
@@ -600,7 +599,7 @@ public abstract class g extends View implements i {
                     this.w = f15;
                 } else {
                     float f17 = this.U0;
-                    this.w = (tr.g.getInterpolation(f16) * (f15 - f17)) + f17;
+                    this.w = (hs.g.getInterpolation(f16) * (f15 - f17)) + f17;
                 }
                 invalidate();
             }
@@ -609,22 +608,22 @@ public abstract class g extends View implements i {
 
     public final void G() {
         int i10 = this.x0 ? i6.Zi : i6.Yi;
-        d6 d6Var = this.W0;
-        int v02 = i6.v0(i10, d6Var);
-        this.N.setColor(v02);
-        this.O.setColor(i6.v0(this.x0 ? i6.Zi : i6.Yi, d6Var));
-        int v03 = i6.v0(i6.Yi, d6Var);
-        this.P.setColor(v03);
-        int v04 = i6.v0(i6.aj, d6Var);
+        e6 e6Var = this.W0;
+        int w02 = i6.w0(i10, e6Var);
+        this.N.setColor(w02);
+        this.O.setColor(i6.w0(this.x0 ? i6.Zi : i6.Yi, e6Var));
+        int w03 = i6.w0(i6.Yi, e6Var);
+        this.P.setColor(w03);
+        int w04 = i6.w0(i6.aj, e6Var);
         Paint paint = this.L;
-        paint.setColor(v04);
-        int v05 = i6.v0(i6.bj, d6Var);
+        paint.setColor(w04);
+        int w05 = i6.w0(i6.bj, e6Var);
         Paint paint2 = this.M;
-        paint2.setColor(v05);
-        this.Q.setColor(i6.v0(i6.dj, d6Var));
-        this.R.setColor(i6.v0(i6.cj, d6Var));
-        this.S.setColor(i6.v0(i6.d6, d6Var));
-        this.T.setColor(i6.v0(i6.ej, d6Var));
+        paint2.setColor(w05);
+        this.Q.setColor(i6.w0(i6.dj, e6Var));
+        this.R.setColor(i6.w0(i6.cj, e6Var));
+        this.S.setColor(i6.w0(i6.d6, e6Var));
+        this.T.setColor(i6.w0(i6.ej, e6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -747,8 +746,8 @@ public abstract class g extends View implements i {
             ArrayList arrayList = this.d;
             int size = arrayList.size();
             long j3 = Long.MAX_VALUE;
-            long j10 = 0;
             int i10 = 0;
+            long j10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
@@ -896,107 +895,114 @@ public abstract class g extends View implements i {
     }
 
     public void j(Canvas canvas) {
+        char c10;
         int i10;
+        int i11;
         if (this.h0 == null) {
             return;
         }
         ArrayList arrayList = this.c;
         this.m0 = arrayList.size();
-        int i11 = this.y0;
+        int i12 = this.y0;
         float f7 = 1.0f;
-        int i12 = 1;
-        float f10 = i11 == 2 ? 1.0f - this.z0.f : i11 == 1 ? this.z0.f : i11 == 3 ? this.z0.f : 1.0f;
-        char c10 = 0;
+        int i13 = 1;
+        float f10 = i12 == 2 ? 1.0f - this.z0.f : i12 == 1 ? this.z0.f : i12 == 3 ? this.z0.f : 1.0f;
+        char c11 = 0;
         this.n0 = 0;
         while (true) {
-            int i13 = this.n0;
-            if (i13 >= this.m0) {
+            int i14 = this.n0;
+            if (i14 >= this.m0) {
                 return;
             }
-            int i14 = ((kg.b) arrayList.get(i13)).d;
-            int i15 = ((kg.b) arrayList.get(this.n0)).a;
-            if (i15 == 0) {
-                i15 = 1;
+            int i15 = ((kg.b) arrayList.get(i14)).d;
+            int i16 = ((kg.b) arrayList.get(this.n0)).a;
+            if (i16 == 0) {
+                i16 = i13;
             }
-            int i16 = this.F - this.o0;
-            while (i16 % i15 != 0) {
-                i16--;
+            int i17 = this.F - this.o0;
+            while (i17 % i16 != 0) {
+                i17--;
             }
-            int i17 = this.G - this.o0;
+            int i18 = this.G - this.o0;
             while (true) {
-                if (i17 % i15 == 0 && i17 >= this.h0.a.length - i12) {
+                if (i18 % i16 == 0 && i18 >= this.h0.a.length - i13) {
                     break;
                 }
-                i17++;
-                i14 = i14;
-                c10 = 0;
+                i18++;
+                i13 = i13;
+                i15 = i15;
+                c11 = c11;
                 f7 = 1.0f;
-                i12 = 1;
             }
-            int i18 = this.o0;
-            int i19 = i16 + i18;
-            int i20 = i17 + i18;
+            int i19 = this.o0;
+            int i20 = i17 + i19;
+            int i21 = i18 + i19;
             float f11 = this.G0 * this.g0.k;
             float f12 = k1;
             float f13 = f11 - f12;
-            while (i19 < i20) {
-                if (i19 >= 0) {
+            while (i20 < i21) {
+                if (i20 >= 0) {
                     long[] jArr = this.h0.a;
-                    if (i19 < jArr.length - i12) {
-                        long j3 = jArr[i19];
-                        long j10 = jArr[c10];
-                        i10 = i14;
-                        float f14 = (((j3 - j10) / (jArr[jArr.length - i12] - j10)) * this.G0) - f13;
+                    if (i20 < jArr.length - i13) {
+                        long j3 = jArr[i20];
+                        long j10 = jArr[c11];
+                        long j11 = jArr[jArr.length - i13];
+                        i10 = i13;
+                        i11 = i15;
+                        float f14 = (((j3 - j10) / (j11 - j10)) * this.G0) - f13;
                         float f15 = f14 - t1;
                         if (f15 > 0.0f) {
                             float f16 = this.F0;
                             if (f15 <= f16 + f12) {
                                 float f17 = p1;
+                                c10 = c11;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i10 * org.telegram.messenger.q.x(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.x(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i10 * org.telegram.messenger.q.x(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.x(f15, f16, f12, f7) * this.h * f10));
                                 } else {
-                                    textPaint.setAlpha((int) (i10 * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * this.h * f10));
                                 }
                                 jg.b bVar = this.h0;
                                 String[] strArr = bVar.c;
                                 long[] jArr2 = bVar.a;
-                                canvas.drawText(strArr[(int) ((jArr2[i19] - jArr2[0]) / bVar.k)], f14, AndroidUtilities.dp(3.0f) + (getMeasuredHeight() - this.s) + o1, textPaint);
-                                i19 += i15;
-                                i14 = i10;
-                                c10 = 0;
+                                canvas.drawText(strArr[(int) ((jArr2[i20] - jArr2[c10]) / bVar.k)], f14, AndroidUtilities.dp(3.0f) + (getMeasuredHeight() - this.s) + o1, textPaint);
+                                i20 += i16;
+                                i13 = i10;
+                                i15 = i11;
+                                c11 = c10;
                                 f7 = 1.0f;
-                                i12 = 1;
                             }
                         }
-                        i19 += i15;
-                        i14 = i10;
-                        c10 = 0;
+                        c10 = c11;
+                        i20 += i16;
+                        i13 = i10;
+                        i15 = i11;
+                        c11 = c10;
                         f7 = 1.0f;
-                        i12 = 1;
                     }
                 }
-                i10 = i14;
-                i19 += i15;
-                i14 = i10;
-                c10 = 0;
+                c10 = c11;
+                i10 = i13;
+                i11 = i15;
+                i20 += i16;
+                i13 = i10;
+                i15 = i11;
+                c11 = c10;
                 f7 = 1.0f;
-                i12 = 1;
             }
-            this.n0++;
-            c10 = 0;
+            this.n0 += i13;
+            c11 = c11;
             f7 = 1.0f;
-            i12 = 1;
         }
     }
 
     public abstract void k(Canvas canvas);
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0081 A[LOOP:0: B:10:0x007f->B:11:0x0081, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x007d A[LOOP:0: B:10:0x007b->B:11:0x007d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1044,38 +1050,40 @@ public abstract class g extends View implements i {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00ee  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x01c1  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x021a  */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0098, code lost:
+    
+        r2 = r16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x01bb  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0215  */
     /* JADX WARN: Removed duplicated region for block: B:70:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:71:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01b5  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0071  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void m(Canvas canvas) {
-        float f7;
         int i10;
+        float f7;
         int i11;
-        jg.b bVar;
         int i12;
+        jg.b bVar;
         int i13;
         int i14;
+        int i15;
         char c10;
         Paint paint;
         Canvas canvas2;
         float f10;
-        int i15;
+        int i16;
         h hVar;
         h hVar2;
-        int i16;
+        int i17;
         float f11;
-        boolean z10;
-        boolean z11;
+        int i18;
         Paint paint2;
         ValueAnimator valueAnimator;
         if (this.h0 == null) {
@@ -1085,77 +1093,88 @@ public abstract class g extends View implements i {
         j jVar = this.g0;
         jVar.b = f12;
         int measuredHeight = getMeasuredHeight();
-        int i17 = q1;
-        int i18 = measuredHeight - i17;
+        int i19 = q1;
+        int i20 = measuredHeight - i19;
         int measuredHeight2 = getMeasuredHeight();
-        int i19 = this.B0;
-        int i20 = (measuredHeight2 - i19) - i17;
+        int i21 = this.B0;
+        int i22 = (measuredHeight2 - i21) - i19;
         float f13 = this.C0;
         float f14 = jVar.k * f13;
         float f15 = k1;
-        int i21 = (int) (f14 + f15);
-        int i22 = (int) ((jVar.l * f13) + f15);
-        int i23 = this.y0;
-        if (i23 == 1) {
+        int i23 = (int) (f14 + f15);
+        int i24 = (int) ((jVar.l * f13) + f15);
+        int i25 = this.y0;
+        if (i25 == 1) {
             kg.j jVar2 = this.z0;
-            int i24 = (int) ((jVar2.a * f13) + f15);
-            int i25 = (int) ((f13 * jVar2.b) + f15);
+            int i26 = (int) ((jVar2.a * f13) + f15);
+            i10 = 1;
+            int i27 = (int) ((f13 * jVar2.b) + f15);
             float f16 = 1.0f - jVar2.f;
-            i21 = (int) (((i24 - i21) * f16) + i21);
-            i22 = (int) ((f16 * (i25 - i22)) + i22);
-        } else if (i23 == 3) {
-            f7 = this.z0.f;
-            i10 = i21;
-            i11 = i22;
-            bVar = this.h0;
-            int i26 = u1;
-            Paint paint3 = this.R;
-            Paint paint4 = this.K;
-            if (bVar == null) {
-                if (i23 == 0) {
-                    int i27 = 0;
-                    while (true) {
-                        ArrayList arrayList = this.d;
+            i23 = (int) (((i26 - i23) * f16) + i23);
+            i24 = (int) ((f16 * (i27 - i24)) + i24);
+        } else {
+            i10 = 1;
+            if (i25 == 3) {
+                f7 = this.z0.f;
+                i11 = i23;
+                i12 = i24;
+                bVar = this.h0;
+                int i28 = u1;
+                Paint paint3 = this.R;
+                Paint paint4 = this.K;
+                if (bVar == null) {
+                    if (i25 == 0) {
+                        int i29 = 0;
+                        while (true) {
+                            ArrayList arrayList = this.d;
+                            f11 = f7;
+                            if (i29 >= arrayList.size()) {
+                                break;
+                            }
+                            kg.f fVar = (kg.f) arrayList.get(i29);
+                            ValueAnimator valueAnimator2 = fVar.h;
+                            if ((valueAnimator2 == null || !valueAnimator2.isRunning()) && ((valueAnimator = fVar.i) == null || !valueAnimator.isRunning())) {
+                                i29++;
+                                f7 = f11;
+                            }
+                        }
+                    } else {
                         f11 = f7;
-                        if (i27 >= arrayList.size()) {
-                            break;
-                        }
-                        kg.f fVar = (kg.f) arrayList.get(i27);
-                        ValueAnimator valueAnimator2 = fVar.h;
-                        if ((valueAnimator2 == null || !valueAnimator2.isRunning()) && ((valueAnimator = fVar.i) == null || !valueAnimator.isRunning())) {
-                            i27++;
-                            f7 = f11;
-                        }
                     }
-                    z10 = true;
-                    if (z10) {
-                        z11 = z10;
+                    int i30 = 0;
+                    if (i30 != 0) {
+                        canvas.save();
+                        i18 = i30;
+                        canvas.clipRect(f15, (getMeasuredHeight() - i19) - i21, getMeasuredWidth() - f15, getMeasuredHeight() - i19);
+                        canvas.translate(f15, (getMeasuredHeight() - i19) - i21);
+                        n(canvas);
+                        canvas.restore();
+                    } else {
+                        i18 = i30;
                         if (this.H) {
                             this.p0.eraseColor(0);
                             n(this.q0);
                             this.H = false;
-                            if (z11) {
-                                paint2 = paint3;
-                                i12 = i17;
-                            } else {
-                                int i28 = this.y0;
-                                if (i28 == 2) {
+                            if (i18 != 0) {
+                                int i31 = this.y0;
+                                if (i31 == 2) {
                                     float f17 = this.C0;
                                     kg.j jVar3 = this.z0;
                                     float f18 = (jVar3.c * f17) + f15;
                                     paint4.setAlpha((int) ((1.0f - jVar3.f) * 255.0f));
                                     canvas.save();
                                     paint2 = paint3;
-                                    i12 = i17;
-                                    canvas.clipRect(f15, i20, getMeasuredWidth() - f15, i18);
-                                    canvas.scale((this.z0.f * 2.0f) + 1.0f, 1.0f, f18, ((i18 - i20) + i20) >> 1);
-                                    canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i12) - i19, paint4);
+                                    i13 = i19;
+                                    canvas.clipRect(f15, i22, getMeasuredWidth() - f15, i20);
+                                    canvas.scale((this.z0.f * 2.0f) + 1.0f, 1.0f, f18, ((i20 - i22) + i22) >> 1);
+                                    canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i13) - i21, paint4);
                                     canvas.restore();
                                 } else {
                                     paint2 = paint3;
-                                    i12 = i17;
-                                    if (i28 == 1) {
-                                        float f19 = ((i18 - i20) + i20) >> 1;
+                                    i13 = i19;
+                                    int i32 = i10;
+                                    if (i31 == i32) {
+                                        float f19 = ((i20 - i22) + i22) >> i32;
                                         float f20 = this.C0;
                                         kg.j jVar4 = this.z0;
                                         float f21 = jVar4.c;
@@ -1166,156 +1185,142 @@ public abstract class g extends View implements i {
                                         }
                                         float f24 = f22 * jVar4.f;
                                         canvas.save();
-                                        i13 = i26;
-                                        canvas.clipRect(f23 - f24, i20, f24 + f23, i18);
+                                        i14 = i28;
+                                        canvas.clipRect(f23 - f24, i22, f24 + f23, i20);
                                         paint4.setAlpha((int) (this.z0.f * 255.0f));
                                         canvas.scale(this.z0.f, 1.0f, f23, f19);
-                                        canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i12) - i19, paint4);
+                                        canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i13) - i21, paint4);
                                         canvas.restore();
                                     } else {
-                                        i13 = i26;
+                                        i14 = i28;
                                         paint4.setAlpha((int) (f11 * 255.0f));
-                                        canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i12) - i19, paint4);
+                                        canvas.drawBitmap(this.p0, f15, (getMeasuredHeight() - i13) - i21, paint4);
                                     }
-                                    if (this.y0 != 2) {
+                                    if (this.y0 == 2) {
                                         return;
                                     }
-                                    float f25 = i20;
-                                    float f26 = i18;
+                                    float f25 = i22;
+                                    float f26 = i20;
                                     float f27 = k1;
                                     paint = paint4;
+                                    i15 = 2;
                                     Paint paint5 = paint2;
-                                    i14 = 2;
                                     c10 = 0;
-                                    canvas.drawRect(f27, f25, i10 + i13, f26, paint5);
+                                    canvas.drawRect(f27, f25, i11 + i14, f26, paint5);
                                     canvas2 = canvas;
-                                    canvas2.drawRect(i11 - i13, f25, getMeasuredWidth() - f27, f26, paint5);
+                                    canvas2.drawRect(i12 - i14, f25, getMeasuredWidth() - f27, f26, paint5);
                                     f10 = f15;
                                 }
+                            } else {
+                                paint2 = paint3;
+                                i13 = i19;
                             }
-                            i13 = i26;
-                            if (this.y0 != 2) {
+                            i14 = i28;
+                            if (this.y0 == 2) {
                             }
                         }
-                    } else {
-                        canvas.save();
-                        z11 = z10;
-                        canvas.clipRect(f15, (getMeasuredHeight() - i17) - i19, getMeasuredWidth() - f15, getMeasuredHeight() - i17);
-                        canvas.translate(f15, (getMeasuredHeight() - i17) - i19);
-                        n(canvas);
-                        canvas.restore();
                     }
-                    if (z11) {
+                    if (i18 != 0) {
                     }
-                    i13 = i26;
-                    if (this.y0 != 2) {
+                    i14 = i28;
+                    if (this.y0 == 2) {
                     }
                 } else {
-                    f11 = f7;
+                    i13 = i19;
+                    i14 = i28;
+                    i15 = 2;
+                    c10 = 0;
+                    paint = paint4;
+                    canvas2 = canvas;
+                    f10 = f15;
+                    canvas2.drawRect(f10, i22, getMeasuredWidth() - f15, i20, paint3);
                 }
-                z10 = false;
-                if (z10) {
-                }
-                if (z11) {
-                }
-                i13 = i26;
-                if (this.y0 != 2) {
-                }
-            } else {
-                i12 = i17;
-                i13 = i26;
-                i14 = 2;
-                c10 = 0;
-                paint = paint4;
-                canvas2 = canvas;
-                f10 = f15;
-                canvas2.drawRect(f10, i20, getMeasuredWidth() - f15, i18, paint3);
-            }
-            canvas2.drawBitmap(this.a.a(i19, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i12) - i19, paint);
-            if (this.h0 == null) {
-                Rect rect = this.V;
-                rect.set(i10, i20, i11, i18);
-                jVar.j.set(rect);
-                int i29 = rect.left;
-                int i30 = rect.top;
-                float f28 = rect.bottom + z1;
-                float f29 = v1;
-                Path path = this.W;
-                b(path, i29, i30 - r12, i29 + i13, f28, f29, f29, true, false, false, true);
-                Paint paint6 = this.Q;
-                canvas2.drawPath(path, paint6);
-                b(path, r3 - i13, rect.top - r12, rect.right, rect.bottom + r12, f29, f29, false, true, true, false);
-                canvas2.drawPath(path, paint6);
-                canvas2.drawRect(rect.left + i13, rect.bottom, rect.right - i13, r3 + r12, paint6);
-                canvas.drawRect(rect.left + i13, r1 - r12, rect.right - i13, rect.top, paint6);
-                int i31 = rect.left;
-                int i32 = w1;
-                float centerY = rect.centerY() - i32;
-                float f30 = rect.left + i32;
-                float centerY2 = rect.centerY() + i32;
-                Paint paint7 = this.U;
-                canvas.drawLine(i31 + i32, centerY, f30, centerY2, paint7);
-                canvas.drawLine(rect.right - i32, rect.centerY() - i32, rect.right - i32, rect.centerY() + i32, paint7);
-                h[] hVarArr = jVar.n;
-                h hVar3 = hVarArr[c10];
-                if (hVar3 == null || hVar3.a != 4) {
-                    i15 = 1;
-                    hVar = hVarArr[1];
-                    if (hVar == null || hVar.a != 4) {
-                        hVar = null;
-                    }
-                } else {
-                    hVar = hVar3;
-                    i15 = 1;
-                }
-                int i33 = rect.bottom;
-                int i34 = rect.top;
-                int i35 = (i33 - i34) >> i15;
-                int i36 = i34 + i35;
-                if (hVar == null) {
-                    if (hVar3 == null || hVar3.a != i15) {
-                        hVar2 = hVarArr[i15];
-                        if (hVar2 == null || hVar2.a != i15) {
-                            hVar2 = null;
+                canvas2.drawBitmap(this.a.a(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
+                if (this.h0 == null) {
+                    Rect rect = this.V;
+                    rect.set(i11, i22, i12, i20);
+                    jVar.j.set(rect);
+                    int i33 = rect.left;
+                    int i34 = rect.top;
+                    float f28 = rect.bottom + z1;
+                    float f29 = v1;
+                    Path path = this.W;
+                    b(path, i33, i34 - r12, i33 + i14, f28, f29, f29, true, false, false, true);
+                    Paint paint6 = this.Q;
+                    canvas2.drawPath(path, paint6);
+                    b(path, r3 - i14, rect.top - r12, rect.right, rect.bottom + r12, f29, f29, false, true, true, false);
+                    canvas2.drawPath(path, paint6);
+                    canvas2.drawRect(rect.left + i14, rect.bottom, rect.right - i14, r3 + r12, paint6);
+                    canvas.drawRect(rect.left + i14, r1 - r12, rect.right - i14, rect.top, paint6);
+                    int i35 = rect.left;
+                    int i36 = w1;
+                    float centerY = rect.centerY() - i36;
+                    float f30 = rect.left + i36;
+                    float centerY2 = rect.centerY() + i36;
+                    Paint paint7 = this.U;
+                    canvas.drawLine(i35 + i36, centerY, f30, centerY2, paint7);
+                    canvas.drawLine(rect.right - i36, rect.centerY() - i36, rect.right - i36, rect.centerY() + i36, paint7);
+                    h[] hVarArr = jVar.n;
+                    h hVar3 = hVarArr[c10];
+                    if (hVar3 == null || hVar3.a != 4) {
+                        i16 = 1;
+                        hVar = hVarArr[1];
+                        if (hVar == null || hVar.a != 4) {
+                            hVar = null;
                         }
                     } else {
-                        hVar2 = hVar3;
+                        hVar = hVar3;
+                        i16 = 1;
                     }
-                    if ((hVar3 == null || hVar3.a != i14) && ((hVar3 = hVarArr[i15]) == null || hVar3.a != i14)) {
-                        hVar3 = null;
+                    int i37 = rect.bottom;
+                    int i38 = rect.top;
+                    int i39 = (i37 - i38) >> i16;
+                    int i40 = i38 + i39;
+                    if (hVar == null) {
+                        if (hVar3 == null || hVar3.a != i16) {
+                            hVar2 = hVarArr[i16];
+                            if (hVar2 == null || hVar2.a != i16) {
+                                hVar2 = null;
+                            }
+                        } else {
+                            hVar2 = hVar3;
+                        }
+                        if ((hVar3 == null || hVar3.a != i15) && ((hVar3 = hVarArr[i16]) == null || hVar3.a != i15)) {
+                            hVar3 = null;
+                        }
+                        Paint paint8 = this.T;
+                        int i41 = y1;
+                        int i42 = x1;
+                        if (hVar2 != null) {
+                            i17 = i42;
+                            canvas.drawCircle(rect.left + i42, i40, (i39 * hVar2.f) - i41, paint8);
+                        } else {
+                            i17 = i42;
+                        }
+                        if (hVar3 != null) {
+                            canvas.drawCircle(rect.right - i17, i40, (i39 * hVar3.f) - i41, paint8);
+                        }
                     }
-                    Paint paint8 = this.T;
-                    int i37 = y1;
-                    int i38 = x1;
-                    if (hVar2 != null) {
-                        i16 = i38;
-                        canvas.drawCircle(rect.left + i38, i36, (i35 * hVar2.f) - i37, paint8);
-                    } else {
-                        i16 = i38;
-                    }
-                    if (hVar3 != null) {
-                        canvas.drawCircle(rect.right - i16, i36, (i35 * hVar3.f) - i37, paint8);
-                    }
+                    Rect rect2 = jVar.h;
+                    int i43 = r1;
+                    int i44 = i43 >> 1;
+                    rect2.set(i11 - i43, i22, i11 + i44, i20);
+                    jVar.i.set(i12 - i44, i22, i12 + i43, i20);
+                    return;
                 }
-                Rect rect2 = jVar.h;
-                int i39 = r1;
-                int i40 = i39 >> 1;
-                rect2.set(i10 - i39, i20, i10 + i40, i18);
-                jVar.i.set(i11 - i40, i20, i11 + i39, i18);
                 return;
             }
-            return;
         }
-        i10 = i21;
-        i11 = i22;
+        i11 = i23;
+        i12 = i24;
         f7 = 1.0f;
         bVar = this.h0;
-        int i262 = u1;
+        int i282 = u1;
         Paint paint32 = this.R;
         Paint paint42 = this.K;
         if (bVar == null) {
         }
-        canvas2.drawBitmap(this.a.a(i19, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i12) - i19, paint);
+        canvas2.drawBitmap(this.a.a(i21, (int) (getMeasuredWidth() - (f10 * 2.0f))), f10, (getMeasuredHeight() - i13) - i21, paint);
         if (this.h0 == null) {
         }
     }
@@ -1555,9 +1560,9 @@ public abstract class g extends View implements i {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0031  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

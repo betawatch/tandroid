@@ -8,10 +8,9 @@ import android.text.Spanned;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import n4.y;
-import w7.p6;
+import w7.n6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -144,8 +143,8 @@ public final class l {
     */
     public final CharSequence e(int i10, int i11, CharSequence charSequence) {
         o oVar;
-        x xVar;
         int codePointAt;
+        x xVar;
         int i12;
         int a2;
         u[] uVarArr;
@@ -172,8 +171,8 @@ public final class l {
             throw new IllegalArgumentException("end should be < than charSequence length");
         }
         if (charSequence.length() != 0 && i10 != i11) {
-            y yVar = (y) this.e.a;
-            yVar.getClass();
+            n4.x xVar3 = (n4.x) this.e.a;
+            xVar3.getClass();
             boolean z10 = charSequence instanceof t;
             if (z10) {
                 ((t) charSequence).a();
@@ -196,14 +195,14 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            r rVar = (r) ((com.google.firebase.messaging.s) yVar.b).d;
+                            r rVar = (r) ((com.google.firebase.messaging.s) xVar3.b).d;
                             oVar = new o();
                             oVar.a = 1;
                             oVar.d = rVar;
                             oVar.e = rVar;
-                            xVar = xVar2;
                             codePointAt = Character.codePointAt(charSequence, i10);
                             int i13 = 0;
+                            xVar = xVar2;
                             loop1: while (true) {
                                 i12 = i10;
                                 while (i10 < i11 && i13 < Integer.MAX_VALUE) {
@@ -220,7 +219,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!yVar.U(charSequence, i12, i10, ((r) oVar.f).b)) {
+                                        if (!xVar3.W(charSequence, i12, i10, ((r) oVar.f).b)) {
                                             if (xVar == null) {
                                                 xVar = new x((Spannable) new SpannableString(charSequence));
                                             }
@@ -230,7 +229,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !yVar.U(charSequence, i12, i10, ((r) oVar.e).b))) {
+                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !xVar3.W(charSequence, i12, i10, ((r) oVar.e).b))) {
                                 if (xVar == null) {
                                     xVar = new x(charSequence);
                                 }
@@ -258,14 +257,14 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                r rVar2 = (r) ((com.google.firebase.messaging.s) yVar.b).d;
+                r rVar2 = (r) ((com.google.firebase.messaging.s) xVar3.b).d;
                 oVar = new o();
                 oVar.a = 1;
                 oVar.d = rVar2;
                 oVar.e = rVar2;
-                xVar = xVar2;
                 codePointAt = Character.codePointAt(charSequence, i10);
                 int i132 = 0;
+                xVar = xVar2;
                 loop1: while (true) {
                     i12 = i10;
                     while (i10 < i11) {
@@ -287,7 +286,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        p6.a(iVar, "initCallback cannot be null");
+        n6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

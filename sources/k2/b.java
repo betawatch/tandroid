@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.os.Build;
 import android.provider.Settings;
@@ -12,9 +13,9 @@ import android.util.SparseArray;
 import b2.r0;
 import e9.a1;
 import java.util.List;
-import v7.y7;
+import v7.v7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b c = new b(e9.i0.z(a.d));
@@ -28,15 +29,15 @@ public final class b {
         e9.q.d(3, objArr);
         d = e9.i0.t(3, objArr);
         a5.a aVar = new a5.a(4, 5);
-        aVar.u(5, 6);
-        aVar.u(17, 6);
-        aVar.u(7, 6);
-        aVar.u(30, 10);
-        aVar.u(18, 6);
-        aVar.u(6, 8);
-        aVar.u(8, 8);
-        aVar.u(14, 8);
-        e = aVar.d();
+        aVar.w(5, 6);
+        aVar.w(17, 6);
+        aVar.w(7, 6);
+        aVar.w(30, 10);
+        aVar.w(18, 6);
+        aVar.w(6, 8);
+        aVar.w(8, 8);
+        aVar.w(14, 8);
+        e = aVar.f();
     }
 
     public b(a1 a1Var) {
@@ -62,32 +63,52 @@ public final class b {
         return u10.i();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x011d, code lost:
     
-        if (r3.equals("Xiaomi") == false) goto L44;
+        if (r0.equals("Xiaomi") == false) goto L53;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b b(Context context, Intent intent, b2.e eVar, e eVar2) {
+    public static b b(Context context, Intent intent, b2.e eVar, a4.l lVar) {
         AudioManager e7 = c2.d.e(context);
-        if (eVar2 == null) {
-            eVar2 = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
+        if (lVar == null) {
+            lVar = Build.VERSION.SDK_INT >= 33 ? g0.a.d(e7, eVar) : null;
         }
         int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 33 && (e2.d0.N(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
+        if (i10 >= 33 && (e2.d0.M(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
             return g0.a.c(e7, eVar);
         }
-        if (i10 >= 23 && e0.b.o(e7, eVar2)) {
-            return c;
-        }
+        AudioDeviceInfo[] devices = lVar == null ? e7.getDevices(2) : new AudioDeviceInfo[]{(AudioDeviceInfo) lVar.b};
         e9.l0 l0Var = new e9.l0(4);
-        l0Var.b(2);
-        if (i10 >= 29 && (e2.d0.N(context) || (i10 >= 23 && context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")))) {
+        Integer[] numArr = {8, 7};
+        e9.q.d(2, numArr);
+        l0Var.g(2);
+        System.arraycopy(numArr, 0, l0Var.c, l0Var.a, 2);
+        l0Var.a += 2;
+        if (i10 >= 31) {
+            Integer[] numArr2 = {26, 27};
+            e9.q.d(2, numArr2);
+            l0Var.g(2);
+            System.arraycopy(numArr2, 0, l0Var.c, l0Var.a, 2);
+            l0Var.a += 2;
+        }
+        if (i10 >= 33) {
+            l0Var.b(30);
+        }
+        e9.m0 i11 = l0Var.i();
+        for (AudioDeviceInfo audioDeviceInfo : devices) {
+            if (i11.contains(Integer.valueOf(audioDeviceInfo.getType()))) {
+                return c;
+            }
+        }
+        e9.l0 l0Var2 = new e9.l0(4);
+        l0Var2.b(2);
+        if (Build.VERSION.SDK_INT >= 29 && (e2.d0.M(context) || context.getPackageManager().hasSystemFeature("android.hardware.type.automotive"))) {
             a1 d10 = b2.c.d(eVar);
             d10.getClass();
-            l0Var.d(d10);
-            return new b(a(10, y7.f(l0Var.i())));
+            l0Var2.d(d10);
+            return new b(a(10, v7.f(l0Var2.i())));
         }
         ContentResolver contentResolver = context.getContentResolver();
         boolean z10 = Settings.Global.getInt(contentResolver, "use_external_surround_sound_flag", 0) == 1;
@@ -99,35 +120,35 @@ public final class b {
         if (Settings.Global.getInt(contentResolver, "external_surround_sound_enabled", 0) == 1) {
             a1 a1Var = d;
             a1Var.getClass();
-            l0Var.d(a1Var);
+            l0Var2.d(a1Var);
         }
         if (intent == null || z10 || intent.getIntExtra("android.media.extra.AUDIO_PLUG_STATE", 0) != 1) {
-            return new b(a(10, y7.f(l0Var.i())));
+            return new b(a(10, v7.f(l0Var2.i())));
         }
         int[] intArrayExtra = intent.getIntArrayExtra("android.media.extra.ENCODINGS");
         if (intArrayExtra != null) {
-            List a2 = y7.a(intArrayExtra);
+            List a2 = v7.a(intArrayExtra);
             a2.getClass();
-            l0Var.d(a2);
+            l0Var2.d(a2);
         }
-        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), y7.f(l0Var.i())));
+        return new b(a(intent.getIntExtra("android.media.extra.MAX_CHANNEL_COUNT", 10), v7.f(l0Var2.i())));
     }
 
-    public static b c(Context context, b2.e eVar, e eVar2) {
-        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, eVar2);
+    public static b c(Context context, b2.e eVar, a4.l lVar) {
+        return b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, lVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00cb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00ca, code lost:
     
         if (r9 != 5) goto L67;
      */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00e6 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00e5 A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00e7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Pair d(b2.e eVar, b2.s sVar) {
-        int s10;
+        int r10;
         String str = sVar.r;
         str.getClass();
         int c10 = r0.c(str, sVar.k);
@@ -169,9 +190,9 @@ public final class b {
             i12 = i11;
         } else if (!sVar.r.equals("audio/vnd.dts.uhd;profile=p2") || Build.VERSION.SDK_INT >= 33) {
             if (m0Var != null) {
-                int s11 = e2.d0.s(i12);
-                if (s11 != 0) {
-                    z10 = m0Var.contains(Integer.valueOf(s11));
+                int r11 = e2.d0.r(i12);
+                if (r11 != 0) {
+                    z10 = m0Var.contains(Integer.valueOf(r11));
                 }
             } else if (i12 <= i11) {
                 z10 = true;
@@ -193,18 +214,18 @@ public final class b {
             if (i15 <= 26 && "fugu".equals(Build.DEVICE) && i10 == 1) {
                 i10 = 2;
             }
-            s10 = e2.d0.s(i10);
-            if (s10 != 0) {
+            r10 = e2.d0.r(i10);
+            if (r10 != 0) {
                 return null;
             }
-            return Pair.create(Integer.valueOf(c10), Integer.valueOf(s10));
+            return Pair.create(Integer.valueOf(c10), Integer.valueOf(r10));
         }
         i10 = i12;
         if (i15 <= 26) {
             i10 = 2;
         }
-        s10 = e2.d0.s(i10);
-        if (s10 != 0) {
+        r10 = e2.d0.r(i10);
+        if (r10 != 0) {
         }
     }
 

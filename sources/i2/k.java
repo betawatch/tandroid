@@ -3,7 +3,7 @@ package i2;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class k {
     public final y2.d a;
@@ -25,12 +25,12 @@ public final class k {
         a(0, 0, "backBufferDurationMs", "0");
         this.a = dVar;
         long j3 = 50000;
-        this.b = e2.d0.Q(j3);
-        this.c = e2.d0.Q(j3);
-        this.d = e2.d0.Q(i10);
-        this.e = e2.d0.Q(i11);
+        this.b = e2.d0.P(j3);
+        this.c = e2.d0.P(j3);
+        this.d = e2.d0.P(i10);
+        this.e = e2.d0.P(i11);
         this.f = -1;
-        this.g = e2.d0.Q(0);
+        this.g = e2.d0.P(0);
         this.h = new HashMap();
         this.i = -1L;
     }
@@ -61,7 +61,7 @@ public final class k {
         long j10 = this.b;
         float f7 = q0Var.c;
         if (f7 > 1.0f) {
-            j10 = Math.min(e2.d0.z(j10, f7), j3);
+            j10 = Math.min(e2.d0.y(j10, f7), j3);
         }
         long max = Math.max(j10, 500000L);
         long j11 = q0Var.b;

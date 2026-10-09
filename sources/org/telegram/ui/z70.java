@@ -3,14 +3,14 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class z70 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
-    public final /* synthetic */ c80 b;
+    public final /* synthetic */ d80 b;
 
-    public z70(c80 c80Var, org.telegram.ui.ActionBar.b2 b2Var) {
-        this.b = c80Var;
+    public z70(d80 d80Var, org.telegram.ui.ActionBar.b2 b2Var) {
+        this.b = d80Var;
         this.a = b2Var;
     }
 
@@ -19,7 +19,7 @@ public final class z70 implements NotificationCenter.NotificationCenterDelegate 
         if (i10 == NotificationCenter.reloadInterface) {
             this.a.dismiss();
             NotificationCenter.getGlobalInstance().removeObserver(this, i10);
-            AndroidUtilities.runOnUIThread(new g10(this, 12), 100L);
+            AndroidUtilities.runOnUIThread(new uz(this, 13), 100L);
         }
     }
 }

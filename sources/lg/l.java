@@ -4,7 +4,7 @@ import android.view.ViewTreeObserver;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class l implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ MediaController.CropState a;
@@ -33,7 +33,7 @@ public final class l implements ViewTreeObserver.OnPreDrawListener {
                 cropAreaView.setLockedAspectRatio(f11);
                 o oVar = pVar.M;
                 if (oVar != null) {
-                    oVar.S(true);
+                    oVar.D(true);
                 }
             }
             pVar.setFreeform(cropState.freeform);
@@ -74,7 +74,7 @@ public final class l implements ViewTreeObserver.OnPreDrawListener {
             pVar.r(false);
             o oVar2 = pVar.M;
             if (oVar2 != null) {
-                oVar2.n0(false);
+                oVar2.S(false);
             }
         }
         cropAreaView.getViewTreeObserver().removeOnPreDrawListener(this);

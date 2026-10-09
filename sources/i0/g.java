@@ -17,12 +17,12 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
-import v7.h8;
-import v7.i8;
+import v7.d8;
+import v7.g8;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class g extends h8 {
+public final class g extends d8 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -70,7 +70,7 @@ public final class g extends h8 {
         }
     }
 
-    @Override // v7.h8
+    @Override // v7.d8
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         int i11;
@@ -82,15 +82,12 @@ public final class g extends h8 {
             obj = null;
         }
         if (obj != null) {
-            h0.f[] fVarArr = eVar.a;
-            int length = fVarArr.length;
-            while (i11 < length) {
-                h0.f fVar = fVarArr[i11];
+            for (h0.f fVar : eVar.a) {
                 int i12 = fVar.f;
-                File d10 = i8.d(context);
+                File d10 = g8.d(context);
                 if (d10 != null) {
                     try {
-                        if (i8.b(d10, resources, i12)) {
+                        if (g8.b(d10, resources, i12)) {
                             try {
                                 fileInputStream = new FileInputStream(d10);
                             } catch (IOException unused2) {
@@ -100,7 +97,7 @@ public final class g extends h8 {
                                 FileChannel channel = fileInputStream.getChannel();
                                 mappedByteBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
                                 fileInputStream.close();
-                                i11 = (mappedByteBuffer == null && g(obj, mappedByteBuffer, fVar.e, fVar.b, fVar.c)) ? i11 + 1 : 0;
+                                i11 = (mappedByteBuffer != null && g(obj, mappedByteBuffer, fVar.e, fVar.b, fVar.c)) ? i11 + 1 : 0;
                             } finally {
                             }
                         }
@@ -109,7 +106,7 @@ public final class g extends h8 {
                     }
                 }
                 mappedByteBuffer = null;
-                if (mappedByteBuffer == null) {
+                if (mappedByteBuffer != null) {
                 }
             }
             return h(obj);
@@ -117,8 +114,8 @@ public final class g extends h8 {
         return null;
     }
 
-    @Override // v7.h8
-    public final Typeface b(Context context, o0.i[] iVarArr, int i10) {
+    @Override // v7.d8
+    public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         Object obj;
         try {
             obj = b.newInstance(null);
@@ -128,17 +125,17 @@ public final class g extends h8 {
         if (obj != null) {
             int i11 = 0;
             m mVar = new m(0);
-            int length = iVarArr.length;
+            int length = hVarArr.length;
             while (true) {
                 if (i11 < length) {
-                    o0.i iVar = iVarArr[i11];
-                    Uri uri = iVar.a;
+                    o0.h hVar = hVarArr[i11];
+                    Uri uri = hVar.a;
                     ByteBuffer byteBuffer = (ByteBuffer) mVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = i8.e(context, uri);
+                        byteBuffer = g8.e(context, uri);
                         mVar.put(uri, byteBuffer);
                     }
-                    if (byteBuffer == null || !g(obj, byteBuffer, iVar.b, iVar.c, iVar.d)) {
+                    if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {
                         break;
                     }
                     i11++;

@@ -1,5 +1,6 @@
 package p8;
 
+import ae.x;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -8,7 +9,6 @@ import android.os.SystemClock;
 import android.os.WorkSource;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.car.app.j;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,11 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
-import org.telegram.ui.Cells.t6;
+import org.telegram.ui.Wallet.n5;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -65,7 +65,7 @@ public final class a {
         if (powerManager == null) {
             StringBuilder sb2 = new StringBuilder(29);
             sb2.append((CharSequence) "expected a non-null reference", 0, 29);
-            throw new j(sb2.toString());
+            throw new x(sb2.toString());
         }
         this.b = powerManager.newWakeLock(1, "wake:com.google.firebase.iid.WakeLockHolder");
         if (f.b(context)) {
@@ -142,7 +142,7 @@ public final class a {
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new t6(this, 29), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new n5(this, 2), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;

@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class g1 {
     public final j2.k a;
@@ -18,7 +18,7 @@ public final class g1 {
     public final e2.z i;
     public boolean k;
     public g2.c0 l;
-    public u2.h1 j = new u2.f1();
+    public u2.g1 j = new u2.e1();
     public final IdentityHashMap c = new IdentityHashMap();
     public final HashMap d = new HashMap();
     public final ArrayList b = new ArrayList();
@@ -32,9 +32,9 @@ public final class g1 {
         this.i = zVar;
     }
 
-    public final b2.k1 a(int i10, ArrayList arrayList, u2.h1 h1Var) {
+    public final b2.k1 a(int i10, ArrayList arrayList, u2.g1 g1Var) {
         if (!arrayList.isEmpty()) {
-            this.j = h1Var;
+            this.j = g1Var;
             for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
                 f1 f1Var = (f1) arrayList.get(i11 - i10);
                 ArrayList arrayList2 = this.b;
@@ -135,22 +135,22 @@ public final class g1 {
         a5.a aVar = a0Var.c;
         aVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar.d;
-        u2.j0 j0Var = new u2.j0();
-        j0Var.a = handler;
-        j0Var.b = d1Var;
-        copyOnWriteArrayList.add(j0Var);
+        u2.i0 i0Var = new u2.i0();
+        i0Var.a = handler;
+        i0Var.b = d1Var;
+        copyOnWriteArrayList.add(i0Var);
         Looper myLooper2 = Looper.myLooper();
         if (myLooper2 == null) {
             myLooper2 = Looper.getMainLooper();
         }
         Handler handler2 = new Handler(myLooper2, null);
-        n2.k kVar = a0Var.d;
-        kVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
-        n2.j jVar = new n2.j();
-        jVar.a = handler2;
-        jVar.b = d1Var;
-        copyOnWriteArrayList2.add(jVar);
+        n2.j jVar = a0Var.d;
+        jVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
+        n2.i iVar = new n2.i();
+        iVar.a = handler2;
+        iVar.b = d1Var;
+        copyOnWriteArrayList2.add(iVar);
         a0Var.l(r12, this.l, this.a);
     }
 

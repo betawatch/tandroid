@@ -1,16 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class bt {
-    public s4.c1 a;
-    public s4.c1 b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final /* synthetic */ class bt implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] b;
 
-    public final String toString() {
-        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+    public /* synthetic */ bt(org.telegram.ui.ActionBar.b2[] b2VarArr, int i10) {
+        this.a = i10;
+        this.b = b2VarArr;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.b2 b2Var = this.b[0];
+                if (b2Var != null) {
+                    b2Var.dismiss();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.b2[] b2VarArr = this.b;
+                try {
+                    b2VarArr[0].dismiss();
+                } catch (Throwable unused) {
+                }
+                b2VarArr[0] = null;
+                break;
+            default:
+                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.b;
+                try {
+                    b2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                b2VarArr2[0] = null;
+                break;
+        }
     }
 }

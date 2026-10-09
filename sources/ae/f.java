@@ -1,39 +1,20 @@
 package ae;
 
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.Choreographer;
-import kotlin.jvm.internal.i;
-import v7.t7;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public abstract class f {
-    private static volatile Choreographer choreographer;
+public final class f extends ld.c {
+    public Object[] a;
+    public int b;
+    public int c;
+    public /* synthetic */ Object d;
+    public int e;
 
-    static {
-        Object a2;
-        try {
-            a2 = new e(a(Looper.getMainLooper()), false);
-        } catch (Throwable th2) {
-            a2 = t7.a(th2);
-        }
-        if (a2 instanceof gd.e) {
-            a2 = null;
-        }
-    }
-
-    public static final Handler a(Looper looper) {
-        if (Build.VERSION.SDK_INT < 28) {
-            try {
-                return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);
-            } catch (NoSuchMethodException unused) {
-                return new Handler(looper);
-            }
-        }
-        Object invoke = Handler.class.getDeclaredMethod("createAsync", Looper.class).invoke(null, looper);
-        i.c(invoke, "null cannot be cast to non-null type android.os.Handler");
-        return (Handler) invoke;
+    @Override // ld.a
+    public final Object invokeSuspend(Object obj) {
+        this.d = obj;
+        this.e |= TLObject.FLAG_31;
+        return g0.p(null, this);
     }
 }

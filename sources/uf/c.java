@@ -1,187 +1,44 @@
 package uf;
 
-import ai.n8;
-import android.content.SharedPreferences;
-import android.text.TextUtils;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationBadge;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import u2.i0;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c {
-    public static volatile long g;
-    public static volatile long h;
-    public static final HashSet i = new HashSet(Arrays.asList("audio/mpeg3", "audio/mpeg", "audio/ogg", "audio/m4a"));
-    public final long a;
-    public final int c;
-    public int d;
-    public boolean f;
-    public String b = null;
-    public final ArrayList e = new ArrayList();
-
-    public c(int i10) {
-        this.c = i10;
-        this.a = UserConfig.getInstance(i10).clientUserId;
-        SharedPreferences d = d();
-        try {
-            g = d.getLong("hash", 0L);
-            h = d.getLong("lastReload", 0L);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-        AndroidUtilities.runOnUIThread(new a(this, 0));
-    }
-
-    public final void a(TLRPC.Document document) {
-        if (document == null || c(document.id) != null) {
+public final class c implements View.OnAttachStateChangeListener {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        b a2;
+        d dVar = (d) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (dVar == null || (a2 = e.a(view, dVar)) == null) {
             return;
         }
-        b bVar = new b();
-        bVar.a = document;
-        int i10 = this.d;
-        this.d = i10 + 1;
-        bVar.c = i10;
-        bVar.d = false;
-        this.e.add(bVar);
-        h();
-    }
-
-    public final void b() {
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        Utilities.globalQueue.postRunnable(new i0(3, this, new ArrayList(this.e)));
-    }
-
-    public final TLRPC.Document c(long j3) {
-        ArrayList arrayList = this.e;
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            try {
-                if (arrayList.get(i10) != null && ((b) arrayList.get(i10)).a != null && ((b) arrayList.get(i10)).a.id == j3) {
-                    return ((b) arrayList.get(i10)).a;
-                }
-            } catch (Exception e7) {
-                FileLog.e(e7);
-                return null;
-            }
-        }
-        return null;
-    }
-
-    public final SharedPreferences d() {
-        if (this.b == null) {
-            this.b = "ringtones_pref_" + this.a;
-        }
-        return ApplicationLoader.applicationContext.getSharedPreferences(this.b, 0);
-    }
-
-    public final String e(long j3) {
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
+        ArrayList arrayList = dVar.a;
+        int size = arrayList.size();
         int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i10 >= arrayList.size()) {
-                return "NoSound";
-            }
-            if (((b) arrayList.get(i10)).a != null && ((b) arrayList.get(i10)).a.id == j3) {
-                return !TextUtils.isEmpty(((b) arrayList.get(i10)).b) ? ((b) arrayList.get(i10)).b : FileLoader.getInstance(this.c).getPathToAttach(((b) arrayList.get(i10)).a).toString();
-            }
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
             i10++;
+            ((qe.b) a2.a.b).add((li.a) obj);
         }
     }
 
-    public final void f(boolean z10) {
-        boolean z11;
-        SharedPreferences d = d();
-        int i10 = d.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        for (int i11 = 0; i11 < i10; i11++) {
-            String string = d.getString("tone_document" + i11, "");
-            String string2 = d.getString("tone_local_path" + i11, "");
-            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
-            try {
-                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-                b bVar = new b();
-                bVar.a = TLdeserialize;
-                bVar.b = string2;
-                int i12 = this.d;
-                this.d = i12 + 1;
-                bVar.c = i12;
-                arrayList.add(bVar);
-            } finally {
-                if (!z11) {
-                }
-            }
-        }
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new a(this, 1));
-        }
-    }
-
-    public final void g(boolean z10) {
-        boolean z11 = z10 || System.currentTimeMillis() - h > 86400000;
-        TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
-        getsavedringtones.hash = g;
-        if (z11) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new n8(this, 22));
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        b bVar;
+        d dVar = (d) view.getTag(R.id.tag_view_on_post_draw_state);
+        if (dVar == null || (bVar = dVar.b) == null) {
             return;
         }
-        if (!this.f) {
-            f(true);
-            this.f = true;
-        }
-        b();
-    }
-
-    public final void h() {
-        SharedPreferences d = d();
-        d.edit().clear().apply();
-        SharedPreferences.Editor edit = d.edit();
+        ArrayList arrayList = dVar.a;
+        int size = arrayList.size();
         int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.e;
-            if (i10 >= arrayList.size()) {
-                edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, i11);
-                edit.apply();
-                NotificationCenter.getInstance(this.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.onUserRingtonesUpdated, new Object[0]);
-                return;
-            }
-            if (!((b) arrayList.get(i10)).d) {
-                i11++;
-                TLRPC.Document document = ((b) arrayList.get(i10)).a;
-                String str = ((b) arrayList.get(i10)).b;
-                SerializedData serializedData = new SerializedData(document.getObjectSize());
-                document.serializeToStream(serializedData);
-                edit.putString("tone_document" + i10, Utilities.bytesToHex(serializedData.toByteArray()));
-                if (str != null) {
-                    edit.putString("tone_local_path" + i10, str);
-                }
-            }
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
             i10++;
+            ((qe.b) bVar.a.b).remove((li.a) obj);
         }
+        dVar.b = null;
     }
 }

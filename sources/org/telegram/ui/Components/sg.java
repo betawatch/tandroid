@@ -1,67 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class sg extends j1.b {
-    public final /* synthetic */ tg o;
+public final /* synthetic */ class sg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ug b;
+    public final /* synthetic */ ci.d4 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sg(tg tgVar, tg tgVar2) {
-        super(tgVar2);
-        this.o = tgVar;
+    public /* synthetic */ sg(ug ugVar, ci.d4 d4Var, int i10) {
+        this.a = i10;
+        this.b = ugVar;
+        this.c = d4Var;
     }
 
-    @Override // j1.b
-    public final int g(float f7, float f10) {
-        tg tgVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = tgVar.V;
-        if (chatActivityEnterView.s4 && chatActivityEnterView.N1 != null && chatActivityEnterView.S3.contains(f7, f10)) {
-            return 2;
-        }
-        return (!chatActivityEnterView.P || chatActivityEnterView.N1 == null || chatActivityEnterView.n4 <= 0.1f || !tgVar.J.contains(f7, f10)) ? -1 : 4;
-    }
-
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.o.V;
-        if (chatActivityEnterView.s4) {
-            arrayList.add(2);
-        }
-        if (!chatActivityEnterView.P || chatActivityEnterView.N1 == null || chatActivityEnterView.n4 <= 0.1f) {
-            return;
-        }
-        arrayList.add(4);
-    }
-
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        return true;
-    }
-
-    @Override // j1.b
-    public final void l(int i10, s0.d dVar) {
-        tg tgVar = this.o;
-        ChatActivityEnterView chatActivityEnterView = tgVar.V;
-        if (i10 == 2) {
-            Rect rect = chatActivityEnterView.U3;
-            RectF rectF = chatActivityEnterView.S3;
-            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(chatActivityEnterView.U3);
-            dVar.o(LocaleController.getString(chatActivityEnterView.p4 > 0.5f ? R.string.AccActionResume : R.string.AccActionPause));
-            return;
-        }
-        if (i10 == 4) {
-            Rect rect2 = chatActivityEnterView.U3;
-            RectF rectF2 = tgVar.J;
-            rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-            dVar.h(chatActivityEnterView.U3);
-            dVar.o(LocaleController.getString(chatActivityEnterView.O ? R.string.AccActionOnceDeactivate : R.string.AccActionOnceActivate));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ug ugVar = this.b;
+                ci.d4 d4Var = this.c;
+                ugVar.removeView(d4Var);
+                if (ugVar.b == d4Var) {
+                    ugVar.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.removeView(this.c);
+                break;
+            case 2:
+                this.b.removeView(this.c);
+                break;
+            default:
+                ug ugVar2 = this.b;
+                ci.d4 d4Var2 = this.c;
+                ugVar2.removeView(d4Var2);
+                if (ugVar2.a == d4Var2) {
+                    ugVar2.a = null;
+                    break;
+                }
+                break;
         }
     }
 }

@@ -10,18 +10,18 @@ import android.graphics.drawable.Drawable;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import le.e;
+import me.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.hs;
 import yf.p;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class a extends c implements le.d {
-    public final le.b d;
+public final class a extends c implements me.d {
+    public final me.b d;
     public final int[] e;
     public final Drawable f;
     public final TextPaint h;
@@ -29,16 +29,16 @@ public final class a extends c implements le.d {
     public int r;
     public int s;
 
-    public a(Context context, d6 d6Var) {
-        super(d6Var);
-        this.d = new le.b(0, this, tr.h, 320L, false);
+    public a(Context context, e6 e6Var) {
+        super(e6Var);
+        this.d = new me.b(0, this, hs.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
         this.h = new TextPaint(i6.P2);
-        int v02 = i6.v0(i6.i6, d6Var);
-        if (this.b != v02) {
-            i6.B1(this.a, v02, false);
-            this.b = v02;
+        int w02 = i6.w0(i6.i6, e6Var);
+        if (this.b != w02) {
+            i6.C1(this.a, w02, false);
+            this.b = w02;
         }
         b();
         c();
@@ -49,13 +49,6 @@ public final class a extends c implements le.d {
         this.a.setAlpha(i10);
         b();
         c();
-    }
-
-    @Override // le.d
-    public final void a0(int i10, float f7, float f10, e eVar) {
-        b();
-        c();
-        invalidateSelf();
     }
 
     public final void b() {
@@ -92,6 +85,13 @@ public final class a extends c implements le.d {
         }
     }
 
+    @Override // me.d
+    public final void n(int i10, float f7, float f10, e eVar) {
+        b();
+        c();
+        invalidateSelf();
+    }
+
     @Override // sh.c, android.graphics.drawable.Drawable
     public final void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
@@ -107,7 +107,7 @@ public final class a extends c implements le.d {
         }
     }
 
-    @Override // le.d
-    public final /* synthetic */ void V(float f7, int i10) {
+    @Override // me.d
+    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

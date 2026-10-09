@@ -1,26 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tb implements o1.g {
+public final class tb extends o1.i {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vb b;
-    public final /* synthetic */ q0.a c;
 
-    public /* synthetic */ tb(q0.a aVar, vb vbVar, int i10) {
+    public /* synthetic */ tb(int i10) {
         this.a = i10;
-        this.c = aVar;
-        this.b = vbVar;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
+    @Override // o1.i
+    public final float a(Object obj) {
         switch (this.a) {
             case 0:
-                ((hb) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                return ((xb) obj).inOutOffset;
+            case 1:
+                return ((org.telegram.ui.hh0) obj).N;
+            default:
+                return ((org.telegram.ui.hh0) obj).M;
+        }
+    }
+
+    @Override // o1.i
+    public final void b(Object obj, float f7) {
+        switch (this.a) {
+            case 0:
+                ((xb) obj).setInOutOffset(f7);
+                break;
+            case 1:
+                org.telegram.ui.hh0 hh0Var = (org.telegram.ui.hh0) obj;
+                hh0Var.N = f7;
+                hh0Var.invalidate();
                 break;
             default:
-                ((pl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                org.telegram.ui.hh0 hh0Var2 = (org.telegram.ui.hh0) obj;
+                hh0Var2.M = f7;
+                hh0Var2.invalidate();
                 break;
         }
     }

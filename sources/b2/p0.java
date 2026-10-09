@@ -2,9 +2,9 @@ package b2;
 
 import java.util.Arrays;
 import java.util.List;
-import v7.z7;
+import v7.w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final o0[] a;
@@ -43,7 +43,7 @@ public final class p0 {
     }
 
     public final int hashCode() {
-        return z7.b(this.b) + (Arrays.hashCode(this.a) * 31);
+        return w7.b(this.b) + (Arrays.hashCode(this.a) * 31);
     }
 
     public final String toString() {

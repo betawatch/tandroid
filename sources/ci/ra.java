@@ -1,54 +1,38 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pg0;
-import org.telegram.ui.Components.rg0;
-
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ra implements o1.f {
+public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ lc b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ra(Object obj, float f7, int i10) {
+    public /* synthetic */ ra(lc lcVar, boolean z10, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = lcVar;
+        this.c = z10;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                kc kcVar = (kc) this.c;
-                if (!z10) {
-                    kcVar.M0.setTranslationY(this.b);
-                    kcVar.M0.K = false;
-                    kcVar.o2 = null;
-                    kcVar.p2 = null;
-                    break;
-                }
+                this.b.e(this.c);
                 break;
             case 1:
-                ei.q4 q4Var = (ei.q4) this.c;
-                q4Var.v = null;
-                float f11 = this.b;
-                if (!z10) {
-                    q4Var.f = f11;
-                    q4Var.c();
+                lc lcVar = this.b;
+                if (!this.c) {
+                    lcVar.J0.b(false, false);
                     break;
                 } else {
-                    q4Var.h = f11;
+                    lcVar.getClass();
                     break;
                 }
             default:
-                pg0 pg0Var = (pg0) this.c;
-                if (!z10) {
-                    rg0 rg0Var = pg0Var.d;
-                    rg0Var.M.u.i = (rg0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    break;
-                }
+                lc lcVar2 = this.b;
+                lcVar2.R = null;
+                lcVar2.e = false;
+                lcVar2.p(this.c);
                 break;
         }
     }

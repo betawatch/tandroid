@@ -1,26 +1,26 @@
 package s3;
 
-import a4.h;
+import a4.g;
 import b2.o0;
 import b2.p0;
 import e2.b0;
 import e2.v;
-import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import t7.u;
-import w7.m;
+import k2.g0;
+import t7.t;
+import w7.l;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
-public final class c extends m {
+public final class c extends l {
     public final v a = new v();
-    public final h b = new h();
+    public final g b = new g();
     public b0 c;
 
-    @Override // w7.m
+    @Override // w7.l
     public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
         b eVar;
         long j3;
@@ -34,13 +34,13 @@ public final class c extends m {
         int limit = byteBuffer.limit();
         v vVar = this.a;
         vVar.H(limit, array);
-        h hVar = this.b;
-        hVar.o(limit, array);
-        hVar.t(39);
-        long i10 = (hVar.i(1) << 32) | hVar.i(32);
-        hVar.t(20);
-        int i11 = hVar.i(12);
-        int i12 = hVar.i(8);
+        g gVar = this.b;
+        gVar.o(limit, array);
+        gVar.t(39);
+        long i10 = (gVar.i(1) << 32) | gVar.i(32);
+        gVar.t(20);
+        int i11 = gVar.i(12);
+        int i12 = gVar.i(8);
         vVar.K(14);
         if (i12 == 0) {
             eVar = new e();
@@ -69,7 +69,7 @@ public final class c extends m {
                         for (int i15 = 0; i15 < x12; i15++) {
                             vVar.x();
                             vVar.z();
-                            arrayList3.add(new u());
+                            arrayList3.add(new t());
                         }
                         arrayList2 = arrayList3;
                     }
@@ -81,7 +81,7 @@ public final class c extends m {
                     vVar.x();
                     vVar.x();
                 }
-                arrayList.add(new n4(arrayList2));
+                arrayList.add(new g0(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (i12 == 5) {

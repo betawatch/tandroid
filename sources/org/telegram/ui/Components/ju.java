@@ -1,23 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class ju extends Dialog {
-    public final /* synthetic */ ai.y3 a;
+public final class ju extends ShapeDrawable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ju(ai.y3 y3Var, Context context) {
-        super(context);
-        this.a = y3Var;
+    public ju(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        ku kuVar = (ku) this.a.b;
-        kuVar.a.k(false);
-        kuVar.a.e();
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.drawInMaim) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.cursorDrawn = true;
+                    break;
+                }
+            default:
+                super.draw(canvas);
+                this.b.cursorDrawn = true;
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                i10 = this.b.cursorSize;
+                return AndroidUtilities.dp(i10 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        float f7;
+        switch (this.a) {
+            case 0:
+                f7 = this.b.cursorWidth;
+                return AndroidUtilities.dp(f7);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public ju(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

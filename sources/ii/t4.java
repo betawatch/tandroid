@@ -9,9 +9,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.p80;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,10 +37,10 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                     List m10 = w4Var.m();
                     if (indexOf >= 0 && indexOf < m10.size() && indexOf < arrayList.size()) {
                         final u uVar = (u) m10.get(indexOf);
-                        b80 f02 = w4Var.N.a.o3.f0((View) arrayList.get(indexOf));
+                        p80 E = w4Var.N.a.f3.E((View) arrayList.get(indexOf));
                         boolean z10 = uVar.n;
                         final int i10 = 0;
-                        f02.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.u4
+                        E.c(z10 ? R.drawable.msg_spoiler_off : R.drawable.msg_spoiler, LocaleController.getString(z10 ? R.string.DisablePhotoSpoiler : R.string.EnablePhotoSpoiler), new Runnable() { // from class: ii.u4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -54,7 +54,7 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                                             x3Var.getClass();
                                             u uVar2 = uVar;
                                             if (uVar2 != null) {
-                                                i2 i2Var = x3Var.Q3;
+                                                i2 i2Var = x3Var.H3;
                                                 if (i2Var != null) {
                                                     i2Var.d();
                                                 }
@@ -66,11 +66,11 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                                                     ((TL_iv.pageBlockVideo) O3).spoiler = uVar2.n;
                                                 }
                                                 x3Var.o4(aVar3);
-                                                i2 i2Var2 = x3Var.Q3;
+                                                i2 i2Var2 = x3Var.H3;
                                                 if (i2Var2 != null) {
                                                     i2Var2.h();
                                                 }
-                                                x3Var.o3.onContentChanged();
+                                                x3Var.f3.onContentChanged();
                                                 break;
                                             }
                                         }
@@ -87,7 +87,7 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                             }
                         }, false);
                         final int i11 = 1;
-                        f02.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.u4
+                        E.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable() { // from class: ii.u4
                             @Override // java.lang.Runnable
                             public final void run() {
                                 a aVar3;
@@ -101,7 +101,7 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                                             x3Var.getClass();
                                             u uVar2 = uVar;
                                             if (uVar2 != null) {
-                                                i2 i2Var = x3Var.Q3;
+                                                i2 i2Var = x3Var.H3;
                                                 if (i2Var != null) {
                                                     i2Var.d();
                                                 }
@@ -113,11 +113,11 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                                                     ((TL_iv.pageBlockVideo) O3).spoiler = uVar2.n;
                                                 }
                                                 x3Var.o4(aVar3);
-                                                i2 i2Var2 = x3Var.Q3;
+                                                i2 i2Var2 = x3Var.H3;
                                                 if (i2Var2 != null) {
                                                     i2Var2.h();
                                                 }
-                                                x3Var.o3.onContentChanged();
+                                                x3Var.f3.onContentChanged();
                                                 break;
                                             }
                                         }
@@ -133,13 +133,13 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                                 }
                             }
                         }, true);
-                        f02.a0(0.0f, -AndroidUtilities.dp(38.0f));
+                        E.a0(0.0f, -AndroidUtilities.dp(38.0f));
                         if (w4Var.H) {
-                            f02.u = false;
-                            f02.v = true;
-                            f02.s = 0;
+                            E.u = false;
+                            E.v = true;
+                            E.s = 0;
                         }
-                        f02.Z();
+                        E.Z();
                         break;
                     }
                 }
@@ -149,8 +149,8 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                 q3 q3Var = w4Var2.N;
                 if (q3Var != null && (aVar = w4Var2.a) != null) {
                     x3 x3Var = q3Var.a;
-                    x3Var.i4 = aVar;
-                    x3Var.o3.r(0);
+                    x3Var.Z3 = aVar;
+                    x3Var.f3.k(0);
                     break;
                 }
                 break;
@@ -161,7 +161,7 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                     x3 x3Var2 = q3Var2.a;
                     x3Var2.getClass();
                     if (x3.C3(aVar2.b)) {
-                        i2 i2Var = x3Var2.Q3;
+                        i2 i2Var = x3Var2.H3;
                         if (i2Var != null) {
                             i2Var.d();
                         }
@@ -186,7 +186,7 @@ public final /* synthetic */ class t4 implements View.OnClickListener {
                             pageblockslideshow = pageblockslideshow2;
                         }
                         aVar2.b = pageblockslideshow;
-                        i2 i2Var2 = x3Var2.Q3;
+                        i2 i2Var2 = x3Var2.H3;
                         if (i2Var2 != null) {
                             i2Var2.h();
                         }

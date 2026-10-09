@@ -1,13 +1,12 @@
 package androidx.lifecycle;
 
 import android.os.Bundle;
-import ii.n4;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -126,6 +125,6 @@ public abstract class j0 {
         kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        return (m0) new aa.a(u0Var.f(), new n4((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).k(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new aa.a(u0Var.f(), new l2.f((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).k(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

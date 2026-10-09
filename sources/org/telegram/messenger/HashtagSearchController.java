@@ -12,7 +12,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public class HashtagSearchController {
     public static final int HISTORY_LIMIT = 100;
@@ -25,7 +25,7 @@ public class HashtagSearchController {
     private final SearchResult localPostsSearch;
     private final SearchResult myMessagesSearch;
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static final class MessageCompositeID {
         final long dialog_id;
         final int id;
@@ -57,7 +57,7 @@ public class HashtagSearchController {
         }
     }
 
-    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
     public static class SearchResult {
         public Runnable cancel;
         public int count;
@@ -218,7 +218,7 @@ public class HashtagSearchController {
                 messageObject.setQuery(str, false);
                 arrayList.add(messageObject);
             }
-            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.m4
+            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.n4
                 @Override // java.lang.Runnable
                 public final void run() {
                     HashtagSearchController.this.lambda$searchHashtag$1(iArr, searchResult, messages_messages, arrayList, i11, i12, i13);
@@ -352,7 +352,7 @@ public class HashtagSearchController {
             }
             searchResult.loading = true;
             if (!TextUtils.isEmpty(str2) && (tLObject = MessagesController.getInstance(this.currentAccount).getUserOrChat(str2)) == null) {
-                Runnable resolve = MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str2, new Utilities.Callback() { // from class: org.telegram.messenger.k4
+                Runnable resolve = MessagesController.getInstance(this.currentAccount).getUserNameResolver().resolve(str2, new Utilities.Callback() { // from class: org.telegram.messenger.l4
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         HashtagSearchController.this.lambda$searchHashtag$0(searchResult, str4, str2, r5, i10, i11, i12, (Long) obj);
@@ -400,7 +400,7 @@ public class HashtagSearchController {
                     tL_channels_searchPosts = tL_channels_searchPosts2;
                 }
             }
-            int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.messenger.l4
+            int sendRequest = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_channels_searchPosts, new RequestDelegate() { // from class: org.telegram.messenger.m4
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
                     HashtagSearchController.this.lambda$searchHashtag$2(i11, str4, r4, searchResult, 21, i10, i12, tLObject2, tL_error);

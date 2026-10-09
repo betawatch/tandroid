@@ -16,7 +16,7 @@ import y8.l0;
 import y8.v0;
 import y8.z0;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class m extends b8.b {
     public volatile int b;
@@ -29,7 +29,7 @@ public final class m extends b8.b {
         this.b = -1;
     }
 
-    public static final void M0(e0 e0Var, boolean z10, byte[] bArr) {
+    public static final void L0(e0 e0Var, boolean z10, byte[] bArr) {
         try {
             e0Var.getClass();
             Parcel obtain = Parcel.obtain();
@@ -48,7 +48,7 @@ public final class m extends b8.b {
     }
 
     @Override // b8.b
-    public final boolean J0(int i10, Parcel parcel, Parcel parcel2) {
+    public final boolean I0(int i10, Parcel parcel, Parcel parcel2) {
         e0 e0Var;
         if (i10 == 13) {
             Object obj = (k0) f8.a.a(parcel, k0.CREATOR);
@@ -60,7 +60,7 @@ public final class m extends b8.b {
                 e0Var = queryLocalInterface instanceof e0 ? (e0) queryLocalInterface : new e0(readStrongBinder, "com.google.android.gms.wearable.internal.IRpcResponseCallback", 4);
             }
             f8.a.b(parcel);
-            L0(new v(this, obj, e0Var, 13), "onRequestReceived", obj);
+            K0(new v(this, obj, e0Var, 12), "onRequestReceived", obj);
             return true;
         }
         if (i10 == 14) {
@@ -71,7 +71,7 @@ public final class m extends b8.b {
             case 1:
                 DataHolder dataHolder = (DataHolder) f8.a.a(parcel, DataHolder.CREATOR);
                 f8.a.b(parcel);
-                Runnable eVar = new u4.e(7, this, dataHolder);
+                Runnable vVar = new s4.v(8, this, dataHolder);
                 try {
                     String valueOf = String.valueOf(dataHolder);
                     int i11 = dataHolder.n;
@@ -79,56 +79,56 @@ public final class m extends b8.b {
                     sb2.append(valueOf);
                     sb2.append(", rows=");
                     sb2.append(i11);
-                    return !L0(eVar, "onDataItemChanged", sb2.toString()) ? true : true;
+                    return !K0(vVar, "onDataItemChanged", sb2.toString()) ? true : true;
                 } finally {
                     dataHolder.close();
                 }
             case 2:
                 Object obj2 = (k0) f8.a.a(parcel, k0.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(8, this, obj2), "onMessageReceived", obj2);
+                K0(new s4.v(9, this, obj2), "onMessageReceived", obj2);
                 return true;
             case 3:
                 l0 l0Var = (l0) f8.a.a(parcel, l0.CREATOR);
                 f8.a.b(parcel);
-                L0(new q(this, l0Var, 0), "onPeerConnected", l0Var);
+                K0(new q(this, l0Var, 0), "onPeerConnected", l0Var);
                 return true;
             case 4:
                 l0 l0Var2 = (l0) f8.a.a(parcel, l0.CREATOR);
                 f8.a.b(parcel);
-                L0(new q(this, l0Var2, 1), "onPeerDisconnected", l0Var2);
+                K0(new q(this, l0Var2, 1), "onPeerDisconnected", l0Var2);
                 return true;
             case 5:
                 Object createTypedArrayList = parcel.createTypedArrayList(l0.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(9, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
+                K0(new s4.v(10, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
                 return true;
             case 6:
                 Object obj3 = (b1) f8.a.a(parcel, b1.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(11, this, obj3), "onNotificationReceived", obj3);
+                K0(new s4.v(12, this, obj3), "onNotificationReceived", obj3);
                 return true;
             case 7:
                 Object obj4 = (y8.e) f8.a.a(parcel, y8.e.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(13, this, obj4), "onChannelEvent", obj4);
+                K0(new s4.v(14, this, obj4), "onChannelEvent", obj4);
                 return true;
             case 8:
                 Object obj5 = (y8.b) f8.a.a(parcel, y8.b.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(10, this, obj5), "onConnectedCapabilityChanged", obj5);
+                K0(new s4.v(11, this, obj5), "onConnectedCapabilityChanged", obj5);
                 return true;
             case 9:
                 Object obj6 = (v0) f8.a.a(parcel, v0.CREATOR);
                 f8.a.b(parcel);
-                L0(new u4.e(12, this, obj6), "onEntityUpdate", obj6);
+                K0(new s4.v(13, this, obj6), "onEntityUpdate", obj6);
                 return true;
             default:
                 return false;
         }
     }
 
-    public final boolean L0(Runnable runnable, String str, Object obj) {
+    public final boolean K0(Runnable runnable, String str, Object obj) {
         Object obj2;
         boolean z10;
         p pVar;

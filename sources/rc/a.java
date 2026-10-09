@@ -3,31 +3,31 @@ package rc;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.s;
 import com.googlecode.mp4parser.g;
-import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import m2.t;
 import mc.c;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ n4 b;
-    public static final /* synthetic */ n4 c;
-    public static final /* synthetic */ n4 d;
-    public static final /* synthetic */ n4 e;
-    public static final /* synthetic */ n4 f;
-    public static final /* synthetic */ n4 h;
-    public static final /* synthetic */ n4 n;
-    public static final /* synthetic */ n4 r;
-    public static final /* synthetic */ n4 s;
-    public static final /* synthetic */ n4 v;
-    public static final /* synthetic */ n4 w;
-    public static final /* synthetic */ n4 x;
-    public static final /* synthetic */ n4 y;
+    public static final /* synthetic */ t b;
+    public static final /* synthetic */ t c;
+    public static final /* synthetic */ t d;
+    public static final /* synthetic */ t e;
+    public static final /* synthetic */ t f;
+    public static final /* synthetic */ t h;
+    public static final /* synthetic */ t n;
+    public static final /* synthetic */ t r;
+    public static final /* synthetic */ t s;
+    public static final /* synthetic */ t v;
+    public static final /* synthetic */ t w;
+    public static final /* synthetic */ t x;
+    public static final /* synthetic */ t y;
     public b a;
 
     static {
-        re.a aVar = new re.a(a.class, "AvcConfigurationBox.java");
+        se.a aVar = new se.a(a.class, "AvcConfigurationBox.java");
         aVar.e(aVar.d("getConfigurationVersion", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
         aVar.e(aVar.d("getAvcProfileIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "int"));
         e = aVar.e(aVar.d("setAvcLevelIndication", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "int", "avcLevelIndication", "void"));
@@ -122,18 +122,18 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i10) {
-        e2.q(re.a.c(e, this, this, new Integer(i10)));
+        e2.q(se.a.c(e, this, this, new Integer(i10)));
         this.a.d = i10;
     }
 
     public final void e(int i10) {
-        e2.q(re.a.c(c, this, this, new Integer(i10)));
+        e2.q(se.a.c(c, this, this, new Integer(i10)));
         this.a.b = i10;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        e2.q(re.a.c(x, this, this, byteBuffer));
+        e2.q(se.a.c(x, this, this, byteBuffer));
         b bVar = this.a;
         e5.b.r(bVar.a, byteBuffer);
         byteBuffer.put((byte) (bVar.b & 255));
@@ -192,7 +192,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i10;
-        e2.q(re.a.b(w, this, this));
+        e2.q(se.a.b(w, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();
@@ -228,7 +228,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        s b10 = re.a.b(y, this, this);
+        s b10 = se.a.b(y, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

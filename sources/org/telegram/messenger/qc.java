@@ -1,27 +1,66 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.ui.NotificationsSettingsActivity;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Cloneable c;
+    public final /* synthetic */ Cloneable d;
+    public final /* synthetic */ Cloneable e;
+    public final /* synthetic */ Cloneable f;
+    public final /* synthetic */ Cloneable h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Cloneable r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Cloneable v;
 
-    public /* synthetic */ qc(boolean[] zArr, Runnable[] runnableArr, int i10) {
+    public /* synthetic */ qc(MessagesController messagesController, LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, a0.i iVar, a0.i iVar2, a0.i iVar3, a0.i iVar4, a0.i iVar5, LongSparseIntArray longSparseIntArray3, int i10) {
         this.a = i10;
-        this.b = zArr;
-        this.c = runnableArr;
+        this.b = messagesController;
+        this.c = longSparseIntArray;
+        this.d = longSparseIntArray2;
+        this.e = sparseIntArray;
+        this.f = iVar;
+        this.h = iVar2;
+        this.n = iVar3;
+        this.r = iVar4;
+        this.s = iVar5;
+        this.v = longSparseIntArray3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$ensureMessagesLoaded$461(this.b, this.c);
+                ((MessagesController) this.b).lambda$processUpdateArray$420((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.i) this.f, (a0.i) this.h, (a0.i) this.n, (a0.i) this.r, (a0.i) this.s, (LongSparseIntArray) this.v);
+                break;
+            case 1:
+                ((MessagesController) this.b).lambda$processUpdateArray$419((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.i) this.f, (a0.i) this.h, (a0.i) this.n, (a0.i) this.r, (a0.i) this.s, (LongSparseIntArray) this.v);
                 break;
             default:
-                PasskeysController.lambda$login$12(this.b, this.c);
+                NotificationsSettingsActivity.U((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
                 break;
         }
+    }
+
+    public /* synthetic */ qc(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
+        this.a = 2;
+        this.b = notificationsSettingsActivity;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.v = arrayList3;
+        this.e = arrayList4;
+        this.f = arrayList5;
+        this.h = arrayList6;
+        this.n = arrayList7;
+        this.r = arrayList8;
+        this.s = runnable;
     }
 }

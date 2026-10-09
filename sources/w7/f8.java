@@ -1,6 +1,19 @@
 package w7;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.os.SystemClock;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public abstract class f8 {
+    public static ki.x a(x2.r rVar) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        int length = rVar.length();
+        int i10 = 0;
+        for (int i11 = 0; i11 < length; i11++) {
+            if (rVar.a(i11, elapsedRealtime)) {
+                i10++;
+            }
+        }
+        return new ki.x(1, 0, length, i10);
+    }
 }

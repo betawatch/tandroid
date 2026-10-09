@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout {
     public int E;
@@ -60,7 +60,7 @@ class ArticleViewer$WindowView extends FrameLayout {
         m3 m3Var;
         i4 i4Var = this.H;
         v3 v3Var = i4Var.K;
-        if (i4Var.v0 == null && !i4Var.T0 && i4Var.P.getVisibility() != 0 && !i4Var.O0.y()) {
+        if (i4Var.v0 == null && !i4Var.T0 && i4Var.P.getVisibility() != 0 && !i4Var.O0.x()) {
             if (motionEvent != null && motionEvent.getAction() == 0 && !this.d && !this.c) {
                 this.b = motionEvent.getPointerId(0);
                 this.c = true;
@@ -132,7 +132,7 @@ class ArticleViewer$WindowView extends FrameLayout {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(i4Var.g0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, i4.d1, 0.0f));
                     }
                     animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), MediaDataController.MAX_LINKS_COUNT));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.tr.h);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.hs.h);
                     animatorSet.addListener(new h4(this, z11));
                     animatorSet.start();
                     i4Var.T0 = true;
@@ -155,8 +155,8 @@ class ArticleViewer$WindowView extends FrameLayout {
                     velocityTracker3.recycle();
                     this.s = null;
                 }
-                org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
-                if (q9Var != null && !q9Var.y()) {
+                org.telegram.ui.Cells.o9 o9Var = i4Var.O0;
+                if (o9Var != null && !o9Var.x()) {
                     i4Var.O0.f(false);
                 }
             }
@@ -271,11 +271,11 @@ class ArticleViewer$WindowView extends FrameLayout {
             motionEvent.offsetLocation(-i4Var.g0.getX(), -i4Var.g0.getY());
             return i4Var.Q0.g(motionEvent);
         }
-        org.telegram.ui.Cells.ca o9 = i4Var.O0.o(getContext());
+        org.telegram.ui.Cells.aa n10 = i4Var.O0.n(getContext());
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.offsetLocation(-i4Var.g0.getX(), -i4Var.g0.getY());
-        if (!i4Var.O0.y() || !i4Var.O0.o(getContext()).onTouchEvent(obtain)) {
-            if (o9.b(motionEvent)) {
+        if (!i4Var.O0.x() || !i4Var.O0.n(getContext()).onTouchEvent(obtain)) {
+            if (n10.b(motionEvent)) {
                 m3[] m3VarArr = i4Var.u0;
                 if (m3VarArr == null || (m3Var = m3VarArr[0]) == null || !m3Var.f() || (arrayList = i4Var.d0) == null || arrayList.size() > 1) {
                     motionEvent.setAction(3);
@@ -283,10 +283,10 @@ class ArticleViewer$WindowView extends FrameLayout {
                     motionEvent.setAction(1);
                 }
             }
-            if (motionEvent.getAction() != 0 || !i4Var.O0.y() || (motionEvent.getY() >= i4Var.g0.getTop() && motionEvent.getY() <= i4Var.g0.getBottom())) {
+            if (motionEvent.getAction() != 0 || !i4Var.O0.x() || (motionEvent.getY() >= i4Var.g0.getTop() && motionEvent.getY() <= i4Var.g0.getBottom())) {
                 return super.dispatchTouchEvent(motionEvent);
             }
-            if (i4Var.O0.o(getContext()).onTouchEvent(obtain)) {
+            if (i4Var.O0.n(getContext()).onTouchEvent(obtain)) {
                 return super.dispatchTouchEvent(motionEvent);
             }
         }

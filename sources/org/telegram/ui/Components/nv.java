@@ -1,64 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import android.view.ViewTreeObserver;
+import android.widget.PopupWindow;
+import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class nv extends View {
-    public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public ai.l4 b;
-    public z5 c;
-    public ValueAnimator d;
-    public float e;
+public final class nv extends PopupWindow {
+    public static Field f;
+    public static final org.telegram.ui.ActionBar.g1 g = new org.telegram.ui.ActionBar.g1(1);
+    public ViewTreeObserver.OnScrollChangedListener a;
+    public ViewTreeObserver b;
+    public final mv c;
+    public boolean d;
+    public final int e;
 
-    public TLRPC.Document getDocument() {
-        z5 z5Var = this.c;
-        if (z5Var == null) {
-            return null;
-        }
-        TLRPC.Document document = z5Var.document;
-        if (document != null) {
-            return document;
-        }
-        return q5.f(UserConfig.selectedAccount, z5Var.getDocumentId());
+    public nv(mv mvVar) {
+        super(mvVar);
+        this.e = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
+        this.c = mvVar;
+        setOutsideTouchable(true);
+        setClippingEnabled(true);
+        setInputMethodMode(2);
+        setSoftInputMode(0);
+        mvVar.setFocusableInTouchMode(true);
+        mvVar.setOnKeyListener(new co(this, 1));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z10) {
-            super.setPressed(z10);
-            invalidate();
-            if (z10 && (valueAnimator = this.d) != null) {
-                valueAnimator.removeAllListeners();
-                this.d.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f7 = this.e;
-            if (f7 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
-                this.d = ofFloat;
-                ofFloat.addUpdateListener(new k6(this, 17));
-                this.d.addListener(new r8(this, 18));
-                this.d.setInterpolator(new OvershootInterpolator(5.0f));
-                this.d.setDuration(350L);
-                this.d.start();
+    public final void a(View view) {
+        if (this.a != null) {
+            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
+            ViewTreeObserver viewTreeObserver2 = this.b;
+            if (viewTreeObserver != viewTreeObserver2) {
+                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
+                    this.b.removeOnScrollChangedListener(this.a);
+                }
+                this.b = viewTreeObserver;
+                if (viewTreeObserver != null) {
+                    viewTreeObserver.addOnScrollChangedListener(this.a);
+                }
             }
         }
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void dismiss() {
+        ViewTreeObserver viewTreeObserver;
+        setFocusable(false);
+        try {
+            super.dismiss();
+        } catch (Exception unused) {
+        }
+        if (this.a == null || (viewTreeObserver = this.b) == null) {
+            return;
+        }
+        if (viewTreeObserver.isAlive()) {
+            this.b.removeOnScrollChangedListener(this.a);
+        }
+        this.b = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAsDropDown(View view, int i10, int i11) {
+        try {
+            super.showAsDropDown(view, i10, i11);
+            a(view);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void showAtLocation(View view, int i10, int i11, int i12) {
+        ViewTreeObserver viewTreeObserver;
+        super.showAtLocation(view, i10, i11, i12);
+        if (this.a == null || (viewTreeObserver = this.b) == null) {
+            return;
+        }
+        if (viewTreeObserver.isAlive()) {
+            this.b.removeOnScrollChangedListener(this.a);
+        }
+        this.b = null;
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i10, int i11, int i12, int i13) {
+        super.update(view, i10, i11, i12, i13);
+        a(view);
+    }
+
+    @Override // android.widget.PopupWindow
+    public final void update(View view, int i10, int i11) {
+        super.update(view, i10, i11);
+        a(view);
     }
 }

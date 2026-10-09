@@ -6,10 +6,10 @@ import c5.v;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import m.p3;
+import m.q3;
 import n6.i;
 import n6.l;
-import n7.z0;
+import n6.t;
 import org.telegram.tgnet.ConnectionsManager;
 import qb.m;
 import v7.k;
@@ -21,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -83,18 +83,18 @@ public final class a {
             }
         }
         hashMap.put(j7Var, Long.valueOf(elapsedRealtime3));
-        p3 p3Var = new p3();
-        p3Var.c = y6.b;
-        p3Var.b = d7.b;
-        p3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        p3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        p3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        e7 e7Var = new e7(p3Var);
-        k kVar = new k(6, false);
+        q3 q3Var = new q3();
+        q3Var.c = y6.b;
+        q3Var.b = d7.b;
+        q3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        q3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        q3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        q3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
+        q3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        e7 e7Var = new e7(q3Var);
+        k kVar = new k(7, false);
         kVar.d = e7Var;
-        m.a.execute(new v(a2, new z0(kVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        m.a.execute(new v(a2, new t(kVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

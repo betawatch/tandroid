@@ -1,53 +1,21 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class fc0 extends og.a {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
-
-    public fc0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+public final class fc0 extends org.telegram.ui.Cells.e9 {
+    @Override // org.telegram.ui.Cells.e9, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    public static fc0 b(int i10, String str) {
-        return new fc0(4, 0, str, i10, 0);
-    }
-
-    public static fc0 c(int i10, int i11, String str) {
-        return new fc0(3, i10, str, i11, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof fc0)) {
-            return false;
-        }
-        fc0 fc0Var = (fc0) obj;
-        int i10 = fc0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && fc0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && fc0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && fc0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(fc0Var.c, this.c);
+    @Override // android.view.View
+    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setContentDescription(getTextView().getText());
+        setContentDescription(getTextView().getText());
     }
 }

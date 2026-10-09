@@ -1,27 +1,37 @@
 package ai;
 
 import android.content.Context;
-import org.telegram.ui.LaunchActivity;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class c7 extends org.telegram.ui.Cells.o6 {
-    public final /* synthetic */ e7 K;
+public final class c7 extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f7 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c7(int i10, d dVar, e7 e7Var, Context context) {
-        super(1, i10, context, dVar, false, true);
-        this.K = e7Var;
+    public /* synthetic */ c7(f7 f7Var, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = f7Var;
     }
 
-    @Override // org.telegram.ui.Cells.o6
-    public final void b(long j3) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b.d.e), TLObject.FLAG_30));
+                break;
+            default:
+                l7 l7Var = this.b.d;
+                int i12 = l7Var.x.J;
+                if (i12 >= l7Var.r.getPaddingTop() && !l7Var.R) {
+                    i12 = 0;
+                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30));
+                break;
         }
-        jc createOverlayStoryViewer = R.createOverlayStoryViewer();
-        createOverlayStoryViewer.getClass();
-        createOverlayStoryViewer.D(getContext(), j3, u9.a(this.K.d.r));
     }
 }

@@ -1,43 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import android.widget.PopupWindow;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class f90 implements PopupWindow.OnDismissListener {
+public final /* synthetic */ class f90 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
-    public final /* synthetic */ ViewGroup e;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ f90(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i10) {
+    public /* synthetic */ f90(eb ebVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.e = viewGroup;
-        this.c = view;
-        this.b = frameLayout;
-        this.d = onPreDrawListener;
+        this.c = ebVar;
+        this.d = obj;
+        this.b = j3;
     }
 
-    @Override // android.widget.PopupWindow.OnDismissListener
-    public final void onDismiss() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((j90) this.e).s = null;
-                ci.r6 r6Var = (ci.r6) this.c;
-                r6Var.animate().cancel();
-                r6Var.animate().alpha(0.0f).setDuration(150L).setListener(new r8(this, 28));
+                i90.o((i90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                xh.h4.W((xh.h4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.w2) obj, (of.e) obj2);
                 break;
             default:
-                ((org.telegram.ui.a00) this.e).x = null;
-                ci.r6 r6Var2 = (ci.r6) this.c;
-                r6Var2.animate().cancel();
-                r6Var2.animate().alpha(0.0f).setDuration(150L).setListener(new b91(this, 21));
+                yh.a7.R((yh.a7) this.c, (p61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ f90(i90 i90Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 0;
+        this.c = i90Var;
+        this.b = j3;
+        this.d = tL_messages_importChatInvite;
     }
 }

@@ -1,78 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class i20 implements org.telegram.ui.Components.yo0 {
+public final class i20 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sg.a b;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ sg.g c;
 
-    public /* synthetic */ i20(sg.a aVar, int i10) {
+    public /* synthetic */ i20(Context context, sg.g gVar, int i10) {
         this.a = i10;
-        this.b = aVar;
+        this.b = context;
+        this.c = gVar;
     }
 
-    @Override // org.telegram.ui.Components.yo0
-    public final void B() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final void Y(float f7, boolean z10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                sg.f fVar = this.b.c;
-                if (fVar != null) {
-                    fVar.v = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 1:
-                sg.f fVar2 = this.b.c;
-                if (fVar2 != null) {
-                    fVar2.w = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 2:
-                sg.f fVar3 = this.b.c;
-                if (fVar3 != null) {
-                    fVar3.x = f7;
-                    break;
-                }
+                g gVar = new g(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.w8 w8Var = new org.telegram.ui.Components.w8(context, false, gVar, 1);
+                sg.o oVar = this.c.c;
+                w8Var.e(oVar != null ? oVar.I : 0, 0);
+                w8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(w8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
                 break;
             default:
-                sg.f fVar4 = this.b.c;
-                if (fVar4 != null) {
-                    fVar4.A = f7 * 2.0f;
-                    break;
-                }
+                g gVar2 = new g(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.w8 w8Var2 = new org.telegram.ui.Components.w8(context2, false, gVar2, 2);
+                sg.o oVar2 = this.c.c;
+                w8Var2.e(oVar2 == null ? 0 : oVar2.H, 0);
+                w8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(w8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.yo0
-    public final /* synthetic */ int p0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
     }
 }

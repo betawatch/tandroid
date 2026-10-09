@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final Paint a;
@@ -52,10 +52,10 @@ public final class r extends View {
 
     public final void b(float f7) {
         float dp = AndroidUtilities.dp(6.0f);
-        float a2 = w7.q.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
+        float a2 = w7.o.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
         int i10 = this.c;
         x xVar = this.e;
-        xVar.m(i0.a.k(i10 != 1 ? i10 != 2 ? Color.argb(255, (int) (a2 * 255.0f), Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(255, Color.red(xVar.f), Color.green(xVar.f), (int) (a2 * 255.0f)) : Color.argb(255, Color.red(xVar.f), (int) (a2 * 255.0f), Color.blue(xVar.f)), Color.alpha(xVar.f)), 4);
+        xVar.o(i0.a.k(i10 != 1 ? i10 != 2 ? Color.argb(255, (int) (a2 * 255.0f), Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(255, Color.red(xVar.f), Color.green(xVar.f), (int) (a2 * 255.0f)) : Color.argb(255, Color.red(xVar.f), (int) (a2 * 255.0f), Color.blue(xVar.f)), Color.alpha(xVar.f)), 4);
         invalidate();
     }
 

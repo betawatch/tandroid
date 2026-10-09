@@ -2,11 +2,11 @@ package ii;
 
 import android.graphics.Rect;
 import android.text.Layout;
-import org.telegram.ui.Cells.ba;
+import org.telegram.ui.Cells.z9;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes4.dex */
-public final class c0 implements ba {
+public final class c0 implements z9 {
     public final /* synthetic */ Layout a;
     public final /* synthetic */ Rect b;
 
@@ -15,27 +15,27 @@ public final class c0 implements ba {
         this.b = rect;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final Layout getLayout() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final /* synthetic */ CharSequence getPrefix() {
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final int getRow() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final Rect getSelectionBounds() {
         return this.b;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final CharSequence getText() {
         Layout layout = getLayout();
         if (layout == null) {
@@ -44,12 +44,12 @@ public final class c0 implements ba {
         return layout.getText();
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final int getX() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Cells.ba
+    @Override // org.telegram.ui.Cells.z9
     public final int getY() {
         return 0;
     }

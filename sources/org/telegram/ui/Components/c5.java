@@ -1,54 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
-/* loaded from: classes3.dex */
-public final class c5 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public c5(org.telegram.ui.ActionBar.d6 d6Var) {
-        this(r4, r5, r6, r7, r8, r9, r10, d6Var != null ? d6Var.j0(r2) : org.telegram.ui.ActionBar.i6.w0(null, r2, false), d6Var != null ? d6Var.j0(org.telegram.ui.ActionBar.i6.Qh) : org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Qh, false));
-        int i10 = org.telegram.ui.ActionBar.i6.j5;
-        int j02 = d6Var != null ? d6Var.j0(i10) : org.telegram.ui.ActionBar.i6.w0(null, i10, false);
-        int i11 = org.telegram.ui.ActionBar.i6.h5;
-        int j03 = d6Var != null ? d6Var.j0(i11) : org.telegram.ui.ActionBar.i6.w0(null, i11, false);
-        int i12 = org.telegram.ui.ActionBar.i6.Ji;
-        if (d6Var != null) {
-            d6Var.j0(i12);
-        } else {
-            org.telegram.ui.ActionBar.i6.w0(null, i12, false);
-        }
-        int i13 = org.telegram.ui.ActionBar.i6.Ni;
-        int j04 = d6Var != null ? d6Var.j0(i13) : org.telegram.ui.ActionBar.i6.w0(null, i13, false);
-        int i14 = org.telegram.ui.ActionBar.i6.E8;
-        int j05 = d6Var != null ? d6Var.j0(i14) : org.telegram.ui.ActionBar.i6.w0(null, i14, false);
-        int i15 = org.telegram.ui.ActionBar.i6.G8;
-        int j06 = d6Var != null ? d6Var.j0(i15) : org.telegram.ui.ActionBar.i6.w0(null, i15, false);
-        int i16 = org.telegram.ui.ActionBar.i6.i6;
-        int j07 = d6Var != null ? d6Var.j0(i16) : org.telegram.ui.ActionBar.i6.w0(null, i16, false);
-        int i17 = org.telegram.ui.ActionBar.i6.Sh;
-        int j08 = d6Var != null ? d6Var.j0(i17) : org.telegram.ui.ActionBar.i6.w0(null, i17, false);
-        int i18 = org.telegram.ui.ActionBar.i6.Oh;
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* loaded from: classes3.dex */
+public final class c5 extends FrameLayout {
+    public final /* synthetic */ org.telegram.ui.Cells.a2[] a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c5(Context context, org.telegram.ui.Cells.a2[] a2VarArr) {
+        super(context);
+        this.a = a2VarArr;
     }
 
-    public c5(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
-        this.g = i16;
-        this.h = i17;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        org.telegram.ui.Cells.a2[] a2VarArr = this.a;
+        if (a2VarArr[0] != null) {
+            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + a2VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+        }
     }
 }

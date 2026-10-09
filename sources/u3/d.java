@@ -1,8 +1,9 @@
 package u3;
 
-import a4.h;
+import a4.g;
 import android.util.Pair;
 import android.util.SparseArray;
+import b2.i;
 import b2.j;
 import b2.n;
 import b2.r;
@@ -12,20 +13,18 @@ import c3.h0;
 import c3.i0;
 import c3.l;
 import c3.o;
-import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
 import c3.x;
 import c5.b0;
-import c5.i;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.m;
 import e2.d0;
 import e2.v;
 import e9.a1;
 import e9.g0;
-import ii.n4;
+import f2.p;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -40,14 +39,16 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
+import l2.f;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import z3.k;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -136,7 +137,7 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new n4(this, 26);
+        bVar.d = new f(this, 27);
         this.f = kVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
@@ -145,7 +146,7 @@ public final class d implements o {
         this.i = new v(4);
         this.j = new v(ByteBuffer.allocate(4).putInt(-1).array());
         this.k = new v(4);
-        this.g = new v(f2.o.a);
+        this.g = new v(p.a);
         this.h = new v(4);
         this.l = new v();
         this.m = new v();
@@ -167,15 +168,9 @@ public final class d implements o {
         return format.getBytes(StandardCharsets.UTF_8);
     }
 
-    public final void a(int i10) {
-        if (this.F == null || this.G == null) {
-            throw s0.a(null, "Element " + i10 + " must be in a Cues");
-        }
-    }
-
     @Override // c3.o
-    public final boolean b(p pVar) {
-        b0 b0Var = new b0(8, (byte) 0);
+    public final boolean a(c3.p pVar) {
+        b0 b0Var = new b0(12, (short) 0);
         v vVar = (v) b0Var.c;
         l lVar = (l) pVar;
         long j3 = lVar.c;
@@ -184,7 +179,7 @@ public final class d implements o {
             j10 = j3;
         }
         int i10 = (int) j10;
-        lVar.f(vVar.a, 0, 4, false);
+        lVar.h(vVar.a, 0, 4, false);
         long z10 = vVar.z();
         b0Var.b = 4;
         while (true) {
@@ -194,24 +189,24 @@ public final class d implements o {
                 if (i11 == i10) {
                     break;
                 }
-                lVar.f(vVar.a, 0, 1, false);
+                lVar.h(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
-                long h = b0Var.h(lVar);
+                long p5 = b0Var.p(lVar);
                 long j11 = b0Var.b;
-                if (h != Long.MIN_VALUE && (j3 == -1 || j11 + h < j3)) {
+                if (p5 != Long.MIN_VALUE && (j3 == -1 || j11 + p5 < j3)) {
                     while (true) {
                         long j12 = b0Var.b;
-                        long j13 = j11 + h;
+                        long j13 = j11 + p5;
                         if (j12 < j13) {
-                            if (b0Var.h(lVar) != Long.MIN_VALUE) {
-                                long h10 = b0Var.h(lVar);
-                                if (h10 < 0 || h10 > 2147483647L) {
+                            if (b0Var.p(lVar) != Long.MIN_VALUE) {
+                                long p10 = b0Var.p(lVar);
+                                if (p10 < 0 || p10 > 2147483647L) {
                                     break;
                                 }
-                                if (h10 != 0) {
-                                    int i12 = (int) h10;
-                                    lVar.s(i12, false);
+                                if (p10 != 0) {
+                                    int i12 = (int) p10;
+                                    lVar.v(i12, false);
                                     b0Var.b += i12;
                                 }
                             } else {
@@ -225,6 +220,12 @@ public final class d implements o {
             }
         }
         return false;
+    }
+
+    public final void b(int i10) {
+        if (this.F == null || this.G == null) {
+            throw s0.a(null, "Element " + i10 + " must be in a Cues");
+        }
     }
 
     public final void d(int i10) {
@@ -354,7 +355,7 @@ public final class d implements o {
         return a1.e;
     }
 
-    public final void j(p pVar, int i10) {
+    public final void j(c3.p pVar, int i10) {
         v vVar = this.i;
         if (vVar.c >= i10) {
             return;
@@ -388,86 +389,90 @@ public final class d implements o {
             throw s0.a(null, "Can't scale timecode prior to timecodeScale being set.");
         }
         String str = d0.a;
-        return d0.Y(j3, j10, 1000L, RoundingMode.DOWN);
+        return d0.X(j3, j10, 1000L, RoundingMode.DOWN);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x01bc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:119:0x01bf, code lost:
     
         throw b2.s0.a(null, "Mandatory element SeekID or SeekPosition not found");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:413:0x08d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:415:0x08d3, code lost:
     
-        if (r1.r() == r11.getLeastSignificantBits()) goto L526;
+        if (r1.r() == r11.getLeastSignificantBits()) goto L527;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x0c08, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0bff, code lost:
     
         r1 = true;
+        r0 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:844:0x0fdb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:846:0x0fd4, code lost:
     
         r4 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:845:0x0fdc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:847:0x0fd5, code lost:
     
-        if (r5 != false) goto L874;
+        if (r5 != false) goto L876;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:846:0x0fde, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:848:0x0fd7, code lost:
     
         r3 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:847:0x0fdf, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:849:0x0fd8, code lost:
     
         r0 = r4.c;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:848:0x0fe5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:850:0x0fde, code lost:
     
-        if (r3 >= r0.size()) goto L939;
+        if (r3 >= r0.size()) goto L941;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:849:0x0fe7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:851:0x0fe0, code lost:
     
         r0 = (u3.c) r0.valueAt(r3);
         r0.Z.getClass();
         r1 = r0.V;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:850:0x0ff4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:852:0x0fed, code lost:
     
-        if (r1 == null) goto L941;
+        if (r1 == null) goto L943;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:851:0x0ff6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:853:0x0fef, code lost:
     
         r1.a(r0.Z, r0.k);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:853:0x0ffd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:855:0x0ff6, code lost:
     
         r3 = r3 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:856:0x1000, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:858:0x0ff9, code lost:
     
         return -1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:857:0x1003, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:859:0x0ffc, code lost:
     
         return 0;
      */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x091f  */
-    /* JADX WARN: Removed duplicated region for block: B:141:0x0937  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x094a  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0b27  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0b3b  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x0b3e  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x0957  */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x0939  */
-    /* JADX WARN: Type inference failed for: r3v47, types: [java.lang.Object, u3.c] */
-    /* JADX WARN: Type inference failed for: r3v51 */
-    /* JADX WARN: Type inference failed for: r3v52, types: [java.lang.RuntimeException] */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0921  */
+    /* JADX WARN: Removed duplicated region for block: B:143:0x0939  */
+    /* JADX WARN: Removed duplicated region for block: B:146:0x094c  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0b1f  */
+    /* JADX WARN: Removed duplicated region for block: B:154:0x0b33  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x0b36  */
+    /* JADX WARN: Removed duplicated region for block: B:157:0x0959  */
+    /* JADX WARN: Removed duplicated region for block: B:245:0x093b  */
+    /* JADX WARN: Type inference failed for: r3v48, types: [java.lang.Object, u3.c] */
+    /* JADX WARN: Type inference failed for: r3v52 */
+    /* JADX WARN: Type inference failed for: r3v53, types: [java.lang.RuntimeException] */
+    /* JADX WARN: Type inference failed for: r5v5, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r8v0, types: [u3.e] */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int m(p pVar, s sVar) {
-        p pVar2;
+    public final int m(c3.p pVar, s sVar) {
+        c3.p pVar2;
         boolean z10;
         int i10;
         boolean z11;
@@ -476,13 +481,16 @@ public final class d implements o {
         boolean z12;
         int i11;
         int a2;
+        c3.p pVar3;
         d dVar;
+        c3.p pVar4;
         char c10;
+        char c11;
         d dVar2;
         List singletonList;
         int i12;
-        String str2;
         int i13;
+        String str2;
         RuntimeException runtimeException;
         Pair pair;
         String str3;
@@ -497,34 +505,38 @@ public final class d implements o {
         byte[] bArr;
         int i18;
         String str5;
-        i d;
+        f2.a a10;
+        List list;
         c3.b0 tVar;
         int i19;
         long[] jArr;
         d dVar3 = this;
+        boolean z14 = false;
         dVar3.I = false;
-        boolean z14 = true;
+        boolean z15 = true;
         while (true) {
             int i20 = -1;
-            if (z14 && !dVar3.I) {
+            if (z15 && !dVar3.I) {
                 b bVar = dVar3.a;
-                e eVar = bVar.c;
+                ?? r82 = bVar.c;
                 ArrayDeque arrayDeque = bVar.b;
                 e2.d.h(bVar.d);
                 while (true) {
                     a aVar = (a) arrayDeque.peek();
+                    boolean z16 = z14;
                     if (aVar == null || pVar.getPosition() < aVar.b) {
-                        int i21 = 0;
+                        ?? r52 = z16 ? 1 : 0;
                         if (bVar.e == 0) {
-                            pVar2 = pVar;
-                            int i22 = 4;
-                            long b10 = eVar.b(pVar2, true, false, 4);
+                            c3.p pVar5 = pVar;
+                            int i21 = 4;
+                            long b10 = r82.b(pVar5, true, r52, 4);
                             if (b10 == -2) {
                                 byte[] bArr2 = bVar.a;
-                                pVar2.m();
+                                pVar5.q();
+                                int i22 = r52;
                                 while (true) {
-                                    pVar2.b(i21, i22, bArr2);
-                                    byte b11 = bArr2[i21];
+                                    pVar5.a(i22, i21, bArr2);
+                                    byte b11 = bArr2[i22];
                                     int i23 = 0;
                                     while (true) {
                                         if (i23 >= 8) {
@@ -541,11 +553,11 @@ public final class d implements o {
                                         if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                         }
                                     }
-                                    pVar2.o(1);
-                                    i22 = 4;
-                                    i21 = 0;
+                                    pVar5.r(1);
+                                    i21 = 4;
+                                    i22 = 0;
                                 }
-                                pVar2.o(i11);
+                                pVar5.r(i11);
                                 j3 = a2;
                             } else {
                                 j3 = b10;
@@ -554,21 +566,23 @@ public final class d implements o {
                             if (j3 == -1) {
                                 z12 = false;
                                 z11 = false;
+                                pVar3 = pVar5;
                             } else {
                                 bVar.f = (int) j3;
                                 bVar.e = 1;
+                                pVar2 = pVar5;
                             }
                         } else {
                             pVar2 = pVar;
                             z10 = true;
                         }
                         if (bVar.e == z10) {
-                            bVar.g = eVar.b(pVar2, false, z10, 8);
+                            bVar.g = r82.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        n4 n4Var = bVar.d;
+                        f fVar = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = n4Var.b;
+                        Object obj2 = fVar.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -578,7 +592,7 @@ public final class d implements o {
                             case MessagesStorage.LAST_DB_VERSION /* 179 */:
                             case 186:
                             case 215:
-                            case 231:
+                            case TLRPC.LAYER /* 231 */:
                             case 238:
                             case 241:
                             case 251:
@@ -678,16 +692,17 @@ public final class d implements o {
                                 break;
                         }
                         if (i10 == 0) {
-                            pVar2.o((int) bVar.g);
+                            pVar2.r((int) bVar.g);
                             bVar.e = 0;
+                            z14 = false;
                             i20 = -1;
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            n4 n4Var2 = bVar.d;
+                            f fVar2 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar4 = (d) n4Var2.b;
+                            d dVar4 = (d) fVar2.b;
                             e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
@@ -731,6 +746,7 @@ public final class d implements o {
                                     cVar.a = dVar4.w;
                                 } else if (i25 == 187) {
                                     dVar4.H = false;
+                                    z11 = false;
                                 } else if (i25 == 19899) {
                                     dVar4.z = -1;
                                     dVar4.A = -1L;
@@ -748,11 +764,11 @@ public final class d implements o {
                                     dVar4.s = position;
                                     dVar4.r = j10;
                                 } else if (i25 == 475249515) {
-                                    dVar4.F = new b0(2, (byte) 0);
-                                    dVar4.G = new b0(2, (byte) 0);
+                                    dVar4.F = new b0(2, (short) 0);
+                                    dVar4.G = new b0(2, (short) 0);
                                 } else if (i25 == 524531317 && !dVar4.y) {
                                     if (!dVar4.d || dVar4.C == -1) {
-                                        dVar4.e0.X1(new t(dVar4.v));
+                                        dVar4.e0.d2(new t(dVar4.v));
                                         dVar4.y = true;
                                     } else {
                                         dVar4.B = true;
@@ -765,14 +781,16 @@ public final class d implements o {
                                 dVar4.U = 0L;
                             }
                             bVar.e = z11 ? 1 : 0;
+                            pVar4 = pVar2;
                         } else if (i10 == 2) {
                             long j12 = bVar.g;
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            n4Var.F(i24, bVar.a(pVar2, (int) j12));
+                            fVar.r(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
+                            pVar4 = pVar2;
                         } else if (i10 == 3) {
                             long j13 = bVar.g;
                             if (j13 > 2147483647L) {
@@ -789,7 +807,7 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar5 = (d) n4Var.b;
+                            d dVar5 = (d) fVar.b;
                             if (i24 == 134) {
                                 dVar5.d(i24);
                                 dVar5.x.c = str;
@@ -807,10 +825,12 @@ public final class d implements o {
                             }
                             z11 = false;
                             bVar.e = 0;
+                            pVar4 = pVar2;
                         } else if (i10 == 4) {
-                            n4Var.C(i24, (int) bVar.g, pVar2);
+                            fVar.j(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
+                            pVar4 = pVar2;
                         } else {
                             if (i10 != 5) {
                                 throw s0.a(null, "Invalid element type " + i10);
@@ -821,7 +841,7 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar6 = (d) n4Var.b;
+                            d dVar6 = (d) fVar.b;
                             if (i24 == 181) {
                                 dVar6.d(i24);
                                 dVar6.x.S = (int) intBitsToFloat;
@@ -888,11 +908,12 @@ public final class d implements o {
                             }
                             z11 = false;
                             bVar.e = 0;
+                            pVar4 = pVar2;
                         }
                     } else {
-                        n4 n4Var3 = bVar.d;
+                        f fVar3 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar7 = (d) n4Var3.b;
+                        d dVar7 = (d) fVar3.b;
                         SparseArray sparseArray = dVar7.c;
                         e2.d.h(dVar7.e0);
                         if (i28 != 160) {
@@ -903,288 +924,531 @@ public final class d implements o {
                                 if (str6 == null) {
                                     throw s0.a(null, "CodecId is missing in TrackEntry element");
                                 }
-                                switch (str6) {
-                                    case "V_MPEG4/ISO/AP":
-                                    case "V_MPEG4/ISO/SP":
-                                    case "A_MS/ACM":
-                                    case "A_TRUEHD":
-                                    case "A_VORBIS":
-                                    case "A_MPEG/L2":
-                                    case "A_MPEG/L3":
-                                    case "V_MS/VFW/FOURCC":
-                                    case "S_DVBSUB":
-                                    case "V_MPEG4/ISO/ASP":
-                                    case "V_MPEG4/ISO/AVC":
-                                    case "S_VOBSUB":
-                                    case "A_DTS/LOSSLESS":
-                                    case "A_AAC":
-                                    case "A_AC3":
-                                    case "A_DTS":
-                                    case "V_AV1":
-                                    case "V_VP8":
-                                    case "V_VP9":
-                                    case "S_HDMV/PGS":
-                                    case "V_THEORA":
-                                    case "A_DTS/EXPRESS":
-                                    case "A_PCM/FLOAT/IEEE":
-                                    case "A_PCM/INT/BIG":
-                                    case "A_PCM/INT/LIT":
-                                    case "S_TEXT/ASS":
-                                    case "S_TEXT/SSA":
-                                    case "V_MPEGH/ISO/HEVC":
-                                    case "S_TEXT/WEBVTT":
-                                    case "S_TEXT/UTF8":
-                                    case "V_MPEG2":
-                                    case "A_EAC3":
-                                    case "A_FLAC":
-                                    case "A_OPUS":
+                                switch (str6.hashCode()) {
+                                    case -2095576542:
+                                        if (str6.equals("V_MPEG4/ISO/AP")) {
+                                            c10 = z16 ? 1 : 0;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -2095575984:
+                                        if (str6.equals("V_MPEG4/ISO/SP")) {
+                                            c10 = 1;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1985379776:
+                                        if (str6.equals("A_MS/ACM")) {
+                                            c10 = 2;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1784763192:
+                                        if (str6.equals("A_TRUEHD")) {
+                                            c10 = 3;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1730367663:
+                                        if (str6.equals("A_VORBIS")) {
+                                            c10 = 4;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1482641358:
+                                        if (str6.equals("A_MPEG/L2")) {
+                                            c10 = 5;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1482641357:
+                                        if (str6.equals("A_MPEG/L3")) {
+                                            c10 = 6;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -1373388978:
+                                        if (str6.equals("V_MS/VFW/FOURCC")) {
+                                            c10 = 7;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -933872740:
+                                        if (str6.equals("S_DVBSUB")) {
+                                            c10 = '\b';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -538363189:
+                                        if (str6.equals("V_MPEG4/ISO/ASP")) {
+                                            c10 = '\t';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -538363109:
+                                        if (str6.equals("V_MPEG4/ISO/AVC")) {
+                                            c10 = '\n';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -425012669:
+                                        if (str6.equals("S_VOBSUB")) {
+                                            c10 = 11;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case -356037306:
+                                        if (str6.equals("A_DTS/LOSSLESS")) {
+                                            c10 = '\f';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 62923557:
+                                        if (str6.equals("A_AAC")) {
+                                            c10 = '\r';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 62923603:
+                                        if (str6.equals("A_AC3")) {
+                                            c10 = 14;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 62927045:
+                                        if (str6.equals("A_DTS")) {
+                                            c10 = 15;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 82318131:
+                                        if (str6.equals("V_AV1")) {
+                                            c10 = 16;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 82338133:
+                                        if (str6.equals("V_VP8")) {
+                                            c10 = 17;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 82338134:
+                                        if (str6.equals("V_VP9")) {
+                                            c10 = 18;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 99146302:
+                                        if (str6.equals("S_HDMV/PGS")) {
+                                            c10 = 19;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 444813526:
+                                        if (str6.equals("V_THEORA")) {
+                                            c10 = 20;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 542569478:
+                                        if (str6.equals("A_DTS/EXPRESS")) {
+                                            c10 = 21;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 635596514:
+                                        if (str6.equals("A_PCM/FLOAT/IEEE")) {
+                                            c10 = 22;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 725948237:
+                                        if (str6.equals("A_PCM/INT/BIG")) {
+                                            c10 = 23;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 725957860:
+                                        if (str6.equals("A_PCM/INT/LIT")) {
+                                            c10 = 24;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 738597099:
+                                        if (str6.equals("S_TEXT/ASS")) {
+                                            c10 = 25;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 738614379:
+                                        if (str6.equals("S_TEXT/SSA")) {
+                                            c10 = 26;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 855502857:
+                                        if (str6.equals("V_MPEGH/ISO/HEVC")) {
+                                            c10 = 27;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1045209816:
+                                        if (str6.equals("S_TEXT/WEBVTT")) {
+                                            c10 = 28;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1422270023:
+                                        if (str6.equals("S_TEXT/UTF8")) {
+                                            c10 = 29;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1809237540:
+                                        if (str6.equals("V_MPEG2")) {
+                                            c10 = 30;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1950749482:
+                                        if (str6.equals("A_EAC3")) {
+                                            c10 = 31;
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1950789798:
+                                        if (str6.equals("A_FLAC")) {
+                                            c10 = ' ';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    case 1951062397:
+                                        if (str6.equals("A_OPUS")) {
+                                            c10 = '!';
+                                            break;
+                                        }
+                                        c10 = 65535;
+                                        break;
+                                    default:
+                                        c10 = 65535;
+                                        break;
+                                }
+                                switch (c10) {
+                                    case 0:
+                                    case 1:
+                                    case 2:
+                                    case 3:
+                                    case 4:
+                                    case 5:
+                                    case 6:
+                                    case 7:
+                                    case '\b':
+                                    case '\t':
+                                    case '\n':
+                                    case 11:
+                                    case '\f':
+                                    case '\r':
+                                    case 14:
+                                    case 15:
+                                    case 16:
+                                    case 17:
+                                    case 18:
+                                    case 19:
+                                    case 20:
+                                    case 21:
+                                    case 22:
+                                    case 23:
+                                    case 24:
+                                    case 25:
+                                    case 26:
+                                    case 27:
+                                    case 28:
+                                    case 29:
+                                    case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                                    case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                                    case ' ':
+                                    case '!':
                                         q qVar = dVar7.e0;
                                         int i29 = r32.d;
                                         switch (str6.hashCode()) {
                                             case -2095576542:
                                                 if (str6.equals("V_MPEG4/ISO/AP")) {
-                                                    c10 = 0;
+                                                    c11 = z16 ? 1 : 0;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -2095575984:
                                                 if (str6.equals("V_MPEG4/ISO/SP")) {
-                                                    c10 = 1;
+                                                    c11 = 1;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1985379776:
                                                 if (str6.equals("A_MS/ACM")) {
-                                                    c10 = 2;
+                                                    c11 = 2;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1784763192:
                                                 if (str6.equals("A_TRUEHD")) {
-                                                    c10 = 3;
+                                                    c11 = 3;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1730367663:
                                                 if (str6.equals("A_VORBIS")) {
-                                                    c10 = 4;
+                                                    c11 = 4;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1482641358:
                                                 if (str6.equals("A_MPEG/L2")) {
-                                                    c10 = 5;
+                                                    c11 = 5;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1482641357:
                                                 if (str6.equals("A_MPEG/L3")) {
-                                                    c10 = 6;
+                                                    c11 = 6;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -1373388978:
                                                 if (str6.equals("V_MS/VFW/FOURCC")) {
-                                                    c10 = 7;
+                                                    c11 = 7;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -933872740:
                                                 if (str6.equals("S_DVBSUB")) {
-                                                    c10 = '\b';
+                                                    c11 = '\b';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -538363189:
                                                 if (str6.equals("V_MPEG4/ISO/ASP")) {
-                                                    c10 = '\t';
+                                                    c11 = '\t';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -538363109:
                                                 if (str6.equals("V_MPEG4/ISO/AVC")) {
-                                                    c10 = '\n';
+                                                    c11 = '\n';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -425012669:
                                                 if (str6.equals("S_VOBSUB")) {
-                                                    c10 = 11;
+                                                    c11 = 11;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case -356037306:
                                                 if (str6.equals("A_DTS/LOSSLESS")) {
-                                                    c10 = '\f';
+                                                    c11 = '\f';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 62923557:
                                                 if (str6.equals("A_AAC")) {
-                                                    c10 = '\r';
+                                                    c11 = '\r';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 62923603:
                                                 if (str6.equals("A_AC3")) {
-                                                    c10 = 14;
+                                                    c11 = 14;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 62927045:
                                                 if (str6.equals("A_DTS")) {
-                                                    c10 = 15;
+                                                    c11 = 15;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 82318131:
                                                 if (str6.equals("V_AV1")) {
-                                                    c10 = 16;
+                                                    c11 = 16;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 82338133:
                                                 if (str6.equals("V_VP8")) {
-                                                    c10 = 17;
+                                                    c11 = 17;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 82338134:
                                                 if (str6.equals("V_VP9")) {
-                                                    c10 = 18;
+                                                    c11 = 18;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 99146302:
                                                 if (str6.equals("S_HDMV/PGS")) {
-                                                    c10 = 19;
+                                                    c11 = 19;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 444813526:
                                                 if (str6.equals("V_THEORA")) {
-                                                    c10 = 20;
+                                                    c11 = 20;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 542569478:
                                                 if (str6.equals("A_DTS/EXPRESS")) {
-                                                    c10 = 21;
+                                                    c11 = 21;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 635596514:
                                                 if (str6.equals("A_PCM/FLOAT/IEEE")) {
-                                                    c10 = 22;
+                                                    c11 = 22;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 725948237:
                                                 if (str6.equals("A_PCM/INT/BIG")) {
-                                                    c10 = 23;
+                                                    c11 = 23;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 725957860:
                                                 if (str6.equals("A_PCM/INT/LIT")) {
-                                                    c10 = 24;
+                                                    c11 = 24;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 738597099:
                                                 if (str6.equals("S_TEXT/ASS")) {
-                                                    c10 = 25;
+                                                    c11 = 25;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 738614379:
                                                 if (str6.equals("S_TEXT/SSA")) {
-                                                    c10 = 26;
+                                                    c11 = 26;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 855502857:
                                                 if (str6.equals("V_MPEGH/ISO/HEVC")) {
-                                                    c10 = 27;
+                                                    c11 = 27;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1045209816:
                                                 if (str6.equals("S_TEXT/WEBVTT")) {
-                                                    c10 = 28;
+                                                    c11 = 28;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1422270023:
                                                 if (str6.equals("S_TEXT/UTF8")) {
-                                                    c10 = 29;
+                                                    c11 = 29;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1809237540:
                                                 if (str6.equals("V_MPEG2")) {
-                                                    c10 = 30;
+                                                    c11 = 30;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1950749482:
                                                 if (str6.equals("A_EAC3")) {
-                                                    c10 = 31;
+                                                    c11 = 31;
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1950789798:
                                                 if (str6.equals("A_FLAC")) {
-                                                    c10 = ' ';
+                                                    c11 = ' ';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             case 1951062397:
                                                 if (str6.equals("A_OPUS")) {
-                                                    c10 = '!';
+                                                    c11 = '!';
                                                     break;
                                                 }
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                             default:
-                                                c10 = 65535;
+                                                c11 = 65535;
                                                 break;
                                         }
                                         String str7 = "video/x-unknown";
-                                        switch (c10) {
+                                        switch (c11) {
                                             case 0:
                                             case 1:
                                             case '\t':
@@ -1195,8 +1459,8 @@ public final class d implements o {
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
-                                                if (r32.P != null && (d = i.d(new v(r32.P))) != null) {
-                                                    str2 = d.a;
+                                                if (r32.P != null && (a10 = f2.a.a(new v(r32.P))) != null) {
+                                                    str2 = a10.a;
                                                     str7 = "video/dolby-vision";
                                                 }
                                                 int i30 = (r32.X ? 1 : 0) | (r32.W ? 2 : 0);
@@ -1304,9 +1568,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2 = new b2.s(rVar);
-                                                h0 Z1 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1;
-                                                Z1.b(sVar2);
+                                                h0 f22 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22;
+                                                f22.b(sVar2);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1331,7 +1595,7 @@ public final class d implements o {
                                                         i13 = -1;
                                                         singletonList = null;
                                                         if (r32.P != null) {
-                                                            str2 = d.a;
+                                                            str2 = a10.a;
                                                             str7 = "video/dolby-vision";
                                                             break;
                                                         }
@@ -1356,16 +1620,16 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar22 = new b2.s(rVar);
-                                                        h0 Z12 = qVar.Z1(r32.d, i15);
-                                                        r32.Z = Z12;
-                                                        Z12.b(sVar22);
+                                                        h0 f222 = qVar.f2(r32.d, i15);
+                                                        r32.Z = f222;
+                                                        f222.b(sVar22);
                                                         sparseArray.put(r32.d, r32);
                                                         dVar7 = dVar2;
                                                     }
                                                     int i37 = r32.R;
                                                     String str9 = d0.a;
-                                                    int B = d0.B(i37, ByteOrder.LITTLE_ENDIAN);
-                                                    if (B == 0) {
+                                                    int A = d0.A(i37, ByteOrder.LITTLE_ENDIAN);
+                                                    if (A == 0) {
                                                         e2.a.n("MatroskaExtractor", "Unsupported PCM bit depth: " + r32.R + ". Setting mimeType to audio/x-unknown");
                                                         str7 = "audio/x-unknown";
                                                         i12 = -1;
@@ -1393,13 +1657,13 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar222 = new b2.s(rVar);
-                                                        h0 Z122 = qVar.Z1(r32.d, i15);
-                                                        r32.Z = Z122;
-                                                        Z122.b(sVar222);
+                                                        h0 f2222 = qVar.f2(r32.d, i15);
+                                                        r32.Z = f2222;
+                                                        f2222.b(sVar222);
                                                         sparseArray.put(r32.d, r32);
                                                         dVar7 = dVar2;
                                                     } else {
-                                                        i12 = B;
+                                                        i12 = A;
                                                         str7 = "audio/raw";
                                                         str2 = null;
                                                         i13 = -1;
@@ -1425,9 +1689,9 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar2222 = new b2.s(rVar);
-                                                        h0 Z1222 = qVar.Z1(r32.d, i15);
-                                                        r32.Z = Z1222;
-                                                        Z1222.b(sVar2222);
+                                                        h0 f22222 = qVar.f2(r32.d, i15);
+                                                        r32.Z = f22222;
+                                                        f22222.b(sVar2222);
                                                         sparseArray.put(r32.d, r32);
                                                         dVar7 = dVar2;
                                                     }
@@ -1464,98 +1728,98 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222 = new b2.s(rVar);
-                                                h0 Z12222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222;
-                                                Z12222.b(sVar22222);
+                                                h0 f222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222;
+                                                f222222.b(sVar22222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
                                             case 4:
-                                                byte[] a10 = r32.a(str6);
+                                                byte[] a11 = r32.a(str6);
                                                 try {
-                                                    try {
-                                                        if (a10[0] != 2) {
-                                                            throw s0.a(null, "Error parsing vorbis codec private");
-                                                        }
-                                                        int i38 = 0;
-                                                        int i39 = 1;
-                                                        while (true) {
-                                                            int i40 = i39;
-                                                            int i41 = a10[i39] & 255;
-                                                            if (i41 == 255) {
-                                                                i38 += 255;
-                                                                i39 = i40 + 1;
-                                                            } else {
-                                                                int i42 = i40 + 1;
-                                                                int i43 = i38 + i41;
-                                                                int i44 = 0;
-                                                                while (true) {
-                                                                    int i45 = a10[i42] & 255;
-                                                                    if (i45 == 255) {
-                                                                        i44 += 255;
-                                                                        i42++;
-                                                                    } else {
-                                                                        int i46 = i42 + 1;
-                                                                        int i47 = i44 + i45;
-                                                                        if (a10[i46] != 1) {
-                                                                            throw s0.a(null, "Error parsing vorbis codec private");
-                                                                        }
-                                                                        byte[] bArr6 = new byte[i43];
-                                                                        System.arraycopy(a10, i46, bArr6, 0, i43);
-                                                                        int i48 = i46 + i43;
-                                                                        if (a10[i48] != 3) {
-                                                                            throw s0.a(null, "Error parsing vorbis codec private");
-                                                                        }
-                                                                        int i49 = i48 + i47;
-                                                                        if (a10[i49] != 5) {
-                                                                            throw s0.a(null, "Error parsing vorbis codec private");
-                                                                        }
-                                                                        byte[] bArr7 = new byte[a10.length - i49];
-                                                                        dVar2 = dVar7;
-                                                                        System.arraycopy(a10, i49, bArr7, 0, a10.length - i49);
-                                                                        ArrayList arrayList = new ArrayList(2);
-                                                                        arrayList.add(bArr6);
-                                                                        arrayList.add(bArr7);
-                                                                        str7 = "audio/vorbis";
-                                                                        singletonList = arrayList;
-                                                                        i12 = -1;
-                                                                        str2 = null;
-                                                                        i13 = 8192;
-                                                                        if (r32.P != null) {
-                                                                        }
-                                                                        int i3022222 = (r32.X ? 1 : 0) | (r32.W ? 2 : 0);
-                                                                        rVar = new r();
-                                                                        i14 = r0.i(str7);
-                                                                        Map map22222 = k0;
-                                                                        if (i14) {
-                                                                        }
-                                                                        str5 = r32.b;
-                                                                        if (str5 != null) {
-                                                                        }
-                                                                        rVar.a = Integer.toString(i29);
-                                                                        rVar.p = r0.n(r32.a ? "video/webm" : "video/x-matroska");
-                                                                        rVar.q = r0.n(str7);
-                                                                        rVar.r = i13;
-                                                                        rVar.d = r32.Y;
-                                                                        rVar.e = i3022222;
-                                                                        rVar.t = singletonList;
-                                                                        rVar.j = str2;
-                                                                        rVar.u = r32.m;
-                                                                        b2.s sVar222222 = new b2.s(rVar);
-                                                                        h0 Z122222 = qVar.Z1(r32.d, i15);
-                                                                        r32.Z = Z122222;
-                                                                        Z122222.b(sVar222222);
-                                                                        sparseArray.put(r32.d, r32);
-                                                                        dVar7 = dVar2;
+                                                } catch (ArrayIndexOutOfBoundsException unused2) {
+                                                    r32 = 0;
+                                                }
+                                                try {
+                                                    if (a11[0] != 2) {
+                                                        throw s0.a(null, "Error parsing vorbis codec private");
+                                                    }
+                                                    int i38 = 0;
+                                                    int i39 = 1;
+                                                    while (true) {
+                                                        int i40 = i39;
+                                                        int i41 = a11[i39] & 255;
+                                                        if (i41 == 255) {
+                                                            i38 += 255;
+                                                            i39 = i40 + 1;
+                                                        } else {
+                                                            int i42 = i40 + 1;
+                                                            int i43 = i38 + i41;
+                                                            int i44 = 0;
+                                                            while (true) {
+                                                                int i45 = a11[i42] & 255;
+                                                                if (i45 == 255) {
+                                                                    i44 += 255;
+                                                                    i42++;
+                                                                } else {
+                                                                    int i46 = i42 + 1;
+                                                                    int i47 = i44 + i45;
+                                                                    if (a11[i46] != 1) {
+                                                                        throw s0.a(null, "Error parsing vorbis codec private");
                                                                     }
+                                                                    byte[] bArr6 = new byte[i43];
+                                                                    System.arraycopy(a11, i46, bArr6, 0, i43);
+                                                                    int i48 = i46 + i43;
+                                                                    if (a11[i48] != 3) {
+                                                                        throw s0.a(null, "Error parsing vorbis codec private");
+                                                                    }
+                                                                    int i49 = i48 + i47;
+                                                                    if (a11[i49] != 5) {
+                                                                        throw s0.a(null, "Error parsing vorbis codec private");
+                                                                    }
+                                                                    byte[] bArr7 = new byte[a11.length - i49];
+                                                                    dVar2 = dVar7;
+                                                                    System.arraycopy(a11, i49, bArr7, 0, a11.length - i49);
+                                                                    ArrayList arrayList = new ArrayList(2);
+                                                                    arrayList.add(bArr6);
+                                                                    arrayList.add(bArr7);
+                                                                    str7 = "audio/vorbis";
+                                                                    singletonList = arrayList;
+                                                                    i13 = 8192;
+                                                                    i12 = -1;
+                                                                    str2 = null;
+                                                                    if (r32.P != null) {
+                                                                    }
+                                                                    int i3022222 = (r32.X ? 1 : 0) | (r32.W ? 2 : 0);
+                                                                    rVar = new r();
+                                                                    i14 = r0.i(str7);
+                                                                    Map map22222 = k0;
+                                                                    if (i14) {
+                                                                    }
+                                                                    str5 = r32.b;
+                                                                    if (str5 != null) {
+                                                                    }
+                                                                    rVar.a = Integer.toString(i29);
+                                                                    rVar.p = r0.n(r32.a ? "video/webm" : "video/x-matroska");
+                                                                    rVar.q = r0.n(str7);
+                                                                    rVar.r = i13;
+                                                                    rVar.d = r32.Y;
+                                                                    rVar.e = i3022222;
+                                                                    rVar.t = singletonList;
+                                                                    rVar.j = str2;
+                                                                    rVar.u = r32.m;
+                                                                    b2.s sVar222222 = new b2.s(rVar);
+                                                                    h0 f2222222 = qVar.f2(r32.d, i15);
+                                                                    r32.Z = f2222222;
+                                                                    f2222222.b(sVar222222);
+                                                                    sparseArray.put(r32.d, r32);
+                                                                    dVar7 = dVar2;
                                                                 }
                                                             }
                                                         }
-                                                    } catch (ArrayIndexOutOfBoundsException unused2) {
-                                                        throw s0.a(r32, "Error parsing vorbis codec private");
                                                     }
                                                 } catch (ArrayIndexOutOfBoundsException unused3) {
-                                                    r32 = 0;
+                                                    throw s0.a(r32, "Error parsing vorbis codec private");
                                                 }
                                                 break;
                                             case 5:
@@ -1586,9 +1850,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222 = new b2.s(rVar);
-                                                h0 Z1222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222;
-                                                Z1222222.b(sVar2222222);
+                                                h0 f22222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222;
+                                                f22222222.b(sVar2222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1620,9 +1884,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222 = new b2.s(rVar);
-                                                h0 Z12222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222;
-                                                Z12222222.b(sVar22222222);
+                                                h0 f222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222;
+                                                f222222222.b(sVar22222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1687,9 +1951,9 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar222222222 = new b2.s(rVar);
-                                                        h0 Z122222222 = qVar.Z1(r32.d, i15);
-                                                        r32.Z = Z122222222;
-                                                        Z122222222.b(sVar222222222);
+                                                        h0 f2222222222 = qVar.f2(r32.d, i15);
+                                                        r32.Z = f2222222222;
+                                                        f2222222222.b(sVar222222222);
                                                         sparseArray.put(r32.d, r32);
                                                         dVar7 = dVar2;
                                                     }
@@ -1721,9 +1985,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222 = new b2.s(rVar);
-                                                    h0 Z1222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z1222222222;
-                                                    Z1222222222.b(sVar2222222222);
+                                                    h0 f22222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f22222222222;
+                                                    f22222222222.b(sVar2222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 } catch (ArrayIndexOutOfBoundsException unused6) {
@@ -1760,17 +2024,17 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222 = new b2.s(rVar);
-                                                h0 Z12222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222;
-                                                Z12222222222.b(sVar22222222222);
+                                                h0 f222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222;
+                                                f222222222222.b(sVar22222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
                                             case '\n':
-                                                c3.d a11 = c3.d.a(new v(r32.a(r32.c)));
-                                                singletonList = a11.a;
-                                                r32.a0 = a11.b;
-                                                str4 = a11.l;
+                                                c3.d a12 = c3.d.a(new v(r32.a(r32.c)));
+                                                singletonList = a12.a;
+                                                r32.a0 = a12.b;
+                                                str4 = a12.l;
                                                 str7 = MediaController.VIDEO_MIME_TYPE;
                                                 str2 = str4;
                                                 dVar2 = dVar7;
@@ -1797,9 +2061,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222;
-                                                Z122222222222.b(sVar222222222222);
+                                                h0 f2222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222;
+                                                f2222222222222.b(sVar222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1831,9 +2095,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222;
-                                                Z1222222222222.b(sVar2222222222222);
+                                                h0 f22222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222;
+                                                f22222222222222.b(sVar2222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1865,16 +2129,16 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222 = new b2.s(rVar);
-                                                h0 Z12222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222222;
-                                                Z12222222222222.b(sVar22222222222222);
+                                                h0 f222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222222;
+                                                f222222222222222.b(sVar22222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
                                             case '\r':
                                                 List singletonList2 = Collections.singletonList(r32.a(str6));
                                                 byte[] bArr10 = r32.l;
-                                                c3.a n10 = c3.b.n(new h(bArr10, bArr10.length), false);
+                                                c3.a n10 = c3.b.n(new g(bArr10, bArr10.length), false);
                                                 r32.S = n10.b;
                                                 r32.Q = n10.c;
                                                 String str10 = n10.a;
@@ -1882,7 +2146,8 @@ public final class d implements o {
                                                 dVar2 = dVar7;
                                                 str2 = str10;
                                                 i13 = -1;
-                                                singletonList = singletonList2;
+                                                list = singletonList2;
+                                                singletonList = list;
                                                 i12 = -1;
                                                 if (r32.P != null) {
                                                 }
@@ -1905,9 +2170,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222;
-                                                Z122222222222222.b(sVar222222222222222);
+                                                h0 f2222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222;
+                                                f2222222222222222.b(sVar222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1939,9 +2204,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222;
-                                                Z1222222222222222.b(sVar2222222222222222);
+                                                h0 f22222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222;
+                                                f22222222222222222.b(sVar2222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -1974,9 +2239,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222 = new b2.s(rVar);
-                                                h0 Z12222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222222222;
-                                                Z12222222222222222.b(sVar22222222222222222);
+                                                h0 f222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222222222;
+                                                f222222222222222222.b(sVar22222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2010,9 +2275,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222222;
-                                                Z122222222222222222.b(sVar222222222222222222);
+                                                h0 f2222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222222;
+                                                f2222222222222222222.b(sVar222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2044,9 +2309,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222222;
-                                                Z1222222222222222222.b(sVar2222222222222222222);
+                                                h0 f22222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222222;
+                                                f22222222222222222222.b(sVar2222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2080,9 +2345,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222 = new b2.s(rVar);
-                                                h0 Z12222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222222222222;
-                                                Z12222222222222222222.b(sVar22222222222222222222);
+                                                h0 f222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222222222222;
+                                                f222222222222222222222.b(sVar22222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2114,9 +2379,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222222222;
-                                                Z122222222222222222222.b(sVar222222222222222222222);
+                                                h0 f2222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222222222;
+                                                f2222222222222222222222.b(sVar222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2147,9 +2412,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222222222;
-                                                Z1222222222222222222222.b(sVar2222222222222222222222);
+                                                h0 f22222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222222222;
+                                                f22222222222222222222222.b(sVar2222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2182,9 +2447,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar22222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z12222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z12222222222222222222222;
-                                                    Z12222222222222222222222.b(sVar22222222222222222222222);
+                                                    h0 f222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f222222222222222222222222;
+                                                    f222222222222222222222222.b(sVar22222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 } else {
@@ -2216,9 +2481,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar222222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z122222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z122222222222222222222222;
-                                                    Z122222222222222222222222.b(sVar222222222222222222222222);
+                                                    h0 f2222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f2222222222222222222222222;
+                                                    f2222222222222222222222222.b(sVar222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 }
@@ -2253,9 +2518,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z1222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z1222222222222222222222222;
-                                                    Z1222222222222222222222222.b(sVar2222222222222222222222222);
+                                                    h0 f22222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f22222222222222222222222222;
+                                                    f22222222222222222222222222.b(sVar2222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 } else {
@@ -2294,9 +2559,9 @@ public final class d implements o {
                                                         rVar.j = str2;
                                                         rVar.u = r32.m;
                                                         b2.s sVar22222222222222222222222222 = new b2.s(rVar);
-                                                        h0 Z12222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                        r32.Z = Z12222222222222222222222222;
-                                                        Z12222222222222222222222222.b(sVar22222222222222222222222222);
+                                                        h0 f222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                        r32.Z = f222222222222222222222222222;
+                                                        f222222222222222222222222222.b(sVar22222222222222222222222222);
                                                         sparseArray.put(r32.d, r32);
                                                         dVar7 = dVar2;
                                                     }
@@ -2326,9 +2591,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z122222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z122222222222222222222222222;
-                                                    Z122222222222222222222222222.b(sVar222222222222222222222222222);
+                                                    h0 f2222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f2222222222222222222222222222;
+                                                    f2222222222222222222222222222.b(sVar222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 }
@@ -2336,8 +2601,8 @@ public final class d implements o {
                                             case 24:
                                                 int i52 = r32.R;
                                                 String str11 = d0.a;
-                                                int B2 = d0.B(i52, ByteOrder.LITTLE_ENDIAN);
-                                                if (B2 == 0) {
+                                                int A2 = d0.A(i52, ByteOrder.LITTLE_ENDIAN);
+                                                if (A2 == 0) {
                                                     e2.a.n("MatroskaExtractor", "Unsupported little endian PCM bit depth: " + r32.R + ". Setting mimeType to audio/x-unknown");
                                                     dVar2 = dVar7;
                                                     str7 = "audio/x-unknown";
@@ -2366,14 +2631,14 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar2222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z1222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z1222222222222222222222222222;
-                                                    Z1222222222222222222222222222.b(sVar2222222222222222222222222222);
+                                                    h0 f22222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f22222222222222222222222222222;
+                                                    f22222222222222222222222222222.b(sVar2222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 } else {
                                                     dVar2 = dVar7;
-                                                    i12 = B2;
+                                                    i12 = A2;
                                                     str7 = "audio/raw";
                                                     str2 = null;
                                                     i13 = -1;
@@ -2399,9 +2664,9 @@ public final class d implements o {
                                                     rVar.j = str2;
                                                     rVar.u = r32.m;
                                                     b2.s sVar22222222222222222222222222222 = new b2.s(rVar);
-                                                    h0 Z12222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                    r32.Z = Z12222222222222222222222222222;
-                                                    Z12222222222222222222222222222.b(sVar22222222222222222222222222222);
+                                                    h0 f222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                    r32.Z = f222222222222222222222222222222;
+                                                    f222222222222222222222222222222.b(sVar22222222222222222222222222222);
                                                     sparseArray.put(r32.d, r32);
                                                     dVar7 = dVar2;
                                                 }
@@ -2435,17 +2700,17 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222222222222222222;
-                                                Z122222222222222222222222222222.b(sVar222222222222222222222222222222);
+                                                h0 f2222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222222222222222222;
+                                                f2222222222222222222222222222222.b(sVar222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
                                             case 27:
-                                                x a12 = x.a(new v(r32.a(r32.c)), false, null);
-                                                singletonList = a12.a;
-                                                r32.a0 = a12.b;
-                                                str4 = a12.n;
+                                                x a13 = x.a(new v(r32.a(r32.c)), z16, null);
+                                                singletonList = a13.a;
+                                                r32.a0 = a13.b;
+                                                str4 = a13.n;
                                                 str7 = "video/hevc";
                                                 str2 = str4;
                                                 dVar2 = dVar7;
@@ -2472,9 +2737,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222222222222222222;
-                                                Z1222222222222222222222222222222.b(sVar2222222222222222222222222222222);
+                                                h0 f22222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222222222222222222;
+                                                f22222222222222222222222222222222.b(sVar2222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2506,9 +2771,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z12222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222222222222222222222222;
-                                                Z12222222222222222222222222222222.b(sVar22222222222222222222222222222222);
+                                                h0 f222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222222222222222222222222;
+                                                f222222222222222222222222222222222.b(sVar22222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2540,9 +2805,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222222222222222222222;
-                                                Z122222222222222222222222222222222.b(sVar222222222222222222222222222222222);
+                                                h0 f2222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222222222222222222222;
+                                                f2222222222222222222222222222222222.b(sVar222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2574,9 +2839,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222222222222222222222;
-                                                Z1222222222222222222222222222222222.b(sVar2222222222222222222222222222222222);
+                                                h0 f22222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222222222222222222222;
+                                                f22222222222222222222222222222222222.b(sVar2222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2608,9 +2873,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar22222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z12222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z12222222222222222222222222222222222;
-                                                Z12222222222222222222222222222222222.b(sVar22222222222222222222222222222222222);
+                                                h0 f222222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f222222222222222222222222222222222222;
+                                                f222222222222222222222222222222222222.b(sVar22222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2643,9 +2908,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar222222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z122222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z122222222222222222222222222222222222;
-                                                Z122222222222222222222222222222222222.b(sVar222222222222222222222222222222222222);
+                                                h0 f2222222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f2222222222222222222222222222222222222;
+                                                f2222222222222222222222222222222222222.b(sVar222222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2657,11 +2922,12 @@ public final class d implements o {
                                                 arrayList2.add(allocate.order(byteOrder).putLong(r32.T).array());
                                                 arrayList2.add(ByteBuffer.allocate(8).order(byteOrder).putLong(r32.U).array());
                                                 str7 = "audio/opus";
-                                                singletonList = arrayList2;
                                                 dVar2 = dVar7;
-                                                i12 = -1;
-                                                str2 = null;
                                                 i13 = 5760;
+                                                str2 = null;
+                                                list = arrayList2;
+                                                singletonList = list;
+                                                i12 = -1;
                                                 if (r32.P != null) {
                                                 }
                                                 int i30222222222222222222222222222222222222 = (r32.X ? 1 : 0) | (r32.W ? 2 : 0);
@@ -2683,9 +2949,9 @@ public final class d implements o {
                                                 rVar.j = str2;
                                                 rVar.u = r32.m;
                                                 b2.s sVar2222222222222222222222222222222222222 = new b2.s(rVar);
-                                                h0 Z1222222222222222222222222222222222222 = qVar.Z1(r32.d, i15);
-                                                r32.Z = Z1222222222222222222222222222222222222;
-                                                Z1222222222222222222222222222222222222.b(sVar2222222222222222222222222222222222222);
+                                                h0 f22222222222222222222222222222222222222 = qVar.f2(r32.d, i15);
+                                                r32.Z = f22222222222222222222222222222222222222;
+                                                f22222222222222222222222222222222222222.b(sVar2222222222222222222222222222222222222);
                                                 sparseArray.put(r32.d, r32);
                                                 dVar7 = dVar2;
                                                 break;
@@ -2696,136 +2962,151 @@ public final class d implements o {
                                         dVar7.x = null;
                                         break;
                                 }
-                            } else if (i28 == 19899) {
-                                int i53 = dVar7.z;
-                                if (i53 != i20) {
-                                    long j15 = dVar7.A;
-                                    if (j15 != -1) {
-                                        if (i53 == 475249515) {
-                                            dVar7.C = j15;
-                                        }
-                                    }
-                                }
-                            } else if (i28 == 25152) {
-                                dVar7.d(i28);
-                                c cVar2 = dVar7.x;
-                                if (cVar2.i) {
-                                    c3.g0 g0Var = cVar2.k;
-                                    if (g0Var == null) {
-                                        throw s0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
-                                    }
-                                    cVar2.m = new b2.o(null, true, new n(b2.i.a, null, "video/webm", g0Var.b));
-                                }
-                            } else if (i28 == 28032) {
-                                dVar7.d(i28);
-                                c cVar3 = dVar7.x;
-                                if (cVar3.i && cVar3.j != null) {
-                                    throw s0.a(null, "Combining encryption and compression is not supported");
-                                }
-                            } else if (i28 == 357149030) {
-                                if (dVar7.t == -9223372036854775807L) {
-                                    dVar7.t = 1000000L;
-                                }
-                                long j16 = dVar7.u;
-                                if (j16 != -9223372036854775807L) {
-                                    dVar7.v = dVar7.l(j16);
-                                }
-                            } else if (i28 == 374648427) {
-                                if (sparseArray.size() == 0) {
-                                    throw s0.a(null, "No valid tracks were found");
-                                }
-                                dVar7.e0.e1();
-                            } else if (i28 == 475249515) {
-                                if (!dVar7.y) {
-                                    q qVar2 = dVar7.e0;
-                                    b0 b0Var = dVar7.F;
-                                    b0 b0Var2 = dVar7.G;
-                                    if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
-                                        tVar = new t(dVar7.v);
-                                    } else {
-                                        int[] iArr = new int[i19];
-                                        long[] jArr2 = new long[i19];
-                                        long[] jArr3 = new long[i19];
-                                        long[] jArr4 = new long[i19];
-                                        int i54 = 0;
-                                        while (i54 < i19) {
-                                            jArr4[i54] = b0Var.f(i54);
-                                            jArr2[i54] = b0Var2.f(i54) + dVar7.s;
-                                            i54++;
-                                            jArr4 = jArr4;
-                                        }
-                                        long[] jArr5 = jArr4;
-                                        int i55 = 0;
-                                        while (true) {
-                                            int i56 = i19 - 1;
-                                            if (i55 < i56) {
-                                                int i57 = i55 + 1;
-                                                iArr[i55] = (int) (jArr2[i57] - jArr2[i55]);
-                                                jArr3[i55] = jArr5[i57] - jArr5[i55];
-                                                i55 = i57;
-                                            } else {
-                                                int i58 = i56;
-                                                while (i58 > 0 && jArr5[i58] > dVar7.v) {
-                                                    i58--;
-                                                }
-                                                iArr[i58] = (int) ((dVar7.s + dVar7.r) - jArr2[i58]);
-                                                jArr3[i58] = dVar7.v - jArr5[i58];
-                                                if (i58 < i56) {
-                                                    e2.a.n("MatroskaExtractor", "Discarding trailing cue points with timestamps greater than total duration");
-                                                    int i59 = i58 + 1;
-                                                    iArr = Arrays.copyOf(iArr, i59);
-                                                    jArr2 = Arrays.copyOf(jArr2, i59);
-                                                    jArr3 = Arrays.copyOf(jArr3, i59);
-                                                    jArr = Arrays.copyOf(jArr5, i59);
-                                                } else {
-                                                    jArr = jArr5;
-                                                }
-                                                tVar = new c3.j(iArr, jArr2, jArr3, jArr);
+                            } else {
+                                if (i28 == 19899) {
+                                    int i53 = dVar7.z;
+                                    if (i53 != i20) {
+                                        long j15 = dVar7.A;
+                                        if (j15 != -1) {
+                                            if (i53 == 475249515) {
+                                                dVar7.C = j15;
+                                                z11 = z16 ? 1 : 0;
                                             }
                                         }
                                     }
-                                    qVar2.X1(tVar);
-                                    dVar7.y = true;
+                                } else if (i28 == 25152) {
+                                    dVar7.d(i28);
+                                    c cVar2 = dVar7.x;
+                                    if (cVar2.i) {
+                                        c3.g0 g0Var = cVar2.k;
+                                        if (g0Var == null) {
+                                            throw s0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
+                                        }
+                                        n[] nVarArr = new n[1];
+                                        nVarArr[z16 ? 1 : 0] = new n(i.a, null, "video/webm", g0Var.b);
+                                        cVar2.m = new b2.o(null, true, nVarArr);
+                                        z11 = z16 ? 1 : 0;
+                                    }
+                                } else if (i28 == 28032) {
+                                    dVar7.d(i28);
+                                    c cVar3 = dVar7.x;
+                                    if (cVar3.i && cVar3.j != null) {
+                                        throw s0.a(null, "Combining encryption and compression is not supported");
+                                    }
+                                } else if (i28 != 357149030) {
+                                    if (i28 == 374648427) {
+                                        if (sparseArray.size() == 0) {
+                                            throw s0.a(null, "No valid tracks were found");
+                                        }
+                                        dVar7.e0.k1();
+                                    } else if (i28 == 475249515) {
+                                        if (!dVar7.y) {
+                                            q qVar2 = dVar7.e0;
+                                            b0 b0Var = dVar7.F;
+                                            b0 b0Var2 = dVar7.G;
+                                            if (dVar7.s == -1 || dVar7.v == -9223372036854775807L || b0Var == null || (i19 = b0Var.b) == 0 || b0Var2 == null || b0Var2.b != i19) {
+                                                tVar = new t(dVar7.v);
+                                            } else {
+                                                int[] iArr = new int[i19];
+                                                long[] jArr2 = new long[i19];
+                                                long[] jArr3 = new long[i19];
+                                                long[] jArr4 = new long[i19];
+                                                int i54 = z16 ? 1 : 0;
+                                                while (i54 < i19) {
+                                                    jArr4[i54] = b0Var.i(i54);
+                                                    jArr2[i54] = b0Var2.i(i54) + dVar7.s;
+                                                    i54++;
+                                                    jArr4 = jArr4;
+                                                }
+                                                long[] jArr5 = jArr4;
+                                                int i55 = z16 ? 1 : 0;
+                                                while (true) {
+                                                    int i56 = i19 - 1;
+                                                    if (i55 < i56) {
+                                                        int i57 = i55 + 1;
+                                                        iArr[i55] = (int) (jArr2[i57] - jArr2[i55]);
+                                                        jArr3[i55] = jArr5[i57] - jArr5[i55];
+                                                        i55 = i57;
+                                                    } else {
+                                                        int i58 = i56;
+                                                        while (i58 > 0 && jArr5[i58] > dVar7.v) {
+                                                            i58--;
+                                                        }
+                                                        iArr[i58] = (int) ((dVar7.s + dVar7.r) - jArr2[i58]);
+                                                        jArr3[i58] = dVar7.v - jArr5[i58];
+                                                        if (i58 < i56) {
+                                                            e2.a.n("MatroskaExtractor", "Discarding trailing cue points with timestamps greater than total duration");
+                                                            int i59 = i58 + 1;
+                                                            iArr = Arrays.copyOf(iArr, i59);
+                                                            jArr2 = Arrays.copyOf(jArr2, i59);
+                                                            jArr3 = Arrays.copyOf(jArr3, i59);
+                                                            jArr = Arrays.copyOf(jArr5, i59);
+                                                        } else {
+                                                            jArr = jArr5;
+                                                        }
+                                                        tVar = new c3.j(iArr, jArr2, jArr3, jArr);
+                                                    }
+                                                }
+                                            }
+                                            qVar2.d2(tVar);
+                                            dVar7.y = true;
+                                        }
+                                        dVar7.F = null;
+                                        dVar7.G = null;
+                                    }
+                                    z11 = z16 ? 1 : 0;
+                                } else {
+                                    if (dVar7.t == -9223372036854775807L) {
+                                        dVar7.t = 1000000L;
+                                    }
+                                    long j16 = dVar7.u;
+                                    if (j16 != -9223372036854775807L) {
+                                        dVar7.v = dVar7.l(j16);
+                                        z11 = z16 ? 1 : 0;
+                                    }
                                 }
-                                dVar7.F = null;
-                                dVar7.G = null;
-                            }
-                        } else if (dVar7.J == 2) {
-                            c cVar4 = (c) sparseArray.get(dVar7.P);
-                            cVar4.Z.getClass();
-                            if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
-                                v vVar3 = dVar7.p;
-                                byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
-                                vVar3.getClass();
-                                vVar3.H(array.length, array);
-                            }
-                            int i60 = 0;
-                            for (int i61 = 0; i61 < dVar7.N; i61++) {
-                                i60 += dVar7.O[i61];
-                            }
-                            int i62 = 0;
-                            while (i62 < dVar7.N) {
-                                long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
-                                int i63 = dVar7.R;
-                                if (i62 == 0 && !dVar7.T) {
-                                    i63 |= 1;
-                                }
-                                int i64 = dVar7.O[i62];
-                                int i65 = i60 - i64;
-                                dVar7.e(cVar4, j17, i63, i64, i65);
-                                i62++;
-                                i60 = i65;
+                                pVar4 = pVar;
                             }
                             z11 = false;
-                            dVar7.J = 0;
-                            pVar2 = pVar;
+                            pVar4 = pVar;
+                        } else {
+                            if (dVar7.J == 2) {
+                                c cVar4 = (c) sparseArray.get(dVar7.P);
+                                cVar4.Z.getClass();
+                                if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
+                                    v vVar3 = dVar7.p;
+                                    byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
+                                    vVar3.getClass();
+                                    vVar3.H(array.length, array);
+                                }
+                                int i60 = 0;
+                                for (int i61 = 0; i61 < dVar7.N; i61++) {
+                                    i60 += dVar7.O[i61];
+                                }
+                                int i62 = 0;
+                                while (i62 < dVar7.N) {
+                                    long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                    int i63 = dVar7.R;
+                                    if (i62 == 0 && !dVar7.T) {
+                                        i63 |= 1;
+                                    }
+                                    int i64 = dVar7.O[i62];
+                                    int i65 = i60 - i64;
+                                    dVar7.e(cVar4, j17, i63, i64, i65);
+                                    i62++;
+                                    i60 = i65;
+                                }
+                                z11 = false;
+                                dVar7.J = 0;
+                                pVar4 = pVar;
+                            }
+                            z11 = false;
+                            pVar4 = pVar;
                         }
-                        z11 = false;
-                        pVar2 = pVar;
                     }
                 }
                 if (z12) {
-                    long position2 = pVar2.getPosition();
+                    long position2 = pVar3.getPosition();
                     dVar = this;
                     if (dVar.B) {
                         dVar.D = position2;
@@ -2846,13 +3127,14 @@ public final class d implements o {
                 } else {
                     dVar = this;
                 }
-                z14 = z12;
+                z15 = z12;
                 dVar3 = dVar;
+                z14 = false;
             }
         }
     }
 
-    public final int n(p pVar, c cVar, int i10, boolean z10) {
+    public final int n(c3.p pVar, c cVar, int i10, boolean z10) {
         int a2;
         int a10;
         int i11;
@@ -3050,7 +3332,7 @@ public final class d implements o {
         return i27;
     }
 
-    public final void o(p pVar, byte[] bArr, int i10) {
+    public final void o(c3.p pVar, byte[] bArr, int i10) {
         int length = bArr.length + i10;
         v vVar = this.m;
         byte[] bArr2 = vVar.a;

@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
+/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
 /* loaded from: classes3.dex */
-public final class h1 extends s4.h0 {
+public final class h1 extends s4.i0 {
     public final /* synthetic */ k1 c;
 
     public h1(k1 k1Var) {
         this.c = k1Var;
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int h() {
         TL_iv.pageBlockCollage pageblockcollage = this.c.s;
         if (pageblockcollage == null) {
@@ -24,20 +24,20 @@ public final class h1 extends s4.h0 {
         return pageblockcollage.items.size();
     }
 
-    @Override // s4.h0
+    @Override // s4.i0
     public final int j(int i10) {
         ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
         return arrayList.get((arrayList.size() - i10) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
+    @Override // s4.i0
+    public final void v(s4.d1 d1Var, int i10) {
         k1 k1Var = this.c;
         j1 j1Var = k1Var.v;
         ArrayList<TL_iv.PageBlock> arrayList = k1Var.s.items;
         TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i10) - 1);
-        int i11 = c1Var.f;
-        View view = c1Var.a;
+        int i11 = d1Var.f;
+        View view = d1Var.a;
         if (i11 == 0) {
             d2 d2Var = (d2) view;
             d2Var.R = (MessageObject.GroupedMessagePosition) j1Var.b.get(pageBlock);
@@ -50,9 +50,9 @@ public final class h1 extends s4.h0 {
         }
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.i0
+    public final s4.d1 x(ViewGroup viewGroup, int i10) {
         k1 k1Var = this.c;
-        return new org.telegram.ui.Components.il0(i10 != 0 ? new x2(k1Var.getContext(), k1Var.x, k1Var.w, 2) : new d2(k1Var.getContext(), k1Var.x, k1Var.w, 2));
+        return new org.telegram.ui.Components.am0(i10 != 0 ? new x2(k1Var.getContext(), k1Var.x, k1Var.w, 2) : new d2(k1Var.getContext(), k1Var.x, k1Var.w, 2));
     }
 }
